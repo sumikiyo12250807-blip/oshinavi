@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSHINAVI - 無料イベント情報</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #e040fb;
+      --accent2: #00e5ff;
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --bg3: #1a1a1a;
+      --text: #f0f0f0;
+      --text-muted: #888;
+      --border: #2a2a2a;
+      --red: #ff5252;
+      --orange: #ffab40;
+      --green: #69f0ae;
+      --free: #69f0ae;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── ヘッダー ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    nav { display: flex; gap: 24px; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a.active { color: var(--free); }
+
+    /* ── ヒーロー ── */
+    .hero {
+      text-align: center;
+      padding: 56px 24px 40px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 50% 0%, rgba(105,240,174,0.08) 0%, transparent 70%);
+    }
+
+    .hero h1 {
+      font-size: clamp(24px, 5vw, 44px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--free), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* ── 検索 & フィルターバー ── */
+    .controls {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .search-wrap {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 15px;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px 10px 38px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+
+    #searchInput::placeholder { color: var(--text-muted); }
+    #searchInput:focus { border-color: var(--free); }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-right: 4px;
+    }
+
+    .filter-btn {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+      font-family: inherit;
+    }
+
+    .filter-btn:hover { border-color: #555; color: var(--text); }
+    .filter-btn.active { border-color: var(--free); color: var(--free); background: rgba(105,240,174,0.08); }
+
+    /* ── メイン ── */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 24px;
+    }
+
+    .result-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .result-meta span { color: var(--text); font-weight: 700; }
+
+    /* ── イベントカード ── */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .event-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--free), var(--accent2));
+    }
+
+    .event-card:hover {
+      border-color: #3a3a3a;
+      transform: translateY(-1px);
+    }
+
+    .event-card.hidden { display: none; }
+    .event-card.status-passed { opacity: 0.5; }
+
+    .card-body {
+      padding: 18px 20px 0 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    /* ── タグ ── */
+    .tag-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .genre-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .genre-jpop    { background: rgba(224,64,251,0.15); color: var(--accent); border: 1px solid rgba(224,64,251,0.3); }
+    .genre-rock    { background: rgba(255,82,82,0.15);  color: var(--red);    border: 1px solid rgba(255,82,82,0.3); }
+    .genre-hiphop  { background: rgba(255,171,64,0.15); color: var(--orange); border: 1px solid rgba(255,171,64,0.3); }
+    .genre-kpop    { background: rgba(0,229,255,0.12);  color: var(--accent2);border: 1px solid rgba(0,229,255,0.25); }
+    .genre-anime   { background: rgba(105,240,174,0.12);color: var(--green);  border: 1px solid rgba(105,240,174,0.25); }
+    .genre-idol    { background: rgba(255,128,171,0.15);color: #ff80ab;       border: 1px solid rgba(255,128,171,0.3); }
+    .genre-youtuber{ background: rgba(255,0,0,0.12);    color: #ff4444;       border: 1px solid rgba(255,0,0,0.3); }
+    .genre-vtuber  { background: rgba(149,117,205,0.18);color: #ce93d8;       border: 1px solid rgba(149,117,205,0.35); }
+
+    .type-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      background: rgba(105,240,174,0.12);
+      color: var(--free);
+      border: 1px solid rgba(105,240,174,0.3);
+    }
+
+    .event-artist {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--free);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .event-name {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .event-meta-item {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── カウントダウン ── */
+    .countdown-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .countdown-box.status-urgent { border-color: rgba(255,82,82,0.4); }
+    .countdown-box.status-soon   { border-color: rgba(255,171,64,0.35); }
+    .countdown-box.status-normal { border-color: rgba(105,240,174,0.3); }
+    .countdown-box.status-passed { opacity: 0.5; }
+
+    .countdown-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .countdown-days {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .status-urgent .countdown-days { color: var(--red); }
+    .status-soon   .countdown-days { color: var(--orange); }
+    .status-normal .countdown-days { color: var(--free); }
+    .status-passed .countdown-days { color: var(--text-muted); }
+
+    .countdown-unit {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── フッターエリア ── */
+    .card-footer {
+      padding: 10px 20px 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 14px;
+    }
+
+    .event-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .event-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s, transform 0.15s;
+      background: rgba(105,240,174,0.12);
+      color: var(--free);
+      border: 1px solid rgba(105,240,174,0.3);
+      white-space: nowrap;
+    }
+
+    .event-link-btn:hover { opacity: 0.8; transform: translateY(-1px); }
+
+    /* ── 空状態 ── */
+    .empty-state {
+      text-align: center;
+      padding: 64px 24px;
+      color: var(--text-muted);
+    }
+
+    .empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
+    .empty-state p { font-size: 14px; letter-spacing: 0.5px; }
+
+    /* ── フッター ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-top: 32px;
+    }
+
+    #pagetop {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--free);
+      color: #000;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      transition: opacity 0.2s;
+    }
+    #pagetop.visible { display: flex; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">OSHINAVI</a>
+  <nav>
+    <a href="index.html">チケットイベント</a>
+    <a href="free.html" class="active">無料イベント</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>楽しいイベントを<span>見逃さない</span>！</h1>
+  <p>入場無料・チケット不要のイベント情報をまとめてチェック</p>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名で検索…">
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label">GENRE</span>
+    <button class="filter-btn active" data-genre="all">すべて</button>
+    <button class="filter-btn" data-genre="jpop">J-POP</button>
+    <button class="filter-btn" data-genre="rock">ロック</button>
+    <button class="filter-btn" data-genre="kpop">K-POP</button>
+    <button class="filter-btn" data-genre="hiphop">ヒップホップ</button>
+    <button class="filter-btn" data-genre="anime">アニソン</button>
+    <button class="filter-btn" data-genre="idol">アイドル</button>
+    <button class="filter-btn" data-genre="youtuber">YouTuber</button>
+    <button class="filter-btn" data-genre="vtuber">VTuber</button>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label">TYPE</span>
+    <button class="filter-btn active" data-evtype="all">すべて</button>
+    <button class="filter-btn" data-evtype="instore">インストア</button>
+    <button class="filter-btn" data-evtype="open">公開収録</button>
+    <button class="filter-btn" data-evtype="outdoor">野外イベント</button>
+    <button class="filter-btn" data-evtype="fanmeeting">ファンミ</button>
+    <button class="filter-btn" data-evtype="other">その他</button>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label">AREA</span>
+    <button class="filter-btn active" data-region="all">すべて</button>
+    <button class="filter-btn" data-region="hokkaido">北海道</button>
+    <button class="filter-btn" data-region="tohoku">東北</button>
+    <button class="filter-btn" data-region="kanto">関東</button>
+    <button class="filter-btn" data-region="chubu">中部</button>
+    <button class="filter-btn" data-region="kinki">近畿</button>
+    <button class="filter-btn" data-region="chugoku">中国</button>
+    <button class="filter-btn" data-region="shikoku">四国</button>
+    <button class="filter-btn" data-region="kyushu">九州</button>
+    <button class="filter-btn" data-region="zenkoku">全国</button>
+  </div>
+</div>
+
+<main>
+  <div class="result-meta">
+    <span id="resultCount">0</span> 件のイベント
+  </div>
+
+  <div class="event-list" id="eventList">
+    <!-- JS で描画 -->
+  </div>
+
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <div class="empty-icon">🔎</div>
+    <p>条件に一致するイベントが見つかりませんでした</p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 OSHINAVI — ライブイベント情報まとめ
+</footer>
+
+<button id="pagetop" title="トップへ戻る">↑</button>
+
+<script>
+  // ────────────────────────────────────────────────
+  //  無料イベントデータ
+  //  date: "YYYY-MM-DD" (イベント当日)
+  //  type: "instore" | "open" | "outdoor" | "fanmeeting" | "other"
+  // ────────────────────────────────────────────────
+  const FREE_EVENTS = [
+    // 例）
+    // {
+    //   id: 1,
+    //   artist: "アーティスト名",
+    //   name: "イベント名",
+    //   date: "2026-04-01",
+    //   dateLabel: "2026年4月1日(水) 14:00〜",
+    //   venue: "会場名",
+    //   prefecture: "東京都",
+    //   genre: "kpop",
+    //   type: "instore",
+    //   note: "整理券配布あり・詳細は公式サイトへ",
+    //   url: "https://...",
+    // },
+  ];
+
+  // ────────────────────────────────────────────────
+  //  ユーティリティ
+  // ────────────────────────────────────────────────
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  function parseDateStr(str) {
+    const [y, m, d] = str.split("-").map(Number);
+    return new Date(y, m - 1, d);
+  }
+
+  function daysFrom(dateStr) {
+    const d = parseDateStr(dateStr);
+    return Math.round((d - today) / 86400000);
+  }
+
+  function getStatus(dateStr) {
+    const diff = daysFrom(dateStr);
+    if (diff < 0)  return "passed";
+    if (diff <= 7) return "urgent";
+    if (diff <= 31) return "soon";
+    return "normal";
+  }
+
+  function countdownLabel(dateStr) {
+    const diff = daysFrom(dateStr);
+    if (diff < 0)  return { days: "終了", unit: "" };
+    if (diff === 0) return { days: "本日", unit: "開催！" };
+    if (diff === 1) return { days: "明日", unit: "開催" };
+    return { days: diff, unit: "日後" };
+  }
+
+  const GENRE_LABEL = {
+    jpop: "J-POP", rock: "ロック", kpop: "K-POP",
+    hiphop: "HIP HOP", anime: "アニソン", idol: "アイドル",
+    youtuber: "YouTuber", vtuber: "VTuber"
+  };
+
+  const TYPE_LABEL = {
+    instore: "インストア", open: "公開収録",
+    outdoor: "野外イベント", fanmeeting: "ファンミ", other: "その他"
+  };
+
+  const PREFECTURE_TO_REGION = {
+    "北海道": "hokkaido",
+    "青森県": "tohoku", "岩手県": "tohoku", "宮城県": "tohoku",
+    "秋田県": "tohoku", "山形県": "tohoku", "福島県": "tohoku",
+    "茨城県": "kanto",  "栃木県": "kanto",  "群馬県": "kanto",
+    "埼玉県": "kanto",  "千葉県": "kanto",  "東京都": "kanto",  "神奈川県": "kanto",
+    "新潟県": "chubu",  "富山県": "chubu",  "石川県": "chubu",  "福井県": "chubu",
+    "山梨県": "chubu",  "長野県": "chubu",  "岐阜県": "chubu",  "静岡県": "chubu",  "愛知県": "chubu",
+    "三重県": "kinki",  "滋賀県": "kinki",  "京都府": "kinki",  "大阪府": "kinki",
+    "兵庫県": "kinki",  "奈良県": "kinki",  "和歌山県": "kinki",
+    "鳥取県": "chugoku","島根県": "chugoku","岡山県": "chugoku","広島県": "chugoku","山口県": "chugoku",
+    "徳島県": "shikoku","香川県": "shikoku","愛媛県": "shikoku","高知県": "shikoku",
+    "福岡県": "kyushu", "佐賀県": "kyushu", "長崎県": "kyushu", "熊本県": "kyushu",
+    "大分県": "kyushu", "宮崎県": "kyushu", "鹿児島県": "kyushu","沖縄県": "kyushu",
+  };
+
+  // ────────────────────────────────────────────────
+  //  カード生成
+  // ────────────────────────────────────────────────
+  function renderCard(ev) {
+    const status = getStatus(ev.date);
+    const { days, unit } = countdownLabel(ev.date);
+
+    const countdownHTML = `
+      <div class="countdown-box status-${status}">
+        <div class="countdown-label">イベントまで</div>
+        <div class="countdown-days">${days}</div>
+        <div class="countdown-unit">${unit}</div>
+      </div>`;
+
+    const noteHTML = ev.note
+      ? `<span class="event-note">※ ${ev.note}</span>`
+      : `<span></span>`;
+
+    const linkHTML = ev.url
+      ? `<a class="event-link-btn" href="${ev.url}" target="_blank" rel="noopener">🔗 詳細・公式サイト</a>`
+      : '';
+
+    return `
+      <div class="event-card ${status === 'passed' ? 'status-passed' : ''}"
+           data-id="${ev.id}"
+           data-genre="${ev.genre}"
+           data-evtype="${ev.type}"
+           data-prefecture="${ev.prefecture || ''}"
+           data-search="${(ev.artist + ' ' + ev.name).toLowerCase()}">
+        <div class="card-body">
+          <div class="event-info">
+            <div class="tag-row">
+              <span class="genre-tag genre-${ev.genre}">${GENRE_LABEL[ev.genre] || ev.genre}</span>
+              <span class="type-tag">${TYPE_LABEL[ev.type] || ev.type}</span>
+              <span class="type-tag" style="background:rgba(105,240,174,0.2);font-weight:900;">FREE</span>
+            </div>
+            <div class="event-artist">${ev.artist}</div>
+            <div class="event-name">${ev.name}</div>
+            <div class="event-meta">
+              <span class="event-meta-item">📅 ${ev.dateLabel}</span>
+              <span class="event-meta-item">📍 ${ev.venue}</span>
+            </div>
+          </div>
+          ${countdownHTML}
+        </div>
+        <div class="card-footer">
+          ${noteHTML}
+          ${linkHTML}
+        </div>
+      </div>`;
+  }
+
+  // ────────────────────────────────────────────────
+  //  フィルタリング
+  // ────────────────────────────────────────────────
+  let activeGenre  = "all";
+  let activeEvtype = "all";
+  let activeRegion = "all";
+  let searchQuery  = "";
+
+  function applyFilters() {
+    const cards = document.querySelectorAll(".event-card");
+    let visible = 0;
+
+    cards.forEach(card => {
+      const genre      = card.dataset.genre;
+      const evtype     = card.dataset.evtype;
+      const search     = card.dataset.search;
+      const prefecture = card.dataset.prefecture;
+
+      const matchGenre  = activeGenre  === "all" || genre === activeGenre;
+      const matchEvtype = activeEvtype === "all" || evtype === activeEvtype;
+      const matchSearch = searchQuery === "" || search.includes(searchQuery.toLowerCase());
+      const matchRegion = activeRegion === "all"
+        || (activeRegion === "zenkoku" && prefecture === "全国")
+        || PREFECTURE_TO_REGION[prefecture] === activeRegion;
+
+      if (matchGenre && matchEvtype && matchSearch && matchRegion) {
+        card.classList.remove("hidden");
+        visible++;
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+    document.getElementById("resultCount").textContent = visible;
+    document.getElementById("emptyState").style.display = visible === 0 ? "block" : "none";
+  }
+
+  // ────────────────────────────────────────────────
+  //  初期化
+  // ────────────────────────────────────────────────
+  function init() {
+    const list = document.getElementById("eventList");
+
+    if (FREE_EVENTS.length === 0) {
+      document.getElementById("emptyState").style.display = "block";
+      document.getElementById("resultCount").textContent = "0";
+      return;
+    }
+
+    list.innerHTML = FREE_EVENTS.map(renderCard).join("");
+    document.getElementById("resultCount").textContent = FREE_EVENTS.length;
+
+    document.querySelectorAll(".filter-btn[data-genre]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn[data-genre]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeGenre = btn.dataset.genre;
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll(".filter-btn[data-evtype]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn[data-evtype]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeEvtype = btn.dataset.evtype;
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll(".filter-btn[data-region]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn[data-region]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeRegion = btn.dataset.region;
+        applyFilters();
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", e => {
+      searchQuery = e.target.value.trim();
+      applyFilters();
+    });
+  }
+
+  init();
+
+  const pagetop = document.getElementById("pagetop");
+  window.addEventListener("scroll", () => {
+    pagetop.classList.toggle("visible", window.scrollY > 300);
+  });
+  pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+</script>
+</body>
+</html>
