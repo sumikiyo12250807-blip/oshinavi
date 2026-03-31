@@ -51,14 +51,10 @@
       z-index: 100;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 4px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
     }
 
     nav { display: flex; gap: 24px; }
@@ -270,6 +266,7 @@
     .genre-youtuber{ background: rgba(255,0,0,0.12);    color: #ff4444;       border: 1px solid rgba(255,0,0,0.3); }
     .genre-vtuber  { background: rgba(149,117,205,0.18);color: #ce93d8;       border: 1px solid rgba(149,117,205,0.35); }
     .genre-classic { background: rgba(212,175,55,0.15); color: #d4af37;       border: 1px solid rgba(212,175,55,0.35); }
+    .genre-fes     { background: rgba(0,200,100,0.15);  color: #00c864;       border: 1px solid rgba(0,200,100,0.3); }
 
     .event-artist {
       font-size: 13px;
@@ -512,7 +509,7 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo" style="text-decoration:none;">OSHINAVI</a>
+  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png" alt="OSHINAVI"></a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケットイベント</a>
     <a href="free.html">無料イベント</a>
@@ -551,6 +548,7 @@
     <button class="filter-btn" data-genre="classic">クラシック</button>
     <button class="filter-btn" data-genre="owarai">お笑い</button>
     <button class="filter-btn" data-genre="sports">スポーツ</button>
+    <button class="filter-btn" data-genre="fes">フェス</button>
   </div>
 
   <!-- ステータスフィルター -->
@@ -2005,7 +2003,7 @@
       dateLabel: "2026年5月16日(土) 10:30開演",
       venue: "東京・海の森公園",
       prefecture: "東京都",
-      genre: "rock",
+      genre: "fes",
       price: "1日券 15,000円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664794", eplus: null },
       tickets: [
@@ -2020,7 +2018,7 @@
       dateLabel: "2026年5月17日(日) 10:30開演",
       venue: "東京・海の森公園",
       prefecture: "東京都",
-      genre: "rock",
+      genre: "fes",
       price: "1日券 15,000円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664794", eplus: null },
       tickets: [
@@ -2035,7 +2033,7 @@
       dateLabel: "2026年5月30日(土) 11:00開演",
       venue: "堺市・海とのふれあい広場",
       prefecture: "大阪府",
-      genre: "rock",
+      genre: "fes",
       price: "1日券 15,000円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664794", eplus: null },
       tickets: [
@@ -2050,7 +2048,7 @@
       dateLabel: "2026年5月31日(日) 11:00開演",
       venue: "堺市・海とのふれあい広場",
       prefecture: "大阪府",
-      genre: "rock",
+      genre: "fes",
       price: "1日券 15,000円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664794", eplus: null },
       tickets: [
@@ -2854,7 +2852,7 @@
       dateLabel: "2026年4月25日(土)・26日(日)",
       venue: "みちのく公園北地区 エコキャンプみちのく",
       prefecture: "宮城県",
-      genre: "rock",
+      genre: "fes",
       price: "15,000円〜",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664951", eplus: null },
       tickets: [
@@ -3194,75 +3192,15 @@
     },
     {
       id: 207,
-      artist: "務川慧悟",
-      name: "務川慧悟 ピアノ・リサイタル【軽井沢大賀ホール 2026春の音楽祭】",
-      date: "2026-04-29",
-      dateLabel: "2026年4月29日(水・祝)",
+      artist: "軽井沢大賀ホール 2026春の音楽祭",
+      name: "軽井沢大賀ホール 2026春の音楽祭",
+      date: "2026-05-06",
+      dateLabel: "2026年4月29日(水・祝)〜5月6日(水・祝)",
       venue: "軽井沢大賀ホール",
       prefecture: "長野県",
-      genre: "classic",
-      price: "2,000円〜5,000円",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2601245&rlsCd=001", eplus: null },
-      tickets: [
-        { type: "一般発売", date: "2026-05-04" },
-      ]
-    },
-    {
-      id: 208,
-      artist: "大友直人 & 東京フィルハーモニー交響楽団",
-      name: "大友直人指揮 東京フィルハーモニー交響楽団【軽井沢大賀ホール 2026春の音楽祭】",
-      date: "2026-05-02",
-      dateLabel: "2026年5月2日(土)",
-      venue: "軽井沢大賀ホール",
-      prefecture: "長野県",
-      genre: "classic",
-      price: "6,500円〜11,000円",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2601245&rlsCd=001", eplus: null },
-      tickets: [
-        { type: "一般発売", date: "2026-05-04" },
-      ]
-    },
-    {
-      id: 209,
-      artist: "軽井沢チェンバーオーケストラ",
-      name: "軽井沢チェンバーオーケストラ【軽井沢大賀ホール 2026春の音楽祭】",
-      date: "2026-05-03",
-      dateLabel: "2026年5月3日(日・祝)",
-      venue: "軽井沢大賀ホール",
-      prefecture: "長野県",
-      genre: "classic",
-      price: "1,000円〜3,000円",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2601245&rlsCd=001", eplus: null },
-      tickets: [
-        { type: "一般発売", date: "2026-05-04" },
-      ]
-    },
-    {
-      id: 210,
-      artist: "サロンオーケストラジャパン",
-      name: "サロンオーケストラジャパン 0歳からの音楽会（ゲスト：横山だいすけ）【軽井沢大賀ホール 2026春の音楽祭】",
-      date: "2026-05-04",
-      dateLabel: "2026年5月4日(月・祝)",
-      venue: "軽井沢大賀ホール",
-      prefecture: "長野県",
-      genre: "classic",
-      price: "1,000円〜4,000円",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2601245&rlsCd=001", eplus: null },
-      tickets: [
-        { type: "一般発売", date: "2026-05-04" },
-      ]
-    },
-    {
-      id: 211,
-      artist: "ギドン・クレーメル",
-      name: "ギドン・クレーメル トリオ【軽井沢大賀ホール 2026春の音楽祭】",
-      date: "2026-05-05",
-      dateLabel: "2026年5月5日(火・祝)",
-      venue: "軽井沢大賀ホール",
-      prefecture: "長野県",
-      genre: "classic",
-      price: "6,000円〜9,000円",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2601245&rlsCd=001", eplus: null },
+      genre: "fes",
+      price: "1,000円〜11,000円",
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665663", eplus: null },
       tickets: [
         { type: "一般発売", date: "2026-05-04" },
       ]
@@ -3310,6 +3248,201 @@
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666742", eplus: null },
       tickets: [
         { type: "プレリザーブ 抽選", date: "2026-04-12" },
+      ]
+    },
+    {
+      id: 212,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-04-05",
+      dateLabel: "2026年4月5日(日)",
+      venue: "仙台Rensa",
+      prefecture: "宮城県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-04-04" },
+      ]
+    },
+    {
+      id: 213,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-04-12",
+      dateLabel: "2026年4月12日(日)",
+      venue: "周南RISING HALL",
+      prefecture: "山口県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-04-11" },
+      ]
+    },
+    {
+      id: 214,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-04-17",
+      dateLabel: "2026年4月17日(金)",
+      venue: "SOUND SHOWER ark",
+      prefecture: "静岡県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-04-08" },
+      ]
+    },
+    {
+      id: 215,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-04-29",
+      dateLabel: "2026年4月29日(水・祝)",
+      venue: "金沢EIGHT HALL",
+      prefecture: "石川県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-04-20" },
+      ]
+    },
+    {
+      id: 216,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-05-01",
+      dateLabel: "2026年5月1日(金)",
+      venue: "高松MONSTER",
+      prefecture: "香川県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-04-22" },
+      ]
+    },
+    {
+      id: 217,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-05-08",
+      dateLabel: "2026年5月8日(金)",
+      venue: "ペニーレーン24",
+      prefecture: "北海道",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-04-29" },
+      ]
+    },
+    {
+      id: 218,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-05-17",
+      dateLabel: "2026年5月17日(日)",
+      venue: "EVANS CASTLE HALL",
+      prefecture: "奈良県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-05-07" },
+      ]
+    },
+    {
+      id: 219,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-05-23",
+      dateLabel: "2026年5月23日(土)",
+      venue: "GOLDEN PIGS RED STAGE",
+      prefecture: "新潟県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-05-14" },
+      ]
+    },
+    {
+      id: 220,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-05-29",
+      dateLabel: "2026年5月29日(金)",
+      venue: "DRUM LOGOS",
+      prefecture: "福岡県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-05-20" },
+      ]
+    },
+    {
+      id: 221,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-05-30",
+      dateLabel: "2026年5月30日(土)",
+      venue: "DRUM Be-7",
+      prefecture: "長崎県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-05-21" },
+      ]
+    },
+    {
+      id: 222,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-07-31",
+      dateLabel: "2026年7月31日(金)",
+      venue: "NHK大阪ホール",
+      prefecture: "大阪府",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-07-22" },
+      ]
+    },
+    {
+      id: 223,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-08-02",
+      dateLabel: "2026年8月2日(日)",
+      venue: "岡谷鋼機名古屋公会堂 大ホール",
+      prefecture: "愛知県",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-07-23" },
+      ]
+    },
+    {
+      id: 224,
+      artist: "超能力戦士ドリアン",
+      name: "超能力戦士ドリアン ワンマンライブツアー「とびだせ！スペースアドベンチャー」",
+      date: "2026-08-07",
+      dateLabel: "2026年8月7日(金)",
+      venue: "Shibuya LOVEZ",
+      prefecture: "東京都",
+      genre: "rock",
+      price: null,
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563710", eplus: null },
+      tickets: [
+        { type: "一般発売", date: "2026-07-29" },
       ]
     },
   ];
