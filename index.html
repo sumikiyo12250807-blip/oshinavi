@@ -51,10 +51,23 @@
       z-index: 100;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .logo img {
       height: 48px;
       width: auto;
       display: block;
+      -webkit-text-fill-color: initial;
     }
 
     nav { display: flex; gap: 24px; }
@@ -509,7 +522,7 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png" alt="OSHINAVI"></a>
+  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケットイベント</a>
     <a href="free.html">無料イベント</a>
