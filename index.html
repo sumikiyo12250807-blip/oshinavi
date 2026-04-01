@@ -518,6 +518,48 @@
     transition: opacity 0.2s;
   }
   #pagetop.visible { display: flex; }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 0 16px;
+      height: 56px;
+    }
+    .logo { font-size: 18px; letter-spacing: 2px; }
+    .logo img { height: 36px; }
+    nav { gap: 14px; }
+    nav a { font-size: 13px; }
+
+    .hero { padding: 36px 16px 28px; }
+
+    .controls { padding: 12px 16px; }
+    .search-wrap { max-width: 100%; }
+
+    main { padding: 20px 16px; }
+
+    .card-body {
+      grid-template-columns: 1fr;
+      padding: 14px 16px 0 18px;
+    }
+
+    .countdown-box { display: none; }
+
+    .event-name { font-size: 15px; }
+
+    .ticket-section {
+      padding: 12px 16px 14px 18px;
+      flex-direction: column;
+    }
+
+    .ticket-item { min-width: 0; width: 100%; }
+
+    .card-footer {
+      padding: 10px 16px 14px 18px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ticket-links { flex-wrap: wrap; }
+  }
   </style>
 </head>
 <body>
