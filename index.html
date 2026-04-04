@@ -399,27 +399,6 @@
     .status-normal .ticket-countdown { background: rgba(0,229,255,0.1);     color: var(--accent2); }
     .status-passed .ticket-countdown { background: transparent; color: var(--text-muted); }
 
-    /* ── イベント日カウントダウンボックス ── */
-    .countdown-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-width: 72px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      text-align: center;
-      align-self: center;
-    }
-    .cd-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; min-height: 14px; }
-    .cd-num   { font-size: 28px; font-weight: 900; line-height: 1.1; }
-    .cd-unit  { font-size: 10px; font-weight: 700; min-height: 14px; }
-
-    .countdown-box.cd-urgent { background: rgba(255,82,82,0.12);    color: var(--red);    border: 1px solid rgba(255,82,82,0.25); }
-    .countdown-box.cd-soon   { background: rgba(255,171,64,0.12);   color: var(--orange); border: 1px solid rgba(255,171,64,0.25); }
-    .countdown-box.cd-normal { background: rgba(0,229,255,0.08);    color: var(--accent2);border: 1px solid rgba(0,229,255,0.15); }
-    .countdown-box.cd-passed { background: transparent;             color: var(--text-muted); border: 1px solid var(--border); }
-
     /* ── チケット価格 & リンクボタン ── */
     .card-footer {
       padding: 10px 20px 14px 24px;
@@ -567,8 +546,6 @@
       grid-template-columns: 1fr;
       padding: 14px 16px 0 18px;
     }
-
-    .countdown-box { display: none; }
 
     .event-name { font-size: 15px; }
 
@@ -4855,28 +4832,6 @@
   //  カード生成
   // ────────────────────────────────────────────────
   function renderCard(ev) {
-    // イベント日カウントダウンボックス
-    const evDiff = daysFrom(ev.date);
-    let cdClass, cdLabelText, cdNumText, cdUnitText;
-    if (evDiff < 0) {
-      cdClass = 'cd-passed'; cdLabelText = ''; cdNumText = '終了'; cdUnitText = '';
-    } else if (evDiff === 0) {
-      cdClass = 'cd-urgent'; cdLabelText = ''; cdNumText = '本日'; cdUnitText = '';
-    } else if (evDiff === 1) {
-      cdClass = 'cd-urgent'; cdLabelText = ''; cdNumText = '明日'; cdUnitText = '';
-    } else {
-      cdClass = evDiff <= 7 ? 'cd-urgent' : evDiff <= 30 ? 'cd-soon' : 'cd-normal';
-      cdLabelText = 'あと';
-      cdNumText = evDiff;
-      cdUnitText = '日';
-    }
-    const countdownBoxHTML = `
-      <div class="countdown-box ${cdClass}">
-        <div class="cd-label">${cdLabelText}</div>
-        <div class="cd-num">${cdNumText}</div>
-        <div class="cd-unit">${cdUnitText}</div>
-      </div>`;
-
     const ticketsHTML = ev.tickets.map(t => {
       const status = getTicketStatus(t.date);
       const label  = countdownLabel(t.date);
@@ -4937,7 +4892,6 @@
               <span class="event-meta-item">📍 ${ev.venue}</span>
             </div>
           </div>
-          ${countdownBoxHTML}
         </div>
         <div class="ticket-section">${ticketsHTML}</div>
         <div class="card-footer">
