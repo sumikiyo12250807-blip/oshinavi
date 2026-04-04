@@ -4972,7 +4972,7 @@
         || (activeStatus === "upcoming" && status === "normal");
       const matchSearch = searchQuery === "" || search.includes(searchQuery.toLowerCase());
       const matchRegion = activeRegion === "all"
-        || (activeRegion === "zenkoku" && prefecture === "全国")
+        || prefecture === "全国"
         || PREFECTURE_TO_REGION[prefecture] === activeRegion;
 
       if (matchGenre && matchStatus && matchSearch && matchRegion) {
