@@ -399,6 +399,27 @@
     .status-normal .ticket-countdown { background: rgba(0,229,255,0.1);     color: var(--accent2); }
     .status-passed .ticket-countdown { background: transparent; color: var(--text-muted); }
 
+    /* ── イベント日カウントダウンボックス ── */
+    .countdown-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-align: center;
+      align-self: center;
+    }
+    .cd-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; min-height: 14px; }
+    .cd-num   { font-size: 28px; font-weight: 900; line-height: 1.1; }
+    .cd-unit  { font-size: 10px; font-weight: 700; min-height: 14px; }
+
+    .countdown-box.cd-urgent { background: rgba(255,82,82,0.12);    color: var(--red);    border: 1px solid rgba(255,82,82,0.25); }
+    .countdown-box.cd-soon   { background: rgba(255,171,64,0.12);   color: var(--orange); border: 1px solid rgba(255,171,64,0.25); }
+    .countdown-box.cd-normal { background: rgba(0,229,255,0.08);    color: var(--accent2);border: 1px solid rgba(0,229,255,0.15); }
+    .countdown-box.cd-passed { background: transparent;             color: var(--text-muted); border: 1px solid var(--border); }
+
     /* ── チケット価格 & リンクボタン ── */
     .card-footer {
       padding: 10px 20px 14px 24px;
@@ -3276,7 +3297,13 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/0005930001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（郡山）", date: "2026-04-26" },
+        { type: "一般発売（仙台4/30）", date: "2026-04-28" },
+        { type: "一般発売（仙台5/1）", date: "2026-04-29" },
+        { type: "一般発売（盛岡）", date: "2026-05-01" },
+        { type: "一般発売（青森）", date: "2026-05-02" }
+      ]
     },
     {
       id: 329,
@@ -3289,7 +3316,11 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/2696540001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（大阪）", date: "2026-04-30" },
+        { type: "一般発売（福岡）", date: "2026-05-08" },
+        { type: "一般発売（東京）", date: "2026-05-16" }
+      ]
     },
     {
       id: 330,
@@ -3302,7 +3333,11 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/3162890001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（山形）", date: "2026-04-28" },
+        { type: "一般発売（福島）", date: "2026-04-30" },
+        { type: "一般発売（沖縄）", date: "2026-05-11" }
+      ]
     },
     {
       id: 331,
@@ -3315,7 +3350,9 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/3736360002" },
-      tickets: []
+      tickets: [
+        { type: "一般発売", date: "2026-04-24" }
+      ]
     },
     {
       id: 332,
@@ -3328,7 +3365,13 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/4054670001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（4/28）", date: "2026-04-27" },
+        { type: "一般発売（4/29）", date: "2026-04-28" },
+        { type: "一般発売（4/30）", date: "2026-04-29" },
+        { type: "一般発売（5/1）", date: "2026-04-30" },
+        { type: "一般発売（5/7）", date: "2026-05-06" }
+      ]
     },
     {
       id: 333,
@@ -3341,7 +3384,9 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/0092520001" },
-      tickets: []
+      tickets: [
+        { type: "2次プレオーダー 抽選", date: "2026-04-05" }
+      ]
     },
     {
       id: 334,
@@ -3354,7 +3399,13 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/0370630001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（大阪）", date: "2026-04-23" },
+        { type: "一般発売（福岡）", date: "2026-04-30" },
+        { type: "一般発売（広島）", date: "2026-05-01" },
+        { type: "一般発売（愛知）", date: "2026-05-03" },
+        { type: "一般発売（京都）", date: "2026-05-05" }
+      ]
     },
     {
       id: 335,
@@ -3367,7 +3418,10 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/1024430001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（大阪）", date: "2026-04-30" },
+        { type: "一般発売（東京）", date: "2026-05-01" }
+      ]
     },
     {
       id: 336,
@@ -3380,7 +3434,11 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/4014720001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売（横浜）", date: "2026-04-22" },
+        { type: "一般発売（京都5/9）", date: "2026-05-01" },
+        { type: "一般発売（京都5/10）", date: "2026-05-06" }
+      ]
     },
     {
       id: 337,
@@ -3406,7 +3464,9 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/4501400001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売", date: "2026-04-30" }
+      ]
     },
     {
       id: 339,
@@ -3419,7 +3479,9 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/4508640001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売", date: "2026-04-30" }
+      ]
     },
     {
       id: 340,
@@ -3445,7 +3507,10 @@
       genre: "rock",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/4478530001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売", date: "2026-05-01" },
+        { type: "当日券", date: "2026-05-02" }
+      ]
     },
     {
       id: 342,
@@ -3458,7 +3523,9 @@
       genre: "jpop",
       price: null,
       links: { lawson: null, pia: null, eplus: "https://eplus.jp/sf/detail/4508610001" },
-      tickets: []
+      tickets: [
+        { type: "一般発売", date: "2026-05-01" }
+      ]
     },
     {
       id: 343,
@@ -4788,6 +4855,28 @@
   //  カード生成
   // ────────────────────────────────────────────────
   function renderCard(ev) {
+    // イベント日カウントダウンボックス
+    const evDiff = daysFrom(ev.date);
+    let cdClass, cdLabelText, cdNumText, cdUnitText;
+    if (evDiff < 0) {
+      cdClass = 'cd-passed'; cdLabelText = ''; cdNumText = '終了'; cdUnitText = '';
+    } else if (evDiff === 0) {
+      cdClass = 'cd-urgent'; cdLabelText = ''; cdNumText = '本日'; cdUnitText = '';
+    } else if (evDiff === 1) {
+      cdClass = 'cd-urgent'; cdLabelText = ''; cdNumText = '明日'; cdUnitText = '';
+    } else {
+      cdClass = evDiff <= 7 ? 'cd-urgent' : evDiff <= 30 ? 'cd-soon' : 'cd-normal';
+      cdLabelText = 'あと';
+      cdNumText = evDiff;
+      cdUnitText = '日';
+    }
+    const countdownBoxHTML = `
+      <div class="countdown-box ${cdClass}">
+        <div class="cd-label">${cdLabelText}</div>
+        <div class="cd-num">${cdNumText}</div>
+        <div class="cd-unit">${cdUnitText}</div>
+      </div>`;
+
     const ticketsHTML = ev.tickets.map(t => {
       const status = getTicketStatus(t.date);
       const label  = countdownLabel(t.date);
@@ -4848,6 +4937,7 @@
               <span class="event-meta-item">📍 ${ev.venue}</span>
             </div>
           </div>
+          ${countdownBoxHTML}
         </div>
         <div class="ticket-section">${ticketsHTML}</div>
         <div class="card-footer">
