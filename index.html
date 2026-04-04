@@ -478,6 +478,12 @@
       border: 1px solid rgba(180, 120, 60, 0.35);
     }
 
+    .btn-amazon {
+      background: rgba(255, 153, 0, 0.15);
+      color: #ffb84d;
+      border: 1px solid rgba(255, 153, 0, 0.35);
+    }
+
     /* ── 空状態 ── */
     .empty-state {
       text-align: center;
@@ -735,7 +741,7 @@
       prefecture: "全国",
       genre: "jpop",
       price: "指定席 11,000円〜",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564019", eplus: "https://eplus.jp/sf/detail/0009860001" },
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564019", eplus: "https://eplus.jp/sf/detail/0009860001", amazon: "https://amzn.to/4v6fwxb" },
       tickets: [
         { type: "一般発売（〜4/9まで）", date: "2026-04-09" },
         { type: "ぴあプリセール(AnyPASS発券) 先行先着 販売終了", date: "2026-04-15" },
@@ -4818,6 +4824,7 @@
       { key: "pia",      label: "チケットぴあ",     cls: "btn-pia",      icon: "🎟" },
       { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
+      { key: "amazon",   label: "Amazon",           cls: "btn-amazon",   icon: "🛒" },
     ];
     const linksHTML = linkDefs
       .filter(d => ev.links && ev.links[d.key])
