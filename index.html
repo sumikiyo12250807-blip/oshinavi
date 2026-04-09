@@ -484,6 +484,12 @@
       border: 1px solid rgba(255, 153, 0, 0.35);
     }
 
+    .btn-hotel {
+      background: rgba(0, 180, 120, 0.12);
+      color: #4dd8a0;
+      border: 1px solid rgba(0, 180, 120, 0.3);
+    }
+
     /* ── 空状態 ── */
     .empty-state {
       text-align: center;
@@ -4712,10 +4718,11 @@
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
       { key: "amazon",   label: "最新CD",            cls: "btn-amazon",   icon: "🛒" },
     ];
+    const hotelBtn = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
     const linksHTML = linkDefs
       .filter(d => ev.links && ev.links[d.key])
       .map(d => `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${d.label}</a>`)
-      .join("");
+      .join("") + hotelBtn;
 
     return `
       <div class="event-card"
@@ -4866,5 +4873,6 @@
   });
   pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 </script>
+<img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.8&type=3&subid=0">
 </body>
 </html>
