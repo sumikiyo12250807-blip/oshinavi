@@ -490,6 +490,12 @@
       border: 1px solid rgba(0, 180, 120, 0.3);
     }
 
+    .btn-rakuten {
+      background: rgba(191, 0, 0, 0.12);
+      color: #ff6666;
+      border: 1px solid rgba(191, 0, 0, 0.3);
+    }
+
     /* ── 空状態 ── */
     .empty-state {
       text-align: center;
@@ -3373,7 +3379,7 @@
       prefecture: "福岡県",
       genre: "jpop",
       price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666393", eplus: "https://eplus.jp/sf/detail/0214240001" },
+      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666393", eplus: "https://eplus.jp/sf/detail/0214240001", rakuten: "https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=1728655&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fmusic%2Fjpop%2Frthfkat%2F" },
       tickets: [
         { type: "一般発売", date: "2026-05-01" }
       ]
@@ -4694,6 +4700,7 @@
       { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
       { key: "amazon",   label: "最新CD",            cls: "btn-amazon",   icon: "🛒" },
+      { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
     ];
     const hotelBtn = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
     const linksHTML = linkDefs
