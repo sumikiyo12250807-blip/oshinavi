@@ -279,8 +279,12 @@
     .genre-youtuber{ background: rgba(255,0,0,0.12);    color: #ff4444;       border: 1px solid rgba(255,0,0,0.3); }
     .genre-vtuber  { background: rgba(149,117,205,0.18);color: #ce93d8;       border: 1px solid rgba(149,117,205,0.35); }
     .genre-classic { background: rgba(212,175,55,0.15); color: #d4af37;       border: 1px solid rgba(212,175,55,0.35); }
-    .genre-fes     { background: rgba(0,200,100,0.15);  color: #00c864;       border: 1px solid rgba(0,200,100,0.3); }
-    .genre-kids    { background: rgba(255,200,0,0.15);  color: #ffcc00;       border: 1px solid rgba(255,200,0,0.3); }
+    .genre-fes        { background: rgba(0,200,100,0.15);  color: #00c864;       border: 1px solid rgba(0,200,100,0.3); }
+    .genre-kids       { background: rgba(255,200,0,0.15);  color: #ffcc00;       border: 1px solid rgba(255,200,0,0.3); }
+    .genre-baseball   { background: rgba(0,60,180,0.15);   color: #6699ff;       border: 1px solid rgba(0,60,180,0.3); }
+    .genre-soccer     { background: rgba(0,160,60,0.15);   color: #33dd77;       border: 1px solid rgba(0,160,60,0.3); }
+    .genre-basketball { background: rgba(255,110,0,0.15);  color: #ff9933;       border: 1px solid rgba(255,110,0,0.3); }
+    .genre-volleyball { background: rgba(0,180,220,0.15);  color: #44ccff;       border: 1px solid rgba(0,180,220,0.3); }
 
     .event-artist {
       font-size: 13px;
@@ -496,6 +500,12 @@
       border: 1px solid rgba(191, 0, 0, 0.3);
     }
 
+    .btn-official {
+      background: rgba(100, 200, 255, 0.12);
+      color: #80d8ff;
+      border: 1px solid rgba(100, 200, 255, 0.3);
+    }
+
     /* ── 空状態 ── */
     .empty-state {
       text-align: center;
@@ -619,6 +629,10 @@
     <button class="filter-btn" data-genre="classic">クラシック</button>
     <button class="filter-btn" data-genre="owarai">お笑い</button>
     <button class="filter-btn" data-genre="sports">スポーツ</button>
+    <button class="filter-btn" data-genre="baseball">野球</button>
+    <button class="filter-btn" data-genre="soccer">サッカー</button>
+    <button class="filter-btn" data-genre="basketball">バスケ</button>
+    <button class="filter-btn" data-genre="volleyball">バレー</button>
     <button class="filter-btn" data-genre="fes">フェス</button>
     <button class="filter-btn" data-genre="kids">キッズ</button>
   </div>
@@ -751,7 +765,6 @@
       price: "指定席 11,000円〜",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564019", eplus: "https://eplus.jp/sf/detail/0009860001", amazon: "https://amzn.to/4v6fwxb" },
       tickets: [
-        { type: "一般発売（〜4/9まで）", date: "2026-04-09" },
         { type: "ぴあプリセール(AnyPASS発券) 先行先着 販売終了", date: "2026-04-15" },
         { type: "ぴあプリセール(紙発券) 先行先着 販売終了", date: "2026-04-15" },
         { type: "一般発売 電子チケット（〜4/23まで）", date: "2026-04-23" },
@@ -791,8 +804,6 @@
       price: "全席指定 15,000円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2542681&rlsCd=002", eplus: "https://eplus.jp/sf/detail/3983380002", amazon: "https://amzn.to/4cpj6eh" },
       tickets: [
-        { type: "一般発売", date: "2026-04-09" },
-        { type: "一般発売", date: "2026-04-10" },
         { type: "一般発売 予定枚数終了", date: "2026-04-11" }
       ]
     },
@@ -917,7 +928,6 @@
       price: "B席 13,000円〜",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666335", eplus: "https://eplus.jp/sf/detail/4503700001" },
       tickets: [
-        { type: "2次プリセール 販売終了", date: "2026-04-10" },
         { type: "一般発売 発売開始", date: "2026-04-11" }
       ]
     },
@@ -933,7 +943,6 @@
       price: "B席 5,000円〜",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665739", eplus: "https://eplus.jp/sf/detail/4484650001" },
       tickets: [
-        { type: "プリセール 販売終了", date: "2026-04-10" },
         { type: "一般発売 発売開始", date: "2026-04-18" }
       ]
     },
@@ -998,7 +1007,6 @@
       price: "全席指定 12,500円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564587", eplus: "https://eplus.jp/sf/detail/1868800009" },
       tickets: [
-        { type: "一般発売（東京・女王）販売終了", date: "2026-04-09" },
         { type: "一般発売（大阪）発売開始", date: "2026-04-11" },
         { type: "一般発売（東京・龍馬）販売終了", date: "2026-04-18" },
         { type: "一般発売 販売終了", date: "2026-04-27" }
@@ -1167,7 +1175,6 @@
       price: "一般席 12,000円〜",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665122", eplus: "https://eplus.jp/sf/detail/4483320001" },
       tickets: [
-        { type: "一般発売（大阪）販売終了", date: "2026-04-09" },
         { type: "一般発売（東京）販売終了", date: "2026-04-25" }
       ]
     },
@@ -1624,21 +1631,6 @@
       ]
     },
     {
-      id: 181,
-      artist: "文豪とアルケミスト",
-      name: "舞台「文豪とアルケミスト 掬ウ者ノ響歌(コンチェルト)」",
-      date: "2026-04-12",
-      dateLabel: "2026年3月27日〜4月12日",
-      venue: "天王洲銀河劇場 他",
-      prefecture: "全国",
-      genre: "2.5ji",
-      price: "11,000円〜",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665474", eplus: "https://eplus.jp/sf/detail/4447420001" },
-      tickets: [
-        { type: "一般発売 販売終了", date: "2026-04-09" }
-      ]
-    },
-    {
       id: 180,
       artist: "超ハジケステージ☆ボボボーボ・ボーボボ",
       name: "超ハジケステージ☆ボボボーボ・ボーボボ ～因縁！鼻毛！決戦！～",
@@ -1821,21 +1813,6 @@
       ]
     },
     {
-      id: 242,
-      artist: "野球いっかん！",
-      name: "宮本慎也・福留孝介 野球いっかん！交流会「No liar」",
-      date: "2026-04-26",
-      dateLabel: "2026年4月26日(日)",
-      venue: "名古屋市東文化小劇場",
-      prefecture: "愛知県",
-      genre: "sports",
-      price: "5,250円〜",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665831", eplus: "https://eplus.jp/sf/detail/4492550001" },
-      tickets: [
-        { type: "一般発売", date: "2026-04-09" }
-      ]
-    },
-    {
       id: 243,
       artist: "皇后盃全日本女子柔道選手権大会",
       name: "第41回 皇后盃全日本女子柔道選手権大会",
@@ -1944,21 +1921,6 @@
       ]
     },
     {
-      id: 252,
-      artist: "ヤクブ・ユゼフ・オルリンスキ",
-      name: "ヤクブ・ユゼフ・オルリンスキ リサイタル",
-      date: "2026-04-10",
-      dateLabel: "2026年4月9日(木)〜4月10日(金)",
-      venue: "東京・兵庫",
-      prefecture: null,
-      genre: "classic",
-      price: "3,000円〜",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563340", eplus: "https://eplus.jp/sf/detail/4425340001" },
-      tickets: [
-        { type: "一般発売（東京）", date: "2026-04-09" }
-      ]
-    },
-    {
       id: 253,
       artist: "神奈川フィルハーモニー管弦楽団",
       name: "華麗なるコンチェルト・シリーズ【2026年度】",
@@ -2058,21 +2020,6 @@
       ]
     },
     {
-      id: 261,
-      artist: "トヨタ・マスター・プレイヤーズ，ウィーン",
-      name: "トヨタ・マスター・プレイヤーズ，ウィーン 2026年公演",
-      date: "2026-04-09",
-      dateLabel: "2026年3月30日(月)〜4月9日(木)【全国8会場】",
-      venue: "全国ツアー",
-      prefecture: null,
-      genre: "classic",
-      price: "7,000円〜（25歳以下: 2,000円〜）",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563648", eplus: "https://eplus.jp/sf/detail/0046660001" },
-      tickets: [
-        { type: "一般発売", date: "2026-04-09" }
-      ]
-    },
-    {
       id: 263,
       artist: "マグダレン・ホー",
       name: "マグダレン・ホー ピアノリサイタル",
@@ -2114,7 +2061,6 @@
       price: "6,000円",
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666181", eplus: "https://eplus.jp/sf/detail/4505960001" },
       tickets: [
-        { type: "先行 抽選", date: "2026-04-10" },
         { type: "一般発売", date: "2026-09-13" }
       ]
     },
@@ -2161,21 +2107,6 @@
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666710", eplus: "https://eplus.jp/sf/detail/0396850001" },
       tickets: [
         { type: "一般発売", date: "2026-06-06" }
-      ]
-    },
-    {
-      id: 269,
-      artist: "五十嵐紅トリオ",
-      name: "五十嵐紅トリオ｜シネマ・セレクション（浦安公演）",
-      date: "2026-04-10",
-      dateLabel: "2026年4月10日(金)",
-      venue: "J:COM浦安音楽ホール コンサートホール",
-      prefecture: "千葉県",
-      genre: "classic",
-      price: "4,000円〜",
-      links: { lawson: null, pia: "https://t.pia.jp/pia/ticketInformation.do?eventCd=2543448&rlsCd=001", eplus: null },
-      tickets: [
-        { type: "一般発売", date: "2026-04-09" }
       ]
     },
     {
@@ -2240,21 +2171,6 @@
       ]
     },
     {
-      id: 275,
-      artist: "おかあさんといっしょ",
-      name: "「おかあさんといっしょ」ファンターネ！がやってきた",
-      date: "2026-04-12",
-      dateLabel: "2026年4月11日(土)・12日(日)",
-      venue: "ロームシアター京都 / フェニーチェ堺",
-      prefecture: null,
-      genre: "kids",
-      price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2451557", eplus: "https://eplus.jp/sf/detail/0062720039" },
-      tickets: [
-        { type: "一般発売", date: "2026-04-09" }
-      ]
-    },
-    {
       id: 276,
       artist: "しまじろう",
       name: "しまじろうコンサート「しまじろうと おかしのくにの ハッピーパーティー」",
@@ -2282,7 +2198,6 @@
       price: null,
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2456332", eplus: "https://eplus.jp/sf/detail/4446880001" },
       tickets: [
-        { type: "一般発売（広島）", date: "2026-04-09" },
         { type: "一般発売（東京）", date: "2026-05-03" }
       ]
     },
@@ -2616,7 +2531,6 @@
       price: null,
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665666", eplus: "https://eplus.jp/sf/detail/4476980001" },
       tickets: [
-        { type: "一般発売（4/7〜12）", date: "2026-04-09" },
         { type: "一般発売（4/13〜19）", date: "2026-04-16" },
         { type: "一般発売（4/20〜26）", date: "2026-04-23" },
         { type: "一般発売（4/27〜30）", date: "2026-04-27" },
@@ -2635,21 +2549,6 @@
         { type: "一般発売（7/13〜19）", date: "2026-07-16" },
         { type: "一般発売（7/20〜26）", date: "2026-07-23" },
         { type: "一般発売（7/27〜31）", date: "2026-07-28" }
-      ]
-    },
-    {
-      id: 312,
-      artist: "文豪とアルケミスト",
-      name: "舞台「文豪とアルケミスト 掬ウ者ノ響歌(コンチェルト)」",
-      date: "2026-04-12",
-      dateLabel: "2026年3月27日〜4月12日",
-      venue: "全国ツアー",
-      prefecture: "全国",
-      genre: "anime",
-      price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665474", eplus: "https://eplus.jp/sf/detail/4447420001" },
-      tickets: [
-        { type: "一般発売", date: "2026-04-09" }
       ]
     },
     {
@@ -2699,36 +2598,6 @@
       ]
     },
     {
-      id: 315,
-      artist: "GUMX",
-      name: "GUMX New Full Album \"SLAPS\" JAPAN TOUR 2026",
-      date: "2026-04-19",
-      dateLabel: "2026年4月4日(土)〜4月19日(日)",
-      venue: "全国ツアー",
-      prefecture: null,
-      genre: "rock",
-      price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563870", eplus: "https://eplus.jp/sf/detail/0078120001" },
-      tickets: [
-        { type: "一般発売（東京）", date: "2026-04-09" }
-      ]
-    },
-    {
-      id: 317,
-      artist: "MAYHEM",
-      name: "MAYHEM「Liturgy of Death」Japan Tour 2026 ～DEATH OVER JAPAN～",
-      date: "2026-04-10",
-      dateLabel: "2026年4月8日(水)〜4月10日(金)",
-      venue: "全国ツアー",
-      prefecture: null,
-      genre: "rock",
-      price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665195", eplus: "https://eplus.jp/mayhem/" },
-      tickets: [
-        { type: "一般発売（東京）", date: "2026-04-09" }
-      ]
-    },
-    {
       id: 318,
       artist: "DEEP PURPLE",
       name: "DEEP PURPLE",
@@ -2741,36 +2610,6 @@
       links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2562907", eplus: "https://eplus.jp/sf/detail/1126590001" },
       tickets: [
         { type: "一般発売（東京 立見）", date: "2026-04-11" }
-      ]
-    },
-    {
-      id: 319,
-      artist: "MICHAEL LIVES FOREVER",
-      name: "MICHAEL LIVES FOREVER - JAPAN",
-      date: "2026-04-11",
-      dateLabel: "2026年4月11日(土)",
-      venue: "ふじさんめっせ",
-      prefecture: "静岡県",
-      genre: "rock",
-      price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665938", eplus: null },
-      tickets: [
-        { type: "一般発売", date: "2026-04-10" }
-      ]
-    },
-    {
-      id: 320,
-      artist: "EDDIE VEDDER",
-      name: "EDDIE VEDDER",
-      date: "2026-04-20",
-      dateLabel: "2026年4月14日(火)〜4月20日(月)",
-      venue: "全国ツアー",
-      prefecture: null,
-      genre: "rock",
-      price: null,
-      links: { lawson: null, pia: "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664982", eplus: "https://eplus.jp/sf/detail/4464630001" },
-      tickets: [
-        { type: "一般発売（東京）", date: "2026-04-09" }
       ]
     },
     {
@@ -5218,6 +5057,7 @@
       { key: "amazonGoods", label: "グッズAmazon",   cls: "btn-amazon",   icon: "🛒" },
       { key: "amazon2",  label: "最新CD②",          cls: "btn-amazon",   icon: "🛒" },
       { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
+      { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" },
     ];
     const hotelBtn = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
     const linksHTML = linkDefs
