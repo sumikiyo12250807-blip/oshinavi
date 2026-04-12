@@ -254,40 +254,23 @@
     }
     .result-meta span { color: var(--text); font-weight: 700; }
 
-    /* ── アフィリエイトバナー ── */
+    /* ── アフィリエイトバナー（5件ごと） ── */
     .affiliate-banner {
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 14px;
-      padding: 14px;
-      margin-bottom: 20px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      box-shadow: 0 2px 6px var(--shadow);
-      flex-wrap: wrap;
+      padding: 4px 0;
     }
-    .affiliate-banner .banner-text {
-      font-size: 13px;
-      color: var(--text);
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-    .affiliate-banner .banner-text small {
+    .affiliate-banner a {
       display: block;
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 400;
-      margin-top: 2px;
-    }
-    .affiliate-banner a img {
-      display: block;
+      line-height: 0;
       transition: transform 0.2s, opacity 0.2s;
     }
-    .affiliate-banner a:hover img {
-      transform: scale(1.03);
-      opacity: 0.9;
+    .affiliate-banner a:hover { transform: scale(1.02); opacity: 0.9; }
+    .affiliate-banner img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
     }
 
     /* ── カード ── */
@@ -612,18 +595,6 @@
 
 <main>
   <div class="result-meta" id="resultMeta"></div>
-
-  <div class="affiliate-banner">
-    <div class="banner-text">
-      🏨 旅行・お出かけに<br>
-      <small>ホテル・旅館を比較して予約</small>
-    </div>
-    <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.76&type=4&subid=0" target="_blank" rel="noopener">
-      <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/Logo-125x125-px.jpg">
-    </a>
-    <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.76&type=4&subid=0" alt="">
-  </div>
-
   <div class="event-list" id="eventList"></div>
 </main>
 
@@ -3068,6 +3039,19 @@ function buildCard(ev) {
 }
 
 // ────────────────────────────────────────────
+//  アフィリエイトバナー（5件ごと挿入）
+// ────────────────────────────────────────────
+function buildBanner() {
+  return `
+    <div class="affiliate-banner">
+      <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.81&type=4&subid=0" target="_blank" rel="noopener">
+        <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/468x60.jpg">
+      </a>
+      <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.81&type=4&subid=0" alt="">
+    </div>`;
+}
+
+// ────────────────────────────────────────────
 //  描画
 // ────────────────────────────────────────────
 function render() {
@@ -3086,7 +3070,20 @@ function render() {
       </div>`;
     return;
   }
-  list.innerHTML = sorted.map(buildCard).join('');
+
+  // 表示されるイベントを5件ごとにカウントしてバナーを挟む
+  const parts = [];
+  let visibleCount = 0;
+  for (const ev of sorted) {
+    parts.push(buildCard(ev));
+    if (matches(ev)) {
+      visibleCount++;
+      if (visibleCount % 5 === 0 && visibleCount < visible.length) {
+        parts.push(buildBanner());
+      }
+    }
+  }
+  list.innerHTML = parts.join('');
 }
 
 // ────────────────────────────────────────────
