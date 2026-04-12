@@ -3091,6 +3091,8 @@ function render() {
       }
     }
   }
+  // 最後にも必ずバナーを表示（5件未満の場合も含む）
+  parts.push(buildBanner());
   list.innerHTML = parts.join('');
 }
 
