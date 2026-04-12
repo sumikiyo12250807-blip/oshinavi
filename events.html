@@ -3023,8 +3023,12 @@ function buildCard(ev) {
     ? `<a href="${ev.link}" target="_blank" rel="noopener" class="btn-official">公式サイト →</a>`
     : '';
   const hotelHtml = `<a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1982003.2&type=3&subid=0" target="_blank" rel="noopener" class="btn-hotel">🏨 近くのホテル予約</a><img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1982003.2&type=3&subid=0">`;
-  const amazonHtml = ev.category === 'matsuri'
-    ? `<a href="https://amzn.to/4cBRFOu" target="_blank" rel="noopener" class="btn-amazon">🛍 行楽アイテム</a>`
+  const AMAZON_LINKS = {
+    matsuri: 'https://amzn.to/4cBRFOu',
+    nature:  'https://amzn.to/4srNadW',
+  };
+  const amazonHtml = AMAZON_LINKS[ev.category]
+    ? `<a href="${AMAZON_LINKS[ev.category]}" target="_blank" rel="noopener" class="btn-amazon">🛍 行楽アイテム</a>`
     : '';
 
   return `
