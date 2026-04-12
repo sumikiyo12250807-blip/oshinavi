@@ -597,6 +597,39 @@
 
     .ticket-links { flex-wrap: wrap; }
   }
+
+  .fixed-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.12);
+  }
+  .fixed-banner a { display: block; line-height: 0; }
+  .fixed-banner img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+  .fixed-banner-close {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+  .fixed-banner-close:hover { background: rgba(0,0,0,0.75); }
+  body { padding-bottom: 80px; }
   </style>
 </head>
 <body>
@@ -688,6 +721,14 @@
 <footer>
   &copy; 2025 OSHINAVI — ライブイベント情報まとめ
 </footer>
+
+<div class="fixed-banner" id="fixedBanner">
+  <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.81&type=4&subid=0" target="_blank" rel="noopener">
+    <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/468x60.jpg">
+  </a>
+  <button class="fixed-banner-close" id="fixedBannerClose" aria-label="閉じる">×</button>
+  <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.81&type=4&subid=0" alt="">
+</div>
 
 <button id="pagetop" title="トップへ戻る">↑</button>
 
@@ -7098,6 +7139,22 @@
     pagetop.classList.toggle("visible", window.scrollY > 300);
   });
   pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // 固定バナー 閉じるボタン
+  (function() {
+    const banner = document.getElementById('fixedBanner');
+    const closeBtn = document.getElementById('fixedBannerClose');
+    if (!banner || !closeBtn) return;
+    if (sessionStorage.getItem('trivagoBannerClosed') === '1') {
+      banner.style.display = 'none';
+      document.body.style.paddingBottom = '0';
+    }
+    closeBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+      document.body.style.paddingBottom = '0';
+      sessionStorage.setItem('trivagoBannerClosed', '1');
+    });
+  })();
 </script>
 <img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.8&type=3&subid=0">
 </body>
