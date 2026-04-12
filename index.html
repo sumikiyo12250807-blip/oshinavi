@@ -6979,8 +6979,18 @@
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" },
     ];
     const hotelBtn = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
+    const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "コンサートアイテム" };
     const GENRE_AMAZON_LINKS = {
-      fes: { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
+      fes:      { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
+      jpop:     CONCERT_AMAZON,
+      kpop:     CONCERT_AMAZON,
+      rock:     CONCERT_AMAZON,
+      hiphop:   CONCERT_AMAZON,
+      idol:     CONCERT_AMAZON,
+      anime:    CONCERT_AMAZON,
+      classic:  CONCERT_AMAZON,
+      youtuber: CONCERT_AMAZON,
+      vtuber:   CONCERT_AMAZON,
     };
     const genreAmazon = GENRE_AMAZON_LINKS[ev.genre];
     const genreAmazonBtn = genreAmazon
