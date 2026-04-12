@@ -6980,9 +6980,11 @@
     ];
     const hotelBtn = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
     const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "コンサートアイテム" };
+    const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦便利アイテム" };
+    const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦便利アイテム" };
+    const BASEBALL_RE = /タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球/;
     const GENRE_AMAZON_LINKS = {
       fes:      { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
-      sports:   { url: "https://amzn.to/4cjW1IR", label: "観戦便利アイテム" },
       jpop:     CONCERT_AMAZON,
       kpop:     CONCERT_AMAZON,
       rock:     CONCERT_AMAZON,
@@ -6993,7 +6995,12 @@
       youtuber: CONCERT_AMAZON,
       vtuber:   CONCERT_AMAZON,
     };
-    const genreAmazon = GENRE_AMAZON_LINKS[ev.genre];
+    let genreAmazon = GENRE_AMAZON_LINKS[ev.genre];
+    if (ev.genre === 'sports') {
+      genreAmazon = BASEBALL_RE.test((ev.name || '') + (ev.artist || ''))
+        ? BASEBALL_AMAZON
+        : OTHER_SPORTS_AMAZON;
+    }
     const genreAmazonBtn = genreAmazon
       ? `<a class="ticket-link-btn btn-amazon" href="${genreAmazon.url}" target="_blank" rel="noopener">🛍 ${genreAmazon.label}</a>`
       : '';
