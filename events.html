@@ -141,7 +141,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      display: inline-block;
     }
 
     .hero p {
@@ -501,8 +500,11 @@
 
     /* ── レスポンシブ ── */
     @media (max-width: 600px) {
-      nav { gap: 14px; }
-      nav a { font-size: 13px; }
+      header { padding: 0 10px; height: 56px; }
+      .logo { font-size: 13px; letter-spacing: 1px; gap: 5px; }
+      .logo img { height: 28px; }
+      nav { gap: 10px; }
+      nav a { font-size: 11px; letter-spacing: 0; }
       .hero { padding: 40px 12px 32px; }
       .hero h1 { font-size: 22px; letter-spacing: 1px; }
       .hero p { font-size: 12px; letter-spacing: 0.3px; }
