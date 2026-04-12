@@ -254,6 +254,42 @@
     }
     .result-meta span { color: var(--text); font-weight: 700; }
 
+    /* ── アフィリエイトバナー ── */
+    .affiliate-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 14px;
+      margin-bottom: 20px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px var(--shadow);
+      flex-wrap: wrap;
+    }
+    .affiliate-banner .banner-text {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .affiliate-banner .banner-text small {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+    .affiliate-banner a img {
+      display: block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .affiliate-banner a:hover img {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
     /* ── カード ── */
     .event-list {
       display: flex;
@@ -576,6 +612,18 @@
 
 <main>
   <div class="result-meta" id="resultMeta"></div>
+
+  <div class="affiliate-banner">
+    <div class="banner-text">
+      🏨 旅行・お出かけに<br>
+      <small>ホテル・旅館を比較して予約</small>
+    </div>
+    <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.76&type=4&subid=0" target="_blank" rel="noopener">
+      <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/Logo-125x125-px.jpg">
+    </a>
+    <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.76&type=4&subid=0" alt="">
+  </div>
+
   <div class="event-list" id="eventList"></div>
 </main>
 
