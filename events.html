@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1EQ5M4HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RM1EQ5M4HT');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSHINAVI - 季節イベント情報まとめ</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:      #f5f2eb;
+      --bg2:     #ffffff;
+      --bg3:     #eeebe2;
+      --text:    #2d2a24;
+      --text-muted: #8a8070;
+      --border:  #e0d9cc;
+      --shadow:  rgba(80,60,20,0.08);
+
+      --animal:    #e64a19;
+      --matsuri:   #c2185b;
+      --nature:    #2e7d32;
+      --gourmet:   #e65100;
+      --fes:       #7b1fa2;
+      --tradition: #1565c0;
+
+      --sakura: #e91e63;
+      --midori: #43a047;
+      --sora:   #1e88e5;
+
+      --header-bg:      #111111;
+      --header-border:  #2a2a2a;
+      --header-accent:  #e040fb;
+      --header-accent2: #00e5ff;
+      --header-muted:   #888888;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── ヘッダー ── */
+    header {
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--header-border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--header-accent), var(--header-accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+      -webkit-text-fill-color: initial;
+    }
+
+    nav { display: flex; gap: 24px; }
+    nav a {
+      color: var(--header-muted);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--header-accent); }
+    nav a.active { color: #69f0ae; }
+
+    /* ── ヒーロー ── */
+    .hero {
+      text-align: center;
+      padding: 56px 24px 44px;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg,
+          rgba(255,182,193,0.4) 0%,
+          rgba(255,228,180,0.25) 25%,
+          rgba(200,230,201,0.4) 55%,
+          rgba(179,229,252,0.35) 85%,
+          rgba(255,249,196,0.2) 100%
+        ),
+        #fafaf5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '🌸 🌿 🌼 🌸 🌿 🌼 🌸 🌿 🌼 🌸 🌿 🌼 🌸 🌿';
+      position: absolute;
+      top: 10px;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 20px;
+      opacity: 0.15;
+      letter-spacing: 8px;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: clamp(24px, 5vw, 42px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      color: var(--text);
+      position: relative;
+    }
+
+    .hero h1 .spring-text {
+      background: linear-gradient(90deg, var(--sakura), var(--midori), var(--sora));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 14px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    /* ── フィルターバー ── */
+    .controls {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+      box-shadow: 0 2px 8px rgba(80,60,20,0.05);
+    }
+
+    .search-wrap {
+      position: relative;
+      max-width: 480px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px 10px 36px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    #searchInput::placeholder { color: var(--text-muted); }
+    #searchInput:focus { border-color: var(--sakura); box-shadow: 0 0 0 2px rgba(233,30,99,0.08); }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-right: 2px;
+      flex-shrink: 0;
+    }
+
+    .filter-btn {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+      font-family: inherit;
+    }
+    .filter-btn:hover { border-color: #aaa; color: var(--text); }
+
+    .filter-btn[data-category="all"].active,
+    .filter-btn[data-region="all"].active   { border-color: #999; color: var(--text); background: #e4e0d8; }
+    .filter-btn[data-category="animal"].active    { border-color: var(--animal);    color: var(--animal);    background: rgba(230,74,25,0.08); }
+    .filter-btn[data-category="matsuri"].active   { border-color: var(--matsuri);   color: var(--matsuri);   background: rgba(194,24,91,0.08); }
+    .filter-btn[data-category="nature"].active    { border-color: var(--nature);    color: var(--nature);    background: rgba(46,125,50,0.08); }
+    .filter-btn[data-category="gourmet"].active   { border-color: var(--gourmet);   color: var(--gourmet);   background: rgba(230,81,0,0.08); }
+    .filter-btn[data-category="fes"].active       { border-color: var(--fes);       color: var(--fes);       background: rgba(123,31,162,0.08); }
+    .filter-btn[data-category="tradition"].active { border-color: var(--tradition); color: var(--tradition); background: rgba(21,101,192,0.08); }
+    .filter-btn[data-region]:not([data-region="all"]).active {
+      border-color: var(--midori);
+      color: var(--midori);
+      background: rgba(67,160,71,0.08);
+    }
+
+    /* ── メイン ── */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 24px;
+    }
+
+    .result-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .result-meta span { color: var(--text); font-weight: 700; }
+
+    /* ── カード ── */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .event-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+      position: relative;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    /* カテゴリ別の左ライン */
+    .event-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+    .event-card[data-category="animal"]::before    { background: var(--animal); }
+    .event-card[data-category="matsuri"]::before   { background: var(--matsuri); }
+    .event-card[data-category="nature"]::before    { background: var(--nature); }
+    .event-card[data-category="gourmet"]::before   { background: var(--gourmet); }
+    .event-card[data-category="fes"]::before       { background: var(--fes); }
+    .event-card[data-category="tradition"]::before { background: var(--tradition); }
+
+    .event-card:hover {
+      border-color: #c4bdb0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .event-card.hidden { display: none; }
+
+    .card-body {
+      padding: 16px 20px 0 24px;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .badge-animal    { background: rgba(230,74,25,0.1);  color: var(--animal);    border: 1px solid rgba(230,74,25,0.3); }
+    .badge-matsuri   { background: rgba(194,24,91,0.1);  color: var(--matsuri);   border: 1px solid rgba(194,24,91,0.3); }
+    .badge-nature    { background: rgba(46,125,50,0.1);  color: var(--nature);    border: 1px solid rgba(46,125,50,0.3); }
+    .badge-gourmet   { background: rgba(230,81,0,0.1);   color: var(--gourmet);   border: 1px solid rgba(230,81,0,0.3); }
+    .badge-fes       { background: rgba(123,31,162,0.1); color: var(--fes);       border: 1px solid rgba(123,31,162,0.3); }
+    .badge-tradition { background: rgba(21,101,192,0.1); color: var(--tradition); border: 1px solid rgba(21,101,192,0.3); }
+
+    .prefecture-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .event-name {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .event-meta-item {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .event-notes {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      padding: 7px 12px;
+      background: var(--bg3);
+      border-radius: 6px;
+      border-left: 3px solid var(--border);
+      line-height: 1.5;
+    }
+
+    /* ── カードフッター ── */
+    .card-footer {
+      padding: 12px 20px 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 14px;
+    }
+
+    .event-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .event-price-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-official {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s, transform 0.15s;
+      background: rgba(67,160,71,0.1);
+      color: var(--midori);
+      border: 1px solid rgba(67,160,71,0.35);
+      white-space: nowrap;
+    }
+    .btn-official:hover { opacity: 0.75; transform: translateY(-1px); }
+
+    /* ── 空状態 ── */
+    .empty-state {
+      text-align: center;
+      padding: 72px 24px;
+      color: var(--text-muted);
+    }
+    .empty-state .empty-icon { font-size: 48px; margin-bottom: 16px; }
+    .empty-state p { font-size: 14px; letter-spacing: 0.5px; }
+
+    /* ── フッター ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-top: 32px;
+      background: #ffffff;
+    }
+
+    /* ── ページトップ ── */
+    #pagetop {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--midori);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 200;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+    #pagetop.visible { opacity: 1; pointer-events: auto; }
+
+    /* ── レスポンシブ ── */
+    @media (max-width: 600px) {
+      nav { gap: 14px; }
+      nav a { font-size: 13px; }
+      .hero { padding: 40px 16px 32px; }
+      .controls { top: 64px; padding: 12px 16px; }
+      main { padding: 20px 16px; }
+      .card-body { padding: 14px 14px 0 18px; }
+      .card-footer { padding: 10px 14px 12px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="logo.png" alt="OSHINAVI logo">OSHINAVI</a>
+  <nav>
+    <a href="index.html">チケットイベント</a>
+    <a href="events.html" class="active">季節イベント</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>行楽<span class="spring-text">季節イベント</span>情報</h1>
+  <p>移動動物園・お祭り・フェス・マーケットなど、全国の季節イベントをまとめてチェック</p>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="イベント名・会場・都道府県で検索…">
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">カテゴリ</span>
+    <button class="filter-btn active" data-category="all">すべて</button>
+    <button class="filter-btn" data-category="animal">🐾 動物・ふれあい</button>
+    <button class="filter-btn" data-category="matsuri">🏮 お祭り・縁日</button>
+    <button class="filter-btn" data-category="nature">🌸 自然・花</button>
+    <button class="filter-btn" data-category="gourmet">🍴 グルメ・マーケット</button>
+    <button class="filter-btn" data-category="fes">🎪 フェス・野外</button>
+    <button class="filter-btn" data-category="tradition">⛩️ 伝統行事</button>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">地域</span>
+    <button class="filter-btn active" data-region="all">全国</button>
+    <button class="filter-btn" data-region="hokkaido_tohoku">北海道・東北</button>
+    <button class="filter-btn" data-region="kanto">関東</button>
+    <button class="filter-btn" data-region="chubu">中部</button>
+    <button class="filter-btn" data-region="kansai">関西</button>
+    <button class="filter-btn" data-region="chugoku_shikoku">中国・四国</button>
+    <button class="filter-btn" data-region="kyushu">九州・沖縄</button>
+  </div>
+</div>
+
+<main>
+  <div class="result-meta" id="resultMeta"></div>
+  <div class="event-list" id="eventList"></div>
+</main>
+
+<footer>
+  &copy; 2025 OSHINAVI — 季節イベント情報まとめ
+</footer>
+
+<button id="pagetop" title="トップへ戻る">↑</button>
+
+<script>
+// ────────────────────────────────────────────
+//  カテゴリ・地域マップ
+// ────────────────────────────────────────────
+const CATEGORY_MAP = {
+  animal:    { label: '動物・ふれあい',     icon: '🐾', cls: 'badge-animal' },
+  matsuri:   { label: 'お祭り・縁日',       icon: '🏮', cls: 'badge-matsuri' },
+  nature:    { label: '自然・花',           icon: '🌸', cls: 'badge-nature' },
+  gourmet:   { label: 'グルメ・マーケット', icon: '🍴', cls: 'badge-gourmet' },
+  fes:       { label: 'フェス・野外',       icon: '🎪', cls: 'badge-fes' },
+  tradition: { label: '伝統行事',           icon: '⛩️', cls: 'badge-tradition' },
+};
+
+// ────────────────────────────────────────────
+//  イベントデータ
+// ────────────────────────────────────────────
+const EVENTS = [
+  {
+    id: 1,
+    name: "春の移動動物園",
+    dateLabel: "2026年4月18日(土)〜5月6日(水)",
+    date: "2026-05-06",
+    venue: "代々木公園イベント広場",
+    prefecture: "東京都",
+    region: "kanto",
+    category: "animal",
+    price: "大人500円 / 子ども200円",
+    link: "https://example.com",
+    notes: "ヤギ・ウサギ・ヒツジなどのふれあい体験あり"
+  },
+  {
+    id: 2,
+    name: "チューリップ祭り",
+    dateLabel: "2026年4月上旬〜下旬",
+    date: "2026-04-30",
+    venue: "国営昭和記念公園",
+    prefecture: "東京都",
+    region: "kanto",
+    category: "nature",
+    price: "大人450円 / 子ども無料",
+    link: "https://example.com",
+    notes: "約8万本のチューリップが見頃"
+  },
+  {
+    id: 3,
+    name: "神戸フラワーフェスティバル",
+    dateLabel: "2026年5月2日(土)〜5月4日(月・祝)",
+    date: "2026-05-04",
+    venue: "フラワーロード周辺",
+    prefecture: "兵庫県",
+    region: "kansai",
+    category: "matsuri",
+    price: "無料",
+    link: "https://example.com",
+    notes: "パレード・ステージ・屋台など多彩なプログラム"
+  },
+  {
+    id: 4,
+    name: "博多どんたく港まつり",
+    dateLabel: "2026年5月3日(日)〜5月4日(月・祝)",
+    date: "2026-05-04",
+    venue: "福岡市内各所",
+    prefecture: "福岡県",
+    region: "kyushu",
+    category: "tradition",
+    price: "無料",
+    link: "https://example.com",
+    notes: "日本最大級の祭り。パレード・演武など"
+  },
+  {
+    id: 5,
+    name: "横浜スパイスフェスタ",
+    dateLabel: "2026年4月25日(土)〜4月26日(日)",
+    date: "2026-04-26",
+    venue: "赤レンガ倉庫イベント広場",
+    prefecture: "神奈川県",
+    region: "kanto",
+    category: "gourmet",
+    price: "入場無料（飲食別途）",
+    link: "https://example.com",
+    notes: "全国各地のカレー・スパイス料理が集結"
+  },
+];
+
+// ────────────────────────────────────────────
+//  状態
+// ────────────────────────────────────────────
+let activeCat    = 'all';
+let activeRegion = 'all';
+let searchQuery  = '';
+
+// ────────────────────────────────────────────
+//  フィルター判定
+// ────────────────────────────────────────────
+function matches(ev) {
+  if (activeCat    !== 'all' && ev.category !== activeCat)    return false;
+  if (activeRegion !== 'all' && ev.region   !== activeRegion) return false;
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    const target = [ev.name, ev.venue, ev.prefecture, ev.notes || ''].join(' ').toLowerCase();
+    if (!target.includes(q)) return false;
+  }
+  return true;
+}
+
+// ────────────────────────────────────────────
+//  カード生成
+// ────────────────────────────────────────────
+function buildCard(ev) {
+  const cat = CATEGORY_MAP[ev.category] || { label: ev.category, icon: '', cls: '' };
+  const notesHtml = ev.notes
+    ? `<div class="event-notes">📝 ${ev.notes}</div>`
+    : '';
+  const linkHtml = ev.link
+    ? `<a href="${ev.link}" target="_blank" rel="noopener" class="btn-official">公式サイト →</a>`
+    : '';
+
+  return `
+    <div class="event-card${matches(ev) ? '' : ' hidden'}" data-category="${ev.category}" data-region="${ev.region}" data-id="${ev.id}">
+      <div class="card-body">
+        <div class="card-top">
+          <span class="category-badge ${cat.cls}">${cat.icon} ${cat.label}</span>
+          <span class="prefecture-tag">📍 ${ev.prefecture}</span>
+        </div>
+        <div class="event-name">${ev.name}</div>
+        <div class="event-meta">
+          <span class="event-meta-item">📅 ${ev.dateLabel}</span>
+          <span class="event-meta-item">🏛️ ${ev.venue}</span>
+        </div>
+        ${notesHtml}
+      </div>
+      <div class="card-footer">
+        <div class="event-price">
+          <span class="event-price-label">入場料</span>
+          ${ev.price || '要確認'}
+        </div>
+        <div>${linkHtml}</div>
+      </div>
+    </div>`;
+}
+
+// ────────────────────────────────────────────
+//  描画
+// ────────────────────────────────────────────
+function render() {
+  const sorted = [...EVENTS].sort((a, b) => a.date.localeCompare(b.date));
+  const visible = sorted.filter(matches);
+
+  const meta = document.getElementById('resultMeta');
+  meta.innerHTML = `<span>${visible.length}</span> 件のイベントが見つかりました`;
+
+  const list = document.getElementById('eventList');
+  if (visible.length === 0) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🌿</div>
+        <p>該当するイベントが見つかりませんでした</p>
+      </div>`;
+    return;
+  }
+  list.innerHTML = sorted.map(buildCard).join('');
+}
+
+// ────────────────────────────────────────────
+//  フィルターボタン
+// ────────────────────────────────────────────
+document.querySelectorAll('.filter-btn[data-category]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn[data-category]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.category;
+    render();
+  });
+});
+
+document.querySelectorAll('.filter-btn[data-region]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn[data-region]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeRegion = btn.dataset.region;
+    render();
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  render();
+});
+
+// ────────────────────────────────────────────
+//  ページトップ
+// ────────────────────────────────────────────
+const pagetop = document.getElementById('pagetop');
+window.addEventListener('scroll', () => {
+  pagetop.classList.toggle('visible', window.scrollY > 300);
+});
+pagetop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// 初期描画
+render();
+</script>
+</body>
+</html>
