@@ -450,35 +450,6 @@
     }
     #pagetop.visible { opacity: 1; pointer-events: auto; }
 
-    /* ── トップページに戻るボタン ── */
-    #hometop {
-      position: fixed;
-      bottom: 24px; right: 76px;
-      background: #69f0ae;
-      color: #111;
-      border: none;
-      border-radius: 22px;
-      height: 42px;
-      padding: 0 16px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: opacity 0.2s, transform 0.15s;
-      z-index: 200;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-      font-family: inherit;
-    }
-    #hometop:hover { opacity: 0.85; transform: translateY(-1px); }
-
-    @media (max-width: 600px) {
-      #hometop { padding: 0 12px; font-size: 12px; bottom: 24px; right: 76px; }
-    }
-
     /* ── レスポンシブ ── */
     @media (max-width: 600px) {
       nav { gap: 14px; }
@@ -543,7 +514,6 @@
   &copy; 2025 OSHINAVI — 季節イベント情報まとめ
 </footer>
 
-<a href="index.html" id="hometop" title="OSHINAVIトップへ">🏠 トップへ</a>
 <button id="pagetop" title="ページ最上部へ">↑</button>
 
 <script>
