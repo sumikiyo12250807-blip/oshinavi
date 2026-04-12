@@ -70,13 +70,15 @@
       -webkit-text-fill-color: initial;
     }
 
-    nav { display: flex; gap: 24px; }
+    nav { display: flex; gap: 18px; align-items: center; }
     nav a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 1px;
       transition: color 0.2s;
+      line-height: 1.25;
+      text-align: center;
     }
     nav a:hover { color: var(--accent); }
 
@@ -602,8 +604,8 @@
 <header>
   <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
-    <a href="index.html" class="active" style="color:var(--accent);">チケットイベント</a>
-    <a href="events.html">季節イベント</a>
+    <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
+    <a href="events.html">行楽<br>イベント</a>
     <a href="contact.html">お問い合わせ</a>
   </nav>
 </header>
