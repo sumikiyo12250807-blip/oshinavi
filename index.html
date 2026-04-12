@@ -6979,10 +6979,17 @@
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" },
     ];
     const hotelBtn = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
+    const GENRE_AMAZON_LINKS = {
+      fes: { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
+    };
+    const genreAmazon = GENRE_AMAZON_LINKS[ev.genre];
+    const genreAmazonBtn = genreAmazon
+      ? `<a class="ticket-link-btn btn-amazon" href="${genreAmazon.url}" target="_blank" rel="noopener">🛍 ${genreAmazon.label}</a>`
+      : '';
     const linksHTML = linkDefs
       .filter(d => ev.links && ev.links[d.key])
       .map(d => `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${d.label}</a>`)
-      .join("") + hotelBtn;
+      .join("") + hotelBtn + genreAmazonBtn;
 
     return `
       <div class="event-card"
