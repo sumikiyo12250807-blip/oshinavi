@@ -289,6 +289,7 @@
     .genre-vtuber  { background: rgba(149,117,205,0.18);color: #ce93d8;       border: 1px solid rgba(149,117,205,0.35); }
     .genre-classic { background: rgba(212,175,55,0.15); color: #d4af37;       border: 1px solid rgba(212,175,55,0.35); }
     .genre-fes        { background: rgba(0,200,100,0.15);  color: #00c864;       border: 1px solid rgba(0,200,100,0.3); }
+    .genre-hanabi     { background: rgba(255,80,150,0.15);  color: #ff5696;       border: 1px solid rgba(255,80,150,0.35); }
     .genre-kids       { background: rgba(255,200,0,0.15);  color: #ffcc00;       border: 1px solid rgba(255,200,0,0.3); }
     .genre-baseball   { background: rgba(0,60,180,0.15);   color: #6699ff;       border: 1px solid rgba(0,60,180,0.3); }
     .genre-soccer     { background: rgba(0,160,60,0.15);   color: #33dd77;       border: 1px solid rgba(0,160,60,0.3); }
@@ -675,6 +676,7 @@
     <button class="filter-btn" data-genre="owarai">お笑い</button>
     <button class="filter-btn" data-genre="sports">スポーツ</button>
     <button class="filter-btn" data-genre="fes">フェス</button>
+    <button class="filter-btn" data-genre="hanabi">花火大会</button>
     <button class="filter-btn" data-genre="kids">キッズ</button>
   </div>
 
@@ -947,7 +949,7 @@
       dateLabel: "2026年4月25日(土)",
       venue: "ふじてんリゾート特設会場",
       prefecture: "山梨県",
-      genre: "fes",
+      genre: "hanabi",
       links: { lawson: "https://l-tike.com/event/mevent/?mid=631191", pia: null, eplus: "https://festival.eplus.jp/events/1274", rakuten: null },
       tickets: [
         { type: "一般発売中", date: "2026-04-25" }
@@ -21546,7 +21548,10 @@
   const GENRE_LABEL = {
     jpop: "J-POP", rock: "ロック", kpop: "K-POP",
     hiphop: "HIP HOP", anime: "アニソン", idol: "アイドル",
-    youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ"
+    youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ",
+    classic: "クラシック", engeki: "演劇", fes: "フェス",
+    sports: "スポーツ", hanabi: "花火大会",
+    "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル"
   };
 
   const PREFECTURE_TO_REGION = {
@@ -21620,6 +21625,7 @@
     const BASEBALL_RE = /タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球/;
     const GENRE_AMAZON_LINKS = {
       fes:      { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
+      hanabi:   { url: "https://amzn.to/3OkhAB4", label: "花火大会グッズ" },
       engeki:   { url: "https://amzn.to/47ZHLUm", label: "オペラグラス" },
       jpop:     CONCERT_AMAZON,
       kpop:     CONCERT_AMAZON,
