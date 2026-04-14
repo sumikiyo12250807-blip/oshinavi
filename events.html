@@ -24499,17 +24499,31 @@ function buildCard(ev) {
 }
 
 // ────────────────────────────────────────────
-//  描画
+//  描画 + 遅延ロード
 // ────────────────────────────────────────────
+const BATCH_SIZE = 50;
+let filteredEvents = [];
+let renderedCount = 0;
+
+function renderNextBatch() {
+  if (renderedCount >= filteredEvents.length) return;
+  const list = document.getElementById('eventList');
+  const end = Math.min(renderedCount + BATCH_SIZE, filteredEvents.length);
+  const html = filteredEvents.slice(renderedCount, end).map(buildCard).join('');
+  list.insertAdjacentHTML('beforeend', html);
+  renderedCount = end;
+}
+
 function render() {
   const sorted = [...EVENTS].sort((a, b) => a.date.localeCompare(b.date));
-  const visible = sorted.filter(matches);
+  filteredEvents = sorted.filter(matches);
+  renderedCount = 0;
 
   const meta = document.getElementById('resultMeta');
-  meta.innerHTML = `<span>${visible.length}</span> 件のイベントが見つかりました`;
+  meta.innerHTML = `<span>${filteredEvents.length}</span> 件のイベントが見つかりました`;
 
   const list = document.getElementById('eventList');
-  if (visible.length === 0) {
+  if (filteredEvents.length === 0) {
     list.innerHTML = `
       <div class="empty-state">
         <div class="empty-icon">🌿</div>
@@ -24518,8 +24532,25 @@ function render() {
     return;
   }
 
-  list.innerHTML = visible.map(buildCard).join('');
+  list.innerHTML = '';
+  renderNextBatch();
 }
+
+// スクロール下端で次バッチをロード
+(function setupLazyLoad() {
+  const list = document.getElementById('eventList');
+  const sentinel = document.createElement('div');
+  sentinel.id = 'loadSentinel';
+  sentinel.style.height = '1px';
+  list.parentNode.insertBefore(sentinel, list.nextSibling);
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) renderNextBatch();
+    });
+  }, { rootMargin: '800px' });
+  io.observe(sentinel);
+})();
 
 // ────────────────────────────────────────────
 //  フィルターボタン
