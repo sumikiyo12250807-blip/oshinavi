@@ -22818,43 +22818,61 @@
   }
 
   // ────────────────────────────────────────────────
-  //  フィルタリング
+  //  フィルタリング + 遅延ロード
   // ────────────────────────────────────────────────
   let activeGenre  = "all";
   let activeStatus = "all";
   let activeRegion = "all";
   let searchQuery  = "";
 
+  const BATCH_SIZE = 50;
+  let filteredEvents = [];
+  let renderedCount = 0;
+
+  function computeCardStatus(ev) {
+    const upcoming = ev.tickets
+      .map(t => ({ diff: daysFrom(t.date) }))
+      .filter(t => t.diff >= 0)
+      .sort((a, b) => a.diff - b.diff)[0];
+    return upcoming
+      ? (upcoming.diff <= 7 ? "urgent" : upcoming.diff <= 31 ? "soon" : "normal")
+      : "passed";
+  }
+
+  function matchEvent(ev) {
+    const matchGenre  = activeGenre  === "all"
+      || ev.genre === activeGenre
+      || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu"))
+      || (activeGenre === "anime"  && ev.genre === "seiyuu");
+    const status = computeCardStatus(ev);
+    const matchStatus = activeStatus === "all"
+      || (activeStatus === "urgent"   && status === "urgent")
+      || (activeStatus === "soon"     && (status === "urgent" || status === "soon"))
+      || (activeStatus === "upcoming" && status === "normal");
+    const haystack = (ev.artist + " " + ev.name).toLowerCase();
+    const matchSearch = searchQuery === "" || haystack.includes(searchQuery.toLowerCase());
+    const matchRegion = activeRegion === "all"
+      || ev.prefecture === "全国"
+      || PREFECTURE_TO_REGION[ev.prefecture] === activeRegion;
+    return matchGenre && matchStatus && matchSearch && matchRegion;
+  }
+
+  function renderNextBatch() {
+    if (renderedCount >= filteredEvents.length) return;
+    const list = document.getElementById("eventList");
+    const end = Math.min(renderedCount + BATCH_SIZE, filteredEvents.length);
+    const html = filteredEvents.slice(renderedCount, end).map(renderCard).join("");
+    list.insertAdjacentHTML("beforeend", html);
+    renderedCount = end;
+  }
+
   function applyFilters() {
-    const cards = document.querySelectorAll(".event-card");
-    let visible = 0;
-
-    cards.forEach(card => {
-      const genre      = card.dataset.genre;
-      const status     = card.dataset.status;
-      const search     = card.dataset.search;
-      const prefecture = card.dataset.prefecture;
-
-      const matchGenre  = activeGenre  === "all" || genre === activeGenre || (activeGenre === "engeki" && (genre === "2.5ji" || genre === "seiyuu")) || (activeGenre === "anime" && genre === "seiyuu");
-      const matchStatus = activeStatus === "all"
-        || (activeStatus === "urgent"   && status === "urgent")
-        || (activeStatus === "soon"     && (status === "urgent" || status === "soon"))
-        || (activeStatus === "upcoming" && status === "normal");
-      const matchSearch = searchQuery === "" || search.includes(searchQuery.toLowerCase());
-      const matchRegion = activeRegion === "all"
-        || prefecture === "全国"
-        || PREFECTURE_TO_REGION[prefecture] === activeRegion;
-
-      if (matchGenre && matchStatus && matchSearch && matchRegion) {
-        card.classList.remove("hidden");
-        visible++;
-      } else {
-        card.classList.add("hidden");
-      }
-    });
-
-    document.getElementById("resultCount").textContent = visible;
-    document.getElementById("emptyState").style.display = visible === 0 ? "block" : "none";
+    filteredEvents = EVENTS.filter(matchEvent);
+    renderedCount = 0;
+    document.getElementById("eventList").innerHTML = "";
+    document.getElementById("resultCount").textContent = filteredEvents.length;
+    document.getElementById("emptyState").style.display = filteredEvents.length === 0 ? "block" : "none";
+    renderNextBatch();
   }
 
   // ────────────────────────────────────────────────
@@ -22862,9 +22880,25 @@
   // ────────────────────────────────────────────────
   function init() {
     const list = document.getElementById("eventList");
-    list.innerHTML = EVENTS.map(renderCard).join("");
 
-    document.getElementById("resultCount").textContent = EVENTS.length;
+    filteredEvents = EVENTS.slice();
+    renderedCount = 0;
+    list.innerHTML = "";
+    renderNextBatch();
+
+    document.getElementById("resultCount").textContent = filteredEvents.length;
+
+    const sentinel = document.createElement("div");
+    sentinel.id = "loadSentinel";
+    sentinel.style.height = "1px";
+    list.parentNode.insertBefore(sentinel, list.nextSibling);
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) renderNextBatch();
+      });
+    }, { rootMargin: "800px" });
+    io.observe(sentinel);
 
     // ジャンルフィルター
     document.querySelectorAll(".filter-btn[data-genre]").forEach(btn => {
