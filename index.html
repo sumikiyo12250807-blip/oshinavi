@@ -413,6 +413,22 @@
     .status-normal .ticket-countdown { background: rgba(0,229,255,0.1);     color: var(--accent2); }
     .status-passed .ticket-countdown { background: transparent; color: var(--text-muted); }
 
+    .ticket-soldout-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+      background: rgba(140, 140, 140, 0.2);
+      color: var(--text-muted);
+      border: 1px solid rgba(140, 140, 140, 0.45);
+    }
+    .ticket-item.soldout { opacity: 0.65; border-color: rgba(140,140,140,0.35); }
+    .ticket-item.soldout .ticket-dot { background: var(--text-muted); }
+    .ticket-item.soldout .ticket-date { color: var(--text-muted); text-decoration: line-through; }
+
     /* ── チケット価格 & リンクボタン ── */
     .card-footer {
       padding: 10px 20px 14px 24px;
@@ -890,7 +906,7 @@
             "venue": "共済ホール",
             "prefecture": "北海道",
             "genre": "youtuber",
-            "price": "4,700円〜",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/ticketInformation.do?eventCd=2607017&rlsCd=001",
@@ -898,8 +914,9 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-04-24"
+                        "type": "一般発売",
+                        "date": "2026-04-24",
+                        "soldout": true
                   }
             ]
       },
@@ -22814,6 +22831,17 @@
   // ────────────────────────────────────────────────
   function renderCard(ev) {
     const ticketsHTML = ev.tickets.map(t => {
+      if (t.soldout) {
+        return `
+          <div class="ticket-item soldout">
+            <div class="ticket-type">
+              <span class="ticket-dot"></span>
+              ${t.type}
+            </div>
+            <div class="ticket-date">${formatDate(t.date)}</div>
+            <div class="ticket-soldout-badge">売り切れ</div>
+          </div>`;
+      }
       const status = getTicketStatus(t.date);
       const label  = countdownLabel(t.date);
       const countdown = ev.links && ev.links.pia
@@ -22830,8 +22858,9 @@
         </div>`;
     }).join("");
 
-    // イベント全体の緊急度（最も近い未来チケット基準）
+    // イベント全体の緊急度（最も近い未来チケット基準、売り切れは除外）
     const upcoming = ev.tickets
+      .filter(t => !t.soldout)
       .map(t => ({ status: getTicketStatus(t.date), diff: daysFrom(t.date) }))
       .filter(t => t.diff >= 0)
       .sort((a, b) => a.diff - b.diff)[0];
@@ -22930,6 +22959,7 @@
 
   function computeCardStatus(ev) {
     const upcoming = ev.tickets
+      .filter(t => !t.soldout)
       .map(t => ({ diff: daysFrom(t.date) }))
       .filter(t => t.diff >= 0)
       .sort((a, b) => a.diff - b.diff)[0];
