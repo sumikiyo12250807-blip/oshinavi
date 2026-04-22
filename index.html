@@ -351,10 +351,11 @@
       transition: border-color 0.2s;
     }
 
-    .ticket-item.status-urgent { border-color: rgba(255,82,82,0.4); }
-    .ticket-item.status-soon   { border-color: rgba(255,171,64,0.35); }
-    .ticket-item.status-normal { border-color: rgba(0,229,255,0.25); }
-    .ticket-item.status-passed { opacity: 0.45; }
+    .ticket-item.status-urgent  { border-color: rgba(255,82,82,0.4); }
+    .ticket-item.status-soon    { border-color: rgba(255,171,64,0.35); }
+    .ticket-item.status-normal  { border-color: rgba(0,229,255,0.25); }
+    .ticket-item.status-selling { border-color: rgba(105,240,174,0.35); }
+    .ticket-item.status-passed  { opacity: 0.45; }
 
     .ticket-type {
       font-size: 10px;
@@ -371,10 +372,11 @@
       flex-shrink: 0;
     }
 
-    .status-urgent .ticket-dot { background: var(--red);    box-shadow: 0 0 5px var(--red); }
-    .status-soon   .ticket-dot { background: var(--orange); box-shadow: 0 0 5px var(--orange); }
-    .status-normal .ticket-dot { background: var(--accent2);}
-    .status-passed .ticket-dot { background: var(--text-muted); }
+    .status-urgent  .ticket-dot { background: var(--red);    box-shadow: 0 0 5px var(--red); }
+    .status-soon    .ticket-dot { background: var(--orange); box-shadow: 0 0 5px var(--orange); }
+    .status-normal  .ticket-dot { background: var(--accent2);}
+    .status-selling .ticket-dot { background: var(--green);  box-shadow: 0 0 5px var(--green); }
+    .status-passed  .ticket-dot { background: var(--text-muted); }
 
     .ticket-date {
       font-size: 16px;
@@ -382,10 +384,11 @@
       letter-spacing: 0.5px;
     }
 
-    .status-urgent .ticket-date { color: var(--red); }
-    .status-soon   .ticket-date { color: var(--orange); }
-    .status-normal .ticket-date { color: var(--accent2); }
-    .status-passed .ticket-date { color: var(--text-muted); text-decoration: line-through; }
+    .status-urgent  .ticket-date { color: var(--red); }
+    .status-soon    .ticket-date { color: var(--orange); }
+    .status-normal  .ticket-date { color: var(--accent2); }
+    .status-selling .ticket-date { color: var(--green); }
+    .status-passed  .ticket-date { color: var(--text-muted); text-decoration: line-through; }
 
     .ticket-countdown {
       font-size: 11px;
@@ -408,10 +411,11 @@
       text-decoration: underline;
     }
 
-    .status-urgent .ticket-countdown { background: rgba(255,82,82,0.15);    color: var(--red); }
-    .status-soon   .ticket-countdown { background: rgba(255,171,64,0.15);   color: var(--orange); }
-    .status-normal .ticket-countdown { background: rgba(0,229,255,0.1);     color: var(--accent2); }
-    .status-passed .ticket-countdown { background: transparent; color: var(--text-muted); }
+    .status-urgent  .ticket-countdown { background: rgba(255,82,82,0.15);    color: var(--red); }
+    .status-soon    .ticket-countdown { background: rgba(255,171,64,0.15);   color: var(--orange); }
+    .status-normal  .ticket-countdown { background: rgba(0,229,255,0.1);     color: var(--accent2); }
+    .status-selling .ticket-countdown { background: rgba(105,240,174,0.15);  color: var(--green); font-weight: 600; }
+    .status-passed  .ticket-countdown { background: transparent; color: var(--text-muted); }
 
     .ticket-soldout-badge {
       font-size: 11px;
@@ -757,29 +761,6 @@
   // ────────────────────────────────────────────────
   const EVENTS = [
       {
-            "id": 1786,
-            "artist": "EXILE",
-            "name": "EXILE LIVE 2026 \"THE REASON\" 〜PERFECT YEAR Special〜",
-            "date": "2026-04-22",
-            "dateLabel": "2026年4月21日(火)・22日(水)",
-            "venue": "東京ドーム",
-            "prefecture": "東京都",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": "https://l-tike.com/concert/mevent/?mid=475852",
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/0060650001",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売(先着)",
-                        "date": "2026-04-22"
-                  }
-            ]
-      },
-      {
             "id": 167,
             "artist": "大相撲",
             "name": "令和八年春巡業 大相撲さいたま場所",
@@ -805,22 +786,22 @@
             "id": 1238,
             "artist": "conSept",
             "name": "conSept『シルヴィア、生きる』",
-            "date": "2026-04-24",
-            "dateLabel": "2026年4月14日〜4月24日",
+            "date": "2026-04-26",
+            "dateLabel": "2026年4月21日〜4月26日",
             "venue": "中野ザ・ポケット",
             "prefecture": "東京都",
             "genre": "engeki",
-            "price": "料金要確認",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": null,
-                  "eplus": "https://eplus.jp/sf/play/musical",
+                  "eplus": "https://eplus.jp/sf/detail/3665660004",
                   "rakuten": null
             },
             "tickets": [
                   {
                         "type": "一般発売中",
-                        "date": "2026-04-24"
+                        "date": "2026-04-26"
                   }
             ]
       },
@@ -866,29 +847,6 @@
                         "type": "一般発売",
                         "date": "2026-04-24",
                         "soldout": true
-                  }
-            ]
-      },
-      {
-            "id": 1241,
-            "artist": "フラガリアメモリーズ",
-            "name": "『フラガリアメモリーズ』〜でぃあ・まい・ふれんず!〜 東京公演",
-            "date": "2026-04-25",
-            "dateLabel": "2026年4月24日〜4月25日",
-            "venue": "シアターH",
-            "prefecture": "東京都",
-            "genre": "engeki",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/play/musical",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売中",
-                        "date": "2026-04-25"
                   }
             ]
       },
@@ -954,28 +912,6 @@
             "tickets": [
                   {
                         "type": "一般発売",
-                        "date": "2026-04-26"
-                  }
-            ]
-      },
-      {
-            "id": 289,
-            "artist": "忍たま乱太郎",
-            "name": "『忍たま乱太郎』スペシャルイベント 感謝の集い Sakura祭 2026",
-            "date": "2026-04-26",
-            "dateLabel": "2026年4月10日〜4月26日",
-            "venue": "LINE CUBE SHIBUYA",
-            "prefecture": "東京都",
-            "genre": "anime",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664694",
-                  "eplus": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売（動画配信）",
                         "date": "2026-04-26"
                   }
             ]
@@ -1060,7 +996,7 @@
             "venue": "新潟県民会館",
             "prefecture": "新潟県",
             "genre": "engeki",
-            "price": "料金要確認",
+            "price": "10,800円〜12,800円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -3173,28 +3109,6 @@
                   {
                         "type": "一般発売",
                         "date": "2026-06-30"
-                  }
-            ]
-      },
-      {
-            "id": 407,
-            "artist": "片平里菜",
-            "name": "片平里菜",
-            "date": "2026-05-07",
-            "dateLabel": "2026年5月7日(木)",
-            "venue": "金沢vanvanV4",
-            "prefecture": "石川県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/1105210001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-04-22"
                   }
             ]
       },
@@ -9802,28 +9716,6 @@
                   {
                         "type": "一般発売（〜5/13まで）",
                         "date": "2026-05-13"
-                  }
-            ]
-      },
-      {
-            "id": 479,
-            "artist": "『キングダム』シネマコンサート",
-            "name": "-最新作公開記念- 『キングダム』シネマコンサート",
-            "date": "2026-07-24",
-            "dateLabel": "2026年7月5日(日)〜7月24日(金)",
-            "venue": "東京・大阪・福岡・神奈川",
-            "prefecture": null,
-            "genre": "anime",
-            "price": "S席 9,900円〜",
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666683",
-                  "eplus": null
-            },
-            "tickets": [
-                  {
-                        "type": "プレリザーブ 抽選締切",
-                        "date": "2026-04-22"
                   }
             ]
       },
@@ -16895,29 +16787,6 @@
             ]
       },
       {
-            "id": 1758,
-            "artist": "アップアップガールズ（仮）",
-            "name": "アプガフェス（ミニ）",
-            "date": "2026-04-25",
-            "dateLabel": "2026年4月25日(土)",
-            "venue": "原宿RUIDO",
-            "prefecture": "東京都",
-            "genre": "idol",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": null,
-                  "rakuten": "https://ticket.rakuten.co.jp/music/jpop/idle/rtyu425/"
-            },
-            "tickets": [
-                  {
-                        "type": "一般販売",
-                        "date": "2026-04-25"
-                  }
-            ]
-      },
-      {
             "id": 1759,
             "artist": "@JAM",
             "name": "@JAM THE WORLD春のジャムまつり！2026",
@@ -17457,8 +17326,29 @@
             <div class="ticket-soldout-badge">売り切れ</div>
           </div>`;
       }
-      const status = getTicketStatus(t.date);
-      const label  = countdownLabel(t.date);
+      // 表示ルール:
+      //  1. startDate 有り + 未来 → 「発売開始まで あとX日」(urgent/soon/normal)
+      //  2. startDate 有り + 販売中(今日 >= startDate かつ 今日 <= date) → 「販売中」(selling)
+      //  3. startDate 無し + date 未来以降 → 旧仕様「あとX日」(urgent/soon/normal)
+      //  4. 期限切れ → 「終了」(passed) ※朝のルーチンで削除対象
+      let status, label;
+      if (t.startDate && parseDateStr(t.startDate) > today) {
+        const sdiff = daysFrom(t.startDate);
+        status = sdiff <= 7 ? "urgent" : sdiff <= 31 ? "soon" : "normal";
+        label  = sdiff === 0 ? "本日発売"
+               : sdiff === 1 ? "明日発売"
+               : `発売開始まで あと ${sdiff} 日`;
+      } else if (t.startDate && parseDateStr(t.date) >= today) {
+        status = "selling";
+        label  = "販売中";
+      } else if (!t.startDate && parseDateStr(t.date) >= today) {
+        const diff = daysFrom(t.date);
+        status = diff <= 7 ? "urgent" : diff <= 31 ? "soon" : "normal";
+        label  = countdownLabel(t.date);
+      } else {
+        status = "passed";
+        label  = "終了";
+      }
       const countdown = ev.links && ev.links.pia
         ? `<a class="ticket-countdown" href="${ev.links.pia}" target="_blank" rel="noopener">${label}</a>`
         : `<div class="ticket-countdown">${label}</div>`;
@@ -17473,16 +17363,8 @@
         </div>`;
     }).join("");
 
-    // イベント全体の緊急度（最も近い未来チケット基準、売り切れは除外）
-    const upcoming = ev.tickets
-      .filter(t => !t.soldout)
-      .map(t => ({ status: getTicketStatus(t.date), diff: daysFrom(t.date) }))
-      .filter(t => t.diff >= 0)
-      .sort((a, b) => a.diff - b.diff)[0];
-
-    const cardStatus = upcoming
-      ? (upcoming.diff <= 7 ? "urgent" : upcoming.diff <= 31 ? "soon" : "normal")
-      : "passed";
+    // イベント全体の緊急度（優先度: urgent > soon > selling > normal > passed）
+    const cardStatus = computeCardStatus(ev);
 
     const priceHTML = ev.price
       ? `<div class="ticket-price"><span class="ticket-price-label">チケット料金</span>${ev.price}</div>`
@@ -17572,15 +17454,28 @@
   let filteredEvents = [];
   let renderedCount = 0;
 
+  function ticketKind(t) {
+    if (t.soldout) return null;
+    if (t.startDate && parseDateStr(t.startDate) > today) {
+      const d = daysFrom(t.startDate);
+      return d <= 7 ? "urgent" : d <= 31 ? "soon" : "normal";
+    }
+    if (t.startDate && parseDateStr(t.date) >= today) {
+      return "selling";
+    }
+    if (!t.startDate && parseDateStr(t.date) >= today) {
+      const d = daysFrom(t.date);
+      return d <= 7 ? "urgent" : d <= 31 ? "soon" : "normal";
+    }
+    return null;
+  }
+
   function computeCardStatus(ev) {
-    const upcoming = ev.tickets
-      .filter(t => !t.soldout)
-      .map(t => ({ diff: daysFrom(t.date) }))
-      .filter(t => t.diff >= 0)
-      .sort((a, b) => a.diff - b.diff)[0];
-    return upcoming
-      ? (upcoming.diff <= 7 ? "urgent" : upcoming.diff <= 31 ? "soon" : "normal")
-      : "passed";
+    const kinds = (ev.tickets || []).map(ticketKind).filter(Boolean);
+    for (const p of ["urgent", "soon", "selling", "normal"]) {
+      if (kinds.includes(p)) return p;
+    }
+    return "passed";
   }
 
   function matchEvent(ev) {
@@ -17709,6 +17604,30 @@
       setTimeout(() => suggest.classList.remove("open"), 150);
     });
   }
+
+  // 表示順: アクションが近い順（昇順）。発売前は startDate、販売中は date(販売終了日)。
+  // 全チケットが売り切れ/終了なら末尾。
+  EVENTS.sort((a, b) => {
+    const getSortDate = (ev) => {
+      const dates = (ev.tickets || [])
+        .filter(t => !t.soldout)
+        .map(t => {
+          if (t.startDate && parseDateStr(t.startDate) > today) return t.startDate;
+          if (t.date && parseDateStr(t.date) >= today) return t.date;
+          return null;
+        })
+        .filter(Boolean)
+        .sort();
+      return dates[0] || ev.date;
+    };
+    const aDate = getSortDate(a);
+    const bDate = getSortDate(b);
+    const aExpired = parseDateStr(aDate) < today;
+    const bExpired = parseDateStr(bDate) < today;
+    if (aExpired !== bExpired) return aExpired ? 1 : -1;
+    if (aDate !== bDate) return aDate < bDate ? -1 : 1;
+    return (a.id || 0) - (b.id || 0);
+  });
 
   init();
 
