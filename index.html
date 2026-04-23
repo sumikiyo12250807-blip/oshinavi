@@ -62,12 +62,34 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      position: relative;
+    }
+    .logo::before {
+      content: '';
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.9) 0%, rgba(224,64,251,0.7) 30%, rgba(224,64,251,0.3) 55%, transparent 75%);
+      filter: blur(10px);
+      pointer-events: none;
+      animation: logoHalo 3s ease-in-out infinite;
     }
     .logo img {
       height: 48px;
-      width: auto;
+      width: 48px;
+      object-fit: contain;
       display: block;
       -webkit-text-fill-color: initial;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes logoHalo {
+      0%,100% { opacity: 0.8; }
+      50%     { opacity: 1; }
     }
 
     nav { display: flex; gap: 18px; align-items: center; }
@@ -197,21 +219,31 @@
     }
 
     .filter-btn {
-      background: var(--bg3);
-      border: 1px solid var(--border);
+      background: radial-gradient(ellipse at center, rgba(0,229,255,0.08), rgba(0,229,255,0.02));
+      border: 1px solid rgba(0,229,255,0.25);
       color: var(--text-muted);
-      padding: 5px 14px;
+      padding: 7px 18px;
       border-radius: 20px;
       font-size: 12px;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.3s;
       letter-spacing: 0.5px;
       font-family: inherit;
       white-space: nowrap;
+      box-shadow: 0 0 0 rgba(0,229,255,0);
     }
 
-    .filter-btn:hover { border-color: #555; color: var(--text); }
-    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(224,64,251,0.08); }
+    .filter-btn:hover {
+      border-color: rgba(0,229,255,0.6);
+      color: var(--text);
+      box-shadow: 0 0 12px rgba(0,229,255,0.3), inset 0 0 12px rgba(0,229,255,0.1);
+    }
+    .filter-btn.active {
+      border-color: rgba(224,64,251,0.8);
+      color: #fff;
+      background: radial-gradient(ellipse at center, rgba(224,64,251,0.25), rgba(224,64,251,0.05));
+      box-shadow: 0 0 16px rgba(224,64,251,0.5), inset 0 0 16px rgba(224,64,251,0.15);
+    }
 
     /* ── メイン ── */
     main {
@@ -583,7 +615,7 @@
       height: 56px;
     }
     .logo { font-size: 13px; letter-spacing: 1px; gap: 5px; }
-    .logo img { height: 28px; }
+    .logo img { height: 28px; width: 28px; }
     nav { gap: 10px; }
     nav a { font-size: 11px; letter-spacing: 0; }
 
@@ -656,7 +688,7 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png" alt="OSHINAVI logo">OSHINAVI</a>
+  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
     <a href="events.html">行楽<br>イベント</a>
@@ -859,7 +891,7 @@
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "engeki",
-            "price": "一般席 12,000円〜",
+            "price": "12,000円〜20,000円",
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665122",
@@ -867,7 +899,8 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売（東京）販売終了",
+                        "type": "一般発売",
+                        "startDate": "2026-02-28",
                         "date": "2026-04-25"
                   }
             ]
@@ -1019,10 +1052,10 @@
             "venue": "横浜アリーナ",
             "prefecture": "神奈川県",
             "genre": "sports",
-            "price": "料金要確認",
+            "price": "4,000円〜250,000円",
             "links": {
-                  "lawson": "https://l-tike.com/sports/mevent/?mid=111750",
-                  "pia": "https://t.pia.jp/pia/artist/artists.do?artistsCd=C3060019",
+                  "lawson": "https://l-tike.com/sports/mevent/?mid=780730",
+                  "pia": "https://t.pia.jp/pia/ticketInformation.do?eventCd=2603701&rlsCd=001",
                   "eplus": null,
                   "rakuten": null
             },
@@ -1052,47 +1085,23 @@
             },
             "tickets": [
                   {
-                        "type": "全受付終了",
-                        "date": "2026-04-26",
-                        "soldout": true
-                  }
-            ]
-      },
-      {
-            "id": 1608,
-            "artist": "熱海海上花火大会 春",
-            "name": "2026 熱海海上花火大会（春）",
-            "date": "2026-04-26",
-            "dateLabel": "2026年4月26日(日)",
-            "venue": "熱海湾（親水公園沖）",
-            "prefecture": "静岡県",
-            "genre": "hanabi",
-            "price": "料金要確認（2026年度は一般有料観覧席の設置なし、宿泊者向け専用観覧スペースあり）",
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": null,
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "公式情報要確認",
-                        "date": "2026-04-25"
+                        "type": "一般発売 2次先着(4/25公演)",
+                        "date": "2026-04-24"
                   }
             ]
       },
       {
             "id": 1736,
             "artist": "Da-iCE",
-            "name": "Da-iCE ARENA TOUR 2026",
+            "name": "Da-iCE ARENA TOUR 2026 -TERMiNaL-",
             "date": "2026-04-26",
-            "dateLabel": "2026年4月18日〜4月26日",
+            "dateLabel": "2026年1月24日〜4月26日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "jpop",
             "price": null,
             "links": {
-                  "lawson": null,
+                  "lawson": "https://l-tike.com/concert/mevent/?mid=619657",
                   "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/0862250001",
                   "rakuten": null
@@ -1100,6 +1109,7 @@
             "tickets": [
                   {
                         "type": "一般発売",
+                        "startDate": "2026-01-24",
                         "date": "2026-04-25"
                   }
             ]
@@ -1116,13 +1126,13 @@
             "price": null,
             "links": {
                   "lawson": null,
-                  "pia": null,
+                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2561093",
                   "eplus": "https://eplus.jp/sf/detail/2527410001",
                   "rakuten": null
             },
             "tickets": [
                   {
-                        "type": "受付中",
+                        "type": "一般発売",
                         "date": "2026-04-25"
                   }
             ]
@@ -1136,16 +1146,16 @@
             "venue": "歌舞伎座",
             "prefecture": "東京都",
             "genre": "engeki",
-            "price": "3階B席 5,000円〜",
+            "price": "5,000円〜20,000円",
             "links": {
                   "lawson": null,
-                  "pia": null,
+                  "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2505507",
                   "eplus": null,
-                  "shochiku": "https://www1.ticket-web-shochiku.com/t/?_gl=1*16fgh3u*_ga*ODA4OTE4OTcyLjE3NzQ3NzY5MTE.*_ga_B2RSRRTNE9*czE3NzQ3NzY5MTEkbzEkZzAkdDE3NzQ3NzY5MTEkajYwJGwwJGgw"
+                  "shochiku": null
             },
             "tickets": [
                   {
-                        "type": "一般発売 販売終了",
+                        "type": "一般発売",
                         "date": "2026-04-27"
                   }
             ]
@@ -1163,12 +1173,12 @@
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/ticketInformation.do?eventCd=2612569&rlsCd=001",
-                  "eplus": "https://eplus.jp/sf/word/0000087236"
+                  "eplus": null
             },
             "tickets": [
                   {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-04-27"
+                        "type": "一般発売",
+                        "date": "2026-04-26"
                   }
             ]
       },
@@ -1242,31 +1252,9 @@
             ]
       },
       {
-            "id": 310,
-            "artist": "終遠のヴィルシュ",
-            "name": "舞台「終遠のヴィルシュ -ErroR：salvation- Case.Yves」",
-            "date": "2026-04-29",
-            "dateLabel": "2026年4月23日〜4月29日",
-            "venue": "有楽町よみうりホール",
-            "prefecture": "東京都",
-            "genre": "anime",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2562276",
-                  "eplus": "https://eplus.jp/sf/detail/4239270001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-04-28"
-                  }
-            ]
-      },
-      {
             "id": 1739,
             "artist": "THEE MICHELLE GUN ELEPHANT",
-            "name": "WORLD PSYCHO BLUES TOUR",
+            "name": "WORLD PSYCHO BLUES TOUR -爆音上映会-",
             "date": "2026-04-29",
             "dateLabel": "2026年4月17日〜4月29日",
             "venue": "全国ツアー",
@@ -1289,13 +1277,13 @@
       {
             "id": 1751,
             "artist": "NAONのYAON",
-            "name": "NAONのBUNTAI 2026",
+            "name": "SHOW-YA PRODUCE『NAONのBUNTAI 2026』",
             "date": "2026-04-29",
-            "dateLabel": "2026年4月29日(火・祝)",
+            "dateLabel": "2026年4月29日(水・祝)",
             "venue": "横浜BUNTAI",
             "prefecture": "神奈川県",
             "genre": "fes",
-            "price": null,
+            "price": "9,000円〜10,000円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -1304,7 +1292,7 @@
             },
             "tickets": [
                   {
-                        "type": "受付中",
+                        "type": "一般発売",
                         "date": "2026-04-28"
                   }
             ]
@@ -1314,11 +1302,11 @@
             "artist": "真打昇進襲名披露興行",
             "name": "真打昇進襲名披露興行",
             "date": "2026-04-30",
-            "dateLabel": "2026年4月1日(水)〜4月30日(木)【東京3会場】",
-            "venue": "新宿末広亭・浅草演芸ホール・池袋演芸場",
+            "dateLabel": "2026年4月21日〜4月30日【池袋下席】",
+            "venue": "池袋演芸場",
             "prefecture": "東京都",
             "genre": "owarai",
-            "price": "3,500円",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665139",
@@ -1336,7 +1324,7 @@
             "artist": "さだまさし",
             "name": "さだまさし 春の葡萄祭 2026 グレープコンサート",
             "date": "2026-04-30",
-            "dateLabel": "2026年4月21日〜4月30日",
+            "dateLabel": "2026年4月7日〜4月30日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "jpop",
@@ -1355,41 +1343,18 @@
             ]
       },
       {
-            "id": 1253,
-            "artist": "美少女戦士セーラームーン",
-            "name": "「美少女戦士セーラームーン The Shining Theatre 品川東京」4月公演",
-            "date": "2026-04-30",
-            "dateLabel": "2026年4月14日〜4月30日",
-            "venue": "クラブeX（品川プリンスホテル）",
-            "prefecture": "東京都",
-            "genre": "engeki",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4476980001",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売中",
-                        "date": "2026-04-30"
-                  }
-            ]
-      },
-      {
             "id": 330,
             "artist": "やのとあがつま",
-            "name": "やのとあがつま(矢野顕子&上妻宏光)",
-            "date": "2026-05-01",
-            "dateLabel": "2026年5月1日(金)",
-            "venue": "いわき芸術文化交流館アリオス セキショウ中劇場",
-            "prefecture": "福島県",
+            "name": "やのとあがつま Japan Tour 2026",
+            "date": "2026-05-12",
+            "dateLabel": "2026年4月25日〜5月12日 全国ツアー",
+            "venue": "全国ツアー",
+            "prefecture": null,
             "genre": "jpop",
             "price": null,
             "links": {
                   "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2169551",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/3162890001",
                   "amazon": "https://amzn.to/4ecvWxJ"
             },
@@ -1420,7 +1385,7 @@
             "price": null,
             "links": {
                   "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2453544",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/3736360002",
                   "amazon": "https://amzn.to/41piK1a"
             },
@@ -1445,29 +1410,6 @@
                   "lawson": null,
                   "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/4490720001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-04-30"
-                  }
-            ]
-      },
-      {
-            "id": 338,
-            "artist": "ぬましょうの実験室",
-            "name": "ぬましょうの実験室 ぬましょう × 善岡慧一",
-            "date": "2026-05-01",
-            "dateLabel": "2026年5月1日(金)",
-            "venue": "東京ゲストハウス王子ミュージックラウンジ",
-            "prefecture": "東京都",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4501400001",
-                  "amazon": "https://amzn.to/4t18nwp"
             },
             "tickets": [
                   {
@@ -1523,31 +1465,9 @@
             ]
       },
       {
-            "id": 293,
-            "artist": "シエナ・ウインド・オーケストラ",
-            "name": "MUSIC LETTER CONCERT 2026 ジブリの名曲を吹奏楽で届けるコンサート",
-            "date": "2026-05-02",
-            "dateLabel": "2026年4月26日〜5月2日",
-            "venue": "全国ツアー",
-            "prefecture": "全国",
-            "genre": "anime",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563317",
-                  "eplus": "https://eplus.jp/sf/detail/4428260002"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売（神戸）",
-                        "date": "2026-04-30"
-                  }
-            ]
-      },
-      {
             "id": 321,
             "artist": "KRAFTWERK",
-            "name": "KRAFTWERK",
+            "name": "KRAFTWERK MULTIMEDIA TOUR 2026",
             "date": "2026-05-02",
             "dateLabel": "2026年4月27日(月)〜5月2日(土)",
             "venue": "全国ツアー",
@@ -1601,29 +1521,6 @@
             ]
       },
       {
-            "id": 342,
-            "artist": "奇妙礼太郎",
-            "name": "奇妙礼太郎 Live at 能楽堂 緑光憩音 2026 HARU",
-            "date": "2026-05-02",
-            "dateLabel": "2026年5月2日(土)",
-            "venue": "銕仙会能楽研修所",
-            "prefecture": "東京都",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4508610001",
-                  "amazon": "https://amzn.to/3OrBQAN"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-01"
-                  }
-            ]
-      },
-      {
             "id": 347,
             "artist": "優河",
             "name": "優河(band set) at Billboard Live YOKOHAMA 2026",
@@ -1632,16 +1529,19 @@
             "venue": "Billboard Live YOKOHAMA",
             "prefecture": "神奈川県",
             "genre": "jpop",
-            "price": null,
+            "price": "5,900円〜16,100円",
             "links": {
                   "lawson": null,
                   "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4133480002",
+                  "eplus": null,
+                  "rakuten": null,
+                  "official": "https://www.billboard-live.com/yokohama/show?event_id=ev-13654",
                   "amazon": "https://amzn.to/4sq0zn6"
             },
             "tickets": [
                   {
                         "type": "一般発売",
+                        "startDate": "2026-03-10",
                         "date": "2026-04-25"
                   }
             ]
@@ -1655,11 +1555,13 @@
             "venue": "Billboard Live OSAKA",
             "prefecture": "大阪府",
             "genre": "jpop",
-            "price": null,
+            "price": "8,500円〜21,300円",
             "links": {
                   "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2345702",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/4462620002",
+                  "rakuten": null,
+                  "official": "https://www.billboard-live.com/osaka/show?event_id=ev-14821",
                   "amazon": "https://amzn.to/4vn5Oq2",
                   "amazon2": "https://amzn.to/48xAzyL"
             },
@@ -1673,7 +1575,7 @@
       {
             "id": 349,
             "artist": "シアーミュージック",
-            "name": "シアーミュージック",
+            "name": "SHEER MUSIC SHOW",
             "date": "2026-05-02",
             "dateLabel": "2026年5月2日(土)",
             "venue": "I'M A SHOW",
@@ -1695,7 +1597,7 @@
       {
             "id": 351,
             "artist": "新居昭乃",
-            "name": "新居昭乃",
+            "name": "新居昭乃 LIVE 2026『Resound all songs ソラノスフィア』追加公演",
             "date": "2026-05-02",
             "dateLabel": "2026年5月2日(土)",
             "venue": "神田明神ホール",
@@ -1718,7 +1620,7 @@
       {
             "id": 354,
             "artist": "東京力車",
-            "name": "東京力車",
+            "name": "東京力車「俺らしく駆け抜けろ〜雲外蒼天〜」",
             "date": "2026-05-02",
             "dateLabel": "2026年5月2日(土)",
             "venue": "観世能楽堂",
@@ -1729,72 +1631,6 @@
                   "lawson": null,
                   "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/4441590001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-01"
-                  }
-            ]
-      },
-      {
-            "id": 355,
-            "artist": "真彩希帆",
-            "name": "開業55周年記念 真彩希帆ディナーショー2026 A new Life",
-            "date": "2026-05-02",
-            "dateLabel": "2026年5月2日(土)",
-            "venue": "京王プラザホテル コンコードボールルーム",
-            "prefecture": "東京都",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4491530001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-01"
-                  }
-            ]
-      },
-      {
-            "id": 356,
-            "artist": "ex.シンサカエ学園祭",
-            "name": "ex.シンサカエ学園祭2026",
-            "date": "2026-05-02",
-            "dateLabel": "2026年5月2日(土)",
-            "venue": "ell.SIZE",
-            "prefecture": "愛知県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4496740001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-01"
-                  }
-            ]
-      },
-      {
-            "id": 358,
-            "artist": "水曜日のカンパネラ",
-            "name": "水曜日のカンパネラ プレミアムライブ2026～常陸大宮市文化センター●ロゼホール～",
-            "date": "2026-05-02",
-            "dateLabel": "2026年5月2日(土)",
-            "venue": "常陸大宮市文化センター(ロゼホール)",
-            "prefecture": "茨城県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4487290001"
             },
             "tickets": [
                   {
@@ -1837,7 +1673,7 @@
             "price": null,
             "links": {
                   "lawson": "https://l-tike.com/concert/mevent/?mid=387073",
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2443613",
+                  "pia": null,
                   "eplus": null,
                   "rakuten": null
             },
@@ -1896,38 +1732,15 @@
             ]
       },
       {
-            "id": 1744,
-            "artist": "KRAFTWERK",
-            "name": "KRAFTWERK MULTIMEDIA TOUR 2026",
-            "date": "2026-05-02",
-            "dateLabel": "2026年4月27日〜5月2日",
-            "venue": "全国ツアー",
-            "prefecture": "全国",
-            "genre": "rock",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/0946110001",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "受付中",
-                        "date": "2026-05-01"
-                  }
-            ]
-      },
-      {
             "id": 47,
             "artist": "B'z",
             "name": "B'z LIVE-GYM 2026 -FYOP+-",
-            "date": "2026-05-03",
-            "dateLabel": "2026年4月11日〜5月3日 全国ツアー",
+            "date": "2026-06-14",
+            "dateLabel": "2026年4月11日〜6月14日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "jpop",
-            "price": "S席 13,000円",
+            "price": "13,000円",
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665215",
@@ -1953,8 +1766,8 @@
             "id": 285,
             "artist": "それいけ！アンパンマン",
             "name": "それいけ！アンパンマン ミュージカル「まもれ！黄金の炎」",
-            "date": "2026-05-03",
-            "dateLabel": "2026年2月28日(土)〜5月3日(日祝)",
+            "date": "2026-06-21",
+            "dateLabel": "2026年2月28日〜6月21日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": null,
             "genre": "kids",
@@ -2090,7 +1903,7 @@
       {
             "id": 369,
             "artist": "天才凡人",
-            "name": "天才凡人",
+            "name": "天才凡人 ONEMAN LIVE TOUR 2026『8ball』",
             "date": "2026-05-03",
             "dateLabel": "2026年5月3日(日祝)",
             "venue": "clubasia",
@@ -2101,28 +1914,6 @@
                   "lawson": null,
                   "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/1187540001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-02"
-                  }
-            ]
-      },
-      {
-            "id": 372,
-            "artist": "沢田聖子",
-            "name": "沢田聖子～年に1度のお祭りパーティー♪SHOKO FESTIVAL～Vol.2",
-            "date": "2026-05-03",
-            "dateLabel": "2026年5月3日(日祝)",
-            "venue": "SHIBUYA PLEASURE PLEASURE",
-            "prefecture": "東京都",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4479140001"
             },
             "tickets": [
                   {
@@ -2172,72 +1963,6 @@
                   {
                         "type": "一般発売",
                         "date": "2026-07-11"
-                  }
-            ]
-      },
-      {
-            "id": 375,
-            "artist": "栄mujica",
-            "name": "栄mujica",
-            "date": "2026-05-03",
-            "dateLabel": "2026年5月3日(日祝)",
-            "venue": "ライブハウス 名古屋 栄 ムジカ",
-            "prefecture": "愛知県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4504150001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-02"
-                  }
-            ]
-      },
-      {
-            "id": 376,
-            "artist": "Do As Infinity",
-            "name": "Do As Infinity",
-            "date": "2026-05-03",
-            "dateLabel": "2026年5月3日(日祝)",
-            "venue": "仙台PIT",
-            "prefecture": "宮城県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2451504",
-                  "eplus": "https://eplus.jp/sf/detail/0117280001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-02"
-                  }
-            ]
-      },
-      {
-            "id": 377,
-            "artist": "ナナクロニクル",
-            "name": "ナナクロニクル 3rd Anniversary Live",
-            "date": "2026-05-03",
-            "dateLabel": "2026年5月3日(日祝)",
-            "venue": "1000 CLUB",
-            "prefecture": "神奈川県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/3884970001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-02"
                   }
             ]
       },
@@ -2380,7 +2105,7 @@
       {
             "id": 388,
             "artist": "THE BINARY",
-            "name": "THE BINARY",
+            "name": "THE BINARY 7th Anniversary One-Man Live NAUTICA",
             "date": "2026-05-04",
             "dateLabel": "2026年5月4日(月祝)",
             "venue": "GRIT at Shibuya",
@@ -2829,28 +2554,6 @@
             ]
       },
       {
-            "id": 396,
-            "artist": "新妻聖子",
-            "name": "新妻聖子",
-            "date": "2026-05-06",
-            "dateLabel": "2026年5月6日(水)",
-            "venue": "軽井沢大賀ホール",
-            "prefecture": "長野県",
-            "genre": "jpop",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": "https://eplus.jp/sf/detail/4466190001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-02"
-                  }
-            ]
-      },
-      {
             "id": 397,
             "artist": "SHINJUKU LOFT",
             "name": "SHINJUKU LOFT",
@@ -3057,7 +2760,7 @@
             "artist": "栄ミナミ音楽祭",
             "name": "栄ミナミ音楽祭 '26 プレサーキットイベント",
             "date": "2026-05-07",
-            "dateLabel": "2026年5月1日(金)〜7日(木)",
+            "dateLabel": "2026年4月28日〜5月7日",
             "venue": "名古屋SPADE BOX & HeartLand",
             "prefecture": "愛知県",
             "genre": "jpop",
@@ -3137,39 +2840,24 @@
       {
             "id": 334,
             "artist": "小沢健二",
-            "name": "小沢健二",
-            "date": "2026-05-08",
-            "dateLabel": "2026年5月1日(金)〜8日(金)",
+            "name": "小沢健二『月と街のAidade』",
+            "date": "2026-05-18",
+            "dateLabel": "2026年4月26日〜5月18日",
             "venue": "全国ツアー",
             "prefecture": null,
             "genre": "jpop",
             "price": null,
             "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2208922",
+                  "lawson": "https://l-tike.com/concert/ozkn/",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/0370630001",
                   "amazon": "https://amzn.to/423xrqJ"
             },
             "tickets": [
                   {
-                        "type": "一般発売（大阪）",
-                        "date": "2026-04-23"
-                  },
-                  {
-                        "type": "一般発売（福岡）",
-                        "date": "2026-04-30"
-                  },
-                  {
-                        "type": "一般発売（広島）",
-                        "date": "2026-05-01"
-                  },
-                  {
-                        "type": "一般発売（愛知）",
-                        "date": "2026-05-03"
-                  },
-                  {
-                        "type": "一般発売（京都）",
-                        "date": "2026-05-05"
+                        "type": "一般発売",
+                        "startDate": "2026-02-28",
+                        "date": "2026-05-13"
                   }
             ]
       },
@@ -3310,16 +2998,16 @@
       {
             "id": 328,
             "artist": "杉山清貴",
-            "name": "杉山清貴",
-            "date": "2026-05-09",
-            "dateLabel": "2026年5月1日(金)〜9日(土)",
+            "name": "杉山清貴 acoustic solo tour 2026",
+            "date": "2026-05-10",
+            "dateLabel": "2026年4月28日〜5月10日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": null,
             "genre": "jpop",
             "price": null,
             "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2346012",
+                  "lawson": "https://l-tike.com/concert/mevent/?mid=281670",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/0005930001",
                   "amazon": "https://amzn.to/4c0oyEq"
             },
@@ -3349,9 +3037,9 @@
       {
             "id": 329,
             "artist": "SHINJIRO ATAE",
-            "name": "SHINJIRO ATAE",
-            "date": "2026-05-09",
-            "dateLabel": "2026年5月1日(金)〜9日(土)",
+            "name": "SHINJIRO ATAE LIVE TOUR 2026 - THIS IS HOW I AM -",
+            "date": "2026-05-17",
+            "dateLabel": "2026年4月26日〜5月17日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": null,
             "genre": "jpop",
@@ -3363,6 +3051,10 @@
                   "amazon": "https://amzn.to/4cAcuKb"
             },
             "tickets": [
+                  {
+                        "type": "一般発売（愛知）",
+                        "date": "2026-04-25"
+                  },
                   {
                         "type": "一般発売（大阪）",
                         "date": "2026-04-30"
@@ -3380,7 +3072,7 @@
       {
             "id": 335,
             "artist": "吉澤嘉代子",
-            "name": "吉澤嘉代子",
+            "name": "吉澤嘉代子ホールツアー2026「幽霊家族 Ghost Family Tour」",
             "date": "2026-05-09",
             "dateLabel": "2026年5月1日(金)〜9日(土)",
             "venue": "全国ツアー",
@@ -3389,7 +3081,7 @@
             "price": null,
             "links": {
                   "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2347532",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/1024430001",
                   "amazon": "https://amzn.to/4c2akTp"
             },
@@ -3407,13 +3099,13 @@
       {
             "id": 336,
             "artist": "GOOFY",
-            "name": "GOOFY～マヌケな2人の間で～",
-            "date": "2026-05-09",
-            "dateLabel": "2026年5月1日(金)〜9日(土)",
-            "venue": "横浜赤レンガ倉庫1号館 3Fホール",
-            "prefecture": "神奈川県",
-            "genre": "jpop",
-            "price": null,
+            "name": "舞台『GOOFY〜マヌケな2人の間で〜』",
+            "date": "2026-05-10",
+            "dateLabel": "2026年4月25日〜5月10日",
+            "venue": "全国ツアー（横浜・京都）",
+            "prefecture": null,
+            "genre": "engeki",
+            "price": "4,500円〜9,500円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -3702,7 +3394,7 @@
       {
             "id": 422,
             "artist": "ベリーグッドマン",
-            "name": "ベリーグッドマン",
+            "name": "メジャーデビュー10周年記念 ベリーグッドマン \"Party Monster\" TOUR 2026 〜応援歌もやるよ〜",
             "date": "2026-05-09",
             "dateLabel": "2026年5月9日(土)",
             "venue": "東大阪市文化創造館",
@@ -3711,13 +3403,14 @@
             "price": null,
             "links": {
                   "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2454256",
+                  "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/1461080001"
             },
             "tickets": [
                   {
-                        "type": "一般発売",
-                        "date": "2026-04-28"
+                        "type": "一般発売 SOLD OUT",
+                        "date": "2026-04-28",
+                        "soldout": true
                   }
             ]
       },
@@ -3886,15 +3579,15 @@
             "artist": "VOICARION",
             "name": "VOICARION 10周年記念公演",
             "date": "2026-05-10",
-            "dateLabel": "2026年4月4日〜5月10日",
+            "dateLabel": "2026年2月14日〜5月10日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "engeki",
-            "price": "全席指定 12,500円",
+            "price": null,
             "links": {
-                  "lawson": null,
+                  "lawson": "https://l-tike.com/play/mevent/?mid=339604",
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564587",
-                  "eplus": "https://eplus.jp/sf/detail/1868800009"
+                  "eplus": null
             },
             "tickets": [
                   {
@@ -4324,7 +4017,7 @@
       {
             "id": 434,
             "artist": "THE FRANK VOX",
-            "name": "THE FRANK VOX",
+            "name": "FRANK FES 2026 〜あつまれ音楽野郎！100年先まで歌おうぜ！〜",
             "date": "2026-05-10",
             "dateLabel": "2026年5月10日(日)",
             "venue": "ESAKA MUSE",
@@ -4339,7 +4032,7 @@
             "tickets": [
                   {
                         "type": "一般発売",
-                        "date": "2026-05-02"
+                        "date": "2026-05-07"
                   }
             ]
       },
@@ -4687,8 +4380,8 @@
             "id": 151,
             "artist": "舞台『小さな神たちの祭り』",
             "name": "舞台『小さな神たちの祭り』全国ツアー",
-            "date": "2026-05-15",
-            "dateLabel": "2026年3月30日〜5月15日",
+            "date": "2026-05-22",
+            "dateLabel": "2026年3月30日〜5月22日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "engeki",
@@ -4800,8 +4493,8 @@
             "id": 156,
             "artist": "UNDERTALE 10th Anniversary Concert FINALE",
             "name": "UNDERTALE 10th Anniversary Concert FINALE",
-            "date": "2026-05-16",
-            "dateLabel": "2026年5月2日〜5月16日",
+            "date": "2026-05-29",
+            "dateLabel": "2026年5月2日〜5月29日",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "anime",
@@ -4813,12 +4506,9 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売（山形）販売終了",
-                        "date": "2026-04-23"
-                  },
-                  {
-                        "type": "プレリザーブ（石川）",
-                        "date": "2026-05-16"
+                        "type": "一般発売",
+                        "startDate": "2026-03-15",
+                        "date": "2026-05-28"
                   }
             ]
       },
@@ -6058,8 +5748,8 @@
             "id": 590,
             "artist": "ラブライブ! 蓮ノ空女学院スクールアイドルクラブ",
             "name": "6th Live Dream 〜Bloom Garden Party〜",
-            "date": "2026-05-31",
-            "dateLabel": "2026年5月2日〜31日",
+            "date": "2026-07-12",
+            "dateLabel": "2026年5月2日〜7月12日",
             "venue": "全国ツアー",
             "prefecture": null,
             "genre": "anime",
@@ -6225,7 +5915,7 @@
             "venue": "幕張メッセ 国際展示場ホール1・2",
             "prefecture": "千葉県",
             "genre": "anime",
-            "price": "入場券 2,500円",
+            "price": "2,500円",
             "links": {
                   "lawson": "https://l-tike.com/event/mevent/?mid=777613",
                   "pia": null,
@@ -6236,7 +5926,8 @@
             "tickets": [
                   {
                         "type": "一般発売",
-                        "date": "2026-04-25"
+                        "startDate": "2026-04-25",
+                        "date": "2026-05-29"
                   }
             ]
       },
@@ -6248,8 +5939,8 @@
             "dateLabel": "2026年5月21日(木)〜31日(日)",
             "venue": "こくみん共済 coop ホール/スペース・ゼロ",
             "prefecture": "東京都",
-            "genre": "anime",
-            "price": "全席指定 9,800円",
+            "genre": "engeki",
+            "price": "9,800円",
             "links": {
                   "lawson": "https://l-tike.com/nanji-stage/",
                   "pia": null,
@@ -6260,7 +5951,8 @@
             "tickets": [
                   {
                         "type": "一般発売",
-                        "date": "2026-04-25"
+                        "startDate": "2026-04-25",
+                        "date": "2026-05-30"
                   }
             ]
       },
@@ -6822,9 +6514,9 @@
             "date": "2026-06-14",
             "dateLabel": "2026年6月6日・7日（大阪）、13日・14日（東京）",
             "venue": "京セラドーム大阪／東京ドーム",
-            "prefecture": "",
+            "prefecture": null,
             "genre": "kpop",
-            "price": "全席指定14,000円",
+            "price": "14,000円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -6835,145 +6527,13 @@
             "tickets": [
                   {
                         "type": "いち早プレリザーブ先行",
+                        "startDate": "2026-04-15",
                         "date": "2026-04-24"
-                  }
-            ]
-      },
-      {
-            "id": 964,
-            "artist": "izna",
-            "name": "izna 1ST FANMEETING IN JAPAN",
-            "date": "2026-06-14",
-            "dateLabel": "2026年6月14日(日)",
-            "venue": "東京ガーデンシアター",
-            "prefecture": "東京都",
-            "genre": "kpop",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": "https://l-tike.com/concert/",
-                  "pia": "https://t.pia.jp/",
-                  "eplus": "https://eplus.jp/sf/live/k-pop-asian",
-                  "rakuten": null
-            },
-            "tickets": [
+                  },
                   {
-                        "type": "FC先行",
-                        "date": "2026-06-14"
-                  }
-            ]
-      },
-      {
-            "id": 979,
-            "artist": "NMIXX",
-            "name": "NMIXX 1ST JAPAN TOUR 2026",
-            "date": "2026-06-14",
-            "dateLabel": "2026年6月13日(土)・14日(日)",
-            "venue": "幕張メッセイベントホール",
-            "prefecture": "千葉県",
-            "genre": "kpop",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": "https://l-tike.com/concert/",
-                  "pia": "https://t.pia.jp/",
-                  "eplus": "https://eplus.jp/sf/live/k-pop-asian",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "FC先行",
-                        "date": "2026-06-14"
-                  }
-            ]
-      },
-      {
-            "id": 1006,
-            "artist": "BEYOOOOONDS",
-            "name": "BEYOOOOONDS コンサートツアー2026春",
-            "date": "2026-06-14",
-            "dateLabel": "2026年4月〜6月 全国ツアー",
-            "venue": "全国ツアー",
-            "prefecture": "全国",
-            "genre": "idol",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": "https://l-tike.com/concert/",
-                  "pia": "https://t.pia.jp/",
-                  "eplus": "https://eplus.jp/sf/live/idol",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "FC先行",
-                        "date": "2026-06-14"
-                  }
-            ]
-      },
-      {
-            "id": 1053,
-            "artist": "BTOB",
-            "name": "BTOB TIME IN JAPAN 2026",
-            "date": "2026-06-14",
-            "dateLabel": "2026年6月13日(土)・14日(日)",
-            "venue": "横浜アリーナ",
-            "prefecture": "神奈川県",
-            "genre": "kpop",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": "https://l-tike.com/concert/",
-                  "pia": "https://t.pia.jp/",
-                  "eplus": "https://eplus.jp/sf/live/k-pop-asian",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "FC先行",
-                        "date": "2026-06-14"
-                  }
-            ]
-      },
-      {
-            "id": 1186,
-            "artist": "NODA・MAP",
-            "name": "NODA・MAP 第28回公演『華氏マイナス320°』北九州公演",
-            "date": "2026-06-14",
-            "dateLabel": "2026年6月6日〜6月14日",
-            "venue": "北九州芸術劇場",
-            "prefecture": "福岡県",
-            "genre": "engeki",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": "https://l-tike.com/play/mevent/?mid=771896",
-                  "pia": null,
-                  "eplus": null,
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売中",
-                        "date": "2026-06-14"
-                  }
-            ]
-      },
-      {
-            "id": 1232,
-            "artist": "東宝",
-            "name": "ミュージカル『Under The Mushroom Shade』",
-            "date": "2026-06-14",
-            "dateLabel": "2026年6月5日〜6月14日",
-            "venue": "東京",
-            "prefecture": "東京都",
-            "genre": "engeki",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667155",
-                  "eplus": null,
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売予定",
-                        "date": "2026-06-14"
+                        "type": "アップグレード抽選",
+                        "startDate": "2026-04-20",
+                        "date": "2026-04-30"
                   }
             ]
       },
@@ -6986,7 +6546,7 @@
             "venue": "名古屋PARCO 南館10F EVENT SPACE",
             "prefecture": "愛知県",
             "genre": "anime",
-            "price": "料金要確認",
+            "price": "¥2,000",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -6997,30 +6557,8 @@
             "tickets": [
                   {
                         "type": "一般発売",
-                        "date": "2026-06-14"
-                  }
-            ]
-      },
-      {
-            "id": 1550,
-            "artist": "鈴木愛奈",
-            "name": "鈴木愛奈 LIVE TOUR 2026",
-            "date": "2026-06-14",
-            "dateLabel": "2026年5月〜6月",
-            "venue": "全国ツアー",
-            "prefecture": "全国",
-            "genre": "anime",
-            "price": "料金要確認",
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/",
-                  "eplus": "https://eplus.jp/sf/live/voiceactor-live",
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-05-01"
+                        "startDate": "2026-03-14",
+                        "date": "2026-05-22"
                   }
             ]
       },
@@ -7478,16 +7016,17 @@
             "id": 283,
             "artist": "ウルトラヒーローズ",
             "name": "ウルトラヒーローズ THE LIVE 全国ツアー",
-            "date": "2026-06-27",
-            "dateLabel": "2026年5月5日〜6月27日 全国ツアー",
+            "date": "2026-07-26",
+            "dateLabel": "2026年1月18日〜7月26日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "kids",
             "price": null,
             "links": {
                   "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2607670",
-                  "eplus": "https://eplus.jp/sf/detail/4394090002"
+                  "pia": null,
+                  "eplus": null,
+                  "official": "https://thelive.m-78.jp/ultraheros/stage/"
             },
             "tickets": [
                   {
@@ -8537,13 +8076,13 @@
       {
             "id": 143,
             "artist": "『罠』",
-            "name": "『罠』",
+            "name": "舞台『罠』",
             "date": "2026-07-09",
             "dateLabel": "2026年6月6日〜7月9日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "engeki",
-            "price": "全席指定 12,500円",
+            "price": "10,000円〜12,500円",
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666746",
@@ -8551,12 +8090,9 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売（大阪）発売開始",
-                        "date": "2026-04-25"
-                  },
-                  {
                         "type": "一般発売",
-                        "date": "2026-07-09"
+                        "startDate": "2026-04-25",
+                        "date": "2026-07-08"
                   }
             ]
       },
@@ -9679,15 +9215,15 @@
       {
             "id": 51,
             "artist": "ゆず",
-            "name": "ゆず",
-            "date": "2026-07-24",
-            "dateLabel": "2026年5月4日〜7月24日 全国ツアー",
+            "name": "ゆず 弾き語りアリーナツアー 2026 心音",
+            "date": "2026-07-26",
+            "dateLabel": "2026年5月4日〜7月26日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "jpop",
-            "price": "指定席 11,000円〜",
+            "price": null,
             "links": {
-                  "lawson": null,
+                  "lawson": "https://l-tike.com/concert/mevent/?mid=328766",
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564019",
                   "eplus": "https://eplus.jp/sf/detail/0009860001",
                   "amazon": "https://amzn.to/4v6fwxb"
@@ -10398,66 +9934,6 @@
             ]
       },
       {
-            "id": 616,
-            "artist": "俺だけレベルアップな件 展",
-            "name": "俺だけレベルアップな件 展",
-            "date": "2026-07-31",
-            "dateLabel": "2026年7月開催（日程未発表）",
-            "venue": "東急プラザ渋谷 4階 特設スペース",
-            "prefecture": "東京都",
-            "genre": "anime",
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": null,
-                  "rakuten": null
-            },
-            "tickets": [
-                  {
-                        "type": "先行販売 4月開始予定",
-                        "date": "2026-04-30"
-                  },
-                  {
-                        "type": "一般販売 5月開始予定",
-                        "date": "2026-05-31"
-                  }
-            ]
-      },
-      {
-            "id": 184,
-            "artist": "美少女戦士セーラームーン",
-            "name": "美少女戦士セーラームーン -Shining Theater Shinagawa Tokyo-",
-            "date": "2026-07-31",
-            "dateLabel": "2026年4月4日〜7月31日",
-            "venue": "品川プリンスホテル クラブeX",
-            "prefecture": "東京都",
-            "genre": "2.5ji",
-            "price": "18,000円",
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665666",
-                  "eplus": "https://eplus.jp/sf/detail/4476980001"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-04-27"
-                  },
-                  {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-05-28"
-                  },
-                  {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-06-27"
-                  },
-                  {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-07-28"
-                  }
-            ]
-      },
-      {
             "id": 311,
             "artist": "美少女戦士セーラームーン",
             "name": "美少女戦士セーラームーン -Shining Theater Shinagawa Tokyo-",
@@ -10474,72 +9950,9 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売（4/20〜26）",
-                        "date": "2026-04-23"
-                  },
-                  {
-                        "type": "一般発売（4/27〜30）",
-                        "date": "2026-04-27"
-                  },
-                  {
-                        "type": "一般発売（5/1〜3）",
-                        "date": "2026-04-30"
-                  },
-                  {
-                        "type": "一般発売（5/4〜10）",
-                        "date": "2026-05-07"
-                  },
-                  {
-                        "type": "一般発売（5/11〜17）",
-                        "date": "2026-05-14"
-                  },
-                  {
-                        "type": "一般発売（5/18〜24）",
-                        "date": "2026-05-21"
-                  },
-                  {
-                        "type": "一般発売（5/25〜31）",
-                        "date": "2026-05-28"
-                  },
-                  {
-                        "type": "一般発売（6/1〜7）",
-                        "date": "2026-06-04"
-                  },
-                  {
-                        "type": "一般発売（6/8〜14）",
-                        "date": "2026-06-11"
-                  },
-                  {
-                        "type": "一般発売（6/15〜21）",
-                        "date": "2026-06-18"
-                  },
-                  {
-                        "type": "一般発売（6/22〜28）",
-                        "date": "2026-06-25"
-                  },
-                  {
-                        "type": "一般発売（6/29〜30）",
-                        "date": "2026-06-27"
-                  },
-                  {
-                        "type": "一般発売（7/2〜5）",
-                        "date": "2026-07-02"
-                  },
-                  {
-                        "type": "一般発売（7/6〜12）",
-                        "date": "2026-07-09"
-                  },
-                  {
-                        "type": "一般発売（7/13〜19）",
-                        "date": "2026-07-16"
-                  },
-                  {
-                        "type": "一般発売（7/20〜26）",
-                        "date": "2026-07-23"
-                  },
-                  {
-                        "type": "一般発売（7/27〜31）",
-                        "date": "2026-07-28"
+                        "type": "一般発売",
+                        "startDate": "2026-02-08",
+                        "date": "2026-07-31"
                   }
             ]
       },
@@ -11460,7 +10873,7 @@
             "venue": "滋賀県営大津港沖水面一帯",
             "prefecture": "滋賀県",
             "genre": "hanabi",
-            "price": "マヂか！シート100,000円／エグゼクティブ27,000円／カップル席24,000円／プレミアS席11,000円ほか",
+            "price": "マヂか！シート112,000円（ペア）／エグゼクティブ29,000円／カップル席28,000円（ペア）／プレミアS席12,500円ほか",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -11492,40 +10905,44 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売（香川）販売終了",
-                        "date": "2026-04-22"
+                        "type": "一般発売（金沢）",
+                        "date": "2026-04-28"
                   },
                   {
-                        "type": "一般発売（北海道）販売終了",
-                        "date": "2026-04-29"
+                        "type": "一般発売（高松）",
+                        "date": "2026-04-30"
                   },
                   {
-                        "type": "一般発売（奈良）販売終了",
+                        "type": "一般発売（北海道）",
                         "date": "2026-05-07"
                   },
                   {
-                        "type": "一般発売（新潟）販売終了",
-                        "date": "2026-05-14"
+                        "type": "一般発売（奈良）",
+                        "date": "2026-05-16"
                   },
                   {
-                        "type": "一般発売（福岡）販売終了",
-                        "date": "2026-05-20"
+                        "type": "一般発売（新潟）",
+                        "date": "2026-05-22"
                   },
                   {
-                        "type": "一般発売（長崎）販売終了",
-                        "date": "2026-05-21"
+                        "type": "一般発売（福岡）",
+                        "date": "2026-05-28"
                   },
                   {
-                        "type": "一般発売（大阪）販売終了",
-                        "date": "2026-07-22"
+                        "type": "一般発売（長崎）",
+                        "date": "2026-05-29"
                   },
                   {
-                        "type": "一般発売（愛知）販売終了",
-                        "date": "2026-07-23"
+                        "type": "一般発売（大阪）",
+                        "date": "2026-07-30"
                   },
                   {
-                        "type": "一般発売（東京）販売終了",
-                        "date": "2026-07-29"
+                        "type": "一般発売（愛知）",
+                        "date": "2026-08-01"
+                  },
+                  {
+                        "type": "一般発売（東京ファイナル）",
+                        "date": "2026-08-06"
                   }
             ]
       },
@@ -12026,7 +11443,7 @@
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "engeki",
-            "price": "全席指定 5,500円",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666699",
@@ -12034,8 +11451,9 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売 発売開始",
-                        "date": "2026-04-25"
+                        "type": "一般発売",
+                        "startDate": "2026-04-25",
+                        "date": "2026-08-14"
                   }
             ]
       },
@@ -12410,9 +11828,9 @@
       {
             "id": 10,
             "artist": "アンジェラ・アキ",
-            "name": "アンジェラ・アキ LIVE 2026",
-            "date": "2026-08-21",
-            "dateLabel": "2026年5月17日(日)〜8月21日(金) 全国ツアー",
+            "name": "Angela Aki Tour 2026 SHADOW WORK",
+            "date": "2026-08-23",
+            "dateLabel": "2026年5月15日〜8月23日 全国ツアー",
             "venue": "全国ツアー",
             "prefecture": "全国",
             "genre": "jpop",
@@ -13506,7 +12924,7 @@
             "venue": "全国ツアー",
             "prefecture": null,
             "genre": "jpop",
-            "price": null,
+            "price": "13,500円",
             "links": {
                   "lawson": "https://l-tike.com/concert/mevent/?mid=400990",
                   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564366",
@@ -16769,7 +16187,7 @@
             "artist": "劇団四季",
             "name": "劇団四季『バック・トゥ・ザ・フューチャー』東京公演",
             "date": "2027-03-31",
-            "dateLabel": "2026年4月1日〜2027年3月31日",
+            "dateLabel": "2025年4月6日開幕〜2027年3月31日千秋楽",
             "venue": "JR東日本四季劇場[秋]",
             "prefecture": "東京都",
             "genre": "engeki",
@@ -16804,31 +16222,9 @@
             },
             "tickets": [
                   {
-                        "type": "一般販売",
-                        "date": "2026-04-26"
-                  }
-            ]
-      },
-      {
-            "id": 1760,
-            "artist": "吉川友",
-            "name": "吉川友 LIVE 2026 生誕きっか",
-            "date": "2026-04-29",
-            "dateLabel": "2026年4月29日(水・祝)",
-            "venue": "KIWA TENNOZ",
-            "prefecture": "東京都",
-            "genre": "idol",
-            "price": null,
-            "links": {
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": null,
-                  "rakuten": "https://ticket.rakuten.co.jp/music/rtyu429/"
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "date": "2026-04-29"
+                        "type": "一般販売 販売終了",
+                        "date": "2026-04-26",
+                        "soldout": true
                   }
             ]
       },
@@ -16930,10 +16326,10 @@
             "name": "東京バレエ団 ブルメイステル版「白鳥の湖」全4幕",
             "date": "2026-09-21",
             "dateLabel": "2026年9月9日〜21日",
-            "venue": "新国立劇場オペラパレス／兵庫県立芸術文化センター／フェニーチェ堺",
+            "venue": "新国立劇場オペラパレス／兵庫県立芸術文化センター／ロームシアター京都／フェニーチェ堺",
             "prefecture": "全国",
             "genre": "classic",
-            "price": null,
+            "price": "6,000円〜17,000円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -16944,6 +16340,11 @@
                   {
                         "type": "最速先行",
                         "date": "2026-04-26"
+                  },
+                  {
+                        "type": "一般発売",
+                        "startDate": "2026-04-28",
+                        "date": "2026-09-20"
                   }
             ]
       },
@@ -16958,15 +16359,15 @@
             "genre": "fes",
             "price": null,
             "links": {
-                  "lawson": "https://l-tike.com/event/mevent/?mid=683511",
+                  "lawson": null,
                   "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/0717790030",
                   "rakuten": null
             },
             "tickets": [
                   {
-                        "type": "一般販売中",
-                        "date": "2026-04-26"
+                        "type": "一般発売",
+                        "date": "2026-04-24"
                   }
             ]
       },
@@ -16979,7 +16380,7 @@
             "venue": "シアターサンモール",
             "prefecture": "東京都",
             "genre": "2.5ji",
-            "price": null,
+            "price": "9,800円〜22,000円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -16990,6 +16391,11 @@
                   {
                         "type": "プレオーダー",
                         "date": "2026-04-26"
+                  },
+                  {
+                        "type": "一般発売",
+                        "startDate": "2026-05-30",
+                        "date": "2026-07-11"
                   }
             ]
       },
@@ -17025,7 +16431,7 @@
             "venue": "大分スポーツ公園",
             "prefecture": "大分県",
             "genre": "fes",
-            "price": null,
+            "price": "11,000円〜20,000円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -17034,8 +16440,19 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売",
+                        "type": "2日通し券",
+                        "startDate": "2026-02-14",
                         "date": "2026-04-24"
+                  },
+                  {
+                        "type": "単日券（4/25）",
+                        "startDate": "2026-02-14",
+                        "date": "2026-04-24"
+                  },
+                  {
+                        "type": "単日券（4/26）",
+                        "startDate": "2026-02-14",
+                        "date": "2026-04-25"
                   }
             ]
       },
@@ -17088,7 +16505,7 @@
       {
             "id": 1775,
             "artist": "梶浦由記",
-            "name": "梶浦由記 FictionJunction コンサート",
+            "name": "Yuki Kajiura LIVE vol.#22 〜precious pieces〜",
             "date": "2026-08-08",
             "dateLabel": "2026年8月8日",
             "venue": "大宮ソニックシティ 大ホール",
@@ -17370,15 +16787,16 @@
       ? `<div class="ticket-price"><span class="ticket-price-label">チケット料金</span>${ev.price}</div>`
       : "";
 
+    // ボタン順序: 楽天（最優先・アフィリ承認済）→ ぴあ → e+ → ローチケ → その他
     const linkDefs = [
-      { key: "lawson",   label: "ローソンチケット", cls: "btn-lawson",   icon: "🎫" },
+      { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
       { key: "pia",      label: "チケットぴあ",     cls: "btn-pia",      icon: "🎟" },
       { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
+      { key: "lawson",   label: "ローソンチケット", cls: "btn-lawson",   icon: "🎫" },
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
       { key: "amazon",   label: "最新CD",            cls: "btn-amazon",   icon: "🛒" },
       { key: "amazonGoods", label: "グッズAmazon",   cls: "btn-amazon",   icon: "🛒" },
       { key: "amazon2",  label: "最新CD②",          cls: "btn-amazon",   icon: "🛒" },
-      { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" },
     ];
     const HOTEL_TRIVAGO_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
@@ -17411,8 +16829,11 @@
     const genreAmazonBtn = genreAmazon
       ? `<a class="ticket-link-btn btn-amazon" href="${genreAmazon.url}" target="_blank" rel="noopener">🛍 ${genreAmazon.label}</a>`
       : '';
+    // 楽天 or ぴあが登録されていれば e+/ローチケは非表示（アフィリ優先）
+    const hasPrimaryVendor = ev.links && (ev.links.rakuten || ev.links.pia);
     const linksHTML = linkDefs
       .filter(d => ev.links && ev.links[d.key])
+      .filter(d => !(hasPrimaryVendor && (d.key === "eplus" || d.key === "lawson")))
       .map(d => `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${d.label}</a>`)
       .join("") + hotelBtn + genreAmazonBtn;
 
