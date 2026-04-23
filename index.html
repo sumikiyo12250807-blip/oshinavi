@@ -568,6 +568,24 @@
       border: 1px solid rgba(100, 200, 255, 0.3);
     }
 
+    .btn-fany {
+      background: rgba(255, 200, 50, 0.15);
+      color: #ffd860;
+      border: 1px solid rgba(255, 200, 50, 0.35);
+    }
+
+    .btn-yoshimoto {
+      background: rgba(255, 150, 30, 0.15);
+      color: #ffb347;
+      border: 1px solid rgba(255, 150, 30, 0.35);
+    }
+
+    .btn-tvasahi {
+      background: rgba(220, 60, 80, 0.15);
+      color: #ff7a8c;
+      border: 1px solid rgba(220, 60, 80, 0.35);
+    }
+
     /* ── 空状態 ── */
     .empty-state {
       text-align: center;
@@ -793,28 +811,6 @@
   // ────────────────────────────────────────────────
   const EVENTS = [
       {
-            "id": 167,
-            "artist": "大相撲",
-            "name": "令和八年春巡業 大相撲さいたま場所",
-            "date": "2026-04-24",
-            "dateLabel": "2026年4月24日(金)",
-            "venue": "サイデン化学アリーナさいたま",
-            "prefecture": "埼玉県",
-            "genre": "sports",
-            "price": "2階席 6,000円〜",
-            "links": {
-                  "lawson": null,
-                  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664742",
-                  "eplus": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売 販売終了",
-                        "date": "2026-04-23"
-                  }
-            ]
-      },
-      {
             "id": 1238,
             "artist": "conSept",
             "name": "conSept『シルヴィア、生きる』",
@@ -967,6 +963,7 @@
             "tickets": [
                   {
                         "type": "一般発売",
+                        "startDate": "2026-03-26",
                         "date": "2026-04-26"
                   }
             ]
@@ -1109,7 +1106,7 @@
             "tickets": [
                   {
                         "type": "一般発売",
-                        "startDate": "2026-01-24",
+                        "startDate": "2026-01-10",
                         "date": "2026-04-25"
                   }
             ]
@@ -1529,13 +1526,12 @@
             "venue": "Billboard Live YOKOHAMA",
             "prefecture": "神奈川県",
             "genre": "jpop",
-            "price": "5,900円〜16,100円",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": null,
-                  "eplus": null,
+                  "eplus": "https://eplus.jp/sf/detail/4133480002",
                   "rakuten": null,
-                  "official": "https://www.billboard-live.com/yokohama/show?event_id=ev-13654",
                   "amazon": "https://amzn.to/4sq0zn6"
             },
             "tickets": [
@@ -1555,13 +1551,12 @@
             "venue": "Billboard Live OSAKA",
             "prefecture": "大阪府",
             "genre": "jpop",
-            "price": "8,500円〜21,300円",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": null,
                   "eplus": "https://eplus.jp/sf/detail/4462620002",
                   "rakuten": null,
-                  "official": "https://www.billboard-live.com/osaka/show?event_id=ev-14821",
                   "amazon": "https://amzn.to/4vn5Oq2",
                   "amazon2": "https://amzn.to/48xAzyL"
             },
@@ -5762,6 +5757,7 @@
             "tickets": [
                   {
                         "type": "2次抽選（神戸・横浜）",
+                        "startDate": "2026-04-11",
                         "date": "2026-04-26"
                   }
             ]
@@ -6238,13 +6234,13 @@
       {
             "id": 1486,
             "artist": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-            "name": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 8th Live! TOKIMEKI Express 大阪公演",
-            "date": "2026-06-07",
-            "dateLabel": "2026年6月6日(土)・7日(日)",
-            "venue": "大阪城ホール",
-            "prefecture": "大阪府",
+            "name": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 8th Live! TOKIMEKI Express",
+            "date": "2026-06-14",
+            "dateLabel": "2026年6月6日〜14日 全国ツアー",
+            "venue": "全国ツアー",
+            "prefecture": null,
             "genre": "anime",
-            "price": "料金要確認",
+            "price": null,
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -6254,8 +6250,14 @@
             },
             "tickets": [
                   {
-                        "type": "一般発売前抽選",
+                        "type": "大阪公演 2次抽選",
+                        "startDate": "2026-04-18",
                         "date": "2026-05-17"
+                  },
+                  {
+                        "type": "東京公演 1次抽選",
+                        "startDate": "2026-04-25",
+                        "date": "2026-05-10"
                   }
             ]
       },
@@ -13719,6 +13721,109 @@
             ]
       },
       {
+            "id": 1791,
+            "artist": "リスアニ!LIVE",
+            "name": "リスアニ!LIVE on TOKYO ANIME MUSIC HIGHLIGHTS",
+            "date": "2026-06-09",
+            "dateLabel": "2026年6月9日(火)",
+            "venue": "TOYOTA ARENA TOKYO",
+            "prefecture": "東京都",
+            "genre": "anime",
+            "price": "11,000円",
+            "links": {
+                  "lawson": null,
+                  "pia": null,
+                  "eplus": "https://eplus.jp/sf/detail/4510210001",
+                  "rakuten": null
+            },
+            "tickets": [
+                  {
+                        "type": "2次先行",
+                        "startDate": "2026-04-24",
+                        "date": "2026-05-10"
+                  }
+            ]
+      },
+      {
+            "id": 1792,
+            "artist": "ブラックスター -Theater Starless-",
+            "name": "BLACK ONE-MAN Painted P",
+            "date": "2026-06-26",
+            "dateLabel": "2026年6月26日(金)",
+            "venue": "渋谷ストリームホール",
+            "prefecture": "東京都",
+            "genre": "anime",
+            "price": null,
+            "links": {
+                  "lawson": null,
+                  "pia": null,
+                  "eplus": "https://eplus.jp/sf/detail/4206130007",
+                  "rakuten": null
+            },
+            "tickets": [
+                  {
+                        "type": "一般抽選",
+                        "startDate": "2026-04-23",
+                        "date": "2026-05-10"
+                  }
+            ]
+      },
+      {
+            "id": 1793,
+            "artist": "アメトーーク！",
+            "name": "アメトーーク！初アリーナLIVE 来ないなんてありえなーーい2026",
+            "date": "2026-05-05",
+            "dateLabel": "2026年5月5日(火・祝)",
+            "venue": "TOYOTA ARENA TOKYO",
+            "prefecture": "東京都",
+            "genre": "owarai",
+            "price": null,
+            "links": {
+                  "lawson": null,
+                  "pia": null,
+                  "eplus": null,
+                  "rakuten": null,
+                  "fany": "https://ticket.fany.lol/event/detail/12410",
+                  "yoshimoto": "https://online-ticket.yoshimoto.co.jp/products/ametalk-live2026_ol"
+            },
+            "tickets": [
+                  {
+                        "type": "現地公演 一般販売 販売終了",
+                        "date": "2026-04-08",
+                        "soldout": true
+                  },
+                  {
+                        "type": "配信",
+                        "date": "2026-05-05"
+                  }
+            ]
+      },
+      {
+            "id": 1794,
+            "artist": "50TA",
+            "name": "50TA たぶん2026年 最初で最後のアリーナライブ",
+            "date": "2026-05-06",
+            "dateLabel": "2026年5月6日(水・祝)",
+            "venue": "TOYOTA ARENA TOKYO",
+            "prefecture": "東京都",
+            "genre": "owarai",
+            "price": "10,000円〜20,000円",
+            "links": {
+                  "lawson": null,
+                  "pia": null,
+                  "eplus": null,
+                  "rakuten": null,
+                  "tvasahi": "https://ticket.tv-asahi.co.jp/ex/project/londonhearts50ta_26"
+            },
+            "tickets": [
+                  {
+                        "type": "一般発売(先着)",
+                        "startDate": "2026-03-21",
+                        "date": "2026-05-06"
+                  }
+            ]
+      },
+      {
             "id": 607,
             "artist": "俺だけレベルアップな件 展",
             "name": "俺だけレベルアップな件 展",
@@ -16213,7 +16318,7 @@
             "venue": "白金高輪 SELENE b2",
             "prefecture": "東京都",
             "genre": "idol",
-            "price": null,
+            "price": "前売 4,500円 / 当日 5,000円",
             "links": {
                   "lawson": null,
                   "pia": null,
@@ -16223,6 +16328,7 @@
             "tickets": [
                   {
                         "type": "一般販売 販売終了",
+                        "startDate": "2026-04-04",
                         "date": "2026-04-26",
                         "soldout": true
                   }
@@ -16793,6 +16899,9 @@
       { key: "pia",      label: "チケットぴあ",     cls: "btn-pia",      icon: "🎟" },
       { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
       { key: "lawson",   label: "ローソンチケット", cls: "btn-lawson",   icon: "🎫" },
+      { key: "fany",     label: "FANYチケット",     cls: "btn-fany",     icon: "🎤" },
+      { key: "yoshimoto",label: "吉本オンライン",   cls: "btn-yoshimoto",icon: "📺" },
+      { key: "tvasahi",  label: "テレ朝チケット",   cls: "btn-tvasahi",  icon: "📺" },
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
       { key: "amazon",   label: "最新CD",            cls: "btn-amazon",   icon: "🛒" },
       { key: "amazonGoods", label: "グッズAmazon",   cls: "btn-amazon",   icon: "🛒" },
