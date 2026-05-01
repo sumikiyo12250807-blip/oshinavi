@@ -110,6 +110,16 @@
     }
     .menu-btn:hover { color: var(--pink); }
 
+    @media (max-width: 600px) {
+      header { padding: 0 12px; height: 56px; }
+      .logo { font-size: 14px; letter-spacing: 1px; gap: 6px; }
+      .logo img { height: 30px; width: 30px; }
+      nav { gap: 4px; }
+      nav a { display: none; }
+      .menu-btn { margin-left: 0; }
+      .search-section { margin: 16px auto; }
+    }
+
     /* ── ヒーローセクション（高解像度切り抜き 853x290 検索バー除外） ── */
     .hero {
       width: 100%;
