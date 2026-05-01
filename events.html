@@ -1,117 +1,1112 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>行楽イベント メンテナンス中 | OSHINAVI</title>
-<style>
-  :root {
-    --accent: #e040fb;
-    --accent2: #00e5ff;
-    --bg: #0a0a0a;
-    --text: #f0f0f0;
-    --text-muted: #888;
-  }
-  html, body { height: 100%; margin: 0; }
-  body {
-    font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-    background-color: var(--bg);
-    background-image:
-      linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px),
-      radial-gradient(circle at 50% 50%, rgba(0,229,255,0.15) 1.5px, transparent 2px);
-    background-size: 60px 60px;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  .card {
-    max-width: 520px;
-    width: 100%;
-    padding: 48px 32px;
-    border-radius: 16px;
-    background:
-      linear-gradient(135deg,
-        rgba(255,255,255,0.08) 0%,
-        rgba(255,255,255,0.03) 50%,
-        rgba(0,229,255,0.06) 100%);
-    border: 1px solid rgba(255,255,255,0.25);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow:
-      0 8px 32px rgba(0,0,0,0.4),
-      0 0 24px rgba(224,64,251,0.25),
-      inset 0 1px 1px rgba(255,255,255,0.3);
-    text-align: center;
-  }
-  .logo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 0.12em;
-    background: linear-gradient(90deg, #ff5252, #ffab40, #69f0ae, #00e5ff, #e040fb);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 8s linear infinite;
-    margin: 0 0 24px;
-    filter: drop-shadow(0 0 12px rgba(0,229,255,0.35));
-  }
-  @keyframes shimmer {
-    0%   { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-  }
-  h1 {
-    font-size: 1.3rem;
-    color: #fff;
-    margin: 0 0 20px;
-    line-height: 1.6;
-    letter-spacing: 0.03em;
-  }
-  p {
-    color: var(--text-muted);
-    line-height: 1.9;
-    margin: 0 0 10px;
-    font-size: 0.95rem;
-  }
-  .back-link {
-    display: inline-block;
-    margin-top: 32px;
-    padding: 10px 24px;
-    border-radius: 22px;
-    border: 1px solid rgba(0,229,255,0.5);
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    background: linear-gradient(135deg, rgba(224,64,251,0.15), rgba(0,229,255,0.15));
-    box-shadow: 0 0 14px rgba(0,229,255,0.3), inset 0 0 10px rgba(255,255,255,0.08);
-    transition: all 0.3s;
-  }
-  .back-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0,229,255,0.5), inset 0 0 12px rgba(255,255,255,0.15);
-  }
-  .note {
-    margin-top: 28px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSHINAVI - 近くのワクワク 見逃さない！</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #fff8fb;
+      --bg2: #ffffff;
+      --bg3: #fef0f4;
+      --text: #3d3d4e;
+      --text-muted: #8a8a9a;
+      --border: #f0e3ec;
+      --pink: #ff80ab;
+      --pink-light: #ffb6cf;
+      --blue: #4fc3f7;
+      --blue-light: #b3e5fc;
+      --green: #81c784;
+      --orange: #ffb74d;
+      --purple: #b39ddb;
+      --yellow: #ffe082;
+      --red: #ef5350;
+    }
+
+    body {
+      background: linear-gradient(180deg, #fff8fb 0%, #fef0f4 100%);
+      color: var(--text);
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── ヘッダー ── */
+    header {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--pink), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      -webkit-text-fill-color: initial;
+    }
+
+    nav { display: flex; gap: 6px; align-items: center; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      line-height: 1.2;
+      text-align: center;
+      position: relative;
+    }
+    nav a:hover { color: var(--text); background: var(--bg3); }
+    nav a.active {
+      color: var(--pink);
+      font-weight: 700;
+    }
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pink), var(--blue));
+      border-radius: 2px;
+    }
+    .menu-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      margin-left: 4px;
+    }
+    .menu-btn:hover { color: var(--pink); }
+
+    /* ── ヒーローセクション（高解像度切り抜き 853x290 検索バー除外） ── */
+    .hero {
+      width: 100%;
+      aspect-ratio: 853 / 290;
+      background-image: url('events_hero_only.png?v=5');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-color: #fff8fb;
+    }
+
+    /* ── 検索バー ── */
+    .search-section {
+      max-width: 720px;
+      margin: -30px auto 16px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 2px solid var(--pink-light);
+      border-radius: 30px;
+      padding: 14px 20px;
+      box-shadow: 0 6px 20px rgba(255,128,171,0.15);
+    }
+
+    .search-bar svg.search-icon { color: var(--blue); flex-shrink: 0; }
+    .search-bar svg.tune-icon { color: var(--pink); flex-shrink: 0; cursor: pointer; }
+
+    .search-bar input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .search-bar input::placeholder { color: var(--text-muted); }
+
+    /* ── フィルターチップ ── */
+    .chips {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 0 24px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      scrollbar-width: thin;
+    }
+
+    .chip {
+      flex-shrink: 0;
+      background: #fff;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .chip:hover { border-color: var(--pink-light); transform: translateY(-1px); }
+
+    .chip.active {
+      background: linear-gradient(135deg, #e1f5fe, #fce4ec);
+      border-color: var(--blue-light);
+      color: var(--blue);
+    }
+
+    .chip[data-chip="free"].active    { background: linear-gradient(135deg, #fce4ec, #fff); border-color: var(--pink); color: var(--pink); }
+    .chip[data-chip="today"].active   { background: linear-gradient(135deg, #fff8e1, #fff); border-color: var(--yellow); color: #b8860b; }
+    .chip[data-chip="weekend"].active { background: linear-gradient(135deg, #e8f5e9, #fff); border-color: var(--green); color: var(--green); }
+    .chip[data-chip="kids"].active    { background: linear-gradient(135deg, #ffe0b2, #fff); border-color: var(--orange); color: var(--orange); }
+    .chip[data-chip="rain"].active    { background: linear-gradient(135deg, #f3e5f5, #fff); border-color: var(--purple); color: var(--purple); }
+
+    /* ── メインコンテンツ ── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8px 24px 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 28px 0 16px;
+    }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .see-all {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .see-all:hover { color: var(--pink); }
+
+    .result-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .result-meta span { color: var(--text); font-weight: 700; }
+
+    /* ── ジャンルブロック ── */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) { .categories { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 600px) { .categories { grid-template-columns: repeat(3, 1fr); } }
+
+    .cat-card {
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 16px;
+      padding: 20px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255,128,171,0.18);
+    }
+
+    .cat-card.is-active {
+      border-color: currentColor;
+      box-shadow: 0 4px 16px currentColor;
+    }
+
+    .cat-icon {
+      width: 70%;
+      aspect-ratio: 1;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    .cat-icon.has-emoji {
+      background: none;
+      width: auto;
+      height: auto;
+      font-size: 36px;
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+    .cat-card[data-genre="お祭り"] .cat-icon       { background-image: url('icon_matsuri.svg'); }
+    .cat-card[data-genre="花・自然"] .cat-icon     { background-image: url('icon_hana.svg'); }
+    .cat-card[data-genre="グルメ"] .cat-icon       { background-image: url('icon_gourmet.svg'); }
+    .cat-card[data-genre="スポーツ"] .cat-icon     { background-image: url('icon_sports.svg'); }
+    .cat-card[data-genre="マーケット"] .cat-icon   { background-image: url('icon_market.svg'); }
+    .cat-card[data-genre="音楽・ステージ"] .cat-icon { background-image: url('icon_music.svg'); }
+
+    .cat-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── イベントカード（横長・縦1列） ── */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px 16px 24px;
+      transition: all 0.2s;
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+    .card[data-genre="お祭り"] .card-icon       { background-image: url('icon_matsuri.svg'); }
+    .card[data-genre="花・自然"] .card-icon     { background-image: url('icon_hana.svg'); }
+    .card[data-genre="グルメ"] .card-icon       { background-image: url('icon_gourmet.svg'); }
+    .card[data-genre="スポーツ"] .card-icon     { background-image: url('icon_sports.svg'); }
+    .card[data-genre="マーケット"] .card-icon   { background-image: url('icon_market.svg'); }
+    .card[data-genre="音楽・ステージ"] .card-icon { background-image: url('icon_music.svg'); }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--pink), var(--blue));
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,128,171,0.18);
+      border-color: var(--pink-light);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        grid-template-columns: 48px 1fr;
+        gap: 12px;
+      }
+      .card-icon { width: 48px; height: 48px; font-size: 28px; }
+      .card-actions {
+        grid-column: 1 / -1;
+        width: 100%;
+        flex-direction: row;
+      }
+      .card-actions a { flex: 1; }
+    }
+
+    .status {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      width: fit-content;
+      letter-spacing: 0.05em;
+    }
+
+    .status.countdown-near {
+      background: rgba(239,83,80,0.12);
+      color: var(--red);
+    }
+    .status.countdown-soon {
+      background: rgba(255,183,77,0.18);
+      color: #ef6c00;
+    }
+    .status.countdown-far {
+      background: rgba(79,195,247,0.15);
+      color: var(--blue);
+    }
+    .status.ongoing {
+      background: rgba(129,199,132,0.18);
+      color: #2e7d32;
+    }
+
+    .card-name {
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      color: var(--text);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    .card-genre {
+      display: inline-block;
+      padding: 2px 10px;
+      background: var(--bg3);
+      border-radius: 10px;
+      font-size: 11px;
+      color: var(--pink);
+      width: fit-content;
+      font-weight: 700;
+    }
+
+    .official-btn, .amazon-btn {
+      display: block;
+      text-align: center;
+      padding: 9px 14px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .official-btn {
+      background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+      box-shadow: 0 2px 8px rgba(255,128,171,0.25);
+    }
+    .official-btn:hover {
+      box-shadow: 0 4px 14px rgba(255,128,171,0.4);
+      transform: translateY(-1px);
+    }
+
+    .amazon-btn {
+      background: linear-gradient(135deg, #ff9900, #ffb74d);
+      box-shadow: 0 2px 8px rgba(255,153,0,0.3);
+    }
+    .amazon-btn:hover {
+      box-shadow: 0 4px 14px rgba(255,153,0,0.45);
+      transform: translateY(-1px);
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--text-muted);
+      padding: 60px 20px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <div class="card">
-    <p class="logo">OSHINAVI</p>
-    <h1>行楽イベント情報<br>ただいまメンテナンス中です</h1>
-    <p>情報の精査・整備を行っております。</p>
-    <p>ご不便をおかけしますが、<br>いましばらくお待ちください。</p>
-    <a class="back-link" href="index.html">← チケット情報へ戻る</a>
-    <p class="note">Under Maintenance</p>
+  <header>
+    <a href="index.html" class="logo"><img src="logo.png?v=5" alt="推しナビ logo">推しナビ</a>
+    <nav>
+      <a href="index.html">イベント<br>チケット</a>
+      <a href="events.html" class="active">行楽<br>イベント</a>
+      <a href="contact.html">お問い合わせ</a>
+      <button class="menu-btn" aria-label="メニュー">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <section class="hero" role="img" aria-label="近くのワクワク 見逃さない！ - 地域の季節イベント情報まとめ"></section>
+
+  <div class="search-section">
+    <div class="search-bar">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="searchInput" placeholder="イベント名・場所・キーワードで検索…">
+      <svg class="tune-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+        <circle cx="9" cy="6" r="2" fill="#fff"></circle>
+        <circle cx="15" cy="12" r="2" fill="#fff"></circle>
+        <circle cx="9" cy="18" r="2" fill="#fff"></circle>
+      </svg>
+    </div>
   </div>
+
+  <div class="chips" id="chips">
+    <button class="chip active" data-chip="all">すべて</button>
+    <button class="chip" data-chip="free">無料イベント</button>
+    <button class="chip" data-chip="today">今日開催</button>
+    <button class="chip" data-chip="weekend">週末おすすめ</button>
+    <button class="chip" data-chip="kids">キッズ</button>
+    <button class="chip" data-chip="rain">雨でもOK</button>
+    <button class="chip" data-chip="more">もっと見る</button>
+  </div>
+
+  <main>
+    <div class="section-header">
+      <h2 class="section-title">✨ ジャンルから探す</h2>
+      <a class="see-all" href="#">すべて見る ›</a>
+    </div>
+    <div class="categories" id="categories"></div>
+
+    <div class="section-header">
+      <h2 class="section-title">🔥 注目のイベント</h2>
+      <a class="see-all" href="#">もっと見る ›</a>
+    </div>
+    <div class="result-meta"><span id="resultCount">0</span> 件のイベント</div>
+    <div class="cards" id="cards"></div>
+  </main>
+
+  <script>
+    const EVENTS = [
+      {
+        id: 1,
+        name: "第42回 仙台・青葉まつり",
+        date: "2026-05-16",
+        endDate: "2026-05-17",
+        venue: "西公園・定禅寺通り・東二番丁通",
+        prefecture: "宮城県",
+        city: "仙台市",
+        genre: "お祭り",
+        link: "https://www.aoba-matsuri.com/",
+        verified: true
+      },
+      {
+        id: 2,
+        name: "梵天ばやい",
+        date: "2026-05-01",
+        endDate: "2026-05-01",
+        venue: "船形山神社",
+        prefecture: "宮城県",
+        city: "大和町",
+        genre: "お祭り",
+        link: "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=1486",
+        verified: true
+      },
+      {
+        id: 3,
+        name: "GW企画 縄文体験・体感WEEK",
+        date: "2026-05-02",
+        endDate: "2026-05-05",
+        venue: "奥松島縄文村歴史資料館",
+        prefecture: "宮城県",
+        city: "東松島市",
+        genre: "体験",
+        link: "http://www.satohama-jomon.jp/",
+        verified: true
+      },
+      {
+        id: 4,
+        name: "定義如来参道 歩行者天国",
+        date: "2026-05-03",
+        endDate: "2026-05-05",
+        venue: "定義如来西方寺 参道",
+        prefecture: "宮城県",
+        city: "仙台市青葉区",
+        genre: "お祭り",
+        link: "https://www.johgi-info.jp/information/hokoten.html",
+        verified: true
+      },
+      {
+        id: 5,
+        name: "白石市民春まつり",
+        date: "2026-05-03",
+        endDate: "2026-05-03",
+        venue: "白石駅前中心市街地・白石城",
+        prefecture: "宮城県",
+        city: "白石市",
+        genre: "お祭り",
+        link: "https://harumatsuri.jp/",
+        verified: true
+      },
+      {
+        id: 6,
+        name: "潮騒まつり",
+        date: "2026-05-03",
+        endDate: "2026-05-05",
+        venue: "神割崎キャンプ場駐車場",
+        prefecture: "宮城県",
+        city: "南三陸町",
+        genre: "お祭り",
+        link: "https://www.city.ishinomaki.lg.jp/cont/10250000/010/shiosaifes.html",
+        verified: true
+      },
+      {
+        id: 7,
+        name: "第68回全日本こけしコンクール",
+        date: "2026-05-03",
+        endDate: "2026-05-04",
+        venue: "ホワイトキューブ（白石市文化体育活動センター）",
+        prefecture: "宮城県",
+        city: "白石市",
+        genre: "展覧会",
+        link: "https://alljapan-kokeshi.com/",
+        verified: true
+      },
+      {
+        id: 8,
+        name: "母の日カーネーションフェア",
+        date: "2026-05-09",
+        endDate: "2026-05-10",
+        venue: "道の駅「村田」物産交流センター",
+        prefecture: "宮城県",
+        city: "村田町",
+        genre: "花・自然",
+        link: "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=10855",
+        verified: true
+      },
+      {
+        id: 9,
+        name: "第53回全国丸森いち",
+        date: "2026-05-09",
+        endDate: "2026-05-10",
+        venue: "丸森町役場周辺",
+        prefecture: "宮城県",
+        city: "丸森町",
+        genre: "マーケット",
+        link: "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=1485",
+        verified: true
+      },
+      {
+        id: 10,
+        name: "野草園こどもの日",
+        date: "2026-05-05",
+        endDate: "2026-05-05",
+        venue: "仙台市野草園",
+        prefecture: "宮城県",
+        city: "仙台市太白区",
+        genre: "体験",
+        link: "https://sendai-green-association.jp/event/yasouen/18760/",
+        verified: true
+      },
+      {
+        id: 11,
+        name: "第33回 かくだ宇宙っ子まつり",
+        date: "2026-04-28",
+        endDate: "2026-05-05",
+        venue: "角田市台山公園",
+        prefecture: "宮城県",
+        city: "角田市",
+        genre: "体験",
+        link: "https://www.city.kakuda.lg.jp/site/kokokakuda/987.html",
+        verified: true
+      },
+      {
+        id: 12,
+        name: "花山鉄砲まつり",
+        date: "2026-05-05",
+        endDate: "2026-05-05",
+        venue: "御嶽神社・花山ダム湖畔",
+        prefecture: "宮城県",
+        city: "栗原市花山",
+        genre: "お祭り",
+        link: "https://www.kuriharacity.jp/w055/PAGE000000000000006089.html",
+        verified: true
+      },
+      {
+        id: 13,
+        name: "金華山黄金山神社初巳大祭",
+        date: "2026-05-12",
+        endDate: "2026-05-18",
+        venue: "金華山黄金山神社",
+        prefecture: "宮城県",
+        city: "石巻市",
+        genre: "お祭り",
+        link: "https://kinkasan.jp/",
+        verified: true
+      },
+      {
+        id: 14,
+        name: "仙台国際ハーフマラソン2026",
+        date: "2026-05-10",
+        endDate: "2026-05-10",
+        venue: "弘進ゴム アスリートパーク仙台",
+        prefecture: "宮城県",
+        city: "仙台市宮城野区",
+        genre: "マラソン",
+        link: "https://www.sendaihalf.com/",
+        verified: true
+      },
+      {
+        id: 15,
+        name: "伊里前しろうおまつり",
+        date: "2026-05-10",
+        endDate: "2026-05-10",
+        venue: "南三陸ハマーレ歌津",
+        prefecture: "宮城県",
+        city: "南三陸町",
+        genre: "お祭り",
+        link: "https://www.m-kankou.jp/events/266994/",
+        verified: true
+      },
+      {
+        id: 16,
+        name: "第33回サン・ファン祭り",
+        date: "2026-05-17",
+        endDate: "2026-05-17",
+        venue: "サン・ファン館",
+        prefecture: "宮城県",
+        city: "石巻市",
+        genre: "お祭り",
+        link: "https://santjuan-matsuri.jp/",
+        verified: true
+      },
+      {
+        id: 17,
+        name: "2026 GT Challenge Asia-Japan Cup Round1&2",
+        date: "2026-05-16",
+        endDate: "2026-05-17",
+        venue: "スポーツランドSUGO インターナショナル レーシングコース",
+        prefecture: "宮城県",
+        city: "村田町",
+        genre: "スポーツ",
+        link: "https://www.sportsland-sugo.co.jp/watch/12960/",
+        verified: true
+      },
+      {
+        id: 18,
+        name: "シャクヤクまつり",
+        date: "2026-05-21",
+        endDate: "2026-05-28",
+        venue: "愛宕山公園",
+        prefecture: "宮城県",
+        city: "色麻町",
+        genre: "花・自然",
+        link: "https://www.town.shikama.miyagi.jp/soshiki/tisin/event/syakuyakumaturi/3251.html",
+        verified: true
+      },
+      {
+        id: 19,
+        name: "第36回多賀城跡あやめまつり",
+        date: "2026-05-23",
+        endDate: "2026-06-21",
+        venue: "多賀城跡あやめ園",
+        prefecture: "宮城県",
+        city: "多賀城市",
+        genre: "花・自然",
+        link: "https://www.city.tagajo.miyagi.jp/bunkakanko/shiseki/kanko/ayamematuri.html",
+        verified: true
+      },
+      {
+        id: 20,
+        name: "第14回タイフェスティバル in 仙台 2026",
+        date: "2026-05-30",
+        endDate: "2026-05-31",
+        venue: "勾当台公園いこいの広場",
+        prefecture: "宮城県",
+        city: "仙台市青葉区",
+        genre: "グルメ",
+        link: "https://thaifestival-sendai.com/",
+        verified: true
+      },
+      {
+        id: 21,
+        name: "第25回 杜の都大茶会",
+        date: "2026-05-30",
+        endDate: "2026-05-31",
+        venue: "あすと長町 杜の広場公園",
+        prefecture: "宮城県",
+        city: "仙台市太白区",
+        genre: "体験",
+        link: "https://www.khb-tv.co.jp/event/daichakai2026/",
+        verified: true
+      },
+      {
+        id: 22,
+        name: "KESENNUMA BEER FESTIVAL 2026",
+        date: "2026-05-30",
+        endDate: "2026-05-30",
+        venue: "南町海岸公園",
+        prefecture: "宮城県",
+        city: "気仙沼市",
+        genre: "グルメ",
+        link: "https://kesennuma-kanko.jp/kesennumabeerfestival2026/",
+        verified: true
+      },
+      {
+        id: 23,
+        name: "地底の森フェスタ2026",
+        date: "2026-05-10",
+        endDate: "2026-05-10",
+        venue: "地底の森ミュージアム",
+        prefecture: "宮城県",
+        city: "仙台市太白区",
+        genre: "体験",
+        link: "https://www.sendai-chiteinomori.jp/guidemap/event/index.html#R8festa",
+        verified: true
+      },
+      {
+        id: 24,
+        name: "自然共生園春まつり",
+        date: "2026-05-02",
+        endDate: "2026-05-03",
+        venue: "みちのく公園 自然共生園",
+        prefecture: "宮城県",
+        city: "川崎町",
+        genre: "体験",
+        link: "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=14622",
+        verified: true
+      },
+      {
+        id: 25,
+        name: "春のマンガッタン祭り2026",
+        date: "2026-05-03",
+        endDate: "2026-05-04",
+        venue: "石ノ森萬画館・中瀬公園",
+        prefecture: "宮城県",
+        city: "石巻市",
+        genre: "お祭り",
+        link: "https://www.mangattan.jp/manga/",
+        verified: true
+      },
+      {
+        id: 26,
+        name: "仙台ラーメンフェスタ2026",
+        date: "2026-04-24",
+        endDate: "2026-05-06",
+        venue: "あすと長町 杜の広場公園",
+        prefecture: "宮城県",
+        city: "仙台市太白区",
+        genre: "グルメ",
+        link: "https://sendai-ramenfesta.com/",
+        verified: true
+      },
+      {
+        id: 27,
+        name: "海中花見",
+        date: "2026-03-20",
+        endDate: "2026-05-10",
+        venue: "仙台うみの杜水族館",
+        prefecture: "宮城県",
+        city: "仙台市宮城野区",
+        genre: "花・自然",
+        link: "https://www.uminomori.jp/en/umino/kaityuuhanami/index.html",
+        verified: true
+      },
+      {
+        id: 28,
+        name: "やくらいイースターフェア",
+        date: "2026-04-18",
+        endDate: "2026-06-14",
+        venue: "やくらいガーデン",
+        prefecture: "宮城県",
+        city: "加美町",
+        genre: "花・自然",
+        link: "https://yakurai-garden.com/easter",
+        verified: true
+      },
+      {
+        id: 29,
+        name: "さくらももこ展",
+        date: "2026-04-18",
+        endDate: "2026-06-21",
+        venue: "東北歴史博物館",
+        prefecture: "宮城県",
+        city: "多賀城市",
+        genre: "展覧会",
+        link: "https://www.thm.pref.miyagi.jp/exhibition/15647/",
+        verified: true
+      },
+      {
+        id: 30,
+        name: "エリック・カールとうみの杜のなかまたち",
+        date: "2026-03-06",
+        endDate: "2026-05-31",
+        venue: "仙台うみの杜水族館",
+        prefecture: "宮城県",
+        city: "仙台市宮城野区",
+        genre: "展覧会",
+        link: "https://www.uminomori.jp/en/umino/ericcarle/",
+        verified: true
+      },
+      {
+        id: 31,
+        name: "東日本大震災文庫展－記憶を記録に未来へ－",
+        date: "2026-03-07",
+        endDate: "2026-05-31",
+        venue: "宮城県図書館",
+        prefecture: "宮城県",
+        city: "仙台市泉区",
+        genre: "展覧会",
+        link: "https://www.pref.miyagi.jp/soshiki/syougaku/sinsaibunkoten.html",
+        verified: true
+      },
+      {
+        id: 32,
+        name: "第57回 子どもの本展示会",
+        date: "2026-04-23",
+        endDate: "2026-05-13",
+        venue: "宮城県図書館",
+        prefecture: "宮城県",
+        city: "仙台市泉区",
+        genre: "展覧会",
+        link: "https://www.pref.miyagi.jp/soshiki/syougaku/tosyokantenji3.html",
+        verified: true
+      },
+      {
+        id: 33,
+        name: "宮城オルレ「蔵王・遠刈田温泉コース」オープニングイベント",
+        date: "2026-05-23",
+        endDate: "2026-05-23",
+        venue: "サン・スポーツランド蔵王",
+        prefecture: "宮城県",
+        city: "蔵王町",
+        genre: "スポーツ",
+        link: "https://www.miyagiolle.jp/news/news-8454/",
+        verified: true
+      }
+    ];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const WEEK = ['日','月','火','水','木','金','土'];
+    let activeGenre = 'all';
+
+    // ジャンル → アイコン・色の事前定義（未定義は default）
+    const GENRE_META = {
+      'お祭り':       { icon: '🏮', color: '#ff80ab' },
+      '花火':         { icon: '🎆', color: '#b39ddb' },
+      '花・自然':      { icon: '🌸', color: '#ff80ab' },
+      '紅葉':         { icon: '🍁', color: '#ff8a65' },
+      'イルミネーション': { icon: '✨', color: '#ffd54f' },
+      'グルメ':       { icon: '🍴', color: '#ffb74d' },
+      'スポーツ':     { icon: '👟', color: '#4fc3f7' },
+      'マラソン':     { icon: '🏃', color: '#81c784' },
+      'マーケット':   { icon: '⛺', color: '#81c784' },
+      '音楽・ステージ': { icon: '🎵', color: '#b39ddb' },
+      '展覧会':       { icon: '🖼️', color: '#4fc3f7' },
+      '体験':         { icon: '🎨', color: '#b39ddb' },
+      '神事':         { icon: '⛩️', color: '#ffd54f' },
+      '初日の出':     { icon: '🌅', color: '#ff8a65' },
+      'ライトアップ':  { icon: '💡', color: '#ffd54f' },
+      'その他':       { icon: '📌', color: '#8a8a9a' }
+    };
+
+    function getGenreMeta(genre) {
+      return GENRE_META[genre] || { icon: '📌', color: '#8a8a9a' };
+    }
+
+    function formatDate(d) {
+      const date = new Date(d);
+      return `${date.getMonth() + 1}月${date.getDate()}日(${WEEK[date.getDay()]})`;
+    }
+
+    function getStatus(ev) {
+      const start = new Date(ev.date);
+      start.setHours(0, 0, 0, 0);
+      const end = ev.endDate ? new Date(ev.endDate) : new Date(start);
+      end.setHours(0, 0, 0, 0);
+
+      if (today > end) return null;
+      if (today >= start && today <= end) {
+        return { cls: 'ongoing', text: '開催中' };
+      }
+      const diff = Math.floor((start - today) / (1000 * 60 * 60 * 24));
+      const cls = diff <= 7 ? 'countdown-near' : diff <= 30 ? 'countdown-soon' : 'countdown-far';
+      return { cls, text: `あと${diff}日` };
+    }
+
+    // ジャンル別Amazonアフィリリンク
+    const AMAZON_LINKS = {
+      'お祭り':   { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
+      '花火':     { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
+      '花・自然': { url: "https://amzn.to/3QFA67P", label: "📷 写ルンです" }
+    };
+
+    function renderCard(ev) {
+      const status = getStatus(ev);
+      if (!status) return '';
+      const dateLabel = ev.endDate && ev.endDate !== ev.date
+        ? `${formatDate(ev.date)}〜${formatDate(ev.endDate)}`
+        : formatDate(ev.date);
+      const amazonInfo = AMAZON_LINKS[ev.genre];
+      const amazonHtml = amazonInfo
+        ? `<a class="amazon-btn" href="${amazonInfo.url}" target="_blank" rel="noopener">${amazonInfo.label}</a>`
+        : '';
+      const meta = getGenreMeta(ev.genre);
+      const isSprite = SPRITE_GENRES.has(ev.genre);
+      const iconContent = isSprite ? '' : meta.icon;
+      const iconStyle = isSprite ? '' : `color:${meta.color}`;
+      return `
+        <div class="card" data-genre="${ev.genre}">
+          <div class="card-icon" style="${iconStyle}">${iconContent}</div>
+          <div class="card-body">
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+              <span class="status ${status.cls}">${status.text}</span>
+              <span class="card-genre">${ev.genre}</span>
+            </div>
+            <h2 class="card-name">${ev.name}</h2>
+            <div class="card-info">
+              <div>📅 ${dateLabel}</div>
+              <div>📍 ${ev.prefecture} ${ev.city} - ${ev.venue}</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a class="official-btn" href="${ev.link}" target="_blank" rel="noopener">公式サイト →</a>
+            ${amazonHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    let searchQuery = '';
+
+    function applyFilter() {
+      const cards = document.querySelectorAll('.card');
+      const q = searchQuery.toLowerCase();
+      let count = 0;
+      cards.forEach(c => {
+        const genreMatch = activeGenre === 'all' || c.dataset.genre === activeGenre;
+        const queryMatch = !q || c.textContent.toLowerCase().includes(q);
+        const match = genreMatch && queryMatch;
+        c.style.display = match ? '' : 'none';
+        if (match) count++;
+      });
+      document.getElementById('resultCount').textContent = count;
+    }
+
+    // 画像内に存在するアイコン（CSS sprite使用）
+    const SPRITE_GENRES = new Set(['お祭り','花・自然','グルメ','スポーツ','マーケット','音楽・ステージ']);
+
+    function renderCategories(genres) {
+      const container = document.getElementById('categories');
+      container.innerHTML = genres.map(g => {
+        const meta = getGenreMeta(g);
+        const isSprite = SPRITE_GENRES.has(g);
+        const iconHtml = isSprite
+          ? `<div class="cat-icon"></div>`
+          : `<div class="cat-icon has-emoji">${meta.icon}</div>`;
+        return `
+          <div class="cat-card" data-genre="${g}" style="color:${meta.color}">
+            ${iconHtml}
+            <div class="cat-name">${g}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function init() {
+      const container = document.getElementById('cards');
+      const visible = EVENTS.filter(e => e.verified === true && getStatus(e) !== null)
+        .sort((a, b) => a.date.localeCompare(b.date));
+
+      const usedGenres = [...new Set(visible.map(e => e.genre))].sort();
+      renderCategories(usedGenres);
+
+      document.getElementById('resultCount').textContent = visible.length;
+
+      if (visible.length === 0) {
+        container.innerHTML = '<div class="empty">表示できるイベントがありません</div>';
+        return;
+      }
+
+      container.innerHTML = visible.map(renderCard).join('');
+
+      document.querySelectorAll('.cat-card').forEach(c => {
+        c.addEventListener('click', () => {
+          const genre = c.dataset.genre;
+          activeGenre = activeGenre === genre ? 'all' : genre;
+          document.querySelectorAll('.cat-card').forEach(cc => {
+            cc.classList.toggle('is-active', cc.dataset.genre === activeGenre);
+          });
+          applyFilter();
+        });
+      });
+
+      document.querySelectorAll('.chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        applyFilter();
+      });
+    }
+
+    init();
+  </script>
 </body>
 </html>
+</content>
+</invoke>
