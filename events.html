@@ -110,6 +110,32 @@
     }
     .menu-btn:hover { color: var(--pink); }
 
+    .nav-mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      flex-direction: column;
+      gap: 2px;
+      min-width: 180px;
+      z-index: 101;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .nav-mobile-menu a:hover { background: var(--bg3); }
+    .nav-mobile-menu a.active { color: var(--pink); font-weight: 700; }
+
     @media (max-width: 600px) {
       header { padding: 0 12px; height: 56px; }
       .logo { font-size: 14px; letter-spacing: 1px; gap: 6px; }
@@ -117,7 +143,10 @@
       nav { gap: 4px; }
       nav a { display: none; }
       .menu-btn { margin-left: 0; }
-      .search-section { margin: 16px auto; }
+      .search-section { margin: 12px auto; padding: 0 16px; }
+      .search-bar { padding: 9px 14px; border-radius: 24px; gap: 8px; }
+      .search-bar input { font-size: 13px; }
+      .search-bar svg.search-icon, .search-bar svg.tune-icon { width: 16px; height: 16px; }
     }
 
     /* ── ヒーローセクション（高解像度切り抜き 853x290 検索バー除外） ── */
@@ -512,13 +541,13 @@
   </style>
 </head>
 <body>
-  <header>
+  <header style="position:relative;">
     <a href="index.html" class="logo"><img src="logo.png?v=5" alt="推しナビ logo">推しナビ</a>
     <nav>
       <a href="index.html">イベント<br>チケット</a>
       <a href="events.html" class="active">行楽<br>イベント</a>
       <a href="contact.html">お問い合わせ</a>
-      <button class="menu-btn" aria-label="メニュー">
+      <button class="menu-btn" id="menuBtn" aria-label="メニュー">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
           <line x1="4" y1="7" x2="20" y2="7"></line>
           <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -526,6 +555,11 @@
         </svg>
       </button>
     </nav>
+    <div class="nav-mobile-menu" id="navMobileMenu">
+      <a href="index.html">イベントチケット</a>
+      <a href="events.html" class="active">行楽イベント</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
   </header>
 
   <section class="hero" role="img" aria-label="近くのワクワク 見逃さない！ - 地域の季節イベント情報まとめ"></section>
@@ -1149,6 +1183,18 @@
       });
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('navMobileMenu');
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+          mobileMenu.classList.remove('open');
+        }
       });
     }
 
