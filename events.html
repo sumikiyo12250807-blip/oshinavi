@@ -196,45 +196,6 @@
 
     .search-bar input::placeholder { color: var(--text-muted); }
 
-    /* ── フィルターチップ ── */
-    .chips {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding: 0 24px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      scrollbar-width: thin;
-    }
-
-    .chip {
-      flex-shrink: 0;
-      background: #fff;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-      font-weight: 600;
-    }
-
-    .chip:hover { border-color: var(--pink-light); transform: translateY(-1px); }
-
-    .chip.active {
-      background: linear-gradient(135deg, #e1f5fe, #fce4ec);
-      border-color: var(--blue-light);
-      color: var(--blue);
-    }
-
-    .chip[data-chip="free"].active    { background: linear-gradient(135deg, #fce4ec, #fff); border-color: var(--pink); color: var(--pink); }
-    .chip[data-chip="today"].active   { background: linear-gradient(135deg, #fff8e1, #fff); border-color: var(--yellow); color: #b8860b; }
-    .chip[data-chip="weekend"].active { background: linear-gradient(135deg, #e8f5e9, #fff); border-color: var(--green); color: var(--green); }
-    .chip[data-chip="kids"].active    { background: linear-gradient(135deg, #ffe0b2, #fff); border-color: var(--orange); color: var(--orange); }
-    .chip[data-chip="rain"].active    { background: linear-gradient(135deg, #f3e5f5, #fff); border-color: var(--purple); color: var(--purple); }
-
     /* ── メインコンテンツ ── */
     main {
       max-width: 1200px;
@@ -302,54 +263,52 @@
       background: var(--pink);
     }
 
-    /* ── ジャンルブロック ── */
+    /* ── ジャンルブロック（小さいチップ式） ── */
     .categories {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-
-    @media (max-width: 900px) { .categories { grid-template-columns: repeat(4, 1fr); } }
-    @media (max-width: 600px) { .categories { grid-template-columns: repeat(3, 1fr); } }
 
     .cat-card {
       background: #fff;
       border: 2px solid transparent;
-      border-radius: 16px;
-      padding: 20px 8px;
-      text-align: center;
+      border-radius: 999px;
+      padding: 10px 18px 10px 14px;
       cursor: pointer;
-      transition: all 0.25s;
-      display: flex;
-      flex-direction: column;
+      transition: all 0.2s;
+      display: inline-flex;
+      flex-direction: row;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       position: relative;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
     .cat-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255,128,171,0.18);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(255,128,171,0.18);
     }
 
     .cat-card.is-active {
       border-color: currentColor;
-      box-shadow: 0 4px 16px currentColor;
+      background: color-mix(in srgb, currentColor 10%, #fff);
     }
 
     .cat-icon {
-      width: 70%;
-      aspect-ratio: 1;
+      width: 26px;
+      height: 26px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
+      flex-shrink: 0;
     }
     .cat-icon.has-emoji {
       background: none;
       width: auto;
       height: auto;
-      font-size: 36px;
-      filter: drop-shadow(0 0 8px currentColor);
+      font-size: 20px;
+      filter: drop-shadow(0 0 4px currentColor);
     }
     .cat-card[data-genre="お祭り"] .cat-icon       { background-image: url('icon_matsuri.svg'); }
     .cat-card[data-genre="花・自然"] .cat-icon     { background-image: url('icon_hana.svg'); }
@@ -359,9 +318,44 @@
     .cat-card[data-genre="音楽・ステージ"] .cat-icon { background-image: url('icon_music.svg'); }
 
     .cat-name {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--text);
+    }
+
+    /* ── エリアボタン ── */
+    .areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .area-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-right: 4px;
+    }
+    .area-btn {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .area-btn:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+    }
+    .area-btn.is-active {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: #fff;
     }
 
     /* ── イベントカード（横長・縦1列） ── */
@@ -584,22 +578,27 @@
     </div>
   </div>
 
-  <div class="chips" id="chips">
-    <button class="chip active" data-chip="all">すべて</button>
-    <button class="chip" data-chip="free">無料イベント</button>
-    <button class="chip" data-chip="today">今日開催</button>
-    <button class="chip" data-chip="weekend">週末おすすめ</button>
-    <button class="chip" data-chip="kids">キッズ</button>
-    <button class="chip" data-chip="rain">雨でもOK</button>
-    <button class="chip" data-chip="more">もっと見る</button>
-  </div>
-
   <main>
     <div class="section-header">
       <h2 class="section-title">✨ ジャンルから探す</h2>
-      <a class="see-all" href="#">すべて見る ›</a>
     </div>
     <div class="categories" id="categories"></div>
+
+    <div class="section-header">
+      <h2 class="section-title">📍 地域から探す</h2>
+    </div>
+    <div class="areas" id="areas">
+      <span class="area-label">AREA</span>
+      <button class="area-btn is-active" data-area="all">すべて</button>
+      <button class="area-btn" data-area="hokkaido">北海道</button>
+      <button class="area-btn" data-area="tohoku">東北</button>
+      <button class="area-btn" data-area="kanto">関東</button>
+      <button class="area-btn" data-area="chubu">中部</button>
+      <button class="area-btn" data-area="kinki">近畿</button>
+      <button class="area-btn" data-area="chugoku">中国</button>
+      <button class="area-btn" data-area="shikoku">四国</button>
+      <button class="area-btn" data-area="kyushu">九州</button>
+    </div>
 
     <div class="section-header">
       <h2 class="section-title">🔥 注目のイベント</h2>
@@ -626,18 +625,6 @@
         verified: true
       },
       {
-        id: 2,
-        name: "梵天ばやい",
-        date: "2026-05-01",
-        endDate: "2026-05-01",
-        venue: "船形山神社",
-        prefecture: "宮城県",
-        city: "大和町",
-        genre: "お祭り",
-        link: "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=1486",
-        verified: true
-      },
-      {
         id: 3,
         name: "GW企画 縄文体験・体感WEEK",
         date: "2026-05-02",
@@ -659,18 +646,6 @@
         city: "仙台市青葉区",
         genre: "お祭り",
         link: "https://www.johgi-info.jp/information/hokoten.html",
-        verified: true
-      },
-      {
-        id: 5,
-        name: "白石市民春まつり",
-        date: "2026-05-03",
-        endDate: "2026-05-03",
-        venue: "白石駅前中心市街地・白石城",
-        prefecture: "宮城県",
-        city: "白石市",
-        genre: "お祭り",
-        link: "https://harumatsuri.jp/",
         verified: true
       },
       {
@@ -887,18 +862,6 @@
         city: "仙台市太白区",
         genre: "体験",
         link: "https://www.sendai-chiteinomori.jp/guidemap/event/index.html#R8festa",
-        verified: true
-      },
-      {
-        id: 24,
-        name: "自然共生園春まつり",
-        date: "2026-05-02",
-        endDate: "2026-05-03",
-        venue: "みちのく公園 自然共生園",
-        prefecture: "宮城県",
-        city: "川崎町",
-        genre: "体験",
-        link: "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=14622",
         verified: true
       },
       {
@@ -2784,6 +2747,1758 @@
         genre: "お祭り",
         link: "https://niigata-kankou.or.jp/event/3558",
         verified: true
+      },
+      {
+        id: 191,
+        name: "山形ワインバル2026",
+        date: "2026-05-16",
+        endDate: "2026-05-17",
+        venue: "上山城周辺・月岡公園",
+        prefecture: "山形県",
+        city: "上山市",
+        genre: "グルメ",
+        link: "https://www.yamagatawinebal.jp/",
+        verified: true
+      },
+      {
+        id: 192,
+        name: "酒田まつり（山王祭）",
+        date: "2026-05-19",
+        endDate: "2026-05-21",
+        venue: "酒田市中町界隈",
+        prefecture: "山形県",
+        city: "酒田市",
+        genre: "お祭り",
+        link: "https://sakata-kankou.com/event/30728",
+        verified: true
+      },
+      {
+        id: 193,
+        name: "鶴岡天神祭（化けものまつり）",
+        date: "2026-05-25",
+        endDate: "2026-05-25",
+        venue: "鶴岡市内中心市街地",
+        prefecture: "山形県",
+        city: "鶴岡市",
+        genre: "お祭り",
+        link: "https://www.city.tsuruoka.lg.jp/kanko/r7tenjinboshu.html",
+        verified: true
+      },
+      {
+        id: 194,
+        name: "さがえさくらんぼマラソン2026",
+        date: "2026-05-31",
+        endDate: "2026-05-31",
+        venue: "寒河江市民スポーツ会館・周辺コース",
+        prefecture: "山形県",
+        city: "寒河江市",
+        genre: "スポーツ",
+        link: "https://sagae-sakuranbo-m.com/",
+        verified: true
+      },
+      {
+        id: 195,
+        name: "むらきざわあじさい祭り",
+        date: "2026-06-27",
+        endDate: "2026-07-12",
+        venue: "出塩文殊堂",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "花・自然",
+        link: "http://www.yamagata-community.jp/~murakisawa/ajisai_fes/ajisai_fes_top.html",
+        verified: true
+      },
+      {
+        id: 196,
+        name: "出羽三山神社 月山開山祭",
+        date: "2026-07-01",
+        endDate: "2026-07-01",
+        venue: "月山神社本宮（山頂）",
+        prefecture: "山形県",
+        city: "鶴岡市",
+        genre: "お祭り",
+        link: "http://www.dewasanzan.jp/",
+        verified: true
+      },
+      {
+        id: 197,
+        name: "出羽三山神社例大祭（花祭り）",
+        date: "2026-07-15",
+        endDate: "2026-07-15",
+        venue: "出羽三山神社（羽黒山）",
+        prefecture: "山形県",
+        city: "鶴岡市",
+        genre: "お祭り",
+        link: "http://www.dewasanzan.jp/",
+        verified: true
+      },
+      {
+        id: 198,
+        name: "国宝羽黒山五重塔ライトアップ",
+        date: "2026-07-18",
+        endDate: "2026-09-23",
+        venue: "羽黒山五重塔",
+        prefecture: "山形県",
+        city: "鶴岡市",
+        genre: "体験",
+        link: "https://www.tsuruokakanko.com/spot/5795",
+        verified: true
+      },
+      {
+        id: 199,
+        name: "第17回スマイルプロジェクト☆かみのやま",
+        date: "2026-07-25",
+        endDate: "2026-07-25",
+        venue: "けやきの森",
+        prefecture: "山形県",
+        city: "上山市",
+        genre: "花火",
+        link: "https://yamagatakanko.com/festivals/detail_9704.html",
+        verified: true
+      },
+      {
+        id: 200,
+        name: "山形花笠まつり前夜祭・花笠サマーフェスティバル",
+        date: "2026-08-04",
+        endDate: "2026-08-04",
+        venue: "七日町大通り",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "お祭り",
+        link: "https://www.yamagata-cci.or.jp/user/eve/ev_hana_sum.html",
+        verified: true
+      },
+      {
+        id: 201,
+        name: "山形花笠まつり",
+        date: "2026-08-05",
+        endDate: "2026-08-07",
+        venue: "山形市中心市街地（十日町〜本町〜七日町通り〜文翔館前）",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "お祭り",
+        link: "https://www.hanagasa.jp/",
+        verified: true
+      },
+      {
+        id: 202,
+        name: "天童夏まつり",
+        date: "2026-08-08",
+        endDate: "2026-08-09",
+        venue: "天童温泉エリア・市内中心部",
+        prefecture: "山形県",
+        city: "天童市",
+        genre: "お祭り",
+        link: "https://www.city.tendo.yamagata.jp/tourism/event/event-summer_tendo.html",
+        verified: true
+      },
+      {
+        id: 203,
+        name: "第3回蔵王ヒルクライムRunBike",
+        date: "2026-08-11",
+        endDate: "2026-08-11",
+        venue: "道の駅やまがた蔵王 イベントパーク",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "スポーツ",
+        link: "https://www.mspo.jp/zaouboudaira/",
+        verified: true
+      },
+      {
+        id: 204,
+        name: "水郷大江夏まつり 灯ろう流し花火大会",
+        date: "2026-08-15",
+        endDate: "2026-08-15",
+        venue: "最上川 大江町地内",
+        prefecture: "山形県",
+        city: "大江町",
+        genre: "花火",
+        link: "https://oekanko.jp/tourou/",
+        verified: true
+      },
+      {
+        id: 205,
+        name: "第33回赤川花火大会",
+        date: "2026-08-15",
+        endDate: "2026-08-15",
+        venue: "赤川河川敷（羽黒橋〜三川橋間）",
+        prefecture: "山形県",
+        city: "鶴岡市",
+        genre: "花火",
+        link: "https://akagawahanabi.com/",
+        verified: true
+      },
+      {
+        id: 206,
+        name: "大石田まつり 最上川花火大会",
+        date: "2026-08-16",
+        endDate: "2026-08-16",
+        venue: "最上川河畔",
+        prefecture: "山形県",
+        city: "大石田町",
+        genre: "花火",
+        link: "https://www.town.oishida.yamagata.jp/kankou/matsuri/o-maturi.html",
+        verified: true
+      },
+      {
+        id: 207,
+        name: "新庄まつり",
+        date: "2026-08-24",
+        endDate: "2026-08-26",
+        venue: "新庄市中心市街地",
+        prefecture: "山形県",
+        city: "新庄市",
+        genre: "お祭り",
+        link: "https://shinjo-matsuri.jp/",
+        verified: true
+      },
+      {
+        id: 208,
+        name: "おばなざわ花笠まつり",
+        date: "2026-08-27",
+        endDate: "2026-08-28",
+        venue: "尾花沢市内",
+        prefecture: "山形県",
+        city: "尾花沢市",
+        genre: "お祭り",
+        link: "https://www.obane-kankou.jp/event/",
+        verified: true
+      },
+      {
+        id: 209,
+        name: "酒田の花火2026",
+        date: "2026-09-12",
+        endDate: "2026-09-12",
+        venue: "最上川河川敷",
+        prefecture: "山形県",
+        city: "酒田市",
+        genre: "花火",
+        link: "https://sakata-hanabi.com/",
+        verified: true
+      },
+      {
+        id: 210,
+        name: "寒河江まつり（神輿の祭典）",
+        date: "2026-09-12",
+        endDate: "2026-09-15",
+        venue: "寒河江八幡宮・市内中心部",
+        prefecture: "山形県",
+        city: "寒河江市",
+        genre: "お祭り",
+        link: "https://www.city.sagae.yamagata.jp/kanko/event/sagaematuri.html",
+        verified: true
+      },
+      {
+        id: 211,
+        name: "米沢牛肉まつり",
+        date: "2026-09-14",
+        endDate: "2026-09-14",
+        venue: "松川河川敷",
+        prefecture: "山形県",
+        city: "米沢市",
+        genre: "グルメ",
+        link: "https://umai-yone.sakura.ne.jp/gyuniku/",
+        verified: true
+      },
+      {
+        id: 212,
+        name: "谷地どんがまつり",
+        date: "2026-09-19",
+        endDate: "2026-09-21",
+        venue: "谷地八幡宮",
+        prefecture: "山形県",
+        city: "河北町",
+        genre: "お祭り",
+        link: "https://www.town.kahoku.yamagata.jp/soshiki/shoko/kankousinkou/3342/700.html",
+        verified: true
+      },
+      {
+        id: 213,
+        name: "第38回日本一の芋煮会フェスティバル",
+        date: "2026-09-20",
+        endDate: "2026-09-20",
+        venue: "馬見ヶ崎川河川敷",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "グルメ",
+        link: "https://imoni-fes.jp/",
+        verified: true
+      },
+      {
+        id: 214,
+        name: "第13回山形まるごとマラソン",
+        date: "2026-10-04",
+        endDate: "2026-10-04",
+        venue: "山形市総合スポーツセンター",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "スポーツ",
+        link: "https://yamagata-city-marathon.com/",
+        verified: true
+      },
+      {
+        id: 215,
+        name: "第3回よねざわ戦国花火大会",
+        date: "2026-10-10",
+        endDate: "2026-10-10",
+        venue: "米沢市",
+        prefecture: "山形県",
+        city: "米沢市",
+        genre: "花火",
+        link: "https://www.city.yonezawa.yamagata.jp/soshiki/5/1020/2/10023.html",
+        verified: true
+      },
+      {
+        id: 216,
+        name: "YONEZAWA ROCK FES 2026",
+        date: "2026-10-18",
+        endDate: "2026-10-18",
+        venue: "西條天満公園",
+        prefecture: "山形県",
+        city: "米沢市",
+        genre: "体験",
+        link: "https://yonezawa-rock-fes.wixsite.com/official",
+        verified: true
+      },
+      {
+        id: 217,
+        name: "第22回山形国際ムービーフェスティバル（YMF2026）",
+        date: "2026-11-13",
+        endDate: "2026-11-15",
+        venue: "山形市内会場",
+        prefecture: "山形県",
+        city: "山形市",
+        genre: "体験",
+        link: "https://movieon.jp/ymf/",
+        verified: true
+      },
+      {
+        id: 218,
+        name: "羽黒山松例祭（大松明行事）",
+        date: "2026-12-31",
+        endDate: "2026-12-31",
+        venue: "出羽三山神社（羽黒山）",
+        prefecture: "山形県",
+        city: "鶴岡市",
+        genre: "お祭り",
+        link: "http://www.shoureisai-hozonkai.com/",
+        verified: true
+      },
+      {
+        id: 219,
+        name: "美郷町ラベンダーまつり",
+        date: "2026-06-07",
+        endDate: "2026-06-29",
+        venue: "美郷町ラベンダー園",
+        prefecture: "秋田県",
+        city: "美郷町",
+        genre: "花・自然",
+        link: "https://akita-misato.com/kanko2/lavendergarden/",
+        verified: true
+      },
+      {
+        id: 220,
+        name: "雲昌寺のあじさい観覧",
+        date: "2026-06-14",
+        endDate: "2026-07-21",
+        venue: "雲昌寺",
+        prefecture: "秋田県",
+        city: "男鹿市",
+        genre: "花・自然",
+        link: "https://oganavi.com/ajisai/",
+        verified: true
+      },
+      {
+        id: 221,
+        name: "北秋田市米代川花火大会",
+        date: "2026-07-04",
+        endDate: "2026-07-04",
+        venue: "米代川河川公園",
+        prefecture: "秋田県",
+        city: "北秋田市",
+        genre: "花火",
+        link: "https://www.kitaakita-kankou.jp/event/firework/",
+        verified: true
+      },
+      {
+        id: 222,
+        name: "第22回港まつり 能代の花火",
+        date: "2026-07-18",
+        endDate: "2026-07-18",
+        venue: "能代港",
+        prefecture: "秋田県",
+        city: "能代市",
+        genre: "花火",
+        link: "https://noshiro-hanabi.com/",
+        verified: true
+      },
+      {
+        id: 223,
+        name: "土崎港曳山まつり",
+        date: "2026-07-20",
+        endDate: "2026-07-21",
+        venue: "土崎神明社・土崎地区",
+        prefecture: "秋田県",
+        city: "秋田市",
+        genre: "お祭り",
+        link: "https://tutizaki-hikiyama.com/",
+        verified: true
+      },
+      {
+        id: 224,
+        name: "能代七夕「天空の不夜城」",
+        date: "2026-08-02",
+        endDate: "2026-08-03",
+        venue: "能代市中心市街地",
+        prefecture: "秋田県",
+        city: "能代市",
+        genre: "お祭り",
+        link: "https://noshirotanabata.com/",
+        verified: true
+      },
+      {
+        id: 225,
+        name: "秋田竿燈まつり",
+        date: "2026-08-03",
+        endDate: "2026-08-06",
+        venue: "竿燈大通り",
+        prefecture: "秋田県",
+        city: "秋田市",
+        genre: "お祭り",
+        link: "https://www.kantou.gr.jp/",
+        verified: true
+      },
+      {
+        id: 226,
+        name: "七夕絵どうろうまつり",
+        date: "2026-08-05",
+        endDate: "2026-08-07",
+        venue: "湯沢市中心部",
+        prefecture: "秋田県",
+        city: "湯沢市",
+        genre: "お祭り",
+        link: "https://akitayuzawa.jp/event-sm-01.html",
+        verified: true
+      },
+      {
+        id: 227,
+        name: "能代役七夕（ねぶながし）",
+        date: "2026-08-06",
+        endDate: "2026-08-07",
+        venue: "能代市中心市街地・米代川河川敷",
+        prefecture: "秋田県",
+        city: "能代市",
+        genre: "お祭り",
+        link: "https://www.city.noshiro.lg.jp/res/kanko/theme/1188",
+        verified: true
+      },
+      {
+        id: 228,
+        name: "大館大文字まつり",
+        date: "2026-08-11",
+        endDate: "2026-08-11",
+        venue: "長木川河川敷",
+        prefecture: "秋田県",
+        city: "大館市",
+        genre: "花火",
+        link: "https://www.city.odate.lg.jp/city/kankou/festibal/festa/summer/daimonzi",
+        verified: true
+      },
+      {
+        id: 229,
+        name: "秋田国際ダリア園 開園",
+        date: "2026-08-13",
+        endDate: "2026-11-03",
+        venue: "秋田国際ダリア園",
+        prefecture: "秋田県",
+        city: "秋田市",
+        genre: "花・自然",
+        link: "http://akita-dahlia.jp/",
+        verified: true
+      },
+      {
+        id: 230,
+        name: "第22回 男鹿日本海花火",
+        date: "2026-08-14",
+        endDate: "2026-08-14",
+        venue: "男鹿市船川港",
+        prefecture: "秋田県",
+        city: "男鹿市",
+        genre: "花火",
+        link: "https://oganavi.com/hanabi/",
+        verified: true
+      },
+      {
+        id: 231,
+        name: "横手の送り盆まつり",
+        date: "2026-08-15",
+        endDate: "2026-08-16",
+        venue: "蛇の崎川原・横手市中心部",
+        prefecture: "秋田県",
+        city: "横手市",
+        genre: "お祭り",
+        link: "https://www.yokotekamakura.com/event/3-2/",
+        verified: true
+      },
+      {
+        id: 232,
+        name: "ドンパン祭り",
+        date: "2026-08-16",
+        endDate: "2026-08-16",
+        venue: "ドンパン広場",
+        prefecture: "秋田県",
+        city: "大仙市",
+        genre: "お祭り",
+        link: "https://donpan.hana.jp/",
+        verified: true
+      },
+      {
+        id: 233,
+        name: "西馬音内盆踊り",
+        date: "2026-08-16",
+        endDate: "2026-08-18",
+        venue: "西馬音内本町通り",
+        prefecture: "秋田県",
+        city: "羽後町",
+        genre: "お祭り",
+        link: "https://ugokanko.com/bonodorigaiyou/",
+        verified: true
+      },
+      {
+        id: 234,
+        name: "花輪ばやし",
+        date: "2026-08-19",
+        endDate: "2026-08-20",
+        venue: "鹿角市花輪地区",
+        prefecture: "秋田県",
+        city: "鹿角市",
+        genre: "お祭り",
+        link: "https://www.hanawabayashi.jp/",
+        verified: true
+      },
+      {
+        id: 235,
+        name: "毛馬内盆踊り",
+        date: "2026-08-21",
+        endDate: "2026-08-23",
+        venue: "鹿角市十和田毛馬内",
+        prefecture: "秋田県",
+        city: "鹿角市",
+        genre: "お祭り",
+        link: "https://www.ink.or.jp/~kemanai09/",
+        verified: true
+      },
+      {
+        id: 236,
+        name: "第98回 全国花火競技大会「大曲の花火」",
+        date: "2026-08-29",
+        endDate: "2026-08-29",
+        venue: "雄物川河川敷運動公園",
+        prefecture: "秋田県",
+        city: "大仙市",
+        genre: "花火",
+        link: "https://www.omagari-hanabi.com/",
+        verified: true
+      },
+      {
+        id: 237,
+        name: "角館祭りのやま行事",
+        date: "2026-09-07",
+        endDate: "2026-09-09",
+        venue: "角館町中心部",
+        prefecture: "秋田県",
+        city: "仙北市",
+        genre: "お祭り",
+        link: "https://www.city.semboku.akita.jp/sightseeing/spot/07_kakumatsuri.html",
+        verified: true
+      },
+      {
+        id: 238,
+        name: "大館神明社例祭",
+        date: "2026-09-10",
+        endDate: "2026-09-11",
+        venue: "大館神明社・大館市内",
+        prefecture: "秋田県",
+        city: "大館市",
+        genre: "お祭り",
+        link: "https://www.city.odate.lg.jp/city/kankou/festibal/festa/autumn/zinmeisya",
+        verified: true
+      },
+      {
+        id: 239,
+        name: "第14回千秋花火",
+        date: "2026-09-19",
+        endDate: "2026-09-19",
+        venue: "千秋公園周辺",
+        prefecture: "秋田県",
+        city: "秋田市",
+        genre: "花火",
+        link: "https://sensyuhanabi.com/",
+        verified: true
+      },
+      {
+        id: 240,
+        name: "第39回 田沢湖マラソン",
+        date: "2026-09-20",
+        endDate: "2026-09-20",
+        venue: "田沢湖畔",
+        prefecture: "秋田県",
+        city: "仙北市",
+        genre: "スポーツ",
+        link: "https://tazawako-marathon.com/",
+        verified: true
+      },
+      {
+        id: 241,
+        name: "第34回 秋田100㌔チャレンジマラソン",
+        date: "2026-09-27",
+        endDate: "2026-09-27",
+        venue: "角館交流センター～北秋田市交流センター",
+        prefecture: "秋田県",
+        city: "仙北市",
+        genre: "スポーツ",
+        link: "https://www.kumagera.ne.jp/a100km/",
+        verified: true
+      },
+      {
+        id: 242,
+        name: "大曲の花火 ―秋の章―",
+        date: "2026-10-03",
+        endDate: "2026-10-03",
+        venue: "大曲の花火公園",
+        prefecture: "秋田県",
+        city: "大仙市",
+        genre: "花火",
+        link: "https://www.omagari-hanabi.com/",
+        verified: true
+      },
+      {
+        id: 243,
+        name: "第53回 本場大館きりたんぽまつり",
+        date: "2026-10-10",
+        endDate: "2026-10-11",
+        venue: "ニプロハチ公ドーム",
+        prefecture: "秋田県",
+        city: "大館市",
+        genre: "グルメ",
+        link: "https://odate-foodfes.com/",
+        verified: true
+      },
+      {
+        id: 244,
+        name: "室根山つつじまつり",
+        date: "2026-05-16",
+        endDate: "2026-05-31",
+        venue: "室根山",
+        prefecture: "岩手県",
+        city: "一関市",
+        genre: "花・自然",
+        link: "https://www.ichitabi.jp/spot/data.php?p=35",
+        verified: true
+      },
+      {
+        id: 245,
+        name: "日本ワインフェスティバル花巻大迫",
+        date: "2026-05-30",
+        endDate: "2026-05-31",
+        venue: "大迫交流活性化センター周辺",
+        prefecture: "岩手県",
+        city: "花巻市",
+        genre: "グルメ",
+        link: "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=411",
+        verified: true
+      },
+      {
+        id: 246,
+        name: "平庭高原つつじまつり",
+        date: "2026-06-01",
+        endDate: "2026-06-01",
+        venue: "平庭高原",
+        prefecture: "岩手県",
+        city: "久慈市",
+        genre: "花・自然",
+        link: "https://www.city.kuji.lg.jp/soshiki/sangyokensetsu/1/4/1/4789.html",
+        verified: true
+      },
+      {
+        id: 247,
+        name: "前沢牛まつり",
+        date: "2026-06-07",
+        endDate: "2026-06-07",
+        venue: "前沢いきいきスポーツランド",
+        prefecture: "岩手県",
+        city: "奥州市",
+        genre: "グルメ",
+        link: "https://www.city.oshu.iwate.jp/soshiki/22/1154/235.html",
+        verified: true
+      },
+      {
+        id: 248,
+        name: "チャグチャグ馬コ",
+        date: "2026-06-13",
+        endDate: "2026-06-13",
+        venue: "鬼越蒼前神社〜盛岡八幡宮",
+        prefecture: "岩手県",
+        city: "滝沢市",
+        genre: "お祭り",
+        link: "https://chaguuma.com/",
+        verified: true
+      },
+      {
+        id: 249,
+        name: "早池峰山山開き",
+        date: "2026-06-14",
+        endDate: "2026-06-14",
+        venue: "早池峰山小田越登山口・山頂",
+        prefecture: "岩手県",
+        city: "花巻市",
+        genre: "体験",
+        link: "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=731",
+        verified: true
+      },
+      {
+        id: 250,
+        name: "いわて銀河ウルトラマラソン",
+        date: "2026-06-14",
+        endDate: "2026-06-14",
+        venue: "雫石町・盛岡市・八幡平市ほか",
+        prefecture: "岩手県",
+        city: "雫石町",
+        genre: "スポーツ",
+        link: "https://www.iwate-ginga100.jp/",
+        verified: true
+      },
+      {
+        id: 251,
+        name: "みちのくあじさいまつり",
+        date: "2026-06-25",
+        endDate: "2026-07-21",
+        venue: "みちのくあじさい園",
+        prefecture: "岩手県",
+        city: "一関市",
+        genre: "花・自然",
+        link: "https://iwatetabi.jp/events/7947/",
+        verified: true
+      },
+      {
+        id: 252,
+        name: "矢巾町夏まつり",
+        date: "2026-07-26",
+        endDate: "2026-07-26",
+        venue: "矢巾町役場前",
+        prefecture: "岩手県",
+        city: "矢巾町",
+        genre: "お祭り",
+        link: "https://www.town.yahaba.iwate.jp/soshiki/sangyou/kankousangyou/171832861218370/",
+        verified: true
+      },
+      {
+        id: 253,
+        name: "三陸・大船渡夏まつり 花火大会",
+        date: "2026-08-01",
+        endDate: "2026-08-02",
+        venue: "大船渡市内・大船渡港湾",
+        prefecture: "岩手県",
+        city: "大船渡市",
+        genre: "花火",
+        link: "https://sanriku-ofunato-fes.jp/",
+        verified: true
+      },
+      {
+        id: 254,
+        name: "盛岡さんさ踊り",
+        date: "2026-08-01",
+        endDate: "2026-08-04",
+        venue: "中央通",
+        prefecture: "岩手県",
+        city: "盛岡市",
+        genre: "お祭り",
+        link: "https://sansaodori.jp/",
+        verified: true
+      },
+      {
+        id: 255,
+        name: "盛岡七夕まつり",
+        date: "2026-08-04",
+        endDate: "2026-08-07",
+        venue: "肴町アーケード",
+        prefecture: "岩手県",
+        city: "盛岡市",
+        genre: "お祭り",
+        link: "https://www.sakanacho.com/tanabata",
+        verified: true
+      },
+      {
+        id: 256,
+        name: "一関夏まつり 磐井川川開き花火大会",
+        date: "2026-08-07",
+        endDate: "2026-08-09",
+        venue: "磐井川河川敷ほか一関市街地",
+        prefecture: "岩手県",
+        city: "一関市",
+        genre: "花火",
+        link: "https://ichinoseki-cci.com/about/matsuri/ichinoseki.html",
+        verified: true
+      },
+      {
+        id: 257,
+        name: "北上・みちのく芸能まつり",
+        date: "2026-08-07",
+        endDate: "2026-08-09",
+        venue: "北上市内各所",
+        prefecture: "岩手県",
+        city: "北上市",
+        genre: "お祭り",
+        link: "https://geinoumatsuri.com/",
+        verified: true
+      },
+      {
+        id: 258,
+        name: "江刺夏まつり 七夕まつり",
+        date: "2026-08-07",
+        endDate: "2026-08-07",
+        venue: "江刺市街地",
+        prefecture: "岩手県",
+        city: "奥州市",
+        genre: "お祭り",
+        link: "https://www.city.oshu.iwate.jp/kanko/event/2/9566.html",
+        verified: true
+      },
+      {
+        id: 259,
+        name: "陸前高田 うごく七夕まつり",
+        date: "2026-08-07",
+        endDate: "2026-08-07",
+        venue: "高田町中心部",
+        prefecture: "岩手県",
+        city: "陸前高田市",
+        genre: "お祭り",
+        link: "https://takanavi.org/",
+        verified: true
+      },
+      {
+        id: 260,
+        name: "気仙町けんか七夕まつり",
+        date: "2026-08-07",
+        endDate: "2026-08-07",
+        venue: "気仙町今泉地区",
+        prefecture: "岩手県",
+        city: "陸前高田市",
+        genre: "お祭り",
+        link: "https://takanavi.org/",
+        verified: true
+      },
+      {
+        id: 261,
+        name: "盛岡花火の祭典",
+        date: "2026-08-11",
+        endDate: "2026-08-11",
+        venue: "都南大橋下流北上川河川敷",
+        prefecture: "岩手県",
+        city: "盛岡市",
+        genre: "花火",
+        link: "https://www.ccimorioka.or.jp/hanabi/",
+        verified: true
+      },
+      {
+        id: 262,
+        name: "石鳥谷夢まつり",
+        date: "2026-08-13",
+        endDate: "2026-08-13",
+        venue: "石鳥谷町中心市街地",
+        prefecture: "岩手県",
+        city: "花巻市",
+        genre: "花火",
+        link: "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=44",
+        verified: true
+      },
+      {
+        id: 263,
+        name: "遠野ホップ収穫祭",
+        date: "2026-08-21",
+        endDate: "2026-08-23",
+        venue: "蔵の道ひろば",
+        prefecture: "岩手県",
+        city: "遠野市",
+        genre: "グルメ",
+        link: "https://japanhopcountry.com/festival/",
+        verified: true
+      },
+      {
+        id: 264,
+        name: "奥州の花火大会",
+        date: "2026-08-23",
+        endDate: "2026-08-23",
+        venue: "胆沢ダム東側特設会場",
+        prefecture: "岩手県",
+        city: "奥州市",
+        genre: "花火",
+        link: "https://www.city.oshu.iwate.jp/kanko/event/2/1680.html",
+        verified: true
+      },
+      {
+        id: 265,
+        name: "二戸まつり",
+        date: "2026-09-04",
+        endDate: "2026-09-06",
+        venue: "二戸市福岡地区",
+        prefecture: "岩手県",
+        city: "二戸市",
+        genre: "お祭り",
+        link: "https://www.city.ninohe.lg.jp/info/4265",
+        verified: true
+      },
+      {
+        id: 266,
+        name: "石鳥谷まつり",
+        date: "2026-09-08",
+        endDate: "2026-09-10",
+        venue: "石鳥谷中央通り商店街周辺",
+        prefecture: "岩手県",
+        city: "花巻市",
+        genre: "お祭り",
+        link: "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=47",
+        verified: true
+      },
+      {
+        id: 267,
+        name: "花巻まつり",
+        date: "2026-09-11",
+        endDate: "2026-09-13",
+        venue: "花巻市内お祭り広場ほか上町アーケード周辺",
+        prefecture: "岩手県",
+        city: "花巻市",
+        genre: "お祭り",
+        link: "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=48",
+        verified: true
+      },
+      {
+        id: 268,
+        name: "山田祭り",
+        date: "2026-09-13",
+        endDate: "2026-09-15",
+        venue: "山田町中心部・山田八幡宮",
+        prefecture: "岩手県",
+        city: "山田町",
+        genre: "お祭り",
+        link: "https://yamada-matsuri.com/",
+        verified: true
+      },
+      {
+        id: 269,
+        name: "盛岡秋まつり",
+        date: "2026-09-14",
+        endDate: "2026-09-16",
+        venue: "盛岡八幡宮ほか盛岡市内一円",
+        prefecture: "岩手県",
+        city: "盛岡市",
+        genre: "お祭り",
+        link: "https://www.city.morioka.iwate.jp/kankou/kankou/1037105/1024992/1037141/index.html",
+        verified: true
+      },
+      {
+        id: 270,
+        name: "日本のふるさと遠野まつり",
+        date: "2026-09-20",
+        endDate: "2026-09-21",
+        venue: "遠野市街地・遠野郷八幡宮",
+        prefecture: "岩手県",
+        city: "遠野市",
+        genre: "お祭り",
+        link: "https://tonogeinou.com/",
+        verified: true
+      },
+      {
+        id: 271,
+        name: "岩手町秋まつり（沼宮内まつり）",
+        date: "2026-10-03",
+        endDate: "2026-10-05",
+        venue: "岩手町沼宮内市街地",
+        prefecture: "岩手県",
+        city: "岩手町",
+        genre: "お祭り",
+        link: "https://town.iwate.iwate.jp/town/kanko/akimatsuri/",
+        verified: true
+      },
+      {
+        id: 272,
+        name: "釜石まつり",
+        date: "2026-10-16",
+        endDate: "2026-10-18",
+        venue: "尾崎神社・日本製鉄山神社・釜石市内",
+        prefecture: "岩手県",
+        city: "釜石市",
+        genre: "お祭り",
+        link: "https://kamaishi-kankou.jp/event/7759",
+        verified: true
+      },
+      {
+        id: 273,
+        name: "秋の藤原まつり",
+        date: "2026-11-01",
+        endDate: "2026-11-03",
+        venue: "中尊寺・毛越寺ほか平泉町内",
+        prefecture: "岩手県",
+        city: "平泉町",
+        genre: "お祭り",
+        link: "https://hiraizumi.or.jp/event/",
+        verified: true
+      },
+      {
+        id: 274,
+        name: "菜の花フェスティバル in よこはま",
+        date: "2026-05-16",
+        endDate: "2026-05-17",
+        venue: "横浜町大豆田地区 特設会場",
+        prefecture: "青森県",
+        city: "横浜町",
+        genre: "花・自然",
+        link: "https://www.town.yokohama.lg.jp/index.cfm/7,11307,19,html",
+        verified: true
+      },
+      {
+        id: 275,
+        name: "大鰐温泉つつじまつり",
+        date: "2026-05-17",
+        endDate: "2026-05-22",
+        venue: "茶臼山公園",
+        prefecture: "青森県",
+        city: "大鰐町",
+        genre: "花・自然",
+        link: "https://owanionsen-kanko.net/tsutsujimatsuri",
+        verified: true
+      },
+      {
+        id: 276,
+        name: "田舎館村 田んぼアート 2026",
+        date: "2026-06-06",
+        endDate: "2026-10-12",
+        venue: "田舎館村役場・道の駅いなかだて「弥生の里」",
+        prefecture: "青森県",
+        city: "田舎館村",
+        genre: "花・自然",
+        link: "http://www.inakadate-tanboart.net/",
+        verified: true
+      },
+      {
+        id: 277,
+        name: "椿昇展 フリーダム ー像（ゾウ）と生きる",
+        date: "2026-06-06",
+        endDate: "2026-11-08",
+        venue: "十和田市現代美術館",
+        prefecture: "青森県",
+        city: "十和田市",
+        genre: "展覧会",
+        link: "https://towadaartcenter.com/exhibitions/tsubaki_noboru/",
+        verified: true
+      },
+      {
+        id: 278,
+        name: "風間サチコ展：方丈ルームの1000里眼",
+        date: "2026-06-06",
+        endDate: "2026-08-30",
+        venue: "弘前れんが倉庫美術館",
+        prefecture: "青森県",
+        city: "弘前市",
+        genre: "展覧会",
+        link: "https://www.hirosaki-moca.jp/",
+        verified: true
+      },
+      {
+        id: 279,
+        name: "第19回 古都ひろさき花火の集い",
+        date: "2026-06-20",
+        endDate: "2026-06-20",
+        venue: "岩木川河川敷運動公園",
+        prefecture: "青森県",
+        city: "弘前市",
+        genre: "花火",
+        link: "https://hiro-hanabi.com/",
+        verified: true
+      },
+      {
+        id: 280,
+        name: "ユーロ＝アジア世界の装飾する魂展（仮）",
+        date: "2026-07-11",
+        endDate: "2026-09-27",
+        venue: "青森県立美術館",
+        prefecture: "青森県",
+        city: "青森市",
+        genre: "展覧会",
+        link: "https://www.aomori-museum.jp/article/16918/",
+        verified: true
+      },
+      {
+        id: 281,
+        name: "恐山大祭",
+        date: "2026-07-20",
+        endDate: "2026-07-24",
+        venue: "霊場恐山（菩提寺）",
+        prefecture: "青森県",
+        city: "むつ市",
+        genre: "お祭り",
+        link: "https://mutsu-kanko.jp/pg1626.html",
+        verified: true
+      },
+      {
+        id: 282,
+        name: "黒石ねぷた祭り",
+        date: "2026-07-30",
+        endDate: "2026-08-05",
+        venue: "黒石市内",
+        prefecture: "青森県",
+        city: "黒石市",
+        genre: "お祭り",
+        link: "https://k-jc.com/neputa/",
+        verified: true
+      },
+      {
+        id: 283,
+        name: "八戸三社大祭",
+        date: "2026-07-31",
+        endDate: "2026-08-04",
+        venue: "八戸市中心街",
+        prefecture: "青森県",
+        city: "八戸市",
+        genre: "お祭り",
+        link: "https://visithachinohe.com/stories/sannshataisai_schedule/",
+        verified: true
+      },
+      {
+        id: 284,
+        name: "弘前ねぷたまつり",
+        date: "2026-08-01",
+        endDate: "2026-08-07",
+        venue: "弘前市内（土手町・駅前コース）",
+        prefecture: "青森県",
+        city: "弘前市",
+        genre: "お祭り",
+        link: "https://www.hirosaki-kanko.or.jp/edit.html?id=cat02_summer_neputa",
+        verified: true
+      },
+      {
+        id: 285,
+        name: "青森ねぶた祭",
+        date: "2026-08-02",
+        endDate: "2026-08-07",
+        venue: "青森市中心街",
+        prefecture: "青森県",
+        city: "青森市",
+        genre: "お祭り",
+        link: "https://www.nebuta.jp/",
+        verified: true
+      },
+      {
+        id: 286,
+        name: "第75回 五所川原花火大会",
+        date: "2026-08-03",
+        endDate: "2026-08-03",
+        venue: "岩木川河川敷（北斗グラウンド）",
+        prefecture: "青森県",
+        city: "五所川原市",
+        genre: "花火",
+        link: "https://www.gocci.or.jp/gosyogawarahanabi/",
+        verified: true
+      },
+      {
+        id: 287,
+        name: "五所川原立佞武多",
+        date: "2026-08-04",
+        endDate: "2026-08-08",
+        venue: "五所川原市中心街",
+        prefecture: "青森県",
+        city: "五所川原市",
+        genre: "お祭り",
+        link: "https://tachineputa-official.jp/",
+        verified: true
+      },
+      {
+        id: 288,
+        name: "青森ねぶた祭協賛 第72回 青森花火大会",
+        date: "2026-08-07",
+        endDate: "2026-08-07",
+        venue: "青森港（青い海公園・新中央埠頭）",
+        prefecture: "青森県",
+        city: "青森市",
+        genre: "花火",
+        link: "http://aomorihanabitaikai.jp/",
+        verified: true
+      },
+      {
+        id: 289,
+        name: "黒石よされ",
+        date: "2026-08-15",
+        endDate: "2026-08-16",
+        venue: "黒石市中心街",
+        prefecture: "青森県",
+        city: "黒石市",
+        genre: "お祭り",
+        link: "https://kuroishi.or.jp/event/summer/kuroishiyosare",
+        verified: true
+      },
+      {
+        id: 290,
+        name: "田名部まつり（田名部神社例大祭）",
+        date: "2026-08-18",
+        endDate: "2026-08-20",
+        venue: "むつ市市街（田名部地区）",
+        prefecture: "青森県",
+        city: "むつ市",
+        genre: "お祭り",
+        link: "https://www.city.mutsu.lg.jp/bunka/information/kankou-tanabujinnjyareitaisai.html",
+        verified: true
+      },
+      {
+        id: 291,
+        name: "十和田市秋まつり",
+        date: "2026-09-05",
+        endDate: "2026-09-07",
+        venue: "三本木大通り・官庁街通り周辺",
+        prefecture: "青森県",
+        city: "十和田市",
+        genre: "お祭り",
+        link: "https://www.city.towada.lg.jp/kanko/event/akimatsuri.html",
+        verified: true
+      },
+      {
+        id: 292,
+        name: "岩木山お山参詣",
+        date: "2026-09-09",
+        endDate: "2026-09-11",
+        venue: "岩木山神社・百沢温泉郷",
+        prefecture: "青森県",
+        city: "弘前市",
+        genre: "お祭り",
+        link: "https://iwakisan.com/oyamasankei/",
+        verified: true
+      },
+      {
+        id: 293,
+        name: "川内八幡宮例大祭（川内まつり）",
+        date: "2026-09-12",
+        endDate: "2026-09-13",
+        venue: "川内八幡宮および川内地区",
+        prefecture: "青森県",
+        city: "むつ市",
+        genre: "お祭り",
+        link: "https://www.city.mutsu.lg.jp/bunka/information/kankou-kawautihatimannguureitaisai.html",
+        verified: true
+      },
+      {
+        id: 294,
+        name: "大正⇄令和アヴァンギャルド展（仮）",
+        date: "2026-09-19",
+        endDate: "2026-12-27",
+        venue: "弘前れんが倉庫美術館",
+        prefecture: "青森県",
+        city: "弘前市",
+        genre: "展覧会",
+        link: "https://www.hirosaki-moca.jp/",
+        verified: true
+      },
+      {
+        id: 295,
+        name: "弘前城菊と紅葉まつり",
+        date: "2026-10-23",
+        endDate: "2026-11-08",
+        venue: "弘前公園（弘前城植物園）",
+        prefecture: "青森県",
+        city: "弘前市",
+        genre: "花・自然",
+        link: "https://www.hirosaki-kanko.or.jp/edit.html?id=cat02_autumn_momiji",
+        verified: true
+      },
+      {
+        id: 296,
+        name: "スティーヴ・ビショップ展（仮）",
+        date: "2026-12-05",
+        endDate: "2026-12-31",
+        venue: "十和田市現代美術館",
+        prefecture: "青森県",
+        city: "十和田市",
+        genre: "展覧会",
+        link: "https://towadaartcenter.com/",
+        verified: true
+      },
+      {
+        id: 297,
+        name: "第35回YOSAKOIソーラン祭り",
+        date: "2026-06-10",
+        endDate: "2026-06-14",
+        venue: "大通公園・市内各所特設ステージ",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "お祭り",
+        link: "https://www.yosakoi-soran.jp/",
+        verified: true
+      },
+      {
+        id: 298,
+        name: "さっぽろ夏まつり（北海盆踊り・ビアガーデン）",
+        date: "2026-07-23",
+        endDate: "2026-08-18",
+        venue: "大通公園",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "お祭り",
+        link: "https://www.sapporo.travel/summerfes/",
+        verified: true
+      },
+      {
+        id: 299,
+        name: "さっぽろライラックまつり（大通会場）",
+        date: "2026-05-20",
+        endDate: "2026-05-31",
+        venue: "大通公園 西5-7丁目",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "花・自然",
+        link: "https://www.sapporo.travel/lilacfes/",
+        verified: true
+      },
+      {
+        id: 300,
+        name: "北海道神宮例祭（札幌まつり）",
+        date: "2026-06-14",
+        endDate: "2026-06-16",
+        venue: "北海道神宮・中島公園",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "お祭り",
+        link: "http://www.hokkaidojingu.or.jp/festival/",
+        verified: true
+      },
+      {
+        id: 301,
+        name: "さっぽろオータムフェスト2026",
+        date: "2026-09-11",
+        endDate: "2026-10-03",
+        venue: "大通公園 4-8/10/11丁目",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "グルメ",
+        link: "https://www.sapporo.travel/autumnfest/",
+        verified: true
+      },
+      {
+        id: 302,
+        name: "北海道マラソン2026",
+        date: "2026-08-30",
+        endDate: "2026-08-30",
+        venue: "大通西4丁目スタート",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "スポーツ",
+        link: "https://hokkaido-marathon.com/",
+        verified: true
+      },
+      {
+        id: 303,
+        name: "北海道真駒内花火大会2026",
+        date: "2026-07-11",
+        endDate: "2026-07-11",
+        venue: "真駒内セキスイハイムスタジアム",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "花火",
+        link: "https://www.makomanai-hanabi.com/",
+        verified: true
+      },
+      {
+        id: 304,
+        name: "道新・UHB花火大会（豊平川花火大会）",
+        date: "2026-07-24",
+        endDate: "2026-07-24",
+        venue: "豊平川 南大橋〜幌平橋間",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "花火",
+        link: "https://www.sapporo.travel/event/event-list/doshinuhbhanabi/",
+        verified: true
+      },
+      {
+        id: 305,
+        name: "SAPPORO CRAFT BEER FOREST 2026",
+        date: "2026-07-11",
+        endDate: "2026-07-12",
+        venue: "さっぽろばんけいスキー場",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "グルメ",
+        link: "https://www.sapporo-craft-beer-forest.com/",
+        verified: true
+      },
+      {
+        id: 306,
+        name: "SAPPORO BEER HOLIDAY 2026",
+        date: "2026-06-28",
+        endDate: "2026-06-29",
+        venue: "サッポロファクトリー・サッポロガーデンパーク",
+        prefecture: "北海道",
+        city: "札幌市",
+        genre: "グルメ",
+        link: "https://www.sapporobeer.jp/news_release/0000017746/",
+        verified: true
+      },
+      {
+        id: 307,
+        name: "函館港まつり",
+        date: "2026-08-01",
+        endDate: "2026-08-05",
+        venue: "函館市内各所",
+        prefecture: "北海道",
+        city: "函館市",
+        genre: "お祭り",
+        link: "https://www.hakodate-minatomatsuri.org/",
+        verified: true
+      },
+      {
+        id: 308,
+        name: "第57回箱館五稜郭祭",
+        date: "2026-05-16",
+        endDate: "2026-05-17",
+        venue: "五稜郭公園・函館市民会館ほか",
+        prefecture: "北海道",
+        city: "函館市",
+        genre: "お祭り",
+        link: "https://www.hotweb.or.jp/goryokaku-sai/",
+        verified: true
+      },
+      {
+        id: 309,
+        name: "第60回おたる潮まつり",
+        date: "2026-07-24",
+        endDate: "2026-07-26",
+        venue: "小樽港第3号ふ頭ほか",
+        prefecture: "北海道",
+        city: "小樽市",
+        genre: "お祭り",
+        link: "https://otaru.ushiomatsuri.net/",
+        verified: true
+      },
+      {
+        id: 310,
+        name: "第38回おたる運河ロードレース大会",
+        date: "2026-06-21",
+        endDate: "2026-06-21",
+        venue: "色内ふ頭公園",
+        prefecture: "北海道",
+        city: "小樽市",
+        genre: "スポーツ",
+        link: "https://www.city.otaru.lg.jp/docs/2025111200024/",
+        verified: true
+      },
+      {
+        id: 311,
+        name: "旭川夏まつり",
+        date: "2026-07-30",
+        endDate: "2026-08-01",
+        venue: "平和通買物公園・旭橋河畔",
+        prefecture: "北海道",
+        city: "旭川市",
+        genre: "お祭り",
+        link: "https://www.atca.jp/kankouspoy/",
+        verified: true
+      },
+      {
+        id: 312,
+        name: "第73回北見ぼんちまつり",
+        date: "2026-07-17",
+        endDate: "2026-07-18",
+        venue: "北見市中心市街地",
+        prefecture: "北海道",
+        city: "北見市",
+        genre: "お祭り",
+        link: "https://kitamicci.or.jp/bonchi_matsuri/",
+        verified: true
+      },
+      {
+        id: 313,
+        name: "第73回勝毎花火大会",
+        date: "2026-08-13",
+        endDate: "2026-08-13",
+        venue: "十勝川河川敷特設会場",
+        prefecture: "北海道",
+        city: "帯広市",
+        genre: "花火",
+        link: "https://www.tokachi.co.jp/hanabi/",
+        verified: true
+      },
+      {
+        id: 314,
+        name: "第77回あばしりオホーツク夏まつり",
+        date: "2026-07-24",
+        endDate: "2026-07-26",
+        venue: "網走港・市街地",
+        prefecture: "北海道",
+        city: "網走市",
+        genre: "お祭り",
+        link: "https://abashiri-summerfestiva.jimdofree.com/",
+        verified: true
+      },
+      {
+        id: 315,
+        name: "洞爺湖ロングラン花火大会",
+        date: "2026-04-28",
+        endDate: "2026-10-31",
+        venue: "洞爺湖温泉湖畔",
+        prefecture: "北海道",
+        city: "洞爺湖町",
+        genre: "花火",
+        link: "https://www.laketoya.com/event/fireworks/",
+        verified: true
+      },
+      {
+        id: 316,
+        name: "登別地獄まつり",
+        date: "2026-08-29",
+        endDate: "2026-08-30",
+        venue: "登別温泉極楽通り・地獄谷",
+        prefecture: "北海道",
+        city: "登別市",
+        genre: "お祭り",
+        link: "https://noboribetsu-spa.jp/",
+        verified: true
+      },
+      {
+        id: 317,
+        name: "第53回釧路湿原マラソン",
+        date: "2026-07-27",
+        endDate: "2026-07-27",
+        venue: "釧路市民陸上競技場",
+        prefecture: "北海道",
+        city: "釧路市",
+        genre: "スポーツ",
+        link: "https://www.kushiroshitsugen-marathon.jp/",
+        verified: true
+      },
+      {
+        id: 318,
+        name: "ふらの北海へそ祭り",
+        date: "2026-07-28",
+        endDate: "2026-07-29",
+        venue: "富良野駅周辺・新相生通り商店街",
+        prefecture: "北海道",
+        city: "富良野市",
+        genre: "お祭り",
+        link: "https://hesomatsuri.com/",
+        verified: true
+      },
+      {
+        id: 319,
+        name: "姥神大神宮渡御祭",
+        date: "2026-08-09",
+        endDate: "2026-08-11",
+        venue: "姥神大神宮および江差町内",
+        prefecture: "北海道",
+        city: "江差町",
+        genre: "お祭り",
+        link: "https://esashi.town/matsuri/page.php?id=257",
+        verified: true
+      },
+      {
+        id: 320,
+        name: "いわみざわ百餅祭り",
+        date: "2026-09-12",
+        endDate: "2026-09-13",
+        venue: "岩見沢市駅前通り",
+        prefecture: "北海道",
+        city: "岩見沢市",
+        genre: "お祭り",
+        link: "https://iwamizawa-kankou.jp/",
+        verified: true
+      },
+      {
+        id: 321,
+        name: "第36回えべつやきもの市",
+        date: "2026-07-11",
+        endDate: "2026-07-12",
+        venue: "江別市セラミックアートセンター・周辺",
+        prefecture: "北海道",
+        city: "江別市",
+        genre: "マーケット",
+        link: "https://ebetsu-yakimono.com/about",
+        verified: true
+      },
+      {
+        id: 322,
+        name: "第60回函館湯の川温泉花火大会",
+        date: "2026-08-23",
+        endDate: "2026-08-23",
+        venue: "松倉川下流付近",
+        prefecture: "北海道",
+        city: "函館市",
+        genre: "花火",
+        link: "https://hakodate-yunokawa.jp/fireworks/",
+        verified: true
+      },
+      {
+        id: 323,
+        name: "ゆうべつチューリップフェア",
+        date: "2026-05-11",
+        endDate: "2026-05-31",
+        venue: "かみゆうべつチューリップ公園",
+        prefecture: "北海道",
+        city: "湧別町",
+        genre: "花・自然",
+        link: "https://yubetsu-kanko.jp/free/tlipf",
+        verified: true
+      },
+      {
+        id: 324,
+        name: "童話村たきのうえ芝ざくらまつり",
+        date: "2026-05-11",
+        endDate: "2026-05-31",
+        venue: "芝ざくら滝上公園",
+        prefecture: "北海道",
+        city: "滝上町",
+        genre: "花・自然",
+        link: "https://takinoue.com/post-927/",
+        verified: true
+      },
+      {
+        id: 325,
+        name: "たきかわ菜の花まつり",
+        date: "2026-05-16",
+        endDate: "2026-05-24",
+        venue: "滝川市菜の花畑",
+        prefecture: "北海道",
+        city: "滝川市",
+        genre: "花・自然",
+        link: "https://www.takikawa-nanohana.com/",
+        verified: true
+      },
+      {
+        id: 326,
+        name: "第32回全国花のまちづくり恵庭大会",
+        date: "2026-06-27",
+        endDate: "2026-06-28",
+        venue: "花の拠点 はなふる",
+        prefecture: "北海道",
+        city: "恵庭市",
+        genre: "花・自然",
+        link: "https://www.hananokai.or.jp/2026hanamachi-eniwataikai-1/",
+        verified: true
+      },
+      {
+        id: 327,
+        name: "第53回 星の降る里・芦別健夏まつり",
+        date: "2026-07-19",
+        endDate: "2026-07-20",
+        venue: "芦別市内市街地",
+        prefecture: "北海道",
+        city: "芦別市",
+        genre: "お祭り",
+        link: "https://go-to-ashibetsu.com/news/kenkafes_pecialpage.html",
+        verified: true
+      },
+      {
+        id: 328,
+        name: "夕張メロンまつり",
+        date: "2026-06-21",
+        endDate: "2026-06-21",
+        venue: "夕張市内",
+        prefecture: "北海道",
+        city: "夕張市",
+        genre: "グルメ",
+        link: "https://www.city.yubari.lg.jp/site/kanko/9237.html",
+        verified: true
+      },
+      {
+        id: 329,
+        name: "岩内神社例大祭",
+        date: "2026-07-07",
+        endDate: "2026-07-09",
+        venue: "岩内神社・岩内町内",
+        prefecture: "北海道",
+        city: "岩内町",
+        genre: "お祭り",
+        link: "https://www.iwanai-jinja.com/",
+        verified: true
+      },
+      {
+        id: 330,
+        name: "2026 UCIグランフォンド世界選手権 ニセコクラシック",
+        date: "2026-08-26",
+        endDate: "2026-08-30",
+        venue: "ニセコ山系（倶知安町・共和町・蘭越町・ニセコ町）",
+        prefecture: "北海道",
+        city: "ニセコ町",
+        genre: "スポーツ",
+        link: "https://nisekoclassic.com/",
+        verified: true
+      },
+      {
+        id: 331,
+        name: "第79回むろらん港まつり",
+        date: "2026-08-07",
+        endDate: "2026-08-09",
+        venue: "室蘭中央埠頭・市内各所",
+        prefecture: "北海道",
+        city: "室蘭市",
+        genre: "お祭り",
+        link: "https://iburi.net/minato/",
+        verified: true
+      },
+      {
+        id: 332,
+        name: "第60回おびひろ平原まつり",
+        date: "2026-08-14",
+        endDate: "2026-08-16",
+        venue: "帯広市平原通り",
+        prefecture: "北海道",
+        city: "帯広市",
+        genre: "お祭り",
+        link: "https://www.city.obihiro.hokkaido.jp/tourism/matsuri/1005849.html",
+        verified: true
+      },
+      {
+        id: 333,
+        name: "旭川夏まつり 道新納涼花火大会",
+        date: "2026-07-30",
+        endDate: "2026-07-30",
+        venue: "旭橋河畔",
+        prefecture: "北海道",
+        city: "旭川市",
+        genre: "花火",
+        link: "https://www.atca.jp/kankouspoy/",
+        verified: true
+      },
+      {
+        id: 334,
+        name: "増毛春の味まつり（えびまつり）",
+        date: "2026-05-23",
+        endDate: "2026-05-24",
+        venue: "増毛フェリーターミナル前広場",
+        prefecture: "北海道",
+        city: "増毛町",
+        genre: "グルメ",
+        link: "https://www.town.mashike.hokkaido.jp/division/shokokanko/newsroom/detail_1708389987.html",
+        verified: true
+      },
+      {
+        id: 335,
+        name: "稚内みなと南極まつり",
+        date: "2026-08-01",
+        endDate: "2026-08-02",
+        venue: "稚内副港市場周辺",
+        prefecture: "北海道",
+        city: "稚内市",
+        genre: "お祭り",
+        link: "https://www.city.wakkanai.hokkaido.jp/kanko/event/nankyokumatsuri.html",
+        verified: true
+      },
+      {
+        id: 336,
+        name: "第50回えりもの灯台まつり",
+        date: "2026-08-14",
+        endDate: "2026-08-16",
+        venue: "えりも灯台広場・市街地",
+        prefecture: "北海道",
+        city: "えりも町",
+        genre: "お祭り",
+        link: "https://www.town.erimo.lg.jp/kankou/event/k9mfea0000002rfv.html",
+        verified: true
       }
     ];
 
@@ -2858,7 +4573,7 @@
       const iconContent = isSprite ? '' : meta.icon;
       const iconStyle = isSprite ? '' : `color:${meta.color}`;
       return `
-        <div class="card" data-genre="${ev.genre}">
+        <div class="card" data-genre="${ev.genre}" data-prefecture="${ev.prefecture}">
           <div class="card-icon" style="${iconStyle}">${iconContent}</div>
           <div class="card-body">
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
@@ -2880,6 +4595,23 @@
     }
 
     let searchQuery = '';
+    let activeArea = 'all';
+
+    const PREFECTURE_TO_REGION = {
+      "北海道": "hokkaido",
+      "青森県": "tohoku", "岩手県": "tohoku", "宮城県": "tohoku",
+      "秋田県": "tohoku", "山形県": "tohoku", "福島県": "tohoku",
+      "茨城県": "kanto",  "栃木県": "kanto",  "群馬県": "kanto",
+      "埼玉県": "kanto",  "千葉県": "kanto",  "東京都": "kanto",  "神奈川県": "kanto",
+      "新潟県": "chubu",  "富山県": "chubu",  "石川県": "chubu",  "福井県": "chubu",
+      "山梨県": "chubu",  "長野県": "chubu",  "岐阜県": "chubu",  "静岡県": "chubu",  "愛知県": "chubu",
+      "三重県": "kinki",  "滋賀県": "kinki",  "京都府": "kinki",  "大阪府": "kinki",
+      "兵庫県": "kinki",  "奈良県": "kinki",  "和歌山県": "kinki",
+      "鳥取県": "chugoku","島根県": "chugoku","岡山県": "chugoku","広島県": "chugoku","山口県": "chugoku",
+      "徳島県": "shikoku","香川県": "shikoku","愛媛県": "shikoku","高知県": "shikoku",
+      "福岡県": "kyushu", "佐賀県": "kyushu", "長崎県": "kyushu", "熊本県": "kyushu",
+      "大分県": "kyushu", "宮崎県": "kyushu", "鹿児島県": "kyushu","沖縄県": "kyushu"
+    };
 
     function applyFilter() {
       const cards = document.querySelectorAll('.card');
@@ -2887,8 +4619,9 @@
       let count = 0;
       cards.forEach(c => {
         const genreMatch = activeGenre === 'all' || c.dataset.genre === activeGenre;
+        const areaMatch = activeArea === 'all' || PREFECTURE_TO_REGION[c.dataset.prefecture] === activeArea;
         const queryMatch = !q || c.textContent.toLowerCase().includes(q);
-        const match = genreMatch && queryMatch;
+        const match = genreMatch && areaMatch && queryMatch;
         c.style.display = match ? '' : 'none';
         if (match) count++;
       });
@@ -2900,7 +4633,13 @@
 
     function renderCategories(genres) {
       const container = document.getElementById('categories');
-      container.innerHTML = genres.map(g => {
+      const allBtn = `
+          <div class="cat-card is-active" data-genre="all" style="color:#666">
+            <div class="cat-icon has-emoji">📋</div>
+            <div class="cat-name">すべて</div>
+          </div>
+        `;
+      container.innerHTML = allBtn + genres.map(g => {
         const meta = getGenreMeta(g);
         const isSprite = SPRITE_GENRES.has(g);
         const iconHtml = isSprite
@@ -2914,6 +4653,7 @@
         `;
       }).join('');
     }
+
 
     function init() {
       const container = document.getElementById('cards');
@@ -2934,8 +4674,7 @@
 
       document.querySelectorAll('.cat-card').forEach(c => {
         c.addEventListener('click', () => {
-          const genre = c.dataset.genre;
-          activeGenre = activeGenre === genre ? 'all' : genre;
+          activeGenre = c.dataset.genre;
           document.querySelectorAll('.cat-card').forEach(cc => {
             cc.classList.toggle('is-active', cc.dataset.genre === activeGenre);
           });
@@ -2943,10 +4682,13 @@
         });
       });
 
-      document.querySelectorAll('.chip').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+      document.querySelectorAll('.area-btn').forEach(b => {
+        b.addEventListener('click', () => {
+          activeArea = b.dataset.area;
+          document.querySelectorAll('.area-btn').forEach(bb => {
+            bb.classList.toggle('is-active', bb.dataset.area === activeArea);
+          });
+          applyFilter();
         });
       });
 
