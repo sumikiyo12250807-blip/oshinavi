@@ -310,12 +310,10 @@
       font-size: 20px;
       filter: drop-shadow(0 0 4px currentColor);
     }
-    .cat-card[data-genre="お祭り"] .cat-icon       { background-image: url('icon_matsuri.svg'); }
-    .cat-card[data-genre="花・自然"] .cat-icon     { background-image: url('icon_hana.svg'); }
-    .cat-card[data-genre="グルメ"] .cat-icon       { background-image: url('icon_gourmet.svg'); }
-    .cat-card[data-genre="スポーツ"] .cat-icon     { background-image: url('icon_sports.svg'); }
-    .cat-card[data-genre="マーケット"] .cat-icon   { background-image: url('icon_market.svg'); }
-    .cat-card[data-genre="音楽・ステージ"] .cat-icon { background-image: url('icon_music.svg'); }
+    .cat-card[data-genre="祭り"] .cat-icon       { background-image: url('icon_matsuri.svg'); }
+    .cat-card[data-genre="花"] .cat-icon         { background-image: url('icon_hana.svg'); }
+    .cat-card[data-genre="グルメ"] .cat-icon     { background-image: url('icon_gourmet.svg'); }
+    .cat-card[data-genre="スポーツ"] .cat-icon   { background-image: url('icon_sports.svg'); }
 
     .cat-name {
       font-size: 14px;
@@ -393,12 +391,10 @@
       justify-content: center;
       font-size: 36px;
     }
-    .card[data-genre="お祭り"] .card-icon       { background-image: url('icon_matsuri.svg'); }
-    .card[data-genre="花・自然"] .card-icon     { background-image: url('icon_hana.svg'); }
-    .card[data-genre="グルメ"] .card-icon       { background-image: url('icon_gourmet.svg'); }
-    .card[data-genre="スポーツ"] .card-icon     { background-image: url('icon_sports.svg'); }
-    .card[data-genre="マーケット"] .card-icon   { background-image: url('icon_market.svg'); }
-    .card[data-genre="音楽・ステージ"] .card-icon { background-image: url('icon_music.svg'); }
+    .card[data-genre="祭り"] .card-icon       { background-image: url('icon_matsuri.svg'); }
+    .card[data-genre="花"] .card-icon         { background-image: url('icon_hana.svg'); }
+    .card[data-genre="グルメ"] .card-icon     { background-image: url('icon_gourmet.svg'); }
+    .card[data-genre="スポーツ"] .card-icon   { background-image: url('icon_sports.svg'); }
 
     .card::before {
       content: '';
@@ -620,7 +616,7 @@
             "venue": "西公園・定禅寺通り・東二番丁通",
             "prefecture": "宮城県",
             "city": "仙台市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.aoba-matsuri.com/",
             "verified": true
       },
@@ -632,7 +628,7 @@
             "venue": "奥松島縄文村歴史資料館",
             "prefecture": "宮城県",
             "city": "東松島市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "http://www.satohama-jomon.jp/",
             "verified": true
       },
@@ -644,7 +640,7 @@
             "venue": "定義如来西方寺 参道",
             "prefecture": "宮城県",
             "city": "仙台市青葉区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.johgi-info.jp/information/hokoten.html",
             "verified": true
       },
@@ -656,7 +652,7 @@
             "venue": "神割崎キャンプ場駐車場",
             "prefecture": "宮城県",
             "city": "南三陸町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.ishinomaki.lg.jp/cont/10250000/010/shiosaifes.html",
             "verified": true
       },
@@ -668,7 +664,7 @@
             "venue": "ホワイトキューブ（白石市文化体育活動センター）",
             "prefecture": "宮城県",
             "city": "白石市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://alljapan-kokeshi.com/",
             "verified": true
       },
@@ -680,9 +676,12 @@
             "venue": "道の駅「村田」物産交流センター",
             "prefecture": "宮城県",
             "city": "村田町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=10855",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 9,
@@ -692,7 +691,7 @@
             "venue": "丸森町役場周辺",
             "prefecture": "宮城県",
             "city": "丸森町",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=1485",
             "verified": true
       },
@@ -704,7 +703,7 @@
             "venue": "仙台市野草園",
             "prefecture": "宮城県",
             "city": "仙台市太白区",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://sendai-green-association.jp/event/yasouen/18760/",
             "verified": true
       },
@@ -716,7 +715,7 @@
             "venue": "角田市台山公園",
             "prefecture": "宮城県",
             "city": "角田市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.city.kakuda.lg.jp/site/kokokakuda/987.html",
             "verified": true
       },
@@ -728,7 +727,7 @@
             "venue": "御嶽神社・花山ダム湖畔",
             "prefecture": "宮城県",
             "city": "栗原市花山",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kuriharacity.jp/w055/PAGE000000000000006089.html",
             "verified": true
       },
@@ -740,7 +739,7 @@
             "venue": "金華山黄金山神社",
             "prefecture": "宮城県",
             "city": "石巻市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://kinkasan.jp/",
             "verified": true
       },
@@ -752,7 +751,7 @@
             "venue": "弘進ゴム アスリートパーク仙台",
             "prefecture": "宮城県",
             "city": "仙台市宮城野区",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://www.sendaihalf.com/",
             "verified": true
       },
@@ -764,7 +763,7 @@
             "venue": "南三陸ハマーレ歌津",
             "prefecture": "宮城県",
             "city": "南三陸町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.m-kankou.jp/events/266994/",
             "verified": true
       },
@@ -776,7 +775,7 @@
             "venue": "サン・ファン館",
             "prefecture": "宮城県",
             "city": "石巻市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://santjuan-matsuri.jp/",
             "verified": true
       },
@@ -800,7 +799,7 @@
             "venue": "愛宕山公園",
             "prefecture": "宮城県",
             "city": "色麻町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.town.shikama.miyagi.jp/soshiki/tisin/event/syakuyakumaturi/3251.html",
             "verified": true
       },
@@ -812,7 +811,7 @@
             "venue": "多賀城跡あやめ園",
             "prefecture": "宮城県",
             "city": "多賀城市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.tagajo.miyagi.jp/bunkakanko/shiseki/kanko/ayamematuri.html",
             "verified": true
       },
@@ -826,7 +825,10 @@
             "city": "仙台市青葉区",
             "genre": "グルメ",
             "link": "https://thaifestival-sendai.com/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 21,
@@ -836,7 +838,7 @@
             "venue": "あすと長町 杜の広場公園",
             "prefecture": "宮城県",
             "city": "仙台市太白区",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.khb-tv.co.jp/event/daichakai2026/",
             "verified": true
       },
@@ -860,9 +862,12 @@
             "venue": "地底の森ミュージアム",
             "prefecture": "宮城県",
             "city": "仙台市太白区",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.sendai-chiteinomori.jp/guidemap/event/index.html#R8festa",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 25,
@@ -872,7 +877,7 @@
             "venue": "石ノ森萬画館・中瀬公園",
             "prefecture": "宮城県",
             "city": "石巻市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.mangattan.jp/manga/",
             "verified": true
       },
@@ -886,7 +891,10 @@
             "city": "仙台市太白区",
             "genre": "グルメ",
             "link": "https://sendai-ramenfesta.com/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 27,
@@ -896,7 +904,7 @@
             "venue": "仙台うみの杜水族館",
             "prefecture": "宮城県",
             "city": "仙台市宮城野区",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.uminomori.jp/en/umino/kaityuuhanami/index.html",
             "verified": true
       },
@@ -908,9 +916,12 @@
             "venue": "やくらいガーデン",
             "prefecture": "宮城県",
             "city": "加美町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://yakurai-garden.com/easter",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 29,
@@ -920,7 +931,7 @@
             "venue": "東北歴史博物館",
             "prefecture": "宮城県",
             "city": "多賀城市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.thm.pref.miyagi.jp/exhibition/15647/",
             "verified": true
       },
@@ -932,7 +943,7 @@
             "venue": "仙台うみの杜水族館",
             "prefecture": "宮城県",
             "city": "仙台市宮城野区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.uminomori.jp/en/umino/ericcarle/",
             "verified": true
       },
@@ -944,7 +955,7 @@
             "venue": "宮城県図書館",
             "prefecture": "宮城県",
             "city": "仙台市泉区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.pref.miyagi.jp/soshiki/syougaku/sinsaibunkoten.html",
             "verified": true
       },
@@ -956,7 +967,7 @@
             "venue": "宮城県図書館",
             "prefecture": "宮城県",
             "city": "仙台市泉区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.pref.miyagi.jp/soshiki/syougaku/tosyokantenji3.html",
             "verified": true
       },
@@ -980,7 +991,7 @@
             "venue": "けんしん郡山文化センター",
             "prefecture": "福島県",
             "city": "郡山市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://observatory-fukushima.jp/pokemon/",
             "verified": true
       },
@@ -992,7 +1003,7 @@
             "venue": "郡山市立美術館",
             "prefecture": "福島県",
             "city": "郡山市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.fct.co.jp/hokusai-hiroshige/",
             "verified": true
       },
@@ -1004,7 +1015,7 @@
             "venue": "ジュピアランドひらた",
             "prefecture": "福島県",
             "city": "平田村",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.vill.hirata.fukushima.jp/site/jupialand/2694.html",
             "verified": true
       },
@@ -1028,7 +1039,7 @@
             "venue": "福島市写真美術館（花の写真館）",
             "prefecture": "福島県",
             "city": "福島市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.f-shinkoukousha.or.jp/hanano-shashinkan/?event=tsuzuri2026",
             "verified": true
       },
@@ -1040,7 +1051,7 @@
             "venue": "霞ヶ城公園",
             "prefecture": "福島県",
             "city": "二本松市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.nihonmatsu-kanko.jp/?p=4879",
             "verified": true
       },
@@ -1052,7 +1063,7 @@
             "venue": "高柴山山頂",
             "prefecture": "福島県",
             "city": "小野町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.ono.fukushima.jp/site/kankou/mt-takashiba_1.html",
             "verified": true
       },
@@ -1064,7 +1075,7 @@
             "venue": "安達太良山(奥岳登山口・山頂)",
             "prefecture": "福島県",
             "city": "二本松市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.nihonmatsu-kanko.jp/?p=7811",
             "verified": true
       },
@@ -1076,7 +1087,7 @@
             "venue": "須賀川牡丹園",
             "prefecture": "福島県",
             "city": "須賀川市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.botan.or.jp/",
             "verified": true
       },
@@ -1088,9 +1099,12 @@
             "venue": "三ノ倉高原花畑",
             "prefecture": "福島県",
             "city": "喜多方市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.kitakata-kanko.jp/?events=%E4%B8%89%E3%83%8E%E5%80%89%E9%AB%98%E5%8E%9F%E8%8F%9C%E3%81%AE%E8%8A%B1%E3%83%95%E3%82%A7%E3%82%B9%E3%82%BF-2",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 44,
@@ -1112,7 +1126,7 @@
             "venue": "雲雀ヶ原祭場地・相馬中村神社他",
             "prefecture": "福島県",
             "city": "相馬市・南相馬市・浪江町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://soma-nomaoi.jp/",
             "verified": true
       },
@@ -1124,7 +1138,7 @@
             "venue": "高柴デコ屋敷",
             "prefecture": "福島県",
             "city": "郡山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://miharukoma.com/event/8824",
             "verified": true
       },
@@ -1160,7 +1174,7 @@
             "venue": "陽林寺",
             "prefecture": "福島県",
             "city": "福島市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://isakusan-yourinji.com/",
             "verified": true
       },
@@ -1172,7 +1186,7 @@
             "venue": "アクアマリンふくしま",
             "prefecture": "福島県",
             "city": "いわき市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.aquamarine.or.jp/",
             "verified": true
       },
@@ -1184,7 +1198,7 @@
             "venue": "本名御神楽岳",
             "prefecture": "福島県",
             "city": "金山町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.kaneyama.fukushima.jp/site/kanko/tanoshimu-mikaguradake.html",
             "verified": true
       },
@@ -1208,7 +1222,7 @@
             "venue": "博士山",
             "prefecture": "福島県",
             "city": "柳津町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://aizu-yanaizu.com/event/hakase/",
             "verified": true
       },
@@ -1232,7 +1246,7 @@
             "venue": "檜枝岐の舞台",
             "prefecture": "福島県",
             "city": "檜枝岐村",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.oze-info.jp/news/230404/",
             "verified": true
       },
@@ -1244,7 +1258,7 @@
             "venue": "さゆり公園",
             "prefecture": "福島県",
             "city": "西会津町",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.nishiaizu-natsukasicarshow.com/",
             "verified": true
       },
@@ -1280,7 +1294,7 @@
             "venue": "矢大臣山",
             "prefecture": "福島県",
             "city": "小野町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.ono.fukushima.jp/soshiki/7/mt-yadaijin.html",
             "verified": true
       },
@@ -1294,7 +1308,10 @@
             "city": "福島市",
             "genre": "スポーツ",
             "link": "https://www.sportspc.jp/?p=12411",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 61,
@@ -1316,7 +1333,7 @@
             "venue": "猪苗代町総合体育館(カメリーナ)他",
             "prefecture": "福島県",
             "city": "猪苗代町・磐梯町・北塩原村",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://kankou.aizubandai.jp/2026/04/15/%E3%80%90%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%80%91%E7%AC%AC5%E5%9B%9E-%E4%BC%9A%E6%B4%A5%E7%A3%90%E6%A2%AF%E5%B1%B1%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B3/",
             "verified": true
       },
@@ -1328,7 +1345,7 @@
             "venue": "三島町宮下地区",
             "prefecture": "福島県",
             "city": "三島町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.mishima.fukushima.jp/site/kankou/7227.html",
             "verified": true
       },
@@ -1364,7 +1381,7 @@
             "venue": "市民のひろば(相馬市民会館駐車場)",
             "prefecture": "福島県",
             "city": "相馬市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://soma-kanko.jp/trip/somabonodori/",
             "verified": true
       },
@@ -1400,7 +1417,7 @@
             "venue": "つくば牡丹園",
             "prefecture": "茨城県",
             "city": "つくば市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://peonygardentokyo.com/",
             "verified": true
       },
@@ -1412,7 +1429,7 @@
             "venue": "国営ひたち海浜公園",
             "prefecture": "茨城県",
             "city": "ひたちなか市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hitachikaihin.jp/event/flowering/flowering2026.html",
             "verified": true
       },
@@ -1424,9 +1441,12 @@
             "venue": "こもれび森のイバライド",
             "prefecture": "茨城県",
             "city": "稲敷市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.ibaraido.co.jp/wp/26097",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 72,
@@ -1436,7 +1456,7 @@
             "venue": "国土地理院 地図と測量の科学館",
             "prefecture": "茨城県",
             "city": "つくば市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.gsi.go.jp/MUSEUM/",
             "verified": true
       },
@@ -1448,7 +1468,7 @@
             "venue": "いばらきフラワーパーク",
             "prefecture": "茨城県",
             "city": "石岡市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.flowerpark.or.jp/",
             "verified": true
       },
@@ -1460,7 +1480,7 @@
             "venue": "大竹海岸鉾田海水浴場",
             "prefecture": "茨城県",
             "city": "鉾田市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "http://www.ric.hi-ho.ne.jp/yamadabaiten/",
             "verified": true
       },
@@ -1484,7 +1504,7 @@
             "venue": "ホーミックふれあい公園(小貝川ふれあい公園)",
             "prefecture": "茨城県",
             "city": "下妻市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.shimotsuma.lg.jp/shimotsumakankomonogatari/kanko-event/page000927.html",
             "verified": true
       },
@@ -1496,9 +1516,12 @@
             "venue": "ホーミックふれあい公園",
             "prefecture": "茨城県",
             "city": "下妻市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.shimotsuma-kankou.jp/section.php?type=0&mode=detail&code=221",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 78,
@@ -1508,9 +1531,12 @@
             "venue": "国営ひたち海浜公園",
             "prefecture": "茨城県",
             "city": "ひたちなか市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hitachikaihin.jp/event/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 79,
@@ -1520,7 +1546,7 @@
             "venue": "こもれび森のイバライド",
             "prefecture": "茨城県",
             "city": "稲敷市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ibaraido.co.jp/",
             "verified": true
       },
@@ -1532,7 +1558,7 @@
             "venue": "涸沼自然公園",
             "prefecture": "茨城県",
             "city": "茨城町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.town.ibaraki.lg.jp/gyousei/news/division3/syoukoukankou/003929.html",
             "verified": true
       },
@@ -1544,7 +1570,7 @@
             "venue": "茨城県天心記念五浦美術館",
             "prefecture": "茨城県",
             "city": "北茨城市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.tenshin.museum.ibk.ed.jp/viewer/info.html?id=258&g=32",
             "verified": true
       },
@@ -1556,7 +1582,7 @@
             "venue": "大子文化福祉会館「まいん」周辺",
             "prefecture": "茨城県",
             "city": "大子町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.ibayosa.com/",
             "verified": true
       },
@@ -1568,7 +1594,7 @@
             "venue": "大洗マリンタワー",
             "prefecture": "茨城県",
             "city": "大洗町",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "http://www.oarai-mt.jp/event.html",
             "verified": true
       },
@@ -1592,7 +1618,7 @@
             "venue": "青山花しょうぶ園",
             "prefecture": "茨城県",
             "city": "城里町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0308e178851/",
             "verified": true
       },
@@ -1604,7 +1630,7 @@
             "venue": "国立科学博物館 筑波実験植物園",
             "prefecture": "茨城県",
             "city": "つくば市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://tbg.kahaku.go.jp/tenji-event/nid00004117.html",
             "verified": true
       },
@@ -1616,7 +1642,7 @@
             "venue": "しもだて美術館",
             "prefecture": "茨城県",
             "city": "筑西市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.city.chikusei.lg.jp/museum/tenrankai/yotei-tenrankai/page013535.html",
             "verified": true
       },
@@ -1628,7 +1654,7 @@
             "venue": "茨城県近代美術館",
             "prefecture": "茨城県",
             "city": "水戸市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.modernart.museum.ibk.ed.jp/",
             "verified": true
       },
@@ -1640,9 +1666,12 @@
             "venue": "大洗サンビーチ",
             "prefecture": "茨城県",
             "city": "大洗町",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.oarai-info.jp/news/postid_9910/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 90,
@@ -1688,7 +1717,7 @@
             "venue": "大洗マリンタワー前広場",
             "prefecture": "茨城県",
             "city": "大洗町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://r.goope.jp/oarai-shokokai/info/6509385",
             "verified": true
       },
@@ -1700,7 +1729,7 @@
             "venue": "笠間日動美術館",
             "prefecture": "茨城県",
             "city": "笠間市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.nichido-museum.or.jp/exhibition.html",
             "verified": true
       },
@@ -1712,7 +1741,7 @@
             "venue": "笠間日動美術館",
             "prefecture": "茨城県",
             "city": "笠間市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.nichido-museum.or.jp/event-2/",
             "verified": true
       },
@@ -1724,7 +1753,7 @@
             "venue": "保和苑及び周辺史跡",
             "prefecture": "茨城県",
             "city": "水戸市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://mitokoumon.com/event/ajisai/ajisai/",
             "verified": true
       },
@@ -1736,7 +1765,7 @@
             "venue": "国道50号(水戸駅北口〜大工町交差点)",
             "prefecture": "茨城県",
             "city": "水戸市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://mitokoumon.com/koumon/honsai.html",
             "verified": true
       },
@@ -1748,7 +1777,7 @@
             "venue": "ミュージアムパーク 茨城県自然博物館",
             "prefecture": "茨城県",
             "city": "坂東市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.nat.museum.ibk.ed.jp/exhibits/special/8720",
             "verified": true
       },
@@ -1760,7 +1789,7 @@
             "venue": "茨城県立歴史館",
             "prefecture": "茨城県",
             "city": "水戸市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://rekishikan-ibk.jp/special/",
             "verified": true
       },
@@ -1772,7 +1801,7 @@
             "venue": "茨城県陶芸美術館",
             "prefecture": "茨城県",
             "city": "笠間市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.tougei.museum.ibk.ed.jp/viewer/info.html?id=562",
             "verified": true
       },
@@ -1784,7 +1813,7 @@
             "venue": "妙雲寺",
             "prefecture": "栃木県",
             "city": "那須塩原市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.tochigiji.or.jp/event/e15601",
             "verified": true
       },
@@ -1796,7 +1825,7 @@
             "venue": "あしかがフラワーパーク",
             "prefecture": "栃木県",
             "city": "足利市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ashikaga.co.jp/fujinohana_special2026/jp/",
             "verified": true
       },
@@ -1808,9 +1837,12 @@
             "venue": "井頭公園",
             "prefecture": "栃木県",
             "city": "真岡市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.tochigiji.or.jp/event/e17328",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 104,
@@ -1820,7 +1852,7 @@
             "venue": "多氣山不動尊",
             "prefecture": "栃木県",
             "city": "宇都宮市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.tagesan.com/hiwatari/",
             "verified": true
       },
@@ -1832,7 +1864,7 @@
             "venue": "日光東照宮",
             "prefecture": "栃木県",
             "city": "日光市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.toshogu.jp/saiten/index.html",
             "verified": true
       },
@@ -1844,7 +1876,7 @@
             "venue": "日光山輪王寺 三仏堂",
             "prefecture": "栃木県",
             "city": "日光市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.rinnoji.or.jp/event/may/04.html",
             "verified": true
       },
@@ -1858,7 +1890,10 @@
             "city": "宇都宮市",
             "genre": "グルメ",
             "link": "https://www.utsunomiya-cvb.org/event/detail_20008.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 108,
@@ -1870,7 +1905,10 @@
             "city": "真岡市",
             "genre": "グルメ",
             "link": "https://www.city.moka.lg.jp/kakuka/nosei/event/21997.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 109,
@@ -1892,7 +1930,7 @@
             "venue": "鹿沼市花木センター",
             "prefecture": "栃木県",
             "city": "鹿沼市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.kanuma.tochigi.jp/0761/info-0000011255-0.html",
             "verified": true
       },
@@ -1916,7 +1954,7 @@
             "venue": "森友瀧尾神社・神田",
             "prefecture": "栃木県",
             "city": "日光市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.nikko-kankou.org/event/1148",
             "verified": true
       },
@@ -1928,9 +1966,12 @@
             "venue": "道の駅うつのみやろまんちっく村",
             "prefecture": "栃木県",
             "city": "宇都宮市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.romanticmura.com/event/calendar.php",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 114,
@@ -1940,9 +1981,12 @@
             "venue": "オリオンスクエア・オリオン通り",
             "prefecture": "栃木県",
             "city": "宇都宮市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.mod.go.jp/pco/tochigi/gf_2026.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 115,
@@ -1952,7 +1996,7 @@
             "venue": "宇都宮二荒山神社",
             "prefecture": "栃木県",
             "city": "宇都宮市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.utsunomiya-cvb.org/event/detail_20035.html",
             "verified": true
       },
@@ -1964,7 +2008,7 @@
             "venue": "足利富士浅間神社",
             "prefecture": "栃木県",
             "city": "足利市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.ashikaga-kankou.jp/event/petanko_matsuri",
             "verified": true
       },
@@ -1976,7 +2020,7 @@
             "venue": "名草下町ほたる養殖池・名草川沿い",
             "prefecture": "栃木県",
             "city": "足利市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ashikaga-kankou.jp/event/nagusa_hotaru",
             "verified": true
       },
@@ -1988,7 +2032,7 @@
             "venue": "湯西川温泉街・平家の里",
             "prefecture": "栃木県",
             "city": "日光市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.nikko-kankou.org/spot/65",
             "verified": true
       },
@@ -2000,7 +2044,7 @@
             "venue": "あしかがフラワーパーク",
             "prefecture": "栃木県",
             "city": "足利市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ashikaga.co.jp/season/season05.html",
             "verified": true
       },
@@ -2012,7 +2056,7 @@
             "venue": "日光山中禅寺立木観音",
             "prefecture": "栃木県",
             "city": "日光市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.rinnoji.or.jp/event/june/03.html",
             "verified": true
       },
@@ -2024,7 +2068,7 @@
             "venue": "吉祥寺",
             "prefecture": "栃木県",
             "city": "足利市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ashikaga-kankou.jp/event/ajisaibenten_matsuri",
             "verified": true
       },
@@ -2036,7 +2080,7 @@
             "venue": "太平山あじさい坂",
             "prefecture": "栃木県",
             "city": "栃木市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.tochigi-kankou.or.jp/event/tochigi-ajisai",
             "verified": true
       },
@@ -2048,7 +2092,7 @@
             "venue": "黒羽城址公園",
             "prefecture": "栃木県",
             "city": "大田原市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://kurobane.info/",
             "verified": true
       },
@@ -2060,9 +2104,12 @@
             "venue": "宮みらいライトヒル",
             "prefecture": "栃木県",
             "city": "宇都宮市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.utsunomiya-cvb.org/event/detail_30202.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 125,
@@ -2074,7 +2121,10 @@
             "city": "宇都宮市",
             "genre": "グルメ",
             "link": "https://www.utsunomiya-cvb.org/event/detail_30153.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 126,
@@ -2084,7 +2134,7 @@
             "venue": "久下田駅前通り",
             "prefecture": "栃木県",
             "city": "真岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.moka.lg.jp/kakuka/shokokanko/event/12403.html",
             "verified": true
       },
@@ -2096,7 +2146,7 @@
             "venue": "那須烏山市街地",
             "prefecture": "栃木県",
             "city": "那須烏山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.nasukarasuyama.lg.jp/page/dir001128.html",
             "verified": true
       },
@@ -2132,7 +2182,7 @@
             "venue": "大通り",
             "prefecture": "栃木県",
             "city": "宇都宮市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.miyamatsuri.com/",
             "verified": true
       },
@@ -2156,7 +2206,7 @@
             "venue": "荒町本通り",
             "prefecture": "栃木県",
             "city": "真岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.moka.lg.jp/kakuka/shokokanko/event/20497.html",
             "verified": true
       },
@@ -2192,7 +2242,7 @@
             "venue": "蔵の街並み（万町交番〜室町ほか）",
             "prefecture": "栃木県",
             "city": "栃木市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.tochigi-kankou.or.jp/event/akimatsuri",
             "verified": true
       },
@@ -2204,7 +2254,7 @@
             "venue": "老神温泉街",
             "prefecture": "群馬県",
             "city": "沼田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0310e594446/",
             "verified": true
       },
@@ -2228,7 +2278,7 @@
             "venue": "ノルン水上スキー場",
             "prefecture": "群馬県",
             "city": "みなかみ町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0310e304539/",
             "verified": true
       },
@@ -2240,7 +2290,7 @@
             "venue": "敷島公園門倉テクノばら園",
             "prefecture": "群馬県",
             "city": "前橋市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0310e578519/",
             "verified": true
       },
@@ -2252,7 +2302,7 @@
             "venue": "赤谷湖 休み石広場",
             "prefecture": "群馬県",
             "city": "みなかみ町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0310e594537/",
             "verified": true
       },
@@ -2276,7 +2326,7 @@
             "venue": "赤城山各所（大沼湖畔・白樺牧場・覚満淵）",
             "prefecture": "群馬県",
             "city": "前橋市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0310e578518/",
             "verified": true
       },
@@ -2288,7 +2338,7 @@
             "venue": "高崎市吉井町多比良",
             "prefecture": "群馬県",
             "city": "高崎市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0310e592693/",
             "verified": true
       },
@@ -2300,7 +2350,7 @@
             "venue": "新川公園",
             "prefecture": "群馬県",
             "city": "桐生市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0310e592365/",
             "verified": true
       },
@@ -2312,7 +2362,7 @@
             "venue": "清水寺",
             "prefecture": "群馬県",
             "city": "高崎市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0310e577957/",
             "verified": true
       },
@@ -2324,7 +2374,7 @@
             "venue": "牛伏山自然公園",
             "prefecture": "群馬県",
             "city": "高崎市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0310e577958/",
             "verified": true
       },
@@ -2348,7 +2398,7 @@
             "venue": "湯畑周辺",
             "prefecture": "群馬県",
             "city": "草津町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kusatsu-onsen.ne.jp/kusatsu_kansya/",
             "verified": true
       },
@@ -2360,7 +2410,7 @@
             "venue": "沼田市中心市街地",
             "prefecture": "群馬県",
             "city": "沼田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.numata.gunma.jp/kanko/numatamatsuri/",
             "verified": true
       },
@@ -2372,7 +2422,7 @@
             "venue": "桐生市中心部（本町通り・末広町通り・錦町通り）",
             "prefecture": "群馬県",
             "city": "桐生市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.kiryu.lg.jp/kankou/event/1015628/index.html",
             "verified": true
       },
@@ -2396,7 +2446,7 @@
             "venue": "群馬県立歴史博物館",
             "prefecture": "群馬県",
             "city": "高崎市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0310e590379/",
             "verified": true
       },
@@ -2408,7 +2458,7 @@
             "venue": "群馬県立土屋文明記念文学館",
             "prefecture": "群馬県",
             "city": "高崎市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0310e591103/",
             "verified": true
       },
@@ -2420,7 +2470,7 @@
             "venue": "富岡市立美術博物館",
             "prefecture": "群馬県",
             "city": "富岡市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0310e587113/",
             "verified": true
       },
@@ -2432,7 +2482,7 @@
             "venue": "原美術館ARC",
             "prefecture": "群馬県",
             "city": "渋川市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0310e586197/",
             "verified": true
       },
@@ -2444,7 +2494,7 @@
             "venue": "原美術館ARC",
             "prefecture": "群馬県",
             "city": "渋川市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0310e586194/",
             "verified": true
       },
@@ -2456,7 +2506,7 @@
             "venue": "鼻高展望花の丘",
             "prefecture": "群馬県",
             "city": "高崎市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0310e592690/",
             "verified": true
       },
@@ -2468,7 +2518,7 @@
             "venue": "新潟県立万代島美術館",
             "prefecture": "新潟県",
             "city": "新潟市中央区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0415e583579/",
             "verified": true
       },
@@ -2480,7 +2530,7 @@
             "venue": "新潟県立近代美術館",
             "prefecture": "新潟県",
             "city": "長岡市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0415e578867/",
             "verified": true
       },
@@ -2492,7 +2542,7 @@
             "venue": "新発田城周辺及びメーンストリート商店街エリア",
             "prefecture": "新潟県",
             "city": "新発田市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.walkerplus.com/event/ar0415e588844/",
             "verified": true
       },
@@ -2504,7 +2554,7 @@
             "venue": "新潟市歴史博物館みなとぴあ",
             "prefecture": "新潟県",
             "city": "新潟市中央区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0415e589235/",
             "verified": true
       },
@@ -2516,7 +2566,7 @@
             "venue": "星と森の詩美術館",
             "prefecture": "新潟県",
             "city": "十日町市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0415e590444/",
             "verified": true
       },
@@ -2528,7 +2578,7 @@
             "venue": "南魚沼市トミオカホワイト美術館",
             "prefecture": "新潟県",
             "city": "南魚沼市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.walkerplus.com/event/ar0415e591099/",
             "verified": true
       },
@@ -2540,7 +2590,7 @@
             "venue": "NASPAニューオータニ",
             "prefecture": "新潟県",
             "city": "湯沢町",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.walkerplus.com/event/ar0415e594503/",
             "verified": true
       },
@@ -2552,7 +2602,7 @@
             "venue": "上越市春日山城跡",
             "prefecture": "新潟県",
             "city": "上越市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.walkerplus.com/event/ar0415e580825/",
             "verified": true
       },
@@ -2576,7 +2626,7 @@
             "venue": "旧月潟駅",
             "prefecture": "新潟県",
             "city": "新潟市南区",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.walkerplus.com/event/ar0415e593299/",
             "verified": true
       },
@@ -2588,7 +2638,7 @@
             "venue": "アピタ新潟西 1階中央催事場",
             "prefecture": "新潟県",
             "city": "新潟市西区",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.walkerplus.com/event/ar0415e595087/",
             "verified": true
       },
@@ -2600,7 +2650,7 @@
             "venue": "三条八幡宮",
             "prefecture": "新潟県",
             "city": "三条市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0415e590876/",
             "verified": true
       },
@@ -2612,7 +2662,7 @@
             "venue": "ヒメサユリの小径",
             "prefecture": "新潟県",
             "city": "三条市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.walkerplus.com/event/ar0415e590874/",
             "verified": true
       },
@@ -2624,7 +2674,7 @@
             "venue": "三条市総合運動公園内芝生広場",
             "prefecture": "新潟県",
             "city": "三条市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.walkerplus.com/event/ar0415e590875/",
             "verified": true
       },
@@ -2636,9 +2686,12 @@
             "venue": "道の駅 親不知ピアパーク",
             "prefecture": "新潟県",
             "city": "糸魚川市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.walkerplus.com/event/ar0415e592768/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 181,
@@ -2648,7 +2701,7 @@
             "venue": "青海神社ほか加茂市内",
             "prefecture": "新潟県",
             "city": "加茂市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0415e586026/",
             "verified": true
       },
@@ -2660,7 +2713,7 @@
             "venue": "新飯田商店街一円",
             "prefecture": "新潟県",
             "city": "新潟市南区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0415e593333/",
             "verified": true
       },
@@ -2672,9 +2725,12 @@
             "venue": "月潟農村環境改善センター",
             "prefecture": "新潟県",
             "city": "新潟市南区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.walkerplus.com/event/ar0415e592971/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 185,
@@ -2684,7 +2740,7 @@
             "venue": "高田・直江津地区",
             "prefecture": "新潟県",
             "city": "上越市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://joetsukankonavi.jp/joetsumatsuri/",
             "verified": true
       },
@@ -2720,7 +2776,7 @@
             "venue": "佐渡市両津地区",
             "prefecture": "新潟県",
             "city": "佐渡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.visitsado.com/event/",
             "verified": true
       },
@@ -2732,7 +2788,7 @@
             "venue": "柾谷小路・萬代橋・信濃川河畔",
             "prefecture": "新潟県",
             "city": "新潟市中央区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://niigata-matsuri.com/",
             "verified": true
       },
@@ -2744,7 +2800,7 @@
             "venue": "新発田市内（諏訪神社ほか）",
             "prefecture": "新潟県",
             "city": "新発田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://niigata-kankou.or.jp/event/3558",
             "verified": true
       },
@@ -2768,7 +2824,7 @@
             "venue": "酒田市中町界隈",
             "prefecture": "山形県",
             "city": "酒田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://sakata-kankou.com/event/30728",
             "verified": true
       },
@@ -2780,7 +2836,7 @@
             "venue": "鶴岡市内中心市街地",
             "prefecture": "山形県",
             "city": "鶴岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.tsuruoka.lg.jp/kanko/r7tenjinboshu.html",
             "verified": true
       },
@@ -2804,7 +2860,7 @@
             "venue": "出塩文殊堂",
             "prefecture": "山形県",
             "city": "山形市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "http://www.yamagata-community.jp/~murakisawa/ajisai_fes/ajisai_fes_top.html",
             "verified": true
       },
@@ -2816,7 +2872,7 @@
             "venue": "月山神社本宮（山頂）",
             "prefecture": "山形県",
             "city": "鶴岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.dewasanzan.jp/",
             "verified": true
       },
@@ -2828,7 +2884,7 @@
             "venue": "出羽三山神社（羽黒山）",
             "prefecture": "山形県",
             "city": "鶴岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.dewasanzan.jp/",
             "verified": true
       },
@@ -2840,7 +2896,7 @@
             "venue": "羽黒山五重塔",
             "prefecture": "山形県",
             "city": "鶴岡市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.tsuruokakanko.com/spot/5795",
             "verified": true
       },
@@ -2864,9 +2920,12 @@
             "venue": "七日町大通り",
             "prefecture": "山形県",
             "city": "山形市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.yamagata-cci.or.jp/user/eve/ev_hana_sum.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 201,
@@ -2876,7 +2935,7 @@
             "venue": "山形市中心市街地（十日町〜本町〜七日町通り〜文翔館前）",
             "prefecture": "山形県",
             "city": "山形市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hanagasa.jp/",
             "verified": true
       },
@@ -2888,7 +2947,7 @@
             "venue": "天童温泉エリア・市内中心部",
             "prefecture": "山形県",
             "city": "天童市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.tendo.yamagata.jp/tourism/event/event-summer_tendo.html",
             "verified": true
       },
@@ -2948,7 +3007,7 @@
             "venue": "新庄市中心市街地",
             "prefecture": "山形県",
             "city": "新庄市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://shinjo-matsuri.jp/",
             "verified": true
       },
@@ -2960,7 +3019,7 @@
             "venue": "尾花沢市内",
             "prefecture": "山形県",
             "city": "尾花沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.obane-kankou.jp/event/",
             "verified": true
       },
@@ -2984,9 +3043,12 @@
             "venue": "寒河江八幡宮・市内中心部",
             "prefecture": "山形県",
             "city": "寒河江市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.sagae.yamagata.jp/kanko/event/sagaematuri.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 211,
@@ -3008,7 +3070,7 @@
             "venue": "谷地八幡宮",
             "prefecture": "山形県",
             "city": "河北町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.kahoku.yamagata.jp/soshiki/shoko/kankousinkou/3342/700.html",
             "verified": true
       },
@@ -3022,7 +3084,10 @@
             "city": "山形市",
             "genre": "グルメ",
             "link": "https://imoni-fes.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 214,
@@ -3056,7 +3121,7 @@
             "venue": "西條天満公園",
             "prefecture": "山形県",
             "city": "米沢市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://yonezawa-rock-fes.wixsite.com/official",
             "verified": true
       },
@@ -3068,9 +3133,12 @@
             "venue": "山形市内会場",
             "prefecture": "山形県",
             "city": "山形市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://movieon.jp/ymf/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 218,
@@ -3080,7 +3148,7 @@
             "venue": "出羽三山神社（羽黒山）",
             "prefecture": "山形県",
             "city": "鶴岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.shoureisai-hozonkai.com/",
             "verified": true
       },
@@ -3092,7 +3160,7 @@
             "venue": "美郷町ラベンダー園",
             "prefecture": "秋田県",
             "city": "美郷町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://akita-misato.com/kanko2/lavendergarden/",
             "verified": true
       },
@@ -3104,7 +3172,7 @@
             "venue": "雲昌寺",
             "prefecture": "秋田県",
             "city": "男鹿市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://oganavi.com/ajisai/",
             "verified": true
       },
@@ -3140,7 +3208,7 @@
             "venue": "土崎神明社・土崎地区",
             "prefecture": "秋田県",
             "city": "秋田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://tutizaki-hikiyama.com/",
             "verified": true
       },
@@ -3152,7 +3220,7 @@
             "venue": "能代市中心市街地",
             "prefecture": "秋田県",
             "city": "能代市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://noshirotanabata.com/",
             "verified": true
       },
@@ -3164,7 +3232,7 @@
             "venue": "竿燈大通り",
             "prefecture": "秋田県",
             "city": "秋田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kantou.gr.jp/",
             "verified": true
       },
@@ -3176,7 +3244,7 @@
             "venue": "湯沢市中心部",
             "prefecture": "秋田県",
             "city": "湯沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://akitayuzawa.jp/event-sm-01.html",
             "verified": true
       },
@@ -3188,7 +3256,7 @@
             "venue": "能代市中心市街地・米代川河川敷",
             "prefecture": "秋田県",
             "city": "能代市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.noshiro.lg.jp/res/kanko/theme/1188",
             "verified": true
       },
@@ -3212,7 +3280,7 @@
             "venue": "秋田国際ダリア園",
             "prefecture": "秋田県",
             "city": "秋田市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "http://akita-dahlia.jp/",
             "verified": true
       },
@@ -3236,7 +3304,7 @@
             "venue": "蛇の崎川原・横手市中心部",
             "prefecture": "秋田県",
             "city": "横手市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.yokotekamakura.com/event/3-2/",
             "verified": true
       },
@@ -3248,7 +3316,7 @@
             "venue": "ドンパン広場",
             "prefecture": "秋田県",
             "city": "大仙市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://donpan.hana.jp/",
             "verified": true
       },
@@ -3260,7 +3328,7 @@
             "venue": "西馬音内本町通り",
             "prefecture": "秋田県",
             "city": "羽後町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://ugokanko.com/bonodorigaiyou/",
             "verified": true
       },
@@ -3272,7 +3340,7 @@
             "venue": "鹿角市花輪地区",
             "prefecture": "秋田県",
             "city": "鹿角市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hanawabayashi.jp/",
             "verified": true
       },
@@ -3284,7 +3352,7 @@
             "venue": "鹿角市十和田毛馬内",
             "prefecture": "秋田県",
             "city": "鹿角市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.ink.or.jp/~kemanai09/",
             "verified": true
       },
@@ -3308,7 +3376,7 @@
             "venue": "角館町中心部",
             "prefecture": "秋田県",
             "city": "仙北市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.semboku.akita.jp/sightseeing/spot/07_kakumatsuri.html",
             "verified": true
       },
@@ -3320,7 +3388,7 @@
             "venue": "大館神明社・大館市内",
             "prefecture": "秋田県",
             "city": "大館市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.odate.lg.jp/city/kankou/festibal/festa/autumn/zinmeisya",
             "verified": true
       },
@@ -3392,7 +3460,7 @@
             "venue": "室根山",
             "prefecture": "岩手県",
             "city": "一関市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ichitabi.jp/spot/data.php?p=35",
             "verified": true
       },
@@ -3406,7 +3474,10 @@
             "city": "花巻市",
             "genre": "グルメ",
             "link": "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=411",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 246,
@@ -3416,7 +3487,7 @@
             "venue": "平庭高原",
             "prefecture": "岩手県",
             "city": "久慈市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.kuji.lg.jp/soshiki/sangyokensetsu/1/4/1/4789.html",
             "verified": true
       },
@@ -3440,7 +3511,7 @@
             "venue": "鬼越蒼前神社〜盛岡八幡宮",
             "prefecture": "岩手県",
             "city": "滝沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://chaguuma.com/",
             "verified": true
       },
@@ -3452,7 +3523,7 @@
             "venue": "早池峰山小田越登山口・山頂",
             "prefecture": "岩手県",
             "city": "花巻市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=731",
             "verified": true
       },
@@ -3476,7 +3547,7 @@
             "venue": "みちのくあじさい園",
             "prefecture": "岩手県",
             "city": "一関市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://iwatetabi.jp/events/7947/",
             "verified": true
       },
@@ -3488,7 +3559,7 @@
             "venue": "矢巾町役場前",
             "prefecture": "岩手県",
             "city": "矢巾町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.yahaba.iwate.jp/soshiki/sangyou/kankousangyou/171832861218370/",
             "verified": true
       },
@@ -3512,7 +3583,7 @@
             "venue": "中央通",
             "prefecture": "岩手県",
             "city": "盛岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://sansaodori.jp/",
             "verified": true
       },
@@ -3524,7 +3595,7 @@
             "venue": "肴町アーケード",
             "prefecture": "岩手県",
             "city": "盛岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.sakanacho.com/tanabata",
             "verified": true
       },
@@ -3548,7 +3619,7 @@
             "venue": "北上市内各所",
             "prefecture": "岩手県",
             "city": "北上市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://geinoumatsuri.com/",
             "verified": true
       },
@@ -3560,7 +3631,7 @@
             "venue": "江刺市街地",
             "prefecture": "岩手県",
             "city": "奥州市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.oshu.iwate.jp/kanko/event/2/9566.html",
             "verified": true
       },
@@ -3572,7 +3643,7 @@
             "venue": "高田町中心部",
             "prefecture": "岩手県",
             "city": "陸前高田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://takanavi.org/",
             "verified": true
       },
@@ -3584,7 +3655,7 @@
             "venue": "気仙町今泉地区",
             "prefecture": "岩手県",
             "city": "陸前高田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://takanavi.org/",
             "verified": true
       },
@@ -3598,7 +3669,10 @@
             "city": "盛岡市",
             "genre": "花火",
             "link": "https://www.ccimorioka.or.jp/hanabi/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 262,
@@ -3644,7 +3718,7 @@
             "venue": "二戸市福岡地区",
             "prefecture": "岩手県",
             "city": "二戸市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.ninohe.lg.jp/info/4265",
             "verified": true
       },
@@ -3656,7 +3730,7 @@
             "venue": "石鳥谷中央通り商店街周辺",
             "prefecture": "岩手県",
             "city": "花巻市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=47",
             "verified": true
       },
@@ -3668,7 +3742,7 @@
             "venue": "花巻市内お祭り広場ほか上町アーケード周辺",
             "prefecture": "岩手県",
             "city": "花巻市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kanko-hanamaki.ne.jp/event/event_detail.php?id=48",
             "verified": true
       },
@@ -3680,7 +3754,7 @@
             "venue": "山田町中心部・山田八幡宮",
             "prefecture": "岩手県",
             "city": "山田町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://yamada-matsuri.com/",
             "verified": true
       },
@@ -3692,7 +3766,7 @@
             "venue": "盛岡八幡宮ほか盛岡市内一円",
             "prefecture": "岩手県",
             "city": "盛岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.morioka.iwate.jp/kankou/kankou/1037105/1024992/1037141/index.html",
             "verified": true
       },
@@ -3704,7 +3778,7 @@
             "venue": "遠野市街地・遠野郷八幡宮",
             "prefecture": "岩手県",
             "city": "遠野市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://tonogeinou.com/",
             "verified": true
       },
@@ -3716,7 +3790,7 @@
             "venue": "岩手町沼宮内市街地",
             "prefecture": "岩手県",
             "city": "岩手町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://town.iwate.iwate.jp/town/kanko/akimatsuri/",
             "verified": true
       },
@@ -3728,7 +3802,7 @@
             "venue": "尾崎神社・日本製鉄山神社・釜石市内",
             "prefecture": "岩手県",
             "city": "釜石市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://kamaishi-kankou.jp/event/7759",
             "verified": true
       },
@@ -3740,7 +3814,7 @@
             "venue": "中尊寺・毛越寺ほか平泉町内",
             "prefecture": "岩手県",
             "city": "平泉町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://hiraizumi.or.jp/event/",
             "verified": true
       },
@@ -3752,9 +3826,12 @@
             "venue": "横浜町大豆田地区 特設会場",
             "prefecture": "青森県",
             "city": "横浜町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.town.yokohama.lg.jp/index.cfm/7,11307,19,html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 275,
@@ -3764,7 +3841,7 @@
             "venue": "茶臼山公園",
             "prefecture": "青森県",
             "city": "大鰐町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://owanionsen-kanko.net/tsutsujimatsuri",
             "verified": true
       },
@@ -3776,7 +3853,7 @@
             "venue": "田舎館村役場・道の駅いなかだて「弥生の里」",
             "prefecture": "青森県",
             "city": "田舎館村",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "http://www.inakadate-tanboart.net/",
             "verified": true
       },
@@ -3788,7 +3865,7 @@
             "venue": "十和田市現代美術館",
             "prefecture": "青森県",
             "city": "十和田市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://towadaartcenter.com/exhibitions/tsubaki_noboru/",
             "verified": true
       },
@@ -3800,7 +3877,7 @@
             "venue": "弘前れんが倉庫美術館",
             "prefecture": "青森県",
             "city": "弘前市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.hirosaki-moca.jp/",
             "verified": true
       },
@@ -3824,7 +3901,7 @@
             "venue": "青森県立美術館",
             "prefecture": "青森県",
             "city": "青森市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.aomori-museum.jp/article/16918/",
             "verified": true
       },
@@ -3836,7 +3913,7 @@
             "venue": "霊場恐山（菩提寺）",
             "prefecture": "青森県",
             "city": "むつ市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://mutsu-kanko.jp/pg1626.html",
             "verified": true
       },
@@ -3848,7 +3925,7 @@
             "venue": "黒石市内",
             "prefecture": "青森県",
             "city": "黒石市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://k-jc.com/neputa/",
             "verified": true
       },
@@ -3860,7 +3937,7 @@
             "venue": "八戸市中心街",
             "prefecture": "青森県",
             "city": "八戸市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visithachinohe.com/stories/sannshataisai_schedule/",
             "verified": true
       },
@@ -3872,7 +3949,7 @@
             "venue": "弘前市内（土手町・駅前コース）",
             "prefecture": "青森県",
             "city": "弘前市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hirosaki-kanko.or.jp/edit.html?id=cat02_summer_neputa",
             "verified": true
       },
@@ -3884,7 +3961,7 @@
             "venue": "青森市中心街",
             "prefecture": "青森県",
             "city": "青森市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.nebuta.jp/",
             "verified": true
       },
@@ -3908,7 +3985,7 @@
             "venue": "五所川原市中心街",
             "prefecture": "青森県",
             "city": "五所川原市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://tachineputa-official.jp/",
             "verified": true
       },
@@ -3932,7 +4009,7 @@
             "venue": "黒石市中心街",
             "prefecture": "青森県",
             "city": "黒石市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://kuroishi.or.jp/event/summer/kuroishiyosare",
             "verified": true
       },
@@ -3944,7 +4021,7 @@
             "venue": "むつ市市街（田名部地区）",
             "prefecture": "青森県",
             "city": "むつ市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.mutsu.lg.jp/bunka/information/kankou-tanabujinnjyareitaisai.html",
             "verified": true
       },
@@ -3956,7 +4033,7 @@
             "venue": "三本木大通り・官庁街通り周辺",
             "prefecture": "青森県",
             "city": "十和田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.towada.lg.jp/kanko/event/akimatsuri.html",
             "verified": true
       },
@@ -3968,7 +4045,7 @@
             "venue": "岩木山神社・百沢温泉郷",
             "prefecture": "青森県",
             "city": "弘前市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://iwakisan.com/oyamasankei/",
             "verified": true
       },
@@ -3980,7 +4057,7 @@
             "venue": "川内八幡宮および川内地区",
             "prefecture": "青森県",
             "city": "むつ市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.mutsu.lg.jp/bunka/information/kankou-kawautihatimannguureitaisai.html",
             "verified": true
       },
@@ -3992,7 +4069,7 @@
             "venue": "弘前れんが倉庫美術館",
             "prefecture": "青森県",
             "city": "弘前市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.hirosaki-moca.jp/",
             "verified": true
       },
@@ -4004,7 +4081,7 @@
             "venue": "弘前公園（弘前城植物園）",
             "prefecture": "青森県",
             "city": "弘前市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hirosaki-kanko.or.jp/edit.html?id=cat02_autumn_momiji",
             "verified": true
       },
@@ -4016,7 +4093,7 @@
             "venue": "十和田市現代美術館",
             "prefecture": "青森県",
             "city": "十和田市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://towadaartcenter.com/",
             "verified": true
       },
@@ -4028,7 +4105,7 @@
             "venue": "大通公園・市内各所特設ステージ",
             "prefecture": "北海道",
             "city": "札幌市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.yosakoi-soran.jp/",
             "verified": true
       },
@@ -4040,7 +4117,7 @@
             "venue": "大通公園",
             "prefecture": "北海道",
             "city": "札幌市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.sapporo.travel/summerfes/",
             "verified": true
       },
@@ -4052,7 +4129,7 @@
             "venue": "大通公園 西5-7丁目",
             "prefecture": "北海道",
             "city": "札幌市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.sapporo.travel/lilacfes/",
             "verified": true
       },
@@ -4064,7 +4141,7 @@
             "venue": "北海道神宮・中島公園",
             "prefecture": "北海道",
             "city": "札幌市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.hokkaidojingu.or.jp/festival/",
             "verified": true
       },
@@ -4078,7 +4155,10 @@
             "city": "札幌市",
             "genre": "グルメ",
             "link": "https://www.sapporo.travel/autumnfest/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 302,
@@ -4148,7 +4228,7 @@
             "venue": "函館市内各所",
             "prefecture": "北海道",
             "city": "函館市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hakodate-minatomatsuri.org/",
             "verified": true
       },
@@ -4160,7 +4240,7 @@
             "venue": "五稜郭公園・函館市民会館ほか",
             "prefecture": "北海道",
             "city": "函館市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hotweb.or.jp/goryokaku-sai/",
             "verified": true
       },
@@ -4172,7 +4252,7 @@
             "venue": "小樽港第3号ふ頭ほか",
             "prefecture": "北海道",
             "city": "小樽市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://otaru.ushiomatsuri.net/",
             "verified": true
       },
@@ -4196,7 +4276,7 @@
             "venue": "平和通買物公園・旭橋河畔",
             "prefecture": "北海道",
             "city": "旭川市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.atca.jp/kankouspoy/",
             "verified": true
       },
@@ -4208,7 +4288,7 @@
             "venue": "北見市中心市街地",
             "prefecture": "北海道",
             "city": "北見市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://kitamicci.or.jp/bonchi_matsuri/",
             "verified": true
       },
@@ -4232,7 +4312,7 @@
             "venue": "網走港・市街地",
             "prefecture": "北海道",
             "city": "網走市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://abashiri-summerfestiva.jimdofree.com/",
             "verified": true
       },
@@ -4256,7 +4336,7 @@
             "venue": "登別温泉極楽通り・地獄谷",
             "prefecture": "北海道",
             "city": "登別市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://noboribetsu-spa.jp/",
             "verified": true
       },
@@ -4280,7 +4360,7 @@
             "venue": "富良野駅周辺・新相生通り商店街",
             "prefecture": "北海道",
             "city": "富良野市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://hesomatsuri.com/",
             "verified": true
       },
@@ -4292,7 +4372,7 @@
             "venue": "姥神大神宮および江差町内",
             "prefecture": "北海道",
             "city": "江差町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://esashi.town/matsuri/page.php?id=257",
             "verified": true
       },
@@ -4304,7 +4384,7 @@
             "venue": "岩見沢市駅前通り",
             "prefecture": "北海道",
             "city": "岩見沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://iwamizawa-kankou.jp/",
             "verified": true
       },
@@ -4316,7 +4396,7 @@
             "venue": "江別市セラミックアートセンター・周辺",
             "prefecture": "北海道",
             "city": "江別市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://ebetsu-yakimono.com/about",
             "verified": true
       },
@@ -4340,9 +4420,12 @@
             "venue": "かみゆうべつチューリップ公園",
             "prefecture": "北海道",
             "city": "湧別町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://yubetsu-kanko.jp/free/tlipf",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 324,
@@ -4352,7 +4435,7 @@
             "venue": "芝ざくら滝上公園",
             "prefecture": "北海道",
             "city": "滝上町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://takinoue.com/post-927/",
             "verified": true
       },
@@ -4364,7 +4447,7 @@
             "venue": "滝川市菜の花畑",
             "prefecture": "北海道",
             "city": "滝川市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.takikawa-nanohana.com/",
             "verified": true
       },
@@ -4376,7 +4459,7 @@
             "venue": "花の拠点 はなふる",
             "prefecture": "北海道",
             "city": "恵庭市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hananokai.or.jp/2026hanamachi-eniwataikai-1/",
             "verified": true
       },
@@ -4388,7 +4471,7 @@
             "venue": "芦別市内市街地",
             "prefecture": "北海道",
             "city": "芦別市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://go-to-ashibetsu.com/news/kenkafes_pecialpage.html",
             "verified": true
       },
@@ -4412,7 +4495,7 @@
             "venue": "岩内神社・岩内町内",
             "prefecture": "北海道",
             "city": "岩内町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.iwanai-jinja.com/",
             "verified": true
       },
@@ -4436,7 +4519,7 @@
             "venue": "室蘭中央埠頭・市内各所",
             "prefecture": "北海道",
             "city": "室蘭市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://iburi.net/minato/",
             "verified": true
       },
@@ -4448,7 +4531,7 @@
             "venue": "帯広市平原通り",
             "prefecture": "北海道",
             "city": "帯広市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.obihiro.hokkaido.jp/tourism/matsuri/1005849.html",
             "verified": true
       },
@@ -4484,7 +4567,7 @@
             "venue": "稚内副港市場周辺",
             "prefecture": "北海道",
             "city": "稚内市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.wakkanai.hokkaido.jp/kanko/event/nankyokumatsuri.html",
             "verified": true
       },
@@ -4496,7 +4579,7 @@
             "venue": "えりも灯台広場・市街地",
             "prefecture": "北海道",
             "city": "えりも町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.erimo.lg.jp/kankou/event/k9mfea0000002rfv.html",
             "verified": true
       },
@@ -4508,7 +4591,7 @@
             "venue": "玉淀河原・寄居町中心市街地",
             "prefecture": "埼玉県",
             "city": "寄居町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.town.yorii.saitama.jp/soshiki/13/yorii-hojyofestival2026.html",
             "verified": true
       },
@@ -4520,7 +4603,7 @@
             "venue": "ポピー・ハッピースクエアほか鴻巣市内各所",
             "prefecture": "埼玉県",
             "city": "鴻巣市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.kounosu.saitama.jp/site/hanamatsuri/1320.html",
             "verified": true
       },
@@ -4532,7 +4615,7 @@
             "venue": "久喜市内 参加ガーデン",
             "prefecture": "埼玉県",
             "city": "久喜市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.kuki.lg.jp/miryoku/flower_event/1005980.html",
             "verified": true
       },
@@ -4544,7 +4627,7 @@
             "venue": "権現堂桜堤（森田鉄工所権現堂桜堤Mirai Park）",
             "prefecture": "埼玉県",
             "city": "幸手市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.satte-k.com/event/ajisai/",
             "verified": true
       },
@@ -4558,7 +4641,10 @@
             "city": "北本市",
             "genre": "グルメ",
             "link": "https://www.city.kitamoto.lg.jp/kanko/event/natsu/19126.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 342,
@@ -4568,7 +4654,7 @@
             "venue": "千年の苑ラベンダー園",
             "prefecture": "埼玉県",
             "city": "嵐山町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.ranzan-kanko.jp/lavenderfestival",
             "verified": true
       },
@@ -4580,7 +4666,7 @@
             "venue": "玉敷公園",
             "prefecture": "埼玉県",
             "city": "加須市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.kazo.lg.jp/soshiki/kasai_chiikishinkou/event/6360.html",
             "verified": true
       },
@@ -4592,7 +4678,7 @@
             "venue": "あじさい寺 金泉寺",
             "prefecture": "埼玉県",
             "city": "嵐山町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://kinsenji.or.jp/hydrangea/",
             "verified": true
       },
@@ -4628,7 +4714,7 @@
             "venue": "行田市中心市街地",
             "prefecture": "埼玉県",
             "city": "行田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.gyoda.lg.jp/soshiki/kankyokeizaibu/shoko_kanko/gyomu/event/7312.html",
             "verified": true
       },
@@ -4640,7 +4726,7 @@
             "venue": "キャンプ朝霞跡地ほか朝霞市内",
             "prefecture": "埼玉県",
             "city": "朝霞市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://saikasai.com/",
             "verified": true
       },
@@ -4664,7 +4750,7 @@
             "venue": "狭山市駅西口・七夕通り商店街",
             "prefecture": "埼玉県",
             "city": "狭山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.sayama.saitama.jp/kankou/kanko/tanabata/index.html",
             "verified": true
       },
@@ -4676,7 +4762,7 @@
             "venue": "日進駅南口 日進七夕通り周辺",
             "prefecture": "埼玉県",
             "city": "さいたま市北区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/26",
             "verified": true
       },
@@ -4714,7 +4800,10 @@
             "city": "八潮市",
             "genre": "花火",
             "link": "https://www.840kankou.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 355,
@@ -4724,7 +4813,7 @@
             "venue": "蔵造りの町並みほか川越市中心市街地",
             "prefecture": "埼玉県",
             "city": "川越市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kawagoematsuri.jp/",
             "verified": true
       },
@@ -4736,7 +4825,7 @@
             "venue": "秩父神社・秩父市街地",
             "prefecture": "埼玉県",
             "city": "秩父市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.chichibuji.gr.jp/event/yomatsuri/",
             "verified": true
       },
@@ -4748,7 +4837,7 @@
             "venue": "与野公園",
             "prefecture": "埼玉県",
             "city": "さいたま市中央区",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://visitsaitamacity.jp/events/13",
             "verified": true
       },
@@ -4760,7 +4849,7 @@
             "venue": "武蔵一宮氷川神社境内 楼門内舞殿",
             "prefecture": "埼玉県",
             "city": "さいたま市大宮区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/14",
             "verified": true
       },
@@ -4784,7 +4873,7 @@
             "venue": "岩槻駅東口クレセントモール",
             "prefecture": "埼玉県",
             "city": "さいたま市岩槻区",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://visitsaitamacity.jp/events/16",
             "verified": true
       },
@@ -4796,7 +4885,7 @@
             "venue": "南浦和駅東口駅前通り・弁天公園",
             "prefecture": "埼玉県",
             "city": "さいたま市南区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/20",
             "verified": true
       },
@@ -4808,7 +4897,7 @@
             "venue": "旧中山道（新浦和橋下〜調神社）",
             "prefecture": "埼玉県",
             "city": "さいたま市浦和区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/19",
             "verified": true
       },
@@ -4820,7 +4909,7 @@
             "venue": "大宮駅西口周辺",
             "prefecture": "埼玉県",
             "city": "さいたま市大宮区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/22",
             "verified": true
       },
@@ -4832,7 +4921,7 @@
             "venue": "大宮駅西口周辺",
             "prefecture": "埼玉県",
             "city": "さいたま市大宮区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/23",
             "verified": true
       },
@@ -4844,7 +4933,7 @@
             "venue": "大宮駅東口周辺",
             "prefecture": "埼玉県",
             "city": "さいたま市大宮区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://visitsaitamacity.jp/events/24",
             "verified": true
       },
@@ -4856,9 +4945,12 @@
             "venue": "東大宮中央公園",
             "prefecture": "埼玉県",
             "city": "さいたま市見沼区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://h-omiya-sf.org",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 367,
@@ -4868,7 +4960,7 @@
             "venue": "岩槻人形博物館駐車場・岩槻駅東口周辺",
             "prefecture": "埼玉県",
             "city": "さいたま市岩槻区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://iwatsuki-matsuri.jp/",
             "verified": true
       },
@@ -4892,7 +4984,7 @@
             "venue": "成田山新勝寺",
             "prefecture": "千葉県",
             "city": "成田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.naritasan.or.jp/",
             "verified": true
       },
@@ -4916,9 +5008,12 @@
             "venue": "鎌ケ谷市役所駐車場",
             "prefecture": "千葉県",
             "city": "鎌ケ谷市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.city.kamagaya.chiba.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 372,
@@ -4928,9 +5023,12 @@
             "venue": "柏駅前通りハウディモールほか",
             "prefecture": "千葉県",
             "city": "柏市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.kashiwa.lg.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 373,
@@ -4940,9 +5038,12 @@
             "venue": "へぐり伊予ヶ岳公園",
             "prefecture": "千葉県",
             "city": "南房総市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.mboso-etoko.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 374,
@@ -4964,7 +5065,7 @@
             "venue": "服部農園あじさい屋敷",
             "prefecture": "千葉県",
             "city": "茂原市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "http://ajisaiyashiki.la.coocan.jp/",
             "verified": true
       },
@@ -4976,7 +5077,7 @@
             "venue": "本土寺",
             "prefecture": "千葉県",
             "city": "松戸市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hondoji.net/",
             "verified": true
       },
@@ -4988,7 +5089,7 @@
             "venue": "栗山川遊歩道",
             "prefecture": "千葉県",
             "city": "多古町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.town.tako.chiba.jp/",
             "verified": true
       },
@@ -5012,7 +5113,7 @@
             "venue": "成田山新勝寺・表参道",
             "prefecture": "千葉県",
             "city": "成田市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.naritasan.or.jp/visit/event/sairei.html",
             "verified": true
       },
@@ -5024,7 +5125,7 @@
             "venue": "佐原本宿地区",
             "prefecture": "千葉県",
             "city": "香取市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.katori.lg.jp/sightseeing/matsuri/",
             "verified": true
       },
@@ -5062,7 +5163,10 @@
             "city": "千葉市美浜区",
             "genre": "花火",
             "link": "https://chiba-hanabi.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 384,
@@ -5120,7 +5224,7 @@
             "venue": "富里中央公園",
             "prefecture": "千葉県",
             "city": "富里市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.tomisato.lg.jp/",
             "verified": true
       },
@@ -5168,7 +5272,7 @@
             "venue": "木更津駅西口",
             "prefecture": "千葉県",
             "city": "木更津市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.kisarazu.lg.jp/",
             "verified": true
       },
@@ -5192,7 +5296,7 @@
             "venue": "鴨川シーサイドベース・安房鴨川駅周辺",
             "prefecture": "千葉県",
             "city": "鴨川市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://maruchiba.jp/event/detail_13153.html",
             "verified": true
       },
@@ -5204,7 +5308,7 @@
             "venue": "玉前神社・釣ヶ崎海岸",
             "prefecture": "千葉県",
             "city": "一宮町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.pref.chiba.lg.jp/kyouiku/bunkazai/bunkazai/p321-060.html",
             "verified": true
       },
@@ -5216,7 +5320,7 @@
             "venue": "大原海水浴場・大原小学校・大原中央商店街",
             "prefecture": "千葉県",
             "city": "いすみ市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.isumi.lg.jp/soshikikarasagasu/suisanshokoka/kankopromotionhan/2/2/786.html",
             "verified": true
       },
@@ -5228,7 +5332,7 @@
             "venue": "船橋駅北口おまつり広場・本町・宮本通りほか船橋市内各所",
             "prefecture": "千葉県",
             "city": "船橋市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.funabashi.lg.jp/shisei/shoukai/006/p127410.html",
             "verified": true
       },
@@ -5240,7 +5344,7 @@
             "venue": "佐原新宿地区",
             "prefecture": "千葉県",
             "city": "香取市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.katori.lg.jp/sightseeing/matsuri/introduction/aki.html",
             "verified": true
       },
@@ -5252,9 +5356,12 @@
             "venue": "横浜赤レンガ倉庫",
             "prefecture": "神奈川県",
             "city": "横浜市中区",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.yokohama-akarenga.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 400,
@@ -5264,7 +5371,7 @@
             "venue": "横浜山手の西洋館・公園",
             "prefecture": "神奈川県",
             "city": "横浜市中区",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.welcome.city.yokohama.jp/",
             "verified": true
       },
@@ -5276,9 +5383,12 @@
             "venue": "横浜イングリッシュガーデン",
             "prefecture": "神奈川県",
             "city": "横浜市西区",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://y-eg.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 402,
@@ -5288,7 +5398,7 @@
             "venue": "アソビル",
             "prefecture": "神奈川県",
             "city": "横浜市西区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://asobuild.com/",
             "verified": true
       },
@@ -5300,7 +5410,7 @@
             "venue": "小田急山のホテル",
             "prefecture": "神奈川県",
             "city": "箱根町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hakone-hoteldeyama.jp/",
             "verified": true
       },
@@ -5312,7 +5422,7 @@
             "venue": "くりはま花の国",
             "prefecture": "神奈川県",
             "city": "横須賀市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.kurihamakanko.com/flowerpark.html",
             "verified": true
       },
@@ -5324,7 +5434,7 @@
             "venue": "ポーラ美術館",
             "prefecture": "神奈川県",
             "city": "箱根町",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.polamuseum.or.jp/",
             "verified": true
       },
@@ -5336,7 +5446,7 @@
             "venue": "新江ノ島水族館",
             "prefecture": "神奈川県",
             "city": "藤沢市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.enosui.com/",
             "verified": true
       },
@@ -5372,7 +5482,7 @@
             "venue": "臨港パーク・みなとみらい21地区・新港地区",
             "prefecture": "神奈川県",
             "city": "横浜市西区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.welcome.city.yokohama.jp/eventinfo/ev_detail.php?bid=yw5300",
             "verified": true
       },
@@ -5396,7 +5506,7 @@
             "venue": "山下公園・港の見える丘公園・里山ガーデンほか",
             "prefecture": "神奈川県",
             "city": "横浜市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.welcome.city.yokohama.jp/",
             "verified": true
       },
@@ -5408,9 +5518,12 @@
             "venue": "県立花と緑のふれあいセンター 花菜ガーデン",
             "prefecture": "神奈川県",
             "city": "平塚市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://kana-garden.com/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 413,
@@ -5420,7 +5533,7 @@
             "venue": "岡田美術館",
             "prefecture": "神奈川県",
             "city": "箱根町",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.okada-museum.com/",
             "verified": true
       },
@@ -5432,7 +5545,7 @@
             "venue": "明月院",
             "prefecture": "神奈川県",
             "city": "鎌倉市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.trip-kamakura.com/",
             "verified": true
       },
@@ -5444,7 +5557,7 @@
             "venue": "長谷寺",
             "prefecture": "神奈川県",
             "city": "鎌倉市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hasedera.jp/",
             "verified": true
       },
@@ -5456,7 +5569,7 @@
             "venue": "成就院",
             "prefecture": "神奈川県",
             "city": "鎌倉市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.trip-kamakura.com/",
             "verified": true
       },
@@ -5480,7 +5593,7 @@
             "venue": "横浜人形の家",
             "prefecture": "神奈川県",
             "city": "横浜市中区",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.doll-museum.jp/",
             "verified": true
       },
@@ -5540,7 +5653,7 @@
             "venue": "鶴岡八幡宮",
             "prefecture": "神奈川県",
             "city": "鎌倉市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hachimangu.or.jp/matsuri/",
             "verified": true
       },
@@ -5576,7 +5689,7 @@
             "venue": "鶴岡八幡宮",
             "prefecture": "神奈川県",
             "city": "鎌倉市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hachimangu.or.jp/matsuri/",
             "verified": true
       },
@@ -5624,7 +5737,7 @@
             "venue": "神田明神",
             "prefecture": "東京都",
             "city": "千代田区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.kandamyoujin.or.jp/",
             "verified": true
       },
@@ -5636,7 +5749,7 @@
             "venue": "浅草神社",
             "prefecture": "東京都",
             "city": "台東区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.sanjasama.jp/",
             "verified": true
       },
@@ -5660,7 +5773,7 @@
             "venue": "堀切菖蒲園・水元公園",
             "prefecture": "東京都",
             "city": "葛飾区",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.katsushika.lg.jp/tourism/1000064/1028427.html",
             "verified": true
       },
@@ -5684,7 +5797,7 @@
             "venue": "ほたる公園",
             "prefecture": "東京都",
             "city": "福生市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.fussakanko.jp/event/firefly/",
             "verified": true
       },
@@ -5696,7 +5809,7 @@
             "venue": "日枝神社",
             "prefecture": "東京都",
             "city": "千代田区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.tenkamatsuri.jp/",
             "verified": true
       },
@@ -5708,7 +5821,7 @@
             "venue": "白山神社・白山公園",
             "prefecture": "東京都",
             "city": "文京区",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.city.bunkyo.lg.jp/b014/p003948.html",
             "verified": true
       },
@@ -5732,7 +5845,7 @@
             "venue": "浅草寺境内",
             "prefecture": "東京都",
             "city": "台東区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.senso-ji.jp/",
             "verified": true
       },
@@ -5828,7 +5941,7 @@
             "venue": "池上本門寺",
             "prefecture": "東京都",
             "city": "大田区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://honmonji.jp/oeshiki/",
             "verified": true
       },
@@ -5840,7 +5953,7 @@
             "venue": "宝田恵比寿神社周辺",
             "prefecture": "東京都",
             "city": "中央区",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.nihonbashi-edoya.co.jp/bettara/",
             "verified": true
       },
@@ -5864,7 +5977,7 @@
             "venue": "甲州街道（追分町〜小仏関跡）",
             "prefecture": "東京都",
             "city": "八王子市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.ichou-festa.org/",
             "verified": true
       },
@@ -5876,7 +5989,7 @@
             "venue": "泉岳寺",
             "prefecture": "東京都",
             "city": "港区",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://sengakuji.or.jp/event/akougishi.html",
             "verified": true
       },
@@ -5888,7 +6001,7 @@
             "venue": "伏木神社・伏木地区",
             "prefecture": "富山県",
             "city": "高岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://kenkayama.jp/",
             "verified": true
       },
@@ -5912,7 +6025,7 @@
             "venue": "津沢地区市街地",
             "prefecture": "富山県",
             "city": "小矢部市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://oyabe.info/1247/",
             "verified": true
       },
@@ -5924,7 +6037,7 @@
             "venue": "JR砺波駅前市街地",
             "prefecture": "富山県",
             "city": "砺波市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://tonami-yotaka.jp/",
             "verified": true
       },
@@ -5936,7 +6049,7 @@
             "venue": "高瀬遺跡公園",
             "prefecture": "富山県",
             "city": "南砺市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.tabi-nanto.jp/archives/2235",
             "verified": true
       },
@@ -5984,7 +6097,7 @@
             "venue": "高岡市中心商店街",
             "prefecture": "富山県",
             "city": "高岡市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.takaoka-st.jp/event/tanabata/",
             "verified": true
       },
@@ -5996,7 +6109,7 @@
             "venue": "魚津港・諏訪神社・魚津市街地",
             "prefecture": "富山県",
             "city": "魚津市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://uozu-kanko.jp/jyantokoi-uozu-fest/",
             "verified": true
       },
@@ -6008,7 +6121,7 @@
             "venue": "八尾町中心地区",
             "prefecture": "富山県",
             "city": "富山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.yatsuo.net/",
             "verified": true
       },
@@ -6020,7 +6133,7 @@
             "venue": "城端市街地・善徳寺・じょうはな座",
             "prefecture": "富山県",
             "city": "南砺市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.tabi-nanto.jp/archives/2315",
             "verified": true
       },
@@ -6032,7 +6145,7 @@
             "venue": "下梨地主神社",
             "prefecture": "富山県",
             "city": "南砺市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://gokayama-info.jp/archives/2307",
             "verified": true
       },
@@ -6044,7 +6157,7 @@
             "venue": "白山宮・上梨地区",
             "prefecture": "富山県",
             "city": "南砺市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://gokayama-info.jp/archives/1705",
             "verified": true
       },
@@ -6056,7 +6169,7 @@
             "venue": "富山城址公園・城址大通り",
             "prefecture": "富山県",
             "city": "富山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://yosakoi-toyama.jp/",
             "verified": true
       },
@@ -6068,7 +6181,7 @@
             "venue": "山町筋・御旅屋町ほか高岡市内各所",
             "prefecture": "富山県",
             "city": "高岡市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.city.takaoka.toyama.jp/bunsou/bunsou/ichibamachi.html",
             "verified": true
       },
@@ -6080,7 +6193,7 @@
             "venue": "高岡市役所前→富岩運河環水公園",
             "prefecture": "富山県",
             "city": "高岡市・富山市",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://www.toyamamarathon.com/",
             "verified": true
       },
@@ -6092,7 +6205,7 @@
             "venue": "富岩運河環水公園",
             "prefecture": "富山県",
             "city": "富山市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.kansui-park.jp/events/events-1035/",
             "verified": true
       },
@@ -6104,9 +6217,12 @@
             "venue": "砺波チューリップ公園",
             "prefecture": "富山県",
             "city": "砺波市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://fair.tulipfair.or.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 471,
@@ -6116,7 +6232,7 @@
             "venue": "あさひ舟川べり",
             "prefecture": "富山県",
             "city": "下新川郡朝日町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.asahi-tabi.com/sijuusou/",
             "verified": true
       },
@@ -6128,7 +6244,7 @@
             "venue": "富山県美術館",
             "prefecture": "富山県",
             "city": "富山市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://tad-toyama.jp/exhibition-event/20247",
             "verified": true
       },
@@ -6140,7 +6256,7 @@
             "venue": "富山市ガラス美術館",
             "prefecture": "富山県",
             "city": "富山市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://toyama-glass-art-museum.jp/exhibition/",
             "verified": true
       },
@@ -6152,7 +6268,7 @@
             "venue": "藤塚神社・美川地区",
             "prefecture": "石川県",
             "city": "白山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.urara-hakusanbito.com/festival/detail_1273.html",
             "verified": true
       },
@@ -6164,7 +6280,7 @@
             "venue": "石川県立美術館",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.ishibi.pref.ishikawa.jp/exhibition/",
             "verified": true
       },
@@ -6176,7 +6292,7 @@
             "venue": "金沢21世紀美術館",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.kanazawa21.jp/exhibition/",
             "verified": true
       },
@@ -6188,7 +6304,7 @@
             "venue": "加賀友禅会館",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.kagayuzen.or.jp/",
             "verified": true
       },
@@ -6200,7 +6316,7 @@
             "venue": "国立工芸館",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://www.momat.go.jp/craft-museum/",
             "verified": true
       },
@@ -6212,7 +6328,7 @@
             "venue": "山中・山代温泉",
             "prefecture": "石川県",
             "city": "加賀市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.yamanaka-spa.or.jp/event",
             "verified": true
       },
@@ -6224,9 +6340,12 @@
             "venue": "石川県産業展示館1〜4号館",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.millionrock.com/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 481,
@@ -6236,7 +6355,7 @@
             "venue": "金沢城公園・金沢市中心部",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://100mangoku.net/",
             "verified": true
       },
@@ -6248,7 +6367,7 @@
             "venue": "マリンタウン・總持寺",
             "prefecture": "石川県",
             "city": "輪島市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://wajimacci.or.jp/fes/",
             "verified": true
       },
@@ -6260,7 +6379,7 @@
             "venue": "湯涌温泉 玉泉湖畔氷室小屋",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://yuwaku.gr.jp/himuro/",
             "verified": true
       },
@@ -6272,7 +6391,7 @@
             "venue": "宇出津 八坂神社",
             "prefecture": "石川県",
             "city": "鳳珠郡能登町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://abarematsuri.jp/",
             "verified": true
       },
@@ -6284,7 +6403,7 @@
             "venue": "白山市白峰地区",
             "prefecture": "石川県",
             "city": "白山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.urara-hakusanbito.com/festival/detail_1308.html",
             "verified": true
       },
@@ -6296,7 +6415,7 @@
             "venue": "湯涌温泉街",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://yuwaku.gr.jp/bonbori/",
             "verified": true
       },
@@ -6308,7 +6427,7 @@
             "venue": "野々市市文化会館フォルテ・野々市小学校周辺",
             "prefecture": "石川県",
             "city": "野々市市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.nonoichi.lg.jp/soshiki/9/2542.html",
             "verified": true
       },
@@ -6332,7 +6451,7 @@
             "venue": "石崎八幡神社・石崎町",
             "prefecture": "石川県",
             "city": "七尾市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.nanao.lg.jp/koryu-s/event/8gatsu/issaki.html",
             "verified": true
       },
@@ -6356,7 +6475,7 @@
             "venue": "海士町・河井町・鳳至町・輪島崎町",
             "prefecture": "石川県",
             "city": "輪島市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://wajimanavi.jp/event/wajimataisai",
             "verified": true
       },
@@ -6368,7 +6487,7 @@
             "venue": "粟津温泉街",
             "prefecture": "石川県",
             "city": "小松市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "http://www.awazuonsen.com/category/event",
             "verified": true
       },
@@ -6380,7 +6499,7 @@
             "venue": "高倉彦神社・蛸島町",
             "prefecture": "石川県",
             "city": "珠洲市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.hot-ishikawa.jp/event/detail_6875.html",
             "verified": true
       },
@@ -6392,7 +6511,7 @@
             "venue": "山中温泉街",
             "prefecture": "石川県",
             "city": "加賀市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.yamanaka-spa.or.jp/event/123",
             "verified": true
       },
@@ -6404,7 +6523,7 @@
             "venue": "金沢城公園・兼六園",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.hot-ishikawa.jp/event/detail_22163.html",
             "verified": true
       },
@@ -6416,7 +6535,7 @@
             "venue": "航空自衛隊小松基地",
             "prefecture": "石川県",
             "city": "小松市",
-            "genre": "体験",
+            "genre": "文化",
             "link": "https://www.mod.go.jp/asdf/komatsu/airfes/index.html",
             "verified": true
       },
@@ -6428,7 +6547,7 @@
             "venue": "湯涌温泉街",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://yuwaku.gr.jp/bonbori/",
             "verified": true
       },
@@ -6440,7 +6559,7 @@
             "venue": "金沢市内コース",
             "prefecture": "石川県",
             "city": "金沢市",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://www.kanazawa-marathon.jp/",
             "verified": true
       },
@@ -6452,7 +6571,7 @@
             "venue": "三國神社・三国町中心部",
             "prefecture": "福井県",
             "city": "坂井市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://mikunimatsuri.com/",
             "verified": true
       },
@@ -6464,7 +6583,7 @@
             "venue": "大野市内特設コース",
             "prefecture": "福井県",
             "city": "大野市",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://www.city.ono.fukui.jp/kenko/sports/meisuimarason/index.html",
             "verified": true
       },
@@ -6476,7 +6595,7 @@
             "venue": "芝政ワールド",
             "prefecture": "福井県",
             "city": "坂井市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://green-flash-fes.com/",
             "verified": true
       },
@@ -6488,7 +6607,7 @@
             "venue": "越前陶芸村",
             "prefecture": "福井県",
             "city": "越前町",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://www.town.echizen.fukui.jp/event/01/p009821.html",
             "verified": true
       },
@@ -6500,7 +6619,7 @@
             "venue": "芝政ワールド",
             "prefecture": "福井県",
             "city": "坂井市",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://shibamasa.com/event.php",
             "verified": true
       },
@@ -6512,7 +6631,7 @@
             "venue": "須波阿須疑神社",
             "prefecture": "福井県",
             "city": "今立郡池田町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://fuku-iro.jp/event/detail_11775.html",
             "verified": true
       },
@@ -6524,7 +6643,7 @@
             "venue": "花はす公園",
             "prefecture": "福井県",
             "city": "南条郡南越前町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.fuku-e.com/event/detail_5358.html",
             "verified": true
       },
@@ -6536,7 +6655,7 @@
             "venue": "福井駅周辺",
             "prefecture": "福井県",
             "city": "福井市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://fuku-iro.jp/fukui_fes",
             "verified": true
       },
@@ -6548,7 +6667,7 @@
             "venue": "あわら湯のまち駅周辺",
             "prefecture": "福井県",
             "city": "あわら市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://awara.info/130/summer_fes/",
             "verified": true
       },
@@ -6572,7 +6691,7 @@
             "venue": "大野市六間通り",
             "prefecture": "福井県",
             "city": "大野市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.ohnocci.or.jp/",
             "verified": true
       },
@@ -6596,7 +6715,7 @@
             "venue": "一乗谷朝倉氏遺跡",
             "prefecture": "福井県",
             "city": "福井市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://mantouya.jp/",
             "verified": true
       },
@@ -6608,7 +6727,7 @@
             "venue": "永平寺町松岡春日 九頭竜川河川敷",
             "prefecture": "福井県",
             "city": "吉田郡永平寺町",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://toronagashi.com/",
             "verified": true
       },
@@ -6620,7 +6739,7 @@
             "venue": "越前市文化センター ほか",
             "prefecture": "福井県",
             "city": "越前市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "http://takefu-imf.com/",
             "verified": true
       },
@@ -6632,7 +6751,7 @@
             "venue": "氣比神宮・敦賀駅前商店街",
             "prefecture": "福井県",
             "city": "敦賀市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://tsurugamatsuri.info/",
             "verified": true
       },
@@ -6656,7 +6775,7 @@
             "venue": "八幡神社・小浜市中心部",
             "prefecture": "福井県",
             "city": "小浜市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://hoze-matsuri.jp/",
             "verified": true
       },
@@ -6668,7 +6787,7 @@
             "venue": "鯖江市・越前市・越前町 各産地工房",
             "prefecture": "福井県",
             "city": "鯖江市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://renew-fukui.com/",
             "verified": true
       },
@@ -6680,7 +6799,7 @@
             "venue": "越前市武生中央公園",
             "prefecture": "福井県",
             "city": "越前市",
-            "genre": "展覧会",
+            "genre": "展示会",
             "link": "https://takefu-kikuningyou.com/",
             "verified": true
       },
@@ -6692,7 +6811,7 @@
             "venue": "丸岡城周辺",
             "prefecture": "福井県",
             "city": "坂井市",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://www.s-taikyo.jp/marathon.html",
             "verified": true
       },
@@ -6716,7 +6835,7 @@
             "venue": "勝山市本町通り",
             "prefecture": "福井県",
             "city": "勝山市",
-            "genre": "マーケット",
+            "genre": "グルメ",
             "link": "https://fuku-iro.jp/event/detail_11239.html",
             "verified": true
       },
@@ -6728,7 +6847,7 @@
             "venue": "勝山市街地",
             "prefecture": "福井県",
             "city": "勝山市",
-            "genre": "お祭り",
+            "genre": "祭り",
             "link": "https://www.city.katsuyama.fukui.jp/kankou/sagityo/",
             "verified": true
       },
@@ -6740,7 +6859,7 @@
             "venue": "足羽川桜並木 ほか",
             "prefecture": "福井県",
             "city": "福井市",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://fuku-iro.jp/sakura",
             "verified": true
       },
@@ -6752,7 +6871,7 @@
             "venue": "小浜市内",
             "prefecture": "福井県",
             "city": "小浜市",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://wakasa-obama.jp/event/obama-wakasamarathon/",
             "verified": true
       },
@@ -6764,7 +6883,7 @@
             "venue": "富士本栖湖リゾート",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://www.fujimotosuko-resort.jp/",
             "verified": true
       },
@@ -6776,7 +6895,7 @@
             "venue": "JR甲府駅北口広場",
             "prefecture": "山梨県",
             "city": "甲府市",
-            "genre": "ワイン・グルメ",
+            "genre": "グルメ",
             "link": "https://sannichiybs.info/wine/yamanasi-2026sp/",
             "verified": true
       },
@@ -6800,9 +6919,12 @@
             "venue": "大石公園・八木崎公園",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "花・自然",
+            "genre": "花",
             "link": "https://fujisan.ne.jp/pages/380/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 529,
@@ -6812,7 +6934,7 @@
             "venue": "北口本宮冨士浅間神社・金鳥居公園",
             "prefecture": "山梨県",
             "city": "富士吉田市",
-            "genre": "伝統行事",
+            "genre": "伝統",
             "link": "https://fujiyoshida.net/event/147",
             "verified": true
       },
@@ -6824,7 +6946,7 @@
             "venue": "北口本宮冨士浅間神社",
             "prefecture": "山梨県",
             "city": "富士吉田市",
-            "genre": "伝統行事",
+            "genre": "伝統",
             "link": "https://fujiyoshida.net/event/148",
             "verified": true
       },
@@ -6836,7 +6958,7 @@
             "venue": "銀座通り・春日通り他",
             "prefecture": "山梨県",
             "city": "甲府市",
-            "genre": "夏祭り",
+            "genre": "祭り",
             "link": "https://kofu-tourism.com/event/66",
             "verified": true
       },
@@ -6860,7 +6982,7 @@
             "venue": "山中湖畔",
             "prefecture": "山梨県",
             "city": "山中湖村",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://lake-yamanakako.com/event/10430",
             "verified": true
       },
@@ -6872,7 +6994,7 @@
             "venue": "西湖前浜",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://fujisan.ne.jp/pages/390/",
             "verified": true
       },
@@ -6884,7 +7006,7 @@
             "venue": "本栖湖畔遊覧船発着所付近",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://fujikawaguchiko-event.com/events/01JWG4Q68XE23RQ2JSVEYHWYRQ",
             "verified": true
       },
@@ -6896,7 +7018,7 @@
             "venue": "精進湖他手合浜",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://fujisan.ne.jp/pages/395/",
             "verified": true
       },
@@ -6908,7 +7030,7 @@
             "venue": "河口湖畔船津浜",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://fujisan.ne.jp/pages/396/",
             "verified": true
       },
@@ -6920,7 +7042,7 @@
             "venue": "三郡橋下流笛吹川河畔",
             "prefecture": "山梨県",
             "city": "市川三郷町",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.town.ichikawamisato.yamanashi.jp/shinmei/",
             "verified": true
       },
@@ -6944,7 +7066,7 @@
             "venue": "北口本宮冨士浅間神社・諏訪神社",
             "prefecture": "山梨県",
             "city": "富士吉田市",
-            "genre": "伝統行事",
+            "genre": "伝統",
             "link": "https://www.sengenjinja.jp/himatsuri/index.html",
             "verified": true
       },
@@ -6968,7 +7090,7 @@
             "venue": "清泉寮前広場",
             "prefecture": "山梨県",
             "city": "北杜市",
-            "genre": "文化・収穫祭",
+            "genre": "文化",
             "link": "https://2026.prfes-county.com/",
             "verified": true
       },
@@ -6980,7 +7102,7 @@
             "venue": "河口湖畔梨川周辺(もみじ回廊)",
             "prefecture": "山梨県",
             "city": "富士河口湖町",
-            "genre": "紅葉",
+            "genre": "花",
             "link": "https://fujisan.ne.jp/pages/433/",
             "verified": true
       },
@@ -6992,7 +7114,7 @@
             "venue": "勝沼ぶどうの丘",
             "prefecture": "山梨県",
             "city": "甲州市",
-            "genre": "ワイン・グルメ",
+            "genre": "グルメ",
             "link": "https://www.koshu-kankou.jp/soshiki/0/6910.html",
             "verified": true
       },
@@ -7004,7 +7126,7 @@
             "venue": "甲府駅前・中央商店街",
             "prefecture": "山梨県",
             "city": "甲府市",
-            "genre": "伝統行事",
+            "genre": "伝統",
             "link": "https://kofu-tourism.com/event/72",
             "verified": true
       },
@@ -7040,7 +7162,7 @@
             "venue": "梓水苑(受付会場)",
             "prefecture": "長野県",
             "city": "松本市",
-            "genre": "サイクリング",
+            "genre": "スポーツ",
             "link": "https://aacr.jp/",
             "verified": true
       },
@@ -7052,7 +7174,7 @@
             "venue": "大鹿村特設コース",
             "prefecture": "長野県",
             "city": "下伊那郡大鹿村",
-            "genre": "自転車ロードレース",
+            "genre": "スポーツ",
             "link": "https://www.toj.co.jp/2026/",
             "verified": true
       },
@@ -7064,9 +7186,12 @@
             "venue": "平出遺跡公園・市内ワイナリー",
             "prefecture": "長野県",
             "city": "塩尻市",
-            "genre": "ワインフェス",
+            "genre": "グルメ",
             "link": "https://www.shiojiri-winery-fes.jp/",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 551,
@@ -7076,7 +7201,7 @@
             "venue": "国営アルプスあづみの公園 堀金・穂高地区",
             "prefecture": "長野県",
             "city": "安曇野市",
-            "genre": "花フェス",
+            "genre": "花",
             "link": "https://www.azumino-koen.jp/",
             "verified": true
       },
@@ -7088,9 +7213,12 @@
             "venue": "フローラルガーデンおぶせ・町内",
             "prefecture": "長野県",
             "city": "上高井郡小布施町",
-            "genre": "花・庭園",
+            "genre": "花",
             "link": "https://www.town.obuse.nagano.jp/docs/327730.html",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 553,
@@ -7100,7 +7228,7 @@
             "venue": "小布施町総合公園",
             "prefecture": "長野県",
             "city": "上高井郡小布施町",
-            "genre": "マラソン",
+            "genre": "スポーツ",
             "link": "https://www.obusemarathon.jp/",
             "verified": true
       },
@@ -7112,7 +7240,7 @@
             "venue": "百々川緑地",
             "prefecture": "長野県",
             "city": "須坂市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://sites.google.com/view/38suzakaminnnanohanabitaikai/",
             "verified": true
       },
@@ -7124,7 +7252,7 @@
             "venue": "塩尻駅前周辺",
             "prefecture": "長野県",
             "city": "塩尻市",
-            "genre": "市民祭",
+            "genre": "祭り",
             "link": "https://gemba.jp/",
             "verified": true
       },
@@ -7136,7 +7264,7 @@
             "venue": "国宝松本城公園",
             "prefecture": "長野県",
             "city": "松本市",
-            "genre": "和太鼓フェス",
+            "genre": "祭り",
             "link": "https://visitmatsumoto.com/event/taiko-drum-festival/",
             "verified": true
       },
@@ -7148,7 +7276,7 @@
             "venue": "諏訪湖畔",
             "prefecture": "長野県",
             "city": "諏訪市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://suwako-hanabi.com/smmr/",
             "verified": true
       },
@@ -7160,7 +7288,7 @@
             "venue": "諏訪大社春宮〜秋宮",
             "prefecture": "長野県",
             "city": "諏訪郡下諏訪町",
-            "genre": "神事・伝統",
+            "genre": "神事",
             "link": "https://shimosuwaonsen.jp/",
             "verified": true
       },
@@ -7172,7 +7300,7 @@
             "venue": "松本市中心市街地",
             "prefecture": "長野県",
             "city": "松本市",
-            "genre": "盆踊り",
+            "genre": "祭り",
             "link": "https://matsubon.com/",
             "verified": true
       },
@@ -7184,7 +7312,7 @@
             "venue": "伊那市中心市街地・天竜川河川敷",
             "prefecture": "長野県",
             "city": "伊那市",
-            "genre": "市民祭・花火",
+            "genre": "祭り",
             "link": "https://www.inacity.jp/kankojoho/event_kanko/inamatsuri/",
             "verified": true
       },
@@ -7196,7 +7324,7 @@
             "venue": "戸倉上山田温泉千曲川河畔",
             "prefecture": "長野県",
             "city": "千曲市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.chikuma-hanabi.jp/",
             "verified": true
       },
@@ -7208,7 +7336,7 @@
             "venue": "飯田市中心市街地",
             "prefecture": "長野県",
             "city": "飯田市",
-            "genre": "市民祭・踊り",
+            "genre": "祭り",
             "link": "https://www.city.iida.lg.jp/soshiki/25/ringon.html",
             "verified": true
       },
@@ -7220,7 +7348,7 @@
             "venue": "茅野市中心市街地",
             "prefecture": "長野県",
             "city": "茅野市",
-            "genre": "夏祭り・踊り",
+            "genre": "祭り",
             "link": "https://chino-donban.com/",
             "verified": true
       },
@@ -7232,7 +7360,7 @@
             "venue": "諏訪湖畔",
             "prefecture": "長野県",
             "city": "諏訪市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://suwako-hanabi.com/kojyou/",
             "verified": true
       },
@@ -7244,7 +7372,7 @@
             "venue": "天竜川時又港",
             "prefecture": "長野県",
             "city": "飯田市",
-            "genre": "花火・伝統",
+            "genre": "花火",
             "link": "https://tokimata-tourounagashi.com/",
             "verified": true
       },
@@ -7256,7 +7384,7 @@
             "venue": "千曲川河川敷(常田新橋下流)",
             "prefecture": "長野県",
             "city": "上田市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.ucci.or.jp/info/event/",
             "verified": true
       },
@@ -7268,7 +7396,7 @@
             "venue": "川中島古戦場史跡公園",
             "prefecture": "長野県",
             "city": "長野市",
-            "genre": "花火・市民祭",
+            "genre": "祭り",
             "link": "https://www.naganoshi-sci.or.jp/kawanakajimakosenjoumatsuri/",
             "verified": true
       },
@@ -7280,7 +7408,7 @@
             "venue": "戸隠神社・戸隠そば店各所",
             "prefecture": "長野県",
             "city": "長野市",
-            "genre": "食フェス・伝統",
+            "genre": "グルメ",
             "link": "https://sobamatsuri.com/",
             "verified": true
       },
@@ -7292,7 +7420,7 @@
             "venue": "犀川第2運動公園・長野大橋上流",
             "prefecture": "長野県",
             "city": "長野市",
-            "genre": "秋花火大会",
+            "genre": "花火",
             "link": "https://www.nagano-ebisukou.jp/",
             "verified": true
       },
@@ -7304,7 +7432,7 @@
             "venue": "中山道妻籠宿",
             "prefecture": "長野県",
             "city": "木曽郡南木曽町",
-            "genre": "伝統行列・絵巻",
+            "genre": "伝統",
             "link": "https://nagiso.jp/topics/bunkabunsei_festival/",
             "verified": true
       },
@@ -7316,7 +7444,7 @@
             "venue": "国営アルプスあづみの公園",
             "prefecture": "長野県",
             "city": "大町市・松川村",
-            "genre": "トレイルラン",
+            "genre": "スポーツ",
             "link": "https://trailrunners.jp/event/azumino-2026/",
             "verified": true
       },
@@ -7328,7 +7456,7 @@
             "venue": "遠山郷各神社",
             "prefecture": "長野県",
             "city": "飯田市南信濃",
-            "genre": "国重要無形民俗文化財",
+            "genre": "文化",
             "link": "https://shimotsukimatsuri.com/",
             "verified": true
       },
@@ -7340,7 +7468,7 @@
             "venue": "岡谷市中心市街地",
             "prefecture": "長野県",
             "city": "岡谷市",
-            "genre": "夏祭り・伝統",
+            "genre": "祭り",
             "link": "http://www.okayacci.or.jp/kitsune/",
             "verified": true
       },
@@ -7352,7 +7480,7 @@
             "venue": "水無神社(木曽福島)",
             "prefecture": "長野県",
             "city": "木曽郡木曽町",
-            "genre": "奇祭・国指定",
+            "genre": "祭り",
             "link": "https://kiso-nagano.ne.jp/festival08/",
             "verified": true
       },
@@ -7364,7 +7492,7 @@
             "venue": "木曽町福島地区",
             "prefecture": "長野県",
             "city": "木曽郡木曽町",
-            "genre": "盆踊り",
+            "genre": "祭り",
             "link": "https://www.kankou-kiso.com/",
             "verified": true
       },
@@ -7376,7 +7504,7 @@
             "venue": "穂高神社",
             "prefecture": "長野県",
             "city": "安曇野市",
-            "genre": "神事・船曳行",
+            "genre": "神事",
             "link": "https://hotakajinja.com/ofunematuri.html",
             "verified": true
       },
@@ -7388,7 +7516,7 @@
             "venue": "ツインメッセ静岡",
             "prefecture": "静岡県",
             "city": "静岡市駿河区",
-            "genre": "ホビー展示会",
+            "genre": "展示会",
             "link": "https://www.hobby-shizuoka.com/",
             "verified": true
       },
@@ -7400,7 +7528,7 @@
             "venue": "下田公園・下田港 周辺",
             "prefecture": "静岡県",
             "city": "下田市",
-            "genre": "伝統祭り",
+            "genre": "祭り",
             "link": "https://www.blackshipfestival.jp/",
             "verified": true
       },
@@ -7412,7 +7540,7 @@
             "venue": "下田港",
             "prefecture": "静岡県",
             "city": "下田市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.blackshipfestival.jp/program",
             "verified": true
       },
@@ -7424,7 +7552,7 @@
             "venue": "富士山樹空の森",
             "prefecture": "静岡県",
             "city": "御殿場市",
-            "genre": "音楽フェス",
+            "genre": "フェス",
             "link": "https://acochill.com/",
             "verified": true
       },
@@ -7436,7 +7564,7 @@
             "venue": "熱海湾",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.ataminews.gr.jp/event/8/",
             "verified": true
       },
@@ -7448,7 +7576,7 @@
             "venue": "浜名湖ガーデンパーク 屋外ステージ",
             "prefecture": "静岡県",
             "city": "浜松市中央区",
-            "genre": "音楽フェス",
+            "genre": "フェス",
             "link": "http://www.adamfest.com/",
             "verified": true
       },
@@ -7460,7 +7588,7 @@
             "venue": "弁天島海浜公園周辺 浜名湖",
             "prefecture": "静岡県",
             "city": "浜松市中央区",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "http://www.bentenjima.jp/",
             "verified": true
       },
@@ -7472,9 +7600,12 @@
             "venue": "ジャカランダ遊歩道(お宮緑地〜サンビーチ)",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "花の祭典",
+            "genre": "花",
             "link": "https://www.ataminews.gr.jp/event/338",
-            "verified": true
+            "verified": true,
+            "tags": [
+                  "フェス"
+            ]
       },
       {
             "id": 585,
@@ -7484,7 +7615,7 @@
             "venue": "下田公園",
             "prefecture": "静岡県",
             "city": "下田市",
-            "genre": "あじさい祭",
+            "genre": "花",
             "link": "https://www.shimoda-city.info/ajisai",
             "verified": true
       },
@@ -7496,7 +7627,7 @@
             "venue": "伊豆漁協下田市魚市場ほか",
             "prefecture": "静岡県",
             "city": "下田市",
-            "genre": "食フェス",
+            "genre": "グルメ",
             "link": "https://www.shimoda-city.info/event",
             "verified": true
       },
@@ -7508,7 +7639,7 @@
             "venue": "熱海梅園 初川清流",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "自然鑑賞",
+            "genre": "花",
             "link": "https://www.ataminews.gr.jp/event/316",
             "verified": true
       },
@@ -7520,7 +7651,7 @@
             "venue": "三嶋大社・大通り",
             "prefecture": "静岡県",
             "city": "三島市",
-            "genre": "大祭",
+            "genre": "祭り",
             "link": "https://www.mishima-cci.com/maturi/",
             "verified": true
       },
@@ -7532,7 +7663,7 @@
             "venue": "清水港 日の出埠頭",
             "prefecture": "静岡県",
             "city": "静岡市清水区",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.minatokappore.jp/",
             "verified": true
       },
@@ -7544,7 +7675,7 @@
             "venue": "安倍川河川敷(田町三丁目付近)",
             "prefecture": "静岡県",
             "city": "静岡市葵区",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.abekawa-hanabi.com/",
             "verified": true
       },
@@ -7556,7 +7687,7 @@
             "venue": "狩野川河川敷",
             "prefecture": "静岡県",
             "city": "沼津市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://numazukanko.jp/event/50051",
             "verified": true
       },
@@ -7568,7 +7699,7 @@
             "venue": "原野谷川親水公園",
             "prefecture": "静岡県",
             "city": "袋井市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.fukuroi-hanabi.jp/",
             "verified": true
       },
@@ -7580,7 +7711,7 @@
             "venue": "来宮神社・市内",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "神社祭礼",
+            "genre": "神事",
             "link": "https://kinomiya.or.jp/top/overview/annual_festival/",
             "verified": true
       },
@@ -7592,7 +7723,7 @@
             "venue": "熱海湾",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.ataminews.gr.jp/event/8/",
             "verified": true
       },
@@ -7604,7 +7735,7 @@
             "venue": "熱海湾",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.ataminews.gr.jp/event/8/",
             "verified": true
       },
@@ -7616,7 +7747,7 @@
             "venue": "伊東市内・伊東海岸",
             "prefecture": "静岡県",
             "city": "伊東市",
-            "genre": "伝統祭り",
+            "genre": "祭り",
             "link": "https://itospa.com/event/detail_10020.html",
             "verified": true
       },
@@ -7628,7 +7759,7 @@
             "venue": "伊東海岸",
             "prefecture": "静岡県",
             "city": "伊東市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://itospa.com/event/detail_10019.html",
             "verified": true
       },
@@ -7640,7 +7771,7 @@
             "venue": "下田八幡神社・市街地",
             "prefecture": "静岡県",
             "city": "下田市",
-            "genre": "神社祭礼",
+            "genre": "神事",
             "link": "https://www.shimoda-city.info/shimoda-taiko",
             "verified": true
       },
@@ -7652,7 +7783,7 @@
             "venue": "富士山本宮浅間大社・市街地",
             "prefecture": "静岡県",
             "city": "富士宮市",
-            "genre": "大祭",
+            "genre": "祭り",
             "link": "https://akimiya.com/fujinomiyamaturi",
             "verified": true
       },
@@ -7664,7 +7795,7 @@
             "venue": "駿府城公園・市街地",
             "prefecture": "静岡県",
             "city": "静岡市葵区",
-            "genre": "大道芸フェス",
+            "genre": "フェス",
             "link": "https://daidogei.com/",
             "verified": true
       },
@@ -7676,7 +7807,7 @@
             "venue": "焼津漁港新港地区",
             "prefecture": "静岡県",
             "city": "焼津市",
-            "genre": "花火大会",
+            "genre": "花火",
             "link": "https://www.city.yaizu.lg.jp/event/fireflower.html",
             "verified": true
       },
@@ -7688,7 +7819,7 @@
             "venue": "稲取温泉場特設会場",
             "prefecture": "静岡県",
             "city": "東伊豆町",
-            "genre": "奇祭",
+            "genre": "祭り",
             "link": "https://inatorionsen.or.jp/dontsuku-festival/",
             "verified": true
       },
@@ -7700,7 +7831,7 @@
             "venue": "大井神社・島田市内",
             "prefecture": "静岡県",
             "city": "島田市",
-            "genre": "日本三奇祭",
+            "genre": "祭り",
             "link": "https://shimadataisai.jp/",
             "verified": true
       }
@@ -7711,25 +7842,22 @@
     const WEEK = ['日','月','火','水','木','金','土'];
     let activeGenre = 'all';
 
-    // ジャンル → アイコン・色の事前定義（未定義は default）
+    // ジャンル → アイコン・色の事前定義（12カテゴリ）
     const GENRE_META = {
-      'お祭り':       { icon: '🏮', color: '#ff80ab' },
-      '花火':         { icon: '🎆', color: '#b39ddb' },
-      '花・自然':      { icon: '🌸', color: '#ff80ab' },
-      '紅葉':         { icon: '🍁', color: '#ff8a65' },
-      'イルミネーション': { icon: '✨', color: '#ffd54f' },
-      'グルメ':       { icon: '🍴', color: '#ffb74d' },
-      'スポーツ':     { icon: '👟', color: '#4fc3f7' },
-      'マラソン':     { icon: '🏃', color: '#81c784' },
-      'マーケット':   { icon: '⛺', color: '#81c784' },
-      '音楽・ステージ': { icon: '🎵', color: '#b39ddb' },
-      '展覧会':       { icon: '🖼️', color: '#4fc3f7' },
-      '体験':         { icon: '🎨', color: '#b39ddb' },
-      '神事':         { icon: '⛩️', color: '#ffd54f' },
-      '初日の出':     { icon: '🌅', color: '#ff8a65' },
-      'ライトアップ':  { icon: '💡', color: '#ffd54f' },
-      'その他':       { icon: '📌', color: '#8a8a9a' }
+      '祭り':           { icon: '🏮', color: '#ff80ab' },
+      '花火':           { icon: '🎆', color: '#b39ddb' },
+      '花':             { icon: '🌸', color: '#ff80ab' },
+      'グルメ':         { icon: '🍴', color: '#ffb74d' },
+      'フェス':         { icon: '🎪', color: '#ff8a65' },
+      'スポーツ':       { icon: '👟', color: '#4fc3f7' },
+      '展示会':         { icon: '🖼️', color: '#4fc3f7' },
+      '文化':           { icon: '🎨', color: '#b39ddb' },
+      '伝統':           { icon: '🎎', color: '#8d6e63' },
+      '神事':           { icon: '⛩️', color: '#ffd54f' },
+      '歴史':           { icon: '🏯', color: '#8d6e63' },
+      'イルミネーション': { icon: '✨', color: '#ffd54f' }
     };
+    const GENRE_ORDER = ['祭り','花火','花','グルメ','フェス','スポーツ','展示会','文化','伝統','神事','歴史','イルミネーション'];
 
     function getGenreMeta(genre) {
       return GENRE_META[genre] || { icon: '📌', color: '#8a8a9a' };
@@ -7757,9 +7885,9 @@
 
     // ジャンル別Amazonアフィリリンク
     const AMAZON_LINKS = {
-      'お祭り':   { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
-      '花火':     { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
-      '花・自然': { url: "https://amzn.to/3QFA67P", label: "📷 写ルンです" }
+      '祭り':   { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
+      '花火':   { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
+      '花':     { url: "https://amzn.to/3QFA67P", label: "📷 写ルンです" }
     };
 
     function renderCard(ev) {
@@ -7776,13 +7904,16 @@
       const isSprite = SPRITE_GENRES.has(ev.genre);
       const iconContent = isSprite ? '' : meta.icon;
       const iconStyle = isSprite ? '' : `color:${meta.color}`;
+      const tagsAttr = ev.tags && ev.tags.length ? ev.tags.join('|') : '';
+      const tagsHtml = ev.tags && ev.tags.length ? ev.tags.map(t=>`<span class="card-genre" style="opacity:.7">${t}</span>`).join('') : '';
       return `
-        <div class="card" data-genre="${ev.genre}" data-prefecture="${ev.prefecture}">
+        <div class="card" data-genre="${ev.genre}" data-tags="${tagsAttr}" data-prefecture="${ev.prefecture}">
           <div class="card-icon" style="${iconStyle}">${iconContent}</div>
           <div class="card-body">
             <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
               <span class="status ${status.cls}">${status.text}</span>
               <span class="card-genre">${ev.genre}</span>
+              ${tagsHtml}
             </div>
             <h2 class="card-name">${ev.name}</h2>
             <div class="card-info">
@@ -7822,7 +7953,9 @@
       const q = searchQuery.toLowerCase();
       let count = 0;
       cards.forEach(c => {
-        const genreMatch = activeGenre === 'all' || c.dataset.genre === activeGenre;
+        const tags = (c.dataset.tags || '').split('|').filter(Boolean);
+        const allCats = [c.dataset.genre, ...tags];
+        const genreMatch = activeGenre === 'all' || allCats.includes(activeGenre);
         const areaMatch = activeArea === 'all' || PREFECTURE_TO_REGION[c.dataset.prefecture] === activeArea;
         const queryMatch = !q || c.textContent.toLowerCase().includes(q);
         const match = genreMatch && areaMatch && queryMatch;
@@ -7833,7 +7966,7 @@
     }
 
     // 画像内に存在するアイコン（CSS sprite使用）
-    const SPRITE_GENRES = new Set(['お祭り','花・自然','グルメ','スポーツ','マーケット','音楽・ステージ']);
+    const SPRITE_GENRES = new Set(['祭り','花','グルメ','スポーツ']);
 
     function renderCategories(genres) {
       const container = document.getElementById('categories');
@@ -7864,7 +7997,12 @@
       const visible = EVENTS.filter(e => e.verified === true && getStatus(e) !== null)
         .sort((a, b) => a.date.localeCompare(b.date));
 
-      const usedGenres = [...new Set(visible.map(e => e.genre))].sort();
+      const usedSet = new Set();
+      visible.forEach(e => {
+        usedSet.add(e.genre);
+        if (e.tags) e.tags.forEach(t => usedSet.add(t));
+      });
+      const usedGenres = GENRE_ORDER.filter(g => usedSet.has(g));
       renderCategories(usedGenres);
 
       document.getElementById('resultCount').textContent = visible.length;
