@@ -1,91 +1,1393 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="5;url=events.html">
-<title>OSHINAVI - 行楽イベント情報へ移動中</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1EQ5M4HT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RM1EQ5M4HT');
-</script>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1f2937;
-  padding: 20px;
-}
-.container {
-  background: white;
-  border-radius: 24px;
-  padding: 48px 32px;
-  max-width: 520px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-}
-h1 {
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: #92400e;
-}
-.icon {
-  font-size: 64px;
-  margin-bottom: 24px;
-}
-p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #4b5563;
-  margin-bottom: 16px;
-}
-.btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: white;
-  text-decoration: none;
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: bold;
-  margin-top: 16px;
-  font-size: 16px;
-  transition: transform 0.2s;
-}
-.btn:hover { transform: translateY(-2px); }
-.note {
-  background: #fef3c7;
-  border-left: 4px solid #f59e0b;
-  padding: 16px;
-  border-radius: 8px;
-  margin-top: 24px;
-  text-align: left;
-  font-size: 13px;
-  color: #92400e;
-  line-height: 1.7;
-}
-</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1EQ5M4HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RM1EQ5M4HT');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSHINAVI - ライブイベント情報まとめ</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #e040fb;
+      --accent2: #00e5ff;
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --bg3: #1a1a1a;
+      --text: #f0f0f0;
+      --text-muted: #888;
+      --border: #2a2a2a;
+      --red: #ff5252;
+      --orange: #ffab40;
+      --green: #69f0ae;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(0,229,255,0.15) 1.5px, transparent 2px);
+      background-size: 60px 60px, 60px 60px, 60px 60px;
+      color: var(--text);
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── ヘッダー ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+    .logo::before {
+      content: '';
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.9) 0%, rgba(224,64,251,0.7) 30%, rgba(224,64,251,0.3) 55%, transparent 75%);
+      filter: blur(10px);
+      pointer-events: none;
+      animation: logoHalo 3s ease-in-out infinite;
+    }
+    .logo img {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      -webkit-text-fill-color: initial;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes logoHalo {
+      0%,100% { opacity: 0.8; }
+      50%     { opacity: 1; }
+    }
+
+    nav { display: flex; gap: 18px; align-items: center; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      line-height: 1.25;
+      text-align: center;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── ヒーロー ── */
+    .hero {
+      text-align: center;
+      padding: 56px 24px 40px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 50% 0%, rgba(224,64,251,0.08) 0%, transparent 70%);
+    }
+
+    .hero h1 {
+      font-size: clamp(22px, 5vw, 44px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      word-break: keep-all;
+      line-break: strict;
+      overflow-wrap: normal;
+      background: linear-gradient(90deg, #ff5252 0%, #ffab40 14%, #ffeb3b 28%, #69f0ae 42%, #00e5ff 57%, #5e8eff 71%, #e040fb 85%, #ff5252 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: hologramShift 8s linear infinite;
+      filter: drop-shadow(0 0 14px rgba(0,229,255,0.35));
+    }
+
+    .hero h1 span {
+      background: none;
+      -webkit-text-fill-color: inherit;
+      color: inherit;
+    }
+
+    @keyframes hologramShift {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 14px;
+      letter-spacing: 1px;
+      word-break: keep-all;
+      line-break: strict;
+      overflow-wrap: normal;
+    }
+
+    /* ── 検索 & フィルターバー ── */
+    .controls {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .search-wrap {
+      position: relative;
+      max-width: 480px;
+      padding: 6px;
+    }
+    .search-wrap::before,
+    .search-wrap::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      pointer-events: none;
+      box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    }
+    .search-wrap::before {
+      top: 0;
+      left: 0;
+      border-top: 2px solid rgba(0, 229, 255, 0.7);
+      border-left: 2px solid rgba(0, 229, 255, 0.7);
+    }
+    .search-wrap::after {
+      bottom: 0;
+      right: 0;
+      border-bottom: 2px solid rgba(0, 229, 255, 0.7);
+      border-right: 2px solid rgba(0, 229, 255, 0.7);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(0, 229, 255, 0.6);
+      font-size: 15px;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      background: rgba(10, 10, 10, 0.6);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      border-radius: 8px;
+      padding: 10px 14px 10px 38px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: all 0.3s;
+      font-family: inherit;
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.25), inset 0 0 8px rgba(0, 229, 255, 0.08);
+    }
+
+    #searchInput::placeholder { color: var(--text-muted); }
+    #searchInput:focus {
+      border-color: var(--accent2);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+
+    #searchSuggest {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background: var(--bg3);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 100;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    #searchSuggest.open { display: block; }
+    .suggest-item {
+      padding: 9px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .suggest-item:last-child { border-bottom: none; }
+    .suggest-item:hover { background: var(--bg2); }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-right: 4px;
+    }
+
+    .filter-btn {
+      position: relative;
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,0.12) 0%,
+          rgba(255,255,255,0.04) 50%,
+          rgba(0,229,255,0.08) 100%);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--text);
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+      letter-spacing: 0.5px;
+      font-family: inherit;
+      white-space: nowrap;
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.35),
+        inset 0 -1px 1px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 1px; left: 6px; right: 6px;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+      border-radius: 18px 18px 50% 50% / 18px 18px 100% 100%;
+      pointer-events: none;
+    }
+
+    .filter-btn:hover {
+      border-color: rgba(0,229,255,0.8);
+      color: #fff;
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,0.18) 0%,
+          rgba(0,229,255,0.12) 50%,
+          rgba(224,64,251,0.1) 100%);
+      box-shadow:
+        0 0 18px rgba(0,229,255,0.45),
+        inset 0 1px 1px rgba(255,255,255,0.4),
+        inset 0 -1px 1px rgba(0,0,0,0.2);
+    }
+    .filter-btn.active {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+      background:
+        linear-gradient(135deg,
+          rgba(224,64,251,0.28) 0%,
+          rgba(255,255,255,0.15) 50%,
+          rgba(0,229,255,0.28) 100%);
+      box-shadow:
+        0 0 20px rgba(224,64,251,0.6),
+        0 0 40px rgba(0,229,255,0.35),
+        inset 0 1px 1px rgba(255,255,255,0.5),
+        inset 0 -1px 2px rgba(0,0,0,0.2);
+    }
+
+    /* ── メイン ── */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 28px 24px;
+    }
+
+    .result-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .result-meta span { color: var(--text); font-weight: 700; }
+
+    /* ── イベントカード ── */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .event-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+    }
+
+    .event-card:hover {
+      border-color: #3a3a3a;
+      transform: translateY(-1px);
+    }
+
+    .event-card.hidden { display: none; }
+
+    .card-body {
+      padding: 18px 20px 0 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .genre-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .genre-jpop    { background: rgba(224,64,251,0.15); color: var(--accent); border: 1px solid rgba(224,64,251,0.3); }
+    .genre-rock    { background: rgba(255,82,82,0.15);  color: var(--red);    border: 1px solid rgba(255,82,82,0.3); }
+    .genre-hiphop  { background: rgba(255,171,64,0.15); color: var(--orange); border: 1px solid rgba(255,171,64,0.3); }
+    .genre-kpop    { background: rgba(0,229,255,0.12);  color: var(--accent2);border: 1px solid rgba(0,229,255,0.25); }
+    .genre-anime   { background: rgba(105,240,174,0.12);color: var(--green);  border: 1px solid rgba(105,240,174,0.25); }
+    .genre-idol    { background: rgba(255,128,171,0.15);color: #ff80ab;       border: 1px solid rgba(255,128,171,0.3); }
+    .genre-youtuber{ background: rgba(255,0,0,0.12);    color: #ff4444;       border: 1px solid rgba(255,0,0,0.3); }
+    .genre-vtuber  { background: rgba(149,117,205,0.18);color: #ce93d8;       border: 1px solid rgba(149,117,205,0.35); }
+    .genre-classic { background: rgba(212,175,55,0.15); color: #d4af37;       border: 1px solid rgba(212,175,55,0.35); }
+    .genre-fes        { background: rgba(0,200,100,0.15);  color: #00c864;       border: 1px solid rgba(0,200,100,0.3); }
+    .genre-hanabi     { background: rgba(255,80,150,0.15);  color: #ff5696;       border: 1px solid rgba(255,80,150,0.35); }
+    .genre-kids       { background: rgba(255,200,0,0.15);  color: #ffcc00;       border: 1px solid rgba(255,200,0,0.3); }
+    .genre-baseball   { background: rgba(0,60,180,0.15);   color: #6699ff;       border: 1px solid rgba(0,60,180,0.3); }
+    .genre-soccer     { background: rgba(0,160,60,0.15);   color: #33dd77;       border: 1px solid rgba(0,160,60,0.3); }
+    .genre-basketball { background: rgba(255,110,0,0.15);  color: #ff9933;       border: 1px solid rgba(255,110,0,0.3); }
+    .genre-volleyball { background: rgba(0,180,220,0.15);  color: #44ccff;       border: 1px solid rgba(0,180,220,0.3); }
+
+    .event-artist {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .event-name {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .event-meta-item {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── チケットセクション ── */
+    .ticket-section {
+      border-top: 1px solid var(--border);
+      margin-top: 14px;
+      padding: 14px 20px 16px 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ticket-item {
+      flex: 1;
+      min-width: 140px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .ticket-item.status-urgent  { border-color: rgba(255,82,82,0.4); }
+    .ticket-item.status-soon    { border-color: rgba(255,171,64,0.35); }
+    .ticket-item.status-normal  { border-color: rgba(0,229,255,0.25); }
+    .ticket-item.status-selling { border-color: rgba(105,240,174,0.35); }
+    .ticket-item.status-passed  { opacity: 0.45; }
+
+    .ticket-type {
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ticket-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-urgent  .ticket-dot { background: var(--red);    box-shadow: 0 0 5px var(--red); }
+    .status-soon    .ticket-dot { background: var(--orange); box-shadow: 0 0 5px var(--orange); }
+    .status-normal  .ticket-dot { background: var(--accent2);}
+    .status-selling .ticket-dot { background: var(--green);  box-shadow: 0 0 5px var(--green); }
+    .status-passed  .ticket-dot { background: var(--text-muted); }
+
+    .ticket-date {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .status-urgent  .ticket-date { color: var(--red); }
+    .status-soon    .ticket-date { color: var(--orange); }
+    .status-normal  .ticket-date { color: var(--accent2); }
+    .status-selling .ticket-date { color: var(--green); }
+    .status-passed  .ticket-date { color: var(--text-muted); text-decoration: line-through; }
+
+    .ticket-countdown {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    a.ticket-countdown {
+      cursor: pointer;
+    }
+
+    a.ticket-countdown:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
+
+    .status-urgent  .ticket-countdown { background: rgba(255,82,82,0.15);    color: var(--red); }
+    .status-soon    .ticket-countdown { background: rgba(255,171,64,0.15);   color: var(--orange); }
+    .status-normal  .ticket-countdown { background: rgba(0,229,255,0.1);     color: var(--accent2); }
+    .status-selling .ticket-countdown { background: rgba(105,240,174,0.15);  color: var(--green); font-weight: 600; }
+    .status-passed  .ticket-countdown { background: transparent; color: var(--text-muted); }
+
+    .ticket-soldout-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+      background: rgba(140, 140, 140, 0.2);
+      color: var(--text-muted);
+      border: 1px solid rgba(140, 140, 140, 0.45);
+    }
+    .ticket-item.soldout { opacity: 0.65; border-color: rgba(140,140,140,0.35); }
+    .ticket-item.soldout .ticket-dot { background: var(--text-muted); }
+    .ticket-item.soldout .ticket-date { color: var(--text-muted); text-decoration: line-through; }
+
+    /* ── チケット価格 & リンクボタン ── */
+    .card-footer {
+      padding: 10px 20px 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .ticket-price {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ticket-price-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .ticket-price-tbd {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .ticket-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ticket-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .ticket-link-btn:hover { opacity: 0.8; transform: translateY(-1px); }
+
+    .btn-lawson {
+      background: rgba(0, 120, 215, 0.15);
+      color: #4db6ff;
+      border: 1px solid rgba(0, 120, 215, 0.35);
+    }
+
+    .btn-pia {
+      background: rgba(255, 80, 80, 0.12);
+      color: #ff8a80;
+      border: 1px solid rgba(255, 80, 80, 0.3);
+    }
+
+    .btn-eplus {
+      background: rgba(0, 200, 130, 0.12);
+      color: #69f0ae;
+      border: 1px solid rgba(0, 200, 130, 0.3);
+    }
+
+    .btn-shochiku {
+      background: rgba(180, 120, 60, 0.15);
+      color: #f0c070;
+      border: 1px solid rgba(180, 120, 60, 0.35);
+    }
+
+    .btn-amazon {
+      background: rgba(255, 153, 0, 0.15);
+      color: #ffb84d;
+      border: 1px solid rgba(255, 153, 0, 0.35);
+    }
+
+    .btn-hotel {
+      background: rgba(0, 180, 120, 0.12);
+      color: #4dd8a0;
+      border: 1px solid rgba(0, 180, 120, 0.3);
+    }
+
+    .btn-rakuten {
+      background: rgba(191, 0, 0, 0.12);
+      color: #ff6666;
+      border: 1px solid rgba(191, 0, 0, 0.3);
+    }
+
+    .btn-official {
+      background: rgba(100, 200, 255, 0.12);
+      color: #80d8ff;
+      border: 1px solid rgba(100, 200, 255, 0.3);
+    }
+
+    .btn-fany {
+      background: rgba(255, 200, 50, 0.15);
+      color: #ffd860;
+      border: 1px solid rgba(255, 200, 50, 0.35);
+    }
+
+    .btn-yoshimoto {
+      background: rgba(255, 150, 30, 0.15);
+      color: #ffb347;
+      border: 1px solid rgba(255, 150, 30, 0.35);
+    }
+
+    .btn-tvasahi {
+      background: rgba(220, 60, 80, 0.15);
+      color: #ff7a8c;
+      border: 1px solid rgba(220, 60, 80, 0.35);
+    }
+
+    /* ── 空状態 ── */
+    .empty-state {
+      text-align: center;
+      padding: 64px 24px;
+      color: var(--text-muted);
+    }
+
+    .empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
+    .empty-state p { font-size: 14px; letter-spacing: 0.5px; }
+
+    /* ── フッター ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-top: 32px;
+    }
+  #pagetop {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), rgba(255,255,255,0) 60%),
+      linear-gradient(135deg, rgba(224,64,251,0.85), rgba(0,229,255,0.85));
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.5);
+    box-shadow:
+      0 0 20px rgba(224,64,251,0.6),
+      0 0 40px rgba(0,229,255,0.4),
+      inset 0 2px 2px rgba(255,255,255,0.5),
+      inset 0 -2px 4px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: pagetopPulse 2.4s ease-in-out infinite;
+    transition: transform 0.2s;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.2s;
+  }
+  #pagetop.visible { display: flex; }
+  #pagetop:hover { transform: translateY(-3px) scale(1.05); }
+
+  @keyframes pagetopPulse {
+    0%, 100% {
+      box-shadow:
+        0 0 20px rgba(224,64,251,0.6),
+        0 0 40px rgba(0,229,255,0.4),
+        inset 0 2px 2px rgba(255,255,255,0.5),
+        inset 0 -2px 4px rgba(0,0,0,0.2);
+    }
+    50% {
+      box-shadow:
+        0 0 30px rgba(224,64,251,0.9),
+        0 0 60px rgba(0,229,255,0.6),
+        inset 0 2px 2px rgba(255,255,255,0.6),
+        inset 0 -2px 4px rgba(0,0,0,0.2);
+    }
+  }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 0 10px;
+      height: 56px;
+    }
+    .logo { font-size: 13px; letter-spacing: 1px; gap: 5px; }
+    .logo img { height: 28px; width: 28px; }
+    nav { gap: 10px; }
+    nav a { font-size: 11px; letter-spacing: 0; }
+
+    .hero { padding: 36px 12px 28px; }
+    .hero h1 { font-size: 22px; letter-spacing: 1px; }
+    .hero p { font-size: 12px; letter-spacing: 0.3px; }
+
+    .controls { padding: 12px 16px; }
+    .search-wrap { max-width: 100%; }
+
+    main { padding: 20px 16px; }
+
+    .card-body {
+      grid-template-columns: 1fr;
+      padding: 14px 16px 0 18px;
+    }
+
+    .event-name { font-size: 15px; }
+
+    .ticket-section {
+      padding: 12px 16px 14px 18px;
+      flex-direction: column;
+    }
+
+    .ticket-item { min-width: 0; width: 100%; }
+
+    .card-footer {
+      padding: 10px 16px 14px 18px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ticket-links { flex-wrap: wrap; }
+  }
+
+  .fixed-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 0;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.12);
+  }
+  .fixed-banner a { display: block; line-height: 0; }
+  .fixed-banner img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+  .fixed-banner-close {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+  .fixed-banner-close:hover { background: rgba(0,0,0,0.75); }
+  body { padding-bottom: 80px; }
+
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="icon">🌸</div>
-<h1>OSHINAVI</h1>
-<p>2026年の行楽・季節イベント情報をお届けしています。</p>
-<p>お祭り・花火大会・展示会など、全国の最新情報をチェック！</p>
-<a href="events.html" class="btn">行楽イベント情報を見る →</a>
-<div class="note">
-ライブ・チケット情報はデータ点検のため一時非公開とさせていただいております。
-復旧次第お知らせいたします。
+
+<header>
+  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
+  <nav>
+    <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
+    <a href="events.html">行楽<br>イベント</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>推しの<span>ライブ</span>を見逃さない！</h1>
+  <p>チケット抽選先行・先行販売・一般販売日をまとめてチェック</p>
 </div>
+
+<div class="controls">
+  <!-- 検索 -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名で検索…">
+    <div id="searchSuggest"></div>
+  </div>
+
+  <!-- ジャンルフィルター -->
+  <div class="filter-row">
+    <span class="filter-label">GENRE</span>
+    <button class="filter-btn active" data-genre="all">すべて</button>
+    <button class="filter-btn" data-genre="jpop">J-POP</button>
+    <button class="filter-btn" data-genre="rock">ロック</button>
+    <button class="filter-btn" data-genre="kpop">K-POP</button>
+    <button class="filter-btn" data-genre="hiphop">ヒップホップ</button>
+    <button class="filter-btn" data-genre="anime">アニソン</button>
+    <button class="filter-btn" data-genre="idol">アイドル</button>
+    <button class="filter-btn" data-genre="youtuber">YouTuber</button>
+    <button class="filter-btn" data-genre="vtuber">VTuber</button>
+    <button class="filter-btn" data-genre="engeki">演劇</button>
+    <button class="filter-btn" data-genre="2.5ji">2.5次元</button>
+    <button class="filter-btn" data-genre="seiyuu">声優</button>
+    <button class="filter-btn" data-genre="classic">クラシック</button>
+    <button class="filter-btn" data-genre="owarai">お笑い</button>
+    <button class="filter-btn" data-genre="sports">スポーツ</button>
+    <button class="filter-btn" data-genre="fes">フェス</button>
+    <button class="filter-btn" data-genre="hanabi">花火大会</button>
+    <button class="filter-btn" data-genre="kids">キッズ</button>
+  </div>
+
+  <!-- ステータスフィルター -->
+  <div class="filter-row">
+    <span class="filter-label">STATUS</span>
+    <button class="filter-btn active" data-status="all">すべて</button>
+    <button class="filter-btn" data-status="urgent">🔴 今週発売</button>
+    <button class="filter-btn" data-status="soon">🟠 今月発売</button>
+    <button class="filter-btn" data-status="upcoming">先行受付前</button>
+  </div>
+
+  <!-- 地方フィルター -->
+  <div class="filter-row">
+    <span class="filter-label">AREA</span>
+    <button class="filter-btn active" data-region="all">すべて</button>
+    <button class="filter-btn" data-region="hokkaido">北海道</button>
+    <button class="filter-btn" data-region="tohoku">東北</button>
+    <button class="filter-btn" data-region="kanto">関東</button>
+    <button class="filter-btn" data-region="chubu">中部</button>
+    <button class="filter-btn" data-region="kinki">近畿</button>
+    <button class="filter-btn" data-region="chugoku">中国</button>
+    <button class="filter-btn" data-region="shikoku">四国</button>
+    <button class="filter-btn" data-region="kyushu">九州</button>
+    <button class="filter-btn" data-region="zenkoku">全国</button>
+  </div>
 </div>
+
+<main>
+  <div class="result-meta">
+    <span id="resultCount">0</span> 件のイベント
+  </div>
+
+  <div class="event-list" id="eventList">
+    <!-- JS で描画 -->
+  </div>
+
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <div class="empty-icon">🔎</div>
+    <p>条件に一致するイベントが見つかりませんでした</p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 OSHINAVI — ライブイベント情報まとめ
+</footer>
+
+<div class="fixed-banner" id="fixedBanner">
+  <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.81&type=4&subid=0" target="_blank" rel="noopener">
+    <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/468x60.jpg">
+  </a>
+  <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1590288.6&type=4&subid=0" target="_blank" rel="noopener">
+    <img alt="楽天トラベル JR楽パック赤い風船" border="0" src="https://img.travel.rakuten.co.jp/package/jr/bnr/234_60.jpg">
+  </a>
+  <button class="fixed-banner-close" id="fixedBannerClose" aria-label="閉じる">×</button>
+  <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.81&type=4&subid=0" alt="">
+  <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1590288.6&type=4&subid=0" alt="">
+</div>
+
+<button id="pagetop" title="トップへ戻る">↑</button>
+
+<script>
+  // ────────────────────────────────────────────────
+  //  イベントデータ
+  //  ticket の date は "YYYY-MM-DD" 形式
+  // ────────────────────────────────────────────────
+  const EVENTS = [
+      {
+            "id": 1,
+            "artist": "さだまさし",
+            "name": "さだまさしコンサートツアー2026 (8月)",
+            "date": "2026-08-24",
+            "dateLabel": "2026年8月17日〜25日 全国ツアー",
+            "venue": "全国ツアー",
+            "prefecture": null,
+            "genre": "jpop",
+            "price": "11,000円",
+            "links": {
+                  "rakuten": "https://ticket.rakuten.co.jp/music/rtxr819/",
+                  "lawson": null,
+                  "pia": null,
+                  "eplus": null
+            },
+            "tickets": [
+                  {
+                        "type": "先行抽選(全4公演)",
+                        "startDate": "2026-05-05",
+                        "date": "2026-05-17"
+                  },
+                  {
+                        "type": "一般発売(兵庫・京都)",
+                        "startDate": "2026-06-06",
+                        "date": "2026-08-18"
+                  },
+                  {
+                        "type": "一般発売(山梨・静岡)",
+                        "startDate": "2026-07-04",
+                        "date": "2026-08-24"
+                  }
+            ],
+            "verified": true,
+            "verifiedAt": "2026-05-08"
+      }
+];
+
+  // ────────────────────────────────────────────────
+  //  ユーティリティ
+  // ────────────────────────────────────────────────
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  function parseDateStr(str) {
+    const [y, m, d] = str.split("-").map(Number);
+    return new Date(y, m - 1, d);
+  }
+
+  function daysFrom(dateStr) {
+    const d = parseDateStr(dateStr);
+    return Math.round((d - today) / 86400000);
+  }
+
+  function getTicketStatus(dateStr) {
+    const diff = daysFrom(dateStr);
+    if (diff < 0)  return "passed";
+    if (diff <= 7) return "urgent";
+    if (diff <= 31) return "soon";
+    return "normal";
+  }
+
+  function countdownLabel(dateStr) {
+    const diff = daysFrom(dateStr);
+    if (diff < 0)  return "終了";
+    if (diff === 0) return "本日";
+    if (diff === 1) return "明日";
+    return `あと ${diff} 日`;
+  }
+
+  function formatDate(dateStr) {
+    const d = parseDateStr(dateStr);
+    return `${d.getMonth() + 1}/${d.getDate()}`;
+  }
+
+  const GENRE_LABEL = {
+    jpop: "J-POP", rock: "ロック", kpop: "K-POP",
+    hiphop: "HIP HOP", anime: "アニソン", idol: "アイドル",
+    youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ",
+    classic: "クラシック", engeki: "演劇", fes: "フェス",
+    sports: "スポーツ", hanabi: "花火大会",
+    "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル"
+  };
+
+  const PREFECTURE_TO_REGION = {
+    "北海道": "hokkaido",
+    "青森県": "tohoku", "岩手県": "tohoku", "宮城県": "tohoku",
+    "秋田県": "tohoku", "山形県": "tohoku", "福島県": "tohoku",
+    "茨城県": "kanto",  "栃木県": "kanto",  "群馬県": "kanto",
+    "埼玉県": "kanto",  "千葉県": "kanto",  "東京都": "kanto",  "神奈川県": "kanto",
+    "新潟県": "chubu",  "富山県": "chubu",  "石川県": "chubu",  "福井県": "chubu",
+    "山梨県": "chubu",  "長野県": "chubu",  "岐阜県": "chubu",  "静岡県": "chubu",  "愛知県": "chubu",
+    "三重県": "kinki",  "滋賀県": "kinki",  "京都府": "kinki",  "大阪府": "kinki",
+    "兵庫県": "kinki",  "奈良県": "kinki",  "和歌山県": "kinki",
+    "鳥取県": "chugoku","島根県": "chugoku","岡山県": "chugoku","広島県": "chugoku","山口県": "chugoku",
+    "徳島県": "shikoku","香川県": "shikoku","愛媛県": "shikoku","高知県": "shikoku",
+    "福岡県": "kyushu", "佐賀県": "kyushu", "長崎県": "kyushu", "熊本県": "kyushu",
+    "大分県": "kyushu", "宮崎県": "kyushu", "鹿児島県": "kyushu","沖縄県": "kyushu",
+  };
+
+  // ────────────────────────────────────────────────
+  //  カード生成
+  // ────────────────────────────────────────────────
+  function renderCard(ev) {
+    const ticketsHTML = ev.tickets.map(t => {
+      if (t.soldout) {
+        return `
+          <div class="ticket-item soldout">
+            <div class="ticket-type">
+              <span class="ticket-dot"></span>
+              ${t.type}
+            </div>
+            <div class="ticket-date">${formatDate(t.date)}</div>
+            <div class="ticket-soldout-badge">売り切れ</div>
+          </div>`;
+      }
+      // 表示ルール:
+      //  1. startDate 有り + 未来 → 「発売開始まで あとX日」(urgent/soon/normal)
+      //  2. startDate 有り + 販売中(今日 >= startDate かつ 今日 <= date) → 「販売中」(selling)
+      //  3. startDate 無し + date 未来以降 → 旧仕様「あとX日」(urgent/soon/normal)
+      //  4. 期限切れ → 「終了」(passed) ※朝のルーチンで削除対象
+      let status, label;
+      if (t.startDate && parseDateStr(t.startDate) > today) {
+        const sdiff = daysFrom(t.startDate);
+        status = sdiff <= 7 ? "urgent" : sdiff <= 31 ? "soon" : "normal";
+        label  = sdiff === 0 ? "本日発売"
+               : sdiff === 1 ? "明日発売"
+               : `発売開始まで あと ${sdiff} 日`;
+      } else if (t.startDate && parseDateStr(t.date) >= today) {
+        status = "selling";
+        label  = "販売中";
+      } else if (!t.startDate && parseDateStr(t.date) >= today) {
+        const diff = daysFrom(t.date);
+        status = diff <= 7 ? "urgent" : diff <= 31 ? "soon" : "normal";
+        label  = countdownLabel(t.date);
+      } else {
+        status = "passed";
+        label  = "終了";
+      }
+      const countdown = ev.links && ev.links.pia
+        ? `<a class="ticket-countdown" href="${ev.links.pia}" target="_blank" rel="noopener">${label}</a>`
+        : `<div class="ticket-countdown">${label}</div>`;
+      return `
+        <div class="ticket-item status-${status}">
+          <div class="ticket-type">
+            <span class="ticket-dot"></span>
+            ${t.type}
+          </div>
+          <div class="ticket-date">${formatDate(t.date)}</div>
+          ${countdown}
+        </div>`;
+    }).join("");
+
+    // イベント全体の緊急度（優先度: urgent > soon > selling > normal > passed）
+    const cardStatus = computeCardStatus(ev);
+
+    const priceHTML = ev.price
+      ? `<div class="ticket-price"><span class="ticket-price-label">チケット料金</span>${ev.price}</div>`
+      : "";
+
+    // ボタン順序: 楽天（最優先・アフィリ承認済）→ ぴあ → e+ → ローチケ → その他
+    const linkDefs = [
+      { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
+      { key: "pia",      label: "チケットぴあ",     cls: "btn-pia",      icon: "🎟" },
+      { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
+      { key: "lawson",   label: "ローソンチケット", cls: "btn-lawson",   icon: "🎫" },
+      { key: "fany",     label: "FANYチケット",     cls: "btn-fany",     icon: "🎤" },
+      { key: "yoshimoto",label: "吉本オンライン",   cls: "btn-yoshimoto",icon: "📺" },
+      { key: "tvasahi",  label: "テレ朝チケット",   cls: "btn-tvasahi",  icon: "📺" },
+      { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
+      { key: "amazon",   label: "最新CD",            cls: "btn-amazon",   icon: "🛒" },
+      { key: "amazonGoods", label: "グッズAmazon",   cls: "btn-amazon",   icon: "🛒" },
+      { key: "amazon2",  label: "最新CD②",          cls: "btn-amazon",   icon: "🛒" },
+      { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" },
+    ];
+    const HOTEL_TRIVAGO_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
+    const HOTEL_RAKUTEN_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=625672.10000246&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a><img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=625672.10000246&type=3&subid=0">`;
+    // 都市部(東京/大阪/神奈川/愛知/福岡)→トリバゴ(大手ホテル網羅)、それ以外→楽天トラベル(田舎・地方の中小宿に強い)
+    // prefecture値は「東京都」「神奈川県」のように語尾付きの場合があるので includes 判定
+    const URBAN_PREFS = ["東京", "大阪", "神奈川", "愛知", "福岡"];
+    const hotelBtn = (ev.prefecture && URBAN_PREFS.some(p => ev.prefecture.includes(p))) ? HOTEL_TRIVAGO_BTN : HOTEL_RAKUTEN_BTN;
+    const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "コンサートアイテム" };
+    const PENLIGHT_AMAZON = { url: "https://amzn.to/4trBSqX", label: "コンサートグッズ" };
+    const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "ライブ用耳栓" };
+    const OWARAI_AMAZON = { url: "https://amzn.to/42i7Yu5", label: "お笑いグッズ" };
+    const KIDS_AMAZON = { url: "https://amzn.to/49jivJa", label: "知育玩具" };
+    const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦便利アイテム" };
+    const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦便利アイテム" };
+    const BASEBALL_RE = /タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球/;
+    const GENRE_AMAZON_LINKS = {
+      fes:      { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
+      hanabi:   { url: "https://amzn.to/3OkhAB4", label: "花火大会グッズ" },
+      engeki:   { url: "https://amzn.to/47ZHLUm", label: "オペラグラス" },
+      jpop:     PENLIGHT_AMAZON,
+      kpop:     PENLIGHT_AMAZON,
+      rock:     ROCK_AMAZON,
+      hiphop:   CONCERT_AMAZON,
+      idol:     CONCERT_AMAZON,
+      anime:    CONCERT_AMAZON,
+      classic:  CONCERT_AMAZON,
+      youtuber: CONCERT_AMAZON,
+      vtuber:   CONCERT_AMAZON,
+      owarai:   OWARAI_AMAZON,
+      kids:     KIDS_AMAZON,
+      seiyuu:   PENLIGHT_AMAZON,
+      "2.5ji":  PENLIGHT_AMAZON,
+    };
+    let genreAmazon = GENRE_AMAZON_LINKS[ev.genre];
+    if (ev.genre === 'sports') {
+      genreAmazon = BASEBALL_RE.test((ev.name || '') + (ev.artist || ''))
+        ? BASEBALL_AMAZON
+        : OTHER_SPORTS_AMAZON;
+    }
+    const genreAmazonBtn = genreAmazon
+      ? `<a class="ticket-link-btn btn-amazon" href="${genreAmazon.url}" target="_blank" rel="noopener">🛍 ${genreAmazon.label}</a>`
+      : '';
+    // 楽天 or ぴあが登録されていれば e+/ローチケは非表示（アフィリ優先）
+    const hasPrimaryVendor = ev.links && (ev.links.rakuten || ev.links.pia);
+    const linksHTML = linkDefs
+      .filter(d => ev.links && ev.links[d.key])
+      .filter(d => !(hasPrimaryVendor && (d.key === "eplus" || d.key === "lawson")))
+      .map(d => `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${d.label}</a>`)
+      .join("") + hotelBtn + genreAmazonBtn;
+
+    return `
+      <div class="event-card"
+           data-id="${ev.id}"
+           data-genre="${ev.genre}"
+           data-status="${cardStatus}"
+           data-prefecture="${ev.prefecture || ''}"
+           data-search="${(ev.artist + " " + ev.name).toLowerCase()}">
+        <div class="card-body">
+          <div class="event-info">
+            <span class="genre-tag genre-${ev.genre}">${GENRE_LABEL[ev.genre]}</span>
+            <div class="event-artist">${ev.artist}</div>
+            <div class="event-name">${ev.name}</div>
+            <div class="event-meta">
+              <span class="event-meta-item">📅 ${ev.dateLabel}</span>
+              <span class="event-meta-item">📍 ${ev.venue}</span>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-section">${ticketsHTML}</div>
+        <div class="card-footer">
+          ${priceHTML}
+          <div class="ticket-links">${linksHTML || '<span style="font-size:12px;color:var(--text-muted)">購入リンク未設定</span>'}</div>
+        </div>
+      </div>`;
+  }
+
+  // ────────────────────────────────────────────────
+  //  フィルタリング + 遅延ロード
+  // ────────────────────────────────────────────────
+  let activeGenre  = "all";
+  let activeStatus = "all";
+  let activeRegion = "all";
+  let searchQuery  = "";
+
+  const BATCH_SIZE = 50;
+  let filteredEvents = [];
+  let renderedCount = 0;
+
+  function ticketKind(t) {
+    if (t.soldout) return null;
+    if (t.startDate && parseDateStr(t.startDate) > today) {
+      const d = daysFrom(t.startDate);
+      return d <= 7 ? "urgent" : d <= 31 ? "soon" : "normal";
+    }
+    if (t.startDate && parseDateStr(t.date) >= today) {
+      return "selling";
+    }
+    if (!t.startDate && parseDateStr(t.date) >= today) {
+      const d = daysFrom(t.date);
+      return d <= 7 ? "urgent" : d <= 31 ? "soon" : "normal";
+    }
+    return null;
+  }
+
+  function computeCardStatus(ev) {
+    const kinds = (ev.tickets || []).map(ticketKind).filter(Boolean);
+    for (const p of ["urgent", "soon", "selling", "normal"]) {
+      if (kinds.includes(p)) return p;
+    }
+    return "passed";
+  }
+
+  function matchEvent(ev) {
+    if (ev.verified !== true) return false;
+    const matchGenre  = activeGenre  === "all"
+      || ev.genre === activeGenre
+      || (ev.extraGenres || []).includes(activeGenre)
+      || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu"))
+      || (activeGenre === "anime"  && ev.genre === "seiyuu");
+    const status = computeCardStatus(ev);
+    const matchStatus = activeStatus === "all"
+      || (activeStatus === "urgent"   && status === "urgent")
+      || (activeStatus === "soon"     && (status === "urgent" || status === "soon"))
+      || (activeStatus === "upcoming" && status === "normal");
+    const haystack = (ev.artist + " " + ev.name).toLowerCase();
+    const matchSearch = searchQuery === "" || haystack.includes(searchQuery.toLowerCase());
+    const matchRegion = activeRegion === "all"
+      || ev.prefecture === "全国"
+      || PREFECTURE_TO_REGION[ev.prefecture] === activeRegion;
+    return matchGenre && matchStatus && matchSearch && matchRegion;
+  }
+
+  function renderNextBatch() {
+    if (renderedCount >= filteredEvents.length) return;
+    const list = document.getElementById("eventList");
+    const end = Math.min(renderedCount + BATCH_SIZE, filteredEvents.length);
+    const html = filteredEvents.slice(renderedCount, end).map(renderCard).join("");
+    list.insertAdjacentHTML("beforeend", html);
+    renderedCount = end;
+  }
+
+  function applyFilters() {
+    filteredEvents = EVENTS.filter(matchEvent);
+    renderedCount = 0;
+    document.getElementById("eventList").innerHTML = "";
+    document.getElementById("resultCount").textContent = filteredEvents.length;
+    document.getElementById("emptyState").style.display = filteredEvents.length === 0 ? "block" : "none";
+    renderNextBatch();
+  }
+
+  // ────────────────────────────────────────────────
+  //  初期化
+  // ────────────────────────────────────────────────
+  function init() {
+    const list = document.getElementById("eventList");
+
+    filteredEvents = EVENTS.filter(e => e.verified === true);
+    renderedCount = 0;
+    list.innerHTML = "";
+    renderNextBatch();
+
+    document.getElementById("resultCount").textContent = filteredEvents.length;
+
+    const sentinel = document.createElement("div");
+    sentinel.id = "loadSentinel";
+    sentinel.style.height = "1px";
+    list.parentNode.insertBefore(sentinel, list.nextSibling);
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) renderNextBatch();
+      });
+    }, { rootMargin: "800px" });
+    io.observe(sentinel);
+
+    // ジャンルフィルター
+    document.querySelectorAll(".filter-btn[data-genre]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn[data-genre]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeGenre = btn.dataset.genre;
+        applyFilters();
+      });
+    });
+
+    // ステータスフィルター
+    document.querySelectorAll(".filter-btn[data-status]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn[data-status]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeStatus = btn.dataset.status;
+        applyFilters();
+      });
+    });
+
+    // 地方フィルター
+    document.querySelectorAll("[data-region]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-region]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeRegion = btn.dataset.region;
+        applyFilters();
+      });
+    });
+
+    // 検索 & サジェスト
+    const searchInput = document.getElementById("searchInput");
+    const suggest = document.getElementById("searchSuggest");
+
+    const allLabels = [...new Set(EVENTS.filter(e => e.verified === true).map(ev => ev.artist))];
+
+    function showSuggest(query) {
+      if (!query) { suggest.classList.remove("open"); return; }
+      const q = query.toLowerCase();
+      const matches = allLabels.filter(label => label.toLowerCase().includes(q)).slice(0, 10);
+      if (matches.length === 0) { suggest.classList.remove("open"); return; }
+      suggest.innerHTML = matches.map(label =>
+        `<div class="suggest-item">${label}</div>`
+      ).join("");
+      suggest.classList.add("open");
+      suggest.querySelectorAll(".suggest-item").forEach(item => {
+        item.addEventListener("mousedown", () => {
+          searchInput.value = item.textContent;
+          searchQuery = item.textContent.trim();
+          applyFilters();
+          suggest.classList.remove("open");
+        });
+      });
+    }
+
+    searchInput.addEventListener("input", e => {
+      searchQuery = e.target.value.trim();
+      applyFilters();
+      showSuggest(searchQuery);
+    });
+
+    searchInput.addEventListener("blur", () => {
+      setTimeout(() => suggest.classList.remove("open"), 150);
+    });
+  }
+
+  // 表示順: アクションが近い順（昇順）。発売前は startDate、販売中は date(販売終了日)。
+  // 全チケットが売り切れ/終了なら末尾。
+  EVENTS.sort((a, b) => {
+    const getSortDate = (ev) => {
+      const dates = (ev.tickets || [])
+        .filter(t => !t.soldout)
+        .map(t => {
+          if (t.startDate && parseDateStr(t.startDate) > today) return t.startDate;
+          if (t.date && parseDateStr(t.date) >= today) return t.date;
+          return null;
+        })
+        .filter(Boolean)
+        .sort();
+      return dates[0] || ev.date;
+    };
+    const aDate = getSortDate(a);
+    const bDate = getSortDate(b);
+    const aExpired = parseDateStr(aDate) < today;
+    const bExpired = parseDateStr(bDate) < today;
+    if (aExpired !== bExpired) return aExpired ? 1 : -1;
+    if (aDate !== bDate) return aDate < bDate ? -1 : 1;
+    return (a.id || 0) - (b.id || 0);
+  });
+
+  init();
+
+  const pagetop = document.getElementById("pagetop");
+  window.addEventListener("scroll", () => {
+    pagetop.classList.toggle("visible", window.scrollY > 300);
+  });
+  pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // 固定バナー 閉じるボタン
+  (function() {
+    const banner = document.getElementById('fixedBanner');
+    const closeBtn = document.getElementById('fixedBannerClose');
+    if (!banner || !closeBtn) return;
+    if (sessionStorage.getItem('trivagoBannerClosed') === '1') {
+      banner.style.display = 'none';
+      document.body.style.paddingBottom = '0';
+    }
+    closeBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+      document.body.style.paddingBottom = '0';
+      sessionStorage.setItem('trivagoBannerClosed', '1');
+    });
+  })();
+
+</script>
+<img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.8&type=3&subid=0">
 </body>
 </html>
