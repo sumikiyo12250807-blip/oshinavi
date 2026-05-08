@@ -321,6 +321,18 @@
       color: var(--text);
     }
 
+    @media (max-width: 600px) {
+      .categories { gap: 5px; }
+      .cat-card {
+        padding: 6px 12px 6px 10px;
+        gap: 5px;
+        border-width: 1.5px;
+      }
+      .cat-icon { width: 18px; height: 18px; }
+      .cat-icon.has-emoji { font-size: 14px; }
+      .cat-name { font-size: 11px; }
+    }
+
     /* ── エリアボタン ── */
     .areas {
       display: flex;
@@ -434,9 +446,9 @@
       .card-actions {
         grid-column: 1 / -1;
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
       }
-      .card-actions a { flex: 1; }
+      .card-actions a { width: 100%; }
     }
 
     .status {
