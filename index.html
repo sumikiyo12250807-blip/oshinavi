@@ -785,6 +785,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
     padding: 6px 0;
     background: rgba(255,255,255,0.95);
     box-shadow: 0 -2px 8px rgba(0,0,0,0.12);
@@ -808,6 +810,7 @@
   }
   .fixed-banner-close:hover { background: rgba(0,0,0,0.75); }
   body { padding-bottom: 80px; }
+
   </style>
 </head>
 <body>
@@ -905,8 +908,12 @@
   <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.81&type=4&subid=0" target="_blank" rel="noopener">
     <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/468x60.jpg">
   </a>
+  <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1590288.6&type=4&subid=0" target="_blank" rel="noopener">
+    <img alt="楽天トラベル JR楽パック赤い風船" border="0" src="https://img.travel.rakuten.co.jp/package/jr/bnr/234_60.jpg">
+  </a>
   <button class="fixed-banner-close" id="fixedBannerClose" aria-label="閉じる">×</button>
   <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.81&type=4&subid=0" alt="">
+  <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1590288.6&type=4&subid=0" alt="">
 </div>
 
 <button id="pagetop" title="トップへ戻る">↑</button>
@@ -9611,6 +9618,29 @@
                   }
             ],
             "verified": true
+      },
+      {
+            "id": 1914,
+            "artist": "百万石音楽祭",
+            "name": "百万石音楽祭2026 〜ミリオンロックフェスティバル〜",
+            "date": "2026-06-07",
+            "dateLabel": "2026年6月6日(土)・7日(日)",
+            "venue": "石川県産業展示館1〜4号館",
+            "prefecture": "石川県",
+            "genre": "fes",
+            "price": "1日券 11,000円 / 2日通し 20,000円",
+            "links": {
+                  "lawson": "https://l-tike.com/concert/mevent/?mid=326239",
+                  "pia": null,
+                  "eplus": "https://eplus.jp/sf/detail/0959380001"
+            },
+            "tickets": [
+                  {
+                        "type": "一般発売",
+                        "date": "2026-06-06"
+                  }
+            ],
+            "verified": true
       }
 ];
 
@@ -9752,9 +9782,16 @@
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" },
     ];
     const HOTEL_TRIVAGO_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
-    const HOTEL_RAKUTEN_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1675967.6&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a><img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1675967.6&type=3&subid=0">`;
-    const hotelBtn = (ev.id % 31 === 0) ? HOTEL_RAKUTEN_BTN : HOTEL_TRIVAGO_BTN;
+    const HOTEL_RAKUTEN_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=625672.10000246&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a><img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=625672.10000246&type=3&subid=0">`;
+    // 都市部(東京/大阪/神奈川/愛知/福岡)→トリバゴ(大手ホテル網羅)、それ以外→楽天トラベル(田舎・地方の中小宿に強い)
+    // prefecture値は「東京都」「神奈川県」のように語尾付きの場合があるので includes 判定
+    const URBAN_PREFS = ["東京", "大阪", "神奈川", "愛知", "福岡"];
+    const hotelBtn = (ev.prefecture && URBAN_PREFS.some(p => ev.prefecture.includes(p))) ? HOTEL_TRIVAGO_BTN : HOTEL_RAKUTEN_BTN;
     const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "コンサートアイテム" };
+    const PENLIGHT_AMAZON = { url: "https://amzn.to/4trBSqX", label: "コンサートグッズ" };
+    const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "ライブ用耳栓" };
+    const OWARAI_AMAZON = { url: "https://amzn.to/42i7Yu5", label: "お笑いグッズ" };
+    const KIDS_AMAZON = { url: "https://amzn.to/49jivJa", label: "知育玩具" };
     const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦便利アイテム" };
     const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦便利アイテム" };
     const BASEBALL_RE = /タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球/;
@@ -9762,15 +9799,19 @@
       fes:      { url: "https://amzn.to/3OkhAB4", label: "フェスアイテム" },
       hanabi:   { url: "https://amzn.to/3OkhAB4", label: "花火大会グッズ" },
       engeki:   { url: "https://amzn.to/47ZHLUm", label: "オペラグラス" },
-      jpop:     CONCERT_AMAZON,
-      kpop:     CONCERT_AMAZON,
-      rock:     CONCERT_AMAZON,
+      jpop:     PENLIGHT_AMAZON,
+      kpop:     PENLIGHT_AMAZON,
+      rock:     ROCK_AMAZON,
       hiphop:   CONCERT_AMAZON,
       idol:     CONCERT_AMAZON,
       anime:    CONCERT_AMAZON,
       classic:  CONCERT_AMAZON,
       youtuber: CONCERT_AMAZON,
       vtuber:   CONCERT_AMAZON,
+      owarai:   OWARAI_AMAZON,
+      kids:     KIDS_AMAZON,
+      seiyuu:   PENLIGHT_AMAZON,
+      "2.5ji":  PENLIGHT_AMAZON,
     };
     let genreAmazon = GENRE_AMAZON_LINKS[ev.genre];
     if (ev.genre === 'sports') {
@@ -10027,6 +10068,7 @@
       sessionStorage.setItem('trivagoBannerClosed', '1');
     });
   })();
+
 </script>
 <img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.8&type=3&subid=0">
 </body>

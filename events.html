@@ -492,7 +492,7 @@
       font-weight: 700;
     }
 
-    .official-btn, .amazon-btn {
+    .official-btn, .amazon-btn, .hotel-btn {
       display: block;
       text-align: center;
       padding: 9px 14px;
@@ -524,16 +524,62 @@
       transform: translateY(-1px);
     }
 
+    .hotel-btn {
+      background: linear-gradient(135deg, #4a90e2, #7eb6ff);
+      box-shadow: 0 2px 8px rgba(74,144,226,0.3);
+    }
+    .hotel-btn:hover {
+      box-shadow: 0 4px 14px rgba(74,144,226,0.45);
+      transform: translateY(-1px);
+    }
+
     .empty {
       text-align: center;
       color: var(--text-muted);
       padding: 60px 20px;
       font-size: 14px;
     }
+
+    /* 下部固定バナー(トリバゴ + JR楽パック) */
+    .fixed-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.12);
+    }
+    .fixed-banner a { display: block; line-height: 0; }
+    .fixed-banner img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+    .fixed-banner-close {
+      position: absolute;
+      top: 2px;
+      right: 8px;
+      width: 26px;
+      height: 26px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+    }
+    .fixed-banner-close:hover { background: rgba(0,0,0,0.75); }
+    body { padding-bottom: 80px; }
+
   </style>
 </head>
 <body>
-  <header style="position:relative;">
+  <header>
     <a href="index.html" class="logo"><img src="logo.png?v=5" alt="推しナビ logo">推しナビ</a>
     <nav>
       <a href="index.html">イベント<br>チケット</a>
@@ -621,54 +667,6 @@
             "verified": true
       },
       {
-            "id": 3,
-            "name": "GW企画 縄文体験・体感WEEK",
-            "date": "2026-05-02",
-            "endDate": "2026-05-05",
-            "venue": "奥松島縄文村歴史資料館",
-            "prefecture": "宮城県",
-            "city": "東松島市",
-            "genre": "文化",
-            "link": "http://www.satohama-jomon.jp/",
-            "verified": true
-      },
-      {
-            "id": 4,
-            "name": "定義如来参道 歩行者天国",
-            "date": "2026-05-03",
-            "endDate": "2026-05-05",
-            "venue": "定義如来西方寺 参道",
-            "prefecture": "宮城県",
-            "city": "仙台市青葉区",
-            "genre": "祭り",
-            "link": "https://www.johgi-info.jp/information/hokoten.html",
-            "verified": true
-      },
-      {
-            "id": 6,
-            "name": "潮騒まつり",
-            "date": "2026-05-03",
-            "endDate": "2026-05-05",
-            "venue": "神割崎キャンプ場駐車場",
-            "prefecture": "宮城県",
-            "city": "南三陸町",
-            "genre": "祭り",
-            "link": "https://www.city.ishinomaki.lg.jp/cont/10250000/010/shiosaifes.html",
-            "verified": true
-      },
-      {
-            "id": 7,
-            "name": "第68回全日本こけしコンクール",
-            "date": "2026-05-03",
-            "endDate": "2026-05-04",
-            "venue": "ホワイトキューブ（白石市文化体育活動センター）",
-            "prefecture": "宮城県",
-            "city": "白石市",
-            "genre": "展示会",
-            "link": "https://alljapan-kokeshi.com/",
-            "verified": true
-      },
-      {
             "id": 8,
             "name": "母の日カーネーションフェア",
             "date": "2026-05-09",
@@ -693,42 +691,6 @@
             "city": "丸森町",
             "genre": "グルメ",
             "link": "https://www.miyagi-kankou.or.jp/kakikomi/detail.php?id=1485",
-            "verified": true
-      },
-      {
-            "id": 10,
-            "name": "野草園こどもの日",
-            "date": "2026-05-05",
-            "endDate": "2026-05-05",
-            "venue": "仙台市野草園",
-            "prefecture": "宮城県",
-            "city": "仙台市太白区",
-            "genre": "文化",
-            "link": "https://sendai-green-association.jp/event/yasouen/18760/",
-            "verified": true
-      },
-      {
-            "id": 11,
-            "name": "第33回 かくだ宇宙っ子まつり",
-            "date": "2026-04-28",
-            "endDate": "2026-05-05",
-            "venue": "角田市台山公園",
-            "prefecture": "宮城県",
-            "city": "角田市",
-            "genre": "文化",
-            "link": "https://www.city.kakuda.lg.jp/site/kokokakuda/987.html",
-            "verified": true
-      },
-      {
-            "id": 12,
-            "name": "花山鉄砲まつり",
-            "date": "2026-05-05",
-            "endDate": "2026-05-05",
-            "venue": "御嶽神社・花山ダム湖畔",
-            "prefecture": "宮城県",
-            "city": "栗原市花山",
-            "genre": "祭り",
-            "link": "https://www.kuriharacity.jp/w055/PAGE000000000000006089.html",
             "verified": true
       },
       {
@@ -864,33 +826,6 @@
             "city": "仙台市太白区",
             "genre": "文化",
             "link": "https://www.sendai-chiteinomori.jp/guidemap/event/index.html#R8festa",
-            "verified": true,
-            "tags": [
-                  "フェス"
-            ]
-      },
-      {
-            "id": 25,
-            "name": "春のマンガッタン祭り2026",
-            "date": "2026-05-03",
-            "endDate": "2026-05-04",
-            "venue": "石ノ森萬画館・中瀬公園",
-            "prefecture": "宮城県",
-            "city": "石巻市",
-            "genre": "祭り",
-            "link": "https://www.mangattan.jp/manga/",
-            "verified": true
-      },
-      {
-            "id": 26,
-            "name": "仙台ラーメンフェスタ2026",
-            "date": "2026-04-24",
-            "endDate": "2026-05-06",
-            "venue": "あすと長町 杜の広場公園",
-            "prefecture": "宮城県",
-            "city": "仙台市太白区",
-            "genre": "グルメ",
-            "link": "https://sendai-ramenfesta.com/",
             "verified": true,
             "tags": [
                   "フェス"
@@ -1441,7 +1376,7 @@
             "venue": "こもれび森のイバライド",
             "prefecture": "茨城県",
             "city": "稲敷市",
-            "genre": "文化",
+            "genre": "キッズ",
             "link": "https://www.ibaraido.co.jp/wp/26097",
             "verified": true,
             "tags": [
@@ -1480,7 +1415,7 @@
             "venue": "大竹海岸鉾田海水浴場",
             "prefecture": "茨城県",
             "city": "鉾田市",
-            "genre": "文化",
+            "genre": "グルメ",
             "link": "http://www.ric.hi-ho.ne.jp/yamadabaiten/",
             "verified": true
       },
@@ -2590,7 +2525,7 @@
             "venue": "NASPAニューオータニ",
             "prefecture": "新潟県",
             "city": "湯沢町",
-            "genre": "文化",
+            "genre": "グルメ",
             "link": "https://www.walkerplus.com/event/ar0415e594503/",
             "verified": true
       },
@@ -2686,7 +2621,7 @@
             "venue": "道の駅 親不知ピアパーク",
             "prefecture": "新潟県",
             "city": "糸魚川市",
-            "genre": "文化",
+            "genre": "趣味",
             "link": "https://www.walkerplus.com/event/ar0415e592768/",
             "verified": true,
             "tags": [
@@ -6333,21 +6268,6 @@
             "verified": true
       },
       {
-            "id": 480,
-            "name": "百万石音楽祭2026 ミリオンロックフェスティバル",
-            "date": "2026-06-06",
-            "endDate": "2026-06-07",
-            "venue": "石川県産業展示館1〜4号館",
-            "prefecture": "石川県",
-            "city": "金沢市",
-            "genre": "文化",
-            "link": "https://www.millionrock.com/",
-            "verified": true,
-            "tags": [
-                  "フェス"
-            ]
-      },
-      {
             "id": 481,
             "name": "第75回 金沢百万石まつり",
             "date": "2026-06-05",
@@ -6934,7 +6854,7 @@
             "venue": "北口本宮冨士浅間神社・金鳥居公園",
             "prefecture": "山梨県",
             "city": "富士吉田市",
-            "genre": "伝統",
+            "genre": "祭り",
             "link": "https://fujiyoshida.net/event/147",
             "verified": true
       },
@@ -6946,7 +6866,7 @@
             "venue": "北口本宮冨士浅間神社",
             "prefecture": "山梨県",
             "city": "富士吉田市",
-            "genre": "伝統",
+            "genre": "祭り",
             "link": "https://fujiyoshida.net/event/148",
             "verified": true
       },
@@ -7066,7 +6986,7 @@
             "venue": "北口本宮冨士浅間神社・諏訪神社",
             "prefecture": "山梨県",
             "city": "富士吉田市",
-            "genre": "伝統",
+            "genre": "祭り",
             "link": "https://www.sengenjinja.jp/himatsuri/index.html",
             "verified": true
       },
@@ -7126,7 +7046,7 @@
             "venue": "甲府駅前・中央商店街",
             "prefecture": "山梨県",
             "city": "甲府市",
-            "genre": "伝統",
+            "genre": "祭り",
             "link": "https://kofu-tourism.com/event/72",
             "verified": true
       },
@@ -7288,7 +7208,7 @@
             "venue": "諏訪大社春宮〜秋宮",
             "prefecture": "長野県",
             "city": "諏訪郡下諏訪町",
-            "genre": "神事",
+            "genre": "祭り",
             "link": "https://shimosuwaonsen.jp/",
             "verified": true
       },
@@ -7504,7 +7424,7 @@
             "venue": "穂高神社",
             "prefecture": "長野県",
             "city": "安曇野市",
-            "genre": "神事",
+            "genre": "祭り",
             "link": "https://hotakajinja.com/ofunematuri.html",
             "verified": true
       },
@@ -7711,7 +7631,7 @@
             "venue": "来宮神社・市内",
             "prefecture": "静岡県",
             "city": "熱海市",
-            "genre": "神事",
+            "genre": "祭り",
             "link": "https://kinomiya.or.jp/top/overview/annual_festival/",
             "verified": true
       },
@@ -7771,7 +7691,7 @@
             "venue": "下田八幡神社・市街地",
             "prefecture": "静岡県",
             "city": "下田市",
-            "genre": "神事",
+            "genre": "祭り",
             "link": "https://www.shimoda-city.info/shimoda-taiko",
             "verified": true
       },
@@ -7842,7 +7762,7 @@
     const WEEK = ['日','月','火','水','木','金','土'];
     let activeGenre = 'all';
 
-    // ジャンル → アイコン・色の事前定義（12カテゴリ）
+    // ジャンル → アイコン・色の事前定義（13カテゴリ、神事は祭りに統合済み）
     const GENRE_META = {
       '祭り':           { icon: '🏮', color: '#ff80ab' },
       '花火':           { icon: '🎆', color: '#b39ddb' },
@@ -7850,14 +7770,15 @@
       'グルメ':         { icon: '🍴', color: '#ffb74d' },
       'フェス':         { icon: '🎪', color: '#ff8a65' },
       'スポーツ':       { icon: '👟', color: '#4fc3f7' },
+      'キッズ':         { icon: '🧸', color: '#ffcdd2' },
+      '趣味':           { icon: '🎯', color: '#4dd0e1' },
       '展示会':         { icon: '🖼️', color: '#4fc3f7' },
       '文化':           { icon: '🎨', color: '#b39ddb' },
       '伝統':           { icon: '🎎', color: '#8d6e63' },
-      '神事':           { icon: '⛩️', color: '#ffd54f' },
       '歴史':           { icon: '🏯', color: '#8d6e63' },
       'イルミネーション': { icon: '✨', color: '#ffd54f' }
     };
-    const GENRE_ORDER = ['祭り','花火','花','グルメ','フェス','スポーツ','展示会','文化','伝統','神事','歴史','イルミネーション'];
+    const GENRE_ORDER = ['祭り','花火','花','グルメ','フェス','スポーツ','キッズ','趣味','展示会','文化','伝統','歴史','イルミネーション'];
 
     function getGenreMeta(genre) {
       return GENRE_META[genre] || { icon: '📌', color: '#8a8a9a' };
@@ -7885,10 +7806,29 @@
 
     // ジャンル別Amazonアフィリリンク
     const AMAZON_LINKS = {
-      '祭り':   { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
-      '花火':   { url: "https://amzn.to/4unIYNX", label: "🛍️ お祭りグッズ" },
-      '花':     { url: "https://amzn.to/3QFA67P", label: "📷 写ルンです" }
+      '祭り':     { url: "https://amzn.to/3QROc6d", label: "🛍️ お祭りグッズ" },
+      '花火':     { url: "https://amzn.to/4duYyl3", label: "🛍️ 花火観戦グッズ" },
+      '花':       { url: "https://amzn.to/3QWoRbc", label: "🛍️ ピクニックグッズ" },
+      'グルメ':   { url: "https://amzn.to/3QVccW2", label: "🛍️ 保冷バッグ" },
+      'キッズ':   { url: "https://amzn.to/49jivJa", label: "🧸 知育玩具" },
+      'スポーツ': { url: "https://amzn.to/4u55Ou6", label: "🏃 マラソングッズ" },
+      '展示会':   { url: "https://amzn.to/4uBiZTi", label: "🛍️ お出かけグッズ" },
+      '文化':     { url: "https://amzn.to/4uBiZTi", label: "🛍️ お出かけグッズ" },
+      '趣味':     { url: "https://amzn.to/3Rtb0sY", label: "🏍️ バイク用品" }
     };
+    // スポーツジャンル サブカテゴリ別Amazonリンク
+    const SPORTS_MOUNTAIN_AMAZON = { url: "https://amzn.to/3PqXdmg", label: "🥾 登山グッズ" };
+    const SPORTS_CYCLING_AMAZON  = { url: "https://amzn.to/42UJrLL", label: "🚴 サイクリンググッズ" };
+    const SPORTS_WALKING_AMAZON  = { url: "https://amzn.to/4uz6pnt", label: "🚶 ウォーキンググッズ" };
+    // 個別イベントごとのAmazon上書き(最優先)
+    const EVENT_AMAZON_OVERRIDES = {
+      33: { url: "https://amzn.to/4uz6pnt", label: "🚶 ウォーキンググッズ" }
+    };
+
+    // ホテルボタン: 都市部(東京/大阪/神奈川/愛知/福岡)→トリバゴ、それ以外→楽天トラベル(地方の中小宿に強い)
+    const HOTEL_TRIVAGO_BTN = `<a class="hotel-btn" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 近くの宿泊施設を探す</a>`;
+    const HOTEL_RAKUTEN_BTN = `<a class="hotel-btn" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=625672.10000246&type=3&subid=0" target="_blank" rel="noopener">🏨 近くの宿泊施設を探す</a><img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=625672.10000246&type=3&subid=0">`;
+    const URBAN_PREFS_EVENTS = ["東京", "大阪", "神奈川", "愛知", "福岡"];
 
     function renderCard(ev) {
       const status = getStatus(ev);
@@ -7896,10 +7836,25 @@
       const dateLabel = ev.endDate && ev.endDate !== ev.date
         ? `${formatDate(ev.date)}〜${formatDate(ev.endDate)}`
         : formatDate(ev.date);
-      const amazonInfo = AMAZON_LINKS[ev.genre];
+      let amazonInfo = AMAZON_LINKS[ev.genre];
+      // スポーツジャンルのサブカテゴリ判定(サイクリング > ウォーキング > 登山 > マラソン)
+      if (ev.genre === 'スポーツ') {
+        if (/サイクリング|ヒルクライム|センチュリーライド|グランフォンド|ツール・ド|ツアー・オブ|UCI/.test(ev.name)) {
+          amazonInfo = SPORTS_CYCLING_AMAZON;
+        } else if (/ウォーク|ウオーク|ウォーキング/.test(ev.name)) {
+          amazonInfo = SPORTS_WALKING_AMAZON;
+        } else if (/山/.test(ev.name)) {
+          amazonInfo = SPORTS_MOUNTAIN_AMAZON;
+        }
+      }
+      // 個別イベントの上書き(最優先)
+      if (EVENT_AMAZON_OVERRIDES[ev.id]) {
+        amazonInfo = EVENT_AMAZON_OVERRIDES[ev.id];
+      }
       const amazonHtml = amazonInfo
         ? `<a class="amazon-btn" href="${amazonInfo.url}" target="_blank" rel="noopener">${amazonInfo.label}</a>`
         : '';
+      const hotelHtml = (ev.prefecture && URBAN_PREFS_EVENTS.some(p => ev.prefecture.includes(p))) ? HOTEL_TRIVAGO_BTN : HOTEL_RAKUTEN_BTN;
       const meta = getGenreMeta(ev.genre);
       const isSprite = SPRITE_GENRES.has(ev.genre);
       const iconContent = isSprite ? '' : meta.icon;
@@ -7923,6 +7878,7 @@
           </div>
           <div class="card-actions">
             <a class="official-btn" href="${ev.link}" target="_blank" rel="noopener">公式サイト →</a>
+            ${hotelHtml}
             ${amazonHtml}
           </div>
         </div>
@@ -8061,7 +8017,35 @@
     }
 
     init();
+
+    // 固定バナー 閉じるボタン
+    (function() {
+      const banner = document.getElementById('fixedBanner');
+      const closeBtn = document.getElementById('fixedBannerClose');
+      if (!banner || !closeBtn) return;
+      if (sessionStorage.getItem('trivagoBannerClosed') === '1') {
+        banner.style.display = 'none';
+        document.body.style.paddingBottom = '0';
+      }
+      closeBtn.addEventListener('click', () => {
+        banner.style.display = 'none';
+        document.body.style.paddingBottom = '0';
+        sessionStorage.setItem('trivagoBannerClosed', '1');
+      });
+    })();
   </script>
+
+  <div class="fixed-banner" id="fixedBanner">
+    <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.81&type=4&subid=0" target="_blank" rel="noopener">
+      <img alt="トリバゴ" border="0" src="https://storage.googleapis.com/trv-mkt-mios-prod-assets/japan/Rakuten%20JP/468x60.jpg">
+    </a>
+    <a href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1590288.6&type=4&subid=0" target="_blank" rel="noopener">
+      <img alt="楽天トラベル JR楽パック赤い風船" border="0" src="https://img.travel.rakuten.co.jp/package/jr/bnr/234_60.jpg">
+    </a>
+    <button class="fixed-banner-close" id="fixedBannerClose" aria-label="閉じる">×</button>
+    <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1674601.81&type=4&subid=0" alt="">
+    <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1590288.6&type=4&subid=0" alt="">
+  </div>
 </body>
 </html>
 </content>
