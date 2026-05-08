@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSHINAVI - メンテナンス中</title>
+<meta http-equiv="refresh" content="0;url=events.html">
+<title>OSHINAVI - 行楽イベント情報へ移動中</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1EQ5M4HT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RM1EQ5M4HT');
+</script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -40,6 +49,19 @@ p {
   color: #4b5563;
   margin-bottom: 16px;
 }
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 16px;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
 .note {
   background: #fef3c7;
   border-left: 4px solid #f59e0b;
@@ -55,14 +77,14 @@ p {
 </head>
 <body>
 <div class="container">
-<div class="icon">🔧</div>
-<h1>メンテナンス中</h1>
-<p>OSHINAVIをご利用いただきありがとうございます。</p>
-<p>現在、掲載情報の精度向上のためデータ点検作業を行っております。</p>
-<p>ご不便をおかけして申し訳ございません。</p>
+<div class="icon">🌸</div>
+<h1>OSHINAVI</h1>
+<p>2026年の行楽・季節イベント情報をお届けしています。</p>
+<p>お祭り・花火大会・展示会など、全国の最新情報をチェック！</p>
+<a href="events.html" class="btn">行楽イベント情報を見る →</a>
 <div class="note">
-チケット販売終了日の表示について再確認作業を実施中です。<br>
-復旧まで今しばらくお待ちください。
+ライブ・チケット情報はデータ点検のため一時非公開とさせていただいております。
+復旧次第お知らせいたします。
 </div>
 </div>
 </body>
