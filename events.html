@@ -9176,8 +9176,8 @@
 
     init();
 
-    // 固定バナー 閉じるボタン
-    (function() {
+    // 固定バナー 閉じるボタン (バナーDOMはこのスクリプト後に出現するためDOMContentLoadedで待つ)
+    document.addEventListener('DOMContentLoaded', () => {
       const banner = document.getElementById('fixedBanner');
       const closeBtn = document.getElementById('fixedBannerClose');
       if (!banner || !closeBtn) return;
@@ -9190,7 +9190,7 @@
         document.body.style.paddingBottom = '0';
         sessionStorage.setItem('trivagoBannerClosed', '1');
       });
-    })();
+    });
   </script>
 
   <div class="fixed-banner" id="fixedBanner">
