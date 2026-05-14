@@ -2669,7 +2669,7 @@
                   "tickets": [
                               {
                                           "type": "一般発売",
-                                          "date": "2026-06-27"
+                                          "date": "2026-06-25"
                               }
                   ],
                   "verified": true,
@@ -2698,7 +2698,6 @@
                               },
                               {
                                           "type": "一般発売(夏期)",
-                                          "startDate": "2026-06-04",
                                           "date": "2026-07-14"
                               }
                   ],
@@ -2789,7 +2788,7 @@
       // 表示ルール:
       //  1. startDate 有り + 未来 → 「発売開始まで あとX日」(urgent/soon/normal) 表示日付=startDate
       //  2. startDate 有り + 販売中(今日 >= startDate かつ 今日 <= date) → 「販売中」(selling) 表示日付=date(終了日)
-      //  3. startDate 無し + date 未来以降 → 旧仕様「あとX日」(urgent/soon/normal) 表示日付=date
+      //  3. startDate 無し + date 未来以降 → 「販売中」(selling) 表示日付=date ※既に販売中扱い
       //  4. 期限切れ → 「終了」(passed) ※朝のルーチンで削除対象
       let status, label, displayDate;
       if (t.startDate && parseDateStr(t.startDate) > today) {
@@ -2804,9 +2803,8 @@
         label  = "販売中";
         displayDate = t.date;
       } else if (!t.startDate && parseDateStr(t.date) >= today) {
-        const diff = daysFrom(t.date);
-        status = diff <= 7 ? "urgent" : diff <= 31 ? "soon" : "normal";
-        label  = countdownLabel(t.date);
+        status = "selling";
+        label  = "販売中";
         displayDate = t.date;
       } else {
         status = "passed";
