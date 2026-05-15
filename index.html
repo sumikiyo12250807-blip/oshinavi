@@ -405,6 +405,7 @@
     .genre-soccer     { background: rgba(0,160,60,0.15);   color: #33dd77;       border: 1px solid rgba(0,160,60,0.3); }
     .genre-basketball { background: rgba(255,110,0,0.15);  color: #ff9933;       border: 1px solid rgba(255,110,0,0.3); }
     .genre-volleyball { background: rgba(0,180,220,0.15);  color: #44ccff;       border: 1px solid rgba(0,180,220,0.3); }
+    .genre-aisatsu    { background: rgba(220,100,180,0.15); color: #e066b4;       border: 1px solid rgba(220,100,180,0.35); }
 
     .event-artist {
       font-size: 13px;
@@ -874,6 +875,7 @@
     <button class="filter-btn" data-genre="fes">フェス</button>
     <button class="filter-btn" data-genre="hanabi">花火大会</button>
     <button class="filter-btn" data-genre="kids">キッズ</button>
+    <button class="filter-btn" data-genre="aisatsu">舞台挨拶</button>
   </div>
 
   <!-- ステータスフィルター -->
@@ -1032,33 +1034,6 @@
                         "date": "2026-06-08"
                   }
             ],
-            "verified": true,
-            "verifiedAt": "2026-05-08"
-      },
-      {
-            "id": 4,
-            "artist": "JamsCollection",
-            "name": "JamsCollection ASIA TOUR 2026 -THE RISING ROAD-（大阪公演）",
-            "date": "2026-06-14",
-            "dateLabel": "2026年6月14日(日) 開場15:00／開演16:00",
-            "venue": "なんばHatch",
-            "prefecture": "大阪",
-            "genre": "idol",
-            "price": null,
-            "links": {
-                  "rakuten": "https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fmusic%2Fjpop%2Fidle%2Frtzzz41%2F",
-                  "lawson": null,
-                  "pia": null,
-                  "eplus": null
-            },
-            "tickets": [
-                  {
-                        "type": "一般発売",
-                        "startDate": "2026-05-14",
-                        "date": "2026-05-14"
-                  }
-            ],
-            "saleEndUnknown": true,
             "verified": true,
             "verifiedAt": "2026-05-08"
       },
@@ -2171,7 +2146,8 @@
                   "dateLabel": "2026年7月17日(金)〜20日(月・祝)",
                   "venue": "KOSE新横浜スケートセンター",
                   "prefecture": "神奈川",
-                  "genre": "new",
+                  "genre": "kids",
+                  "extraGenres": ["engeki"],
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2201,7 +2177,7 @@
                   "dateLabel": "2026年7月26日(日)",
                   "venue": "豊田市白浜町（白浜公園一帯）",
                   "prefecture": "愛知",
-                  "genre": "new",
+                  "genre": "hanabi",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2231,7 +2207,7 @@
                   "dateLabel": "2026年7月10日(金)〜12日(日)",
                   "venue": "幕張メッセ 展示ホール4〜6",
                   "prefecture": "千葉",
-                  "genre": "new",
+                  "genre": "anime",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2256,7 +2232,7 @@
                   "dateLabel": "2026年5月25日(月)",
                   "venue": "新宿ピカデリー",
                   "prefecture": "東京",
-                  "genre": "new",
+                  "genre": "aisatsu",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2287,7 +2263,7 @@
                   "dateLabel": "2026年5月29日(金)新宿バルト9／6月3日(水)T・ジョイ梅田",
                   "venue": "新宿バルト9／T・ジョイ梅田",
                   "prefecture": "東京・大阪",
-                  "genre": "new",
+                  "genre": "aisatsu",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2317,7 +2293,7 @@
                   "dateLabel": "2026年7月17日(金)〜9月27日(日)",
                   "venue": "東急プラザ渋谷 4F 特設スペース",
                   "prefecture": "東京",
-                  "genre": "new",
+                  "genre": "anime",
                   "price": "一般 2,800円〜3,800円",
                   "links": {
                               "rakuten": null,
@@ -2346,7 +2322,8 @@
                   "dateLabel": "2026年7月9日(木)〜9月28日(月) 八戸/東京/名古屋/大阪/横浜/福岡/広島/高松/神戸/船橋",
                   "venue": "FLAT八戸／有明アリーナ／クロコくんホール／大阪城ホール／横浜アリーナ／マリンメッセ福岡A館／広島グリーンアリーナ／あなぶきアリーナ香川／ワールド記念ホール／LaLa arena TOKYO-BAY",
                   "prefecture": "全国",
-                  "genre": "new",
+                  "genre": "kids",
+                  "extraGenres": ["engeki"],
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2407,7 +2384,7 @@
                   "dateLabel": "2026年5月30日(土)",
                   "venue": "日本橋三井ホール",
                   "prefecture": "東京",
-                  "genre": "new",
+                  "genre": "kpop",
                   "price": "12,000円",
                   "links": {
                               "rakuten": null,
@@ -2432,7 +2409,7 @@
                   "dateLabel": "2026年5月30日(土)・31日(日)代々木第一／6月12日(金)・13日(土)大阪城ホール",
                   "venue": "国立代々木競技場 第一体育館／大阪城ホール",
                   "prefecture": "東京・大阪",
-                  "genre": "new",
+                  "genre": "kpop",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2461,7 +2438,7 @@
                   "dateLabel": "2026年6月7日(日)〜6月23日(火)",
                   "venue": "パシフィコ横浜 国立大ホール／PIA LIVE STREAM",
                   "prefecture": "神奈川",
-                  "genre": "new",
+                  "genre": "anime",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2490,7 +2467,8 @@
                   "dateLabel": "2026年6月23日(火)〜7月18日(土) 札幌/埼玉/東京/愛知/兵庫/大分",
                   "venue": "札幌コンサートホールKitara小ホール／川口リリア・山伸サステインホール／浜離宮朝日ホール／電気文化会館ザ・コンサートホール／神戸朝日ホール／iichikoおとの泉ホール",
                   "prefecture": "全国",
-                  "genre": "new",
+                  "genre": "anime",
+                  "extraGenres": ["classic"],
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2519,7 +2497,8 @@
                   "dateLabel": "2026年6月20日(土)",
                   "venue": "札幌コンサートホールKitara 大ホール",
                   "prefecture": "北海道",
-                  "genre": "new",
+                  "genre": "anime",
+                  "extraGenres": ["classic"],
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2544,7 +2523,7 @@
                   "dateLabel": "2026年5月27日(水)〜6月21日(日)東急シアターオーブ／7月4日(土)〜7月22日(水)梅田芸術劇場",
                   "venue": "東急シアターオーブ／梅田芸術劇場メインホール",
                   "prefecture": "東京・大阪",
-                  "genre": "new",
+                  "genre": "engeki",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2573,7 +2552,7 @@
                   "dateLabel": "2026年6月6日(土)",
                   "venue": "けいはんなプラザ イベントホール",
                   "prefecture": "京都",
-                  "genre": "new",
+                  "genre": "sports",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2598,7 +2577,7 @@
                   "dateLabel": "2026年7月18日(土)",
                   "venue": "インテックス大阪 5号館",
                   "prefecture": "大阪",
-                  "genre": "new",
+                  "genre": "sports",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2623,7 +2602,7 @@
                   "dateLabel": "2026年7月12日(日)",
                   "venue": "クリエート浜松 ホール",
                   "prefecture": "静岡",
-                  "genre": "new",
+                  "genre": "sports",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2648,7 +2627,7 @@
                   "dateLabel": "2026年6月6日(土)",
                   "venue": "POST DI AMISTAD",
                   "prefecture": "神奈川",
-                  "genre": "new",
+                  "genre": "sports",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2673,7 +2652,7 @@
                   "dateLabel": "2026年7月4日(土)",
                   "venue": "ティグレジム平野",
                   "prefecture": "大阪",
-                  "genre": "new",
+                  "genre": "sports",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2698,7 +2677,7 @@
                   "dateLabel": "2026年5月23日(土)仙台／6月6日(土)岡山／6月7日(日)神戸／6月13日(土)福岡／6月21日(日)札幌／6月27日(土)〜28日(日)渋谷",
                   "venue": "仙台市シルバーセンター交流ホール／おかやま未来ホール／神戸朝日ホール／西鉄ホール／札幌サンプラザコンサートホール／渋谷区文化総合センター大和田さくらホール",
                   "prefecture": "全国",
-                  "genre": "new",
+                  "genre": "owarai",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2743,7 +2722,7 @@
                   "dateLabel": "2026年4月〜7月 川越/松戸/大田/中野/練馬/横須賀 ほか",
                   "venue": "川越市やまぶき会館／森のホール21小ホール／大田区民プラザ／なかのゼロ小ホール／練馬文化センター／ヨコスカ・ベイサイド・ポケット ほか",
                   "prefecture": "関東",
-                  "genre": "new",
+                  "genre": "owarai",
                   "price": null,
                   "links": {
                               "rakuten": null,
@@ -2810,7 +2789,8 @@
     youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ",
     classic: "クラシック", engeki: "演劇", fes: "フェス",
     sports: "スポーツ", hanabi: "花火大会",
-    "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル"
+    "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル",
+    aisatsu: "舞台挨拶"
   };
 
   const PREFECTURE_TO_REGION = {
@@ -2966,6 +2946,7 @@
         <div class="card-body">
           <div class="event-info">
             <span class="genre-tag genre-${ev.genre}">${GENRE_LABEL[ev.genre]}</span>
+            ${(ev.extraGenres || []).map(g => `<span class="genre-tag genre-${g}">${GENRE_LABEL[g] || g}</span>`).join('')}
             <div class="event-artist">${ev.artist}</div>
             <div class="event-name">${ev.name}</div>
             <div class="event-concert-date">📅 ${ev.dateLabel}</div>
