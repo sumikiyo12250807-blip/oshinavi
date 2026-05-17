@@ -751,7 +751,19 @@
       "WebFetch(domain:www.laketoya.com)",
       "Skill(update-config)",
       "Bash(powershell -NoProfile -Command \"[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; [Console]::Error.WriteLine\\('BLOCKED: AskUserQuestion is forbidden. Use plain text body with \\(yes/no\\) or numbered list. See memory: feedback_simple_questions.md'\\); exit 2\")",
-      "Bash(echo \"exit_code=$?\")"
+      "Bash(echo \"exit_code=$?\")",
+      "WebFetch(domain:acochill.com)",
+      "WebFetch(domain:www.blackshipfestival.jp)",
+      "WebFetch(domain:www.town.obuse.nagano.jp)",
+      "WebFetch(domain:www.urara-hakusanbito.com)",
+      "WebFetch(domain:www.sanjasama.jp)",
+      "WebFetch(domain:www.city.kamagaya.chiba.jp)",
+      "WebFetch(domain:www.hotweb.or.jp)",
+      "WebFetch(domain:www.town.yokohama.lg.jp)",
+      "WebFetch(domain:www.yamagatawinebal.jp)",
+      "WebFetch(domain:www.ibayosa.com)",
+      "WebFetch(domain:www.aoba-matsuri.com)",
+      "WebFetch(domain:ibayosa.com)"
     ]
   },
   "hooks": {
