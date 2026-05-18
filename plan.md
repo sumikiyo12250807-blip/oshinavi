@@ -12,6 +12,19 @@ python tools/check_expired.py
 - **絶対に自前で抽出スクリプトをゼロから書き直さない**（2026-05-17に endDate 見落としで139件誤判定の事故あり → feedback_check_existing_logic.md）
 - 判定ロジックを変える時は `tools/check_expired.py` を直接編集し、events.html の `getStatus()` と一致させる
 
+## 🎭 ロングラン公演（アナ雪 id:72）の継続チェック
+
+朝のルーチンで以下も毎回チェック：
+
+```
+WebFetch: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2171105
+```
+
+- id:72『アナと雪の女王』東京公演の最新販売波を確認
+- 過ぎた ticket は削除、新しく判明した販売波（プレミアム先行/一般先行/一般発売 × 月別）を tickets に追加
+- 月別: 9月／10月／11月／12月／2027年1月 公演（各月で3段階）
+- 詳細: memory `project_longrun_anayuki.md`
+
 ## 🔴🔴🔴 2026-05-08 夜 緊急事態とリセット
 
 ### 重大な問題発覚
