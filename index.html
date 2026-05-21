@@ -7312,11 +7312,6 @@
 
   function applyFilters() {
     filteredEvents = EVENTS.filter(matchEvent);
-    // ✨新着(チェック用)は id 順で固定。チェック中に日付を直してもカードの順番が動かないようにする
-    // （通常ジャンルは EVENTS.sort の「販売終了日が近い順」のまま＝公開サイトのカウントダウン順は維持）
-    if (activeGenre === "new") {
-      filteredEvents = filteredEvents.slice().sort((a, b) => (a.id || 0) - (b.id || 0));
-    }
     renderedCount = 0;
     document.getElementById("eventList").innerHTML = "";
     document.getElementById("resultCount").textContent = filteredEvents.length;
