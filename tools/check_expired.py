@@ -110,13 +110,26 @@ def main():
 
     # index.html
     idx_events = extract_events_array('index.html')
-    idx_expired = [(ev, is_expired_index(ev, today)) for ev in idx_events]
-    idx_expired = [(ev, r) for ev, r in idx_expired if r]
-    out.append(f"\n[index.html] 全{len(idx_events)}件 → 期限切れ {len(idx_expired)}件")
-    for ev, r in idx_expired:
+    idx_flagged = [(ev, is_expired_index(ev, today)) for ev in idx_events]
+    idx_flagged = [(ev, r) for ev, r in idx_flagged if r]
+    # saleEndUnknown=true は「削除」せず「要再確認」に回す。
+    # （販売終了日が不明で date に開始日等の仮置きをしているもの。売り場URLで本当の終了日を確認して date を書き換える）
+    idx_delete = [(ev, r) for ev, r in idx_flagged if not ev.get('saleEndUnknown')]
+    idx_recheck = [(ev, r) for ev, r in idx_flagged if ev.get('saleEndUnknown')]
+    out.append(f"\n[index.html] 全{len(idx_events)}件 → 期限切れ削除 {len(idx_delete)}件 / ⚠️要再確認(販売終了日不明) {len(idx_recheck)}件")
+    for ev, r in idx_delete:
         out.append(fmt_event_entry(ev, r))
         for t in ev.get('tickets', []) or []:
             out.append(f"     - {t.get('type','?')}: {t.get('date','?')} soldout={t.get('soldout', False)}")
+    if idx_recheck:
+        out.append("\n  ⚠️ 以下は saleEndUnknown=true。削除せず、売り場URLで終了日を確認し date を書き換えること（買えなければ削除）:")
+        for ev, r in idx_recheck:
+            out.append(fmt_event_entry(ev, r))
+            lk = ev.get('links', {}) or {}
+            url = lk.get('rakuten') or lk.get('pia') or lk.get('eplus') or lk.get('lawson') or '(URLなし)'
+            out.append(f"     URL: {url}")
+            for t in ev.get('tickets', []) or []:
+                out.append(f"     - {t.get('type','?')}: {t.get('date','?')}")
 
     # events.html
     ev_events = extract_events_array('events.html')
