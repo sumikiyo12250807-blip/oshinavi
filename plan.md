@@ -28,6 +28,9 @@ python tools/check_expired.py
 - このスクリプトは **events.html の `endDate`** と **index.html の `tickets[].date` 全件** を見て判定する
 - **絶対に自前で抽出スクリプトをゼロから書き直さない**（2026-05-17に endDate 見落としで139件誤判定の事故あり → feedback_check_existing_logic.md）
 - 判定ロジックを変える時は `tools/check_expired.py` を直接編集し、events.html の `getStatus()` と一致させる
+- **出力は「期限切れ削除」と「⚠️要再確認(販売終了日不明)」に分かれる（2026-05-21〜）**
+  - 「期限切れ削除」= 通常どおりユーザー確認→削除
+  - **「⚠️要再確認」= `saleEndUnknown:true` のもの。絶対に勝手に削除しない。** 表示される売り場URLをWebFetchして本当の販売終了日を確認→`tickets[].date`を書き換える（買えなくなっていれば削除、まだ不明なら翌日再確認）。これは「終了日不明のチケットを発売日翌日に誤削除しない」ための仕組み → feedback_unknown_end_date.md
 
 ## 🎭 ロングラン公演の継続チェック
 
