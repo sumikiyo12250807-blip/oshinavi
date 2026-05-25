@@ -1,0 +1,6 @@
+# トップ(/)は _redirects で events.html への 200 リライト。
+# Netlify Edge が古い版を粘着キャッシュし、データ更新が / に反映されない問題への対策。
+# トップだけ Edge キャッシュを無効化して毎回最新を返す。
+/
+  Netlify-CDN-Cache-Control: no-store
+  Cache-Control: public, max-age=0, must-revalidate
