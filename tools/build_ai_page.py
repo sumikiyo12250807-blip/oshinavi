@@ -283,7 +283,40 @@ def build(today):
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write("\n".join(sm))
 
-    print(f"wrote {npages} pages ({total} events, {PER_PAGE}/page, today={today}) + sitemap.xml")
+    # トップ(events.html=oshinavi.jp)の<noscript>にチケット全件を埋め込む。
+    # AIアプリは /ai.html を「Failed to fetch」で取得できないが、トップ(/)は取得できるため、
+    # トップに静的データを仕込めば「OSHINAVI見て」だけでAIが全チケットを読める（人間にはnoscriptで非表示）。
+    NS_START = "<!-- AI_DATA_START -->"
+    NS_END = "<!-- AI_DATA_END -->"
+    ns = ["<noscript>", NS_START]
+    ns.append(f'<section><h2>OSHINAVI チケット発売カレンダー（全{total}件・{today.isoformat()}更新）</h2>')
+    ns.append('<p>AI・検索エンジン向けの全件データです。50件ずつの詳細表は <a href="/ai.html">/ai.html</a> 以降にもあります。</p><ul>')
+    for _, _, ev in rows:
+        st, _ = status_text(ev, today)
+        url, vendor = buy_url(ev)
+        name = esc(ev.get("name", ""))
+        artist = esc(ev.get("artist", ""))
+        venue = esc(ev.get("venue", ""))
+        pref = esc(ev.get("prefecture", ""))
+        held = esc(ev.get("dateLabel") or ev.get("date") or "")
+        buy = f'｜購入: <a href="{esc(url)}">{esc(vendor)}</a>' if url else ""
+        ns.append(f"<li>{esc(st)}｜{name}／{artist}／{venue}（{pref}）／{held}{buy}</li>")
+    ns.append("</ul></section>")
+    ns.append(NS_END)
+    ns.append("</noscript>")
+    ns_block = "\n".join(ns)
+
+    with open("events.html", encoding="utf-8") as f:
+        ehtml = f.read()
+    pat = re.compile(r"<noscript>\s*" + re.escape(NS_START) + r".*?" + re.escape(NS_END) + r"\s*</noscript>", re.DOTALL)
+    if pat.search(ehtml):
+        ehtml = pat.sub(lambda m: ns_block, ehtml)  # リテラル置換（\エスケープ回避）
+    else:
+        ehtml = ehtml.replace("</body>", ns_block + "\n</body>", 1)
+    with open("events.html", "w", encoding="utf-8") as f:
+        f.write(ehtml)
+
+    print(f"wrote {npages} pages + sitemap.xml + events.html<noscript>埋込 ({total} tickets, today={today})")
 
 
 def main():
