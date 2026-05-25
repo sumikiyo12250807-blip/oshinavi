@@ -306,15 +306,24 @@ def build(today):
     ns.append("</noscript>")
     ns_block = "\n".join(ns)
 
+    pat = re.compile(r"<noscript>\s*" + re.escape(NS_START) + r".*?" + re.escape(NS_END) + r"\s*</noscript>", re.DOTALL)
+    # トップ(/)は Netlify が index.html を Serve する（_redirectsの200リライトより
+    # 実在する静的ファイル index.html が優先される）。よって index.html の</body>前に埋め込む。
+    with open("index.html", encoding="utf-8") as f:
+        ihtml = f.read()
+    if pat.search(ihtml):
+        ihtml = pat.sub(lambda m: ns_block, ihtml)  # リテラル置換（\エスケープ回避）
+    else:
+        ihtml = ihtml.replace("</body>", ns_block + "\n</body>", 1)
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(ihtml)
+    # 旧実装で events.html に入れた noscript は除去（トップ=index.html のため不要）
     with open("events.html", encoding="utf-8") as f:
         ehtml = f.read()
-    pat = re.compile(r"<noscript>\s*" + re.escape(NS_START) + r".*?" + re.escape(NS_END) + r"\s*</noscript>", re.DOTALL)
-    if pat.search(ehtml):
-        ehtml = pat.sub(lambda m: ns_block, ehtml)  # リテラル置換（\エスケープ回避）
-    else:
-        ehtml = ehtml.replace("</body>", ns_block + "\n</body>", 1)
-    with open("events.html", "w", encoding="utf-8") as f:
-        f.write(ehtml)
+    ehtml2 = pat.sub("", ehtml)
+    if ehtml2 != ehtml:
+        with open("events.html", "w", encoding="utf-8") as f:
+            f.write(ehtml2)
 
     print(f"wrote {npages} pages + sitemap.xml + events.html<noscript>埋込 ({total} tickets, today={today})")
 
