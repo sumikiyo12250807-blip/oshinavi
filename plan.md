@@ -12,9 +12,10 @@
    - ② 当日の新着を 楽天/ぴあ/e+ から取得 → `genre:"new"` で投入
    - 取得は1サイト確認でOK（クロスチェック不要 / A案）。ただし**販売中かどうかは親で1件ずつWebFetch確認必須**
    - 振り分けは判定案を表で提示→ユーザー確認（迷うジャンルだけ相談）
-5. **commit → push**（1日2回まで・必ず事前確認）
+5. **ai.html 再生成**（`python tools/build_ai_page.py`）… AI/クローラ向け静的データページ。データ更新後に必ず実行し commit に含める（詳細 memory: `reference_oshinavi_ai_page`）
+6. **commit → push**（1日2回まで・必ず事前確認。ai.html も一緒に上げる）
 
-→ 詳細 memory: `feedback_morning_routine` / `feedback_new_genre_workflow`
+→ 詳細 memory: `feedback_morning_routine` / `feedback_new_genre_workflow` / `reference_oshinavi_ai_page`
 
 ### 📝 継続タスク（ついでの時に少しずつ）
 - **既存エントリへの `showSalePeriod: true` 付与** … 販売期間表示（例「5/23〜8/7まで」）は2026-05-20導入。今日の新着18件(id:130-147)には付与済み。既存エントリ（特に長期ツアー・複数公演もの）に順次付けていく。長いツアーものは販売期間が複雑なので1件ずつ丁寧に。
