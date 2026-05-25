@@ -1,0 +1,38 @@
+# OSHINAVI robots.txt — AI・検索クローラ歓迎サイト
+# 全ページ閲覧OK。特にAI向け全件データは /ai.html にあります。
+
+User-agent: *
+Allow: /
+
+# --- AIクローラを明示的に許可 ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://oshinavi.jp/sitemap.xml
