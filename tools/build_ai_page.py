@@ -283,14 +283,15 @@ def build(today):
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write("\n".join(sm))
 
-    # トップ(events.html=oshinavi.jp)の<noscript>にチケット全件を埋め込む。
-    # AIアプリは /ai.html を「Failed to fetch」で取得できないが、トップ(/)は取得できるため、
-    # トップに静的データを仕込めば「OSHINAVI見て」だけでAIが全チケットを読める（人間にはnoscriptで非表示）。
-    NS_START = "<!-- AI_DATA_START -->"
-    NS_END = "<!-- AI_DATA_END -->"
-    ns = ["<noscript>", NS_START]
-    ns.append(f'<section><h2>OSHINAVI チケット発売カレンダー（全{total}件・{today.isoformat()}更新）</h2>')
-    ns.append('<p>AI・検索エンジン向けの全件データです。50件ずつの詳細表は <a href="/ai.html">/ai.html</a> 以降にもあります。</p><ul>')
+    # ★AIアプリは <noscript> を「非表示コンテンツ」として無視し、本体の初期表示
+    #   （resultCount=0 / emptyState「見つかりませんでした」）を読んで「0件」と誤判定する。
+    #   そこで本体 #eventList に静的データを直接埋め込み、resultCount 初期値も件数にする。
+    #   JSが起動時に list.innerHTML="" でクリア＆件数を再設定するので人間の画面は不変。
+    #   AIはJSを実行しないため、この初期データ＋件数を読む（SSR的手法）。
+    SSR_START = "<!-- AI_SSR_START -->"
+    SSR_END = "<!-- AI_SSR_END -->"
+    ss = [SSR_START, '<div class="ai-ssr">']
+    ss.append(f'<p>OSHINAVI チケット発売カレンダー｜全{total}件（{today.isoformat()}更新・発売日が近い順）。50件ずつの一覧は <a href="/ai.html">/ai.html</a>。</p><ul>')
     for _, _, ev in rows:
         st, _ = status_text(ev, today)
         url, vendor = buy_url(ev)
@@ -300,32 +301,38 @@ def build(today):
         pref = esc(ev.get("prefecture", ""))
         held = esc(ev.get("dateLabel") or ev.get("date") or "")
         buy = f'｜購入: <a href="{esc(url)}">{esc(vendor)}</a>' if url else ""
-        ns.append(f"<li>{esc(st)}｜{name}／{artist}／{venue}（{pref}）／{held}{buy}</li>")
-    ns.append("</ul></section>")
-    ns.append(NS_END)
-    ns.append("</noscript>")
-    ns_block = "\n".join(ns)
+        ss.append(f"<li>{esc(st)}｜{name}／{artist}／{venue}（{pref}）／{held}{buy}</li>")
+    ss.append("</ul></div>")
+    ss.append(SSR_END)
+    ssr_block = "\n".join(ss)
 
-    pat = re.compile(r"<noscript>\s*" + re.escape(NS_START) + r".*?" + re.escape(NS_END) + r"\s*</noscript>", re.DOTALL)
+    old_ns = re.compile(r"<noscript>\s*<!-- AI_DATA_START -->.*?<!-- AI_DATA_END -->\s*</noscript>", re.DOTALL)
+    ssr_pat = re.compile(re.escape(SSR_START) + r".*?" + re.escape(SSR_END), re.DOTALL)
+
     # トップ(/)は Netlify が index.html を Serve する（_redirectsの200リライトより
-    # 実在する静的ファイル index.html が優先される）。よって index.html の</body>前に埋め込む。
+    # 実在する静的ファイル index.html が優先される）。index.html 本体に SSR 埋め込み。
     with open("index.html", encoding="utf-8") as f:
         ihtml = f.read()
-    if pat.search(ihtml):
-        ihtml = pat.sub(lambda m: ns_block, ihtml)  # リテラル置換（\エスケープ回避）
+    ihtml = old_ns.sub("", ihtml)  # 旧noscriptが残っていれば除去
+    if ssr_pat.search(ihtml):
+        ihtml = ssr_pat.sub(lambda m: ssr_block, ihtml)  # マーカー間を毎回更新
     else:
-        ihtml = ihtml.replace("</body>", ns_block + "\n</body>", 1)
+        anchor = '<div class="event-list" id="eventList">'
+        ihtml = ihtml.replace(anchor, anchor + "\n" + ssr_block, 1)
+    # resultCount の初期値を件数に（JSが起動時に上書きするので人間には影響なし）
+    ihtml = re.sub(r'(<span id="resultCount">)\d+(</span>)', lambda m: m.group(1) + str(total) + m.group(2), ihtml)
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(ihtml)
-    # 旧実装で events.html に入れた noscript は除去（トップ=index.html のため不要）
+
+    # events.html に残る旧noscriptも除去
     with open("events.html", encoding="utf-8") as f:
         ehtml = f.read()
-    ehtml2 = pat.sub("", ehtml)
+    ehtml2 = old_ns.sub("", ehtml)
     if ehtml2 != ehtml:
         with open("events.html", "w", encoding="utf-8") as f:
             f.write(ehtml2)
 
-    print(f"wrote {npages} pages + sitemap.xml + events.html<noscript>埋込 ({total} tickets, today={today})")
+    print(f"wrote {npages} pages + sitemap.xml + index.html本体SSR埋込 ({total} tickets, today={today})")
 
 
 def main():
