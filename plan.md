@@ -21,10 +21,13 @@
    - 取得は1サイト確認でOK（クロスチェック不要 / A案）。ただし**販売中かどうかは親で1件ずつWebFetch確認必須**
    - 振り分けは判定案を表で提示→ユーザー確認（迷うジャンルだけ相談）
 4.5. **【発売前スイープ】1日50件ずつ（2026-06-09開始・ユーザー指示）**
-   - `python tools/presale_harvest.py <lg>`（lg=01音楽/02演劇/03スポーツ/04映画/05アート/06イベント/07クラシック）でぴあ発売前(rlsInfo.do?rlsIn=03=30日以内発売)を取得→既存353件と名前＋eventCd照合→**未掲載の発売前を1日50件**ずつ `genre:"new"`(verified:true)投入
-   - 発売前は startDate=date=発売日。単独公演を優先、ツアーは1エントリ統合。**ライブハウス小箱もOK**
+   - `python tools/presale_harvest.py <lg>`（lg=01音楽/02演劇/03スポーツ/04映画/05アート/06イベント/07クラシック）でぴあ発売前(rlsInfo.do?rlsIn=03=30日以内発売)を取得→既存と名前＋eventCd照合→**未掲載の発売前を1日50件**ずつ `genre:"new"`(verified:true)投入
+   - **★2026-06-11確定: エントリは必ず「T-SQUARE形 標準テンプレート」で作る → memory `feedback_entry_template_standard`**
+     - バッジ=「販売種別（県名 公演日公演）＋時刻」/ showSalePeriod無し / CDキーワードは名前のみ / 県名はバッジに入れる
+     - **harvestは最初の1公演しか拾わず・今販売中の先行枠も拾わない**ので、投入後 **1件ずつWebFetchで全公演(別県含む)・全販売枠(先行/一般)・時刻を取り直す**(ASKA=岐阜+三重取りこぼした反省)
+   - 単独公演を優先、ツアーは1エントリ統合。**ライブハウス小箱もOK**
    - **1エントリに別ぴあ公演を混ぜない**（リンク先URLで確認できる情報のみ書く＝AROUND40で愛媛/茨城混同した反省 2026-06-08）
-   - 音楽から開始（単独202件+ツアー60→消化後 演劇/クラシック…へ）。詳細 memory: `reference_pia_presale_api` / `feedback_event_size`(小箱例外)
+   - 音楽から開始。詳細 memory: `feedback_entry_template_standard` / `reference_pia_presale_api` / `feedback_event_size`(小箱例外)
 5. **ai.html 再生成**（`python tools/build_ai_page.py`）… AI/クローラ向け静的データページ。データ更新後に必ず実行し commit に含める（詳細 memory: `reference_oshinavi_ai_page`）
 6. **commit → push**（1日2回まで・必ず事前確認。ai.html も一緒に上げる）
 
