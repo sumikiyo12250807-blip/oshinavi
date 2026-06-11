@@ -50,7 +50,7 @@ def jd(s):
 
 objs = []
 new_ids = []
-nid = 501
+nid = 602
 for r in recs:
     artist = r['artist']
     name = artist if re.search(r'20(26|27)', artist) else artist + ' 2026'
@@ -86,7 +86,7 @@ for r in recs:
         '            ],\n'
         '            "showSalePeriod": true,\n'
         '            "verified": true,\n'
-        '            "verifiedAt": "2026-06-09"\n'
+        '            "verifiedAt": "2026-06-11"\n'
         '      }'
     )
     objs.append(o)
