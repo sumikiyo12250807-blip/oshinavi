@@ -17766,12 +17766,9 @@
       { key: "amazon2",  label: "最新CD②",          cls: "btn-amazon",   icon: "🛒" },
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" }
     ];
-    const HOTEL_TRIVAGO_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=1674601.8&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a>`;
-    const HOTEL_RAKUTEN_BTN = `<a class="ticket-link-btn btn-hotel" href="https://click.linksynergy.com/fs-bin/click?id=z9x6HLNpWco&offerid=625672.10000246&type=3&subid=0" target="_blank" rel="noopener">🏨 会場近くのホテルを探す</a><img border="0" width="1" alt="" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=625672.10000246&type=3&subid=0">`;
-    // 都市部(東京/大阪/神奈川/愛知/福岡)→トリバゴ(大手ホテル網羅)、それ以外→楽天トラベル(田舎・地方の中小宿に強い)
-    // prefecture値は「東京都」「神奈川県」のように語尾付きの場合があるので includes 判定
-    const URBAN_PREFS = ["東京", "大阪", "神奈川", "愛知", "福岡"];
-    const hotelBtn = (ev.prefecture && URBAN_PREFS.some(p => ev.prefecture.includes(p))) ? HOTEL_TRIVAGO_BTN : HOTEL_RAKUTEN_BTN;
+    // ホテル予約: Expedia（バリューコマース sid=3769972 / pid=892633446・報酬4.4%）。2026-06-13 楽天トラベル・trivagoから差し替え
+    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">🏨 会場近くのホテルを探す</a>`;
+    const hotelBtn = HOTEL_EXPEDIA_BTN;
     const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "コンサートアイテム" };
     const PENLIGHT_AMAZON = { url: "https://amzn.to/4trBSqX", label: "コンサートグッズ" };
     const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "ライブ用耳栓" };
