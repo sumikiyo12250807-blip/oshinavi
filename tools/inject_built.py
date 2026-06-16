@@ -4,7 +4,7 @@ NEW_ORDERを投入id昇順で更新する。"""
 import re, json, io, sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-allnew = json.load(open('tmp/all_new.json', encoding='utf-8'))
+allnew = json.load(open('tmp/all_new2.json', encoding='utf-8'))
 src = open('index.html', encoding='utf-8').read()
 
 # 各エントリを2スペース余分にインデントして直列化（既存と同じ字下げ）
