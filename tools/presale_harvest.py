@@ -3,7 +3,7 @@
 使い方: python tools/presale_harvest.py <lg> [out.json]
   lg: 01音楽 02演劇 03スポーツ 04映画 05アート 06イベント 07クラシック
 既存 index.html と名前照合し、未掲載候補のみ抽出して出力。"""
-import re, io, sys, json, time, html, urllib.request
+import re, io, sys, json, time, html, urllib.request, unicodedata
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 LG = sys.argv[1] if len(sys.argv) > 1 else '01'
@@ -72,7 +72,10 @@ print('parsed items:', len(items))
 idx = open('index.html', encoding='utf-8').read()
 existing = idx.lower()
 def norm(s):
-    return re.sub(r'[\s　・／/＜＞<>「」『』（）()【】]', '', s).lower()
+    # NFKC で全角→半角を正規化（ＫＥＮＮＹ Ｇ→KENNY G 等）。これが無いと
+    # ぴあの全角名が既存DBの半角名とマッチせず重複を取りこぼす（2026-06-16に16件混入）
+    s = unicodedata.normalize('NFKC', s)
+    return re.sub(r'[\s　・／/＜＞<>「」『』（）()【】’\'"!！\-—]', '', s).lower()
 # build set of existing artist/name tokens
 ex_names = set()
 for m in re.finditer(r'"(?:artist|name)"\s*:\s*"([^"]+)"', idx):

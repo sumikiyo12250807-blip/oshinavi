@@ -492,6 +492,10 @@
       background: rgba(129,199,132,0.18);
       color: #2e7d32;
     }
+    .status.ended {
+      background: rgba(0,0,0,0.08);
+      color: #888;
+    }
 
     .card-name {
       font-size: 16px;
@@ -841,18 +845,6 @@
             "verified": true
       },
       {
-            "id": 73,
-            "name": "いばらきフラワーパーク 春バラ",
-            "date": "2026-05-01",
-            "endDate": "2026-06-15",
-            "venue": "いばらきフラワーパーク",
-            "prefecture": "茨城県",
-            "city": "石岡市",
-            "genre": "花",
-            "link": "https://www.flowerpark.or.jp/",
-            "verified": true
-      },
-      {
             "id": 80,
             "name": "第16回 ひぬまあじさいまつり",
             "date": "2026-06-13",
@@ -1076,8 +1068,8 @@
       {
             "id": 121,
             "name": "吉祥寺あじさい弁天まつり",
-            "date": "2026-06-15",
-            "endDate": "2026-06-15",
+            "date": "2026-06-21",
+            "endDate": "2026-06-21",
             "venue": "吉祥寺",
             "prefecture": "栃木県",
             "city": "足利市",
@@ -1264,7 +1256,7 @@
             "id": 143,
             "name": "赤城山 レンゲツツジ",
             "date": "2026-05-25",
-            "endDate": "2026-06-15",
+            "endDate": "2026-06-20",
             "venue": "赤城山各所（大沼湖畔・白樺牧場・覚満淵）",
             "prefecture": "群馬県",
             "city": "前橋市",
@@ -3866,18 +3858,6 @@
             "verified": true
       },
       {
-            "id": 437,
-            "name": "第42回 文京あじさいまつり",
-            "date": "2026-06-07",
-            "endDate": "2026-06-15",
-            "venue": "白山神社・白山公園",
-            "prefecture": "東京都",
-            "city": "文京区",
-            "genre": "花",
-            "link": "https://www.city.bunkyo.lg.jp/b014/p003948.html",
-            "verified": true
-      },
-      {
             "id": 438,
             "name": "東京競馬場花火 2026",
             "date": "2026-07-01",
@@ -4049,8 +4029,8 @@
       {
             "id": 456,
             "name": "高瀬遺跡菖蒲まつり",
-            "date": "2026-06-09",
-            "endDate": "2026-06-15",
+            "date": "2026-06-20",
+            "endDate": "2026-06-20",
             "venue": "高瀬遺跡公園",
             "prefecture": "富山県",
             "city": "南砺市",
@@ -6766,7 +6746,7 @@
       const end = ev.endDate ? new Date(ev.endDate) : new Date(start);
       end.setHours(0, 0, 0, 0);
 
-      if (today > end) return null;
+      if (today > end) return { cls: 'ended', text: '終了' };
       if (today >= start && today <= end) {
         return { cls: 'ongoing', text: '開催中' };
       }
@@ -6932,7 +6912,12 @@
     function init() {
       const container = document.getElementById('cards');
       const visible = EVENTS.filter(e => e.verified === true && getStatus(e) !== null)
-        .sort((a, b) => (a.endDate || a.date).localeCompare(b.endDate || b.date));
+        .sort((a, b) => {
+          const ae = getStatus(a).cls === 'ended' ? 1 : 0;
+          const be = getStatus(b).cls === 'ended' ? 1 : 0;
+          if (ae !== be) return ae - be;  // 終了は末尾へ
+          return (a.endDate || a.date).localeCompare(b.endDate || b.date);
+        });
 
       const usedSet = new Set();
       visible.forEach(e => {
