@@ -2,10 +2,23 @@
 
 毎朝の作業開始時、必ずこのファイルを先に確認してください。
 
-## ⏰ 翌朝（2026-06-17）必ず確認する案件
-**本日6/16 18:00発売・終了日不明の2件**（`saleEndUnknown:true`付与済→期限切れチェックで「⚠️要再確認」に出る）。発売後にぴあで実際の販売終了日を確認し ticket.date を書き換える（売切なら削除）。発売前形(startDate=date=6/16)のままなので販売中形への変換も：
-- **id778 THE ORAL CIGARETTES（宮城8/5公演）** … ぴあ eventCd=2623748（プリセール）
-- **id793 BABYMONSTER（大阪9/22・9/23公演）** … ぴあ eventCd=2623789（ぴあ先行・先着）
+## ⏰ 次回（2026-06-18以降）必ず確認する案件 ★6/17マツコ作業の中断状態
+
+### 🚨 最優先：未pushの作業が2つ溜まってる（ユーザーレビュー→commit/push待ち）
+1. **朝の期限切れ整理 = commit済(8ea2a0e)・未push**：販売中4件復元(292 WILD BUNCH/294 曲がれスプーン/778 THE ORAL CIGARETTES/793 BABYMONSTER)・芹澤優(428)を大阪12/6プリセール発売前形に差替・削除(index:三木大雲178/JANET320、events:南魚沼171/札幌まつり300/ささゆり743)・マグロック408残置(抽選中)。index 595→593件
+2. **発売前スイープ投入 = 未commit・未push（検証済・コブクロ統合済・ジャンル再振り分け＋ai.html再生成が残）**：id855〜936投入後、検証＆コブクロ整理で **index 674件**・genre:"new" **81件**。verified:true。
+   - ✅ **⚠️相談3件は全件残す決定**(6/17ユーザーOK)：id861 SMAミュージックペア・id868 KYUHYUN・id866 可憐なアイボリー。3件ともぴあで**当日引換券が販売受付中**確認済。締切過ぎたら朝チェックで自然削除
+   - ✅ **82件 全件検証完了(6/17・親が独立再取得で突合)**：日付/会場/県/CD/発売時刻の事実エラーほぼ無し。872/924/868はエージェントの「販売終了」誤読で実データ正だった(救済)。**適用した修正**: id887 ev.date 6/17→7/9 / id882 締切〜8/26→〜8/25 23:59 / 本日発売8件を販売中形に(id859/860/865/904/909/918/919/920) / id856 Arche 2枠→saleUntilSoldOut。id895たっくんは時刻曖昧(6/17 20:00 or 6/22当日)で据え置き→**翌朝再チェック**。backup=index.html.bak_0617_verify_fixes
+   - ✅ **コブクロを全国ツアー1エントリに統合(6/17・ユーザー指摘)**：id874=「コブクロ KOBUKURO LIVE TOUR 2026」venue=全国ツアー・4公演バッジ(石川7/31・8/1／広島9/4・5／香川9/24・25／北海道9/29・30)・**各ticketに会場別pia url**(2620913/2623253/2619864/2617470)。**堺(id873)は完売で削除**・追加した937/938/939も統合で削除。下部購入ボタンは uniqTicketUrls>1 で自動非表示。他公演(八王子/福岡/仙台/愛知/大阪城/ぴあアリーナMM)はまだぴあ未掲載→出たらurl貰って追加。コブクロのジャンル=jpop
+   - ⏳ **ジャンル振り分けは下書き済だが一旦new状態(ユーザー新着レビュー途中)**：**ユーザーOK後に `python tmp/apply_genres.py` で再適用→ai.html再生成→commit/push**。案: idol/rock/fes/jpop/jazz/classic/kpop/enka/dento。両方方式4件=899ちゃんみな(jpop+hiphop)/922 Rei(jpop+rock)/903 TOKAI ROCK FES(rock+fes)/907なにわブルースフェス(rock+fes)。apply/revert_genres.pyで切替可。※apply_genres.pyはgenre_table.tsv(id→genre)参照。削除済873/937/938/939は無視され問題なし
+   - ⚠️ **ai.html は最新状態で未再生成**（674件・コブクロ統合後）。commit前に必ず `python tools/build_ai_page.py`
+   - 投入元/作業データ残置: tmp/built_*.json, tmp/apply_genres.py, tmp/revert_genres.py, tmp/apply_fixes.py, tmp/add_kobukuro.py, tmp/consolidate_kobukuro.py, tmp/vout/(検証結果)
+
+### 🐢 初回表示が重い（index.html 939KB）→ ✅軽い改善(案1)適用済(6/17)
+- 症状：ページを開いた直後（初回表示）がモッサリ。82件追加で939KBに肥大したのが引き金
+- ✅ **案1適用(6/17・ユーザーOK)**：①BATCH_SIZE 50→24(初回描画カード数を削減・残りはスクロール追加読み込みで従来通り) ②広告バナー画像(トリバゴ/楽天トラベル, fixed-banner)に `loading="lazy" decoding="async"` 付与。**データは1件も削らず初回表示だけ軽量化**。1×1トラッキングピクセルは成果計測用で非変更
+- ⏳ **ユーザーがブラウザで体感チェック→改善実感あればpush可**。まだ重ければ案2(データ別ファイル分離・半日仕事)を検討
+- ★push前に必ずブラウザ確認(feedback_check_before_push)
 
 ## 🚧 継続中：全エントリのT-SQUARE標準形化（2026-06-13開始・大仕事）
 **目的**：全503件のticketsを標準形「販売種別（県名 公演日公演）〜M/D HH:MM」に統一（非標準332件→各ソースをWebFetch実取得して組み直す。showSalePeriod廃止）。
