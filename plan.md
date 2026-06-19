@@ -4,9 +4,20 @@
 
 ## ⏰ 次回（2026-06-20以降）必ず確認する案件 ★6/19マツコ作業の中断状態
 
-> 🟢 **6/19 全作業完了→commit/push実施**：index **709件** / events **478件**。新着プール**0件**。①朝の期限切れ整理(復元6/削除9) ②音楽新着77件 全数監査(独立再導出→14件修正) ③音楽ジャンル振り分け77件適用 ④**演劇・舞台 発売前スイープ第1弾50件投入→独立検証→キーウ等4件修正→48件(2件統合削除)ジャンル適用**(engeki20/owarai25/classic2/dento1) ⑤バッジ公演日オレンジ強調を全件修正(highlightShowDate強化＋略記47件直し＋`tools/check_badges.py`新設)。ai.html/SSR/sitemap再生成(707 tickets)。**push本日1回目実施。**
+> 🟢 **6/19 1回目push済み(709件時点)→その後さらに大量作業・未commit/未push**：現在 index **803件** / events **478件**。**新着プール50件(演劇第3弾 id1037-1086・genre:"new"・NEW_ORDER設定済・ユーザーレビュー前)**。
 >
-> **次回(6/20)**: ①朝の期限切れチェック(348浜崎/425milet残置・本日発売の発売前→販売中変換多数あり) ②演劇 発売前スイープ第2弾(候補残り約154件・`tmp/theater_dedup.json`の51件目以降) ③バッジ投入前は必ず`python tools/check_badges.py`
+> **★今日の最大の成果＝取りこぼし根絶の新方式を確立(恒久ツール化)**：WebFetch要約をやめHTML機械パースに切替。`tools/pia_tickets.py`(全券種抽出)＋`tools/build_pia_entries.py`(候補JSON→T-SQUAREエントリ一括)＋`tools/check_badges.py`(投入前ゲート)。詳細 memory [[reference_pia_tickets_tool]]。第3弾50件はこの新方式で構築済み。
+>
+> **6/19の作業履歴**：①朝の期限切れ整理(復元6/削除9・push済) ②音楽新着77件監査→14修正→ジャンル適用(push済) ③演劇第1弾48件 投入・検証・ジャンル適用(engeki20/owarai25/classic2/dento1) ④演劇第2弾48件 投入・全数独立検証→取りこぼし7件修正(988/1006/1016/1025/1026/1032/1033)・ハリポタ5→1統合・ジャンル適用(engeki18/owarai20/dento5/classic1) ⑤バッジ表示改修(highlightShowDate全角半角/カッコ外対応・略記完全形化・複数県は全県小さい字`.badge-pref`/shrinkPrefList) ⑥**新方式で演劇第3弾50件構築(genre:"new"でレビュー待ち)**。
+>
+> **次回(6/20)最優先**：
+> 1. **演劇第3弾50件(1037-1086)をユーザーレビュー→ジャンル適用**(`tmp/genre_table_theater3.tsv`参照、apply_genres系で。下書き engeki/owarai/dento/classic)→新着プール空に
+> 2. **未commit/未pushが大量に溜まってる**(演劇第1〜3弾・各種修正・新ツール・表示改修)。レビュー後 ai.html再生成→commit→push(本日2回目で上限)
+> 3. 朝の期限切れチェック(348浜崎/425milet残置・本日発売の発売前→販売中変換)
+> 4. 演劇第4弾(候補 `tmp/theater_dedup.json` の151件目以降。**新方式 build_pia_entries.py で**)
+> 5. **新着投入は必ず新方式**：候補を`[{newid,artist,urls}]`にして`python tools/build_pia_entries.py 候補.json`→投入前`python tools/check_badges.py`。旧WebFetch要約方式は使わない
+>
+> **未検証の宿題**：第3弾(1037-1086)はまだユーザー目視レビューしてない(マツコの新方式構築のみ)。1069は売切でskip。表示改修(badge-pref等)はブラウザ確認待ち。
 
 ### 📌 6/19朝にやったこと（commit/push全部まだ）
 - **期限切れ復元6件**（実は販売中→全件WebFetch確認し標準形に修正）：110ボボボーボ(当日引換券〜6/21 9:00)／115 FRUITS ZIPPER(当日引換券愛知〜6/24＋プレリザーブ兵庫福岡〜6/21)／337 DRAGON PONY(一般〜6/20)／428芹澤優(プリセール大阪〜6/25)／602青木隆治(青森岩手福島一般〜10/22＋岡山広島山口saleUntilSoldOut)／876斉藤和義(2次プレリザーブ北海道〜6/24 11:00)
