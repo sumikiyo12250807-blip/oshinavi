@@ -43,9 +43,21 @@ def parse_cards(h):
         if 'ticketSalesCard-2024__status' not in it: continue
         g = lambda p: (re.search(p, it, re.S).group(1) if re.search(p, it, re.S) else '')
         dts = re.findall(r'datetime="(\d{4}-\d{2}-\d{2})', it)
-        stat = re.search(r'__status (is-\w+)">(.*?)(?:<br|</p>)', it, re.S)
+        stat = re.search(r'__status (is-[\w-]+)">(.*?)(?:<br|</p>)', it, re.S)
+        cls = stat.group(1) if stat else ''
         stt = txt(stat.group(2)) if stat else ''
-        state = '受付中' if re.search(r'(販売期間中|受付中)', stt) else ('発売前' if '発売前' in stt else '受付終了')
+        # ステータスは【HTMLクラス】基準で判定（文言ゆれに強い）。
+        # is-active=受付中 / is-before=発売前(「まもなく抽選受付」等の先行も拾う) / それ以外=対象外。
+        # ただし売切・終了・結果発表は文言でも明示除外（クラスがactive/beforeでも保険）。
+        # ※2026-06-20: 「まもなく抽選受付」(is-before)を受付終了と誤判定しプレリザーブ3枠ドロップした反省。
+        if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|終了しました|結果発表)', stt):
+            state = '受付終了'
+        elif cls == 'is-active' or re.search(r'(販売期間中|受付中)', stt):
+            state = '受付中'
+        elif cls == 'is-before' or '発売前' in stt or 'まもなく' in stt:
+            state = '発売前'
+        else:
+            state = '受付終了'
         place = txt(g(r'__place"[^>]*>(.*?)</span>'))
         region = txt(g(r'__region">(.*?)</span>'))
         prefs = extract_prefs(region, place)   # 複数県は __place に「県／県／…」で入る
@@ -78,6 +90,12 @@ def parse_when(state, when):
         if m:
             iso = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"; t = m.group(4)
             return (f"{int(m.group(2))}/{int(m.group(3))} {t}発売" if t else f"{int(m.group(2))}/{int(m.group(3))}発売"), iso, iso
+        # プレリザーブ/抽選受付など「START(日 時) ～ END」レンジ形 → STARTを受付開始(発売)日に
+        # 例: "2026/6/20(土) 11:00 ～ 2026/6/28(日) 23:59"
+        m2 = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*(\d{1,2}:\d{2})?\s*～', when)
+        if m2:
+            iso = f"{m2.group(1)}-{int(m2.group(2)):02d}-{int(m2.group(3)):02d}"; t = m2.group(4)
+            return (f"{int(m2.group(2))}/{int(m2.group(3))} {t}発売" if t else f"{int(m2.group(2))}/{int(m2.group(3))}発売"), iso, iso
     else:
         m = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*(?:昼|夜|朝|午前|午後)?(\d{1,2}:\d{2})?', when)
         if m:
@@ -86,16 +104,57 @@ def parse_when(state, when):
     return None, None, None
 
 def genre_of(n):
+    """名前ベースのジャンル推測（bundleページ等でぴあカテゴリが取れない時のフォールバック）。"""
     if re.search(r'落語|寄席|独演会|二人会|お笑い|漫才|ものまね|コント|新喜劇|喜劇|講談|演芸', n): return 'owarai'
     if re.search(r'狂言|能楽|文楽|歌舞伎|雅楽|邦楽', n): return 'dento'
     if re.search(r'バレエ|オペラ|クラシック|交響|管弦|フィル', n): return 'classic'
+    if re.search(r'ミュージカル', n): return 'musical'
     return 'engeki'
 
+# ぴあ個別公演ページの <title> 末尾 [カテゴリ サブカテゴリ] → OSHINAVIジャンル(主, 追加)
+# 2026-06-20 演劇50件で実証・ユーザー確定。memory: project_vendor_genre_autoassign
+PIA_GENRE_MAP = {
+    # 演劇カテゴリ
+    '寄席・お笑い': ('owarai', None),
+    '歌舞伎・古典芸能': ('dento', None),
+    'バレエ・ダンス': ('classic', 'engeki'),   # バレエ=classic+engeki両方方式
+    '人形劇・キャラクター': ('kids', None),
+    'ミュージカル・ショー': ('musical', None),
+    '朗読・リーディング': ('engeki', None),
+    '演劇': ('engeki', None),
+    '演劇その他': ('engeki', None),
+    # 音楽カテゴリ（粒度はぴあ依存・J-POP・ROCKは粗いので人が最終判断）
+    'ジャズ・フュージョン': ('jazz', None),
+    '演歌・邦楽': ('enka', None),
+    'クラシック': ('classic', None),
+    'J-POP・ROCK': ('jpop', None),
+    '音楽その他': ('fes', None),
+}
+# トップカテゴリ単位のフォールバック
+PIA_CAT_FALLBACK = {'スポーツ': ('sports', None)}
+
+def pia_subcat(h):
+    """HTMLの<title>から (カテゴリ, サブカテゴリ) を抽出。bundleページ等で取れなければ None。"""
+    m = re.search(r'<title>([^<]*)</title>', h or '')
+    if not m: return None
+    title = _html.unescape(m.group(1))
+    mc = re.search(r'\[([^\]\s]+)\s+(.+?)のチケット', title)
+    return (mc.group(1), mc.group(2)) if mc else None
+
+def genre_from_subcat(cat, sub):
+    """ (カテゴリ,サブ) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
+    if sub and sub in PIA_GENRE_MAP: return PIA_GENRE_MAP[sub]
+    if sub:
+        for k, v in PIA_GENRE_MAP.items():
+            if k in sub or sub in k: return v
+    return PIA_CAT_FALLBACK.get(cat)
+
 def build(cand):
-    allrows = []
+    allrows, htmls = [], []
     for u in cand['urls']:
         try:
-            allrows += parse_cards(fetch(u)); time.sleep(0.25)
+            h = fetch(u); htmls.append(h)
+            allrows += parse_cards(h); time.sleep(0.25)
         except Exception:
             pass
     buy = [r for r in allrows if r['state'] in ('受付中', '発売前')]
@@ -132,8 +191,26 @@ def build(cand):
         dl = f"{jp(starts[0])}〜{jp(ends[-1])} {tail}".strip()
     u0 = cand['urls'][0]
     pia = ('https://t.pia.jp/pia/event/event.do?eventBundleCd=' + re.search(r'eventBundleCd=(\w+)', u0).group(1)) if 'eventBundleCd' in u0 else ecd_url(u0)
+    # ジャンル下ごしらえ: ぴあカテゴリ優先 → 取れなければ個別ページを1つ引く → それでも無ければ名前ベース
+    pg, sub_used = None, ''
+    for h in htmls:
+        sc = pia_subcat(h)
+        if sc and genre_from_subcat(*sc):
+            pg, sub_used = genre_from_subcat(*sc), f"{sc[0]}/{sc[1]}"; break
+    if not pg:  # bundleページはサブカテゴリ無し → 個別eventCdページを1つ引いて再試行
+        for r in rows:
+            eu = ecd_url(r.get('url'))
+            if not eu: continue
+            try:
+                sc = pia_subcat(fetch(eu)); time.sleep(0.2)
+            except Exception:
+                sc = None
+            if sc and genre_from_subcat(*sc):
+                pg, sub_used = genre_from_subcat(*sc), f"{sc[0]}/{sc[1]}"; break
+    main_genre, extra = pg if pg else (genre_of(cand['artist']), None)
     return {'id': cand['newid'], 'artist': cand['artist'], 'name': cand['artist'], 'date': ends[-1],
-            'dateLabel': dl, 'venue': venue, 'prefecture': pref, 'genre': 'new', '_genre': genre_of(cand['artist']),
+            'dateLabel': dl, 'venue': venue, 'prefecture': pref, 'genre': 'new',
+            '_genre': main_genre, '_extraGenres': [extra] if extra else [], '_piaSub': sub_used,
             'price': None, 'links': {'rakuten': None, 'lawson': None, 'pia': pia, 'eplus': None},
             'tickets': tickets, 'verified': True, 'verifiedAt': datetime.date.today().isoformat()}
 
