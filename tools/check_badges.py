@@ -26,6 +26,9 @@ ng = []
 for e in data:
     if not ALL and e.get('genre') != 'new':
         continue
+    # verified欠落チェック（verified!==trueだと matchEvent が新着タブから除外する）
+    if e.get('verified') is not True:
+        ng.append((e['id'], e.get('name', '')[:24], '(エントリ全体)', 'verified:true が無い→新着タブに出ない'))
     for t in e.get('tickets', []):
         b = badge(t.get('type', ''))
         reasons = []
