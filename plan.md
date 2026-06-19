@@ -2,16 +2,40 @@
 
 毎朝の作業開始時、必ずこのファイルを先に確認してください。
 
-## ⏰ 次回（2026-06-18以降）必ず確認する案件 ★6/17マツコ作業の中断状態
+## ⏰ 次回（2026-06-20以降）必ず確認する案件 ★6/19マツコ作業の中断状態
 
-### 🚨 最優先：未pushの作業が2つ溜まってる（ユーザーレビュー→commit/push待ち）
-1. **朝の期限切れ整理 = commit済(8ea2a0e)・未push**：販売中4件復元(292 WILD BUNCH/294 曲がれスプーン/778 THE ORAL CIGARETTES/793 BABYMONSTER)・芹澤優(428)を大阪12/6プリセール発売前形に差替・削除(index:三木大雲178/JANET320、events:南魚沼171/札幌まつり300/ささゆり743)・マグロック408残置(抽選中)。index 595→593件
-2. **発売前スイープ投入 = 未commit・未push（検証済・コブクロ統合済・ジャンル再振り分け＋ai.html再生成が残）**：id855〜936投入後、検証＆コブクロ整理で **index 674件**・genre:"new" **81件**。verified:true。
+> 🟢 **6/19 全作業完了→commit/push実施**：index **709件** / events **478件**。新着プール**0件**。①朝の期限切れ整理(復元6/削除9) ②音楽新着77件 全数監査(独立再導出→14件修正) ③音楽ジャンル振り分け77件適用 ④**演劇・舞台 発売前スイープ第1弾50件投入→独立検証→キーウ等4件修正→48件(2件統合削除)ジャンル適用**(engeki20/owarai25/classic2/dento1) ⑤バッジ公演日オレンジ強調を全件修正(highlightShowDate強化＋略記47件直し＋`tools/check_badges.py`新設)。ai.html/SSR/sitemap再生成(707 tickets)。**push本日1回目実施。**
+>
+> **次回(6/20)**: ①朝の期限切れチェック(348浜崎/425milet残置・本日発売の発売前→販売中変換多数あり) ②演劇 発売前スイープ第2弾(候補残り約154件・`tmp/theater_dedup.json`の51件目以降) ③バッジ投入前は必ず`python tools/check_badges.py`
+
+### 📌 6/19朝にやったこと（commit/push全部まだ）
+- **期限切れ復元6件**（実は販売中→全件WebFetch確認し標準形に修正）：110ボボボーボ(当日引換券〜6/21 9:00)／115 FRUITS ZIPPER(当日引換券愛知〜6/24＋プレリザーブ兵庫福岡〜6/21)／337 DRAGON PONY(一般〜6/20)／428芹澤優(プリセール大阪〜6/25)／602青木隆治(青森岩手福島一般〜10/22＋岡山広島山口saleUntilSoldOut)／876斉藤和義(2次プレリザーブ北海道〜6/24 11:00)
+- **期限切れ削除9件**（全件WebFetch全販売終了確認→ユーザーOK後削除）：index 8件＝202(110と重複)/371 STEINS;GATE愛知/408マグロック/653阿部真央/778オーラル宮城/861 SMA/868 KYUHYUN/869 CUTIE STREET、events 1件＝120中禅寺講(6/18開催終了)
+- **残置2件**：348浜崎貴司(松江城・「販売再開待ち」で一時停止→明日再確認)／425 milet(方針残置)
+- **ロングラン健全確認**：72アナ雪(saleUntilSoldOut全月受付中)・137ゴースト(締切8/5未来)→差し替え不要
+- バックアップ：index.html.bak_0619_morning_expired / events.html.bak_0619_morning_expired
+- **新着プール77件スキャン済**：締切間近33件あるが真の売切消滅はゼロ（6/19締切に見える6件=本日発売スタートの発売前、935/923/933=先行終了だが一般発売7月に残存）。ジャンル振り分け案は提示済(jpop18/rock24/idol8/jazz11/enka5/classic4/dento4/fes3、両方方式4件=899/922/903/907)→ユーザーレビュー待ち
+
+### 📌 6/18朝にやったこと（commit/pushはまだ＝レビュー終わってからまとめて上げる）
+- **期限切れ削除 7件**（全件WebFetch確認済→ユーザーOK後削除）：
+  - index 5件削除＝奇妙礼太郎(127)/Courtney Barnett(151)/たっくん(895)/KISS OF LIFE(340)/映画ラブライブ蓮ノ空 舞台挨拶(410)
+  - events 2件削除＝山王祭(436)/率川神社 三枝祭(744)
+  - → index 674→669件 / events 481→479件（※6/19朝にさらに復元6/削除9で661/478に）
+- **救済復元 2件**（実は販売中だった）：
+  - 735 藤澤ノリマサ → 発売前形を「一般発売（東京 8/22公演）〜8/18 23:59」販売中形に変換
+  - 215 ULTRA JAPAN → 公式「絶賛発売中」確認、saleUntilSoldOut形＋saleEndUnknown:trueで復元
+- **残置**：milet(425)＝ツアーbundle再構築待ちで毎朝出続けるが消さない（方針通り）
+- **id895たっくんの宿題決着**：時刻曖昧だった件→ぴあ「予定枚数終了」確認で削除済
+- バックアップ：`index.html.bak_0618_morning_expired` / `events.html.bak_0618_morning_expired`
+
+### 🚨 最優先：未pushの作業が溜まってる（ユーザーレビュー→commit/push待ち）
+1. **6/18朝の期限切れ整理（上記）＝未commit・未push**
+2. **発売前スイープ投入 = 未commit・未push（検証済・コブクロ統合済・ジャンル再振り分け＋ai.html再生成が残）**：id855〜936投入後、検証＆コブクロ整理＋6/18期限切れ整理で **index 669件**・genre:"new" **81件**。verified:true。
    - ✅ **⚠️相談3件は全件残す決定**(6/17ユーザーOK)：id861 SMAミュージックペア・id868 KYUHYUN・id866 可憐なアイボリー。3件ともぴあで**当日引換券が販売受付中**確認済。締切過ぎたら朝チェックで自然削除
    - ✅ **82件 全件検証完了(6/17・親が独立再取得で突合)**：日付/会場/県/CD/発売時刻の事実エラーほぼ無し。872/924/868はエージェントの「販売終了」誤読で実データ正だった(救済)。**適用した修正**: id887 ev.date 6/17→7/9 / id882 締切〜8/26→〜8/25 23:59 / 本日発売8件を販売中形に(id859/860/865/904/909/918/919/920) / id856 Arche 2枠→saleUntilSoldOut。id895たっくんは時刻曖昧(6/17 20:00 or 6/22当日)で据え置き→**翌朝再チェック**。backup=index.html.bak_0617_verify_fixes
    - ✅ **コブクロを全国ツアー1エントリに統合(6/17・ユーザー指摘)**：id874=「コブクロ KOBUKURO LIVE TOUR 2026」venue=全国ツアー・4公演バッジ(石川7/31・8/1／広島9/4・5／香川9/24・25／北海道9/29・30)・**各ticketに会場別pia url**(2620913/2623253/2619864/2617470)。**堺(id873)は完売で削除**・追加した937/938/939も統合で削除。下部購入ボタンは uniqTicketUrls>1 で自動非表示。他公演(八王子/福岡/仙台/愛知/大阪城/ぴあアリーナMM)はまだぴあ未掲載→出たらurl貰って追加。コブクロのジャンル=jpop
    - ⏳ **ジャンル振り分けは下書き済だが一旦new状態(ユーザー新着レビュー途中)**：**ユーザーOK後に `python tmp/apply_genres.py` で再適用→ai.html再生成→commit/push**。案: idol/rock/fes/jpop/jazz/classic/kpop/enka/dento。両方方式4件=899ちゃんみな(jpop+hiphop)/922 Rei(jpop+rock)/903 TOKAI ROCK FES(rock+fes)/907なにわブルースフェス(rock+fes)。apply/revert_genres.pyで切替可。※apply_genres.pyはgenre_table.tsv(id→genre)参照。削除済873/937/938/939は無視され問題なし
-   - ⚠️ **ai.html は最新状態で未再生成**（674件・コブクロ統合後）。commit前に必ず `python tools/build_ai_page.py`
+   - ⚠️ **ai.html は最新状態で未再生成**（669件・6/18期限切れ整理後）。commit前に必ず `python tools/build_ai_page.py`
    - 投入元/作業データ残置: tmp/built_*.json, tmp/apply_genres.py, tmp/revert_genres.py, tmp/apply_fixes.py, tmp/add_kobukuro.py, tmp/consolidate_kobukuro.py, tmp/vout/(検証結果)
 
 ### 🐢 初回表示が重い（index.html 939KB）→ ✅軽い改善(案1)適用済(6/17)
