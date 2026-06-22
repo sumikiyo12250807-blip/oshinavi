@@ -130,8 +130,8 @@ PIA_GENRE_MAP = {
     'J-POP・ROCK': ('jpop', None),
     '音楽その他': ('fes', None),
 }
-# トップカテゴリ単位のフォールバック
-PIA_CAT_FALLBACK = {'スポーツ': ('sports', None)}
+# トップカテゴリ単位のフォールバック（サブカテゴリがMAP未収載の時）
+PIA_CAT_FALLBACK = {'スポーツ': ('sports', None), 'クラシック': ('classic', None)}
 
 def pia_subcat(h):
     """HTMLの<title>から (カテゴリ, サブカテゴリ) を抽出。bundleページ等で取れなければ None。"""
