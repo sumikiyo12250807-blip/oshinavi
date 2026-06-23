@@ -90,6 +90,17 @@ def is_expired_index(ev: dict, today: date) -> list:
     return reasons
 
 
+def perf_is_future(ev: dict, today: date) -> bool:
+    """公演日(ev.date)が today 以降（未来 or 当日）なら True。
+    日付が壊れている/不明なら「未来扱い(=保留側)」にして安全側に倒す。
+    """
+    ev_date = ev.get('date', '')
+    try:
+        return date.fromisoformat(ev_date) >= today
+    except ValueError:
+        return True
+
+
 def fmt_event_entry(ev: dict, reasons: list) -> str:
     artist = ev.get('artist', '?')
     title = ev.get('title') or ev.get('event') or ev.get('name') or '?'
@@ -112,17 +123,30 @@ def main():
     idx_events = extract_events_array('index.html')
     idx_flagged = [(ev, is_expired_index(ev, today)) for ev in idx_events]
     idx_flagged = [(ev, r) for ev, r in idx_flagged if r]
-    # saleEndUnknown=true は「削除」せず「要再確認」に回す。
-    # （販売終了日が不明で date に開始日等の仮置きをしているもの。売り場URLで本当の終了日を確認して date を書き換える）
-    idx_delete = [(ev, r) for ev, r in idx_flagged if not ev.get('saleEndUnknown')]
-    idx_recheck = [(ev, r) for ev, r in idx_flagged if ev.get('saleEndUnknown')]
-    out.append(f"\n[index.html] 全{len(idx_events)}件 → 期限切れ削除 {len(idx_delete)}件 / ⚠️要再確認(販売終了日不明) {len(idx_recheck)}件")
+    # 「削除候補」と「⚠️要再確認(保留)」に振り分ける。
+    # 要再確認に回す条件（機械判定だけで削除しない）:
+    #   (a) saleEndUnknown=true … 販売終了日が不明で date に開始日等の仮置きをしているもの
+    #   (b) 公演日(ev.date)がまだ未来 … 記録済みの販売枠が過ぎただけで、新しい販売枠
+    #       （一般発売・コンビニ/ファミマ先行・当日券・リセール）が後から開く可能性が高い。
+    #       しかも販売枠は当日の日中に開くので、朝の機械スナップショットでは枠ゼロに見えることがある。
+    #       → 必ずWebFetchで再導出してから判断（2026-06-23 680私立恵比寿中学ファミマ先行を
+    #         削除候補にしかけた事故の恒久対策。memory: feedback_pre_delete_webfetch_verify）
+    # 削除候補に残るのは「公演も終わっている(ev.date < today)・かつ全販売終了」だけ。
+    idx_delete, idx_recheck = [], []
+    for ev, r in idx_flagged:
+        if ev.get('saleEndUnknown') or perf_is_future(ev, today):
+            idx_recheck.append((ev, r))
+        else:
+            idx_delete.append((ev, r))
+    out.append(f"\n[index.html] 全{len(idx_events)}件 → 期限切れ削除候補(公演終了済) {len(idx_delete)}件 / ⚠️要再確認(公演は未来・要WebFetch) {len(idx_recheck)}件")
     for ev, r in idx_delete:
         out.append(fmt_event_entry(ev, r))
         for t in ev.get('tickets', []) or []:
             out.append(f"     - {t.get('type','?')}: {t.get('date','?')} soldout={t.get('soldout', False)}")
     if idx_recheck:
-        out.append("\n  ⚠️ 以下は saleEndUnknown=true。削除せず、売り場URLで終了日を確認し date を書き換えること（買えなければ削除）:")
+        out.append("\n  ⚠️ 以下は「公演がまだ未来」or saleEndUnknown=true。機械判定だけで削除しないこと。")
+        out.append("     売り場URLをWebFetchで実態確認 → 新販売枠(一般/コンビニ先行/当日券)が出ていれば該当ticketを追加して変換、")
+        out.append("     予定枚数終了/中止が確定したものだけ削除（抽選結果待ち・一般未発表は残置）:")
         for ev, r in idx_recheck:
             out.append(fmt_event_entry(ev, r))
             lk = ev.get('links', {}) or {}
