@@ -41,6 +41,8 @@ for e in data:
         # 正常な type は「券種名（県 M/D公演）…」。県名(漢字)の前に全角／や数字が来たら化け。
         if '／' in typ:
             reasons.append('券種名に全角／残存(kenshuパース化け)')
+        if re.search(r'[【〔［＜]', typ):
+            reasons.append('券種名に角/山カッコ【〔［＜残存(kenshu化け)')
         if re.search(r'（[０-９0-9]', typ):
             reasons.append('（の直後が数字＝券種名化け疑い')
         if typ.count('（') != typ.count('）'):
