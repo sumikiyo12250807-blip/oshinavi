@@ -37,6 +37,13 @@ def md(iso): _, m, d = iso.split('-'); return f"{int(m)}/{int(d)}"
 def ecd_url(u):
     mm = re.search(r'eventCd=(\w+)', u or ''); return 'https://t.pia.jp/pia/event/event.do?eventCd=' + mm.group(1) if mm else None
 
+def src_event_url(u):
+    """候補の元URL(eventCd or eventBundleCd)から、その公演ページの event.do URL を作る。
+    抽選券(lotRlsCd hrefでeventCd無し)に「由来ページ」のurlを付けてボタン誤誘導を防ぐため。"""
+    mb = re.search(r'eventBundleCd=(\w+)', u or '')
+    if mb: return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
+    return ecd_url(u)
+
 def parse_cards(h):
     rows = []
     for it in re.split(r'(?=<li class="ticketSalesList-2024__item)', h):
@@ -79,25 +86,28 @@ def parse_cards(h):
 
 def kenshu(title):
     t = re.sub(r'＜.*?＞', '', title)  # ＜...＞内に／がある場合があるので先に除去
+    # （９／２２公演）等の公演日カッコも除去。中の全角／を区切りと誤認して「一般発売（９」に
+    # 化けるのを防ぐ(2026-06-23 JUJU北海道で発覚)。type側で（県 M/D公演）を付け直すので不要。
+    t = re.sub(r'（[^（）]*公演[^（）]*）', '', t)
     if '／' in t:
-        return t.split('／')[0].strip('　 ').strip() or '一般発売'
+        return t.split('／')[0].strip('　 .・').strip() or '一般発売'
     m = re.search(r'(プレイガイド最速先行|最速先行|オフィシャル先行|\d次プレリザーブ|プレリザーブ\d次|プレリザーブ|\d次受付|プリセール|一般発売|当日引換券|当日券|先行)', t)
     return m.group(1) if m else '先行'
 
 def parse_when(state, when):
     if state == '発売前':
-        m = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*(?:昼|夜|朝|午前|午後)?(\d{1,2}:\d{2})?\s*より発売', when)
+        m = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?\s*より発売', when)
         if m:
             iso = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"; t = m.group(4)
             return (f"{int(m.group(2))}/{int(m.group(3))} {t}発売" if t else f"{int(m.group(2))}/{int(m.group(3))}発売"), iso, iso
         # プレリザーブ/抽選受付など「START(日 時) ～ END」レンジ形 → STARTを受付開始(発売)日に
         # 例: "2026/6/20(土) 11:00 ～ 2026/6/28(日) 23:59"
-        m2 = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*(\d{1,2}:\d{2})?\s*～', when)
+        m2 = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?\s*～', when)
         if m2:
             iso = f"{m2.group(1)}-{int(m2.group(2)):02d}-{int(m2.group(3)):02d}"; t = m2.group(4)
             return (f"{int(m2.group(2))}/{int(m2.group(3))} {t}発売" if t else f"{int(m2.group(2))}/{int(m2.group(3))}発売"), iso, iso
     else:
-        m = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*(?:昼|夜|朝|午前|午後)?(\d{1,2}:\d{2})?', when)
+        m = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?', when)
         if m:
             iso = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"; t = m.group(4)
             return (f"〜{int(m.group(2))}/{int(m.group(3))} {t}" if t else f"〜{int(m.group(2))}/{int(m.group(3))}"), iso, None
@@ -154,7 +164,11 @@ def build(cand):
     for u in cand['urls']:
         try:
             h = fetch(u); htmls.append(h)
-            allrows += parse_cards(h); time.sleep(0.25)
+            cards = parse_cards(h)
+            su = src_event_url(u)
+            for c in cards:
+                c['_src'] = su          # このカードが載っていた公演ページ(eventCd/bundle)を記録
+            allrows += cards; time.sleep(0.25)
         except Exception:
             pass
     buy = [r for r in allrows if r['state'] in ('受付中', '発売前')]
@@ -168,8 +182,11 @@ def build(cand):
     prefs = list(dict.fromkeys(p for r in rows for p in r['prefs']))
     starts = sorted(r['perfdate'] for r in rows if r['perfdate'])
     ends = sorted((r.get('perf_end') or r['perfdate']) for r in rows if r['perfdate'])
-    ecds = set(re.search(r'eventCd=(\w+)', r['url']).group(1) for r in rows if r.get('url') and re.search(r'eventCd=(\w+)', r['url']))
-    multi = len(ecds) > 1
+    # multi=「買える券種が複数の公演ページ(eventCd/bundle)由来」。この時だけ各ticketに会場別url
+    # を付ける(=下のベンダーボタンを自動非表示にして1会場誤誘導を防ぐ)。単一ページ由来なら
+    # links.pia=その1ページが全券種を載せるのでボタンはそのまま正しく機能する。
+    srcs = set(r.get('_src') for r in rows if r.get('_src'))
+    multi = len(srcs) > 1
     tickets = []
     for r in rows:
         suf, iso, sd = parse_when(r['state'], r['when'])
@@ -179,7 +196,11 @@ def build(cand):
         _pf = '・'.join(r['prefs']) if r['prefs'] else '全国'   # 複数県は全部載せる(字は小さめ表示)。県名取れなければ全国
         t = {'type': f"{kenshu(r['title'])}（{_pf} {mdr}公演）{suf}", 'date': iso}
         if sd: t['startDate'] = sd
-        if multi and ecd_url(r['url']): t['url'] = ecd_url(r['url'])
+        # 抽選券(先行/プレリザーブ)はhrefがlotRlsCdでeventCd無し→由来ページ(_src)のurlで補完。
+        # これで複数会場エントリの全ticketにurlが付き、ボタン誤誘導が消える(2026-06-23恒久修正)。
+        if multi:
+            tu = ecd_url(r['url']) or r.get('_src')
+            if tu: t['url'] = tu
         tickets.append(t)
     tickets.sort(key=lambda t: t['date'])
     venue = venues[0] if len(venues) == 1 else '全国ツアー（' + '／'.join(venues[:4]) + '）'
@@ -214,7 +235,34 @@ def build(cand):
             'price': None, 'links': {'rakuten': None, 'lawson': None, 'pia': pia, 'eplus': None},
             'tickets': tickets, 'verified': True, 'verifiedAt': datetime.date.today().isoformat()}
 
+def _selftest():
+    """過去の取りこぼし/化けバグの回帰防止テスト(2026-06-23)。`python tools/build_pia_entries.py --selftest`"""
+    # ① 時刻プレフィックスは列挙せず「数字/コロン以外は何でも飛ばす」robust方式。
+    #    昼/夜/朝/午前/午後/正午/未知語/プレフィックス無し すべてで脱落しない。
+    cases = [
+        ('発売前', '2026/6/28(日) 昼12:00 ～ 2026/7/12(日) 23:59', '2026-06-28', '6/28 12:00発売'),
+        ('発売前', '2026/6/28(日) 夜18:00 ～ 2026/7/12(日) 23:59', '2026-06-28', '6/28 18:00発売'),
+        ('発売前', '2026/6/28(日) 午前10:00 ～ 2026/7/1(火) 23:59', '2026-06-28', '6/28 10:00発売'),
+        ('発売前', '2026/6/28(日) 13:00 ～ 2026/7/1(火) 23:59', '2026-06-28', '6/28 13:00発売'),  # プレフィックス無し
+        ('発売前', '2026/6/24(水) 11:00 ～ 2026/6/30(火) 11:00', '2026-06-24', '6/24 11:00発売'),
+        ('発売前', '2026/7/25(土) 昼12:00より発売', '2026-07-25', '7/25 12:00発売'),
+        ('発売前', '2026/7/25(土) 14:00より発売', '2026-07-25', '7/25 14:00発売'),
+        ('発売前', '2026/7/25(土) 10:00より発売', '2026-07-25', '7/25 10:00発売'),
+        ('受付中', '～ 2026/10/21(水) 夜23:59', '2026-10-21', '〜10/21 23:59'),
+        ('受付中', '～ 2026/10/21(水) 13:00', '2026-10-21', '〜10/21 13:00'),
+    ]
+    for st, w, exp_iso, exp_suf in cases:
+        suf, iso, sd = parse_when(st, w)
+        assert iso == exp_iso and suf == exp_suf, (w, '→', suf, iso, sd)
+    # ② 全角カッコの公演日「（９／２２公演）」でkenshuが化けない(JUJU北海道)
+    assert kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ')
+    assert kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ')
+    assert kenshu('「奥華子」プレリザーブ') == 'プレリザーブ', kenshu('「奥華子」プレリザーブ')
+    print('selftest OK: parse_when(昼/夜/レンジ/より発売) と kenshu(全角／公演カッコ) 回帰なし')
+
 if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        _selftest(); sys.exit(0)
     cands = json.load(open(sys.argv[1], encoding='utf-8'))
     out, skip = [], []
     for c in cands:

@@ -30,12 +30,21 @@ for e in data:
     if e.get('verified') is not True:
         ng.append((e['id'], e.get('name', '')[:24], '(エントリ全体)', 'verified:true が無い→新着タブに出ない'))
     for t in e.get('tickets', []):
-        b = badge(t.get('type', ''))
+        typ = t.get('type', '')
+        b = badge(typ)
         reasons = []
         if abbr_re.search(b):
             reasons.append('略記/半端範囲(2日目に月なし)')
         if '公演' in b and not date_re.search(b):
             reasons.append('公演バッジなのに公演日(M/D)が無い')   # 例「各公演」→ぴあの期間日付を入れる
+        # kenshuパース化けガード（2026-06-23 JUJU「一般発売（９」事故の恒久検出）。
+        # 正常な type は「券種名（県 M/D公演）…」。県名(漢字)の前に全角／や数字が来たら化け。
+        if '／' in typ:
+            reasons.append('券種名に全角／残存(kenshuパース化け)')
+        if re.search(r'（[０-９0-9]', typ):
+            reasons.append('（の直後が数字＝券種名化け疑い')
+        if typ.count('（') != typ.count('）'):
+            reasons.append('丸カッコ（）が不均衡＝パース化け疑い')
         if reasons:
             ng.append((e['id'], e.get('name', '')[:24], b, ' / '.join(reasons)))
 
