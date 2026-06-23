@@ -173,8 +173,13 @@ def pia_subcat(h):
     mc = re.search(r'\[([^\]\s]+)\s+(.+?)のチケット', title)
     return (mc.group(1), mc.group(2)) if mc else None
 
-def genre_from_subcat(cat, sub):
-    """ (カテゴリ,サブ) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
+# 邦楽(和楽器)を示す語。ぴあの「演歌・邦楽」は演歌(enka)と邦楽(和楽器=dento)を1カテゴリに
+# まとめているので、名前にこれらが含まれれば dento、無ければ enka に分ける(2026-06-23ユーザー指摘)。
+HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|雅楽|民謡|和楽器|邦楽|篠笛|笙|能楽|長唄|常磐津')
+def genre_from_subcat(cat, sub, name=''):
+    """ (カテゴリ,サブ,名前) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
+    if sub and '邦楽' in sub:   # 「演歌・邦楽」→ 和楽器系はdento、それ以外は演歌(enka)
+        return ('dento', None) if HOGAKU_RE.search(name or '') else ('enka', None)
     if sub and sub in PIA_GENRE_MAP: return PIA_GENRE_MAP[sub]
     if sub:
         for k, v in PIA_GENRE_MAP.items():
@@ -244,8 +249,8 @@ def build(cand):
     pg, sub_used = None, ''
     for h in htmls:
         sc = pia_subcat(h)
-        if sc and genre_from_subcat(*sc):
-            pg, sub_used = genre_from_subcat(*sc), f"{sc[0]}/{sc[1]}"; break
+        if sc and genre_from_subcat(*sc, cand['artist']):
+            pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
     if not pg:  # bundleページはサブカテゴリ無し → 個別eventCdページを1つ引いて再試行
         for r in rows:
             eu = ecd_url(r.get('url'))
@@ -254,8 +259,8 @@ def build(cand):
                 sc = pia_subcat(fetch(eu)); time.sleep(0.2)
             except Exception:
                 sc = None
-            if sc and genre_from_subcat(*sc):
-                pg, sub_used = genre_from_subcat(*sc), f"{sc[0]}/{sc[1]}"; break
+            if sc and genre_from_subcat(*sc, cand['artist']):
+                pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
     main_genre, extra = pg if pg else (genre_of(cand['artist']), None)
     links = {'rakuten': None, 'lawson': None, 'pia': pia, 'eplus': None}
     # 音楽系の単独/グループ名義は「最新CD」リンクを自動付与(合同公演／×は除外＝レビューで判断)。
@@ -296,6 +301,10 @@ def _selftest():
     # ③ 「本日発売初日」(is-beforeだが今日から販売中)は受付中扱いで終了日のみ「～7/23」を拾える
     suf, iso, sd = parse_when('受付中', '～ 2026/7/23(木) 23:59')
     assert iso == '2026-07-23' and sd is None, ('本日発売初日(受付中)', suf, iso, sd)
+    # ④ 「演歌・邦楽」カテゴリ: 和楽器名はdento、演歌歌手はenka(邦楽≠演歌・2026-06-23ユーザー指摘)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '徳永ゆうき') == ('enka', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＯの夏フェス 和太鼓') == ('dento', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '津軽三味線コンサート') == ('dento', None)
     print('selftest OK: parse_when(昼/夜/レンジ/より発売) と kenshu(全角／公演カッコ) 回帰なし')
 
 if __name__ == '__main__':

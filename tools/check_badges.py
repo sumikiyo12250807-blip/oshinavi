@@ -39,14 +39,14 @@ for e in data:
             reasons.append('公演バッジなのに公演日(M/D)が無い')   # 例「各公演」→ぴあの期間日付を入れる
         # kenshuパース化けガード（2026-06-23 JUJU「一般発売（９」事故の恒久検出）。
         # 正常な type は「券種名（県 M/D公演）…」。県名(漢字)の前に全角／や数字が来たら化け。
-        if '／' in typ:
+        head = typ.split('（')[0]   # 券種名部分(最初の（より前)。県/詳細の正規／は（…）内なので除外
+        if '／' in head:
             reasons.append('券種名に全角／残存(kenshuパース化け)')
-        if re.search(r'[【〔［＜]', typ):
-            reasons.append('券種名に角/山カッコ【〔［＜残存(kenshu化け)')
-        if re.search(r'（[０-９0-9]', typ):
-            reasons.append('（の直後が数字＝券種名化け疑い')
-        if typ.count('（') != typ.count('）'):
-            reasons.append('丸カッコ（）が不均衡＝パース化け疑い')
+        # kenshu囲み除去ミスの化け(「一般発売（９（…」「一般発売【６（…」)はカッコ開閉の不均衡で必ず出る。
+        # 〔埼玉〕や「（6/6公演）」等の正規表記は開閉が揃うので誤検出しない(直後数字チェックは過剰で撤去)。
+        for op, cl in (('（', '）'), ('【', '】'), ('〔', '〕'), ('［', '］'), ('＜', '＞')):
+            if typ.count(op) != typ.count(cl):
+                reasons.append(f'{op}{cl}カッコ不均衡＝パース化け疑い')
         if reasons:
             ng.append((e['id'], e.get('name', '')[:24], b, ' / '.join(reasons)))
 
