@@ -128,6 +128,12 @@ def parse_when(state, when):
         if m2:
             iso = f"{m2.group(1)}-{int(m2.group(2)):02d}-{int(m2.group(3)):02d}"; t = m2.group(4)
             return (f"{int(m2.group(2))}/{int(m2.group(3))} {t}発売" if t else f"{int(m2.group(2))}/{int(m2.group(3))}発売"), iso, iso
+        # 終了日だけの形「～ END」で来る先行(本日発売初日の前日等)→ENDを採り販売中形で拾う。
+        # 開始日が読めずNoneで無言ドロップしていた(2026-06-24 琉球フェスFM沖縄先着先行の反省)。
+        m3 = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?', when)
+        if m3:
+            iso = f"{m3.group(1)}-{int(m3.group(2)):02d}-{int(m3.group(3)):02d}"; t = m3.group(4)
+            return (f"〜{int(m3.group(2))}/{int(m3.group(3))} {t}" if t else f"〜{int(m3.group(2))}/{int(m3.group(3))}"), iso, None
     else:
         m = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?', when)
         if m:
@@ -289,6 +295,7 @@ def _selftest():
         ('発売前', '2026/7/25(土) 10:00より発売', '2026-07-25', '7/25 10:00発売'),
         ('受付中', '～ 2026/10/21(水) 夜23:59', '2026-10-21', '〜10/21 23:59'),
         ('受付中', '～ 2026/10/21(水) 13:00', '2026-10-21', '〜10/21 13:00'),
+        ('発売前', '～ 2026/6/24(水) 23:59', '2026-06-24', '〜6/24 23:59'),  # 終了日だけの先行(琉球フェスFM沖縄)→無言ドロップ防止
     ]
     for st, w, exp_iso, exp_suf in cases:
         suf, iso, sd = parse_when(st, w)
