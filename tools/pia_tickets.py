@@ -45,14 +45,19 @@ for it in items:
     _dts = re.findall(r'datetime="(\d{4}-\d{2}-\d{2})', it)
     perf_start = _dts[0] if _dts else ''
     perf_end = _dts[-1] if _dts else ''
-    m_stat = re.search(r'__status (is-\w+)">(.*?)(?:<br|</p>)', it, re.S)
+    m_stat = re.search(r'__status (is-[\w-]+)">(.*?)(?:<br|</p>)', it, re.S)
     m_sdate = re.search(r'__status[^>]*>.*?<br>\s*<span[^>]*>(.*?)</span>', it, re.S)
     stat_text = txt(m_stat.group(2)) if m_stat else ''
+    cls = m_stat.group(1) if m_stat else ''
     sdate = txt(m_sdate.group(1)) if m_sdate else ''
-    # classify by status TEXT (販売終了 も is-before を使うのでクラスだけでは不可)
-    if re.search(r'(販売期間中|受付中)', stat_text):
+    # HTMLクラス＋文言で判定。build_pia_entries.py と同一ロジックに統一(2026-06-24)。
+    # 「本日発売初日」(is-before)を受付終了と取り違えると買える枠を黙って落とす(琉球フェス沖縄の反省)。
+    # 売切・終了・結果発表は文言で先に除外(クラスがactive/beforeでも保険)。
+    if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|終了しました|結果発表)', stat_text):
+        state = '受付終了'
+    elif cls == 'is-active' or re.search(r'(販売期間中|受付中|発売中|販売中|発売初日|本日発売)', stat_text):
         state = '受付中'
-    elif '発売前' in stat_text:
+    elif cls == 'is-before' or '発売前' in stat_text or 'まもなく' in stat_text:
         state = '発売前'
     else:
         state = '受付終了'  # 販売終了/予定枚数終了/抽選受付終了/結果発表前 等
