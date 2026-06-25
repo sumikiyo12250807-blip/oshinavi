@@ -1,4 +1,4 @@
-# トップ(/)は _redirects で events.html への 200 リライト。
+# トップ(/)は _redirects で index.html への 200 リライト（行楽events.html廃止 2026-06-25）。
 # Netlify Edge が古い版を粘着キャッシュし、データ更新が / に反映されない問題への対策。
 # トップだけ Edge キャッシュを無効化して毎回最新を返す。
 /

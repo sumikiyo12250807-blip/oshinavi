@@ -155,13 +155,14 @@ def main():
             for t in ev.get('tickets', []) or []:
                 out.append(f"     - {t.get('type','?')}: {t.get('date','?')}")
 
-    # events.html
-    ev_events = extract_events_array('events.html')
-    ev_expired = [(ev, is_expired_event(ev, today)) for ev in ev_events]
-    ev_expired = [(ev, r) for ev, r in ev_expired if r]
-    out.append(f"\n[events.html] 全{len(ev_events)}件 → 期限切れ {len(ev_expired)}件")
-    for ev, r in ev_expired:
-        out.append(fmt_event_entry(ev, r))
+    # events.html（行楽）は2026-06-25に廃止。存在する時だけ後方互換でチェック。
+    import os
+    if os.path.exists('events.html'):
+        ev_events = extract_events_array('events.html')
+        ev_expired = [(ev, r) for ev, r in ((ev, is_expired_event(ev, today)) for ev in ev_events) if r]
+        out.append(f"\n[events.html] 全{len(ev_events)}件 → 期限切れ {len(ev_expired)}件")
+        for ev, r in ev_expired:
+            out.append(fmt_event_entry(ev, r))
 
     text = '\n'.join(out)
     if args.report_file:
