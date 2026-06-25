@@ -275,7 +275,7 @@ def build(today):
     # sitemap.xml も同時生成（ページ数の増減に自動追従）
     sm = ['<?xml version="1.0" encoding="UTF-8"?>']
     sm.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-    for u in ["", "index.html", "events.html"]:
+    for u in ["", "index.html"]:
         sm.append(f'  <url><loc>https://oshinavi.jp/{u}</loc><lastmod>{today.isoformat()}</lastmod><changefreq>daily</changefreq></url>')
     for i in range(npages):
         sm.append(f'  <url><loc>https://oshinavi.jp/{page_name(i)}</loc><lastmod>{today.isoformat()}</lastmod><changefreq>daily</changefreq></url>')
@@ -323,14 +323,7 @@ def build(today):
     ihtml = re.sub(r'(<span id="resultCount">)\d+(</span>)', lambda m: m.group(1) + str(total) + m.group(2), ihtml)
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(ihtml)
-
-    # events.html に残る旧noscriptも除去
-    with open("events.html", encoding="utf-8") as f:
-        ehtml = f.read()
-    ehtml2 = old_ns.sub("", ehtml)
-    if ehtml2 != ehtml:
-        with open("events.html", "w", encoding="utf-8") as f:
-            f.write(ehtml2)
+    # （行楽events.htmlは2026-06-25に廃止。旧noscript除去処理も削除済み）
 
     print(f"wrote {npages} pages + sitemap.xml + index.html本体SSR埋込 ({total} tickets, today={today})")
 
