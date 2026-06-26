@@ -54,7 +54,23 @@ def extract_prefs(*texts):
             if m not in seen:
                 seen.add(m); out.append(m)
     return out
+def normalize_pia_url(u):
+    """ticketInformation.do?...&rlsCd=XXX は『特定リリース専用ページ』で、そのリリースが
+    終了すると買える枠ゼロを返す（イベント全体ではまだ受付中でも）。誤って販売中エントリを
+    削除候補化する事故の元なので、必ず event.do（イベント全体）に正規化してから取得する。
+    （2026-06-26 美川憲一/コロッケ誤削除候補化の恒久対策）"""
+    if not u or 'ticketInformation.do' not in u:
+        return u
+    mb = re.search(r'eventBundleCd=(\w+)', u)
+    if mb:
+        return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
+    me = re.search(r'eventCd=(\w+)', u)
+    if me:
+        return 'https://t.pia.jp/pia/event/event.do?eventCd=' + me.group(1)
+    return u
+
 def fetch(u):
+    u = normalize_pia_url(u)
     req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
     return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
 def txt(s): return _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s or ''))).strip()

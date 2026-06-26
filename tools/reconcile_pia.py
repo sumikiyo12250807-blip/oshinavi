@@ -105,9 +105,11 @@ def main():
         pia_dates = set(b[0] for b in buyable)
         missing = [b for b in buyable if b[0] not in reg_dates]   # ぴあにあるが登録に無い締切
         stale = [t for t in reg if t.get('date') not in pia_dates]  # 登録にあるがぴあに無い
-        problem = bool(missing or drops or errs)
+        # STALE と 枠数不一致 も必ず表に出す（2026-06-26 839南佳孝/1313w.o.d.が「一致」表示で
+        # 隠れてた反省。STALEは自動削除でなくWebFetch要確認のサイン）
+        problem = bool(missing or drops or errs or stale or len(reg) != len(buyable))
         if problem:
-            tag = '🚨' if missing else ('⚠️' if drops else ('❌' if errs else '💤'))
+            tag = '🚨' if missing else ('💤' if stale else ('⚠️' if drops else '❌'))
             print(f'{tag} id={ev["id"]} {ev.get("artist","")[:30]} | 登録{len(reg)}枠 / ぴあ買える{len(buyable)}枠')
             for iso, suf, title, st in missing:
                 print(f'    🚨MISSING ぴあに [{st}] {suf} ({iso}) があるが登録に無い | {title}')
