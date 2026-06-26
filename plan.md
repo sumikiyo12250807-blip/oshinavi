@@ -11,7 +11,9 @@
 > - ✅ **期限切れ削除9件**（ユーザー「美川憲一以外は消す」OK）：111さまぁ〜ず/279リチャード三世/295Identity V(公演終了)＋193松尾スズキ/388ブルーロック凪/455尾上菊五郎/464ザ・ルーツ/575ハロプロ研修生/919TOPPING PARTY(ぴあ0枠・event.do確認済)。
 > - ✅ **【恒久対策・誤削除根絶】ツール2点修正**：①`build_pia_entries.py`/`pia_tickets.py`の`fetch`に`normalize_pia_url()`追加＝`ticketInformation.do?...rlsCd=`を`event.do?eventCd=`に正規化してから取得（美川憲一の罠の再発防止・テスト済）②`reconcile_pia.py`の問題フラグに`stale`と`len(reg)≠len(buyable)`を追加＝STALE/枠数不一致を必ず表に出す（839南佳孝/1313が「一致」表示で隠れてた反省）。これで「reconcileが取りこぼし/不整合を黙って隠す」穴を塞いだ。
 > - ✅ **839南佳孝 整理**：reconcile改修で💤STALE浮上→広島6/27・山口6/28がぴあ受付終了(当日券無し)確認→2枠＋過去プレリザーブ除去、買える佐賀9/12・大分9/13(7/4発売前)のみに。
-> - 📊 index **982件**（991→9削除）。ai.html(20p)/sitemap再生成済。**6/26 push 2回＝上限到達**。
+> - ✅ **【発売前音楽 完全制覇】**：ページングバグ修正(total÷10決め打ち→空ページまで回す)＋rlsIn=03/04両方スイープ。新着37(rls03)＋8(rls04)＋NOMELON NOLEMON投入。真の未掲載ゼロ(大橋当日券/福山配信枠0のみ残)。クラシック13件も投入(1370-1382)。
+> - ✅ **【受付中音楽スイープ 新規立上げ】**：rlsInfo.doは`rlsStatus`で受付中も列挙可と発見＝0101発売中(3792)/0201受付中(712)。受付中(0201)から**46件投入(1393-1442)**。席種違い(1396/1423)はラベル復元。全件ぴあ一致(reconcile時の💤1400は429取りこぼし＝単体で一致確認)。**受付中0201未掲載は残り約450件・発売中0101 3792件は未着手→1日50件ずつ継続**(memory [[reference-pia-presale-api]]に運用記録)。
+> - 📊 **index 1087件**（1000突破！）。ai.html(22p)/sitemap再生成済。**6/26 push 3回**（ユーザー判断で上限超え＝大豊作日のため）。新着プール47件(受付中46＋NOMELON)は**振り分け待ち**(ユーザー「間違えなかった」確認済・翌朝振り分け)。
 >
 > **🚨 6/27朝の最優先**：
 > 1. **6/26 18:00抽選結果発表の5件**：654雨宮天/681ジュディ・オング/795松田聖子/926渡辺貞夫/1132桂雀々三回忌 → 一般発売出たか確認して発売前変換 or 削除triage。
@@ -275,6 +277,7 @@
    - **1エントリに別ぴあ公演を混ぜない**（リンク先URLで確認できる情報のみ書く＝AROUND40で愛媛/茨城混同した反省 2026-06-08）
    - 音楽から開始。詳細 memory: `feedback_entry_template_standard` / `reference_pia_presale_api` / `feedback_event_size`(小箱例外)
 5. **ai.html 再生成**（`python tools/build_ai_page.py`）… AI/クローラ向け静的データページ。データ更新後に必ず実行し commit に含める（詳細 memory: `reference_oshinavi_ai_page`）
+5.5. **【push直前・必須】`python tools/reconcile_pia.py --new` をもう一度回す**（2026-06-26常設化）。販売状態は投入後〜push前の数時間でも動く＝発売前→受付中の当日フリップ・締切延長を**公開前に捕まえる**。投入直後の照合だけでは取りこぼす（TANQUA/米倉が発売前6/27→当日販売中にフリップ・カウントダウンが嘘になった反省）。🚨/⚠️/💤が出たら機械パースで直してから push。発売日が当日/翌日の発売前は特に重点確認。詳細 memory: `feedback_deadline_extended_after_register`
 6. **commit → push**（1日2回まで・必ず事前確認。ai.html も一緒に上げる）
 
 → 詳細 memory: `feedback_morning_routine` / `feedback_new_genre_workflow` / `reference_oshinavi_ai_page`
