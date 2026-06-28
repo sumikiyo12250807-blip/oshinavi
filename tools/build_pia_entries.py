@@ -80,6 +80,17 @@ def jp(iso):
     y, m, d = map(int, iso.split('-')); return f"{y}年{m}月{d}日({wd(iso)})"
 def prefshort(p): return p if p == '北海道' else re.sub(r'(都|道|府|県)$', '', p)
 def md(iso): _, m, d = iso.split('-'); return f"{int(m)}/{int(d)}"
+def era(iso):
+    """公演年が当年(today基準)より先なら令和略記「R{N}年 」(2027→R9年/2028→R10年)。当年以下は空。
+    旧md()は年を捨てており2027公演のR9年表記が毎回抜けていた恒久対策(2026-06-28・feedback_r9_year_notation)。"""
+    y = int(iso[:4]); base = datetime.date.today().year
+    return f"R{y - 2018}年 " if y > base else ''
+def mdbadge(start, end):
+    """公演日バッジ。単日=R9年付M/D。範囲=同年なら先頭だけ・異年(2026〜2027)は終了側にR9年。"""
+    s_md = f"{int(start[5:7])}/{int(start[8:10])}"; e_md = f"{int(end[5:7])}/{int(end[8:10])}"
+    if start == end: return f"{era(start)}{s_md}"
+    es, ee = era(start), era(end)
+    return f"{es}{s_md}〜{e_md}" if es == ee else f"{s_md}〜{ee}{e_md}"
 def ecd_url(u):
     mm = re.search(r'eventCd=(\w+)', u or ''); return 'https://t.pia.jp/pia/event/event.do?eventCd=' + mm.group(1) if mm else None
 
@@ -262,7 +273,7 @@ def build(cand):
             _DROPPED.append((cand.get('newid'), r.get('state'), r.get('when', ''), r.get('title', '')[:40]))
             continue
         pe = r.get('perf_end') or r['perfdate']
-        mdr = md(r['perfdate']) if pe == r['perfdate'] else f"{md(r['perfdate'])}〜{md(pe)}"
+        mdr = mdbadge(r['perfdate'], pe)   # 2027公演は自動でR9年付与(年が抜けない)
         _pf = '・'.join(r['prefs']) if r['prefs'] else '全国'   # 複数県は全部載せる(字は小さめ表示)。県名取れなければ全国
         t = {'type': f"{kenshu(r['title'])}（{_pf} {mdr}公演）{suf}", 'date': iso}
         if sd: t['startDate'] = sd
@@ -346,7 +357,14 @@ def _selftest():
     assert genre_from_subcat('音楽', '演歌・邦楽', '徳永ゆうき') == ('enka', None)
     assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＯの夏フェス 和太鼓') == ('dento', None)
     assert genre_from_subcat('音楽', '演歌・邦楽', '津軽三味線コンサート') == ('dento', None)
-    print('selftest OK: parse_when(昼/夜/レンジ/より発売) と kenshu(全角／公演カッコ) 回帰なし')
+    # ⑤ R9年(令和9年=2027)自動付与: 当年(today)より先の公演年は略記が付く・範囲は端点別
+    assert era('2026-12-27') == '' and era('2027-01-09').strip() == 'R9年', '当年=空/翌年=R9年'
+    assert mdbadge('2027-01-30', '2027-01-30') == 'R9年 1/30', '単日2027'
+    assert mdbadge('2026-11-08', '2026-11-08') == '11/8', '単日2026'
+    assert mdbadge('2027-01-09', '2027-01-11') == 'R9年 1/9〜1/11', '範囲同年(2027)は先頭だけ'
+    assert mdbadge('2026-12-03', '2027-01-08') == '12/3〜R9年 1/8', '範囲異年は終了側にR9年'
+    assert mdbadge('2026-11-07', '2026-11-08') == '11/7〜11/8', '範囲同年(2026)は素'
+    print('selftest OK: parse_when/kenshu/R9年(mdbadge) 回帰なし')
 
 if __name__ == '__main__':
     if '--selftest' in sys.argv:

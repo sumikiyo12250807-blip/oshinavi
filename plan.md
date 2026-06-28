@@ -11,7 +11,23 @@
 > - ✅ **C 別公演差し替え 3件（ユーザー「3件とも残して」）**＝登録公演は終了だがbundleに別未来公演あり→会場/県/公演日/dateLabel/ticketsまで更新：**106 リポビタンDチャレンジカップ**(瑞穂6/27終→大阪8/8花園・7/3 18:00発売・対戦カード不明なのでseries名据置)／**401 SF9**(大阪6/27終→東京6/30 LINE CUBE SHIBUYA〜6/29)／**1355 新妻聖子**(大阪6/28→東京7/12 オーチャードホール〜7/11)。reconcile 401/1355=一致、106は通常席+車椅子席を1枠化（同発売日・実害なし）。
 > - ⏸ **B 本日6/28公演 8件は据え置き→明朝6/29削除**（[[feedback_delete_next_morning]]）：64 東京ホテイソン/368 Dreams on Ice/469 アイラブ坊っちゃん/480 玉川太福/1343 SARD当日引換券/1348 SONIC/1356 ねぐせ。/1369 WORLD HAPPINESS。
 > - 📊 **index 1107→1092件**。ai.html(22p)/sitemap/SSR再生成済。**期限切れ削除候補0件・⚠️残8件はB（本日公演）のみ**。
-> - 🔜 **未完**：新着取得（②）はまだ。push（③）はブラウザ確認後ユーザーOK待ち（本日6/28 push 0回）。
+> **📋 6/28 午後（ユーザー帰宅後・push 2回目で上限）**
+> - ✅ **新着50→42件 ジャンル振り分け完了**（ユーザー「振り分けて」）：jpop34/fes3(DElicious BUns・ナガノアニエラ・nobinobi=複数組屋外確認)/rock3(TRUST RECORDS×2海外ROCK・POPS・BE WONDERFUL=屋内ロック複数組)/kpop1(PARK YUCHUN)/idol1(fav me=ASOBISYSTEMアイドル)。**両方方式3件**(ユーザー「迷ったのは両方」)＝DIR EN GREY[jpop+rock]/花澤香菜[jpop+seiyuu]/ハロ!コン[jpop+idol]。genre:new 0件・NEW_ORDER空・下書きフィールド除去。
+> - ✅ **同一ツアー統合4件**(ユーザー指摘)：TK from 凛として時雨「生癖」[1500-1504→1500・6枠会場別url・武道館ファイナルWeb裏取り]/TOTALFAT[1516-1518→1516・福岡がmerge中flaky fetchで落ち→reconcileで検出復活]/Doona[1519,1520→1519]/栄喜[1534,1535→1534]。**This is LASTは別物で据置**(1506 Zeppツアー2027 vs 1507 武道館2026)。
+> - ✅ **桃鈴ねね(id1443)救済**＝VTuber調査で既存発見・発売前6/28形のまま放置→一般6/28 12:00発売済→saleUntilSoldOut(販売中)に変換。※新着にVTuber無し=大型VTuber現地はローチケ主体でぴあスイープに出ない。
+> - ✅ **R9年(令和9年=2027)表記 全DB29件付与**＋**[[feedback_r9_year_notation]]恒久対策**＝build_pia_entriesにera()/mdbadge()追加で今後自動付与(selftest済)。誤検出回避(id97/309/1400=2026はぴあ実年裏取りで除外)。
+> - 📊 **index 1134件**。ai.html(23p)/sitemap/SSR再生成済。**reconcile押下前OK41(残1=nobinobi駐車場券種を意図集約)**。
+> - 🚀 **6/28 push 2回目**(commit後)＝本日上限到達。
+> - 🔜 残：ローチケVTuber枠の精掘り(タイムアウトで未達)。
+>
+> ---
+> 〔旧〕**📋 6/28 朝やったこと**
+>
+> ✅ **新着取得② 完了（自走・ユーザー外出中の依頼「50件集めといて」）**：ぴあ音楽 受付中(rlsStatus=0201)スイープの続き。harvest未掲載445件→eventCd/名前重複除外→build_pia_entries構築(売切6件skip=Kazuki Kato3公演/澤村光彩/**財津和夫=朝削除済の予定枚数終了を再導出で正しくskip**/DISH//)→**50件投入(id1494-1543・genre:"new")**。**ゼロエラー二段構え完全クリア**＝check_badges OK／reconcile --new **全50一致(MISSING0/STALE0/FETCH0)**／eventCd重複0。空カッコ「全国ツアー（）」12箇所清掃済。backup=index.html.bak_0628_newpool。
+>   - ⚠️ **未push・未振り分け**（[[feedback_new_pool_ok_before_assign]]厳守）。ユーザーレビュー&OK後に本ジャンルへ。
+>   - 🏷 **_genreドラフトは粗い**（bundleでぴあカテゴリ取れず engeki にフォールバック多数＝福山雅治1543/PARK YUCHUN1533/各フェス/斉藤由貴1536等は振り分け時に親が直す。J-POP・ROCKは一律jpop下書き）。
+>   - 🔗 **統合候補(同一名義の別公演=ツアー化検討)**：TK from 凛として時雨[1500-1504]／This is LAST[1506,1507]／TOTALFAT[1516-1518]／Doona[1519,1520]／栄喜[1534,1535]。※TRUST RECORDS[1512,1513]は別興行(presents違い)なので統合しない。
+> - 🔜 **push（③）は本日2回目ぶんが残（朝1回push済）**。新着50件のレビュー&OK→振り分け→ai.html再生成→push の順。
 >
 > ---
 > 〔旧〕**📋 6/27 やったこと（全push済・本日2回=上限到達）**
