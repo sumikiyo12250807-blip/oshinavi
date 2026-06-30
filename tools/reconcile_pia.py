@@ -62,6 +62,10 @@ def pia_buyable(urls):
             h = bpe.fetch(u)
         except Exception as ex:
             errs.append((u, str(ex)[:60])); continue
+        # eventCd無効化/差し替え=「ご確認ください」エラーページ。0カードと区別して大声で出す
+        # (2026-06-30 風輪のurlが朝有効→無効化。静かに0枠になり取りこぼす穴を塞ぐ)。
+        if bpe.is_error_page(h):
+            errs.append((u, '無効URL(ご確認ください)=eventCd削除/差替')); continue
         for r in bpe.parse_cards(h):
             if r['state'] not in ('受付中', '発売前'):
                 continue
