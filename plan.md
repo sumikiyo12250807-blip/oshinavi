@@ -2,9 +2,48 @@
 
 毎朝の作業開始時、必ずこのファイルを先に確認してください。
 
-## ⏰ 次回（2026-06-28以降）最優先・引き継ぎ
+## ⏰ 次回（2026-06-30以降）最優先・引き継ぎ
 
-> **📋 6/28 朝やったこと（未push・ブラウザ確認→pushはユーザーOK待ち）**
+> **📋 6/30 朝ルーチン（未push・ブラウザ確認待ち）**
+> - ✅ **期限切れ＝変換15件＋削除14件**（二段構えclear: build⇄reconcile削除14完全一致）。1235 SOUND CONNECTIONはWebFetchで立見1枠救済。削除はユーザーOK済。backup=bak_0630_morning_convert/_delete。
+> - ✅ **6/29新着56件 ジャンル振り分け完了**（ユーザー「あなたの案で」）＝jpop50/dento2(鼓童=和太鼓でenka→dento修正・三味線)/fes1(SiM)/kpop1(BOYNEXTDOOR)/enka1(三波春夫)/classic1(角川映画音楽祭)。下書きフィールド除去・NEW_ORDER空。
+> - ✅ **新着取得＝発売前ファースト適用 39件投入(genre:new・発売前16/発売中23)**。rlsIn=03発売前を先に総ざらい→受付中で穴埋め(7/4以降のみ・もうじき終わる10件除外)。**ゼロエラー二段構えclear**(check_badges OK/reconcile --new OK37・MISSING0/eventCd重複1скип)。レビューで直し=1637初音ミク(ライブ/企画展券種復元・**大阪8/14-16取りこぼし気味=要確認**)・7件多都市venue→全国ツアー。**1636 NXMERCY/1648 LANA除外**(本日発売でreconcile検証不可→翌日受付中で拾う)。backup=bak_0630_newpool。
+> - ✅ **50件達成**(ユーザー「50件ほしいから入れといて」)＝音楽39+**演劇発売前11件追加**(落語/歌舞伎/きみまろ/能/現代劇・reconcile OK11)。**他ジャンル発売前は宝の山**＝演劇483件/クラシック570件未掲載(rlsIn=03)。今日は演劇先頭から11拾った。
+> - 📊 (午前 index 1178 / genre:new 50)。
+> - 💡 **発売前ファースト=全ジャンル展開すべき**(音楽だけでは1日の発売前が少ない・演劇/クラシックに大量の発売前在庫)。翌朝から02演劇/07クラシック等もrlsIn=03スイープに含める。
+>
+> **📋 6/30 午後（ユーザーレビュー→修正→振り分け→push）**
+> - ✅ **ユーザー指摘4件を全て根本原因究明→恒久対処→保存**：①飯田の当日引換券取りこぼし＝ぴあ「本日発売」は時刻だけ表記→`parse_when`にm4(時刻のみ=today)追加([[reference_pia_today_sale_timeonly]])②Summer Eye取りこぼし＝ぴあが登録後に一般発売追加(push前reconcileで捕捉・[[feedback_deadline_extended_after_register]])③風輪URLでたらめ＝ぴあがeventCd無効化(「ご確認ください」)→`is_error_page()`追加でreconcileが❌FETCH大声検出・風輪(1639)削除④Vaundy R9年→R10年＝`mdbadge`異年分岐が開始側era落とすバグ(2027→2028で発覚)→両端era付与に修正([[feedback_r9_year_notation]])。全てselftest追加済。
+> - ✅ **CDボタン6件除去**（音源CD無いイベント名：石川さゆり御園座/SLENDERIE/プラザジャズ/Shibuya PIT/PLAY VOL.171/君と歩いた青春）。
+> - ✅ **push前reconcile --new 全49件**＝風輪の死URL＋Summer Eyeの枠追加を公開前に捕捉(防止網機能確認)。1627/1700のSTALEはflaky(再照合一致)。
+> - ✅ **49件ジャンル振り分け完了**＝jpop29/fes5/owarai4/engeki4/dento3/classic2(トップガン・斉藤由貴=オーケストラ)/enka1/jazz1。新着プール0・NEW_ORDER空。
+> - 📊 **index 1177件**。ai.html(24p)再生成。**push実施**。
+>
+> ---
+> 〔旧〕## ⏰ 次回（2026-06-29以降）最優先・引き継ぎ
+
+> **📋 6/29 朝やったこと（push済 843c323..937b2c0・本日push 1回目／上限2回）**
+> - ✅ **期限切れ大掃除**（6/28大型発売の翌朝フリップ）。check_expired→⚠️66件をbuild_pia_entries再利用で機械再構築（tmp/convert_0629.py→apply_0629.py）。**二段構えクリア**＝build⇄reconcile独立照合で**削除38/変換 完全一致**・変換後の再reconcile **26件OK・MISSING0/STALE0/DROP0**。
+>   - **変換27件**（発売前→販売中）＝6/28一般発売開始/先行終了分の実終了日取り直し。
+>   - **救済1件＝115 FRUITS ZIPPER**：ツアーほぼ受付終了だが7/3兵庫(GLION ARENA KOBE)の当日引換券が**本日6/29 10:00発売開始・予定枚数終了まで**とぴあ個別ページで裏取り→saleUntilSoldOut販売中化。dateを7/3に。
+>   - **注記＝292 WILD BUNCH FES**：1日券/2日通し/3日通し計7券種を「6/30 12:00発売」1バッジに**意図集約**（reconcileのMISSING7はノイズ・nobinobi方式）。
+> - ✅ **削除48件**（ユーザーOK「全部削除」）＝**B組10件**(6/28公演終了=64ホテイソン/368Dreams on Ice/385時光代理人/391プリンスアイス/469アイラブ坊っちゃん/480玉川太福/1343SARD当日券/1348SONIC/1356ねぐせ/1369WORLD HAPPINESS)＋**先行終了38件**(316Vaundy/1403内田真礼/1461沢田研二/1471須田景凪/1512TRUST等・全件buildとreconcile両方で買える枠ゼロ確認)。tmp/delete_0629.py。
+> - 📊 **index 1134→1086件**。ai.html(22p)/sitemap/SSR再生成済。backup=index.html.bak_0629_morning_convert / _delete。
+> - ⚠️ tmp/convert_0628.py・apply_0628.py は破損ファイル（末尾「these files are corrupt」連打）。使わない。
+>
+> **📋 6/29 午後（新着取得・ユーザー外出中の依頼「50件集めて新着に入れといて・push不要・自走で」）**
+> - ✅ **新着50件投入（id1547-1602・genre:"new"・未push未振り分け）**。ぴあ音楽スイープ機械パース構築。**ゼロエラー二段構え完全クリア**＝check_badges OK／**reconcile --new 全50一致(MISSING0/STALE0/DROP0/FETCH0)**／eventCd重複除外1件(1557「7」=既存2619892と衝突→外して藍坊主1602で補填)。空カッコ「全国ツアー（）」清掃57箇所(新11＋既存46)。
+>   - 内訳＝**音楽受付中(rlsStatus=0201)49件＋発売前(rlsIn=03)1件(1601藍井エイル)**。受付中プールは57グループ全消化(49投入/8件売切skip=Kazuki Kato3ツアー/GANG PARADE/澤村光彩/戸川純等)＝**音楽受付中は枯渇**。
+>   - **ツアー統合6件**(artist完全一致でurlまとめ)＝1547かりゆし58(5公演)/1566 BOYNEXTDOOR(4)/1569三浦大知(4)/1573 moon drop(2)/1576モナキ(3)/1589ルサンチマン(5)/1602藍坊主(2)。
+>   - 🏷 **_genre下書きは粗い**(jpop36/engeki13/enka1)。**_piaSub空13件はbundleでぴあカテゴリ取れずengekiフォールバック**＝COPES/SiM/flumpool/Hedigan's/Homecomings/BOYNEXTDOOR/松任谷由実/ME:I/薬師丸ひろ子/yutori/浪漫派マシュマロ/WATWING/VOKSY DAYS＝**全部音楽。振り分け時に親が直す**(勝手にジャンル確定しない[[feedback_new_pool_ok_before_assign]])。
+>   - ⚠️ **かりゆし58/GANG PARADE/PIGMONZ系は今朝削除した組が「今受付中の別公演」として再登場**＝削除したのは終了した先行枠・これは今買える枠で正しいサイクル。
+>   - 🔜 **ai.html未再生成**(レビュー後push前に build_ai_page.py)。**push本日あと1回ぶん残**(新着プールはレビュー&OK後に振り分け→ai再生成→push)。backup=index.html.bak_0629_newpool。
+> - ✅ **【方針転換・発売前ファースト】ユーザー指示「もう売ってるより、これから売るのを早く拾って」**（スキマスイッチ宮城が売り切れ後しか拾えず=memory [[feedback_presale_first_harvest]]）。朝ルーチン(上記🌅)を発売前優先に書き換え済。**発売前19件 追加投入(id1607-1626)**＝鼓童/藤井フミヤ/NEE/THE GOOD-BYE/ザ・ワイルドワンズ/ゆあさみちる(7公演ツアー統合)等。reconcile --ids 19件全OK。新着レビューで4件直し済(1596浪漫革命=18歳以下券種/1607角川=U-22券種/1569三浦大知&1573 moon drop&1624みやけん=多都市ツアーvenue→全国ツアー/1563 BABY Q売切除外&1604KYOW-YA補填)。
+ - ✅ **今夜締切のみ・将来枠なしの先行を5件除外**(ユーザー「6/29のを今チェックしてどうするの」=Hedigan's指摘)＝1562 Hedigan's/1565 Homecomings/1568 松任谷由実/1574 メ～テレ/1599 ONE AND ONLY(全部6/29 23:59先行1枠のみ・一般発売なし=明朝には死ぬ)。教訓＝[[feedback_presale_first_harvest]]の精神で「今日締切・将来枠なし」は載せる価値なし。大物の一般発売は発売前ファースト・スイープが後で拾う。
+ - 📊 **index 1150件 / genre:new 64件**(受付中＋発売前)。**未push・未振り分け**。ai.html未再生成(レビュー後push前にbuild_ai_page.py)。
+>
+> ---
+> 〔旧〕**📋 6/28 朝やったこと（未push・ブラウザ確認→pushはユーザーOK待ち）**
 > - ✅ **期限切れ→販売中 変換 105件**（6/27大型発売の翌朝フリップ）。ぴあ機械パース（build_pia_entries再利用＝canonicalパーサー自動追従）で実終了日取り直し。二段構えクリア＝**check_badges NG0／reconcile OK102・🚨MISSING0・💤STALE0**（残DROP2=406注記カード/887別イベント混入のノイズで実害ゼロ）。tmp/convert_0628.py→apply_0628.py。backup=index.html.bak_0628_morning_convert。
 > - ✅ **e+のid43 シナモロール 救済変換**＝WebFetchが「受付全終了」と誤報も実は一般6/27 10:00〜**8/19 18:00販売中**（e+生HTMLで裏取り）。[[feedback_webfetch_soldout_false_positive]]。
 > - ✅ **A 売切/終了確定 15件 削除**（ユーザーOK「消していい」）：147 iri/168 熊谷×海野/273 セーラームーン/395 アプガ(2)/417 志の輔/493・604 ASKA(同eventCd重複)/648 君島大空/743 円広志/760 ハロコン/881 財津和夫/1033 東京03/1034 BKB/1289 ENVii/1329 バチカン市国。全件「予定枚数終了」or公演終了を機械パース/WebFetch確認済。backup=index.html.bak_0628_morning_delete。
@@ -308,17 +347,16 @@
    - ~~アナ雪(id:72)/ゴースト(id:137)ロングラン専用チェック~~ **【2026-06-25廃止】** 両方とも全公演を実日付で展開済→このcheck_expired.pyが期限切れ枠を自動で拾うので専用WebFetchは不要（memory: project_longrun_anayuki）
 3. **新着の入れ替え（毎朝セットで回す）**
    - ① 前日までの `genre:"new"` を全部、正式ジャンルに振り分ける → 新着枠を空にする（0件に）
-   - ② 当日の新着を 楽天/ぴあ/e+ から取得 → `genre:"new"` で投入
-   - 取得は1サイト確認でOK（クロスチェック不要 / A案）。ただし**販売中かどうかは親で1件ずつWebFetch確認必須**
+   - ② 当日の新着を `genre:"new"` で投入。**【最重要・2026-06-29ユーザー指示＝memory `feedback_presale_first_harvest`】収集は「発売前(これから売る)」を最優先**。「もう売ってる」より「これから発売開始する」を先に拾って発売日カウントダウンで載せる（受付中だけ追うと「載った時にはもう売り切れ」＝スキマスイッチ宮城を取りこぼした反省）。
    - 振り分けは判定案を表で提示→ユーザー確認（迷うジャンルだけ相談）
-4.5. **【発売前スイープ】1日50件ずつ（2026-06-09開始・ユーザー指示）**
-   - `python tools/presale_harvest.py <lg>`（lg=01音楽/02演劇/03スポーツ/04映画/05アート/06イベント/07クラシック）でぴあ発売前(rlsInfo.do?rlsIn=03=30日以内発売)を取得→既存と名前＋eventCd照合→**未掲載の発売前を1日50件**ずつ `genre:"new"`(verified:true)投入
-   - **★2026-06-11確定: エントリは必ず「T-SQUARE形 標準テンプレート」で作る → memory `feedback_entry_template_standard`**
-     - バッジ=「販売種別（県名 公演日公演）＋時刻」/ showSalePeriod無し / CDキーワードは名前のみ / 県名はバッジに入れる
-     - **harvestは最初の1公演しか拾わず・今販売中の先行枠も拾わない**ので、投入後 **1件ずつWebFetchで全公演(別県含む)・全販売枠(先行/一般)・時刻を取り直す**(ASKA=岐阜+三重取りこぼした反省)
-   - 単独公演を優先、ツアーは1エントリ統合。**ライブハウス小箱もOK**
-   - **1エントリに別ぴあ公演を混ぜない**（リンク先URLで確認できる情報のみ書く＝AROUND40で愛媛/茨城混同した反省 2026-06-08）
-   - 音楽から開始。詳細 memory: `feedback_entry_template_standard` / `reference_pia_presale_api` / `feedback_event_size`(小箱例外)
+4.5. **【新着収集の順番＝発売前ファースト】（2026-06-29にユーザー指示で「発売前優先」へ刷新）**
+   - **① 発売前を総ざらい（最優先）**：`python tools/presale_harvest.py 01 out.json 'rlsIn=03'`（30日以内発売）＋`'rlsIn=04'`（それ以外）。lg=01音楽/02演劇/03スポーツ/04映画/05アート/06イベント/07クラシック。未掲載の発売前を `build_pia_entries.py` で機械構築→`genre:"new"`(verified:true)投入。**発売日カウントダウン**（startDate=発売日）で載せる。
+   - **② 受付中(0201)は穴埋め**：`'rlsStatus=0201'`。発売前を取り切った残り枠で。
+   - **★エントリは必ず「T-SQUARE形 標準テンプレート」**（memory `feedback_entry_template_standard`）。バッジ=「販売種別（県名 公演日公演）＋時刻」/ showSalePeriod無し。
+   - **大型ツアーはbundle全公演＝地方公演（ユーザー地元=宮城）の一般発売日も漏らさない**（memory `feedback_bundle_full_rederive`）。ツアーは1エントリ統合・ライブハウス小箱もOK。
+   - **1エントリに別ぴあ公演を混ぜない**（リンク先URLで確認できる情報のみ）。
+   - **ゼロエラー二段構え必須**＝check_badges OK／reconcile --new 全一致／eventCd重複0（memory `feedback_zero_error_pipeline`）。
+   - 音楽から開始。詳細 memory: `feedback_presale_first_harvest` / `feedback_entry_template_standard` / `reference_pia_presale_api`
 5. **ai.html 再生成**（`python tools/build_ai_page.py`）… AI/クローラ向け静的データページ。データ更新後に必ず実行し commit に含める（詳細 memory: `reference_oshinavi_ai_page`）
 5.5. **【push直前・必須】`python tools/reconcile_pia.py --new` をもう一度回す**（2026-06-26常設化）。販売状態は投入後〜push前の数時間でも動く＝発売前→受付中の当日フリップ・締切延長を**公開前に捕まえる**。投入直後の照合だけでは取りこぼす（TANQUA/米倉が発売前6/27→当日販売中にフリップ・カウントダウンが嘘になった反省）。🚨/⚠️/💤が出たら機械パースで直してから push。発売日が当日/翌日の発売前は特に重点確認。詳細 memory: `feedback_deadline_extended_after_register`
 6. **commit → push**（1日2回まで・必ず事前確認。ai.html も一緒に上げる）

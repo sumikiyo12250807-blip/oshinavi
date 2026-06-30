@@ -73,6 +73,12 @@ def fetch(u):
     u = normalize_pia_url(u)
     req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
     return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+
+def is_error_page(h):
+    """ぴあのエラー/確認ページ判定。eventCdが無効化/削除/差し替えされるとイベント本文でなく
+    「ご確認ください」(error-container)が返る。0カードと区別できず無言で枠を失う原因なので
+    明示検出する(2026-06-30 風輪のeventCd 2623808が朝有効→夜無効化=ご確認ください の取りこぼし)。"""
+    return bool(h) and ('<title>ご確認ください' in h or 'class="error-container"' in h)
 def txt(s): return _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s or ''))).strip()
 def wd(iso):
     y, m, d = map(int, iso.split('-')); return WD[datetime.date(y, m, d).weekday()]
@@ -86,11 +92,14 @@ def era(iso):
     y = int(iso[:4]); base = datetime.date.today().year
     return f"R{y - 2018}年 " if y > base else ''
 def mdbadge(start, end):
-    """公演日バッジ。単日=R9年付M/D。範囲=同年なら先頭だけ・異年(2026〜2027)は終了側にR9年。"""
+    """公演日バッジ。単日=R{N}年付M/D。範囲=同年(同era)なら先頭だけ・異年は両端にera。
+    ※異年で開始側のeraを落とすバグがあった(2027→2028ツアーでstart=2027のR9年が消えた=2026-06-30
+    Vaundy 2027-2028で発覚)。es='' なら自然に省略されるので両端付けが正しい。"""
     s_md = f"{int(start[5:7])}/{int(start[8:10])}"; e_md = f"{int(end[5:7])}/{int(end[8:10])}"
-    if start == end: return f"{era(start)}{s_md}"
     es, ee = era(start), era(end)
-    return f"{es}{s_md}〜{e_md}" if es == ee else f"{s_md}〜{ee}{e_md}"
+    if start == end: return f"{es}{s_md}"
+    if es == ee: return f"{es}{s_md}〜{e_md}"
+    return f"{es}{s_md}〜{ee}{e_md}"
 def ecd_url(u):
     mm = re.search(r'eventCd=(\w+)', u or ''); return 'https://t.pia.jp/pia/event/event.do?eventCd=' + mm.group(1) if mm else None
 
@@ -176,6 +185,15 @@ def parse_when(state, when):
         if m3:
             iso = f"{m3.group(1)}-{int(m3.group(2)):02d}-{int(m3.group(3)):02d}"; t = m3.group(4)
             return (f"〜{int(m3.group(2))}/{int(m3.group(3))} {t}" if t else f"〜{int(m3.group(2))}/{int(m3.group(3))}"), iso, None
+        # 時刻だけの「HH:MMより発売」(日付なし) = 本日発売。ぴあは“当日に発売開始する枠”を日付省略で
+        # 時刻だけ書く(将来発売は必ずYYYY/M/D形で書く)。日付が読めずNoneで無言ドロップしていた当日引換券/
+        # 本日発売を today で拾う。2026-06-30 飯田洋輔の当日引換券「18:00より発売」=本日(6/30)発売の取り
+        # こぼしが真因(FRUITS ZIPPER 115/NXMERCY/LANAも同型)。実HTML確認: is-before「本日発売初日」に
+        # 切替わる前の発売前表示が時刻のみだった。
+        m4 = re.search(r'(\d{1,2}:\d{2})\s*より発売', when)
+        if m4 and not re.search(r'\d{4}/\d', when):
+            td = datetime.date.today()
+            return f"{td.month}/{td.day} {m4.group(1)}発売", td.isoformat(), td.isoformat()
     else:
         m = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?', when)
         if m:
@@ -345,6 +363,16 @@ def _selftest():
     for st, w, exp_iso, exp_suf in cases:
         suf, iso, sd = parse_when(st, w)
         assert iso == exp_iso and suf == exp_suf, (w, '→', suf, iso, sd)
+    # 時刻だけの「HH:MMより発売」(日付なし)= 本日発売 → today を採る(無言ドロップ根絶。2026-06-30飯田の
+    # 当日引換券「18:00より発売」=本日発売の取りこぼし対策)。todayは可変なので動的に照合。
+    _td = datetime.date.today()
+    for w, hhmm in [('18:00より発売', '18:00'), ('当日引換券 10:00より発売', '10:00')]:
+        suf, iso, sd = parse_when('発売前', w)
+        assert iso == _td.isoformat() and sd == _td.isoformat(), ('本日発売', w, suf, iso, sd)
+        assert suf == f"{_td.month}/{_td.day} {hhmm}発売", ('本日発売suf', w, suf)
+    # 将来発売(YYYY/M/D形)は today に化けない(m4が誤爆しない)
+    suf, iso, sd = parse_when('発売前', '2026/9/9(水) 18:00より発売')
+    assert iso == '2026-09-09', ('将来発売がm4誤爆', suf, iso)
     # ② 全角カッコ/角カッコ/山カッコの公演日「（９／２２公演）」「【６／２７公演】」でkenshuが化けない
     assert kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ')
     assert kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ')
@@ -364,6 +392,9 @@ def _selftest():
     assert mdbadge('2027-01-09', '2027-01-11') == 'R9年 1/9〜1/11', '範囲同年(2027)は先頭だけ'
     assert mdbadge('2026-12-03', '2027-01-08') == '12/3〜R9年 1/8', '範囲異年は終了側にR9年'
     assert mdbadge('2026-11-07', '2026-11-08') == '11/7〜11/8', '範囲同年(2026)は素'
+    # 両端とも将来年の異年範囲(2027→2028)は開始側のeraも残す(Vaundy 2027-2028でR9年が落ちた反省)
+    assert mdbadge('2027-08-14', '2028-02-27') == 'R9年 8/14〜R10年 2/27', '異年2027→2028は両端era'
+    assert mdbadge('2028-02-27', '2028-02-27') == 'R10年 2/27', '単日2028=R10年'
     print('selftest OK: parse_when/kenshu/R9年(mdbadge) 回帰なし')
 
 if __name__ == '__main__':
