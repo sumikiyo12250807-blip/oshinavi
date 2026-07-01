@@ -40932,6 +40932,25 @@
     return "passed";
   }
 
+  // 発売フィルタ(今週発売/今月発売/先行受付前)専用の判定。
+  // ★発売前(発売開始日=startDateが未来)のチケットだけを対象にする。
+  // 販売中(発売済で終了日が近い＝締切間近)は「発売」ではないので対象外＝nullを返す。
+  function releaseKind(t) {
+    if (t.soldout) return null;
+    if (saleStartPending(t)) {
+      const d = daysFrom(t.startDate);
+      return d <= 7 ? "urgent" : d <= 31 ? "soon" : "normal";
+    }
+    return null;
+  }
+  function eventReleaseStatus(ev) {
+    const kinds = (ev.tickets || []).map(releaseKind).filter(Boolean);
+    for (const p of ["urgent", "soon", "normal"]) {
+      if (kinds.includes(p)) return p;
+    }
+    return null;
+  }
+
   function matchEvent(ev) {
     if (ev.verified !== true) return false;
     const matchGenre  = activeGenre  === "all"
@@ -40939,11 +40958,11 @@
       || (ev.extraGenres || []).includes(activeGenre)
       || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu"))
       || (activeGenre === "anime"  && ev.genre === "seiyuu");
-    const status = computeCardStatus(ev);
+    const rel = eventReleaseStatus(ev);   // 発売フィルタは発売前(発売開始日が未来)のチケットだけで判定
     const matchStatus = activeStatus === "all"
-      || (activeStatus === "urgent"   && status === "urgent")
-      || (activeStatus === "soon"     && (status === "urgent" || status === "soon"))
-      || (activeStatus === "upcoming" && status === "normal");
+      || (activeStatus === "urgent"   && rel === "urgent")
+      || (activeStatus === "soon"     && (rel === "urgent" || rel === "soon"))
+      || (activeStatus === "upcoming" && rel === "normal");
     const haystack = (ev.artist + " " + ev.name).toLowerCase();
     const matchSearch = searchQuery === "" || haystack.includes(searchQuery.toLowerCase());
     const matchRegion = activeRegion === "all"
