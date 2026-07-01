@@ -302,7 +302,9 @@ def build(cand):
             if tu: t['url'] = tu
         tickets.append(t)
     tickets.sort(key=lambda t: t['date'])
-    venue = venues[0] if len(venues) == 1 else '全国ツアー（' + '／'.join(venues[:4]) + '）'
+    # 全会場を列挙する（[:4]で打切ると大規模ツアーの大半の会場が消える＝2026-07-01発覚
+    # ディズニー・オン・クラシック18県中4会場しか出ず「アクトシティ浜松が抜けてる」）。
+    venue = venues[0] if len(venues) == 1 else '全国ツアー（' + '／'.join(venues) + '）'
     pref = prefs[0] if len(prefs) == 1 else '全国'
     if len(starts) == 1 and ends[-1] == starts[0]:
         dl = f"{jp(starts[0])} {pref} {venues[0] if venues else ''}".strip()
