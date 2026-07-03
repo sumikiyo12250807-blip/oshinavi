@@ -120,6 +120,33 @@ def next_action(ev, today):
     return cands[0]
 
 
+def classify_rank(ev, today):
+    """index.html の EVENTS.sort() 相当。①販売中(今買える)=rank0・終了日近い順 →
+    ②発売前=rank1・発売日近い順 → ③終了/売切=rank2。買えるものを常に先頭に。"""
+    sell, pre = [], []
+    for t in ev.get("tickets") or []:
+        if t.get("soldout"):
+            continue
+        sd, d = t.get("startDate"), t.get("date")
+        try:
+            if t.get("saleUntilSoldOut"):
+                if d and parse(d) >= today:
+                    sell.append(d)
+                continue
+            if sd and parse(sd) > today:
+                pre.append(sd)
+                continue
+            if d and parse(d) >= today:
+                sell.append(d)
+        except ValueError:
+            continue
+    if sell:
+        return (0, min(sell))
+    if pre:
+        return (1, min(pre))
+    return (2, ev.get("date") or "9999-99-99")
+
+
 def buy_url(ev):
     links = ev.get("links") or {}
     for key, _ in VENDOR_ORDER:
@@ -200,9 +227,8 @@ def build(today):
         na = next_action(ev, today)
         if na is None:
             continue  # 販売終了は載せない
-        _, sort_date = status_text(ev, today)
-        rows.append((sort_date, ev.get("id", 0), ev))
-    rows.sort(key=lambda x: (x[0], x[1]))
+        rows.append((classify_rank(ev, today), ev.get("id", 0), ev))
+    rows.sort(key=lambda x: (x[0][0], x[0][1], x[1]))
 
     total = len(rows)
     pages = [rows[i:i + PER_PAGE] for i in range(0, total, PER_PAGE)] or [[]]
