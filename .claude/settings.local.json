@@ -1,6 +1,8 @@
 {
   "permissions": {
     "allow": [
+      "Write(//c/Users/user/oshinavi/**)",
+      "Edit(//c/Users/user/oshinavi/**)",
       "Bash(tail:*)",
       "Bash(head:*)",
       "Bash(grep:*)",
@@ -894,7 +896,9 @@
       "Bash(echo \"done exit=$?\")",
       "Bash(cd *)",
       "Read(//c/tmp/**)",
-      "WebFetch(domain:r.jina.ai)"
+      "WebFetch(domain:r.jina.ai)",
+      "Bash(ps -W)",
+      "Bash(cp index.html index.html.bak_0708_morning_delete)"
     ]
   },
   "hooks": {
