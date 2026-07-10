@@ -902,7 +902,9 @@
       "WebFetch(domain:r.jina.ai)",
       "Bash(ps -W)",
       "Bash(cp index.html index.html.bak_0708_morning_delete)",
-      "Bash(bash tmp/harvest_all_0708.sh)"
+      "Bash(bash tmp/harvest_all_0708.sh)",
+      "Bash(tasklist)",
+      "Bash(rm *)"
     ]
   },
   "hooks": {

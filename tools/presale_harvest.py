@@ -3,7 +3,7 @@
 使い方: python tools/presale_harvest.py <lg> [out.json]
   lg: 01音楽 02演劇 03スポーツ 04映画 05アート 06イベント 07クラシック
 既存 index.html と名前照合し、未掲載候補のみ抽出して出力。"""
-import re, io, sys, json, time, html, urllib.request, unicodedata
+import re, io, sys, json, time, html, urllib.request, unicodedata, http.client
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 LG = sys.argv[1] if len(sys.argv) > 1 else '01'
@@ -16,10 +16,36 @@ FILTER = sys.argv[3] if len(sys.argv) > 3 else 'rlsIn=03'
 if '=' not in FILTER:           # 後方互換: '03' だけ渡されたら rlsIn=03 とみなす
     FILTER = 'rlsIn=' + FILTER
 
+_conn = None
+
 def fetch(page):
-    url = 'https://t.pia.jp/pia/rlsInfo.do?lg=%s&%s&page=%d' % (LG, FILTER, page)
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+    """t.pia.jp への接続を keep-alive で使い回す。1ページ毎に TCP+TLS を張り直すと
+    1ページ約5秒かかり、音楽(57ページ)で接続確立に大半の時間を費やしていた(2026-07-10計測)。
+    失敗したら接続を捨てて urllib にフォールバック。"""
+    global _conn
+    path = '/pia/rlsInfo.do?lg=%s&%s&page=%d' % (LG, FILTER, page)
+    for attempt in (1, 2):
+        try:
+            if _conn is None:
+                _conn = http.client.HTTPSConnection('t.pia.jp', timeout=30)
+            _conn.request('GET', path, headers={
+                'User-Agent': 'Mozilla/5.0', 'Connection': 'keep-alive',
+                'Accept-Encoding': 'identity'})
+            r = _conn.getresponse()
+            body = r.read()
+            if r.status != 200:
+                raise OSError('status %d' % r.status)
+            return body.decode('utf-8', 'replace')
+        except Exception:
+            try:
+                _conn.close()
+            except Exception:
+                pass
+            _conn = None
+            if attempt == 2:
+                url = 'https://t.pia.jp' + path
+                req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+                return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
 
 def strip(s):
     return html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', s))).strip()
@@ -68,22 +94,43 @@ print('lg=%s total=%d pages=%d' % (LG, total, pages))
 
 # ★1ページの件数は固定でない(5〜10件・末尾は1件等)。total÷10で打ち切ると後半ページを
 #   丸ごと取りこぼす(2026-06-26発覚＝音楽で71ページ以降の約175件を未取得だった)。
-#   空ページが2回連続するまで回す(safety cap 400ページ)。
-items = parse_page(h1)
-p, empty = 2, 0
+# ★★ぴあは範囲外のページを要求されても「最後のページ」を返す(空を返さない)。そのため
+#   「空ページ2回で終了」の条件に永久に当たらず毎回400ページ空回りしていた(2026-07-10発覚)。
+#   art05では同じ1件を399回も拾い、在庫件数まで水増しされていた。
+#   → 新規URLが1件も増えないページに当たったら終端とみなす。
+#   ※フェッチにはゆらぎがあり、実在ページが一度だけ空/前ページと同一で返ることがある
+#     (2026-07-10 art05で1回目9件・2回目15件)。1回リトライし、新規ゼロが2回続いたら終端。
+items, seen = [], set()
+p, empty = 1, 0
+h = h1
 while p <= 400:
     try:
-        pi = parse_page(fetch(p))
+        pi = parse_page(h)
     except Exception as e:
         print('page', p, 'err', e); pi = []
-    if pi:
-        items += pi; empty = 0
+    fresh = [x for x in pi if x['url'] not in seen]
+    if not fresh:
+        time.sleep(1.0)                      # ゆらぎ対策の1回リトライ
+        try:
+            pi = parse_page(fetch(p))
+        except Exception:
+            pi = []
+        fresh = [x for x in pi if x['url'] not in seen]
+    if fresh:
+        for x in fresh:
+            seen.add(x['url'])
+        items += fresh
+        empty = 0
     else:
         empty += 1
-        if empty >= 2:
+        if empty >= 2:      # 新規ゼロが2ページ連続 = 終端(折り返し)
             break
     p += 1
     time.sleep(0.15)
+    try:
+        h = fetch(p)
+    except Exception as e:
+        print('page', p, 'fetch err', e); break
 print('parsed items:', len(items), '(fetched up to page %d)' % p)
 
 # dedup vs existing index.html (artist + name text)
