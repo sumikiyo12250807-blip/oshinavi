@@ -120,10 +120,14 @@ def next_action(ev, today):
     return cands[0]
 
 
+SORT_PRESALE, SORT_SELLING = 0, 1
+
+
 def classify_rank(ev, today):
-    """index.html の EVENTS.sort() 相当。①販売中(今買える)=rank0・終了日近い順 →
-    ②発売前=rank1・発売日近い順 → ③終了/売切=rank2。買えるものを常に先頭に。"""
-    sell, pre = [], []
+    """index.html の EVENTS.sort() 相当（ユーザー指示 2026-07-10）。
+    日付を1本の時間軸にして早い順。同じ日付なら「発売開始(発売前)」が上、「締切(販売中)」が下。
+    売切・終了だけのカードは末尾(rank2)。"""
+    cands = []
     for t in ev.get("tickets") or []:
         if t.get("soldout"):
             continue
@@ -131,20 +135,22 @@ def classify_rank(ev, today):
         try:
             if t.get("saleUntilSoldOut"):
                 if d and parse(d) >= today:
-                    sell.append(d)
+                    cands.append((d, SORT_SELLING))
                 continue
-            if sd and parse(sd) > today:
-                pre.append(sd)
+            # 「今日発売(sd==today)」も発売開始として扱う。index.html は発売時刻を見て
+            # 時刻後は販売中に切り替えるが、ai.html は1日1回の静的生成なので時刻で揺らさない。
+            # renderCard 側も締切未取込(startDate==date)は「本日発売」と表示するので整合する。
+            if sd and parse(sd) >= today:
+                cands.append((sd, SORT_PRESALE))
                 continue
             if d and parse(d) >= today:
-                sell.append(d)
+                cands.append((d, SORT_SELLING))
         except ValueError:
             continue
-    if sell:
-        return (0, min(sell))
-    if pre:
-        return (1, min(pre))
-    return (2, ev.get("date") or "9999-99-99")
+    if not cands:
+        return (2, ev.get("date") or "9999-99-99", SORT_SELLING)
+    cands.sort()
+    return (0, cands[0][0], cands[0][1])
 
 
 def buy_url(ev):
@@ -177,6 +183,10 @@ def status_text(ev, today):
     # selling
     if t.get("saleUntilSoldOut"):
         return f"{emoji} 販売中（予定枚数に達し次第終了）", d
+    if t.get("startDate") and t["startDate"] == t.get("date"):
+        # 締切未取込（ぴあ「◯/◯より発売」の単日形）。誤った「販売中〜発売日」を出さず
+        # 発売日だけ告げる。index.html renderCard と同じルール（2026-07-09）。
+        return f"{emoji} 本日発売（{d}発売）", d
     if n == 0:
         ctxt = "本日締切"
     elif n == 1:
