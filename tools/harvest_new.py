@@ -9,7 +9,7 @@
 【選定順】(2026-07-10 ユーザー指摘で修正)
   旧: 発売日が近い順＋「本日発売/発売日不明」を最優先 → 本日発売ばかり50件埋まり、
       「発売までカウントダウンして教える」というOSHINAVIの主旨と真逆だった。
-  新: 4日後以降(近い順) > 2〜3日後 > 明日 > 本日発売 > 発売日不明
+  新: 4日後以降(遠い順=まだまだ先を優先) > 2〜3日後 > 明日 > 本日発売 > 発売日不明
 
 出力は build_pia_entries.py にそのまま食わせられる cand 形式。
 """
@@ -75,9 +75,21 @@ db_cds = set(re.findall(r'event(?:Bundle)?Cd=(\w+)', idx))
 m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', idx, re.S)
 maxid = max(e['id'] for e in json.loads(m.group(2)))
 
+# ジャンル優先度（ユーザー指示 2026-07-10 夜）：音楽 > 演劇 > クラシック > イベント > スポーツ > アート(最後)。
+GENRE_PRI = {'music': 0, 'engeki': 1, 'classic': 2, 'event': 3, 'sports': 4, 'art': 5}
+
+
+def sortkey(x):
+    d = days_until(x.get('rlsdate', ''))
+    b = bucket(d)
+    g = GENRE_PRI.get(x.get('_tag', ''), 9)
+    # ①カウントダウン価値のbucket ②ジャンル優先度 ③bucket0は遠い順(降順)・他は近い順。
+    # ユーザー指示 2026-07-12(遠い順) + 2026-07-10(ジャンル優先度)。
+    return (b, g, -(d or 0) if b == 0 else (d or 0))
+
+
 seen_cd, seen_nm, sel = set(db_cds), set(), []
-for it in sorted(items, key=lambda x: (bucket(days_until(x.get('rlsdate', ''))),
-                                       days_until(x.get('rlsdate', '')) or 0)):
+for it in sorted(items, key=sortkey):
     cd, nm = eventcd(it['url']), norm(it['artist'])
     if not cd or cd in seen_cd or (nm and nm in seen_nm):
         continue
