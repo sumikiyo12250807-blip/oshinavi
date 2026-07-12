@@ -15,6 +15,9 @@ check_expired.py は「全枠死亡」のエントリしか拾わないため、
   python tools/heal_stale_deadlines.py --build    # ぴあ再パース → tmp/heal_stale.json
   python tools/heal_stale_deadlines.py --apply    # 上記jsonを index.html に適用（tickets のみ置換）
 
+--ids 154,292 を付けると隠れ枠の有無に関係なくそのエントリを対象にする（期限切れtriageの
+救済変換＝「ぴあに買える枠があるのに登録に無い」子の再buildに使う）。
+
 適用は tickets のみ。venue/dateLabel を上書きすると過去のQC手修正（空カッコ会場埋め等）が巻き戻る。
 """
 import re, json, sys, io, time, datetime, os
@@ -24,6 +27,7 @@ import re, json, sys, io, time, datetime, os
 sys.stdout.reconfigure(encoding='utf-8')
 TODAY = datetime.date.today().isoformat()
 OUT = 'tmp/heal_stale.json'
+BAK_SUFFIX = 'heal_stale'
 
 
 def load_events(h):
@@ -57,10 +61,25 @@ def scan(EVENTS):
     return out
 
 
+def arg_ids():
+    if '--ids' not in sys.argv:
+        return None
+    raw = sys.argv[sys.argv.index('--ids') + 1]
+    return [int(x) for x in raw.replace(' ', '').split(',') if x]
+
+
 def main():
     h = open('index.html', encoding='utf-8').read()
     m, EVENTS = load_events(h)
-    targets = scan(EVENTS)
+    ids = arg_ids()
+    if ids:
+        byid = {e['id']: e for e in EVENTS}
+        targets = [(byid[i], []) for i in ids if i in byid]
+        # 同日に隠れ枠ヒールも走るので、そちらの成果物/backupを踏まないよう名前を分ける
+        global OUT, BAK_SUFFIX
+        OUT, BAK_SUFFIX = 'tmp/heal_ids.json', 'rescue'
+    else:
+        targets = scan(EVENTS)
 
     if '--apply' in sys.argv:
         if not os.path.exists(OUT):
@@ -74,7 +93,7 @@ def main():
             e['tickets'] = o['tickets']
             changed += 1
         left = sum(1 for _, s in scan(EVENTS) for _ in s)
-        bak = f'index.html.bak_{datetime.date.today():%m%d}_heal_stale'
+        bak = f'index.html.bak_{datetime.date.today():%m%d}_{BAK_SUFFIX}'
         open(bak, 'w', encoding='utf-8').write(h)
         new_arr = json.dumps(EVENTS, ensure_ascii=False, indent=2)
         open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():])
