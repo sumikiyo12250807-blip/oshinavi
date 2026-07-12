@@ -9,8 +9,14 @@
 >   - ⏳ **当日券のみ生存2件＝オカモトショウ(山口7/12)・新妻聖子(オーチャード7/12)**＝WebFetchで「当日券発売中」確認・今日公演なので[[feedback_delete_next_morning]]で**今日は残置→明日削除**。DROP解析不能はこの当日券形が原因。
 > - ✅ **【宿題④解決】harvest_new.py 並び順**＝ユーザー2択で**「遠い順」選択**→bucket0(4日後以降)を降順(`-days_until`)に。さらに7/10指示の**ジャンル優先度**（音楽>演劇>クラシック>イベント>スポーツ>アート最後）が未コード化だったので`sortkey()`に追加（GENRE_PRI）。memory[[feedback_harvest_countdown_first]]更新。
 > - ✅ **新着100件収集→投入(id2400-2499・genre:new)**。全部4日後以降。収集元 music10/engeki38/classic52（遠い先の音楽在庫は薄い＝plan既知）。下書き=classic56/owarai18/engeki11/jpop7/musical4/dento2/jazz1/kids1。**二段構えゼロエラー**（check_badges OK／reconcile --new **OK100・MISSING0/DROP0/STALE0**）。QC=半角化0/日付逆転0/eventCd重複0/名前重複0/R9バッジ正常、**空カッコ会場1件修正**（id2435 第14回清水にぎわい落語まつり=4会場の清水ローカルまつり→「清水文化会館マリナート大ホール ほか（清水）」・bak_0712_qc/_newpool）。id2496=12人のヴァイオリニスト大型ツアー(2026→R9年枠)は優良カウントダウン物件。
-> - 📊 **index 1591→1691件**。**未push（本日0回）**・ai.html/SSR未再生成（振り分け＆push前）。
-> - 🚨 **7/13最優先**：①**新着100件(2400-2499)のユーザーレビュー→振り分け→ai.html再生成→push**②期限切れ(7/12締切フリップ)＋**当日券2件(771オカモトショウ/1355新妻聖子)削除**③宿題＝presale_harvestのeventCd判定化（同名別公演の取りこぼし・[[feedback_harvest_name_dedup_blindspot]]）④reconcileに発売前枠照合追加。
+> - ✅ **重複バッジ意図集約17件44枠**（仙台クラシックフェス24→3=ユーザー「同じ内容のバッジがいっぱい」で発覚・フェス個別公演を全部拾ったヒール副産物／NAGASAKI10→4・古澤巖7→6ほか）。tmp/dedup_badges_0712.py。**表示フィールド完全一致のみ畳む**（席種違い10件・全国ツアー28枠等は正当で残置）。
+> - ✅ **新着100件 総点検「間違い0」**（ユーザー「一気にやる前にチェック・間違い0目指す」）＝文字化け0/空カッコ0(清水まつり1件修正)/飾り記号0/日付逆転0/R9漏れ0/既存重複0/verified全付き/価格捏造0。**ジャンル下書き3件補正**（_piaSub空でengeki誤フォールバック＝2408 DIANA KRALL→jazz/2409 ウィーンフェスタMATSUDO→classic[WebFetch=ウィーン・フィルのブラス・コンサート・fes定義非該当]/2467はclassicで正）。下書き最終=classic57/owarai18/engeki9/jpop7/musical4/dento2/jazz2/kids1。
+> - 📊 **index 1591→1691件**。**push 2回実施(1回目b557169／2回目=午後)＝本日上限到達**。
+> - ✅ **【午後・ユーザーレビュー対応】** 仙台クラシックフェス「同じバッジがいっぱい」指摘→**重複バッジ意図集約17件44枠**（表示完全一致のみ・全国ツアー/席種違いは正当で残置）。新着100件**総点検で間違い0**（下書き3件補正=DIANA KRALL→jazz/ウィーンフェスタ→classic）。**振り分け確定100件**＝classic57/owarai18/engeki9/jpop7/musical4/dento2/jazz2/kids1・両方式4件(バレエclassic+engeki)・NEW_ORDER空。
+> - ✅ **【表示・ユーザー指示】カード内枠順を日付軸に修正**（renderCard ticketSortKey）＝旧「販売中を全部上→発売前を下」で発売前が後方に沈む→**発売日/締切の時間軸で早い順・同日は発売前が上**（グローバル順[[feedback_display_order]]と統一）。売切除去2件（北山の岡山8/29／高嶋ちさ子の熊本7/17）。
+> - 🚨🚨 **【最重要・恒久】取りこぼし真因＝harvestはぴあ専業・ツアーを1バンドルからしか作らない**（ローチケ/キョードー等ぴあ外チャネルは構造的に取れない＋公式全日程未照合で気づけない。高嶋ちさ子の関西=キョードー→ローチケ・bundle生HTMLでKOBELCO=0確認）。**対処＝`tools/tour_audit.py`新設（朝ルーチン常設）**＝全国ツアーを公演日多い順に出し公式照合対象を見える化。[[feedback_tour_cross_channel_blindspot]]。
+> - 🚨 **【最重要・信用】保存memory不遵守2件**＝①「あんた」禁止([[feedback_tone_onee]])を連発②ローチケ誤除外（[[feedback_vendor_priority]]は「楽天orぴあがある時だけ非表示・単独なら表示」）。真因＝**MEMORY.md一行要約だけ見て本体未読**。対処＝①Stop hook `.claude/hooks/check_tone.ps1`で「あんた」機械ブロック(テスト済)②要約を条件付きに修正③[[feedback_read_full_memory_before_apply]]新規=適用前は本体を読む。
+> - 🚨 **7/13最優先**：①期限切れ(7/12締切フリップ)＋**当日券2件(771オカモトショウ/1355新妻聖子)削除**②`tools/tour_audit.py`で上位ツアー(ディズニー26/PERSONZ25/葉加瀬太郎17等)の公式照合→取りこぼし補完③`tools/dedup_badges`を常設化(buildが表示同一ticketを畳まない恒久対策)④presale_harvestのeventCd判定化([[feedback_harvest_name_dedup_blindspot]])⑤reconcileに発売前枠照合追加。
 >
 > ---
 > 〔旧〕## ⏰ 次回（2026-07-12以降）最優先・引き継ぎ
