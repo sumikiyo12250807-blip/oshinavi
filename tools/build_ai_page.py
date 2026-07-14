@@ -187,6 +187,10 @@ def status_text(ev, today):
         # 締切未取込（ぴあ「◯/◯より発売」の単日形）。誤った「販売中〜発売日」を出さず
         # 発売日だけ告げる。index.html renderCard と同じルール（2026-07-09）。
         return f"{emoji} 本日発売（{d}発売）", d
+    if t.get("startDate") and parse(t["startDate"]) == today:
+        # 今日が発売初日で締切も判明している枠＝「本日発売」と「いつまで買えるか」を両方出す
+        # （ユーザー指示 2026-07-14）。renderCard 側と同じルール。
+        return f"{emoji} 本日発売（〜{d}まで）", d
     if n == 0:
         ctxt = "本日締切"
     elif n == 1:

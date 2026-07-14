@@ -40,6 +40,38 @@ def is_stale(t):
     return bool(sd and sd == d and d <= TODAY and not t.get('saleUntilSoldOut'))
 
 
+def base_type(ty):
+    """券種名から日付・時刻の部分を落とした基底名。ヒール前後の枠を突き合わせるキー。
+    例「一般発売（熊本 9/5公演）7/14 10:00発売」→「一般発売（熊本 9/5公演）」
+       「一般発売（熊本 9/5公演）〜9/4 23:59」  →「一般発売（熊本 9/5公演）」"""
+    ty = re.sub(r'〜\s*\d{1,2}/\d{1,2}(?:\s*\d{1,2}:\d{2})?\s*$', '', ty or '')
+    ty = re.sub(r'\d{1,2}/\d{1,2}(?:\s*\d{1,2}:\d{2})?\s*発売\s*$', '', ty)
+    return ty.strip()
+
+
+def carry_start_dates(old_tickets, new_tickets):
+    """ヒール前の隠れ枠が持っていた「発売開始日」を、ヒール後の枠に引き継ぐ。
+
+    ぴあは発売時刻を過ぎると同じ枠を「受付中 〜9/4 23:59」と出すので、再パースした枠には
+    startDate が付かない（＝発売日が消える）。それだと当日のカードが「本日発売」でなく
+    「販売中」になり、いつ発売されたかも分からなくなる。事実として持っていた発売日は残す。
+    （ユーザー指示 2026-07-14「本日発売をいつまでか表示して」）"""
+    old_start = {}
+    for t in old_tickets or []:
+        sd = t.get('startDate')
+        if sd and sd == t.get('date'):          # 隠れ枠＝単日形（発売日のみ判明）
+            old_start[base_type(t.get('type'))] = sd
+    carried = 0
+    for t in new_tickets or []:
+        if t.get('startDate') or t.get('soldout'):
+            continue
+        sd = old_start.get(base_type(t.get('type')))
+        if sd and t.get('date') and sd < t['date']:   # 発売日 < 締切 のときだけ
+            t['startDate'] = sd
+            carried += 1
+    return carried
+
+
 def pia_urls(ev):
     urls = []
     p = (ev.get('links') or {}).get('pia')
@@ -85,11 +117,12 @@ def main():
         if not os.path.exists(OUT):
             print(f'!! {OUT} が無い。先に --build を実行して。'); return
         built = {o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
-        changed = 0
+        changed = carried = 0
         for e in EVENTS:
             o = built.get(e.get('id'))
             if not o or o.get('status') != 'convert' or not o.get('tickets'):
                 continue
+            carried += carry_start_dates(e.get('tickets'), o['tickets'])
             e['tickets'] = o['tickets']
             changed += 1
         left = sum(1 for _, s in scan(EVENTS) for _ in s)
@@ -98,7 +131,7 @@ def main():
         new_arr = json.dumps(EVENTS, ensure_ascii=False, indent=2)
         open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():])
         dels = [o for o in built.values() if o.get('status') == 'delete']
-        print(f'=== {changed}件 適用 / 残り隠れ枠 {left} (backup: {bak}) ===')
+        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
         if dels:
             print(f'\n🚨 買える枠ゼロ = 削除候補 {len(dels)}件（ユーザーOK後に削除）:')
             for o in dels:
