@@ -66,6 +66,10 @@ def pia_buyable(urls):
         # (2026-06-30 風輪のurlが朝有効→無効化。静かに0枠になり取りこぼす穴を塞ぐ)。
         if bpe.is_error_page(h):
             errs.append((u, '無効URL(ご確認ください)=eventCd削除/差替')); continue
+        # 券種がw.pia.jp直販ページで出るイベントは t.pia.jp に券種カードが無い。0枠と読むと
+        # 販売中を「ぴあ0枠」＝削除候補にしてしまう(2026-07-15 nobinobi 2026)。照合不能として出す。
+        if bpe.wpia_only(h):
+            errs.append((u, '🚨w.pia.jp直販形式=券種カード無し・機械照合不可(削除NG・目視必須)')); continue
         for r in bpe.parse_cards(h):
             if r['state'] not in ('受付中', '発売前'):
                 continue

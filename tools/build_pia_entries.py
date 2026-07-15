@@ -54,6 +54,28 @@ def extract_prefs(*texts):
             if m not in seen:
                 seen.add(m); out.append(m)
     return out
+
+def is_preflist(place):
+    """place が「県名の羅列」だけ(実会場名でない)か。全国ツアーのバンドル行は
+    __place に「東京／大阪／愛知」の形で県が入る。"""
+    if not place:
+        return False
+    return not PREF_RE.sub('', place).replace('／', '').replace('・', '').replace('　', '').strip()
+
+def prefs_for(region, place):
+    """券種カードの都道府県を決める。
+
+    【最重要】実会場名から県名を拾ってはいけない。会場名に他県の名が入っていると誤検出し、
+    複数県扱い → prefecture が「全国」に化ける（2026-07-14 ANN WILSON＝会場「東京建物
+    Brillia HALL 箕面 大ホール」は"大阪"の劇場なのに、会場名の"東京"を拾って大阪・東京の
+    2県と読み全国になっていた）。ぴあが出す __region が正。
+    会場名を見るのは ①place が県名の羅列(=複数県ツアー行) ②region が空 の時だけ。"""
+    if is_preflist(place):
+        return extract_prefs(region, place)
+    prefs = extract_prefs(region)
+    if not prefs:
+        prefs = extract_prefs(place)   # regionが取れない時だけ会場名から推測
+    return prefs
 def normalize_pia_url(u):
     """ticketInformation.do?...&rlsCd=XXX は『特定リリース専用ページ』で、そのリリースが
     終了すると買える枠ゼロを返す（イベント全体ではまだ受付中でも）。誤って販売中エントリを
@@ -79,6 +101,19 @@ def is_error_page(h):
     「ご確認ください」(error-container)が返る。0カードと区別できず無言で枠を失う原因なので
     明示検出する(2026-06-30 風輪のeventCd 2623808が朝有効→夜無効化=ご確認ください の取りこぼし)。"""
     return bool(h) and ('<title>ご確認ください' in h or 'class="error-container"' in h)
+
+class WpiaFormPage(Exception):
+    """【誤削除の罠】ぴあが券種を w.pia.jp/t/xxx（WEB直販ページ）で出すイベントは、t.pia.jp 側に
+    ticketSalesCard-2024 の券種カードを1枚も持たない。パーサは0カード→「買える枠ゼロ」と読み、
+    販売中のエントリを削除候補に出してしまう（2026-07-15 nobinobi 2026＝当日12:00発売開始の
+    フェスを危うく削除するところだった）。カード0かつw.pia.jpリンク有り＝機械照合の対象外なので、
+    Noneを返さず例外で止める。呼び出し側は削除候補にせず人間の目視へ回すこと。"""
+
+def wpia_only(h):
+    """券種カードが1枚も無く、w.pia.jp の購入リンクがある＝WEB直販形式のページ。"""
+    if not h:
+        return False
+    return 'ticketSalesList-2024__item' not in h and 'https://w.pia.jp/t/' in h
 def txt(s): return _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s or ''))).strip()
 def wd(iso):
     y, m, d = map(int, iso.split('-')); return WD[datetime.date(y, m, d).weekday()]
@@ -136,12 +171,10 @@ def parse_cards(h):
             state = '受付終了'
         place = txt(g(r'__place"[^>]*>(.*?)</span>'))
         region = txt(g(r'__region">(.*?)</span>'))
-        prefs = extract_prefs(region, place)   # 複数県は __place に「県／県／…」で入る
-        # place が県名の羅列だけ(実会場名でない)なら venue 扱いしない
-        is_preflist = place and not PREF_RE.sub('', place).replace('／', '').replace('・', '').replace('　', '').strip()
+        prefs = prefs_for(region, place)   # 実会場名からは県を拾わない(全国化バグの恒久対策)
         rows.append({
             'perfdate': dts[0] if dts else '', 'perf_end': dts[-1] if dts else '',
-            'venue': '' if is_preflist else place, 'prefs': prefs,
+            'venue': '' if is_preflist(place) else place, 'prefs': prefs,
             'title': txt(g(r'__title">(.*?)</p>')), 'state': state,
             'when': txt(g(r'__status[^>]*>.*?<br>\s*<span[^>]*>(.*?)</span>')),
             'url': g(r'href="(https://t\.pia\.jp/pia/ticketInformation\.do\?[^"]+)"'),
@@ -153,11 +186,43 @@ def parse_cards(h):
         seen.add(k); u.append(r)
     return u
 
+def drop_labels_in_name(type_str, name):
+    """券種名の【ラベル】が公演名にも入っているなら冗長なので落とす。
+    例: 公演名「【かわさきジャズ2026】しんゆりJAZZストリーム」の枠が
+        「一般発売【かわさきジャズ2026】」になるとバッジが二重に名乗って読みにくい。
+    「【学生限定LIVE】」「【サイン会付き】」のように公演名に無いものは券種の区別なので残す。"""
+    n = norm_fw(name or '')
+    def _f(m):
+        return '' if norm_fw(m.group(1)) in n else m.group(0)
+    return re.sub(r'【(.*?)】', _f, type_str)
+
 def kenshu(title):
+    labels = []
+    base = _kenshu_base(title, labels)
+    # 説明ラベル(【11月平日限定】【サイン会付き】【座席券】等)は券種名に戻す。落とすと特典違い・
+    # 席種違いの枠が同じバッジ文字列になり「同じバッジが2つ」に見える(2026-07-15 ミルキー☆サブウェイ展
+    # のサイン会付き券／特別展「生きものたちの性」の11月平日限定券で発覚)。
+    return base + ''.join(f'【{x}】' for x in labels)
+
+def _kenshu_base(title, labels):
     # ＜...＞【...】〔...〕［...］の囲み(公演日/区分指定)を全部除去。中の全角／を区切りと誤認して
     # 「一般発売（９」「一般発売【６」等に化けるのを防ぐ(2026-06-23 JUJU・KAWAII LABで発覚)。
-    t = re.sub(r'＜.*?＞', '', title)
-    t = re.sub(r'【.*?】', '', t)
+    def _brace(m):
+        inner = m.group(1).strip()
+        # 落とすのは①券種語の装飾囲み(【一般発売】【先行】)②公演日の囲み(【６／２７公演】)。
+        # それ以外＝券種を区別する説明ラベル(【11月平日限定】【座席券】)は labels に退避して残す。
+        if re.search(r'(発売|販売|先行|受付|プリセール|プレリザーブ|抽選|当日|公演)', inner):
+            return ''
+        if re.search(r'[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}', inner):
+            return ''
+        if inner:
+            labels.append(inner)
+        return ''
+    # ＜…＞も同じ扱い。＜６／２４公演＞は落とすが、＜学生限定LIVE＞＜2DAY通し券＞は券種を分ける
+    # 情報なので残す（落とすと学生限定券と通常券が同じ「一般発売」バッジになり1枠に潰れる。
+    # 2026-07-15 KAWAII LAB. MATESで発覚）。
+    t = re.sub(r'＜(.*?)＞', _brace, title)
+    t = re.sub(r'【(.*?)】', _brace, t)
     t = re.sub(r'〔.*?〕', '', t)
     t = re.sub(r'［.*?］', '', t)
     # ◎K-1.CLUB◎一般発売 のように【同じ記号で囲んだ装飾ラベル】を先頭に付ける表記がある。
@@ -165,10 +230,23 @@ def kenshu(title):
     t = re.sub(r'^([●○◎★☆■◆])[^●○◎★☆■◆]*\1', '', t).strip()
     # （９／２２公演）等の丸カッコ公演日も除去。type側で（県 M/D公演）を付け直すので不要。
     t = re.sub(r'（[^（）]*(?:公演|／)[^（）]*）', '', t)
+    # 「９／１８（金）一般発売」のように公演日を券種名の頭に付ける表記がある。この／を下の
+    # 「券種／公演名」区切りと誤認すると券種名が「9」だけになる（2026-07-14 巨人×中日で発覚）。
+    t = re.sub(r'^[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}\s*(?:（[^（）]*）|\([^()]*\))?\s*', '', t).strip()
+    KW = (r'(プレイガイド最速先行|最速先行|オフィシャル先行|\d次プレリザーブ|プレリザーブ\d次|'
+          r'プレリザーブ|\d次受付|プリセール|一般発売|一般販売|当日引換券|当日券|先行)')
     if '／' in t:
         # 先頭/末尾の飾り記号(●○★@※等)はぴあ表記の装飾。バッジに出さない(2026-07-10)。
-        return t.split('／')[0].strip('　 .・●○◎◆◇■□★☆@＠※〇▼▲').strip() or '一般発売'
-    m = re.search(r'(プレイガイド最速先行|最速先行|オフィシャル先行|\d次プレリザーブ|プレリザーブ\d次|プレリザーブ|\d次受付|プリセール|一般発売|当日引換券|当日券|先行)', t)
+        head = t.split('／')[0].strip('　 .・●○◎◆◇■□★☆@＠※〇▼▲').strip()
+        # ぴあは「券種 ／ 公演名」が基本だが、公演名そのものに／を含み「公演名★2次受付〔東京〕」と
+        # 出す枠がある。この場合 head は公演名の断片＝券種でない（2026-07-14『いきなり本読み!』で発覚）。
+        # head に券種語が無ければ、元の文字列から券種語を拾い直す。
+        if head and not re.search(r'(発売|販売|先行|受付|プリセール|プレリザーブ|当日|抽選)', head):
+            m = re.search(KW, t)
+            if m:
+                return m.group(1)
+        return head or '一般発売'
+    m = re.search(KW, t)
     return m.group(1) if m else '先行'
 
 def parse_when(state, when):
@@ -279,7 +357,12 @@ def build(cand):
         k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'])
         if k in seen: continue
         seen.add(k); rows.append(r)
-    if not rows: return None
+    if not rows:
+        # 【誤削除の罠】買える枠ゼロに見えても、ページがw.pia.jp直販形式なら「券種カードが無い」
+        # だけで実際は販売中のことがある。Noneを返すと呼び出し側が削除候補にするので例外で止める。
+        if any(wpia_only(h) for h in htmls):
+            raise WpiaFormPage(f"w.pia.jp直販形式(券種カード0)＝機械照合できない。実ページを目視で確認: {cand['urls']}")
+        return None
     venues = list(dict.fromkeys(r['venue'] for r in rows if r['venue']))
     prefs = list(dict.fromkeys(p for r in rows for p in r['prefs']))
     starts = sorted(r['perfdate'] for r in rows if r['perfdate'])
@@ -301,7 +384,8 @@ def build(cand):
         pe = r.get('perf_end') or r['perfdate']
         mdr = mdbadge(r['perfdate'], pe)   # 2027公演は自動でR9年付与(年が抜けない)
         _pf = '・'.join(r['prefs']) if r['prefs'] else '全国'   # 複数県は全部載せる(字は小さめ表示)。県名取れなければ全国
-        t = {'type': f"{kenshu(r['title'])}（{_pf} {mdr}公演）{suf}", 'date': iso}
+        ks = drop_labels_in_name(kenshu(r['title']), cand.get('artist'))
+        t = {'type': f"{ks}（{_pf} {mdr}公演）{suf}", 'date': iso}
         if sd: t['startDate'] = sd
         # 抽選券(先行/プレリザーブ)はhrefがlotRlsCdでeventCd無し→由来ページ(_src)のurlで補完。
         # これで複数会場エントリの全ticketにurlが付き、ボタン誤誘導が消える(2026-06-23恒久修正)。
@@ -314,7 +398,10 @@ def build(cand):
     # ディズニー・オン・クラシック18県中4会場しか出ず「アクトシティ浜松が抜けてる」）。
     venue = venues[0] if len(venues) == 1 else '全国ツアー（' + '／'.join(venues) + '）'
     pref = prefs[0] if len(prefs) == 1 else '全国'
-    if len(starts) == 1 and ends[-1] == starts[0]:
+    # 同一公演日の枠が2つ以上あると starts が ['8/3','8/3'] になり、len==1 を満たさず範囲形に落ちて
+    # 「2026年8月3日(月)〜2026年8月3日(月)」と冗長表示になっていた(2026-07-15 KAWAII LAB.等4件)。
+    # 判定は件数でなく「最早の開始日==最遅の終了日」＝実質単日か、で行う。
+    if starts and ends[-1] == starts[0]:
         dl = f"{jp(starts[0])} {pref} {venues[0] if venues else ''}".strip()
     else:
         tail = '全国ツアー' if pref == '全国' else (pref + ' ' + (venues[0] if len(venues) == 1 else '')).strip()
@@ -398,6 +485,14 @@ def _selftest():
     # ②'' ◎…◎ の囲み装飾ラベル（2026-07-13 K-1 WORLD MAX）
     assert kenshu('◎K-1.CLUB◎一般発売 ／ Ｋ－１ ＷＯＲＬＤ ＭＡＸ') == '一般発売', kenshu('◎K-1.CLUB◎一般発売 ／ Ｋ－１ ＷＯＲＬＤ ＭＡＸ')
     assert kenshu('◎K-1.CLUB 限定◎有料会員先行発売 ／ Ｋ－１') == '有料会員先行発売', kenshu('◎K-1.CLUB 限定◎有料会員先行発売 ／ Ｋ－１')
+    # ②'' 券種名の頭に付く公演日「９／１８（金）一般発売」（2026-07-14 読売ジャイアンツ対中日）
+    #     この／を「券種／公演名」の区切りと誤読すると券種名が「9」だけになる
+    assert kenshu('９／１８（金）一般発売 ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦') == '一般発売', \
+        kenshu('９／１８（金）一般発売 ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦')
+    assert kenshu('9/19 一般発売 ／ 巨人戦') == '一般発売', kenshu('9/19 一般発売 ／ 巨人戦')
+    # ②''' 公演名そのものに／が入り「公演名★2次受付〔県〕」形で出る枠（2026-07-14『いきなり本読み!』）
+    assert kenshu('『いきなり本読み！In IMM／いきなり本読み！サテライト』★2次受付〔東京〕') == '2次受付', \
+        kenshu('『いきなり本読み！In IMM／いきなり本読み！サテライト』★2次受付〔東京〕')
     # ③ 「本日発売初日」(is-beforeだが今日から販売中)は受付中扱いで終了日のみ「～7/23」を拾える
     suf, iso, sd = parse_when('受付中', '～ 2026/7/23(木) 23:59')
     assert iso == '2026-07-23' and sd is None, ('本日発売初日(受付中)', suf, iso, sd)
@@ -415,7 +510,35 @@ def _selftest():
     # 両端とも将来年の異年範囲(2027→2028)は開始側のeraも残す(Vaundy 2027-2028でR9年が落ちた反省)
     assert mdbadge('2027-08-14', '2028-02-27') == 'R9年 8/14〜R10年 2/27', '異年2027→2028は両端era'
     assert mdbadge('2028-02-27', '2028-02-27') == 'R10年 2/27', '単日2028=R10年'
-    print('selftest OK: parse_when/kenshu/R9年(mdbadge) 回帰なし')
+    # ⑥ w.pia.jp直販形式の検出（2026-07-15 nobinobi 2026を誤って削除候補にした事故の回帰テスト）
+    #    券種カード0＋w.pia.jpリンク有り=販売中でも0枠に見える → 削除候補にしてはいけない
+    assert wpia_only('<div>チケット情報<a href="https://w.pia.jp/t/nobinobi26-2days/">チケット購入</a></div>') is True
+    assert wpia_only('<li class="ticketSalesList-2024__item"><p class="ticketSalesCard-2024__status is-active">受付中</p></li>') is False
+    assert wpia_only('<html><body>券種の無い普通のページ</body></html>') is False
+    # 券種カードとw.pia.jpが同居するページは通常パースできるので罠ではない
+    assert wpia_only('<li class="ticketSalesList-2024__item">…</li><a href="https://w.pia.jp/t/x/">購入</a>') is False
+    # ⑦ 都道府県は__regionが正・実会場名から拾わない（2026-07-14 ANN WILSONの「全国」化バグ）
+    assert prefs_for('大阪', '東京建物 Brillia HALL 箕面 大ホール') == ['大阪'], prefs_for('大阪', '東京建物 Brillia HALL 箕面 大ホール')
+    assert prefs_for('北海道', 'Zepp Sapporo') == ['北海道']
+    assert prefs_for('東京', '東京／大阪／愛知') == ['東京', '大阪', '愛知'], '県名の羅列(複数県ツアー行)は会場名側も拾う'
+    assert prefs_for('', '東京建物 Brillia HALL') == ['東京'], 'regionが空の時だけ会場名から推測'
+    assert is_preflist('東京／大阪') is True and is_preflist('Zepp Sapporo') is False
+    # ⑧ 【…】は装飾なら落とし、券種を区別する説明ラベルは残す
+    #    (2026-07-15 サイン会付き券・11月平日限定券が「一般発売」に潰れ同一バッジ化した回帰テスト)
+    assert kenshu('一般発売【亀山陽平監督 サイン会付き】 ／ 銀河特急 ミルキー☆サブウェイ') == '一般発売【亀山陽平監督 サイン会付き】', \
+        kenshu('一般発売【亀山陽平監督 サイン会付き】 ／ 銀河特急 ミルキー☆サブウェイ')
+    assert kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」') == '超早割チケット【１１月平日限定】', \
+        kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」')
+    assert kenshu('【一般発売】 ／ 工藤静香') == '一般発売', kenshu('【一般発売】 ／ 工藤静香')   # 装飾囲みは落とす
+    assert kenshu('一般発売 ／ ＺＩＧＧＹ') == '一般発売'
+    # ＜…＞も同様：公演日囲みは落とし、券種を分ける説明は残す（学生限定LIVE券が通常券と同一バッジに潰れた）
+    assert kenshu('一般発売 ／ ＫＡＷＡＩＩ ＬＡＢ． ＭＡＴＥＳ＜学生限定ＬＩＶＥ＞') == '一般発売【学生限定ＬＩＶＥ】', \
+        kenshu('一般発売 ／ ＫＡＷＡＩＩ ＬＡＢ． ＭＡＴＥＳ＜学生限定ＬＩＶＥ＞')
+    # ⑨ 公演名に既にあるラベルはバッジで二重に名乗らない（かわさきジャズ2026）／無いものは残す
+    assert drop_labels_in_name('一般発売【かわさきジャズ2026】', '【かわさきジャズ2026】しんゆりJAZZストリーム DAY1') == '一般発売'
+    assert drop_labels_in_name('一般発売【学生限定LIVE】', 'KAWAII LAB. MATES／KAWAII LAB. SOUTH') == '一般発売【学生限定LIVE】'
+    assert drop_labels_in_name('超早割チケット【11月平日限定】', '特別展「生きものたちの性」') == '超早割チケット【11月平日限定】'
+    print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels 回帰なし')
 
 if __name__ == '__main__':
     if '--selftest' in sys.argv:
