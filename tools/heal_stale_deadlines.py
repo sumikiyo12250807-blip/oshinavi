@@ -131,11 +131,16 @@ def main():
         new_arr = json.dumps(EVENTS, ensure_ascii=False, indent=2)
         open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():])
         dels = [o for o in built.values() if o.get('status') == 'delete']
+        wpia = [o for o in built.values() if o.get('status') == 'WPIA']
         print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
         if dels:
             print(f'\n🚨 買える枠ゼロ = 削除候補 {len(dels)}件（ユーザーOK後に削除）:')
             for o in dels:
                 print(f"  id={o['id']} {o.get('artist','')}")
+        if wpia:
+            print(f'\n🚨 w.pia.jp直販形式 {len(wpia)}件＝機械照合できない（削除NG・実ページを目視）:')
+            for o in wpia:
+                print(f"  id={o['id']} {o.get('artist','')} {(o.get('urls') or [''])[0]}")
         return
 
     nslot = sum(len(s) for _, s in targets)
@@ -151,7 +156,7 @@ def main():
         return
 
     sys.path.insert(0, 'tools')
-    from build_pia_entries import build
+    from build_pia_entries import build, WpiaFormPage
     out = []
     for n, (ev, _) in enumerate(targets, 1):
         i = ev['id']
@@ -161,6 +166,11 @@ def main():
             print(f'[{n}/{len(targets)}] {i} NO_PIA_URL ⚠️非ぴあ＝要WebFetch'); continue
         try:
             ne = build({'newid': i, 'artist': ev.get('artist', ''), 'urls': urls})
+        except WpiaFormPage:
+            # w.pia.jp直販形式＝券種カードが無いだけで販売中のことがある。絶対に削除候補にしない。
+            out.append({'id': i, 'status': 'WPIA', 'artist': ev.get('artist', ''), 'urls': urls})
+            print(f"[{n}/{len(targets)}] {i} 🚨w.pia.jp直販形式＝機械照合不可・削除NG・要目視 ({ev.get('artist','')})")
+            time.sleep(1.2); continue
         except Exception as ex:
             out.append({'id': i, 'status': 'ERROR', 'artist': ev.get('artist', ''), 'err': str(ex)[:120]})
             print(f'[{n}/{len(targets)}] {i} ERROR {str(ex)[:60]}'); time.sleep(2.0); continue
