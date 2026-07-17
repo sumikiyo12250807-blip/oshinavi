@@ -140,14 +140,14 @@ def main():
         if wpia:
             print(f'\n🚨 w.pia.jp直販形式 {len(wpia)}件＝機械照合できない（削除NG・実ページを目視）:')
             for o in wpia:
-                print(f"  id={o['id']} {o.get('artist','')} {(o.get('urls') or [''])[0]}")
+                print(f"  id={o['id']} {o.get('artist') or ''} {(o.get('urls') or [''])[0]}")
         return
 
     nslot = sum(len(s) for _, s in targets)
     print(f'=== 隠れ枠スキャン (today={TODAY}) ===')
     print(f'  対象エントリ {len(targets)}件 / 隠れ枠 {nslot}枠')
     for e, s in sorted(targets, key=lambda x: -len(x[1]))[:20]:
-        print(f"  id={e['id']:<5} {e.get('artist','')[:28]:<30} 隠れ{len(s)}/全{len(e.get('tickets',[]))}枠")
+        print(f"  id={e['id']:<5} {(e.get('artist') or '')[:28]:<30} 隠れ{len(s)}/全{len(e.get('tickets',[]))}枠")
     if len(targets) > 20:
         print(f'  … 他 {len(targets)-20}件')
 
