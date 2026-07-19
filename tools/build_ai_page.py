@@ -263,7 +263,7 @@ def build(today):
         out.append('<meta charset="UTF-8">')
         out.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
         out.append('<meta name="robots" content="index,follow">')
-        out.append(f"<title>OSHINAVI チケット発売カレンダー（{lo}〜{hi}件目／全{total}件・AIデータ一覧）</title>")
+        out.append(f"<title>OSHINAVI チケット発売日情報（{lo}〜{hi}件目／全{total}件・AIデータ一覧）</title>")
         out.append(f'<meta name="description" content="OSHINAVI掲載チケットの発売日・販売状況一覧（{lo}〜{hi}件目／全{total}件・50件ずつ分割・AI/検索エンジン向け静的データ）。">')
         out.append("<style>")
         out.append("body{font-family:sans-serif;max-width:1100px;margin:0 auto;padding:16px;line-height:1.6;color:#111}")
@@ -271,7 +271,7 @@ def build(today):
         out.append("th,td{border:1px solid #ccc;padding:6px 8px;text-align:left;vertical-align:top}")
         out.append("th{background:#f3f3f3}a{color:#06c}.note{color:#555;font-size:13px}.pager{margin:12px 0;font-size:13px}")
         out.append("</style></head><body>")
-        out.append("<h1>OSHINAVI チケット発売カレンダー</h1>")
+        out.append("<h1>OSHINAVI チケット発売日情報</h1>")
         out.append(
             f'<p class="note">AI・検索エンジン向けの静的データ一覧（50件ずつ分割）。'
             f'人間向けのトップは <a href="/">OSHINAVI トップ</a>。<br>'
@@ -333,7 +333,7 @@ def build(today):
     SSR_START = "<!-- AI_SSR_START -->"
     SSR_END = "<!-- AI_SSR_END -->"
     ss = [SSR_START, '<div class="ai-ssr">']
-    ss.append(f'<p>OSHINAVI チケット発売カレンダー｜全{total}件（{today.isoformat()}更新・発売日が近い順）。50件ずつの一覧は <a href="/ai.html">/ai.html</a>。</p><ul>')
+    ss.append(f'<p>OSHINAVI チケット発売日情報｜全{total}件（{today.isoformat()}更新・発売日が近い順）。50件ずつの一覧は <a href="/ai.html">/ai.html</a>。</p><ul>')
     for _, _, ev in rows:
         st, _ = status_text(ev, today)
         url, vendor = buy_url(ev)
