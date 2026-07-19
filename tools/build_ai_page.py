@@ -242,7 +242,9 @@ def build(today):
         if na is None:
             continue  # 販売終了は載せない
         rows.append((classify_rank(ev, today), ev.get("id", 0), ev))
-    rows.sort(key=lambda x: (x[0][0], x[0][1], x[1]))
+    # (rank, 日付, 種別, id)。**種別(x[0][2])を落とすと「同じ日は発売開始が上・締切が下」が壊れる**
+    # ＝本日発売がSSRの先頭に出ず、ブラウザの初期表示が古い並びに見える（2026-07-19 の事故）。
+    rows.sort(key=lambda x: (x[0][0], x[0][1], x[0][2], x[1]))
 
     total = len(rows)
     pages = [rows[i:i + PER_PAGE] for i in range(0, total, PER_PAGE)] or [[]]
