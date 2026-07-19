@@ -158,7 +158,12 @@ def parse_cards(h):
         # is-active=受付中 / is-before=発売前(「まもなく抽選受付」等の先行も拾う) / それ以外=対象外。
         # ただし売切・終了・結果発表は文言でも明示除外（クラスがactive/beforeでも保険）。
         # ※2026-06-20: 「まもなく抽選受付」(is-before)を受付終了と誤判定しプレリザーブ3枠ドロップした反省。
-        if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|終了しました|結果発表)', stt):
+        # 「本サイト取扱なし」＝ぴあにページはあるが ぴあでは買えない券(店頭のみ等)。
+        # 発売日も書かれない(when='')ので、除外しないと毎回 parse_when が落ちて取りこぼし警告で
+        # ビルドがゲートされる(2026-07-16 / 07-20 に同じ 風とロック芋煮会シャトルバス券 で2回停止)。
+        # ぴあで買えない＝購入導線を作れないので対象外。他ベンダー単独の券を落とす話ではない
+        # (memory: feedback_vendor_priority ＝ローチケ/e+単独は載せる)。
+        if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|終了しました|結果発表|取扱なし)', stt):
             state = '受付終了'
         elif cls == 'is-active' or re.search(r'(販売期間中|受付中|発売中|販売中|発売初日|本日発売)', stt):
             # ※「本日発売初日」はクラスがis-beforeでも“今日から販売中”＝受付中扱い。
@@ -530,6 +535,18 @@ def _selftest():
     assert kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」') == '超早割チケット【１１月平日限定】', \
         kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」')
     assert kenshu('【一般発売】 ／ 工藤静香') == '一般発売', kenshu('【一般発売】 ／ 工藤静香')   # 装飾囲みは落とす
+    # ⑨ 「本サイト取扱なし」=ぴあでは買えない券(店頭のみ)は対象外にする
+    #    発売日が書かれず when='' になるため、除外しないと取りこぼし警告でビルドが毎回止まる
+    #    (2026-07-16 / 07-20 に同じ 風とロック芋煮会シャトルバス券 で2回停止した回帰テスト)
+    _no_deal = ('<li class="ticketSalesList-2024__item">'
+                '<p class="ticketSalesCard-2024__status is-before">本サイト取扱なし</p>'
+                '<p class="ticketSalesCard-2024__title">一般発売 ／ 風とロック芋煮会 シャトルバス券</p></li>')
+    assert parse_cards(_no_deal)[0]['state'] == '受付終了', parse_cards(_no_deal)
+    # 通常の発売前カードは今まで通り拾う（除外を広げすぎていないことの確認）
+    _before = ('<li class="ticketSalesList-2024__item">'
+               '<p class="ticketSalesCard-2024__status is-before">発売前</p>'
+               '<p class="ticketSalesCard-2024__title">一般発売 ／ テスト公演</p></li>')
+    assert parse_cards(_before)[0]['state'] == '発売前', parse_cards(_before)
     assert kenshu('一般発売 ／ ＺＩＧＧＹ') == '一般発売'
     # ＜…＞も同様：公演日囲みは落とし、券種を分ける説明は残す（学生限定LIVE券が通常券と同一バッジに潰れた）
     assert kenshu('一般発売 ／ ＫＡＷＡＩＩ ＬＡＢ． ＭＡＴＥＳ＜学生限定ＬＩＶＥ＞') == '一般発売【学生限定ＬＩＶＥ】', \
