@@ -5,7 +5,10 @@
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-$raw = [Console]::In.ReadToEnd()
+# 🚨 stdin は必ず UTF-8 として読む。[Console]::In はコンソールのコードページで解釈するため、
+# 日本語のプロンプトが化けて鍵が一生開かない（2026-07-20 に assign_approval.ps1 で発覚した同型のバグ）。
+$stdin = [System.IO.StreamReader]::new([Console]::OpenStandardInput(), [System.Text.UTF8Encoding]::new($false))
+$raw = $stdin.ReadToEnd()
 if (-not $raw) { exit 0 }
 try { $data = $raw | ConvertFrom-Json } catch { exit 0 }
 $p = $data.prompt

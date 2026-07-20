@@ -7,7 +7,11 @@
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-$raw = [Console]::In.ReadToEnd()
+# 🚨 stdin は必ず UTF-8 として読む。[Console]::In はコンソールのコードページで解釈するため、
+# 日本語のプロンプトが化けて「振り分けて」が正規表現に一生マッチしなかった
+# （2026-07-19 に作ってから 2026-07-20 まで、この鍵は一度も開いたことがなかった）。
+$stdin = [System.IO.StreamReader]::new([Console]::OpenStandardInput(), [System.Text.UTF8Encoding]::new($false))
+$raw = $stdin.ReadToEnd()
 if (-not $raw) { exit 0 }
 try { $data = $raw | ConvertFrom-Json } catch { exit 0 }
 $p = $data.prompt
