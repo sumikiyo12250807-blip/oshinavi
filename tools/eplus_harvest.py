@@ -389,8 +389,9 @@ def main():
         genre = sys.argv[2]
         p0 = int(sys.argv[3]); p1 = int(sys.argv[4])
         need = int(sys.argv[5]) if len(sys.argv) > 5 else 60
+        status_filter = sys.argv[6] if len(sys.argv) > 6 else '受付前'
         names, eplus_ids, norm = load_db_artists()
-        found = {}   # base_eid -> card (発売前=受付前のみ)
+        found = {}   # base_eid -> card
         for p in range(p0, p1 + 1):
             url = f'https://eplus.jp/sf/live/{genre}' + ('' if p == 1 else f'/p{p}')
             try:
@@ -398,7 +399,8 @@ def main():
             except Exception as e:
                 print(f'p{p} ERR {e}'); continue
             cards = parse_kouen(html)
-            pre = [c for c in cards if c['status'] == '受付前']
+            # 券種で選考しない＝その status の全カードを拾う（[[feedback_capture_all_not_select]]）
+            pre = [c for c in cards if c['status'] == status_filter]
             for c in pre:
                 if c['eid'] in found:
                     continue
