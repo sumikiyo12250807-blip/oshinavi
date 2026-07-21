@@ -250,12 +250,12 @@ def main():
                 w = r['w']; kind = w['kind'] or '先着'
                 sesslab = f"{r['sess']}公演" if (multi_session and r['sess']) else '公演'
                 scope = f"{r['pref']} {md(r['iso'])}{sesslab}"
-                if w['sd'] > TODAY:  # 発売前(受付開始が未来)のみ発売日表示。今日開始含む受付中は締切表示  # 発売前＋本日発売（本日開始は発売前側＝本日発売バッジ）
+                if w['sd'] >= TODAY:  # 発売前＋本日発売(今日開始)＝発売日表示・startDate付与／過去開始=受付中(締切表示)
                     typ = f"{kind}一般発売（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
                 else:                 # 発売中
                     typ = f"{kind}一般発売（{scope}）〜{w['ed'].month}/{w['ed'].day} {w['et']}"
                 tk = {'type': typ, 'date': str(w['ed']), 'url': r['url']}
-                if w['sd'] > TODAY:  # 発売前のみstartDate(発売日カウントダウン)。受付中は販売中形(startDate無)
+                if w['sd'] >= TODAY:  # 今日開始含む発売前はstartDate付与(本日発売)／過去開始は販売中形(startDate無)
                     tk['startDate'] = str(w['sd'])
                 tickets.append(tk)
             entries.append({
@@ -281,8 +281,9 @@ def main():
         m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h, re.S)
         EVENTS = json.loads(m.group(2))
         cache, changed = {}, 0
+        # 対象＝genre:new または id3012-3035（振り分け後のe+純エントリ。玉置3011は混在なので除外）
         for e in EVENTS:
-            if e.get('genre') != 'new':
+            if e.get('genre') != 'new' and not (3012 <= e.get('id', 0) <= 3035):
                 continue
             urls = [(e.get('links') or {}).get('eplus') or ''] + [t.get('url', '') for t in e.get('tickets', [])]
             eids = list(dict.fromkeys(mm.group(1) for u in urls for mm in [re.search(r'/sf/detail/(\d+)', u)] if mm))
@@ -350,7 +351,7 @@ def main():
                 wlabel = re.sub(r'\s+', '', w['label']) or (w['kind'] or '先着') + '一般発売'
                 sesslab = f"{r['sess']}公演" if (multi_session and r['sess']) else '公演'
                 scope = f"{r['pref']} {md(r['iso'])}{sesslab}"
-                if w['sd'] > TODAY:  # 発売前(受付開始が未来)のみ発売日表示。今日開始含む受付中は締切表示  # 発売前＋本日発売
+                if w['sd'] >= TODAY:  # 発売前＋本日発売(今日開始)＝発売日表示／過去開始=受付中(締切)
                     typ = f"{wlabel}（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
                 else:                 # 発売中
                     typ = f"{wlabel}（{scope}）〜{w['ed'].month}/{w['ed'].day} {w['et']}"
@@ -359,7 +360,7 @@ def main():
                     continue
                 seen_t.add(k)
                 tk = {'type': typ, 'date': str(w['ed']), 'url': r['url']}
-                if w['sd'] > TODAY:  # 発売前のみstartDate。受付中は販売中形
+                if w['sd'] >= TODAY:  # 今日開始含む発売前はstartDate付与／過去開始は販売中形
                     tk['startDate'] = str(w['sd'])
                 tickets.append(tk)
             before = [t['type'] for t in e['tickets']]
