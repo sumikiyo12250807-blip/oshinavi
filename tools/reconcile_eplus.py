@@ -60,7 +60,10 @@ def parse_blocks(html):
     return out
 
 def norm_pref(p):
-    return re.sub(r'[都道府県]$', '', (p or '').strip())
+    # 「京都府」→「京都」だが、短縮形「京都」に適用すると末尾「都」を削って「京」に化ける
+    # （2026-07-24 真田ナオキ京都公演でe+ゲートが誤FAIL）。除去後1文字なら元を返す＝全県2文字以上。
+    s = re.sub(r'[都道府県]$', '', (p or '').strip())
+    return s if len(s) >= 2 else (p or '').strip()
 
 def hm(s):
     """'18:00'/'9:00' → (18,0)/(9,0)。表記ゆれを吸収して時刻比較する。"""
