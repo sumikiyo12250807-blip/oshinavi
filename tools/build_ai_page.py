@@ -233,6 +233,12 @@ def pager_html(cur, npages, total):
 
 
 def build(today):
+    # 更新スタンプ＝実際にビルドした日時。毎日2回のビルドで刻み、閲覧者に情報の鮮度を
+    # 正直に見せる（ぴあは照合後も締切を動かすので「◯時時点」を明示するのが誠実・
+    # ユーザー指示 2026-07-24）。日付は today、時刻は実行時刻。
+    _n = datetime.now()
+    update_stamp = f"{today.year}年{today.month}月{today.day}日 {_n:%H:%M}"
+
     events = [e for e in extract_events_array("index.html") if e.get("verified") is True]
 
     # 表示対象（次アクションあり=販売中or発売前）を次アクション日順に
@@ -275,7 +281,7 @@ def build(today):
         out.append(
             f'<p class="note">AI・検索エンジン向けの静的データ一覧（50件ずつ分割）。'
             f'人間向けのトップは <a href="/">OSHINAVI トップ</a>。<br>'
-            f"最終更新: {today.isoformat()} ／ 全 <strong>{total}</strong>件中 "
+            f"最終更新: {update_stamp} ／ 全 <strong>{total}</strong>件中 "
             f"<strong>{lo}〜{hi}件目</strong>を表示（発売日が近い順）。</p>"
         )
         out.append(f'<div class="pager">ページ（50件ずつ）: {pager}<br>{prev_link} {next_link}</div>')
@@ -363,6 +369,11 @@ def build(today):
         ihtml = ihtml.replace(anchor, anchor + "\n" + ssr_block, 1)
     # resultCount の初期値を件数に（JSが起動時に上書きするので人間には影響なし）
     ihtml = re.sub(r'(<span id="resultCount">)\d+(</span>)', lambda m: m.group(1) + str(total) + m.group(2), ihtml)
+    # 最終更新スタンプを実ビルド日時で毎回刻む（id="lastUpdated" の中身を置換）
+    ihtml, n_stamp = re.subn(
+        r'(<span class="lu-stamp" id="lastUpdated">).*?(</span>)',
+        lambda m: m.group(1) + f"最終更新：{update_stamp}" + m.group(2), ihtml, flags=re.DOTALL)
+    assert n_stamp == 1, f"lastUpdated の埋め込み先が {n_stamp} 箇所（1でない）"
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(ihtml)
     # （行楽events.htmlは2026-06-25に廃止。旧noscript除去処理も削除済み）

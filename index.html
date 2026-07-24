@@ -195,6 +195,27 @@
       overflow-wrap: normal;
     }
 
+    /* ── 最終更新（毎日2回のビルドで実日時を刻む・鮮度を正直に出す） ── */
+    .last-updated {
+      text-align: center;
+      padding: 9px 16px;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .last-updated .lu-stamp {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent2);
+      letter-spacing: 0.5px;
+    }
+    .last-updated .lu-note {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
     /* ── 検索 & フィルターバー ── */
     .controls {
       background: var(--bg2);
@@ -928,6 +949,11 @@
 <div class="hero">
   <h1>推しの<span>ライブ</span>を見逃さない！</h1>
   <p>チケット抽選先行・先行販売・一般販売日をまとめてチェック</p>
+</div>
+
+<div class="last-updated">
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年7月24日 22:31</span>
+  <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
 <div class="controls">
