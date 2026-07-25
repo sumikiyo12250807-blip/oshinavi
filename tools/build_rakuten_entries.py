@@ -173,7 +173,10 @@ def build(recs, new_id):
         if last != perfs[0]['date']:
             datelabel = '%s〜%s %s %s' % (jp_date(perfs[0]['date']), jp_date(last), prefs[0], venue)
     else:
-        venue = '全国ツアー（%s）' % '／'.join(venues[:4])
+        # 全会場を列挙する。[:4]で打ち切ると大規模ツアーの大半の会場が消える
+        # （ぴあ側で2026-07-01に同じ事故＝ディズニー・オン・クラシック18県中4会場しか出ず。
+        #   楽天ビルダーに同じバグが残っていたのを2026-07-26に発見＝MATSURI 10会場→4会場）
+        venue = '全国ツアー（%s）' % '／'.join(venues)
         datelabel = '%s〜%s %s' % (jp_date(min(p['date'] for p in perfs)), jp_date(last), venue)
 
     g = rec.get('_genre') or ''
