@@ -1,6 +1,8 @@
 {
   "permissions": {
     "allow": [
+      "PowerShell(*)",
+      "Bash(*)",
       "Write(//c/Users/user/oshinavi/**)",
       "Edit(//c/Users/user/oshinavi/**)",
       "Bash(bash:*)",
@@ -923,11 +925,36 @@
       "WebFetch(domain:publish.x.com)",
       "WebFetch(domain:tiget.net)",
       "WebFetch(domain:matsukata.kobe-np.co.jp)",
-      "Bash(iconv -f SHIFT_JIS -t UTF-8 tmp/build_0716b.err)"
+      "Bash(iconv -f SHIFT_JIS -t UTF-8 tmp/build_0716b.err)",
+      "WebFetch(domain:nobinobi-fes.com)",
+      "WebFetch(domain:www.city-fujiidera-kosha.or.jp)",
+      "PowerShell(powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/tmp/test_newpool_guard.ps1\")",
+      "PowerShell($p = \"C:/Users/user/oshinavi/tmp/test_newpool_guard.ps1\"; $t = [System.IO.File]::ReadAllText\\($p, [System.Text.UTF8Encoding]::new\\($false\\)\\); [System.IO.File]::WriteAllText\\($p, $t, [System.Text.UTF8Encoding]::new\\($true\\)\\); powershell -NoProfile -ExecutionPolicy Bypass -File $p)",
+      "PowerShell(Remove-Item *)",
+      "WebFetch(domain:www.wakayama-johall.jp)",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/assign_approval.ps1\")",
+      "WebFetch(domain:www.milet.jp)",
+      "WebFetch(domain:wess.jp)",
+      "WebFetch(domain:saltmoderate.com)",
+      "WebFetch(domain:theyellowmonkeysuper.jp)",
+      "Skill(claude-api)",
+      "WebFetch(domain:www.sanadanaoki.com)",
+      "WebFetch(domain:www.naokisanada.com)",
+      "WebFetch(domain:www.kyoto-gekijo.com)",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File .claude/hooks/newpool_guard.ps1)"
     ]
   },
   "hooks": {
     "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/push_order_guard.ps1\""
+          }
+        ]
+      },
       {
         "matcher": "AskUserQuestion",
         "hooks": [
@@ -935,6 +962,21 @@
             "type": "command",
             "command": "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; [Console]::Error.WriteLine('BLOCKED: AskUserQuestion is forbidden. Use plain text body with (yes/no) or numbered list. See memory: feedback_simple_questions.md'); exit 2",
             "shell": "powershell"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/newpool_guard.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/sort_guard.ps1\""
           }
         ]
       }
@@ -955,6 +997,14 @@
           {
             "type": "command",
             "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/memory_reminder.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/assign_approval.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/sort_approval.ps1\""
           }
         ]
       }
