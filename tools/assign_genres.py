@@ -32,7 +32,11 @@ def main():
     args = ap.parse_args()
     skip = {int(x) for x in args.exclude.split(',') if x.strip()}
 
-    src = open(PATH, encoding='utf-8').read()
+    # index.html は CRLF。newline='' を付けずに読み書きすると全行 LF 化し、
+    # sort_guard が「並び順ロジックを書き換えた」と誤ブロックする（2026-07-26 事故）。
+    # memory: feedback_index_html_crlf_preserve
+    src = open(PATH, encoding='utf-8', newline='').read()
+    nl = '\r\n' if '\r\n' in src else '\n'
     m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', src, re.S)
     assert m, 'EVENTS配列が見つからない'
     events = json.loads(m.group(2))
@@ -80,14 +84,15 @@ def main():
         print('(--apply で書き込み)')
         return 0
 
-    out = src[:m.start(2)] + json.dumps(events, ensure_ascii=False, indent=2) + src[m.end(2):]
+    dumped = json.dumps(events, ensure_ascii=False, indent=2).replace('\n', nl)
+    out = src[:m.start(2)] + dumped + src[m.end(2):]
     # NEW_ORDER は残す新着だけにする（全部振り分けたなら空）
     m2 = re.search(r'(const NEW_ORDER = )(\[[^\]]*\])(;)', out)
     assert m2, 'NEW_ORDERが見つからない'
     keep = [e['id'] for e in remain]
     order = [i for i in json.loads(m2.group(2)) if i in keep]
     out = out[:m2.start(2)] + json.dumps(order, ensure_ascii=False) + out[m2.end(2):]
-    open(PATH, 'w', encoding='utf-8').write(out)
+    open(PATH, 'w', encoding='utf-8', newline='').write(out)
     print(f'書き込み完了 / NEW_ORDER {len(order)}件')
     return 0
 
