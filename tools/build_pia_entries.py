@@ -174,12 +174,19 @@ def parse_cards(h):
             state = '発売前'
         else:
             state = '受付終了'
-        place = txt(g(r'__place"[^>]*>(.*?)</span>'))
+        # 🚨 __place は1枚のカードに複数入る（多会場ツアーは [県の羅列, 会場1, 会場2, …]）。
+        # 以前は re.search で【1個目だけ】読んでいたため、多会場だと1個目＝県の羅列を掴んで
+        # is_preflist→venue='' となり「全国ツアー（）」の空カッコ会場が量産されていた
+        # （2026-07-27 発見。それまで毎バッチ手作業で会場名を埋めていた）。
+        places = [txt(x) for x in re.findall(r'__place"[^>]*>(.*?)</span>', it, re.S)]
+        place = places[0] if places else ''
+        card_venues = list(dict.fromkeys(p for p in places if p and not is_preflist(p)))
         region = txt(g(r'__region">(.*?)</span>'))
         prefs = prefs_for(region, place)   # 実会場名からは県を拾わない(全国化バグの恒久対策)
         rows.append({
             'perfdate': dts[0] if dts else '', 'perf_end': dts[-1] if dts else '',
-            'venue': '' if is_preflist(place) else place, 'prefs': prefs,
+            'venue': card_venues[0] if len(card_venues) == 1 else '',
+            'venues': card_venues, 'prefs': prefs,
             'title': txt(g(r'__title">(.*?)</p>')), 'state': state,
             'when': txt(g(r'__status[^>]*>.*?<br>\s*<span[^>]*>(.*?)</span>')),
             'url': g(r'href="(https://t\.pia\.jp/pia/ticketInformation\.do\?[^"]+)"'),
@@ -372,7 +379,11 @@ def build(cand):
         if any(wpia_only(h) for h in htmls):
             raise WpiaFormPage(f"w.pia.jp直販形式(券種カード0)＝機械照合できない。実ページを目視で確認: {cand['urls']}")
         return None
-    venues = list(dict.fromkeys(r['venue'] for r in rows if r['venue']))
+    # カードが複数会場を持つ（多会場ツアー行）ときは r['venues'] を全部展開する。
+    # r['venue'] だけ見ると多会場カードが空扱いになり「全国ツアー（）」になる。
+    venues = list(dict.fromkeys(
+        v for r in rows
+        for v in (r.get('venues') or ([r['venue']] if r.get('venue') else []))))
     prefs = list(dict.fromkeys(p for r in rows for p in r['prefs']))
     starts = sorted(r['perfdate'] for r in rows if r['perfdate'])
     ends = sorted((r.get('perf_end') or r['perfdate']) for r in rows if r['perfdate'])

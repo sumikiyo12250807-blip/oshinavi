@@ -12,7 +12,10 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 SRC_JSON = sys.argv[1] if len(sys.argv) > 1 else 'tmp/all_new2.json'
 allnew = json.load(open(SRC_JSON, encoding='utf-8'))
-h = open('index.html', encoding='utf-8').read()
+# index.html は CRLF。newline='' 無しで読み書きすると全行 LF 化し、sort_guard が
+# 「並び順ロジックを書き換えた」と誤ブロックする（memory: feedback_index_html_crlf_preserve）。
+h = open('index.html', encoding='utf-8', newline='').read()
+NL = '\r\n' if '\r\n' in h else '\n'
 
 m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h, re.S)
 assert m, 'EVENTS配列が見つからない'
@@ -38,8 +41,9 @@ assert n == 1, 'NEW_ORDER replaced=%d' % n
 m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h2, re.S)
 
 bak = f'index.html.bak_{datetime.date.today():%m%d}_newpool'
-open(bak, 'w', encoding='utf-8').write(h)
-new_arr = json.dumps(EVENTS, ensure_ascii=False, indent=2)
-open('index.html', 'w', encoding='utf-8').write(h2[:m.start()] + m.group(1) + new_arr + m.group(3) + h2[m.end():])
+open(bak, 'w', encoding='utf-8', newline='').write(h)
+new_arr = json.dumps(EVENTS, ensure_ascii=False, indent=2).replace('\n', NL)
+open('index.html', 'w', encoding='utf-8', newline='').write(
+    h2[:m.start()] + m.group(1) + new_arr + m.group(3) + h2[m.end():])
 print('投入 %d件 id%d..%d / NEW_ORDER更新(%d件) / 総%d件 (backup %s)'
       % (len(allnew), new_ids[0], new_ids[-1], len(new_ids), len(EVENTS), bak))
