@@ -281,7 +281,15 @@ def main():
             continue
         buyable, drops, errs = pia_buyable(urls)
         # 登録tickets(未来締切のみ=今載ってるはずの枠)
-        reg = [t for t in ev.get('tickets', []) if (t.get('date') or '') >= TODAY]
+        reg_all = [t for t in ev.get('tickets', []) if (t.get('date') or '') >= TODAY]
+        # ぴあ以外の売り場を ticket.url で明示した枠(JFA公式直販/e+/ローチケ等)は、このゲートの
+        # 守備範囲外。ぴあに無くて当たり前なので STALE/枠数不一致の判定から外す。
+        # ただし黙って落とすと「照合したつもり」になるので件数は必ず表に出す
+        # （2026-07-28 id3349 キリンチャレンジカップ＝試合本体がJFA直販・駐車券だけぴあ）。
+        reg = [t for t in reg_all
+               if not (t.get('url') or '') or 'pia.jp' in (t.get('url') or '')]
+        n_other = len(reg_all) - len(reg)
+        stat['other'] = stat.get('other', 0) + n_other
         reg_dates = set(t.get('date') for t in reg)
         pia_dates = set(b['iso'] for b in buyable)
         missing = [b for b in buyable if b['iso'] not in reg_dates]   # ぴあにあるが登録に無い締切
@@ -293,7 +301,8 @@ def main():
         problem = bool(missing or drops or errs or stale or qc or len(reg) != len(buyable))
         if problem:
             tag = '❌' if qc_bad else ('🚨' if missing else ('💤' if stale else ('⚠️' if drops else '❌')))
-            print(f'{tag} id={ev["id"]} {ev.get("artist","")[:30]} | 登録{len(reg)}枠 / ぴあ買える{len(buyable)}枠')
+            print(f'{tag} id={ev["id"]} {ev.get("artist","")[:30]} | 登録{len(reg)}枠 / ぴあ買える{len(buyable)}枠'
+                  + (f' ／ ぴあ外{n_other}枠は対象外' if n_other else ''))
             for b in missing:
                 print(f'    🚨MISSING ぴあに [{b["state"]}] {b["suf"]} ({b["iso"]}) があるが登録に無い | {b["title"]}')
                 n_missing += 1
@@ -312,7 +321,8 @@ def main():
         else:
             n_ok += 1
             if not QUIET:
-                print(f'✅ id={ev["id"]} {ev.get("artist","")[:24]} | 登録{len(reg)}=ぴあ{len(buyable)} 一致')
+                print(f'✅ id={ev["id"]} {ev.get("artist","")[:24]} | 登録{len(reg)}=ぴあ{len(buyable)} 一致'
+                      + (f' ／ ぴあ外{n_other}枠は対象外' if n_other else ''))
     print(f'\n=== 集計: OK {n_ok} / 🚨MISSING {n_missing} / ⚠️DROP {n_drop} / 💤STALE {n_stale} / '
           f'❌FETCH {n_err} / ❌QC {len(qc_fail)} ===')
     # カバレッジ＝「QC 0」が“全部見て問題なし”なのか“そもそも見ていない”のかを必ず区別する。
@@ -322,6 +332,9 @@ def main():
           (f' / 未照合 skip{sk}(同締切の枠が複数で対を確定できない)' if sk else '') +
           (f' badge{bd}(型が「券種（県 M/D公演）…」でない手作りバッジ)' if bd else '') +
           (f' e+{ep}(reconcile_eplusの担当)' if ep else '') + ' ===')
+    oth = stat.get('other', 0)
+    if oth:
+        print(f'=== ぴあ外の売り場を明示した枠 {oth}件は対象外（このゲートでは見ていない＝別途要確認） ===')
     if sk or bd:
         print('   ※未照合の枠は「正しい」と確認できていない枠。QC 0＝全部正しい、ではない。')
     if n_missing or n_drop:
