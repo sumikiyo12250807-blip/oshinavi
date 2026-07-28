@@ -73,7 +73,21 @@ def parse_cards(html):
     return out
 
 
-TODAY = datetime.date(2026, 7, 21)
+# 🚨 2026-07-21 に書いた日付がハードコードされたまま1週間動いていなかった。
+# その間「締切済み(ed < TODAY)」の判定が7/21基準のままで、7/22〜の締切枠を
+# 「まだ買える」と誤判定して取り込んでいた（2026-07-28 LINDBERGで発覚＝
+# 〜7/24締切の抽選プレオーダー4枠が生き枠として出てきた）。実日付を使う。
+TODAY = datetime.date.today()
+
+_WD = ('月', '火', '水', '木', '金', '土', '日')
+
+
+def jp_date(iso):
+    """2026-10-23 → 2026年10月23日(金)。dateLabel はテンプレ準拠の日本語形で出す
+    （memory: feedback_entry_template_standard）。ISO のまま出すと画面が英数字になる
+    ＝2026-07-28 LINDBERG の refresh で発覚。"""
+    d = datetime.date.fromisoformat(iso)
+    return f'{d.year}年{d.month}月{d.day}日({_WD[d.weekday()]})'
 
 
 def parse_ld(html):
@@ -239,11 +253,12 @@ def main():
             if single_venue:
                 pref = prefs[0] if prefs else '全国'
                 venue = uniq_venues[0] if uniq_venues else ''
-                dlabel = (f"{d0} {pref} {venue}" if d0 == d1 else f"{d0}〜{d1} {pref} {venue}")
+                dlabel = (f"{jp_date(d0)} {pref} {venue}" if d0 == d1
+                          else f"{jp_date(d0)}〜{jp_date(d1)} {pref} {venue}")
             else:
                 pref = '全国' if len(prefs) > 1 else (prefs[0] if prefs else '全国')
                 venue = '全国ツアー（' + '／'.join(uniq_venues) + '）'
-                dlabel = f"{d0}〜{d1} 全国ツアー " + '／'.join(uniq_venues)
+                dlabel = f"{jp_date(d0)}〜{jp_date(d1)} 全国ツアー"
             # チケット＝公演ごと（個別URL付与）
             tickets = []
             for r in rows:
@@ -277,13 +292,23 @@ def main():
 
         def md(iso):
             return f'{int(iso[5:7])}/{int(iso[8:10])}'
-        h = open('index.html', encoding='utf-8').read()
+        # index.html は CRLF。newline='' 無しで読み書きすると全行 LF 化し、sort_guard が
+        # 「並び順ロジックを書き換えた」と誤ブロックする（memory: feedback_index_html_crlf_preserve）
+        h = open('index.html', encoding='utf-8', newline='').read()
         m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h, re.S)
         EVENTS = json.loads(m.group(2))
         cache, changed = {}, 0
+        # --ids 2194,2195 を付けたエントリは genre に関係なく対象にする
+        # （振り分け済みのツアーを e+ 側の実態で育て直す用。2026-07-28 LINDBERG で追加）
+        only_ids = set()
+        if '--ids' in sys.argv:
+            only_ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',') if x.strip()}
         # 対象＝genre:new または id3012-3035（振り分け後のe+純エントリ。玉置3011は混在なので除外）
         for e in EVENTS:
-            if e.get('genre') != 'new' and not (3012 <= e.get('id', 0) <= 3035):
+            if only_ids:
+                if e.get('id') not in only_ids:
+                    continue
+            elif e.get('genre') != 'new' and not (3012 <= e.get('id', 0) <= 3035):
                 continue
             urls = [(e.get('links') or {}).get('eplus') or ''] + [t.get('url', '') for t in e.get('tickets', [])]
             eids = list(dict.fromkeys(mm.group(1) for u in urls for mm in [re.search(r'/sf/detail/(\d+)', u)] if mm))
@@ -339,11 +364,12 @@ def main():
             if len(uniq_venues) <= 1:
                 pref = prefs[0] if prefs else '全国'
                 venue = uniq_venues[0] if uniq_venues else e['venue']
-                dlabel = (f"{d0} {pref} {venue}" if d0 == d1 else f"{d0}〜{d1} {pref} {venue}")
+                dlabel = (f"{jp_date(d0)} {pref} {venue}" if d0 == d1
+                          else f"{jp_date(d0)}〜{jp_date(d1)} {pref} {venue}")
             else:
                 pref = '全国' if len(prefs) > 1 else (prefs[0] if prefs else '全国')
                 venue = '全国ツアー（' + '／'.join(uniq_venues) + '）'
-                dlabel = f"{d0}〜{d1} 全国ツアー " + '／'.join(uniq_venues)
+                dlabel = f"{jp_date(d0)}〜{jp_date(d1)} 全国ツアー"
             tickets = []
             seen_t = set()
             for r in rows:
@@ -378,8 +404,16 @@ def main():
             e['date'] = d1
             e['links']['eplus'] = rows[0]['url']
         if 'apply' in sys.argv:
-            new = json.dumps(EVENTS, ensure_ascii=False, indent=2)
-            open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new + m.group(3) + h[m.end():])
+            # index.html は CRLF。json.dumps は \n を吐くので元の改行に戻してから書く。
+            # newline='' 無し／replace漏れのどちらでも全行LF化し sort_guard が誤ブロックする
+            # （memory: feedback_index_html_crlf_preserve・inject_built.py と同じ書き方に揃えた）
+            NL = '\r\n' if '\r\n' in h else '\n'
+            bak = f'index.html.bak_{datetime.date.today():%m%d}_eplus_refresh'
+            open(bak, 'w', encoding='utf-8', newline='').write(h)
+            new = json.dumps(EVENTS, ensure_ascii=False, indent=2).replace('\n', NL)
+            with open('index.html', 'w', encoding='utf-8', newline='') as f:
+                f.write(h[:m.start()] + m.group(1) + new + m.group(3) + h[m.end():])
+            print(f'  (backup {bak})')
             print(f'=== refresh適用：{changed}エントリ更新（id据え置き）===')
         else:
             print(f'=== [ドライラン] {changed}エントリが変化。書込むなら refresh apply ===')
