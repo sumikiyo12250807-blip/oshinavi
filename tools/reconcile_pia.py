@@ -100,6 +100,44 @@ def pia_buyable(urls):
     return buyable, drops, errs
 
 
+# 「ぴあ0枠」と出た時だけ間を空けて単独リトライする回数と待ち秒（--retries / --retry-wait）。
+def _num(name, default):
+    v = opt(name)
+    if v in (None, True):
+        return default
+    return type(default)(v)
+
+RETRIES = _num('--retries', 2)
+RETRY_WAIT = _num('--retry-wait', 6.0)
+
+# 登録の未来枠も0の子（＝削除候補）まで0枠リトライするか。
+# --ids は削除判断の精密照合で使う経路なので既定でON（削除は不可逆＝安全側に倒す）。
+# --new/--all は件数が多く全部リトライすると走査が実用外になるので、登録枠がある子だけ。
+RETRY_EMPTY_REG = bool(opt('--ids')) or '--retry-empty' in ARGS
+
+
+def fetch_buyable(urls, expect):
+    """→ (buyable, drops, errs, tries)。**0枠と出た時だけ単独リトライ**する。
+
+    【なぜ必要か】2026-07-28、49件を一括再照合したら「ぴあ買える0枠」の偽陽性が3件出た
+    （climbgrow 3321／立川立飛 3324／キリン駐車券 3349）。実ページには全部枠があり、
+    単独で回し直したら3件とも✅一致。しかも ❌FETCH は0件だったので
+    [[reference_pia_rate_limit_429]] の「429が出ていないSTALEは本物」も成り立たなかった。
+    ＝ぴあは連続アクセス時、例外も429も返さずに券種カードの無いページを返すことがある。
+    放置すると翌朝「買える枠0＝死枠」として**生きている枠を削除候補に出す**。
+
+    リトライは「ぴあ0枠×エラー無し」の時だけ＝全体を遅くせず危ない側だけ確かめる。
+    登録枠も0の子（削除候補）は RETRY_EMPTY_REG が真の時だけ（--ids 経路＝既定ON）。
+    ここを飛ばすと、一過性の空ページを「全枠死亡」と読んで**生きた枠ごと削除**しかねない。"""
+    buyable, drops, errs = pia_buyable(urls)
+    tries = 0
+    while (not buyable) and (expect or RETRY_EMPTY_REG) and not errs and tries < RETRIES:
+        tries += 1
+        time.sleep(RETRY_WAIT * tries)      # 間隔を広げながら（1回目6秒→2回目12秒）
+        buyable, drops, errs = pia_buyable(urls)
+    return buyable, drops, errs, tries
+
+
 # ============================================================================
 # QC＝「バッジに出ている値が、ぴあの実ページの現在窓と一致する」ことの機械保証。
 #
@@ -252,6 +290,54 @@ def selftest():
     assert qc_entry(ev, [card], [{**ok, 'type': 'ちがう', 'url': 'https://eplus.jp/sf/detail/1-P0'}]) == []
     assert qc_entry(ev, [card], [{**ok, 'date': '2026-09-09'}]) == []
     print('selftest OK: QC(TIME/PREF/PERF/CAP/EVDATE)は壊れたデータで確かにFAILを出す')
+    selftest_retry()
+
+
+def selftest_retry():
+    """0枠リトライが「発動すべき時だけ発動し、2回目で枠を回収できる」ことを確かめる。
+    （2026-07-28のSTALE偽陽性3件＝一括0枠→単独で一致、の再発防止）"""
+    global pia_buyable, RETRY_WAIT, RETRY_EMPTY_REG
+    real, real_wait, real_empty = pia_buyable, RETRY_WAIT, RETRY_EMPTY_REG
+    RETRY_WAIT = 0.0                                   # テストは待たない
+    RETRY_EMPTY_REG = False
+    card = [{'iso': '2026-08-09', 'sd': None, 'suf': '〜8/9 23:59', 'title': 'x', 'state': '受付中',
+             'prefs': ['岩手'], 'perfdate': '2026-10-30', 'perf_end': '2026-10-30'}]
+    try:
+        calls = {'n': 0}
+        def flaky(urls):                               # 1回目だけ0枠を返す（ぴあの一過性の空ページ）
+            calls['n'] += 1
+            return (([], [], []) if calls['n'] == 1 else (card, [], []))
+        pia_buyable = flaky
+        b, _, _, tries = fetch_buyable(['u'], expect=1)
+        assert b == card and tries == 1, (b, tries)    # ① 2回目で回収できる
+
+        calls['n'] = 0
+        pia_buyable = lambda urls: ([], [], [])
+        b, _, _, tries = fetch_buyable(['u'], expect=1)
+        assert b == [] and tries == RETRIES, tries     # ② 本物の0枠は上限まで試して0のまま
+
+        pia_buyable = lambda urls: (card, [], [])
+        _, _, _, tries = fetch_buyable(['u'], expect=1)
+        assert tries == 0, tries                       # ③ 枠が取れた時は無駄打ちしない
+
+        pia_buyable = lambda urls: ([], [], [])
+        _, _, _, tries = fetch_buyable(['u'], expect=0)
+        assert tries == 0, tries                       # ④ 登録枠0＋大量走査(--new/--all)では省略
+
+        # ⑤ 削除候補(登録枠0)でも --ids 経路なら必ずリトライする＝生きた枠を消さないための本命
+        RETRY_EMPTY_REG = True
+        calls['n'] = 0
+        pia_buyable = flaky
+        b, _, _, tries = fetch_buyable(['u'], expect=0)
+        assert b == card and tries == 1, (b, tries)
+        RETRY_EMPTY_REG = False
+
+        pia_buyable = lambda urls: ([], [], [('u', 'w.pia.jp直販')])
+        _, _, _, tries = fetch_buyable(['u'], expect=1)
+        assert tries == 0, tries                       # ⑥ FETCH/直販エラーは別の話＝リトライしない
+    finally:
+        pia_buyable, RETRY_WAIT, RETRY_EMPTY_REG = real, real_wait, real_empty
+    print('selftest OK: 0枠リトライは「登録枠あり×エラー無し×0枠」の時だけ発動し2回目で回収する')
 
 
 def main():
@@ -273,13 +359,13 @@ def main():
 
     print(f'=== reconcile_pia (today={TODAY}) 対象{len(targets)}件 ===\n')
     n_missing = n_drop = n_stale = n_err = n_ok = 0
+    n_retried = n_rescued = 0     # 0枠リトライの発動回数／それで生き返った件数
     qc_fail = []          # (id, code, detail)
     stat = {}             # 照合カバレッジ（checked/skip/badge/eplus）
     for ev in targets:
         urls = pia_urls(ev)
         if not urls:
             continue
-        buyable, drops, errs = pia_buyable(urls)
         # 登録tickets(未来締切のみ=今載ってるはずの枠)
         reg_all = [t for t in ev.get('tickets', []) if (t.get('date') or '') >= TODAY]
         # ぴあ以外の売り場を ticket.url で明示した枠(JFA公式直販/e+/ローチケ等)は、このゲートの
@@ -290,6 +376,16 @@ def main():
                if not (t.get('url') or '') or 'pia.jp' in (t.get('url') or '')]
         n_other = len(reg_all) - len(reg)
         stat['other'] = stat.get('other', 0) + n_other
+        # ぴあ側の実態を取得。0枠と出たら単独リトライ（偽陽性で生きた枠を殺さないため）。
+        buyable, drops, errs, tries = fetch_buyable(urls, len(reg))
+        if tries:
+            n_retried += 1
+            if buyable:
+                n_rescued += 1
+                print(f'    🔁RETRY id={ev["id"]} 一括では0枠→単独{tries}回目で{len(buyable)}枠を回収'
+                      f'（0枠は偽陽性だった）')
+            else:
+                print(f'    🔁RETRY id={ev["id"]} 単独{tries}回試しても0枠（本物の可能性・要確認）')
         reg_dates = set(t.get('date') for t in reg)
         pia_dates = set(b['iso'] for b in buyable)
         missing = [b for b in buyable if b['iso'] not in reg_dates]   # ぴあにあるが登録に無い締切
@@ -332,6 +428,9 @@ def main():
           (f' / 未照合 skip{sk}(同締切の枠が複数で対を確定できない)' if sk else '') +
           (f' badge{bd}(型が「券種（県 M/D公演）…」でない手作りバッジ)' if bd else '') +
           (f' e+{ep}(reconcile_eplusの担当)' if ep else '') + ' ===')
+    if n_retried:
+        print(f'=== 🔁0枠リトライ: 発動{n_retried}件 / うち{n_rescued}件は枠が復活（一括時の0枠は偽陽性）'
+              f' / 残り{n_retried - n_rescued}件は単独でも0枠 ===')
     oth = stat.get('other', 0)
     if oth:
         print(f'=== ぴあ外の売り場を明示した枠 {oth}件は対象外（このゲートでは見ていない＝別途要確認） ===')

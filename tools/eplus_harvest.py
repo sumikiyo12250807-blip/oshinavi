@@ -90,6 +90,41 @@ def jp_date(iso):
     return f'{d.year}年{d.month}月{d.day}日({_WD[d.weekday()]})'
 
 
+def md(iso):
+    """公演日バッジのM/D。**翌年以降の公演には令和略記「R{N}年 」を付ける**。
+
+    ぴあ側 build_pia_entries.era()/mdbadge() と同じ規則。e+側の md() は年を捨てており、
+    2027公演のバッジが「1/23公演」になって来年公演が今年に見えていた
+    （2026-07-29 茉ひる id3102＝実際は2027-01-23）。[[feedback_r9_year_notation]]"""
+    y = int(iso[:4])
+    e = f'R{y - 2018}年 ' if y > datetime.date.today().year else ''
+    return f'{e}{int(iso[5:7])}/{int(iso[8:10])}'
+
+
+def multi_time_dates(shows):
+    """同じ公演日に開演時刻が2つ以上ある日付の集合。
+
+    従来は「全公演数 > 日付の種類数」というツアー全体の判定だったので、1日だけ昼夜がある
+    ツアーでも全枠に昼/夜が付いた。時刻を入れるのは**その日だけ**でよい
+    （[[feedback_same_day_show_time_badge]]「こういったものだけ」）。"""
+    by_date = {}
+    for s in shows:
+        by_date.setdefault(s['iso'], set()).add(s.get('time') or '')
+    return {d for d, ts in by_date.items() if len([t for t in ts if t]) >= 2}
+
+
+def sesslab(r, multi_dates):
+    """公演descriptorの末尾。同日・時間違いの複数公演がある日だけ開演時刻を入れる。
+
+    「昼公演/夜公演」だけだと画面に同じ表記が2つ並んで見分けられない
+    （2026-07-23 BENI id3047 ユーザー指摘）。→「（神奈川県 11/1 15:00公演）」の形にする。
+    🚨 renderCardの発売時刻抽出は「最後の閉じ括弧より後ろ」を見る前提なので、
+    （…公演）の中に時刻を入れても発売時刻の表示は壊れない（[[feedback_same_day_show_time_badge]]）。"""
+    if r['iso'] in multi_dates and r.get('time'):
+        return f" {r['time']}公演"
+    return '公演'
+
+
 def parse_ld(html):
     """JSON-LD Event blob群 → [{name,date(YYYY-MM-DD),venue,pref}]（公演日/会場ごと）"""
     evs = []
@@ -124,26 +159,74 @@ def count_options(html):
     return len(re.findall(r'<option[^>]*>[^<]*20\d\d[^<]*</option>', html))
 
 
+_DEAD = ('予定枚数終了', '受付終了', '販売終了', '完売', '受付は終了')
+_PERIOD = re.compile(r'受付期間:(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)(\d{1,2}):(\d{2})'
+                     r'～(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)(\d{1,2}):(\d{2})')
+
+
+def _window_from(header_text, status):
+    """受付期間テキスト → 枠dict。締切が過去 or 売り切れ/終了なら None。"""
+    m = _PERIOD.search(header_text)
+    if not m:
+        return None
+    g = m.groups()
+    sd = datetime.date(int(g[0]), int(g[1]), int(g[2]))
+    ed = datetime.date(int(g[5]), int(g[6]), int(g[7]))
+    if ed < TODAY or status == 'ended':
+        return None
+    s = header_text
+    kind = '抽選' if '抽選' in s[:8] else ('先着' if '先着' in s[:8] else '')
+    label = re.sub(r'受付期間.*', '', s).strip()
+    label = re.sub(r'[★☆◇◆■◎●▲△▼▽※]', '', label)          # 装飾記号除去
+    label = re.sub(r'(先着|抽選)\s*(先着|抽選)', r'\1', label)   # 「先着 先着」重複除去
+    label = re.sub(r'\s+', '', label).strip() or (kind + '一般発売')
+    return {'kind': kind, 'label': label, 'sd': sd, 'status': status,
+            'st': f'{int(g[3])}:{g[4]}', 'ed': ed, 'et': f'{int(g[8])}:{g[9]}'}
+
+
+def _flat(x):
+    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', H.unescape(x))).strip()
+
+
 def parse_windows(html):
-    """block-ticket__header群 → 締切が未来の販売枠 [{kind,label,sd,st,ed,et}]"""
+    """販売枠 [{kind,label,sd,st,ed,et,status}]。**売り切れ/受付終了の枠は返さない**。
+
+    🚨 旧版は `block-ticket__header` の中だけを読んでいた。ところが e+ は販売状態
+    （「予定枚数終了」「受付終了」）を **header の外**＝section本体に書く。
+    そのため受付期間だけを見て「11/4まで買える」と判断し、**売り切れ枠を生存登録していた**
+    （2026-07-29 REBECCA id3052＝実ページは「受付期間:…～2026/11/4(水)18:00 予定枚数終了」。
+    reconcile_eplus が死枠と正しく出したのに refresh が生き枠として書き戻し、
+    両者が食い違って発覚）。[[project_eplus_harvester_bug_and_qc]]の欠陥Bの本修正。
+
+    判定は `<section class="block-ticket">` 単位で状態spanを読む＝reconcile_eplus.parse_blocks
+    と同じ規則にして、ハーベスタと検証ゲートの見解が割れないようにする。"""
     out = []
-    for inner in re.findall(r'block-ticket__header[^>]*>(.*?)</header>', html, re.S):
-        s = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', H.unescape(inner))).strip()
-        m = re.search(r'受付期間:(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)(\d{1,2}):(\d{2})～(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)(\d{1,2}):(\d{2})', s)
-        if not m:
-            continue
-        g = m.groups()
-        sd = datetime.date(int(g[0]), int(g[1]), int(g[2]))
-        ed = datetime.date(int(g[5]), int(g[6]), int(g[7]))
-        if ed < TODAY:
-            continue
-        kind = '抽選' if '抽選' in s[:8] else ('先着' if '先着' in s[:8] else '')
-        label = re.sub(r'受付期間.*', '', s).strip()
-        label = re.sub(r'[★☆◇◆■◎●▲△▼▽※]', '', label)          # 装飾記号除去
-        label = re.sub(r'(先着|抽選)\s*(先着|抽選)', r'\1', label)   # 「先着 先着」重複除去
-        label = re.sub(r'\s+', '', label).strip() or (kind + '一般発売')
-        out.append({'kind': kind, 'label': label, 'sd': sd,
-                    'st': f'{int(g[3])}:{g[4]}', 'ed': ed, 'et': f'{int(g[8])}:{g[9]}'})
+    secs = [s for s in re.split(r'(?=<section class="block-ticket">)', html)
+            if s.startswith('<section class="block-ticket">')]
+    if not secs:
+        # section形式で取れないページは状態不明。枠を全部捨てると取りこぼすので拾い、
+        # status='unknown' を付けて reconcile_eplus 側の照合に委ねる。
+        for inner in re.findall(r'block-ticket__header[^>]*>(.*?)</header>', html, re.S):
+            w = _window_from(_flat(inner), 'unknown')
+            if w:
+                out.append(w)
+        return out
+    for sec in secs:
+        body = sec.split('</section>', 1)[0]
+        span = re.search(r'<span class="ticket-status__item[^"]*">([^<]+)</span>', body)
+        stxt = span.group(1) if span else ''
+        if any(w in stxt for w in _DEAD):
+            status = 'ended'
+        elif '受付中' in stxt:
+            status = 'open'
+        elif '受付前' in stxt:
+            status = 'before'
+        else:
+            status = 'unknown'
+        hm_ = re.search(r'block-ticket__header[^>]*>(.*?)</header>', body, re.S)
+        w = _window_from(_flat(hm_.group(1) if hm_ else body), status)
+        if w:
+            out.append(w)
     return out
 
 
@@ -175,8 +258,7 @@ def main():
                 continue  # DB重複（ローマ字/カナ含む）
             groups.setdefault(ak, []).append(c)
         print(f'候補 {len(cands)}件 → 新規アーティスト {len(groups)}組')
-        def md(iso):
-            return f'{int(iso[5:7])}/{int(iso[8:10])}'
+        # md() はモジュール直下の令和略記つき版を使う（旧ローカル定義は年を捨てていた）
 
         def card_iso(cd):
             m = re.match(r'(\d{4})/(\d{1,2})/(\d{1,2})', cd or '')
@@ -249,7 +331,7 @@ def main():
             d0, d1 = min(dates), max(dates)
             edate = d1
             single_venue = len(uniq_venues) <= 1
-            multi_session = len(rows) > len(set(r['iso'] for r in rows))
+            multi_session = multi_time_dates(rows)
             if single_venue:
                 pref = prefs[0] if prefs else '全国'
                 venue = uniq_venues[0] if uniq_venues else ''
@@ -263,8 +345,7 @@ def main():
             tickets = []
             for r in rows:
                 w = r['w']; kind = w['kind'] or '先着'
-                sesslab = f"{r['sess']}公演" if (multi_session and r['sess']) else '公演'
-                scope = f"{r['pref']} {md(r['iso'])}{sesslab}"
+                scope = f"{r['pref']} {md(r['iso'])}{sesslab(r, multi_session)}"
                 if w['sd'] >= TODAY:  # 発売前＋本日発売(今日開始)＝発売日表示・startDate付与／過去開始=受付中(締切表示)
                     typ = f"{kind}一般発売（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
                 else:                 # 発売中
@@ -290,8 +371,7 @@ def main():
         def to_date(iso):
             y, mo, d = iso.split('-'); return datetime.date(int(y), int(mo), int(d))
 
-        def md(iso):
-            return f'{int(iso[5:7])}/{int(iso[8:10])}'
+        # md() はモジュール直下の令和略記つき版を使う（旧ローカル定義は年を捨てていた）
         # index.html は CRLF。newline='' 無しで読み書きすると全行 LF 化し、sort_guard が
         # 「並び順ロジックを書き換えた」と誤ブロックする（memory: feedback_index_html_crlf_preserve）
         h = open('index.html', encoding='utf-8', newline='').read()
@@ -353,13 +433,16 @@ def main():
                         continue  # 締切済＝買えない
                     rows.append({**sh, 'w': w})
             if not rows:
+                # 買える窓がゼロ＝削除候補。黙って continue すると「変化なし＝健全」に見え、
+                # すでに載っている死枠がそのまま残る（2026-07-29 REBECCA/米倉利紀で発覚）。
+                print(f"  ⚠️ id{e['id']} {e.get('artist')}: 買える窓ゼロ（全枠 受付終了/予定枚数終了）＝削除候補")
                 continue
             uniq_shows = sorted(shows.values(), key=lambda x: (x['iso'], x['time']))
             uniq_venues = list(dict.fromkeys(s['venue'] for s in uniq_shows if s['venue']))
             prefs = list(dict.fromkeys(s['pref'] for s in uniq_shows if s['pref']))
             dates = [s['iso'] for s in uniq_shows]
             d0, d1 = min(dates), max(dates)
-            multi_session = len(uniq_shows) > len(set(s['iso'] for s in uniq_shows))
+            multi_session = multi_time_dates(uniq_shows)
             rows = sorted(rows, key=lambda x: (x['iso'], x['time'], x['w']['sd']))
             if len(uniq_venues) <= 1:
                 pref = prefs[0] if prefs else '全国'
@@ -375,8 +458,7 @@ def main():
             for r in rows:
                 w = r['w']
                 wlabel = re.sub(r'\s+', '', w['label']) or (w['kind'] or '先着') + '一般発売'
-                sesslab = f"{r['sess']}公演" if (multi_session and r['sess']) else '公演'
-                scope = f"{r['pref']} {md(r['iso'])}{sesslab}"
+                scope = f"{r['pref']} {md(r['iso'])}{sesslab(r, multi_session)}"
                 if w['sd'] >= TODAY:  # 発売前＋本日発売(今日開始)＝発売日表示／過去開始=受付中(締切)
                     typ = f"{wlabel}（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
                 else:                 # 発売中
