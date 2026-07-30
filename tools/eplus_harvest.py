@@ -4,10 +4,23 @@
   python tools/eplus_harvest.py cards j-pop 1 3     # j-popジャンルのp1〜p3のカードを収集→tmp/eplus_cards.json
 既存DBのartist名と突合し in_db フラグを付ける。
 """
-import urllib.request, re, json, sys, time, datetime
+import urllib.request, re, json, sys, time, datetime, unicodedata
 import html as H
 
 UA = {'User-Agent': 'Mozilla/5.0'}
+
+_HALF_KANA_RE = re.compile(r'[｡-ﾟ]+')
+
+
+def fix_half_kana(s):
+    """e+は名前や会場に半角カナを返すことがある（アンジェラ･アキ／ナオト･インティライミ の半角中黒、
+    ｽﾞ等）。OSHINAVI既存は全角なので**半角カナの連続だけ** NFKC で全角化する。
+    全角ラテンや（）／〜には触らない＝最小限（ぴあ側 norm_fw との違い）。
+    2026-07-30 の目視で発覚（既存 id77/3016/3019/3031/3053/3082/3100/3103 が半角中黒）。
+    """
+    if not isinstance(s, str) or not s:
+        return s
+    return _HALF_KANA_RE.sub(lambda m: unicodedata.normalize('NFKC', m.group(0)), s)
 
 
 def fetch(url, tries=4):
@@ -354,9 +367,11 @@ def main():
                 if w['sd'] >= TODAY:  # 今日開始含む発売前はstartDate付与(本日発売)／過去開始は販売中形(startDate無)
                     tk['startDate'] = str(w['sd'])
                 tickets.append(tk)
+            for _t in tickets:  # 表示テキストは出口で半角カナを全角化
+                _t['type'] = fix_half_kana(_t['type'])
             entries.append({
-                'id': nid, 'artist': akey, 'name': name, 'date': edate,
-                'dateLabel': dlabel, 'venue': venue, 'prefecture': pref,
+                'id': nid, 'artist': fix_half_kana(akey), 'name': fix_half_kana(name), 'date': edate,
+                'dateLabel': fix_half_kana(dlabel), 'venue': fix_half_kana(venue), 'prefecture': pref,
                 'genre': 'new', 'price': None,
                 'links': {'rakuten': None, 'lawson': None, 'pia': None,
                           'eplus': rows[0]['url'], 'amazon': None},
@@ -479,10 +494,12 @@ def main():
                 for t in tickets:
                     mark = '  ＋' if t['type'] not in before else '   '
                     print(f"{mark} {t['type']}")
+            for _t in tickets:  # 表示テキストは出口で半角カナを全角化（e+は半角中黒を返す）
+                _t['type'] = fix_half_kana(_t['type'])
             e['tickets'] = tickets
-            e['venue'] = venue
+            e['venue'] = fix_half_kana(venue)
             e['prefecture'] = pref
-            e['dateLabel'] = dlabel
+            e['dateLabel'] = fix_half_kana(dlabel)
             e['date'] = d1
             e['links']['eplus'] = rows[0]['url']
         if 'apply' in sys.argv:

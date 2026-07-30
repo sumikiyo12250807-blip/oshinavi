@@ -19,12 +19,33 @@ import datetime
 import json
 import re
 import sys
+import unicodedata
 import urllib.parse
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.path.insert(0, 'tools')
 
 TODAY = datetime.date.today()
+
+_HALF_KANA_RE = re.compile(r'[｡-ﾟ]+')
+
+
+def venue_key(v):
+    """会場名の表記ゆれを吸収した重複判定キー（半角/全角・空白・住所の〔〕[]注記を無視）"""
+    s = unicodedata.normalize('NFKC', v or '')
+    s = re.sub(r'〔.*?〕|\[.*?\]|（[^（）]*?[0-9-]+[^（）]*?）', '', s)
+    return re.sub(r'\s+', '', s)
+
+
+def fix_half_kana(s):
+    """楽天HTMLは会場名に半角カナを返すことがある（ｽﾎﾟｰﾂﾊﾟｰｸ／Cｹﾞｰﾄ／ﾋﾞﾚｯｼﾞﾎｰﾙ）。
+    OSHINAVI既存は全角なので、**半角カナの連続だけ** NFKC で全角化する。
+    ぴあ側の norm_fw と違い全角ラテンや（）／〜には触らない＝最小限の正規化。
+    2026-07-30 の目視で id3516 諏訪湖祭「Cｹﾞｰﾄ観覧席」を発見（既存も3224/3229/3232が汚染）。
+    """
+    if not isinstance(s, str) or not s:
+        return s
+    return _HALF_KANA_RE.sub(lambda m: unicodedata.normalize('NFKC', m.group(0)), s)
 CD_GENRES = {'jpop', 'rock', 'idol', 'classic', 'jazz', 'anime', 'enka', 'kpop', 'yougaku', 'fes', 'dento'}
 WD = '月火水木金土日'
 
@@ -124,10 +145,22 @@ def build(recs, new_id):
         s = pref_short(p['pref'])
         if s and s not in prefs:
             prefs.append(s)
-    venues = []
+    # 会場の重複除去は**表記ゆれを吸収したキー**で行う。素の文字列比較だと同じ会場が
+    # 半角カナ／住所カッコ付き／空白違いで別会場に見え、1会場なのに
+    # 「全国ツアー（モエレ沼公園／ﾓｴﾚ沼公園／モエレ沼公園）」になる（2026-07-30 id3229で発覚）。
+    # 表示は同じ会場のうち**最短表記**を採る（住所付きの冗長な方を残さない）。
+    venues, _vpick = [], {}
     for p in perfs:
-        if p['venue'] and p['venue'] not in venues:
-            venues.append(p['venue'])
+        v = fix_half_kana((p.get('venue') or '').strip())
+        if not v:
+            continue
+        k = venue_key(v)
+        if k not in _vpick:
+            _vpick[k] = v
+            venues.append(v)
+        elif len(v) < len(_vpick[k]):
+            venues[venues.index(_vpick[k])] = v
+            _vpick[k] = v
 
     tickets = []
     for r in recs:
@@ -187,16 +220,25 @@ def build(recs, new_id):
         # （ぴあ側で2026-07-01に同じ事故＝ディズニー・オン・クラシック18県中4会場しか出ず。
         #   楽天ビルダーに同じバグが残っていたのを2026-07-26に発見＝MATSURI 10会場→4会場）
         venue = '全国ツアー（%s）' % '／'.join(venues)
-        datelabel = '%s〜%s %s' % (jp_date(min(p['date'] for p in perfs)), jp_date(last), venue)
+        first = min(p['date'] for p in perfs)
+        # 実質単日（最早の公演日==最遅の終了日）なら「9/5〜9/5」の冗長形にしない
+        # （ぴあ側は2026-07-15に直したが楽天側に同じ穴が残っていた・2026-07-30 id3229）
+        if first == last:
+            datelabel = '%s %s' % (jp_date(first), venue)
+        else:
+            datelabel = '%s〜%s %s' % (jp_date(first), jp_date(last), venue)
 
     g = rec.get('_genre') or ''
+    # 表示テキストは出口で半角カナを全角化する（会場名に混ざる＝id3516で発覚）
+    for t in tickets:
+        t['type'] = fix_half_kana(t.get('type'))
     e = {
         'id': new_id,
-        'artist': rec['name'],
-        'name': rec['name'],
+        'artist': fix_half_kana(rec['name']),
+        'name': fix_half_kana(rec['name']),
         'date': last,
-        'dateLabel': datelabel,
-        'venue': venue,
+        'dateLabel': fix_half_kana(datelabel),
+        'venue': fix_half_kana(venue),
         'prefecture': prefs[0] if len(prefs) == 1 else '全国',
         'genre': 'new',
         '_genre': g,
@@ -205,7 +247,9 @@ def build(recs, new_id):
         'links': {
             'rakuten': deeplink(rec['url']),
             'lawson': None, 'pia': None, 'eplus': None,
-            'amazon': amazon(rec['name']) if g in CD_GENRES else None,
+            # 検索語も表示と同じ正規化を通す（ぴあ側で amazon_cd(norm_fw(..)) を忘れて
+            # 全角クエリのまま0件になった事故と同型・2026-07-30）
+            'amazon': amazon(fix_half_kana(rec['name'])) if g in CD_GENRES else None,
         },
         'tickets': tickets,
         'verified': True,
@@ -249,7 +293,43 @@ def _selftest():
     assert e['genre'] == 'new' and e['_genre'] == 'fes'
     # R9年表記
     assert r9('2027-01-14') == 'R9年 1/14'
-    print('selftest OK: 締切不明→公演日+saleEndUnknown / 発売前startDate / 終了枠除去 / deeplink / R9年')
+
+    # 🚨2026-07-30追加＝id3229 北海道芸術花火の型。同じ1会場が「半角カナ」「住所〔〕付き」で
+    #   3通り書かれており、素の文字列比較では3会場に見えて「全国ツアー（同じ会場×3）」＋
+    #   「9/5〜9/5」の冗長形になっていた。表記ゆれを吸収して1会場・単日形に落ちること。
+    rec2 = {
+        'url': 'https://ticket.rakuten.co.jp/event/rtmlhk6/',
+        'name': 'テスト花火2026', '_genre': 'hanabi',
+        'perfs': [
+            {'date': '2026-09-05', 'end': '', 'time': '18:00', 'pref': '北海道',
+             'venue': 'モエレ沼公園 〔札幌市東区モエレ沼公園1-1〕', 'status': '受付中'},
+            {'date': '2026-09-05', 'end': '', 'time': '18:00', 'pref': '北海道',
+             'venue': 'ﾓｴﾚ沼公園 〔札幌市東区ﾓｴﾚ沼公園1-1〕', 'status': '受付中'},
+            {'date': '2026-09-05', 'end': '', 'time': '18:00', 'pref': '北海道',
+             'venue': 'モエレ沼公園', 'status': '受付中'},
+        ],
+        'windows': [{'type': '一般発売', 'timming': '2026/08/26(水) 12:00 〜 2026/09/05 (土) 15:00',
+                     'status': '0', 'start': ''}],
+    }
+    e2, why2 = build(rec2, 9998)
+    assert e2, why2
+    assert e2['venue'] == 'モエレ沼公園', e2['venue']          # 1会場・最短表記
+    assert '全国ツアー' not in e2['dateLabel'], e2['dateLabel']
+    assert '〜' not in e2['dateLabel'], e2['dateLabel']        # 単日は範囲形にしない
+    # 半角カナは表示テキストに残らない
+    assert not re.search(r'[｡-ﾟ]', e2['venue'] + e2['dateLabel'] + e2['tickets'][0]['type'])
+    # 陽性テスト：本当に別会場なら統合しない
+    rec3 = dict(rec2)
+    rec3['perfs'] = [dict(rec2['perfs'][0]),
+                     {'date': '2026-09-06', 'end': '', 'time': '18:00', 'pref': '北海道',
+                      'venue': '別の公園', 'status': '受付中'}]
+    e3, _ = build(rec3, 9997)
+    # （rec3は住所付き表記しか無いので、その表記のまま残る＝勝手に情報を削らない）
+    assert e3['venue'] == '全国ツアー（モエレ沼公園 〔札幌市東区モエレ沼公園1-1〕／別の公園）', e3['venue']
+    assert '〜' in e3['dateLabel'], e3['dateLabel']            # 日付が違えば範囲形
+
+    print('selftest OK: 締切不明→公演日+saleEndUnknown / 発売前startDate / 終了枠除去 / deeplink / R9年'
+          ' / 会場の表記ゆれ統合 / 単日形 / 半角カナ全角化')
 
 
 def main():
