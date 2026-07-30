@@ -88,9 +88,23 @@ def sortkey(x):
     return (b, g, -(d or 0) if b == 0 else (d or 0))
 
 
+# 「調べた上で対象外」と決めた eventCd は二度と拾わない（毎回ハーベストに出てきて
+# 毎回同じ判断をやり直す無駄を止める）。理由と決定日は tools/harvest_exclude.json に残す。
+# ⚠️ここに入れてよいのは調査済みのものだけ。「分からないから外す」はダメ
+# （[[feedback_investigate_dont_guess]]／[[feedback_oshikatsu_first]]）。
+try:
+    _ex = json.load(open('tools/harvest_exclude.json', encoding='utf-8'))
+    EXCLUDE = {x['eventCd'] for x in _ex.get('excluded', [])}
+except FileNotFoundError:
+    EXCLUDE = set()
+
 seen_cd, seen_nm, sel = set(db_cds), set(), []
+n_ex = 0
 for it in sorted(items, key=sortkey):
     cd, nm = eventcd(it['url']), norm(it['artist'])
+    if cd in EXCLUDE:
+        n_ex += 1
+        continue
     if not cd or cd in seen_cd or (nm and nm in seen_nm):
         continue
     seen_cd.add(cd); seen_nm.add(nm)
@@ -111,3 +125,6 @@ for b in sorted(bc):
     print(f'   {NAMES[b]}: {bc[b]}件')
 print(f'   ジャンル: {dict(collections.Counter(it["_tag"] for it in sel))}')
 print(f'   ※在庫(未掲載ユニーク) {len({eventcd(it["url"]) for it in items})}件 中から選定')
+if n_ex:
+    # 黙って落とすと「そもそも出てこなかった」のか「除外した」のか分からなくなる。
+    print(f'   ※除外リスト(tools/harvest_exclude.json)で {n_ex}件スキップ')

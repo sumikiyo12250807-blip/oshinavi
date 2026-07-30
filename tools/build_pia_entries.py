@@ -216,6 +216,13 @@ def kenshu(title):
     # のサイン会付き券／特別展「生きものたちの性」の11月平日限定券で発覚)。
     return base + ''.join(f'【{x}】' for x in labels)
 
+# 囲みの中身が「券種語だけ」かを判定するための除去パターン。これで消して何も残らなければ
+# 装飾囲み(【一般発売】〔当日引換券〕)＝落とす。何か残れば席種/特典の説明ラベル
+# (〔テーブルシート販売〕【11月平日限定】)＝券種を区別する情報なので残す（2026-07-30）。
+# 旧版は「発売|販売|…を含めば落とす」だったので〔テーブルシート販売〕まで落ちていた。
+_DECOR_RE = re.compile(r'(一般|発売|販売|先行|受付|抽選|当日|引換|券|プリセール|プレリザーブ|'
+                       r'プレリク|最速|オフィシャル|プレイガイド|次|[0-9０-９]|[・／/　 ])')
+
 def _kenshu_base(title, labels):
     # ＜...＞【...】〔...〕［...］の囲み(公演日/区分指定)を全部除去。中の全角／を区切りと誤認して
     # 「一般発売（９」「一般発売【６」等に化けるのを防ぐ(2026-06-23 JUJU・KAWAII LABで発覚)。
@@ -223,9 +230,13 @@ def _kenshu_base(title, labels):
         inner = m.group(1).strip()
         # 落とすのは①券種語の装飾囲み(【一般発売】【先行】)②公演日の囲み(【６／２７公演】)。
         # それ以外＝券種を区別する説明ラベル(【11月平日限定】【座席券】)は labels に退避して残す。
-        if re.search(r'(発売|販売|先行|受付|プリセール|プレリザーブ|抽選|当日|公演)', inner):
+        if '公演' in inner or not _DECOR_RE.sub('', inner):
             return ''
         if re.search(r'[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}', inner):
+            return ''
+        # ③県名だけの囲み(〔大阪〕〔東京・兵庫〕)は落とす。県はバッジ側で（県 M/D公演）と
+        #   付け直すので、残すと二重に名乗る（2026-07-30）。
+        if inner and not re.sub(PREF_RE, '', inner).strip('・／/、,　 '):
             return ''
         if inner:
             labels.append(inner)
@@ -235,8 +246,11 @@ def _kenshu_base(title, labels):
     # 2026-07-15 KAWAII LAB. MATESで発覚）。
     t = re.sub(r'＜(.*?)＞', _brace, title)
     t = re.sub(r'【(.*?)】', _brace, t)
-    t = re.sub(r'〔.*?〕', '', t)
-    t = re.sub(r'［.*?］', '', t)
+    # 〔…〕［…］も同じ扱い。旧版は無条件除去だったため「一般発売〔テーブルシート販売〕」が
+    # 「一般発売」に潰れ、通常券と同じバッジ文字列になっていた（2026-07-30 ギラヴァンツ北九州で
+    # 発覚＝KAWAII LAB.の学生限定券と同型の事故。reconcileは枠数一致なので気づけない）。
+    t = re.sub(r'〔(.*?)〕', _brace, t)
+    t = re.sub(r'［(.*?)］', _brace, t)
     # ◎K-1.CLUB◎一般発売 のように【同じ記号で囲んだ装飾ラベル】を先頭に付ける表記がある。
     # 先頭/末尾stripでは内側の記号が残る（2026-07-13 K-1 WORLD MAXで発覚）。囲みごと落とす。
     t = re.sub(r'^([●○◎★☆■◆])[^●○◎★☆■◆]*\1', '', t).strip()
@@ -252,8 +266,21 @@ def _kenshu_base(title, labels):
     KW = (r'(プレイガイド最速先行|最速先行|オフィシャル先行|\d次プレリザーブ|プレリザーブ\d次|'
           r'プレリザーブ|\d次受付|プリセール|一般発売|一般販売|当日引換券|当日券|先行)')
     if '／' in t:
+        # 🚨ぴあは「券種 ／ 公演名」を**前後スペース付きの「 ／ 」**で区切り、券種名の中の
+        # 席種は「一般発売／勝欲の秋シート」のようにスペース無しで繋ぐ。旧版はスペース無しの
+        # 「／」で切っていたため席種名が丸ごと落ち、同じ「一般発売」バッジが何枚も並んだ
+        # （2026-07-30 巨人×中日の勝欲の秋シート／浦和レッズのメインアッパー指定席で発覚。
+        #  reconcileは枠数一致なので気づけない＝KAWAII LAB.学生限定券と同型の事故）。
+        sep = ' ／ ' if ' ／ ' in t else '／'
         # 先頭/末尾の飾り記号(●○★@※等)はぴあ表記の装飾。バッジに出さない(2026-07-10)。
-        head = t.split('／')[0].strip('　 .・●○◎◆◇■□★☆@＠※〇▼▲').strip()
+        head = t.split(sep)[0].strip('　 .・●○◎◆◇■□★☆@＠※〇▼▲').strip()
+        # head の中に「／」が残る＝「券種語／席種名」。席種名は券種を区別する情報なので
+        # ラベルに退避して残す（落とすと席種違いが1枠に潰れて買えない席が見えなくなる）。
+        if '／' in head:
+            kwp, seat = head.split('／', 1)
+            if re.search(KW, kwp) and seat.strip():
+                labels.append(seat.strip())
+                head = kwp.strip()
         # ぴあは「券種 ／ 公演名」が基本だが、公演名そのものに／を含み「公演名★2次受付〔東京〕」と
         # 出す枠がある。この場合 head は公演名の断片＝券種でない（2026-07-14『いきなり本読み!』で発覚）。
         # head に券種語が無ければ、元の文字列から券種語を拾い直す。
@@ -329,6 +356,13 @@ PIA_GENRE_MAP = {
     'クラシック': ('classic', None),
     'J-POP・ROCK': ('jpop', None),
     '音楽その他': ('fes', None),
+    # 2026-07-29 追加＝実ページの<title>で存在を確認したカテゴリ。
+    # 旧版は対応表に無いと _piaSub ごと捨てていたので、そもそも存在に気づけなかった。
+    '海外ROCK・POPS': ('yougaku', None),      # SQUEEZE(梅田クラブクアトロ)で確認
+    '民族音楽': ('yougaku', None),             # ネパールの詩心～四季と祭り～で確認（海外の音楽）
+    # 2026-07-30 追加＝イベントカテゴリに fallback が無く、genre_of(名前キーワード)で
+    # engeki へ倒れていた（にゃんだらけ21・スキップとローファー展・夏まつり2件が engeki 下書き）。
+    '博覧会・展示会・見本市': ('art', None),    # 深堀隆介展・キボリノコンノ展・にゃんだらけで確認
 }
 # トップカテゴリ単位のフォールバック（サブカテゴリがMAP未収載の時）
 PIA_CAT_FALLBACK = {'スポーツ': ('sports', None), 'クラシック': ('classic', None)}
@@ -348,6 +382,10 @@ def genre_from_subcat(cat, sub, name=''):
     """ (カテゴリ,サブ,名前) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
     if sub and '邦楽' in sub:   # 「演歌・邦楽」→ 和楽器系はdento、それ以外は演歌(enka)
         return ('dento', None) if HOGAKU_RE.search(name or '') else ('enka', None)
+    # 「祭り・花火大会」は花火大会と祭りが同居する1カテゴリ。名前に花火があれば hanabi、
+    # 無ければ祭り＝屋外の複数組イベント＝fes（[[feedback_fes_definition]]）。2026-07-30追加。
+    if sub and '花火' in sub:
+        return ('hanabi', None) if re.search(r'花火', name or '') else ('fes', None)
     if sub and sub in PIA_GENRE_MAP: return PIA_GENRE_MAP[sub]
     if sub:
         for k, v in PIA_GENRE_MAP.items():
@@ -429,10 +467,22 @@ def build(cand):
     u0 = cand['urls'][0]
     pia = ('https://t.pia.jp/pia/event/event.do?eventBundleCd=' + re.search(r'eventBundleCd=(\w+)', u0).group(1)) if 'eventBundleCd' in u0 else ecd_url(u0)
     # ジャンル下ごしらえ: ぴあカテゴリ優先 → 取れなければ個別ページを1つ引く → それでも無ければ名前ベース
+    #
+    # 🚨 _piaSub は「PIA_GENRE_MAP に載っているカテゴリ」だけでなく、**ぴあが返したカテゴリは
+    # 必ず記録する**。旧版は genre_from_subcat が None（対応表に無いサブカテゴリ）だと
+    # sub_used を '' のまま捨てていたため、レビュー時に「ぴあが何と言っていたか」が消え、
+    # 人間が名前だけを見て推測する羽目になっていた（2026-07-29発覚＝実ページの<title>には
+    # ちゃんと [音楽 民族音楽] [イベント ショー・ファンイベント] [音楽 海外ROCK・POPS] と
+    # 書いてあったのに _piaSub='' で、engekiへのfallbackだけが残っていた）。
+    # 記録さえ残れば振り分けは「ぴあのカテゴリを見て決める」で済む（[[project_vendor_genre_autoassign]]）。
     pg, sub_used = None, ''
     for h in htmls:
         sc = pia_subcat(h)
-        if sc and genre_from_subcat(*sc, cand['artist']):
+        if not sc:
+            continue
+        if not sub_used:
+            sub_used = f"{sc[0]}/{sc[1]}"     # 対応表に無くても、ぴあの言い分は残す
+        if genre_from_subcat(*sc, cand['artist']):
             pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
     if not pg:  # bundleページはサブカテゴリ無し → 個別eventCdページを1つ引いて再試行
         for r in rows:
@@ -442,13 +492,20 @@ def build(cand):
                 sc = pia_subcat(fetch(eu)); time.sleep(0.2)
             except Exception:
                 sc = None
-            if sc and genre_from_subcat(*sc, cand['artist']):
+            if not sc:
+                continue
+            if not sub_used:
+                sub_used = f"{sc[0]}/{sc[1]}"
+            if genre_from_subcat(*sc, cand['artist']):
                 pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
     main_genre, extra = pg if pg else (genre_of(cand['artist']), None)
     links = {'rakuten': None, 'lawson': None, 'pia': pia, 'eplus': None}
     # 音楽系の単独/グループ名義は「最新CD」リンクを自動付与(合同公演／×は除外＝レビューで判断)。
     if main_genre in MUSIC_GENRES and not re.search(r'／|×', cand['artist']):
-        amz = amazon_cd(cand['artist'])
+        # 🚨全角のままAmazonに渡すと検索が1件もヒットしない（ぴあHTMLは「ＣｉＯＮ」等の
+        # 全角ラテンを返す）。表示側と同じく norm_fw で半角化してからクエリにする
+        # （2026-07-30発覚＝12件のCDリンクが死んでいた）。
+        amz = amazon_cd(norm_fw(cand['artist']))
         if amz:
             links['amazon'] = amz
     # 出口で全角ローマ字/数字を半角化（表示フィールドのみ。URL/日付/_piaSubは触らない）。
@@ -573,7 +630,30 @@ def _selftest():
     assert drop_labels_in_name('一般発売【かわさきジャズ2026】', '【かわさきジャズ2026】しんゆりJAZZストリーム DAY1') == '一般発売'
     assert drop_labels_in_name('一般発売【学生限定LIVE】', 'KAWAII LAB. MATES／KAWAII LAB. SOUTH') == '一般発売【学生限定LIVE】'
     assert drop_labels_in_name('超早割チケット【11月平日限定】', '特別展「生きものたちの性」') == '超早割チケット【11月平日限定】'
-    print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels 回帰なし')
+    # ⑬ 「券種語／席種名 ／ 公演名」の席種名を残す（2026-07-30 巨人×中日・浦和レッズ）
+    assert kenshu('一般発売／勝欲の秋シート（９／８） ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦') \
+        == '一般発売【勝欲の秋シート】', \
+        kenshu('一般発売／勝欲の秋シート（９／８） ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦')
+    assert kenshu('一般発売／メインアッパー指定席・ビジター指定席・ビジター自由席 ／ 浦和レッズ対東京ヴェルディ 明治安田Ｊ１リーグ') \
+        == '一般発売【メインアッパー指定席・ビジター指定席・ビジター自由席】', \
+        kenshu('一般発売／メインアッパー指定席・ビジター指定席・ビジター自由席 ／ 浦和レッズ対東京ヴェルディ 明治安田Ｊ１リーグ')
+    # 席種の無い普通形は今まで通り（区切りがスペース付きでも無しでも）
+    assert kenshu('一般発売 ／ 田中彩子 ハイコロラトゥーラの魅力《春の声》') == '一般発売'
+    assert kenshu('プレリザーブ／ＴＨＥ ＹＥＬＬＯＷ ＭＯＮＫＥＹ') == 'プレリザーブ'
+    # ⑫ 〔…〕の席種ラベルは残す・県名だけの〔…〕は落とす（2026-07-30 ギラヴァンツ北九州）
+    assert kenshu('一般発売〔テーブルシート販売〕 ／ ギラヴァンツ北九州対松本山雅ＦＣ') == '一般発売【テーブルシート販売】', \
+        kenshu('一般発売〔テーブルシート販売〕 ／ ギラヴァンツ北九州対松本山雅ＦＣ')
+    assert kenshu('ぴあカードで確率UP 舞台『キュー』★2次受付〔大阪〕') == '2次受付', \
+        kenshu('ぴあカードで確率UP 舞台『キュー』★2次受付〔大阪〕')
+    assert kenshu('先行 ／ テスト公演〔東京・兵庫〕') == '先行', kenshu('先行 ／ テスト公演〔東京・兵庫〕')
+    # ⑩ ジャンル対応表（2026-07-30 追加）＝イベントカテゴリが engeki に倒れていた回帰テスト
+    assert genre_from_subcat('イベント', '祭り・花火大会', '第28回にっぽんど真ん中祭り') == ('fes', None)
+    assert genre_from_subcat('イベント', '祭り・花火大会', 'いたみ花火大会') == ('hanabi', None)
+    assert genre_from_subcat('イベント', '博覧会・展示会・見本市', 'にゃんだらけ21') == ('art', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('dento', None)   # 既存分岐の非回帰
+    # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
+    assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
+    print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels/genre_map/amazon 回帰なし')
 
 if __name__ == '__main__':
     if '--selftest' in sys.argv:
