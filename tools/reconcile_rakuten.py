@@ -57,7 +57,7 @@ def main():
                and (e['id'] in ids if ids else (e.get('genre') == 'new' if args.new else True))]
 
     print('=== reconcile_rakuten (today=%s) 対象%d件 ===\n' % (TODAY, len(targets)))
-    ok = fail = fetcherr = 0
+    ok = fail = fetcherr = unparsable = 0
     skip_slots = checked_slots = 0
     for e in targets:
         # 統合エントリは枠ごとにURLが違う（ツアー/別券種）。**その枠のURL**を正として照合する。
@@ -78,6 +78,17 @@ def main():
         if bad and not perfs:
             fetcherr += 1
             print('❌ id=%s %s | FETCH %s' % (e['id'], e['name'][:34], bad))
+            continue
+        # 楽天チケットmini(/mini/events/xxxx)は公演カードもsalesDisplayStatusも無い別レイアウト。
+        # 取得できても中身がゼロ＝**照合できない**。ここを「ページに無い」と鳴らすと、正しい登録が
+        # 毎回FAILに出て本物のFAILが埋もれる。黙って合格にもしない＝対象外として件数を必ず出す。
+        # （2026-07-30: id6 古琴と琵琶の対話 が mini 形式で誤検知していた）
+        if not perfs and not wins:
+            unparsable += 1
+            print('⏭️ id=%s %s | 照合対象外（公演カード/販売枠が取れないページ形式・要目視）'
+                  % (e['id'], e['name'][:34]))
+            for u in urls:
+                print('      %s' % u)
             continue
         page_end = {p['sale_end'][:10] for p in perfs if p.get('sale_end')}
         page_start = {p['sale_start'][:10] for p in perfs if p.get('sale_start')}
@@ -124,9 +135,15 @@ def main():
                         checked = True
             checked_slots += 1 if checked else 0
             skip_slots += 0 if checked else 1
-        # ④ 県
-        if e.get('prefecture') and e['prefecture'] != '全国' and page_pref and e['prefecture'] not in page_pref:
-            errs.append('県 %s がページ(%s)と違う' % (e['prefecture'], '/'.join(sorted(page_pref))))
+        # ④ 県。複数会場のエントリは prefecture が「大阪・東京」のように多県を名乗る（正しい表記）。
+        #   丸ごと1県として比較すると必ず外れるので、**分解して全部がページ側に在るか**で見る
+        #   （ぴあ側の「統合バッジが多県名乗るのは正」と同じ扱い＝[[reference_reconcile_pia_qc_gate]]）。
+        #   2026-07-30: id5 Rol3ert（大阪・東京の2会場）が誤検知でFAILしていた。
+        if e.get('prefecture') and e['prefecture'] != '全国' and page_pref:
+            mine = [p for p in re.split(r'[・/／]', e['prefecture']) if p]
+            miss = [p for p in mine if p not in page_pref]
+            if miss:
+                errs.append('県 %s がページ(%s)に無い' % ('・'.join(miss), '/'.join(sorted(page_pref))))
 
         if errs:
             fail += 1
@@ -137,7 +154,10 @@ def main():
             ok += 1
             print('✅ id=%s %s | 一致' % (e['id'], e['name'][:40]))
 
-    print('\n=== 集計: OK %d / 🚨FAIL %d / ❌FETCH %d ===' % (ok, fail, fetcherr))
+    print('\n=== 集計: OK %d / 🚨FAIL %d / ❌FETCH %d / ⏭️照合対象外 %d ==='
+          % (ok, fail, fetcherr, unparsable))
+    if unparsable:
+        print('   ※照合対象外＝ページ形式が違って一次情報が取れない分。「正しい」と確認できていない。')
     print('=== QC照合カバレッジ: 照合できた枠 %d / 未照合 %d ===' % (checked_slots, skip_slots))
     if skip_slots:
         print('   ※未照合＝締切が「公演日で締めた/売り切れ次第終了」で突合対象が無い枠。正しいと確認できていない。')

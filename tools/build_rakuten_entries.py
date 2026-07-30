@@ -61,15 +61,25 @@ def perf_span(perfs):
     return r9(ds[0]) if len(ds) == 1 else '%s〜%s' % (r9(ds[0]), r9(ds[-1]))
 
 
+# 🚨 楽天の timming は「2026/06/20(土) 10:00 〜 2026/06/23 (火) 23:59」＝**終了側だけ
+# 日付と曜日カッコの間にスペースが入る**。旧regexは `(\d{2})\(` でスペースを許さず、
+# 終了日を1つも拾えないまま len(ds)<2 で None を返していた。その結果、呼び出し側の
+# 「締切が無ければ card_end(=data-dateのmax_end_on＝一番遅い締切)で埋める」フォールバックが
+# 全枠に効き、**もう終わった先行が「まだ買える」として載る／生きた枠の締切が実際より遅く出る**
+# という嘘の情報になっていた（2026-07-30発見・ウルトラヒーローズ岐阜=6/23締切の最速先行が
+# 「〜9/11」と出ていた）。selftestが旧形式(スペース無し)で書かれていたので通り抜けていた。
+_WIN_DT = r'(20\d{2})/(\d{2})/(\d{2})\s*\([^)]*\)\s*(\d{1,2}:\d{2})'
+
+
 def win_end_iso(timming):
-    ds = re.findall(r'(20\d{2})/(\d{2})/(\d{2})\([^)]*\)\s*(\d{1,2}:\d{2})', timming or '')
+    ds = re.findall(_WIN_DT, timming or '')
     if len(ds) < 2:
         return None, None
     return '%s-%s-%s' % ds[1][:3], ds[1][3]
 
 
 def win_start_iso(timming):
-    ds = re.findall(r'(20\d{2})/(\d{2})/(\d{2})\([^)]*\)\s*(\d{1,2}:\d{2})', timming or '')
+    ds = re.findall(_WIN_DT, timming or '')
     if not ds:
         return None, None
     return '%s-%s-%s' % ds[0][:3], ds[0][3]
@@ -212,10 +222,16 @@ def _selftest():
         'perfs': [{'date': '2026-08-29', 'end': '', 'time': '12:00', 'pref': '長野県', 'venue': '白馬会場', 'status': '受付中'}],
         'windows': [
             {'type': '一般発売', 'timming': '2026/07/25(土) 10:00 〜 ', 'status': '1', 'start': ''},
-            {'type': '二次先行', 'timming': '2026/08/01(土) 10:00 〜 2026/08/10(月) 23:59', 'status': '0', 'start': ''},
-            {'type': '終わった枠', 'timming': '2026/05/01(金) 10:00 〜 2026/05/10(日) 23:59', 'status': '0', 'start': ''},
+            # 🚨終了側にスペースが入る楽天の実形式（2026-07-30の嘘締切バグの回帰ケース）
+            {'type': '二次先行', 'timming': '2026/08/01(土) 10:00 〜 2026/08/10 (月) 23:59', 'status': '0', 'start': ''},
+            {'type': '終わった枠', 'timming': '2026/05/01(金) 10:00 〜 2026/05/10 (日) 23:59', 'status': '0', 'start': ''},
         ],
     }
+    # 終了側スペース有り／無しの両方で締切が取れること（取れないと card_end で埋まって嘘になる）
+    assert win_end_iso('2026/06/20(土) 10:00 〜 2026/06/23 (火) 23:59') == ('2026-06-23', '23:59')
+    assert win_end_iso('2026/06/20(土) 10:00 〜 2026/06/23(火) 23:59') == ('2026-06-23', '23:59')
+    assert win_end_iso('2026/07/25(土) 10:00 〜 ') == (None, None)
+    assert win_start_iso('2026/06/20(土) 10:00 〜 2026/06/23 (火) 23:59') == ('2026-06-20', '10:00')
     e, why = build(rec, 9999)
     assert e, why
     assert e['date'] == '2026-08-29' and e['prefecture'] == '長野', e

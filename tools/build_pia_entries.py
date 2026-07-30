@@ -363,8 +363,16 @@ PIA_GENRE_MAP = {
     # 2026-07-30 追加＝イベントカテゴリに fallback が無く、genre_of(名前キーワード)で
     # engeki へ倒れていた（にゃんだらけ21・スキップとローファー展・夏まつり2件が engeki 下書き）。
     '博覧会・展示会・見本市': ('art', None),    # 深堀隆介展・キボリノコンノ展・にゃんだらけで確認
+    # 2026-07-30 追加(第2弾)＝イベントカテゴリのサブが未収載で、また engeki へ倒れていた分。
+    # 「対応表に無いサブは名前ベースfallback＝だいたい engeki」という穴を1つずつ潰す。
+    '子供と楽しむ': ('kids', None),             # 「おかあさんといっしょ」ファンターネ!で確認
+    'アミューズメント': ('kids', None),          # マクセル アクアパーク品川(水族館入場券)で確認
+    'スクール・レジャー': ('kids', None),        # わんにゃん夜ふかし縁日で確認
 }
 # トップカテゴリ単位のフォールバック（サブカテゴリがMAP未収載の時）
+# 「イベント/イベントその他」等のサブが拾えないものはここで受ける。イベントは中身が
+# 雑多（前夜祭・物販くじ・展示）なので art に倒さず、engeki にも倒さず**人に相談**させたいが、
+# 下書きが空だと投入ゲートで止まるので art を仮置きせず None のまま（=名前ベースfallback）にする。
 PIA_CAT_FALLBACK = {'スポーツ': ('sports', None), 'クラシック': ('classic', None)}
 
 def pia_subcat(h):
@@ -650,6 +658,12 @@ def _selftest():
     assert genre_from_subcat('イベント', '祭り・花火大会', '第28回にっぽんど真ん中祭り') == ('fes', None)
     assert genre_from_subcat('イベント', '祭り・花火大会', 'いたみ花火大会') == ('hanabi', None)
     assert genre_from_subcat('イベント', '博覧会・展示会・見本市', 'にゃんだらけ21') == ('art', None)
+    # 2026-07-30(第2弾)＝イベント系サブの未収載で engeki へ倒れていた分の回帰
+    assert genre_from_subcat('イベント', '子供と楽しむ', '「おかあさんといっしょ」ファンターネ!がやってきた') == ('kids', None)
+    assert genre_from_subcat('イベント', 'アミューズメント', 'マクセル アクアパーク品川') == ('kids', None)
+    assert genre_from_subcat('イベント', 'スクール・レジャー', 'わんにゃん夜ふかし縁日') == ('kids', None)
+    # 「イベントその他」は中身が雑多なので機械で決めない（Noneで人に回す）
+    assert genre_from_subcat('イベント', 'イベントその他', '第39期竜王戦第2局三島対局 前夜祭') is None
     assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('dento', None)   # 既存分岐の非回帰
     # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
     assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
