@@ -175,8 +175,23 @@ def main():
             out.append({'id': i, 'status': 'ERROR', 'artist': ev.get('artist', ''), 'err': str(ex)[:120]})
             print(f'[{n}/{len(targets)}] {i} ERROR {str(ex)[:60]}'); time.sleep(2.0); continue
         if ne is None:
+            # 🚨「買える枠ゼロ」は間を空けて単独リトライしてから信じる。ぴあは連続アクセス時、
+            # 例外も429も返さずに券種カードの無いページを返すことがある（reconcile_pia に同じ
+            # 対策を入れた日の午後、ここで再発＝関西フィル2477が生きているのに削除候補に出た。
+            # 実ページは「一般発売 受付中 〜11/25 23:59」で、リトライしたら普通に取れた）。
+            # 削除は不可逆なので、ここだけは遅くなっても確かめる。
+            for wait in (6, 12):
+                time.sleep(wait)
+                try:
+                    ne = build({'newid': i, 'artist': ev.get('artist', ''), 'urls': urls})
+                except Exception:
+                    ne = None
+                if ne is not None:
+                    print(f'[{n}/{len(targets)}] {i} 🔁RETRY 0枠は偽陽性→{len(ne["tickets"])}枠を回収')
+                    break
+        if ne is None:
             out.append({'id': i, 'status': 'delete', 'artist': ev.get('artist', ''), 'urls': urls})
-            print(f'[{n}/{len(targets)}] {i} 買える枠ゼロ→削除候補')
+            print(f'[{n}/{len(targets)}] {i} 買える枠ゼロ→削除候補（単独リトライ2回でも0枠）')
         else:
             out.append({'id': i, 'status': 'convert', 'artist': ev.get('artist', ''), 'tickets': ne['tickets']})
             print(f"[{n}/{len(targets)}] {i} convert {len(ne['tickets'])}枠")
