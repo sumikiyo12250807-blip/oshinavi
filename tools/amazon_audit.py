@@ -118,6 +118,12 @@ def shorten(kw):
     nak = re.split(r'[・]', kw)[0].strip('　 -－—')
     if nak and nak != kw and len(nak) >= 3:
         cands.append(nak)
+    # 🚨ハイフン/ダッシュ/波ダッシュで**副題を切る**（2026-07-30 目視で発覚）。
+    # 「白鳥の湖-湖に沈む誓い-」は本体が演目そのものなのに、ハイフンを区切りとして
+    # 扱っていなかったため4通り全部0件で drop になりかけた（実測「白鳥の湖」=20件）。
+    sub = re.split(r'\s*[-－—~〜～]\s*', kw)[0].strip('　 ・「」『』（）()')
+    if sub and sub != kw and len(sub) >= 2:
+        cands.append(sub)
     # 数字を含む語（生誕150周年・第39回・開館10周年）は検索を殺すので落とす
     nodigit = re.sub(r'[^\s　]*[0-9０-９]+[^\s　]*', ' ', kw)
     nodigit = re.sub(r'\s+', ' ', nodigit).strip('　 ・-－—')
@@ -175,7 +181,9 @@ def pick(events, mode, ids):
             continue
         if mode == 'sus' and not EVENT_RE.search(kw):
             continue
-        sel.append((ev['id'], kw, ev.get('name'), ev.get('genre')))
+        # 新着プールは genre='new' で本ジャンルは _genre（下書き）にある。fes判定に使うので
+        # 実効ジャンルを返す（[[reference_amazon_affiliate]]＝fesは個別CDを付けない）
+        sel.append((ev['id'], kw, ev.get('name'), ev.get('_genre') or ev.get('genre')))
     return sel
 
 def main():
@@ -199,6 +207,17 @@ def main():
     for n, (eid, kw, name, genre) in enumerate(sel, 1):
         rec = {'id': eid, 'genre': genre, 'name': name, 'kw': kw,
                'action': None, 'newkw': None, 'cd': True, 'hit': None}
+        # 🚨fesは多人数名義で「最新CD」が合わないので個別リンクを付けない＝ジャンル共通の
+        # 「フェスアイテム」ボタンに任せる（[[reference_amazon_affiliate]]）。
+        # 実測すると「Sky Jamboree」等がそれなりにヒットして rewrite になってしまうため、
+        # 叩く前に落とす（2026-07-30 id3517）。
+        if genre == 'fes':
+            rec['action'] = 'drop'
+            rec['hit'] = 0
+            rec['why'] = 'fesは個別CDを付けない（ジャンル共通ボタン）'
+            res.append(rec)
+            print('  [%d/%d] id=%s drop (fes=個別CDなし)' % (n, len(sel), eid))
+            continue
         # 試す順＝①今のクエリ+CD ②今のクエリ(名前だけ) ③短縮+CD ④短縮(名前だけ)
         # クラシックの団体/演奏家は「CD」を足すと絞られるので②④が効く。
         plan = [(kw, True), (kw, False)]
