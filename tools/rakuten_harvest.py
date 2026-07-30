@@ -214,8 +214,8 @@ def parse_windows(body):
     if not wins:
         txt = strip_tags(body)
         for mm in re.finditer(r'販売期間\s*[:：]\s*(?P<type>[^0-9]{0,20}?)\s*'
-                              r'(?P<from>20\d{2}/\d{2}/\d{2}\([^)]*\)\s*\d{1,2}:\d{2})\s*〜\s*'
-                              r'(?P<to>20\d{2}/\d{2}/\d{2}\([^)]*\)\s*\d{1,2}:\d{2})?', txt):
+                              r'(?P<from>20\d{2}/\d{2}/\d{2}\s*\([^)]*\)\s*\d{1,2}:\d{2})\s*〜\s*'
+                              r'(?P<to>20\d{2}/\d{2}/\d{2}\s*\([^)]*\)\s*\d{1,2}:\d{2})?', txt):
             wins.append({
                 'type': (mm.group('type') or '一般発売').strip() or '一般発売',
                 'timming': '%s 〜 %s' % (mm.group('from'), mm.group('to') or ''),
@@ -233,8 +233,15 @@ def parse_windows(body):
 
 
 def win_dates(timming):
-    """'2026/07/25(土) 10:00 〜 2026/08/01(土) 23:59' → (開始iso時刻, 終了iso時刻 or None)"""
-    ds = re.findall(r'(20\d{2})/(\d{2})/(\d{2})\([^)]*\)\s*(\d{1,2}:\d{2})', timming or '')
+    """'2026/07/25(土) 10:00 〜 2026/08/01 (土) 23:59' → (開始iso時刻, 終了iso時刻 or None)
+
+    🚨 楽天は**終了側だけ日付と曜日カッコの間にスペースを入れる**（「2026/06/23 (火) 23:59」）。
+    旧regexは `(\\d{2})\\(` でスペースを許さず終了日を取りこぼし、reconcile_rakuten の
+    page_end に締切が入らないまま「締切がページに無い」と誤検知していた。
+    同じ穴が build_rakuten_entries.win_end_iso にもあり、そちらは**嘘の締切を作っていた**
+    （2026-07-30 発見・[[reference_rakuten_harvest]]）。両方で `\\s*` を許す。
+    """
+    ds = re.findall(r'(20\d{2})/(\d{2})/(\d{2})\s*\([^)]*\)\s*(\d{1,2}:\d{2})', timming or '')
     if not ds:
         return None, None
     f = '%s-%s-%s %s' % (ds[0][0], ds[0][1], ds[0][2], ds[0][3])
@@ -369,6 +376,11 @@ def _selftest():
     assert r['perfs'][0]['time'] == '14:00', r['perfs']
     assert len(r['windows']) == 1 and r['windows'][0]['type'] == '一般発売', r['windows']
     assert win_dates(r['windows'][0]['timming']) == ('2026-07-25 10:00', '2026-09-18 23:59')
+    # 🚨終了側に**スペースが入る**のが楽天の実形式。ここを取りこぼすと
+    # reconcile が「締切がページに無い」と誤検知し、builderは嘘の締切を作る（2026-07-30の回帰ケース）
+    assert win_dates('2026/06/20(土) 10:00 〜 2026/06/23 (火) 23:59') == ('2026-06-20 10:00', '2026-06-23 23:59')
+    assert win_dates('2026/06/20(土) 10:00 〜 2026/06/23(火) 23:59') == ('2026-06-20 10:00', '2026-06-23 23:59')
+    assert win_dates('2026/07/25(土) 10:00 〜 ') == ('2026-07-25 10:00', None)
     assert deeplink('https://ticket.rakuten.co.jp/a/').startswith('https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2F')
     print('selftest OK: og:title/パンくずジャンル/公演カード/販売枠JSON/deeplink 回帰なし')
 
