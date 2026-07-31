@@ -43,6 +43,10 @@ def amazon_cd(name):
 # 「買えると判定したのに取り込めなかったカード」を貯める(無言ドロップ撲滅・2026-06-23)。
 # build後に__main__が大声で報告し、1件でもあれば非ゼロ終了でゲートする。
 _DROPPED = []
+# ぴあが返したサブカテゴリが PIA_GENRE_MAP に無く、名前ベース fallback に倒れた分（2026-07-31追加）。
+# 無言で間違ったジャンルが下書きされるのを防ぐため、build 後に一覧で報告する。
+# 例＝「音楽/フェスティバル」が未収載で engeki に倒れていた（3521 JAZZ井）。
+_UNMAPPED_SUB = []
 
 WD = '月火水木金土日'
 PREFS = '北海道青森岩手宮城秋田山形福島茨城栃木群馬埼玉千葉東京神奈川新潟富山石川福井山梨長野岐阜静岡愛知三重滋賀京都大阪兵庫奈良和歌山鳥取島根岡山広島山口徳島香川愛媛高知福岡佐賀長崎熊本大分宮崎鹿児島沖縄'
@@ -396,11 +400,17 @@ def pia_subcat(h):
 
 # 邦楽(和楽器)を示す語。ぴあの「演歌・邦楽」は演歌(enka)と邦楽(和楽器=dento)を1カテゴリに
 # まとめているので、名前にこれらが含まれれば dento、無ければ enka に分ける(2026-06-23ユーザー指摘)。
-HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|雅楽|民謡|和楽器|邦楽|篠笛|笙|能楽|長唄|常磐津')
+# 🚨ローマ字表記も拾う（2026-07-31）＝「神戸国際taiko音楽祭2027」が漢字の「太鼓」を含まず
+# enka に倒れていた。照合前に NFKC+小文字化するので全角「ＴＡＩＫＯ」も当たる。
+# 誤爆が怖い短語（koto 等）は入れない。
+HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|雅楽|民謡|和楽器|邦楽|篠笛|笙|能楽|長唄|常磐津'
+                       r'|taiko|shamisen|shakuhachi|gagaku|wagakki')
+def _hogaku(name):
+    return bool(HOGAKU_RE.search(unicodedata.normalize('NFKC', name or '').lower()))
 def genre_from_subcat(cat, sub, name=''):
     """ (カテゴリ,サブ,名前) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
     if sub and '邦楽' in sub:   # 「演歌・邦楽」→ 和楽器系はdento、それ以外は演歌(enka)
-        return ('dento', None) if HOGAKU_RE.search(name or '') else ('enka', None)
+        return ('dento', None) if _hogaku(name) else ('enka', None)
     # 「祭り・花火大会」は花火大会と祭りが同居する1カテゴリ。名前に花火があれば hanabi、
     # 無ければ祭り＝屋外の複数組イベント＝fes（[[feedback_fes_definition]]）。2026-07-30追加。
     if sub and '花火' in sub:
@@ -518,6 +528,9 @@ def build(cand):
             if genre_from_subcat(*sc, cand['artist']):
                 pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
     main_genre, extra = pg if pg else (genre_of(cand['artist']), None)
+    if not pg and sub_used:
+        # ぴあはカテゴリを言っているのに対応表に無い＝名前fallbackの結果は信用しない方がいい
+        _UNMAPPED_SUB.append((cand.get('newid'), cand['artist'], sub_used, main_genre))
     links = {'rakuten': None, 'lawson': None, 'pia': pia, 'eplus': None}
     # 音楽系の単独/グループ名義は「最新CD」リンクを自動付与(合同公演／×は除外＝レビューで判断)。
     if main_genre in MUSIC_GENRES and not re.search(r'／|×', cand['artist']):
@@ -599,6 +612,12 @@ def _selftest():
     assert genre_from_subcat('音楽', '演歌・邦楽', '徳永ゆうき') == ('enka', None)
     assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＯの夏フェス 和太鼓') == ('dento', None)
     assert genre_from_subcat('音楽', '演歌・邦楽', '津軽三味線コンサート') == ('dento', None)
+    # 2026-07-31 追加＝ローマ字/全角のtaikoが漢字に当たらず enka に倒れていた（3523 神戸国際taiko音楽祭）
+    assert genre_from_subcat('音楽', '演歌・邦楽', '神戸国際taiko音楽祭2027') == ('dento', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＩＫＯ ＦＥＳ') == ('dento', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '氷川きよし特別公演') == ('enka', None)
+    # 対応表に無いサブカテゴリは None を返す＝名前fallback＋_UNMAPPED_SUB 報告に回る
+    assert genre_from_subcat('音楽', 'フェスティバル', '大人のくつろぎ音楽堂フェス「JAZZ井」2026') is None
     # ⑤ R9年(令和9年=2027)自動付与: 当年(today)より先の公演年は略記が付く・範囲は端点別
     assert era('2026-12-27') == '' and era('2027-01-09').strip() == 'R9年', '当年=空/翌年=R9年'
     assert mdbadge('2027-01-30', '2027-01-30') == 'R9年 1/30', '単日2027'
@@ -698,6 +717,14 @@ if __name__ == '__main__':
         sys.stderr.write(f"  {c['newid']} {'OK' if e else 'skip(売切)'}\n")
     print(json.dumps(out, ensure_ascii=False, indent=1))
     sys.stderr.write(f"構築 {len(out)} 件 / skip {skip}\n")
+    # 対応表に無いサブカテゴリ＝下書きジャンルが名前fallback＝レビューで人が見る枠。
+    # 止めはしない（下書きが空だと投入ゲートで止まるため）が、必ず目に入るように出す。
+    if _UNMAPPED_SUB:
+        sys.stderr.write(f"\n⚠️ PIA_GENRE_MAP 未収載のサブカテゴリ {len(_UNMAPPED_SUB)}件"
+                         f"（下書きは名前fallback＝要確認）:\n")
+        for nid, artist, sub, g in _UNMAPPED_SUB:
+            sys.stderr.write(f"   id{nid} [{sub}] → _genre={g} | {artist[:40]}\n")
+        sys.stderr.write("→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。\n")
     # 【最重要ゲート】買えると判定したのに取り込めなかったカードを大声で報告。
     # 1件でもあれば新しいぴあ表記を取りこぼしている＝parse_when/kenshu/状態判定を直す合図。
     if _DROPPED:
