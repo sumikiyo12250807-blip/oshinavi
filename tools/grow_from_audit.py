@@ -165,7 +165,14 @@ def main():
 
     today = datetime.date.today().isoformat()
     rf = opt('--rls-from')
-    rls_from = rf if isinstance(rf, str) else '2026-08-01'
+    # 🚨 `--rls-from all` ＝発売日で絞らない（2026-07-31追加）。
+    # 既定の「発売日が指定日以降」は**カウントダウン価値のある新規発掘**の考え方で、
+    # **既に受付中の枠を丸ごと落とす**（in_scope は発売日が空だと必ず False）。
+    # 育成は「登録済みエントリに同じツアーの買える枠が抜けている」のを埋める作業なので、
+    # 受付中も入れないと取りこぼしが残る（布袋寅泰3533＝先行抽選が受付中の10枠が落ちていた）。
+    # [[feedback_capture_all_not_select]] 発売前も受付中も網羅する。
+    rls_from = None if (isinstance(rf, str) and rf.lower() in ('all', 'none')) \
+        else (rf if isinstance(rf, str) else '2026-08-01')
     state_path = opt('--state') or os.path.join(ROOT, 'tmp', 'pia_missing_audit_state.json')
     out_path = opt('--out') or os.path.join(ROOT, 'tmp', 'grow_from_audit.txt')
     apply_ = '--apply' in ARGS
