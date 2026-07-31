@@ -123,6 +123,17 @@ def next_action(ev, today):
 SORT_PRESALE, SORT_SELLING = 0, 1
 
 
+def x_promo_key(ev):
+    """X紹介済みを同じ塊の先頭へ（ユーザー指示 2026-08-01）。index.html 側の
+    `const xa = a.xPost ...` と同じ同点決着を SSR にも入れる。
+    新しい投稿ほど小さい値＝先頭に来る。無印は 0 で最後。"""
+    xp = ev.get("xPost") or ""
+    try:
+        return -int(xp.replace("-", ""))
+    except ValueError:
+        return 0
+
+
 def classify_rank(ev, today):
     """index.html の EVENTS.sort() 相当（ユーザー指示 2026-07-10）。
     日付を1本の時間軸にして早い順。同じ日付なら「発売開始(発売前)」が上、「締切(販売中)」が下。
@@ -248,9 +259,10 @@ def build(today):
         if na is None:
             continue  # 販売終了は載せない
         rows.append((classify_rank(ev, today), ev.get("id", 0), ev))
-    # (rank, 日付, 種別, id)。**種別(x[0][2])を落とすと「同じ日は発売開始が上・締切が下」が壊れる**
+    # (rank, 日付, 種別, X紹介, id)。**種別(x[0][2])を落とすと「同じ日は発売開始が上・締切が下」が壊れる**
     # ＝本日発売がSSRの先頭に出ず、ブラウザの初期表示が古い並びに見える（2026-07-19 の事故）。
-    rows.sort(key=lambda x: (x[0][0], x[0][1], x[0][2], x[1]))
+    # X紹介(x_promo_key)は上の3つが同点のときだけ効く同点決着＝日付の時間軸は動かさない。
+    rows.sort(key=lambda x: (x[0][0], x[0][1], x[0][2], x_promo_key(x[2]), x[1]))
 
     total = len(rows)
     pages = [rows[i:i + PER_PAGE] for i in range(0, total, PER_PAGE)] or [[]]
