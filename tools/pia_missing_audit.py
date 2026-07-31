@@ -40,6 +40,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 import importlib.util
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -143,6 +144,20 @@ def in_scope(m, rls_from, today):
     return bool(iso) and iso >= rls_from
 
 
+def same_name(kw, title):
+    """キーワードが公演名に入っているか＝「本人名義の取りこぼし」判定。
+
+    🚨ぴあは公演名をローマ字全角で返す（`Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ`）ので、
+    素の `kw in title` だと**本人名義なのに「別名義/フェス出演」に紛れて埋もれる**
+    （2026-07-31発見＝Little Glee Monster/People In The Box/千住真理子/May’n/Luciela/
+      立川生九郎の6組・計16枠が誤分類されていた）。
+    NFKCで全角→半角に寄せ、空白を落として比較する。[[feedback_newpool_fullwidth_halfwidth]]
+    """
+    def norm(s):
+        return re.sub(r'[\s　]+', '', unicodedata.normalize('NFKC', s or '')).lower()
+    return norm(kw) in norm(title)
+
+
 def good_keyword(name, allow_all=False):
     n = (name or '').strip()
     if not n or len(n) < 2:
@@ -210,7 +225,7 @@ def audit(kws, reg, excl, wait, state_path, out_path, prior=None, rls_from=None,
             miss.append({
                 'code': code, 'url': u, 'title': x['title'], 'status': x['status'],
                 'perfdate': x['perfdate'], 'venue': x['venue'], 'rlsdate': x['rlsdate'],
-                'own_name': kw in x['title'],
+                'own_name': same_name(kw, x['title']),
             })
         results[kw] = {'hits': len(found), 'missing': miss}
         print('[%d/%d] hits=%d missing=%d' % (i + 1, len(kws), len(found), len(miss)))
@@ -306,6 +321,16 @@ def selftest():
     assert keywords(evs2, None, False) == ['XX', 'YY']
     # 1文字は引かない（ぴあが無関係な大量ヒットを返す）
     assert not good_keyword('X')
+
+    # same_name(): ぴあの全角公演名でも本人名義と判定できる（2026-07-31の誤分類バグの回帰テスト）
+    assert same_name('Little Glee Monster', 'Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ')
+    assert same_name('People In The Box', 'Ｐｅｏｐｌｅ Ｉｎ Ｔｈｅ Ｂｏｘ')
+    assert same_name('May’n', 'Ｍａｙ’ｎ')
+    assert same_name('千住真理子（vl）', '千住真理子（ｖｌ）')
+    assert same_name('立川生九郎落語SHOW in太宰府', '立川生九郎落語ＳＨＯＷｉｎ太宰府')
+    # 別イベントは本人名義にしない
+    assert not same_name('キュウソネコカミ', 'SWEET LOVE SHOWER')
+    assert not same_name('Hump Back', 'ハンブレッダーズ')
 
     # rls_iso / in_scope ＝「明後日発売以降だけ」の絞り込み
     assert rls_iso('2026/08/03', '2026-07-30') == '2026-08-03'
