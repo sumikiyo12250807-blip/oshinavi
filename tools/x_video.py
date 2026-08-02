@@ -71,6 +71,29 @@ def as_image_url(path_or_url: str) -> str:
         return "data:" + mime + ";base64," + base64.b64encode(f.read()).decode("ascii")
 
 
+KEY_FILE = os.path.join(REPO, ".minimax_key")
+
+
+def load_key() -> str:
+    """APIキーは ①環境変数 MINIMAX_API_KEY ②リポジトリ直下の .minimax_key の順で探す。
+    ファイル方式にしたのは、キーをチャットや git に出さずに渡すため（.gitignore 済み）。
+    """
+    key = os.environ.get("MINIMAX_API_KEY", "").strip()
+    if key:
+        return key
+    if os.path.exists(KEY_FILE):
+        with open(KEY_FILE, encoding="utf-8-sig") as f:
+            key = f.read().strip().strip('"').strip("'")
+        if key:
+            return key
+        sys.exit(".minimax_key は在るが中身が空。キーだけを1行で保存して。")
+    sys.exit(
+        "APIキーが見つからない。次のどちらかで渡して:\n"
+        "  ① メモ帳にキーだけ貼って " + KEY_FILE + " という名前で保存\n"
+        "  ② $env:MINIMAX_API_KEY=\"...\" を設定"
+    )
+
+
 def post_json(url: str, payload: dict, key: str) -> dict:
     body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=body, method="POST")
@@ -143,9 +166,7 @@ def main() -> None:
         print("参照画像 %d枚 / --dry-run なので送信していない" % len(refs))
         return
 
-    key = os.environ.get("MINIMAX_API_KEY", "").strip()
-    if not key:
-        sys.exit("環境変数 MINIMAX_API_KEY が空。platform.minimax.io で発行して設定して。")
+    key = load_key()
 
     try:
         res = post_json(API_CREATE, payload, key)

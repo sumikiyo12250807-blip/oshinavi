@@ -1,0 +1,4 @@
+# APIキー等の秘密情報（絶対にコミットしない）
+.minimax_key
+*.key
+.env
