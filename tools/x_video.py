@@ -26,33 +26,61 @@ API_QUERY = "https://api.minimax.io/v2/query/video_generation/{task_id}"
 MODEL = "MiniMax-H3"
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 参照画像は1枚だけ渡す（image-to-videoは1コマ目として使われる）。
+# 2026-08-04のキャラ刷新後は tmp/char3 のもの。大きい正面画ができたら差し替える。
 DEFAULT_REFS = [
-    os.path.join(REPO, "tmp", "char", "odoku_front.png"),
-    os.path.join(REPO, "tmp", "char", "odoku_smile.png"),
+    os.path.join(REPO, "tmp", "char3", "ref_front.png"),
 ]
 
 # 日本語の朗読はだいたい秒5字。尺に収まらないセリフを投げると途中で切れる。
 CHARS_PER_SEC = 5.0
 
+# 🚨【声の指定は必ず最先頭】(2026-08-02 実機で判明)
+# Hailuoは「見た目」から声を決めるので、女性に見える絵だと女声になる。声の形容詞を後ろに
+# 足しても効かなかった。対策は①声の指定を最初に置く ②身元を「ドラァグをする男性」と書く
+# ③代名詞を he/his に統一 の3点セット。お毒姐さんはおねえ＝**男性の声**が正
+# （ユーザー「澄んだ女性の声はだめ」）。それでも駄目ならリップシンク型へ切替。
+VOICE = (
+    "VOICE REQUIREMENT (highest priority): the speaking voice MUST be a MAN's voice — "
+    "a warm, low-pitched adult male voice speaking Japanese, campy and theatrical, "
+    "the voice of a Japanese drag queen. NEVER a female voice, never a clear high voice."
+)
+
 # キャラの見た目を毎回同じ言葉で固定する（参照画像だけに頼らない）。
+# 🎨 2026-08-04にキャラ刷新＝黒髪ショート／紫の羽根の妖艶タイプ（旧＝紫スパンコールの
+#    ぽっちゃり3Dカートゥーン）。旧の記述は git 履歴にある。
 CHARACTER = (
-    "A stylized 3D-cartoon Japanese woman in her forties, plus-size, "
-    "lavender bouffant updo with a small tiara, dramatic purple eyeshadow, "
-    "a beauty mark on her right cheek, large jeweled earrings, "
-    "a sparkling lavender sequined dress with a matching sequined cape, "
-    "pastel lavender studio background, warm key light, Pixar-like rendering."
+    "The speaker is a stylized 3D-cartoon Japanese drag queen: a plus-size MAN in his "
+    "forties performing in drag, a tall lavender braided beehive updo, dramatic purple "
+    "eyeshadow with winged eyeliner, a beauty mark on his right cheek, a faint stubble "
+    "shadow on his chin, large purple teardrop earrings, a shimmering purple sequined "
+    "long gown, hands on his hips, confident and theatrical."
 )
 
 SCENE = (
-    "Medium shot, camera locked off, she faces the viewer and speaks directly to camera "
+    "Medium shot, camera locked off, he faces the viewer and speaks directly to camera "
     "with lively theatrical gestures, confident and teasing, ending with a warm smile. "
-    "Accurate Japanese lip sync. Clear female voice, slightly husky, playful. "
+    "Accurate Japanese lip sync. "
     "No on-screen text, no subtitles, no watermark."
 )
 
 
-def build_prompt(script: str, extra: str = "") -> str:
-    parts = [CHARACTER, SCENE, "She says in Japanese: 「" + script + "」"]
+# 🎤【音声を渡す場合】声はこちらが用意した音声（VOICEVOX 玄野武宏ツンギレ）を使うので、
+# 「男性の声にしろ」という指示は不要になる。代わりに「渡した音声に口を合わせろ」と言う。
+# こうすれば**毎回まったく同じ声**になる＝Hailuoが見た目から声を決める問題が根本から消える。
+VOICE_GIVEN = (
+    "AUDIO REQUIREMENT (highest priority): the provided audio IS the character's own "
+    "speaking voice. Lip-sync his mouth precisely and naturally to that Japanese audio, "
+    "matching every syllable. Do not generate any other voice, narration or speech."
+)
+
+
+def build_prompt(script: str, extra: str = "", audio_given: bool = False) -> str:
+    if audio_given:
+        parts = [VOICE_GIVEN, CHARACTER, SCENE,
+                 "The audio says in Japanese: 「" + script + "」"]
+    else:
+        parts = [VOICE, CHARACTER, SCENE, "He says in Japanese: 「" + script + "」"]
     if extra:
         parts.append(extra)
     return " ".join(parts)
@@ -115,8 +143,11 @@ def main() -> None:
     ap.add_argument("--script", help="お毒姐さんに言わせる日本語のセリフ")
     ap.add_argument("--script-file", help="セリフをファイルから読む")
     ap.add_argument("--duration", type=int, default=15, help="4〜15秒 (既定15)")
-    ap.add_argument("--ratio", default="16:9", help="16:9 / 9:16 / 1:1 など")
-    ap.add_argument("--ref", action="append", help="参照画像(パス or URL)。省略時は tmp/char の2枚")
+    # 既定は縦(9:16)。Xのタイムラインは縦が大きく出るし、実機の初号2本も9:16で作った。
+    ap.add_argument("--ratio", default="9:16", help="9:16(既定) / 16:9 / 1:1 など")
+    ap.add_argument("--ref", action="append", help="参照画像(パス or URL)。省略時は DEFAULT_REFS")
+    ap.add_argument("--audio", action="append",
+                    help="読ませる音声(wav/mp3・2〜15秒・15MB以下)。渡すと声が毎回同じになる")
     ap.add_argument("--extra", default="", help="プロンプトに足したい指示")
     ap.add_argument("--out", default=os.path.join(REPO, "tmp", "video", "odoku.mp4"))
     ap.add_argument("--dry-run", action="store_true", help="投げずにpayloadだけ表示（課金されない）")
@@ -125,7 +156,8 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.script_file:
-        with open(args.script_file, encoding="utf-8") as f:
+        # VOICEVOXの書き出しtxtはBOM付きなので utf-8-sig で読む
+        with open(args.script_file, encoding="utf-8-sig") as f:
             script = f.read().strip()
     elif args.script:
         script = args.script.strip()
@@ -140,13 +172,31 @@ def main() -> None:
     if len(script) > limit:
         print("⚠️ 長すぎ＝読み切れずに切れる。%d字まで削ること。" % limit)
 
+    # 🚨台詞は「ひらがな＋カタカナ」で書く（AIは漢字の読みを外す＝平手友梨奈/14時 等）。
+    # 固有名詞と数字がいちばん危ないので、漢字が残っていたら止めずに警告する。
+    kanji = [c for c in script if "一" <= c <= "鿿"]
+    if kanji:
+        print("⚠️ 漢字が%d字ある＝読み間違いの元。ひらがなに開くこと: %s"
+              % (len(kanji), "".join(sorted(set(kanji)))))
+    if any("0" <= c <= "9" or "０" <= c <= "９" for c in script):
+        print("⚠️ 数字は漢数字でなく『じゅうよじ』のように かな で書くと読みが安定する")
+
     refs = args.ref if args.ref else [p for p in DEFAULT_REFS if os.path.exists(p)]
     if not refs:
         print("⚠️ 参照画像なしで生成する＝キャラの同一性は担保されない")
 
-    content = [{"type": "text", "text": build_prompt(script, args.extra)}]
+    content = [{"type": "text", "text": build_prompt(script, args.extra, bool(args.audio))}]
     for r in refs:
         content.append({"type": "image_url", "image_url": {"url": as_image_url(r)}, "role": "reference_image"})
+
+    # 🎤 音声を渡す＝声を毎回同じにできる（公式仕様 2026-08-04 実測）:
+    #   {"type":"audio_url","audio_url":{"url":...},"role":"reference_audio"}
+    #   最大3クリップ／2〜15秒・合計15秒以下／WAV・MP3／15MB以下／画像か動画と併用が必須
+    if args.audio:
+        for a in args.audio:
+            content.append({"type": "audio_url",
+                            "audio_url": {"url": as_image_url(a)},
+                            "role": "reference_audio"})
 
     payload = {
         "model": MODEL,
@@ -159,11 +209,13 @@ def main() -> None:
     if args.dry_run:
         preview = json.loads(json.dumps(payload))
         for c in preview["content"]:
-            if c.get("type") == "image_url":
-                u = c["image_url"]["url"]
-                c["image_url"]["url"] = u[:60] + "...(%d文字)" % len(u) if len(u) > 60 else u
+            for k in ("image_url", "audio_url"):
+                if c.get("type") == k:
+                    u = c[k]["url"]
+                    c[k]["url"] = u[:60] + "...(%d文字)" % len(u) if len(u) > 60 else u
         print(json.dumps(preview, ensure_ascii=False, indent=2))
-        print("参照画像 %d枚 / --dry-run なので送信していない" % len(refs))
+        print("参照画像 %d枚 / 音声 %d本 / --dry-run なので送信していない"
+              % (len(refs), len(args.audio or [])))
         return
 
     key = load_key()
