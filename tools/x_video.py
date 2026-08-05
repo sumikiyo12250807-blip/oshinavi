@@ -47,21 +47,36 @@ VOICE = (
 )
 
 # キャラの見た目を毎回同じ言葉で固定する（参照画像だけに頼らない）。
-# 🎨 2026-08-04にキャラ刷新＝黒髪ショート／紫の羽根の妖艶タイプ（旧＝紫スパンコールの
-#    ぽっちゃり3Dカートゥーン）。旧の記述は git 履歴にある。
+# 🚨 2026-08-05修正＝ここが【旧キャラのまま】だった。8/4にコメントだけ「キャラ刷新」と
+#    書き換えて本文を直し忘れていた＝参照画像(新キャラ)と文章(旧キャラ)が矛盾する状態。
+#    dry-run で気づいて課金前に修正（気づかなければ$1.30で別人が出るところだった）。
+# 🎨 現行キャラ＝tmp/char3 の黒髪ショート／黒スパンコール／紫の羽根の妖艶タイプ。
 CHARACTER = (
-    "The speaker is a stylized 3D-cartoon Japanese drag queen: a plus-size MAN in his "
-    "forties performing in drag, a tall lavender braided beehive updo, dramatic purple "
-    "eyeshadow with winged eyeliner, a beauty mark on his right cheek, a faint stubble "
-    "shadow on his chin, large purple teardrop earrings, a shimmering purple sequined "
-    "long gown, hands on his hips, confident and theatrical."
+    "The speaker is a stylized 3D-rendered Japanese drag queen: a slim, tall MAN "
+    "performing in drag, short tousled jet-black hair, heavy plum-purple smoky "
+    "eyeshadow with sharp winged eyeliner, bold dark-red lipstick, pale porcelain skin, "
+    "long purple gem drop earrings and a purple gemstone necklace, wearing a black "
+    "sequined floor-length gown with a high thigh slit and a sheer purple feathered "
+    "tulle shawl draped over the arms, one hand on his hip, elegant, sultry and "
+    "theatrical."
 )
 
+# 🚨 2026-08-05修正＝"Medium shot"(バストアップ)固定をやめた。参照画像の構図は毎回変わる
+#    （この日は「全身を小さめに右下」）ので、寄りを言葉で決め打ちすると絵と喧嘩する。
 SCENE = (
-    "Medium shot, camera locked off, he faces the viewer and speaks directly to camera "
-    "with lively theatrical gestures, confident and teasing, ending with a warm smile. "
-    "Accurate Japanese lip sync. "
+    "Camera locked off. Keep exactly the same framing, scale and position as the "
+    "reference image — do not zoom, pan or re-compose. He faces the viewer and speaks "
+    "directly to camera with subtle theatrical gestures, confident and teasing, ending "
+    "with a warm smile. Accurate Japanese lip sync. "
     "No on-screen text, no subtitles, no watermark."
+)
+
+# 🎉 背景を守る指示（2026-08-04に実証＝これを付けたらX投稿の文字が1文字も崩れなかった）。
+# 参照画像に投稿画面を合成して渡すので、背景を描き直されると文字が壊れる。既定で必ず付ける。
+BACKGROUND = (
+    "Keep the background perfectly still and pixel-identical to the reference image: "
+    "do NOT redraw, re-render or alter any text, letters, numbers or the logo anywhere "
+    "in the frame. Only the drag queen herself moves."
 )
 
 
@@ -77,10 +92,11 @@ VOICE_GIVEN = (
 
 def build_prompt(script: str, extra: str = "", audio_given: bool = False) -> str:
     if audio_given:
-        parts = [VOICE_GIVEN, CHARACTER, SCENE,
+        parts = [VOICE_GIVEN, CHARACTER, SCENE, BACKGROUND,
                  "The audio says in Japanese: 「" + script + "」"]
     else:
-        parts = [VOICE, CHARACTER, SCENE, "He says in Japanese: 「" + script + "」"]
+        parts = [VOICE, CHARACTER, SCENE, BACKGROUND,
+                 "He says in Japanese: 「" + script + "」"]
     if extra:
         parts.append(extra)
     return " ".join(parts)
