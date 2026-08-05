@@ -49,6 +49,13 @@ def base_type(ty):
     return ty.strip()
 
 
+def perf_key(type_):
+    """券種名から「どの公演の枠か」を取り出す（grow_from_audit と同じ流儀）。
+    例「一般発売（石川 10/11公演）8/5 21:00発売」→「石川 10/11公演」"""
+    m = re.search(r'[（(]([^（）()]*公演[^（）()]*)[）)]', type_ or '')
+    return m.group(1).strip() if m else (type_ or '').strip()
+
+
 def carry_start_dates(old_tickets, new_tickets):
     """ヒール前の隠れ枠が持っていた「発売開始日」を、ヒール後の枠に引き継ぐ。
 
@@ -117,13 +124,22 @@ def main():
         if not os.path.exists(OUT):
             print(f'!! {OUT} が無い。先に --build を実行して。'); return
         built = {o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
-        changed = carried = 0
+        changed = carried = kept_n = 0
         for e in EVENTS:
             o = built.get(e.get('id'))
             if not o or o.get('status') != 'convert' or not o.get('tickets'):
                 continue
             carried += carry_start_dates(e.get('tickets'), o['tickets'])
-            e['tickets'] = o['tickets']
+            # 🚨 build() はぴあ枠しか作らない。素直に置換すると e+/楽天/ローチケの枠が消える
+            #    （2026-08-05・ネクライトーキー3545のローチケ3枠が消えるところだった）。
+            #    ただし同じ公演をぴあ側が持ち始めていたら二重表示になるので、公演単位で名寄せし
+            #    「ぴあに無い公演の非ぴあ枠」だけ据え置く（購入先の優先はぴあ>ローチケ）。
+            newk = {perf_key(t.get('type')) for t in o['tickets']}
+            keep = [t for t in (e.get('tickets') or [])
+                    if (t.get('url') or '') and 'pia.jp' not in (t.get('url') or '')
+                    and perf_key(t.get('type')) not in newk]
+            kept_n += len(keep)
+            e['tickets'] = list(o['tickets']) + keep
             changed += 1
         left = sum(1 for _, s in scan(EVENTS) for _ in s)
         bak = f'index.html.bak_{datetime.date.today():%m%d}_{BAK_SUFFIX}'
@@ -132,7 +148,7 @@ def main():
         open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():])
         dels = [o for o in built.values() if o.get('status') == 'delete']
         wpia = [o for o in built.values() if o.get('status') == 'WPIA']
-        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
+        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 非ぴあ据置 {kept_n}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
         if dels:
             print(f'\n🚨 買える枠ゼロ = 削除候補 {len(dels)}件（ユーザーOK後に削除）:')
             for o in dels:
