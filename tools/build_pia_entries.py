@@ -95,10 +95,24 @@ def normalize_pia_url(u):
         return 'https://t.pia.jp/pia/event/event.do?eventCd=' + me.group(1)
     return u
 
+class PiaSorry(Exception):
+    """ぴあの混雑ページ(sorry.pia.jp)に飛ばされた＝券種が読めていない。"""
+
+
 def fetch(u):
+    """🚨2026-08-06追加＝ぴあは混雑すると 302 で sorry.pia.jp に飛ばす。
+    そのHTMLに券種カードは1枚も無いので、黙って解析すると「買える枠ゼロ」に見える。
+    heal_stale_deadlines は build() の結果で tickets を置き換えるため、
+    **この静かな0で実在する枠が消える**（2026-08-06実害＝2735の2会場・615の1枠）。
+    飛ばされたら例外にして、上位の _DROPPED / FETCH-ERR に必ず出す。"""
     u = normalize_pia_url(u)
     req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
-    return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+    with urllib.request.urlopen(req, timeout=30) as r:
+        final = r.geturl()
+        body = r.read().decode('utf-8', 'replace')
+    if 'sorry.pia' in final or 'sorry.pia' in body[:4000]:
+        raise PiaSorry('ぴあが混雑ページに飛ばした（券種は読めていない）: ' + final)
+    return body
 
 def is_error_page(h):
     """ぴあのエラー/確認ページ判定。eventCdが無効化/削除/差し替えされるとイベント本文でなく
