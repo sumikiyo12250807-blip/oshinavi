@@ -125,9 +125,26 @@ def main():
             print(f'!! {OUT} が無い。先に --build を実行して。'); return
         built = {o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
         changed = carried = kept_n = 0
+        blocked = []
+        FORCE = '--force-shrink' in sys.argv
+        today = f'{datetime.date.today():%Y-%m-%d}'
         for e in EVENTS:
             o = built.get(e.get('id'))
             if not o or o.get('status') != 'convert' or not o.get('tickets'):
+                continue
+            # 🚨🚨【2026-08-06 実害から追加した安全弁】
+            #    ぴあが混雑ページ(sorry.pia.jp)を返すと build() は「その会場の枠が無い」と読む。
+            #    tickets を丸ごと置き換えるこの処理は、**まだ締切が来ていない実在の枠を消す**。
+            #    実害＝2735 THEカルテットが3会場→1枠／615 稲垣潤一の埼玉9/5枠が消滅。
+            #    → 「生きている枠(締切が今日以降)が置換で失われる」なら適用しない。
+            #    期限切れ枠が落ちるのは正常なので、生きている枠だけを比べる。
+            live_old = {perf_key(t.get('type')) for t in (e.get('tickets') or [])
+                        if (t.get('date') or '') >= today}
+            live_new = {perf_key(t.get('type')) for t in o['tickets']
+                        if (t.get('date') or '') >= today}
+            lost = live_old - live_new
+            if lost and not FORCE:
+                blocked.append((e['id'], e.get('artist', ''), sorted(lost)))
                 continue
             carried += carry_start_dates(e.get('tickets'), o['tickets'])
             # 🚨 build() はぴあ枠しか作らない。素直に置換すると e+/楽天/ローチケの枠が消える
@@ -149,6 +166,11 @@ def main():
         dels = [o for o in built.values() if o.get('status') == 'delete']
         wpia = [o for o in built.values() if o.get('status') == 'WPIA']
         print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 非ぴあ据置 {kept_n}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
+        if blocked:
+            print(f'\n🛡️ 生きた枠が消えるので適用しなかった {len(blocked)}件'
+                  f'（ぴあの混雑ページ疑い。実ページを単発で確認してから手で直すこと）:')
+            for i, name, lost in blocked:
+                print(f'  id={i} {name[:26]} ← 消えるはずだった公演: {", ".join(lost)[:70]}')
         if dels:
             print(f'\n🚨 買える枠ゼロ = 削除候補 {len(dels)}件（ユーザーOK後に削除）:')
             for o in dels:

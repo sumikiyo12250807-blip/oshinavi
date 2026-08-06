@@ -39,10 +39,24 @@ def normalize_pia_url(u):
         return 'https://t.pia.jp/pia/event/event.do?eventCd=' + me.group(1)
     return u
 
+class PiaSorry(Exception):
+    """ぴあの混雑ページ(sorry.pia.jp)に飛ばされた＝券種が読めていない。"""
+
+
 def fetch(u):
+    """🚨2026-08-06追加＝ぴあは混雑すると 302 で sorry.pia.jp に飛ばす。
+    そのHTMLには券種カードが1つも無いので、黙って解析すると **「全0券種」＝
+    買える枠ゼロ** に見える。この静かな0が reconcile の STALE 偽陽性の温床だった
+    （実害＝昼のヒール後に4枠がSTALE扱い・2735は枠が消えた）。
+    飛ばされたら例外にして、呼び出し側が「読めなかった」と分かるようにする。"""
     u = normalize_pia_url(u)
     req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
-    return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+    with urllib.request.urlopen(req, timeout=30) as r:
+        final = r.geturl()
+        body = r.read().decode('utf-8', 'replace')
+    if 'sorry.pia' in final or 'sorry.pia' in body[:4000]:
+        raise PiaSorry('ぴあが混雑ページに飛ばした（券種は読めていない）: ' + final)
+    return body
 
 def txt(s):
     return _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s or ''))).strip()

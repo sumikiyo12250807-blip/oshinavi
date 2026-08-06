@@ -50,24 +50,35 @@ VOICE = (
 # 🚨 2026-08-05修正＝ここが【旧キャラのまま】だった。8/4にコメントだけ「キャラ刷新」と
 #    書き換えて本文を直し忘れていた＝参照画像(新キャラ)と文章(旧キャラ)が矛盾する状態。
 #    dry-run で気づいて課金前に修正（気づかなければ$1.30で別人が出るところだった）。
-# 🎨 現行キャラ＝tmp/char3 の黒髪ショート／黒スパンコール／紫の羽根の妖艶タイプ。
+# 🎨 現行キャラ＝tmp/char6（2026-08-06 ユーザー指定「今日はこのキャラでやってみる」）。
+#    紫スパンコールのぽっちゃりドラァグクイーン。前キャラ(char3の黒髪ショート)から差し替えた。
 CHARACTER = (
-    "The speaker is a stylized 3D-rendered Japanese drag queen: a slim, tall MAN "
-    "performing in drag, short tousled jet-black hair, heavy plum-purple smoky "
-    "eyeshadow with sharp winged eyeliner, bold dark-red lipstick, pale porcelain skin, "
-    "long purple gem drop earrings and a purple gemstone necklace, wearing a black "
-    "sequined floor-length gown with a high thigh slit and a sheer purple feathered "
-    "tulle shawl draped over the arms, one hand on his hip, elegant, sultry and "
-    "theatrical."
+    "The speaker is a stylized 3D-rendered cartoon Japanese drag queen: a short, very "
+    "plump MAN performing in drag, with a tall lavender-purple bouffant updo topped by "
+    "a small jewelled tiara, round full cheeks, heavy purple eyeshadow with long lashes "
+    "and sharp winged eyeliner, pink glossy lips, a beauty mark on the cheek, large "
+    "purple gemstone drop earrings and matching necklace, wearing a shimmering "
+    "lilac-and-silver sequinned dress with a matching sequinned long duster coat draped "
+    "over it, warm, campy, bossy and theatrical."
 )
 
 # 🚨 2026-08-05修正＝"Medium shot"(バストアップ)固定をやめた。参照画像の構図は毎回変わる
 #    （この日は「全身を小さめに右下」）ので、寄りを言葉で決め打ちすると絵と喧嘩する。
+# 🚨🚨 2026-08-06修正＝**"subtle theatrical gestures"(控えめな仕草)が動きを殺していた**。
+#    ユーザー「もうちょっと動きが欲しいよね」。背景の文字を守りたい一心で
+#    「カメラ固定・背景固定・動くのは本人だけ」と書いたうえに、本人の芝居まで
+#    "subtle" と指定していた＝守る必要があるのは**カメラと背景**であって、本人の動きではない。
+#    → カメラ/背景のロックは残したまま、本人には**大きく連続した仕草**を要求する。
+#    その場から動かない1行を足して、画面外へ出たり背景を踏み荒らすのを防ぐ。
 SCENE = (
     "Camera locked off. Keep exactly the same framing, scale and position as the "
-    "reference image — do not zoom, pan or re-compose. He faces the viewer and speaks "
-    "directly to camera with subtle theatrical gestures, confident and teasing, ending "
-    "with a warm smile. Accurate Japanese lip sync. "
+    "reference image — do not zoom, pan or re-compose. "
+    "He performs to camera with BIG, continuous, exaggerated drag-queen gestures: "
+    "he lifts and wags his index finger, opens both arms wide, puts a hand on his hip "
+    "and tilts his head, shrugs, points at the viewer, and finishes with a wink and a "
+    "warm smile. Constant lively motion of head, shoulders, hands and hair throughout "
+    "the whole shot — never a still pose. He stays standing in the same spot and never "
+    "leaves the frame. Accurate Japanese lip sync. "
     "No on-screen text, no subtitles, no watermark."
 )
 
@@ -90,8 +101,27 @@ VOICE_GIVEN = (
 )
 
 
-def build_prompt(script: str, extra: str = "", audio_given: bool = False) -> str:
-    if audio_given:
+# 🎙️【声だけ借りる場合＝ボイストランスファー】(2026-08-06 ユーザー方針)
+# 参照音声を「この台詞を喋らせる元データ」ではなく「声色(音色)の見本」として使う。
+# 中身は喋らせず、**その声で新しい台詞**を喋らせる。H3の公式仕様に
+# 「Reference character, motion, camera, style, voice」＝voiceの参照が挙がっている。
+# 使い道＝H3が自力で出した"当たりの声"を1本目から抜き出して見本にすれば、
+# VOICEVOXの合成音に頼らず**毎回同じ声**にできる（参照音声は無料）。
+VOICE_CLONE = (
+    "VOICE REQUIREMENT (highest priority): the provided reference audio is a sample of "
+    "THIS character's voice timbre only. Reproduce that exact same voice — same timbre, "
+    "same pitch, same age, same masculine drag-queen character — but he speaks the NEW "
+    "Japanese line written below. Do NOT repeat or replay the words contained in the "
+    "reference audio. Accurate Japanese lip sync to the new line."
+)
+
+
+def build_prompt(script: str, extra: str = "", audio_given: bool = False,
+                 voice_ref: bool = False) -> str:
+    if voice_ref:
+        parts = [VOICE_CLONE, CHARACTER, SCENE, BACKGROUND,
+                 "He says in Japanese: 「" + script + "」"]
+    elif audio_given:
         parts = [VOICE_GIVEN, CHARACTER, SCENE, BACKGROUND,
                  "The audio says in Japanese: 「" + script + "」"]
     else:
@@ -164,6 +194,8 @@ def main() -> None:
     ap.add_argument("--ref", action="append", help="参照画像(パス or URL)。省略時は DEFAULT_REFS")
     ap.add_argument("--audio", action="append",
                     help="読ませる音声(wav/mp3・2〜15秒・15MB以下)。渡すと声が毎回同じになる")
+    ap.add_argument("--voice-ref", action="store_true",
+                    help="--audio を『声色の見本』として使う（中身は喋らせず、その声で新しい台詞を喋らせる）")
     ap.add_argument("--extra", default="", help="プロンプトに足したい指示")
     ap.add_argument("--out", default=os.path.join(REPO, "tmp", "video", "odoku.mp4"))
     ap.add_argument("--dry-run", action="store_true", help="投げずにpayloadだけ表示（課金されない）")
@@ -201,7 +233,11 @@ def main() -> None:
     if not refs:
         print("⚠️ 参照画像なしで生成する＝キャラの同一性は担保されない")
 
-    content = [{"type": "text", "text": build_prompt(script, args.extra, bool(args.audio))}]
+    if args.voice_ref and not args.audio:
+        sys.exit("--voice-ref は --audio(声の見本) と一緒に使う")
+
+    content = [{"type": "text", "text": build_prompt(
+        script, args.extra, bool(args.audio), args.voice_ref)}]
     for r in refs:
         content.append({"type": "image_url", "image_url": {"url": as_image_url(r)}, "role": "reference_image"})
 
