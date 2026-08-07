@@ -28,7 +28,7 @@ GENRE_LABEL = {
     "sports": "スポーツ", "hanabi": "花火大会", "2.5ji": "2.5次元", "seiyuu": "声優",
     "owarai": "お笑い", "musical": "ミュージカル", "aisatsu": "舞台挨拶",
     "dinnershow": "ディナーショー", "enka": "演歌", "dento": "伝統",
-    "art": "イベントアート", "kaidan": "怪談",
+    "art": "イベントアート", "kaidan": "怪談", "gourmet": "グルメ",
 }
 
 # index.html の linkDefs 順（楽天 > ぴあ > e+ > ローチケ > その他）
