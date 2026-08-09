@@ -93,6 +93,10 @@ for it in items:
     rows.append({
         'perfdate': perf_start,
         'perf_end': perf_end,
+        # ぴあが実際に出している文言そのまま。「予定枚数終了」と「受付終了」は
+        # stateではどちらも受付終了に潰れるが、売り切れ表示の継続判定に必要
+        # （2026-08-09 ユーザー方針＝ぴあが予定枚数終了と出している間はOSHINAVIも出す）。
+        'statustext': stat_text,
         'venue': txt(m_place.group(1)) if m_place else '',
         'pref': txt(m_region.group(1)) if m_region else '',
         'title': txt(m_title.group(1)) if m_title else '',
