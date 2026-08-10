@@ -928,7 +928,7 @@
  ],
  "artists": {
   "_readme": "Xフォロワー実数。WebSearchで取得（x.com直アクセスは404/402/403）。取り方は memory: reference_x_follower_lookup。一度取ったら再調査不要。",
-  "measured": "2026-08-05",
+  "measured": "2026-08-11",
   "data": [
    {
     "name": "SEVENTEEN Japan",
@@ -1154,6 +1154,36 @@
     "handle": "@DannieMay_info",
     "followers": null,
     "note": "🚨フォロワー数を取得できず(2026-08-05・1回)。ranking.netバンド100位内に無し"
+   },
+   {
+    "name": "Vaundy",
+    "handle": "@vaundy_engawa",
+    "followers": 776500,
+    "note": "本人垢。2026年5月時点の数値として検索で取得(2026-08-11)。Instagram @vaundy_engawa は100万"
+   },
+   {
+    "name": "LiSA",
+    "handle": "@LiSA_OLiVE",
+    "followers": 1595000,
+    "note": "本人垢。2026-08-11取得"
+   },
+   {
+    "name": "吉本新喜劇",
+    "handle": "@shinkigeki1",
+    "followers": 84200,
+    "note": "2026-08-11取得。TikTok 271.3K／Instagram 153K のほうが強い"
+   },
+   {
+    "name": "キュウソネコカミ",
+    "handle": "@KYUSO_NEKOKAMI",
+    "followers": null,
+    "note": "⚠️検索スニペットが「280.9K（28万9000人）」と換算が食い違う＝数値の意味を確定できず不採用(2026-08-11)。本人ヨコタ@shinnosukeykt の11.5万は取得済"
+   },
+   {
+    "name": "SEKIRO / フロム・ソフトウェア",
+    "handle": null,
+    "followers": null,
+    "note": "🚨公式Xのフォロワー数を取得できず(2026-08-11・1回)"
    }
   ]
  }
