@@ -96,18 +96,30 @@ def main():
           % (len(urls), len({i for v in users.values() for i, _ in v}),
              '全部' if only_all else '表示中のみ'))
 
+    def probe(u):
+        try:
+            h = fetch(u)
+            return ('DEAD', '') if any(mk in h for mk in DEAD_MARKS) else ('OK', '')
+        except urllib.error.HTTPError as ex:
+            return ('429' if ex.code == 429 else 'ERR'), 'HTTP %s' % ex.code
+        except Exception as ex:
+            return 'ERR', str(ex)[:60]
+
     rows = []
     counts = {'OK': 0, 'DEAD': 0, '429': 0, 'ERR': 0}
     for n, u in enumerate(urls, 1):
-        st, note = 'OK', ''
-        try:
-            h = fetch(u)
-            if any(mk in h for mk in DEAD_MARKS):
-                st = 'DEAD'
-        except urllib.error.HTTPError as ex:
-            st, note = ('429' if ex.code == 429 else 'ERR'), 'HTTP %s' % ex.code
-        except Exception as ex:
-            st, note = 'ERR', str(ex)[:60]
+        st, note = probe(u)
+        # 🚨1回のDEAD/ERRを信じない。ぴあは一瞬だけエラーページを返すことがある
+        # （2026-08-12 実測＝3930 権田晃朗ピアノリサイタルが走査ではDEAD、直後の単独再取得では
+        #  券種2枚で正常＝偽陽性）。間を空けて2回まで取り直し、再現した時だけDEADと呼ぶ。
+        if st in ('DEAD', 'ERR', '429'):
+            for wait in (8, 15):
+                time.sleep(wait)
+                st2, note2 = probe(u)
+                if st2 == 'OK':
+                    st, note = 'OK', ''
+                    break
+                st, note = st2, note2
         counts[st] += 1
         if st != 'OK':
             for i, nm in users[u]:
