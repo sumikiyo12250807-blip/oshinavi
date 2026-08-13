@@ -384,6 +384,53 @@
         inset 0 -1px 2px rgba(0,0,0,0.2);
     }
 
+    /* ── ジャンルの折りたたみ（2026-08-13 ユーザー指示：27個は多すぎる） ── */
+    .genre-groups {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .genre-group { flex: 0 0 auto; }
+    .genre-group-toggle {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: var(--text);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      transition: all 0.25s;
+    }
+    .genre-group-toggle:hover {
+      border-color: rgba(0,229,255,0.8);
+      color: #fff;
+      background: rgba(0,229,255,0.12);
+    }
+    .genre-group.open > .genre-group-toggle {
+      border-color: rgba(255,255,255,0.55);
+      color: #fff;
+      background: rgba(255,255,255,0.14);
+    }
+    .gg-arrow { display: inline-block; width: 10px; transition: transform 0.25s; }
+    .genre-group.open .gg-arrow { transform: rotate(90deg); }
+    .gg-count { color: var(--text-muted); font-size: 11px; margin-left: 2px; }
+    .genre-group-body { display: none; }
+    /* 開いたグループの中身は行いっぱいに広げる（グループの箱の外に出す） */
+    .genre-group.open { flex: 1 1 100%; }
+    .genre-group.open .genre-group-body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 4px 14px;
+      padding-left: 12px;
+      border-left: 2px solid rgba(255,255,255,0.18);
+    }
+    .filter-btn.gg-all { font-weight: 700; }
+
     /* ── メイン ── */
     main {
       max-width: 1000px;
@@ -966,37 +1013,64 @@
     <div id="searchSuggest"></div>
   </div>
 
-  <!-- ジャンルフィルター -->
+  <!-- ジャンルフィルター（4グループに折りたたみ・2026-08-13 ユーザー指示） -->
   <div class="filter-row">
     <span class="filter-label">GENRE</span>
     <button class="filter-btn active" data-genre="all">すべて</button>
     <button class="filter-btn" data-genre="new">✨ 新着</button>
-    <button class="filter-btn" data-genre="jpop">J-POP</button>
-    <button class="filter-btn" data-genre="rock">ロック</button>
-    <button class="filter-btn" data-genre="kpop">K-POP</button>
-    <button class="filter-btn" data-genre="hiphop">ヒップホップ</button>
-    <button class="filter-btn" data-genre="yougaku">洋楽</button>
-    <button class="filter-btn" data-genre="anime">アニソン</button>
-    <button class="filter-btn" data-genre="idol">アイドル</button>
-    <button class="filter-btn" data-genre="youtuber">YouTuber</button>
-    <button class="filter-btn" data-genre="vtuber">VTuber</button>
-    <button class="filter-btn" data-genre="engeki">演劇</button>
-    <button class="filter-btn" data-genre="2.5ji">2.5次元</button>
-    <button class="filter-btn" data-genre="seiyuu">声優</button>
-    <button class="filter-btn" data-genre="classic">クラシック</button>
-    <button class="filter-btn" data-genre="jazz">ジャズ</button>
-    <button class="filter-btn" data-genre="enka">演歌</button>
-    <button class="filter-btn" data-genre="dento">伝統</button>
-    <button class="filter-btn" data-genre="owarai">お笑い</button>
-    <button class="filter-btn" data-genre="kaidan">怪談</button>
-    <button class="filter-btn" data-genre="sports">スポーツ</button>
-    <button class="filter-btn" data-genre="fes">フェス</button>
-    <button class="filter-btn" data-genre="hanabi">花火大会</button>
-    <button class="filter-btn" data-genre="kids">キッズ</button>
-    <button class="filter-btn" data-genre="aisatsu">舞台挨拶</button>
-    <button class="filter-btn" data-genre="dinnershow">ディナーショー</button>
-    <button class="filter-btn" data-genre="art">イベントアート</button>
-    <button class="filter-btn" data-genre="gourmet">グルメ</button>
+  </div>
+  <div class="genre-groups">
+    <div class="genre-group" data-group="music">
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎵 音楽 <span class="gg-count"></span></button>
+      <div class="genre-group-body">
+        <button class="filter-btn gg-all" data-genre="g:music">音楽すべて</button>
+        <button class="filter-btn" data-genre="jpop">J-POP</button>
+        <button class="filter-btn" data-genre="classic">クラシック</button>
+        <button class="filter-btn" data-genre="rock">ロック</button>
+        <button class="filter-btn" data-genre="jazz">ジャズ</button>
+        <button class="filter-btn" data-genre="enka">演歌</button>
+        <button class="filter-btn" data-genre="yougaku">洋楽</button>
+        <button class="filter-btn" data-genre="anime">アニソン</button>
+        <button class="filter-btn" data-genre="idol">アイドル</button>
+        <button class="filter-btn" data-genre="kpop">K-POP</button>
+        <button class="filter-btn" data-genre="hiphop">ヒップホップ</button>
+      </div>
+    </div>
+    <div class="genre-group" data-group="stage">
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎭 舞台 <span class="gg-count"></span></button>
+      <div class="genre-group-body">
+        <button class="filter-btn gg-all" data-genre="g:stage">舞台すべて</button>
+        <button class="filter-btn" data-genre="engeki">演劇</button>
+        <button class="filter-btn" data-genre="musical">ミュージカル</button>
+        <button class="filter-btn" data-genre="dento">伝統</button>
+        <button class="filter-btn" data-genre="seiyuu">声優</button>
+        <button class="filter-btn" data-genre="2.5ji">2.5次元</button>
+      </div>
+    </div>
+    <div class="genre-group" data-group="ento">
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎪 エンタメ <span class="gg-count"></span></button>
+      <div class="genre-group-body">
+        <button class="filter-btn gg-all" data-genre="g:ento">エンタメすべて</button>
+        <button class="filter-btn" data-genre="owarai">お笑い</button>
+        <button class="filter-btn" data-genre="kaidan">怪談</button>
+        <button class="filter-btn" data-genre="dinnershow">ディナーショー</button>
+        <button class="filter-btn" data-genre="aisatsu">舞台挨拶</button>
+        <button class="filter-btn" data-genre="youtuber">YouTuber</button>
+        <button class="filter-btn" data-genre="vtuber">VTuber</button>
+      </div>
+    </div>
+    <div class="genre-group" data-group="odekake">
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🏟 おでかけ <span class="gg-count"></span></button>
+      <div class="genre-group-body">
+        <button class="filter-btn gg-all" data-genre="g:odekake">おでかけすべて</button>
+        <button class="filter-btn" data-genre="sports">スポーツ</button>
+        <button class="filter-btn" data-genre="art">イベントアート</button>
+        <button class="filter-btn" data-genre="kids">キッズ</button>
+        <button class="filter-btn" data-genre="fes">フェス</button>
+        <button class="filter-btn" data-genre="hanabi">花火大会</button>
+        <button class="filter-btn" data-genre="gourmet">グルメ</button>
+      </div>
+    </div>
   </div>
 
   <!-- ステータスフィルター -->
@@ -1020,7 +1094,7 @@
     <button class="filter-btn" data-region="chugoku">中国</button>
     <button class="filter-btn" data-region="shikoku">四国</button>
     <button class="filter-btn" data-region="kyushu">九州</button>
-    <button class="filter-btn" data-region="zenkoku">全国</button>
+    <button class="filter-btn" data-region="zenkoku">🚌 全国ツアー</button>
   </div>
 </div>
 
@@ -90389,11 +90463,26 @@
     return null;
   }
 
+  // ジャンルの大分類（フィルターの折りたたみ用・2026-08-13）。
+  // ★ボタンが無いジャンル(musical)もここに入れる＝「舞台すべて」で拾えるようにするため。
+  const GENRE_GROUPS = {
+    music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","kpop","hiphop"],
+    stage:   ["engeki","musical","dento","seiyuu","2.5ji"],
+    ento:    ["owarai","kaidan","dinnershow","aisatsu","youtuber","vtuber"],
+    odekake: ["sports","art","kids","fes","hanabi","gourmet"]
+  };
+
+  function eventGenres(ev) {
+    return [ev.genre].concat(ev.extraGenres || []).filter(Boolean);
+  }
+
   function matchEvent(ev) {
     if (ev.verified !== true) return false;
+    const grp = activeGenre.startsWith("g:") ? GENRE_GROUPS[activeGenre.slice(2)] : null;
     const matchGenre  = activeGenre  === "all"
-      || ev.genre === activeGenre
-      || (ev.extraGenres || []).includes(activeGenre)
+      || (grp ? eventGenres(ev).some(g => grp.includes(g)) : false)
+      || (!grp && ev.genre === activeGenre)
+      || (!grp && (ev.extraGenres || []).includes(activeGenre))
       || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu"))
       || (activeGenre === "anime"  && ev.genre === "seiyuu");
     const rel = eventReleaseStatus(ev);   // 発売フィルタは発売前(発売開始日が未来)のチケットだけで判定
@@ -90477,6 +90566,21 @@
         // ボタンが27個あって「本当に切り替わったか」が分からず何度も押してしまう、が理由。
         // 🚨結果の先頭を上端に固定する版は「動かしすぎ」で差し戻された＝最小限だけ動かす。
         revealResultCount();
+      });
+    });
+
+    // ジャンルグループの開閉（見出しはフィルターボタンではないので .genre-group-toggle で拾う）
+    document.querySelectorAll(".genre-group").forEach(grp => {
+      const key = grp.dataset.group;
+      const list = GENRE_GROUPS[key] || [];
+      const n = EVENTS.filter(e => e.verified === true && eventGenres(e).some(g => list.includes(g))).length;
+      const cnt = grp.querySelector(".gg-count");
+      if (cnt) cnt.textContent = "(" + n.toLocaleString() + ")";
+      grp.querySelector(".genre-group-toggle").addEventListener("click", () => {
+        const wasOpen = grp.classList.contains("open");
+        // 一度に開くのは1グループだけ（27個が一気に出ると畳んだ意味がない）
+        document.querySelectorAll(".genre-group.open").forEach(g => g.classList.remove("open"));
+        if (!wasOpen) grp.classList.add("open");
       });
     });
 
