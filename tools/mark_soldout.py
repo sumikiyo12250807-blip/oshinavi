@@ -15,6 +15,8 @@ Why:
   3. ぴあ券種に「予定枚数終了」あり → soldout:true + soldoutSince を付ける
   4. 「予定枚数終了」が1つも無い    → 触らない（受付終了・取扱なし等＝従来どおり削除候補）
   販売期間が満了した枠(date < today)は売り切れではないので soldout にしない。
+  ただし満了枠しか無いエントリは、いちばん新しい満了枠に印を付ける（2026-08-14 追加）。
+  そうしないと1枠も付かずカードごと消えて、「予定枚数終了を出し続ける」方針が効かない。
 
 使い方:
   python tools/mark_soldout.py --ids 130,1644        # 判定のみ
@@ -123,12 +125,14 @@ def main():
             continue
         tickets = ev.get("tickets") or []
         if r["status"] == "soldout":
+            hit = 0
             for t in tickets:
                 # 「販売期間が満了して終わった枠」は売り切れではないので触らない。
                 # ただし startDate==date の隠れ枠は"発売日しか分かっていない"だけで
                 # 満了ではない（ぴあが予定枚数終了にすると締切を出さないため締切が取れない）。
                 # ここを満了扱いにすると、当日即完した枠が1つも売り切れ表示にならない。
                 if t.get("soldout"):
+                    hit += 1
                     continue
                 d, sd = t.get("date") or "", t.get("startDate")
                 expired = d < TODAY and not (sd and sd == d)
@@ -137,6 +141,20 @@ def main():
                 t["soldout"] = True
                 t["soldoutSince"] = TODAY
                 marked += 1
+                hit += 1
+            # 🚨全枠が満了済みだと1枠も付かず、カードごと画面から消える＝
+            #   「予定枚数終了を出し続ける」というユーザー方針が効かない（2026-08-14 発覚。
+            #   1149 いぎなり東北産／1487 CHiCO with HoneyWorks／2265 原田知世が該当）。
+            #   ぴあが現に予定枚数終了を出している以上、いちばん新しい満了枠に印を付けて
+            #   「売り切れた」という事実を残す。公演日を過ぎたら renderCard 側の安全弁で消える。
+            if hit == 0 and tickets:
+                last = max((t.get("date") or "") for t in tickets)
+                for t in tickets:
+                    if (t.get("date") or "") != last:
+                        continue
+                    t["soldout"] = True
+                    t["soldoutSince"] = TODAY
+                    marked += 1
         elif review and r["status"] in ("nosold", "skip"):
             # ぴあがもう予定枚数終了を出していない＝枠ごと下げた → soldoutを外して削除候補へ
             for t in tickets:
