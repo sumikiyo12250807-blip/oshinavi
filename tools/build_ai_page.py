@@ -24,7 +24,8 @@ GENRE_LABEL = {
     "new": "✨新着", "jpop": "J-POP", "rock": "ロック", "kpop": "K-POP",
     "yougaku": "洋楽", "hiphop": "HIP HOP", "anime": "アニソン", "idol": "アイドル",
     "youtuber": "YouTuber", "vtuber": "VTuber", "kids": "キッズ",
-    "classic": "クラシック", "jazz": "ジャズ", "engeki": "演劇", "fes": "フェス",
+    # engeki の表示名は 2026-08-13 に「ミュージカル」へ変更（ユーザー指示「演劇はミュージカルでしょ」）。値は engeki のまま。
+    "classic": "クラシック", "jazz": "ジャズ", "engeki": "ミュージカル", "fes": "フェス",
     "sports": "スポーツ", "hanabi": "花火大会", "2.5ji": "2.5次元", "seiyuu": "声優",
     "owarai": "お笑い", "musical": "ミュージカル", "aisatsu": "舞台挨拶",
     "dinnershow": "ディナーショー", "enka": "演歌", "dento": "伝統",

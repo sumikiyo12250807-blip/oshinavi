@@ -415,8 +415,19 @@
       color: #fff;
       background: rgba(255,255,255,0.14);
     }
-    .gg-arrow { display: inline-block; width: 10px; transition: transform 0.25s; }
-    .genre-group.open .gg-arrow { transform: rotate(90deg); }
+    /* 折りたたみの矢印は「閉じている」ことが一目で分かる大きさに（ユーザー指示 2026-08-13） */
+    .gg-arrow {
+      display: inline-block;
+      width: 16px;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--accent2);
+      text-shadow: 0 0 8px rgba(0,229,255,0.7);
+      transition: transform 0.25s;
+      vertical-align: -1px;
+    }
+    .genre-group.open .gg-arrow { transform: rotate(180deg); color: var(--accent); text-shadow: 0 0 8px rgba(224,64,251,0.7); }
     .gg-count { color: var(--text-muted); font-size: 11px; margin-left: 2px; }
     .genre-group-body { display: none; }
     /* 開いたグループの中身は行いっぱいに広げる（グループの箱の外に出す） */
@@ -1001,7 +1012,7 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月13日 20:33</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月13日 21:41</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
@@ -1021,7 +1032,7 @@
   </div>
   <div class="genre-groups">
     <div class="genre-group" data-group="music">
-      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎵 音楽 <span class="gg-count"></span></button>
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▼</span> 🎵 音楽 <span class="gg-count"></span></button>
       <div class="genre-group-body">
         <button class="filter-btn gg-all" data-genre="g:music">音楽すべて</button>
         <button class="filter-btn" data-genre="jpop">J-POP</button>
@@ -1037,7 +1048,7 @@
       </div>
     </div>
     <div class="genre-group" data-group="stage">
-      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎭 舞台 <span class="gg-count"></span></button>
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▼</span> 🎭 舞台 <span class="gg-count"></span></button>
       <div class="genre-group-body">
         <button class="filter-btn gg-all" data-genre="g:stage">舞台すべて</button>
         <!-- ユーザー指示 2026-08-13「演劇はミュージカルでしょ」＝ボタンは1つに統合し表示は「ミュージカル」。
@@ -1049,7 +1060,7 @@
       </div>
     </div>
     <div class="genre-group" data-group="ento">
-      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎪 エンタメ <span class="gg-count"></span></button>
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▼</span> 🎪 エンタメ <span class="gg-count"></span></button>
       <div class="genre-group-body">
         <button class="filter-btn gg-all" data-genre="g:ento">エンタメすべて</button>
         <button class="filter-btn" data-genre="owarai">お笑い</button>
@@ -1061,7 +1072,7 @@
       </div>
     </div>
     <div class="genre-group" data-group="odekake">
-      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🏟 おでかけ <span class="gg-count"></span></button>
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▼</span> 🏟 おでかけ <span class="gg-count"></span></button>
       <div class="genre-group-body">
         <button class="filter-btn gg-all" data-genre="g:odekake">おでかけすべて</button>
         <button class="filter-btn" data-genre="sports">スポーツ</button>
@@ -90076,7 +90087,7 @@
     youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ",
     classic: "クラシック", jazz: "ジャズ", enka: "演歌", dento: "伝統",
     kaidan: "怪談",
-    engeki: "演劇", fes: "フェス",
+    engeki: "ミュージカル", fes: "フェス",   /* ユーザー指示 2026-08-13「演劇はミュージカルでしょ」＝表示名を統一（値は engeki のまま） */
     sports: "スポーツ", hanabi: "花火大会",
     "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル",
     aisatsu: "舞台挨拶", dinnershow: "ディナーショー", art: "イベントアート",
