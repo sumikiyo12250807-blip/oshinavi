@@ -1040,8 +1040,9 @@
       <button type="button" class="genre-group-toggle"><span class="gg-arrow">▸</span> 🎭 舞台 <span class="gg-count"></span></button>
       <div class="genre-group-body">
         <button class="filter-btn gg-all" data-genre="g:stage">舞台すべて</button>
-        <button class="filter-btn" data-genre="engeki">演劇</button>
-        <button class="filter-btn" data-genre="musical">ミュージカル</button>
+        <!-- ユーザー指示 2026-08-13「演劇はミュージカルでしょ」＝ボタンは1つに統合し表示は「ミュージカル」。
+             値は engeki のまま（データ移行なし）で、matchEvent 側が musical も一緒に拾う。 -->
+        <button class="filter-btn" data-genre="engeki">ミュージカル</button>
         <button class="filter-btn" data-genre="dento">伝統</button>
         <button class="filter-btn" data-genre="seiyuu">声優</button>
         <button class="filter-btn" data-genre="2.5ji">2.5次元</button>
@@ -90483,7 +90484,7 @@
       || (grp ? eventGenres(ev).some(g => grp.includes(g)) : false)
       || (!grp && ev.genre === activeGenre)
       || (!grp && (ev.extraGenres || []).includes(activeGenre))
-      || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu"))
+      || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu" || ev.genre === "musical"))
       || (activeGenre === "anime"  && ev.genre === "seiyuu");
     const rel = eventReleaseStatus(ev);   // 発売フィルタは発売前(発売開始日が未来)のチケットだけで判定
     const matchStatus = activeStatus === "all"
