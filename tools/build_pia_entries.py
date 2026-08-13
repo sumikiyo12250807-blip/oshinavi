@@ -127,6 +127,18 @@ class WpiaFormPage(Exception):
     フェスを危うく削除するところだった）。カード0かつw.pia.jpリンク有り＝機械照合の対象外なので、
     Noneを返さず例外で止める。呼び出し側は削除候補にせず人間の目視へ回すこと。"""
 
+class PiaEventGone(Exception):
+    """【購入ボタンが無言で死ぬ罠】ぴあは eventCd を後から無効化し、同じ興行を
+    eventBundleCd のツアーページに作り直すことがある。無効化された eventCd は HTTP 200 のまま
+    「ご確認ください／ご指定の公演情報が見つかりませんでした」を返すので、券種カードは0枚。
+    0枠と区別せずに扱うと **販売中のイベントが「買える枠ゼロ＝削除候補」に化ける**
+    （2026-08-12 実害＝2605 ザ・シスターズハイ／4120 PompadollS。どちらも投入時のゲートは
+     通っており、その後ぴあがURLを消した。ユーザーが画面で「タップしても飛ばない」と発見）。
+    is_error_page() 自体は 2026-06-30 から在ったが reconcile_pia でしか呼ばれておらず、
+    heal_stale_deadlines は素通しだった＝穴。build() で例外にして全呼び出し元に効かせる。
+    受け取った側は **削除候補にせず、tools/pia_kw_search.py で後継URLを探すこと**。"""
+
+
 def wpia_only(h):
     """券種カードが1枚も無く、w.pia.jp の購入リンクがある＝WEB直販形式のページ。"""
     if not h:
@@ -385,6 +397,9 @@ PIA_GENRE_MAP = {
     'クラシック': ('classic', None),
     'J-POP・ROCK': ('jpop', None),
     '音楽その他': ('fes', None),
+    # 🚨「フェスティバル」は**意図的に未収載**（2026-08-13にあたしが足そうとして selftest に止められた）。
+    # ぴあのこのカテゴリには屋内のジャズ「フェス」等も入るので fes に直結できない
+    # ＝OSHINAVIの fes は「複数組＋屋外」（[[feedback_fes_definition]]）。人が最終判断する枠のまま残す。
     # 2026-07-29 追加＝実ページの<title>で存在を確認したカテゴリ。
     # 旧版は対応表に無いと _piaSub ごと捨てていたので、そもそも存在に気づけなかった。
     '海外ROCK・POPS': ('yougaku', None),      # SQUEEZE(梅田クラブクアトロ)で確認
@@ -455,9 +470,13 @@ def genre_from_subcat(cat, sub, name=''):
 
 def build(cand):
     allrows, htmls = [], []
+    gone = []
     for u in cand['urls']:
         try:
             h = fetch(u); htmls.append(h)
+            # eventCdが無効化されたページ。0カードと混ぜると削除候補に化けるので印を付ける。
+            if is_error_page(h):
+                gone.append(u); continue
             cards = parse_cards(h)
             su = src_event_url(u)
             for c in cards:
@@ -473,6 +492,12 @@ def build(cand):
         if k in seen: continue
         seen.add(k); rows.append(r)
     if not rows:
+        # 【購入ボタンが無言で死ぬ罠】参照先のeventCdがぴあ側で無効化されている＝0枠ではない。
+        # 削除候補に出すと販売中の興行を消すので例外で止める（[[PiaEventGone]]）。
+        if gone and not allrows:
+            raise PiaEventGone(
+                'ぴあが無効化したURL(ご確認ください)＝eventCd削除/差替。'
+                'tools/pia_kw_search.py で後継URLを探すこと: ' + ', '.join(gone))
         # 【誤削除の罠】買える枠ゼロに見えても、ページがw.pia.jp直販形式なら「券種カードが無い」
         # だけで実際は販売中のことがある。Noneを返すと呼び出し側が削除候補にするので例外で止める。
         if any(wpia_only(h) for h in htmls):

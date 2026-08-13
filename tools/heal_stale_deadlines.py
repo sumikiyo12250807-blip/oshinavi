@@ -179,6 +179,13 @@ def main():
             print(f'\n🚨 w.pia.jp直販形式 {len(wpia)}件＝機械照合できない（削除NG・実ページを目視）:')
             for o in wpia:
                 print(f"  id={o['id']} {o.get('artist') or ''} {(o.get('urls') or [''])[0]}")
+        dead = [o for o in built.values() if o.get('status') == 'DEAD_URL']
+        if dead:
+            print(f'\n🚨🚨 ぴあURLが無効化 {len(dead)}件＝**削除候補ではない**'
+                  f'（ぴあがeventCdを消してツアーbundleに作り直した疑い。後継URLを探して貼り替える）:')
+            for o in dead:
+                print(f"  id={o['id']} {o.get('artist') or ''}")
+                print(f"      python tools/pia_kw_search.py \"{o.get('artist') or ''}\"")
         return
 
     nslot = sum(len(s) for _, s in targets)
@@ -194,7 +201,7 @@ def main():
         return
 
     sys.path.insert(0, 'tools')
-    from build_pia_entries import build, WpiaFormPage
+    from build_pia_entries import build, WpiaFormPage, PiaEventGone
     out = []
     for n, (ev, _) in enumerate(targets, 1):
         i = ev['id']
@@ -204,6 +211,29 @@ def main():
             print(f'[{n}/{len(targets)}] {i} NO_PIA_URL ⚠️非ぴあ＝要WebFetch'); continue
         try:
             ne = build({'newid': i, 'artist': ev.get('artist', ''), 'urls': urls})
+        except PiaEventGone as ex:
+            # 🚨ぴあがeventCdを無効化した＝「買える枠ゼロ」ではない。削除候補に混ぜると
+            # 販売中の興行を消す（2026-08-12 ザ・シスターズハイ/PompadollS）。後継URLを探す枠。
+            # ただし**1回のエラーページを信じない**＝ぴあは一瞬だけ「ご確認ください」を返すことがある
+            # （同日実測＝3930 権田晃朗が走査ではDEAD、直後の単独再取得では正常＝偽陽性）。
+            ne = None
+            for wait in (8, 15):
+                time.sleep(wait)
+                try:
+                    ne = build({'newid': i, 'artist': ev.get('artist', ''), 'urls': urls})
+                    break
+                except PiaEventGone:
+                    ne = None
+                except Exception:
+                    ne = None
+                    break
+            if ne is None:
+                out.append({'id': i, 'status': 'DEAD_URL', 'artist': ev.get('artist', ''),
+                            'urls': urls, 'err': str(ex)[:160]})
+                print(f"[{n}/{len(targets)}] {i} 🚨ぴあURLが無効化（3回とも）＝削除NG・後継URLを探す "
+                      f"({ev.get('artist','')})  → python tools/pia_kw_search.py \"{ev.get('artist','')}\"")
+                time.sleep(1.2); continue
+            print(f'[{n}/{len(targets)}] {i} 🔁RETRY 無効ページは偽陽性→{len(ne["tickets"])}枠を回収')
         except WpiaFormPage:
             # w.pia.jp直販形式＝券種カードが無いだけで販売中のことがある。絶対に削除候補にしない。
             out.append({'id': i, 'status': 'WPIA', 'artist': ev.get('artist', ''), 'urls': urls})
@@ -237,7 +267,10 @@ def main():
     json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     nc = sum(1 for o in out if o['status'] == 'convert')
     nd = sum(1 for o in out if o['status'] == 'delete')
-    print(f'\n=== convert {nc} / 削除候補 {nd} → {OUT} (適用は --apply) ===')
+    ng = sum(1 for o in out if o['status'] == 'DEAD_URL')
+    print(f'\n=== convert {nc} / 削除候補 {nd} / 🚨ぴあURL無効化 {ng} → {OUT} (適用は --apply) ===')
+    if ng:
+        print('   ※ぴあURL無効化は削除候補ではない。pia_kw_search.py で後継URLを探すこと。')
 
 
 if __name__ == '__main__':
