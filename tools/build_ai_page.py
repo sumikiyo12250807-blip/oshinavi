@@ -201,7 +201,12 @@ def status_text(ev, today):
     na = next_action(ev, today)
     if na is None:
         if soldout_visible(ev, today):
-            return "⚫ 予定枚数終了", ev.get("date") or "9999-99-99"
+            # 「予定枚数終了(売り切れ)」と「販売終了(販売期間が終わっただけ)」を混ぜない
+            # （ユーザー選択 2026-08-14）。1枠でも本当に売り切れているなら売り切れとして出す。
+            real_sold = [t for t in (ev.get("tickets") or [])
+                         if t.get("soldout") and not t.get("saleEnded")]
+            label = "⚫ 予定枚数終了" if real_sold else "⚪ 販売終了"
+            return label, ev.get("date") or "9999-99-99"
         return "⚪ 販売終了", "9999-99-99"
     d, kind, t = na
     n = days_from(d, today)
