@@ -130,7 +130,9 @@ def main():
                 fails.append((e['id'], ti, 'g-粒度', f'LD公演数={len(ld)}(≠1)', u)); continue
             L = ld[0]
             tp, tmd, ttime = parse_type(t.get('type', ''))
-            ld_dates.append((L['date'], u))
+            # 配信(視聴券)は会場公演ではないので「同日複数公演＝昼夜」の集計(h)から外す
+            if '配信' not in (t.get('type', '') or '') and '視聴券' not in (t.get('type', '') or ''):
+                ld_dates.append((L['date'], u))
             # (f) 公演日
             if tmd and L['date']:
                 lm, ld_ = int(L['date'][5:7]), int(L['date'][8:10])
@@ -140,12 +142,22 @@ def main():
             if tp is not None and L['pref']:
                 if norm_pref(tp) != norm_pref(L['pref']):
                     fails.append((e['id'], ti, 'd-県', f'type_pref!=LD_pref (LD={L["pref"]})', u))
-            # (a) 締切<=公演日
-            if t.get('date') and L['date'] and t['date'] > L['date']:
+            # (a) 締切<=公演日。配信(視聴券)はアーカイブ期間まで売るので公演日を越えて正常。
+            _ty = t.get('type', '') or ''
+            if t.get('date') and L['date'] and t['date'] > L['date'] \
+                    and '配信' not in _ty and '視聴券' not in _ty:
                 fails.append((e['id'], ti, 'a-締切>公演日', f"締切{t['date']} > 公演{L['date']}", u))
             # 窓＝実ページの窓を真値とし、storedを日付+時刻で比較する
             #   (Fable第4分析：一致窓を"探す"のでなく現在窓と"比較"＝表示ズレを必ず検出)
             blocks = parse_blocks(html)
+            # 「予定枚数終了」「販売終了」でマーク済みの枠は、窓が閉じているのが正常な状態
+            # （消さずに出し続ける方針＝feedback_soldout_keep_visible）。窓照合から外す。
+            # ただし逆向きは見る＝実頁に今日買える窓があるのに売切表示なら嘘なので FAIL。
+            if t.get('soldout') or t.get('saleEnded'):
+                _open_now = [b for b in blocks if b['status'] == 'open' and b['sd'] <= TODAY <= b['ed']]
+                if _open_now:
+                    fails.append((e['id'], ti, 's-売切表示ズレ', '売切/販売終了の表示だが実頁は受付中', u))
+                continue
             sd = t.get('startDate')
             bdl = badge_deadline(t.get('type', ''))
             if sd:   # 発売前（発売日sdで自分の窓を特定・同頁に複数before窓ありうる＝プレオーダー+一般）
