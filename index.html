@@ -1082,7 +1082,6 @@
         <button class="filter-btn" data-genre="fes">フェス</button>
         <button class="filter-btn" data-genre="hanabi">花火大会</button>
         <button class="filter-btn" data-genre="gourmet">グルメ</button>
-        <button class="filter-btn" data-genre="kaigai">海外</button>
       </div>
     </div>
   </div>
@@ -1108,6 +1107,7 @@
     <button class="filter-btn" data-region="chugoku">中国</button>
     <button class="filter-btn" data-region="shikoku">四国</button>
     <button class="filter-btn" data-region="kyushu">九州</button>
+    <button class="filter-btn" data-region="kaigai">🌏 海外</button>
     <button class="filter-btn" data-region="zenkoku">🚌 全国ツアー</button>
   </div>
 </div>
@@ -90153,7 +90153,7 @@
     "dateLabel": "2026年10月17日(土) 台湾 台北市某所",
     "venue": "台北市某所",
     "prefecture": "台湾",
-    "genre": "kaigai",
+    "genre": "fanevent",
     "price": null,
     "links": {
       "rakuten": null,
@@ -90169,10 +90169,7 @@
       }
     ],
     "verified": true,
-    "verifiedAt": "2026-08-14",
-    "extraGenres": [
-      "fanevent"
-    ]
+    "verifiedAt": "2026-08-14"
   },
   {
     "id": 4260,
@@ -90721,7 +90718,7 @@
     "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル",
     aisatsu: "舞台挨拶", dinnershow: "ディナーショー", art: "イベントアート",
     gourmet: "グルメ",
-    fanevent: "ファンイベント", kaigai: "海外"
+    fanevent: "ファンイベント"
   };
 
   // データの prefecture / 会場・公演名は短縮形（「東京」「大阪」）なので短縮名をキーにする
@@ -90739,6 +90736,8 @@
     "徳島": "shikoku","香川": "shikoku","愛媛": "shikoku","高知": "shikoku",
     "福岡": "kyushu", "佐賀": "kyushu", "長崎": "kyushu", "熊本": "kyushu",
     "大分": "kyushu", "宮崎": "kyushu", "鹿児島": "kyushu","沖縄": "kyushu",
+    // 海外公演（ぴあが日本の県を持たない興行）。バッジの「（台湾 M/D公演）」から拾う
+    "台湾": "kaigai",
   };
   const PREF_LIST = Object.keys(PREFECTURE_TO_REGION);
   // 県名→地域（フルネーム「東京都」等が来ても末尾の都府県を外して照合）
@@ -91112,7 +91111,7 @@
     music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","kpop","hiphop"],
     stage:   ["engeki","musical","dento","seiyuu","2.5ji"],
     ento:    ["owarai","kaidan","dinnershow","aisatsu","youtuber","vtuber","fanevent"],
-    odekake: ["sports","art","kids","fes","hanabi","gourmet","kaigai"]
+    odekake: ["sports","art","kids","fes","hanabi","gourmet"]
   };
 
   function eventGenres(ev) {
