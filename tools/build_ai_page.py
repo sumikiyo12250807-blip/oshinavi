@@ -24,6 +24,8 @@ GENRE_LABEL = {
     "new": "✨新着", "jpop": "J-POP", "rock": "ロック", "kpop": "K-POP",
     "yougaku": "洋楽", "hiphop": "HIP HOP", "anime": "アニソン", "idol": "アイドル",
     "youtuber": "YouTuber", "vtuber": "VTuber", "kids": "キッズ",
+    # 2026-08-14 追加（index.html の GENRE_LABEL と必ず一致させる）
+    "fanevent": "ファンイベント", "kaigai": "海外",
     # 2026-08-13: 一時「ミュージカル」にしたが engeki に能/文楽/舞踊が混ざるため差し戻し（index.html と必ず一致させる）
     "classic": "クラシック", "jazz": "ジャズ", "engeki": "演劇", "fes": "フェス",
     "sports": "スポーツ", "hanabi": "花火大会", "2.5ji": "2.5次元", "seiyuu": "声優",
