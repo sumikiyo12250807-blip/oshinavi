@@ -8,6 +8,8 @@
 **①新着の振り分け ②削除 ③push**。それ以外（変換/新着収集/投入/修正/統合/ヒール/重複掃除）は自走で実行→報告。
 （出典：feedback_selfrun_gates_only_two / feedback_user_confirms_expired）
 
+🆕**昼の便だけ②削除と③pushが自走OK**（2026-08-14ユーザー明示）＝別エージェントの独立再導出＋機械ゲート全通しが条件。朝と夜は従来どおりOK待ち。除外条件は feedback_user_confirms_expired 全文を読むこと。
+
 ---
 
 ## 行動別チェックリスト

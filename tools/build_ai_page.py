@@ -122,6 +122,22 @@ def next_action(ev, today):
     return cands[0]
 
 
+def soldout_visible(ev, today):
+    """「予定枚数終了」として載せ続ける子か（ユーザー方針 2026-08-09→AI面にも展開 2026-08-14）。
+    index.html renderCard と同じ条件＝soldout 枠を持ち、公演日をまだ過ぎていない。
+    Why: ブラウザでは「予定枚数終了」と出るのに ai.html / SSR からは消えていたため、
+    AI や検索から来た人には「最初から載っていなかった」ように見えていた。"""
+    if not any(t.get("soldout") for t in (ev.get("tickets") or [])):
+        return False
+    d = ev.get("date")
+    if not d:
+        return False
+    try:
+        return parse(d) >= today
+    except ValueError:
+        return False
+
+
 SORT_PRESALE, SORT_SELLING = 0, 1
 
 
@@ -181,6 +197,8 @@ def status_text(ev, today):
     """AI/人が読む状態テキストを作る。"""
     na = next_action(ev, today)
     if na is None:
+        if soldout_visible(ev, today):
+            return "⚫ 予定枚数終了", ev.get("date") or "9999-99-99"
         return "⚪ 販売終了", "9999-99-99"
     d, kind, t = na
     n = days_from(d, today)
@@ -258,8 +276,8 @@ def build(today):
     rows = []
     for ev in events:
         na = next_action(ev, today)
-        if na is None:
-            continue  # 販売終了は載せない
+        if na is None and not soldout_visible(ev, today):
+            continue  # 販売終了は載せない（予定枚数終了は classify_rank の rank2＝末尾で載せる）
         rows.append((classify_rank(ev, today), ev.get("id", 0), ev))
     # (rank, 日付, 種別, X紹介, id)。**種別(x[0][2])を落とすと「同じ日は発売開始が上・締切が下」が壊れる**
     # ＝本日発売がSSRの先頭に出ず、ブラウザの初期表示が古い並びに見える（2026-07-19 の事故）。
