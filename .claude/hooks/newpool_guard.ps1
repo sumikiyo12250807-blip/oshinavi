@@ -1,17 +1,21 @@
 ﻿# PostToolUse hook: 新着プール(genre:"new")が勝手に減っていないかを見張る番人。
-# memory: feedback_new_pool_ok_before_assign（振り分けはユーザーの明示OK後）を機械的に強制する。
+# memory: feedback_new_pool_ok_before_assign / feedback_selfrun_gates_only_two
 #
 # 2026-07-19 の事故＝あたしが新着47件をユーザーのチェック前に振り分け、
 # genre が classic 等に変わって「新着タブが空っぽ」になった。ユーザーは見るものを失った。
-# 保存ルール同士が矛盾していた（ゲートは2つ／振り分けはOK後）ため、意志だけでは防げない。
-# よってファイルの実体を数えて止める。
+#
+# 🔧【2026-08-17 作り替え】8/16にルールが変わり「振り分けはユーザーのGO待ち不要・
+#    別エージェントの客観チェックを通せば自走OK。ただし後から見られるリンクを残すこと」になった。
+#    ＝この番人の役目も「ユーザーのOKが有るか」から
+#      **「新着タブが空になる代わりの『見る場所』＝logs/assigned_YYYY-MM-DD.md が残っているか」** に変わる。
 #
 # 判定:
-#   new件数が 0 になった or 半分以上ドカッと減った → 振り分けの疑い → exit 2 でブロック
+#   new件数が 0 になった or 半分以上ドカッと減った → 振り分け相当 → 下の解除条件が無ければ exit 2
 #   数件だけ減った（統合・新着からの除去）→ 通すが件数は記録する
-# 解除:
-#   ユーザー本人が「振り分けて」等と言うと assign_approval.ps1 が承認印を書く。
-#   あたし(Claude)からは承認印を作れない＝偽装できない。
+# 解除（どちらかが満たされていれば通す）:
+#   (a) 当日の振り分け記録 logs/assigned_YYYY-MM-DD.md が有り、中身が空でない
+#       ＝ユーザーが携帯から後追いできる状態が担保されている（新ルールの必須条件C）
+#   (b) ユーザー本人が「振り分けて」と言った承認印（assign_approval.ps1 が書く・旧ルート）
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
@@ -42,10 +46,19 @@ if ($now -ge $prev) {
     exit 0
 }
 
-# 減った。ユーザーの承認印が今日付いているか
+# 減った。解除条件を見る
 $today = (Get-Date).ToString('yyyy-MM-dd')
 $ok = $false
-if (Test-Path $approve) {
+
+# (a) 当日の振り分け記録が残っているか（新ルールの必須条件C＝後から見られるリンク）
+$assignLog = Join-Path $root ("logs/assigned_" + $today + ".md")
+if (Test-Path $assignLog) {
+    $body = (Get-Content $assignLog -Raw -Encoding UTF8)
+    if ($body -and $body.Trim().Length -gt 30) { $ok = $true }
+}
+
+# (b) ユーザー本人の承認印（旧ルート・今も有効）
+if (-not $ok -and (Test-Path $approve)) {
     if ((Get-Content $approve -Raw).Trim() -eq $today) { $ok = $true }
 }
 if ($ok) {
