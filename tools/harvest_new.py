@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 """新着候補ハーベスタ（朝ルーチン用・1コマンド）。
 
-  python tools/harvest_new.py [件数] [出力json]
+  python tools/harvest_new.py [件数] [出力json] [rlsIn] [--merge 既存cand.json]
      例: python tools/harvest_new.py 100 tmp/cand_0711.json
+         python tools/harvest_new.py 30 tmp/cand_04.json 04 --merge tmp/cand_03.json
 
 ぴあの発売前(rlsIn=03)を全ジャンルからスイープし、**カウントダウンの価値が高い順**に選ぶ。
+
+第3引数で rlsIn を切り替えられる（03＝30日以内に発売／04＝それより先）。
+発売前の在庫が枯れている日は 03 を取り切ったあと 04 を足す（2026-08-17 追加）。
+--merge は「同じ日に別スイープで既に選んだ候補」のファイル。そこに入っている eventCd を
+重複除外に足し、newid の起点もその続きにする＝2回に分けて回しても id が衝突しない。
 
 【選定順】(2026-07-10 ユーザー指摘で修正)
   旧: 発売日が近い順＋「本日発売/発売日不明」を最優先 → 本日発売ばかり50件埋まり、
@@ -16,8 +22,13 @@
 import re, io, sys, json, time, datetime, subprocess, unicodedata, collections
 
 sys.stdout.reconfigure(encoding='utf-8')
-WANT = int(sys.argv[1]) if len(sys.argv) > 1 else 50
-OUT = sys.argv[2] if len(sys.argv) > 2 else 'tmp/cand_new.json'
+ARGV = [a for a in sys.argv[1:] if not a.startswith('--')]
+WANT = int(ARGV[0]) if len(ARGV) > 0 else 50
+OUT = ARGV[1] if len(ARGV) > 1 else 'tmp/cand_new.json'
+RLSIN = ARGV[2] if len(ARGV) > 2 else '03'
+MERGE = None
+if '--merge' in sys.argv:
+    MERGE = sys.argv[sys.argv.index('--merge') + 1]
 TODAY = datetime.date.today()
 STAMP = f'{TODAY:%m%d}'
 
@@ -54,10 +65,10 @@ def norm(s):
 
 items = []
 for i, (lg, tag) in enumerate(JOBS):
-    f = f'tmp/presale_{tag}03_{STAMP}.json'
+    f = f'tmp/presale_{tag}{RLSIN}_{STAMP}.json'
     t0 = time.time()
     try:
-        subprocess.run([sys.executable, 'tools/presale_harvest.py', lg, f, 'rlsIn=03'],
+        subprocess.run([sys.executable, 'tools/presale_harvest.py', lg, f, f'rlsIn={RLSIN}'],
                        capture_output=True, timeout=1800)
         d = json.load(open(f, encoding='utf-8'))
         new = d.get('new', [])
@@ -74,6 +85,19 @@ idx = open('index.html', encoding='utf-8').read()
 db_cds = set(re.findall(r'event(?:Bundle)?Cd=(\w+)', idx))
 m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', idx, re.S)
 maxid = max(e['id'] for e in json.loads(m.group(2)))
+
+# --merge＝同じ日に別スイープで既に選んだ候補。eventCd を重複除外に足し、id の起点も続きにする。
+merged_cds = set()
+if MERGE:
+    try:
+        prev = json.load(open(MERGE, encoding='utf-8'))
+        for p in prev:
+            merged_cds |= set(re.findall(r'event(?:Bundle)?Cd=(\w+)', ' '.join(p.get('urls') or [])))
+            maxid = max(maxid, p.get('newid', 0))
+        print(f'  --merge {MERGE}: 既選 {len(prev)}件 / 除外eventCd {len(merged_cds)}件 / id起点 {maxid}')
+    except FileNotFoundError:
+        print(f'  ⚠️ --merge {MERGE} が無い')
+db_cds |= merged_cds
 
 # ジャンル優先度（ユーザー指示 2026-07-10 夜）：音楽 > 演劇 > クラシック > イベント > スポーツ > アート(最後)。
 GENRE_PRI = {'music': 0, 'engeki': 1, 'classic': 2, 'event': 3, 'sports': 4, 'art': 5}

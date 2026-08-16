@@ -3,25 +3,25 @@
   "batches": [
     {
       "date": "2026-08-16",
-      "slot": "morning",
-      "id_from": 4326,
-      "id_to": 4375,
-      "count": 50,
-      "source": "ぴあ 発売前rlsIn=03/04 36件 + 受付中(音楽)14件",
-      "assigned": true,
-      "rechecked": true,
-      "note": "夜に独立再照合済み＝指摘22件は全部ノイズか正常。振り分け完了"
-    },
-    {
-      "date": "2026-08-16",
       "slot": "evening",
       "id_from": 4376,
       "id_to": 4425,
       "count": 50,
       "source": "ぴあ 受付中(音楽45+演劇5)",
+      "assigned": true,
+      "rechecked": true,
+      "note": "8/17朝に独立再照合＋別エージェント検品。46件を振り分け／4件(4377 BE WONDERFUL!!・4400 MASTERPIECE 2026・4417 LEE SANG JUN・4418 Osaka GLOW)はユーザー相談待ちでプールに残した"
+    },
+    {
+      "date": "2026-08-17",
+      "slot": "morning",
+      "id_from": 4426,
+      "id_to": 4488,
+      "count": 50,
+      "source": "ぴあ 発売前rlsIn=03(20件)+rlsIn=04(1件)+受付中rlsStatus=0101(29件)",
       "assigned": false,
       "rechecked": false,
-      "note": "翌朝(8/17)に①独立再照合②別エージェントの客観チェック→ユーザーが新着タブを見る→振り分け"
+      "note": "翌朝(8/18)に①独立再照合②別エージェントの客観チェック→振り分け。🚨_genre下書きが engeki 7件・fes 4件ある＝bundleでカテゴリが取れず名前fallbackに倒れた疑い。振り分け前に要是正（8/17の46件でも同じ問題が11件あった）"
     }
   ]
 }
