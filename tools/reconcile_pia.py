@@ -84,7 +84,10 @@ def pia_buyable(urls):
             if r['state'] not in ('受付中', '発売前'):
                 continue
             suf, iso, sd = bpe.parse_when(r['state'], r['when'])
-            key = (iso, r['title'], r['perfdate'])
+            # 🚨飛び先の売り場コードまで見て同一性を判定する。ツアーのまとめページは公演日を
+            # 出さないカードがあり、締切と券種名だけで畳むと別会場の枠が消える
+            # （2026-08-18 杉山清貴の福岡プレリザーブを「一致」と報告して見逃した）。
+            key = (iso, r['title'], r['perfdate'], bpe.slot_code(r.get('url')))
             if key in seen:
                 continue
             seen.add(key)

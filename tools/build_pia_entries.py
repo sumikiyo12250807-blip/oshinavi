@@ -223,10 +223,27 @@ def parse_cards(h):
         })
     seen, u = set(), []
     for r in rows:
-        k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'], r['when'])
+        # 🚨枠の同一性は【飛び先の売り場コード】で決まる。見た目の文言・公演日・締切が同じでも、
+        # eventCd/rlsCd/lotRlsCd が違えば別の売り場＝畳んだら導線が消える。
+        # ツアーのまとめページは公演日を出さないカードがあり、それを畳むと枠が丸ごと消える
+        # （2026-08-17 Juice=Juice 7枠→3枠／2026-08-18 杉山清貴の福岡プレリザーブ見逃し）。
+        k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'], r['when'],
+             slot_code(r.get('url')))
         if k in seen: continue
         seen.add(k); u.append(r)
     return u
+
+def slot_code(url):
+    """ぴあの券種カードのリンク先から「売り場の識別子」を作る。
+    eventCd=どの公演か / rlsCd=どの一般発売枠か / lotRlsCd=どの抽選先行枠か。
+    この3つが同じなら同一の売り場、1つでも違えば別の売り場。
+    [[feedback_pia_parser_flattens_slots]] / [[feedback_dedup_badges_keeps_urls]]"""
+    if not url:
+        return ''
+    return '|'.join((re.search(k + r'=(\w+)', url).group(1)
+                     if re.search(k + r'=(\w+)', url) else '')
+                    for k in ('eventCd', 'rlsCd', 'lotRlsCd'))
+
 
 def drop_labels_in_name(type_str, name):
     """券種名の【ラベル】が公演名にも入っているなら冗長なので落とす。
