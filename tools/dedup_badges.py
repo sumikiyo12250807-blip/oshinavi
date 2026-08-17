@@ -5,8 +5,18 @@
 フェスの個別公演などが「表示上まったく同じバッジ」として何枚も復活するため、
 ヒールの後に必ず流して畳む。
 
-判定は dispkey（画面に出るフィールド）が完全一致するものだけ。url違い＝見た目同じ
-なので畳む。席種違い・全国ツアーの会場別枠は type/dateLabel が違うので残る。
+判定は dispkey（画面に出るフィールド）＋**飛び先URL**が完全一致するものだけ。
+席種違い・全国ツアーの会場別枠は type/dateLabel が違うので残る。
+
+🚨2026-08-17 修正: 以前は「urlは表示に出ないので除外＝見た目が同じなら畳む」だったが、
+   **url は枠バッジのリンク先**（renderCard の `const itemLinkUrl = t.url || ticketLinkUrl;`）で、
+   畳むと**まだ売っている売り場がサイトから消える**。実際 id4448「愛の讃歌」で、同一会場・同一
+   公演日で eventCd が2つある枠を畳み、販売中の 2629201 への導線を消してしまった（push直前の
+   独立検証で発覚）。→ url を判定に含める。
+   影響は限定的で、修正時点で「見た目は同じだがURLが違う」枠を持つエントリはサイト全体で
+   この1件のみ（url が空/同一の重複は今までどおり畳まれる）。
+   関連: [[feedback_capture_all_deadlines_on_add]]（買える枠は1つ残らず載せる）
+        [[feedback_tour_per_ticket_url]]（会場別URLを各ticketに付ける）
 
   python tools/dedup_badges.py           走査のみ
   python tools/dedup_badges.py --apply   適用（backupを取る）
@@ -19,9 +29,11 @@ E = json.loads(m.group(2))
 
 
 def dispkey(t):
-    # 画面表示に効くフィールド。urlは表示に出ないので除外＝同じ見た目なら重複。
+    # 画面表示に効くフィールド ＋ 飛び先URL。
+    # url は「表示に出ない」が**バッジのリンク先**なので、違えば別の売り場＝畳んではいけない。
     return (t.get('type', ''), t.get('startDate'), t.get('date'),
-            t.get('badge', ''), t.get('dateLabel', ''), t.get('saleUntilSoldOut'))
+            t.get('badge', ''), t.get('dateLabel', ''), t.get('saleUntilSoldOut'),
+            t.get('url') or '')
 
 
 def dedup(ts):
