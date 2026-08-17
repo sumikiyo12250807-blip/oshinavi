@@ -133,7 +133,14 @@ while p <= 400:
         print('page', p, 'fetch err', e); break
 print('parsed items:', len(items), '(fetched up to page %d)' % p)
 
-# dedup vs existing index.html (artist + name text)
+# dedup vs existing index.html
+# 🚨2026-08-17 修正: 未掲載判定を「アーティスト名の一致」→「eventCd がDBに在るか」に変更。
+#   旧実装は norm(artist) が index.html の artist/name に一部一致しただけで捨てていた。
+#   そのため **DBに1エントリでもある人の別公演・別ツアーが永久に拾えない**（発売前・音楽で
+#   在庫393件中「未掲載」が13件しか出ず、新着50件が「もう売ってる」で埋まる原因になった）。
+#   ユーザー 2026-08-17「新着がもう売ってるのだらけ／これから売るやつを重点的に集めて」。
+#   名前一致は捨てずに name_in_db フラグで残す＝投入時に「既存エントリへ統合するか」を判断する材料
+#   （[[feedback_harvest_name_dedup_blindspot]] / [[feedback_tour_consolidate]]）。
 idx = open('index.html', encoding='utf-8').read()
 existing = idx.lower()
 def norm(s):
@@ -146,16 +153,35 @@ ex_names = set()
 for m in re.finditer(r'"(?:artist|name)"\s*:\s*"([^"]+)"', idx):
     ex_names.add(norm(m.group(1)))
 
-new = []
+ex_cds = set(re.findall(r'event(?:Bundle)?Cd=(\w+)', idx))
+
+def eventcd(u):
+    m = re.search(r'event(?:Bundle)?Cd=(\w+)', u or '')
+    return m.group(1) if m else ''
+
+new, n_name_only = [], 0
 for it in items:
     key = norm(it['artist'])
-    hit = key and (key in ex_names or any(key in en or en in key for en in ex_names if len(en) > 3 and len(key) > 3))
-    it['in_db'] = bool(hit)
-    if not hit:
+    # 印は「完全一致」だけ。旧実装の部分一致(en in key / key in en)は当たりすぎて
+    # 393件中380件が消えるほど乱暴だった＝統合検討の目印としても使い物にならない。
+    name_hit = bool(key) and key in ex_names
+    cd_hit = eventcd(it['url']) in ex_cds
+    it['in_db'] = cd_hit                 # ★判定はeventCdのみ
+    it['name_in_db'] = name_hit          # 参考＝既存エントリへの統合を検討する印
+    if not cd_hit:
         new.append(it)
+        if name_hit:
+            n_name_only += 1
 
-print('already in DB:', len(items) - len(new), '| NOT in DB (new candidates):', len(new))
-json.dump({'lg': LG, 'total': total, 'parsed': len(items), 'new': new},
+print('already in DB (eventCd一致):', len(items) - len(new), '| NOT in DB (new candidates):', len(new))
+print('  うち %d件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）' % n_name_only)
+# ★pages(想定)と fetched_pages(実際に見たページ)を必ず残す。
+#   parsed < total は取りこぼしではない（ぴあは1公演=1行なので同じeventCdが複数行に出る＝
+#   URL重複を潰すと当然減る）。**打ち切りを検知できる指標はページ数のほう**。
+#   2026-08-17に受付中スイープが音楽4318件中204件＝「あ行」だけで打ち切られていたのを
+#   件数比で見つけた反省（[[feedback_newpool_presale_ratio_gate]]）。
+json.dump({'lg': LG, 'total': total, 'pages': pages, 'fetched_pages': p,
+           'parsed': len(items), 'new_name_in_db': n_name_only, 'new': new},
           open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('written', OUT)
 # print first 25 new
