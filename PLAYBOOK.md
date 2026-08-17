@@ -41,7 +41,7 @@ push・削除・振り分け、**3つとも自走してよい**。ただし**必
 |---|---|---|---|
 | **朝ルーチン** | 自走 | feedback_morning_routine / feedback_plan_md | ①plan.md②check_expired③ヒール④昼もう一度ヒール。振り分け/削除/pushは合図待ち |
 | **期限切れ削除** | 要OK | feedback_user_confirms_expired / feedback_pre_delete_webfetch_verify / feedback_delete_nonpia_blindspot / feedback_reconcile_drop_unparsed_not_noise / **feedback_soldout_keep_visible** | 「抽選結果発表前」はふみ型で削除禁止／当日公演は翌朝／URLは機械抽出のみ(捏造禁止)／w.pia直販0枠は誤検出／🚨**売り切れは削除せず`mark_soldout.py`で「予定枚数終了」表示に**（削除ゲートに載せない） |
-| **新着harvest(ぴあ)** | 自走 | feedback_presale_first_harvest / feedback_capture_all_not_select / feedback_harvest_countdown_first / reference_pia_tickets_tool | 発売前優先・1バッチ50上限・eventCd総ざらい |
+| **新着harvest(ぴあ)** | 自走 | feedback_presale_first_harvest / **feedback_newpool_presale_ratio_gate** / feedback_capture_all_not_select / feedback_harvest_countdown_first / reference_pia_tickets_tool | 発売前優先・1バッチ50上限・eventCd総ざらい／🚨**投入前に `python tools/harvest_audit.py` でカバー率と発売前比率を出す**（「発売前が枯れた」は数字で証明してから言う。2026-08-17に音楽カバー率4.7%＝あ行だけで50件埋めた事故） |
 | **新着harvest(e+)** | 自走 | reference_eplus_harvest / reference_eplus_machine_parse | 各公演-P個別URL必須／発売中≠発売前／JSON-LDが源／撮影会除外 |
 | **新着投入(genre:new化)** | 自走 | feedback_zero_error_pipeline / feedback_url_first_on_new_add / reference_reconcile_pia_tool / feedback_badge_date_full_form | 投入前check_badges＋reconcile --new／URL全件fetch／二段構えゼロエラー |
 | **🔒投入後の新着プール** | — | **feedback_new_list_order_lock** / **feedback_candidate_list_stable_numbering** / feedback_new_order_array | 🚨🚨**丸ごと作り直さない＝id/番号振り直し禁止。個別直しは現物編集(id据え置き)**／削除は欠番／並びはid昇順固定 |
