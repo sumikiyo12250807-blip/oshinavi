@@ -2,26 +2,37 @@
   "_comment": "前日投入した新着バッチの記録。翌日の朝ルーチンで『前日分の再チェック』に使う（ユーザー指示 2026-08-16）。inject後に必ず更新すること。",
   "batches": [
     {
-      "date": "2026-08-16",
-      "slot": "evening",
-      "id_from": 4376,
-      "id_to": 4425,
-      "count": 50,
-      "source": "ぴあ 受付中(音楽45+演劇5)",
-      "assigned": true,
-      "rechecked": true,
-      "note": "8/17朝に独立再照合＋別エージェント検品。46件を振り分け／4件(4377 BE WONDERFUL!!・4400 MASTERPIECE 2026・4417 LEE SANG JUN・4418 Osaka GLOW)はユーザー相談待ちでプールに残した"
-    },
-    {
       "date": "2026-08-17",
       "slot": "morning",
       "id_from": 4426,
       "id_to": 4488,
       "count": 50,
       "source": "ぴあ 発売前rlsIn=03(20件)+rlsIn=04(1件)+受付中rlsStatus=0101(29件)",
+      "assigned": true,
+      "rechecked": true,
+      "note": "8/17昼に振り分け45件（logs/assigned_2026-08-17.md）"
+    },
+    {
+      "date": "2026-08-17",
+      "slot": "evening",
+      "id_from": 4489,
+      "id_to": 4538,
+      "count": 50,
+      "source": "ぴあ 発売前rlsIn=03（ハーベスタのeventCd判定修正後の初バッチ）",
+      "assigned": true,
+      "rechecked": true,
+      "note": "8/18朝に独立再照合＋別エージェント2本のゼロから再導出。50件中48件が枠数・千秋楽とも完全一致。本物の取りこぼしは4515 杉山清貴の福岡プレリザーブ1枠のみ（reconcileが見逃していた＝道具を修正）。振り分け50件・相談待ち4件は据置。logs/assigned_2026-08-18.md"
+    },
+    {
+      "date": "2026-08-18",
+      "slot": "morning",
+      "id_from": 4539,
+      "id_to": 4588,
+      "count": 50,
+      "source": "ぴあ 発売前rlsIn=03（音楽50件・在庫284件から選定）",
       "assigned": false,
       "rechecked": false,
-      "note": "翌朝(8/18)に①独立再照合②別エージェントの客観チェック→振り分け。🚨_genre下書きが engeki 7件・fes 4件ある＝bundleでカテゴリが取れず名前fallbackに倒れた疑い。振り分け前に要是正（8/17の46件でも同じ問題が11件あった）"
+      "note": "全件が『発売前』かつ発売まで4日以上。投入直後のゲート＝check_badges OK／reconcile --new は OK54・MISSING/DROP/STALE/FETCH/QC 全0・照合カバレッジ89/91。翌朝(8/19)に①独立再照合②別エージェントの客観チェック→振り分け。下書きジャンル内訳 jpop37/enka9/jazz1/classic1/yougaku1/fes1"
     }
   ]
 }
