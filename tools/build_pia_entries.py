@@ -231,7 +231,35 @@ def parse_cards(h):
              slot_code(r.get('url')))
         if k in seen: continue
         seen.add(k); u.append(r)
+    fill_when_from_ticketinfo(u)
     return u
+
+# 一覧カードに発売日が出ない発売前枠がある（ぴあの表示は「販売停止（発売日待ちです）」だけ）。
+# その枠は when='' になり、parse_when が解析できず【買える枠なのに丸ごと落ちる】。
+# 2026-08-19 に 天満天神繁昌亭(950/4673) の 10/31公演 で発覚＝券種ページには
+# 「発売開始 2026/8/31(月) 10:00～」と書いてある。一覧に無いときだけ券種ページを読んで補う。
+_WHEN_RE = re.compile(r'発売開始\s*(\d{4}/\d{1,2}/\d{1,2}\([^)]{1,3}\))\s*(?:昼|夜)?\s*(\d{1,2}:\d{2})')
+
+def fill_when_from_ticketinfo(rows):
+    for r in rows:
+        if r['state'] != '発売前' or r['when'] or not r.get('url'):
+            continue
+        try:
+            # 🚨fetch() は ticketInformation.do を event.do へ正規化してしまう（別用途の安全策）。
+            #   ここは券種ページそのものを読みたいので、正規化せずに取りに行く。
+            req = urllib.request.Request(r['url'], headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                if 'sorry.pia' in resp.geturl():
+                    continue
+                h = resp.read().decode('utf-8', 'replace')
+        except Exception:
+            continue
+        if 'sorry.pia' in h[:4000]:
+            continue
+        m = _WHEN_RE.search(txt(h))
+        if m:
+            # 一覧カードと同じ「YYYY/M/D(曜) HH:MM より発売」形へ揃える（parse_when がこの形を読む）
+            r['when'] = '%s %s より発売' % (m.group(1), m.group(2))
 
 def slot_code(url):
     """ぴあの券種カードのリンク先から「売り場の識別子」を作る。
