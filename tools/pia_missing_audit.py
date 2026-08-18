@@ -164,6 +164,11 @@ def good_keyword(name, allow_all=False):
         return False
     if allow_all:
         return True
+    # 🚨短すぎる欧文名（US / ACE 等）はぴあの部分一致で「全部」に当たる。
+    # 2026-08-18、"US" が447件ヒットして未登録候補251件のゴミを吐いた。
+    # 日本語（かな/漢字）は2文字でも固有名として機能するので、ASCII主体の時だけ4文字以上を要求する。
+    if len(n) < 4 and not re.search(r'[ぁ-んァ-ヶ一-龥]', n):
+        return False
     if len(n) > 22:
         return False
     if BAD_KW.search(n):
