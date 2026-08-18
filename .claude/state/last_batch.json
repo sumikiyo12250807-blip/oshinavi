@@ -30,9 +30,20 @@
       "id_to": 4588,
       "count": 50,
       "source": "ぴあ 発売前rlsIn=03（音楽50件・在庫284件から選定）",
+      "assigned": true,
+      "rechecked": true,
+      "note": "独立再照合の指摘7件は県表記ゆれ5＋相談待ち1で実害なし。🚨50件のうち39件が既存エントリと同名＝ツアーが分裂していたので統合し、残り11件を振り分けた（enka2/jpop8/jazz1）。logs/assigned_2026-08-18_pm.md"
+    },
+    {
+      "date": "2026-08-18",
+      "slot": "afternoon",
+      "id_from": 4589,
+      "id_to": 4638,
+      "count": 50,
+      "source": "ぴあ 発売前rlsIn=03（音楽24+演劇26・在庫236件から選定）",
       "assigned": false,
       "rechecked": false,
-      "note": "全件が『発売前』かつ発売まで4日以上。投入直後のゲート＝check_badges OK／reconcile --new は OK54・MISSING/DROP/STALE/FETCH/QC 全0・照合カバレッジ89/91。翌朝(8/19)に①独立再照合②別エージェントの客観チェック→振り分け。下書きジャンル内訳 jpop37/enka9/jazz1/classic1/yougaku1/fes1"
+      "note": "ユーザー依頼で同日2バッチ目。全件が『発売前』かつ発売まで4日以上。ゲート＝check_badges OK／reconcile --new は OK53・MISSING/DROP/QC 0。4601 SUGIZO のFETCHは混雑ページで冷却後に一致。4620 春風亭昇太はbuild時に混雑ページへ飛ばされ単独で再構築して投入。翌朝(8/19)に①独立再照合②別エージェントの客観チェック→振り分け。🚨投入前に既存の同名エントリとの統合を必ず確認する（8/18に39件が分裂していた）"
     }
   ]
 }
