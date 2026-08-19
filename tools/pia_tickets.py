@@ -106,9 +106,13 @@ for it in items:
     })
 
 # 重複除去（ぴあHTMLはレスポンシブで同じカードを2回出力する）
+# 🚨キーに url を必ず入れる（2026-08-20）。文言が同じでも**飛び先が違えば別の売り場**で、
+#   url を外すと本物の枠が消える（宮川彬良vs新日本フィルの rlsCd=001〜004 のような
+#   「同名だが別券種」型）。レスポンシブの二重出力は url も同じなので、これでも潰れる。
+#   同系の事故＝[[feedback_pia_parser_flattens_slots]] / [[feedback_dedup_badges_keeps_urls]]
 seen = set(); uniq = []
 for r in rows:
-    k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'], r['when'])
+    k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'], r['when'], r['url'])
     if k in seen:
         continue
     seen.add(k); uniq.append(r)
