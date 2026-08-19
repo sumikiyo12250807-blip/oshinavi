@@ -502,7 +502,10 @@ def pia_subcat(h):
 # enka に倒れていた。照合前に NFKC+小文字化するので全角「ＴＡＩＫＯ」も当たる。
 # 誤爆が怖い短語（koto 等）は入れない。
 HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|雅楽|民謡|和楽器|邦楽|篠笛|笙|能楽|長唄|常磐津'
-                       r'|taiko|shamisen|shakuhachi|gagaku|wagakki')
+                       # 2026-08-19 追加：琵琶が入っておらず「琵琶絵巻 坂田美子」が enka(演歌) に落ちていた
+                       # （検証エージェントの指摘で発覚）。同じ型の邦楽語をまとめて足す。
+                       r'|琵琶|義太夫|清元|新内|小唄|端唄|地唄|浄瑠璃|詩吟|囃子|能舞台'
+                       r'|taiko|shamisen|shakuhachi|gagaku|wagakki|biwa')
 def _hogaku(name):
     return bool(HOGAKU_RE.search(unicodedata.normalize('NFKC', name or '').lower()))
 def genre_from_subcat(cat, sub, name=''):
