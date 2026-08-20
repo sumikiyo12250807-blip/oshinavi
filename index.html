@@ -195,6 +195,50 @@
       overflow-wrap: normal;
     }
 
+    /* ── 週1記事「今週のピックアップ」への入口（2026-08-20 新設） ── */
+    .pickup-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 16px auto 0;
+      padding: 14px 18px;
+      background: linear-gradient(90deg, rgba(224,64,251,.14), rgba(0,229,255,.10));
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: .2s;
+    }
+    .pickup-banner:hover, .pickup-banner:focus-visible {
+      background: linear-gradient(90deg, rgba(224,64,251,.24), rgba(0,229,255,.18));
+    }
+    .pickup-banner .pb-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: .1em;
+      white-space: nowrap;
+    }
+    .pickup-banner .pb-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      flex: 1;
+      min-width: 200px;
+      line-height: 1.6;
+    }
+    .pickup-banner .pb-more {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .pickup-banner { margin: 12px 12px 0; padding: 12px 14px; gap: 8px; }
+      .pickup-banner .pb-title { font-size: 13px; }
+    }
+
     /* ── 最終更新（毎日2回のビルドで実日時を刻む・鮮度を正直に出す） ── */
     .last-updated {
       text-align: center;
@@ -1012,6 +1056,7 @@
   <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
+    <a href="pickup/2026-08-20.html">今週の<br>ピックアップ</a>
     <a href="contact.html">お問い合わせ</a>
   </nav>
 </header>
@@ -1022,9 +1067,15 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 15:34</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 17:30</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
+
+<a class="pickup-banner" href="pickup/2026-08-20.html">
+  <span class="pb-label">📖 今週のピックアップ</span>
+  <span class="pb-title">EXILE・布袋寅泰・真心ブラザーズ、それにシルク・ドゥ・ソレイユも一斉発売！</span>
+  <span class="pb-more">読む →</span>
+</a>
 
 <div class="controls">
   <!-- 検索 -->
