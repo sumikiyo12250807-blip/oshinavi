@@ -1,0 +1,64 @@
+  1758 OK
+  1759 OK
+  1760 skip(売切)
+  1761 OK
+  1762 OK
+  1763 OK
+  1764 OK
+  1765 OK
+  1766 OK
+  1767 OK
+  1768 OK
+  1769 OK
+  1770 OK
+  1771 OK
+  1772 OK
+  1773 OK
+  1774 skip(売切)
+  1775 OK
+  1776 OK
+  1777 OK
+  1778 OK
+  1779 OK
+  1780 OK
+  1781 OK
+  1782 skip(売切)
+  1783 OK
+  1784 skip(売切)
+  1785 OK
+  1786 OK
+  1787 OK
+  1788 skip(売切)
+  1789 OK
+  1790 OK
+  1791 OK
+  1792 OK
+  1793 OK
+  1794 skip(売切)
+  1795 OK
+  1796 OK
+  1797 OK
+  1798 OK
+  1799 OK
+  1800 OK
+  1801 OK
+  1802 OK
+  1803 OK
+  1804 OK
+  1805 OK
+  1806 OK
+  1807 OK
+  1808 OK
+  1809 OK
+構築 46 件 / skip [1760, 1774, 1782, 1784, 1788, 1794]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 6件（買える枠なのに取り込めなかった＝要対応）:
+   id1760 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://ticket.pia.jp/pia/event.do?eventCd=2623713
+   id1774 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://ticket.pia.jp/pia/event.do?eventCd=2623383
+   id1782 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://ticket.pia.jp/pia/event.do?eventCd=2623994
+   id1784 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://ticket.pia.jp/pia/event.do?eventCd=2619128
+   id1788 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://ticket.pia.jp/pia/event.do?eventCd=2619987
+   id1794 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://ticket.pia.jp/pia/event.do?eventCd=2624585
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

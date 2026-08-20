@@ -1,0 +1,95 @@
+1:     filteredEvents = EVENTS.filter(matchEvent);
+2:     // 新着タブは NEW_ORDER の番号順で固定し、日付順での並び替えを止める
+3:     if (activeGenre === "new") {
+4:       filteredEvents.sort((a, b) => {
+5:         const ia = NEW_ORDER.indexOf(a.id); const ib = NEW_ORDER.indexOf(b.id);
+6:         return (ia < 0 ? 9999 : ia) - (ib < 0 ? 9999 : ib);
+7:       });
+8:     }
+9:     renderedCount = 0;
+10:     document.getElementById("eventList").innerHTML = "";
+11:     document.getElementById("resultCount").textContent = filteredEvents.length;
+12:     document.getElementById("emptyState").style.display = filteredEvents.length === 0 ? "block" : "none";
+13:     renderNextBatch();
+14:   }
+15: 
+16:   // ────────────────────────────────────────────────
+17:   //  初期化
+18:   // ────────────────────────────────────────────────
+19:   function init() {
+20:     const list = document.getElementById("eventList");
+21: 
+22:     filteredEvents = EVENTS.filter(e => e.verified === true);
+23:     renderedCount = 0;
+24:     list.innerHTML = "";
+25:     renderNextBatch();
+26: 
+27:     document.getElementById("resultCount").textContent = filteredEvents.length;
+28: 
+29:     const sentinel = document.createElement("div");
+30:     sentinel.id = "loadSentinel";
+31:     sentinel.style.height = "1px";
+32:     list.parentNode.insertBefore(sentinel, list.nextSibling);
+33: 
+34:     const io = new IntersectionObserver(entries => {
+35:       entries.forEach(e => {
+36:         if (e.isIntersecting) renderNextBatch();
+37:       });
+38:     }, { rootMargin: "800px" });
+39:     io.observe(sentinel);
+40: 
+41:     // ジャンルフィルター
+42:     document.querySelectorAll(".filter-btn[data-genre]").forEach(btn => {
+43:       btn.addEventListener("click", () => {
+44:         document.querySelectorAll(".filter-btn[data-genre]").forEach(b => b.classList.remove("active"));
+45:         btn.classList.add("active");
+46:         activeGenre = btn.dataset.genre;
+47:         applyFilters();
+48:         // ジャンルを押したら「件数の行が見えるところまで」だけ動かす（ユーザー指示 2026-08-10）。
+49:         // ボタンが27個あって「本当に切り替わったか」が分からず何度も押してしまう、が理由。
+50:         // 🚨結果の先頭を上端に固定する版は「動かしすぎ」で差し戻された＝最小限だけ動かす。
+51:         revealResultCount();
+52:       });
+53:     });
+54: 
+55:     // ジャンルグループの開閉（見出しはフィルターボタンではないので .genre-group-toggle で拾う）
+56:     document.querySelectorAll(".genre-group").forEach(grp => {
+57:       const key = grp.dataset.group;
+58:       const list = GENRE_GROUPS[key] || [];
+59:       const n = EVENTS.filter(e => e.verified === true && eventGenres(e).some(g => list.includes(g))).length;
+60:       const cnt = grp.querySelector(".gg-count");
+61:       if (cnt) cnt.textContent = "(" + n.toLocaleString() + ")";
+62:       grp.querySelector(".genre-group-toggle").addEventListener("click", () => {
+63:         const wasOpen = grp.classList.contains("open");
+64:         // 一度に開くのは1グループだけ（27個が一気に出ると畳んだ意味がない）
+65:         document.querySelectorAll(".genre-group.open").forEach(g => g.classList.remove("open"));
+66:         if (!wasOpen) grp.classList.add("open");
+67:       });
+68:     });
+69: 
+70:     // ステータスフィルター
+71:     document.querySelectorAll(".filter-btn[data-status]").forEach(btn => {
+72:       btn.addEventListener("click", () => {
+73:         document.querySelectorAll(".filter-btn[data-status]").forEach(b => b.classList.remove("active"));
+74:         btn.classList.add("active");
+75:         activeStatus = btn.dataset.status;
+76:         applyFilters();
+77:       });
+78:     });
+79: 
+80:     // 地方フィルター
+81:     document.querySelectorAll("[data-region]").forEach(btn => {
+82:       btn.addEventListener("click", () => {
+83:         document.querySelectorAll("[data-region]").forEach(b => b.classList.remove("active"));
+84:         btn.classList.add("active");
+85:         activeRegion = btn.dataset.region;
+86:         applyFilters();
+87:       });
+88:     });
+89: 
+90:     // 検索 & サジェスト
+91:     const searchInput = document.getElementById("searchInput");
+92:     const suggest = document.getElementById("searchSuggest");
+93: 
+94:     const allLabels = [...new Set(EVENTS.filter(e => e.verified === true).map(ev => ev.artist))];
+95: 

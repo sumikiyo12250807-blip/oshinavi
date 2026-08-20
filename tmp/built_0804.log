@@ -1,0 +1,61 @@
+﻿python :   3672 OK
+At line:1 char:302
++ ... tch {} } }; python tools/build_pia_entries.py tmp/cand_0804.json 
+> tm ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : NotSpecified: (  3672 OK:String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  3673 OK
+  3674 OK
+  3675 OK
+  3676 OK
+  3677 OK
+  3678 OK
+  3679 OK
+  3680 OK
+  3681 OK
+  3682 OK
+  3683 OK
+  3684 OK
+  3685 OK
+  3686 OK
+  3687 OK
+  3688 OK
+  3689 skip(売切)
+  3690 OK
+  3691 OK
+  3692 OK
+  3693 OK
+  3694 OK
+  3695 OK
+  3696 OK
+  3697 OK
+  3698 OK
+  3699 OK
+  3700 OK
+  3701 OK
+  3702 OK
+  3703 OK
+  3704 OK
+  3705 OK
+  3706 OK
+  3707 OK
+  3708 OK
+  3709 OK
+  3710 OK
+  3711 OK
+  3712 OK
+  3713 OK
+  3714 OK
+  3715 OK
+構築 43 件 / skip [3689]
+
+⚠️ PIA_GENRE_MAP 未収載のサブカテゴリ 3件（下書きは名前fallback＝要確認）:
+   id3674 [イベント/パフォーマンス] → _genre=engeki | シルク・ドゥ・ソレイユ アース製薬 クーザ 東京公演
+   id3712 [映画/洋画] → _genre=engeki | わたしは、ダニエル・ブレイク
+   id3713 [イベント/ショー・ファンイベント] → _genre=engeki | 瀬戸利樹 写真集 『３０／３０～いま～』発売記念
+イベント
+→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。

@@ -1,0 +1,10 @@
+3166 真田ナオキの後継URL貼替とreconcile_eplusのゲート穴を2つ塞ぐ
+
+- 3166 浅草ディスコ: e+旧URLが404 → 3489620002系へ貼替え。実ページは「予定枚数終了」なので
+  販売終了→予定枚数終了に直し、受付中の配信視聴券（〜10/29 21:00）を枠として追加
+- reconcile_eplus: soldout/saleEnded 済みの枠を窓照合から外す（売切表示は窓が閉じているのが正常）。
+  逆向き＝実頁が受付中なのに売切表示なら s-売切表示ズレ で検出する
+- reconcile_eplus: 配信(視聴券)は締切>公演日を許し、同日複数公演(h)の集計から外す
+- 検証: 対象8エントリ30枠で FAIL 18 → 0
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>

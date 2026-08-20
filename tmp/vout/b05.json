@@ -1,0 +1,91 @@
+[
+  {
+    "id": "id890",
+    "found": true,
+    "performer": "Septeto Santiaguero Vivela! Salsa Tour 2026 in Nagoya",
+    "performances": [
+      { "date": "2026-09-22", "venue": "名古屋クラブクアトロ", "pref": "愛知県" }
+    ],
+    "tickets": [
+      { "type": "早割券", "status": "販売期間中", "saleStart": null, "saleEnd": "2026-07-12 23:59" },
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-07-16 10:00", "saleEnd": null }
+    ],
+    "notes": "公演日は2026/9/22(火・祝)。未就学児入場不可・飲食持込不可・購入後の変更/キャンセル不可・ビデオ持込禁止。早割券の販売開始日時はページに明記なし。"
+  },
+  {
+    "id": "id891",
+    "found": true,
+    "performer": "SO×DY (ソディー)",
+    "performances": [
+      { "date": "2026-08-09", "venue": "心斎橋soma", "pref": "大阪府" },
+      { "date": "2026-09-23", "venue": "神戸煉瓦倉庫K-wave", "pref": "兵庫県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 10:00", "saleEnd": null }
+    ],
+    "notes": "公演日は2026/8/9(日)と2026/9/23(水・祝)、会場は心斎橋soma(大阪)と神戸煉瓦倉庫K-wave(兵庫)の2会場。ページ上では日付と会場の対応が明確に紐付いておらず、上記は推定対応。一般発売は両公演を1枠でカバー。※3歳未満入場不可・転売チケット入場不可。"
+  },
+  {
+    "id": "id892",
+    "found": true,
+    "performer": "高田漣 presents アコースティックギターセッション at 銀座 Vol.2",
+    "performances": [
+      { "date": "2026-10-09", "venue": "ヤマハホール", "pref": "東京都" }
+    ],
+    "tickets": [
+      { "type": "プレリザーブ", "status": "近日抽選受付", "saleStart": "2026-06-20 10:00", "saleEnd": "2026-06-28 23:59" },
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-07-18 10:00", "saleEnd": null }
+    ],
+    "notes": "公演日2026/10/9(金)。プレリザーブのステータス語は「近日抽選受付」。未就学児童は入場不可。"
+  },
+  {
+    "id": "id893",
+    "found": true,
+    "performer": "宝くじおしゃべり音楽館～想い出のスクリーンミュージック～",
+    "performances": [
+      { "date": "2026-09-19", "venue": "多賀城市民会館 大ホール", "pref": "宮城県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-19 10:00", "saleEnd": null }
+    ],
+    "notes": "公演日2026/9/19(土)。出演:春風亭小朝、島田歌穂、小原孝(piano)、おしゃべり音楽館ポップスオーケストラ。宝くじ助成の特別料金・4歳以上入場可。"
+  },
+  {
+    "id": "id894",
+    "found": true,
+    "performer": "TAKUYA_SUN_MUSIC／オルミュ／一木万里奈／まりたす",
+    "performances": [
+      { "date": "2026-07-31", "venue": "スペードボックス", "pref": "愛知県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 10:00", "saleEnd": null }
+    ],
+    "notes": "公演日2026/7/31(金)。［共演］ありの記載。"
+  },
+  {
+    "id": "id895",
+    "found": true,
+    "performer": "たっくん＆friends.(タックンアンドフレンズ)",
+    "performances": [
+      { "date": "2026-06-22", "venue": "梅田BananaHall", "pref": "大阪府" }
+    ],
+    "tickets": [
+      { "type": "最終受付", "status": "本日 20:00より発売", "saleStart": "2026-06-22 20:00", "saleEnd": null },
+      { "type": "◎Fierce Official Fanclub 先着受付", "status": "販売終了", "saleStart": null, "saleEnd": null },
+      { "type": "プリセール", "status": "販売終了", "saleStart": null, "saleEnd": null }
+    ],
+    "notes": "公演日2026/6/22(月)。最終受付のステータス語は「本日 20:00より発売」(saleStartは公演当日2026-06-22 20:00として記載)。先着受付とプリセールは「販売終了」。未就学児童は入場不可・出演者変更の場合あり。"
+  },
+  {
+    "id": "id896",
+    "found": true,
+    "performer": "第3回琉球の風 沖縄祭りin高崎",
+    "performances": [
+      { "date": "2026-10-17", "venue": "もてなし広場", "pref": "群馬県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-07-01 10:00", "saleEnd": null }
+    ],
+    "notes": "公演日2026/10/17(土)。出演:宮沢和史/島袋優/玉城千春/大城クラウディア/HoRookies/仲宗根創/伊波はづき。小学生以下入場無料。一般エリアとSエリアで入場範囲が異なる。"
+  }
+]

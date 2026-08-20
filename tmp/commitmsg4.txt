@@ -1,0 +1,11 @@
+新着50件を投入（id4276-4325・ぴあ発売前スイープ）
+
+- 在庫115件から「発売まで遠い順」で50件＝4日後以降38 / 2〜3日後3 / 明日5 / 本日発売4
+- 内訳 engeki16 / sports16 / classic11 / music4 / art2 / event1（音楽の発売前は在庫が薄い）
+- 二段構え検証＝build_pia_entries で機械構築（skip 0・無言ドロップ 0）→
+  reconcile_pia --new で OK50 / MISSING0 / DROP0 / STALE0 / FETCH0 / QC0
+  （照合カバレッジ 50/56枠・skip6は同締切の枠が複数で対を確定できない分）
+- 重複チェック eventCd＋NFKC名で 0件。check_badges OK・並び順違反0・全角残り0
+- NEW_ORDER 50件をid昇順で更新・CRLF保持。2,815 → 2,865件
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>

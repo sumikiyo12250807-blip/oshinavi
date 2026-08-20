@@ -1,0 +1,21 @@
+[
+  {
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "url": "https://eplus.jp/sf/detail/4530650001-P0030001P021001",
+    "name": "山本達彦 &lt;Live en Quatre Saisons･Automne&gt;",
+    "startDate": "2026-09-12T14:30",
+    "endDate": "2026-09-12T23:59",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "南青山マンダラ",
+      "url": "https://eplus.jp/sf/venue/1070170",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "東京都",
+        "addressCountry": "日本"
+      }
+    }
+  }
+]

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\user\oshinavi\tools\inject_built.py", line 22, in <module>
+    dup = [e['id'] for e in allnew if e['id'] in exist]
+                                      ~^^^^^^
+KeyError: 'id'

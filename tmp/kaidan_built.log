@@ -1,0 +1,38 @@
+﻿python :   3781 OK
+At line:1 char:302
++ ... tch {} } }; python C:\Users\user\oshinavi\tools\build_pia_entries
+.py  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : NotSpecified: (  3781 OK:String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  3782 OK
+  3783 OK
+  3784 OK
+  3785 OK
+  3786 OK
+  3787 skip(売切)
+  3788 skip(売切)
+  3789 OK
+  3790 OK
+  3791 skip(売切)
+  3792 skip(売切)
+  3793 OK
+  3794 OK
+  3795 skip(売切)
+  3796 skip(売切)
+  3797 OK
+  3798 OK
+  3799 skip(売切)
+  3800 skip(売切)
+  3801 OK
+  3802 OK
+  3803 skip(売切)
+構築 14 件 / skip [3787, 3788, 3791, 3792, 3795, 3796, 3799, 3800, 3803]
+
+⚠️ PIA_GENRE_MAP 未収載のサブカテゴリ 1件（下書きは名前fallback＝要確認）:
+   id3790 [イベント/ショー・ファンイベント] → _genre=engeki | 松原タニシさん『事故物件生活 恐い日常』発売記念
+トーク&サイン会
+→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。

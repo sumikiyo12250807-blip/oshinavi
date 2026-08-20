@@ -1,0 +1,85 @@
+  4489 OK
+  4490 OK
+  4491 OK
+  4492 skip(売切)
+  4493 skip(売切)
+  4494 OK
+  4495 OK
+  4496 skip(売切)
+  4497 OK
+  4498 skip(売切)
+  4499 skip(売切)
+  4500 OK
+  4501 OK
+  4502 OK
+  4503 OK
+  4504 skip(売切)
+  4505 skip(売切)
+  4506 OK
+  4507 skip(売切)
+  4508 skip(売切)
+  4509 skip(売切)
+  4510 skip(売切)
+  4511 skip(売切)
+  4512 skip(売切)
+  4513 skip(売切)
+  4514 OK
+  4515 skip(売切)
+  4516 OK
+  4517 skip(売切)
+  4518 OK
+  4519 skip(売切)
+  4520 skip(売切)
+  4521 skip(売切)
+  4522 OK
+  4523 OK
+  4524 OK
+  4525 skip(売切)
+  4526 skip(売切)
+  4527 OK
+  4528 skip(売切)
+  4529 OK
+  4530 skip(売切)
+  4531 OK
+  4532 OK
+  4533 OK
+  4534 OK
+  4535 OK
+  4536 OK
+  4537 skip(売切)
+  4538 skip(売切)
+構築 25 件 / skip [4492, 4493, 4496, 4498, 4499, 4504, 4505, 4507, 4508, 4509, 4510, 4511, 4512, 4513, 4515, 4517, 4519, 4520, 4521, 4525, 4526, 4528, 4530, 4537, 4538]
+
+\u26a0\ufe0f PIA_GENRE_MAP 未収載のサブカテゴリ 1件（下書きは名前fallback＝要確認）:
+   id4527 [音楽/フェスティバル] → _genre=engeki | ONE PARK HANGOUT FES2026 in OYABE
+→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 25件（買える枠なのに取り込めなかった＝要対応）:
+   id4492 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2620415
+   id4493 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2625456
+   id4496 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2624002
+   id4498 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2628155
+   id4499 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2628708
+   id4504 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2623844
+   id4505 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2623842
+   id4507 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2625335
+   id4508 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2629144
+   id4509 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2626203
+   id4510 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2624829
+   id4511 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2632030
+   id4512 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670482
+   id4513 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2632901
+   id4515 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670303
+   id4517 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2615630
+   id4519 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2630029
+   id4520 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2631510
+   id4521 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2630059
+   id4525 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669937
+   id4526 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2627015
+   id4528 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2627028
+   id4530 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2629588
+   id4537 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669310
+   id4538 [FETCH-ERR] when='HTTP Error 429: Too Many Requests' | https://t.pia.jp/pia/event/event.do?eventCd=2631763
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

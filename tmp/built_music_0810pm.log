@@ -1,0 +1,57 @@
+  4018 OK
+  4019 OK
+  4020 OK
+  4021 OK
+  4022 OK
+  4023 OK
+  4024 OK
+  4025 OK
+  4026 OK
+  4027 OK
+  4028 OK
+  4029 skip(売切)
+  4030 OK
+  4031 skip(売切)
+  4032 OK
+  4033 OK
+  4034 OK
+  4035 OK
+  4036 OK
+  4037 OK
+  4038 OK
+  4039 skip(売切)
+  4040 OK
+  4041 OK
+  4042 OK
+  4043 OK
+  4044 OK
+  4045 OK
+  4046 OK
+  4047 OK
+  4048 OK
+  4049 OK
+  4050 OK
+  4051 OK
+  4052 OK
+  4053 OK
+  4054 OK
+  4055 OK
+  4056 OK
+  4057 OK
+  4058 OK
+  4059 OK
+  4060 OK
+  4061 OK
+  4062 OK
+  4063 OK
+構築 43 件 / skip [4029, 4031, 4039]
+
+\u26a0\ufe0f PIA_GENRE_MAP 未収載のサブカテゴリ 1件（下書きは名前fallback＝要確認）:
+   id4028 [音楽/フェスティバル] → _genre=engeki | INSPIRATION by SUNSETLIVE
+→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 1件（買える枠なのに取り込めなかった＝要対応）:
+   id4039 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670094
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

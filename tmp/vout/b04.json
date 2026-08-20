@@ -1,0 +1,108 @@
+[
+  {
+    "id": "id883",
+    "found": true,
+    "performer": "The Right Light",
+    "performances": [
+      {"date": "2026-07-29", "venue": "F.A.D YOKOHAMA", "pref": "神奈川県"},
+      {"date": "2026-08-02", "venue": "仙台MACANA", "pref": "宮城県"},
+      {"date": "2026-08-06", "venue": "Fukuoka BEAT STATION", "pref": "福岡県"},
+      {"date": "2026-08-08", "venue": "IMAGE", "pref": "岡山県"},
+      {"date": "2026-08-09", "venue": "OSAKA MUSE", "pref": "大阪府"},
+      {"date": "2026-08-11", "venue": "ell.FITS ALL", "pref": "愛知県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 12:00", "saleEnd": null},
+      {"type": "プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null},
+      {"type": "CANDY ROOM会員限定先行(8/8 IMAGE)", "status": "抽選受付終了", "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "受付終了関連の特記なし。プレリザーブ及び会員限定先行は抽選受付終了。一般発売のみ発売前。"
+  },
+  {
+    "id": "id884",
+    "found": true,
+    "performer": "塩谷哲（ｐ）／沖仁（ｇ）",
+    "performances": [
+      {"date": "2026-11-07", "venue": "第一生命ホール", "pref": "東京都"}
+    ],
+    "tickets": [
+      {"type": "プリセール", "status": "本日発売初日(販売期間中)", "saleStart": null, "saleEnd": "2026-06-26 23:59"},
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-27 10:00", "saleEnd": null}
+    ],
+    "notes": "未就学児入場不可。プリセールは『本日発売初日』表示で~6/26(金)23:59まで。"
+  },
+  {
+    "id": "id885",
+    "found": true,
+    "performer": "志多ら　瑞浪公演　「音還～おんがえし～」",
+    "performances": [
+      {"date": "2026-09-26", "venue": "瑞浪市総合文化センター", "pref": "岐阜県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-26 10:00", "saleEnd": null}
+    ],
+    "notes": "３歳以下入場不可。子供無料席・同伴者半額席ありだがぴあでの取り扱いなし。"
+  },
+  {
+    "id": "id886",
+    "found": true,
+    "performer": "Ｊ－ＴＲＡＤ　Ｅｎｓｅｍｂｌｅ　ＭＡＨＯＲＯＢＡ",
+    "performances": [
+      {"date": "2026-09-26", "venue": "川口リリア・山伸サステインホール", "pref": "埼玉県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-27 10:00", "saleEnd": null}
+    ],
+    "notes": "未就学児童は入場不可。他の券種(プレリザーブ・先行等)の記載なし。"
+  },
+  {
+    "id": "id887",
+    "found": true,
+    "performer": "ENPLEX × Hello! Project 名古屋定期イベント",
+    "performances": [
+      {"date": "2026-03-03", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-03-27", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-04-27", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-04-28", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-05-08", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-05-11", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-05-22", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-05-25", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-06-12", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-06-17", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"},
+      {"date": "2026-07-09", "venue": "ミッドランドスクエア シネマ２ スクリーン８", "pref": "愛知県"}
+    ],
+    "tickets": [
+      {"type": "一般発売(複数公演混在)", "status": "販売終了/発売前/本日発売初日/中止 が混在", "saleStart": "2026-06-27 13:00", "saleEnd": null},
+      {"type": "本日発売初日(6/17公演 等)", "status": "本日発売初日", "saleStart": null, "saleEnd": "2026-06-17 19:55"},
+      {"type": "当日券", "status": null, "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "バンドル(複数公演)ページ。ステータスは公演ごとに『販売終了』『発売前(2026/6/27 13:00)』『本日発売初日～2026/6/17 19:55』『この公演は中止になりました』が混在。WebFetch要約のため公演別の券種対応付けが不完全。3歳以下無料条件あり。要・公演別の精査。"
+  },
+  {
+    "id": "id888",
+    "found": true,
+    "performer": "Ｓｅｐｔｅｔｏ　Ｓａｎｔｉａｇｕｅｒｏ　Ｖｉｖｅｌａ！　Ｓａｌｓａ　Ｔｏｕｒ　２０２６　ｉｎ　Ｏｓａｋａ（セプテート・サンティアゲーロ／マジート・リベラ）",
+    "performances": [
+      {"date": "2026-09-23", "venue": "梅田クラブクアトロ", "pref": "大阪府"}
+    ],
+    "tickets": [
+      {"type": "早割券", "status": "販売期間中", "saleStart": null, "saleEnd": "2026-07-12 23:59"},
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-07-16 10:00", "saleEnd": null}
+    ],
+    "notes": "未就学児入場不可・飲食持込不可・購入後の変更/キャンセル不可。"
+  },
+  {
+    "id": "id889",
+    "found": true,
+    "performer": "Ｓｅｐｔｅｔｏ　Ｓａｎｔｉａｇｕｅｒｏ　Ｖｉｖｅｌａ！　Ｓａｌｓａ　Ｔｏｕｒ　２０２６　ｉｎ　ＴＯＫＹＯ（Septeto Santiaguero／Majeto Rivera）",
+    "performances": [
+      {"date": "2026-09-21", "venue": "渋谷ＣＬＵＢ　ＱＵＡＴＴＲＯ", "pref": "東京都"}
+    ],
+    "tickets": [
+      {"type": "早割券", "status": "販売期間中", "saleStart": null, "saleEnd": "2026-07-15 23:59"},
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-07-16 10:00", "saleEnd": null}
+    ],
+    "notes": "未就学児入場不可・録画録音禁止・飲食持込不可・購入後の変更/キャンセル不可。"
+  }
+]

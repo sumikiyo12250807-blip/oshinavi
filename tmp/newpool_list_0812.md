@@ -1,0 +1,53 @@
+| id | アーティスト/公演 | 公演日 | 会場(県) | ジャンル下書き | 枠 | URL |
+|---|---|---|---|---|---|---|
+| 4068 | Insheart | 2026-10-17 | 福岡トヨタホールスカラエスパシオ(福岡) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2620239) |
+| 4069 | 奥田民生 | 2026-08-25 | 仙台サンプラザホール(宮城) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2613492) |
+| 4070 | 8otto | 2026-12-07 | Yogibo HOLY MOUNTAIN(大阪) | jpop | 2 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2631772) |
+| 4071 | CANDY TUNE | 2026-12-09 | 全国ツアー（大阪国際会議場 メインホール／仙台サンプラザ…(全国) | jpop※ | 7 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669827) |
+| 4072 | くれいじーまぐねっと | 2026-08-19 | Zepp Sapporo(北海道) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2623372) |
+| 4073 | 後藤真希 | 2026-09-09 | SHIBUYA PLEASURE PLEASURE(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2629429) |
+| 4074 | シャインポスト BRiGHT STARS FESTIVAL 2026 | 2026-09-13 | ぴあアリーナMM(神奈川) | jpop | 2 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669034) |
+| 4075 | 昭和・平成歌謡ナイト Vol.3 | 2026-10-30 | さんばしひろば周辺エリア（PIER-01／千葉ポートタワ…(千葉) | enka | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2631940) |
+| 4077 | Vaundy JAPAN ARENA TOUR 2027-2028 | 2028-02-27 | 全国ツアー（真駒内セキスイハイムアイスアリーナ／盛岡タカ…(全国) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666592) |
+| 4078 | 浅井健一 | 2027-05-16 | 全国ツアー（Quarter／仙台Rensa）(青森・宮城) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2627512) |
+| 4079 | Eve | 2027-06-13 | 全国ツアー（トーサイクラシックホール岩手 大ホール／栃木…(全国) | jpop※ | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670151) |
+| 4080 | 澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert - | 2027-02-27 | 東京ガーデンシアター(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670108) |
+| 4081 | 梅田サイファー | 2027-02-23 | 日本武道館(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669477) |
+| 4082 | エイアイカ | 2027-02-22 | LIQUIDROOM(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2614175) |
+| 4083 | 汐れいら | 2027-02-10 | Zepp Shinjuku（TOKYO）(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2631557) |
+| 4084 | セブンス・ベガ | 2027-02-14 | 全国ツアー（Spotify O-EAST／エレクトリック…(東京・愛知・大阪・福岡) | jpop※ | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670226) |
+| 4085 | East Of Eden | 2027-01-30 | 昭和女子大学 人見記念講堂(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2631907) |
+| 4086 | ハラミちゃん | 2027-01-30 | 東京ガーデンシアター(東京) | jpop | 2 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2630669) |
+| 4087 | WHITE ASH | 2027-02-24 | 全国ツアー（SPIRITUAL LOUNGE／LIVE …(全国) | jpop※ | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670250) |
+| 4088 | TRiDENT | 2027-02-13 | 全国ツアー（LIQUIDROOM／NAGOYA JAMM…(東京・愛知・大阪) | jpop※ | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667781) |
+| 4089 | 花宮初奈 | 2026-12-31 | TACHIKAWA STAGE GARDEN(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2625344) |
+| 4090 | アカリトライブ2026 ～キャンドルの灯りと音楽で日本を元気に!～ | 2026-12-25 | 日本橋三井ホール(東京) | jpop | 2 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2629073) |
+| 4091 | deadman | 2026-12-23 | Veats Shibuya(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2627421) |
+| 4092 | 松任谷由実 | 2026-12-15 | 東京国際フォーラム ホールA(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2561802) |
+| 4093 | ANISON PREMIUM LIVE ささきいさお×堀江美都子×影山ヒロノブ×遠藤正明 | 2026-12-13 | 東京エレクトロンホール宮城(宮城) | anime | 2 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2627571) |
+| 4094 | KAWAII LAB. SESSION | 2026-12-13 | 有明アリーナ(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2631397) |
+| 4095 | 稲葉浩志 | 2026-12-13 | 全国ツアー（長良川国際会議場 メインホール／三重県文化会…(岐阜・三重) | jpop※ | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669355) |
+| 4096 | ゲスの極み乙女 | 2026-12-10 | Zepp Nagoya(愛知) | jpop※ | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668746) |
+| 4097 | THE JAPANESE PRIDE | 2026-12-22 | 全国ツアー（LIVE HOUSE FEVER／Party…(東京・愛知・大阪) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2629790) |
+| 4098 | 高木いくの | 2026-12-06 | KIWA TENNOZ(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2629426) |
+| 4099 | KOTORI pre. TORI ROCK FESTIVAL'26 | 2026-12-05 | 豊洲PIT(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669467) |
+| 4100 | Khalid | 2026-12-03 | 東京ガーデンシアター(東京) | yougaku | 3 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669789) |
+| 4102 | Alaska Jam | 2026-12-02 | 渋谷CLUB QUATTRO(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2617117) |
+| 4103 | 矢野顕子 | 2026-12-04 | 全国ツアー（リンクモア平安閣市民ホール／電力ホール）(青森・宮城) | jpop | 3 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2628308) |
+| 4104 | 第15回 「徹子の部屋」コンサート | 2026-11-29 | フェスティバルホール(大阪) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2621543) |
+| 4105 | ガラスの靴は落とさない | 2026-12-12 | 全国ツアー（SPIRITUAL LOUNGE／下北沢Da…(北海道・東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2624299) |
+| 4106 | 放送50周年記念 第20回「徹子の部屋」コンサート | 2026-11-27 | 東京国際フォーラム ホールA(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2616808) |
+| 4107 | ロックアンセム2026 EX | 2026-11-29 | EX THEATER ROPPONGI(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668773) |
+| 4108 | 大貫妙子 | 2026-11-22 | 昭和女子大学 人見記念講堂(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2628174) |
+| 4109 | 超能力戦士ドリアン | 2026-11-22 | 仙台Rensa(宮城) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2617151) |
+| 4110 | TRUST RECORDS presents.TRUST NIGHT 2026 / TRUST TOUR 2026 | 2026-12-27 | 全国ツアー（yanagase ants／神戸 太陽と虎／…(全国) | jpop | 10 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667158) |
+| 4111 | FRUITS ZIPPER | 2026-11-22 | 全国ツアー（大阪国際会議場 メインホール／広島文化学園H…(全国) | jpop | 6 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669209) |
+| 4112 | mogari 1st Full Album「Bypass Pop」Release Party | 2027-01-16 | 全国ツアー（下北沢SHELTER／Live House …(東京・京都・大阪) | jpop | 2 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670334) |
+| 4113 | 鼓童×初音ミク 響演 ～和楽器スペシャルライブ～ | 2026-11-21 | NHKホール(東京) | dento | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2629779) |
+| 4114 | Yung Kai | 2026-11-19 | 恵比寿ザ・ガーデンホール(東京) | yougaku※ | 5 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670313) |
+| 4115 | THE MACKSHOW | 2026-11-18 | LIVE HOUSE CB(福岡) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2624805) |
+| 4116 | 『exPoP!!!!!再会 2026』 | 2026-11-15 | Spotify O-EAST／O-WEST／O-nest…(東京) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669835) |
+| 4117 | RAINCOVER | 2026-11-15 | KYOTO MUSE(京都) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2625334) |
+| 4118 | 神はサイコロを振らない | 2026-11-29 | 全国ツアー（Zepp Sapporo／Zepp Nago…(北海道・愛知・大阪・福岡) | jpop | 1 | [ぴあ](https://t.pia.jp/pia/event/event.do?eventCd=2623285) |
+
+※＝ぴあがカテゴリを返さず名前で判断したもの
