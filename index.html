@@ -103931,6 +103931,9 @@
         btn.classList.add("active");
         activeStatus = btn.dataset.status;
         applyFilters();
+        // ステータスもジャンル・エリアと同じだけ動かす（ユーザー指示 2026-08-20「全部よ」）。
+        // 押しても画面が動かないと切り替わったか分からない、はどのフィルターでも同じ。
+        revealResultCount();
       });
     });
 
