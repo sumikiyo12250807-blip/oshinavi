@@ -268,7 +268,13 @@
       display: block; width: 100%; height: auto;
       border: 1px solid var(--border); border-radius: 5px; background: var(--bg3);
     }
-    .pickup .pk-portrait img { max-width: 190px; }
+    .pickup .pk-portrait { float: left; width: 148px; margin: 2px 15px 4px 0; }
+    .pickup .pk-portrait img { width: 100%; }
+    .pickup .pk-portrait figcaption { font-size: 9.5px; line-height: 1.55; }
+    .pickup .pk-detail::after { content: ""; display: block; clear: both; }
+    @media (max-width: 359px) {
+      .pickup .pk-portrait { float: none; width: 168px; margin-right: 0; }
+    }
     .pickup .pk-fig figcaption {
       font-size: 10.5px; line-height: 1.65; color: var(--text-muted); margin-top: 6px;
     }
