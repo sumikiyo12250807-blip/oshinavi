@@ -47,6 +47,20 @@ SOLDOUT_WORDS = re.compile(r"(予定枚数|完売|売り?切)")
 NOT_ON_PIA = re.compile(r"(本サイト取扱なし|取扱なし|取り扱いなし)")
 
 
+OTHER_VENDOR = re.compile(r"(eplus\.jp|rakuten|l-tike\.com|lawson)")
+
+
+def is_pia_ticket(t):
+    """この枠の売り手がぴあか。
+    🚨判定の根拠はぴあの実ページなので、**ぴあが売っていない枠に印を付けたり外したりしてはいけない**
+    （2026-08-20 発覚＝--review が「ぴあURLなし」のエントリのe+枠まで soldout を解除していた。
+      memory: feedback_saleended_vs_soldout「判定は枠の売り手の実ページで／エントリ一括マーク禁止」）。
+    url が空の枠は links.pia 由来＝ぴあとみなす（従来どおり）。
+    """
+    u = t.get("url") or ""
+    return not OTHER_VENDOR.search(u)
+
+
 def pia_rows(url):
     """pia_tickets.py --all --json を呼ぶ。読めなければ None（混雑ページ等）。"""
     r = subprocess.run([sys.executable, "tools/pia_tickets.py", url, "--all", "--json"],
@@ -134,6 +148,8 @@ def main():
                 if t.get("soldout"):
                     hit += 1
                     continue
+                if not is_pia_ticket(t):      # e+/楽天/ローチケの枠はぴあの状態で判断しない
+                    continue
                 d, sd = t.get("date") or "", t.get("startDate")
                 expired = d < TODAY and not (sd and sd == d)
                 if expired:
@@ -148,24 +164,32 @@ def main():
             #   ぴあが現に予定枚数終了を出している以上、いちばん新しい満了枠に印を付けて
             #   「売り切れた」という事実を残す。公演日を過ぎたら renderCard 側の安全弁で消える。
             if hit == 0 and tickets:
-                last = max((t.get("date") or "") for t in tickets)
-                for t in tickets:
-                    if (t.get("date") or "") != last:
-                        continue
-                    t["soldout"] = True
-                    t["soldoutSince"] = TODAY
-                    marked += 1
-        elif review and r["status"] in ("nosold", "skip"):
-            # ぴあがもう予定枚数終了を出していない＝枠ごと下げた → soldoutを外して削除候補へ
+                pia_ts = [t for t in tickets if is_pia_ticket(t)]
+                if pia_ts:
+                    last = max((t.get("date") or "") for t in pia_ts)
+                    for t in pia_ts:
+                        if (t.get("date") or "") != last:
+                            continue
+                        t["soldout"] = True
+                        t["soldoutSince"] = TODAY
+                        marked += 1
+        elif review and r["status"] == "nosold":
+            # ぴあがもう予定枚数終了を出していない＝枠ごと下げた → ぴあの枠だけ soldout を外して削除候補へ
             for t in tickets:
-                if t.get("soldout"):
+                if t.get("soldout") and is_pia_ticket(t):
                     t.pop("soldout", None)
                     t.pop("soldoutSince", None)
                     unmarked += 1
             drop.append((ev["id"], ev.get("artist", ""), r["note"]))
+        elif review and r["status"] == "skip":
+            # 🚨ぴあURLが無い＝**ぴあでは照合できない**（売り手はe+/楽天/ローチケ）。
+            #   ぴあを根拠に soldout を外してはいけないので何もしない。
+            #   2026-08-20、ここが nosold と同じ枝に入っていて、e+で売り切れている枠の
+            #   「予定枚数終了」を大量に解除していた（未pushで巻き戻し済み）。
+            pass
         elif review and r["status"] == "alive":
             for t in tickets:
-                if t.get("soldout"):
+                if t.get("soldout") and is_pia_ticket(t):
                     t.pop("soldout", None)
                     t.pop("soldoutSince", None)
                     unmarked += 1
