@@ -237,6 +237,7 @@
     }
     .pickup .pk-more:hover, .pickup .pk-more:focus-visible { background: rgba(224,64,251,.14); }
     .pickup .pk-more::after { content: ' ▼'; font-size: 11px; }
+    .pickup .pk-more[aria-expanded="true"]::after { content: ' ▲'; }
     .pickup .pk-body[hidden] { display: none; }
     .pickup .pk-body { margin-top: 22px; }
     .pickup .pk-h2 {
@@ -1141,7 +1142,7 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 20:33</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 20:37</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
@@ -104402,15 +104403,25 @@
   });
   pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  // 【今週のピックアップ】つづきを読む＝同じページで開く（2026-08-20 ユーザー指示）
+  // 【今週のピックアップ】つづきを読む＝同じページで開く（2026-08-20 ユーザー指示）。
+  // 🚨開いたら閉じられること（ユーザー「続きを読むを戻す折りたたむ矢印もひつようよね」）。
+  //   閉じた時は記事の頭に戻す＝本文が長いと、閉じたあとどこにいるか分からなくなるため。
   (function () {
     const btn = document.getElementById("pickupMore");
     const body = document.getElementById("pickupBody");
+    const sec = document.getElementById("pickup");
     if (!btn || !body) return;
     btn.addEventListener("click", () => {
-      body.hidden = false;
-      btn.setAttribute("aria-expanded", "true");
-      btn.remove();
+      const open = btn.getAttribute("aria-expanded") === "true";
+      body.hidden = open;
+      btn.setAttribute("aria-expanded", String(!open));
+      btn.textContent = open ? "つづきを読む" : "折りたたむ";
+      if (open && sec) {
+        const hd = document.querySelector("header");
+        const gap = (hd ? hd.getBoundingClientRect().height : 0) + 12;
+        const top = sec.getBoundingClientRect().top + window.pageYOffset - gap;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      }
     });
   })();
 
