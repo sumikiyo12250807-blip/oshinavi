@@ -1,0 +1,266 @@
+---- script srcs ----
+  /mt-static/support/theme_static/rainier/js/html5shiv.js
+  //maps.google.com/maps/api/js?sensor=true&key=AIzaSyAqTEBs0HBp8HrnAT6_ROediT10lmYL__c
+  https://www-shibuya.jp/js/jquery.min.js
+  https://www-shibuya.jp/js/jquery.libs.js
+  https://www-shibuya.jp/js/ls.unveilhooks.min.js
+  https://www-shibuya.jp/js/lazysizes.min.js
+  https://www-shibuya.jp/js/picturefill.min.js
+  https://www-shibuya.jp/js/common.js
+---- ajax/json hints ----
+  //fonts.googleapis.com/css?family=Montserrat:400,700
+  //maps.google.com/maps/api/js?sensor=true&key=AIzaSyAqTEBs0HBp8HrnAT6_ROediT10lmYL__c
+---- month links ----
+  https://www-shibuya.jp/schedule/
+  https://www-shibuya.jp/schedule/atom.xml
+  https://www-shibuya.jp/schedule/
+  https://www-shibuya.jp/schedule/
+  https://www-shibuya.jp/schedule/#www
+  https://www-shibuya.jp/schedule/#www_x
+  https://www-shibuya.jp/schedule
+  https://www-shibuya.jp/schedule/202607.php
+  https://www-shibuya.jp/schedule/202609.php
+  https://www-shibuya.jp/schedule/019891.php
+  https://www-shibuya.jp/schedule/019789.php
+  https://www-shibuya.jp/schedule/019488.php
+  https://www-shibuya.jp/schedule/019690.php
+  https://www-shibuya.jp/schedule/019689.php
+  https://www-shibuya.jp/schedule/019867.php
+  https://www-shibuya.jp/schedule/019776.php
+  https://www-shibuya.jp/schedule/019972.php
+  https://www-shibuya.jp/schedule/019839.php
+  https://www-shibuya.jp/schedule/019634.php
+  https://www-shibuya.jp/schedule/019904.php
+  https://www-shibuya.jp/schedule/019913.php
+  https://www-shibuya.jp/schedule/019833.php
+  https://www-shibuya.jp/schedule/019773.php
+  https://www-shibuya.jp/schedule/019781.php
+  https://www-shibuya.jp/schedule/019866.php
+  https://www-shibuya.jp/schedule/019801.php
+  https://www-shibuya.jp/schedule/019840.php
+  https://www-shibuya.jp/schedule/019995.php
+  https://www-shibuya.jp/schedule/019888.php
+  https://www-shibuya.jp/schedule/019939.php
+  https://www-shibuya.jp/schedule/019859.php
+  https://www-shibuya.jp/schedule/019930.php
+  https://www-shibuya.jp/schedule/019928.php
+  https://www-shibuya.jp/schedule/020001.php
+  https://www-shibuya.jp/schedule/019980.php
+  https://www-shibuya.jp/schedule/019957.php
+  https://www-shibuya.jp/schedule/019794.php
+  https://www-shibuya.jp/schedule/019412.php
+  https://www-shibuya.jp/schedule/019862.php
+  https://www-shibuya.jp/schedule/019914.php
+  https://www-shibuya.jp/schedule/019190.php
+  https://www-shibuya.jp/schedule/019892.php
+  https://www-shibuya.jp/schedule/019872.php
+  https://www-shibuya.jp/schedule/020010.php
+  https://www-shibuya.jp/schedule/019947.php
+  https://www-shibuya.jp/schedule/019942.php
+  https://www-shibuya.jp/schedule/019870.php
+  https://www-shibuya.jp/schedule/019937.php
+  https://www-shibuya.jp/schedule/019923.php
+  https://www-shibuya.jp/schedule/019987.php
+  https://www-shibuya.jp/schedule/019900.php
+  https://www-shibuya.jp/schedule/019852.php
+  https://www-shibuya.jp/schedule/019682.php
+  https://www-shibuya.jp/schedule/019922.php
+  https://www-shibuya.jp/schedule/019701.php
+  https://www-shibuya.jp/schedule/019933.php
+  https://www-shibuya.jp/schedule/019916.php
+  https://www-shibuya.jp/schedule/019837.php
+  https://www-shibuya.jp/schedule/020011.php
+  https://www-shibuya.jp/schedule/019879.php
+  https://www-shibuya.jp/schedule/019970.php
+  https://www-shibuya.jp/schedule/019976.php
+  https://www-shibuya.jp/schedule/019912.php
+  https://www-shibuya.jp/schedule/019764.php
+  https://www-shibuya.jp/schedule/019979.php
+  https://www-shibuya.jp/schedule/019924.php
+  https://www-shibuya.jp/schedule/019981.php
+  https://www-shibuya.jp/schedule/019504.php
+  https://www-shibuya.jp/schedule/019772.php
+  https://www-shibuya.jp/schedule/019790.php
+  https://www-shibuya.jp/schedule/020013.php
+  https://www-shibuya.jp/schedule/019893.php
+---- data attrs ----
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/260801_visual.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/ab6e4cf29f997fe998cc25a1e0771aa1d2e66053.png"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/522d07e40eed51935e29372d78de3e4793b43827.png"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/geek_mains_0418.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/e907dd57cfbfb8e28c7be98a33905a4cd02203ca_1.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="none"
+  data-bg="https://www-shibuya.jp/schedule/87be2d040ebaa8ffa879404fe8b5bd5aaa705f0f.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/b6e857155f1b94084a18558e40e55e4b7711e555.png"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/0805.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/20260805_X_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/260806_CHiCO_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/YOUNG%20PRO.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/aeea255480d8f05ba8a86e03090629b756cdbed9.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/w26080-7-thumbnail.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/20260808W_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/9b00b1d760dec4aeb4d178bf340e3c6f4073aec7.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/bb92b9acd96ee527e19ee5fff5dc7e9968a74bb9.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_www_x_www_beta"
+  data-bg="https://www-shibuya.jp/schedule/vol_AP_bunner.png"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/260810_amini_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/260811_HIGH%20SYNC_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/1f3f13a94abf13c25aff3635778241b1780926c1.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/f0aed40c3831dda0ea704276b13cf3bd27e92061.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/0f79f372e83da074749d46c693a4c0870169103f.png"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/284888833354c8b2c7dc61507fbcd7d5f61ee819.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/e55351a526421351af20f430a347cfcb1a51f7ca.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/260818_FOKALITE_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/0819.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/260820_shibuyaluisant_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/7e5171be60b2878ce1e42d2d938f9bc3b4a41475.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/5105bad29f3c58a2ef19983b079ac3e879605868.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/1f932320012266bbbc288ebc8d225bebd9992d67.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/20260822_X_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/0c888398c03075cd514bd465d4f5dcf504a7fca5.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/2a9e7c3f578fb5a4bf203fec7747517bfb75ddbd.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/260825_SAKA-SAMA_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/c3d7f7054b6602edb37cfc7dc35863dbf6170ac6.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/260827_HAKONIWAvol.13.5_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/8a3283505482916ce83168b1c86d8628fb65c741.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/680a141909e0a8ee2da6916bb3bc918f20e07ab3.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_beta"
+  data-bg="https://www-shibuya.jp/schedule/4b67b8e120dcee9e1a5a08e7fc1a048a2d7ecb27.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/20260829_W_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/092043032202e2715da666c1f042413e862fff35.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/20260829X_th.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/70909f4dc61452e5fa74f67de91f3dbf282a72e0.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/47c611243e66d2a5e034f680d8bf4ffbae8ec2cf.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www_x"
+  data-bg="https://www-shibuya.jp/schedule/b3ddd64ccb824cdf823fd5ab6384838f31b0e9e9.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-place="www"
+  data-bg="https://www-shibuya.jp/schedule/031b2ee06f257ca28c7d507871777829767bb0a4.jpg"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
+  data-anijs="if: mouseover, do: rubberBand animated"
