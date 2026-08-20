@@ -1,0 +1,10 @@
+push直前の最終照合と SSR/ai.html 再生成（57ページ + sitemap）
+
+- reconcile_pia --new で MISSING1 / FETCH2 を検出 → 実ページで確認して処理
+  - 4279 市川團十郎特別公演＝京都の独占最速先行（〜8/23 23:59）が未登録 → 取り込み（2枠に）
+  - 4297 愛媛FC / 4324 王道の礎2 のFETCHはぴあ混雑ページ（sorry.pia）の偽陽性。
+    単発で叩き直して登録どおりと確認（愛媛FC 9/5 10:00発売／王道の礎2 〜9/9 19:30）
+- 再照合 OK3 / MISSING0 / STALE0 / FETCH0 / QC0
+- 並び順違反0・CRLF保持・NEW_ORDER 50件id昇順
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>

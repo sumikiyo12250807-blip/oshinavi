@@ -1,0 +1,81 @@
+diff --git a/index.html b/index.html
+index 453d7ab..2c1c75b 100644
+--- a/index.html
++++ b/index.html
+@@ -20729,17 +20729,23 @@
+         "type": "一般発売（三重 10/3公演）8/18 10:00発売",
+         "date": "2026-08-18",
+         "startDate": "2026-08-18",
+-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621795"
++        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621795",
++        "soldout": true,
++        "soldoutSince": "2026-08-20"
+       },
+       {
+         "type": "一般発売（大阪 8/23公演）〜8/20 23:59",
+         "date": "2026-08-20",
+-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2613761"
++        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2613761",
++        "soldout": true,
++        "soldoutSince": "2026-08-20"
+       },
+       {
+         "type": "一般発売（山形 8/22公演）〜8/21 23:59",
+         "date": "2026-08-21",
+-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614357"
++        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614357",
++        "soldout": true,
++        "soldoutSince": "2026-08-20"
+       },
+       {
+         "type": "一般発売（富山 10/4公演）〜10/3 18:00",
+@@ -74963,9 +74969,7 @@
+       {
+         "type": "一般発売（東京 8/20公演）8/15 10:00発売",
+         "date": "2026-08-15",
+-        "startDate": "2026-08-15",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-08-15"
+       }
+     ],
+     "verified": true,
+@@ -81441,8 +81445,6 @@
+         "type": "一般発売（宮城 8/28公演）8/15 10:00発売",
+         "date": "2026-08-15",
+         "startDate": "2026-08-15",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15",
+         "saleEnded": true,
+         "saleEndedSince": "2026-08-19"
+       }
+@@ -87125,9 +87127,7 @@
+     "tickets": [
+       {
+         "type": "プレリザーブ（東京 12/14〜12/15公演）〜8/16 23:59",
+-        "date": "2026-08-16",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-17"
++        "date": "2026-08-16"
+       }
+     ],
+     "verified": true,
+@@ -93581,16 +93581,12 @@
+       {
+         "type": "追加販売（宮城 8/25公演）8/17 19:00発売",
+         "date": "2026-08-17",
+-        "startDate": "2026-08-17",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-18"
++        "startDate": "2026-08-17"
+       },
+       {
+         "type": "追加販売（宮城 8/26公演）8/17 19:00発売",
+         "date": "2026-08-17",
+-        "startDate": "2026-08-17",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-18"
++        "startDate": "2026-08-17"
+       }
+     ],
+     "verified": true,

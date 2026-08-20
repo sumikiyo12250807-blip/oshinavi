@@ -1,0 +1,51 @@
+<body>
+
+<header>
+  <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
+  <nav>
+    <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>推しの<span>ライブ</span>を見逃さない！</h1>
+  <p>チケット抽選先行・先行販売・一般販売日をまとめてチェック</p>
+</div>
+
+<div class="last-updated">
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 08:06</span>
+  <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
+</div>
+
+<div class="controls">
+  <!-- 検索 -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名で検索…">
+    <div id="searchSuggest"></div>
+  </div>
+
+  <!-- ジャンルフィルター（4グループに折りたたみ・2026-08-13 ユーザー指示） -->
+  <div class="filter-row">
+    <span class="filter-label">GENRE</span>
+    <button class="filter-btn active" data-genre="all">すべて</button>
+    <button class="filter-btn" data-genre="new">✨ 新着</button>
+  </div>
+  <div class="genre-groups">
+    <div class="genre-group" data-group="music">
+      <button type="button" class="genre-group-toggle"><span class="gg-arrow">▼</span> 🎵 音楽 <span class="gg-count"></span></button>
+      <div class="genre-group-body">
+        <button class="filter-btn gg-all" data-genre="g:music">音楽すべて</button>
+        <button class="filter-btn" data-genre="jpop">J-POP</button>
+        <button class="filter-btn" data-genre="classic">クラシック</button>
+        <button class="filter-btn" data-genre="rock">ロック</button>
+        <button class="filter-btn" data-genre="jazz">ジャズ</button>
+        <button class="filter-btn" data-genre="enka">演歌</button>
+        <button class="filter-btn" data-genre="yougaku">洋楽</button>
+        <button class="filter-btn" data-genre="chanson">シャンソン</button>
+        <button class="filter-btn" data-genre="anime">アニソン</button>
+        <button class="filter-btn" data-genre="idol">アイドル</button>
+        <button class="filter-btn" data-genre="kpop">K-POP</button>
+        <button class="filter-btn" data-genre="hiphop">ヒップホップ</button>
+        <button class="filter-btn" data-genre="musicetc">その他</bu

@@ -1,0 +1,105 @@
+[
+ {
+  "id": 1137,
+  "artist": "HOT STUFF presents Ruby Tuesday",
+  "name": "HOT STUFF presents Ruby Tuesday",
+  "date": "2026-09-29",
+  "dateLabel": "2026年7月14日(火)〜2026年9月29日(火) 東京",
+  "venue": "全国ツアー（ＣＬＵＢ ＣＲＡＷＬ／ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ／Ｓｈｉｂｕｙａ ＷＷＷ）",
+  "prefecture": "東京",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564439",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "主催者先行（東京 8/11公演）〜6/21 23:59",
+    "date": "2026-06-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623160"
+   },
+   {
+    "type": "一般発売（東京 8/11公演）6/27 10:00発売",
+    "date": "2026-06-27",
+    "startDate": "2026-06-27",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623160"
+   },
+   {
+    "type": "一般発売（東京 7/14公演）〜7/13 23:59",
+    "date": "2026-07-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614993"
+   },
+   {
+    "type": "一般発売（東京 9/29公演）〜9/28 23:59",
+    "date": "2026-09-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615434"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-06-21"
+ },
+ {
+  "id": 1138,
+  "artist": "Ｃｏｎｔｏｎ Ｃａｎｄｙ",
+  "name": "Ｃｏｎｔｏｎ Ｃａｎｄｙ",
+  "date": "2026-07-31",
+  "dateLabel": "2026年7月31日(金) 宮城 仙台ＭＡＣＡＮＡ",
+  "venue": "仙台ＭＡＣＡＮＡ",
+  "prefecture": "宮城",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2624963",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（宮城 7/31公演）7/3 12:00発売",
+    "date": "2026-07-03",
+    "startDate": "2026-07-03"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-06-21"
+ },
+ {
+  "id": 1139,
+  "artist": "近藤真彦",
+  "name": "近藤真彦",
+  "date": "2026-09-12",
+  "dateLabel": "2026年9月12日(土) 愛知 一宮市民会館",
+  "venue": "一宮市民会館",
+  "prefecture": "愛知",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2619898",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（愛知 9/12公演）7/4 9:00発売",
+    "date": "2026-07-04",
+    "startDate": "2026-07-04"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-06-21"
+ }
+]

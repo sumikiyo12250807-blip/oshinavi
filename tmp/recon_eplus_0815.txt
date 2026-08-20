@@ -1,0 +1,178 @@
+=== reconcile_eplus (today=2026-08-15) 対象82エントリ / e+チケット211枠 ===
+🚨 FAIL 88件（この枠だけ実ページで見直す）:
+  id40 t0 [g-粒度] LD公演数=0(≠1)
+        https://eplus.jp/sf/detail/4516460001
+  id77 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1734600001-P0030439P021001
+  id77 t1 [c-死枠] 発売日2026-07-30の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/1734600001-P0030440P021001
+  id77 t2 [c-死枠] 発売日2026-07-30の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/1734600001-P0030441P021001
+  id77 t3 [c-死枠] 発売日2026-07-30の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/1734600001-P0030442P021001
+  id144 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897440001-P0030004P021009
+  id144 t2 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897440001-P0030004P021003
+  id144 t3 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897440001-P0030004P021006
+  id144 t4 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897440001-P0030004P021004
+  id144 t5 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897440001-P0030004P021005
+  id144 t6 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3897440001-P0030004P021007
+  id144 t7 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3897440001-P0030004P021002
+  id717 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3616590001-P0030020P021001
+  id775 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3489620001-P0030046P021001
+  id813 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3362390001-P0030053P021001
+  id1098 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0981850002-P0030038P021001
+  id1593 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1994490001-P0030049P021001
+  id2223 t2 [b-発売前化] 受付中登録だが実頁は発売前(今後開く窓あり)
+        https://eplus.jp/sf/detail/0015890190-P0030490P021001
+  id2223 t3 [b-発売前化] 受付中登録だが実頁は発売前(今後開く窓あり)
+        https://eplus.jp/sf/detail/0015890190-P0030490P021001
+  id2223 t4 [b-発売前化] 受付中登録だが実頁は発売前(今後開く窓あり)
+        https://eplus.jp/sf/detail/0015890190-P0030490P021001
+  id2300 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0201250001-P0030121P021001
+  id2300 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0201250001-P0030122P021001
+  id2300 t2 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0201250001-P0030123P021001
+  id2300 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0201250001-P0030124P021001
+  id2300 t4 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0201250001-P0030125P021001
+  id3016 t0 [c-死枠] 発売日2026-08-01の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/4556830001-P0030001P021001
+  id3020 t0 [c-死枠] 発売日2026-07-24の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0061260005-P0030053P021001
+  id3020 t1 [c-死枠] 発売日2026-07-24の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0061260005-P0030053P021002
+  id3021 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0746890001-P0030195P021001
+  id3021 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0746890001-P0030196P021001
+  id3023 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/4021600001-P0030012P021001
+  id3031 t0 [c-死枠] 発売日2026-07-29の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0200170001-P0030007P021001
+  id3038 t0 [c-死枠] 発売日2026-08-13の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/4500660001-P0030001P021001
+  id3039 t1 [c-死枠] 発売日2026-07-27の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0092440002-P0030069P021002
+  id3040 t0 [b-締切ズレ] date 2026-08-03 != open窓ed[2026-10-10]
+        https://eplus.jp/sf/detail/2556950001-P0030021P021001
+  id3040 t1 [c-死枠] 発売日2026-08-08の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/2556950001-P0030022P021001
+  id3050 t0 [c-死枠] 発売日2026-07-25の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/4572030001-P0030001P021001
+  id3053 t0 [c-死枠] 発売日2026-07-29の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0013710001-P0030532P021002
+  id3053 t1 [c-死枠] 発売日2026-07-29の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0013710001-P0030532P021001
+  id3053 t2 [c-死枠] 発売日2026-07-29の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/0013710001-P0030533P021002
+  id3053 t4 [b-締切ズレ] date 2026-08-03 != open窓ed[2026-08-25]
+        https://eplus.jp/sf/detail/0013710001-P0030526P021001
+  id3057 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0043510001-P0030209P021001
+  id3057 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0043510001-P0030210P021001
+  id3067 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0050460001-P0030110P021001
+  id3067 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0050460001-P0030108P021001
+  id3076 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3792160001-P0030019P021001
+  id3076 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3792160001-P0030019P021002
+  id3078 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/2904010001-P0030229P021001
+  id3078 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/2904010001-P0030225P021001
+  id3078 t2 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/2904010001-P0030225P021002
+  id3082 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0150920001-P0030321P021001
+  id3082 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0150920001-P0030322P021001
+  id3082 t2 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0150920001-P0030339P021001
+  id3082 t3 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0150920001-P0030327P021001
+  id3082 t4 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0150920001-P0030342P021001
+  id3085 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/1067170001-P0030269P021002
+  id3085 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/1067170001-P0030269P021001
+  id3085 t4 [b-締切ズレ] date 2026-08-02 != open窓ed[2026-08-24]
+        https://eplus.jp/sf/detail/1067170001-P0030271P021002
+  id3096 t0 [c-死枠] 発売日2026-07-29の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/3860840001-P0030030P021001
+  id3096 t1 [c-死枠] 発売日2026-07-29の窓が受付終了/予定枚数終了
+        https://eplus.jp/sf/detail/3860840001-P0030030P021002
+  id3097 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897390001-P0030031P021001
+  id3097 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897390001-P0030031P021002
+  id3097 t2 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897390001-P0030033P021001
+  id3097 t3 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3897390001-P0030033P021002
+  id3103 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0139490001-P0030306P021001
+  id3103 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/0139490001-P0030307P021001
+  id3103 t2 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0139490001-P0030303P021001
+  id3103 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0139490001-P0030304P021001
+  id3108 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/4083330001-P0030013P021001
+  id3108 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/4083330001-P0030014P021001
+  id3113 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/1311740001-P0030120P021001
+  id3113 t1 [b-締切ズレ] date 2026-08-14 != open窓ed[2026-08-18]
+        https://eplus.jp/sf/detail/1311740001-P0030121P021001
+  id3115 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1933380001-P0030018P021002
+  id3065 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3658480001-P0030045P021001
+  id3065 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3658480001-P0030046P021001
+  id3166 t0 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3489620001-P0030053P021001
+  id3166 t1 [FETCH] ページ取得失敗
+        https://eplus.jp/sf/detail/3489620001-P0030053P021002
+  id3167 t0 [b-締切ズレ] date 2026-08-15 != open窓ed[2026-08-18]
+        https://eplus.jp/sf/detail/4549640001-P0030001P021001
+  id3167 t1 [b-締切ズレ] date 2026-08-15 != open窓ed[2026-08-18]
+        https://eplus.jp/sf/detail/4549640001-P0030001P021002
+  id3806 t0 [b-締切ズレ] date 2026-08-14 != open窓ed[2026-08-15]
+        https://eplus.jp/sf/detail/4544090001-P0030001P021001
+  id3807 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4199660003-P0030003P021001
+  id3807 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4199660003-P0030003P021003
+  id3807 t2 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4199660003-P0030003P021002
+  id3807 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4199660003-P0030003P021004
+  id3926 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=11:30)
+        https://eplus.jp/sf/detail/4576960001-P0030001P021001
+  id3926 t2 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=15:30)
+        https://eplus.jp/sf/detail/4576960001-P0030001P021002
+  id3926 t3 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=10:30)
+        https://eplus.jp/sf/detail/4576960001-P0030001P021003
+  id3926 t4 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=14:30)
+        https://eplus.jp/sf/detail/4576960001-P0030001P021004

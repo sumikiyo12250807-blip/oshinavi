@@ -1,0 +1,97 @@
+[
+  {
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "url": "https://eplus.jp/sf/detail/0035110001-P0030702P021001",
+    "name": "斉藤和義 「KAZUYOSHI SAITO LIVE TOUR 2026 “日常Days”」",
+    "startDate": "2026-11-21T17:30",
+    "endDate": "2026-11-21T23:59",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "広島文化学園HBGホール",
+      "url": "https://eplus.jp/sf/venue/7300050",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "広島県",
+        "addressCountry": "日本"
+      }
+    }
+  },
+  {
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "url": "https://eplus.jp/sf/detail/0035110001-P0030703P021001",
+    "name": "斉藤和義 「KAZUYOSHI SAITO LIVE TOUR 2026 “日常Days”」",
+    "startDate": "2026-11-23T17:30",
+    "endDate": "2026-11-23T23:59",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "ハイスタッフホール(観音寺市民会館)大ホール",
+      "url": "https://eplus.jp/sf/venue/7680000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "香川県",
+        "addressCountry": "日本"
+      }
+    }
+  },
+  {
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "url": "https://eplus.jp/sf/detail/0035110001-P0030704P021001",
+    "name": "斉藤和義 「KAZUYOSHI SAITO LIVE TOUR 2026 “日常Days”」",
+    "startDate": "2026-11-24T18:30",
+    "endDate": "2026-11-24T23:59",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "倉敷市民会館",
+      "url": "https://eplus.jp/sf/venue/7100020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "岡山県",
+        "addressCountry": "日本"
+      }
+    }
+  },
+  {
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "url": "https://eplus.jp/sf/detail/0035110001-P0030705P021002",
+    "name": "斉藤和義 「KAZUYOSHI SAITO LIVE TOUR 2026 “日常Days”」",
+    "startDate": "2026-11-28T17:30",
+    "endDate": "2026-11-28T23:59",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "福岡サンパレス ホテル&amp;ホール",
+      "url": "https://eplus.jp/sf/venue/8120050",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "福岡県",
+        "addressCountry": "日本"
+      }
+    }
+  },
+  {
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "url": "https://eplus.jp/sf/detail/0035110001-P0030705P021001",
+    "name": "斉藤和義 「KAZUYOSHI SAITO LIVE TOUR 2026 “日常Days”」",
+    "startDate": "2026-11-29T17:00",
+    "endDate": "2026-11-29T23:59",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "福岡サンパレス ホテル&amp;ホール",
+      "url": "https://eplus.jp/sf/venue/8120050",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "福岡県",
+        "addressCountry": "日本"
+      }
+    }
+  }
+]

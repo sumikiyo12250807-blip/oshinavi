@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\user\oshinavi\tools\inject_built.py", line 14, in <module>
+    allnew = json.load(open(SRC_JSON, encoding='utf-8'))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'tmp/hajimerin_built.json'

@@ -1,0 +1,55 @@
+付=startDate
+      //  2. startDate 有り + 販売中(今日 >= startDate かつ 今日 <= date) → 「販売中」(selling) 表示日付=date(終了日)
+      //  3. startDate 無し + date 未来以降 → 「販売中」(selling) 表示日付=date ※既に販売中扱い
+      //  4. 期限切れ → 「終了」(passed) ※朝のルーチンで削除対象
+      let status, label, displayDate;
+      if (t.saleUntilSoldOut) {
+        status = "selling";
+        label  = "販売中";
+        displayDate = null;
+      } else if (saleStartPending(t)) {
+        const sdiff = daysFrom(t.startDate);
+        status = sdiff <= 7 ? "urgent" : sdiff <= 31 ? "soon" : "normal";
+        label  = sdiff === 0 ? "本日発売"
+               : sdiff === 1 ? "明日発売"
+               : `発売開始まで あと ${sdiff} 日`;
+        displayDate = t.startDate;
+      } else if (t.startDate && parseDateStr(t.date) >= today) {
+        if (t.startDate === t.date) {
+          // 締切未取込(発売日==終了日)＝ぴあが「◯/◯より発売」の単日形で販売終了日を出さない枠。
+          // 発売時刻は過ぎたが締切が不明→誤った「販売中～発売日」を出さず「本日発売」とだけ表示。
+          // 翌朝のルーチン(救済変換)で正しい締切が入る（ユーザー方針 2026-07-09）。
+          status = "urgent";
+          label  = "本日発売";
+          displayDate = t.startDate;
+        } else {
+          status = "selling";
+          label  = "販売中";
+          displayDate = t.date;
+        }
+      } else if (!t.startDate && parseDateStr(t.date) >= today) {
+        status = "selling";
+        label  = "販売中";
+        displayDate = t.date;
+      } else {
+        status = "passed";
+        label  = "終了";
+        displayDate = t.date;
+      }
+      // チケット枠(ticket-item)全体のリンク先 優先順位: 楽天(アフィリ) > ぴあ > e+ > ローチケ > その他ベンダー
+      const ticketLinkUrl = ev.links && (ev.links.rakuten || ev.links.pia || ev.links.eplus || ev.links.lawson || ev.links.fany || ev.links.yoshimoto || ev.links.tvasahi || ev.links.shochiku || ev.links.official);
+      const countdown = `<div class="ticket-countdown">${label}</div>`;
+      const typeHTML = `<div class="ticket-type"><span class="ticket-dot"></span><span class="ticket-type-text">${highlightShowDate(shrinkPrefList(badgeType))}</span></div>`;
+      // 販売期間表示（showSalePeriod=true のエントリのみ）
+      //  開始日なし→「～終了日まで」 / 終了日未定(startDate===date)→「開始日～」 / 両方→「開始日～終了日まで」
+      const periodHTML = ev.showSalePeriod
+        ? `<div class="ticket-period">${
+            !t.startDate ? "～" + formatDate(t.date) + "まで"
+            : t.startDate === t.date ? formatDate(t.startDate) + "～"
+            : formatDate(t.startDate) + "～" + formatDate(t.date) + "まで"
+          }</div>`
+        : "";
+      const datePrefix = status === "selling" ? "～" : "";
+      const timeHTML = dispTime ? ` <span class="ticket-date-time">${dispTime}</span>` : "";
+      const dateLine = t.saleUntilSoldOut
+        ? 

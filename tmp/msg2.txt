@@ -1,0 +1,15 @@
+8/3夜: 隠れ枠ヒール20枠・売切2件削除・新着49件をジャンル振り分け
+
+- 夜のヒールで隠れ枠に締切を取り込み 29枠→2枠（20枠を画面に復帰）
+  ハママツ・ジャズ6枠／栗林みな実2枠／立川立飛カップ体操2枠 ほか
+- 売切2件を削除（四日市市民バレエ・長崎くんち＝実ページで予定枚数終了を確認）
+- 新着49件をジャンル振り分け（新着プール0・NEW_ORDER空）
+  classic15 engeki9 sports5 aisatsu5 jpop4 owarai3 art3 kids2 anime/dinnershow/enka各1
+- build_pia_entries: ぴあの新サブカテゴリ10種をPIA_GENRE_MAPへ恒久登録
+  舞台挨拶→aisatsu アート→art アニメ音楽→anime ディナーショー→dinnershow ほか
+  （未収載で18件がengekiへ誤fallbackしていた穴を塞いだ）
+
+ゲート: reconcile OK20 MISSING/DROP/STALE/FETCH/QC全0・並び順違反0・CRLF無傷
+総2405件 / SSR 2400枠
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>

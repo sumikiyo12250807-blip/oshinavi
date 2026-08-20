@@ -1,0 +1,4347 @@
+{
+ "lg": "03",
+ "total": 868,
+ "parsed": 676,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622215",
+   "artist": "令和８年 秋巡業 大相撲狭山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/8(木)",
+   "venue": "狭山市民総合体育館(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668841",
+   "artist": "令和8年秋巡業 大相撲つくば場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/6(火)",
+   "venue": "つくばカピオアリーナ(茨城県)",
+   "pref": "茨城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623547",
+   "artist": "アクトレスガールズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626691",
+   "artist": "アクトレスガールズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615029",
+   "artist": "アクトレスガールズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626707",
+   "artist": "アクトレスガールズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667506",
+   "artist": "第20回アジア競技大会／ソフトボール",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/26(土) ～ 2026/10/3(土)",
+   "venue": "安城市総合運動公園ソフトボール場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667518",
+   "artist": "第20回アジア競技大会／体操(体操)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/21(月・祝) ～ 2026/9/25(金)",
+   "venue": "名古屋市総合体育館［レインボーホール］(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667520",
+   "artist": "第20回アジア競技大会／体操(トランポリン)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "名古屋市総合体育館［レインボーホール］(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667527",
+   "artist": "第20回アジア競技大会／卓球",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ～ 2026/9/28(月)",
+   "venue": "スカイホール豊田(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667528",
+   "artist": "第20回アジア競技大会／テコンドー",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/1(木) ・ 2026/10/2(金) ・ 2026/10/3(土)",
+   "venue": "豊橋市総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667529",
+   "artist": "第20回アジア競技大会／テニス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日) ～ 2026/10/3(土)",
+   "venue": "名古屋市東山公園テニスセンター(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667530",
+   "artist": "第20回アジア競技大会／テニス(ソフトテニス)",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/18(金) ～ 2026/9/23(水・祝)",
+   "venue": "名古屋市東山公園テニスセンター(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669523",
+   "artist": "第20回アジア競技大会／ハンドボール",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ～ 2026/9/26(土)",
+   "venue": "春日井市総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667514",
+   "artist": "第20回アジア競技大会／馬術",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/21(月・祝) ～ 2026/10/4(日)",
+   "venue": "馬事公苑(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667507",
+   "artist": "第20回アジア競技大会／バスケットボール",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/10(木) ～ 2026/9/26(土)",
+   "venue": "愛知国際アリーナ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669516",
+   "artist": "第20回アジア競技大会／バスケットボール(3x3バスケットボール)",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/21(月・祝) ～ 2026/9/25(金)",
+   "venue": "金城ふ頭駅前特設コート(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667504",
+   "artist": "第20回アジア競技大会／バドミントン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ～ 2026/9/29(火)",
+   "venue": "一宮市総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667531",
+   "artist": "第20回アジア競技大会／バレーボール",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/16(水) ～ 2026/10/3(土)",
+   "venue": "岡崎中央総合公園総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667532",
+   "artist": "第20回アジア競技大会／バレーボール(ビーチバレーボール)",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/20(日) ～ 2026/10/3(土)",
+   "venue": "碧南緑地ビーチコート(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667515",
+   "artist": "第20回アジア競技大会／フェンシング",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/22(火・祝) ～ 2026/9/27(日)",
+   "venue": "愛知県国際展示場［Ａｉｃｈｉ Ｓｋｙ Ｅｘｐｏ］ホールＦ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667535",
+   "artist": "第20回アジア競技大会／武術太極拳",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/20(日) ～ 2026/9/24(木)",
+   "venue": "愛知県武道館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667521",
+   "artist": "第20回アジア競技大会／ホッケー",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/18(金) ～ 2026/10/3(土)",
+   "venue": "岐阜県グリーンスタジアム(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667508",
+   "artist": "第20回アジア競技大会／ボクシング",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/21(月・祝) ～ 2026/10/2(金)",
+   "venue": "西尾市総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667505",
+   "artist": "第20回アジア競技大会／野球",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/21(月・祝) ～ 2026/9/27(日)",
+   "venue": "岡崎中央総合公園野球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667525",
+   "artist": "第20回アジア競技大会／ラグビー(ラグビー7s)",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/1(木) ・ 2026/10/2(金) ・ 2026/10/3(土)",
+   "venue": "名古屋市瑞穂公園ラグビー場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668578",
+   "artist": "第20回アジア競技大会／陸上競技(トラック／フィールド・マラソン)",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/24(木) ～ 2026/9/29(火)",
+   "venue": "名古屋市瑞穂公園陸上競技場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667534",
+   "artist": "第20回アジア競技大会／レスリング",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/30(水) ～ 2026/10/3(土)",
+   "venue": "名古屋市稲永スポーツセンター(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667547",
+   "artist": "第5回アジアパラ競技大会／車いすテニス",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ～ 2026/10/23(金)",
+   "venue": "名古屋市東山公園テニスセンター(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667545",
+   "artist": "第5回アジアパラ競技大会／車いすバスケットボール",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/16(金) ～ 2026/10/23(金)",
+   "venue": "愛知国際アリーナ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668573",
+   "artist": "第5回アジアパラ競技大会／車いすラグビー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/19(月) ～ 2026/10/23(金)",
+   "venue": "ウィングアリーナ刈谷(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667540",
+   "artist": "第5回アジアパラ競技大会／ゴールボール",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/17(土) ～ 2026/10/23(金)",
+   "venue": "豊橋市総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667543",
+   "artist": "第5回アジアパラ競技大会／座位バレーボール",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ～ 2026/10/23(金)",
+   "venue": "岡崎中央総合公園総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667536",
+   "artist": "第5回アジアパラ競技大会／パラアーチェリー",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/21(水) ～ 2026/10/24(土)",
+   "venue": "岡崎中央総合公園多目的広場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667539",
+   "artist": "第5回アジアパラ競技大会／パラ自転車競技(トラックレース)",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ・ 2026/10/20(火)",
+   "venue": "伊豆ベロドローム(静岡県)",
+   "pref": "静岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667541",
+   "artist": "第5回アジアパラ競技大会／パラ柔道",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ・ 2026/10/20(火) ・ 2026/10/21(水)",
+   "venue": "愛知県武道館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668569",
+   "artist": "第5回アジアパラ競技大会／パラ水泳",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ～ 2026/10/23(金)",
+   "venue": "名古屋市総合体育館［レインボープール］(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667544",
+   "artist": "第5回アジアパラ競技大会／パラ卓球",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/16(金) ～ 2026/10/23(金)",
+   "venue": "スカイホール豊田(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667537",
+   "artist": "第5回アジアパラ競技大会／パラバドミントン",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/16(金) ～ 2026/10/23(金)",
+   "venue": "一宮市総合体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667542",
+   "artist": "第5回アジアパラ競技大会／パラパワーリフティング",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ～ 2026/10/24(土)",
+   "venue": "名古屋市中小企業振興会館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667546",
+   "artist": "第5回アジアパラ競技大会／パラフェンシング",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/19(月) ～ 2026/10/24(土)",
+   "venue": "名古屋市稲永スポーツセンター(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668568",
+   "artist": "第5回アジアパラ競技大会／パラ陸上競技",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/19(月) ～ 2026/10/24(土)",
+   "venue": "名古屋市瑞穂公園陸上競技場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667538",
+   "artist": "第5回アジアパラ競技大会／ボッチャ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/17(土) ～ 2026/10/24(土)",
+   "venue": "名古屋市総合体育館［レインボーホール］(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619996",
+   "artist": "飛鳥プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "ＴＯＫＹＯ ＳＱＵＡＲＥ ｉｎ Ｉｔａｂａｓｈｉ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624112",
+   "artist": "第５５回石川県サッカー選手権大会 決勝",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/29(水)",
+   "venue": "石川県西部緑地公園陸上競技場(石川県)",
+   "pref": "石川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616638",
+   "artist": "ＥＣＯ信頼サービス株式会社 ＰＲＥＳＥＮＴＳ Ｋ－１ ＤＯＮＴＡＫＵ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "マリンメッセ福岡Ｂ館(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619392",
+   "artist": "ＳＴＣ ＣＨＡＭＰＩＯＮ ＣＡＲＮＩＶＡＬ ９",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "ホテルプラザ勝川(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624261",
+   "artist": "エスポラーダ北海道対湘南ベルマーレ メットライフ生命Ｆ１リーグ2026-27／エスポラーダ北海道イルネーヴェ対ミネルバ宇部 メットライフ生命女子Fリーグ2026-27",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "北海きたえーる(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669508",
+   "artist": "NEC軽井沢72ゴルフトーナメント(第35回大会)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金) ・ 2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "軽井沢７２ゴルフ(長野県)",
+   "pref": "長野県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669664",
+   "artist": "【NTT DOCOMO presents】 プロフェッショナル修斗公式戦『Lemino修斗～POUND OUT～』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "ＴＫＰガーデンシティ千葉(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609527",
+   "artist": "愛媛マンダリンパイレーツホームゲーム 四国アイランドリーグｐｌｕｓ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/3/28(土) ～ 2026/9/30(水)",
+   "venue": "",
+   "pref": "",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667638",
+   "artist": "F GAME.6 in 静岡",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "沼津市総合体育館（香陵アリーナ）(静岡県)",
+   "pref": "静岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669285",
+   "artist": "第4回 MUFGスタジアムENJOYリレーマラソン supported by ぴあ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "ＭＵＦＧスタジアム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618971",
+   "artist": "ａｂｃ ｐｒｅｓｅｎｔｓ ＲＩＺＩＮ ＬＡＮＤＭＡＲＫ １５ ｉｎ ＨＩＲＯＳＨＩＭＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土)",
+   "venue": "広島グリーンアリーナ(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625802",
+   "artist": "ＡＰＦ ＴＯＫＹＯ ＮＩＧＨＴ ＳＨＯＷ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "曳舟文化センター 劇場ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627773",
+   "artist": "ＡＰＦ ＶＩＳＩＯＮＡＲＹ ＴＲＹＯＵＴ ＣＵＰ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "きゅりあん（品川区立総合区民会館） 大ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616373",
+   "artist": "大相撲宇部場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/25(日)",
+   "venue": "宇部市俵田翁記念体育館(山口県)",
+   "pref": "山口県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667233",
+   "artist": "大相撲名古屋場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/12(日) ～ 2026/7/26(日)",
+   "venue": "ＩＧアリーナ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618845",
+   "artist": "オリックス・バファローズ対千葉ロッテマリーンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618846",
+   "artist": "オリックス・バファローズ対千葉ロッテマリーンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618847",
+   "artist": "オリックス・バファローズ対千葉ロッテマリーンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616960",
+   "artist": "オリックス・バファローズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/3(月)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623126",
+   "artist": "オリックス・バファローズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/5(水)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623128",
+   "artist": "オリックス・バファローズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623138",
+   "artist": "オリックス・バファローズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623139",
+   "artist": "オリックス・バファローズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/26(水)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623140",
+   "artist": "オリックス・バファローズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/27(木)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618830",
+   "artist": "オリックス・バファローズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618844",
+   "artist": "オリックス・バファローズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618930",
+   "artist": "オリックス・バファローズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623131",
+   "artist": "オリックス・バファローズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623133",
+   "artist": "オリックス・バファローズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623135",
+   "artist": "オリックス・バファローズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/16(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620076",
+   "artist": "オリックス・バファローズ ホームゲーム≪７月公式戦／京セラドーム大阪≫ 【ライブ指定席】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/5(日) ～ 2026/7/26(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623435",
+   "artist": "オリックス・バファローズ ホームゲーム≪８月公式戦／京セラドーム大阪≫ 【ライブ指定席】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/5(水) ～ 2026/8/30(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667579",
+   "artist": "≪会場・盛岡駅間送迎バス≫いわて盛岡シティマラソン2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "きたぎんボールパーク(岩手県)",
+   "pref": "岩手県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609519",
+   "artist": "香川オリーブガイナーズホームゲーム 四国アイランドリーグｐｌｕｓ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/3/28(土) ～ 2026/9/30(水)",
+   "venue": "",
+   "pref": "",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623026",
+   "artist": "柏プロレスフェス２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/6(日)",
+   "venue": "リアクション柏(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621730",
+   "artist": "川口オートレース（７／１６～７／２０）第５特別観覧席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/16(木) ～ 2026/7/20(月・祝)",
+   "venue": "川口オートレース場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621732",
+   "artist": "川口オートレース（７／２５～７／２８）第５特別観覧席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土) ～ 2026/7/28(火)",
+   "venue": "川口オートレース場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625181",
+   "artist": "川口オートレース（８／６～８／９）第５特別観覧席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木) ～ 2026/8/9(日)",
+   "venue": "川口オートレース場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621621",
+   "artist": "川口オートレース（７／１６～７／２０）ホールショット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/16(木) ～ 2026/7/20(月・祝)",
+   "venue": "川口オートレース場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621623",
+   "artist": "川口オートレース（７／２５～７／２８）ホールショット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土) ～ 2026/7/28(火)",
+   "venue": "川口オートレース場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625178",
+   "artist": "川口オートレース（８／６～８／９）ホールショット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木) ～ 2026/8/9(日)",
+   "venue": "川口オートレース場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615066",
+   "artist": "関東サッカーリーグ２部１４節 栃木シティフットボールクラブ Ｕ－２５ ｖｓ ジョイフル本田つくばＦＣ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "ＣＩＴＹ ＦＯＯＴＢＡＬＬ ＳＴＡＴＩＯＮ(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615068",
+   "artist": "関東サッカーリーグ２部１８節 栃木シティフットボールクラブ Ｕ－２５ ｖｓ ｔｏｎａｎ前橋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "ＣＩＴＹ ＦＯＯＴＢＡＬＬ ＳＴＡＴＩＯＮ(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615065",
+   "artist": "関東サッカーリーグ２部１３節 栃木シティフットボールクラブ Ｕ－２５ ｖｓ 日立ビルシステム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/23(日)",
+   "venue": "ＣＩＴＹ ＦＯＯＴＢＡＬＬ ＳＴＡＴＩＯＮ(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615067",
+   "artist": "関東サッカーリーグ２部１６節 栃木シティフットボールクラブ Ｕ－２５ ｖｓ ヴェルフェ矢板",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/12(土)",
+   "venue": "ＣＩＴＹ ＦＯＯＴＢＡＬＬ ＳＴＡＴＩＯＮ(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621123",
+   "artist": "ガンバレ☆プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616761",
+   "artist": "ガンバレ☆プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622738",
+   "artist": "ガンバレ☆プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614033",
+   "artist": "木屋町わいわいフェスタ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "ヒューリックホール京都(京都府)",
+   "pref": "京都府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621183",
+   "artist": "Ｋｒｕｓｈ．１９０",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665205",
+   "artist": "【車椅子席専用駐車場利用券】阪神タイガース主催試合＜阪神甲子園球場＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場南側「甲子園プラス」１Ｆ駐車場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603184",
+   "artist": "【車椅子席】阪神タイガース対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金) ・ 2026/8/8(土) ・ 2026/8/9(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602176",
+   "artist": "【車椅子席】阪神タイガース対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617980",
+   "artist": "【車椅子席】阪神タイガース対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/14(月)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603185",
+   "artist": "【車椅子席】阪神タイガース対東京ヤクルトスワローズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/18(火) ・ 2026/8/19(水) ・ 2026/8/20(木)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602175",
+   "artist": "【車椅子席】阪神タイガース対広島東洋カープ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602177",
+   "artist": "【車椅子席】阪神タイガース対広島東洋カープ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ・ 2026/9/19(土)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602171",
+   "artist": "【車椅子席】阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602174",
+   "artist": "【車椅子席】阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602178",
+   "artist": "【車椅子席】阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622590",
+   "artist": "【車いす席引換券】読売ジャイアンツ対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ・ 2026/9/2(水)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621557",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/16(木)",
+   "venue": "ＣＩＴＹ ＨＡＬＬ ＆ ＧＡＬＬＥＲＹ ＧＯＴＡＮＤＡ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621565",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．２７",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "今池ガスホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621569",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．２８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "梅田ステラホール(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621616",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．２９",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木)",
+   "venue": "狭山市市民交流センター(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625353",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．３０",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "横浜産貿ホール マリネリア(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625355",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．３１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日)",
+   "venue": "梅田ステラホール(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625430",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．３２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/24(木)",
+   "venue": "ＣＩＴＹ ＨＡＬＬ ＆ ＧＡＬＬＥＲＹ ＧＯＴＡＮＤＡ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625434",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．３３",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "今池ガスホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626015",
+   "artist": "ＧＬＥＡＴ Ｕｎｄｅｒｇｒｏｕｎｄ Ｐｒｏ Ｗｒｅｓｔｌｉｎｇ １ｓｔシーズン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金)",
+   "venue": "Ｂａｓｅｍｅｎｔ ＭＯＮＳＴＡＲ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626016",
+   "artist": "ＧＬＥＡＴ Ｕｎｄｅｒｇｒｏｕｎｄ Ｐｒｏ Ｗｒｅｓｔｌｉｎｇ １ｓｔシーズン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/28(金)",
+   "venue": "Ｂａｓｅｍｅｎｔ ＭＯＮＳＴＡＲ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626019",
+   "artist": "ＧＬＥＡＴ Ｕｎｄｅｒｇｒｏｕｎｄ Ｐｒｏ Ｗｒｅｓｔｌｉｎｇ １ｓｔシーズン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/4(金)",
+   "venue": "Ｂａｓｅｍｅｎｔ ＭＯＮＳＴＡＲ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626021",
+   "artist": "ＧＬＥＡＴ Ｕｎｄｅｒｇｒｏｕｎｄ Ｐｒｏ Ｗｒｅｓｔｌｉｎｇ １ｓｔシーズン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/11(金)",
+   "venue": "Ｂａｓｅｍｅｎｔ ＭＯＮＳＴＡＲ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626023",
+   "artist": "ＧＬＥＡＴ Ｕｎｄｅｒｇｒｏｕｎｄ Ｐｒｏ Ｗｒｅｓｔｌｉｎｇ １ｓｔシーズン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金)",
+   "venue": "Ｂａｓｅｍｅｎｔ ＭＯＮＳＴＡＲ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625544",
+   "artist": "ＧＬＥＡＴ Ｖｅｒ．ＥＸ ～ＧＬＥＡＴ ｖｓ 強敵～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/9(金)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621584",
+   "artist": "ＧＬＥＡＴ さよならＦＡＣＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/3(月)",
+   "venue": "新宿ＦＡＣＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606089",
+   "artist": "気仙沼市政２０周年記念 令和８年夏巡業 大相撲気仙沼場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/20(木)",
+   "venue": "気仙沼市総合体育館(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669301",
+   "artist": "高校野球女子選抜対イチロー選抜KOBE CHIBEN",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609526",
+   "artist": "高知ファイティングドッグスホームゲーム 四国アイランドリーグｐｌｕｓ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/3/28(土) ～ 2026/9/30(水)",
+   "venue": "",
+   "pref": "",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667237",
+   "artist": "和歌山ラグビー祭2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "紀三井寺公園 陸上競技場(和歌山県)",
+   "pref": "和歌山県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621202",
+   "artist": "ＧＯＬＤ祭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "新宿ＦＡＣＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615579",
+   "artist": "埼玉西武ライオンズ対千葉ロッテマリーンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669741",
+   "artist": "埼玉西武ライオンズ対千葉ロッテマリーンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金) ・ 2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626240",
+   "artist": "埼玉西武ライオンズ対千葉ロッテマリーンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/25(金) ・ 2026/9/26(土)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626149",
+   "artist": "埼玉西武ライオンズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/28(金) ・ 2026/8/29(土) ・ 2026/8/30(日)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626342",
+   "artist": "埼玉西武ライオンズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日) ・ 2026/9/28(月)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615696",
+   "artist": "埼玉西武ライオンズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/22(水) ・ 2026/7/23(木)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669744",
+   "artist": "埼玉西武ライオンズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626224",
+   "artist": "埼玉西武ライオンズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/12(土) ・ 2026/9/13(日)",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623976",
+   "artist": "サガン鳥栖対ヴァンフォーレ甲府 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "駅前不動産スタジアム(佐賀県)",
+   "pref": "佐賀県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619769",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＵＴＳＵＮＯＭＩＹＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "ライトキューブ宇都宮(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617803",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＯＳＡＫＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "ハービスＨＡＬＬ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618209",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＫＡＮＡＺＡＷＡ Ｓｕｐｐｏｒｔｅｄ ｂｙ ハニービー石川",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "石川県産業展示館 ２号館(石川県)",
+   "pref": "石川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618008",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＫＹＯＴＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "ＫＢＳホール(京都府)",
+   "pref": "京都府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619250",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＫＯＢＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金)",
+   "venue": "神戸サンボーホール(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619967",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＫＯＲＡＫＵＥＮ Ａｕｇ．２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/18(火)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619869",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＫＯＲＡＫＵＥＮ Ａｕｇ．１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/3(月)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619836",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＫＯＲＡＫＵＥＮ Ｊｕｌ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/28(火)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618467",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＳＡＰＰＯＲＯ Ｄａｙ２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日)",
+   "venue": "シャトレーゼ ガトーキングダム サッポロ(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618294",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＳＡＰＰＯＲＯ Ｄａｙ１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "シャトレーゼ ガトーキングダム サッポロ(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619675",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＪＯＥＴＳＵ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "Ｄｕｏ ＣＥＲＥＺＯ(新潟県)",
+   "pref": "新潟県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618790",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＳＥＮＤＡＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "仙台ＰＩＴ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619467",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＴＯＹＯＨＡＳＨＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "ロワジールホテル豊橋 ホリデイ・ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617758",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ｉｎ ＨＡＭＡＭＡＴＳＵ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/16(日)",
+   "venue": "アクトシティ浜松(静岡県)",
+   "pref": "静岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616758",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ～開幕戦～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土)",
+   "venue": "ＥＢＡＲＡ ＷＡＶＥ アリーナおおた(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617708",
+   "artist": "Ｓａｍｍｙ ｐｒｅｓｅｎｔｓ ＳＴＡＲＤＯＭ ５★ＳＴＡＲ ＧＰ ２０２６ ～優勝決定戦～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/23(日)",
+   "venue": "両国国技館(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669287",
+   "artist": "侍ジャパンU-18壮行試合 高校日本代表 対 大学日本代表",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617097",
+   "artist": "Ｓａｎｓａｎ ＫＢＣオーガスタゴルフトーナメント２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/27(木) ～ 2026/8/30(日)",
+   "venue": "芥屋ゴルフ倶楽部(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668286",
+   "artist": "ザ・オーケストラマッチ 「新日本プロレス×オーケストラ(京都フィル特別交響楽団)」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "東京国際フォーラム ホールＡ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623440",
+   "artist": "第５３弾“Ｔｈｅ ＧＲＥＡＴＥＳＴ”ＢＯＸＩＮＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/5(水)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623591",
+   "artist": "ＳＨＯＯＴ ＢＯＸＩＮＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/22(土)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619403",
+   "artist": "シュートボクシング／ＭＡＸＦＣ【ＹＯＵＮＧ ＣＡＥＳＡＲ ＣＵＰ ＣＥＮＴＲＡＬ ＶＯＬ．４０／ＭＡＸ ＦＣ ＤＥＡＤ ＯＲ ＡＬＩＶＥ １４】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "ホテルプラザ勝川(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623837",
+   "artist": "初代タイガーマスク ストロングスタイルプロレスＶｏｌ．４０",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/27(木)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621048",
+   "artist": "新日本キックボクシング",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621773",
+   "artist": "新日本プロレス ＜福岡大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "福岡国際センター(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669272",
+   "artist": "新日本プロレス 真夏の最強戦士決定戦 G1 CLIMAX36 三重大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝)",
+   "venue": "日硝ハイウエーアリーナ(三重県)",
+   "pref": "三重県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622183",
+   "artist": "新日本プロレス＜高松大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/31(金)",
+   "venue": "高松市総合体育館 第１競技場(香川県)",
+   "pref": "香川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622289",
+   "artist": "新日本プロレス＜広島大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "広島サンプラザホール(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622544",
+   "artist": "新日本プロレス＜大和大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/29(水)",
+   "venue": "大和大学 大和アリーナ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621601",
+   "artist": "２０２６ ＪＬＰＧＡステップ・アップ・ツアー 山陽新聞レディースカップ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ～ 2026/9/20(日)",
+   "venue": "東児が丘マリンヒルズゴルフクラブ(岡山県)",
+   "pref": "岡山県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669684",
+   "artist": "JCDA CHEER DANCE COMPETITION in Summer 関東",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "駒沢オリンピック公園総合運動場 体育館(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623345",
+   "artist": "ＪＯＣジュニアオリンピックカップ ２０２６全日本ジュニア体操競技選手権大会・東西決勝大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/13(木) ～ 2026/8/17(月)",
+   "venue": "日環アリーナ栃木(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623861",
+   "artist": "２０２６ Ｊリーグ プレシーズンマッチ 松本山雅ＦＣ対ヴァンフォーレ甲府",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/7/25(土)",
+   "venue": "サンプロ アルウィン(長野県)",
+   "pref": "長野県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613121",
+   "artist": "ジャガー横田デビュー５０周年大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669821",
+   "artist": "Juiceスペシャルマッチ 浦和レッズ対RB大宮アルディージャ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "埼玉スタジアム２００２(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668308",
+   "artist": "秀拓Presents 女子野球交流戦 読売ジャイアンツ女子チーム対阪神タイガース Women",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626139",
+   "artist": "スーパーマリオ : ＲＵＮ ＴＯ ＴＨＥ ＧＯＡＬ ｉｎ Ｈｏｋｋａｉｄｏ ２０２６ 大和ハウス プレミストドーム 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "大和ハウス プレミストドーム(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620699",
+   "artist": "ＳＥＮＲＩＭＡ ＳＵＰＥＲ ＦＩＧＨＴ ＶＯＬ．７６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "神戸芸術センター 芸術劇場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669266",
+   "artist": "第30回記念全国高等学校女子硬式野球選手権大会 【決勝戦】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669703",
+   "artist": "令和8年度全国高等学校総合体育大会陸上競技大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/30(木) ～ 2026/8/5(水)",
+   "venue": "平和堂ＨＡＴＯスタジアム(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625196",
+   "artist": "第３４回 全日本新体操クラブ選手権",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/8/14(金) ・ 2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "東京体育館(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625418",
+   "artist": "全日本プロレス＜大田区大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土)",
+   "venue": "ＥＢＡＲＡ ＷＡＶＥ アリーナおおた(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620126",
+   "artist": "全日本プロレス＜岐阜大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "じゅうろくプラザ ホール(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625359",
+   "artist": "全日本プロレス＜熊本大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/22(土)",
+   "venue": "グランメッセ熊本(熊本県)",
+   "pref": "熊本県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625365",
+   "artist": "全日本プロレス＜久留米大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/23(日)",
+   "venue": "地場産くるめ(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620124",
+   "artist": "全日本プロレス＜神戸大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "神戸サンボーホール(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620724",
+   "artist": "全日本プロレス＜後楽園大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624297",
+   "artist": "全日本プロレス＜後楽園大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620725",
+   "artist": "全日本プロレス＜新木場大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/22(水)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627477",
+   "artist": "全日本プロレス＜新木場大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625304",
+   "artist": "全日本プロレス＜立川大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "ドーム立川立飛(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625305",
+   "artist": "全日本プロレス＜長崎大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金)",
+   "venue": "出島メッセ長崎(長崎県)",
+   "pref": "長崎県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625381",
+   "artist": "全日本プロレス＜広島大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/26(水)",
+   "venue": "広島県立広島産業会館 東展示館(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625369",
+   "artist": "全日本プロレス＜松山大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火)",
+   "venue": "松山市総合コミュニティセンター 企画展示ホール(愛媛県)",
+   "pref": "愛媛県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621044",
+   "artist": "全日本プロレス＜代々木大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/31(木)",
+   "venue": "国立代々木競技場 第二体育館(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605574",
+   "artist": "創立４０周年記念事業ＹＳＫｅ－ｃｏｍ 大相撲甲府場所夏巡業",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火)",
+   "venue": "アイメッセ山梨(山梨県)",
+   "pref": "山梨県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624315",
+   "artist": "ＳＯＵＬ ＦＩＧＨＴＩＮＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/16(日)",
+   "venue": "いちのみや中央プラザ体育館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615940",
+   "artist": "第１回ベースボールフェスタ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625517",
+   "artist": "第５９回 日本女子オープンゴルフ選手権 【１日目・２日目】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/1(木) ～ 2026/10/2(金)",
+   "venue": "宝塚ゴルフ倶楽部 旧コース(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626088",
+   "artist": "第５９回 日本女子オープンゴルフ選手権 【３日目・４日目】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土) ～ 2026/10/4(日)",
+   "venue": "宝塚ゴルフ倶楽部 旧コース(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618828",
+   "artist": "第２回空手 Ｃｈａｍｐｉｏｎ ｏｆ Ｃｈａｍｐｉｏｎｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "国立代々木競技場 第二体育館(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626084",
+   "artist": "第６回千葉女子オープンゴルフトーナメント２０２６ 新昭和杯",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/7(月)",
+   "venue": "鶴舞カントリー倶楽部(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618463",
+   "artist": "千葉ロッテマリーンズ対埼玉西武ライオンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ・ 2026/8/5(水)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624037",
+   "artist": "千葉ロッテマリーンズ対埼玉西武ライオンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618951",
+   "artist": "千葉ロッテマリーンズ対埼玉西武ライオンズ 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ・ 2026/8/5(水)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624420",
+   "artist": "千葉ロッテマリーンズ対埼玉西武ライオンズ 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618461",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/22(水) ・ 2026/7/23(木)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624045",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624049",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/16(水) ・ 2026/9/17(木)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618947",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/22(水) ・ 2026/7/23(木)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624421",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624422",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/16(水) ・ 2026/9/17(木)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624028",
+   "artist": "千葉ロッテマリーンズ対北海道日本ハムファイターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金) ・ 2026/8/22(土) ・ 2026/8/23(日)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624417",
+   "artist": "千葉ロッテマリーンズ対北海道日本ハムファイターズ 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金) ・ 2026/8/22(土) ・ 2026/8/23(日)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615639",
+   "artist": "中日ドラゴンズ（１塁側）対千葉ロッテマリーンズ（３塁側） ２０２６年ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/5(水) ・ 2026/8/6(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602463",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ・ 2026/8/5(水) ・ 2026/8/6(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602474",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金) ・ 2026/8/22(土) ・ 2026/8/23(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602485",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/12(土)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600700",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ・ 2026/8/5(水) ・ 2026/8/6(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600715",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金) ・ 2026/8/22(土) ・ 2026/8/23(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600734",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/12(土)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600770",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ・ 2026/8/5(水) ・ 2026/8/6(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600785",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金) ・ 2026/8/22(土) ・ 2026/8/23(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600790",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/12(土)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600941",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ・ 2026/8/5(水) ・ 2026/8/6(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600947",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金) ・ 2026/8/22(土) ・ 2026/8/23(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600951",
+   "artist": "中日ドラゴンズ対東京ヤクルトスワローズ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/12(土)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602453",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602477",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水) ・ 2026/8/27(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600694",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600717",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水) ・ 2026/8/27(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600756",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600786",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水) ・ 2026/8/27(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600936",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600948",
+   "artist": "中日ドラゴンズ対阪神タイガース 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水) ・ 2026/8/27(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602479",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ・ 2026/9/2(水) ・ 2026/9/3(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602488",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600729",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ・ 2026/9/2(水) ・ 2026/9/3(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600742",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600789",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ・ 2026/9/2(水) ・ 2026/9/3(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600794",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600950",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ・ 2026/9/2(水) ・ 2026/9/3(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600952",
+   "artist": "中日ドラゴンズ対広島東洋カープ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602459",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602468",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 一般席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝) ・ 2026/8/12(水) ・ 2026/8/13(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600696",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600704",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 駐車券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝) ・ 2026/8/12(水) ・ 2026/8/13(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600766",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600771",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 テラス・ペア・リビングシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝) ・ 2026/8/12(水) ・ 2026/8/13(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600937",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600944",
+   "artist": "中日ドラゴンズ対横浜ＤｅＮＡベイスターズ 公式戦 プライム・レストランシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝) ・ 2026/8/12(水) ・ 2026/8/13(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614094",
+   "artist": "中日ドラゴンズ（１塁側）対横浜ＤｅＮＡベイスターズ（３塁側） ２０２６年ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618417",
+   "artist": "中日ドラゴンズ（１塁側）対横浜ＤｅＮＡベイスターズ（３塁側） ２０２６年ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/13(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619058",
+   "artist": "中日ドラゴンズ（１塁側）対読売ジャイアンツ（３塁側） ２０２６年ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水) ・ 2026/8/27(木)",
+   "venue": "バンテリンドーム ナゴヤ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2452563",
+   "artist": "TJHiroshimaチケット企画",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/6/25(木) ～ 2027/1/24(日)",
+   "venue": "呉カントリークラブ(広島県) 一般発売 予定枚数終了",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612888",
+   "artist": "天龍プロジェクト",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/29(水)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621984",
+   "artist": "東京ヤクルトスワローズ対千葉ロッテマリーンズ ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/31(金) ・ 2026/8/1(土) ・ 2026/8/2(日)",
+   "venue": "ヤクルト戸田球場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620384",
+   "artist": "東京ヤクルトスワローズ 対 中日ドラゴンズ 2026/7月開催",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620401",
+   "artist": "東京ヤクルトスワローズ 対 中日ドラゴンズ 2026/7月開催≪車椅子席≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621883",
+   "artist": "東京ヤクルトスワローズ対東北楽天ゴールデンイーグルス ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土) ・ 2026/7/19(日) ・ 2026/7/20(月・祝)",
+   "venue": "ヤクルト戸田球場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620390",
+   "artist": "東京ヤクルトスワローズ 対 阪神タイガース 2026/7・8月開催",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/31(金) ・ 2026/8/1(土) ・ 2026/8/2(日)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620403",
+   "artist": "東京ヤクルトスワローズ 対 阪神タイガース 2026/7・8月開催≪車椅子席≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/31(金) ・ 2026/8/1(土) ・ 2026/8/2(日)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620387",
+   "artist": "東京ヤクルトスワローズ 対 広島東洋カープ 2026/7月開催",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620391",
+   "artist": "東京ヤクルトスワローズ 対 広島東洋カープ 2026/8月開催",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝) ・ 2026/8/12(水) ・ 2026/8/13(木)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620402",
+   "artist": "東京ヤクルトスワローズ 対 広島東洋カープ 2026/7月開催≪車椅子席≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/7/25(土) ・ 2026/7/26(日)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620404",
+   "artist": "東京ヤクルトスワローズ 対 広島東洋カープ 2026/8月開催≪車椅子席≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝) ・ 2026/8/12(水) ・ 2026/8/13(木)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620400",
+   "artist": "東京ヤクルトスワローズ 対 横浜ＤｅＮＡベイスターズ 2026/8月開催",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金) ・ 2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620405",
+   "artist": "東京ヤクルトスワローズ 対 横浜ＤｅＮＡベイスターズ 2026/8月開催≪車椅子席≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金) ・ 2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615426",
+   "artist": "東京ヤクルトスワローズ 対 読売ジャイアンツ 2026/7月開催",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615430",
+   "artist": "東京ヤクルトスワローズ 対 読売ジャイアンツ 2026/7月開催≪車椅子席≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666049",
+   "artist": "TOKYO ROKUTAI FES 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "味の素スタジアム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626495",
+   "artist": "東京ワイルズ対横浜グリッツ ２６－２７ Ｅｘｈｉｂｉｔｉｏｎ Ｓｐｅｃｉａｌ Ｍａｔｃｈ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/23(日)",
+   "venue": "ダイドードリンコアイスアリーナ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609523",
+   "artist": "徳島インディゴソックスホームゲーム 四国アイランドリーグｐｌｕｓ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/3/28(土) ～ 2026/9/30(水)",
+   "venue": "",
+   "pref": "",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666565",
+   "artist": "令和8年 夏巡業 大相撲岐阜場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "岐阜メモリアルセンター で愛ドーム(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626876",
+   "artist": "６６６ ｖｏｌ．１６４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日)",
+   "venue": "ＴＯＫＹＯ ＳＱＵＡＲＥ ｉｎ Ｉｔａｂａｓｈｉ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614468",
+   "artist": "ＰＰＰＴＯＫＹＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "新木場１ｓｔ ＲＩＮＧ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614490",
+   "artist": "ＰＰＰＴＯＫＹＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木)",
+   "venue": "新宿ＦＡＣＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626453",
+   "artist": "ＰＰＰＴＯＫＹＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/26(木)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611252",
+   "artist": "道頓堀プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "ティグレジム平野(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618855",
+   "artist": "道頓堀プロレス２０２６ ７月大会２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "大阪市立生野区民センター(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618858",
+   "artist": "道頓堀プロレス２０２６ ８月大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "ドーンセンター パフォーマンススペース(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618859",
+   "artist": "道頓堀プロレス２０２６ ８月大会２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日)",
+   "venue": "尼崎市中小企業センター(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617337",
+   "artist": "【土日祝日時指定】中日（３塁側）対埼玉西武（１塁側） ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "ナゴヤ球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617325",
+   "artist": "【土日祝日時指定】中日（３塁側）対ハヤテ（１塁側） ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土) ・ 2026/7/19(日) ・ 2026/7/20(月・祝)",
+   "venue": "ナゴヤ球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617339",
+   "artist": "【土日祝日時指定】中日（３塁側）対ハヤテ（１塁側） ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土) ・ 2026/8/30(日)",
+   "venue": "ナゴヤ球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622669",
+   "artist": "【土日祝日時指定】中日（３塁側）対ハヤテ（１塁側） ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/19(土) ・ 2026/9/20(日)",
+   "venue": "ナゴヤ球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622754",
+   "artist": "【土日祝日時指定】中日（３塁側）対北海道日本ハム（１塁側） ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土) ・ 2026/9/27(日)",
+   "venue": "ナゴヤ球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617328",
+   "artist": "【土日祝日時指定】中日（３塁側）対横浜ＤｅＮＡ（１塁側） ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝)",
+   "venue": "ナゴヤ球場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625298",
+   "artist": "第８５回Ｄｒａｍａｔｉｃ Ｂｏｘｉｎｇ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日)",
+   "venue": "エル・おおさか エル・シアター(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620520",
+   "artist": "名古屋オーシャンズ対しながわシティ メットライフ生命Ｆリーグ2026-27 ディビジョン1",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "名古屋市千種スポーツセンター 第１競技場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620522",
+   "artist": "名古屋オーシャンズ対ボアルース長野 メットライフ生命Ｆリーグ2026-27 ディビジョン1",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "名古屋市千種スポーツセンター 第１競技場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668962",
+   "artist": "令和八年夏巡業 大相撲川崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/26(水)",
+   "venue": "東急ドレッセとどろきアリーナ(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614859",
+   "artist": "令和八年夏巡業 大相撲熊谷場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/24(月)",
+   "venue": "彩の国くまがやドーム 体育館(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603845",
+   "artist": "令和８年夏巡業 大相撲須賀川場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/13(木)",
+   "venue": "すかがわ「だんぼっち」「ダンボ・ウル」アリーナ(福島県)",
+   "pref": "福島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667833",
+   "artist": "令和八年夏巡業 大相撲立川立飛場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "アリーナ立川立飛(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668168",
+   "artist": "令和8年夏巡業 大相撲水戸大洗場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/27(木)",
+   "venue": "アダストリアみとアリーナ(茨城県)",
+   "pref": "茨城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668963",
+   "artist": "令和八年夏巡業 大相撲横手場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金)",
+   "venue": "ＩＲＩＳＯアリーナ横手(秋田県)",
+   "pref": "秋田県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609256",
+   "artist": "ハヤテベンチャーズ静岡 ２０２６年度 ファーム・リーグ公式戦 ホームゲーム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/3/14(土) ～ 2026/9/27(日)",
+   "venue": "",
+   "pref": "",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603181",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金) ・ 2026/8/8(土) ・ 2026/8/9(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600846",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617979",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/14(月)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665272",
+   "artist": "【阪神タイガース 公式戦・交流戦】NTTドコモビジネスファミリーシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665270",
+   "artist": "【阪神タイガース 公式戦・交流戦】JCBエキサイトシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664954",
+   "artist": "【阪神タイガース】セコム ツイン・トリプルシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665271",
+   "artist": "【阪神タイガース 公式戦】TBDS限定オリジナルジャージ付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金) ・ 2026/8/8(土) ・ 2026/8/9(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602257",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617988",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/14(月)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602339",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617993",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/14(月)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664952",
+   "artist": "【阪神タイガース】パナソニックペアシート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2548437",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617986",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/14(月)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603187",
+   "artist": "阪神タイガース対中日ドラゴンズ 公式戦 練習見学付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金) ・ 2026/8/8(土) ・ 2026/8/9(日)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603182",
+   "artist": "阪神タイガース対東京ヤクルトスワローズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/18(火) ・ 2026/8/19(水) ・ 2026/8/20(木)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603188",
+   "artist": "阪神タイガース対東京ヤクルトスワローズ 公式戦 練習見学付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/18(火) ・ 2026/8/19(水) ・ 2026/8/20(木)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600845",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600847",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ・ 2026/9/19(土)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602256",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602258",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ・ 2026/9/19(土)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602337",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602340",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ・ 2026/9/19(土)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2548436",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2548438",
+   "artist": "阪神タイガース対広島東洋カープ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ・ 2026/9/19(土)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600840",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600843",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600849",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602251",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602255",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602259",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 ＤＴＳボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602333",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602336",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602341",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 「ドコモラウンジ」付きチケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2548432",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝) ・ 2026/7/21(火) ・ 2026/7/22(水)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2548435",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2548439",
+   "artist": "阪神タイガース対横浜ＤｅＮＡベイスターズ 公式戦 三ツ矢サイダーボックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609897",
+   "artist": "東日本大震災復興支援 令和八年夏巡業 大相撲仙台場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/10(月) ・ 2026/8/11(火・祝)",
+   "venue": "本山製作所青葉アリーナ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669461",
+   "artist": "第25回ヒロシマ国際ハンドボール大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/18(土) ・ 2026/7/19(日) ・ 2026/7/20(月・祝)",
+   "venue": "マエダハウジング東区スポーツセンター(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605657",
+   "artist": "広島東洋カープ対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/31(金) ・ 2026/8/1(土) ・ 2026/8/2(日)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605661",
+   "artist": "広島東洋カープ対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/18(火) ・ 2026/8/19(水) ・ 2026/8/20(木)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605665",
+   "artist": "広島東洋カープ対東京ヤクルトスワローズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/28(金) ・ 2026/8/29(土) ・ 2026/8/30(日)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606550",
+   "artist": "広島東洋カープ対阪神タイガース 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/17(金) ・ 2026/7/18(土) ・ 2026/7/19(日)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606551",
+   "artist": "広島東洋カープ対阪神タイガース 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/14(金) ・ 2026/8/15(土) ・ 2026/8/16(日)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605663",
+   "artist": "広島東洋カープ対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火) ・ 2026/8/26(水) ・ 2026/8/27(木)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605669",
+   "artist": "広島東洋カープ対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/11(金) ・ 2026/9/12(土)",
+   "venue": "ＭＡＺＤＡ Ｚｏｏｍ－Ｚｏｏｍ スタジアム広島(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626558",
+   "artist": "ＨＥＡＴ５９",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土)",
+   "venue": "刈谷市産業振興センター あいおいホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618146",
+   "artist": "ＰＵＲＥ－Ｊ女子プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "大阪市立生野区民センター(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616782",
+   "artist": "ＰＵＲＥ－Ｊ女子プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622691",
+   "artist": "ＰＵＲＥ－Ｊ女子プロレス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "板橋区立グリーンホール ２Ｆホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622906",
+   "artist": "ファーム・リーグ公式戦 埼玉西武ＶＳ北海道日本ハム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土)",
+   "venue": "大原運動公園ベーマガＳＴＡＤＩＵＭ(新潟県)",
+   "pref": "新潟県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625023",
+   "artist": "ＦＩＴ－ＥＡＳＹ ＣＵＰ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "長良川国際会議場 メインホール(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624284",
+   "artist": "ＦＵＫＵＯＫＡ ＯＨ ＳＡＤＡＨＡＲＵ ＬＥＧＡＣＹ ＰＲＯＪＥＣＴ ＳＰＥＣＩＡＬ ＭＡＴＣＨ Ｓｕｐｐｏｒｔｅｄ ｂｙ 昭和建設",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "みずほペイペイドーム(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625122",
+   "artist": "ＦＵＫＵＯＫＡ ＯＨ ＳＡＤＡＨＡＲＵ ＬＥＧＡＣＹ ＰＲＯＪＥＣＴ ＳＰＥＣＩＡＬ ＭＡＴＣＨ Ｓｕｐｐｏｒｔｅｄ ｂｙ 昭和建設 英国風パブ ＨＵＢ スポーツバーシート観戦（１１／２３）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "みずほペイペイドーム(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625223",
+   "artist": "ＦＵＫＵＯＫＡ ＯＨ ＳＡＤＡＨＡＲＵ ＬＥＧＡＣＹ ＰＲＯＪＥＣＴ ＳＰＥＣＩＡＬ ＭＡＴＣＨ Ｓｕｐｐｏｒｔｅｄ ｂｙ 昭和建設 スーパーボックス＜引換券＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "みずほペイペイドーム(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624955",
+   "artist": "ＦＵＫＵＯＫＡ ＯＨ ＳＡＤＡＨＡＲＵ ＬＥＧＡＣＹ ＰＲＯＪＥＣＴ ＳＰＥＣＩＡＬ ＭＡＴＣＨ Ｓｕｐｐｏｒｔｅｄ ｂｙ 昭和建設 みずほＰａｙＰａｙドーム一般駐車場予約券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "みずほペイペイドーム(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624320",
+   "artist": "ＦＵＫＵＯＫＡ ＯＨ ＳＡＤＡＨＡＲＵ ＬＥＧＡＣＹ ＰＲＯＪＥＣＴ ＳＰＥＣＩＡＬ ＭＡＴＣＨ Ｓｕｐｐｏｒｔｅｄ ｂｙ 昭和建設 みずほＰａｙＰａｙドーム車イスゾーン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "みずほペイペイドーム(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624942",
+   "artist": "ＦＵＫＵＯＫＡ ＯＨ ＳＡＤＡＨＡＲＵ ＬＥＧＡＣＹ ＰＲＯＪＥＣＴ ＳＰＥＣＩＡＬ ＭＡＴＣＨ Ｓｕｐｐｏｒｔｅｄ ｂｙ 昭和建設 みずほＰａｙＰａｙドーム車イス用駐車場予約券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "みずほペイペイドーム(福岡県)",
+   "pref": "福岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622372",
+   "artist": "プロフェッショナル修斗公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "各務原市産業文化センター あすかホール(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618920",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "横浜産貿ホール マリネリア(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621228",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土)",
+   "venue": "新宿ＦＡＣＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623102",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "ＰＯＳＴ ＤＩ ＡＭＩＳＴＡＤ(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618927",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627356",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/8/26(水)",
+   "venue": "ＴＯＫＹＯ ＳＱＵＡＲＥ ｉｎ Ｉｔａｂａｓｈｉ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623144",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火)",
+   "venue": "新宿ＦＡＣＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623184",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "仙台ヒルズホテル(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627522",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/22(火・祝)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621231",
+   "artist": "プロレスリングＷＡＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "１７６ＢＯＸ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627751",
+   "artist": "プロレスリングＦＬＡＳＨ！！浜松ＦＬＡＳＨ！！ＶＯＬ．１２",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/21(月・祝)",
+   "venue": "クリエート浜松 ホール(静岡県)",
+   "pref": "静岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2605271",
+   "artist": "【平日 日付自由券】中日ドラゴンズ ２０２６年ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/3/24(火) ～ 2026/9/25(金)",
+   "venue": "",
+   "pref": "",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622011",
+   "artist": "北海道コンサドーレ札幌キックオフ２０２６／２７",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669832",
+   "artist": "北海道コンサドーレ札幌対RB大宮アルディージャ 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/22(土)",
+   "venue": "大和ハウス プレミストドーム(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669830",
+   "artist": "北海道コンサドーレ札幌対徳島ヴォルティス 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "大和ハウス プレミストドーム(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622587",
+   "artist": "北海道コンサドーレ札幌対名古屋グランパス ２０２６／２７トレーニングマッチ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/25(土)",
+   "venue": "宮の沢白い恋人サッカー場(北海道)",
+   "pref": "北海道",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622557",
+   "artist": "ＨＯＯＳＴ ＣＵＰ ＣＥＮＴＲＡＬ ＫＩＣＫ Ｖｏｌ．１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/26(日)",
+   "venue": "ダイアモンドホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618582",
+   "artist": "ボートピア梅田",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/1(水) ～ 2026/7/31(金)",
+   "venue": "ボートピア梅田(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622324",
+   "artist": "ボートピア梅田",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土) ～ 2026/8/31(月)",
+   "venue": "ボートピア梅田(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620578",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 尼崎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/13(月) ～ 2026/8/4(火)",
+   "venue": "ボートレース尼崎(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625236",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 尼崎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日) ～ 2026/8/14(金)",
+   "venue": "ボートレース尼崎(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625232",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 尼崎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/17(月) ～ 2026/8/29(土)",
+   "venue": "ボートレース尼崎(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620627",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 住之江",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/3(金) ～ 2026/7/27(月)",
+   "venue": "ボートレース住之江(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625006",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 住之江",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/4(火) ～ 2026/8/18(火)",
+   "venue": "ボートレース住之江(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620623",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 住之江 場外発売",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/1(水) ～ 2026/7/31(金)",
+   "venue": "ボートレース住之江(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625161",
+   "artist": "ＢＯＡＴ ＲＡＣＥ 住之江 場外発売",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/1(土) ～ 2026/8/31(月)",
+   "venue": "ボートレース住之江(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2604158",
+   "artist": "ＢＯＡＴ ＲＡＣＥ ２０２６年全日本スーパーフォーミュラ選手権第８戦 東北大会 スポーツランドＳＵＧＯ 観戦券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土) ～ 2026/8/9(日)",
+   "venue": "スポーツランドＳＵＧＯ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623222",
+   "artist": "ＢＯＡＴ ＲＡＣＥ びわこ「ＳＧ第３１回オーシャンカップ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/28(火) ～ 2026/8/2(日)",
+   "venue": "ボートレースびわこ(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626688",
+   "artist": "松本山雅ＦＣ対愛媛ＦＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/8/22(土)",
+   "venue": "サンプロ アルウィン(長野県)",
+   "pref": "長野県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626683",
+   "artist": "松本山雅ＦＣ対レイラック滋賀ＦＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/8/16(日)",
+   "venue": "サンプロ アルウィン(長野県)",
+   "pref": "長野県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669682",
+   "artist": "第13回 マルハンカップ 太平洋クラブシニア",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/22(土) ～ 2026/8/23(日)",
+   "venue": "太平洋クラブ 御殿場コース(静岡県)",
+   "pref": "静岡県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625687",
+   "artist": "ＭＡＲＯＯＭＳ ｐｒｅｓｅｎｔｓ ＫＮＯＣＫ ＯＵＴ．６６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625188",
+   "artist": "ＭｕａｙＴｈａｉＯｐｅｎ ５３",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "ひがしんアリーナ サブアリーナ(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668136",
+   "artist": "明治安田レディスゴルフトーナメント",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/16(木) ～ 2026/7/17(金)",
+   "venue": "仙台クラシックゴルフ倶楽部(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667675",
+   "artist": "野球いっかん！presents 立浪・宮本 「MAJI TALK」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "東別院テラスホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619846",
+   "artist": "Ｙｏｕ ｗｉｌｌ ｂｅ ｔｈｅ Ｃｈａｍｐｉｏｎ ３１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/27(月)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621436",
+   "artist": "Ｙｏｕ ｗｉｌｌ ｂｅ ｔｈｅ Ｃｈａｍｐｉｏｎ ３２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/2(日)",
+   "venue": "錦秀会 住吉区民センター(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618212",
+   "artist": "横浜ＤｅＮＡベイスターズ対中日ドラゴンズ／公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/28(金) ・ 2026/8/29(土) ・ 2026/8/30(日)",
+   "venue": "横浜スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618688",
+   "artist": "横浜ＤｅＮＡベイスターズ対中日ドラゴンズ／公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/22(火・祝) ・ 2026/9/23(水・祝)",
+   "venue": "横浜スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669514",
+   "artist": "横浜DeNAベイスターズ主催 ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/21(火) ・ 2026/7/22(水) ・ 2026/7/23(木)",
+   "venue": "横須賀スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666416",
+   "artist": "横浜DeNAベイスターズ対東京ヤクルトスワローズ／公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/17(金) ・ 2026/7/18(土) ・ 2026/7/19(日)",
+   "venue": "横浜スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618286",
+   "artist": "横浜ＤｅＮＡベイスターズ対東京ヤクルトスワローズ／公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/8(火) ・ 2026/9/9(水) ・ 2026/9/10(木)",
+   "venue": "横浜スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618526",
+   "artist": "横浜ＤｅＮＡベイスターズ対東京ヤクルトスワローズ／公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/18(金) ・ 2026/9/19(土)",
+   "venue": "横浜スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617626",
+   "artist": "横浜ＤｅＮＡベイスターズ対広島東洋カープ／公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金) ・ 2026/8/8(土) ・ 2026/8/9(日)",
+   "venue": "横浜スタジアム(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615166",
+   "artist": "横浜ノースドックラン２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/7(土)",
+   "venue": "横浜ノース・ドック(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665773",
+   "artist": "読売ジャイアンツ主催 2026ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/14(火) ・ 2026/7/15(水) ・ 2026/7/16(木)",
+   "venue": "ジャイアンツタウンスタジアム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618514",
+   "artist": "読売ジャイアンツ対中日ドラゴンズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/17(金)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621130",
+   "artist": "読売ジャイアンツ対東京ヤクルトスワローズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621131",
+   "artist": "読売ジャイアンツ対阪神タイガース 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/11(火・祝)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668254",
+   "artist": "読売ジャイアンツ対広島東洋カープ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/20(月・祝)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621132",
+   "artist": "読売ジャイアンツ対広島東洋カープ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621129",
+   "artist": "読売ジャイアンツ対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/31(金)",
+   "venue": "東京ドーム(東京都)",
+   "pref": "東京都",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622589",
+   "artist": "読売ジャイアンツ対横浜ＤｅＮＡベイスターズ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ・ 2026/9/2(水)",
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625915",
+   "artist": "琉球ドラゴン女子プロレス２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/16(日)",
+   "venue": "てんぶす那覇 テンブスホール(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618940",
+   "artist": "ＲＹＵＫＹＵ ＭＩＤＳＵＭＭＥＲ ＣＲＥＡＴＩＯＮ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/19(日)",
+   "venue": "てんぶす那覇 テンブスホール(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668005",
+   "artist": "令和8年 秋巡業 大相撲明石場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/20(火)",
+   "venue": "にっしんタコちゃんアリーナ(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667582",
+   "artist": "令和八年 秋巡業 大相撲射水場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/11(日)",
+   "venue": "アルビス小杉総合体育センター(富山県)",
+   "pref": "富山県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668404",
+   "artist": "令和八年 秋巡業 大相撲海老名場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/7(水)",
+   "venue": "海老名運動公園 総合体育館(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616252",
+   "artist": "令和８年 秋巡業 大相撲おおさか舞洲場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/17(土)",
+   "venue": "おおきにアリーナ舞洲(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616218",
+   "artist": "令和八年 秋巡業 大相撲笠岡場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/23(金)",
+   "venue": "かさしんアリーナ(岡山県)",
+   "pref": "岡山県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667583",
+   "artist": "令和八年 秋巡業 大相撲かほく場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/13(火)",
+   "venue": "とり野菜みそ ＢＬＵＥＣＡＴＳ ＡＲＥＮＡ(石川県)",
+   "pref": "石川県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613412",
+   "artist": "令和八年 秋巡業 大相撲高山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/14(水)",
+   "venue": "飛騨高山ビッグアリーナ(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668292",
+   "artist": "令和八年 秋巡業 大相撲長浜場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/15(木)",
+   "venue": "県民共済ドーム長浜(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613429",
+   "artist": "令和八年 秋巡業 大相撲松本場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "エア・ウォーターアリーナ 松本(長野県)",
+   "pref": "長野県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619037",
+   "artist": "令和八年大相撲秋巡業 岡山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/21(水)",
+   "venue": "シゲトーアリーナ岡山(岡山県)",
+   "pref": "岡山県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617934",
+   "artist": "令和８年度夏巡業大相撲奥州場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/12(水)",
+   "venue": "奥州市総合体育館（Ｚアリーナ）(岩手県)",
+   "pref": "岩手県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606062",
+   "artist": "令和８年夏巡業 大相撲秋田場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "ＣＮＡアリーナ☆あきた(秋田県)",
+   "pref": "秋田県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666129",
+   "artist": "令和八年 夏巡業 大相撲大崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/21(金)",
+   "venue": "タカカツアリーナ大崎(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606014",
+   "artist": "令和八年 夏巡業 大相撲大田原場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/23(日)",
+   "venue": "栃木県立県北体育館(栃木県)",
+   "pref": "栃木県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623605",
+   "artist": "令和八年 夏巡業 大相撲ぎふ山県場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/3(月)",
+   "venue": "山県市総合体育館(岐阜県)",
+   "pref": "岐阜県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669160",
+   "artist": "令和8年 夏巡業 大相撲郡山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/5(水)",
+   "venue": "宝来屋 ボンズアリーナ(福島県)",
+   "pref": "福島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606010",
+   "artist": "令和八年 夏巡業 大相撲酒田場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/7(金)",
+   "venue": "ＩＮＰＥＸ酒田アリーナ(山形県)",
+   "pref": "山形県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666325",
+   "artist": "令和八年 夏巡業 大相撲白石場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/9(日)",
+   "venue": "ホワイトキューブ（白石市文化体育活動センター）(宮城県)",
+   "pref": "宮城県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609307",
+   "artist": "令和八年 夏巡業 大相撲新庄場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "新庄市体育館(山形県)",
+   "pref": "山形県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666040",
+   "artist": "令和八年 夏巡業 大相撲草加場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土)",
+   "venue": "エネクルスポーツアリーナＳＯＫＡ(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606019",
+   "artist": "令和八年 夏巡業 大相撲流山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/25(火)",
+   "venue": "キッコーマン アリーナ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666126",
+   "artist": "令和八年 夏巡業 大相撲福島場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/22(土)",
+   "venue": "福島トヨタ クラウンアリーナ(福島県)",
+   "pref": "福島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667843",
+   "artist": "令和八年 夏巡業 大相撲三沢場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/19(水)",
+   "venue": "三沢市国際交流スポーツセンター(青森県)",
+   "pref": "青森県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669490",
+   "artist": "令和八年 冬巡業 大相撲呉場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/6(日)",
+   "venue": "シシンヨー オークアリーナ(広島県)",
+   "pref": "広島県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625274",
+   "artist": "レノファ山口ＦＣ対ＦＣ大阪 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "維新みらいふスタジアム(山口県)",
+   "pref": "山口県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625035",
+   "artist": "レノファ山口ＦＣ対ＦＣ琉球 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/15(土)",
+   "venue": "維新みらいふスタジアム(山口県)",
+   "pref": "山口県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624010",
+   "artist": "ＲＥＭＹ ｐｒｅｓｅｎｔｓ ＫＮＯＣＫ ＯＵＴ．６７",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "タケダハムはびきのコロセアム(大阪府)",
+   "pref": "大阪府",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624517",
+   "artist": "ヴァンラーレ八戸対カターレ富山 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/8(土)",
+   "venue": "プライフーズスタジアム(青森県)",
+   "pref": "青森県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626045",
+   "artist": "ヴァンラーレ八戸対ブラウブリッツ秋田 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土)",
+   "venue": "プライフーズスタジアム(青森県)",
+   "pref": "青森県",
+   "in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626040",
+   "artist": "ヴァンラーレ八戸対ベガルタ仙台 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/22(土)",
+   "venue": "プライフーズスタジアム(青森県)",
+   "pref": "青森県",
+   "in_db": false
+  }
+ ]
+}

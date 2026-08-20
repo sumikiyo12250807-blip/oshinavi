@@ -1,0 +1,84 @@
+1:   function renderCard(ev) {
+2:     // 特定地域フィルター中は、その地域の公演バッジだけ表示（「すべて」「全国」選択時は全バッジ）
+3:     let shownTickets = ev.tickets;
+4:     if (activeRegion && activeRegion !== "all" && activeRegion !== "zenkoku") {
+5:       const f = ev.tickets.filter(t => ticketRegions(t, ev).has(activeRegion));
+6:       if (f.length) shownTickets = f;
+7:     }
+8:     // カード内の枠順も グローバルのカード順(2026-07-10)と同じ「1本の時間軸で早い順」に揃える＝
+9:     // 発売前は発売日・販売中は締切を軸にして日付が早い順、同日なら発売前(これから発売)が上・締切(販売中)が下。
+10:     // 終了はその下、売切は最下。
+11:     // 旧(2026-07-03)は「販売中を全部上→発売前を下にまとめる」だったため、カウントダウン対象の発売前枠が
+12:     // カード後方に沈んでいた（ユーザー指摘 2026-07-12「これから発売するのを後ろにまとめるな・日付順に」）。
+13:     const ticketSortKey = (t) => {
+14:       if (t.soldout) return [3, "9999-99-99", 1];              // 売切=最下
+15:       if (t.saleUntilSoldOut) return [0, t.date, 1];           // 販売中（締切軸）
+16:       if (saleStartPending(t)) return [0, t.startDate, 0];     // 発売前（発売日軸・同日で上）
+17:       if (parseDateStr(t.date) >= today) return [0, t.date, 1];// 販売中（締切未到来）
+18:       return [2, t.date, 1];                                    // 終了
+19:     };
+20:     shownTickets = shownTickets.slice().sort((a, b) => {
+21:       const ka = ticketSortKey(a), kb = ticketSortKey(b);
+22:       if (ka[0] !== kb[0]) return ka[0] - kb[0];               // 買える/これから → 終了 → 売切
+23:       if (ka[1] !== kb[1]) return ka[1] < kb[1] ? -1 : 1;      // 日付が早い順（発売日/締切の時間軸）
+24:       return ka[2] - kb[2];                                     // 同日は 発売前 → 販売中
+25:     });
+26:     const ticketsHTML = shownTickets.map(t => {
+27:       // バッジからは末尾の締切/発売日時を外す（公演日や（）内の日付・範囲は残す）。
+28:       // 日付＋時刻は下の色付き日付にまとめて表示する（時刻は dispTime）。
+29:       const rawType = t.type || '';
+30:       const badgeType = (rawType
+31:         .replace(/\s*〜\s*\d{1,2}\/\d{1,2}(?:\s*\d{1,2}:\d{2})?\s*$/, '')
+32:         .replace(/\s*\d{1,2}\/\d{1,2}(?:\s*\d{1,2}:\d{2})?\s*(?:発売開始|発売予定|発売|販売開始|受付開始|受付)\s*$/, '')
+33:         .trim()) || rawType;
+34:       // 発売/締切の時刻だけを拾う（（…公演）内の開演時刻を発売時刻と誤読しないよう、最後の閉じ括弧より後ろで探す）
+35:       const _tm = rawType.replace(/^.*[）)]/, '').match(/\d{1,2}:\d{2}/);
+36:       const dispTime = _tm ? _tm[0] : null;
+37:       // 【予定枚数終了は消さずに残す】（ユーザー方針 2026-08-09）
+38:       //   ぴあ等が「予定枚数終了」と出している間は OSHINAVI にも出しておく。URLも生かしたまま。
+39:       //   Why: 売り切れた瞬間に消すと「売り切れた」のか「最初から載っていなかった」のかが
+40:       //        見た人に区別できない＝サイトを信用できなくなる（ユーザーが大相撲九月場所で実感）。
+41:       //   ぴあが枠ごと下げたら朝のルーチンで soldout が外れて削除候補に回る。
+42:       //   安全弁＝公演日を過ぎたら出さない（ぴあがページを残し続けても永久に居座らせない）。
+43:       if (t.soldout) {
+44:         if (parseDateStr(ev.date) < today) return "";
+45:         return `
+46:           <div class="ticket-item soldout">
+47:             <div class="ticket-type">
+48:               <span class="ticket-dot"></span>
+49:               <span class="ticket-type-text">${highlightShowDate(shrinkPrefList(badgeType))}</span>
+50:             </div>
+51:             <div class="ticket-date">${formatDate(t.date)}</div>
+52:             <div class="ticket-soldout-badge${t.saleEnded ? " saleended" : ""}">${t.saleEnded ? "販売終了" : "予定枚数終了"}</div>
+53:           </div>`;
+54:       }
+55:       // 販売終了したチケットは表示しない（発売前は date>=today なので残る／終わった公演から自然に消える）
+56:       if ((!t.startDate || parseDateStr(t.startDate) <= today) && parseDateStr(t.date) < today) {
+57:         return "";
+58:       }
+59:       // 表示ルール:
+60:       //  1. startDate 有り + 未来 → 「発売開始まで あとX日」(urgent/soon/normal) 表示日付=startDate
+61:       //  2. startDate 有り + 販売中(今日 >= startDate かつ 今日 <= date) → 「販売中」(selling) 表示日付=date(終了日)
+62:       //  3. startDate 無し + date 未来以降 → 「販売中」(selling) 表示日付=date ※既に販売中扱い
+63:       //  4. 期限切れ → 「終了」(passed) ※朝のルーチンで削除対象
+64:       let status, label, displayDate;
+65:       if (t.saleUntilSoldOut) {
+66:         status = "selling";
+67:         label  = "販売中";
+68:         displayDate = null;
+69:       } else if (saleStartPending(t)) {
+70:         const sdiff = daysFrom(t.startDate);
+71:         status = sdiff <= 7 ? "urgent" : sdiff <= 31 ? "soon" : "normal";
+72:         label  = sdiff === 0 ? "本日発売"
+73:                : sdiff === 1 ? "明日発売"
+74:                : `発売開始まで あと ${sdiff} 日`;
+75:         displayDate = t.startDate;
+76:       } else if (t.startDate && parseDateStr(t.date) >= today) {
+77:         if (t.startDate === t.date) {
+78:           // 締切未取込(発売日==終了日)＝ぴあが「◯/◯より発売」の単日形で販売終了日を出さない枠。
+79:           // 発売時刻は過ぎたが締切が不明→誤った「販売中〜発売日」を出さず「本日発売」とだけ表示。
+80:           // 発売時刻後にぴあが締切を出すので、当日のヒールで date に入る（ユーザー方針 2026-07-09）。
+81:           status = "urgent";
+82:           label  = "本日発売";
+83:           displayDate = t.startDate;
+84:         } else if (daysFrom(t.startDate) === 0) {

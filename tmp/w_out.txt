@@ -1,0 +1,74 @@
+=== 87868 ===
+  </div>
+                </div>
+              </form>
+
+            </div>
+          </section>
+        </div>
+        <div class="section section--no-box hidden-onlysm">
+          <!-- BEGIN .block-sidebanner-->
+          <div class="block-sidebanner">
+            <div class="block-sidebanner__list">
+            <!--
+              <div class="section section--no-box hidden-onlysm">
+                <div class="block-sidebanner">
+                  <div class="block-sidebanner__list">
+                    
+                  <div class="block-sidebanner__item" tabindex="-1" role="option" aria-describedby="slick-slide00" style=""><a class="block-sidebanner__trigger" href="#" tabindex="0"><img src="//placehold.it/336x150"></a></div></div>
+                </div>
+              </div>
+-->
+            </div>
+          </div>
+          <!-- END .block-sidebanner-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-tool"><a class="page-tool__button page-tool__button--filter" href="#" role="button" data-toggle="filter" aria-expanded="false" aria-controls="js-block-filter-modal"><span class="page-tool__label">絞込</span></a></div>
+</main>
+<script id="entry-template-koen" class="entry-template-koen" type="text/x-handlebars-template">
+  <a class="ticket-item ticket-item--kouen" href="{{{seni_saki_url}}}">
+	<section class="ticket-item__inner">
+		<div class="ticket-item__left">
+                           {{{koenbi_from}}}
+                                  {{{koenbi_to}}}
+		</div>
+		<div class="ticket-item__right">
+			<header class="ticket-item__header">
+				<h3 class="ticket-item__title">
+					{{{hambai_hoho_label}}}
+					{{{kogyo_name}}}
+				</h3>
+			</header>
+			<div class="ticket-item__content">
+                                {{{camera_angle}}}
+				{{{venue}}}
+				{{{kaienKaijo}}}
+                                {{{setKen}}}
+                                {{{archiveUmuMark}}}
+				<div class="ticket-item__status" id="{{status_id}}" style="opacity:0;">
+						{{{uketsuke_status}}}
+				</div>
+			</div>
+		</div>
+	</section>
+</a>
+
+</script>
+<script id="entry-template-koenbi" class="entry-template-koenbi" type="text/x-handlebars-template">
+  <p class="ticket-item__date">
+    <span class="ticket-item__yyyy">{{yyyy}}</span>
+    <span class="ticket-item__mmdd">{{mmdd}}</span>
+</p>
+</script>
+<script id="more-next-trigger" class="more-next-trigger" type="text/x-handlebars-template">
+  <div class="block-more-next">
+  <button class="block-more-next__trigger" data-toggle="#base_data{{base_data_id}}">もっと見る</button>
+</div>
+
+</script>
+<script id="json" class="json" type="application/json">
+  {"data":{"so_kensu":2,"record_list":[{"kaien_time_2":null,"kanren_genre_list":null,"koenbi_term":"20260909","kaien_time":"1400","kanren_tour":null,"archive_umu_kubun":"0","koenbi_hyoji_mongon":null,"kaien_time_name_2":null,"shuen_time":null,"kanren_venue":{"venue_name":"兵庫県立芸術文化センター 神戸女学院小ホール","todofuken_code":"28","todofuken_name":"兵庫県","venue_code":"6630042"},"kogyo_code":"349942","kanren_word_list":null,"haishin_yotei_time":null,"abort_henko_enki_reason":null,"tokuchike_comment_mobile":null,"kanren_uketsuke_koen_list":[{"kogyo_sub_code":"0009","uketsuke_info_code":"001","sptx_ari_flag":false,"zaseki_sentaku_kubun":"0","hambai_hoho_kubun":"001","hambai_hoho_label":"先着","uketsuke_group_num":1,"uketsuke_channel_list":[{"uketsuke_channel_code":"01"},{"uketsuke_channel_code":"06"}],"info_kokai_start_datetime":"20260501120000","kogyo_code":"349942","koen_code":"001","kyuen_flag":false,"info_kokai_end_datetime":"20260910235959","eplus_toriatsukai_ari_flag":true,"uketsuke_end_datetime":"20260908235959","uketsuke_status":"0","fee_otoku_kubun":"0","uketsuke_name_mobile":"一般販売","shutsuensha":"榛葉樹人(テノール)/今井俊輔(バリトン)/濱野基行(ピアノ)","uketsuke_info_kubun":"001","uketsuke_start_datetime":"20260622100000","enmoku_kyokumoku":null,"uketsuke_name_pc":"一般販売"},{"kogyo_sub_code":"0009","uketsuke_info_code":"003","sptx_ari_flag":false,"zaseki_sentaku_kubun":"0","hambai_hoho_kubun":"000","hambai_hoho_label":"プレオーダー","uketsuke_group_num":3,"uketsuke_channel_list":[{"uketsuke_channel_code":"01"}],"info_kokai_start_datetime":"20260501120000","kogyo_code":"349942","koen_code":"001","kyuen_flag":false,"info_kokai_end_datetime":"20260910235900","eplus_toriatsukai_ari_flag":true,"uketsuke_end_datetime":"20260604235900","uketsuke_status":"5","fee_otoku_kubun":"0","uketsuke_name_mobile":"プレオーダー受付","shutsuensha":"榛葉樹人(テノール)/今井俊輔(バリトン)/濱野基行(ピアノ)","uketsuke_info_kubun":"001","uketsuke
+

@@ -1,0 +1,80 @@
+1:     const searchInput = document.getElementById("searchInput");
+2:     const suggest = document.getElementById("searchSuggest");
+3: 
+4:     const allLabels = [...new Set(EVENTS.filter(e => e.verified === true).map(ev => ev.artist))];
+5: 
+6:     // 【検索したら結果まで自動スクロール】(ユーザー指示 2026-08-04)
+7:     // 検索窓の下にジャンル/ステータス/地方のボタンが縦に長く並ぶので、検索しても
+8:     // 結果が画面の外にいて「下にスクロールしないと確認できない」状態だった。
+9:     // 🚨打っている途中では動かさない（ユーザー 2026-08-04「早いよ」）。
+10:     // 動くのは「Enterを押した時」と「サジェスト候補を選んだ時」の2つだけ。
+11:     let scrollTimer = null;
+12:     function scrollToResults(delay) {
+13:       clearTimeout(scrollTimer);
+14:       scrollTimer = setTimeout(() => {
+15:         const meta = document.querySelector(".result-meta");
+16:         if (!meta) return;
+17:         const top = meta.getBoundingClientRect().top + window.pageYOffset - 8;
+18:         window.scrollTo({ top: top, behavior: "smooth" });
+19:       }, delay);
+20:     }
+21:     // 【ジャンル切替え用】件数の行（"◯◯件のイベント"）を画面の上のほうへ出す。
+22:     // ユーザーが実物の画面で指した位置＝追従ヘッダーのすぐ下に件数、その下に1枚目のカードが丸ごと見える形
+23:     // （2026-08-10。最初「結果の先頭を上端へ」で"動かしすぎ"、次に"件数が見えるところまで"で足りず、この位置に着地）。
+24:     // header は position:sticky（56〜64px）なので、その実寸を測って隠れないように差し引く。
+25:     function revealResultCount() {
+26:       clearTimeout(scrollTimer);
+27:       const meta = document.querySelector(".result-meta");
+28:       if (!meta) return;
+29:       const hd = document.querySelector("header");
+30:       const gap = (hd ? hd.getBoundingClientRect().height : 0) + 80;
+31:       const target = meta.getBoundingClientRect().top + window.pageYOffset - gap;
+32:       window.scrollTo({ top: Math.max(0, target), behavior: "smooth" });
+33:     }
+34: 
+35:     function showSuggest(query) {
+36:       if (!query) { suggest.classList.remove("open"); return; }
+37:       const q = query.toLowerCase();
+38:       const matches = allLabels.filter(label => label.toLowerCase().includes(q)).slice(0, 10);
+39:       if (matches.length === 0) { suggest.classList.remove("open"); return; }
+40:       suggest.innerHTML = matches.map(label =>
+41:         `<div class="suggest-item">${label}</div>`
+42:       ).join("");
+43:       suggest.classList.add("open");
+44:       suggest.querySelectorAll(".suggest-item").forEach(item => {
+45:         item.addEventListener("mousedown", () => {
+46:           searchInput.value = item.textContent;
+47:           searchQuery = item.textContent.trim();
+48:           applyFilters();
+49:           suggest.classList.remove("open");
+50:           scrollToResults(0);
+51:         });
+52:       });
+53:     }
+54: 
+55:     searchInput.addEventListener("input", e => {
+56:       searchQuery = e.target.value.trim();
+57:       applyFilters();
+58:       showSuggest(searchQuery);
+59:     });
+60: 
+61:     // Enterは待たずにすぐ結果へ（サジェストは閉じる）
+62:     searchInput.addEventListener("keydown", e => {
+63:       if (e.key === "Enter") {
+64:         suggest.classList.remove("open");
+65:         if (searchQuery) scrollToResults(0);
+66:       }
+67:     });
+68: 
+69:     searchInput.addEventListener("blur", () => {
+70:       setTimeout(() => suggest.classList.remove("open"), 150);
+71:     });
+72:   }
+73: 
+74:   // 【現行ルール】並び順（ユーザー指示 2026-07-10）＝日付を1本の時間軸にして早い順。
+75:   //   同じ日付なら「発売開始(発売前)」が上、「締切(販売中)」が下。
+76:   //     7/11 発売開始 Kroi ／ 7/11 発売開始 羊文学 ／ 7/11 締切 ○○ ／ 7/12 発売開始 □□ …
+77:   //   売切・終了だけのカードは末尾。
+78:   //   ※2026-07-03 の「販売中を先頭」ルールを上書き。カウントダウン(発売までの日数)を主役にするため、
+79:   //     締切が先の販売中カードより発売日が近い発売前カードが上に来る（旧「にじクラ問題」は許容）。
+80:   const SORT_PRESALE = 0, SORT_SELLING = 1;   // 同日内の優先度
