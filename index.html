@@ -195,48 +195,81 @@
       overflow-wrap: normal;
     }
 
-    /* ── 週1記事「今週のピックアップ」への入口（2026-08-20 新設） ── */
-    .pickup-banner {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
+    /* ── 週1記事「今週のピックアップ」（2026-08-20 新設・トップページ内で開く） ── */
+    .pickup {
       max-width: 1200px;
       margin: 16px auto 0;
-      padding: 14px 18px;
-      background: linear-gradient(90deg, rgba(224,64,251,.14), rgba(0,229,255,.10));
+      padding: 20px 22px;
+      background: var(--bg2);
       border: 1px solid var(--accent);
       border-radius: 8px;
-      text-decoration: none;
-      transition: .2s;
     }
-    .pickup-banner:hover, .pickup-banner:focus-visible {
-      background: linear-gradient(90deg, rgba(224,64,251,.24), rgba(0,229,255,.18));
+    .pickup .pk-label {
+      display: inline-block;
+      font-size: 12px; font-weight: 800; color: var(--accent);
+      letter-spacing: .1em; margin-bottom: 10px;
     }
-    .pickup-banner .pb-label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: .1em;
-      white-space: nowrap;
+    .pickup .pk-title {
+      font-size: clamp(17px, 3.4vw, 22px);
+      font-weight: 900; line-height: 1.5; color: var(--text); margin-bottom: 6px;
     }
-    .pickup-banner .pb-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      flex: 1;
-      min-width: 200px;
-      line-height: 1.6;
+    .pickup .pk-sub {
+      font-size: 13px; color: var(--accent2); font-weight: 700; margin-bottom: 14px;
     }
-    .pickup-banner .pb-more {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--accent2);
-      white-space: nowrap;
+    .pickup .pk-lede {
+      border-left: 3px solid var(--accent);
+      padding: 2px 0 2px 14px;
+      font-size: 15px; line-height: 1.9; color: var(--text);
+    }
+    .pickup .pk-lede p { margin-bottom: 4px; }
+    .pickup .pk-lede b { color: var(--accent); font-weight: 800; }
+    .pickup .pk-tease {
+      margin-top: 10px; padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      color: var(--accent2); font-weight: 700;
+    }
+    .pickup .pk-more {
+      display: block; width: 100%; margin-top: 16px; padding: 13px;
+      background: transparent; border: 1px solid var(--accent); border-radius: 5px;
+      color: var(--accent); font-size: 14px; font-weight: 800; font-family: inherit;
+      letter-spacing: .06em; cursor: pointer; transition: .2s;
+    }
+    .pickup .pk-more:hover, .pickup .pk-more:focus-visible { background: rgba(224,64,251,.14); }
+    .pickup .pk-more::after { content: ' ▼'; font-size: 11px; }
+    .pickup .pk-body[hidden] { display: none; }
+    .pickup .pk-body { margin-top: 22px; }
+    .pickup .pk-h2 {
+      font-size: 17px; font-weight: 800; color: var(--text);
+      margin: 30px 0 6px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+    .pickup .pk-act { margin-top: 24px; }
+    .pickup .pk-name { font-size: 18px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+    .pickup .pk-top .pk-name { font-size: 21px; }
+    .pickup .pk-sale {
+      display: inline-block; font-size: 12.5px; font-weight: 800; color: var(--orange);
+      border: 1px solid rgba(255,171,64,.4); background: rgba(255,171,64,.10);
+      border-radius: 999px; padding: 3px 12px; margin-bottom: 10px;
+    }
+    .pickup .pk-sale.pk-mon { color: var(--green); border-color: rgba(105,240,174,.4); background: rgba(105,240,174,.10); }
+    .pickup .pk-act p { font-size: 14.5px; line-height: 1.9; margin-bottom: 10px; color: var(--text); }
+    .pickup .pk-act strong { color: var(--accent2); font-weight: 800; }
+    .pickup .pk-shows {
+      background: var(--bg3); border: 1px solid var(--border); border-radius: 4px;
+      padding: 11px 15px; margin-bottom: 12px; font-size: 13.5px; line-height: 1.95; color: var(--text);
+    }
+    .pickup .pk-shows b { display: block; color: var(--accent2); font-size: 11px; letter-spacing: .1em; margin-bottom: 3px; }
+    .pickup .pk-most {
+      display: inline-block; background: var(--red); color: #0a0a0a;
+      font-size: 11px; font-weight: 900; border-radius: 3px; padding: 2px 8px;
+      margin-left: 8px; vertical-align: 3px;
+    }
+    .pickup .pk-tail {
+      margin-top: 26px; padding: 12px 15px; background: var(--bg3);
+      border: 1px solid var(--border); border-radius: 4px;
+      font-size: 13.5px; color: var(--text-muted);
     }
     @media (max-width: 640px) {
-      .pickup-banner { margin: 12px 12px 0; padding: 12px 14px; gap: 8px; }
-      .pickup-banner .pb-title { font-size: 13px; }
+      .pickup { margin: 12px 12px 0; padding: 16px 15px; }
     }
 
     /* ── 最終更新（毎日2回のビルドで実日時を刻む・鮮度を正直に出す） ── */
@@ -1056,7 +1089,7 @@
   <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
-    <a href="pickup/2026-08-20.html">今週の<br>ピックアップ</a>
+    <a href="#pickup">今週の<br>ピックアップ</a>
     <a href="contact.html">お問い合わせ</a>
   </nav>
 </header>
@@ -1067,15 +1100,128 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 17:30</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年8月20日 17:37</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
-<a class="pickup-banner" href="pickup/2026-08-20.html">
-  <span class="pb-label">📖 今週のピックアップ</span>
-  <span class="pb-title">EXILE・布袋寅泰・真心ブラザーズ、それにシルク・ドゥ・ソレイユも一斉発売！</span>
-  <span class="pb-more">読む →</span>
-</a>
+<section class="pickup" id="pickup">
+  <span class="pk-label">📖 今週のピックアップ</span>
+  <h2 class="pk-title">EXILE・布袋寅泰・真心ブラザーズ、それにシルク・ドゥ・ソレイユも一斉発売！</h2>
+  <p class="pk-sub">8/24(月)〜8/30(日)にチケットの発売が始まるアーティスト紹介</p>
+  <div class="pk-lede">
+    <p>今週は<b>EXILE</b>結成25周年！　埼玉のドームにて。</p>
+    <p><b>布袋寅泰</b>45周年！　宮城・埼玉・東京5公演のチケット発売が週末に。</p>
+    <p class="pk-tease">他にも、あの老舗人気グループのチケットも。</p>
+  </div>
+  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" aria-controls="pickupBody">つづきを読む</button>
+  <div class="pk-body" id="pickupBody" hidden>
+<h3 class="pk-h2">今週の主役たち</h3>
+
+      <div class="pk-act pk-top">
+        <h4 class="pk-name">EXILE</h4>
+        <span class="pk-sale">8/29(土) 10:00 一般発売</span>
+        <p>結成25周年の「EXILE 25th ANNIVERSARY BEST LIVE ～LDH PERFECT YEAR 2026～」よ。</p>
+        <div class="pk-shows"><b>発売になる公演</b>
+          埼玉・ベルーナドーム　11/14(土)・11/15(日) の2公演
+        </div>
+        <p>出演はATSUSHI、AKIRA、TAKAHIRO、KENCHI、TETSUYA、NESMITH、SHOKICHI、NAOTO、NAOKI、SEKAI、TAIKIに、オリジナルメンバーのMATSU、ÜSA、MAKIDAIまで揃うんだから、25周年の名にふさわしい顔ぶれだわ。<br>同じツアーで12/5・12/6には大阪・京セラドーム大阪の公演もあるのよ。</p>
+      </div>
+
+      <div class="pk-act pk-top">
+        <h4 class="pk-name">布袋寅泰</h4>
+        <span class="pk-sale">8/29(土) 10:00 に5公演ぶん一斉</span>
+        <p>活動45周年記念の『HOTEI the LIVE 2026 "45th Celebration GIGS" STAY WILD TOUR』。<br>全国21都市27公演の大きなツアーで、9/5に始まるわ。</p>
+        <div class="pk-shows"><b>発売になる公演</b>
+          宮城 9/22・9/23 ／ 埼玉 10/16・10/17 ／ 東京 11/14
+        </div>
+        <p>OSHINAVIには全16会場ぶんが載っていて、千秋楽は12/6。<br>気になる会場をゆっくり選んでちょうだい。</p>
+      </div>
+
+      <div class="pk-act pk-top">
+        <h4 class="pk-name">真心ブラザーズ<span class="pk-most">今週最多</span></h4>
+        <span class="pk-sale">8/29(土) 10:00 に8公演ぶん一気に</span>
+        <p>今週いちばん多いのがここ。</p>
+        <div class="pk-shows"><b>発売になる公演</b>
+          埼玉 11/23 ／ 岡山 12/5 ／ 香川 12/6 ／ 静岡 12/25 ／<br>
+          愛知 2027/1/16 ／ 岩手 2027/1/23 ／ 宮城 2027/1/24 ／ 東京 2027/1/30
+        </div>
+        <p>全国9会場のツアーで、千秋楽は2027年1月30日の東京・LINE CUBE SHIBUYA。<br>年をまたぐ長い旅だから、近くの会場を見逃さないでね。</p>
+      </div>
+
+      <div class="pk-act">
+        <h4 class="pk-name">モーニング娘。'26</h4>
+        <span class="pk-sale">8/29(土) 10:00 に3公演</span>
+        <p>コンサートツアー秋「超 Heartful 11」（9/5〜11/30）から発売よ。</p>
+        <div class="pk-shows"><b>発売になる公演</b>
+          大阪 9/21 ／ 愛知 9/23 ／ 茨城 9/26
+        </div>
+        <p>ツアー開幕からすぐの日程だから、早めにチェックしておくのが正解だわ。</p>
+      </div>
+
+      <div class="pk-act">
+        <h4 class="pk-name">シルク・ドゥ・ソレイユ「クーザ」東京公演</h4>
+        <span class="pk-sale">8/29(土) 10:00 セブン-イレブン先行</span>
+        <p>お台場ビッグトップの公演が、7つの期間に分かれて一斉に受付開始よ。</p>
+        <div class="pk-shows"><b>受付が始まる公演期間（2027年）</b>
+          2/24-2/28 ／ 3/1-3/9 ／ 3/11-3/20 ／ 3/21-3/30 ／<br>
+          4/2-4/10 ／ 4/11-4/20 ／ 4/21-4/25
+        </div>
+        <p>来年の春の予定、ここで先に押さえられるわ。</p>
+      </div>
+
+      <div class="pk-act">
+        <h4 class="pk-name">凛として時雨</h4>
+        <span class="pk-sale">8/29(土) 10:00 に3公演</span>
+        <div class="pk-shows"><b>発売になる公演</b>
+          愛知 9/29（Zepp Nagoya）／ 東京 10/1（Zepp Haneda）／ 大阪 10/7（Zepp Osaka Bayside）
+        </div>
+        <p>4会場のツアーで千秋楽は11/27。<br>Zeppで観られる機会、逃さないでちょうだい。</p>
+      </div>
+
+      <div class="pk-act">
+        <h4 class="pk-name">徳永英明</h4>
+        <span class="pk-sale">8/29(土) 10:00 に3公演</span>
+        <div class="pk-shows"><b>発売になる公演</b>
+          三重 10/11 ／ 愛知 10/12 ／ 愛知 11/28
+        </div>
+        <p>5会場のツアーで千秋楽は12/13だから、後半の日程もお楽しみに。</p>
+      </div>
+
+      <div class="pk-act">
+        <h4 class="pk-name">7ORDER</h4>
+        <span class="pk-sale">8/29(土) 12:00 発売 ← 時刻が違う</span>
+        <p>ここだけ時刻が違うから気をつけて。</p>
+        <div class="pk-shows"><b>発売になる公演</b>
+          大阪 10/9（Zepp Namba）／ 東京 10/16（Zepp Haneda）
+        </div>
+        <p>昼の12時、アラームをかけておいてね。</p>
+      </div>
+
+      <div class="pk-act">
+        <h4 class="pk-name">プロレスリング・ノア</h4>
+        <span class="pk-sale pk-mon">8/24(月) 12:00 発売 ← 週の頭</span>
+        <div class="pk-shows"><b>発売になる公演</b>
+          東京 10/15（後楽園ホール）／ 富山 10/18 ／ 東京 10/25（両国国技館）
+        </div>
+        <p>全18会場のツアーで、千秋楽は10/25の両国国技館。<br>月曜のお昼だから、うっかり忘れないでね。</p>
+      </div>
+
+      <h3 class="pk-h2">深掘り：高嶋ちさ子 12人のヴァイオリニスト</h3>
+
+      <div class="pk-act">
+        <span class="pk-sale">8/29(土) 10:00 発売</span>
+        <p>正式名称は「FJネクスト Presents ～結成20周年記念～ 高嶋ちさ子 12人のヴァイオリニスト コンサートツアー 2026～2027」。<br>そう、結成20周年なのよ。<br>出演は高嶋ちさ子、12人のヴァイオリニスト、近藤亜紀（ピアノ）。</p>
+        <p>このツアー、<strong>会場によってゲストが違う</strong>のが面白いところで、山本耕史や城田優が出る回もあるの。<br>同じツアーなのに中身が変わるんだから、どの会場を選ぶかで悩む楽しみがあるわね。</p>
+        <div class="pk-shows"><b>発売になる公演</b>
+          富山・石川・福井・長野　10/29〜11/3公演<br>
+          全席指定 8,000円（税込）
+        </div>
+        <p>OSHINAVIには全15会場が載っていて、千秋楽は2027年2月21日。<br>じっくり選んでちょうだい。</p>
+      </div>
+
+      <div class="pk-tail">この週は全部で245公演ぶんの発売があるわ。</div>
+  </div>
+</section>
 
 <div class="controls">
   <!-- 検索 -->
@@ -104148,6 +104294,18 @@
     pagetop.classList.toggle("visible", window.scrollY > 300);
   });
   pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // 【今週のピックアップ】つづきを読む＝同じページで開く（2026-08-20 ユーザー指示）
+  (function () {
+    const btn = document.getElementById("pickupMore");
+    const body = document.getElementById("pickupBody");
+    if (!btn || !body) return;
+    btn.addEventListener("click", () => {
+      body.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      btn.remove();
+    });
+  })();
 
   // 固定バナー 閉じるボタン
   (function() {
