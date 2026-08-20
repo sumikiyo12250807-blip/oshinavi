@@ -1,54 +1,91 @@
 # -*- coding: utf-8 -*-
-"""tmp/eplus_check_urls.txt のURLを1本ずつ間隔をあけて叩き、公演ごと・枠ごとの窓を出す。
-兄弟券種ページ（…P0210NN の NN を増分）も一緒に叩いて「同一公演の別券種が生きていないか」を見る
-（feedback_eplus_delete_blindspot の券種穴）。
-"""
-import re, sys, time, importlib.util
-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+import json, re, sys, time, urllib.parse, urllib.request
 
-spec = importlib.util.spec_from_file_location('epd', 'tools/eplus_detail.py')
-epd = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(epd)
+OUT = r"C:\Users\user\oshinavi\tmp\eplus_probe_out.txt"
 
-urls = [u.strip() for u in open('tmp/eplus_check_urls.txt', encoding='utf-8') if u.strip()]
+KEYWORDS = [
+    ("4167", "Ken Yokoyama"),
+    ("4167", "ケンヨコヤマ"),
+    ("4167", "Pizza of Death"),
+    ("4172", "Bocchi"),
+    ("4172", "ぼっち"),
+    ("4175", "THE PREDATORS"),
+    ("4175", "PREDATORS"),
+    ("4422", "yeti let you notice"),
+    ("4422", "yeti"),
+    ("4423", "The Performance Zero"),
+    ("4423", "Performance Zero"),
+    ("4424", "シャッポ"),
+    ("4424", "chapeau"),
+    ("4425", "スミワタルトリオ"),
+    ("4425", "すばるホール"),
+]
+
+FIELDS = ["kogyo_name_1", "kogyo_name_2", "venue_name", "koenbi_term",
+          "koen_start_datetime", "uketsuke_name_pc", "uketsuke_start_datetime",
+          "uketsuke_end_datetime", "koen_detail_url_pc", "uketsuke_status"]
+
+HDR = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36",
+    "Accept-Language": "ja,en;q=0.8",
+}
 
 
-def probe(u):
+def fetch(url):
+    req = urllib.request.Request(url, headers=HDR)
+    with urllib.request.urlopen(req, timeout=45) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def probe(kw):
+    url = "https://eplus.jp/sf/search?keyword=" + urllib.parse.quote(kw)
     try:
-        page = epd.fetch(u)
-    except Exception as ex:
-        return None, str(ex)
-    try:
-        return epd.parse(page), None
-    except Exception as ex:
-        return None, 'parse:%s' % ex
+        html = fetch(url)
+    except Exception as e:
+        return url, "ERROR %s" % e, []
+    # find all occurrences of koen_detail_url_pc and grab a window around each
+    hits = []
+    for m in re.finditer(r'"koen_detail_url_pc"\s*:\s*"([^"]+)"', html):
+        start = max(0, m.start() - 4000)
+        end = min(len(html), m.end() + 4000)
+        window = html[start:end]
+        rec = {"detail": m.group(1)}
+        for f in FIELDS:
+            fm = None
+            # nearest occurrence of field in window
+            for fm2 in re.finditer(r'"%s"\s*:\s*"([^"]*)"' % f, window):
+                fm = fm2
+                if fm2.start() > (m.start() - start):
+                    break
+            if fm:
+                rec[f] = fm.group(1)
+        hits.append(rec)
+    # dedupe by detail url
+    seen = set()
+    uniq = []
+    for h in hits:
+        if h["detail"] in seen:
+            continue
+        seen.add(h["detail"])
+        uniq.append(h)
+    return url, "OK len=%d" % len(html), uniq
 
 
-for u in urls:
-    print('=' * 78)
-    print(u)
-    shows, err = probe(u)
-    if err:
-        print('  [取得失敗]', err)
-        # 兄弟券種を探す（P021001 -> P021002..004）
-        m = re.search(r'(P021)(\d{3})$', u)
-        if m:
-            for n in range(1, 5):
-                alt = u[:m.start(2)] + '%03d' % n
-                if alt == u:
-                    continue
-                time.sleep(2)
-                s2, e2 = probe(alt)
-                if not e2 and s2:
-                    print('  ▶兄弟券種 %s' % alt)
-                    for sh in s2:
-                        alive = [t for t in sh['tickets'] if t['status'] != '受付終了']
-                        print('     %s %s 受付終了でない枠 %d' % (sh['date'], sh['venue'], len(alive)))
-                        for t in alive:
-                            print('       [%s] %s | %s' % (t['status'], t['name'], t['period']))
-    else:
-        for sh in shows:
-            print('  ▼%s %s（%s）' % (sh['date'], sh['venue'], sh['pref']))
-            for t in sh['tickets']:
-                print('     [%s] %s | %s' % (t['status'], t['name'], t['period']))
-    time.sleep(3)
+def main():
+    with open(OUT, "w", encoding="utf-8") as f:
+        for eid, kw in KEYWORDS:
+            url, status, hits = probe(kw)
+            f.write("\n=== id=%s keyword=%s\n%s\n%s hits=%d\n" % (eid, kw, url, status, len(hits)))
+            for h in hits[:25]:
+                f.write("  - detail=%s\n" % h.get("detail"))
+                for k in ["kogyo_name_1", "kogyo_name_2", "venue_name", "koenbi_term",
+                          "koen_start_datetime", "uketsuke_name_pc",
+                          "uketsuke_start_datetime", "uketsuke_end_datetime"]:
+                    if h.get(k):
+                        f.write("      %s = %s\n" % (k, h.get(k)))
+            f.flush()
+            time.sleep(2)
+    print("done ->", OUT)
+
+
+main()
