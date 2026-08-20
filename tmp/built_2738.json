@@ -1,0 +1,48 @@
+[
+ {
+  "id": 2738,
+  "artist": "プロレスリングFREEDOMS",
+  "name": "プロレスリングFREEDOMS",
+  "date": "2026-10-16",
+  "dateLabel": "2026年9月6日(日)〜2026年10月16日(金) 神奈川・東京",
+  "venue": "全国ツアー（横浜武道館／TOKYO SQUARE in Itabashi／新木場1st RING）",
+  "prefecture": "神奈川・東京",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_piaSub": "スポーツ/プロレス",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2603690",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/25公演）8/21 10:00発売",
+    "date": "2026-08-21",
+    "startDate": "2026-08-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630387"
+   },
+   {
+    "type": "一般発売（東京 10/16公演）8/21 10:00発売",
+    "date": "2026-08-21",
+    "startDate": "2026-08-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631311"
+   },
+   {
+    "type": "一般発売（神奈川 9/6公演）〜9/5 23:59",
+    "date": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2603690"
+   },
+   {
+    "type": "一般発売（東京 9/13公演）〜9/12 23:59",
+    "date": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629046"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-21"
+ }
+]
