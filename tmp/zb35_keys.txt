@@ -1,0 +1,91 @@
+dden-onlysm">
+          <!-- BEGIN .block-sidebanner-->
+          <div class="block-sidebanner">
+            <div class="block-sidebanner__list">
+            <!--
+              <div class="section section--no-box hidden-onlysm">
+                <div class="block-sidebanner">
+                  <div class="block-sidebanner__list">
+                    
+                  <div class="block-sidebanner__item" tabindex="-1" role="option" aria-describedby="slick-slide00" style=""><a class="block-sidebanner__trigger" href="#" tabindex="0"><img src="//placehold.it/336x150"></a></div></div>
+                </div>
+              </div>
+-->
+            </div>
+          </div>
+          <!-- END .block-sidebanner-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-tool"><a class="page-tool__button page-tool__button--filter" href="#" role="button" data-toggle="filter" aria-expanded="false" aria-controls="js-block-filter-modal"><span class="page-tool__label">絞込</span></a></div>
+</main>
+<script id="entry-template-koen" class="entry-template-koen" type="text/x-handlebars-template">
+  <a class="ticket-item ticket-item--kouen" href="{{{seni_saki_url}}}">
+	<section class="ticket-item__inner">
+		<div class="ticket-item__left">
+                           {{{koenbi_from}}}
+                                  {{{koenbi_to}}}
+		</div>
+		<div class="ticket-item__right">
+			<header class="ticket-item__header">
+				<h3 class="ticket-item__title">
+					{{{hambai_hoho_label}}}
+					{{{kogyo_name}}}
+				</h3>
+			</header>
+			<div class="ticket-item__content">
+                                {{{camera_angle}}}
+				{{{venue}}}
+				{{{kaienKaijo}}}
+                                {{{setKen}}}
+                                {{{archiveUmuMark}}}
+				<div class="ticket-item__status" id="{{status_id}}" style="opacity:0;">
+						{{{uketsuke_status}}}
+				</div>
+			</div>
+		</div>
+	</section>
+</a>
+
+</script>
+<script id="entry-template-koenbi" class="entry-template-koenbi" type="text/x-handlebars-template">
+  <p class="ticket-item__date">
+    <span class="ticket-item__yyyy">{{yyyy}}</span>
+    <span class="ticket-item__mmdd">{{mmdd}}</span>
+</p>
+</script>
+<script id="more-next-trigger" class="more-next-trigger" type="text/x-handlebars-template">
+  <div class="block-more-next">
+  <button class="block-more-next__trigger" data-toggle="#base_data{{base_data_id}}">もっと見る</button>
+</div>
+
+</script>
+<script id="json" class="json" type="application/json">
+  {"data":{"so_kensu":2,"record_list":[{"kaien_time_2":null,"kanren_genre_list":null,"koenbi_term":"20261025","kaien_time":"1300","kanren_tour":null,"archive_umu_kubun":"0","koenbi_hyoji_mongon":null,"kaien_time_name_2":null,"shuen_time":null,"kanren_venue":{"venue_name":"サントリーホール 大ホール","todofuken_code":"13","todofuken_name":"東京都","venue_code":"1070080"},"kogyo_code":"456069","kanren_word_list":null,"haishin_yotei_time":null,"abort_henko_enki_reason":null,"tokuchike_comment_mobile":null,"kanren_uketsuke_koen_list":[{"kogyo_sub_code":"0001","uketsuke_info_code":"001","sptx_ari_flag":false,"zaseki_sentaku_kubun":"1","hambai_hoho_kubun":"001","hambai_hoho_label":"先着","uketsuke_group_num":1,"uketsuke_channel_list":[{"uketsuke_channel_code":"01"},{"uketsuke_channel_code":"06"}],"info_kokai_start_datetime":"20260626150000","kogyo_code":"456069","koen_code":"001","kyuen_flag":false,"info_kokai_end_datetime":"20261026235900","eplus_toriatsukai_ari_flag":true,"uketsuke_end_datetime":"20261021180000","uketsuke_status":"1","fee_otoku_kubun":"0","uketsuke_name_mobile":"一般発売","shutsuensha":"舘野泉、千住真理子、仲道郁代、錦織健、横山幸雄 ほか","uketsuke_info_kubun":"001","uketsuke_start_datetime":"20260627100000","enmoku_kyokumoku":"リスト:ハンガリー狂詩曲第2番\nJ.シュトラウスII:皇帝円舞曲\n他","uketsuke_name_pc":"一般発売"}],"koenbi_hyoji_mongon_hyoji_flag":false,"kanren_kogyo_sub":{"kogyo_name_1":"ジャパン･アーツ スペシャル･ガラ･コンサート","kogyo_sub_code":"0001","kogyo_name_2":null,"kogyo_code":"456069"},"shuen_time_name_2":null,"koen_detail_url_pc":"/sf/detail/4560690001-P0030001P021001","child_koen_su":0,"kogyo_sub_code":"0001","abort_henko_enki_status":"0","streaming_haishin_kubun":"0","keyword_itchido":"6.0","info_kokai_start_datetime":"20260626150000","koen_code":"001","access_kensu":0,"shuen_time_name":null,"shuen_time_2":null,"info_kokai_end_datetime":"20261026235900","archive_end_datetime":null,"kaijo_time_name":"開場","kikanchu_yuko_flag":false,"archive_start_datetime":null,"tokuchike_comment_pc":null,"satsuei_angle":null,"parent_koen_taisho_flag":false,"kaijo_time":"1230","kaien_time_name":"開演"},{"kaien_time_2":null,"kanren_genre_list":null,"koenbi_term":"20270207","kaien_time":"1400","kanren_tour":null,"archive_umu_kubun":"0","koenbi_hyoji_mongon":null,"kaien_time_name_2":null,"shuen_time":null,"kanren_venue":{"venue_name":"ザ･シンフォニーホール","todofuken_code":"27","todofuken_name":"大阪府","venue_code":"5310100"},"kogyo_code":"349653","kanren_word_list":null,"haishin_yotei_time":null,"abort_henko_enki_reason":null,"tokuchike_comment_mobile":null,"kanren_uketsuke_koen_list":[{"kogyo_sub_code":"0014","uketsuke_info_code":"001","sptx_ari_flag":false,"zaseki_sentaku_kubun":"1","hambai_hoho_kubun":"001","hambai_hoho_label":"先着","uketsuke_group_num":1,"uketsuke_channel_list":[{"uketsuke_channel_code":"01"},{"uketsuke_channel_code":"06"}],"info_kokai_start_datetime":"20260724000000","kogyo_code":"349653","koen_code":"001","kyuen_flag":false,"info_kokai_end_datetime":"20270208235900","eplus_toriatsukai_ari_flag":true,"uketsuke_end_datetime":"20270207140000","uketsuke_status":"0","fee_otoku_kubun":"0","uketsuke_name_mobile":"一般発売","shutsuensha":"[指揮]角田鋼亮\n[ピアノ]松田華音、中川優芽花、三浦謙司、横山幸雄\n[管弦楽]大阪フィルハーモニー交響楽団","uketsuke_info_kubun":"001","uketsuke_start_datetime":"20260726100000","enmoku_kyokumoku":"リスト:\nハンガリー民謡による幻想曲 S.123/R.458 (松田華音)\nピアノ協奏曲第2番 イ長調 S.125/R.456 (中川優芽花)\n死の舞踏(「怒りの日」によるパラフレーズ) S.126/R.457(三浦謙司) \nピアノ協奏曲第1番 変ホ長調  S.124/R.455 (横山幸雄)","uketsuke_name_pc":"一般発売"}],"koenbi_hyoji_mongon_hyoji_flag":false,"kanren_kogyo_sub":{"kogyo_name_1":"熱狂コンチェルト","kogyo_sub_code":"0014","kogyo_name_2":"2027 リスト4本勝負!","kogyo_code":"349653"},"shuen_time_name_2":null,"koen_detail_url_pc":"/sf/detail/3496530001-P0030014P021001","child_koen_su":0,"kogyo_sub_code":"0014","abort_henko_enki_status":"0","streaming_haishin_kubun":"0","keyword_itchido":"6.0","info_kokai_start_datetime":"20260724000000","koen_code":"001","access_kensu":0,"shuen_time_name":null,"shuen_time_2":null,"info_kokai_end_datetime":"20270208235900","archive_end_datetime":null,"kaijo_time_name":"開場","kikanchu_yuko_flag":false,"archive_start_datetime":null,"tokuchike_comment_pc":null,"satsuei_angle":null,"parent_koen_taisho_flag":false,"kaijo_time":"1300","kaien_time_name":"開演"}]},"error":null}
+</script>
+<script id="template-cal" type="text/x-handlebars-template">
+<section class="block-s2-calendar" hidden>
+  <div class="block-s2-calendar__inner">
+    <ul class="block-s2-calendar__notes">
+      <li class="block-s2-calendar__note block-s2-calendar__note--status2"><span>◯</span><span>受付中</span></li>
+      <li class="block-s2-calendar__note block-s2-calendar__note--status1"><span>□</span><span>受付前</span></li>
+      <li class="block-s2-calendar__note block-s2-calendar__note--status0"><span>×</span><span>予定枚数終了・受付終了</span></li>
+    </ul>
+    <header class="block-s2-calendar__header">
+      <div class="s2-calendar-nextprev">
+        <div class="s2-calendar-nextprev__inner">
+          <h2 class="s2-calendar-nextprev__title">{{month}}</h2>{{{prev}}}{{{next}}}
+        </div>
+      </div>
+    </header>
+    <div class="block-s2-calendar__content">
+      <table class="s2-calendar">
+        <thead>
+          <tr>
+            <th class="s2-calendar__day0">日</th>
+            <th class="s2-calendar__day1">月</th>
+            <th class="s2-calendar__day2">火</th>
+            <th class="s2-calendar__day3">水</th>
+            <th class="s2-calendar__day4">木</th>
+            <th class="s2-calendar__day5">金</t
