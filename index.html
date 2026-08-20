@@ -103914,6 +103914,9 @@
         btn.classList.add("active");
         activeRegion = btn.dataset.region;
         applyFilters();
+        // エリアもジャンルと同じだけ動かす（ユーザー指示 2026-08-20）。
+        // 地方ボタンは9個あって、押しても画面が動かないと切り替わったか分からない＝ジャンルと同じ理由。
+        revealResultCount();
       });
     });
 
