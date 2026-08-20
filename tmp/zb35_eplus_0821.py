@@ -60,8 +60,8 @@ def search(kw):
         rows.append({
             'url': url,
             'kogyo': g('kogyo_name_1'), 'sub': g('kogyo_name_2'),
-            'koenbi': g('koenbi') or g('koen_start_datetime') or g('koenbi_hyoji'),
-            'venue': g('kaijo_name') or g('venue_name'),
+            'koenbi': g('koenbi_term') or g('koenbi_hyoji_mongon'),
+            'venue': g('venue_name'),
             'pref': g('todofuken_name'),
             'status': g('uketsuke_name_pc'),
             'ustart': g('uketsuke_start_datetime'),
@@ -76,9 +76,11 @@ for eid, kw in ITEMS:
     try:
         ln, rows = search(kw)
         print('htmllen=%d hits=%d' % (ln, len(rows)))
+        rows=[o for o in rows if (o['uend'] or '99999999') >= '20260821']
+        print('  live(受付終了>=今日) %d件' % len(rows))
         for o in rows:
             print('  %s | %s / %s | %s(%s) | %s | 受付 %s〜%s | %s' % (
-                o['koenbi'][:8], o['kogyo'][:28], o['sub'][:30], o['venue'][:20], o['pref'][:5],
+                o['koenbi'][:24], o['kogyo'][:28], o['sub'][:30], o['venue'][:20], o['pref'][:5],
                 o['status'][:14], o['ustart'][:12], o['uend'][:12], o['url']))
     except Exception as e:
         print('ERR %r' % (e,))
