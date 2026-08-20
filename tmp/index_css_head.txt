@@ -1,0 +1,113 @@
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #e040fb;
+      --accent2: #00e5ff;
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --bg3: #1a1a1a;
+      --text: #f0f0f0;
+      --text-muted: #888;
+      --border: #2a2a2a;
+      --red: #ff5252;
+      --orange: #ffab40;
+      --green: #69f0ae;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(0,229,255,0.15) 1.5px, transparent 2px);
+      background-size: 60px 60px, 60px 60px, 60px 60px;
+      color: var(--text);
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── ヘッダー ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+    .logo::before {
+      content: '';
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.9) 0%, rgba(224,64,251,0.7) 30%, rgba(224,64,251,0.3) 55%, transparent 75%);
+      filter: blur(10px);
+      pointer-events: none;
+      animation: logoHalo 3s ease-in-out infinite;
+    }
+    .logo img {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      -webkit-text-fill-color: initial;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes logoHalo {
+      0%,100% { opacity: 0.8; }
+      50%     { opacity: 1; }
+    }
+
+    nav { display: flex; gap: 18px; align-items: center; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      line-height: 1.25;
+      text-align: center;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── ヒーロー ── */
+    .hero {
+      text-align: center;
+      padding: 56px 24px 40px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 50% 0%, rgba(224,64,251,0.08) 0%, transparent 70%);
+    }
+
+    .hero h1 {
+      font-size: clamp(22px, 5vw, 44px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      word-break: keep-all;
+      line-break: strict;
+      overflow-wrap: normal;
+    

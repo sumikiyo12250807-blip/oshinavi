@@ -1,0 +1,31 @@
+セリフ 57字 / 尺10秒に収まる目安 50字
+⚠️ 長すぎ＝読み切れずに切れる。50字まで削ること。
+⚠️ 漢字が15字ある＝読み間違いの元。ひらがなに開くこと: 一全合国場売夜寝日明時発知般起
+⚠️ 数字は漢数字でなく『じゅうよじ』のように かな で書くと読みが安定する
+{
+  "model": "MiniMax-H3",
+  "content": [
+    {
+      "type": "text",
+      "text": "AUDIO REQUIREMENT (highest priority): the provided audio IS the character's own speaking voice. Lip-sync his mouth precisely and naturally to that Japanese audio, matching every syllable. Do not generate any other voice, narration or speech. The speaker is a stylized 3D-cartoon Japanese drag queen: a plus-size MAN in his forties performing in drag, a tall lavender braided beehive updo, dramatic purple eyeshadow with winged eyeliner, a beauty mark on his right cheek, a faint stubble shadow on his chin, large purple teardrop earrings, a shimmering purple sequined long gown, hands on his hips, confident and theatrical. Medium shot, camera locked off, he faces the viewer and speaks directly to camera with lively theatrical gestures, confident and teasing, ending with a warm smile. Accurate Japanese lip sync. No on-screen text, no subtitles, no watermark. The audio says in Japanese: 「あら、まだ知らないの？ ネクライトーキーの全国ツアー、一般発売は明日の夜　9時よ!\n寝てる場合じゃないわ。起きて！」 The background is a static screenshot of a social media post: keep it perfectly still and unchanged. Do NOT redraw or alter any text or the logo. Only the drag queen in the lower right moves, staying the same size and in the same place. Camera locked off."
+    },
+    {
+      "type": "image_url",
+      "image_url": {
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAeACAIAAA...(779258文字)"
+      },
+      "role": "reference_image"
+    },
+    {
+      "type": "audio_url",
+      "audio_url": {
+        "url": "data:audio/wav;base64,UklGRiTIBgBXQVZFZm10IBAAAAABAAEAwF0AAI...(592638文字)"
+      },
+      "role": "reference_audio"
+    }
+  ],
+  "duration": 10,
+  "resolution": "2K",
+  "ratio": "9:16"
+}
+参照画像 1枚 / 音声 1本 / --dry-run なので送信していない

@@ -1,0 +1,172 @@
+diff --git a/index.html b/index.html
+index 453d7ab..cdc2f30 100644
+--- a/index.html
++++ b/index.html
+@@ -5057,33 +5057,25 @@
+       {
+         "type": "先着一般発売（東京都 8/16公演）〜8/16 18:00",
+         "date": "2026-08-16",
+-        "url": "https://eplus.jp/sf/detail/1734600001-P0030439P021001",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "url": "https://eplus.jp/sf/detail/1734600001-P0030439P021001"
+       },
+       {
+         "type": "先着一般発売（北海道 9/5公演）7/30 20:00発売",
+         "date": "2026-09-04",
+         "url": "https://eplus.jp/sf/detail/1734600001-P0030440P021001",
+-        "startDate": "2026-07-30",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-07-30"
+       },
+       {
+         "type": "先着一般発売（長野県 9/12公演）7/30 20:00発売",
+         "date": "2026-09-11",
+         "url": "https://eplus.jp/sf/detail/1734600001-P0030441P021001",
+-        "startDate": "2026-07-30",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-07-30"
+       },
+       {
+         "type": "先着一般発売（福井県 9/13公演）7/30 20:00発売",
+         "date": "2026-09-12",
+         "url": "https://eplus.jp/sf/detail/1734600001-P0030442P021001",
+-        "startDate": "2026-07-30",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-07-30"
+       },
+       {
+         "type": "先着一般発売（宮城県 9/21公演）〜9/20 18:00",
+@@ -20729,17 +20721,23 @@
+         "type": "一般発売（三重 10/3公演）8/18 10:00発売",
+         "date": "2026-08-18",
+         "startDate": "2026-08-18",
+-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621795"
++        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621795",
++        "soldout": true,
++        "soldoutSince": "2026-08-20"
+       },
+       {
+         "type": "一般発売（大阪 8/23公演）〜8/20 23:59",
+         "date": "2026-08-20",
+-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2613761"
++        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2613761",
++        "soldout": true,
++        "soldoutSince": "2026-08-20"
+       },
+       {
+         "type": "一般発売（山形 8/22公演）〜8/21 23:59",
+         "date": "2026-08-21",
+-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614357"
++        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614357",
++        "soldout": true,
++        "soldoutSince": "2026-08-20"
+       },
+       {
+         "type": "一般発売（富山 10/4公演）〜10/3 18:00",
+@@ -58478,9 +58476,7 @@
+         "type": "先着一般発売（神奈川県 8/22公演）8/1 10:00発売",
+         "date": "2026-08-19",
+         "url": "https://eplus.jp/sf/detail/4556830001-P0030001P021001",
+-        "startDate": "2026-08-01",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-08-01"
+       }
+     ],
+     "verified": true,
+@@ -58604,17 +58600,13 @@
+         "type": "先着一般発売（神奈川県 9/19 14:00公演）7/24 12:00発売",
+         "date": "2026-09-12",
+         "url": "https://eplus.jp/sf/detail/0061260005-P0030053P021001",
+-        "startDate": "2026-07-24",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-07-24"
+       },
+       {
+         "type": "先着一般発売（神奈川県 9/19 17:00公演）7/24 12:00発売",
+         "date": "2026-09-12",
+         "url": "https://eplus.jp/sf/detail/0061260005-P0030053P021002",
+-        "startDate": "2026-07-24",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-07-24"
+       },
+       {
+         "type": "先着一般発売（大阪府 9/26 14:00公演）〜9/19 18:00",
+@@ -59166,9 +59158,7 @@
+         "type": "先着一般発売（東京都 10/13公演）8/13 10:00発売",
+         "date": "2026-10-13",
+         "url": "https://eplus.jp/sf/detail/4500660001-P0030001P021001",
+-        "startDate": "2026-08-13",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-08-13"
+       },
+       {
+         "type": "一般発売＜当日券価格＞（東京都 10/13公演）10/13 0:00発売",
+@@ -59207,9 +59197,7 @@
+         "type": "先着一般発売（大阪府 10/16公演）7/27 12:00発売",
+         "date": "2026-10-09",
+         "url": "https://eplus.jp/sf/detail/0092440002-P0030069P021002",
+-        "startDate": "2026-07-27",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-07-27"
+       },
+       {
+         "type": "先着一般発売（東京都 10/26公演）〜10/19 18:00",
+@@ -59252,9 +59240,7 @@
+         "type": "先着一般発売（大阪府 10/17公演）8/8 10:00発売",
+         "date": "2026-10-16",
+         "url": "https://eplus.jp/sf/detail/2556950001-P0030022P021001",
+-        "startDate": "2026-08-08",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": "2026-08-08"
+       }
+     ],
+     "verified": true,
+@@ -59705,9 +59691,7 @@
+       {
+         "type": "先着一般発売（愛知県 9/23公演）〜9/22 18:00",
+         "date": "2026-09-22",
+-        "url": "https://eplus.jp/sf/detail/0043510001-P0030210P021001",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "url": "https://eplus.jp/sf/detail/0043510001-P0030210P021001"
+       },
+       {
+         "type": "先着一般発売（東京都 11/14公演）8/22 10:00発売",
+@@ -60227,9 +60211,7 @@
+         "type": "先着一般発売（大阪府 9/21公演）〜9/20 23:59",
+         "date": "2026-09-20",
+         "url": "https://eplus.jp/sf/detail/1933380001-P0030018P021002",
+-        "startDate": null,
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "startDate": null
+       }
+     ],
+     "verified": true,
+@@ -62031,17 +62013,13 @@
+         "type": "一般発売（東京 10/23公演）7/31 12:00発売",
+         "date": "2026-10-20",
+         "startDate": "2026-07-31",
+-        "url": "https://eplus.jp/sf/detail/3489620002-P0030053P021001",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "url": "https://eplus.jp/sf/detail/3489620002-P0030053P021001"
+       },
+       {
+         "type": "一般発売（東京 10/24公演）7/31 12:00発売",
+         "date": "2026-10-21",
+         "startDate": "2026-07-31",
+-        "url": "https://eplus.jp/sf/detail/3489620002-P0030053P021002",
+-        "soldout": true,
+-        "soldoutSince": "2026-08-15"
++        "ur

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "id904",
+    "found": true,
+    "performer": "ＴＯＫＵ　「ＴＲＩＢＵＴＥＳ」　リリース記念凱旋コンサート",
+    "performances": [
+      {"date": "2026-08-15", "venue": "三条市中央公民館　大ホール", "pref": "新潟県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "本日発売初日", "saleStart": null, "saleEnd": "2026-08-14 23:59"}
+    ],
+    "notes": "ステータス語は「本日発売初日」、受付期間表示は「本日発売初日 ～ 2026/8/14(金) 23:59」。saleStartの日付・時刻はページにliteralに記載なし。"
+  },
+  {
+    "id": "id905",
+    "found": true,
+    "performer": "富澤一誠プロデュース「フォーエバーヤング～ミュージック＆トーク・ライブ～vol.12」（出演: 佐藤竹善 / 富澤一誠）",
+    "performances": [
+      {"date": "2026-09-13", "venue": "須坂市文化会館メセナホール　小ホール", "pref": "長野県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-07-11 10:00", "saleEnd": null}
+    ],
+    "notes": "saleEndはページに記載なし。"
+  },
+  {
+    "id": "id906",
+    "found": true,
+    "performer": "堂島孝平",
+    "performances": [
+      {"date": "2026-07-29", "venue": "ｅｌｌ．ＦＩＴＳ　ＡＬＬ", "pref": "愛知県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-19 10:00", "saleEnd": null},
+      {"type": "「堂島孝平」プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null},
+      {"type": "「堂島孝平」2次プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null},
+      {"type": "「堂島孝平」3次プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null},
+      {"type": "「堂島孝平」4次プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "プレリザーブ4種は全て抽選受付終了。一般発売は発売前。小学生以上チケット必要・未就学児入場不可の注記あり。"
+  },
+  {
+    "id": "id907",
+    "found": true,
+    "performer": "なつかしい × あたらしい なにわブルースフェスティバル2026（有山じゅんじ / 泉谷しげる / 金子マリ / 上田正樹 R&B BAND 他）",
+    "performances": [
+      {"date": "2026-09-19", "venue": "なんばHatch", "pref": "大阪府"},
+      {"date": "2026-09-20", "venue": "なんばHatch", "pref": "大阪府"},
+      {"date": "2026-09-21", "venue": "なんばHatch", "pref": "大阪府"}
+    ],
+    "tickets": [
+      {"type": "「なつかしい × あたらしい なにわブルースフェスティバル2026」プレリザーブ", "status": "抽選受付中", "saleStart": null, "saleEnd": "2026-06-21 23:59"},
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-27 10:00", "saleEnd": null}
+    ],
+    "notes": "1会場(なんばHatch)3日間フェス。プレリザーブのsaleStartは記載なし、受付終了は2026-06-21 23:59。出演者変更ありの注記。"
+  },
+  {
+    "id": "id908",
+    "found": true,
+    "performer": "ＮＥＯＬＡＮＤ　ｃａｓｅ．６　「ＭＡＤ　ＦＩＧＨＴ」　ザ・クロマニヨンズ　対　ＺＡＺＥＮ　ＢＯＹＳ",
+    "performances": [
+      {"date": "2026-09-30", "venue": "Ｚｅｐｐ　Ｆｕｋｕｏｋａ", "pref": "福岡県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-27 10:00", "saleEnd": null}
+    ],
+    "notes": "「2026/6/27(土) 10:00より発売」と表示。saleEndは記載なし。"
+  },
+  {
+    "id": "id909",
+    "found": true,
+    "performer": "シャープス＆フラッツ",
+    "performances": [
+      {"date": "2026-11-27", "venue": "Ｉ'Ｍ　Ａ　ＳＨＯＷ", "pref": "東京都"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "本日発売初日", "saleStart": null, "saleEnd": "2026-11-18 23:59"}
+    ],
+    "notes": "ステータス語は「本日発売初日」。saleEnd=2026-11-18 23:59、saleStartはliteralに記載なし。"
+  },
+  {
+    "id": "id910",
+    "found": true,
+    "performer": "Hollywood in Japan 2026（後藤葵 / 後藤栞 / Colaps / 山部泰嗣 他）",
+    "performances": [
+      {"date": "2026-12-05", "venue": "福岡サンパレス", "pref": "福岡県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-07-15 10:00", "saleEnd": null}
+    ],
+    "notes": "「2026/7/15(水) 10:00より発売」と表示。saleEndは記載なし。"
+  }
+]

@@ -1,0 +1,59 @@
+[
+ {
+  "id": 9001,
+  "artist": "三谷文楽『人形ぎらい』",
+  "name": "三谷文楽『人形ぎらい』",
+  "date": "2026-08-26",
+  "dateLabel": "2026年8月21日(金)〜2026年8月26日(水) 京都 京都劇場",
+  "venue": "京都劇場",
+  "prefecture": "京都",
+  "genre": "new",
+  "_genre": "dento",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668806",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "プレイガイド最速先行（京都 8/21〜8/26公演）〜6/22 23:59",
+    "date": "2026-06-22"
+   },
+   {
+    "type": "一般発売（京都 8/21〜8/26公演）6/28 10:00発売",
+    "date": "2026-06-28",
+    "startDate": "2026-06-28"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-06-19"
+ },
+ {
+  "id": 9002,
+  "artist": "舞台『ペパロニ・ヴァンパイア』",
+  "name": "舞台『ペパロニ・ヴァンパイア』",
+  "date": "2026-07-31",
+  "dateLabel": "2026年7月31日(金) 大阪 大阪市中央公会堂 中集会室",
+  "venue": "大阪市中央公会堂 中集会室",
+  "prefecture": "大阪",
+  "genre": "new",
+  "_genre": "engeki",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2613054",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（７（大阪 7/31公演）〜7/22 23:59",
+    "date": "2026-07-22"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-06-19"
+ }
+]

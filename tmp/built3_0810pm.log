@@ -1,0 +1,57 @@
+  4018 OK
+  4019 OK
+  4020 OK
+  4021 OK
+  4022 OK
+  4023 OK
+  4024 OK
+  4025 OK
+  4026 OK
+  4027 OK
+  4028 OK
+  4029 OK
+  4030 OK
+  4031 OK
+  4032 OK
+  4033 OK
+  4034 OK
+  4035 OK
+  4036 OK
+  4037 OK
+  4038 OK
+  4039 OK
+  4040 OK
+  4041 OK
+  4042 OK
+  4043 OK
+  4044 OK
+  4045 OK
+  4046 OK
+  4047 OK
+  4048 OK
+  4049 OK
+  4050 OK
+  4051 OK
+  4052 OK
+  4053 OK
+  4054 OK
+  4055 OK
+  4056 OK
+  4057 OK
+  4058 OK
+  4059 OK
+  4060 OK
+  4061 OK
+  4062 OK
+  4063 OK
+  4064 skip(売切)
+  4065 OK
+  4066 skip(売切)
+構築 47 件 / skip [4064, 4066]
+
+\u26a0\ufe0f PIA_GENRE_MAP 未収載のサブカテゴリ 4件（下書きは名前fallback＝要確認）:
+   id4021 [イベント/学園祭] → _genre=engeki | 綱啓永トークショー
+   id4035 [イベント/ショー・ファンイベント] → _genre=engeki | ＬＥＥ ＪＩ ＨＯＯＮ ＴＯＫＹＯ ＦＡＮＭＥＥＴＩＮＧ ： Ｓｃｅｎｅ ＃２ 
+   id4052 [音楽/フェスティバル] → _genre=engeki | INSPIRATION by SUNSETLIVE
+   id4053 [イベント/学園祭] → _genre=engeki | 松浦航大 歌まねライブ
+→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。

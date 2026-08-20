@@ -1,0 +1,213 @@
+ 
+ 
+   
+     
+     ご確認ください｜チケットぴあ 
+
+     
+.container{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+}
+
+.error-container {
+  height: 100%;
+  overflow: auto;
+  background: #FFFFFF;
+}
+
+     
+
+   
+   
+     
+       
+ 
+ 
+     
+    
+   ご確認ください｜チケットぴあ 
+    
+   
+   
+   
+   
+   
+   
+   
+    
+   
+   
+    
+    
+    
+    
+   
+      function setCookie_persistentForApp(name, value, domain, path, sameSite, secure) {
+          // 永続的な有効期限を設定（9999年12月31日）
+          var expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+          var cookieString = name + "=" + value;
+          cookieString += expires;
+
+          if (domain) {
+              cookieString += "; domain=" + domain;
+          }
+          if (path) {
+              cookieString += "; path=" + path;
+          }
+          if (sameSite) {
+              cookieString += "; SameSite=" + sameSite;
+          }
+          if (secure) {
+              cookieString += "; Secure";
+          }
+          document.cookie = cookieString;
+      }
+      function getCookie_persistentForApp(name) {
+          var cookies = document.cookie.split('; ');
+          for (var i = 0; i  
+     
+    
+     
+     
+        var dataLayer = dataLayer || [];
+        dataLayer.push({
+            'ga-goal-process' : 'Error.jsp_E00002'
+        });
+     
+     
+var thisDomain = location.href.match(/^[httpsfile]+:\/{2,3}([0-9a-zA-Z\.\-:]+?):?[0-9]*?\//i)[1];
+var firstTracker = null;
+var secondTracker = null;
+
+var _gaq = _gaq || [];
+_gaq.push(function() {
+    firstTracker = _gaq._createAsyncTracker('UA-13210169-1', 'ga_asp');
+    firstTracker._setDomainName(".pia.jp");
+    firstTracker._trackPageview();
+
+    secondTracker = _gaq._createAsyncTracker('UA-3292047-1', 'ga_current');
+    secondTracker._trackPageview();
+});
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+ 
+
+
+ (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-JN9B'); 
+
+     
+    
+     
+     
+     
+    
+     チケットのことならチケットぴあ    
+    
+     
+     
+    
+     
+    
+       
+     
+     
+    
+     
+   ご確認ください 
+     
+    
+     
+   
+       
+      
+     
+        以下の現象が発生しました。  
+     
+         
+          
+           ご指定の公演情報が見つかりませんでした。   
+         
+     
+    
+     
+     
+     
+     
+     
+     
+       
+           
+          
+             トップページへ 
+         
+            
+       
+     
+     
+     
+     
+      
+       
+   
+     
+     
+    
+      このページ「エラー通知｜チケットぴあ」上部へ  
+    
+     
+     
+     
+     
+    
+     
+     
+       
+   
+     
+       
+         
+     
+        ジャンル  
+        音楽  スポーツ  演劇  クラシック  アート・イベント  映画 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; アーティスト一覧  
+     
+         
+         
+     
+       エリア 
+        北海道  東 北  関東甲信越  中部・北陸  関 西  中国・四国  九州・沖縄  
+     
+         
+       
+     
+   
+    
+      プライバシーポリシー ｜ 外部送信ポリシー ｜ ぴあ会員規約 ｜ 特定商取引法に基づく表示 ｜ 旅行業登録票・約款等 ｜ 動作環境・セキュリティ   公演中止・延期・発売方法変更のお知らせ ｜ チケットを委託するには ｜  アフィリエイト募集 ｜ ぴあ会社案内 ｜ お問い合わせ  
+       チケットぴあに掲載されているすべてのコンテンツ（記事、画像、音声データ等）はぴあ株式会社の承諾なしに無断転載することはできません。 
+       Copyright &copy; PIA Corporation. All Rights Reserved. 
+   
+    
+       
+     
+    
+     
+    
+     
+       
+     
+   
+ 
+

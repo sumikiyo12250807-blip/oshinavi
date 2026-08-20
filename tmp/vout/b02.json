@@ -1,0 +1,103 @@
+[
+  {
+    "id": "id869",
+    "found": true,
+    "performer": "ＣＵＴＩＥ ＳＴＲＥＥＴ 真鍋凪咲 生誕祭 ２０２６",
+    "performances": [
+      { "date": "2026-06-29", "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ", "pref": "東京都" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-18 18:00", "saleEnd": null },
+      { "type": "プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null }
+    ],
+    "notes": "「販売終了したチケット情報を表示」リンクあり（展開なし）。"
+  },
+  {
+    "id": "id870",
+    "found": true,
+    "performer": "ＣＲＥＡＴＵＲＥ ＣＲＥＡＴＵＲＥ",
+    "performances": [
+      { "date": "2026-09-13", "venue": "ｅｌｌ．ＦＩＴＳ ＡＬＬ", "pref": "愛知県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 10:00", "saleEnd": null },
+      { "type": "「CREATURE CREATURE」プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null }
+    ],
+    "notes": "３歳以上有料・３歳未満入場不可。"
+  },
+  {
+    "id": "id871",
+    "found": true,
+    "performer": "Ｋｅｎｎｙ Ｐａｒａｖｅｓ",
+    "performances": [
+      { "date": "2026-07-17", "venue": "Ｓｈａｎｇｒｉ－Ｌａ", "pref": "大阪府" },
+      { "date": "2026-07-18", "venue": "Ｒｅｅｄ", "pref": "広島県" },
+      { "date": "2026-07-19", "venue": "ＬＩＶＥ ＨＯＵＳＥ ＣＢ", "pref": "福岡県" },
+      { "date": "2026-07-26", "venue": "ＰＬＡＮＴ", "pref": "北海道" },
+      { "date": "2026-08-08", "venue": "Ｖｅａｔｓ Ｓｈｉｂｕｙａ", "pref": "東京都" }
+    ],
+    "tickets": [
+      { "type": "プリセール", "status": "販売期間中", "saleStart": null, "saleEnd": "2026-06-21 23:59" },
+      { "type": "一般発売（福岡 7/19 公演）", "status": "発売前", "saleStart": "2026-06-24 12:00", "saleEnd": null },
+      { "type": "最速オフィシャル先行（先着）", "status": "販売終了", "saleStart": null, "saleEnd": null }
+    ],
+    "notes": "eventBundleCd（複数会場ツアー）。一般発売は福岡7/19公演のみと表示。最速オフィシャル先行は全エントリ販売終了。"
+  },
+  {
+    "id": "id872",
+    "found": true,
+    "performer": "KOIAI",
+    "performances": [
+      { "date": "2026-07-20", "venue": "仙台 ｄａｒｗｉｎ", "pref": "宮城県" },
+      { "date": "2026-07-20", "venue": "ＮＡＧＯＹＡ ＪＡＭＭＩＮ'", "pref": "愛知県" },
+      { "date": "2026-07-20", "venue": "心斎橋ＪＡＮＵＳ", "pref": "大阪府" },
+      { "date": "2026-07-20", "venue": "ＤＲＵＭ Ｂｅ－１", "pref": "福岡県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 10:00", "saleEnd": null },
+      { "type": "オフィシャル2次先行", "status": "抽選結果発表前", "saleStart": null, "saleEnd": null },
+      { "type": "オフィシャル先行", "status": "抽選受付終了", "saleStart": null, "saleEnd": null }
+    ],
+    "notes": "eventBundleCd（複数会場ツアー）。各公演の期間表示は2026-07-20〜2026-08-30と幅があり、ページ要約では公演日が判然としない（開始日2026-07-20を採用、要再確認）。オフィシャル2次先行の抽選結果発表は2026-06-18 18:00。一般発売の終了日は2026-08-30（時刻表示なし）。"
+  },
+  {
+    "id": "id873",
+    "found": true,
+    "performer": "コブクロ",
+    "performances": [
+      { "date": "2026-08-08", "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール", "pref": "大阪府" },
+      { "date": "2026-08-09", "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール", "pref": "大阪府" }
+    ],
+    "tickets": [
+      { "type": "プリセール ／ コブクロ", "status": "予定枚数終了", "saleStart": null, "saleEnd": null }
+    ],
+    "notes": "公演は2026-08-08〜2026-08-09の2日間。６歳未満入場不可。販売開始/終了の時刻はページ未表示。"
+  },
+  {
+    "id": "id874",
+    "found": true,
+    "performer": "コブクロ KOBUKURO LIVE TOUR 2026",
+    "performances": [
+      { "date": "2026-09-29", "venue": "札幌文化芸術劇場ｈｉｔａｒｕ", "pref": "北海道" },
+      { "date": "2026-09-30", "venue": "札幌文化芸術劇場ｈｉｔａｒｕ", "pref": "北海道" }
+    ],
+    "tickets": [
+      { "type": "「コブクロ」プレリザーブ", "status": "抽選受付終了", "saleStart": null, "saleEnd": null },
+      { "type": "「コブクロ」2次プレリザーブ", "status": "抽選結果発表前", "saleStart": null, "saleEnd": "2026-06-17 18:00" },
+      { "type": "「コブクロ」3次プレリザーブ", "status": "近日抽選受付", "saleStart": "2026-06-22 11:00", "saleEnd": "2026-06-29 11:00" }
+    ],
+    "notes": "「販売終了したチケット情報を表示」リンクあり。"
+  },
+  {
+    "id": "id875",
+    "found": true,
+    "performer": "Ｇｏｄｉｅｇｏ（ゴダイゴ）",
+    "performances": [
+      { "date": "2026-10-16", "venue": "仙台サンプラザホール", "pref": "宮城県" }
+    ],
+    "tickets": [
+      { "type": "一般発売", "status": "発売前", "saleStart": "2026-06-21 10:00", "saleEnd": null }
+    ],
+    "notes": null
+  }
+]

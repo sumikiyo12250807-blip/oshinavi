@@ -1,0 +1,87 @@
+  4376 OK
+  4377 OK
+  4378 OK
+  4379 OK
+  4380 OK
+  4381 OK
+  4382 OK
+  4383 OK
+  4384 OK
+  4385 OK
+  4386 OK
+  4387 skip(売切)
+  4388 skip(売切)
+  4389 OK
+  4390 OK
+  4391 OK
+  4392 OK
+  4393 OK
+  4394 OK
+  4395 OK
+  4396 OK
+  4397 OK
+  4398 OK
+  4399 OK
+  4400 OK
+  4401 OK
+  4402 OK
+  4403 OK
+  4404 OK
+  4405 OK
+  4406 OK
+  4407 skip(売切)
+  4408 OK
+  4409 skip(売切)
+  4410 OK
+  4411 OK
+  4412 OK
+  4413 OK
+  4414 OK
+  4415 OK
+  4416 OK
+  4417 OK
+  4418 OK
+  4419 OK
+  4420 OK
+  4421 OK
+  4422 OK
+  4423 OK
+  4424 OK
+  4425 OK
+  4426 OK
+  4427 OK
+  4428 OK
+  4429 OK
+  4430 OK
+  4431 OK
+  4432 OK
+  4433 OK
+  4434 OK
+  4435 OK
+  4436 OK
+  4437 OK
+  4438 OK
+  4439 OK
+  4440 OK
+  4441 OK
+  4442 OK
+  4443 OK
+  4444 OK
+  4445 OK
+  4446 OK
+  4447 OK
+  4448 OK
+  4449 OK
+構築 70 件 / skip [4387, 4388, 4407, 4409]
+
+\u26a0\ufe0f PIA_GENRE_MAP 未収載のサブカテゴリ 1件（下書きは名前fallback＝要確認）:
+   id4405 [音楽/フェスティバル] → _genre=engeki | ＳＴＡＲフェス
+→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 3件（買える枠なのに取り込めなかった＝要対応）:
+   id4390 [発売前] when='' | 一般発売【８／１（土）熊本公演】 ／ 吉川晃司
+   id4407 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668774
+   id4409 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670292
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

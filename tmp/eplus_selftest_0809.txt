@@ -1,0 +1,15 @@
+==============================================================================
+https://eplus.jp/sf/detail/0034210001-P0030185P021001
+  ▼2026/9/21(月・祝) Zepp DiverCity(TOKYO)（東京都）  … 受付中の枠 0/3
+       予定枚数終了 | 先着 ★一般発売 | 受付期間:2026/8/8(土)10:00～2026/9/17(木)18:00
+       受付終了 | 抽選 プレオーダー受付 | 受付期間:2026/7/15(水)12:00～2026/7/22(水)23:59
+       受付終了 | 抽選 2次プレオーダー受付 | 受付期間:2026/7/25(土)12:00～2026/8/2(日)23:59
+==============================================================================
+https://eplus.jp/sf/detail/3963800001-P0030011P021001
+  ▼2026/10/8(木) LIQUIDROOM（東京都）  … 受付中の枠 1/1
+Traceback (most recent call last):
+  File "C:\Users\user\oshinavi\tools\eplus_detail.py", line 93, in <module>
+    main()
+  File "C:\Users\user\oshinavi\tools\eplus_detail.py", line 89, in main
+    print("    %s %s | %s | %s" % (mark, t["status"], t["name"], t["period"]))
+UnicodeEncodeError: 'cp932' codec can't encode character '\U0001f7e2' in position 4: illegal multibyte sequence

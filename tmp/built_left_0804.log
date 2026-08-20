@@ -1,0 +1,26 @@
+﻿python :   3716 OK
+At line:1 char:336
++ ... ft_0804.py; python tools/build_pia_entries.py tmp/cand_left_0804.
+json ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : NotSpecified: (  3716 OK:String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  3717 OK
+  3718 OK
+  3719 OK
+  3720 OK
+  3721 OK
+  3722 OK
+  3723 OK
+  3724 OK
+  3725 OK
+  3726 OK
+  3727 OK
+  3728 skip(売切)
+  3729 OK
+  3730 OK
+  3731 skip(売切)
+構築 14 件 / skip [3728, 3731]

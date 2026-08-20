@@ -1,0 +1,99 @@
+[
+  {
+    "id": "id911",
+    "found": true,
+    "performer": "BREAKERZ",
+    "performances": [
+      {"date": "2026-09-19", "venue": "cube garden", "pref": "北海道"},
+      {"date": "2026-08-31", "venue": "新横浜NEW SIDE BEACH!!", "pref": "神奈川県"},
+      {"date": null, "venue": "Spotify O-WEST", "pref": "東京都"},
+      {"date": null, "venue": "Electric Lady Land", "pref": "愛知県"},
+      {"date": null, "venue": "梅田BananaHall", "pref": "大阪府"},
+      {"date": null, "venue": "DRUM Be-1", "pref": "福岡県"}
+    ],
+    "tickets": [
+      {"type": "「BREAKERZ」プレリザーブ（2026-09-19 cube garden公演）", "status": "近日抽選受付", "saleStart": "2026-06-24 11:00", "saleEnd": "2026-06-30 11:00"},
+      {"type": "一般発売／BREAKERZ（2026-08-31 新横浜公演）", "status": "発売前", "saleStart": "2026-07-18 10:00", "saleEnd": null},
+      {"type": "「BREAKERZ」プレリザーブ（6会場ツアー）", "status": "抽選結果発表前", "saleStart": null, "saleEnd": "2026-06-18 18:00"},
+      {"type": "「BREAKERZ」オフィシャルHP先行", "status": "抽選受付終了", "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "ツアーbundleページ。公演会期は2026-08-31〜2026-09-23、6会場(cube garden北海道/Spotify O-WEST東京/新横浜NEW SIDE BEACH!!神奈川/Electric Lady Land愛知/梅田BananaHall大阪/DRUM Be-1福岡)。各公演の個別日付は新横浜8/31とcube garden9/19以外は明示されず。"
+  },
+  {
+    "id": "id912",
+    "found": true,
+    "performer": "ｐｌｅｎｔｙ(プレンティー)",
+    "performances": [
+      {"date": "2026-09-13", "venue": "ペニーレーン２４", "pref": "北海道"}
+    ],
+    "tickets": [
+      {"type": "「plenty」プレリザーブ", "status": "まもなく抽選受付", "saleStart": "2026-06-19 11:00", "saleEnd": "2026-06-24 11:00"}
+    ],
+    "notes": "未就学児童入場不可。"
+  },
+  {
+    "id": "id913",
+    "found": true,
+    "performer": "ｐｌｅｎｔｙ(プレンティー)",
+    "performances": [
+      {"date": "2026-10-16", "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ", "pref": "新潟県"},
+      {"date": "2026-10-17", "venue": "金沢ＡＺ", "pref": "石川県"}
+    ],
+    "tickets": [
+      {"type": "「plenty」プレリザーブ", "status": "まもなく抽選受付", "saleStart": "2026-06-19 11:00", "saleEnd": "2026-06-29 11:00"}
+    ],
+    "notes": "未就学児童入場不可。"
+  },
+  {
+    "id": "id914",
+    "found": true,
+    "performer": "ホワイトキューブジャズフェス",
+    "performances": [
+      {"date": "2026-08-15", "venue": "ホワイトキューブ（白石市文化体育活動センター）", "pref": "宮城県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-25 14:00", "saleEnd": null}
+    ],
+    "notes": "未就学児童は入場不可。U-24チケット購入者は会場で年齢確認を求められる場合あり。"
+  },
+  {
+    "id": "id915",
+    "found": true,
+    "performer": "前川清ファミリーコンサート",
+    "performances": [
+      {"date": "2026-08-29", "venue": "博多座", "pref": "福岡県"},
+      {"date": "2026-08-30", "venue": "博多座", "pref": "福岡県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-07-04 10:00", "saleEnd": null},
+      {"type": "先行", "status": "抽選受付終了", "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "公演期間は2026-08-29〜2026-08-30(博多座)。小学生未満のお子様の入場不可。リセールチケット購入導線あり。"
+  },
+  {
+    "id": "id916",
+    "found": true,
+    "performer": "真夏の沖縄音楽フェスティバル２０２６",
+    "performances": [
+      {"date": "2026-08-09", "venue": "新歌舞伎座", "pref": "大阪府"}
+    ],
+    "tickets": [
+      {"type": "プリセール", "status": "販売期間中", "saleStart": null, "saleEnd": "2026-06-24 23:59"},
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-25 10:00", "saleEnd": null},
+      {"type": "プレイガイド最速先行", "status": "販売終了", "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "未就学児童は入場不可。座席ごとの制限注記あり。"
+  },
+  {
+    "id": "id917",
+    "found": true,
+    "performer": "みんおんバラエティーショー",
+    "performances": [
+      {"date": "2026-09-04", "venue": "やまと芸術文化ホール メインホール", "pref": "神奈川県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-07-02 10:00", "saleEnd": null}
+    ],
+    "notes": "未就学児童は入場不可。"
+  }
+]

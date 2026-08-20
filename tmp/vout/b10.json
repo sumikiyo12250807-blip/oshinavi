@@ -1,0 +1,92 @@
+[
+  {
+    "id": "id925",
+    "found": true,
+    "performer": "忘れらんねえよ",
+    "performances": [
+      {"date": "2026-08-08", "venue": "ＬＩＱＵＩＤＲＯＯＭ", "pref": "東京都"},
+      {"date": "2026-08-08", "venue": "新栄シャングリラ", "pref": "愛知県"},
+      {"date": "2026-08-11", "venue": "Ｌｉｖｅ　Ｈｏｕｓｅ　Ａｎｉｍａ", "pref": "大阪府"},
+      {"date": "2026-08-16", "venue": "ＬＩＱＵＩＤＲＯＯＭ", "pref": "東京都"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 10:00", "saleEnd": null},
+      {"type": "「ウィーラブ言う」オフィシャル抽選先行", "status": "抽選受付終了", "saleStart": null, "saleEnd": null},
+      {"type": "ウィーラブ言う　オフィシャル最終抽選先行", "status": "抽選受付終了", "saleStart": null, "saleEnd": null}
+    ],
+    "notes": "eventBundleCd（複数公演バンドル）。一般発売は発売前、抽選先行2件は抽選受付終了。"
+  },
+  {
+    "id": "id926",
+    "found": true,
+    "performer": "渡辺貞夫カルテット２０２６",
+    "performances": [
+      {"date": "2026-11-03", "venue": "長崎市民会館　文化ホール", "pref": "長崎県"},
+      {"date": "2026-11-05", "venue": "くまもと森都心プラザホール", "pref": "熊本県"}
+    ],
+    "tickets": [
+      {"type": "先行（抽選先行）", "status": "まもなく抽選受付", "saleStart": "2026-06-19 10:00", "saleEnd": "2026-06-24 23:59"}
+    ],
+    "notes": "ステータス語は「まもなく抽選受付」(抽選受付開始間近)。1券種のみ。長崎・熊本2公演を1抽選でカバー。"
+  },
+  {
+    "id": "id927",
+    "found": true,
+    "performer": "和洋楽器ユニット「蒼ノトキ」ライブ　２０２６",
+    "performances": [
+      {"date": "2026-09-26", "venue": "タクトホームこもれびＧＲＡＦＡＲＥホール　小ホール", "pref": "東京都"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-21 10:00", "saleEnd": null}
+    ],
+    "notes": null
+  },
+  {
+    "id": "id928",
+    "found": true,
+    "performer": "ＪＡＩＬＨＯＵＳＥ創業約４８周年記念興行　「ＬＯＵＤ　ＭＩＮＯＲＩＴＹ　２０２６」",
+    "performances": [
+      {"date": "2026-08-09", "venue": "ＣＯＭＴＥＣ　ＰＯＲＴＢＡＳＥ", "pref": "愛知県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-27 10:00", "saleEnd": null}
+    ],
+    "notes": null
+  },
+  {
+    "id": "id929",
+    "found": true,
+    "performer": "ＢＵＧＳ　ＭＥＥＴＩＮＧ２０２６　３ＭＡＮ",
+    "performances": [
+      {"date": "2026-10-04", "venue": "ＢＬＵＥ　ＭＯＯＤ", "pref": "東京都"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-27 10:00", "saleEnd": null}
+    ],
+    "notes": "出演: ＢＩＬＬＹ / 氏神一番 / ジューシィ・フルーツ。"
+  },
+  {
+    "id": "id930",
+    "found": true,
+    "performer": "BugLug主催Fes.『バグサミ 2026名古屋』",
+    "performances": [
+      {"date": "2026-07-26", "venue": "ElectricLadyLand/ell.FITS ALL/ell.SIZE", "pref": "愛知県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-20 10:00", "saleEnd": null}
+    ],
+    "notes": null
+  },
+  {
+    "id": "id931",
+    "found": true,
+    "performer": "Ｐｅｒｆｏｒｍｉｎｇ　Ａｒｔｓ　Ｆｅｓｔｉｖａｌ　ｖｏｌ．１",
+    "performances": [
+      {"date": "2026-09-26", "venue": "宝山ホール", "pref": "鹿児島県"}
+    ],
+    "tickets": [
+      {"type": "一般発売", "status": "発売前", "saleStart": "2026-06-28 10:00", "saleEnd": null}
+    ],
+    "notes": null
+  }
+]

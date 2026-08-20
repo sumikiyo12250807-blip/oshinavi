@@ -1,0 +1,13 @@
+7/13: 隠れ枠ヒール47件／救済変換5件(THE HAUNTED・WILD BUNCH FEST・Junna・清水ミチコ・Rockon Social Club)／期限切れ削除38件(全件ぴあ生HTMLで受付終了裏取り)／新着92件投入(ぴあ87件 id2500-2599＋Jリーグ5件 id2600-2604・NPBレギュラー戦8件は方針通り除外・genre:new)／総点検で間違い0(ジャンル下書き37件補正=_piaSub空のengeki誤フォールバックをart24/kids5ほかへ)／二段構えOK91・MISSING0 index1745件
+
+恒久修正4本:
+- tools/dedup_badges.py 常設化(ヒール後の再buildで表示同一ticketが復活するのを畳む)
+- build_pia_entries: ◎…◎ 囲み装飾ラベルを券種名から除去(K-1で発覚・selftest追加)
+- inject_built: 脆い文字列アンカーを廃止しJSON方式へ(他ツールの書き戻しで壊れていた)
+- inject_built: NEW_ORDERを上書きから追記へ(同日2回目の投入で前バッチが新着タブから消える)
+
+tour_audit でディズニー・オン・クラシックを公式照合＝ぴあ28枠に対し公式51公演。
+北海道/沖縄/秋田/富山/大阪12月がローチケ・主催直販のみで取りこぼし。
+ただし楽天/ぴあがあるカードではローチケ/e+ボタンが出ない(アフィリ都合)ため補完は見送り。
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>

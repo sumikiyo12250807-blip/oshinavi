@@ -1,0 +1,20 @@
+{
+ "id": 839,
+ "artist": "南佳孝",
+ "name": "南佳孝 Soloism 2026",
+ "date": "2026-09-13",
+ "dateLabel": "2026年6月27日 広島／6月28日 山口／9月12日 佐賀／9月13日 大分",
+ "venue": "全国ツアー",
+ "prefecture": "広島・山口・佐賀・大分",
+ "genre": "jpop",
+ "multiTicketUrl": null
+}
+
+ticket例:
+{"type": "一般発売（広島 6/27公演）〜6/27", "date": "2026-06-27", "url": "https://t.pia.jp/pia/ticketInformation.do?eventCd=2610097&rlsCd=001"}
+{"type": "一般発売（山口 6/28公演）〜6/28", "date": "2026-06-28", "url": "https://t.pia.jp/pia/ticketInformation.do?eventCd=2610097&rlsCd=001"}
+{"type": "プレリザーブ（佐賀 9/12・大分 9/13公演）〜6/21 23:59", "date": "2026-06-21", "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666580"}
+{"type": "一般発売（佐賀 9/12・大分 9/13公演）7/4 10:00発売", "startDate": "2026-07-04", "date": "2026-07-04", "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666580"}
+
+keys:['id', 'artist', 'name', 'date', 'dateLabel', 'venue', 'prefecture', 'genre', 'price', 'links', 'tickets', 'verified', 'verifiedAt']
+links:{"rakuten": null, "lawson": null, "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666580", "eplus": null, "amazon": "https://www.amazon.co.jp/s?k=%E5%8D%97%E4%BD%B3%E5%AD%9D%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"}
