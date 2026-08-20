@@ -14,6 +14,9 @@ push・削除・振り分け、**3つとも自走してよい**。ただし**必
 | **C 残す** | **後から見られるリンク**＝削除は公演名＋確認用直URL、振り分けは公演名＋ジャンル＋URL。**報告に出す＋`logs/` にも残す**（携帯から遡れるように） |
 | **⛔例外** | 🚨**新着収集で「ぴあ以外（e+／楽天／ローチケ）」が混ざったら、そこだけユーザーの確認を待つ**（2026-08-16夜明示）。件名・会場・締切・URL付きで別立て報告→返事まで振り分けない。ぴあ由来は自走OK |
 
+🚨**毎朝 `node tools/check_zero_badge.js` を回す**（2026-08-20新設）＝「カードは出るのに買える枠が0」を拾う唯一の網。
+終了コード2が出たら放置しない（2026-08-20に54件が埋もれていた）。
+
 **push**＝1日3回まで（Netlifyクレジット）・**push後は何を上げたか1行報告**。
 🚨**便を締める前に3点を機械で確認する**（2026-08-18に未pushのまま「今日は終わり」と報告した）＝
 ①`git log --oneline origin/main..HEAD` が空か ②EVENTSを触ったら `build_ai_page.py` を回したか
@@ -42,7 +45,7 @@ push・削除・振り分け、**3つとも自走してよい**。ただし**必
 
 | 行動 | ゲート | 動く前に全文Readするmemory | 🚨罠（これで事故った） |
 |---|---|---|---|
-| **朝ルーチン** | 自走 | feedback_morning_routine / feedback_plan_md | ①plan.md②check_expired③ヒール④昼もう一度ヒール。振り分け/削除/pushは合図待ち |
+| **朝ルーチン** | 自走 | feedback_morning_routine / feedback_plan_md / **feedback_zero_badge_gate** | ①plan.md②check_expired③ヒール④昼もう一度ヒール。振り分け/削除/pushは合図待ち |
 | **期限切れ削除** | 要OK | feedback_user_confirms_expired / feedback_pre_delete_webfetch_verify / feedback_delete_nonpia_blindspot / feedback_reconcile_drop_unparsed_not_noise / **feedback_soldout_keep_visible** | 「抽選結果発表前」はふみ型で削除禁止／当日公演は翌朝／URLは機械抽出のみ(捏造禁止)／w.pia直販0枠は誤検出／🚨**売り切れは削除せず`mark_soldout.py`で「予定枚数終了」表示に**（削除ゲートに載せない） |
 | **新着harvest(ぴあ)** | 自走 | feedback_presale_first_harvest / **feedback_newpool_presale_ratio_gate** / feedback_capture_all_not_select / feedback_harvest_countdown_first / reference_pia_tickets_tool | 発売前優先・1バッチ50上限・eventCd総ざらい／🚨**投入前に `python tools/harvest_audit.py` でカバー率と発売前比率を出す**（「発売前が枯れた」は数字で証明してから言う。2026-08-17に音楽カバー率4.7%＝あ行だけで50件埋めた事故） |
 | **新着harvest(e+)** | 自走 | reference_eplus_harvest / reference_eplus_machine_parse | 各公演-P個別URL必須／発売中≠発売前／JSON-LDが源／撮影会除外 |

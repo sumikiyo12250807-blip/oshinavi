@@ -41,6 +41,14 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
    - 公演終了組＝削除候補／⚠️要再確認組＝`reconcile_pia.py --ids ...` で機械照合
    - 買える枠あり＝救済変換（自走OK）／0枠＝まず `mark_soldout.py --ids ...` で**予定枚数終了かを判定**
      （売り切れは削除しない＝[[feedback_soldout_keep_visible]]）
+3.5. 🚨🚨**バッジ0の番人** `node tools/check_zero_badge.js`（2026-08-20 新設・**毎朝必須**）
+   - 「カードは出るのに**買える枠が1枚も無い**」エントリを、**index.htmlの実物の表示ルールを取り出して**数える
+   - 終了コード **2＝要対応**（公演まで31日より先なのに枠0）／1＝30日以内のみ／0＝健全
+   - 出たら `node tools/check_zero_badge.js --ids` で id を取り、`reconcile_pia.py --ids` で照合 →
+     **ぴあに買える枠があれば `build_pia_entries` で取り直す**／無ければ削除ゲートへ
+   - 🚨**この型は他のどの道具でも拾えない**＝ヒールは startDate==date だけ、reconcile --new は新着だけ、
+     check_expired は全枠死亡の子だけ。2026-08-20 に**54件**が埋もれているのが見つかった（ユーザーが画面で発見）
+
 4. **隠れ枠ヒール** `heal_stale_deadlines.py` → `--build` → `--apply`
    - 安全弁が出た子は**実ページを単発で確認して手で当てる**
 5. **🆕「〆切日に発売時刻がくっつく」型の掃除**（2026-08-16 ユーザーがスクショで発見）
