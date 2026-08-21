@@ -1,0 +1,10 @@
+  1601 skip(売切)
+  4175 OK
+構築 1 件 / skip [1601]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 2件（買える枠なのに取り込めなかった＝要対応）:
+   id1601 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/pia/?mark=type-PR1' | https://t.pia.jp/pia/event/event.do?eventCd=2625247
+   id1601 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/pia/?mark=type-PR1' | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669627
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
