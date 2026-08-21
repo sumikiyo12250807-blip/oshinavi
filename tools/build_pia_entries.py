@@ -522,6 +522,63 @@ def genre_from_subcat(cat, sub, name=''):
             if k in sub or sub in k: return v
     return PIA_CAT_FALLBACK.get(cat)
 
+# 【同じ文言のバッジが並ぶ罠の恒久対策・2026-08-22】
+# ぴあは別々の売り場（会場違い・席種違い・企画違い）を同じ券種名で出すことがあり、
+# kenshu() が券種名を削ると **バッジ文言が完全に一致してしまう**。画面では見分けられず、
+# dedup_badges を流すと片方が畳まれて**実在する売り場への導線が消える**
+# （[[feedback_pia_parser_flattens_slots]] / [[feedback_dedup_badges_keeps_urls]]）。
+# 実例＝4971 映画『ホーム スイート ホーム』(イオンシネマ板橋と kino cinema 新宿が同文言)、
+#       5016 TJHiroshima(ゴルフ場4か所)、4114 Yung Kai(席種3種)、2642 高校野球決勝(席種7種)。
+# → 文言がぶつかった組にだけ、①会場名 ②タイトルの差分 の順で見分け札を足す。
+#    ぶつかっていない枠には一切触らない（既存の出力を変えない）。
+def _uniq_suffix(vals):
+    """同じ組の中で「そこだけ違う部分」を返す。共通の頭とお尻を落として差分だけ残す。"""
+    if len(set(vals)) < 2:
+        return None
+    head = 0
+    while head < min(len(v) for v in vals) and len({v[head] for v in vals}) == 1:
+        head += 1
+    tail = 0
+    while tail < min(len(v) for v in vals) - head and len({v[-1 - tail] for v in vals}) == 1:
+        tail += 1
+    # 囲み記号は札の【】と二重になるので落とす（【＜追加公演＞】にならないように）
+    out = [v[head:len(v) - tail].strip('　 ／/・-−＜＞〔〕［］【】<>()（）') for v in vals]
+    # 片方だけ差分がある形（「一般発売」と「一般発売＜追加公演＞」）は、差分がある側にだけ
+    # 見分け札を付ければ区別できる。全部空でなければ採用する（2026-08-22 ニッチェで発覚）。
+    if not any(out) or len(set(out)) < 2:
+        return None
+    return out
+
+
+def disambiguate(tickets, newid=None):
+    """バッジ文言がぶつかった枠に見分け札【…】を付ける。付けられなければ大声で報告する。"""
+    groups = {}
+    for t in tickets:
+        groups.setdefault((t['type'], t['date']), []).append(t)
+    for (typ, _d), g in groups.items():
+        if len(g) < 2:
+            continue
+        label = None
+        vens = [t['_venue'] for t in g]
+        if len(set(vens)) == len(g) and all(vens):
+            label = vens                      # ①会場が全部違う＝会場名で見分ける
+        else:
+            label = _uniq_suffix([t['_title'] for t in g])   # ②タイトルの差分で見分ける
+        if not label:
+            # 見分けようがない＝ぴあ側が本当に同じ文言。無言で潰さず報告して人が見る。
+            _DROPPED.append((newid, 'SAME-BADGE', '同じ文言のバッジ%d枚' % len(g), typ[:40]))
+            continue
+        for t, lb in zip(g, label):
+            if not lb:
+                continue          # 差分が無い側は素のままで、付いた側と区別できる
+            ks, sep, rest = t['type'].partition('（')
+            t['type'] = f"{ks}【{lb}】{sep}{rest}"
+    for t in tickets:
+        t.pop('_venue', None)
+        t.pop('_title', None)
+    return tickets
+
+
 def build(cand):
     allrows, htmls = [], []
     gone = []
@@ -584,6 +641,9 @@ def build(cand):
         _pf = '・'.join(r['prefs']) if r['prefs'] else '全国'   # 複数県は全部載せる(字は小さめ表示)。県名取れなければ全国
         ks = drop_labels_in_name(kenshu(r['title']), cand.get('artist'))
         t = {'type': f"{ks}（{_pf} {mdr}公演）{suf}", 'date': iso}
+        # disambiguate() が「同じ文言のバッジ」を見分けるのに使う。出口で必ず消す。
+        t['_venue'] = r.get('venue') or ''
+        t['_title'] = r.get('title') or ''
         if sd: t['startDate'] = sd
         # 抽選券(先行/プレリザーブ)はhrefがlotRlsCdでeventCd無し→由来ページ(_src)のurlで補完。
         # これで複数会場エントリの全ticketにurlが付き、ボタン誤誘導が消える(2026-06-23恒久修正)。
@@ -591,6 +651,7 @@ def build(cand):
             tu = ecd_url(r['url']) or r.get('_src')
             if tu: t['url'] = tu
         tickets.append(t)
+    tickets = disambiguate(tickets, cand.get('newid'))
     tickets.sort(key=lambda t: t['date'])
     # 全会場を列挙する（[:4]で打切ると大規模ツアーの大半の会場が消える＝2026-07-01発覚
     # ディズニー・オン・クラシック18県中4会場しか出ず「アクトシティ浜松が抜けてる」）。
