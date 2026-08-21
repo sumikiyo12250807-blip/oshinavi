@@ -1,0 +1,54 @@
+[
+ {
+  "id": 4334,
+  "artist": "ONE OK ROCK",
+  "name": "ONE OK ROCK",
+  "date": "2026-09-06",
+  "dateLabel": "2026年8月25日(火)〜2026年9月6日(日) 千葉・宮城",
+  "venue": "全国ツアー（ZOZOマリンスタジアム／宮城・セキスイハイムスーパーアリーナ（グランディ・21））",
+  "prefecture": "千葉・宮城",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669955",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=ONE%20OK%20ROCK%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "一般発売（千葉 9/5公演）8/22 10:00発売",
+    "date": "2026-08-22",
+    "startDate": "2026-08-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619301"
+   },
+   {
+    "type": "一般発売（千葉 9/6公演）8/22 10:00発売",
+    "date": "2026-08-22",
+    "startDate": "2026-08-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619301"
+   },
+   {
+    "type": "公演 一般発売【クロークチケット】（宮城 8/25公演）〜8/24 23:59",
+    "date": "2026-08-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631556"
+   },
+   {
+    "type": "公演 一般発売【クロークチケット】（宮城 8/26公演）〜8/25 23:59",
+    "date": "2026-08-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631556"
+   },
+   {
+    "type": "一般発売【駐車券】（宮城 8/25〜8/26公演）〜8/25 23:59",
+    "date": "2026-08-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628239"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-21"
+ }
+]
