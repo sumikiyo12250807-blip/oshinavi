@@ -3,7 +3,7 @@
 import io, re, json, sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-reb = {e['id']: e for e in json.load(io.open('tmp/rebuilt_0821.json', encoding='utf-8'))}
+reb = {e['id']: e for e in json.load(io.open('tmp/rebuilt147_0821.json', encoding='utf-8'))}
 h = io.open('index.html', encoding='utf-8').read()
 EV = json.loads(re.search(r'  const EVENTS = (\[.*?\]);', h, re.S).group(1))
 cur = {e['id']: e for e in EV if e.get('genre') == 'new'}
