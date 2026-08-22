@@ -1058,6 +1058,10 @@
           {
             "type": "command",
             "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/check_tone.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/shift_guard.ps1\""
           }
         ]
       }
