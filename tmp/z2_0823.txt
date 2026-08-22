@@ -1,0 +1,83 @@
+{
+ "id": 43,
+ "artist": "サンリオ",
+ "name": "シナモロールワンダートリップ ～消えた魔法の秘密～",
+ "date": "2026-10-11",
+ "dateLabel": "2026年10月10日(土)〜2026年10月11日(日) 福岡 久留米シティプラザ ザ・グランドホール",
+ "venue": "久留米シティプラザ ザ・グランドホール",
+ "prefecture": "福岡",
+ "genre": "kids",
+ "extraGenres": [
+  "anime"
+ ],
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": null,
+  "eplus": "https://eplus.jp/sf/detail/4518110002-P0030002P021001",
+  "amazonGoods": "https://amzn.to/4u7xTzY",
+  "amazonGoodsLabel": "シナモロール"
+ },
+ "tickets": [
+  {
+   "type": "一般発売（大阪 8/22公演）〜8/19 18:00",
+   "date": "2026-08-19",
+   "url": null
+  },
+  {
+   "type": "一般発売（福岡 10/10〜10/11公演）8/22 10:00発売",
+   "date": "2026-08-22",
+   "startDate": "2026-08-22"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-08-22"
+}
+{
+ "id": 3085,
+ "artist": "浦島坂田船",
+ "name": "浦島坂田船",
+ "date": "2026-10-10",
+ "dateLabel": "2026年8月7日(金)〜2026年10月10日(土) 全国ツアー",
+ "venue": "全国ツアー（LaLa arena TOKYO-BAY／大阪城ホール／有明アリーナ）",
+ "prefecture": "全国",
+ "genre": "jpop",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": null,
+  "eplus": "https://eplus.jp/sf/detail/1067170001-P0030269P021002",
+  "amazon": null
+ },
+ "tickets": [
+  {
+   "type": "先着一般発売（千葉県 8/7公演）〜8/3 18:00",
+   "date": "2026-08-03",
+   "url": "https://eplus.jp/sf/detail/1067170001-P0030269P021002"
+  },
+  {
+   "type": "先着一般発売（千葉県 8/8公演）〜8/3 18:00",
+   "date": "2026-08-03",
+   "url": "https://eplus.jp/sf/detail/1067170001-P0030269P021001"
+  },
+  {
+   "type": "先着一般発売（大阪府 8/22公演）〜8/21 20:00",
+   "date": "2026-08-21",
+   "url": "https://eplus.jp/sf/detail/1067170001-P0030270P021002"
+  },
+  {
+   "type": "先着一般発売（大阪府 8/23公演）〜8/22 20:00",
+   "date": "2026-08-22",
+   "url": "https://eplus.jp/sf/detail/1067170001-P0030270P021001"
+  },
+  {
+   "type": "抽選最速先行（東京都 10/10公演）〜8/2 23:59",
+   "date": "2026-08-02",
+   "url": "https://eplus.jp/sf/detail/1067170001-P0030271P021002"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-07-21"
+}
