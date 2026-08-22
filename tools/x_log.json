@@ -1174,7 +1174,7 @@
  ],
  "artists": {
   "_readme": "Xフォロワー実数。WebSearchで取得（x.com直アクセスは404/402/403）。取り方は memory: reference_x_follower_lookup。一度取ったら再調査不要。",
-  "measured": "2026-08-20",
+  "measured": "2026-08-22",
   "data": [
    {
     "name": "SEVENTEEN Japan",
@@ -1544,6 +1544,72 @@
     "handle": "@magokoro_bros",
     "followers": 20800,
     "note": "公式。プロフィール画面で実数を確認（20.8K）。2026-08-20取得"
+   },
+   {
+    "name": "EXILE THE SECOND",
+    "handle": "@EXILETHESECOND_",
+    "followers": 349000,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "劇団四季",
+    "handle": "@shiki_jp",
+    "followers": 341300,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "indigo la End",
+    "handle": "@indigo_la_End",
+    "followers": 174900,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "ミュージカル『テニスの王子様』シリーズ公式",
+    "handle": "@TennimuNews",
+    "followers": 138800,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "ナイツ 塙宣之",
+    "handle": "@hanawa_nobuyuki",
+    "followers": 121500,
+    "note": "2026-08-22 WebSearch実測。本人アカウント"
+   },
+   {
+    "name": "THE SECOND〜漫才トーナメント〜公式",
+    "handle": "@thesecond_cx",
+    "followers": 107300,
+    "note": "2026-08-22 WebSearch実測。番組公式"
+   },
+   {
+    "name": "加藤登紀子",
+    "handle": "@TokikoKato",
+    "followers": 96300,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "ゴスペラーズ公式",
+    "handle": "@the_gospellers",
+    "followers": 49600,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "ヨーロッパ企画【公式】",
+    "handle": "@europe_kikaku",
+    "followers": 11400,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "野村義男",
+    "handle": null,
+    "followers": null,
+    "note": "🚨2026-08-22 X公式アカウントのフォロワー数を取得できず（Instagram @440hz_with は17K）"
+   },
+   {
+    "name": "鈴木実貴子ズ",
+    "handle": "@suzukimikikozu",
+    "followers": null,
+    "note": "🚨2026-08-22 フォロワー数を取得できず（投稿数1,994は判明）"
    }
   ]
  }
