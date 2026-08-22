@@ -1,0 +1,97 @@
+  4458 OK
+  4489 OK
+  1333 OK
+  4401 OK
+  3057 OK
+  503 OK
+  1149 OK
+  3960 OK
+  3738 OK
+  642 OK
+  3371 OK
+  1293 OK
+  3475 OK
+  4228 OK
+  1 OK
+  668 OK
+  3810 OK
+  3119 OK
+  3739 OK
+  710 OK
+  3539 OK
+  3035 OK
+  4098 OK
+  1554 OK
+  571 OK
+  4235 OK
+  4397 OK
+  1203 OK
+  2500 OK
+  3370 OK
+  2175 OK
+  3735 OK
+  3129 OK
+  3700 OK
+  4045 OK
+  3126 OK
+  3487 OK
+  2327 OK
+  3741 OK
+  177 OK
+  849 OK
+  751 OK
+  4890 OK
+  4239 OK
+  3488 OK
+  4689 OK
+  4040 OK
+  3755 OK
+  43 OK
+  4189 OK
+  950 OK
+  3752 OK
+  3759 OK
+  1100 OK
+  4249 OK
+  1772 OK
+  3501 OK
+  3213 OK
+  3770 OK
+  4727 OK
+  3775 OK
+  3818 OK
+  4293 OK
+  1828 OK
+  4729 OK
+  3662 OK
+  4730 OK
+  1835 OK
+  2552 OK
+  3410 OK
+  2694 OK
+  579 OK
+  764 OK
+  2626 OK
+  3840 OK
+  1265 OK
+  2564 OK
+  2628 OK
+  2629 OK
+  3956 OK
+  3635 OK
+  3335 OK
+  1274 OK
+構築 83 件 / skip []
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 8件（買える枠なのに取り込めなかった＝要対応）:
+   id3057 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/0043510001-P0030209P021001
+   id3057 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/0043510001-P0030214P021001
+   id3057 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/0043510001-P0030211P021001
+   id3057 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/0043510001-P0030210P021001
+   id3057 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/0043510001-P0030213P021001
+   id3035 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/3290400001-P0030028P021001
+   id3035 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/3290400001-P0030029P021001
+   id4098 [FETCH-ERR] when='HTTP Error 404: Not Found' | https://t.pia.jp/sf/detail/3656540001-P0030002P021001
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
