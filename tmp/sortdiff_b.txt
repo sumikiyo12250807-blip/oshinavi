@@ -1,0 +1,38 @@
+  EVENTS.sort((a, b) => {
+    const classify = (ev) => {
+      const cands = [];                                // [日付, 種別]
+      for (const t of (ev.tickets || [])) {
+        if (t.soldout) continue;
+        if (t.saleUntilSoldOut) {                      // 予定枚数まで販売中＝今買える
+          if (parseDateStr(t.date) >= today) cands.push([t.date, SORT_SELLING]);
+          continue;
+        }
+        if (saleStartPending(t)) {                     // 発売前（発売日が未来／今日の発売時刻前）
+          cands.push([t.startDate, SORT_PRESALE]);
+          continue;
+        }
+        // 【本日発売は一日中いちばん上】（ユーザー 2026-07-19「本日発売は一日中上に置くのは当然でしょ」）
+        // 今日が発売日の枠は、発売時刻(10:00等)を過ぎても「7/19の発売開始」として扱う。
+        // これが無いと10時を境に締切日(何ヶ月も先)へキーが飛び、本日発売カードが画面の下に沈む。
+        if (t.startDate === todayStr) {
+          cands.push([t.startDate, SORT_PRESALE]);
+          continue;
+        }
+        if (parseDateStr(t.date) >= today) cands.push([t.date, SORT_SELLING]);  // 販売中（締切未到来）
+      }
+      if (!cands.length) return { rank: 2, key: ev.date, kind: SORT_SELLING };  // 売切/終了は末尾
+      cands.sort((x, y) => (x[0] !== y[0] ? (x[0] < y[0] ? -1 : 1) : x[1] - y[1]));
+      return { rank: 0, key: cands[0][0], kind: cands[0][1] };
+    };
+    const ca = classify(a), cb = classify(b);
+    if (ca.rank !== cb.rank) return ca.rank - cb.rank;   // 買える/これから → 終了
+    if (ca.key !== cb.key)   return ca.key < cb.key ? -1 : 1;   // 日付が早い順
+    if (ca.kind !== cb.kind) return ca.kind - cb.kind;   // 同日は 発売開始 → 締切
+    // 【X紹介済みを同じ塊の先頭へ】（ユーザー指示 2026-08-01「並び順変えて頂戴」）
+    //   ev.xPost = X(旧Twitter)で紹介した日 "YYYY-MM-DD"。
+    //   日付の時間軸も「発売開始→締切」も一切崩さない。上の3段が同点のときだけ効く同点決着で、
+    //   紹介済み（新しい投稿ほど上）を先に出す。印が古くなれば自然に順位が下がる。
+    const xa = a.xPost || "", xb = b.xPost || "";
+    if (xa !== xb) return xa < xb ? 1 : -1;
+    return (a.id || 0) - (b.id || 0);
+  });
