@@ -238,6 +238,9 @@
     .pickup .pk-more:hover, .pickup .pk-more:focus-visible { background: rgba(224,64,251,.14); }
     .pickup .pk-more::after { content: ' ▼'; font-size: 11px; }
     .pickup .pk-more[aria-expanded="true"]::after { content: ' ▲'; }
+    .pickup .pk-close { margin-top: 18px; }
+    .pickup .pk-close::after { content: ' ▲'; font-size: 11px; }
+    .pickup .pk-more[hidden] { display: none; }
     .pickup .pk-body[hidden] { display: none; }
     .pickup .pk-body { margin-top: 22px; }
     .pickup .pk-h2 {
@@ -1314,6 +1317,7 @@
 
       <p class="pk-others-note">この週にチケットの発売が始まる公演は、全部で325件あるわ。</p>
       <a class="pk-tail" href="#" data-pk-status="urgent">他にも気になるアーティストがチケット発売しているわよ。<span class="pk-go">今週発売を見る →</span></a>
+      <button class="pk-more pk-close" id="pickupClose" type="button">折りたたむ</button>
   </div>
 </section>
 
@@ -4653,7 +4657,7 @@
   <img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=z9x6HLNpWco&bids=1590288.6&type=4&subid=0" alt="">
 </div>
 
-<button id="pagetop" title="トップへ戻る">↑</button>
+<button id="pagetop" title="検索・ジャンルへ戻る（もう一度押すといちばん上へ）">↑</button>
 
 <script>
   // ────────────────────────────────────────────────
@@ -111911,7 +111915,22 @@
   window.addEventListener("scroll", () => {
     pagetop.classList.toggle("visible", window.scrollY > 300);
   });
-  pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  // 🚨↑ボタンは2段階（2026-08-23 ユーザー指示）。
+  //   記事の「タップで探す」で結果まで飛んだあと、↑を押すと一気に最上部まで行ってしまい、
+  //   検索窓やジャンルに戻れなくて迷子になった。
+  //   → 1回目は「検索・ジャンル」の帯で止まる。そこから もう一度押すと いちばん上へ。
+  pagetop.addEventListener("click", () => {
+    const hd = document.querySelector("header");
+    const gap = (hd ? hd.getBoundingClientRect().height : 0) + 8;
+    const ctrl = document.querySelector(".controls");
+    let target = 0;
+    if (ctrl) {
+      const top = Math.max(0, ctrl.getBoundingClientRect().top + window.pageYOffset - gap);
+      // 検索窓より下にいる時だけ、まずそこで止める（もう既に上ならいちばん上へ）
+      if (window.pageYOffset > top + 4) target = top;
+    }
+    window.scrollTo({ top: target, behavior: "smooth" });
+  });
 
   // 【今週のピックアップ】ボタン＝同じページで開く（2026-08-20 ユーザー指示）。
   // 🚨ラベルは「つづきを読む」ではなく「今週の主役を読む」（2026-08-23 ユーザー指摘）。
@@ -111924,17 +111943,24 @@
     const sec = document.getElementById("pickup");
     if (!btn || !body) return;
     btn.addEventListener("click", () => {
+      toggle();
+    });
+    // 🚨閉じるボタンは本文の一番下に置く（2026-08-23 ユーザー指示
+    //   「折りたたむボタンは普通、一番下にあるものよ」）。開いている間、上のボタンは隠す。
+    const closeBtn = document.getElementById("pickupClose");
+    if (closeBtn) closeBtn.addEventListener("click", toggle);
+    function toggle() {
       const open = btn.getAttribute("aria-expanded") === "true";
       body.hidden = open;
       btn.setAttribute("aria-expanded", String(!open));
-      btn.textContent = open ? "今週の主役を読む" : "折りたたむ";
+      btn.hidden = !open;          // 開いている間は上のボタンを隠す（remove しない）
       if (open && sec) {
         const hd = document.querySelector("header");
         const gap = (hd ? hd.getBoundingClientRect().height : 0) + 12;
         const top = sec.getBoundingClientRect().top + window.pageYOffset - gap;
         window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
       }
-    });
+    }
   })();
 
   // 固定バナー 閉じるボタン
