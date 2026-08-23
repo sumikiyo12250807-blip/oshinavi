@@ -78,12 +78,12 @@ if len(sap) > 1:
                  'name': '札幌交響楽団 第%d〜%d回定期演奏会' % (nums[0], nums[-1]),
                  'md': '%s〜%s' % (mds[0], mds[-1])})
 
+# 🚨落語お笑い・スポーツ・そのほかは1本にまとめる（2026-08-23 ユーザー指示）。
+#   細かく割ると連投が増えて読まれない。
 GROUPS = [
     ('音楽', ['jpop', 'rock'], '🎤'),
     ('クラシック', ['classic'], '🎻'),
-    ('落語・お笑い', ['owarai'], '🎙'),
-    ('プロレス・スポーツ', ['sports'], '🔥'),
-    ('そのほか', ['new'], '✨'),
+    ('落語・お笑い／プロレス・そのほか', ['owarai', 'sports', 'new'], '🎙'),
 ]
 
 HEAD = 'OSHINAVIの"8/24発売"まとめ🎫'
@@ -101,17 +101,17 @@ for i, (label, gs, emoji) in enumerate(GROUPS, 1):
     total += len(items)
     lines = ['・%s（%s %s）' % (r['name'], r['pref'], r['md']) for r in
              sorted(items, key=lambda r: r['name'])]
-    # 🚨「ぜんぶ出すわ」と言いながら次の投稿に続きがあるのは嘘に見える（2026-08-23 ユーザー指摘）。
-    #   1投稿＝1ジャンルを丸ごと出し切り、最後に次のジャンルを予告する形にする。
-    if i < n:
-        nxt = GROUPS[i]
-        tail = 'このあと%s %sをまとめて出すわ。' % (nxt[2], nxt[0])
-    else:
-        tail = 'これで明日8/24(月)発売のぶんは全部よ。'
+    # 🚨導入文がいちばん大事（2026-08-23 ユーザー指摘）。
+    #   Xは最初の2〜3行しか見えないので、そこが「この17件で全部よ。※かっこ内は…」だと
+    #   誰も「続きを読む」を押さない。目玉を名指しにした導入を Fable に書かせて先頭に置く。
+    # 🚨次回予告も本文の中に入れる＝15分おきに時間差で流れるので、
+    #   1本ずつ独立して読めて、かつ次に何が来るか分かること。
+    lead = io.open('tmp/x0824/lead%d.txt' % i, encoding='utf-8').read().strip()
+    tail = io.open('tmp/x0824/next%d.txt' % i, encoding='utf-8').read().strip()
     body = NL.join([
-        HEAD,
-        '%s %s、明日8/24(月)発売はこの%d件で全部よ。' % (emoji, label, len(items)),
-        '※かっこ内はエリアと最終公演日。',
+        lead,
+        '',
+        '%s %s（%d件）※かっこ内はエリアと最終公演日。' % (emoji, label, len(items)),
         '',
         *lines,
         '',
