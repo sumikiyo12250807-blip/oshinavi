@@ -1,0 +1,27 @@
+検索語: ORANGE RANGE
+
+  (無フィルタ)        → 3件
+  rlsIn=03       → 1件
+  rlsIn=04       → 0件
+  rlsStatus=0101 → 3件
+  rlsStatus=0201 → 2件
+
+=== ヒット 3 件（URL単位・全フィルタのunion）===
+
+[一般発売] sadd
+  公演日: 2026/9/26(土)
+  会場  : ｓｈｉｍｏｋｉｔａｚａｗａ ＥＲＡ(東京都)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665842
+  検出フィルタ: (無),rlsStatus=0101
+
+[一般発売] OKINAWA FES Milafete HOKKAIDO
+  公演日: 2026/9/5(土) ・ 2026/9/6(日)
+  会場  : エスコンフィールドＨＯＫＫＡＩＤＯ(北海道)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668544
+  検出フィルタ: (無),rlsStatus=0101,rlsStatus=0201
+
+[先行抽選] ORANGE RANGE
+  公演日: 2027/1/9(土)
+  会場  : ＮＨＫホール(東京都)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666269
+  検出フィルタ: (無),rlsIn=03,rlsStatus=0101,rlsStatus=0201

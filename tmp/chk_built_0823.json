@@ -1,0 +1,75 @@
+[
+ {
+  "id": 90101,
+  "artist": "7ORDER",
+  "name": "7ORDER",
+  "date": "2026-10-16",
+  "dateLabel": "2026年10月9日(金)〜2026年10月16日(金) 大阪・東京",
+  "venue": "全国ツアー（Zepp Namba（OSAKA）／Zepp Haneda（TOKYO））",
+  "prefecture": "大阪・東京",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670038",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=7ORDER%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "プレリザーブ（大阪 10/9公演）〜8/23 23:59",
+    "date": "2026-08-23"
+   },
+   {
+    "type": "プレリザーブ（東京 10/16公演）〜8/23 23:59",
+    "date": "2026-08-23"
+   },
+   {
+    "type": "一般販売（大阪 10/9公演）8/29 12:00発売",
+    "date": "2026-08-29",
+    "startDate": "2026-08-29"
+   },
+   {
+    "type": "一般販売（東京 10/16公演）8/29 12:00発売",
+    "date": "2026-08-29",
+    "startDate": "2026-08-29"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-23"
+ },
+ {
+  "id": 90102,
+  "artist": "ORANGE RANGE",
+  "name": "ORANGE RANGE",
+  "date": "2026-12-19",
+  "dateLabel": "2026年12月19日(土) 静岡 大井川文化会館ミュージコ",
+  "venue": "大井川文化会館ミュージコ",
+  "prefecture": "静岡",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2632101",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=ORANGE%20RANGE%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "一般発売（静岡 12/19公演）8/29 10:00発売",
+    "date": "2026-08-29",
+    "startDate": "2026-08-29"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-23"
+ }
+]
