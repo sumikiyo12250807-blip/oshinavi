@@ -52,14 +52,21 @@ VOICE = (
 #    dry-run で気づいて課金前に修正（気づかなければ$1.30で別人が出るところだった）。
 # 🎨 現行キャラ＝tmp/char6（2026-08-06 ユーザー指定「今日はこのキャラでやってみる」）。
 #    紫スパンコールのぽっちゃりドラァグクイーン。前キャラ(char3の黒髪ショート)から差し替えた。
+#    🎨 2026-08-23 差し替え＝ユーザーから**大きい1枚絵**（1024×1536）を受領。
+#    ティアラ無し・デューターコート無し・**無精ひげとあごひげがはっきり見える**＝
+#    前の文章のままだと参照画像と喧嘩する（8/5に踏みかけた罠）。実物に合わせて書き直した。
 CHARACTER = (
-    "The speaker is a stylized 3D-rendered cartoon Japanese drag queen: a short, very "
-    "plump MAN performing in drag, with a tall lavender-purple bouffant updo topped by "
-    "a small jewelled tiara, round full cheeks, heavy purple eyeshadow with long lashes "
-    "and sharp winged eyeliner, pink glossy lips, a beauty mark on the cheek, large "
-    "purple gemstone drop earrings and matching necklace, wearing a shimmering "
-    "lilac-and-silver sequinned dress with a matching sequinned long duster coat draped "
-    "over it, warm, campy, bossy and theatrical."
+    "The speaker is a stylized 3D-rendered cartoon Japanese drag queen with big-head "
+    "chibi proportions: a short, very plump MAN performing in drag, with a huge "
+    "voluminous wavy lavender-purple bouffant hairdo (no tiara, no hat), round full "
+    "cheeks, thick dark eyebrows and a clearly visible COOL BLUE-GREY five o'clock "
+    "shadow — a slate-blue shaved stubble over the moustache area, jaw and cheeks with "
+    "a small blue-grey goatee (never brown, never black) — "
+    "heavy pink-purple eyeshadow with long lashes and sharp winged eyeliner, "
+    "glossy pink lips, large silver rhinestone drop earrings and a matching rhinestone "
+    "collar necklace, wearing a strapless violet-purple sequinned gown with sheer "
+    "puffed long sleeves, a jewelled brooch at the hip and a sparkling ruffled train, "
+    "on chunky glitter platform heels. Warm, campy, bossy and theatrical."
 )
 
 # 🚨 2026-08-05修正＝"Medium shot"(バストアップ)固定をやめた。参照画像の構図は毎回変わる
