@@ -143,6 +143,8 @@ o.append('      </div>')
 o.append('')
 o.append('      <p class="pk-others-note">この週にチケットの発売が始まる公演は、全部で325件あるわ。</p>')
 o.append('      <a class="pk-tail" href="#" data-pk-status="urgent">%s<span class="pk-go">今週発売を見る →</span></a>' % esc(t('tail')))
+# 🚨閉じるボタンは本文の一番下（2026-08-23 ユーザー「折りたたむボタンは普通、一番下にあるものよ」）
+o.append('      <button class="pk-more pk-close" id="pickupClose" type="button">折りたたむ</button>')
 o.append('  </div>')
 o.append('</section>')
 
