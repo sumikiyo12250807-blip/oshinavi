@@ -40,7 +40,7 @@ ACTS = [
               'ギターを抱えて客席に笑いかける布袋寅泰（2017年・オランダのPaaspopフェスティバル）',
               '2017年 Paaspop（オランダ）／Photo: <a href="https://commons.wikimedia.org/wiki/File:Tomoyasu_Hotei_Paaspop_2017.jpg" target="_blank" rel="noopener">Oecherbaer</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a>)'),
          shows='宮城 9/22・9/23 ／ 埼玉 10/16・10/17 ／ 東京 11/14'),
-    dict(cls='pk-act pk-top', name='真心ブラザーズ<span class="pk-most">今週最多</span>',
+    dict(cls='pk-act pk-top', name='真心ブラザーズ<span class="pk-most">公演数が今週最多</span>',
          sale='8/29(土) 10:00 に9公演ぶん一気に',
          search='真心ブラザーズ', body=t('magokoro'), fig=None,
          shows='埼玉 11/23 ／ 岡山 12/5 ／ 香川 12/6 ／ 静岡 12/25 ／<br>愛知 2027/1/16 ／ 大阪 2027/1/17 ／ 岩手 2027/1/23 ／ 宮城 2027/1/24 ／ 東京 2027/1/30'),
@@ -82,7 +82,7 @@ for i, l in enumerate(lede):
     cls = ' class="pk-tease"' if i == len(lede) - 1 else ''
     o.append('    <p%s>%s</p>' % (cls, esc(l)))
 o.append('  </div>')
-o.append('  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" aria-controls="pickupBody">つづきを読む</button>')
+o.append('  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" aria-controls="pickupBody">今週の主役を読む</button>')
 o.append('  <div class="pk-body" id="pickupBody" hidden>')
 o.append('      <h3 class="pk-h2">今週の主役</h3>')
 

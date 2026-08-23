@@ -1147,7 +1147,7 @@
   <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
-    <a href="#pickup" hidden>今週の<br>ピックアップ</a>
+    <a href="#pickup">今週の<br>ピックアップ</a>
     <a href="contact.html">お問い合わせ</a>
   </nav>
 </header>
@@ -1163,7 +1163,7 @@
 </div>
 
 <!-- 🚨公開予定 2026-08-24(日)の朝。出す時は下の hidden を消すだけ（ユーザー指示 2026-08-20） -->
-<section class="pickup" id="pickup" hidden>
+<section class="pickup" id="pickup">
   <span class="pk-label">📖 今週のピックアップ</span>
   <h2 class="pk-title">EXILE・布袋寅泰・真心ブラザーズ、それにシルク・ドゥ・ソレイユも一斉発売！</h2>
   <p class="pk-sub">8/24(月)〜8/30(日)にチケットの発売が始まるアーティスト紹介</p>
@@ -1172,7 +1172,7 @@
     <p>布袋寅泰の45周年ツアーと、真心ブラザーズ9公演の一斉発売もあるの。</p>
     <p class="pk-tease">他にも、あの老舗アイドルグループのチケットも出るわよ。</p>
   </div>
-  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" aria-controls="pickupBody">つづきを読む</button>
+  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" aria-controls="pickupBody">今週の主役を読む</button>
   <div class="pk-body" id="pickupBody" hidden>
       <h3 class="pk-h2">今週の主役</h3>
 
@@ -1210,11 +1210,11 @@
 
       <div class="pk-act pk-top">
         <button class="pk-open" type="button" aria-expanded="false">
-          <span class="pk-name">真心ブラザーズ<span class="pk-most">今週最多</span></span>
+          <span class="pk-name">真心ブラザーズ<span class="pk-most">公演数が今週最多</span></span>
           <span class="pk-sale">8/29(土) 10:00 に9公演ぶん一気に</span>
         </button>
         <div class="pk-detail" hidden>
-        <p>今週いちばん数が多いのはここ。真心ブラザーズが8/29(土)10:00に、9公演ぶんを一気に発売するのよ。埼玉11/23、岡山12/5、香川12/6、静岡12/25、年が明けて2027年は1/16愛知、1/17大阪、1/23岩手、1/24宮城、1/30東京。ツアーは2026/9/10から2027/1/30まで、全国10会場を回る長い日程よ。大阪の会場はなんばHatch、千秋楽は2027年1月30日、東京・日本青年館ホール。秋に始まって冬をまたぎ、年明けまで続くツアーだから、近くの街の公演をゆっくり選べるわね。今週まとめて出る9公演、見逃さないでほしいわ。</p>
+        <p>今週いちばん多くの公演がまとめて発売になるのが、この真心ブラザーズ。8/29(土)10:00に、9公演ぶんを一気に売り出すのよ。埼玉11/23、岡山12/5、香川12/6、静岡12/25、年が明けて2027年は1/16愛知、1/17大阪、1/23岩手、1/24宮城、1/30東京。ツアーは2026/9/10から2027/1/30まで、全国10会場を回る長い日程よ。大阪の会場はなんばHatch、千秋楽は2027年1月30日、東京・日本青年館ホール。秋に始まって冬をまたぎ、年明けまで続くツアーだから、近くの街の公演をゆっくり選べるわね。今週まとめて出る9公演、見逃さないでほしいわ。</p>
         <a class="pk-shows" href="#" data-pk-search="真心ブラザーズ">
           <b>発売になる公演<span class="pk-go">タップで探す →</span></b>
           埼玉 11/23 ／ 岡山 12/5 ／ 香川 12/6 ／ 静岡 12/25 ／<br>愛知 2027/1/16 ／ 大阪 2027/1/17 ／ 岩手 2027/1/23 ／ 宮城 2027/1/24 ／ 東京 2027/1/30
@@ -111913,7 +111913,9 @@
   });
   pagetop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  // 【今週のピックアップ】つづきを読む＝同じページで開く（2026-08-20 ユーザー指示）。
+  // 【今週のピックアップ】ボタン＝同じページで開く（2026-08-20 ユーザー指示）。
+  // 🚨ラベルは「つづきを読む」ではなく「今週の主役を読む」（2026-08-23 ユーザー指摘）。
+  //   開くと出るのは文章の続きではなくアーティストのカードなので、期待とズレて迷子になる。
   // 🚨開いたら閉じられること（ユーザー「続きを読むを戻す折りたたむ矢印もひつようよね」）。
   //   閉じた時は記事の頭に戻す＝本文が長いと、閉じたあとどこにいるか分からなくなるため。
   (function () {
@@ -111925,7 +111927,7 @@
       const open = btn.getAttribute("aria-expanded") === "true";
       body.hidden = open;
       btn.setAttribute("aria-expanded", String(!open));
-      btn.textContent = open ? "つづきを読む" : "折りたたむ";
+      btn.textContent = open ? "今週の主役を読む" : "折りたたむ";
       if (open && sec) {
         const hd = document.querySelector("header");
         const gap = (hd ? hd.getBoundingClientRect().height : 0) + 12;
