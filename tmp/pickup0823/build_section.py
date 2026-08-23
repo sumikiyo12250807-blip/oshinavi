@@ -18,13 +18,27 @@ def esc(s):
     return html.escape(s, quote=False)
 
 
+# 🚨「。」の直後は必ず改行する（2026-08-23 ユーザー指摘。X投稿だけのルールではなく記事も同じ）。
+#   ただし「モーニング娘。」の「。」は文末ではないので割ってはいけない。
+KEEP = ['モーニング娘。']
+
+
 def paras(txt):
-    """空行で段落、行内改行は <br> にする"""
+    """空行で段落。文は「。」ごとに改行して <br> にする"""
+    import re as _re
     out = []
     for blk in txt.split('\n\n'):
         blk = blk.strip()
-        if blk:
-            out.append('<p>' + esc(blk).replace('\n', '<br>') + '</p>')
+        if not blk:
+            continue
+        e = esc(blk)
+        for i, k in enumerate(KEEP):            # 名前の中の「。」を退避
+            e = e.replace(k, '\x00%d\x00' % i)
+        e = e.replace('。', '。\n')
+        for i, k in enumerate(KEEP):
+            e = e.replace('\x00%d\x00' % i, k)
+        e = _re.sub(r'\n+', '\n', e).strip()
+        out.append('<p>' + e.replace('\n', '<br>') + '</p>')
     return '\n        '.join(out)
 
 
@@ -34,8 +48,10 @@ ACTS = [
     dict(cls='pk-act pk-top', name='EXILE', sale='8/29(土) 10:00 一般発売',
          search='EXILE', body=t('exile'), fig=None,
          shows='埼玉・ベルーナドーム　11/14(土)・11/15(日) の2公演'),
+    # 🚨写真は全部 small=True（pk-portrait＝小さい回り込み）にする。
+    #   2026-08-23 ユーザー「高島千佐子みたいに小さめにしてほしいだけ」。大きい写真は本文を押しのける。
     dict(cls='pk-act pk-top', name='布袋寅泰', sale='8/29(土) 10:00 に5公演ぶん一斉',
-         search='布袋寅泰', body=t('hotei'),
+         search='布袋寅泰', body=t('hotei'), small=True,
          fig=('img/hotei.jpg', 1280, 960,
               'ギターを抱えて客席に笑いかける布袋寅泰（2017年・オランダのPaaspopフェスティバル）',
               '2017年 Paaspop（オランダ）／Photo: <a href="https://commons.wikimedia.org/wiki/File:Tomoyasu_Hotei_Paaspop_2017.jpg" target="_blank" rel="noopener">Oecherbaer</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a>)'),
@@ -48,10 +64,10 @@ ACTS = [
          search='モーニング娘', body=t('morningmusume'), fig=None,
          shows='8/25(火) 11:00 … 北海道 10/25（2次受付）<br>8/29(土) 10:00 … 大阪 9/21 ／ 愛知 9/23 ／ 茨城 9/26'),
     dict(cls='pk-act', name='シルク・ドゥ・ソレイユ「クーザ」', sale='8/29(土) 10:00 セブン-イレブン先行',
-         search='クーザ', body=t('kooza'),
+         search='クーザ', body=t('kooza'), small=True,
          fig=('img/kooza39.jpg', 1280, 853,
               '真っ赤な照明の中、宙づりの大きな輪の上を歩くパフォーマー（「クーザ」の演目デス・ホイール）',
-              'シドニー公演より（演目「デス・ホイール」）／Photo: <a href="https://commons.wikimedia.org/wiki/File:Kooza_in_Sydney39.jpg" target="_blank" rel="noopener">Tibor Kovacs</a> (<a href="https://creativecommons.org/licenses/by/2.0/deed.ja" target="_blank" rel="noopener">CC BY 2.0</a>)'),
+              '2016年 シドニー公演より（演目「デス・ホイール」）／Photo: <a href="https://commons.wikimedia.org/wiki/File:Kooza_in_Sydney39.jpg" target="_blank" rel="noopener">Tibor Kovacs</a> (<a href="https://creativecommons.org/licenses/by/2.0/deed.ja" target="_blank" rel="noopener">CC BY 2.0</a>)'),
          shows='2027年 2/24-2/28 ／ 3/1-3/9 ／ 3/11-3/20 ／ 3/21-3/30 ／<br>4/2-4/10 ／ 4/11-4/20 ／ 4/21-4/25'),
 ]
 
@@ -73,7 +89,10 @@ TILES = [
 ]
 
 o = []
-o.append('<section class="pickup" id="pickup" hidden>')
+# 🚨hidden を書かない（2026-08-23）。ここで hidden を付けると、
+#   差し替えるたびに記事がまた隠れて「更新したら消えた」になる。
+#   表示/非表示の状態は tools/apply_pickup.py が index.html の現状から引き継ぐ。
+o.append('<section class="pickup" id="pickup">')
 o.append('  <span class="pk-label">📖 今週のピックアップ</span>')
 o.append('  <h2 class="pk-title">EXILE・布袋寅泰・真心ブラザーズ、それにシルク・ドゥ・ソレイユも一斉発売！</h2>')
 o.append('  <p class="pk-sub">8/24(月)〜8/30(日)にチケットの発売が始まるアーティスト紹介</p>')
@@ -96,7 +115,8 @@ for a in ACTS:
     o.append('        <div class="pk-detail" hidden>')
     if a['fig']:
         src, w, h, alt, cap = a['fig']
-        o.append('        <figure class="pk-fig">')
+        # 🚨小さい回り込み表示（pk-portrait）にするか。2026-08-23 ユーザー指示で布袋も小さくした
+        o.append('        <figure class="pk-fig%s">' % (' pk-portrait' if a.get('small') else ''))
         o.append('          <img src="%s" alt="%s" width="%d" height="%d" loading="lazy" decoding="async">' % (src, alt, w, h))
         o.append('          <figcaption>%s</figcaption>' % cap)
         o.append('        </figure>')
@@ -121,12 +141,13 @@ for search, label, when in TILES:
 o.append('')
 o.append('      </div>')
 o.append('')
-o.append('      <h3 class="pk-h2">深掘り：高嶋ちさ子 12人のヴァイオリニスト</h3>')
+# 🚨カードには必ずアーティスト名を出す（見出しに名前を逃がすと見失う・2026-08-23）
+o.append('      <h3 class="pk-h2">今週の深掘り</h3>')
 o.append('')
 o.append('      <div class="pk-act">')
 o.append('        <button class="pk-open" type="button" aria-expanded="false">')
-o.append('          <span class="pk-name">結成20周年の記念ツアー</span>')
-o.append('          <span class="pk-sale">8/29(土) 10:00 発売</span>')
+o.append('          <span class="pk-name">高嶋ちさ子 12人のヴァイオリニスト</span>')
+o.append('          <span class="pk-sale">8/29(土) 10:00 発売・結成20周年の記念ツアー</span>')
 o.append('        </button>')
 o.append('        <div class="pk-detail" hidden>')
 o.append('        <figure class="pk-fig pk-portrait">')
