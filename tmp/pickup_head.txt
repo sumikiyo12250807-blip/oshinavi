@@ -1,0 +1,65 @@
+<section class="pickup" id="pickup" hidden>
+  <span class="pk-label">📖 今週のピックアップ</span>
+  <h2 class="pk-title">EXILE・布袋寅泰・真心ブラザーズ、それにシルク・ドゥ・ソレイユも一斉発売！</h2>
+  <p class="pk-sub">8/24(月)〜8/30(日)にチケットの発売が始まるアーティスト紹介</p>
+  <div class="pk-lede">
+    <p>今週は<b>EXILE</b>結成25周年！　埼玉のドームにて。</p>
+    <p><b>布袋寅泰</b>45周年！　宮城・埼玉・東京5公演のチケット発売が週末に。</p>
+    <p class="pk-tease">他にも、あの老舗人気グループのチケットも。</p>
+  </div>
+  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" aria-controls="pickupBody">つづきを読む</button>
+  <div class="pk-body" id="pickupBody" hidden>
+      <h3 class="pk-h2">今週の主役</h3>
+
+      <div class="pk-act pk-top">
+        <button class="pk-open" type="button" aria-expanded="false">
+          <span class="pk-name">EXILE</span>
+          <span class="pk-sale">8/29(土) 10:00 一般発売</span>
+        </button>
+        <div class="pk-detail" hidden>
+        <p>結成25周年の「EXILE 25th ANNIVERSARY BEST LIVE ～LDH PERFECT YEAR 2026～」よ。</p>
+        <a class="pk-shows" href="#" data-pk-search="EXILE">
+          <b>発売になる公演<span class="pk-go">タップで探す →</span></b>
+          埼玉・ベルーナドーム　11/14(土)・11/15(日) の2公演
+        </a>
+        <p>オリジナルメンバーのMATSU、ÜSA、MAKIDAIまで揃う顔ぶれ。<br>同じツアーで12/5・12/6には大阪・京セラドーム大阪の公演もあるのよ。</p>
+        </div>
+      </div>
+
+      <div class="pk-act pk-top">
+        <button class="pk-open" type="button" aria-expanded="false">
+          <span class="pk-name">布袋寅泰</span>
+          <span class="pk-sale">8/29(土) 10:00 に5公演ぶん一斉</span>
+        </button>
+        <div class="pk-detail" hidden>
+        <figure class="pk-fig">
+          <img src="img/hotei.jpg" alt="ギターを抱えて客席に笑いかける布袋寅泰（2017年・オランダのPaaspopフェスティバル）" width="1280" height="960" loading="lazy" decoding="async">
+          <figcaption>2017年 Paaspop（オランダ）／Photo: <a href="https://commons.wikimedia.org/wiki/File:Tomoyasu_Hotei_Paaspop_2017.jpg" target="_blank" rel="noopener">Oecherbaer</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a>)</figcaption>
+        </figure>
+        <p>活動45周年記念『HOTEI the LIVE 2026 "45th Celebration GIGS" STAY WILD TOUR』。<br>全国21都市27公演の大きなツアーよ。</p>
+        <a class="pk-shows" href="#" data-pk-search="布袋寅泰">
+          <b>発売になる公演<span class="pk-go">タップで探す →</span></b>
+          宮城 9/22・9/23 ／ 埼玉 10/16・10/17 ／ 東京 11/14
+        </a>
+        <p>OSHINAVIには全16会場ぶんが載っていて、千秋楽は12/6。</p>
+        </div>
+      </div>
+
+      <div class="pk-act pk-top">
+        <button class="pk-open" type="button" aria-expanded="false">
+          <span class="pk-name">真心ブラザーズ<span class="pk-most">今週最多</span></span>
+          <span class="pk-sale">8/29(土) 10:00 に8公演ぶん一気に</span>
+        </button>
+        <div class="pk-detail" hidden>
+        <p>今週いちばん多いのがここ。</p>
+        <a class="pk-shows" href="#" data-pk-search="真心ブラザーズ">
+          <b>発売になる公演<span class="pk-go">タップで探す →</span></b>
+          埼玉 11/23 ／ 岡山 12/5 ／ 香川 12/6 ／ 静岡 12/25 ／<br>愛知 2027/1/16 ／ 岩手 2027/1/23 ／ 宮城 2027/1/24 ／ 東京 2027/1/30
+        </a>
+        <p>全国9会場、千秋楽は2027年1月30日の東京・LINE CUBE SHIBUYA。<br>年をまたぐ長い旅だから、近くの会場を見逃さないでね。</p>
+        </div>
+      </div>
+
+      <div class="pk-act">
+        <button class="pk-open" type="button" aria-expanded="false">
+          <span class="pk-name">モーニング娘。&#39;26</span>
