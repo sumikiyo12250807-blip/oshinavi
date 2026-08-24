@@ -100,31 +100,43 @@ print('lg=%s total=%d pages=%d' % (LG, total, pages))
 #   → 新規URLが1件も増えないページに当たったら終端とみなす。
 #   ※フェッチにはゆらぎがあり、実在ページが一度だけ空/前ページと同一で返ることがある
 #     (2026-07-10 art05で1回目9件・2回目15件)。1回リトライし、新規ゼロが2回続いたら終端。
+# ★★🚨2026-08-24 修正＝終端判定を「新規URLが増えない」から「前ページと中身が同じ」に変えた。
+#   受付中(rlsStatus=0101)の一覧は**同じ公演が券種ごとに何行も並ぶ**ので、
+#   10行×2ページが丸ごと既知URLになることが普通に起きる。旧判定だとそこで終端と誤読して
+#   打ち切っていた＝音楽0101が448ページ中32ページ(7.1%)で停止していた。
+#   発売前(rlsIn=03)は在庫が小さく重複が少ないので表に出なかった。
+#   新しい終端＝「そのページのURL並びが前ページと完全に同一」が2回連続（＝ぴあが最後のページを
+#   返し続けている状態）。合わせて total から計算した想定ページ数までは必ず回る。
+#   memory: feedback_newpool_presale_ratio_gate（頭文字の若いものだけ拾う事故）
 items, seen = [], set()
-p, empty = 1, 0
+p, same = 1, 0
+prev_sig = None
 h = h1
-while p <= 400:
+LAST = min(400, max(pages, 1))
+while p <= LAST:
     try:
         pi = parse_page(h)
     except Exception as e:
         print('page', p, 'err', e); pi = []
-    fresh = [x for x in pi if x['url'] not in seen]
-    if not fresh:
+    sig = tuple(x['url'] for x in pi)
+    if not pi or sig == prev_sig:
         time.sleep(1.0)                      # ゆらぎ対策の1回リトライ
         try:
             pi = parse_page(fetch(p))
         except Exception:
             pi = []
-        fresh = [x for x in pi if x['url'] not in seen]
-    if fresh:
-        for x in fresh:
-            seen.add(x['url'])
-        items += fresh
-        empty = 0
-    else:
-        empty += 1
-        if empty >= 2:      # 新規ゼロが2ページ連続 = 終端(折り返し)
+        sig = tuple(x['url'] for x in pi)
+    if not pi or sig == prev_sig:
+        same += 1
+        if same >= 2:       # 前ページと同じ中身が2回続く = 終端(折り返し)
             break
+    else:
+        same = 0
+    for x in pi:
+        if x['url'] not in seen:
+            seen.add(x['url'])
+            items.append(x)
+    prev_sig = sig
     p += 1
     time.sleep(0.15)
     try:
