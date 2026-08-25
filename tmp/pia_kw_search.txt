@@ -1,16 +1,27 @@
-検索語: 新テニスの王子様
+検索語: きゃりーぱみゅぱみゅ
 
-  (無フィルタ)        → 1件
-  rlsIn=03       → 1件
-  rlsIn=04       → 1件
-  rlsStatus=0101 → 0件
-  rlsStatus=0201 → 0件
+  (無フィルタ)        → 3件
+  rlsIn=03       → 0件
+  rlsIn=04       → 0件
+  rlsStatus=0101 → 2件
+  rlsStatus=0201 → 1件
 
-=== ヒット 1 件（URL単位・全フィルタのunion）===
+=== ヒット 3 件（URL単位・全フィルタのunion）===
 
-[一般発売] ミュージカル『新テニスの王子様』The Final Stage
-  公演日: 2026/10/2(金) ～ 2026/10/12(月・祝)
-  会場  : Ｋａｎａｄｅｖｉａ Ｈａｌｌ(東京都)
-  発売日: 2026/8/23
-  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669100
-  検出フィルタ: (無),rlsIn=03,rlsIn=04
+[一般発売] KOYABU SONIC 2026
+  公演日: 2026/9/21(月・祝) ・ 2026/9/22(火・祝) ・ 2026/9/23(水・祝)
+  会場  : インテックス大阪 ４号館・５号館(大阪府)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669961
+  検出フィルタ: (無),rlsStatus=0101
+
+[一般発売] ONE PARK FESTIVAL 2026
+  公演日: 2026/9/5(土) ・ 2026/9/6(日)
+  会場  : 福井市中央公園 特設会場(福井県)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666750
+  検出フィルタ: (無),rlsStatus=0101
+
+[先行抽選] きゃりーぱみゅぱみゅ
+  公演日: 2027/3/19(金) ～ 2027/6/12(土)
+  会場  : カナモトホール(北海道)／ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)／厚木市文化会館 大ホール(神奈川県)／岡谷鋼機名古屋公会堂 大ホール(愛知県)／ＮＨＫ大阪ホール(大阪府)／広島文化学園ＨＢＧホール(広島県)／福岡市民ホール 大ホール(福岡県)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670626
+  検出フィルタ: (無),rlsStatus=0201
