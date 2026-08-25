@@ -1,0 +1,524 @@
+{
+ "5097": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5098": {
+  "pia_sub": "音楽/音楽その他",
+  "genre": "jpop",
+  "confidence": "低",
+  "note": "ぴあ=音楽/音楽その他。実体はマーチングバンド（吹奏楽）の東京都大会＝関東大会予選。受け皿ルールでjpopにしたが、吹奏楽の大会をJ-POPタブに置くのは違和感がある。classic寄りに置く選択肢もあり要相談。"
+ },
+ "5099": {
+  "pia_sub": "演劇/歌舞伎・古典芸能",
+  "genre": "dento",
+  "confidence": "高",
+  "note": ""
+ },
+ "5100": {
+  "pia_sub": "イベント/子供と楽しむ",
+  "genre": "kids",
+  "confidence": "中",
+  "note": "ぴあ=イベント/子供と楽しむ→kids。ただし名称は「ファミリーミュージカル」でmusicalにも掛かる。サンリオキャラ目当ての親子連れが主客なのでkidsを主にした。"
+ },
+ "5101": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": ""
+ },
+ "5102": {
+  "pia_sub": "演劇/歌舞伎・古典芸能",
+  "genre": "dento",
+  "confidence": "高",
+  "note": ""
+ },
+ "5103": {
+  "pia_sub": "クラシック/オペラ・声楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5104": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5105": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5106": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5107": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5111": {
+  "pia_sub": "イベント/子供と楽しむ",
+  "genre": "kids",
+  "confidence": "高",
+  "note": ""
+ },
+ "5112": {
+  "pia_sub": "イベント/ディナーショー",
+  "genre": "dinnershow",
+  "confidence": "高",
+  "note": ""
+ },
+ "5113": {
+  "pia_sub": "アート/アート",
+  "genre": "art",
+  "confidence": "高",
+  "note": ""
+ },
+ "5114": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5115": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5116": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5117": {
+  "pia_sub": "クラシック/オペラ・声楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5118": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5119": {
+  "pia_sub": "イベント/イベントその他",
+  "genre": "enka",
+  "confidence": "低",
+  "note": "ぴあ=イベント/イベントその他（対応表に無い区分）。内容は「生バンド演奏で杉良太郎が魂の歌唱」＋講演、すきま風発売50周年。主役は歌謡・演歌の歌手なのでenkaにしたが、講演会（engeki）やfaneventとも読める。"
+ },
+ "5120": {
+  "pia_sub": "イベント/イベントその他",
+  "genre": "gourmet",
+  "confidence": "低",
+  "note": "ぴあ=イベント/イベントその他（対応表に無い区分）。NPO法人プロフェッショナル・バーテンダーズ機構主催のカクテル＆バーの催し（20歳未満入場不可・ホテル宴会場）。飲食の催しなのでgourmetにしたが、ぴあの区分からは決められなかった。"
+ },
+ "5121": {
+  "pia_sub": "イベント/子供と楽しむ",
+  "genre": "kids",
+  "confidence": "高",
+  "note": ""
+ },
+ "5122": {
+  "pia_sub": "イベント/スクール・レジャー",
+  "genre": "gourmet",
+  "confidence": "低",
+  "note": "ぴあ=イベント/スクール・レジャー→対応表ではkidsだが、実体は十勝若牛のバーベキューセット引換券＝フードフェスティバル。kidsタブに出すのは明らかにずれるのでgourmetにした。対応表を優先するならkids。"
+ },
+ "5123": {
+  "pia_sub": "スポーツ/野球",
+  "genre": "sports",
+  "confidence": "高",
+  "note": ""
+ },
+ "5124": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "bundleのためtitleに区分が出ない。隠しinput genreCd=0100102（音楽/J-POP・ROCK）で確定。"
+ },
+ "5125": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "中",
+  "note": "ぴあ=音楽/J-POP・ROCK。会場がザ・シンフォニーホールでクラシック系にも見えるが、ぴあの区分どおりjpop。"
+ },
+ "5126": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "ジャズ寄りのピアノトリオだが、ぴあの区分が音楽/J-POP・ROCKなのでそのまま写した。"
+ },
+ "5127": {
+  "pia_sub": "音楽/音楽その他",
+  "genre": "jpop",
+  "confidence": "低",
+  "note": "ぴあ=音楽/音楽その他→受け皿でjpop。実体は日経ミューズサロン第577回、竹内永和のクラシックギター＋榎木孝明。classicに置くほうがファンの探し方に合う可能性が高い。"
+ },
+ "5128": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5130": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "bundle。genreCd=0100102で確定。"
+ },
+ "5131": {
+  "pia_sub": "音楽/音楽その他",
+  "genre": "jpop",
+  "confidence": "低",
+  "note": "ぴあ=音楽/音楽その他→受け皿でjpop。紹介文は「洋楽器と和楽器が織りなす」＝和楽器が入る編成。dentoにも掛かるが、ぴあのサブが演歌・邦楽ではないのでdento条件は適用しなかった。"
+ },
+ "5132": {
+  "pia_sub": "音楽/演歌・邦楽",
+  "genre": "dento",
+  "confidence": "高",
+  "note": "ぴあ=音楽/演歌・邦楽。公演名の副題が「第二十五回 音輪会雅楽演奏会」＝雅楽なのでdento（enkaではない）。"
+ },
+ "5133": {
+  "pia_sub": "音楽/海外ROCK・POPS",
+  "genre": "yougaku",
+  "confidence": "高",
+  "note": "bundle。genreCd=0100108（音楽/海外ROCK・POPS）。EVANESCENCEは米国のバンドで韓国ではないのでyougaku。"
+ },
+ "5135": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5136": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5139": {
+  "pia_sub": "音楽/海外ROCK・POPS",
+  "genre": "kpop",
+  "confidence": "高",
+  "note": "ぴあ=音楽/海外ROCK・POPSだが、wave to earthは韓国ソウルのバンド。ぴあ自身がページに「K-POP・韓流エンタメ」タグを付けているのでkpop。"
+ },
+ "5141": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5142": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5143": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "中",
+  "note": "ぴあ=音楽/J-POP・ROCK。実体はシンガーソングライターLioraの実話をもとにした「アニメ・ソロミュージカル」でmusicalにも掛かるが、主役は歌手なのでjpop。"
+ },
+ "5144": {
+  "pia_sub": "音楽/海外ROCK・POPS",
+  "genre": "yougaku",
+  "confidence": "高",
+  "note": "bundle。genreCd=0100108。WOLF ALICEは英国のバンドで韓国ではないのでyougaku。"
+ },
+ "5146": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5147": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5148": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5151": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5152": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5153": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "アイドルだが対応表どおりidolに細分せずjpop。"
+ },
+ "5154": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5155": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "bundle。genreCd=0100102で確定。"
+ },
+ "5156": {
+  "pia_sub": "音楽/フェスティバル",
+  "genre": "jpop",
+  "confidence": "中",
+  "note": "ぴあ=音楽/フェスティバル。出演はENTH/envy/FIVE STATE DRIVE/KUZIRA/SHANK/TIVE/花冷え。＝複数組だが、会場がAichi Sky Expo（愛知国際展示場）展示ホールA〜D＝屋内。fesの定義「複数組＋屋外」を満たさないのでjpop。"
+ },
+ "5157": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "対バンライブ（go!go!vanillas／ハンブレッダーズ）だが屋内ライブハウス規模でfesではない。"
+ },
+ "5158": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": "bundle。genreCd=0100102で確定。"
+ },
+ "5159": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5160": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5161": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5162": {
+  "pia_sub": "音楽/J-POP・ROCK",
+  "genre": "jpop",
+  "confidence": "高",
+  "note": ""
+ },
+ "5164": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5165": {
+  "pia_sub": "クラシック/オペラ・声楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5166": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5167": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5168": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5169": {
+  "pia_sub": "クラシック/オーケストラ",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5170": {
+  "pia_sub": "クラシック/オーケストラ",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5171": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5172": {
+  "pia_sub": "クラシック/クラシックその他",
+  "genre": "classic",
+  "confidence": "中",
+  "note": "ぴあ=クラシック/クラシックその他→classic。実体は「ドイツ歌曲の森 vol.2 入門講座 第3回」＝演奏会でなく講座。イベント/講演会ならengekiになる区分だが、ぴあがクラシックに置いているのでclassicのまま。"
+ },
+ "5173": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5174": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5175": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5176": {
+  "pia_sub": "クラシック/器楽・室内楽",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5177": {
+  "pia_sub": "クラシック/オーケストラ",
+  "genre": "classic",
+  "confidence": "高",
+  "note": "ぴあタグは「映画音楽・シネマコンサート」だがサブジャンルはクラシック/オーケストラなのでclassic。"
+ },
+ "5178": {
+  "pia_sub": "クラシック/合唱",
+  "genre": "classic",
+  "confidence": "高",
+  "note": ""
+ },
+ "5179": {
+  "pia_sub": "演劇/歌舞伎・古典芸能",
+  "genre": "dento",
+  "confidence": "高",
+  "note": ""
+ },
+ "5180": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": "ATSUKO OKATSUKAは日系アメリカ人のスタンダップコメディアン。ぴあ=演劇/寄席・お笑いでowarai。"
+ },
+ "5181": {
+  "pia_sub": "演劇/ミュージカル・ショー",
+  "genre": "musical",
+  "confidence": "高",
+  "note": ""
+ },
+ "5182": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": "浪曲だが、ぴあの区分が演劇/寄席・お笑いなのでowarai。"
+ },
+ "5184": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": "講談だが、ぴあの区分が演劇/寄席・お笑いなのでowarai。"
+ },
+ "5185": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": ""
+ },
+ "5187": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": ""
+ },
+ "5188": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": "講談。ぴあの区分どおりowarai。"
+ },
+ "5189": {
+  "pia_sub": "演劇/寄席・お笑い",
+  "genre": "owarai",
+  "confidence": "高",
+  "note": ""
+ },
+ "5191": {
+  "pia_sub": "演劇/朗読・リーディング",
+  "genre": "engeki",
+  "confidence": "低",
+  "note": "ぴあ=演劇/朗読・リーディング→対応表ではengeki。ただしぴあのタグは「アニメ・声優・ゲーム」で、フラガリアメモリーズは声優が主役のメディアミックス企画。seiyuuに置いたほうがファンは見つけやすいかもしれない。"
+ },
+ "5193": {
+  "pia_sub": "演劇/演劇",
+  "genre": "engeki",
+  "confidence": "高",
+  "note": ""
+ },
+ "5194": {
+  "pia_sub": "イベント/博覧会・展示会・見本市",
+  "genre": "art",
+  "confidence": "中",
+  "note": "ぴあ=イベント/博覧会・展示会・見本市→対応表どおりart。実体は国際園芸博覧会（横浜・旧上瀬谷通信施設）でアート色は薄く、対応表に従っただけ。"
+ },
+ "5195": {
+  "pia_sub": "イベント/サーカス",
+  "genre": "engeki",
+  "confidence": "高",
+  "note": ""
+ },
+ "5197": {
+  "pia_sub": "イベント/イベントその他",
+  "genre": "art",
+  "confidence": "低",
+  "note": "ぴあ=イベント/イベントその他（対応表に無い区分）。実体は「バイオハザード」30周年の大型展覧会（BEAMギャラリー）なので展示会扱いでartにした。ただしぴあのタグは「アニメ・声優・ゲーム」で、animeに置く選択肢もある。"
+ },
+ "5198": {
+  "pia_sub": "スポーツ/プロレス",
+  "genre": "sports",
+  "confidence": "高",
+  "note": ""
+ },
+ "5199": {
+  "pia_sub": "スポーツ/プロレス",
+  "genre": "sports",
+  "confidence": "高",
+  "note": ""
+ },
+ "5200": {
+  "pia_sub": "スポーツ/プロレス",
+  "genre": "sports",
+  "confidence": "高",
+  "note": ""
+ }
+}

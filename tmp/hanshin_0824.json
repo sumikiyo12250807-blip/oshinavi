@@ -1,0 +1,46 @@
+[
+ {
+  "id": 5123,
+  "artist": "阪神タイガース対読売ジャイアンツ 公式戦",
+  "name": "阪神タイガース対読売ジャイアンツ 公式戦",
+  "date": "2026-10-01",
+  "dateLabel": "2026年10月1日(木) 兵庫 阪神甲子園球場",
+  "venue": "阪神甲子園球場",
+  "prefecture": "兵庫",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_piaSub": "スポーツ/野球",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2631063",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "アルプス楽楽シート／一般発売（兵庫 10/1公演）9/1 12:00発売",
+    "date": "2026-09-01",
+    "startDate": "2026-09-01"
+   },
+   {
+    "type": "ビジター専用応援席／一般発売（兵庫 10/1公演）9/1 12:00発売",
+    "date": "2026-09-01",
+    "startDate": "2026-09-01"
+   },
+   {
+    "type": "一般発売（兵庫 10/1公演）9/1 12:00発売",
+    "date": "2026-09-01",
+    "startDate": "2026-09-01"
+   },
+   {
+    "type": "見切り席／一般発売（兵庫 10/1公演）9/1 12:00発売",
+    "date": "2026-09-01",
+    "startDate": "2026-09-01"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-24"
+ }
+]

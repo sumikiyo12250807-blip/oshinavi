@@ -1,0 +1,638 @@
+=== 期限切れチェック (today=2026-08-26) ===
+
+[index.html] 全3412件 → 期限切れ削除候補(公演終了済) 9件 / ⚠️要再確認(公演は未来・要WebFetch) 174件
+  id=526: かずき山盛り / かずき山盛り 2026 @ BIGCAT (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（大阪 8/25公演）〜8/16 23:59: 2026-08-16 soldout=False
+     - 一般発売（大阪 8/25公演）〜8/24 23:59: 2026-08-24 soldout=False
+  id=821: TEPPANトリオの音シアター 映画音楽でめぐるスクリーン物語 / TEPPANトリオの音シアター 映画音楽でめぐるスクリーン物語 @ 白山市松任学習センター コンサートホール (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（石川 8/25公演）〜8/24 23:59: 2026-08-24 soldout=False
+  id=1242: 仙台貨物 / 仙台貨物 @ 全国ツアー（エレクトリック・レディ・ランド／仙台Rensa） (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（愛知 8/11公演）〜8/6 23:59: 2026-08-06 soldout=False
+     - 一般発売（宮城 8/25公演）〜8/20 23:59: 2026-08-20 soldout=False
+  id=1904: 劇団かもめんたる 第16回公演『ピノキオの元カノ』 / 劇団かもめんたる 第16回公演『ピノキオの元カノ』 @ 本多劇場 (2026-08-23) [開催終了2026-08-23]
+     - 一般発売（東京 8/19〜8/23公演）〜8/16 23:59: 2026-08-16 soldout=False
+     - 視聴券受付【配信】（東京 8/19〜8/23公演）〜10/4 21:00: 2026-10-04 soldout=False
+  id=1974: 第71回相模原でよい音楽をきく会 / 第71回相模原でよい音楽をきく会 @ ほねごり杜のホールはしもと 多目的室 (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（神奈川 8/25公演）〜8/24 23:59: 2026-08-24 soldout=False
+  id=2224: 立川志の彦落語会 in TOKYO 上野ストアハウス / 立川志の彦落語会 in TOKYO 上野ストアハウス @ 上野ストアハウス (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（東京 8/25公演）〜8/24 23:59: 2026-08-24 soldout=False
+  id=2320: claquepot / claquepot @ 全国ツアー（Zepp Fukuoka／Zepp Osaka Bayside／Zepp DiverCity（TOKYO）） (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売.（福岡 8/21公演）〜8/20 23:59: 2026-08-20 soldout=False
+     - 一般発売（大阪 8/23公演）〜8/22 23:59: 2026-08-22 soldout=False
+     - 一般発売（東京 8/25公演）〜8/24 23:59: 2026-08-24 soldout=False
+     - 一般発売（福岡 8/21公演）〜8/20 18:00: 2026-08-20 soldout=False
+     - 一般発売（大阪 8/23公演）〜8/22 18:00: 2026-08-22 soldout=False
+     - 一般発売（東京 8/25公演）〜8/24 18:00: 2026-08-24 soldout=False
+  id=4026: idntt / idntt @ 全国ツアー（川口リリア・フカガワみらいホール／SkyシアターMBS） (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（埼玉・大阪 8/23〜8/25公演）〜8/17 23:59: 2026-08-17 soldout=False
+  id=4069: 奥田民生 / 奥田民生 @ 仙台サンプラザホール (2026-08-25) [全販売終了, 開催終了2026-08-25]
+     - 一般発売（宮城 8/25公演）〜8/22 23:59: 2026-08-22 soldout=False
+
+  ⚠️ 以下は「公演がまだ未来」or saleEndUnknown=true。機械判定だけで削除しないこと。
+     売り場URLをWebFetchで実態確認 → 新販売枠(一般/コンビニ先行/当日券)が出ていれば該当ticketを追加して変換、
+     予定枚数終了/中止が確定したものだけ削除（抽選結果待ち・一般未発表は残置）:
+  id=130: 宝塚歌劇団 雪組 / 宝塚歌劇 雪組『ポーの一族』 @ 宝塚大劇場／東京宝塚劇場 (2026-10-17) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666575
+     - 一般発売（東京 9/19公演）8/9 10:00発売: 2026-08-09
+  id=163: VIO-LENCE / VIO-LENCE Live in Japan 2026 @ 高円寺HIGH (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2619901
+     - 一般発売: 2026-08-25
+  id=179: ナジャ・グランディーバ / ナジャ・グランディーバとおしゃれな仲間たち @ リーガロイヤルホテル広島／シェラトン・グランデ・トーキョーベイ(千葉) (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2608176
+     - 広島公演: 2026-07-19
+     - 千葉公演: 2026-08-16
+  id=413: 桂文珍 / 桂文珍独演会 @ 博多座 (2026-08-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668409
+     - 一般発売（福岡 8/27公演）〜8/25 23:59: 2026-08-25
+  id=504: 池田綾子 / 池田綾子 2026 @ キリスト品川教会 グローリア・チャペル (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2622373
+     - 一般発売（東京 8/26公演）〜8/23 23:59: 2026-08-23
+  id=533: ＧＡＬＮＥＲＹＵＳ / ＧＡＬＮＥＲＹＵＳ 2026 @ セカンド・クラッチ(広島) (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2621115
+     - 一般発売（広島 8/30公演）〜8/20 23:59: 2026-08-20
+  id=553: ジェイコブ・コーラー / ジェイコブ・コーラー (ゲスト:みやけん/後藤浩二) @ Niterra日本特殊陶業市民会館 フォレストホール (2026-08-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2616793
+     - 一般発売（〜8/25 23:59）: 2026-08-25
+  id=631: OKINAWAFES Milafete エスコンフィールドHOKKAIDO / OKINAWAFES Milafete エスコンフィールドHOKKAIDO 2026 @ エスコンフィールドＨＯＫＫＡＩＤＯ (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668544
+     - 一般発売（北海道 9/5〜9/6公演）〜8/18 23:59: 2026-08-18
+  id=650: 木村至信 / 木村至信 2026 @ 県民共済みらいホール (2026-08-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623261
+     - 一般発売（神奈川 8/29公演）〜8/25 23:59: 2026-08-25
+  id=673: THE BACK HORN / THE BACK HORN 2026 @ 全国ツアー (2026-08-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668655
+     - 一般発売（愛知 8/29公演）〜8/20 23:59: 2026-08-20
+  id=753: 渡辺真知子 / 渡辺真知子 2026 @ 全国ツアー（新歌舞伎座／イスのサンケイホール鈴鹿） (2026-11-15) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2606489
+     - 一般発売（三重 11/15公演）8/23 10:00発売: 2026-08-23
+  id=780: 高岩遼 / 高岩遼 ライブ 2026 @ 渋谷CLUB QUATTRO (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667000
+     - 一般発売（東京 8/26公演）〜8/25 23:59: 2026-08-25
+  id=882: THEカルテットとオレンジマン / THEカルテットとオレンジマンの昭和歌謡コンサート @ 源内音楽ホール／サンポートホール高松 第1小ホール／ベッセルおおちの湯 イベントホール (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2621566
+     - 一般発売（香川 8/24・8/25・8/26公演）〜8/25 23:59: 2026-08-25
+  id=924: 松尾雄史／二見颯一／原田波人 / 若手人気スター歌謡ショー 2026・夏 @ I'M A SHOW (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623382
+     - 一般発売（東京 8/26公演）〜8/20 17:00: 2026-08-20
+  id=1001: ロルカフェスティバル2026 〜沃野の月〜 / ロルカフェスティバル2026 〜沃野の月〜 @ 天王洲銀河劇場 (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623558
+     - 一般発売（東京 8/29・8/30公演）〜8/24 23:59: 2026-08-24
+  id=1040: 三谷文楽『人形ぎらい』 / 三谷文楽『人形ぎらい』 @ 京都劇場 (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668806
+     - 一般発売（京都 8/21〜8/26公演）〜8/23 23:59: 2026-08-23
+  id=1137: よしもと ド夏笑い（どかわらい）３ＤＡＹＳ ｉｎ 神戸２０２６ / よしもと ド夏笑い（どかわらい）３ＤＡＹＳ ｉｎ 神戸２０２６ @ 神戸国際会館こくさいホール (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2622513
+     - 一般発売（兵庫 8/24〜8/26公演）〜8/23 23:59: 2026-08-23
+  id=1318: 東京演歌ライブ Vol.256 ～納涼!歌謡パレード!!～ / 東京演歌ライブ Vol.256 ～納涼!歌謡パレード!!～ @ 亀戸文化センター カメリアホール (2026-08-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2624831
+     - 一般発売（東京 8/27公演）〜8/24 17:00: 2026-08-24
+  id=1344: THE GREATEST ROCK FUKUOKA / THE GREATEST ROCK FUKUOKA @ みずほペイペイドーム (2026-08-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669283
+     - 一般発売（福岡 8/29公演）〜8/20 23:59: 2026-08-20
+  id=1401: いきものがかり / いきものがかり @ 全国ツアー（仙台サンプラザホール／フェニックス・プラザ エルピス 大ホール／本多の森北電ホール） (2027-04-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2564372
+     - 先行（福井 R9年 2/27公演）〜8/19 11:00: 2026-08-19
+     - 先行（石川 R9年 4/3公演）〜8/19 11:00: 2026-08-19
+     - 先行（宮城 R9年 2/7公演）〜8/23 23:59: 2026-08-23
+  id=1554: 高嶋ちさ子のザワつく!昭和歌謡祭 2026 / 高嶋ちさ子のザワつく!昭和歌謡祭 2026 @ 国立代々木競技場 第一体育館 (2026-12-15) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625233
+     - 2次プレリザーブ（東京 12/15公演）〜8/11 23:59: 2026-08-11
+     - 一般発売（福岡 9/12公演）8/22 10:00発売: 2026-08-22
+     - 先行（宮城 11/14公演）〜8/25 11:00: 2026-08-25
+  id=1601: 藍井エイル / 藍井エイル @ 全国ツアー（ペニーレーン24／Zepp DiverCity（TOKYO）／BIGCAT／DRUM Be-1／熊本B.9 V1／Zepp Haneda（TOKYO）） (2026-12-24) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625347
+     - 一般発売（東京 8/16公演）〜8/11 23:59: 2026-08-11
+     - 先行（北海道・東京・大阪・福岡・熊本 10/24〜12/24公演）〜8/16 23:59: 2026-08-16
+     - プレオーダー受付（熊本 10/24公演）〜8/24 23:59: 2026-08-24
+     - プレオーダー受付（福岡 10/25公演）〜8/24 23:59: 2026-08-24
+     - プレオーダー受付（北海道 11/28公演）〜8/23 23:59: 2026-08-23
+     - 先行（福岡・熊本 10/24〜10/25公演）〜8/24 23:59: 2026-08-24
+  id=1783: 0歳児からのコンサート / 0歳児からのコンサート @ 高山市民文化会館 大ホール (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623912
+     - 一般発売（岐阜 8/30公演）〜8/23 23:59: 2026-08-23
+  id=1944: 第5回 ザハール・ブロン ヴァイオリン・マスタークラスin宗次ホール 聴講券 / 第5回 ザハール・ブロン ヴァイオリン・マスタークラスin宗次ホール 聴講券 @ 宗次ホール (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625440
+     - 一般発売（愛知 8/23〜8/30公演）〜8/16 23:59: 2026-08-16
+  id=1956: 歌舞伎座 八月納涼歌舞伎 / 歌舞伎座 八月納涼歌舞伎 @ 歌舞伎座 (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626185
+     - 一般発売（東京 8/2〜8/26公演）〜8/20 23:59: 2026-08-20
+  id=2004: 国立能楽堂 8月企画公演 / 国立能楽堂 8月企画公演 @ 国立能楽堂 (2026-08-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626942
+     - 一般発売（東京 8/28公演）〜8/23 23:59: 2026-08-23
+  id=2040: 名古屋音楽大学シンフォニックウインズ特別コンサートin飛騨市文化交流センター / 名古屋音楽大学シンフォニックウインズ特別コンサートin飛騨市文化交流センター @ 飛騨市文化交流センター スピリットガーデンホール (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625970
+     - 一般発売（岐阜 8/26公演）〜8/25 17:00: 2026-08-25
+  id=2206: FULL METAL JAPAN 2026 ～Powered by WACKEN～ / FULL METAL JAPAN 2026 ～Powered by WACKEN～ @ ぴあアリーナMM (2026-10-25) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667009
+     - プレリザーブ（神奈川 10/24〜10/25公演）〜8/23 23:59: 2026-08-23
+  id=2265: 原田知世 / 原田知世 @ 全国ツアー（かつしかシンフォニーヒルズ モーツァルトホール／愛知県芸術劇場 コンサートホール／京都コンサートホール 大ホール／軽井沢大賀ホール／サントリーホール 大ホール） (2026-08-31) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667138
+     - 一般発売（京都 8/23公演）〜8/20 23:59: 2026-08-20
+     - 一般発売（東京 8/31公演）〜8/20 23:59: 2026-08-20
+  id=2341: GANG PARADE / GANG PARADE @ 全国ツアー (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2603094
+     - 一般発売（広島 9/5公演）8/8 10:00発売: 2026-08-08
+  id=2401: 木根尚登 / 木根尚登 @ たましんRISURUホール 大ホール (2026-11-20) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2612129
+     - 先行（東京 11/20公演）〜7/13 23:59: 2026-07-13
+     - 一般発売（東京 11/20公演）8/9 10:00発売: 2026-08-09
+  id=2415: 笑福亭鶴瓶×サンドウィッチマンLIVE『シルエット』 / 笑福亭鶴瓶×サンドウィッチマンLIVE『シルエット』 @ ニッショーホール (2026-09-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2624199
+     - 一般発売（東京 9/13公演）8/8 10:00発売: 2026-08-08
+  id=2416: J亭スピンオフ企画44 白酒・一之輔 大手町二人会 / J亭スピンオフ企画44 白酒・一之輔 大手町二人会 @ 日経ホール (2026-09-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623320
+     - 一般発売（東京 9/14公演）8/8 10:00発売: 2026-08-08
+  id=2616: 8月国立演芸場寄席（24日～28日） / 8月国立演芸場寄席（24日～28日） @ すみだトリフォニーホール 小ホール (2026-08-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2628069
+     - 一般発売（東京 8/24〜8/28公演）〜8/22 23:59: 2026-08-22
+  id=2617: 第569回 花形演芸会 / 第569回 花形演芸会 @ 渋谷区文化総合センター大和田 伝承ホール (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2628072
+     - 一般発売（東京 8/30公演）〜8/25 23:59: 2026-08-25
+  id=2748: 熊本地震10年復興コンサート「FUTURE」 / 熊本地震10年復興コンサート「FUTURE」 @ 熊本城ホール メインホール (2026-10-18) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626277
+     - 先行（熊本 10/18公演）7/17 10:00発売: 2026-08-07
+  id=2749: 黒夢 / 黒夢 @ 全国ツアー（TOYOTA ARENA TOKYO／東京ガーデンシアター） (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668277
+     - 当日引換券（東京 7/17〜7/19公演）〜7/18 23:59: 2026-07-18
+     - 一般発売（東京 9/6公演）〜8/24 23:59: 2026-08-24
+  id=2752: Chevon / Chevon @ 全国ツアー（SENDAI GIGS／NIIGATA LOTS／KBSホール／BLUE LIVE 広島／高松festhalle） (2026-12-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669309
+     - プレリザーブ（宮城・新潟・京都・広島・香川 10/14〜12/6公演）〜8/23 23:59: 2026-08-23
+  id=2997: 真空ジェシカのイベン父ちゃん・イベアンドトシ / 真空ジェシカのイベン父ちゃん・イベアンドトシ @ 有楽町よみうりホール (2026-09-16) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2622298
+     - 一般発売（東京 9/16公演）8/16 10:00発売: 2026-08-16
+  id=3085: 浦島坂田船 / 浦島坂田船 @ 全国ツアー（LaLa arena TOKYO-BAY／大阪城ホール／有明アリーナ／神戸ワールド記念ホール） (2026-10-25) [全販売終了]
+     URL: https://eplus.jp/sf/detail/1067170001-P0030269P021002
+     - 先着一般発売（千葉県 8/7公演）〜8/3 18:00: 2026-08-03
+     - 先着一般発売（千葉県 8/8公演）〜8/3 18:00: 2026-08-03
+     - 先着一般発売（大阪府 8/22公演）〜8/21 20:00: 2026-08-21
+     - 先着一般発売（大阪府 8/23公演）〜8/22 20:00: 2026-08-22
+     - 抽選最速先行（東京都 10/10公演）〜8/2 23:59: 2026-08-02
+     - ☆X先行（東京都 10/10公演）〜8/24 23:59: 2026-08-24
+     - ☆X先行（東京都 10/11公演）〜8/24 23:59: 2026-08-24
+     - ☆X先行（兵庫県 10/24公演）〜8/24 23:59: 2026-08-24
+     - ☆X先行（兵庫県 10/25公演）〜8/24 23:59: 2026-08-24
+  id=3116: CUTIE STREET 梅田みゆ 生誕祭 2026 / CUTIE STREET 梅田みゆ 生誕祭 2026 @ SGC HALL ARIAKE (2026-09-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669934
+     - 一般発売（東京 9/14公演）8/22 10:00発売: 2026-08-22
+  id=3119: THE PAINS OF BEING PURE AT HEART / THE PAINS OF BEING PURE AT HEART @ WWW X (2026-11-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626870
+     - 一般発売（東京 11/13公演）8/22 10:00発売: 2026-08-22
+  id=3120: シャイトープ / シャイトープ @ 豊洲PIT (2026-09-05) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2615760
+     - 一般発売（東京 9/5公演）8/22 10:00発売: 2026-08-22
+  id=3127: 遊佐未森 / 遊佐未森 @ TOKYO FMホール (2026-10-10) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2628355
+     - 一般発売（東京 10/10公演）8/22 10:00発売: 2026-08-22
+  id=3169: 野村義男 / 野村義男 @ I’M A SHOW (2026-10-09) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626547
+     - 一般発売（東京 10/9公演）8/23 10:00発売: 2026-08-23
+  id=3178: dolce“偏愛”落語会 / dolce“偏愛”落語会 @ ドルチェ・アートホール Osaka (2026-10-18) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2627879
+     - 一般発売（大阪 10/18公演）8/23 10:00発売: 2026-08-23
+  id=3287: 「【パンキッシュガーデン】ネモフィラブルー」 / 「【パンキッシュガーデン】ネモフィラブルー」 @ 新宿バティオス (2026-09-02) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629174
+     - 一般発売（東京 9/2公演）8/8 12:00発売: 2026-08-08
+  id=3463: 東京ディズニーシー(R)25周年“スパークリング・ジュビリー”イン・コンサート / 東京ディズニーシー(R)25周年“スパークリング・ジュビリー”イン・コンサート @ 全国ツアー（東京国際フォーラム ホールA／水戸市民会館 グロービスホール／アクトシティ浜松 大ホール／広島上野学園ホール／福岡市民ホール 大ホール／東京エレクトロンホール宮城） (2026-08-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665155
+     - 当日引換券（茨城 8/15公演）〜8/14 23:59: 2026-08-14
+     - 一般発売.（静岡 8/20公演）〜8/19 23:59: 2026-08-19
+  id=3484: マカロニえんぴつ / マカロニえんぴつ @ 全国ツアー（マリンメッセ福岡A館／有明アリーナ／国立代々木競技場 第一体育館／真駒内セキスイハイムアイスアリーナ／クロコくんホール） (2026-12-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2620662
+     - 先行（福岡 10/24〜10/25公演）〜8/19 23:59: 2026-08-19
+     - プレリザーブ4次（東京 11/3〜12/6公演）〜8/23 23:59: 2026-08-23
+     - 6次プレリザーブ（北海道 10/31公演）〜8/23 23:59: 2026-08-23
+     - 3次プレリザーブ（愛知 12/26公演）〜8/23 23:59: 2026-08-23
+  id=3513: 大相撲九月場所 / 大相撲九月場所 @ 両国国技館 (2026-09-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669864
+     - 一般発売（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（1人マス）（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（2人マス）（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（3人マス）（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（4人マス）（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（5人マス）（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（6人マス）（東京 9/13〜9/27公演）8/8 10:00発売: 2026-08-08
+  id=3569: EXILE THE SECOND / EXILE THE SECOND @ LaLa arena TOKYO-BAY (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2602377
+     - 一般発売（千葉 8/29公演）〜8/24 23:59: 2026-08-24
+     - 一般発売（千葉 8/30公演）〜8/25 23:59: 2026-08-25
+  id=3592: 2026伝承ホール寺子屋 「渋谷金王丸伝説」&歌舞伎リーディング / 2026伝承ホール寺子屋 「渋谷金王丸伝説」&歌舞伎リーディング @ 渋谷区文化総合センター大和田 伝承ホール (2026-10-25) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2624459
+     - 一般発売（東京 10/25公演）8/25 10:00発売: 2026-08-25
+  id=3594: 真一文字の会 ～春風亭一之輔勉強会～ / 真一文字の会 ～春風亭一之輔勉強会～ @ 東京証券会館 ホール (2026-09-16) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629373
+     - 一般発売（東京 9/16公演）8/16 10:00発売: 2026-08-16
+  id=3683: 『超かぐや姫!』ムビチケカード型前売り券 / 『超かぐや姫!』ムビチケカード型前売り券 @ 全国の上映劇場 (2026-09-18) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669906
+     - 一般発売（全国 9/18公演）〜8/20 23:59: 2026-08-20
+  id=3696: Stray Kids / Stray Kids @ 全国ツアー（MUFGスタジアム／バンテリンドーム ナゴヤ／京セラドーム大阪／みずほペイペイドーム） (2026-10-24) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670074
+     - ぴあNICOSカード限定先行（東京・愛知・大阪・福岡 8/29〜10/24公演）8/7 20:00発売: 2026-08-11
+     - セブン-イレブン先行（東京・愛知・大阪・福岡 8/29〜10/24公演）8/12 12:00発売: 2026-08-16
+  id=3727: 爆生!!お笑い in 大宮 / 爆生!!お笑い in 大宮 @ 大宮ソニックシティ 大ホール (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2614973
+     - 一般発売（埼玉 8/30公演）〜8/25 23:59: 2026-08-25
+  id=3739: SHIBUYA MUSIC CROSSOVER 2026 #7 / SHIBUYA MUSIC CROSSOVER 2026 #7 @ 渋谷区文化総合センター大和田 伝承ホール (2026-11-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2604217
+     - 一般発売（東京 11/14公演）8/22 10:00発売: 2026-08-22
+  id=3743: Uru / Uru @ 全国ツアー（昭和女子大学 人見記念講堂／神戸国際会館こくさいホール） (2026-09-24) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665148
+     - 一般発売（東京 9/3公演）8/15 10:00発売: 2026-08-15
+     - 一般発売（兵庫 9/24公演）8/15 10:00発売: 2026-08-15
+  id=3766: 国立能楽堂 9月特別公演 / 国立能楽堂 9月特別公演 @ 国立能楽堂 (2026-09-25) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631168
+     - 一般発売（東京 9/25公演）8/10 10:00発売: 2026-08-10
+  id=3872: PM AGENCY 40th ANNIVERSARY LIVE スーパー大感謝祭 / PM AGENCY 40th ANNIVERSARY LIVE スーパー大感謝祭 @ 沖縄コンベンションセンター 展示棟 (2026-11-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668938
+     - 一般発売（沖縄 11/14公演）8/8 10:00発売: 2026-08-08
+  id=3875: ミュージカル「タイムトラベラーズ・ワイフ」 / ミュージカル「タイムトラベラーズ・ワイフ」 @ 全国ツアー（EX THEATER ARIAKE／オリックス劇場） (2026-10-08) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670261
+     - 一般発売（東京 9/5〜9/24公演）8/8 10:00発売: 2026-08-08
+     - 一般発売（大阪 10/2〜10/8公演）8/8 10:00発売: 2026-08-08
+  id=3896: 伊藤蘭 クリスマスディナー&コンサート / 伊藤蘭 クリスマスディナー&コンサート @ 神戸ポートピアホテル・大輪田の間 (2026-12-18) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629855
+     - 一般発売（兵庫 12/18公演）8/17 10:00発売: 2026-08-17
+  id=3899: MISIA / MISIA @ 仙台サンプラザホール (2026-08-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630921
+     - 一般発売（宮城 8/28公演）8/15 10:00発売: 2026-08-15
+  id=3907: 桂三度日本公演～桂三度入門十五周年記念祭～ / 桂三度日本公演～桂三度入門十五周年記念祭～ @ なんばグランド花月 (2026-10-07) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631228
+     - 一般発売（大阪 10/7公演）8/22 12:30発売: 2026-08-22
+  id=3937: 万筆舎『R3』刊行記念落語会 / 万筆舎『R3』刊行記念落語会 @ 座・高円寺2 (2026-10-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625598
+     - 一般発売（東京 10/13公演）8/15 10:00発売: 2026-08-15
+  id=3960: 一攫千笑 成りあがれ モノボケアイドルGP ～伝説はここから始まる 渋谷・夏の陣～ / 一攫千笑 成りあがれ モノボケアイドルGP ～伝説はここから始まる 渋谷・夏の陣～ @ 東京カルチャーカルチャー (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630407
+     - 一般発売（東京 8/26公演）〜8/25 23:59: 2026-08-25
+  id=3965: 読売ジャイアンツ対横浜DeNAベイスターズ 公式戦 / 読売ジャイアンツ対横浜DeNAベイスターズ 公式戦 @ 東京ドーム (2026-10-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630890
+     - 一般発売（東京 10/3公演）8/22 11:00発売: 2026-08-22
+  id=3967: 第一回 五圓會 ～三遊派落語研究会～ / 第一回 五圓會 ～三遊派落語研究会～ @ 日本橋公会堂（日本橋劇場） (2026-12-22) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630515
+     - 一般発売（東京 12/22公演）8/24 10:00発売: 2026-08-24
+  id=4015: 田村ゆかり / 田村ゆかり @ SGC HALL ARIAKE (2026-09-05) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629760
+     - プレリザーブ（東京 9/5公演）8/10 12:00発売: 2026-08-16
+  id=4033: CARCASS / CARCASS @ SPACE ODD (2026-09-18) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631284
+     - プレリザーブ（東京 9/18公演）〜8/16 23:59: 2026-08-16
+  id=4034: syudou / syudou @ Kanadevia Hall (2026-09-23) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625337
+     - プレリザーブ（東京 9/23公演）〜8/23 23:59: 2026-08-23
+  id=4035: 紫 今 / 紫 今 @ 渋谷CLUB QUATTRO (2026-10-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625136
+     - プレリザーブ2次（東京 10/3公演）〜8/16 23:59: 2026-08-16
+  id=4036: Little Parade / Little Parade @ SkyシアターMBS (2026-10-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629363
+     - オフィシャル先行（大阪 10/3公演）〜8/20 23:59: 2026-08-20
+  id=4039: FMY RADIO CRUSH / FMY RADIO CRUSH @ 周南RISING HALL (2026-10-10) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629023
+     - プリセール（山口 10/10公演）〜8/23 23:59: 2026-08-23
+  id=4041: MAYSON’s PARTY / MAYSON’s PARTY @ LOUD AFFECTION (2026-10-16) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630752
+     - プレリザーブ（秋田 10/16公演）〜8/24 23:59: 2026-08-24
+  id=4044: 堂島孝平 / 堂島孝平 @ 全国ツアー（心斎橋JANUS／PLANT） (2026-10-31) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629699
+     - プレリザーブ（北海道 10/31公演）〜8/17 11:00: 2026-08-17
+     - プレリザーブ（大阪 10/24公演）〜8/24 11:00: 2026-08-24
+  id=4047: 山下大輝 / 山下大輝 @ ニッショーホール (2026-11-01) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623223
+     - プレリザーブ（東京 11/1公演）〜8/24 23:59: 2026-08-24
+  id=4051: K-Drama OST Tribute Concert 2026 / K-Drama OST Tribute Concert 2026 @ 横浜BUNTAI (2026-11-10) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670325
+     - プレイガイド最速先行（神奈川 11/10公演）〜8/18 23:59: 2026-08-18
+  id=4055: 純名里沙 / 純名里沙 @ 全国ツアー（I’M A SHOW／東京建物 Brillia HALL 箕面 小ホール） (2026-12-24) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631403
+     - プレリザーブ2次（東京・大阪 11/24〜12/24公演）〜8/23 23:59: 2026-08-23
+  id=4059: Midnight Grand Orchestra / Midnight Grand Orchestra @ 幕張メッセ 国際展示場 4～6ホール (2027-02-11) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667494
+     - 先行（千葉 R9年 2/11公演）〜8/23 23:59: 2026-08-23
+  id=4065: ち、ち、違うんだよ!説明させてくれよ! / ち、ち、違うんだよ!説明させてくれよ! @ space&cafe ポレポレ坐 (2026-08-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631915
+     - 一般発売（東京 8/27公演）〜8/25 23:59: 2026-08-25
+  id=4066: 新サクラ大戦 the Stage ～誠伝 TSURUGI～ / 新サクラ大戦 the Stage ～誠伝 TSURUGI～ @ シアターサンモール (2026-09-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2619766
+     - 先行（東京 9/19〜9/26公演）〜8/14 23:59: 2026-08-14
+  id=4068: Insheart / Insheart @ 福岡トヨタホールスカラエスパシオ (2026-10-17) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2620239
+     - 5次プレリザーブ（福岡 10/17公演）〜8/24 23:59: 2026-08-24
+  id=4071: CANDY TUNE / CANDY TUNE @ 全国ツアー（大阪国際会議場 メインホール／仙台サンプラザホール／宇都宮市文化会館 大ホール／愛知県芸術劇場 大ホール／三重県文化会館 大ホール／米子コンベンションセンター BiG SHiP／広島文化学園HBGホール／新潟県民会館 大ホール／本多の森北電ホール／戸田市文化会館／森のホール21 大ホール／東京ガーデンシアター／カルッツかわさき（川崎市スポーツ・文化総合センター）ホール／レクザムホール 大ホール／新来島高知重工ホール オレンジホール） (2026-12-09) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669827
+     - プレリザーブ（宮城・栃木 10/8〜10/9公演）〜8/17 23:59: 2026-08-17
+     - プレリザーブ（愛知・三重 10/26〜10/29公演）〜8/19 23:59: 2026-08-19
+     - プレリザーブ（大阪 9/9〜9/10公演）〜8/23 23:59: 2026-08-23
+     - プレリザーブ（新潟・石川 11/17〜11/19公演）〜8/23 23:59: 2026-08-23
+     - プレリザーブ（北海道 10/2〜10/4公演）〜8/23 23:59: 2026-08-23
+     - プレリザーブ（鳥取・広島 11/10〜11/12公演）〜8/24 11:00: 2026-08-24
+     - 2次プレリザーブ（香川・高知 11/24〜11/26公演）〜8/25 23:59: 2026-08-25
+  id=4074: シャインポスト BRiGHT STARS FESTIVAL 2026 / シャインポスト BRiGHT STARS FESTIVAL 2026 @ ぴあアリーナMM (2026-09-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669034
+     - ぴあ先着先行（神奈川 9/12公演）〜8/20 23:59: 2026-08-20
+     - ぴあ先着先行（神奈川 9/13公演）〜8/20 23:59: 2026-08-20
+  id=4080: 澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert - / 澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert - @ 東京ガーデンシアター (2027-02-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670108
+     - 先行（東京 R9年 2/27公演）〜8/16 23:59: 2026-08-16
+  id=4081: 梅田サイファー / 梅田サイファー @ 日本武道館 (2027-02-23) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669477
+     - プレリザーブ（東京 R9年 2/23公演）〜8/16 23:59: 2026-08-16
+  id=4084: セブンス・ベガ / セブンス・ベガ @ 全国ツアー（Spotify O-EAST／エレクトリック・レディ・ランド／梅田BananaHall／LIVE HOUSE OP’s） (2027-02-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670226
+     - 先行（東京・愛知・大阪・福岡 R9年 2/7〜2/14公演）〜8/23 23:59: 2026-08-23
+  id=4085: East Of Eden / East Of Eden @ 全国ツアー（昭和女子大学 人見記念講堂／ヒューリックホール東京） (2027-01-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631907
+     - 先行（東京 R9年 1/30公演）〜8/18 23:59: 2026-08-18
+     - 先行（東京 9/26公演）〜8/23 23:59: 2026-08-23
+  id=4087: WHITE ASH / WHITE ASH @ 全国ツアー（SPIRITUAL LOUNGE／LIVE HOUSE enn 2nd／千葉LOOK／LIQUIDROOM／新潟CLUB RIVERST／池下CLUB UPSET／Shangri-La／岡山ペパーランド／graf） (2027-02-24) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670250
+     - オフィシャル先行（北海道・宮城・千葉・東京・新潟・愛知・大阪・岡山・福岡 R9年 1/16〜2/24公演）〜8/23 23:59: 2026-08-23
+  id=4089: 花宮初奈 / 花宮初奈 @ TACHIKAWA STAGE GARDEN (2026-12-31) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625344
+     - オフィシャル先行（東京 12/31公演）〜8/11 23:59: 2026-08-11
+  id=4094: KAWAII LAB. SESSION / KAWAII LAB. SESSION @ 有明アリーナ (2026-12-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631397
+     - プレリザーブ（東京 12/12〜12/13公演）〜8/16 23:59: 2026-08-16
+  id=4095: 稲葉浩志 / 稲葉浩志 @ 全国ツアー（長良川国際会議場 メインホール／三重県文化会館 大ホール） (2026-12-20) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669355
+     - 先行（北海道・宮城・秋田・福島・茨城・栃木・群馬・神奈川・石川・福井・山梨・岐阜・三重・京都・奈良・和歌山・岡山・広島・山口・香川・愛媛・福岡・大分・沖縄 9/18〜12/20公演）〜8/25 23:59: 2026-08-25
+  id=4099: KOTORI pre. TORI ROCK FESTIVAL'26 / KOTORI pre. TORI ROCK FESTIVAL'26 @ 豊洲PIT (2026-12-05) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669467
+     - 先行（東京 12/4〜12/5公演）〜8/23 23:59: 2026-08-23
+  id=4100: Khalid / Khalid @ 東京ガーデンシアター (2026-12-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669789
+     - 先行【GOLD席】（東京 12/3公演）〜8/16 23:59: 2026-08-16
+     - 先行【SS席/S席/A席】（東京 12/3公演）〜8/16 23:59: 2026-08-16
+     - 先行【VIPアップグレード】（東京 12/3公演）〜8/16 23:59: 2026-08-16
+  id=4106: 放送50周年記念 第20回「徹子の部屋」コンサート / 放送50周年記念 第20回「徹子の部屋」コンサート @ 東京国際フォーラム ホールA (2026-11-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2616808
+     - 先行（東京 11/27公演）〜8/18 23:59: 2026-08-18
+  id=4107: ロックアンセム2026 EX / ロックアンセム2026 EX @ EX THEATER ROPPONGI (2026-11-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668773
+     - 先行（東京 11/27〜11/29公演）〜8/23 23:59: 2026-08-23
+  id=4108: 大貫妙子 / 大貫妙子 @ 昭和女子大学 人見記念講堂 (2026-11-22) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2628174
+     - プレリザーブ2次（東京 11/22公演）〜8/25 23:59: 2026-08-25
+  id=4111: FRUITS ZIPPER / FRUITS ZIPPER @ 全国ツアー（大阪国際会議場 メインホール／広島文化学園HBGホール／沖縄コンベンションセンター 劇場棟／仙台サンプラザホール／宇都宮市文化会館 大ホール／長良川国際会議場 メインホール／Niterra日本特殊陶業市民会館 フォレストホール／三重県文化会館 大ホール／福岡サンパレス／熊本城ホール メインホール） (2026-11-22) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669209
+     - プレリザーブ（香川・愛媛 10/13〜10/15公演）〜8/25 23:59: 2026-08-25
+     - プレリザーブ（北海道 11/12公演）〜8/25 23:59: 2026-08-25
+  id=4117: RAINCOVER / RAINCOVER @ KYOTO MUSE (2026-11-15) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2625334
+     - 先行（京都 11/15公演）〜8/16 23:59: 2026-08-16
+  id=4121: MASS OF THE FERMENTING DREGS / MASS OF THE FERMENTING DREGS @ LIQUIDROOM (2027-11-07) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631947
+     - オフィシャル最速先着先行（東京 R9年 11/7公演）〜8/23 23:59: 2026-08-23
+  id=4133: Age Factory／ENTH／Paledusk / Age Factory／ENTH／Paledusk @ 全国ツアー（Zepp Osaka Bayside／Zepp Fukuoka） (2026-08-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563811
+     - 一般発売（大阪 8/24公演）〜8/13 23:59: 2026-08-13
+     - 一般発売（福岡 8/27公演）〜8/18 23:59: 2026-08-18
+  id=4134: BEEEEM FES Vol.7 / BEEEEM FES Vol.7 @ Veats Shibuya (2026-08-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629746
+     - プレリザーブ（東京 8/27公演）〜8/12 23:59: 2026-08-12
+  id=4140: 風見和香 / 風見和香 @ KT Zepp Yokohama (2026-08-31) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623494
+     - 一般発売（神奈川 8/31公演）〜8/20 23:59: 2026-08-20
+  id=4145: 須田景凪 / 須田景凪 @ REDSUN (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2627176
+     - 3次プレリザーブ（石川 9/6公演）〜8/16 23:59: 2026-08-16
+  id=4146: さかしたひかる / さかしたひかる @ 全国ツアー（LIVE HOUSE FEVER／心斎橋JANUS） (2026-09-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629370
+     - 先行（東京 9/8公演）〜8/12 23:59: 2026-08-12
+     - 先行（大阪 9/14公演）〜8/16 23:59: 2026-08-16
+  id=4148: BANQUET!! / BANQUET!! @ Yogibo HOLY MOUNTAIN (2026-09-08) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2628342
+     - 先行（大阪 9/8公演）〜8/25 12:00: 2026-08-25
+  id=4150: FIVE O ONE / FIVE O ONE @ 全国ツアー（SGC HALL ARIAKE／オリックス劇場／神戸文化ホール 大ホール） (2026-09-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629146
+     - プレリザーブ（東京 9/11〜9/13公演）〜8/16 23:59: 2026-08-16
+     - 先行（大阪・兵庫 9/26〜9/27公演）〜8/16 23:59: 2026-08-16
+  id=4151: ITAMI GREENJAM’26 / ITAMI GREENJAM’26 @ 昆陽池公園 (2026-09-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670333
+     - 一般販売（兵庫 9/12〜9/13公演）〜8/24 23:59: 2026-08-24
+  id=4153: 高尾奏音／櫻井陽菜 / 高尾奏音／櫻井陽菜 @ ランドマークホール (2026-09-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631424
+     - 先行（神奈川 9/13公演）〜8/16 23:59: 2026-08-16
+  id=4154: PERSONA LIVE TOUR 2026 - Resonance - / PERSONA LIVE TOUR 2026 - Resonance - @ Zepp Namba（OSAKA） (2026-09-13) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668974
+     - プレリザーブ（大阪 9/13公演）〜8/14 23:59: 2026-08-14
+  id=4155: 高橋愛 / 高橋愛 @ TOKYO FMホール (2026-09-14) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631154
+     - 先行（東京 9/14公演）〜8/13 23:59: 2026-08-13
+  id=4164: 島袋寛子 / 島袋寛子 @ 全国ツアー（大宮ソニックシティ 大ホール／SGC HALL ARIAKE／フェスティバルホール／Niterra日本特殊陶業市民会館 フォレストホール） (2026-11-04) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626828
+     - プレリザーブ（埼玉・東京 9/23〜11/4公演）〜8/17 23:59: 2026-08-17
+     - プレリザーブ（大阪 10/4公演）〜8/17 11:00: 2026-08-17
+     - プレリザーブ（愛知 10/30公演）〜8/25 23:59: 2026-08-25
+  id=4165: ETERNAL FIGHTER TAKERU DEEPEST RESPECT / ETERNAL FIGHTER TAKERU DEEPEST RESPECT @ 豊洲PIT (2026-09-24) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669304
+     - プレリザーブ（東京 9/24公演）〜8/18 23:59: 2026-08-18
+  id=4169: DEEN / DEEN @ 京都劇場 (2026-09-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2629677
+     - 一般発売（京都 9/26〜9/27公演）8/22 10:00発売: 2026-08-22
+  id=4172: Bocchi / Bocchi @ WWW X (2026-09-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670225
+     - プレリザーブ（東京 9/26公演）〜8/16 23:59: 2026-08-16
+  id=4173: esq / esq @ Fragile (2026-09-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2624127
+     - 3次受付（福岡 9/27公演）〜8/24 23:59: 2026-08-24
+  id=4174: Lead / Lead @ 全国ツアー（I’M A SHOW／Lives NAGOYA） (2026-09-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630529
+     - 一般発売.（愛知 8/22公演）〜8/20 23:59: 2026-08-20
+     - 3次プレリザーブ（東京 9/27公演）〜8/24 23:59: 2026-08-24
+  id=4205: 第570回 花形演芸会 / 第570回 花形演芸会 @ 渋谷区文化総合センター大和田 伝承ホール (2026-09-23) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631590
+     - 一般発売（東京 9/23公演）8/18 10:00発売: 2026-08-18
+  id=4268: APF SAPPHIRE CUP 2026 / APF SAPPHIRE CUP 2026 @ 曳舟文化センター 劇場ホール (2026-09-19) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632466
+     - 一般発売（東京 9/19公演）8/19 10:00発売: 2026-08-19
+  id=4272: 横浜DeNAベイスターズ対阪神タイガース／公式戦 / 横浜DeNAベイスターズ対阪神タイガース／公式戦 @ 横浜スタジアム (2026-09-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632092
+     - 一般販売（神奈川 9/25〜9/26公演）8/18 12:00発売: 2026-08-18
+  id=4311: 千葉ロッテマリーンズ対北海道日本ハムファイターズ 公式戦〈ワイドシート〉 / 千葉ロッテマリーンズ対北海道日本ハムファイターズ 公式戦〈ワイドシート〉 @ ZOZOマリンスタジアム (2026-09-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630224
+     - 一般発売（千葉 9/27〜9/28公演）8/19 10:00発売: 2026-08-19
+  id=4319: ハロー【一花】イチハナ～一之輔相談室～ / ハロー【一花】イチハナ～一之輔相談室～ @ 座・高円寺2 (2026-09-02) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626773
+     - 一般発売（東京 9/2公演）8/16 10:00発売: 2026-08-16
+  id=4326: Kis-My-Ft2 / Kis-My-Ft2 @ 全国ツアー（LaLa arena TOKYO-BAY／広島グリーンアリーナ／朱鷺メッセ 新潟コンベンションセンター） (2026-09-20) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668966
+     - 一般発売（千葉 9/4〜9/6公演）8/16 12:00発売: 2026-08-16
+     - 一般発売（広島 9/12〜9/13公演）8/16 12:00発売: 2026-08-16
+     - 一般発売（新潟 9/19〜9/20公演）8/16 12:00発売: 2026-08-16
+  id=4334: ONE OK ROCK / ONE OK ROCK @ 全国ツアー（ZOZOマリンスタジアム／宮城・セキスイハイムスーパーアリーナ（グランディ・21）） (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669955
+     - 公演 一般発売【クロークチケット】（宮城 8/25公演）〜8/24 23:59: 2026-08-24
+     - 公演 一般発売【クロークチケット】（宮城 8/26公演）〜8/25 23:59: 2026-08-25
+     - 一般発売【駐車券】（宮城 8/25〜8/26公演）〜8/25 23:59: 2026-08-25
+     - 一般発売【JR仙台駅東口発臨時直行往復バス券】（宮城 8/25〜8/26公演）〜8/25 23:59: 2026-08-25
+  id=4346: 「試し卸し叩き」 / 「試し卸し叩き」 @ 新宿バティオス (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631017
+     - 先行（東京 9/6公演）8/18 18:00発売: 2026-08-23
+  id=4358: 「劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉」舞台挨拶 / 「劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉」舞台挨拶 @ 全国ツアー（新宿バルト9／ユナイテッド・シネマ豊洲／チネチッタ／横浜ブルク13） (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670168
+     - 一般発売（東京 8/29公演）8/18 10:00発売: 2026-08-18
+     - 一般発売（東京 8/29公演）8/18 10:00発売: 2026-08-18
+     - 一般発売（神奈川 8/30公演）8/18 10:00発売: 2026-08-18
+     - 一般発売（神奈川 8/30公演）8/18 10:00発売: 2026-08-18
+  id=4392: INORAN / INORAN @ Zepp DiverCity（TOKYO） (2026-10-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669402
+     - 5次プレリザーブ（東京 10/30公演）〜8/25 23:59: 2026-08-25
+  id=4393: AQ / AQ @ ダンスホール新世紀 (2026-10-12) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632172
+     - プレリザーブ（東京 10/12公演）〜8/25 23:59: 2026-08-25
+  id=4394: バズリズム LIVE 2026 / バズリズム LIVE 2026 @ 横浜アリーナ (2026-11-08) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670399
+     - 最速先行（神奈川 11/6〜11/8公演）〜8/25 23:59: 2026-08-25
+  id=4395: BEEEEM FES vol.9 Supported by michellMacaron / BEEEEM FES vol.9 Supported by michellMacaron @ Spotify O-EAST (2026-09-10) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631890
+     - プレリザーブ（東京 9/10公演）〜8/25 23:59: 2026-08-25
+  id=4396: Spicy Sessions -THE LIVE- 2026 / Spicy Sessions -THE LIVE- 2026 @ TACHIKAWA STAGE GARDEN (2026-10-20) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670476
+     - プレリザーブ（東京 10/20公演）〜8/24 23:59: 2026-08-24
+  id=4397: TOOBOE / TOOBOE @ 全国ツアー（CASINO DRIVE／ペニーレーン24／仙台 darwin／Shibuya LOVEZ／KT Zepp Yokohama／金沢EIGHT HALL／長野CLUB JUNK BOX／静岡UMBER／ダイアモンドホール／KYOTO MUSE／BIGCAT／神戸VARIT.／米子laughs／LIVE VANQUISH／DIME／DRUM LOGOS／熊本B.9 V2／鹿児島SRホール／LINE CUBE SHIBUYA） (2027-02-21) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669512
+     - 一般発売（東京 8/21公演）〜8/20 23:59: 2026-08-20
+     - 先行【全国】（北海道・宮城・東京・神奈川・石川・長野・静岡・愛知・京都・大阪・兵庫・鳥取・広島・香川・福岡・熊本・鹿児島 11/7〜R9年 2/21公演）〜8/24 23:59: 2026-08-24
+     - 当日券発売（東京 8/21公演）〜8/21 20:00: 2026-08-21
+  id=4398: 比嘉ゆめの生誕祭2026『～ユメノハナシ～』 / 比嘉ゆめの生誕祭2026『～ユメノハナシ～』 @ Spotify O-WEST (2026-09-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632368
+     - オフィシャル先行（東京 9/26公演）〜8/24 23:59: 2026-08-24
+  id=4399: FOMARE / FOMARE @ Gメッセ群馬 (2026-10-12) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2619530
+     - 先行（群馬 10/12公演）〜8/24 23:59: 2026-08-24
+  id=4400: MASTERPIECE 2026 / MASTERPIECE 2026 @ 岐阜市文化センター (2026-11-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668940
+     - 先行（岐阜 11/28〜11/29公演）〜8/24 23:59: 2026-08-24
+  id=4402: UNLIMITS / UNLIMITS @ 全国ツアー（柏ALIVE／F.A.D YOKOHAMA／磐田FMSTAGE） (2026-12-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626998
+     - 先行（千葉・神奈川・静岡 10/31〜12/6公演）〜8/23 23:59: 2026-08-23
+  id=4404: iri / iri @ ぴあアリーナMM (2026-10-22) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669959
+     - プレリザーブ2次（神奈川 10/22公演）〜8/23 23:59: 2026-08-23
+  id=4405: EDEN’s CLINE Live turn 4 / EDEN’s CLINE Live turn 4 @ unravel tokyo (2026-10-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632029
+     - 先行（東京 10/3公演）〜8/23 23:59: 2026-08-23
+  id=4406: Girls2 / Girls2 @ 全国ツアー（福岡国際会議場 メインホール／NHK大阪ホール） (2026-10-18) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632404
+     - プレリザーブ（福岡 10/4公演）〜8/23 23:59: 2026-08-23
+     - プレリザーブ（大阪 10/18公演）〜8/23 23:59: 2026-08-23
+  id=4408: SATANIC PARTY 2026 / SATANIC PARTY 2026 @ Spotify O-EAST (2026-11-01) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2626823
+     - オフィシャル先行2次（東京 11/1公演）〜8/23 23:59: 2026-08-23
+     - 餓鬼割先行2次（東京 11/1公演）〜8/23 23:59: 2026-08-23
+  id=4409: 清水翔太 / 清水翔太 @ 日本武道館 (2026-10-09) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669341
+     - プレリザーブ（東京 10/9公演）〜8/23 23:59: 2026-08-23
+  id=4410: 玉置浩二 / 玉置浩二 @ 日本武道館 (2026-11-05) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630176
+     - プレリザーブ2次（東京 11/4〜11/5公演）〜8/23 23:59: 2026-08-23
+  id=4411: ChouCho / ChouCho @ duo MUSIC EXCHANGE (2026-10-25) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630760
+     - プレリザーブ（東京 10/25公演）〜8/23 23:59: 2026-08-23
+  id=4412: T.M.Revolution / T.M.Revolution @ 全国ツアー（堺市民芸術文化ホール（フェニーチェ堺） 大ホール／カルッツかわさき（川崎市スポーツ・文化総合センター）ホール／愛知県芸術劇場 大ホール） (2026-12-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669838
+     - 最速先行（大阪 11/21公演）〜8/23 23:59: 2026-08-23
+     - 最速先行（大阪 11/22公演）〜8/23 23:59: 2026-08-23
+     - 最速先行（神奈川 12/21公演）〜8/23 23:59: 2026-08-23
+     - 最速先行（神奈川 12/22公演）〜8/23 23:59: 2026-08-23
+     - 最速先行（愛知 12/26公演）〜8/23 23:59: 2026-08-23
+     - 最速先行（愛知 12/27公演）〜8/23 23:59: 2026-08-23
+  id=4413: DeNeel / DeNeel @ 全国ツアー（SPACE ODD／新栄シャングリラ／Yogibo HOLY MOUNTAIN） (2026-11-27) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669562
+     - 先行（東京・愛知・大阪 11/6〜11/27公演）〜8/23 23:59: 2026-08-23
+  id=4414: TRUST RECORDS presents.PUNK IN AUTUMN 2026 / TRUST RECORDS presents.PUNK IN AUTUMN 2026 @ 名古屋RAD NINE／栄R.A.D／栄Party’z (2026-11-08) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670397
+     - 先行（愛知 11/3〜11/8公演）〜8/23 23:59: 2026-08-23
+  id=4415: Tohji / Tohji @ 東京ドーム (2026-11-17) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670415
+     - 先行（東京 11/17公演）〜8/23 23:59: 2026-08-23
+     - 先行【Tシャツ付き】（東京 11/17公演）〜8/23 23:59: 2026-08-23
+  id=4416: PENTAGON / PENTAGON @ 全国ツアー（Zepp DiverCity（TOKYO）／Zepp Namba（OSAKA）） (2026-10-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632037
+     - 最速先行（東京・大阪 10/1〜10/3公演）〜8/23 23:59: 2026-08-23
+  id=4417: 2026 LEE SANG JUN SHOW 45 WORLD TOUR in TOKYO / 2026 LEE SANG JUN SHOW 45 WORLD TOUR in TOKYO @ 日本教育会館 一ツ橋ホール (2026-09-21) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670242
+     - 先行（東京 9/21公演）〜8/23 23:59: 2026-08-23
+  id=4418: Osaka GLOW Glow-in-the-Dark Dance Performance&Experience / Osaka GLOW Glow-in-the-Dark Dance Performance&Experience @ STUDIO WREXX (2027-03-21) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631839
+     - オフィシャル先行（大阪 10/24〜R9年 3/21公演）〜8/23 23:59: 2026-08-23
+  id=4420: Suchmos / Suchmos @ 全国ツアー（ゼビオアリーナ仙台／Kアリーナ横浜／GLION ARENA KOBE／マリンメッセ福岡B館） (2027-05-02) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668000
+     - 先行（宮城・神奈川・兵庫・福岡 R9年 3/13〜5/2公演）〜8/21 23:59: 2026-08-21
+  id=4422: yeti let you notice / yeti let you notice @ 全国ツアー（Shibuya WWW／鶴舞DAYTRIP／CONPASS／福岡・UTERO） (2026-11-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669302
+     - 先行（東京・愛知・大阪・福岡 10/4〜11/28公演）〜8/20 23:59: 2026-08-20
+  id=4423: The Performance Zero / The Performance Zero @ Zepp DiverCity（TOKYO） (2026-10-12) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670473
+     - オフィシャル先行（東京 10/12公演）〜8/20 23:59: 2026-08-20
+  id=4424: シャッポ / シャッポ @ 全国ツアー（daikanyama 晴れたら空に豆まいて／磔磔） (2026-11-08) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670245
+     - プレリザーブ（東京・京都 10/10〜11/8公演）〜8/20 23:59: 2026-08-20
+  id=4425: スミワタルトリオ / スミワタルトリオ @ すばるホール 小ホール (2027-01-16) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631967
+     - 先行（大阪 R9年 1/16公演）〜8/20 11:00: 2026-08-20
+  id=4436: GLAY / GLAY @ 全国ツアー（朱鷺メッセ 新潟コンベンションセンター／北海きたえーる／マリンメッセ福岡A館／広島グリーンアリーナ／Aichi Sky Expo（愛知県国際展示場） 展示ホールA） (2027-02-07) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2627147
+     - プレリザーブ（新潟 12/5公演）〜8/25 23:59: 2026-08-25
+     - プレリザーブ（北海道 12/13公演）〜8/25 23:59: 2026-08-25
+     - プレリザーブ（福岡 12/19〜12/20公演）〜8/25 23:59: 2026-08-25
+     - プレリザーブ（広島 R9年 1/30〜1/31公演）〜8/25 23:59: 2026-08-25
+     - プレリザーブ（愛知 R9年 2/7公演）〜8/25 23:59: 2026-08-25
+  id=4455: 明くる夜の羊 / 明くる夜の羊 @ 全国ツアー（LIVE HOUSE OP’s／LIQUIDROOM） (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2614316
+     - 一般発売（福岡 8/22公演）〜8/21 23:59: 2026-08-21
+     - 一般発売（東京 8/26公演）〜8/25 23:59: 2026-08-25
+  id=4468: atsuo dohke デビュー記念コンサート / atsuo dohke デビュー記念コンサート @ 文京シビックホール 小ホール (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2608329
+     - 一般発売（東京 8/26公演）〜8/25 23:59: 2026-08-25
+  id=4611: MET JAZZ TOKYO: DAY 0 / MET JAZZ TOKYO: DAY 0 @ オーチャードホール (2026-11-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630568
+     - 一般発売（東京 11/29公演）8/22 12:00発売: 2026-08-22
+  id=4732: 大阪フィルハーモニー交響楽団 / 大阪フィルハーモニー交響楽団 @ ザ・シンフォニーホール (2026-11-25) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630122
+     - 一般発売（大阪 11/25公演）8/25 10:00発売: 2026-08-25
+  id=4912: 弁論2026 / 弁論2026 @ 全国ツアー（東京エレクトロンホール宮城／SAWARAPIA 大ホール／ロームシアター京都 メインホール／東京ガーデンシアター） (2026-12-04) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2623645
+     - 一般発売（宮城 11/4公演）8/22 10:00発売: 2026-08-22
+     - 一般発売（福岡 11/11公演）8/22 10:00発売: 2026-08-22
+     - 一般発売（京都 11/24公演）8/22 10:00発売: 2026-08-22
+     - 一般発売（東京 12/4公演）8/22 10:00発売: 2026-08-22
+  id=4951: ウルフルズ / ウルフルズ @ フェスティバルホール (2026-12-31) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2628863
+     - 先行（大阪 12/31公演）〜8/25 23:59: 2026-08-25
+  id=4958: "darlin. 10th ANNIVERSARY" / "darlin. 10th ANNIVERSARY" @ LIQUIDROOM (2026-11-02) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670417
+     - 最速先行（東京 11/2公演）〜8/24 23:59: 2026-08-24
+  id=4968: アニメ『ケロロ軍曹』20周年御礼!～舞台挨拶付き『超劇場版』&『新劇場版』上映会であります!～ / アニメ『ケロロ軍曹』20周年御礼!～舞台挨拶付き『超劇場版』&『新劇場版』上映会であります!～ @ TOHOシネマズ日比谷 (2026-08-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632917
+     - 一般発売（東京 8/29公演）8/25 10:00発売: 2026-08-25
+  id=4970: 映画『しびれ』完成披露舞台挨拶 / 映画『しびれ』完成披露舞台挨拶 @ TOHOシネマズ六本木ヒルズ (2026-08-30) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631720
+     - 一般発売（東京 8/30公演）8/25 10:00発売: 2026-08-25
+  id=4971: 映画『ホーム スイート ホーム』公開記念舞台挨拶 / 映画『ホーム スイート ホーム』公開記念舞台挨拶 @ 全国ツアー（ユナイテッド・シネマ アクアシティお台場／イオンシネマ板橋／kino cinema 新宿／大阪ステーションシティシネマ／ミッドランドスクエアシネマ） (2026-09-06) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669792
+     - 一般発売（東京 9/4公演）8/25 10:00発売: 2026-08-25
+     - 一般発売【イオンシネマ板橋】（東京 9/5公演）8/25 10:00発売: 2026-08-25
+     - 一般発売【kino cinema 新宿】（東京 9/5公演）8/25 10:00発売: 2026-08-25
+     - 一般発売（大阪 9/6公演）8/25 10:00発売: 2026-08-25
+     - 一般発売（愛知 9/6公演）8/25 10:00発売: 2026-08-25
+  id=4987: TVアニメ『魔法騎士レイアース』ジャパンプレミア / TVアニメ『魔法騎士レイアース』ジャパンプレミア @ TOHOシネマズ六本木ヒルズ (2026-10-03) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630999
+     - 一般発売（東京 10/3公演）8/25 10:00発売: 2026-08-25
+  id=4989: 『時には懺悔を』公開初日舞台挨拶 / 『時には懺悔を』公開初日舞台挨拶 @ TOHOシネマズ日比谷 (2026-08-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632391
+     - 一般発売（東京 8/28公演）8/25 10:00発売: 2026-08-25
+  id=5028: 「愛し合ってるかい? 忌野清志郎が教えてくれた」最速プレミア上映 / 「愛し合ってるかい? 忌野清志郎が教えてくれた」最速プレミア上映 @ 新宿バルト9 (2026-08-26) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630812
+     - 一般発売（東京 8/26公演）8/22 10:00発売: 2026-08-22
+  id=5029: 映画『私はあなたを知らない、』初日舞台挨拶 / 映画『私はあなたを知らない、』初日舞台挨拶 @ 新宿ピカデリー (2026-08-28) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631446
+     - 一般発売（東京 8/28公演）8/22 10:00発売: 2026-08-22
+  id=5030: 『縁の手紙』完成披露上映会 / 『縁の手紙』完成披露上映会 @ グランドシネマサンシャイン 池袋 (2026-09-04) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2631151
+     - 一般発売（東京 9/4公演）8/22 10:00発売: 2026-08-22
+  id=5031: TVアニメ『超巡!超条先輩』キャスト舞台挨拶付き先行上映会 / TVアニメ『超巡!超条先輩』キャスト舞台挨拶付き先行上映会 @ ユナイテッド・シネマ アクアシティお台場 (2026-09-08) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2630427
+     - 一般発売（東京 9/8公演）8/22 10:00発売: 2026-08-22
+  id=5032: 『ナギダイアリー』ジャパンプレミア / 『ナギダイアリー』ジャパンプレミア @ 新宿ピカデリー (2026-08-29) [全販売終了]
+     URL: https://t.pia.jp/pia/event/event.do?eventCd=2632524
+     - 一般発売（東京 8/29公演）8/22 10:00発売: 2026-08-22

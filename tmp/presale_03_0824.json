@@ -1,0 +1,54 @@
+{
+ "lg": "03",
+ "total": 101,
+ "pages": 11,
+ "fetched_pages": 12,
+ "parsed": 70,
+ "new_name_in_db": 3,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629941",
+   "artist": "ＦＣ今治対湘南ベルマーレ 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "アシックス里山スタジアム(愛媛県)",
+   "pref": "愛媛県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670580",
+   "artist": "第74回全日本剣道選手権大会／第65回全日本女子剣道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "日本武道館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631063",
+   "artist": "阪神タイガース対読売ジャイアンツ 公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/10/1(木)",
+   "venue": "阪神甲子園球場(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670619",
+   "artist": "令和8年冬巡業 大相撲長崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/12/3(木)",
+   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}
