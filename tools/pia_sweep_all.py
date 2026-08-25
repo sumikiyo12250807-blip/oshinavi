@@ -124,10 +124,15 @@ def plan_buckets():
 
 
 def run_bucket(filter_str, tmpout):
-    r = subprocess.run([sys.executable, 'tools/presale_harvest.py', LG, tmpout, filter_str],
-                       capture_output=True, text=True, encoding='utf-8')
+    # 🚨子プロセスの出力はファイルに逃がす。パイプにすると Windows のコンソール既定
+    #   コードページで日本語がエンコードエラーになり、原因が分からないまま失敗する。
+    logp = tmpout + '.log'
+    with open(logp, 'w', encoding='utf-8') as lf:
+        r = subprocess.run([sys.executable, 'tools/presale_harvest.py', LG, tmpout, filter_str],
+                           stdout=lf, stderr=subprocess.STDOUT)
     if r.returncode != 0:
-        return None, r.stderr[-400:]
+        tail = open(logp, encoding='utf-8', errors='replace').read()[-400:]
+        return None, 'rc=%d %s' % (r.returncode, tail.replace('\n', ' / '))
     try:
         return json.load(open(tmpout, encoding='utf-8')), ''
     except Exception as e:
