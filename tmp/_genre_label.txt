@@ -1,0 +1,15 @@
+
+    new: "✨ 新着",
+    jpop: "J-POP", rock: "ロック", kpop: "K-POP", yougaku: "洋楽",
+    hiphop: "HIP HOP", anime: "アニソン", idol: "アイドル",
+    youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ",
+    classic: "クラシック", jazz: "ジャズ", enka: "演歌", dento: "伝統",
+    chanson: "シャンソン", musicetc: "その他",
+    kaidan: "怪談",
+    engeki: "演劇", fes: "フェス",   /* 2026-08-13: 一度「ミュージカル」に統一したが、engeki には能/文楽/舞踊/ダンスも混ざっていて嘘になるので差し戻し。ぴあのカテゴリで再分類してから決める */
+    sports: "スポーツ", hanabi: "花火大会",
+    "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル",
+    aisatsu: "舞台挨拶", dinnershow: "ディナーショー", art: "イベントアート",
+    gourmet: "グルメ",
+    fanevent: "ファンイベント"
+  
