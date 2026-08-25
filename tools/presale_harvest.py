@@ -108,9 +108,24 @@ print('lg=%s total=%d pages=%d' % (LG, total, pages))
 #   新しい終端＝「そのページのURL並びが前ページと完全に同一」が2回連続（＝ぴあが最後のページを
 #   返し続けている状態）。合わせて total から計算した想定ページ数までは必ず回る。
 #   memory: feedback_newpool_presale_ratio_gate（頭文字の若いものだけ拾う事故）
+# ★★🚨2026-08-25 再修正＝終端判定を「URLの並び」から**件数表記の位置**に変えた。
+#   8/24版の「前ページと中身が同じ＝終端」は、**1ページに1本しかリンクが無いページが
+#   続く**と誤爆する。原因は大型ツアー＝同じ eventCd の行が何十行も並ぶことで、
+#   実測(音楽 rlsIn=03)では 37〜40ページが「同じ1本」だけになり、**62ページ中39ページで
+#   打ち切られていた**（取得273/619件）。頭文字の若い側だけ拾う事故と同じ型。
+#   ✅ぴあは各ページに「全619件中 391～400件」と**現在位置**を出す。範囲外を要求すると
+#     最後のページを返し続ける＝この位置が進まなくなる。**位置が進まない＝終端**が正しい判定。
+#   位置表記が取れない時だけ、従来のURL並び比較にフォールバックする。
+POS_RE = re.compile(r'全[0-9,]+件中\s*([0-9,]+)\s*[~〜～\-–]\s*([0-9,]+)\s*件')
+
+def page_pos(h):
+    m = POS_RE.search(h or '')
+    return (int(m.group(1).replace(',', '')), int(m.group(2).replace(',', ''))) if m else None
+
 items, seen = [], set()
 p, same = 1, 0
 prev_sig = None
+prev_pos = None
 h = h1
 LAST = min(400, max(pages, 1))
 while p <= LAST:
@@ -118,20 +133,25 @@ while p <= LAST:
         pi = parse_page(h)
     except Exception as e:
         print('page', p, 'err', e); pi = []
+    pos = page_pos(h)
     sig = tuple(x['url'] for x in pi)
-    if not pi or sig == prev_sig:
+    stalled = (pos is not None and pos == prev_pos) if pos is not None else (sig == prev_sig)
+    if not pi or stalled:
         time.sleep(1.0)                      # ゆらぎ対策の1回リトライ
         try:
-            pi = parse_page(fetch(p))
+            h = fetch(p); pi = parse_page(h)
         except Exception:
             pi = []
+        pos = page_pos(h)
         sig = tuple(x['url'] for x in pi)
-    if not pi or sig == prev_sig:
+        stalled = (pos is not None and pos == prev_pos) if pos is not None else (sig == prev_sig)
+    if not pi or stalled:
         same += 1
-        if same >= 2:       # 前ページと同じ中身が2回続く = 終端(折り返し)
+        if same >= 2:       # 現在位置が進まないページが2回続く = 終端(折り返し)
             break
     else:
         same = 0
+    prev_pos = pos
     for x in pi:
         if x['url'] not in seen:
             seen.add(x['url'])
