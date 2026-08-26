@@ -82,7 +82,7 @@ for it in items:
     # HTMLクラス＋文言で判定。build_pia_entries.py と同一ロジックに統一(2026-06-24)。
     # 「本日発売初日」(is-before)を受付終了と取り違えると買える枠を黙って落とす(琉球フェス沖縄の反省)。
     # 売切・終了・結果発表は文言で先に除外(クラスがactive/beforeでも保険)。
-    if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|終了しました|結果発表)', stat_text):
+    if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|販売期間終了|終了しました|結果発表)', stat_text):
         state = '受付終了'
     elif cls == 'is-active' or re.search(r'(販売期間中|受付中|発売中|販売中|発売初日|本日発売)', stat_text):
         state = '受付中'
