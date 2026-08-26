@@ -33,6 +33,9 @@ GENRE_LABEL = {
     "owarai": "お笑い", "musical": "ミュージカル", "aisatsu": "舞台挨拶",
     "dinnershow": "ディナーショー", "enka": "演歌", "dento": "伝統",
     "art": "イベントアート", "kaidan": "怪談", "gourmet": "グルメ",
+    # 2026-08-27 同期（index.html の GENRE_LABEL と必ず一致させる）
+    "chanson": "シャンソン", "musicetc": "その他",
+    "douyou": "童謡・唱歌", "circus": "サーカス", "magic": "マジック", "gakusai": "学園祭",
 }
 
 # index.html の linkDefs 順（楽天 > ぴあ > e+ > ローチケ > その他）

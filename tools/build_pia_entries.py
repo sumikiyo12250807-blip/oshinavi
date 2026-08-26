@@ -532,8 +532,17 @@ PIA_GENRE_MAP = {
     # 対応表に載せておけば「なぜ engeki か」が機械の判断として残る（未収載は毎回人が見る枠になる）。
     '洋画': ('engeki', None),                   # わたしは、ダニエル・ブレイクで確認（「邦画」と揃える）
     'パフォーマンス': ('engeki', None),           # シルク・ドゥ・ソレイユ クーザで確認（サーカス/舞台系）
-    # ※「ショー・ファンイベント」は入れない＝中身がアイドル接触〜俳優イベントまで雑多で、
-    #   ジャンルはイベント形式でなくアーティストで決まる（[[project_vendor_genre_autoassign]]）。
+    # 🚨🚨2026-08-27＝ユーザー「**ジャンル作って　たためるようになったから躊躇なく作っていいよ**」。
+    #   これで**ぴあの66サブカテゴリ全部に行き先がある**状態になった＝人が判断する枠はゼロ。
+    #   （旧コメント「ショー・ファンイベントは入れない＝アーティストで決まる」は失効。
+    #     入れないと名前fallbackで engeki に倒れるだけで、結局あたしが毎回迷っていた）
+    'シャンソン': ('chanson', None),                 # 既存ジャンル chanson に接続
+    'ショー・ファンイベント': ('fanevent', None),      # 既存ジャンル fanevent に接続
+    '祭り・花火大会': ('hanabi', None),               # 既存ジャンル hanabi に接続
+    '童謡・日本のうた': ('douyou', None),             # 🆕新設
+    'サーカス': ('circus', None),                    # 🆕新設（シルク・ドゥ・ソレイユ等）
+    'マジック・イリュージョン': ('magic', None),        # 🆕新設
+    '学園祭': ('gakusai', None),                     # 🆕新設
 }
 # トップカテゴリ単位のフォールバック（サブカテゴリがMAP未収載の時）
 # 「イベント/イベントその他」等のサブが拾えないものはここで受ける。イベントは中身が
@@ -1043,8 +1052,19 @@ def _selftest():
     # 2026-08-04(第4弾)の回帰
     assert genre_from_subcat('映画', '洋画', 'わたしは、ダニエル・ブレイク') == ('engeki', None)
     assert genre_from_subcat('イベント', 'パフォーマンス', 'シルク・ドゥ・ソレイユ クーザ') == ('engeki', None)
-    # 「ショー・ファンイベント」は未収載のまま＝人が見る枠（アーティストでジャンルが決まる）
-    assert genre_from_subcat('イベント', 'ショー・ファンイベント', '瀬戸利樹 写真集発売記念イベント') is None
+    # 🚨2026-08-27＝ユーザー「ジャンル作って　たためるようになったから躊躇なく作っていいよ」。
+    #   ぴあの66サブカテゴリ全部に行き先を作った＝**未収載（人が判断する枠）はゼロ**。
+    assert genre_from_subcat('イベント', 'ショー・ファンイベント', '瀬戸利樹 写真集発売記念イベント') == ('fanevent', None)
+    assert genre_from_subcat('イベント', '学園祭', '桃子 トークショー') == ('gakusai', None)
+    assert genre_from_subcat('イベント', 'サーカス', 'シルク・ドゥ・ソレイユ') == ('circus', None)
+    assert genre_from_subcat('イベント', 'マジック・イリュージョン', 'マジックショー') == ('magic', None)
+    assert genre_from_subcat('イベント', '祭り・花火大会', '第50回花火大会') == ('hanabi', None)
+    assert genre_from_subcat('音楽', 'シャンソン', 'シャンソンの夕べ') == ('chanson', None)
+    assert genre_from_subcat('音楽', '童謡・日本のうた', '日本のうたコンサート') == ('douyou', None)
+    # ぴあの全サブカテゴリに行き先があること（人の判断枠を作らない・2026-08-26のユーザー決定）
+    _holes = [ (PIA_LG_LABEL[cd[:2]], nm) for cd, nm in PIA_GENRE_CD.items()
+               if nm not in PIA_GENRE_MAP and PIA_LG_LABEL[cd[:2]] not in PIA_CAT_FALLBACK ]
+    assert not _holes, '行き先の無いぴあサブカテゴリが残っている: %s' % (_holes,)
     assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('dento', None)   # 既存分岐の非回帰
     # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
     assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
