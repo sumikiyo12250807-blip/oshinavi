@@ -66,6 +66,11 @@ for eid in sorted(plan):
     except Exception as ex:
         print("id=%-5d ❌build失敗 %s: %s" % (eid, type(ex).__name__, str(ex)[:110]))
         continue
+    if not ne:
+        # build は「買える枠が1つも無い」と None を返す（売切/受付終了のみ）。
+        # ここで落ちると残りのエントリが全部処理されないので、飛ばして続ける。
+        print("id=%-5d ⚠️再導出で買える枠0→触らない（混雑ページ/全枠終了の疑い）" % eid)
+        continue
     new = list(ne.get("tickets") or [])
     if not new:
         print("id=%-5d ⚠️再導出で0枠→触らない（混雑ページ疑い）" % eid)
