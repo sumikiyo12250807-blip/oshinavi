@@ -175,6 +175,25 @@ def src_event_url(u):
     if mb: return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
     return ecd_url(u)
 
+# 🚨2026-08-27＝ぴあの券種リンクには**2つの形**がある。
+#   ① https://t.pia.jp/pia/ticketInformation.do?eventCd=..&rlsCd=..   （大多数）
+#   ② http://ticket.pia.jp/sp/ticketInformation.do?eventCd=..&rlsCd=.. （スマホ形式・httpでホストも違う）
+#   旧実装は①しか拾わず、②のページでは url が空になっていた。url は
+#   **枠の同一性(slot_code)** と **発売前の締切を券種ページから補う処理** の両方で使うので、
+#   空だと「別の売り場なのに同じ枠と見なして畳む」事故につながる（[[feedback_pia_parser_flattens_slots]]）。
+#   実例＝『グレンギャリー・グレンロス』(eventCd=2623908)／「ロックンロール」(eventCd=2631631)。
+_TICKETINFO_RE = re.compile(r'href="(https?://(?:t\.pia\.jp/pia|ticket\.pia\.jp/(?:pia|sp))/ticketInformation\.do\?[^"]+)"')
+
+def ticketinfo_href(card_html):
+    """券種カードから ticketInformation.do のURLを取り、正規の https://t.pia.jp/pia/ 形に揃える。"""
+    m = _TICKETINFO_RE.search(card_html or '')
+    if not m:
+        return None
+    u = _html.unescape(m.group(1))
+    q = u.split('ticketInformation.do?', 1)[1]
+    return 'https://t.pia.jp/pia/ticketInformation.do?' + q
+
+
 def parse_cards(h):
     rows = []
     for it in re.split(r'(?=<li class="ticketSalesList-2024__item)', h):
@@ -219,7 +238,7 @@ def parse_cards(h):
             'venues': card_venues, 'prefs': prefs,
             'title': txt(g(r'__title">(.*?)</p>')), 'state': state,
             'when': txt(g(r'__status[^>]*>.*?<br>\s*<span[^>]*>(.*?)</span>')),
-            'url': g(r'href="(https://t\.pia\.jp/pia/ticketInformation\.do\?[^"]+)"'),
+            'url': ticketinfo_href(it),
         })
     seen, u = set(), []
     for r in rows:
