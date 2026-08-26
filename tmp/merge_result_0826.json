@@ -1,223 +1,290 @@
 [
  {
-  "id": 2500,
-  "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+  "id": 1,
+  "artist": "さだまさし",
+  "n_old": 15,
+  "n_new": 8,
+  "tickets": [
+   {
+    "type": "先行（福岡・大分 11/13〜11/15公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667141"
+   },
+   {
+    "type": "プリセール（愛知 11/24〜11/25公演）8/31 10:00発売",
+    "date": "2026-08-31",
+    "startDate": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631052"
+   },
+   {
+    "type": "一般発売（千葉 11/8公演）9/4 10:00発売",
+    "date": "2026-09-04",
+    "startDate": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627015"
+   },
+   {
+    "type": "2次受付（石川・福井 11/3〜11/5公演）〜9/6 23:59",
+    "date": "2026-09-06",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628913"
+   },
+   {
+    "type": "一般発売（石川・福井 11/3〜11/5公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628913"
+   },
+   {
+    "type": "一般発売（愛知 11/24〜11/25公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631052"
+   },
+   {
+    "type": "一般発売（山口 10/17公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625620"
+   },
+   {
+    "type": "一般発売（岩手・宮城 10/25〜10/27公演）〜10/24 23:59",
+    "date": "2026-10-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622165"
+   }
+  ],
+  "warn": [
+   "枠が減る(15→8)＝消える枠の締切が過去だと目視で確認済み"
+  ],
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667141",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2631052",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2627015",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2616209",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2628913",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2622165",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2625620"
+  ],
+  "newdate": "2026-11-25"
+ },
+ {
+  "id": 177,
+  "artist": "山内惠介",
+  "n_old": 9,
+  "n_new": 5,
+  "tickets": [
+   {
+    "type": "一般発売（宮城 11/18公演）8/28 10:00発売",
+    "date": "2026-08-28",
+    "startDate": "2026-08-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628019"
+   },
+   {
+    "type": "2次受付（大阪 11/10公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623376"
+   },
+   {
+    "type": "一般発売（大阪 11/10公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623376"
+   },
+   {
+    "type": "一般発売（埼玉 11/14公演）〜11/8 23:59",
+    "date": "2026-11-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623691"
+   },
+   {
+    "type": "一般発売（山口・香川 11/26〜11/27公演）〜11/24 23:59",
+    "date": "2026-11-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627557"
+   }
+  ],
+  "warn": [
+   "枠が減る(9→5)＝消える枠の締切が過去だと目視で確認済み"
+  ],
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2612184",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2628019",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2623691",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2623376",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2611832",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2627557"
+  ],
+  "newdate": "2026-11-27"
+ },
+ {
+  "id": 516,
+  "artist": "大瀬戸千嶋",
   "n_old": 3,
   "n_new": 2,
   "tickets": [
    {
-    "type": "5次プリセール（栃木 12/6公演）〜8/27 23:59",
-    "date": "2026-08-27"
+    "type": "一般発売（広島 10/16公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632350"
    },
    {
-    "type": "一般発売（栃木 12/6公演）8/29 10:00発売",
-    "date": "2026-08-29",
-    "startDate": "2026-08-29"
+    "type": "一般発売（広島 11/22公演）〜11/21 23:59",
+    "date": "2026-11-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2607375"
    }
   ],
   "warn": [
    "枠が減る(3→2)＝消える枠の締切が過去だと目視で確認済み"
   ],
   "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669734",
-   "https://t.pia.jp/pia/event/event.do?eventCd=2626141",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669435"
+   "https://t.pia.jp/pia/event/event.do?eventCd=2607375",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2632350"
   ],
-  "newdate": "2026-12-06"
+  "newdate": "2026-11-22"
  },
  {
-  "id": 3129,
-  "artist": "Pearl Drums 80th Anniversary Fest.",
-  "n_old": 4,
-  "n_new": 3,
-  "tickets": [
-   {
-    "type": "最速先行（神奈川 10/17公演）〜9/2 23:59",
-    "date": "2026-09-02"
-   },
-   {
-    "type": "一般発売（神奈川 10/17公演）9/12 12:00発売",
-    "date": "2026-09-12",
-    "startDate": "2026-09-12"
-   },
-   {
-    "type": "一般発売（神奈川 10/15〜10/18公演）〜10/17 23:59",
-    "date": "2026-10-17"
-   }
-  ],
-  "warn": [
-   "枠が減る(4→3)＝消える枠の締切が過去だと目視で確認済み"
-  ],
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2626815",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670350"
-  ],
-  "newdate": "2026-10-18"
- },
- {
-  "id": 3501,
-  "artist": "WAHAHA本舗PRESENTS ワハハ本舗特別公演「エンド（仮）」",
-  "n_old": 6,
-  "n_new": 4,
-  "tickets": [
-   {
-    "type": "プリセール（東京 11/11〜R9年 2/7公演）〜9/3 23:59",
-    "date": "2026-09-03",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624859"
-   },
-   {
-    "type": "プリセール（愛知 R9年 2/13公演）〜9/4 23:59",
-    "date": "2026-09-04",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624380"
-   },
-   {
-    "type": "一般発売（東京 11/11〜R9年 2/7公演）9/5 10:00発売",
-    "date": "2026-09-05",
-    "startDate": "2026-09-05",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624859"
-   },
-   {
-    "type": "一般発売（愛知 R9年 2/13公演）9/5 10:00発売",
-    "date": "2026-09-05",
-    "startDate": "2026-09-05",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624380"
-   }
-  ],
-  "warn": [
-   "枠が減る(6→4)＝消える枠の締切が過去だと目視で確認済み"
-  ],
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2625803",
-   "https://t.pia.jp/pia/event/event.do?eventCd=2624859",
-   "https://t.pia.jp/pia/event/event.do?eventCd=2624380",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670289"
-  ],
-  "newdate": "2027-02-13"
- },
- {
-  "id": 3840,
-  "artist": "第74回全日本剣道選手権大会／第65回全日本女子剣道選手権大会",
+  "id": 571,
+  "artist": "竹原ピストル",
   "n_old": 3,
   "n_new": 1,
   "tickets": [
    {
-    "type": "一般発売（東京 11/3公演）9/1 10:00発売",
-    "date": "2026-09-01",
-    "startDate": "2026-09-01"
+    "type": "プレリザーブ（石川 12/3公演）〜8/31 11:00",
+    "date": "2026-08-31"
    }
   ],
   "warn": [
    "枠が減る(3→1)＝消える枠の締切が過去だと目視で確認済み"
   ],
   "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2625751",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670580"
+   "https://t.pia.jp/pia/event/event.do?eventCd=2618185",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2632752"
   ],
-  "newdate": "2026-11-03"
+  "newdate": "2026-12-05"
  },
  {
-  "id": 3956,
-  "artist": "令和8年冬巡業 大相撲長崎場所",
-  "n_old": 3,
-  "n_new": 2,
-  "tickets": [
-   {
-    "type": "プリセール（長崎 12/3公演）〜8/31 23:59",
-    "date": "2026-08-31"
-   },
-   {
-    "type": "一般発売（長崎 12/3公演）9/4 10:00発売",
-    "date": "2026-09-04",
-    "startDate": "2026-09-04"
-   }
-  ],
-  "warn": [
-   "枠が減る(3→2)＝消える枠の締切が過去だと目視で確認済み"
-  ],
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2629386",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670619"
-  ],
-  "newdate": "2026-12-03"
- },
- {
-  "id": 4189,
-  "artist": "第88回 扇辰・喬太郎の会",
-  "n_old": 2,
-  "n_new": 1,
-  "tickets": [
-   {
-    "type": "一般発売（東京 10/16公演）9/11 10:00発売",
-    "date": "2026-09-11",
-    "startDate": "2026-09-11"
-   }
-  ],
-  "warn": [
-   "枠が減る(2→1)＝消える枠の締切が過去だと目視で確認済み"
-  ],
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2631541",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670513"
-  ],
-  "newdate": "2026-10-16"
- },
- {
-  "id": 4249,
-  "artist": "ミュージカル『メイビー、ハッピーエンディング』",
+  "id": 761,
+  "artist": "半崎美子",
   "n_old": 5,
   "n_new": 3,
   "tickets": [
    {
-    "type": "プレリザーブ（東京 11/20〜12/13公演）〜8/27 23:59",
-    "date": "2026-08-27",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632123"
+    "type": "プリセール（福井 11/1公演）〜8/28 23:59",
+    "date": "2026-08-28"
    },
    {
-    "type": "2次プリセール（東京 11/25〜12/10公演）〜8/28 23:59",
-    "date": "2026-08-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628886"
+    "type": "一般発売（福井 11/1公演）8/29 10:00発売",
+    "date": "2026-08-29",
+    "startDate": "2026-08-29"
    },
    {
-    "type": "一般発売（東京 11/20〜12/13公演）9/5 11:00発売",
-    "date": "2026-09-05",
-    "startDate": "2026-09-05",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632123"
+    "type": "一般発売（滋賀・奈良・和歌山 10/31〜11/4公演）〜10/27 23:59",
+    "date": "2026-10-27"
    }
   ],
   "warn": [
    "枠が減る(5→3)＝消える枠の締切が過去だと目視で確認済み"
   ],
   "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2632123",
-   "https://t.pia.jp/pia/event/event.do?eventCd=2628886",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669970"
+   "https://t.pia.jp/pia/event/event.do?eventCd=2617573",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2615378",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2613074"
   ],
-  "newdate": "2026-12-13"
+  "newdate": "2026-11-08"
  },
  {
-  "id": 4870,
-  "artist": "ピアニスト務川慧悟によるSolistiadeマスタークラス第1回",
-  "n_old": 3,
+  "id": 1098,
+  "artist": "中田カウス 漫才のDENDO 全国ツアー 2026",
+  "n_old": 5,
   "n_new": 2,
   "tickets": [
    {
-    "type": "先行（東京 10/12公演）8/27 12:00発売",
-    "date": "2026-08-30",
-    "startDate": "2026-08-27"
+    "type": "一般発売（三重 10/3公演）〜9/27 23:59",
+    "date": "2026-09-27"
    },
    {
-    "type": "プレリザーブ（東京 10/12公演）9/3 12:00発売",
-    "date": "2026-09-06",
-    "startDate": "2026-09-03"
+    "type": "一般発売（富山 10/4公演）〜10/3 18:00",
+    "date": "2026-10-03",
+    "url": "https://eplus.jp/sf/detail/0981850002-P0030038P021001",
+    "soldout": true,
+    "soldoutSince": "2026-08-15"
    }
   ],
   "warn": [
-   "枠が減る(3→2)＝消える枠の締切が過去だと目視で確認済み"
+   "非ぴあ枠1を据え置き",
+   "枠が減る(5→2)＝消える枠の締切が過去だと目視で確認済み"
   ],
   "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2629747",
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670633"
+   "https://t.pia.jp/pia/event/event.do?eventCd=2620946",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2621795",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2613761",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2614357"
   ],
-  "newdate": "2026-10-12"
+  "newdate": "2026-10-04"
+ },
+ {
+  "id": 3118,
+  "artist": "沢田研二",
+  "n_old": 8,
+  "n_new": 2,
+  "tickets": [
+   {
+    "type": "一般発売（埼玉 9/24公演）9/10 10:00発売",
+    "date": "2026-09-10",
+    "startDate": "2026-09-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633093"
+   },
+   {
+    "type": "一般発売（広島 10/9公演）〜9/23 23:59",
+    "date": "2026-09-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627003"
+   }
+  ],
+  "warn": [
+   "枠が減る(8→2)＝消える枠の締切が過去だと目視で確認済み"
+  ],
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2626852",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2628711",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2633093",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2627003",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2625711"
+  ],
+  "newdate": "2026-11-17"
+ },
+ {
+  "id": 3926,
+  "artist": "ジャパン・ビアフェスティバル横浜2026",
+  "n_old": 6,
+  "n_new": 5,
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 9/12〜9/13公演）〜9/12 23:59",
+    "date": "2026-09-12"
+   },
+   {
+    "type": "一般発売＜お昼の回＞（神奈川 9/12 11:30公演）〜9/11 23:59",
+    "date": "2026-09-11",
+    "url": "https://eplus.jp/sf/detail/4576960001-P0030001P021001"
+   },
+   {
+    "type": "一般発売＜午後の回＞（神奈川 9/12 15:30公演）〜9/11 23:59",
+    "date": "2026-09-11",
+    "url": "https://eplus.jp/sf/detail/4576960001-P0030001P021002"
+   },
+   {
+    "type": "一般発売＜お昼の回＞（神奈川 9/13 10:30公演）〜9/12 23:59",
+    "date": "2026-09-12",
+    "url": "https://eplus.jp/sf/detail/4576960001-P0030001P021003"
+   },
+   {
+    "type": "一般発売＜午後の回＞（神奈川 9/13 14:30公演）〜9/12 23:59",
+    "date": "2026-09-12",
+    "url": "https://eplus.jp/sf/detail/4576960001-P0030001P021004"
+   }
+  ],
+  "warn": [
+   "非ぴあ枠4を据え置き",
+   "枠が減る(6→5)＝消える枠の締切が過去だと目視で確認済み"
+  ],
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2631688"
+  ],
+  "newdate": "2026-09-13"
  }
 ]
