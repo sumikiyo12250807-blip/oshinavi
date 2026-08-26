@@ -28,7 +28,10 @@ import urllib.request
 
 UA = {'User-Agent': 'Mozilla/5.0'}
 # 無フィルタ＝全状態。加えて各フィルタでも引いて union する（ぴあは既定で一部しか返さないことがある）。
-FILTERS = ['', 'rlsIn=03', 'rlsIn=04', 'rlsStatus=0101', 'rlsStatus=0201']
+# 🚨2026-08-27 修正＝rlsIn は「発売までの日数の窓」で最大30日しか無く、
+#   31日より先に発売される枠を1つも返さない（[[reference_pia_rlsin_measured]]）。
+#   発売前は rlsStatus=0102(先着)／0202(抽選) が正しい（[[reference_pia_presale_full_filter]]）。
+FILTERS = ['', 'rlsStatus=0101', 'rlsStatus=0102', 'rlsStatus=0201', 'rlsStatus=0202']
 
 
 def strip(s):
