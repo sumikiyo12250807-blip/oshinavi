@@ -85,6 +85,13 @@ for eid in sorted(plan):
         warn.append("千秋楽が伸びる(%s→%s)" % (ev.get("date"), newest))
     if keep:
         warn.append("非ぴあ枠%dを据え置き" % len(keep))
+    # 🚨枠が減る＝受付終了が落ちただけのこともあるが、生きた枠が消える事故と見分けがつかない。
+    # 混雑ページを掴んでいると静かに減る（feedback_wpia_direct_sale_trap / 2026-08-06の実害）。
+    # 自動では適用せず、1件ずつ実ページを見て決める。
+    if len(merged) < len(old) and "--allow-shrink" not in sys.argv:
+        warn.append("🚨枠が減る(%d→%d)＝適用しない・要目視" % (len(old), len(merged)))
+    elif len(merged) < len(old):
+        warn.append("枠が減る(%d→%d)＝消える枠の締切が過去だと目視で確認済み" % (len(old), len(merged)))
     results.append({"id": eid, "artist": ev.get("artist"), "n_old": len(old), "n_new": len(merged),
                     "tickets": merged, "warn": warn, "urls": urls,
                     "newdate": newest if newest > (ev.get("date") or "") else ev.get("date")})
