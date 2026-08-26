@@ -1,18 +1,18 @@
 {
  "lg": "07",
- "total": 271,
- "pages": 28,
- "fetched_pages": 29,
- "parsed": 227,
- "new_name_in_db": 17,
+ "total": 270,
+ "pages": 27,
+ "fetched_pages": 28,
+ "parsed": 219,
+ "new_name_in_db": 18,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632608",
-   "artist": "石井久美子ピアノリサイタル",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/14(土)",
-   "venue": "ＬＯＶＥＲＳＩＯＮ(東京都)",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632796",
+   "artist": "葵トリオ",
+   "saletype": "先行先着",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/12/7(月)",
+   "venue": "浜離宮朝日ホール(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -29,17 +29,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633418",
-   "artist": "ＮＤＲエルプフィルハーモニー管弦楽団／アラン・ギルバート（指揮）／角野隼斗（ｐ）",
-   "saletype": "先行先着",
-   "rlsdate": "2026/9/18",
-   "perfdate": "2027/2/21(日)",
-   "venue": "東京芸術劇場 コンサートホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632406",
    "artist": "絵本ｄｅクラシック 「オズの魔法使い」 ｉｎ 瀬戸",
    "saletype": "一般発売",
@@ -47,6 +36,28 @@
    "perfdate": "2026/10/4(日)",
    "venue": "瀬戸公民館 ２階大研修室（大ホール）(岡山県)",
    "pref": "岡山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632366",
+   "artist": "絵本ｄｅクラシック 「ブレーメンの音楽隊」 ｉｎ 建部",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/28",
+   "perfdate": "2026/10/3(土)",
+   "venue": "建部町文化センター(岡山県)",
+   "pref": "岡山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600395",
+   "artist": "大阪桐蔭高等学校吹奏楽部 サンタコンサートｉｎ福山",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/29",
+   "perfdate": "2026/12/6(日)",
+   "venue": "ふくやま芸術文化ホール リーデンローズ 大ホール(広島県)",
+   "pref": "広島県",
    "in_db": false,
    "name_in_db": false
   },
@@ -62,13 +73,24 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627926",
-   "artist": "神奈川フィルハーモニー管弦楽団 音楽堂シリーズ第３８回＜Ｃｌａｓｓｉｃ Ｍｏｄｅｒｎ＞",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629361",
+   "artist": "オーケストラ・アンサンブル金沢 第２０回記念能美市ファミリーコンサート",
    "saletype": "一般発売",
-   "rlsdate": "2026/9/1",
-   "perfdate": "2027/1/30(土)",
-   "venue": "神奈川県立音楽堂（木のホール）(神奈川県)",
-   "pref": "神奈川県",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/12/6(日)",
+   "venue": "能美市根上総合文化会館 音楽ホール「タント」(石川県)",
+   "pref": "石川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633052",
+   "artist": "加藤昌則の『うた』の世界",
+   "saletype": "先行先着",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2027/1/24(日)",
+   "venue": "浜離宮朝日ホール(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -128,46 +150,13 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627666",
-   "artist": "～芸劇ブランチコンサート～ 名曲リサイタル・サロン 第４２回「葵トリオ」",
-   "saletype": "先行先着",
-   "rlsdate": "TODAY",
-   "perfdate": "2027/3/3(水)",
-   "venue": "東京芸術劇場 コンサートホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627665",
-   "artist": "～芸劇ブランチコンサート～ 名曲リサイタル・サロン 第４１回「佐川和冴」",
-   "saletype": "先行先着",
-   "rlsdate": "TODAY",
-   "perfdate": "2027/1/13(水)",
-   "venue": "東京芸術劇場 コンサートホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627664",
-   "artist": "～芸劇ブランチコンサート～ 名曲リサイタル・サロン 第４０回「沼沢淑音」",
-   "saletype": "先行先着",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/4(水)",
-   "venue": "東京芸術劇場 コンサートホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633723",
-   "artist": "越の国室内合唱団 ＶＯＸ ＯＲＡＴＴＡ １５周年記念コンサート",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631145",
+   "artist": "グロリア・カンパネル",
    "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/22(日)",
-   "venue": "長岡リリックホール コンサートホール(新潟県)",
-   "pref": "新潟県",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/12/12(土)",
+   "venue": "国分寺市立いずみホール Ａホール(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -183,15 +172,15 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633423",
-   "artist": "三瀬由起子 湯谷玲子 ＤＵＯ ＣＯＮＣＥＲＴ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626499",
+   "artist": "ＫＯＢＵＤＯ－古武道－",
    "saletype": "一般発売",
-   "rlsdate": "2026/9/1",
-   "perfdate": "2027/3/7(日)",
-   "venue": "アメリカヤ楽器店(京都府)",
-   "pref": "京都府",
+   "rlsdate": "2026/8/28",
+   "perfdate": "2026/12/19(土)",
+   "venue": "あいおいニッセイ同和損保 ザ・フェニックスホール(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670675",
@@ -227,21 +216,10 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632995",
-   "artist": "Ｓｈｉｏｎ×１７ＬＩＶＥ Ｏｓａｋａ Ｓｈｉｏｎ Ｗｉｎｄ Ｏｒｃｈｅｓｔｒａクリスマスコンサート",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/12/23(水)",
-   "venue": "ザ・シンフォニーホール(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632834",
    "artist": "清水陽介 チェロ・リサイタル",
    "saletype": "先行先着",
-   "rlsdate": "2026/8/26",
+   "rlsdate": "TODAY",
    "perfdate": "2027/1/28(木)",
    "venue": "浜離宮朝日ホール(東京都)",
    "pref": "東京都",
@@ -249,78 +227,23 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632252",
-   "artist": "すぎやまこういち 交響組曲「ドラゴンクエストVIII」 空と海と大地と呪われし姫君 ～藝大生有志による特別演奏会～",
-   "saletype": "先行先着",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/12/9(水)",
-   "venue": "杉並公会堂 大ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629741",
-   "artist": "創立１００年記念 Ｎ響ニューイヤーコンサート",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/6",
-   "perfdate": "2027/1/10(日) ・ 2027/1/11(月・祝)",
-   "venue": "ＮＨＫホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670665",
-   "artist": "竹澤恭子 ヴァイオリン・リサイタル",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/11",
-   "perfdate": "2026/12/9(水)",
-   "venue": "浜離宮朝日ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633457",
-   "artist": "田野倉雅秋５０ｔｈＢｉｒｔｈｄａｙＶＩＯＬＩＮＣＯＮＣＥＲＴ",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/9/11(金)",
-   "venue": "ドルチェ・アートホール Ｏｓａｋａ(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627639",
-   "artist": "楽しき「音」まつり～ジャンルを飛び越えたプロ合唱の魅力！",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/15",
-   "perfdate": "2026/11/21(土)",
-   "venue": "プリニーの文化ホール(岐阜県)",
-   "pref": "岐阜県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630342",
-   "artist": "辻裕久テノールリサイタル ～なかにしあかねを歌う２～",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/1",
-   "perfdate": "2026/12/26(土)",
-   "venue": "東京オペラシティ リサイタルホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670687",
-   "artist": "辻本玲チェロ・リサイタル",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631821",
+   "artist": "第４０回記念 ＫＥＩＢＵＮ第九２０２６演奏会",
    "saletype": "一般発売",
    "rlsdate": "2026/9/13",
-   "perfdate": "2027/1/24(日)",
-   "venue": "ＴＯＰＰＡＮホール(東京都)",
+   "perfdate": "2026/12/26(土)",
+   "venue": "守山市民ホール 大ホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632799",
+   "artist": "デジュー・ラーンキ（ｐ）",
+   "saletype": "先行先着",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2027/2/10(水)",
+   "venue": "浜離宮朝日ホール(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -335,17 +258,6 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632662",
-   "artist": "東京都交響楽団 第１０６２回定期演奏会Ｃシリーズ",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/16",
-   "perfdate": "2027/2/18(木)",
-   "venue": "東京芸術劇場 コンサートホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670602",
@@ -381,13 +293,24 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608725",
-   "artist": "びわ湖ホール声楽アンサンブル",
-   "saletype": "一般発売",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632800",
+   "artist": "中村恵理（Ｓ）",
+   "saletype": "先行先着",
    "rlsdate": "2026/9/5",
-   "perfdate": "2026/12/19(土)",
-   "venue": "京都府立府民ホール（アルティ）(京都府)",
-   "pref": "京都府",
+   "perfdate": "2027/2/17(水)",
+   "venue": "浜離宮朝日ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632409",
+   "artist": "初めまして。弦楽四重奏です。",
+   "saletype": "先行先着",
+   "rlsdate": "2026/8/27",
+   "perfdate": "2026/10/18(日)",
+   "venue": "岡山市ウェルポートなださき かしの木ホール(岡山県)",
+   "pref": "岡山県",
    "in_db": false,
    "name_in_db": false
   },
@@ -414,24 +337,13 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633850",
-   "artist": "マリア・エステル・グスマンを迎えて スペシャルコンサート",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633924",
+   "artist": "松本紘佳 パガニーニ ２４のカプリス全曲演奏会",
    "saletype": "一般発売",
    "rlsdate": "TODAY",
-   "perfdate": "2026/10/16(金)",
-   "venue": "大田区民プラザ 小ホール(東京都)",
+   "perfdate": "2027/10/23(土)",
+   "venue": "銀座 王子ホール(東京都)",
    "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632937",
-   "artist": "みきあんどりさ クリスマスオペラコンサート",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/12",
-   "perfdate": "2026/12/13(日)",
-   "venue": "横浜市旭区民文化センター（サンハート） ホール(神奈川県)",
-   "pref": "神奈川県",
    "in_db": false,
    "name_in_db": false
   },
@@ -447,28 +359,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631551",
-   "artist": "ＭＵＺＡジルベスターコンサート２０２６",
-   "saletype": "先行先着",
-   "rlsdate": "2026/9/18",
-   "perfdate": "2026/12/31(木)",
-   "venue": "ミューザ川崎シンフォニーホール(神奈川県)",
-   "pref": "神奈川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618298",
-   "artist": "未来につなぐコンサート",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/12",
-   "perfdate": "2026/12/26(土)",
-   "venue": "アクロス福岡 福岡シンフォニーホール(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632110",
    "artist": "務川慧悟（ｐ）",
    "saletype": "一般発売",
@@ -478,6 +368,17 @@
    "pref": "静岡県",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608710",
+   "artist": "守山市民ホール開館４０周年記念公演 びわ湖ホールプロデュースオペラ モーツァルト作曲『ドン・ジョヴァンニ』",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2027/1/23(土) ・ 2027/1/24(日)",
+   "venue": "守山市民ホール 大ホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633471",

@@ -1,18 +1,18 @@
 [
  {
-  "id": 1601,
-  "status": "delete",
-  "artist": "藍井エイル",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2625347"
-  ]
- },
- {
-  "id": 4044,
-  "status": "delete",
-  "artist": "堂島孝平",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2629699"
+  "id": 5225,
+  "status": "convert",
+  "artist": "第七回 松喬三昧",
+  "tickets": [
+   {
+    "type": "先行（大阪 11/21公演）〜8/30 23:59",
+    "date": "2026-08-30"
+   },
+   {
+    "type": "一般発売（大阪 11/21公演）9/1 10:00発売",
+    "date": "2026-09-01",
+    "startDate": "2026-09-01"
+   }
   ]
  }
 ]
