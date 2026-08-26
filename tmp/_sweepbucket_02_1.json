@@ -1,29 +1,40 @@
 {
  "lg": "02",
- "total": 254,
- "pages": 26,
- "fetched_pages": 27,
- "parsed": 200,
- "new_name_in_db": 9,
+ "total": 275,
+ "pages": 28,
+ "fetched_pages": 29,
+ "parsed": 209,
+ "new_name_in_db": 12,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633851",
-   "artist": "桂文我上方落語珍品集",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633040",
+   "artist": "第６５回あきつ落語会 春風亭一朝独演会 その六",
+   "saletype": "先行抽選",
+   "rlsdate": "",
+   "perfdate": "2027/1/16(土)",
+   "venue": "大須演芸場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634132",
+   "artist": "一龍斎貞心・なかの亭 一人で赤穂義士伝を読む！カルチャー講談付き",
    "saletype": "一般発売",
-   "rlsdate": "2026/8/29",
-   "perfdate": "2026/10/18(日)",
-   "venue": "お江戸両国亭(東京都)",
+   "rlsdate": "2026/8/28",
+   "perfdate": "2026/12/20(日)",
+   "venue": "なかの芸能小劇場(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633863",
-   "artist": "桂文我 露の眞 三遊亭遊かりの会",
-   "saletype": "一般発売",
-   "rlsdate": "2026/8/29",
-   "perfdate": "2026/10/19(月)",
-   "venue": "お江戸両国亭(東京都)",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670033",
+   "artist": "『移民』",
+   "saletype": "最速抽選",
+   "rlsdate": "",
+   "perfdate": "2027/1/15(金)",
+   "venue": "東京芸術劇場 シアターイースト(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -51,11 +62,33 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631458",
+   "artist": "熊本漫才選集",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/29",
+   "perfdate": "2026/10/25(日)",
+   "venue": "熊本城ホール メインホール(熊本県)",
+   "pref": "熊本県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632950",
    "artist": "雲助・一朝 年忘れ二人会 雲助『夜鷹そば屋』他",
    "saletype": "一般発売",
    "rlsdate": "2026/8/28",
    "perfdate": "2026/12/12(土)",
+   "venue": "文京シビックホール 小ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631475",
+   "artist": "けんこう一番！ 第３９回三遊亭兼好独演会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/18",
+   "perfdate": "2027/1/25(月)",
    "venue": "文京シビックホール 小ホール(東京都)",
    "pref": "東京都",
    "in_db": false,
@@ -84,37 +117,59 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623037",
-   "artist": "座長・酒井藍ｉｎ御園座 吉本新喜劇＆バラエティーショー",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633870",
+   "artist": "志の春落語劇場ｉｎ赤坂１１月",
    "saletype": "一般発売",
-   "rlsdate": "2026/9/15",
-   "perfdate": "2026/11/22(日) ・ 2026/11/23(月・祝)",
-   "venue": "御園座(愛知県)",
-   "pref": "愛知県",
+   "rlsdate": "2026/8/27",
+   "perfdate": "2026/11/24(火)",
+   "venue": "赤坂ＣＨＡＮＣＥシアター(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670681",
-   "artist": "第七回 松喬三昧",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633869",
+   "artist": "志の春落語劇場ｉｎ赤坂１０月",
    "saletype": "一般発売",
-   "rlsdate": "2026/9/1",
-   "perfdate": "2026/11/21(土)",
-   "venue": "朝日生命ホール(大阪府)",
+   "rlsdate": "2026/8/27",
+   "perfdate": "2026/10/7(水)",
+   "venue": "赤坂ＣＨＡＮＣＥシアター(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630557",
+   "artist": "第４回渋谷ひとり朗読 井桁弘恵×芥川龍之介「秋」",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/17(土)",
+   "venue": "渋谷区文化総合センター大和田 伝承ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629217",
+   "artist": "第５回渋谷ひとり朗読～松田るか×百田尚樹「魔法の万年筆」～",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/11/2(月)",
+   "venue": "渋谷区文化総合センター大和田 伝承ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622417",
+   "artist": "春風亭一之輔独演会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "コスモスシアター（貝塚市民文化会館） 中ホール(大阪府)",
    "pref": "大阪府",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633451",
-   "artist": "声優朗読劇フォアレーゼン ～太陽が、痛いほどいっぱい～",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/6",
-   "perfdate": "2026/11/28(土)",
-   "venue": "海老名市文化会館 大ホール(神奈川県)",
-   "pref": "神奈川県",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670513",
@@ -128,12 +183,34 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633797",
-   "artist": "立川志の大の大一番！２０２６",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633876",
+   "artist": "立川志の春独演会ｉｎ柏 其の百四十三",
    "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/4(水)",
-   "venue": "シアター７１１(東京都)",
+   "rlsdate": "2026/8/27",
+   "perfdate": "2026/11/20(金)",
+   "venue": "アミュゼ柏 プラザ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633872",
+   "artist": "立川志の春独演会ｉｎ柏 其の百四十二",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/27",
+   "perfdate": "2026/10/4(日)",
+   "venue": "アミュゼ柏 プラザ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632408",
+   "artist": "第５９回豪華浪曲大会 浪曲博物館",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/10",
+   "perfdate": "2026/11/28(土)",
+   "venue": "江戸東京博物館 大ホール(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -142,7 +219,7 @@
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670676",
    "artist": "大名古屋らくご祭2026",
    "saletype": "先行抽選",
-   "rlsdate": "2026/9/4",
+   "rlsdate": "",
    "perfdate": "2026/12/17(木) ～ 2026/12/20(日)",
    "venue": "岡谷鋼機名古屋公会堂 大ホール(愛知県)／岡谷鋼機名古屋公会堂 ４Ｆホール(愛知県)",
    "pref": "愛知県",
@@ -150,26 +227,37 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632944",
-   "artist": "第２回月亭方正落語会",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633512",
+   "artist": "第２２回きたぎん落語名人会",
    "saletype": "一般発売",
-   "rlsdate": "2026/8/31",
-   "perfdate": "2026/10/22(木)",
-   "venue": "中目黒ＧＴプラザホール(東京都)",
+   "rlsdate": "2026/8/29",
+   "perfdate": "2026/10/17(土)",
+   "venue": "トーサイクラシックホール岩手 大ホール(岩手県)",
+   "pref": "岩手県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629190",
+   "artist": "つかこうへい革命ミュージカル ダブルス 「飛龍伝」「幕末純情伝」",
+   "saletype": "先行抽選",
+   "rlsdate": "",
+   "perfdate": "2026/11/5(木) ～ 2026/11/22(日)",
+   "venue": "紀伊國屋サザンシアター ＴＡＫＡＳＨＩＭＡＹＡ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626653",
-   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ ｉｎ Ｓａｉｔａｍａ",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/10/25(日)",
-   "venue": "蕨市民会館コンクレレホール(埼玉県)",
-   "pref": "埼玉県",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670708",
+   "artist": "東京バレエ団 ベジャールの「くるみ割り人形」 全2幕",
+   "saletype": "先行先着",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2027/1/10(日) ・ 2027/1/11(月・祝)",
+   "venue": "新国立劇場 オペラパレス(東京都)",
+   "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670685",
@@ -183,6 +271,39 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634103",
+   "artist": "とくい能「紅葉狩」",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/10(土)",
+   "venue": "山本能楽堂(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629483",
+   "artist": "ハナコ第１０回単独公演２０２６『これ』",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/10/1(木) ～ 2026/10/4(日)",
+   "venue": "草月ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633443",
+   "artist": "【花座特別公演】花さぽ寄席２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/16(金)",
+   "venue": "仙台市シルバーセンター 交流ホール(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633865",
    "artist": "林家正雀 桂文我 東西落語会",
    "saletype": "一般発売",
@@ -192,6 +313,17 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634040",
+   "artist": "林家つる子・入船亭扇白・金原亭馬好三人会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/28",
+   "perfdate": "2027/1/13(水)",
+   "venue": "江戸東京博物館 小ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670622",
@@ -205,28 +337,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633790",
-   "artist": "魔訶不思議夜話 第五夜",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/10/24(土)",
-   "venue": "あべのハルカス近鉄本店 ＳＰＡＣＥ９(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623386",
-   "artist": "御園座錦秋歌舞伎",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/8",
-   "perfdate": "2026/10/3(土) ～ 2026/10/20(火)",
-   "venue": "御園座(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628899",
    "artist": "ミュージカル 「ＡＬＩＣＥ ～不思議の国のアリスより～」",
    "saletype": "一般発売",
@@ -238,6 +348,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670327",
+   "artist": "ミュージカル『FOUR MINUTES－4分間のピアニスト－』",
+   "saletype": "最速抽選",
+   "rlsdate": "",
+   "perfdate": "2026/12/15(火) ・ 2026/12/24(木)",
+   "venue": "東京芸術劇場 シアターウエスト(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669970",
    "artist": "ミュージカル『メイビー、ハッピーエンディング』",
    "saletype": "一般発売",
@@ -247,6 +368,28 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670078",
+   "artist": "ミュージカル『ラ・カージュ・オ・フォール』",
+   "saletype": "先行先着",
+   "rlsdate": "2026/8/27",
+   "perfdate": "2026/12/12(土) ・ 2026/12/21(月)",
+   "venue": "日生劇場(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632943",
+   "artist": "ミュージカル「アリス」",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/7(土)",
+   "venue": "秋田エプソンゆざわホール 大ホール(秋田県)",
+   "pref": "秋田県",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633903",
@@ -272,14 +415,14 @@
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634118",
-   "artist": "ＷＡＨＡＨＡ本舗特別公演「エンド（仮）」",
+   "artist": "ＷＡＨＡＨＡ本舗ＰＲＥＳＥＮＴＳ ワハハ本舗特別公演「エンド（仮）」",
    "saletype": "先行先着",
-   "rlsdate": "2026/8/26",
+   "rlsdate": "TODAY",
    "perfdate": "2026/11/27(金) ・ 2026/11/28(土) ・ 2026/11/29(日)",
    "venue": "森ノ宮ピロティホール(大阪府)",
    "pref": "大阪府",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670289",

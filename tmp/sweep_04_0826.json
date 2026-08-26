@@ -1,0 +1,40 @@
+{
+ "lg": "04",
+ "base_filter": "rlsIn=03",
+ "base_total": 33,
+ "buckets": [
+  {
+   "filter": "rlsIn=03",
+   "label": "ALL",
+   "total": 33,
+   "parsed": 29,
+   "pages": 4,
+   "fetched_pages": 5,
+   "new": 2
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670671",
+   "artist": "映画『白鳥とコウモリ』舞台挨拶",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/29",
+   "perfdate": "2026/9/3(木)",
+   "venue": "丸の内ピカデリー(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633715",
+   "artist": "千歳市空港開港１００年記念『天空の城ラピュタ』特別上映会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/8/29",
+   "perfdate": "2026/9/12(土)",
+   "venue": "新千歳空港シアター シアター１(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
