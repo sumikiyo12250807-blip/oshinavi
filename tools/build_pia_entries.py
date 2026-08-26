@@ -724,7 +724,14 @@ def build(cand):
     # を付ける(=下のベンダーボタンを自動非表示にして1会場誤誘導を防ぐ)。単一ページ由来なら
     # links.pia=その1ページが全券種を載せるのでボタンはそのまま正しく機能する。
     srcs = set(r.get('_src') for r in rows if r.get('_src'))
-    multi = len(srcs) > 1
+    # 🚨2026-08-27＝旧実装は multi = len(srcs) > 1（買える枠が複数ページに散っている時だけ
+    #   各ticketにurlを付ける）だった。ところが**統合で古いURLと新しいURLを両方渡した時、
+    #   古い側の枠が全部終わっていると srcs は新しいURL1本だけになり multi=False**＝
+    #   ticket.url が1つも付かない。links.pia は候補URLの1本目（＝古い死にかけのページ）なので、
+    #   **買うボタンも reconcile も、枠が1つも無いページを見る**ことになる。
+    #   実害＝2026-08-27 の統合で 565 the shes gone/メレンゲ が登録10枠/ぴあ0枠（全部STALE）。
+    #   → **URLを2本以上渡された時は常に各ticketにurlを付ける**（[[feedback_build_pia_multiurl_loses_ticket_url]]）。
+    multi = len(srcs) > 1 or len(cand.get('urls') or []) > 1
     tickets = []
     for r in rows:
         suf, iso, sd = parse_when(r['state'], r['when'])
@@ -773,8 +780,22 @@ def build(cand):
     else:
         tail = '全国ツアー' if pref == '全国' else (pref + ' ' + (venues[0] if len(venues) == 1 else '')).strip()
         dl = f"{jp(starts[0])}〜{jp(ends[-1])} {tail}".strip()
+    # 🚨2026-08-27＝links.pia は「候補URLの1本目」固定だった。統合で古いURLを先に渡すと、
+    #   買える枠が1つも無いページが購入ボタンの飛び先になる（上の multi と同じ事故の片割れ）。
+    #   → **実際に買える枠が取れたページ(_src)を優先**する。1本目がその中にあればそのまま使う。
     u0 = cand['urls'][0]
-    pia = ('https://t.pia.jp/pia/event/event.do?eventBundleCd=' + re.search(r'eventBundleCd=(\w+)', u0).group(1)) if 'eventBundleCd' in u0 else ecd_url(u0)
+    def _norm_event_url(u):
+        mb = re.search(r'eventBundleCd=(\w+)', u or '')
+        if mb:
+            return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
+        return ecd_url(u)
+    pia = _norm_event_url(u0)
+    if srcs and pia not in srcs:
+        # 1本目からは買える枠が取れていない＝そのページに飛ばしても買えない。
+        # 実際に枠が取れたページのうち、いちばん早い枠のものを選ぶ。
+        first_src = next((r.get('_src') for r in rows if r.get('_src')), None)
+        if first_src:
+            pia = first_src
     # ジャンル下ごしらえ: ぴあカテゴリ優先 → 取れなければ個別ページを1つ引く → それでも無ければ名前ベース
     #
     # 🚨 _piaSub は「PIA_GENRE_MAP に載っているカテゴリ」だけでなく、**ぴあが返したカテゴリは
