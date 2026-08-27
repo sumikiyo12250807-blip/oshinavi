@@ -1,0 +1,236 @@
+# 2026-08-28 ツアー分裂の統合（追加のみ・置換なし）
+
+## id=646 岸谷香 枠 9→11
+  + 一般発売（奈良 10/11公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2626963
+  + 先行（岐阜・愛知 11/1〜11/3公演）〜8/31 23:59 | 締切/発売 2026-08-31 | https://t.pia.jp/pia/event/event.do?eventCd=2632901
+
+## id=1601 藍井エイル 枠 4→5
+  + 一般発売（北海道 11/28公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2625593
+
+## id=1619 826aska 枠 7→10
+  + 先行（東京・神奈川 10/31〜11/28公演）8/29 11:00発売 | 締切/発売 2026-09-03 | https://t.pia.jp/pia/event/event.do?eventCd=2634171
+  + 一般発売（神奈川 10/31公演）9/5 10:00発売 | 締切/発売 2026-09-05 | https://t.pia.jp/pia/event/event.do?eventCd=2634171
+  + 一般発売（東京 11/28公演）9/5 10:00発売 | 締切/発売 2026-09-05 | https://t.pia.jp/pia/event/event.do?eventCd=2634171
+
+## id=1625 山中さわお&ELPIS 枠 7→9
+  + 一般発売（広島 11/21公演）9/20 10:00発売 | 締切/発売 2026-09-20 | https://t.pia.jp/pia/event/event.do?eventCd=2634648
+  + 一般発売（宮城 12/5公演）10/11 10:00発売 | 締切/発売 2026-10-11 | https://t.pia.jp/pia/event/event.do?eventCd=2634538
+  公演日 2026-11-27 → 2026-12-05（千秋楽が後ろに伸びた）
+
+## id=2047 スターダスト☆レビュー 枠 3→5
+  + 一般発売（福島 11/28〜11/29公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2626018
+  + 一般発売（宮崎 11/1公演）8/30 10:00発売 | 締切/発売 2026-08-30 | https://t.pia.jp/pia/event/event.do?eventCd=2627694
+  公演日 2026-10-03 → 2026-11-29（千秋楽が後ろに伸びた）
+
+## id=2080 読響名曲シリーズ 枠 4→8
+  + 一般発売 9月公演（東京 9/15公演）〜9/15 18:00 | 締切/発売 2026-09-15 | https://t.pia.jp/pia/event/event.do?eventCd=2543735
+  + 一般発売 1月公演（東京 R9年 1/28公演）10/11 10:00発売 | 締切/発売 2026-10-11 | https://t.pia.jp/pia/event/event.do?eventCd=2543735
+  + 一般発売 10～11月公演（東京 10/23〜11/24公演）〜11/24 18:00 | 締切/発売 2026-11-24 | https://t.pia.jp/pia/event/event.do?eventCd=2543735
+  + 一般発売 12月公演（東京 12/22公演）〜12/22 18:00 | 締切/発売 2026-12-22 | https://t.pia.jp/pia/event/event.do?eventCd=2543735
+
+## id=2081 読響横浜マチネーシリーズ 枠 4→8
+  + 一般発売 9月公演（神奈川 9/13公演）〜9/13 13:00 | 締切/発売 2026-09-13 | https://t.pia.jp/pia/event/event.do?eventCd=2543739
+  + 一般発売 1月公演（神奈川 R9年 1/30公演）10/11 10:00発売 | 締切/発売 2026-10-11 | https://t.pia.jp/pia/event/event.do?eventCd=2543739
+  + 一般発売 10～11月公演（神奈川 10/25〜11/29公演）〜11/29 13:00 | 締切/発売 2026-11-29 | https://t.pia.jp/pia/event/event.do?eventCd=2543739
+  + 一般発売 12月公演（神奈川 12/27公演）〜12/27 13:00 | 締切/発売 2026-12-27 | https://t.pia.jp/pia/event/event.do?eventCd=2543739
+
+## id=2117 moon drop 枠 4→5
+  + 一般発売（北海道 9/4公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2624479
+
+## id=2402 野口五郎 枠 6→7
+  + 一般発売（長崎 11/1公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2634461
+
+## id=2638 桂米團治独演会 枠 2→3
+  + 一般発売（東京 R9年 1/9公演）9/30 10:00発売 | 締切/発売 2026-09-30 | https://t.pia.jp/pia/event/event.do?eventCd=2634194
+  公演日 2026-11-25 → 2027-01-09（千秋楽が後ろに伸びた）
+
+## id=2876 LEGO BIG MORL 枠 1→3
+  + 一般発売（東京 8/29公演）〜8/28 23:59 | 締切/発売 2026-08-28 | https://t.pia.jp/pia/event/event.do?eventCd=2628305
+  + 一般発売（東京 9/19公演）9/5 10:00発売 | 締切/発売 2026-09-05 | https://t.pia.jp/pia/event/event.do?eventCd=2634039
+  公演日 2026-08-29 → 2026-09-19（千秋楽が後ろに伸びた）
+
+## id=2949 『禅とジブリ』京都展 枠 3→6
+  + 一般発売（先行ペアチケット）（京都 10/3〜12/6公演）〜10/2 23:59 | 締切/発売 2026-10-02 | https://t.pia.jp/pia/event/event.do?eventCd=2626971
+  + 一般発売（前売券）（京都 10/3〜12/6公演）〜10/2 23:59 | 締切/発売 2026-10-02 | https://t.pia.jp/pia/event/event.do?eventCd=2626971
+  + 一般発売（当日券）（京都 10/3〜12/6公演）10/3 0:00発売 | 締切/発売 2026-10-03 | https://t.pia.jp/pia/event/event.do?eventCd=2626971
+
+## id=2990 森高千里 枠 10→15
+  + プレリザーブ4次（山梨 11/22公演）〜8/30 23:59 | 締切/発売 2026-08-30 | https://t.pia.jp/pia/event/event.do?eventCd=2617514
+  + 3次プレリザーブ（新潟 11/29公演）〜8/31 11:00 | 締切/発売 2026-08-31 | https://t.pia.jp/pia/event/event.do?eventCd=2628474
+  + 一般発売（新潟 11/29公演）9/5 10:00発売 | 締切/発売 2026-09-05 | https://t.pia.jp/pia/event/event.do?eventCd=2628474
+  + 一般発売（滋賀 10/24公演）〜10/8 23:59 | 締切/発売 2026-10-08 | https://t.pia.jp/pia/event/event.do?eventCd=2618169
+  + 一般発売（大阪 10/25公演）〜10/8 23:59 | 締切/発売 2026-10-08 | https://t.pia.jp/pia/event/event.do?eventCd=2618169
+
+## id=3051 秦基博 枠 3→5
+  + プレリザーブ（神奈川 11/8公演）〜9/6 23:59 | 締切/発売 2026-09-06 | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670351
+  + 一般発売（大阪 11/3公演）10/3 10:00発売 | 締切/発売 2026-10-03 | https://t.pia.jp/pia/event/event.do?eventCd=2625119
+
+## id=3129 Pearl Drums 80th Anniversary Fest. 枠 3→6
+  + 最速先行（神奈川 10/17公演）〜9/2 23:59 | 締切/発売 2026-09-02 | https://t.pia.jp/pia/event/event.do?eventCd=2626815
+  + 一般発売（神奈川 10/17公演）9/12 12:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2626815
+  + 一般発売（神奈川 10/15〜10/18公演）〜10/17 23:59 | 締切/発売 2026-10-17 | https://t.pia.jp/pia/event/event.do?eventCd=2626815
+
+## id=3320 Plastic Tree 枠 1→3
+  + 一般発売（宮城・東京・愛知・京都・大阪・兵庫 9/12〜10/17公演）〜10/13 23:59 | 締切/発売 2026-10-13 | https://t.pia.jp/pia/event/event.do?eventCd=2624976
+  + 一般発売（神奈川 12/27公演）11/21 12:00発売 | 締切/発売 2026-11-21 | https://t.pia.jp/pia/event/event.do?eventCd=2634573
+  公演日 2026-10-17 → 2026-12-27（千秋楽が後ろに伸びた）
+
+## id=3484 マカロニえんぴつ 枠 2→3
+  + 一般発売（北海道 10/31公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2621851
+
+## id=3501 WAHAHA本舗PRESENTS ワハハ本舗特別公演「エンド（仮）」 枠 8→10
+  + 先行（富山・長野 12/5〜12/6公演）〜9/14 11:00 | 締切/発売 2026-09-14 | https://t.pia.jp/pia/event/event.do?eventCd=2625803
+  + 3次受付（静岡 R9年 1/23公演）〜9/14 11:00 | 締切/発売 2026-09-14 | https://t.pia.jp/pia/event/event.do?eventCd=2625803
+
+## id=3518 EXILE 枠 3→4
+  + 一般発売（大阪 12/6公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2623235
+  公演日 2026-11-15 → 2026-12-06（千秋楽が後ろに伸びた）
+
+## id=3528 橋本絵莉子 枠 5→7
+  + 一般発売（徳島 9/29公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2632459
+  + 一般発売（大阪 10/16公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2632490
+
+## id=3535 真心ブラザーズ 枠 19→21
+  + 一般発売（鹿児島 R9年 1/9公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2631702
+  + 一般発売（福岡 R9年 1/10公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2631703
+
+## id=3735 パパイヤ鈴木の踊る昭和歌謡☆ディスコパラダイス! 枠 2→4
+  + プリセール（東京 11/4公演）〜9/1 23:59 | 締切/発売 2026-09-01 | https://t.pia.jp/pia/event/event.do?eventCd=2625903
+  + 一般発売（東京 11/4公演）9/3 10:00発売 | 締切/発売 2026-09-03 | https://t.pia.jp/pia/event/event.do?eventCd=2625903
+
+## id=3752 爆笑ファンタジスタ!夢の競演!! 枠 2→4
+  + プリセール（東京 11/25公演）〜9/1 23:59 | 締切/発売 2026-09-01 | https://t.pia.jp/pia/event/event.do?eventCd=2627032
+  + 一般発売（東京 11/25公演）9/3 10:00発売 | 締切/発売 2026-09-03 | https://t.pia.jp/pia/event/event.do?eventCd=2627032
+
+## id=3775 コバケンとその仲間たちオーケストラ 史上最高の第九に挑むVol.7 枠 2→4
+  + poco会員限定先行販売（東京 12/8公演）〜9/3 23:59 | 締切/発売 2026-09-03 | https://t.pia.jp/pia/event/event.do?eventCd=2628106
+  + 一般発売（東京 12/8公演）9/4 10:00発売 | 締切/発売 2026-09-04 | https://t.pia.jp/pia/event/event.do?eventCd=2628106
+
+## id=3818 東京シティ・フィルハーモニック管弦楽団 第九特別演奏会2026 枠 2→4
+  + poco会員限定先行販売（東京 12/28公演）9/4 11:00発売 | 締切/発売 2026-09-04 | https://t.pia.jp/pia/event/event.do?eventCd=2627452
+  + 一般発売（東京 12/28公演）9/18 11:00発売 | 締切/発売 2026-09-18 | https://t.pia.jp/pia/event/event.do?eventCd=2627452
+
+## id=3879 カキンツハルカ 枠 1→3
+  + 一般発売（東京 R9年 1/13〜1/14公演）9/5 10:00発売 | 締切/発売 2026-09-05 | https://t.pia.jp/pia/event/event.do?eventCd=2628496
+  + 一般発売（福岡 R9年 2/10公演）10/24 10:00発売 | 締切/発売 2026-10-24 | https://t.pia.jp/pia/event/event.do?eventCd=2630991
+  公演日 2027-01-14 → 2027-02-10（千秋楽が後ろに伸びた）
+
+## id=3905 東京バレエ団 ベジャールの「くるみ割り人形」 全2幕 枠 2→4
+  + プリセール（東京 R9年 1/10〜1/11公演）9/1 10:00発売 | 締切/発売 2026-09-01 | https://t.pia.jp/pia/event/event.do?eventCd=2630574
+  + 一般発売（東京 R9年 1/10〜1/11公演）9/8 10:00発売 | 締切/発売 2026-09-08 | https://t.pia.jp/pia/event/event.do?eventCd=2630574
+
+## id=3956 令和8年冬巡業 大相撲長崎場所 枠 2→4
+  + プリセール（長崎 12/3公演）〜8/31 23:59 | 締切/発売 2026-08-31 | https://t.pia.jp/pia/event/event.do?eventCd=2629386
+  + 一般発売（長崎 12/3公演）9/4 10:00発売 | 締切/発売 2026-09-04 | https://t.pia.jp/pia/event/event.do?eventCd=2629386
+
+## id=3974 RIZIN LANDMARK 16 in NAGASAKI 枠 1→3
+  + プリセール（長崎 10/3公演）8/29 12:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2629037
+  + 一般発売（長崎 10/3公演）8/30 10:00発売 | 締切/発売 2026-08-30 | https://t.pia.jp/pia/event/event.do?eventCd=2629037
+
+## id=4093 ANISON PREMIUM LIVE ささきいさお×堀江美都子×影山ヒロノブ×遠藤正明 枠 2→4
+  + 先行（宮城 12/13公演）〜9/7 11:00 | 締切/発売 2026-09-07 | https://t.pia.jp/pia/event/event.do?eventCd=2627571
+  + 一般発売（宮城 12/13公演）9/26 10:00発売 | 締切/発売 2026-09-26 | https://t.pia.jp/pia/event/event.do?eventCd=2627571
+
+## id=4189 第88回 扇辰・喬太郎の会 枠 1→2
+  + 一般発売（東京 10/16公演）9/11 10:00発売 | 締切/発売 2026-09-11 | https://t.pia.jp/pia/event/event.do?eventCd=2631541
+
+## id=4195 大名古屋らくご祭2026 枠 4→8
+  + 先行（愛知 12/17〜12/20公演）8/28 10:00発売 | 締切/発売 2026-09-01 | https://t.pia.jp/pia/event/event.do?eventCd=2631220
+  + プリセール（大ホール）（愛知 12/17〜12/20公演）9/4 10:00発売 | 締切/発売 2026-09-04 | https://t.pia.jp/pia/event/event.do?eventCd=2631220
+  + プリセール（4階ホール）（愛知 12/19〜12/20公演）9/4 10:00発売 | 締切/発売 2026-09-04 | https://t.pia.jp/pia/event/event.do?eventCd=2631220
+  + 一般発売（愛知 12/17〜12/20公演）9/19 10:00発売 | 締切/発売 2026-09-19 | https://t.pia.jp/pia/event/event.do?eventCd=2631220
+
+## id=4235 DYGL 枠 3→5
+  + 一般発売（新潟 11/7公演）9/12 10:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2633269
+  + 一般発売（石川 11/8公演）9/12 10:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2633270
+
+## id=4246 湖月わたる 宝塚歌劇団退団20th Anniversary『TUMBLEWEED』 枠 2→5
+  + 一般発売（兵庫 11/6〜11/8公演）9/12 10:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2617386
+  + 一般発売（東京 11/12〜11/14公演）9/12 10:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2617387
+  + 一般発売（愛知 11/18〜11/19公演）9/12 10:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2615337
+  公演日 2026-11-14 → 2026-11-19（千秋楽が後ろに伸びた）
+
+## id=4249 ミュージカル『メイビー、ハッピーエンディング』 枠 3→4
+  + 3次プリセール（東京 11/25〜12/10公演）8/29 11:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2628886
+
+## id=4538 Juice=Juice 枠 14→15
+  + 一般発売（愛知 10/3公演）9/12 10:00発売 | 締切/発売 2026-09-12 | https://t.pia.jp/pia/event/event.do?eventCd=2632124
+
+## id=4727 オリックスPresents 新日本フィルハーモニー交響楽団 ニューイヤー・コンサート2027 枠 2→4
+  + poco会員限定先行販売（東京 R9年 1/3公演）〜8/28 23:59 | 締切/発売 2026-08-28 | https://t.pia.jp/pia/event/event.do?eventCd=2627349
+  + 一般発売（東京 R9年 1/3公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2627349
+
+## id=4729 宮川彬良vs新日本フィル 超!ジルベスター・コンサート2026→2027 枠 4→8
+  + poco会員限定先行販売（東京 12/31公演）〜8/28 23:59 | 締切/発売 2026-08-28 | https://t.pia.jp/pia/event/event.do?eventCd=2627343
+  + poco会員限定先行販売（ランチorディナー付きチケット）（東京 12/31公演）〜8/28 23:59 | 締切/発売 2026-08-28 | https://t.pia.jp/pia/event/event.do?eventCd=2627343
+  + 一般発売（ランチ・ディナー付き）（東京 12/31公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2627343
+  + 一般発売（東京 12/31公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2627343
+
+## id=4730 龍角散Presents 新日本フィルハーモニー交響楽団 みんなで楽しむ「第九」特別演奏会2026 枠 2→4
+  + poco会員限定先行販売（東京 12/18公演）〜8/28 23:59 | 締切/発売 2026-08-28 | https://t.pia.jp/pia/event/event.do?eventCd=2627340
+  + 一般発売（東京 12/18公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2627340
+
+## id=4771 サントリーホール クリスマスコンサート 2026 バッハ・コレギウム・ジャパン「聖夜のメサイア」 枠 2→4
+  + プリセール（東京 12/24公演）9/15 10:00発売 | 締切/発売 2026-09-15 | https://t.pia.jp/pia/event/event.do?eventCd=2633164
+  + 一般発売（東京 12/24公演）9/18 10:00発売 | 締切/発売 2026-09-18 | https://t.pia.jp/pia/event/event.do?eventCd=2633164
+
+## id=4772 サントリーホールのクリスマス2026 枠 1→2
+  + 一般発売（東京 12/25公演）9/18 10:00発売 | 締切/発売 2026-09-18 | https://t.pia.jp/pia/event/event.do?eventCd=2633165
+
+## id=4850 サントリーホール開館40周年記念 ウィーン・フォルクスオーパー交響楽団特別公演 オペレッタ『こうもり』ハイライト（演奏会形式） -ウィーンの大みそか in サントリーホール- 枠 1→2
+  + 一般発売（東京 12/31公演）9/19 10:00発売 | 締切/発売 2026-09-19 | https://t.pia.jp/pia/event/event.do?eventCd=2631658
+
+## id=4998 全国花火師競技大会「第5回にし阿波の花火」 枠 1→2
+  + 一般発売（徳島 11/14公演）8/30 13:00発売 | 締切/発売 2026-08-30 | https://t.pia.jp/pia/event/event.do?eventCd=2630987
+
+## id=5044 打首獄門同好会 枠 11→15
+  + 一般発売（沖縄 10/3公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2634254
+  + 一般発売（沖縄 10/4公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2634254
+  + 一般発売（石川 10/17公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2634163
+  + 一般発売（新潟 12/20公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2634164
+
+## id=5052 未来プロジェクト 町田智子対談シリーズ Vol.2 中島貴子氏を迎えて 枠 1→2
+  + 一般発売（大分 11/14公演）9/16 10:00発売 | 締切/発売 2026-09-16 | https://t.pia.jp/pia/event/event.do?eventCd=2631891
+
+## id=5284 ちゃくら 枠 1→3
+  + 一般発売（北海道 9/6公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2620963
+  + 一般発売（東京 12/3公演）〜11/24 23:59 | 締切/発売 2026-11-24 | https://t.pia.jp/pia/event/event.do?eventCd=2626475
+
+## id=5351 渋谷すばる 枠 1→3
+  + 先行（東京・愛知・大阪・福岡 9/22〜12/5公演）〜8/30 23:59 | 締切/発売 2026-08-30 | https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669863
+  + 一般発売（福岡 12/5公演）10/10 10:00発売 | 締切/発売 2026-10-10 | https://t.pia.jp/pia/event/event.do?eventCd=2634266
+
+## id=5392 「果てない ～甦る母篇～」 枠 1→3
+  + 一般発売（東京 11/7〜12/6公演）10/3 10:00発売 | 締切/発売 2026-10-03 | https://t.pia.jp/pia/event/event.do?eventCd=2630603
+  + 一般発売（福岡 12/24〜12/29公演）10/3 10:00発売 | 締切/発売 2026-10-03 | https://t.pia.jp/pia/event/event.do?eventCd=2631812
+  公演日 2026-12-06 → 2026-12-29（千秋楽が後ろに伸びた）
+
+## id=5400 「ロックンロール」 枠 1→2
+  + 一般発売（兵庫 11/6〜11/8公演）10/4 10:00発売 | 締切/発売 2026-10-04 | https://t.pia.jp/pia/event/event.do?eventCd=2631631
+
+## id=5408 芸劇リサイタル・シリーズ 「VS」 Vol.12 福間洸太朗×フロリアン・ノアック 枠 2→4
+  + poco会員限定先行販売（東京 R9年 2/19公演）10/3 10:00発売 | 締切/発売 2026-10-03 | https://t.pia.jp/pia/event/event.do?eventCd=2627950
+  + 一般発売（東京 R9年 2/19公演）10/10 10:00発売 | 締切/発売 2026-10-10 | https://t.pia.jp/pia/event/event.do?eventCd=2627950
+
+## id=5409 芸劇リサイタル・シリーズ 「VS」 Vol.11 ルーカス&アルトゥール・ユッセン 枠 2→4
+  + poco会員限定先行販売（東京 R9年 1/23公演）10/3 10:00発売 | 締切/発売 2026-10-03 | https://t.pia.jp/pia/event/event.do?eventCd=2627946
+  + 一般発売（東京 R9年 1/23公演）10/10 10:00発売 | 締切/発売 2026-10-10 | https://t.pia.jp/pia/event/event.do?eventCd=2627946
+
+## id=5504 SHE’S 枠 3→12
+  + 一般発売（山口 10/9公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2621782
+  + 一般発売（広島 10/12公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2621782
+  + 一般発売（岡山 11/2公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2621782
+  + 一般発売（鹿児島 10/3公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2633684
+  + 一般発売（長崎 10/4公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2633685
+  + 一般発売（兵庫 10/28公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2618336
+  + 一般発売（京都 11/19公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2618336
+  + 一般発売（大阪 12/6公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2618336
+  + 一般発売（福岡 11/3公演）8/29 10:00発売 | 締切/発売 2026-08-29 | https://t.pia.jp/pia/event/event.do?eventCd=2633686
+  公演日 2026-11-02 → 2026-12-06（千秋楽が後ろに伸びた）
+
+## id=5585 北海道コンサドーレ札幌対いわきFC 明治安田J2リーグ 枠 1→3
+  + 一般発売【明治安田J2リーグ】（北海道 10/4公演）8/31 12:00発売 | 締切/発売 2026-08-31 | https://t.pia.jp/pia/event/event.do?eventCd=2631985
+  + 一般発売【■■■車いす・シニア・手帳割引・U-23他】（北海道 10/4公演）8/31 12:00発売 | 締切/発売 2026-08-31 | https://t.pia.jp/pia/event/event.do?eventCd=2631986
+
+
+合計 53 エントリ / +116 枠 / 公演日が伸びた 10件
