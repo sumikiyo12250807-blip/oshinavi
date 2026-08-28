@@ -66,12 +66,21 @@ def parse_page(h):
             return strip(m.group(1)) if m else ''
 
         st = re.search(r'status_icon_text[^>]*>(.*?)</span>', body, re.S)
-        rm = re.search(r'発売前\s*(\d{4}/\d{1,2}/\d{1,2})', body)
+        # 発売日欄の3パターン（presale_harvest.py と同じ。2026-08-29 実HTMLで確認）
+        SEP = r'(?:</?[a-zA-Z][^>]*>|\s)*'
+        rm = re.search(r'発売前' + SEP + r'(\d{4}/\d{1,2}/\d{1,2})', body)
+        lm = re.search(r'(?:まもなく|近日)抽選受付' + SEP + r'(\d{4}/\d{1,2}/\d{1,2})', body)
+        if rm:
+            _rls = rm.group(1)
+        elif re.search(r'本日発売' + SEP + r'\(' + SEP + r'発売前' + SEP + r'\)', body):
+            _rls = 'TODAY'
+        else:
+            _rls = lm.group(1) if lm else ''
         out.append({
             'url': am.group(1).replace('http://', 'https://'),
             'title': strip(am.group(2)),
             'status': strip(st.group(1)) if st else '',
-            'rlsdate': rm.group(1) if rm else ('TODAY' if '本日発売初日' in body else ''),
+            'rlsdate': _rls,
             'perfdate': span('list_03'),
             'venue': span('list_04'),
         })

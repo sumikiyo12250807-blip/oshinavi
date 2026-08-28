@@ -16,6 +16,28 @@ FILTER = sys.argv[3] if len(sys.argv) > 3 else 'rlsIn=03'
 if '=' not in FILTER:           # 後方互換: '03' だけ渡されたら rlsIn=03 とみなす
     FILTER = 'rlsIn=' + FILTER
 
+
+def _selftest():
+    """🚨発売日欄の3パターンが取れることの番人（2026-08-29 新設）。
+    旧実装は②③を1件も拾えず、毎日100件前後を「発売日不明」として捨てていた。
+    文言とデータの間に <strong></strong> が挟まるのが罠。"""
+    rows = parse_page(
+        '<li class="listWrp_title_list clearfix"><a href="http://t.pia.jp/pia/event/event.do?eventCd=1">A</a>'
+        '<td><strong>発売前</strong>2026/9/19(土) 10:00より発売</td></li>'
+        '<li class="listWrp_title_list clearfix"><a href="http://t.pia.jp/pia/event/event.do?eventCd=2">B</a>'
+        '<td><strong>本日発売</strong>(発売前)10:00より発売</td></li>'
+        '<li class="listWrp_title_list clearfix"><a href="http://t.pia.jp/pia/event/event.do?eventCd=3">C</a>'
+        '<td><strong>近日抽選受付</strong>2026/9/3(木) 11:00 ～ 2026/9/10(木) 11:00</td></li>'
+        '<li class="listWrp_title_list clearfix"><a href="http://t.pia.jp/pia/event/event.do?eventCd=4">D</a>'
+        '<td><strong>まもなく抽選受付</strong>2026/8/29(土) 昼12:00 ～ 2026/9/1(火) 23:59</td></li>'
+        '<li class="listWrp_title_list clearfix"><a href="http://t.pia.jp/pia/event/event.do?eventCd=5">E</a>'
+        '<td>本サイト取扱なし</td></li>')
+    got = [r['rlsdate'] for r in rows]
+    assert got == ['2026/9/19', 'TODAY', '2026/9/3', '2026/8/29', ''], got
+    print('selftest OK: 発売前/本日発売/近日抽選受付/まもなく抽選受付/取扱なし の5型')
+    sys.exit(0)
+
+
 _conn = None
 
 def fetch(page):
@@ -68,11 +90,22 @@ def parse_page(h):
         if st:
             saletype = strip(st.group(1))
         rlsdate = ''
-        rm = re.search(r'発売前\s*(\d{4}/\d{1,2}/\d{1,2})', body)
+        # ぴあ一覧の「発売日」欄は3つの書き方がある（2026-08-29 実HTMLで確認）。
+        #   ①発売前2026/9/19(土) 10:00より発売      … 通常の発売前
+        #   ②本日発売(発売前)10:00より発売           … 当日発売（🚨旧コードの'本日発売初日'は実在しない死に文字列）
+        #   ③まもなく/近日抽選受付 2026/9/3(木) 11:00～ … 抽選（rlsStatus=0202）は「発売前」の語が無い
+        # ②③を拾えず、発売日不明として毎日落としていた（8/29 実測＝100件のうち約95件がこれ）。
+        # 🚨文言とデータの間に <strong></strong> 等のタグが挟まる。SEP でタグと空白を飛ばす。
+        SEP = r'(?:</?[a-zA-Z][^>]*>|\s)*'
+        rm = re.search(r'発売前' + SEP + r'(\d{4}/\d{1,2}/\d{1,2})', body)
         if rm:
             rlsdate = rm.group(1)
-        elif '本日発売初日' in body:
+        elif re.search(r'本日発売' + SEP + r'\(' + SEP + r'発売前' + SEP + r'\)', body):
             rlsdate = 'TODAY'
+        else:
+            lm = re.search(r'(?:まもなく|近日)抽選受付' + SEP + r'(\d{4}/\d{1,2}/\d{1,2})', body)
+            if lm:
+                rlsdate = lm.group(1)
         perfdate = span('list_03')
         venue = span('list_04')
         pref = ''
@@ -84,6 +117,10 @@ def parse_page(h):
             'rlsdate': rlsdate, 'perfdate': perfdate, 'venue': venue, 'pref': pref,
         })
     return out
+
+
+if '--selftest' in sys.argv:
+    _selftest()
 
 # total count
 h1 = fetch(1)
