@@ -1,13 +1,28 @@
 [
  {
-  "id": 4046,
+  "id": 3421,
   "status": "convert",
-  "artist": "荒谷翔大",
+  "artist": "CiON",
   "tickets": [
    {
-    "type": "3次プリセール（大阪 10/23公演）〜9/4 23:59",
-    "date": "2026-09-04",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620201"
+    "type": "一般発売（大阪 11/23公演）〜11/22 23:59",
+    "date": "2026-11-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629182"
+   },
+   {
+    "type": "一般発売（宮城 11/28公演）〜11/25 23:59",
+    "date": "2026-11-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631757"
+   },
+   {
+    "type": "一般発売（広島 12/5公演）〜12/3 23:59",
+    "date": "2026-12-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630584"
+   },
+   {
+    "type": "一般発売（福岡 12/6公演）〜12/5 23:59",
+    "date": "2026-12-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629679"
    }
   ]
  },
@@ -17,80 +32,46 @@
   "artist": "山下大輝",
   "tickets": [
    {
-    "type": "プリセール（東京 11/1公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28"
+    "type": "プリセール（東京 11/1公演）〜9/17 18:00",
+    "date": "2026-09-17"
    }
   ]
  },
  {
-  "id": 4055,
+  "id": 4726,
+  "status": "delete",
+  "artist": "世界のMIDORI 再び七尾へ!! 能登復興支援事業 オーケストラ・アンサンブル金沢 第25回七尾定期公演",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2629338"
+  ]
+ },
+ {
+  "id": 4969,
   "status": "convert",
-  "artist": "純名里沙",
+  "artist": "アニメ『スティール・ボール・ラン ジョジョの奇妙な冒険』全国5都市横断1st STAGE上映イベント",
   "tickets": [
    {
-    "type": "最終プリセール（東京 11/24公演）〜9/2 23:59",
-    "date": "2026-09-02"
-   },
-   {
-    "type": "最終プリセール（大阪 12/24公演）〜9/2 23:59",
-    "date": "2026-09-02"
+    "type": "一般発売（東京 9/5公演）〜9/4 16:00",
+    "date": "2026-09-04"
    }
   ]
  },
  {
-  "id": 4080,
-  "status": "convert",
-  "artist": "澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert -",
-  "tickets": [
-   {
-    "type": "一般発売（東京 R9年 2/27公演）8/29 10:00発売",
-    "date": "2026-08-29",
-    "startDate": "2026-08-29"
-   }
+  "id": 5498,
+  "status": "delete",
+  "artist": "ANI-ROCK FES.2026「僕のヒーローアカデミア PLUS ULTRA LIVE」",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667821"
   ]
  },
  {
-  "id": 4087,
+  "id": 5575,
   "status": "convert",
-  "artist": "WHITE ASH",
+  "artist": "中島由貴 Birthday Event 2026",
   "tickets": [
    {
-    "type": "先行（北海道・宮城・千葉・東京・新潟・愛知・大阪・岡山・福岡 R9年 1/16〜2/24公演）〜9/6 23:59",
-    "date": "2026-09-06"
-   }
-  ]
- },
- {
-  "id": 4404,
-  "status": "convert",
-  "artist": "iri",
-  "tickets": [
-   {
-    "type": "プレリザーブ3次（神奈川 10/22公演）〜9/9 23:59",
-    "date": "2026-09-09"
-   }
-  ]
- },
- {
-  "id": 4414,
-  "status": "convert",
-  "artist": "TRUST RECORDS presents.PUNK IN AUTUMN 2026",
-  "tickets": [
-   {
-    "type": "先行（愛知 11/3〜11/8公演）〜9/6 23:59",
-    "date": "2026-09-06"
-   }
-  ]
- },
- {
-  "id": 4923,
-  "status": "convert",
-  "artist": "高嶋ちさ子のザワつく!音楽会 2026",
-  "tickets": [
-   {
-    "type": "先行（宮城 11/15公演）〜9/8 11:00",
-    "date": "2026-09-08"
+    "type": "一般発売（東京 9/19公演）〜9/10 23:59",
+    "date": "2026-09-10"
    }
   ]
  }
