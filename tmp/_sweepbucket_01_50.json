@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 457,
- "pages": 46,
- "fetched_pages": 47,
- "parsed": 390,
- "new_name_in_db": 65,
+ "total": 493,
+ "pages": 50,
+ "fetched_pages": 51,
+ "parsed": 420,
+ "new_name_in_db": 80,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621267",
@@ -57,6 +57,28 @@
    "rlsdate": "",
    "perfdate": "2026/9/23(水・祝)",
    "venue": "ｅｌｌ．ＦＩＴＳ ＡＬＬ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634071",
+   "artist": "Ａｒａｋｅｚｕｒｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/16(水)",
+   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634080",
+   "artist": "Ａｒａｋｅｚｕｒｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2027/1/15(金)",
+   "venue": "ボトムライン(愛知県)",
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": true
@@ -180,7 +202,7 @@
    "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": true
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670559",
@@ -414,17 +436,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628907",
-   "artist": "ＱＵＥＥＮＳ ＯＦ ＴＨＥ ＳＴＯＮＥ ＡＧＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/26(木)",
-   "venue": "Ｚｅｐｐ Ｎａｇｏｙａ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669787",
    "artist": "kurage",
    "saletype": "一般発売",
@@ -467,6 +478,17 @@
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628447",
+   "artist": "Ｋｅｎ Ｙｏｋｏｙａｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "ダイアモンドホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
@@ -557,6 +579,28 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633416",
+   "artist": "Ｓｕｓｐｅｎｄｅｄ ４ｔｈ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/23(金)",
+   "venue": "新栄シャングリラ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563931",
+   "artist": "サニーデイ・サービス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "ダイアモンドホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622698",
    "artist": "Ｓｕｍｍｅｒ Ｅｙｅ",
    "saletype": "一般発売",
@@ -566,17 +610,6 @@
    "pref": "東京都／愛知県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625480",
-   "artist": "Ｓｏｍｅ Ｌｉｆｅ ｐｒｅｓｅｎｔｓ．Ｔｗｈｉｌｉｇｈｔ Ｓｃｈｏｏｌ ｖｏｌ．４",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "ＲＡＤ ＮＩＮＥ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669922",
@@ -623,6 +656,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633945",
+   "artist": "Ｔｈｅ構わねぇよＢＡＢＹ／ＬａｙＢａｃｋ／Ｏ’Ｄ ＳＥＣＴ／オリカド／フジケンバンド",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609845",
    "artist": "ＴＨＥ ＧＯＯＤ－ＢＹＥ",
    "saletype": "一般発売",
@@ -645,13 +689,13 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613574",
-   "artist": "ザ・ワイルドワンズ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625175",
+   "artist": "ＴＨＥ ＭＡＣＫＳＨＯＷ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/30(日)",
-   "venue": "森町文化会館 大ホール(静岡県)",
-   "pref": "静岡県",
+   "perfdate": "2026/11/21(土)",
+   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
+   "pref": "愛知県",
    "in_db": false,
    "name_in_db": true
   },
@@ -662,17 +706,6 @@
    "rlsdate": "",
    "perfdate": "2026/11/8(日)",
    "venue": "メニコン シアターＡｏｉ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611642",
-   "artist": "シクラメン",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＮＡＧＯＹＡ ＪＡＭＭＩＮ’(愛知県)",
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
@@ -733,17 +766,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621645",
-   "artist": "終活クラブ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "ｅｌｌ．ＦＩＴＳ ＡＬＬ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619390",
    "artist": "ＳＨＯＷ－ＹＡ",
    "saletype": "一般発売",
@@ -766,6 +788,28 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/22(日)",
+   "venue": "名古屋スクールオブミュージック＆ダンス専門学校 ８Ｆイベントホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627109",
+   "artist": "ＳＨＥ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ 浜松 窓枠(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669203",
    "artist": "時速36km",
    "saletype": "一般発売",
@@ -773,17 +817,6 @@
    "perfdate": "2026/10/4(日)",
    "venue": "名古屋クラブクアトロ(愛知県)",
    "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628494",
-   "artist": "時代を彩る歌姫たち～渡辺真知子・サーカス～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/15(日)",
-   "venue": "イスのサンケイホール鈴鹿(三重県)",
-   "pref": "三重県",
    "in_db": false,
    "name_in_db": false
   },
@@ -830,6 +863,17 @@
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629130",
+   "artist": "スターダスト☆レビュー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "三重県文化会館 大ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667840",
@@ -953,12 +997,12 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631399",
-   "artist": "Ｃｚｅｃｈｏ Ｎｏ Ｒｅｐｕｂｌｉｃ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633729",
+   "artist": "駄洒落／パグズアイニー／ぺんでうぃん",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "ｅｌｌ．ＳＩＺＥ(愛知県)",
+   "perfdate": "2026/10/15(木)",
+   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
@@ -972,7 +1016,7 @@
    "venue": "名古屋クラブクアトロ(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
@@ -1005,7 +1049,7 @@
    "venue": "Ｌｉｖｅ＆Ｌｏｕｎｇｅ Ｖｉｏ(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621559",
@@ -1049,18 +1093,7 @@
    "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
    "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670452",
-   "artist": "TRUST RECORDS presents.PUNK IN SUMMER 2026",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "名古屋ＤＩＡＭＯＮＤ ＨＡＬＬ／Ｓｈａｎｇｒｉ－Ｌａ／ＳＰＡＤＥ ＢＯＸ／ＨｅａｒｔＬａｎｄ／他(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614332",
@@ -1159,16 +1192,16 @@
    "venue": "今池ガスホール(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613912",
    "artist": "長渕剛",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/13(日)",
-   "venue": "富士市文化会館ロゼシアター 大ホール(静岡県)",
-   "pref": "静岡県",
+   "perfdate": "2026/9/5(土)",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
+   "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
   },
@@ -1181,7 +1214,7 @@
    "venue": "ダイアモンドホール(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612447",
@@ -1228,6 +1261,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607254",
+   "artist": "Ｎａｍｅ ｔｈｅ Ｎｉｇｈｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/13(金) ・ 2026/11/14(土) ・ 2026/12/6(日)",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／Ｋ・Ｄ Ｊａｐｏｎ(愛知県)／ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "東京都／愛知県／大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624254",
    "artist": "野島樺乃",
    "saletype": "一般発売",
@@ -1235,17 +1279,6 @@
    "perfdate": "2026/11/8(日) ～ 2026/11/20(金)",
    "venue": "ＧＲＩＴ ａｔ Ｓｈｉｂｕｙａ(東京都)／Ｌｉｏｎ Ｃａｆｅ(愛知県)／ＰＬＵＳＷＩＮ ＨＡＬＬ ビレボア(大阪府)／ＲＯＯＭＳ(福岡県)",
    "pref": "東京都／愛知県／大阪府／福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619361",
-   "artist": "野田愛実",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/4(金)",
-   "venue": "スペードボックス(愛知県)",
-   "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
   },
@@ -1316,6 +1349,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632632",
+   "artist": "ばってん少女隊",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "ＳＯＵＮＤ ＳＨＯＷＥＲ ａｒｋ(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
    "artist": "ＰａｓｓＣｏｄｅ",
    "saletype": "一般発売",
@@ -1336,6 +1380,17 @@
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670763",
+   "artist": "PURPLE BUBBLE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "ＲＡＤ ＮＩＮＥ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623353",
@@ -1481,28 +1536,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631622",
-   "artist": "プッシュプルポット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/12(土)",
-   "venue": "静岡ＵＭＢＥＲ(静岡県)",
-   "pref": "静岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632003",
-   "artist": "プッシュプルポット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/17(日)",
-   "venue": "名古屋クラブクアトロ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623695",
    "artist": "ｐｌｅｎｔｙ",
    "saletype": "一般発売",
@@ -1543,17 +1576,6 @@
    "perfdate": "2026/9/5(土)",
    "venue": "富士市文化会館ロゼシアター 大ホール(静岡県)",
    "pref": "静岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616593",
-   "artist": "ＨＯＮＥＢＯＮＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ハートランド(愛知県)",
-   "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
   },
@@ -1602,17 +1624,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623679",
    "artist": "Ｍｙ Ｌｉｔｔｌｅ Ｌｏｖｅｒ ☆ Ａｋｋｏ Ｂａｎｄ Ｑｕｉｎｔｅｔ ２０２６ ＃３",
    "saletype": "一般発売",
@@ -1620,6 +1631,28 @@
    "perfdate": "2026/11/7(土)",
    "venue": "掛川市生涯学習センター(静岡県)",
    "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633728",
+   "artist": "ｍａｏ／Ｒｉｔｏｍｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/8(木)",
+   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622202",
+   "artist": "マカロニえんぴつ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/26(土)",
+   "venue": "クロコくんホール(愛知県)",
+   "pref": "愛知県",
    "in_db": false,
    "name_in_db": true
   },
@@ -1644,17 +1677,6 @@
    "pref": "静岡県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626537",
-   "artist": "松本明人／三輪和也",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",
@@ -1745,17 +1767,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618942",
-   "artist": "メリクレット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土)",
-   "venue": "ｅｌｌ．ＳＩＺＥ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616006",
    "artist": "森恵",
    "saletype": "一般発売",
@@ -1822,17 +1833,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622120",
-   "artist": "ヤングオオハラ×RAINCOVER pre. YOUNG COVER",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "新栄ＲＡＤ ｍｉｎｉ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618114",
    "artist": "Ｙｕ Ｉｂｕｋｉ ２６ Ｌｉｖｅ ＸＦＥＲ",
    "saletype": "一般発売",
@@ -1840,17 +1840,6 @@
    "perfdate": "2026/9/12(土)",
    "venue": "ＬＩＶＥＨＯＵＳＥ ＳＯＵＮＤＮＯＴＥ ＮＡＧＯＹＡ(愛知県)",
    "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612176",
-   "artist": "遊助",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "富士市文化会館ロゼシアター 大ホール(静岡県)",
-   "pref": "静岡県",
    "in_db": false,
    "name_in_db": false
   },
@@ -1870,9 +1859,9 @@
    "artist": "横山裕",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/31(月) ・ 2026/9/1(火)",
-   "venue": "Ｚｅｐｐ Ｎａｇｏｙａ(愛知県)",
-   "pref": "愛知県",
+   "perfdate": "2026/9/4(金)",
+   "venue": "ＥＶＥＮＴ ＨＡＬＬ ｃｌｕｂ－Ｇ(岐阜県)",
+   "pref": "岐阜県",
    "in_db": false,
    "name_in_db": false
   },
@@ -1907,7 +1896,7 @@
    "venue": "Ｚｅｐｐ Ｎａｇｏｙａ(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2543352",
@@ -1916,6 +1905,17 @@
    "rlsdate": "",
    "perfdate": "2026/11/15(日)",
    "venue": "名古屋クラブクアトロ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667589",
+   "artist": "緑黄色社会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/13(金)",
+   "venue": "ＩＧアリーナ(愛知県)",
    "pref": "愛知県",
    "in_db": false,
    "name_in_db": false

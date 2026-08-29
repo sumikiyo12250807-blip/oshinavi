@@ -18,6 +18,11 @@
   python tools/preview_pickup.py            # _preview.html を作る
   python tools/preview_pickup.py --open     # 作ってブラウザで開く
   python tools/preview_pickup.py --clean    # 後片付け（消す）
+
+🆕--section <path>（2026-08-30 追加）:
+  まだ index.html に入れていない次号のセクションを、コピー側にだけ差し込んで見せる。
+  「差し替える前に見てもらう」のが毎号の手順なのに、この口が無くて毎回その場のスクリプトを書いていた。
+  python tools/preview_pickup.py --section tmp/pickup0830/section.html --open
 """
 import io, os, re, sys, subprocess
 
@@ -34,6 +39,16 @@ if '--clean' in sys.argv:
     sys.exit(0)
 
 h = io.open(SRC, encoding='utf-8').read()
+
+# 🆕未適用の次号セクションを、コピー側にだけ差し込む（index.html は触らない）
+if '--section' in sys.argv:
+    sec_path = sys.argv[sys.argv.index('--section') + 1]
+    new_sec = io.open(sec_path, encoding='utf-8').read().rstrip()
+    i = h.index('<section class="pickup"')
+    j = h.index('</section>', i) + len('</section>')
+    h = h[:i] + new_sec + h[j:]
+    print('差し込んだ（コピー側だけ）: %s' % sec_path)
+
 n = 0
 for a, b in (('<section class="pickup" id="pickup" hidden>', '<section class="pickup" id="pickup">'),
              ('<a href="#pickup" hidden>', '<a href="#pickup">')):

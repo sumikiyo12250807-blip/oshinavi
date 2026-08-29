@@ -1,11 +1,22 @@
 {
  "lg": "01",
- "total": 265,
+ "total": 269,
  "pages": 27,
  "fetched_pages": 28,
- "parsed": 245,
- "new_name_in_db": 82,
+ "parsed": 248,
+ "new_name_in_db": 70,
  "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634291",
+   "artist": "荒川夏蓮 クリスマスライブショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/19(土)",
+   "venue": "祇園ＪＴＮ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602375",
    "artist": "石川さゆり",
@@ -161,17 +172,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614984",
-   "artist": "歌謡ビッグステージ 四人衆コンサート２０２６ ～お客様の笑顔と拍手に支えられて～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "守山市民ホール 大ホール(滋賀県)",
-   "pref": "滋賀県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617769",
    "artist": "関西いのちの電話 第３０回チャリティコンサート 大野敬正 津軽三味線コンサート",
    "saletype": "一般発売",
@@ -293,17 +293,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627568",
-   "artist": "伍代夏子／純烈",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/7(月)",
-   "venue": "近江八幡市文化会館 大ホール(滋賀県)",
-   "pref": "滋賀県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619607",
    "artist": "彩・恋・歌コンサート２０２６",
    "saletype": "一般発売",
@@ -348,28 +337,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629813",
-   "artist": "サンパレス六甲ウィンターディナーショー２０２６北島兄弟",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/5(土)",
-   "venue": "サンパレス六甲(兵庫県)",
-   "pref": "兵庫県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629817",
-   "artist": "サンパレス六甲ウィンターディナーショー２０２６北島兄弟",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/5(土)",
-   "venue": "サンパレス六甲(兵庫県)",
-   "pref": "兵庫県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628201",
    "artist": "ＴＨＥカルテットの昭和歌謡コンサート（蓮田１０月公演）",
    "saletype": "一般発売",
@@ -399,17 +366,6 @@
    "perfdate": "2026/9/6(日)",
    "venue": "大垣市スイトピアセンター 文化ホール(岐阜県)",
    "pref": "岐阜県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616806",
-   "artist": "志多ら 瀬戸公演 つながる和太鼓 おもやひ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/30(日)",
-   "venue": "瀬戸市文化センター 文化ホール(愛知県)",
-   "pref": "愛知県",
    "in_db": false,
    "name_in_db": false
   },
@@ -579,17 +535,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614989",
-   "artist": "スペシャルコンサート 居酒屋 “昭和”",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/20(木) ・ 2026/8/21(金) ・ 2026/9/2(水)",
-   "venue": "枚方市総合文化芸術センター 関西医大 大ホール(大阪府)／アワーズホール・明石市民会館 大ホール(兵庫県)／奈良県橿原文化会館 大ホール(奈良県)",
-   "pref": "大阪府／兵庫県／奈良県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615802",
    "artist": "スペシャルコンサート居酒屋“昭和”",
    "saletype": "一般発売",
@@ -755,17 +700,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623482",
-   "artist": "ＴＡＬＫ＆ＬＩＶＥ ザ・ゴールデンステージ ｐｒｏｄｕｃｅｄ ｂｙ Ｊａｐａｎｅｔ ＜第１１回＞",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
-   "pref": "長崎県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623483",
    "artist": "ＴＡＬＫ＆ＬＩＶＥ ザ・ゴールデンステージ ｐｒｏｄｕｃｅｄ ｂｙ Ｊａｐａｎｅｔ ＜第１２回＞",
    "saletype": "一般発売",
@@ -784,138 +718,6 @@
    "perfdate": "2026/10/31(土)",
    "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
    "pref": "長崎県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618698",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土) ～ 2026/9/7(月)",
-   "venue": "旭川市民文化会館 大ホール(北海道)／帯広市民文化ホール 大ホール(北海道)／北ガス市民ホール 大ホール(北海道)／コーチャンフォー釧路文化ホール 大ホール(北海道)／札幌市教育文化会館 大ホール(北海道)／北斗市総合文化センターかなで～る 大ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616835",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "都城市総合文化ホール 大ホール(宮崎県)",
-   "pref": "宮崎県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625741",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/12(月・祝)",
-   "venue": "あきた芸術劇場ミルハス 大ホール(秋田県)",
-   "pref": "秋田県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623804",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/17(土)",
-   "venue": "北國新聞赤羽ホール(石川県)",
-   "pref": "石川県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622509",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/19(月)",
-   "venue": "富山 オーバード・ホール 中ホール(富山県)",
-   "pref": "富山県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622551",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/21(水)",
-   "venue": "長野市芸術館 メインホール(長野県)",
-   "pref": "長野県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623329",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/25(日)",
-   "venue": "大井川文化会館ミュージコ(静岡県)",
-   "pref": "静岡県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626835",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/27(火)",
-   "venue": "ＹＣＣ県民文化ホール 小ホール(山梨県)",
-   "pref": "山梨県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626839",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/3(火・祝)",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631355",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/22(日)",
-   "venue": "松山市総合コミュニティセンター キャメリアホール(愛媛県)",
-   "pref": "愛媛県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624251",
-   "artist": "ＤＲＵＭ ＴＡＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/17(火) ・ 2026/11/24(火) ・ 2026/11/25(水)",
-   "venue": "鳥取市文化ホール(鳥取県)／安来市総合文化ホール アルテピア 大ホール(島根県)／岡山芸術創造劇場 ハレノワ 中劇場(岡山県)",
-   "pref": "鳥取県／島根県／岡山県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626155",
-   "artist": "ＤＲＵＭ ＴＡＯ ２０２６ 最新作舞台「ＴＨＥ ＨＵＭＡＮ」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/13(金) ・ 2026/11/14(土)",
-   "venue": "松下ＩＭＰホール(大阪府)",
-   "pref": "大阪府",
    "in_db": false,
    "name_in_db": false
   },
@@ -1129,17 +931,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623544",
-   "artist": "舟木一夫 シアターコンサート ｉｎ 新橋演舞場",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木) ～ 2026/8/31(月)",
-   "venue": "新橋演舞場(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618130",
    "artist": "舟木一夫 御園座特別コンサート２０２６",
    "saletype": "一般発売",
@@ -1246,17 +1037,6 @@
    "perfdate": "2026/9/1(火) ・ 2026/9/2(水)",
    "venue": "熊本城ホール メインホール(熊本県)／宝山ホール(鹿児島県)",
    "pref": "熊本県／鹿児島県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615898",
-   "artist": "三波春夫 没後２５年特別企画",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "新潟県民会館 大ホール(新潟県)",
-   "pref": "新潟県",
    "in_db": false,
    "name_in_db": true
   },
@@ -1554,17 +1334,6 @@
    "perfdate": "2026/11/1(日)",
    "venue": "ＨＯＴＥＬ ＳＥＡＭＯＲＥ グランドホール雅(和歌山県)",
    "pref": "和歌山県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617279",
-   "artist": "和楽器ユニット 蓮－ＲＥＮ－陽炎 Symphonia",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "海老名市文化会館 小ホール(神奈川県)",
-   "pref": "神奈川県",
    "in_db": false,
    "name_in_db": false
   },

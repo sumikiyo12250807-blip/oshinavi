@@ -1,22 +1,11 @@
 {
  "lg": "01",
- "total": 14,
+ "total": 18,
  "pages": 2,
  "fetched_pages": 3,
- "parsed": 10,
- "new_name_in_db": 2,
+ "parsed": 13,
+ "new_name_in_db": 3,
  "new": [
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610637",
-   "artist": "遠藤正明",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "ＬＩＱＵＩＤＲＯＯＭ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626885",
    "artist": "影山ヒロノブ",
@@ -47,6 +36,17 @@
    "perfdate": "2026/10/15(木)",
    "venue": "東京芸術劇場 コンサートホール(東京都)",
    "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669435",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/6(日)",
+   "venue": "栃木県総合文化センター メインホール(栃木県)",
+   "pref": "栃木県",
    "in_db": false,
    "name_in_db": true
   },

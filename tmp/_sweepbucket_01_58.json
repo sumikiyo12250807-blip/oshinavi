@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 206,
- "pages": 21,
- "fetched_pages": 22,
- "parsed": 130,
- "new_name_in_db": 18,
+ "total": 234,
+ "pages": 24,
+ "fetched_pages": 25,
+ "parsed": 145,
+ "new_name_in_db": 20,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668272",
@@ -73,6 +73,28 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632596",
+   "artist": "Ｙｎｇｗｉｅ Ｍａｌｍｓｔｅｅｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/11(金)",
+   "venue": "豊洲ＰＩＴ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633595",
+   "artist": "Ｙｎｇｗｉｅ Ｍａｌｍｓｔｅｅｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/13(日)",
+   "venue": "パシフィコ横浜 国立大ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612608",
    "artist": "ADRIAN SHERWOOD presents DUB SESSIONS 2026",
    "saletype": "一般発売",
@@ -82,6 +104,17 @@
    "pref": "大阪府",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670480",
+   "artist": "FTISLAND",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/6(日)",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620275",
@@ -99,9 +132,9 @@
    "artist": "ELECTRIC CALLBOY",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
-   "pref": "大阪府",
+   "perfdate": "2026/8/31(月)",
+   "venue": "東京ガーデンシアター(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -139,6 +172,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670631",
+   "artist": "CAT POWER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/14(月)",
+   "venue": "ＥＸ ＴＨＥＡＴＥＲ ＲＯＰＰＯＮＧＩ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617538",
    "artist": "ｃａｒｏｌｉｎｅ／Ｍｙ Ｎｅｗ Ｂａｎｄ Ｂｅｌｉｅｖｅ",
    "saletype": "一般発売",
@@ -158,18 +202,7 @@
    "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629300",
-   "artist": "ＱＵＥＥＮＳ ＯＦ ＴＨＥ ＳＴＯＮＥ ＡＧＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/28(土)",
-   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628885",
@@ -271,17 +304,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624845",
-   "artist": "ＳＩＥＮＮＡ ＳＰＩＲＯ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/4(月)",
-   "venue": "豊洲ＰＩＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633054",
    "artist": "Ｓｈａｌｌｏｗ Ｌｅｖｅｅ",
    "saletype": "一般発売",
@@ -304,23 +326,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670459",
-   "artist": "JAMES BLAKE",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632701",
+   "artist": "ＪＡＹ Ｂ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/12/8(火)",
-   "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669145",
-   "artist": "JAURIM",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｖｅａｔｓ Ｓｈｉｂｕｙａ(東京都)",
+   "perfdate": "2026/9/2(水)",
+   "venue": "ヒューリックホール東京(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -480,28 +491,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668288",
-   "artist": "TWO DOOR CINEMA CLUB",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/30(月)",
-   "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622208",
-   "artist": "ＴＲＵＳＴ ＲＥＣＯＲＤＳ ｐｒｅｓｅｎｔｓ ＲＡＮＤＯＭ ＪＡＰＡＮ ＴＯＵＲ ｓｕｐｐｏｒｔｅｄ ｂｙ ＰＵＮＫ ＩＮ ＳＵＭＭＥＲ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/26(水)",
-   "venue": "ＲＡＤ ＮＩＮＥ(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623255",
    "artist": "ＴＲＡＭＨＡＵＳ ＪＡＰＡＮ ＴＯＵＲ ２０２６",
    "saletype": "一般発売",
@@ -579,13 +568,24 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669895",
-   "artist": "PUBLIC IMAGE LTD.",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628753",
+   "artist": "Ｈ．Ｅ．Ｒ．Ｏ．",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2027/2/3(水)",
-   "venue": "ダイアモンドホール(愛知県)",
-   "pref": "愛知県",
+   "perfdate": "2026/11/22(日) ・ 2026/11/23(月・祝)",
+   "venue": "ＴＨＥ ＧＡＭＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670263",
+   "artist": "B1A4",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/6(日)",
+   "venue": "ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": false
   },
@@ -630,6 +630,17 @@
    "perfdate": "2026/8/31(月)",
    "venue": "豊洲ＰＩＴ(東京都)",
    "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669914",
+   "artist": "PLAVE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土) ・ 2026/9/27(日)",
+   "venue": "ぴあアリーナＭＭ(神奈川県)",
+   "pref": "神奈川県",
    "in_db": false,
    "name_in_db": false
   },
@@ -696,6 +707,17 @@
    "perfdate": "2026/10/6(火)",
    "venue": "Ｋアリーナ横浜(神奈川県)",
    "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633792",
+   "artist": "ＰＯＴＡＴＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/16(金)",
+   "venue": "恵比寿ザ・ガーデンルーム(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -810,6 +832,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633944",
+   "artist": "ＲＹＵＤＥＮ／Ｍｙ ｐｏｉｎｔ ｏｆ ｖｉｅｗ Ｄｏｍｉｎａｎｔ／ＳＴＭＹ／Ｔｈｅ Ｓｔｒｉｐ Ｓｈｏｗ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/26(月)",
+   "venue": "池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670255",
    "artist": "LOUIS TOMLINSON",
    "saletype": "一般発売",
@@ -850,6 +883,17 @@
    "perfdate": "2026/10/6(火) ・ 2026/10/7(水)",
    "venue": "有明アリーナ(東京都)／Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
    "pref": "東京都／大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621864",
+   "artist": "Ｒａｃｉｎｇ Ｍｏｕｎｔ Ｐｌｅａｓａｎｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/2(水)",
+   "venue": "ＵＮＩＴ(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
