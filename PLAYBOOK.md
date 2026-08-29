@@ -39,7 +39,7 @@ push・削除・振り分け、**3つとも自走してよい**。ただし**必
 | 🌅朝 | 🚨**①朝のルーチン（期限切れtriage→隠れ枠ヒール→「〆切日に発売時刻」型の掃除→削除→check_zero_badge）②前夜の新着をチェック ③振り分け ④新着を収集 ⑤最後にpush**（🚨**2026-08-26夜ユーザー修正＝pushは朝の便のいちばん最後**。「前日と変わりないのにプッシュしてどうすんのよ」） | 相談があれば止まる（8/16以降GO待ち無し） |
 | ☀️昼 | 隠れ枠ヒールをもう一度。🚨**普通は12時以降**・その日に**14:00発売の枠があるなら14時より後**にずらす（発売時刻の後でないとぴあが締切を出さない） | 同上 |
 | 🌆夕方 | （新着収集は**朝に前倒し**した＝2026-08-16変更） | — |
-| 🌙夜 | X投稿＝**Xフォロワー多い順トップ4＋まとめ1本**（🚨2026-08-17＝**選定でユーザーに聞かない・着手はもっと早く**）。本文はFable。予約は**`:01/:16/:31/:46`・15分おき**。<br>🚨**予約したら、投稿に出した公演のチケット取りこぼしをぴあで総ざらいして潰す→直してからpush**（2026-08-26） | **文面はユーザーが見てから予約**（ここは従来どおり） |
+| 🌙夜 | 🚨**着手は17:00**（19:01予約に間に合わせるため）。X投稿＝**Xフォロワー多い順トップ4＋まとめ1本**（🚨2026-08-17＝**選定でユーザーに聞かない・着手はもっと早く**）。本文はFable。予約は**`:01/:16/:31/:46`・15分おき**。<br>🚨**予約したら、投稿に出した公演のチケット取りこぼしをぴあで総ざらいして潰す→直してからpush**（2026-08-26） | **文面はユーザーが見てから予約**（ここは従来どおり） |
 
 🚨**新着50件は「投入した翌日」に再チェックを通してからpush**（ユーザー明示）。詳細 `project_daily_operation`
 
@@ -59,7 +59,7 @@ push・削除・振り分け、**3つとも自走してよい**。ただし**必
 | **隠れ枠ヒール** | 自走 | feedback_harvest_today_sale_enddate / feedback_wpia_direct_sale_trap | 毎朝＋昼／startDate==dateは隠れ枠／w.pia直販は削除NG要目視 |
 | **エントリ修正/統合** | 自走 | feedback_tour_consolidate / feedback_tour_per_ticket_url / feedback_bundle_full_rederive / feedback_multiwindow_webfetch_verify | ツアーは1エントリ／各公演に個別URL／全URL開いて再導出 |
 | **表示・並び順いじる** | 要確認 | feedback_display_order / feedback_display_rules / feedback_ask_what_user_sees | 本日発売は一日中先頭／写経検証NG(実物eval)／「直ってない」は画面の実物を1つ聞く |
-| **X投稿** | 選定は自走／**文面は要確認** | project_sns_promotion / **feedback_x_pick_bigname_miss** / feedback_model_routing_fable / feedback_x_link_oshinavi_only / feedback_x_no_link_spam / feedback_x_deadline_vs_presale_by_genre | 🚨**2026-08-17変更＝選定はユーザーに聞かない。Xフォロワー多い順で上位4本＋まとめ1本・着手は早く（夜まで待たない）・文面まで作っておく**／説明書かない・気持ちの代弁／URLは素のoshinavi.jp／ツアー名は公式裏取り／文字数機械カウント／フォロワー数はポスト数・Instagramと取り違えない・取れなければ「取れなかった」と書く |
+| **X投稿** | 選定は自走／**文面は要確認** | 🚨🚨**まず feedback_x_post_method_0825 を全文Read（これが決定版・字数も締めもここで決まる）** / project_sns_promotion / **feedback_x_pick_bigname_miss** / feedback_model_routing_fable / feedback_x_link_oshinavi_only / feedback_x_no_link_spam / feedback_x_deadline_vs_presale_by_genre | 🚨**2026-08-17変更＝選定はユーザーに聞かない。Xフォロワー多い順で上位4本＋まとめ1本・着手は早く（夜まで待たない）・文面まで作っておく**／説明書かない・気持ちの代弁／URLは素のoshinavi.jp／ツアー名は公式裏取り／文字数機械カウント／フォロワー数はポスト数・Instagramと取り違えない・取れなければ「取れなかった」と書く |
 | **push** | 要OK | feedback_push / feedback_check_before_push / project_netlify_credits | 1日2回・事前確認／commit→pushの間にブラウザチェック／push前にai.html/SSR再生成 |
 
 ---
