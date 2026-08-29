@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 51,
+ "total": 52,
  "pages": 6,
  "fetched_pages": 7,
- "parsed": 42,
- "new_name_in_db": 9,
+ "parsed": 45,
+ "new_name_in_db": 14,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625164",
@@ -73,6 +73,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/30(金)",
+   "venue": "柏ＰＡＬＯＯＺＡ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667301",
    "artist": "超PMAM",
    "saletype": "一般発売",
@@ -114,7 +125,7 @@
    "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
    "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626940",
@@ -158,18 +169,18 @@
    "venue": "千葉ＬＯＯＫ(千葉県)",
    "pref": "千葉県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634204",
+   "artist": "Ｈｅｌｓｉｎｋｉ Ｌａｍｂｄａ Ｃｌｕｂ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
+   "perfdate": "2026/10/29(木)",
+   "venue": "千葉ＬＯＯＫ(千葉県)",
+   "pref": "千葉県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632516",
@@ -192,6 +203,28 @@
    "pref": "千葉県",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628186",
+   "artist": "リアクション ザ ブッタ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "千葉ＬＯＯＫ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667589",
+   "artist": "緑黄色社会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/19(土)",
+   "venue": "ＬａＬａ ａｒｅｎａ ＴＯＫＹＯ－ＢＡＹ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": false
   }
  ]
 }

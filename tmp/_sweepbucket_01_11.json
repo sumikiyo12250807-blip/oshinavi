@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 32,
- "pages": 4,
- "fetched_pages": 5,
- "parsed": 30,
- "new_name_in_db": 8,
+ "total": 29,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 28,
+ "new_name_in_db": 9,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665597",
@@ -18,26 +18,15 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616173",
-   "artist": "ＣＨＥＭＩＳＴＲＹ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
+   "perfdate": "2026/11/1(日)",
+   "venue": "Ｃｌｕｂ ＪＡＭＭＥＲ’Ｓ ＴＡＫＡＳＡＫＩ(群馬県)",
    "pref": "群馬県",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665889",
-   "artist": "the shes gone",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/26(土)",
-   "venue": "前橋 ＤＹＶＥＲ(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",

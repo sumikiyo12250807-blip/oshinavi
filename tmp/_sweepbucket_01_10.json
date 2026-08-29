@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 36,
+ "total": 38,
  "pages": 4,
  "fetched_pages": 5,
- "parsed": 34,
- "new_name_in_db": 6,
+ "parsed": 36,
+ "new_name_in_db": 9,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669162",
@@ -51,6 +51,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)",
+   "pref": "栃木県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
    "artist": "鈴木雅之",
    "saletype": "一般発売",
@@ -70,7 +81,18 @@
    "venue": "小山市立文化センター 大ホール(栃木県)",
    "pref": "栃木県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634494",
+   "artist": "Ｓｏａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/8(日)",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)",
+   "pref": "栃木県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666977",

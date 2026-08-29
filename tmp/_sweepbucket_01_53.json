@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 350,
- "pages": 35,
- "fetched_pages": 36,
- "parsed": 245,
- "new_name_in_db": 48,
+ "total": 369,
+ "pages": 37,
+ "fetched_pages": 38,
+ "parsed": 253,
+ "new_name_in_db": 57,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621694",
@@ -95,6 +95,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630398",
+   "artist": "打首獄門同好会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)",
+   "pref": "岡山県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622736",
    "artist": "ウルフルズ",
    "saletype": "一般発売",
@@ -148,28 +159,6 @@
    "pref": "広島県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600138",
-   "artist": "大森靖子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "ＤＩＭＥ(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612998",
-   "artist": "大森靖子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)",
-   "pref": "山口県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615221",
@@ -297,9 +286,9 @@
    "artist": "吉川晃司",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/26(土)",
-   "venue": "レクザムホール 大ホール(香川県)",
-   "pref": "香川県",
+   "perfdate": "2026/9/5(土)",
+   "venue": "米子コンベンションセンター ＢｉＧ ＳＨｉＰ 多目的ホール(鳥取県)",
+   "pref": "鳥取県",
    "in_db": false,
    "name_in_db": false
   },
@@ -491,15 +480,26 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665889",
-   "artist": "the shes gone",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/3(土)",
-   "venue": "ＤＩＭＥ(香川県)",
-   "pref": "香川県",
+   "perfdate": "2026/12/5(土)",
+   "venue": "ＳＩＸ ＯＮＥ Ｌｉｖｅ ＳＴＡＲ(広島県)",
+   "pref": "広島県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624374",
+   "artist": "ＳＨＥ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/30(金)",
+   "venue": "ＷｓｔｕｄｉｏＲＥＤ(愛媛県)",
+   "pref": "愛媛県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667117",
@@ -590,17 +590,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620294",
-   "artist": "セックスマシーン！！",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/9(土)",
-   "venue": "ＤＩＭＥ(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621151",
    "artist": "ＳＥｔＴＯＵＣＨシアター Ｔｈｅ ｆｉｒｓｔ ｓｅｔｏｕｃｈｉ",
    "saletype": "一般発売",
@@ -620,7 +609,29 @@
    "venue": "光市民ホール 大ホール(山口県)",
    "pref": "山口県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632694",
+   "artist": "Ｓｏａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632127",
+   "artist": "Ｓｏａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/27(金)",
+   "venue": "ＬＩＶＥ ＶＡＮＱＵＩＳＨ(広島県)",
+   "pref": "広島県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629031",
@@ -642,7 +653,7 @@
    "venue": "ＣＲＡＺＹＭＡＭＡ ２ｎｄ Ｒｏｏｍ(岡山県)",
    "pref": "岡山県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625893",
@@ -653,7 +664,7 @@
    "venue": "ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)",
    "pref": "香川県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
@@ -667,7 +678,7 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622986",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665969",
    "artist": "鶴",
    "saletype": "一般発売",
    "rlsdate": "",
@@ -676,17 +687,6 @@
    "pref": "愛媛県／高知県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616930",
-   "artist": "ＴＥＮＤＯＵＪＩ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "Ｂａｒ Ｃａｅｚａｒ(愛媛県)",
-   "pref": "愛媛県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620047",
@@ -707,6 +707,17 @@
    "perfdate": "2026/11/14(土) ・ 2026/11/15(日)",
    "venue": "高松ＭＯＮＳＴＥＲ(香川県)／高知Ｘ－ｐｔ．(高知県)",
    "pref": "香川県／高知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622442",
+   "artist": "徳永英明",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/17(土)",
+   "venue": "倉敷市民会館(岡山県)",
+   "pref": "岡山県",
    "in_db": false,
    "name_in_db": true
   },
@@ -764,17 +775,6 @@
    "pref": "広島県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611793",
-   "artist": "ＤＲＡＧＯＮ ＦＡＣＴＯＲＹ ＡＷＡ ＮＩＧＨＴＳ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "カサブランカ(徳島県)",
-   "pref": "徳島県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
@@ -964,17 +964,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619446",
-   "artist": "ビレッジマンズストア",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "セカンド・クラッチ(広島県)",
-   "pref": "広島県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625809",
    "artist": "ＴＨＥ ＢＥＡＴ ＧＡＲＤＥＮ",
    "saletype": "一般発売",
@@ -1008,17 +997,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668987",
-   "artist": "フォレスタ チャリティコンサート in 広島",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/31(月)",
-   "venue": "広島ＪＭＳアステールプラザ 大ホール(広島県)",
-   "pref": "広島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617589",
    "artist": "フラワーカンパニーズ",
    "saletype": "一般発売",
@@ -1038,7 +1016,7 @@
    "venue": "ＣＲＡＺＹＭＡＭＡ ２ｎｄ Ｒｏｏｍ(岡山県)",
    "pref": "岡山県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628660",
@@ -1049,7 +1027,7 @@
    "venue": "ＴＯＯＮＩＣＥ(香川県)",
    "pref": "香川県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623687",
@@ -1092,17 +1070,6 @@
    "perfdate": "2026/10/12(月・祝)",
    "venue": "松山市民会館 大ホール(愛媛県)",
    "pref": "愛媛県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
    "in_db": false,
    "name_in_db": false
   },
@@ -1151,34 +1118,12 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
-   "artist": "メリクレット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/3(火・祝)",
-   "venue": "ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617794",
    "artist": "山内総一郎",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/9/13(日)",
    "venue": "ＬＩＶＥ ＶＡＮＱＵＩＳＨ(広島県)",
-   "pref": "広島県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665133",
-   "artist": "山中さわお＆ELPIS",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "広島クラブクアトロ(広島県)",
    "pref": "広島県",
    "in_db": false,
    "name_in_db": true
@@ -1210,19 +1155,8 @@
    "artist": "横山裕",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621447",
-   "artist": "ＬＯＶＥＢＩＴＥＳ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/30(日)",
-   "venue": "広島クラブクアトロ(広島県)",
+   "perfdate": "2026/9/9(水)",
+   "venue": "ＢＬＵＥ ＬＩＶＥ 広島(広島県)",
    "pref": "広島県",
    "in_db": false,
    "name_in_db": false

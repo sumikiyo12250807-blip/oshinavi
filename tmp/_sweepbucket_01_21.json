@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 52,
+ "total": 56,
  "pages": 6,
  "fetched_pages": 7,
- "parsed": 50,
- "new_name_in_db": 7,
+ "parsed": 54,
+ "new_name_in_db": 10,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611506",
@@ -62,15 +62,15 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665889",
-   "artist": "the shes gone",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634674",
+   "artist": "ＳＨＥ’Ｓ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
-   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)／長野ライブハウスＪ(長野県)",
-   "pref": "新潟県／長野県",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
@@ -106,17 +106,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624158",
-   "artist": "ＴａＮａＢａＴａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｇｉｖｅ ｍｅ ｌｉｔｔｌｅ ｍｏｒｅ．(長野県)",
-   "pref": "長野県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625383",
    "artist": "ちゃくら",
    "saletype": "一般発売",
@@ -125,7 +114,7 @@
    "venue": "長野ライブハウスＪ(長野県)",
    "pref": "長野県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622214",
@@ -183,15 +172,15 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634289",
+   "artist": "真心ブラザーズ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
+   "perfdate": "2026/12/18(金)",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",

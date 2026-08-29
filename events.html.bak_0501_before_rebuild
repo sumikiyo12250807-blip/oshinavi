@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>行楽イベント メンテナンス中 | OSHINAVI</title>
+<style>
+  :root {
+    --accent: #e040fb;
+    --accent2: #00e5ff;
+    --bg: #0a0a0a;
+    --text: #f0f0f0;
+    --text-muted: #888;
+  }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px),
+      radial-gradient(circle at 50% 50%, rgba(0,229,255,0.15) 1.5px, transparent 2px);
+    background-size: 60px 60px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .card {
+    max-width: 520px;
+    width: 100%;
+    padding: 48px 32px;
+    border-radius: 16px;
+    background:
+      linear-gradient(135deg,
+        rgba(255,255,255,0.08) 0%,
+        rgba(255,255,255,0.03) 50%,
+        rgba(0,229,255,0.06) 100%);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+      0 8px 32px rgba(0,0,0,0.4),
+      0 0 24px rgba(224,64,251,0.25),
+      inset 0 1px 1px rgba(255,255,255,0.3);
+    text-align: center;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    background: linear-gradient(90deg, #ff5252, #ffab40, #69f0ae, #00e5ff, #e040fb);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 8s linear infinite;
+    margin: 0 0 24px;
+    filter: drop-shadow(0 0 12px rgba(0,229,255,0.35));
+  }
+  @keyframes shimmer {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+  h1 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0 0 20px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+  }
+  p {
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 10px 24px;
+    border-radius: 22px;
+    border: 1px solid rgba(0,229,255,0.5);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    background: linear-gradient(135deg, rgba(224,64,251,0.15), rgba(0,229,255,0.15));
+    box-shadow: 0 0 14px rgba(0,229,255,0.3), inset 0 0 10px rgba(255,255,255,0.08);
+    transition: all 0.3s;
+  }
+  .back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0,229,255,0.5), inset 0 0 12px rgba(255,255,255,0.15);
+  }
+  .note {
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="logo">OSHINAVI</p>
+    <h1>行楽イベント情報<br>ただいまメンテナンス中です</h1>
+    <p>情報の精査・整備を行っております。</p>
+    <p>ご不便をおかけしますが、<br>いましばらくお待ちください。</p>
+    <a class="back-link" href="index.html">← チケット情報へ戻る</a>
+    <p class="note">Under Maintenance</p>
+  </div>
+</body>
+</html>

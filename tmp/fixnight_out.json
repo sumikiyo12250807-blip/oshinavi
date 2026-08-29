@@ -1,0 +1,66 @@
+[
+ {
+  "id": 5501,
+  "artist": "LOVEBITES",
+  "name": "LOVEBITES",
+  "date": "2026-09-11",
+  "dateLabel": "2026年9月11日(金) 北海道 Zepp Sapporo",
+  "venue": "Zepp Sapporo",
+  "prefecture": "北海道",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2621389",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=LOVEBITES%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "一般発売（北海道 9/11公演）〜9/10 23:59",
+    "date": "2026-09-10"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-27"
+ },
+ {
+  "id": 5521,
+  "artist": "瀬川あやか",
+  "name": "瀬川あやか",
+  "date": "2026-11-01",
+  "dateLabel": "2026年10月25日(日)〜2026年11月1日(日) 北海道",
+  "venue": "全国ツアー（CASINO DRIVE／札幌近松）",
+  "prefecture": "北海道",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2632532",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=%E7%80%AC%E5%B7%9D%E3%81%82%E3%82%84%E3%81%8B%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "プレリザーブ（北海道 10/25〜11/1公演）9/1 11:00発売",
+    "date": "2026-09-07",
+    "startDate": "2026-09-01"
+   },
+   {
+    "type": "一般発売（北海道 10/25〜11/1公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-27"
+ }
+]

@@ -1,37 +1,25 @@
 # -*- coding: utf-8 -*-
-"""X投稿の候補出し（明日=2026-08-27 発売開始の枠だけ）。
-feedback_sale_start_vs_deadline＝date は締切のことが多いので、
-「M/D HH:MM発売」と明示された枠 or startDate==対象日 の枠だけを発売開始として拾う。
-soldout枠は除く。
-"""
-import re, json, sys
-from collections import Counter
+"""明日(8/28)発売の枠を機械抽出する。"""
+import json,re,io,sys,collections
 sys.stdout.reconfigure(encoding='utf-8')
-
-TARGET = "2026-08-27"
-MD = "8/27"
-
-raw = open('index.html', encoding='utf-8').read()
-EVENTS = json.loads(re.search(r'  const EVENTS = (\[.*?\]);', raw, re.S).group(1))
-
-rows = []
-for e in EVENTS:
-    hits = []
-    for t in e.get('tickets') or []:
-        if t.get('soldout'):
-            continue
-        ty = t.get('type') or ''
-        explicit = re.search(r'%s\s*\d{1,2}:\d{2}\s*発売' % re.escape(MD), ty)
-        if t.get('startDate') == TARGET or explicit:
-            hits.append(ty)
-    if hits:
-        rows.append((e, hits))
-
-print("=== 明日 %s 発売開始の枠を持つエントリ %d件 ===" % (TARGET, len(rows)))
-print("ジャンル内訳:", dict(Counter(e.get('genre') for e, _ in rows)))
-print()
-for e, hits in rows:
-    print("id%-5s [%-8s] %s" % (e['id'], e.get('genre'), (e.get('artist') or '')[:44]))
-    print("        会場 %s / %s" % ((e.get('venue') or '')[:40], e.get('prefecture')))
-    for h in hits:
-        print("        - %s" % h)
+TOM='2026-08-28'
+s=open('index.html',encoding='utf-8',newline='').read()
+m=re.search(r'(  const EVENTS = )(\[.*?\])(;)',s,re.S)
+EV=json.loads(m.group(2))
+rows=[]
+for e in EV:
+    if e.get('genre')=='new': continue          # 新着プールは振り分け前なので出さない
+    if (e.get('date') or '')<TOM: continue
+    for t in e.get('tickets',[]):
+        if t.get('soldout'): continue
+        if t.get('startDate')==TOM:
+            rows.append((e['id'],e.get('artist',''),e.get('genre',''),t.get('type',''),e.get('prefecture',''),e.get('date','')))
+o=io.open('tmp/x_cand_0827.md','w',encoding='utf-8')
+o.write('# 明日8/28に発売する枠 %d件\n\n'%len(rows))
+g=collections.Counter(r[2] for r in rows)
+o.write('ジャンル別: %s\n\n'%dict(g.most_common()))
+for r in sorted(rows,key=lambda x:(x[2],x[1])):
+    o.write('- [%s] id=%d %s ｜ %s ｜ %s ｜ 公演〜%s\n'%(r[2],r[0],r[1],r[3],r[4],r[5]))
+o.close()
+print('明日発売の枠',len(rows),'件 / エントリ',len(set(r[0] for r in rows)))
+print(dict(g.most_common()))
