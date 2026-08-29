@@ -1,11 +1,22 @@
 {
  "lg": "01",
- "total": 238,
- "pages": 24,
- "fetched_pages": 25,
- "parsed": 191,
- "new_name_in_db": 28,
+ "total": 241,
+ "pages": 25,
+ "fetched_pages": 26,
+ "parsed": 196,
+ "new_name_in_db": 33,
  "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669627",
+   "artist": "藍井エイル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/28(土)",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618892",
    "artist": "新居昭乃",
@@ -356,7 +367,7 @@
    "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
    "pref": "北海道",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608247",
@@ -392,17 +403,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620963",
-   "artist": "ちゃくら",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "札幌近松(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
    "artist": "つきみ",
    "saletype": "一般発売",
@@ -412,17 +412,6 @@
    "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618994",
-   "artist": "徳永英明",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615997",
@@ -444,7 +433,7 @@
    "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
    "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609363",
@@ -455,7 +444,7 @@
    "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
    "pref": "北海道",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613327",
@@ -530,6 +519,17 @@
    "rlsdate": "",
    "perfdate": "2026/12/19(土)",
    "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613074",
+   "artist": "半崎美子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/8(日)",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
@@ -686,7 +686,7 @@
    "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
    "pref": "北海道",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623781",
@@ -718,17 +718,6 @@
    "perfdate": "2026/9/20(日)",
    "venue": "旧カトリック住之江教会(北海道)",
    "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
    "in_db": false,
    "name_in_db": false
   },
@@ -788,45 +777,12 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
-   "artist": "メリクレット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/26(土)",
-   "venue": "ＰＬＡＮＴ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624679",
    "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 帯広公演",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/8/30(日)",
    "venue": "ＭＥＬＬＯＷ ＭＥＬＬＯＷ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624678",
-   "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 札幌公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "岩本珈琲(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624677",
-   "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 苫小牧公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "ニュー ドン・キホーテ(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": false
@@ -859,17 +815,6 @@
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/9/28(月) ・ 2026/9/29(火)",
-   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621389",
-   "artist": "ＬＯＶＥＢＩＴＥＳ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/11(金)",
    "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
    "pref": "北海道",
    "in_db": false,

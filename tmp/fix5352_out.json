@@ -1,0 +1,36 @@
+[
+ {
+  "id": 5352,
+  "artist": "paris match",
+  "name": "paris match",
+  "date": "2026-12-06",
+  "dateLabel": "2026年12月6日(日) 東京 日本橋三井ホール",
+  "venue": "日本橋三井ホール",
+  "prefecture": "東京",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2632683",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=paris%20match%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "プレリザーブ（東京 12/6公演）〜9/7 23:59",
+    "date": "2026-09-07"
+   },
+   {
+    "type": "一般発売（東京 12/6公演）10/10 10:00発売",
+    "date": "2026-10-10",
+    "startDate": "2026-10-10"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-27"
+ }
+]

@@ -1,0 +1,93 @@
+=== 66サブカテゴリ全部を通した挙動（潜在の穴の洗い出し） ===
+音楽/ジャズ・フュージョン	-> ('jazz', None)	[MAP]
+音楽/J-POP・ROCK	-> ('jpop', None)	[MAP]
+音楽/演歌・邦楽	-> ('enka', None)	[MAP]
+音楽/童謡・日本のうた	-> ('douyou', None)	[MAP]
+音楽/アニメ音楽	-> ('anime', None)	[MAP]
+音楽/シャンソン	-> ('chanson', None)	[MAP]
+音楽/海外ROCK・POPS	-> ('yougaku', None)	[MAP]
+音楽/民族音楽	-> ('yougaku', None)	[MAP]
+音楽/フェスティバル	-> ('fes', None)	[MAP]
+音楽/音楽その他	-> ('musicetc', None)	[MAP]
+演劇/演劇	-> ('engeki', None)	[MAP]
+演劇/朗読・リーディング	-> ('engeki', None)	[MAP]
+演劇/ミュージカル・ショー	-> ('musical', None)	[MAP]
+演劇/人形劇・キャラクター	-> ('kids', None)	[MAP]
+演劇/バレエ・ダンス	-> ('classic', 'engeki')	[MAP]
+演劇/パフォーマンス	-> ('engeki', None)	[MAP]
+演劇/フェスティバル	-> ('fes', None)	[MAP]
+演劇/歌舞伎・古典芸能	-> ('dento', None)	[MAP]
+演劇/寄席・お笑い	-> ('owarai', None)	[MAP]
+演劇/演劇その他	-> ('engeki', None)	[MAP]
+スポーツ/サッカー	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/野球	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/ラグビー	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/バスケットボール	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/バレーボール	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/アメフト	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/球技その他	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/プロレス	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/ボクシング	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/格闘技	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/相撲・武道	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/モータースポーツ	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/スイム・マリンスポーツ	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/フィギュアスケート・ウィンタースポーツ	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/ゴルフ	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/eスポーツ	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/ソフトボール	-> ('sports', None)	[あいまい/CATfallback]
+スポーツ/スポーツその他	-> ('sports', None)	[MAP]
+映画/邦画	-> ('engeki', None)	[MAP]
+映画/洋画	-> ('engeki', None)	[MAP]
+映画/舞台挨拶	-> ('aisatsu', None)	[MAP]
+映画/映画祭	-> ('engeki', None)	[MAP]
+映画/ライブビューイング	-> ('engeki', None)	[MAP]
+映画/映画その他	-> ('musicetc', None)	[MAP]
+アート/アート	-> ('art', None)	[MAP]
+イベント/講演会・トークショー	-> ('engeki', None)	[MAP]
+イベント/子供と楽しむ	-> ('kids', None)	[MAP]
+イベント/サーカス	-> ('circus', None)	[MAP]
+イベント/マジック・イリュージョン	-> ('magic', None)	[MAP]
+イベント/パフォーマンス	-> ('engeki', None)	[MAP]
+イベント/ショー・ファンイベント	-> ('fanevent', None)	[MAP]
+イベント/祭り・花火大会	-> ('fes', None)	[MAP]
+イベント/ディナーショー	-> ('dinnershow', None)	[MAP]
+イベント/博覧会・展示会・見本市	-> ('art', None)	[MAP]
+イベント/スクール・レジャー	-> ('kids', None)	[MAP]
+イベント/学園祭	-> ('gakusai', None)	[MAP]
+イベント/アミューズメント	-> ('kids', None)	[MAP]
+イベント/イベントその他	-> ('musicetc', None)	[MAP]
+クラシック/オーケストラ	-> ('classic', None)	[あいまい/CATfallback]
+クラシック/器楽・室内楽	-> ('classic', None)	[あいまい/CATfallback]
+クラシック/オペラ・声楽	-> ('classic', None)	[あいまい/CATfallback]
+クラシック/吹奏楽	-> ('classic', None)	[あいまい/CATfallback]
+クラシック/合唱	-> ('classic', None)	[あいまい/CATfallback]
+クラシック/クラシック邦楽	-> ('enka', None)	[分岐]
+クラシック/フェスティバル・ガラコンサート	-> ('fes', None)	[あいまい/CATfallback]
+クラシック/クラシックその他	-> ('classic', None)	[あいまい/CATfallback]
+
+=== 新着261件の重複チェック ===
+同名 2件: 人間椅子|人間椅子
+同名 2件: みゆな|みゆな
+同名 2件: 忘れらんねえよ|忘れらんねえよ
+同名 2件: 岡村孝子|岡村孝子
+同名 3件: 岡村靖幸|岡村靖幸
+同名 2件: 「果てない ～甦る母篇～」|「果てない ～甦る母篇～」
+同名 3件: 『ジャズ大名』|『ジャズ大名』
+同名 5件: SHE’S|SHE’S
+同名 2件: PURPLE BUBBLE|PURPLE BUBBLE
+同名 3件: syrup16g|syrup16g
+同名 2件: TENDOUJI|TENDOUJI
+同名 3件: 金ガチャ|金ガチャ
+
+=== NEW_ORDER と新着プールの照合 ===
+NEW_ORDER 261件 / 新着プール 261件
+NEW_ORDERにあるがプールに無い: []
+プールにあるがNEW_ORDERに無い: []
+NEW_ORDER内の重複: []
+
+=== id連番の欠番（5332-5594） ===
+欠番: [5432, 5433]
+
+=== _extraGenres が空配列のまま残っている件数 ===
+257件（空配列。assign時は falsy なので extraGenres は付かない＝害なし）

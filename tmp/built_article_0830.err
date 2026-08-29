@@ -1,0 +1,16 @@
+  3892 OK
+  3891 OK
+  756 OK
+  4843 OK
+  4626 OK
+  4627 OK
+  5726 OK
+構築 7 件 / skip []
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 3件（買える枠なのに取り込めなかった＝要対応）:
+   id3891 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2624866
+   id3891 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2630029
+   id756 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia/event/event.do?eventCd=2625605
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

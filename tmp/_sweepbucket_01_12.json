@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 61,
- "pages": 7,
- "fetched_pages": 8,
- "parsed": 57,
- "new_name_in_db": 10,
+ "total": 71,
+ "pages": 8,
+ "fetched_pages": 9,
+ "parsed": 64,
+ "new_name_in_db": 12,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613366",
@@ -51,6 +51,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616173",
+   "artist": "ＣＨＥＭＩＳＴＲＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/10(木)",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
    "artist": "KOTORI pre.“12” Tour",
    "saletype": "一般発売",
@@ -95,15 +106,15 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607858",
-   "artist": "世良公則",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626828",
+   "artist": "島袋寛子",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/29(日)",
-   "venue": "深谷市民文化会館 大ホール(埼玉県)",
+   "perfdate": "2026/9/23(水・祝)",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
    "pref": "埼玉県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626958",
@@ -117,17 +128,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612073",
-   "artist": "ツチヤカレン",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/24(木)",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619046",
    "artist": "ＴＲＩＰＬＡＮＥ",
    "saletype": "一般発売",
@@ -136,7 +136,7 @@
    "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
    "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
@@ -238,12 +238,12 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2604449",
-   "artist": "渡辺真知子",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628186",
+   "artist": "リアクション ザ ブッタ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
+   "perfdate": "2027/3/14(日)",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
    "pref": "埼玉県",
    "in_db": false,
    "name_in_db": true

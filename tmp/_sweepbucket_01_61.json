@@ -1,33 +1,11 @@
 {
  "lg": "01",
- "total": 146,
- "pages": 15,
- "fetched_pages": 16,
- "parsed": 133,
+ "total": 139,
+ "pages": 14,
+ "fetched_pages": 15,
+ "parsed": 126,
  "new_name_in_db": 5,
  "new": [
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670402",
-   "artist": "一攫千笑 成りあがれ モノボケアイドルGP ～伝説はここから始まる 渋谷・夏の陣～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/26(水)",
-   "venue": "東京カルチャーカルチャー(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628423",
-   "artist": "岩田卓也＆ＭＡＫＩリサイタル",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "浜離宮朝日ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619358",
    "artist": "沖縄三線と澄んだ歌声で聴く沖縄音楽コンサート＆エイサー文化庁公演",
@@ -84,17 +62,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670240",
-   "artist": "Kaushiki Chakraborty インド古典音楽公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/7(月)",
-   "venue": "飛行船シアター(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628434",
    "artist": "風とロック芋煮会ｉｎ Ｓｅｐｔｅｍｂｅｒ ＪＡＭシャトルバス券＜猪苗代駅⇔猪苗代スキー場（ミネロ）特設第１駐車場＞",
    "saletype": "一般発売",
@@ -113,17 +80,6 @@
    "perfdate": "2026/9/21(月・祝) ・ 2026/9/22(火・祝)",
    "venue": "郡山駅⇔猪苗代スキー場ミネロ第１駐車場(福島県)",
    "pref": "福島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612834",
-   "artist": "桂三四郎チャレンジｗｉｔｈおぼん＆醸－ＫＡＭＯＳＨＩ－",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "かつしかシンフォニーヒルズ アイリスホール(東京都)",
-   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -282,17 +238,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629293",
-   "artist": "ＴＨＥ ＲＥＣＩＴＡＬ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/6(日)",
-   "venue": "おきえらぶ文化ホールあしびの郷・ちな(鹿児島県)",
-   "pref": "鹿児島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622113",
    "artist": "下関きずな音楽祭ＶＯＬ．６",
    "saletype": "一般発売",
@@ -302,6 +247,17 @@
    "pref": "山口県",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670785",
+   "artist": "昭和・平成歌謡ナイト Vol.3",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/30(金)",
+   "venue": "さんばしひろば周辺エリア（ＰＩＥＲ－０１／千葉ポートタワー／他）(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626103",
@@ -414,17 +370,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627710",
-   "artist": "第４０回静岡・清水市民クリスマスコンサート「イーダ・エリナ」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/2(水)",
-   "venue": "グランシップ 中ホール・大地(静岡県)",
-   "pref": "静岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669324",
    "artist": "地球の響き ～Earth Sounds～",
    "saletype": "一般発売",
@@ -451,20 +396,9 @@
    "artist": "ワッチャプリマジ！スペシャルイベント ～ワッチャ！5th！マジック！～",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625664",
-   "artist": "ＤＲＵＭ ＴＡＯ ２０２６ 新作舞台「ＴＨＥ ＨＵＭＡＮ」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土)",
-   "venue": "南越前文化会館(福井県)",
-   "pref": "福井県",
+   "perfdate": "2026/8/29(土) ～ 2026/9/13(日)",
+   "venue": "ＳＰＷＮ 一般発売 販売期間中 ～2026/9/13(日) 20:59",
+   "pref": "",
    "in_db": false,
    "name_in_db": false
   },
@@ -568,39 +502,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632371",
-   "artist": "ｆａｉｆｏ ｓｕｍｍｅｒ ～野島樺乃 名曲で繋ぐ夏の夜～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "Ｆａｉｆｏ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632928",
-   "artist": "ｆａｉｆｏ ｓｕｍｍｅｒ ～野島樺乃 名曲で繋ぐ夏の夜～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "Ｆａｉｆｏ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619699",
-   "artist": "古川展生 妹尾武 コンサート 夏彩のハーモニー",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/30(日)",
-   "venue": "横浜市開港記念会館 講堂(神奈川県)",
-   "pref": "神奈川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627552",
    "artist": "ふるさとアーティストフェスティバル２０２６",
    "saletype": "一般発売",
@@ -663,28 +564,6 @@
    "perfdate": "2026/9/6(日)",
    "venue": "えずこホール（仙南芸術文化センター） 大ホール(宮城県)",
    "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616631",
-   "artist": "Ｍｉｙａｋｅｎ Ｊａｍｂｏｒｅｅ Ｔｏｕｒ ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "名古屋市熱田文化小劇場(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626090",
-   "artist": "Ｍｉｙａｋｅｎ Ｊａｍｂｏｒｅｅ Ｔｏｕｒ ＴＯＫＹＯＦＩＮＡＬ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/11(金)",
-   "venue": "めぐろパーシモンホール 小ホール(東京都)",
-   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },

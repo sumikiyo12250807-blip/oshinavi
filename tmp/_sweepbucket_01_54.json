@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 324,
- "pages": 33,
- "fetched_pages": 34,
- "parsed": 233,
- "new_name_in_db": 43,
+ "total": 342,
+ "pages": 35,
+ "fetched_pages": 36,
+ "parsed": 243,
+ "new_name_in_db": 48,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623411",
@@ -58,6 +58,28 @@
    "perfdate": "2026/9/26(土) ・ 2026/10/12(月・祝)",
    "venue": "タイハクホール名取 大ホール(宮城県)／あきた芸術劇場ミルハス 大ホール(秋田県)",
    "pref": "宮城県／秋田県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668250",
+   "artist": "September JAM(ARTS／風とロック芋煮会／オハラ☆ブレイク’26)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/21(月・祝) ～ 2026/11/3(火・祝)",
+   "venue": "福島県猪苗代町(福島県)",
+   "pref": "福島県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616049",
+   "artist": "生田絵梨花",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/30(日)",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県",
    "in_db": false,
    "name_in_db": false
   },
@@ -205,17 +227,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668645",
-   "artist": "Gum-9",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ３ｒｄ(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629732",
    "artist": "ガラスの靴は落とさない",
    "saletype": "一般発売",
@@ -255,17 +266,6 @@
    "rlsdate": "",
    "perfdate": "2026/8/30(日)",
    "venue": "仙台サンプラザホール(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622461",
-   "artist": "君島大空",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "仙台 ｄａｒｗｉｎ(宮城県)",
    "pref": "宮城県",
    "in_db": false,
    "name_in_db": false
@@ -425,17 +425,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2543150",
-   "artist": "財津和夫",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "仙台サンプラザホール(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669905",
    "artist": "the band apart",
    "saletype": "一般発売",
@@ -458,26 +447,15 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612809",
-   "artist": "清水ミチコ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "岩沼市民会館 大ホール(宮城県)",
+   "perfdate": "2026/11/28(土)",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ２ｎｄ(宮城県)",
    "pref": "宮城県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619609",
-   "artist": "ｓｕｋｅｋｉｙｏ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "仙台 ｄａｒｗｉｎ(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
@@ -489,17 +467,6 @@
    "pref": "青森県",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564629",
-   "artist": "スターダスト☆レビュー",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金) ・ 2026/8/29(土)",
-   "venue": "リンクモア平安閣市民ホール(青森県)／シェルターなんようホール 大ホール(山形県)",
-   "pref": "青森県／山形県",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616346",
@@ -565,7 +532,7 @@
    "venue": "仙台ＭＡＣＡＮＡ(宮城県)",
    "pref": "宮城県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628880",
@@ -590,7 +557,7 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620132",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665969",
    "artist": "鶴",
    "saletype": "一般発売",
    "rlsdate": "",
@@ -631,7 +598,7 @@
    "venue": "酒田ｈｏｐｅ(山形県)",
    "pref": "山形県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619046",
@@ -642,7 +609,7 @@
    "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
    "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620469",
@@ -708,7 +675,7 @@
    "venue": "仙台ＰＩＴ(宮城県)",
    "pref": "宮城県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612447",
@@ -731,17 +698,6 @@
    "pref": "宮城県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619782",
-   "artist": "野田愛実",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/12(土)",
-   "venue": "誰も知らない劇場(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669925",
@@ -810,6 +766,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670763",
+   "artist": "PURPLE BUBBLE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/25(日)",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ２ｎｄ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616397",
    "artist": "ビッケブランカ",
    "saletype": "一般発売",
@@ -876,17 +843,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622359",
    "artist": "Ｍｙ Ｌｉｔｔｌｅ Ｌｏｖｅｒ",
    "saletype": "一般発売",
@@ -896,6 +852,17 @@
    "pref": "宮城県",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621517",
+   "artist": "マカロニえんぴつ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/21(土)",
+   "venue": "宮城・セキスイハイムスーパーアリーナ（グランディ・２１）(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617546",
@@ -931,17 +898,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
-   "artist": "メリクレット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/25(日)",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ３ｒｄ(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624684",
    "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 秋田公演",
    "saletype": "一般発売",
@@ -975,7 +931,7 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617748",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670758",
    "artist": "森高千里",
    "saletype": "一般発売",
    "rlsdate": "",
@@ -1038,7 +994,7 @@
    "venue": "ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)",
    "pref": "宮城県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667696",
@@ -1050,17 +1006,6 @@
    "pref": "宮城県",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609435",
-   "artist": "Ｒｈｙｔｈｍｉｃ Ｔｏｙ Ｗｏｒｌｄ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＦＬＹＩＮＧ ＳＯＮ(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665615",

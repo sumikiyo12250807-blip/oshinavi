@@ -1,11 +1,22 @@
 {
  "lg": "01",
- "total": 737,
- "pages": 74,
- "fetched_pages": 75,
- "parsed": 636,
- "new_name_in_db": 87,
+ "total": 749,
+ "pages": 75,
+ "fetched_pages": 76,
+ "parsed": 642,
+ "new_name_in_db": 96,
  "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633895",
+   "artist": "藍井エイル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/24(木)",
+   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670008",
    "artist": "秋の定期公演「フォークソングでやんす」六角精児バンドｗｉｔｈ井ノ原快彦",
@@ -29,17 +40,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670551",
-   "artist": "浅葱／ASAGI 20th Anniversary Year chapter II",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "Ｓｐｏｔｉｆｙ Ｏ－ＥＡＳＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670090",
    "artist": "あたらよ",
    "saletype": "一般発売",
@@ -49,6 +49,17 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634323",
+   "artist": "ＡＮＩＭＡＸ ＭＵＳＩＸ ＮＥＸＴＡＧＥ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/11(金)",
+   "venue": "東放学園映画専門学校 ＳＴＵＤＩＯ Ｄｅｅ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613573",
@@ -68,17 +79,6 @@
    "rlsdate": "",
    "perfdate": "2026/11/14(土)",
    "venue": "きゅりあん（品川区立総合区民会館） 大ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619709",
-   "artist": "アルルカン",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
@@ -117,28 +117,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621836",
-   "artist": "五十嵐ハル",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628535",
-   "artist": "いぎなり東北産",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＴＨＥＡＴＲＥ１０１０(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625312",
    "artist": "石川さゆりコンサート ～極上のアンサンブル～",
    "saletype": "一般発売",
@@ -172,6 +150,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628540",
+   "artist": "弌誠",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/16(金)",
+   "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621066",
    "artist": "稲垣潤一",
    "saletype": "一般発売",
@@ -192,17 +181,6 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667663",
-   "artist": "eastern youth",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＬＩＱＵＩＤＲＯＯＭ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
@@ -233,17 +211,6 @@
    "rlsdate": "",
    "perfdate": "2026/9/24(木)",
    "venue": "ＬＩＱＵＩＤＲＯＯＭ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665596",
-   "artist": "w-inds.",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/26(水)",
-   "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -365,17 +332,6 @@
    "rlsdate": "",
    "perfdate": "2026/12/9(水)",
    "venue": "Ｓｐｏｔｉｆｙ Ｏ－ＷＥＳＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624438",
-   "artist": "大塚 愛",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "ＴＡＣＨＩＫＡＷＡ ＳＴＡＧＥ ＧＡＲＤＥＮ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -601,6 +557,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631404",
+   "artist": "加藤ミリヤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/1(日)",
+   "venue": "ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624096",
    "artist": "ｃａｄｏｄｅ",
    "saletype": "一般発売",
@@ -618,6 +585,17 @@
    "rlsdate": "",
    "perfdate": "2026/10/11(日)",
    "venue": "Ｖｅａｔｓ Ｓｈｉｂｕｙａ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608624",
+   "artist": "神谷浩史",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土)",
+   "venue": "東京国際フォーラム ホールＡ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -700,8 +678,8 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621469",
-   "artist": "ＧＡＮＭＩ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670718",
+   "artist": "GANMI",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/11/11(水)",
@@ -728,17 +706,6 @@
    "rlsdate": "",
    "perfdate": "2026/9/4(金)",
    "venue": "なかのＺＥＲＯ 大ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612128",
-   "artist": "木根尚登",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "ＥＸ ＴＨＥＡＴＥＲ ＲＯＰＰＯＮＧＩ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
@@ -775,6 +742,17 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631036",
+   "artist": "９ｂｉｃ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日)",
+   "venue": "ＺＥＡＬ ＴＨＥＡＴＥＲ ＴＯＫＹＯ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669439",
@@ -865,17 +843,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623941",
-   "artist": "くれいじーまぐねっと",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/26(水)",
-   "venue": "豊洲ＰＩＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670501",
    "artist": "黒木渚",
    "saletype": "一般発売",
@@ -896,6 +863,17 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670715",
+   "artist": "黒フェス2026～白黒歌合戦～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/6(日)",
+   "venue": "豊洲ＰＩＴ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624545",
@@ -920,17 +898,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666625",
-   "artist": "GLIM SPANKY",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668279",
    "artist": "中西圭三",
    "saletype": "一般発売",
@@ -948,17 +915,6 @@
    "rlsdate": "",
    "perfdate": "2026/9/30(水)",
    "venue": "恵比寿ザ・ガーデンホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611365",
-   "artist": "交感ひろば＠ＳＰＡＣＥ ＺＥＲＯ Ｐａｒｔ３０ コッキーポップコンサート２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "こくみん共済 ｃｏｏｐ ホール／スペース・ゼロ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1074,17 +1030,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616248",
-   "artist": "ＳｕｇＬａｗｄ Ｆａｍｉｌｉａｒ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/9(土)",
-   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667573",
    "artist": "サグラダ・ファミリア シンフォニックコンサート",
    "saletype": "一般発売",
@@ -1113,17 +1058,6 @@
    "rlsdate": "",
    "perfdate": "2026/9/26(土)",
    "venue": "ｓｈｉｍｏｋｉｔａｚａｗａ ＥＲＡ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628066",
-   "artist": "佐藤アツヒロ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＮＥＷ ＰＩＥＲ ＨＡＬＬ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1173,6 +1107,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625711",
+   "artist": "沢田研二",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/16(月)",
+   "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622687",
    "artist": "澤田知可子",
    "saletype": "一般発売",
@@ -1190,17 +1135,6 @@
    "rlsdate": "",
    "perfdate": "2026/9/22(火・祝)",
    "venue": "ＳＨＩＢＵＹＡ ＰＬＥＡＳＵＲＥ ＰＬＥＡＳＵＲＥ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611739",
-   "artist": "Ｓｕｎｄａｅ Ｍａｙ Ｃｌｕｂ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1261,12 +1195,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607500",
-   "artist": "ＴＨＥ ＳＵＰＥＲ ＦＲＵＩＴ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633372",
+   "artist": "ＴＨＥ ＤＯ ＤＯ ＤＯ’Ｓ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/12/12(土)",
-   "venue": "両国国技館(東京都)",
+   "perfdate": "2026/9/24(木)",
+   "venue": "下北沢ＳＨＥＬＴＥＲ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1292,6 +1226,28 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625376",
+   "artist": "ＴＨＥ ＭＡＣＫＳＨＯＷ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/4(金)",
+   "venue": "浅草花劇場(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625328",
+   "artist": "ザ・ワイルドワンズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/5(木)",
+   "venue": "なかのＺＥＲＯ 大ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563874",
@@ -1322,17 +1278,6 @@
    "rlsdate": "",
    "perfdate": "2026/11/7(土)",
    "venue": "第一生命ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611390",
-   "artist": "ＳＩＯＮ ｗｉｔｈ ＴＨＥ ＭＯＧＡＭＩ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1415,12 +1360,34 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626828",
+   "artist": "島袋寛子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/4(水)",
+   "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621510",
    "artist": "終活クラブ",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/9/1(火)",
    "venue": "渋谷音楽堂(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621644",
+   "artist": "終活クラブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2027/1/22(金)",
+   "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1503,12 +1470,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600552",
-   "artist": "－真天地開闢集団－ジグザグ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "Ｊ：ＣＯＭホール八王子(東京都)",
+   "perfdate": "2026/12/25(金)",
+   "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
@@ -1540,7 +1507,7 @@
    "artist": "GENIC",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
+   "perfdate": "2026/8/30(日)",
    "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
    "pref": "東京都",
    "in_db": false,
@@ -1556,6 +1523,17 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670094",
+   "artist": "ジ・エンプティ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "Ｓｐｏｔｉｆｙ Ｏ－Ｃｒｅｓｔ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669203",
@@ -1646,23 +1624,23 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619436",
-   "artist": "水中スピカ／Ｂｌｕｍｅ ｐｏｐｏ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "下北沢ＤａｉｓｙＢａｒ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669456",
    "artist": "CYNHN",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/11/16(月)",
    "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634681",
+   "artist": "菅原圭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/19(土)",
+   "venue": "Ｋａｎａｄｅｖｉａ Ｈａｌｌ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1690,17 +1668,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615152",
-   "artist": "杉本善徳",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/29(日)",
-   "venue": "渋谷ストリームホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621090",
    "artist": "ＳＣＯＯＢＩＥ ＤＯ／Ｔｈｅ Ｂｉｒｔｈｄａｙ",
    "saletype": "一般発売",
@@ -1723,17 +1690,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621341",
-   "artist": "鈴木智貴",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/26(土)",
-   "venue": "ニッショーホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
    "artist": "鈴木雅之",
    "saletype": "一般発売",
@@ -1745,23 +1701,23 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667374",
-   "artist": "Slow LIVE'26",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613046",
+   "artist": "須田景凪",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/4(金)",
-   "venue": "東京池上本門寺野外特設ステージ(東京都)",
+   "perfdate": "2026/9/19(土)",
+   "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618338",
-   "artist": "ＳＷＡＬＬＯＷ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623205",
+   "artist": "すりぃ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｓｐｏｔｉｆｙ Ｏ－ｎｅｓｔ(東京都)",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -1778,17 +1734,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665601",
-   "artist": "聖飢魔II",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土)",
-   "venue": "東京ガーデンシアター(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616554",
    "artist": "世良公則",
    "saletype": "一般発売",
@@ -1797,7 +1742,7 @@
    "venue": "ＴＨＥＡＴＲＥ１０１０(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631313",
@@ -1818,17 +1763,6 @@
    "perfdate": "2026/9/22(火・祝) ・ 2026/10/17(土)",
    "venue": "ＷＷＷ Ｘ(東京都)／心斎橋ＪＡＮＵＳ(大阪府)",
    "pref": "東京都／大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609696",
-   "artist": "それでも僕らは月には行かない III",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/19(土)",
-   "venue": "Ｕ．Ｆ．Ｏ．ＣＬＵＢ(東京都)",
-   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -1932,17 +1866,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626475",
-   "artist": "ちゃくら",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/3(木)",
-   "venue": "Ｓｐｏｔｉｆｙ Ｏ－ＥＡＳＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670007",
    "artist": "チャリティーコンサート 生命讃歌",
    "saletype": "一般発売",
@@ -1973,6 +1896,17 @@
    "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629819",
+   "artist": "天竜川ナコン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "Ｓｐｏｔｉｆｙ Ｏ－ｎｅｓｔ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
    "name_in_db": false
   },
   {
@@ -1998,17 +1932,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627421",
-   "artist": "ｄｅａｄｍａｎ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/23(水)",
-   "venue": "Ｖｅａｔｓ Ｓｈｉｂｕｙａ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630119",
    "artist": "ＤＥＮＩＭＳ",
    "saletype": "一般発売",
@@ -2018,17 +1941,6 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668543",
-   "artist": "デビュー50周年トリビュート・プロジェクト ピンク・レディー伝説 今も そして永遠に … Legend, Now and Forever",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/25(火)",
-   "venue": "",
-   "pref": "",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613519",
@@ -2086,6 +1998,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628332",
+   "artist": "ＴＲｉＤＥＮＴ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/22(火・祝)",
+   "venue": "ＳＰＡＣＥ ＯＤＤ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623926",
    "artist": "ＴＲｉＤＥＮＴ×ＮＥＫ！",
    "saletype": "一般発売",
@@ -2105,7 +2028,7 @@
    "venue": "ＵＮＩＴ(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620695",
@@ -2174,17 +2097,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620176",
-   "artist": "Ｄｏｏｎａ",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/10/23(金)",
-   "venue": "ｓｈｉｂｕｙａ ｅｇｇｍａｎ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620748",
    "artist": "ＮＩＮＥ ＭＩＬＥＳ",
    "saletype": "一般発売",
@@ -2218,34 +2130,12 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626993",
-   "artist": "なかねかな",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/9(土)",
-   "venue": "ＵＮＩＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670273",
    "artist": "仲村宗悟",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/8/30(日)",
    "venue": "恵比寿ザ・ガーデンホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623226",
-   "artist": "中村ゆりか",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/17(日)",
-   "venue": "品川プリンスホテル ステラボール(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -2268,6 +2158,17 @@
    "rlsdate": "",
    "perfdate": "2026/12/5(土)",
    "venue": "東京ガーデンシアター(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632603",
+   "artist": "虹のコンキスタドール",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/10(木)",
+   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -2306,17 +2207,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625922",
-   "artist": "ｎｅｗｄｕｂｈａｌｌ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｓｈｉｂｕｙａ ＷＷＷ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669779",
    "artist": "NEE",
    "saletype": "一般発売",
@@ -2350,6 +2240,28 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634438",
+   "artist": "猫背のネイビーセゾン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/28(土)",
+   "venue": "ＬＩＱＵＩＤＲＯＯＭ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607254",
+   "artist": "Ｎａｍｅ ｔｈｅ Ｎｉｇｈｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/13(金) ・ 2026/11/14(土) ・ 2026/12/6(日)",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／Ｋ・Ｄ Ｊａｐｏｎ(愛知県)／ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "東京都／愛知県／大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624254",
    "artist": "野島樺乃",
    "saletype": "一般発売",
@@ -2357,17 +2269,6 @@
    "perfdate": "2026/11/8(日) ～ 2026/11/20(金)",
    "venue": "ＧＲＩＴ ａｔ Ｓｈｉｂｕｙａ(東京都)／Ｌｉｏｎ Ｃａｆｅ(愛知県)／ＰＬＵＳＷＩＮ ＨＡＬＬ ビレボア(大阪府)／ＲＯＯＭＳ(福岡県)",
    "pref": "東京都／愛知県／大阪府／福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619365",
-   "artist": "野田愛実",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/26(土)",
-   "venue": "ＳＨＩＢＵＹＡ ＰＬＥＡＳＵＲＥ ＰＬＥＡＳＵＲＥ(東京都)",
-   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -2381,17 +2282,6 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619982",
-   "artist": "ＨＡＧＡＮＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＥＸ ＴＨＥＡＴＥＲ ＲＯＰＰＯＮＧＩ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628538",
@@ -2414,28 +2304,6 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628171",
-   "artist": "ＨＡＮｉＫＡＭｉ ｖｏｌ．５",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626514",
-   "artist": "Ｈａｖｅ ａ Ｎｉｃｅ Ｄａｙ！",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/26(水)",
-   "venue": "ｃｌｕｂａｓｉａ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625959",
@@ -2537,17 +2405,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627884",
-   "artist": "ＰＡＩＬ ＯＵＴ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｓｐｏｔｉｆｙ Ｏ－Ｃｒｅｓｔ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
    "artist": "ＰａｓｓＣｏｄｅ",
    "saletype": "一般発売",
@@ -2566,17 +2423,6 @@
    "perfdate": "2026/9/24(木)",
    "venue": "Ｓｐｏｔｉｆｙ Ｏ－ＥＡＳＴ(東京都)",
    "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625210",
-   "artist": "Ｐａｓｔｅｌ Ｔａｎｇ Ｃｌｕｂ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/10(日) ・ 2027/1/24(日)",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
-   "pref": "東京都／大阪府",
    "in_db": false,
    "name_in_db": false
   },
@@ -2625,17 +2471,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2601458",
-   "artist": "日々かりめろ結成１０周年記念単独公演「東京家族２０２７」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/10(日)",
-   "venue": "Ｉ’Ｍ Ａ ＳＨＯＷ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621862",
    "artist": "広瀬香美",
    "saletype": "一般発売",
@@ -2661,7 +2496,7 @@
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631406",
    "artist": "Ｂｅｙｏｎｄ Ｍｕｓｉｃ Ｆｅｓｔｉｖａｌ ２０２６",
    "saletype": "一般発売",
-   "rlsdate": "TODAY",
+   "rlsdate": "",
    "perfdate": "2026/10/12(月・祝)",
    "venue": "ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)",
    "pref": "東京都",
@@ -2697,17 +2532,6 @@
    "rlsdate": "",
    "perfdate": "2026/11/15(日)",
    "venue": "ＬＩＱＵＩＤＲＯＯＭ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616184",
-   "artist": "Ｐｉｘｅｌ Ｒｉｂｂｏｎ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -2752,17 +2576,6 @@
    "rlsdate": "",
    "perfdate": "2026/12/25(金)",
    "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607615",
-   "artist": "ｆｉｓｈｂｏｗｌ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/26(水)",
-   "venue": "Ｓｐｏｔｉｆｙ Ｏ－ＥＡＳＴ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -2845,28 +2658,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623066",
-   "artist": "フリージアン",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/21(金) ・ 2026/8/28(金)",
-   "venue": "ＴＯＫＩＯ ＴＯＫＹＯ(東京都)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
-   "pref": "東京都／大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625534",
-   "artist": "古川雄大",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/11(金)",
-   "venue": "東京国際フォーラム ホールＣ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609434",
    "artist": "ＢＬＵ－ＳＷＩＮＧ",
    "saletype": "一般発売",
@@ -2886,7 +2677,7 @@
    "venue": "渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624220",
@@ -2906,28 +2697,6 @@
    "rlsdate": "",
    "perfdate": "2026/9/10(木)",
    "venue": "ＬＩＱＵＩＤＲＯＯＭ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623984",
-   "artist": "ｈｅａｖｅｎ ｉｎ ｈｅｒ ａｒｍｓ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/28(土)",
-   "venue": "渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623627",
-   "artist": "Ｂａｂｙ Ｂｏｏ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "よみうり大手町ホール(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
@@ -3021,13 +2790,24 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670028",
-   "artist": "My Hair is Bad",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614402",
+   "artist": "マカロニえんぴつ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/16(月) ～ 2027/7/3(土)",
-   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)／ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)／ＳＥＮＤＡＩ ＧＩＧＳ(宮城県)／Ｃｌｕｂ ＳＷＩＮＤＬＥ(秋田県)／水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／国立代々木競技場 第一体育館(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／朱鷺メッセ 新潟コンベンションセンター(新潟県)／Ｓｏｕｌ Ｐｏｗｅｒ(富山県)／ＫＡＺＯＯ ＨＡＬＬ(山梨県)／上田Ｒａｄｉｕｓ(長野県)／松本ＡＬＥＣＸ(長野県)／静岡ＵＭＢＥＲ(静岡県)／クロコくんホール(愛知県)／ＫＹＯＴＯ ＭＵＳＥ(京都府)／大阪城ホール(大阪府)／ＢＲＯＮＺＥ(大阪府)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)／ＣＲＡＺＹＭＡＭＡ ＫＩＮＧＤＯＭ(岡山県)／広島クラブクアトロ(広島県)／周南ＲＩＳＩＮＧ ＨＡＬＬ(山口県)／高松ｆｅｓｔｈａｌｌｅ(香川県)／ＷｓｔｕｄｉｏＲＥＤ(愛媛県)／高知Ｘ－ｐｔ．(高知県)／小倉ＦＵＳＥ(福岡県)／マリンメッセ福岡Ａ館(福岡県)／鹿児島ＣＡＰＡＲＶＯホール(鹿児島県)",
-   "pref": "北海道／宮城県／秋田県／茨城県／千葉県／東京都／神奈川県／新潟県／富山県／山梨県／長野県／静岡県／愛知県／京都府／大阪府／奈良県／和歌山県／岡山県／広島県／山口県／香川県／愛媛県／高知県／福岡県／鹿児島県",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "国立代々木競技場 第一体育館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632879",
+   "artist": "茉白彩聖",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/30(水)",
+   "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": false
   },
@@ -3038,17 +2818,6 @@
    "rlsdate": "",
    "perfdate": "2026/10/24(土)",
    "venue": "ＡＤＲＩＦＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629529",
-   "artist": "ＭＡ５５ＩＶＥ ＴＨＥ ＲＡＭＰＡＧＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/16(水)",
-   "venue": "東京ガーデンシアター(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -3087,6 +2856,17 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670760",
+   "artist": "MARTIN ACOUSTIC LIVE FES Rebirth Tour 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "恵比寿ザ・ガーデンルーム(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609282",
    "artist": "未唯ｍｉｅ ＤＥＢＵＴ ５０ｔｈ ＆ ＳＯＬＯ ４５ｔｈ Ａｎｎｉｖｅｒｓａｒｙ Ｃｅｌｅｂｒａｔｉｏｎ ｐｒｅｓｅｎｔｅｄ ｂｙ Ａｃｈｉｅｖｅｍｅｎｔ Ｃｏｒｐｏｒａｔｉｏｎ",
    "saletype": "一般発売",
@@ -3109,6 +2889,17 @@
    "name_in_db": false
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670573",
+   "artist": "三浦大知",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/24(木)",
+   "venue": "ＳＧＣ ＨＡＬＬ ＡＲＩＡＫＥ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619879",
    "artist": "美川憲一",
    "saletype": "一般発売",
@@ -3126,17 +2917,6 @@
    "rlsdate": "",
    "perfdate": "2026/11/1(日)",
    "venue": "ＴＯＫＩＯ ＴＯＫＹＯ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668349",
-   "artist": "宮本貴奈(p)／May J.／クリス・ハート",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -3230,34 +3010,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615724",
-   "artist": "ＭＥＴＡＬＶＥＲＳＥ／ＭＯＲＥ ＳＴＡＲ",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/8/25(火)",
-   "venue": "",
-   "pref": "",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616068",
    "artist": "メトロノーム",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/10/4(日)",
    "venue": "渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
-   "artist": "メリクレット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/6(日)",
-   "venue": "Ｖｅａｔｓ Ｓｈｉｂｕｙａ(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
@@ -3329,17 +3087,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612372",
-   "artist": "ＭＯＮＧＯＬ８００",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/28(金)",
-   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668135",
    "artist": "八神純子 ヤガ祭り the 8th",
    "saletype": "一般発売",
@@ -3371,6 +3118,28 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629883",
+   "artist": "ヤバイＴシャツ屋さん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/27(火)",
+   "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629884",
+   "artist": "ヤバイＴシャツ屋さん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/4(水)",
+   "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2547735",
@@ -3472,17 +3241,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617931",
-   "artist": "Ｕ＆ｐｉａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/9(水)",
-   "venue": "東京国際フォーラム ホールＡ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669968",
    "artist": "横山裕",
    "saletype": "一般発売",
@@ -3571,17 +3329,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616338",
-   "artist": "ｌｕｖ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/8(火)",
-   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620689",
    "artist": "ＬＯＶＥＢＩＴＥＳ",
    "saletype": "一般発売",
@@ -3590,7 +3337,7 @@
    "venue": "Ｚｅｐｐ Ｈａｎｅｄａ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627529",
@@ -3675,8 +3422,8 @@
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/8/29(土)",
-   "venue": "ＷＷＷ Ｘ(東京都)",
-   "pref": "東京都",
+   "venue": "",
+   "pref": "",
    "in_db": false,
    "name_in_db": false
   },
@@ -3703,17 +3450,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616896",
-   "artist": "Ｒｏｙｚ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/16(水)",
-   "venue": "日本武道館(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667677",
    "artist": "LOW IQ 01&THE RHYTHM MAKERS／HAWAIIAN6",
    "saletype": "一般発売",
@@ -3723,17 +3459,6 @@
    "pref": "東京都／長野県",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670680",
-   "artist": "ロッケンロー★サミット2026 ～六弦仁義、世代抗争～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/29(土)",
-   "venue": "Ｓｐｏｔｉｆｙ Ｏ－ＷＥＳＴ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667859",
@@ -3786,17 +3511,6 @@
    "rlsdate": "",
    "perfdate": "2026/10/12(月・祝)",
    "venue": "ＣＬＵＢ ＰＨＡＳＥ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669132",
-   "artist": "VOKSY DAYS",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/27(木)",
-   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false
