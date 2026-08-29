@@ -1,5 +1,51 @@
 [
  {
+  "id": 21,
+  "status": "convert",
+  "artist": "ORANGE RANGE",
+  "tickets": [
+   {
+    "type": "プレリザーブ2次（大分・宮崎 R9年 1/23〜1/24公演）〜9/8 23:59",
+    "date": "2026-09-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666269"
+   },
+   {
+    "type": "プレリザーブ2次（長崎 R9年 2/5公演）〜9/8 23:59",
+    "date": "2026-09-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666269"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/9公演）10/24 10:00発売",
+    "date": "2026-10-24",
+    "startDate": "2026-10-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2607703"
+   },
+   {
+    "type": "一般発売（高知 11/27公演）〜11/18 23:59",
+    "date": "2026-11-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2613929"
+   },
+   {
+    "type": "一般発売.（愛知 R9年 2/21公演）12/19 10:00発売",
+    "date": "2026-12-19",
+    "startDate": "2026-12-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2608916"
+   },
+   {
+    "type": "一般発売（栃木 R9年 3/6公演）12/19 10:00発売",
+    "date": "2026-12-19",
+    "startDate": "2026-12-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616023"
+   },
+   {
+    "type": "一般発売（茨城 R9年 3/7公演）12/19 10:00発売",
+    "date": "2026-12-19",
+    "startDate": "2026-12-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616024"
+   }
+  ]
+ },
+ {
   "id": 130,
   "status": "delete",
   "artist": "宝塚歌劇団 雪組",
@@ -8,41 +54,65 @@
   ]
  },
  {
-  "id": 177,
+  "id": 309,
   "status": "convert",
-  "artist": "山内惠介",
+  "artist": "しまじろう",
   "tickets": [
    {
-    "type": "2次受付（大阪 11/10公演）〜8/30 23:59",
-    "date": "2026-08-30",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623376"
+    "type": "一般発売（三重 12/20公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630181"
    },
    {
-    "type": "一般発売（大阪 11/10公演）9/5 10:00発売",
-    "date": "2026-09-05",
-    "startDate": "2026-09-05",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623376"
+    "type": "一般発売（宮崎 10/25公演）〜10/23 23:59",
+    "date": "2026-10-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628207"
    },
    {
-    "type": "一般発売（神奈川 11/16公演）9/25 10:00発売",
-    "date": "2026-09-25",
-    "startDate": "2026-09-25",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626354"
+    "type": "一般発売（栃木 12/26公演）〜12/23 10:00",
+    "date": "2026-12-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627660"
    },
    {
-    "type": "一般発売（埼玉 11/14公演）〜11/8 23:59",
-    "date": "2026-11-08",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623691"
+    "type": "一般発売（埼玉・千葉・東京・神奈川・愛知・大阪・兵庫・岡山・福岡 5/23〜12/27公演）〜12/27 17:00",
+    "date": "2026-12-27",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2609071"
+   }
+  ]
+ },
+ {
+  "id": 553,
+  "status": "convert",
+  "artist": "ジェイコブ・コーラー",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/8公演）〜11/5 23:59",
+    "date": "2026-11-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628394"
+   }
+  ]
+ },
+ {
+  "id": 579,
+  "status": "convert",
+  "artist": "二見颯一",
+  "tickets": [
+   {
+    "type": "プリセール（北海道 12/4公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630281"
    },
    {
-    "type": "一般発売（宮城 11/18公演）〜11/17 23:59",
-    "date": "2026-11-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628019"
+    "type": "一般発売（兵庫・奈良 9/4〜9/5公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620209"
    },
    {
-    "type": "一般発売（山口・香川 11/26〜11/27公演）〜11/24 23:59",
-    "date": "2026-11-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627557"
+    "type": "一般発売（北海道 12/4公演）9/9 10:00発売",
+    "date": "2026-09-09",
+    "startDate": "2026-09-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630281"
    }
   ]
  },
@@ -55,176 +125,171 @@
   ]
  },
  {
-  "id": 696,
+  "id": 646,
   "status": "convert",
-  "artist": "DRUM TAO",
+  "artist": "岸谷香",
   "tickets": [
    {
-    "type": "一般発売（山口 11/28公演）9/1 10:00発売",
-    "date": "2026-09-01",
-    "startDate": "2026-09-01",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629588"
+    "type": "先行（岐阜・愛知 11/1〜11/3公演）〜8/31 23:59",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632901"
    },
    {
-    "type": "先行（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島 12/5〜12/27公演）〜9/2 23:59",
-    "date": "2026-09-02",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633426"
-   },
-   {
-    "type": "一般発売（北海道 8/29〜9/7公演）〜9/5 23:59",
+    "type": "一般発売（岐阜・愛知 11/1〜11/3公演）9/5 10:00発売",
     "date": "2026-09-05",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618698"
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632901"
    },
    {
-    "type": "一般発売（宮崎 9/12公演）〜9/11 23:59",
-    "date": "2026-09-11",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616835"
+    "type": "一般発売（静岡 9/18公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622475"
    },
    {
-    "type": "一般発売（大分 9/13公演）〜9/12 23:59",
-    "date": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622492"
+    "type": "一般発売（奈良 10/11公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626963"
    },
    {
-    "type": "一般発売（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島 12/5〜12/27公演）9/12 10:00発売",
-    "date": "2026-09-12",
-    "startDate": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633426"
-   },
-   {
-    "type": "一般発売（福井 10/10公演）〜10/9 23:59",
-    "date": "2026-10-09",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625664"
-   },
-   {
-    "type": "一般発売（秋田 10/12公演）〜10/9 23:59",
-    "date": "2026-10-09",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625741"
-   },
-   {
-    "type": "一般発売（石川 10/17公演）〜10/16 23:59",
-    "date": "2026-10-16",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623804"
-   },
-   {
-    "type": "一般発売（富山 10/19公演）〜10/18 23:59",
-    "date": "2026-10-18",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622509"
-   },
-   {
-    "type": "一般発売（長野 10/21公演）〜10/20 23:59",
-    "date": "2026-10-20",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622551"
-   },
-   {
-    "type": "一般発売（静岡 10/25公演）〜10/24 23:59",
-    "date": "2026-10-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623329"
-   },
-   {
-    "type": "一般発売（山梨 10/27公演）〜10/26 23:59",
-    "date": "2026-10-26",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626835"
-   },
-   {
-    "type": "一般発売（大阪 11/13〜11/14公演）〜10/28 23:59",
-    "date": "2026-10-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626155"
-   },
-   {
-    "type": "一般発売（福島 11/1公演）〜10/29 23:59",
-    "date": "2026-10-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627364"
-   },
-   {
-    "type": "一般発売（群馬 11/3公演）〜11/2 23:59",
-    "date": "2026-11-02",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626839"
-   },
-   {
-    "type": "一般発売（愛媛 11/22公演）〜11/19 23:59",
-    "date": "2026-11-19",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631355"
-   },
-   {
-    "type": "一般発売（鳥取・島根・岡山 11/17〜11/25公演）〜11/22 23:59",
-    "date": "2026-11-22",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624251"
+    "type": "一般発売（埼玉 12/12公演）〜12/8 23:59",
+    "date": "2026-12-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625260"
    }
   ]
  },
  {
-  "id": 698,
+  "id": 738,
   "status": "convert",
-  "artist": "永井龍雲",
+  "artist": "フラワーカンパニーズ",
   "tickets": [
    {
-    "type": "一般発売（東京 8/28〜8/30公演）〜8/29 23:59",
-    "date": "2026-08-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617618"
+    "type": "一般発売（愛知 R9年 3/6〜3/7公演）10/3 10:00発売",
+    "date": "2026-10-03",
+    "startDate": "2026-10-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633987"
    },
    {
-    "type": "一般発売（福岡 9/19公演）〜9/18 23:59",
-    "date": "2026-09-18",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617396"
+    "type": "一般発売（栃木 12/5公演）〜12/3 23:59",
+    "date": "2026-12-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633260"
    },
    {
-    "type": "一般発売（福岡 9/20公演）〜9/19 23:59",
-    "date": "2026-09-19",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617397"
+    "type": "一般発売（長野 12/6公演）〜12/5 23:59",
+    "date": "2026-12-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628742"
    },
    {
-    "type": "一般発売（兵庫 9/27公演）〜9/23 23:59",
-    "date": "2026-09-23",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625412"
+    "type": "一般発売（京都 12/11公演）〜12/10 23:59",
+    "date": "2026-12-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623923"
    },
    {
-    "type": "一般発売（宮崎 10/24公演）〜10/22 23:59",
-    "date": "2026-10-22",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623884"
-   },
-   {
-    "type": "一般発売（熊本 10/25公演）〜10/24 23:59",
-    "date": "2026-10-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623795"
-   },
-   {
-    "type": "一般発売（青森・秋田・福島 11/3〜11/7公演）〜11/6 23:59",
-    "date": "2026-11-06",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629143"
-   },
-   {
-    "type": "一般発売（東京 11/15公演）〜11/14 23:59",
-    "date": "2026-11-14",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628971"
+    "type": "一般発売（青森・岩手 11/23〜12/19公演）〜12/18 23:59",
+    "date": "2026-12-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623761"
    }
   ]
  },
  {
-  "id": 799,
+  "id": 761,
   "status": "convert",
-  "artist": "三山ひろし",
+  "artist": "半崎美子",
   "tickets": [
    {
-    "type": "一般発売（埼玉 12/8公演）9/9 10:00発売",
+    "type": "一般発売（福井 11/1公演）〜10/24 23:59",
+    "date": "2026-10-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615378"
+   },
+   {
+    "type": "一般発売（滋賀・奈良・和歌山 10/31〜11/4公演）〜10/27 23:59",
+    "date": "2026-10-27",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615378"
+   }
+  ]
+ },
+ {
+  "id": 764,
+  "status": "convert",
+  "artist": "松原健之",
+  "tickets": [
+   {
+    "type": "プリセール（北海道 12/6公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630289"
+   },
+   {
+    "type": "一般発売（北海道 12/6公演）9/9 10:00発売",
     "date": "2026-09-09",
     "startDate": "2026-09-09",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623842"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630289"
    },
    {
-    "type": "一般発売（神奈川 10/28公演）〜10/27 23:59",
-    "date": "2026-10-27",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623798"
+    "type": "一般発売（北海道 9/16公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615776"
    },
    {
-    "type": "一般発売（群馬 11/4公演）〜11/3 23:59",
-    "date": "2026-11-03",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623798"
+    "type": "一般発売（東京 10/8公演）〜10/7 23:59",
+    "date": "2026-10-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615733"
+   }
+  ]
+ },
+ {
+  "id": 824,
+  "status": "convert",
+  "artist": "HUSKING BEE",
+  "tickets": [
+   {
+    "type": "プリセール（沖縄 7/11公演）5/15 12:00発売",
+    "date": "2026-05-15",
+    "startDate": "2026-05-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618716"
    },
    {
-    "type": "一般発売（茨城 11/19公演）〜11/15 23:59",
-    "date": "2026-11-15",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626936"
+    "type": "一般発売【札幌】（北海道 9/4公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619815"
+   },
+   {
+    "type": "一般発売【函館】（北海道 9/6公演）〜9/5 23:59",
+    "date": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619815"
+   },
+   {
+    "type": "一般発売（いわき）（福島 9/25公演）〜9/9 23:59",
+    "date": "2026-09-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618239"
+   },
+   {
+    "type": "一般発売（長野 10/3公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618945"
+   },
+   {
+    "type": "一般発売（新潟 10/4公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618945"
+   },
+   {
+    "type": "一般発売（広島 10/31公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619224"
+   },
+   {
+    "type": "一般発売（大分 12/5公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619011"
+   },
+   {
+    "type": "一般発売（福岡 12/6公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619011"
+   },
+   {
+    "type": "一般発売（沖縄 R9年 1/29公演）〜12/24 23:59",
+    "date": "2026-12-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628970"
    }
   ]
  },
@@ -233,12 +298,6 @@
   "status": "convert",
   "artist": "天満天神繁昌亭",
   "tickets": [
-   {
-    "type": "一般発売（大阪 10/29公演）8/29 10:00発売",
-    "date": "2026-08-29",
-    "startDate": "2026-08-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628866"
-   },
    {
     "type": "一般発売（大阪 10/30公演）8/30 10:00発売",
     "date": "2026-08-30",
@@ -308,6 +367,11 @@
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628866"
    },
    {
+    "type": "一般発売（大阪 10/29公演）〜10/28 23:59",
+    "date": "2026-10-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628866"
+   },
+   {
     "type": "一般発売（大阪 11/8公演）〜11/7 23:59",
     "date": "2026-11-07",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631744"
@@ -315,14 +379,45 @@
   ]
  },
  {
-  "id": 1060,
+  "id": 965,
   "status": "convert",
-  "artist": "けんこう一番！秋スペシャル 第３８回三遊亭兼好独演会",
+  "artist": "特撰落語会",
   "tickets": [
    {
-    "type": "一般発売【視聴券】【動画配信】（全国 9/12〜9/26公演）〜9/26 10:00",
-    "date": "2026-09-26",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633231"
+    "type": "一般発売（茨城・群馬・東京・神奈川・岐阜・愛知 8/22〜9/6公演）〜9/5 10:00",
+    "date": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617174"
+   },
+   {
+    "type": "一般発売（埼玉 9/7〜9/12公演）〜9/11 10:00",
+    "date": "2026-09-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617181"
+   },
+   {
+    "type": "一般発売（群馬・埼玉・神奈川・新潟 9/14〜9/23公演）〜9/22 10:00",
+    "date": "2026-09-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620411"
+   },
+   {
+    "type": "一般発売（茨城・埼玉 R9年 1/14〜1/20公演）10/13 10:00発売",
+    "date": "2026-10-13",
+    "startDate": "2026-10-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631810"
+   },
+   {
+    "type": "一般発売（群馬・埼玉・東京・三重 9/19〜10/16公演）〜10/15 10:00",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624744"
+   },
+   {
+    "type": "一般発売（埼玉・東京・神奈川 11/27〜12/10公演）〜12/7 10:00",
+    "date": "2026-12-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631706"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/17公演）〜1/16 10:00",
+    "date": "2027-01-16",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631740"
    }
   ]
  },
@@ -335,29 +430,177 @@
   ]
  },
  {
-  "id": 1095,
+  "id": 1214,
   "status": "convert",
-  "artist": "星屑の会『星屑の町～忘却篇』",
+  "artist": "布施明",
   "tickets": [
    {
-    "type": "一般発売（大阪 10/10〜10/11公演）〜10/10 23:59",
-    "date": "2026-10-10",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2603947"
+    "type": "プリセール（京都 12/15公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622315"
    },
    {
-    "type": "一般発売（宮城 10/25公演）〜10/22 23:59",
-    "date": "2026-10-22",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617371"
+    "type": "一般発売（埼玉 10/3公演）〜9/29 23:59",
+    "date": "2026-09-29",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622129"
    },
    {
-    "type": "一般発売（北海道 11/9公演）〜11/6 23:59",
-    "date": "2026-11-06",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626677"
+    "type": "一般発売（宮城 R9年 2/14公演）10/31 10:00発売",
+    "date": "2026-10-31",
+    "startDate": "2026-10-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628021"
    },
    {
-    "type": "一般発売（北海道 11/8公演）〜11/7 23:59",
-    "date": "2026-11-07",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622674"
+    "type": "一般発売（愛知 R9年 2/28公演）〜2/25 23:59",
+    "date": "2027-02-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618754"
+   }
+  ]
+ },
+ {
+  "id": 1216,
+  "status": "convert",
+  "artist": "Ｍｙ Ｌｉｔｔｌｅ Ｌｏｖｅｒ ☆ Ａｋｋｏ Ｂａｎｄ Ｑｕｉｎｔｅｔ ２０２６",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 11/1公演）〜10/31 23:59",
+    "date": "2026-10-31"
+   }
+  ]
+ },
+ {
+  "id": 1274,
+  "status": "convert",
+  "artist": "みちのくプロレス",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/24公演）〜10/20 23:59",
+    "date": "2026-10-20",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624290"
+   },
+   {
+    "type": "一般発売（岩手 11/1公演）〜10/31 23:59",
+    "date": "2026-10-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632281"
+   },
+   {
+    "type": "一般発売（宮城 11/15公演）〜11/10 23:59",
+    "date": "2026-11-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632856"
+   }
+  ]
+ },
+ {
+  "id": 1291,
+  "status": "convert",
+  "artist": "大原櫻子",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 10/3公演）〜9/16 23:59",
+    "date": "2026-09-16",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623410"
+   },
+   {
+    "type": "一般発売（北海道 10/7公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622078"
+   },
+   {
+    "type": "プレリザーブ3次（東京 10/28公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623743"
+   },
+   {
+    "type": "一般発売（愛知 10/4公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626675"
+   },
+   {
+    "type": "一般発売（広島 10/15公演）〜9/29 23:59",
+    "date": "2026-09-29",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625609"
+   },
+   {
+    "type": "一般発売（大阪 10/17公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625009"
+   }
+  ]
+ },
+ {
+  "id": 1334,
+  "status": "convert",
+  "artist": "a flood of circle",
+  "tickets": [
+   {
+    "type": "一般発売（福岡・大分・鹿児島 9/10〜9/13公演）〜9/12 23:59",
+    "date": "2026-09-12"
+   },
+   {
+    "type": "一般発売（広島 9/20公演）〜9/19 23:59",
+    "date": "2026-09-19"
+   },
+   {
+    "type": "一般発売（静岡 9/23公演）〜9/22 23:59",
+    "date": "2026-09-22"
+   },
+   {
+    "type": "一般発売（愛知 R9年 1/17公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/24公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26"
+   },
+   {
+    "type": "一般発売（いわき・八戸・秋田）（青森・秋田・福島 10/1〜10/4公演）〜10/3 23:59",
+    "date": "2026-10-03"
+   },
+   {
+    "type": "一般発売（香川 10/14公演）〜10/13 23:59",
+    "date": "2026-10-13"
+   },
+   {
+    "type": "一般発売（北海道 10/22〜10/25公演）〜10/24 23:59",
+    "date": "2026-10-24"
+   },
+   {
+    "type": "一般発売（石川 10/29公演）〜10/28 23:59",
+    "date": "2026-10-28"
+   },
+   {
+    "type": "一般発売（新潟・長野 10/30〜11/1公演）〜10/31 23:59",
+    "date": "2026-10-31"
+   },
+   {
+    "type": "一般発売（仙台）（宮城 11/6公演）〜11/5 23:59",
+    "date": "2026-11-05"
+   },
+   {
+    "type": "一般発売（愛媛 11/19公演）〜11/18 23:59",
+    "date": "2026-11-18"
+   },
+   {
+    "type": "一般発売（三重 12/2公演）〜12/1 23:59",
+    "date": "2026-12-01"
+   },
+   {
+    "type": "一般発売（岡山 12/4公演）〜12/3 23:59",
+    "date": "2026-12-03"
+   },
+   {
+    "type": "一般発売（鳥取 12/5公演）〜12/4 23:59",
+    "date": "2026-12-04"
+   },
+   {
+    "type": "一般発売（広島 12/18公演）〜12/17 23:59",
+    "date": "2026-12-17"
+   },
+   {
+    "type": "一般発売（福岡 12/20公演）〜12/19 23:59",
+    "date": "2026-12-19"
    }
   ]
  },
@@ -370,152 +613,112 @@
   ]
  },
  {
-  "id": 1831,
+  "id": 1601,
   "status": "convert",
-  "artist": "柳家三三独演会",
+  "artist": "藍井エイル",
   "tickets": [
    {
-    "type": "一般発売（東京 9/26公演）〜9/17 23:59",
-    "date": "2026-09-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619861"
+    "type": "一般発売（熊本 10/24公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625247"
    },
    {
-    "type": "一般発売（神奈川 9/26公演）〜9/25 23:59",
+    "type": "一般発売（福岡 10/25公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625247"
+   },
+   {
+    "type": "一般発売（北海道 11/28公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625593"
+   }
+  ]
+ },
+ {
+  "id": 1786,
+  "status": "convert",
+  "artist": "藤原道山尺八コンサート",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/4公演）〜9/26 23:59",
+    "date": "2026-09-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619219"
+   },
+   {
+    "type": "一般発売（佐賀 10/18公演）〜10/17 23:59",
+    "date": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624703"
+   }
+  ]
+ },
+ {
+  "id": 1998,
+  "status": "convert",
+  "artist": "林家正雀 桂文我 東西落語会",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/5公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624875"
+   },
+   {
+    "type": "一般発売（東京 10/19公演）〜10/18 23:59",
+    "date": "2026-10-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633865"
+   }
+  ]
+ },
+ {
+  "id": 2047,
+  "status": "convert",
+  "artist": "スターダスト☆レビュー",
+  "tickets": [
+   {
+    "type": "一般発売（宮崎 11/1公演）8/30 10:00発売",
+    "date": "2026-08-30",
+    "startDate": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627694"
+   },
+   {
+    "type": "一般発売（岩手 9/26公演）〜9/25 23:59",
     "date": "2026-09-25",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616691"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616442"
    },
    {
-    "type": "一般発売（東京 10/1公演）〜9/30 23:59",
+    "type": "一般発売（和歌山 10/3公演）〜9/30 23:59",
     "date": "2026-09-30",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620679"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622257"
    },
    {
-    "type": "一般発売（宮城 R9年 1/14公演）10/24 10:00発売",
-    "date": "2026-10-24",
-    "startDate": "2026-10-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625628"
-   },
-   {
-    "type": "一般発売（東京 12/15公演）〜12/9 23:59",
-    "date": "2026-12-09",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627783"
-   },
-   {
-    "type": "一般発売（広島 12/20公演）〜12/17 23:59",
-    "date": "2026-12-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623228"
+    "type": "一般発売（福島 11/28〜11/29公演）〜11/26 23:59",
+    "date": "2026-11-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626018"
    }
   ]
  },
  {
-  "id": 1863,
+  "id": 2067,
   "status": "convert",
-  "artist": "京都市交響楽団",
+  "artist": "ダムタイプ『2020』",
   "tickets": [
    {
-    "type": "一般発売（大阪 12/19公演）9/5 10:00発売",
-    "date": "2026-09-05",
-    "startDate": "2026-09-05",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624723"
-   },
-   {
-    "type": "一般発売（京都 9/18〜9/19公演）〜9/16 23:59",
-    "date": "2026-09-16",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533284"
-   },
-   {
-    "type": "一般発売（京都 12/25〜12/26公演）9/18 10:00発売",
-    "date": "2026-09-18",
-    "startDate": "2026-09-18",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533290"
-   },
-   {
-    "type": "一般発売（京都 R9年 1/9公演）10/3 10:00発売",
-    "date": "2026-10-03",
-    "startDate": "2026-10-03",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533291"
-   },
-   {
-    "type": "一般発売（京都 10/9〜10/10公演）〜10/7 23:59",
-    "date": "2026-10-07",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533285"
-   },
-   {
-    "type": "一般発売（京都 R9年 1/15〜1/16公演）10/9 10:00発売",
-    "date": "2026-10-09",
-    "startDate": "2026-10-09",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533287"
-   },
-   {
-    "type": "一般発売（広島 10/12公演）〜10/10 23:59",
-    "date": "2026-10-10",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2545887"
-   },
-   {
-    "type": "一般発売（京都 11/8公演）〜11/6 23:59",
-    "date": "2026-11-06",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2612362"
-   },
-   {
-    "type": "一般発売（京都 R9年 2/19〜2/20公演）11/21 10:00発売",
-    "date": "2026-11-21",
-    "startDate": "2026-11-21",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533288"
-   },
-   {
-    "type": "一般発売【1回券】（京都 5/3〜11/28公演）〜11/25 23:59",
-    "date": "2026-11-25",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533295"
-   },
-   {
-    "type": "一般発売（京都 R9年 3/19〜3/20公演）12/25 10:00発売",
-    "date": "2026-12-25",
-    "startDate": "2026-12-25",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533289"
-   },
-   {
-    "type": "一般販売（大阪 R9年 1/17公演）〜1/15 23:59",
-    "date": "2027-01-15",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626935"
+    "type": "一般発売（京都 12/11〜12/13公演）〜12/10 23:59",
+    "date": "2026-12-10"
    }
   ]
  },
  {
-  "id": 2057,
+  "id": 2077,
   "status": "convert",
-  "artist": "絵本deクラシック 「オズの魔法使い」",
+  "artist": "読響大阪定期演奏会",
   "tickets": [
    {
-    "type": "一般発売（岡山 10/4公演）〜10/1 23:59",
-    "date": "2026-10-01",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632406"
+    "type": "一般発売 9月公演（大阪 9/30公演）〜9/30 18:00",
+    "date": "2026-09-30"
    },
    {
-    "type": "一般発売（千葉 10/31公演）〜10/24 23:59",
-    "date": "2026-10-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620319"
-   }
-  ]
- },
- {
-  "id": 2213,
-  "status": "convert",
-  "artist": "松平健 マツケンサンバコンサート2026",
-  "tickets": [
-   {
-    "type": "一般発売（新潟 11/21公演）〜11/17 23:59",
-    "date": "2026-11-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622197"
-   },
-   {
-    "type": "一般発売（富山 11/22公演）〜11/21 23:59",
-    "date": "2026-11-21",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624836"
-   },
-   {
-    "type": "一般発売（茨城・栃木 12/19〜12/20公演）〜12/15 23:59",
-    "date": "2026-12-15",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631678"
+    "type": "一般発売 12月公演（大阪 12/17公演）〜12/17 18:00",
+    "date": "2026-12-17"
    }
   ]
  },
@@ -532,12 +735,6 @@
   "status": "convert",
   "artist": "ミュージカル 「ALICE ～不思議の国のアリスより～」",
   "tickets": [
-   {
-    "type": "一般発売（北海道 R9年 1/23〜1/25公演）8/29 10:00発売",
-    "date": "2026-08-29",
-    "startDate": "2026-08-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630250"
-   },
    {
     "type": "子供舞台芸術鑑賞体験支援事業 受付【18歳以下無料招待】（佐賀 R9年 1/10公演）8/30 10:00発売",
     "date": "2026-08-30",
@@ -566,6 +763,12 @@
     "date": "2026-09-11",
     "startDate": "2026-09-11",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627580"
+   },
+   {
+    "type": "先行（三重 12/13公演）9/1 11:00発売",
+    "date": "2026-09-15",
+    "startDate": "2026-09-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669515"
    },
    {
     "type": "一般発売（三重 12/13公演）9/20 10:00発売",
@@ -603,6 +806,220 @@
     "date": "2026-12-07",
     "startDate": "2026-12-07",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623602"
+   },
+   {
+    "type": "一般発売（北海道 R9年 1/23〜1/25公演）〜1/23 23:59",
+    "date": "2027-01-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630250"
+   }
+  ]
+ },
+ {
+  "id": 2254,
+  "status": "convert",
+  "artist": "杉山清貴",
+  "tickets": [
+   {
+    "type": "2次受付（香川・愛媛・高知 12/12〜12/15公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627269"
+   },
+   {
+    "type": "先行（宮城 11/7〜11/8公演）〜8/31 11:00",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623234"
+   },
+   {
+    "type": "プレリザーブ（新潟 10/15〜10/16公演）〜9/2 11:00",
+    "date": "2026-09-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670303"
+   },
+   {
+    "type": "一般発売（東京 12/5〜12/6公演）9/4 10:00発売",
+    "date": "2026-09-04",
+    "startDate": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627998"
+   },
+   {
+    "type": "一般発売（宮城 11/7〜11/8公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623234"
+   },
+   {
+    "type": "一般発売（新潟 10/15〜10/16公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630535"
+   },
+   {
+    "type": "一般発売（埼玉 11/14公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628870"
+   },
+   {
+    "type": "一般発売（愛知 9/25〜9/26公演）〜9/25 23:59",
+    "date": "2026-09-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629554"
+   },
+   {
+    "type": "一般発売（福岡 10/9〜10/10公演）〜10/9 23:59",
+    "date": "2026-10-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621920"
+   },
+   {
+    "type": "一般発売（富山 10/18公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630564"
+   },
+   {
+    "type": "一般発売（北海道 10/30〜10/31公演）〜10/30 23:59",
+    "date": "2026-10-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624066"
+   }
+  ]
+ },
+ {
+  "id": 2310,
+  "status": "convert",
+  "artist": "浜崎貴司",
+  "tickets": [
+   {
+    "type": "プレリザーブ（愛知 11/15公演）〜9/9 23:59",
+    "date": "2026-09-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633815"
+   },
+   {
+    "type": "山形公演 一般発売（山形 9/26公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631423"
+   },
+   {
+    "type": "一般発売（愛知 11/15公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633815"
+   },
+   {
+    "type": "一般発売（島根 10/17公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625728"
+   },
+   {
+    "type": "一般発売（岡山 10/18公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625728"
+   },
+   {
+    "type": "青森公演 一般発売（青森 11/21公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631423"
+   },
+   {
+    "type": "秋田公演 一般発売（秋田 11/22公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631423"
+   },
+   {
+    "type": "一般発売（山口 12/19公演）〜12/10 23:59",
+    "date": "2026-12-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625728"
+   },
+   {
+    "type": "一般発売（広島 12/20公演）〜12/10 23:59",
+    "date": "2026-12-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625728"
+   }
+  ]
+ },
+ {
+  "id": 2316,
+  "status": "convert",
+  "artist": "UNCHAIN",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/29公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618167"
+   },
+   {
+    "type": "一般発売（東京 10/1公演）〜9/30 23:59",
+    "date": "2026-09-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621834"
+   },
+   {
+    "type": "一般発売（東京 11/8公演）〜11/7 23:59",
+    "date": "2026-11-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623230"
+   }
+  ]
+ },
+ {
+  "id": 2336,
+  "status": "convert",
+  "artist": "中嶋ユキノ",
+  "tickets": [
+   {
+    "type": "一般発売（仙台）（宮城 10/12公演）〜9/30 23:59",
+    "date": "2026-09-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617362"
+   },
+   {
+    "type": "一般発売（神奈川 10/17公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626439"
+   },
+   {
+    "type": "一般発売（静岡 10/25公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629008"
+   },
+   {
+    "type": "一般発売（山梨 10/24公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629556"
+   },
+   {
+    "type": "一般発売（富山 11/7公演）〜10/26 23:59",
+    "date": "2026-10-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622401"
+   },
+   {
+    "type": "一般発売（広島・香川 10/4〜11/3公演）〜11/2 23:59",
+    "date": "2026-11-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623159"
+   },
+   {
+    "type": "一般発売（新潟 11/21公演）〜11/9 23:59",
+    "date": "2026-11-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622403"
+   },
+   {
+    "type": "一般発売（郡山）（福島 12/4公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617362"
+   },
+   {
+    "type": "一般発売（福岡・大分 11/28〜11/29公演）〜11/28 23:59",
+    "date": "2026-11-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615804"
+   },
+   {
+    "type": "一般発売（東京 12/18公演）〜12/2 23:59",
+    "date": "2026-12-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626439"
+   },
+   {
+    "type": "一般発売（愛知 12/13公演）〜12/3 23:59",
+    "date": "2026-12-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629557"
+   },
+   {
+    "type": "一般発売（大阪・兵庫 11/1〜12/12公演）〜12/11 23:59",
+    "date": "2026-12-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625579"
    }
   ]
  },
@@ -615,11 +1032,62 @@
   ]
  },
  {
+  "id": 2347,
+  "status": "convert",
+  "artist": "つばきファクトリー",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/11公演）〜9/9 23:59",
+    "date": "2026-09-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631156"
+   }
+  ]
+ },
+ {
   "id": 2401,
   "status": "delete",
   "artist": "木根尚登",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2612129"
+  ]
+ },
+ {
+  "id": 2402,
+  "status": "convert",
+  "artist": "野口五郎",
+  "tickets": [
+   {
+    "type": "一般発売（埼玉 9/13公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617918"
+   },
+   {
+    "type": "一般発売（長崎 11/1公演）〜10/22 23:59",
+    "date": "2026-10-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634461"
+   },
+   {
+    "type": "一般発売（学生席）（山形 R9年 1/16公演）10/31 12:00発売",
+    "date": "2026-10-31",
+    "startDate": "2026-10-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632084"
+   },
+   {
+    "type": "一般発売（通常席）（山形 R9年 1/16公演）10/31 12:00発売",
+    "date": "2026-10-31",
+    "startDate": "2026-10-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632084"
+   },
+   {
+    "type": "一般発売（兵庫 11/29公演）〜11/9 23:59",
+    "date": "2026-11-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631477"
+   },
+   {
+    "type": "一般発売（長野 11/15公演）〜11/11 23:59",
+    "date": "2026-11-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623675"
+   }
   ]
  },
  {
@@ -639,46 +1107,160 @@
   ]
  },
  {
-  "id": 2453,
+  "id": 2423,
   "status": "convert",
-  "artist": "外村理紗（vl）／小林愛実（p）",
+  "artist": "ダンスエンターテイメント演劇『PASSION - 北斎の描く夢 -』",
   "tickets": [
    {
-    "type": "一般発売（青森・福島 11/21〜11/23公演）〜11/19 23:59",
-    "date": "2026-11-19",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628272"
+    "type": "一般発売（神奈川 10/22〜11/3公演）〜10/29 23:59",
+    "date": "2026-10-29"
    },
    {
-    "type": "一般発売（山形 11/29公演）〜11/28 23:59",
-    "date": "2026-11-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615960"
+    "type": "一般発売（大阪 11/7〜11/8公演）〜11/7 23:59",
+    "date": "2026-11-07"
    }
   ]
  },
  {
-  "id": 2454,
+  "id": 2496,
   "status": "convert",
-  "artist": "KOBUDO-古武道-",
+  "artist": "高嶋ちさ子 12人のヴァイオリニスト コンサートツアー 2026～2027",
   "tickets": [
    {
-    "type": "一般発売（東京 9/22公演）〜9/21 23:59",
-    "date": "2026-09-21",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616155"
+    "type": "3次受付（大阪 R9年 2/14公演）〜9/1 11:00",
+    "date": "2026-09-01"
    },
    {
-    "type": "一般発売（山梨 12/5公演）〜12/4 23:59",
-    "date": "2026-12-04",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623702"
+    "type": "一般発売（愛知 9/23公演）〜9/3 23:59",
+    "date": "2026-09-03"
    },
    {
-    "type": "一般発売（愛知 12/18公演）〜12/17 23:59",
-    "date": "2026-12-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629623"
+    "type": "プレリザーブ5次（栃木・埼玉・東京 R9年 1/21〜2/20公演）〜9/13 23:59",
+    "date": "2026-09-13"
    },
    {
-    "type": "一般発売（大阪 12/19公演）〜12/18 23:59",
-    "date": "2026-12-18",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626499"
+    "type": "プレリザーブ（東京 R9年 1/20公演）〜9/13 23:59",
+    "date": "2026-09-13"
+   },
+   {
+    "type": "一般発売（新潟 10/2公演）〜9/16 23:59",
+    "date": "2026-09-16"
+   },
+   {
+    "type": "一般発売（山梨 10/4公演）〜9/30 23:59",
+    "date": "2026-09-30"
+   },
+   {
+    "type": "一般発売（宮城 10/17公演）〜9/30 23:59",
+    "date": "2026-09-30"
+   },
+   {
+    "type": "一般発売（青森 10/18公演）〜9/30 23:59",
+    "date": "2026-09-30"
+   },
+   {
+    "type": "一般発売（宮崎 10/23公演）〜10/7 23:59",
+    "date": "2026-10-07"
+   },
+   {
+    "type": "一般発売（岩手 11/8公演）〜10/21 23:59",
+    "date": "2026-10-21"
+   },
+   {
+    "type": "一般発売（福島 11/13公演）〜10/27 23:59",
+    "date": "2026-10-27"
+   },
+   {
+    "type": "一般発売（富山・石川・福井・長野 10/29〜11/3公演）〜11/2 23:59",
+    "date": "2026-11-02"
+   },
+   {
+    "type": "一般発売（山形 12/19公演）〜12/2 23:59",
+    "date": "2026-12-02"
+   },
+   {
+    "type": "一般発売（東京 12/23公演）〜12/7 23:59",
+    "date": "2026-12-07"
+   },
+   {
+    "type": "一般発売（京都 R9年 1/30公演）〜1/14 23:59",
+    "date": "2027-01-14"
+   }
+  ]
+ },
+ {
+  "id": 2500,
+  "status": "convert",
+  "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+  "tickets": [
+   {
+    "type": "3次プリセール【単日券】（東京 12/30〜R9年 1/1公演）〜8/31 23:59",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627834"
+   },
+   {
+    "type": "3次プリセール【通し券】（東京 12/30〜R9年 1/1公演）〜8/31 23:59",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627834"
+   },
+   {
+    "type": "一般発売【単日券】（東京 12/30〜R9年 1/1公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627834"
+   },
+   {
+    "type": "一般発売【通し券】（東京 12/30〜R9年 1/1公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627834"
+   },
+   {
+    "type": "一般発売（栃木 12/6公演）〜12/5 23:59",
+    "date": "2026-12-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623982"
+   }
+  ]
+ },
+ {
+  "id": 2552,
+  "status": "convert",
+  "artist": "「おかあさんといっしょ」ファンターネ!とあそぼ PLUS(プラス)",
+  "tickets": [
+   {
+    "type": "一般発売（山口 9/27公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618673"
+   },
+   {
+    "type": "一般発売（埼玉 10/3公演）〜9/28 23:59",
+    "date": "2026-09-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623674"
+   },
+   {
+    "type": "一般発売【明石公演】（兵庫 10/10公演）〜10/7 23:59",
+    "date": "2026-10-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619215"
+   },
+   {
+    "type": "一般発売【城陽公演】（京都 10/11公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619216"
+   },
+   {
+    "type": "一般発売【岸和田公演】（大阪 10/12公演）〜10/9 23:59",
+    "date": "2026-10-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619218"
+   },
+   {
+    "type": "一般発売【厚木公演】（神奈川 11/15公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620072"
+   },
+   {
+    "type": "一般発売（埼玉 12/19公演）〜12/9 23:59",
+    "date": "2026-12-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631179"
    }
   ]
  },
@@ -688,53 +1270,19 @@
   "artist": "チキン ガーリック ステーキ",
   "tickets": [
    {
-    "type": "一般発売（兵庫 8/30公演）〜8/29 23:59",
-    "date": "2026-08-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627172"
-   },
-   {
-    "type": "一般発売（兵庫 10/4公演）8/29 10:00発売",
-    "date": "2026-08-29",
-    "startDate": "2026-08-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630872"
-   },
-   {
     "type": "一般発売（兵庫 9/13公演）〜9/6 18:00",
     "date": "2026-09-06",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2609875"
    },
    {
+    "type": "一般発売（兵庫 10/4公演）〜10/3 23:59",
+    "date": "2026-10-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630872"
+   },
+   {
     "type": "一般発売（兵庫 12/20公演）〜12/19 23:59",
     "date": "2026-12-19",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627478"
-   }
-  ]
- },
- {
-  "id": 2669,
-  "status": "convert",
-  "artist": "角座金曜落語会 -#カドきんらくご-",
-  "tickets": [
-   {
-    "type": "一般発売（大阪 9/18公演）〜9/17 23:59",
-    "date": "2026-09-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627960"
-   },
-   {
-    "type": "一般発売（大阪 10/23公演）〜10/22 23:59",
-    "date": "2026-10-22",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632405"
-   }
-  ]
- },
- {
-  "id": 2937,
-  "status": "convert",
-  "artist": "B→C 「辻彩奈ヴァイオリン・リサイタル」",
-  "tickets": [
-   {
-    "type": "一般発売（東京 11/24公演）〜11/24 19:00",
-    "date": "2026-11-24"
    }
   ]
  },
@@ -747,13 +1295,80 @@
   ]
  },
  {
-  "id": 3040,
+  "id": 3004,
   "status": "convert",
-  "artist": "山崎ハコ",
+  "artist": "兄ーズ Piano Land",
   "tickets": [
    {
-    "type": "一般発売（神奈川 11/3公演）〜11/1 23:59",
-    "date": "2026-11-01"
+    "type": "プリセール（栃木 11/1公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629717"
+   },
+   {
+    "type": "一般発売（長野 10/18公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626297"
+   },
+   {
+    "type": "一般発売（東京 11/25公演）〜11/22 23:59",
+    "date": "2026-11-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629717"
+   },
+   {
+    "type": "一般発売（兵庫 12/27公演）〜12/24 23:59",
+    "date": "2026-12-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631683"
+   }
+  ]
+ },
+ {
+  "id": 3035,
+  "status": "convert",
+  "artist": "7ORDER",
+  "tickets": [
+   {
+    "type": "一般販売（大阪 10/9公演）〜10/6 23:59",
+    "date": "2026-10-06"
+   },
+   {
+    "type": "一般販売（東京 10/16公演）〜10/13 23:59",
+    "date": "2026-10-13"
+   }
+  ]
+ },
+ {
+  "id": 3053,
+  "status": "convert",
+  "artist": "徳永英明",
+  "tickets": [
+   {
+    "type": "2次受付（岩手・秋田 11/8〜12/13公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615630"
+   },
+   {
+    "type": "一般発売（奥州）（岩手 11/8公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615630"
+   },
+   {
+    "type": "一般発売（秋田 12/12公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615630"
+   },
+   {
+    "type": "一般発売（秋田 12/13公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615630"
+   },
+   {
+    "type": "一般発売（東京 11/14公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616377"
    }
   ]
  },
@@ -795,13 +1410,56 @@
   ]
  },
  {
-  "id": 3140,
+  "id": 3141,
   "status": "convert",
-  "artist": "令和・歌の祭典2026",
+  "artist": "林部智史",
   "tickets": [
    {
-    "type": "一般発売（東京 11/27公演）〜11/23 23:59",
-    "date": "2026-11-23"
+    "type": "一般発売（大分 11/20公演）8/30 10:00発売",
+    "date": "2026-08-30",
+    "startDate": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629663"
+   },
+   {
+    "type": "3次受付（福岡 11/18公演）〜9/1 23:59",
+    "date": "2026-09-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625818"
+   },
+   {
+    "type": "4次受付（北海道 11/13公演）9/1 11:00発売",
+    "date": "2026-09-07",
+    "startDate": "2026-09-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624844"
+   },
+   {
+    "type": "一般発売（神奈川 10/17公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624900"
+   },
+   {
+    "type": "一般発売（大阪 10/20公演）〜10/17 23:59",
+    "date": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625050"
+   },
+   {
+    "type": "一般発売（愛知 10/28公演）〜10/27 23:59",
+    "date": "2026-10-27",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624997"
+   },
+   {
+    "type": "一般発売（長野 10/31公演）〜10/29 23:59",
+    "date": "2026-10-29",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626728"
+   },
+   {
+    "type": "一般発売（埼玉・東京 11/5〜11/25公演）〜11/24 23:59",
+    "date": "2026-11-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627433"
+   },
+   {
+    "type": "一般発売（宮城・山形・福島 10/12〜11/29公演）〜11/26 23:59",
+    "date": "2026-11-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625920"
    }
   ]
  },
@@ -815,95 +1473,113 @@
  },
  {
   "id": 3287,
-  "status": "delete",
+  "status": "convert",
   "artist": "「【パンキッシュガーデン】ネモフィラブルー」",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2629174"
+  "tickets": [
+   {
+    "type": "先行【マセキライブサークル】（東京 10/13公演）〜9/2 10:00",
+    "date": "2026-09-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633782"
+   },
+   {
+    "type": "先行（東京 10/13公演）9/3 10:00発売",
+    "date": "2026-09-07",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633782"
+   }
   ]
  },
  {
-  "id": 3420,
+  "id": 3422,
   "status": "convert",
-  "artist": "岩崎宏美",
+  "artist": "モーニング娘。’26",
   "tickets": [
    {
-    "type": "一般発売（兵庫 10/10公演）〜10/7 23:59",
+    "type": "先行（静岡 10/4公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631510"
+   },
+   {
+    "type": "先行（福岡 10/18公演）〜8/31 23:59",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627667"
+   },
+   {
+    "type": "2次受付（広島 10/10公演）〜9/2 23:59",
+    "date": "2026-09-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630586"
+   },
+   {
+    "type": "2次受付（北海道 10/25公演）〜9/2 11:00",
+    "date": "2026-09-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629318"
+   },
+   {
+    "type": "一般発売（静岡 10/4公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631510"
+   },
+   {
+    "type": "一般発売（香川 9/12公演）〜9/9 23:59",
+    "date": "2026-09-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630339"
+   },
+   {
+    "type": "一般発売（広島 10/10公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630586"
+   },
+   {
+    "type": "一般発売（大阪 10/12公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629620"
+   },
+   {
+    "type": "一般発売（愛知 9/23公演）〜9/21 23:59",
+    "date": "2026-09-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631664"
+   },
+   {
+    "type": "一般発売（茨城 9/26公演）〜9/23 23:59",
+    "date": "2026-09-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630263"
+   },
+   {
+    "type": "一般発売（岩手・宮城 10/31〜11/1公演）10/3 10:00発売",
+    "date": "2026-10-03",
+    "startDate": "2026-10-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630578"
+   },
+   {
+    "type": "一般発売（大阪 11/14公演）10/17 10:00発売",
+    "date": "2026-10-17",
+    "startDate": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629622"
+   }
+  ]
+ },
+ {
+  "id": 3430,
+  "status": "NO_PIA_URL",
+  "artist": "榛葉樹人＆今井俊輔 コンサート in 仙台 Vol.4"
+ },
+ {
+  "id": 3484,
+  "status": "convert",
+  "artist": "マカロニえんぴつ",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 10/24〜10/25公演）〜9/30 23:59",
+    "date": "2026-09-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620662"
+   },
+   {
+    "type": "一般発売（北海道 10/31公演）〜10/7 23:59",
     "date": "2026-10-07",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623040"
-   },
-   {
-    "type": "一般発売（栃木 11/1公演）〜10/29 23:59",
-    "date": "2026-10-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625969"
-   },
-   {
-    "type": "一般発売（東京 11/28公演）〜11/24 23:59",
-    "date": "2026-11-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623636"
-   },
-   {
-    "type": "一般発売（神奈川 12/6公演）〜12/2 23:59",
-    "date": "2026-12-02",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623458"
-   }
-  ]
- },
- {
-  "id": 3421,
-  "status": "convert",
-  "artist": "CiON",
-  "tickets": [
-   {
-    "type": "一般発売（大阪 11/23公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629182"
-   },
-   {
-    "type": "一般発売（愛知 11/22公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632226"
-   },
-   {
-    "type": "一般発売（宮城 11/28公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631757"
-   },
-   {
-    "type": "一般発売（広島 12/5公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630584"
-   },
-   {
-    "type": "一般発売（福岡 12/6公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629679"
-   }
-  ]
- },
- {
-  "id": 3426,
-  "status": "convert",
-  "artist": "狂言ござる乃座 presents きょうげんであそぼ ～親子編～vol.2",
-  "tickets": [
-   {
-    "type": "一般発売（東京 9/27公演）〜9/24 23:59",
-    "date": "2026-09-24"
-   }
-  ]
- },
- {
-  "id": 3470,
-  "status": "convert",
-  "artist": "デビュー35周年記念 横山幸雄ピアノ・リサイタル「入魂のショパン in 山形」",
-  "tickets": [
-   {
-    "type": "一般発売（山形 11/23公演）〜11/20 23:59",
-    "date": "2026-11-20"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621851"
    }
   ]
  },
@@ -924,6 +1600,694 @@
   ]
  },
  {
+  "id": 3518,
+  "status": "convert",
+  "artist": "EXILE",
+  "tickets": [
+   {
+    "type": "一般発売（埼玉 11/14公演）〜11/9 23:59",
+    "date": "2026-11-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617158"
+   },
+   {
+    "type": "一般発売（埼玉 11/15公演）〜11/10 23:59",
+    "date": "2026-11-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617158"
+   }
+  ]
+ },
+ {
+  "id": 3519,
+  "status": "convert",
+  "artist": "OGRE YOU ASSHOLE",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 9/27公演）〜9/17 23:59",
+    "date": "2026-09-17"
+   },
+   {
+    "type": "一般発売（東京 12/19公演）〜12/18 23:59",
+    "date": "2026-12-18"
+   },
+   {
+    "type": "一般発売（北海道 R9年 1/10公演）〜12/24 23:59",
+    "date": "2026-12-24"
+   }
+  ]
+ },
+ {
+  "id": 3520,
+  "status": "convert",
+  "artist": "小曽根真 クリスマス スペシャル featuring アナ・マリア・ヨペック",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 12/13公演）〜12/12 23:59",
+    "date": "2026-12-12"
+   }
+  ]
+ },
+ {
+  "id": 3521,
+  "status": "convert",
+  "artist": "大人のくつろぎ音楽堂フェス「JAZZ井」2026",
+  "tickets": [
+   {
+    "type": "一般発売（福井 11/21公演）〜11/20 23:59",
+    "date": "2026-11-20"
+   }
+  ]
+ },
+ {
+  "id": 3522,
+  "status": "convert",
+  "artist": "カルロス・トシキ",
+  "tickets": [
+   {
+    "type": "2次受付（東京 12/4公演）〜8/30 23:59",
+    "date": "2026-08-30"
+   },
+   {
+    "type": "一般発売（東京 12/4公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12"
+   },
+   {
+    "type": "一般発売（愛知 11/24公演）〜11/15 23:59",
+    "date": "2026-11-15"
+   }
+  ]
+ },
+ {
+  "id": 3523,
+  "status": "convert",
+  "artist": "神戸国際taiko音楽祭2027",
+  "tickets": [
+   {
+    "type": "一般発売（兵庫 R9年 1/31公演）〜1/28 23:59",
+    "date": "2027-01-28"
+   }
+  ]
+ },
+ {
+  "id": 3524,
+  "status": "convert",
+  "artist": "サックス&ジャンベコンサート 心躍る響きと砂の世界",
+  "tickets": [
+   {
+    "type": "一般発売（宮崎 11/29公演）〜11/28 23:59",
+    "date": "2026-11-28"
+   }
+  ]
+ },
+ {
+  "id": 3525,
+  "status": "convert",
+  "artist": "太鼓祭inさがみはら 第8回関東大会",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/1公演）〜10/22 23:59",
+    "date": "2026-10-22"
+   }
+  ]
+ },
+ {
+  "id": 3526,
+  "status": "convert",
+  "artist": "dustbox",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/10〜10/11公演）〜10/10 23:59",
+    "date": "2026-10-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629991"
+   }
+  ]
+ },
+ {
+  "id": 3527,
+  "status": "delete",
+  "artist": "中村敦",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2630531"
+  ]
+ },
+ {
+  "id": 3528,
+  "status": "convert",
+  "artist": "橋本絵莉子",
+  "tickets": [
+   {
+    "type": "一般発売（岡山 9/30公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632364"
+   },
+   {
+    "type": "一般発売（徳島 9/29公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632459"
+   },
+   {
+    "type": "一般発売（大阪 10/16公演）〜10/7 23:59",
+    "date": "2026-10-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632490"
+   },
+   {
+    "type": "一般発売（東京 10/18公演）〜10/17 23:59",
+    "date": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627498"
+   }
+  ]
+ },
+ {
+  "id": 3529,
+  "status": "convert",
+  "artist": "花巻リズムヤンガー80周年記念コンサート",
+  "tickets": [
+   {
+    "type": "一般発売【一般・高校生】（岩手 11/7公演）〜11/5 23:59",
+    "date": "2026-11-05"
+   },
+   {
+    "type": "一般発売【中学生以下】（岩手 11/7公演）〜11/5 23:59",
+    "date": "2026-11-05"
+   }
+  ]
+ },
+ {
+  "id": 3530,
+  "status": "delete",
+  "artist": "林哲司 SONG FILE SPECIAL ～シティポップ HITS セレクション 2026～",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2626329"
+  ]
+ },
+ {
+  "id": 3531,
+  "status": "convert",
+  "artist": "ハンバートハンバート",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/10公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626436"
+   }
+  ]
+ },
+ {
+  "id": 3532,
+  "status": "convert",
+  "artist": "Helsinki Lambda Club",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 10/4公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626365"
+   },
+   {
+    "type": "一般発売（石川 11/2公演）〜10/22 23:59",
+    "date": "2026-10-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629631"
+   },
+   {
+    "type": "一般発売（長野 11/3公演）〜10/22 23:59",
+    "date": "2026-10-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629632"
+   },
+   {
+    "type": "一般発売（福岡 11/8公演）〜10/29 23:59",
+    "date": "2026-10-29",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626901"
+   }
+  ]
+ },
+ {
+  "id": 3533,
+  "status": "convert",
+  "artist": "布袋寅泰",
+  "tickets": [
+   {
+    "type": "2次プレリザーブ（香川 11/8公演）〜8/30 23:59",
+    "date": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670338"
+   },
+   {
+    "type": "3次プレリザーブ（岡山・広島 12/5〜12/6公演）〜8/31 11:00",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670338"
+   },
+   {
+    "type": "3次プレリザーブ（岩手・山形 11/28〜11/29公演）〜8/31 11:00",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670338"
+   },
+   {
+    "type": "一般発売【ファミリーマート支払い専用】（北海道 9/13公演）〜9/1 23:59",
+    "date": "2026-09-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624623"
+   },
+   {
+    "type": "一般発売（北海道 9/13公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624623"
+   },
+   {
+    "type": "4次プレリザーブ（佐賀・熊本 10/4〜11/3公演）〜9/3 11:00",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670338"
+   },
+   {
+    "type": "一般発売（香川 11/8公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622351"
+   },
+   {
+    "type": "一般発売（岡山 12/5公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627395"
+   },
+   {
+    "type": "一般発売（広島 12/6公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627395"
+   },
+   {
+    "type": "9月22日公演 一般発売（宮城 9/22公演）〜9/13 23:59",
+    "date": "2026-09-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629343"
+   },
+   {
+    "type": "9月23日公演 一般発売（宮城 9/23公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629343"
+   },
+   {
+    "type": "一般発売（新潟 9/26公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625934"
+   },
+   {
+    "type": "一般発売（山口 10/3公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627394"
+   },
+   {
+    "type": "一般発売（福岡 11/22公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627277"
+   },
+   {
+    "type": "一般発売（福岡 11/23公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627277"
+   }
+  ]
+ },
+ {
+  "id": 3534,
+  "status": "convert",
+  "artist": "真琴つばさ",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/23公演）〜11/12 23:59",
+    "date": "2026-11-12"
+   },
+   {
+    "type": "一般発売（東京 11/25公演）〜11/12 23:59",
+    "date": "2026-11-12"
+   }
+  ]
+ },
+ {
+  "id": 3535,
+  "status": "convert",
+  "artist": "真心ブラザーズ",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/10公演）〜9/3 23:59",
+    "date": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626436"
+   },
+   {
+    "type": "一般発売（岡山 12/5公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631432"
+   },
+   {
+    "type": "一般発売（香川 12/6公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630303"
+   },
+   {
+    "type": "一般発売（北海道 12/12公演）〜11/26 23:59",
+    "date": "2026-11-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627532"
+   },
+   {
+    "type": "一般発売（静岡 12/25公演）〜12/9 23:59",
+    "date": "2026-12-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627685"
+   },
+   {
+    "type": "一般発売（鹿児島 R9年 1/9公演）〜12/22 23:59",
+    "date": "2026-12-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631702"
+   },
+   {
+    "type": "一般発売（大阪 R9年 1/17公演）〜12/23 23:59",
+    "date": "2026-12-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628125"
+   },
+   {
+    "type": "一般発売（愛知 R9年 1/16公演）〜12/24 23:59",
+    "date": "2026-12-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627685"
+   },
+   {
+    "type": "一般発売（福岡 R9年 1/10公演）〜12/24 23:59",
+    "date": "2026-12-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631703"
+   },
+   {
+    "type": "一般発売（岩手 R9年 1/23公演）〜1/7 23:59",
+    "date": "2027-01-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627697"
+   },
+   {
+    "type": "一般発売（宮城 R9年 1/24公演）〜1/7 23:59",
+    "date": "2027-01-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627697"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/30公演）〜1/14 23:59",
+    "date": "2027-01-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628268"
+   }
+  ]
+ },
+ {
+  "id": 3536,
+  "status": "convert",
+  "artist": "リアクション ザ ブッタ",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 11/21公演）〜11/20 23:59",
+    "date": "2026-11-20",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626177"
+   },
+   {
+    "type": "一般発売（北海道 12/5公演）〜11/26 23:59",
+    "date": "2026-11-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629805"
+   },
+   {
+    "type": "一般発売（愛知 R9年 1/24公演）〜1/14 23:59",
+    "date": "2027-01-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631820"
+   },
+   {
+    "type": "一般発売（香川 R9年 2/11公演）〜2/2 23:59",
+    "date": "2027-02-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629339"
+   },
+   {
+    "type": "一般発売（広島 R9年 2/13公演）〜2/4 23:59",
+    "date": "2027-02-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630249"
+   },
+   {
+    "type": "一般発売（宮城 R9年 2/21公演）〜2/11 23:59",
+    "date": "2027-02-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630278"
+   },
+   {
+    "type": "一般発売（石川 R9年 3/6公演）〜2/25 23:59",
+    "date": "2027-02-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631398"
+   },
+   {
+    "type": "一般発売（東京 R9年 4/18公演）〜4/8 23:59",
+    "date": "2027-04-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618225"
+   }
+  ]
+ },
+ {
+  "id": 3537,
+  "status": "convert",
+  "artist": "凛として時雨",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 9/29公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619791"
+   },
+   {
+    "type": "一般発売（東京 10/1公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621343"
+   }
+  ]
+ },
+ {
+  "id": 3538,
+  "status": "convert",
+  "artist": "VINTAGE ROCK pre. スターゲイザー",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/25公演）〜9/24 23:59",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 3546,
+  "status": "delete",
+  "artist": "岡崎歌舞伎特別公演",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2623725"
+  ]
+ },
+ {
+  "id": 3547,
+  "status": "convert",
+  "artist": "GAKURAN-BOYZ vol.2～GAKURANーBOYZがやって来る!ヤァヤァヤァ!～",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 10/30〜11/1公演）〜10/31 23:59",
+    "date": "2026-10-31"
+   }
+  ]
+ },
+ {
+  "id": 3548,
+  "status": "convert",
+  "artist": "秋季歌舞伎特別公演 岐阜",
+  "tickets": [
+   {
+    "type": "プリセール（岐阜 11/21〜11/22公演）〜9/3 23:59",
+    "date": "2026-09-03"
+   },
+   {
+    "type": "一般発売（岐阜 11/21〜11/22公演）9/5 9:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 3549,
+  "status": "convert",
+  "artist": "横須賀芸術劇場リニューアル記念 東京バレエ団「くるみ割り人形」全2幕",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 12/20公演）〜12/17 23:59",
+    "date": "2026-12-17"
+   }
+  ]
+ },
+ {
+  "id": 3557,
+  "status": "convert",
+  "artist": "音楽の絵本",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/12公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632244"
+   },
+   {
+    "type": "一般発売（埼玉 12/13公演）〜12/6 23:59",
+    "date": "2026-12-06",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622368"
+   }
+  ]
+ },
+ {
+  "id": 3558,
+  "status": "convert",
+  "artist": "第13回 オルガン・1アワーコンサート（早島万紀子） メシアン 音楽の薔薇窓 ～フランスの色彩をめぐって～",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/25公演）〜11/24 23:59",
+    "date": "2026-11-24"
+   }
+  ]
+ },
+ {
+  "id": 3559,
+  "status": "convert",
+  "artist": "京都アルティ弦楽四重奏団",
+  "tickets": [
+   {
+    "type": "一般発売（京都 11/21公演）〜11/18 23:59",
+    "date": "2026-11-18"
+   }
+  ]
+ },
+ {
+  "id": 3560,
+  "status": "convert",
+  "artist": "豊嶋泰嗣演奏活動40周年記念リサイタル",
+  "tickets": [
+   {
+    "type": "一般発売（京都 12/12〜12/26公演）〜12/23 23:59",
+    "date": "2026-12-23"
+   }
+  ]
+ },
+ {
+  "id": 3561,
+  "status": "convert",
+  "artist": "トリオ・ミンストレル コンサートツアー2026東京公演",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/29公演）〜11/28 23:59",
+    "date": "2026-11-28"
+   }
+  ]
+ },
+ {
+  "id": 3562,
+  "status": "convert",
+  "artist": "なとりミュージックガーデン Meet up with 仙台フィルメンバーズ 岩倉宗二郎プロデュース公演",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 R9年 1/31公演）〜1/28 23:59",
+    "date": "2027-01-28"
+   }
+  ]
+ },
+ {
+  "id": 3563,
+  "status": "convert",
+  "artist": "なとりミュージックガーデン Meet up with 仙台フィルメンバーズ 中村隆人プロデュース公演",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 11/22公演）〜11/19 23:59",
+    "date": "2026-11-19"
+   }
+  ]
+ },
+ {
+  "id": 3564,
+  "status": "convert",
+  "artist": "名曲コンサート ショパンピアノ協奏曲 シューベルト未完成交響曲",
+  "tickets": [
+   {
+    "type": "一般発売（兵庫 11/29公演）〜11/28 23:59",
+    "date": "2026-11-28"
+   }
+  ]
+ },
+ {
+  "id": 3574,
+  "status": "convert",
+  "artist": "The Dead of Night CitY",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/28公演）〜10/22 23:59",
+    "date": "2026-10-22"
+   }
+  ]
+ },
+ {
+  "id": 3575,
+  "status": "convert",
+  "artist": "谷山浩子",
+  "tickets": [
+   {
+    "type": "先行（宮城 11/11公演）〜9/2 11:00",
+    "date": "2026-09-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625284"
+   },
+   {
+    "type": "一般発売（宮城 11/11公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625284"
+   },
+   {
+    "type": "一般発売（東京 12/18公演）9/20 10:00発売",
+    "date": "2026-09-20",
+    "startDate": "2026-09-20",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633250"
+   }
+  ]
+ },
+ {
+  "id": 3576,
+  "status": "convert",
+  "artist": "舞太鼓あすか組",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 12/27公演）〜12/20 23:59",
+    "date": "2026-12-20"
+   }
+  ]
+ },
+ {
+  "id": 3577,
+  "status": "delete",
+  "artist": "ロックロックこんにちは!ver.28 ～にゃーロック!ホームズ～",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2628028"
+  ]
+ },
+ {
+  "id": 3590,
+  "status": "convert",
+  "artist": "舞台『スクラップ アンド コーラス』 -君が灯したメロディー-",
+  "tickets": [
+   {
+    "type": "ぴあ先着先行（大阪 10/23〜10/25公演）〜9/3 23:59",
+    "date": "2026-09-03"
+   },
+   {
+    "type": "一般発売（大阪 10/23〜10/25公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売（東京 9/18〜9/27公演）〜9/24 23:59",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 3591,
+  "status": "convert",
+  "artist": "MANSAI FANTASY BOX 野村萬斎&オーケストラ・アンサンブル金沢",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 11/20公演）〜11/18 23:59",
+    "date": "2026-11-18"
+   }
+  ]
+ },
+ {
   "id": 3592,
   "status": "delete",
   "artist": "2026伝承ホール寺子屋 「渋谷金王丸伝説」&歌舞伎リーディング",
@@ -940,41 +2304,186 @@
   ]
  },
  {
-  "id": 3732,
+  "id": 3604,
   "status": "convert",
-  "artist": "古内東子",
+  "artist": "吉本新喜劇&バラエティーショー in 周南",
   "tickets": [
    {
-    "type": "プリセール（大阪 12/3公演）〜8/30 23:59",
-    "date": "2026-08-30",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625756"
+    "type": "一般発売（山口 11/21公演）〜11/18 23:59",
+    "date": "2026-11-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624067"
    },
    {
-    "type": "一般発売（大阪 12/3公演）9/2 10:00発売",
-    "date": "2026-09-02",
-    "startDate": "2026-09-02",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625756"
-   },
-   {
-    "type": "一般発売【一般発売（福島公演）】（福島 9/12公演）〜9/11 23:59",
-    "date": "2026-09-11",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620245"
-   },
-   {
-    "type": "一般発売【一般発売（宮城公演）】（宮城 9/13公演）〜9/12 23:59",
-    "date": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620245"
+    "type": "一般発売（岡山 11/28公演）〜11/25 23:59",
+    "date": "2026-11-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632476"
    }
   ]
  },
  {
-  "id": 3734,
+  "id": 3609,
+  "status": "delete",
+  "artist": "N響オーチャード定期2026／2027 東横シリーズ in 横浜<傑作ピアノ協奏曲&三大バレエ音楽><第138回>",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2600460"
+  ]
+ },
+ {
+  "id": 3610,
   "status": "convert",
-  "artist": "四人衆コンサート2026～お客様の笑顔と拍手に支えられて～",
+  "artist": "仙台フィルハーモニー管弦楽団",
   "tickets": [
    {
-    "type": "一般発売（栃木 12/11公演）〜12/9 23:59",
-    "date": "2026-12-09"
+    "type": "一般発売（宮城 10/16〜10/17公演）〜10/17 13:15",
+    "date": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621073"
+   },
+   {
+    "type": "一般発売（宮城 11/20〜11/21公演）〜11/21 13:15",
+    "date": "2026-11-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621075"
+   },
+   {
+    "type": "一般発売（宮城 12/12公演）〜12/12 13:15",
+    "date": "2026-12-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628370"
+   },
+   {
+    "type": "一般発売（宮城 12/23公演）〜12/23 12:15",
+    "date": "2026-12-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2546790"
+   },
+   {
+    "type": "一般発売（福島 R9年 1/10〜1/11公演）〜1/11 13:15",
+    "date": "2027-01-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628379"
+   }
+  ]
+ },
+ {
+  "id": 3611,
+  "status": "convert",
+  "artist": "リリア第九演奏会",
+  "tickets": [
+   {
+    "type": "一般発売（埼玉 12/12公演）〜12/11 23:59",
+    "date": "2026-12-11"
+   }
+  ]
+ },
+ {
+  "id": 3632,
+  "status": "convert",
+  "artist": "宝塚歌劇 宙組東京宝塚劇場公演『黒蜥蜴』『Diamond IMPULSE(ダイヤモンド インパルス)』千秋楽 ライブ中継",
+  "tickets": [
+   {
+    "type": "一般発売（北海道・青森・岩手・宮城・秋田・山形・福島・茨城・栃木・群馬・埼玉・千葉・東京・神奈川・新潟・富山・石川・福井・山梨・長野・岐阜・静岡・愛知・三重・滋賀・京都・大阪・兵庫・奈良・和歌山・鳥取・島根・岡山・広島・山口・香川・愛媛・高知・福岡・佐賀・長崎・熊本・大分・宮崎・沖縄 9/6公演）〜9/4 12:00",
+    "date": "2026-09-04"
+   }
+  ]
+ },
+ {
+  "id": 3633,
+  "status": "convert",
+  "artist": "アイ工務店 presents ふわふわアドベンチャーツアー ハロウィンパーティー in 函館サーモン・まるなまアリーナ",
+  "tickets": [
+   {
+    "type": "一般発売（北海道 10/31〜11/1公演）〜10/30 23:59",
+    "date": "2026-10-30"
+   }
+  ]
+ },
+ {
+  "id": 3664,
+  "status": "convert",
+  "artist": "奥井亜紀",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/21公演）〜11/20 23:59",
+    "date": "2026-11-20",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630129"
+   },
+   {
+    "type": "一般発売（宮城 12/19公演）〜12/18 23:59",
+    "date": "2026-12-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633061"
+   }
+  ]
+ },
+ {
+  "id": 3674,
+  "status": "convert",
+  "artist": "シルク・ドゥ・ソレイユ アース製薬 クーザ 東京公演",
+  "tickets": [
+   {
+    "type": "セブン-イレブン先行【2/24（水）～28（日）公演】（東京 R9年 2/24〜2/28公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626484"
+   },
+   {
+    "type": "セブン-イレブン先行【3/1（月）～9（火）公演】（東京 R9年 3/1〜3/9公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626485"
+   },
+   {
+    "type": "セブン-イレブン先行【3/11（木）～20（土）公演】（東京 R9年 3/11〜3/20公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626485"
+   },
+   {
+    "type": "セブン-イレブン先行【3/21（日）～30（火）公演】（東京 R9年 3/21〜3/30公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626485"
+   },
+   {
+    "type": "セブン-イレブン先行【4/2（金）～10（土）公演】（東京 R9年 4/2〜4/10公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626487"
+   },
+   {
+    "type": "セブン-イレブン先行【4/11（日）～20（火）公演】（東京 R9年 4/11〜4/20公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626487"
+   },
+   {
+    "type": "セブン-イレブン先行【4/21（水）～25（日）公演】（東京 R9年 4/21〜4/25公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626487"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【2/24（水）～28（日）公演】（東京 R9年 2/24〜2/28公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626484"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【3/1（月）～9（火）公演】（東京 R9年 3/1〜3/9公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626485"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【3/11（木）～20（土）公演】（東京 R9年 3/11〜3/20公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626485"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【3/21（日）～30（火）公演】（東京 R9年 3/21〜3/30公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626485"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【4/2（金）～10（土）公演】（東京 R9年 4/2〜4/10公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626487"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【4/11（日）～20（火）公演】（東京 R9年 4/11〜4/20公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626487"
+   },
+   {
+    "type": "フジテレビダイレクト2次先行【4/21（水）～25（日）公演】（東京 R9年 4/21〜4/25公演）〜9/18 23:59",
+    "date": "2026-09-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626487"
    }
   ]
  },
@@ -1003,20 +2512,13 @@
   ]
  },
  {
-  "id": 3770,
+  "id": 3809,
   "status": "convert",
-  "artist": "オクサーナ・ステパニュック（S）",
+  "artist": "岡幸二郎 ベスト・オブ・ミュージカル with 九州交響楽団",
   "tickets": [
    {
-    "type": "一般発売（東京 11/12公演）9/3 10:00発売",
-    "date": "2026-09-03",
-    "startDate": "2026-09-03",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627020"
-   },
-   {
-    "type": "一般発売（鳥取・島根・広島 11/28〜12/1公演）〜11/28 23:59",
-    "date": "2026-11-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625705"
+    "type": "一般発売（福岡 12/1公演）〜11/30 23:59",
+    "date": "2026-11-30"
    }
   ]
  },
@@ -1037,6 +2539,23 @@
   ]
  },
  {
+  "id": 3894,
+  "status": "convert",
+  "artist": "加藤ミリヤ",
+  "tickets": [
+   {
+    "type": "一般発売（広島 10/24公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630177"
+   },
+   {
+    "type": "一般発売（石川 11/7公演）〜11/5 23:59",
+    "date": "2026-11-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630710"
+   }
+  ]
+ },
+ {
   "id": 3896,
   "status": "delete",
   "artist": "伊藤蘭 クリスマスディナー&コンサート",
@@ -1045,19 +2564,46 @@
   ]
  },
  {
-  "id": 3899,
-  "status": "delete",
-  "artist": "MISIA",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2630921"
-  ]
- },
- {
   "id": 3907,
   "status": "delete",
   "artist": "桂三度日本公演～桂三度入門十五周年記念祭～",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2631228"
+  ]
+ },
+ {
+  "id": 3915,
+  "status": "convert",
+  "artist": "務川慧悟（p）",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 12/6公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626041"
+   },
+   {
+    "type": "令和8年度 文化庁 劇場・音楽堂等における子供舞台芸術鑑賞体験支援事業（福岡 12/6公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626041"
+   },
+   {
+    "type": "一般発売（静岡 11/21公演）9/13 10:00発売",
+    "date": "2026-09-13",
+    "startDate": "2026-09-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632110"
+   },
+   {
+    "type": "一般発売（新潟 10/17公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615959"
+   },
+   {
+    "type": "一般発売（愛媛 12/13公演）〜12/10 23:59",
+    "date": "2026-12-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632349"
+   }
   ]
  },
  {
@@ -1085,14 +2631,136 @@
   ]
  },
  {
-  "id": 4047,
+  "id": 3970,
   "status": "convert",
-  "artist": "山下大輝",
+  "artist": "GARLICBOYS",
   "tickets": [
    {
-    "type": "プリセール（東京 11/1公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28"
+    "type": "一般発売（東京 11/23公演）〜11/22 23:59",
+    "date": "2026-11-22"
+   }
+  ]
+ },
+ {
+  "id": 3971,
+  "status": "convert",
+  "artist": "僕らの別荘 全国ツアー 2026",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 R9年 3/14公演）〜3/12 23:59",
+    "date": "2027-03-12"
+   }
+  ]
+ },
+ {
+  "id": 3972,
+  "status": "convert",
+  "artist": "花井悠希のミュージックカフェ 第6回",
+  "tickets": [
+   {
+    "type": "一般発売（三重 11/8公演）〜11/5 23:59",
+    "date": "2026-11-05"
+   }
+  ]
+ },
+ {
+  "id": 3974,
+  "status": "convert",
+  "artist": "RIZIN LANDMARK 16 in NAGASAKI",
+  "tickets": [
+   {
+    "type": "プリセール（長崎 10/3公演）〜8/29 23:59",
+    "date": "2026-08-29"
+   },
+   {
+    "type": "一般発売（長崎 10/3公演）8/30 10:00発売",
+    "date": "2026-08-30",
+    "startDate": "2026-08-30"
+   }
+  ]
+ },
+ {
+  "id": 4020,
+  "status": "convert",
+  "artist": "日食なつこ",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 10/9公演）〜9/30 23:59",
+    "date": "2026-09-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632360"
+   },
+   {
+    "type": "一般発売（宮城 10/10公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632338"
+   },
+   {
+    "type": "一般発売（北海道 10/18公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619213"
+   },
+   {
+    "type": "一般発売（愛知 10/25公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632345"
+   },
+   {
+    "type": "一般発売（福岡 11/8公演）〜10/29 23:59",
+    "date": "2026-10-29",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618020"
+   }
+  ]
+ },
+ {
+  "id": 4021,
+  "status": "convert",
+  "artist": "HAN SEUNG WOO SOUND & MOMENT : Scene #Tokyo",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/5公演）〜9/4 23:59",
+    "date": "2026-09-04"
+   }
+  ]
+ },
+ {
+  "id": 4080,
+  "status": "delete",
+  "artist": "澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert -",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670108"
+  ]
+ },
+ {
+  "id": 4115,
+  "status": "convert",
+  "artist": "THE MACKSHOW",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 11/18公演）〜11/17 23:59",
+    "date": "2026-11-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624805"
+   }
+  ]
+ },
+ {
+  "id": 4164,
+  "status": "delete",
+  "artist": "島袋寛子",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2628973",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2625475",
+   "https://t.pia.jp/pia/event/event.do?eventCd=2631134"
+  ]
+ },
+ {
+  "id": 4167,
+  "status": "convert",
+  "artist": "Ken Yokoyama",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/14公演）〜10/13 23:59",
+    "date": "2026-10-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627195"
    }
   ]
  },
@@ -1102,6 +2770,30 @@
   "artist": "DEEN",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2629677"
+  ]
+ },
+ {
+  "id": 4173,
+  "status": "convert",
+  "artist": "esq",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/21公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631937"
+   },
+   {
+    "type": "一般発売（福岡 9/27公演）〜9/26 23:59",
+    "date": "2026-09-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624127"
+   },
+   {
+    "type": "一般発売（宮城 11/29公演）10/3 10:00発売",
+    "date": "2026-10-03",
+    "startDate": "2026-10-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632594"
+   }
   ]
  },
  {
@@ -1121,48 +2813,147 @@
   ]
  },
  {
-  "id": 4235,
+  "id": 4221,
   "status": "convert",
-  "artist": "DYGL",
+  "artist": "みんなのルシオールカーニバル2026 0歳から楽しめるみんなのコンサート",
   "tickets": [
    {
-    "type": "プレリザーブ（新潟 11/7公演）〜9/7 11:00",
-    "date": "2026-09-07",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633269"
+    "type": "一般発売（滋賀 11/23公演）〜11/20 23:59",
+    "date": "2026-11-20"
+   }
+  ]
+ },
+ {
+  "id": 4224,
+  "status": "convert",
+  "artist": "LEE JI HOON TOKYO FANMEETING : Scene #2 - Autumn Page",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/6公演）〜9/5 23:59",
+    "date": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 4225,
+  "status": "convert",
+  "artist": "松浦航大 歌まねライブ",
+  "tickets": [
+   {
+    "type": "一般発売（石川 10/11公演）〜10/10 23:59",
+    "date": "2026-10-10"
+   }
+  ]
+ },
+ {
+  "id": 4236,
+  "status": "convert",
+  "artist": "東京スカパラダイスオーケストラ",
+  "tickets": [
+   {
+    "type": "プレリザーブ（石川・福井 10/31〜11/1公演）〜8/31 11:00",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670528"
    },
    {
-    "type": "プレリザーブ（石川 11/8公演）〜9/7 11:00",
-    "date": "2026-09-07",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633270"
+    "type": "プレリザーブ（北海道 R9年 1/9〜1/11公演）〜8/31 11:00",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670528"
    },
    {
-    "type": "プリセール（北海道 11/28公演）〜9/9 23:59",
-    "date": "2026-09-09",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630783"
+    "type": "プレリザーブ（新潟 R9年 1/16公演）〜8/31 11:00",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670528"
    },
    {
-    "type": "一般発売（愛知 11/21公演）9/12 10:00発売",
+    "type": "プレリザーブ（熊本・宮崎 12/3〜12/5公演）〜8/31 23:59",
+    "date": "2026-08-31",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670528"
+   },
+   {
+    "type": "プレリザーブ（青森・宮城 11/27〜11/29公演）〜9/1 11:00",
+    "date": "2026-09-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670528"
+   },
+   {
+    "type": "2次プレリザーブ（岐阜・愛知 11/5〜11/6公演）〜9/6 23:59",
+    "date": "2026-09-06",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670528"
+   },
+   {
+    "type": "一般発売（埼玉 10/29公演）9/12 10:00発売",
     "date": "2026-09-12",
     "startDate": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630330"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628356"
    },
    {
-    "type": "一般発売（大阪 11/22公演）9/12 10:00発売",
+    "type": "一般発売（愛知 11/5公演）9/12 10:00発売",
     "date": "2026-09-12",
     "startDate": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633565"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628155"
    },
    {
-    "type": "一般発売（新潟 11/7公演）9/12 10:00発売",
+    "type": "一般発売（岐阜 11/6公演）9/12 10:00発売",
     "date": "2026-09-12",
     "startDate": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633269"
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628155"
+   }
+  ]
+ },
+ {
+  "id": 4249,
+  "status": "convert",
+  "artist": "ミュージカル『メイビー、ハッピーエンディング』",
+  "tickets": [
+   {
+    "type": "プリセール（東京 11/20〜12/13公演）8/30 11:00発売",
+    "date": "2026-08-30",
+    "startDate": "2026-08-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632123"
    },
    {
-    "type": "一般発売（石川 11/8公演）9/12 10:00発売",
-    "date": "2026-09-12",
-    "startDate": "2026-09-12",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633270"
+    "type": "3次プリセール（東京 11/25〜12/10公演）〜9/4 10:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628886"
+   },
+   {
+    "type": "一般発売（東京 11/20〜12/13公演）9/5 11:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632123"
+   }
+  ]
+ },
+ {
+  "id": 4250,
+  "status": "convert",
+  "artist": "三遊亭わん丈・三遊亭円丈兄弟会",
+  "tickets": [
+   {
+    "type": "一般発売（熊本 R9年 1/6公演）〜1/5 23:59",
+    "date": "2027-01-05"
+   }
+  ]
+ },
+ {
+  "id": 4251,
+  "status": "convert",
+  "artist": "第23回三遊亭わん丈の会",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 R9年 1/7公演）〜1/6 23:59",
+    "date": "2027-01-06"
+   }
+  ]
+ },
+ {
+  "id": 4252,
+  "status": "convert",
+  "artist": "第11回冬休み子ども寄席",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 R9年 1/7公演）〜1/6 23:59",
+    "date": "2027-01-06"
    }
   ]
  },
@@ -1191,13 +2982,13 @@
   ]
  },
  {
-  "id": 4296,
+  "id": 4282,
   "status": "convert",
-  "artist": "みんなのアニソン・オーケストラ!",
+  "artist": "豪華競演!大爆笑!!浅草漫才大行進",
   "tickets": [
    {
-    "type": "一般発売（岡山 11/20公演）〜11/17 23:59",
-    "date": "2026-11-17"
+    "type": "一般発売（沖縄 11/15公演）〜11/12 23:59",
+    "date": "2026-11-12"
    }
   ]
  },
@@ -1218,6 +3009,27 @@
   ]
  },
  {
+  "id": 4340,
+  "status": "convert",
+  "artist": "ENPLEX × Hello! Project 名古屋定期イベント",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 5/25公演）5/16 13:00発売",
+    "date": "2026-05-16",
+    "startDate": "2026-05-16"
+   },
+   {
+    "type": "一般発売（愛知 9/7公演）〜9/6 23:59",
+    "date": "2026-09-06"
+   },
+   {
+    "type": "一般発売（愛知 10/9公演）9/26 13:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26"
+   }
+  ]
+ },
+ {
   "id": 4358,
   "status": "delete",
   "artist": "「劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉」舞台挨拶",
@@ -1226,58 +3038,141 @@
   ]
  },
  {
-  "id": 4425,
+  "id": 4431,
   "status": "convert",
-  "artist": "スミワタルトリオ",
+  "artist": "上野耕平（sax）／山中惇史（p）／石若駿（perc）",
   "tickets": [
    {
-    "type": "一般発売（大阪 R9年 1/16公演）〜1/15 23:59",
-    "date": "2027-01-15"
+    "type": "一般発売（北海道 12/1公演）〜11/29 23:59",
+    "date": "2026-11-29"
    }
   ]
  },
  {
-  "id": 4434,
+  "id": 4533,
   "status": "convert",
-  "artist": "川井郁子（vl）",
+  "artist": "青木カレン Sings Standards 2026 feat.ジェイコブ・コーラー&米澤美玖",
   "tickets": [
    {
-    "type": "一般発売（愛知 12/22公演）9/17 10:00発売",
-    "date": "2026-09-17",
-    "startDate": "2026-09-17",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628459"
+    "type": "一般発売（静岡 11/27公演）〜11/23 23:59",
+    "date": "2026-11-23"
+   }
+  ]
+ },
+ {
+  "id": 4534,
+  "status": "convert",
+  "artist": "UNCHAIN",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/1公演）〜9/30 23:59",
+    "date": "2026-09-30"
+   }
+  ]
+ },
+ {
+  "id": 4535,
+  "status": "convert",
+  "artist": "OGRE YOU ASSHOLE",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 12/5公演）〜11/26 23:59",
+    "date": "2026-11-26"
+   }
+  ]
+ },
+ {
+  "id": 4537,
+  "status": "convert",
+  "artist": "coldrain",
+  "tickets": [
+   {
+    "type": "オフィシャル先行【追加公演】（東京 12/8公演）〜9/6 23:59",
+    "date": "2026-09-06",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669310"
    },
    {
-    "type": "一般発売（兵庫 9/27公演）〜9/24 23:59",
-    "date": "2026-09-24",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633411"
+    "type": "一般発売（広島 10/10公演）〜10/9 23:59",
+    "date": "2026-10-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625632"
    },
    {
-    "type": "一般発売（東京 11/1公演）〜10/29 23:59",
-    "date": "2026-10-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630311"
+    "type": "一般発売（北海道 10/21〜10/22公演）〜10/21 23:59",
+    "date": "2026-10-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633063"
+   },
+   {
+    "type": "一般発売（新潟 11/3公演）〜11/2 23:59",
+    "date": "2026-11-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634176"
+   },
+   {
+    "type": "一般発売（宮城 11/29公演）〜11/28 23:59",
+    "date": "2026-11-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626313"
+   },
+   {
+    "type": "一般発売（大阪 12/1公演）〜11/28 23:59",
+    "date": "2026-11-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632638"
+   },
+   {
+    "type": "一般発売（愛知 12/2公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632560"
    }
   ]
  },
  {
-  "id": 4569,
+  "id": 4538,
   "status": "convert",
-  "artist": "～だけ、だけ、だけ、だけ、演歌だけ!～ 辰巳ゆうとコンサート2026 in 渋谷公会堂",
+  "artist": "Juice=Juice",
   "tickets": [
    {
-    "type": "一般発売（東京 11/11公演）〜11/9 23:59",
-    "date": "2026-11-09"
+    "type": "一般発売（京都 9/24公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631157"
+   },
+   {
+    "type": "一般発売（愛知 10/3公演）9/12 10:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632124"
+   },
+   {
+    "type": "一般発売（大阪 10/10公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631158"
+   },
+   {
+    "type": "一般発売（大阪 11/13公演）10/24 10:00発売",
+    "date": "2026-10-24",
+    "startDate": "2026-10-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631161"
    }
   ]
  },
  {
-  "id": 4573,
+  "id": 4555,
   "status": "convert",
-  "artist": "八神純子 キミの街へ2026 Share the moment with you",
+  "artist": "ELEKTRIC MOTH feat. Carmen Maki with 近藤房之助",
   "tickets": [
    {
-    "type": "一般発売（岐阜 11/22公演）〜11/20 23:59",
-    "date": "2026-11-20"
+    "type": "一般発売（京都 10/22公演）〜10/21 23:59",
+    "date": "2026-10-21"
+   }
+  ]
+ },
+ {
+  "id": 4591,
+  "status": "convert",
+  "artist": "jimama",
+  "tickets": [
+   {
+    "type": "一般発売（沖縄 12/20公演）〜12/19 23:59",
+    "date": "2026-12-19"
    }
   ]
  },
@@ -1290,47 +3185,172 @@
   ]
  },
  {
-  "id": 4657,
+  "id": 4637,
   "status": "convert",
-  "artist": "Jazz meets Classics! -Ted Rosenthal Trio with Okayama Philharmonic Orchestra-",
+  "artist": "オペラシアターこんにゃく座 オペラ「あん」",
   "tickets": [
    {
-    "type": "一般発売（岡山 11/3公演）〜10/31 23:59",
-    "date": "2026-10-31"
+    "type": "一般発売（三重 11/1公演）〜10/29 23:59",
+    "date": "2026-10-29"
    }
   ]
  },
  {
-  "id": 4670,
+  "id": 4638,
   "status": "convert",
-  "artist": "桂文珍独演会",
+  "artist": "キーウ・クラシック・バレエ 「ロミオとジュリエット」",
   "tickets": [
    {
-    "type": "プリセール（東京 11/29公演）〜9/1 23:59",
-    "date": "2026-09-01",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627160"
-   },
-   {
-    "type": "一般発売（東京 11/29公演）9/3 10:00発売",
-    "date": "2026-09-03",
-    "startDate": "2026-09-03",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627160"
-   },
-   {
-    "type": "一般発売（神奈川 R9年 1/17公演）〜1/13 23:59",
-    "date": "2027-01-13",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628387"
+    "type": "一般発売（愛知 11/14公演）〜11/12 23:59",
+    "date": "2026-11-12"
    }
   ]
  },
  {
-  "id": 4725,
+  "id": 4647,
   "status": "convert",
-  "artist": "荘村清志 武満徹へのオマージュ 没後30年に寄せて",
+  "artist": "菊田雪心／Ka-mue／龍星／幻奏法師／宮田大樹／KITA坊主with石川賢次",
   "tickets": [
    {
-    "type": "一般発売（岡山 11/12公演）〜11/9 23:59",
-    "date": "2026-11-09"
+    "type": "一般発売（愛知 11/9公演）〜11/7 23:59",
+    "date": "2026-11-07"
+   }
+  ]
+ },
+ {
+  "id": 4648,
+  "status": "convert",
+  "artist": "幻奏法師／IBUKI／宮田大樹／菊田雪心／縁来人／MuNi",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 12/7公演）〜12/5 23:59",
+    "date": "2026-12-05"
+   }
+  ]
+ },
+ {
+  "id": 4652,
+  "status": "convert",
+  "artist": "虹音／龍星／山本隼也／ひいらぎ繭",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/2公演）〜9/30 23:59",
+    "date": "2026-09-30"
+   }
+  ]
+ },
+ {
+  "id": 4653,
+  "status": "convert",
+  "artist": "宮田大樹／末藤亜季／MuNi",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/5公演）〜10/3 23:59",
+    "date": "2026-10-03"
+   }
+  ]
+ },
+ {
+  "id": 4654,
+  "status": "convert",
+  "artist": "yuka／Enfini／にじのにじたろう／Ka-mue",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/16公演）〜10/14 23:59",
+    "date": "2026-10-14"
+   }
+  ]
+ },
+ {
+  "id": 4655,
+  "status": "convert",
+  "artist": "龍星／KITA坊主with石川賢次",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 12/14公演）〜12/12 23:59",
+    "date": "2026-12-12"
+   }
+  ]
+ },
+ {
+  "id": 4656,
+  "status": "NO_PIA_URL",
+  "artist": "LINKL PLANET"
+ },
+ {
+  "id": 4667,
+  "status": "convert",
+  "artist": "『Close Up -クローズ・アップ-』",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/28〜11/29公演）〜11/26 23:59",
+    "date": "2026-11-26"
+   }
+  ]
+ },
+ {
+  "id": 4668,
+  "status": "convert",
+  "artist": "劇団四季ファミリーミュージカル「はじまりの樹の神話～こそあどの森の物語～」／福岡",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 11/3公演）〜10/28 23:59",
+    "date": "2026-10-28"
+   }
+  ]
+ },
+ {
+  "id": 4669,
+  "status": "convert",
+  "artist": "立川吉笑独演会",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/20公演）〜11/16 23:59",
+    "date": "2026-11-16"
+   }
+  ]
+ },
+ {
+  "id": 4721,
+  "status": "convert",
+  "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 in 東京",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/5公演）〜11/4 23:59",
+    "date": "2026-11-04"
+   }
+  ]
+ },
+ {
+  "id": 4722,
+  "status": "convert",
+  "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 in 横浜",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/2公演）〜11/1 23:59",
+    "date": "2026-11-01"
+   }
+  ]
+ },
+ {
+  "id": 4723,
+  "status": "convert",
+  "artist": "川口成彦 フォルテピアノリサイタルシリーズ2026 ～万国博覧会の思い出～",
+  "tickets": [
+   {
+    "type": "一般販売（大阪 12/19〜R9年 3/20公演）〜3/18 23:59",
+    "date": "2027-03-18"
+   }
+  ]
+ },
+ {
+  "id": 4724,
+  "status": "convert",
+  "artist": "仙台フィルハーモニー管弦楽団",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 12/19公演）〜12/19 13:15",
+    "date": "2026-12-19"
    }
   ]
  },
@@ -1343,13 +3363,169 @@
   ]
  },
  {
-  "id": 4824,
+  "id": 4727,
   "status": "convert",
-  "artist": "三遊亭わん丈 落語会",
+  "artist": "オリックスPresents 新日本フィルハーモニー交響楽団 ニューイヤー・コンサート2027",
   "tickets": [
    {
-    "type": "一般発売（埼玉 11/14公演）〜11/13 23:59",
-    "date": "2026-11-13"
+    "type": "一般発売（東京 R9年 1/3公演）〜12/31 23:59",
+    "date": "2026-12-31"
+   }
+  ]
+ },
+ {
+  "id": 4729,
+  "status": "convert",
+  "artist": "宮川彬良vs新日本フィル 超!ジルベスター・コンサート2026→2027",
+  "tickets": [
+   {
+    "type": "一般発売（ランチ・ディナー付き）（東京 12/31公演）〜12/14 23:59",
+    "date": "2026-12-14"
+   },
+   {
+    "type": "一般発売（東京 12/31公演）〜12/28 23:59",
+    "date": "2026-12-28"
+   }
+  ]
+ },
+ {
+  "id": 4730,
+  "status": "convert",
+  "artist": "龍角散Presents 新日本フィルハーモニー交響楽団 みんなで楽しむ「第九」特別演奏会2026",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/18公演）〜12/15 23:59",
+    "date": "2026-12-15"
+   }
+  ]
+ },
+ {
+  "id": 4735,
+  "status": "convert",
+  "artist": "石田泰尚（vl）",
+  "tickets": [
+   {
+    "type": "一般発売（北海道 11/14公演）〜11/12 23:59",
+    "date": "2026-11-12"
+   }
+  ]
+ },
+ {
+  "id": 4747,
+  "status": "convert",
+  "artist": "第50回春日井まつり前夜祭 相川七瀬",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/16公演）〜10/14 23:59",
+    "date": "2026-10-14"
+   }
+  ]
+ },
+ {
+  "id": 4768,
+  "status": "convert",
+  "artist": "第11回きく麿レストラン 北九州出張編",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 11/16公演）〜11/15 23:59",
+    "date": "2026-11-15"
+   }
+  ]
+ },
+ {
+  "id": 4769,
+  "status": "convert",
+  "artist": "コチソバ創立15周年記念落語会vol.0 第15.5回コチソバ寄席 きく麿レストラン福岡出張編 Vol.11",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 11/15公演）〜11/14 23:59",
+    "date": "2026-11-14"
+   }
+  ]
+ },
+ {
+  "id": 4778,
+  "status": "convert",
+  "artist": "新日本フィル「第九」特別演奏会2026 クリスマスコンサート presented by 住友林業",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/20公演）〜12/17 23:59",
+    "date": "2026-12-17"
+   }
+  ]
+ },
+ {
+  "id": 4779,
+  "status": "delete",
+  "artist": "新日本フィル「第九」特別演奏会2026 スターツハートフルコンサート",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2627213"
+  ]
+ },
+ {
+  "id": 4780,
+  "status": "convert",
+  "artist": "新日本フィル「第九」特別演奏会2026 ユニオンツールクリスマスコンサート",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/21公演）〜12/18 23:59",
+    "date": "2026-12-18"
+   }
+  ]
+ },
+ {
+  "id": 4781,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 SMBC presents「第九」特別演奏会2026",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 12/16公演）〜12/13 23:59",
+    "date": "2026-12-13"
+   }
+  ]
+ },
+ {
+  "id": 4782,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 「第九」特別演奏会2026",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 12/16公演）〜12/13 23:59",
+    "date": "2026-12-13"
+   },
+   {
+    "type": "一般発売（東京 12/17公演）〜12/14 23:59",
+    "date": "2026-12-14"
+   },
+   {
+    "type": "一般発売（東京 12/20公演）〜12/17 23:59",
+    "date": "2026-12-17"
+   },
+   {
+    "type": "一般発売（東京 12/21公演）〜12/18 23:59",
+    "date": "2026-12-18"
+   }
+  ]
+ },
+ {
+  "id": 4833,
+  "status": "convert",
+  "artist": "リリア寄席 瀧川鯉昇・柳家喬太郎・三遊亭わん丈 落語会",
+  "tickets": [
+   {
+    "type": "一般発売（埼玉 R9年 2/20公演）〜2/19 23:59",
+    "date": "2027-02-19"
+   }
+  ]
+ },
+ {
+  "id": 4874,
+  "status": "convert",
+  "artist": "上田正樹／内田勘太郎",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 10/21公演）〜10/20 23:59",
+    "date": "2026-10-20"
    }
   ]
  },
@@ -1362,24 +3538,46 @@
   ]
  },
  {
-  "id": 4935,
+  "id": 4917,
   "status": "convert",
-  "artist": "東京ヤクルトスワローズ対オイシックス新潟アルビレックスBC ファーム・リーグ公式戦",
+  "artist": "ワタナベお笑いライブ supported by にしたんクリニック",
   "tickets": [
    {
-    "type": "一般発売（埼玉 9/19〜9/20公演）〜9/20 15:30",
-    "date": "2026-09-20"
+    "type": "一般発売（東京 10/17公演）〜10/15 23:59",
+    "date": "2026-10-15"
    }
   ]
  },
  {
-  "id": 4936,
+  "id": 4922,
   "status": "convert",
-  "artist": "東京ヤクルトスワローズ対中日ドラゴンズ ファーム・リーグ公式戦",
+  "artist": "進藤実優（p）",
   "tickets": [
    {
-    "type": "一般発売（埼玉 9/11〜9/13公演）〜9/13 15:30",
-    "date": "2026-09-13"
+    "type": "一般発売（東京 R9年 3/12公演）〜3/9 23:59",
+    "date": "2027-03-09"
+   }
+  ]
+ },
+ {
+  "id": 4927,
+  "status": "convert",
+  "artist": "ユリアンナ・アヴデーエワ ピアノ・リサイタル",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/1公演）〜11/26 23:59",
+    "date": "2026-11-26"
+   }
+  ]
+ },
+ {
+  "id": 4963,
+  "status": "convert",
+  "artist": "よしもとお笑いライブin荒川2026～秋の大笑い収穫祭～",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/9公演）〜11/7 23:59",
+    "date": "2026-11-07"
    }
   ]
  },
@@ -1389,18 +3587,6 @@
   "artist": "アニメ『ケロロ軍曹』20周年御礼!～舞台挨拶付き『超劇場版』&『新劇場版』上映会であります!～",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2632917"
-  ]
- },
- {
-  "id": 4969,
-  "status": "convert",
-  "artist": "アニメ『スティール・ボール・ラン ジョジョの奇妙な冒険』全国5都市横断1st STAGE上映イベント",
-  "tickets": [
-   {
-    "type": "一般発売（東京 9/5公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28"
-   }
   ]
  },
  {
@@ -1420,6 +3606,17 @@
   ]
  },
  {
+  "id": 4979,
+  "status": "convert",
+  "artist": "こがねいシネマ シネマ歌舞伎「二人藤娘／日本振袖始」上映会",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/5公演）〜12/4 23:59",
+    "date": "2026-12-04"
+   }
+  ]
+ },
+ {
   "id": 4987,
   "status": "delete",
   "artist": "TVアニメ『魔法騎士レイアース』ジャパンプレミア",
@@ -1428,19 +3625,14 @@
   ]
  },
  {
-  "id": 4989,
-  "status": "delete",
-  "artist": "『時には懺悔を』公開初日舞台挨拶",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2632391"
-  ]
- },
- {
-  "id": 5029,
-  "status": "delete",
-  "artist": "映画『私はあなたを知らない、』初日舞台挨拶",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2631446"
+  "id": 5002,
+  "status": "convert",
+  "artist": "ぶらり塩竈 秋の酒蔵めぐり2026",
+  "tickets": [
+   {
+    "type": "一般発売（前売）（宮城 9/26公演）〜9/25 23:59",
+    "date": "2026-09-25"
+   }
   ]
  },
  {
@@ -1468,18 +3660,311 @@
   ]
  },
  {
-  "id": 5073,
+  "id": 5044,
   "status": "convert",
-  "artist": "新潟レプタイルズワールド",
+  "artist": "打首獄門同好会",
   "tickets": [
    {
-    "type": "一般発売【前売券】（新潟 10/24〜10/25公演）〜10/23 23:59",
-    "date": "2026-10-23"
+    "type": "一般発売（東京 9/24公演）〜9/15 23:59",
+    "date": "2026-09-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634316"
    },
    {
-    "type": "一般発売（新潟 10/24〜10/25公演）10/24 0:00発売",
-    "date": "2026-10-24",
-    "startDate": "2026-10-24"
+    "type": "一般発売（沖縄 10/3公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634254"
+   },
+   {
+    "type": "一般発売（大阪 10/12公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631211"
+   },
+   {
+    "type": "一般発売（石川 10/17公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634163"
+   },
+   {
+    "type": "一般発売（福岡 10/31公演）〜10/22 23:59",
+    "date": "2026-10-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629488"
+   },
+   {
+    "type": "一般発売（愛媛 11/3公演）〜10/25 23:59",
+    "date": "2026-10-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634184"
+   },
+   {
+    "type": "一般発売（愛知 11/8公演）〜10/29 23:59",
+    "date": "2026-10-29",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632012"
+   },
+   {
+    "type": "公演 一般発売（秋田 11/21公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630308"
+   },
+   {
+    "type": "公演 一般発売（宮城 11/23公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630308"
+   },
+   {
+    "type": "一般発売（北海道 12/14公演）〜12/3 23:59",
+    "date": "2026-12-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634113"
+   },
+   {
+    "type": "一般発売（新潟 12/20公演）〜12/10 23:59",
+    "date": "2026-12-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634164"
+   },
+   {
+    "type": "一般発売【神戸公演】（兵庫 R9年 1/9公演）〜12/23 23:59",
+    "date": "2026-12-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631211"
+   },
+   {
+    "type": "2027／1／16（土）公演 一般発売（宮城 R9年 1/16公演）〜12/23 23:59",
+    "date": "2026-12-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630308"
+   },
+   {
+    "type": "一般発売（愛知 R9年 1/24公演）〜1/14 23:59",
+    "date": "2027-01-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632012"
+   },
+   {
+    "type": "一般発売（福岡 R9年 1/31公演）〜1/21 23:59",
+    "date": "2027-01-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629488"
+   }
+  ]
+ },
+ {
+  "id": 5045,
+  "status": "convert",
+  "artist": "FTISLAND",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 9/6公演）〜9/5 23:59",
+    "date": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625225"
+   },
+   {
+    "type": "一般発売（兵庫 9/19公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622195"
+   },
+   {
+    "type": "一般発売（兵庫 9/20公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622195"
+   },
+   {
+    "type": "一般発売（東京 9/26公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630466"
+   },
+   {
+    "type": "一般発売（東京 9/27公演）〜9/17 23:59",
+    "date": "2026-09-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630466"
+   }
+  ]
+ },
+ {
+  "id": 5047,
+  "status": "convert",
+  "artist": "「DAW:trace」",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 9/30公演）〜9/29 23:59",
+    "date": "2026-09-29"
+   }
+  ]
+ },
+ {
+  "id": 5048,
+  "status": "convert",
+  "artist": "久松史奈",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 10/4公演）〜10/1 23:59",
+    "date": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": 5056,
+  "status": "convert",
+  "artist": "ロングコートダディ単独ライブツアー「月光もたらす」",
+  "tickets": [
+   {
+    "type": "一般発売（宮城・愛知 9/17〜10/7公演）〜10/5 23:59",
+    "date": "2026-10-05"
+   }
+  ]
+ },
+ {
+  "id": 5061,
+  "status": "convert",
+  "artist": "みんなで歌う第九の会 第40回記念演奏会",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 11/29公演）〜11/28 23:59",
+    "date": "2026-11-28"
+   }
+  ]
+ },
+ {
+  "id": 5080,
+  "status": "convert",
+  "artist": "MFJ全日本トライアル選手権シリーズ第6戦 宮城・SUGO大会 観戦券・駐車券付き観戦券",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 10/11公演）〜10/10 23:59",
+    "date": "2026-10-10"
+   }
+  ]
+ },
+ {
+  "id": 5081,
+  "status": "convert",
+  "artist": "第21回K-1アマチュア全日本大会～アマチュア日本一決定オープントーナメント～／K-1甲子園2026～高校生日本一決定トーナメント～／K-1カレッジ2026～大学生日本一決定トーナメント～",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/6公演）〜9/5 12:00",
+    "date": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5082,
+  "status": "convert",
+  "artist": "名古屋グランパス対セレッソ大阪 明治安田J1リーグ",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/21公演）〜10/21 20:00",
+    "date": "2026-10-21"
+   }
+  ]
+ },
+ {
+  "id": 5083,
+  "status": "convert",
+  "artist": "名古屋グランパス対横浜F・マリノス 明治安田J1リーグ",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/25公演）〜10/25 15:00",
+    "date": "2026-10-25"
+   }
+  ]
+ },
+ {
+  "id": 5097,
+  "status": "convert",
+  "artist": "SHINJUKU LOFT 50th ANNIVERSARY",
+  "tickets": [
+   {
+    "type": "先行（東京 12/13公演）〜8/30 23:59",
+    "date": "2026-08-30"
+   },
+   {
+    "type": "オフィシャル先行（東京 12/10公演）〜8/31 23:59",
+    "date": "2026-08-31"
+   },
+   {
+    "type": "一般発売（東京 9/28公演）〜9/27 23:59",
+    "date": "2026-09-27"
+   },
+   {
+    "type": "一般発売（東京 10/3公演）〜10/2 23:59",
+    "date": "2026-10-02"
+   },
+   {
+    "type": "一般発売（東京 10/5公演）〜10/4 23:59",
+    "date": "2026-10-04"
+   }
+  ]
+ },
+ {
+  "id": 5210,
+  "status": "convert",
+  "artist": "POP YOURS presents Golden Age Tour",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 10/10公演）〜10/1 23:59",
+    "date": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": 5211,
+  "status": "convert",
+  "artist": "@onefive",
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/10公演）〜11/1 23:59",
+    "date": "2026-11-01"
+   }
+  ]
+ },
+ {
+  "id": 5230,
+  "status": "convert",
+  "artist": "桂文我上方落語珍品集",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/18公演）〜10/17 23:59",
+    "date": "2026-10-17"
+   }
+  ]
+ },
+ {
+  "id": 5231,
+  "status": "convert",
+  "artist": "桂文我 露の眞 三遊亭遊かりの会",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/19公演）〜10/18 23:59",
+    "date": "2026-10-18"
+   }
+  ]
+ },
+ {
+  "id": 5239,
+  "status": "delete",
+  "artist": "『東京リベンジャーズ』三天戦争編放送直前威弁斗～聞こえるか?時代の足音が!～",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670267"
+  ]
+ },
+ {
+  "id": 5240,
+  "status": "convert",
+  "artist": "【MORINOMIYA CINEMA CLASSICS】 Vol.1 特別上映:「団地」",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 9/27公演）〜9/24 23:59",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 5291,
+  "status": "convert",
+  "artist": "世良公則",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 10/3公演）〜9/30 23:59",
+    "date": "2026-09-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626192"
+   },
+   {
+    "type": "一般発売（埼玉 11/29公演）〜11/25 23:59",
+    "date": "2026-11-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2607858"
    }
   ]
  },
@@ -1492,132 +3977,499 @@
   ]
  },
  {
-  "id": 5499,
+  "id": 5502,
   "status": "convert",
-  "artist": "JACK & MUSIC",
+  "artist": "有村竜逹瑯",
   "tickets": [
    {
-    "type": "一般発売（東京 9/26公演）〜9/26 18:00",
-    "date": "2026-09-26"
+    "type": "一般発売（東京 10/6公演）〜10/5 23:59",
+    "date": "2026-10-05"
+   },
+   {
+    "type": "一般発売（東京 10/7公演）〜10/6 23:59",
+    "date": "2026-10-06"
    }
   ]
  },
  {
-  "id": 5500,
+  "id": 5503,
+  "status": "delete",
+  "artist": "The Ravens",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2634343"
+  ]
+ },
+ {
+  "id": 5504,
   "status": "convert",
-  "artist": "太極律で新地球へ 1100人むすひコンサート",
+  "artist": "SHE’S",
   "tickets": [
    {
-    "type": "一般発売（愛知 12/23公演）〜12/22 23:59",
-    "date": "2026-12-22"
+    "type": "一般発売（鹿児島 10/3公演）〜10/2 23:59",
+    "date": "2026-10-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633684"
+   },
+   {
+    "type": "一般発売（長崎 10/4公演）〜10/3 23:59",
+    "date": "2026-10-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633685"
+   },
+   {
+    "type": "一般発売（兵庫 10/28公演）〜10/19 23:59",
+    "date": "2026-10-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618336"
+   },
+   {
+    "type": "一般発売（福岡 11/3公演）〜11/2 23:59",
+    "date": "2026-11-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633686"
+   },
+   {
+    "type": "一般発売（大阪 12/6公演）〜11/26 23:59",
+    "date": "2026-11-26",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618336"
    }
   ]
  },
  {
-  "id": 5533,
+  "id": 5505,
   "status": "convert",
-  "artist": "一龍斎貞心・なかの亭 一人で赤穂義士伝を読む!カルチャー講談付き",
+  "artist": "SHE’S",
   "tickets": [
    {
-    "type": "一般発売（東京 12/20公演）〜12/19 23:59",
-    "date": "2026-12-19"
+    "type": "一般発売（北海道 10/17公演）〜10/8 23:59",
+    "date": "2026-10-08"
    }
   ]
  },
  {
-  "id": 5534,
+  "id": 5506,
   "status": "convert",
-  "artist": "雲助・一朝 年忘れ二人会 雲助『夜鷹そば屋』他",
+  "artist": "SHE’S",
   "tickets": [
    {
-    "type": "一般発売（東京 12/12公演）〜12/11 23:59",
-    "date": "2026-12-11"
+    "type": "一般発売（盛岡）（岩手 10/23公演）〜10/14 23:59",
+    "date": "2026-10-14"
+   },
+   {
+    "type": "一般発売（仙台）（宮城 10/24公演）〜10/15 23:59",
+    "date": "2026-10-15"
+   },
+   {
+    "type": "一般発売（山形）（山形 11/28公演）〜11/19 23:59",
+    "date": "2026-11-19"
    }
   ]
  },
  {
-  "id": 5535,
+  "id": 5507,
   "status": "convert",
-  "artist": "林家つる子・入船亭扇白・金原亭馬好三人会",
+  "artist": "SHE’S",
   "tickets": [
    {
-    "type": "一般発売（東京 R9年 1/13公演）〜1/12 23:59",
-    "date": "2027-01-12"
+    "type": "一般発売（愛知 11/20公演）〜11/11 23:59",
+    "date": "2026-11-11"
    }
   ]
  },
  {
-  "id": 5536,
+  "id": 5508,
   "status": "convert",
-  "artist": "柳家小ふね ひとり遊び落語会 大ネタ磨きの巻 その2!",
+  "artist": "SHE’S",
   "tickets": [
    {
-    "type": "一般発売（東京 11/27公演）〜11/26 23:59",
-    "date": "2026-11-26"
+    "type": "一般発売（新潟 11/29公演）〜11/19 23:59",
+    "date": "2026-11-19"
    }
   ]
  },
  {
-  "id": 5537,
+  "id": 5509,
   "status": "convert",
-  "artist": "柳家小里ん・入船亭扇遊 年忘れ二人会 トーク付き",
+  "artist": "PURPLE BUBBLE",
   "tickets": [
    {
-    "type": "一般発売（東京 12/12公演）〜12/11 23:59",
-    "date": "2026-12-11"
+    "type": "一般発売（宮城 10/25公演）〜10/15 23:59",
+    "date": "2026-10-15"
+   },
+   {
+    "type": "一般発売（愛知 10/31公演）〜10/22 23:59",
+    "date": "2026-10-22"
+   },
+   {
+    "type": "一般発売（福岡 11/14公演）〜11/5 23:59",
+    "date": "2026-11-05"
    }
   ]
  },
  {
-  "id": 5538,
+  "id": 5510,
+  "status": "delete",
+  "artist": "PURPLE BUBBLE",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2634324"
+  ]
+ },
+ {
+  "id": 5539,
   "status": "convert",
-  "artist": "絵本deクラシック 「ブレーメンの音楽隊」 in 建部",
+  "artist": "桂文我 東西南北 怪異談の旅",
   "tickets": [
    {
-    "type": "一般発売（岡山 10/3公演）〜9/30 23:59",
-    "date": "2026-09-30"
+    "type": "一般発売（東京 10/19公演）〜10/18 23:59",
+    "date": "2026-10-18"
    }
   ]
  },
  {
-  "id": 5575,
+  "id": 5540,
   "status": "convert",
-  "artist": "中島由貴 Birthday Event 2026",
+  "artist": "熊本漫才選集",
   "tickets": [
    {
-    "type": "一般発売（東京 9/19公演）8/28 18:00発売",
-    "date": "2026-08-28",
-    "startDate": "2026-08-28"
+    "type": "一般発売（熊本 10/25公演）〜10/23 23:59",
+    "date": "2026-10-23"
    }
   ]
  },
  {
-  "id": 5576,
+  "id": 5541,
   "status": "convert",
-  "artist": "【WEリーグ】INAC神戸レオネッサ対ノジマステラ神奈川相模原 WEリーグ カップ戦 リーグステージ",
+  "artist": "第22回きたぎん落語名人会",
   "tickets": [
    {
-    "type": "一般発売（兵庫 9/19公演）〜9/18 23:59",
-    "date": "2026-09-18"
+    "type": "一般発売（岩手 10/17公演）〜10/16 23:59",
+    "date": "2026-10-16"
    }
   ]
  },
  {
-  "id": 5577,
+  "id": 5542,
+  "status": "delete",
+  "artist": "大阪桐蔭高等学校吹奏楽部 サンタコンサートin福山",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2600395"
+  ]
+ },
+ {
+  "id": 5578,
   "status": "convert",
-  "artist": "栃木SC対モンテディオ山形 ルヴァンカップ 1stラウンド 1回戦",
+  "artist": "【WEリーグ】アルビレックス新潟レディース対サンフレッチェ広島レジーナ WEリーグ カップ戦 リーグステージ",
   "tickets": [
    {
-    "type": "一般発売【プレミアムビューボックス】（栃木 9/9公演）〜9/6 23:59",
+    "type": "一般発売（新潟 9/12公演）〜9/11 23:59",
+    "date": "2026-09-11"
+   }
+  ]
+ },
+ {
+  "id": 5579,
+  "status": "delete",
+  "artist": "映画『白鳥とコウモリ』舞台挨拶",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670671"
+  ]
+ },
+ {
+  "id": 5580,
+  "status": "convert",
+  "artist": "千歳市空港開港100年記念『天空の城ラピュタ』特別上映会",
+  "tickets": [
+   {
+    "type": "一般発売（北海道 9/12公演）〜9/11 23:59",
+    "date": "2026-09-11"
+   }
+  ]
+ },
+ {
+  "id": 5608,
+  "status": "convert",
+  "artist": "IZUMO OROCHI FES 2026",
+  "tickets": [
+   {
+    "type": "一般発売（島根 9/26〜9/27公演）〜9/25 23:59",
+    "date": "2026-09-25"
+   }
+  ]
+ },
+ {
+  "id": 5609,
+  "status": "convert",
+  "artist": "関西音酒場at大槻能楽堂「Re:ロックTHE魂」",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 11/7公演）〜11/6 23:59",
+    "date": "2026-11-06"
+   }
+  ]
+ },
+ {
+  "id": 5610,
+  "status": "convert",
+  "artist": "ClariS",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 9/11公演）〜9/2 23:59",
+    "date": "2026-09-02"
+   }
+  ]
+ },
+ {
+  "id": 5611,
+  "status": "convert",
+  "artist": "Soala",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 10/23公演）〜10/14 23:59",
+    "date": "2026-10-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631621"
+   },
+   {
+    "type": "一般発売【スタンディング】（北海道 10/29公演）〜10/20 23:59",
+    "date": "2026-10-20",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630365"
+   },
+   {
+    "type": "一般発売【スタンディング（限定グッズ付き）】（北海道 10/29公演）〜10/20 23:59",
+    "date": "2026-10-20",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630365"
+   },
+   {
+    "type": "一般発売（愛知 11/21公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633170"
+   },
+   {
+    "type": "一般発売（福岡 12/6公演）〜12/5 23:59",
+    "date": "2026-12-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633079"
+   }
+  ]
+ },
+ {
+  "id": 5612,
+  "status": "convert",
+  "artist": "超ときめき宣伝部",
+  "tickets": [
+   {
+    "type": "一般発売（兵庫 9/12公演）〜9/11 23:59",
+    "date": "2026-09-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627276"
+   },
+   {
+    "type": "一般発売（兵庫 9/13公演）〜9/12 23:59",
+    "date": "2026-09-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627276"
+   },
+   {
+    "type": "オフィシャル先行（大阪 11/13公演）〜9/13 23:59",
+    "date": "2026-09-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628725"
+   }
+  ]
+ },
+ {
+  "id": 5613,
+  "status": "convert",
+  "artist": "マグロック & ポップ 2026",
+  "tickets": [
+   {
+    "type": "一般発売【一日券】（静岡 10/4公演）〜9/24 23:59",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 5614,
+  "status": "convert",
+  "artist": "ヤバイTシャツ屋さん",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 10/12公演）〜10/11 23:59",
+    "date": "2026-10-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627509"
+   },
+   {
+    "type": "一般発売（福岡 10/19公演）〜10/18 23:59",
+    "date": "2026-10-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631767"
+   },
+   {
+    "type": "一般発売（北海道 10/24公演）〜10/23 23:59",
+    "date": "2026-10-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628058"
+   }
+  ]
+ },
+ {
+  "id": 5618,
+  "status": "convert",
+  "artist": "劇団ショーマンシップ公演 「すんまっせん～西島伊三雄の世界～」",
+  "tickets": [
+   {
+    "type": "一般発売（福岡 12/12〜12/13公演）〜12/12 23:59",
+    "date": "2026-12-12"
+   }
+  ]
+ },
+ {
+  "id": 5619,
+  "status": "convert",
+  "artist": "上田晴子&門脇大樹 デュオリサイタル",
+  "tickets": [
+   {
+    "type": "一般発売（埼玉 11/15公演）〜11/7 23:59",
+    "date": "2026-11-07"
+   }
+  ]
+ },
+ {
+  "id": 5620,
+  "status": "convert",
+  "artist": "第39回 大阪府マーチングコンテスト",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 9/6公演）〜9/6 16:34",
     "date": "2026-09-06"
+   }
+  ]
+ },
+ {
+  "id": 5621,
+  "status": "convert",
+  "artist": "「煌めきの奥に」 エバーグリーン交響楽団",
+  "tickets": [
+   {
+    "type": "一般発売（京都・大阪 10/28〜10/30公演）〜10/26 23:59",
+    "date": "2026-10-26"
+   }
+  ]
+ },
+ {
+  "id": 5622,
+  "status": "convert",
+  "artist": "クインテット・アッシュ 結成20周年記念 第4回定期演奏会",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/2公演）〜12/1 23:59",
+    "date": "2026-12-01"
+   }
+  ]
+ },
+ {
+  "id": 5632,
+  "status": "convert",
+  "artist": "第5回 FIDA GOLD CUP",
+  "tickets": [
+   {
+    "type": "一般発売（東京 10/17公演）〜10/16 23:59",
+    "date": "2026-10-16"
+   }
+  ]
+ },
+ {
+  "id": 5633,
+  "status": "convert",
+  "artist": "『DJ井澤の小耳に挟んでいきなはれ～公開収録イベント 2026～』",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/6公演）〜9/4 23:59",
+    "date": "2026-09-04"
+   }
+  ]
+ },
+ {
+  "id": 5634,
+  "status": "convert",
+  "artist": "東北未来芸術花火2026 ～明日へのマーチ 桑田佳祐SP～",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 9/13公演）〜9/13 12:00",
+    "date": "2026-09-13"
+   }
+  ]
+ },
+ {
+  "id": 5635,
+  "status": "convert",
+  "artist": "野球いっかん!交流会 in 愛知",
+  "tickets": [
+   {
+    "type": "一般発売（愛知 10/4公演）〜9/24 23:59",
+    "date": "2026-09-24"
+   }
+  ]
+ },
+ {
+  "id": 5636,
+  "status": "convert",
+  "artist": "ヴァンフォーレ甲府対ジュビロ磐田 明治安田J2リーグ",
+  "tickets": [
+   {
+    "type": "一般発売（山梨 9/12公演）〜9/11 23:59",
+    "date": "2026-09-11"
+   }
+  ]
+ },
+ {
+  "id": 5649,
+  "status": "convert",
+  "artist": "NHK交響楽団",
+  "tickets": [
+   {
+    "type": "一般発売（熊本・大分 R9年 1/30〜1/31公演）〜1/30 23:59",
+    "date": "2027-01-30"
+   }
+  ]
+ },
+ {
+  "id": 5675,
+  "status": "convert",
+  "artist": "神韻日本公演2027",
+  "tickets": [
+   {
+    "type": "プリセール（埼玉・東京・神奈川・愛知・京都・大阪・兵庫 R9年 4/7〜5/12公演）〜9/3 23:59",
+    "date": "2026-09-03"
    },
    {
-    "type": "一般発売（栃木 9/9公演）〜9/8 23:59",
-    "date": "2026-09-08"
+    "type": "一般発売（京都 R9年 4/7〜4/11公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
    },
    {
-    "type": "一般発売【パーティーシート】（栃木 9/9公演）〜9/8 23:59",
-    "date": "2026-09-08"
+    "type": "一般発売（愛知 R9年 4/13〜4/15公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売（兵庫 R9年 4/17〜4/18公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売（大阪 R9年 4/20〜4/23公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売（埼玉 R9年 4/27〜4/28公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売（神奈川 R9年 5/1〜5/3公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売【東京（文京）公演】（東京 R9年 5/4〜5/6公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売【東京（千代田）公演】（東京 R9年 5/10〜5/12公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
    }
   ]
  }
