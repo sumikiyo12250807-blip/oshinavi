@@ -1,6 +1,10 @@
-lg=01 total=15 pages=2
-parsed items: 14 (fetched up to page 3)
-already in DB (eventCd一致): 13 | NOT in DB (new candidates): 1
-  うち 1件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）
+lg=01 total=26 pages=3
+parsed items: 24 (fetched up to page 4)
+already in DB (eventCd一致): 19 | NOT in DB (new candidates): 5
+  うち 3件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）
 written tmp/_ph_01_0202.json
- NEW | 2026/10/15 | クレイジーケンバンド | 2027/1/17(日) | 長野県
+ NEW | 2026/9/1 | 神はサイコロを振らない | 2026/11/14(土) | 北海道
+ NEW | 2026/8/31 | ＴＫ ｆｒｏｍ 凛として時雨 | 2026/11/27(金) | 福岡県
+ NEW | 2026/8/31 | ＭＯＮＯ ＮＯ ＡＷＡＲＥ | 2027/1/30(土) ・ 2027/1/ | 岡山県／広島県
+ NEW | 2026/8/31 | ＭＯＮＯ ＮＯ ＡＷＡＲＥ | 2027/2/27(土) | 香川県
+ NEW | 2026/8/31 | ｌｏｇ ｙｏｕ | 2026/9/19(土) | 東京都
