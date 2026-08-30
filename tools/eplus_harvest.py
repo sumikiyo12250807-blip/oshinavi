@@ -131,14 +131,20 @@ def multi_time_dates(shows):
     return {d for d, ts in by_date.items() if len([t for t in ts if t]) >= 2}
 
 
-def sesslab(r, multi_dates):
-    """公演descriptorの末尾。同日・時間違いの複数公演がある日だけ開演時刻を入れる。
+def sesslab(r, multi_dates, same_day_deadline=False):
+    """公演descriptorの末尾。**時刻を入れるのは次の2つの場合だけ**。
 
-    「昼公演/夜公演」だけだと画面に同じ表記が2つ並んで見分けられない
-    （2026-07-23 BENI id3047 ユーザー指摘）。→「（神奈川県 11/1 15:00公演）」の形にする。
+    ①同日・時間違いの複数公演がある日（[[feedback_same_day_show_time_badge]]）
+      「昼公演/夜公演」だけだと画面に同じ表記が2つ並んで見分けられない
+      （2026-07-23 BENI id3047 ユーザー指摘）→「（神奈川県 11/1 15:00公演）」の形にする。
+    ②🆕**受付の締切が公演当日にある枠**（2026-08-30 ユーザー指示）
+      例＝梶原岳人and中澤まさともトークショー in 同志社＝一般発売の締切が **10/25 14:00**、開演は **15:00**。
+      締切の時刻だけ見ても「何時のイベントか」が分からない＝当日まで買える枠は開演時刻とセットで出す。
+      ユーザー「**この場合時間を入れてちょうだい　こういう場合だけ公演時間を入れる**」
+
     🚨 renderCardの発売時刻抽出は「最後の閉じ括弧より後ろ」を見る前提なので、
-    （…公演）の中に時刻を入れても発売時刻の表示は壊れない（[[feedback_same_day_show_time_badge]]）。"""
-    if r['iso'] in multi_dates and r.get('time'):
+    （…公演）の中に時刻を入れても発売時刻の表示は壊れない。"""
+    if (r['iso'] in multi_dates or same_day_deadline) and r.get('time'):
         return f" {r['time']}公演"
     return '公演'
 
@@ -248,6 +254,38 @@ def parse_windows(html):
     return out
 
 
+def sibling_show_urls(html, name, fetch_fn, sleep=0.4):
+    """同じアーティストの**全公演の -P URL** を返す（e+ の公開APIを使う）。
+
+    🚨 JSON-LD は多公演ツアーでも一部の公演しか持たず、`/sf/word/` のHTMLも**先頭5公演しか出さない**
+    （残りは「もっと見る」でJS）。この2つだけで作ると**ツアーの大半が落ちる**
+    ＝2026-08-30実測で35件中12件・約50公演の取りこぼし（黒蜜15公演中2件しか登録できていなかった）。
+    詳しくは tools/eplus_word_koen.py のドキュメント。
+    """
+    wid = re.search(r'/sf/word/(\d+)', html or '')
+    if not wid:
+        return []
+    try:
+        import importlib.util as _il
+        _sp = _il.spec_from_file_location('ewk', 'tools/eplus_word_koen.py')
+        _m = _il.module_from_spec(_sp)
+        _sp.loader.exec_module(_m)
+        recs = _m.koen_by_word(wid.group(1), sleep=sleep)
+    except Exception as e:
+        sys.stderr.write('  ! word API 失敗 ' + str(e)[:60] + chr(10))
+        return []
+    urls = []
+    for r in recs:
+        u = (r.get('koen_detail_url_pc') or '').split('?')[0]
+        if not u:
+            continue
+        if u.startswith('/'):
+            u = 'https://eplus.jp' + u
+        if u not in urls:
+            urls.append(u)
+    return urls
+
+
 def artist_key(title):
     t = re.sub(r'^[\s　]*(先着|抽選)[\s　]+', '', title).strip()
     t = re.split(r'ワンマンツアー|ワンマンライブ|LIVE TOUR|Concert Tour|Billboard Live|THE LIVE|BIRTHDAY|[<「（(【]', t)[0]
@@ -308,6 +346,30 @@ def main():
                 nopt = count_options(h)
                 if nopt > len(ld):
                     print(f'  ⚠️ {akey} {eid}: option{nopt} > JSON-LD{len(ld)} 取りこぼしの可能性')
+                # 🚨🚨 アーティストページ(/sf/word/)から**同じ公演名の他公演**を拾って足す（2026-08-30 新設）。
+                # JSON-LD は多公演ツアーだと一部しか持たないので、これが無いと
+                # 「5公演のツアーが1公演だけ登録される」（NoGoD で実害・ユーザーが発見）。
+                base_names = {(e.get('name') or '').strip() for e in ld if e.get('name')}
+                for su in sibling_show_urls(h, None, fetch):
+                    if su in page_cache:
+                        continue
+                    try:
+                        sh = fetch(su)
+                    except Exception:
+                        sh = ''
+                    page_cache[su] = sh
+                    time.sleep(0.4)
+                    if not sh:
+                        continue
+                    for sev in parse_ld(sh):
+                        nm = (sev.get('name') or '').strip()
+                        if not nm or nm not in base_names:
+                            continue        # 別イベント＝このエントリの領分ではない
+                        if not any(x.get('date') == sev.get('date') and x.get('time') == sev.get('time')
+                                   for x in ld):
+                            sev['url'] = sev.get('url') or su
+                            ld.append(sev)
+                            print(f'      ＋他公演を回収: {sev.get("date")} {sev.get("venue") or ""}')
                 for ev in ld:
                     if not ev['date']:
                         continue
@@ -334,13 +396,19 @@ def main():
                             if D - datetime.timedelta(70) <= w['ed'] <= D + datetime.timedelta(3)]
                     if not near:
                         continue
-                    w = max(near, key=lambda x: x['ed'])
-                    if w['ed'] < TODAY:
-                        continue  # 締切済＝もう買えない（発売前も発売中も網羅＝feedback_capture_all_not_select）
+                    # 🚨🚨 その公演の窓は**全部**載せる（2026-08-30 修正）。
+                    # 旧版は max(ed) で「締切がいちばん遅い1枠」だけ採っていたので、
+                    # **抽選プレオーダーと先着一般が両方ある公演で、片方が消えていた**。
+                    # 実害＝TOKIWA FES 2026（10/18 常磐大学）＝抽選プレオーダー(9/26 12:00〜10/1 18:00)が
+                    # 丸ごと落ちて、先着一般発売しか載っていなかった。ユーザーが画面で発見。
+                    # memory: feedback_tickets_all_expand / feedback_capture_all_deadlines_on_add
                     sess = '昼' if (ev['time'] and ev['time'] < '16:00') else ('夜' if ev['time'] else '')
-                    rows.append({'iso': ev['date'], 'time': ev['time'], 'venue': ev['venue'],
-                                 'pref': ev['pref'], 'url': url, 'w': w, 'sess': sess,
-                                 'name': ev['name']})
+                    for w in sorted(near, key=lambda x: (x['sd'], x['ed'])):
+                        if w['ed'] < TODAY:
+                            continue  # 締切済＝もう買えない
+                        rows.append({'iso': ev['date'], 'time': ev['time'], 'venue': ev['venue'],
+                                     'pref': ev['pref'], 'url': url, 'w': w, 'sess': sess,
+                                     'name': ev['name']})
             if not rows:
                 print(f'  △ {akey}: 発売前公演なし → スキップ'); continue
             # 不完全JSON-LD(都道府県空)の重複行を除去（同一公演日に情報付き行があれば空行を捨てる）
@@ -349,7 +417,8 @@ def main():
             # 公演(日+セッション)で重複排除。会場/都道府県のある方を優先（同一公演が複数券種ページに出るため）
             byshow = {}
             for r in rows:
-                key = (r['iso'], r['sess'])
+                # 🚨キーに窓を含める＝同じ公演の「抽選」と「一般」が1つに潰れないようにする（2026-08-30）
+                key = (r['iso'], r['sess'], r['w']['label'], str(r['w']['sd']), str(r['w']['ed']))
                 cur = byshow.get(key)
                 if cur is None or ((r['venue'] and not cur['venue']) or (r['pref'] and not cur['pref'])):
                     byshow[key] = r
@@ -379,11 +448,17 @@ def main():
             tickets = []
             for r in rows:
                 w = r['w']; kind = w['kind'] or '先着'
-                scope = f"{r['pref']} {md(r['iso'])}{sesslab(r, multi_session)}"
+                # 🚨枠名は**実ページの券種名**を使う（2026-08-30 修正）。
+                # 旧版は kind+'一般発売' の決め打ちで、「抽選 プレオーダー受付」が
+                # 「抽選一般発売」という**実在しない文言**になっていた（refresh 側は元から label 採用）。
+                wlabel = re.sub(r'\s+', '', w['label']) or (kind + '一般発売')
+                # 締切が公演当日＝開演時刻を併記する（上の sesslab ②）
+                same_day = (str(w['ed']) == r['iso'])
+                scope = f"{r['pref']} {md(r['iso'])}{sesslab(r, multi_session, same_day)}"
                 if w['sd'] >= TODAY:  # 発売前＋本日発売(今日開始)＝発売日表示・startDate付与／過去開始=受付中(締切表示)
-                    typ = f"{kind}一般発売（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
+                    typ = f"{wlabel}（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
                 else:                 # 発売中
-                    typ = f"{kind}一般発売（{scope}）〜{w['ed'].month}/{w['ed'].day} {w['et']}"
+                    typ = f"{wlabel}（{scope}）〜{w['ed'].month}/{w['ed'].day} {w['et']}"
                 tk = {'type': typ, 'date': str(w['ed']), 'url': r['url']}
                 if w['sd'] >= TODAY:  # 今日開始含む発売前はstartDate付与(本日発売)／過去開始は販売中形(startDate無)
                     tk['startDate'] = str(w['sd'])
@@ -494,7 +569,8 @@ def main():
             for r in rows:
                 w = r['w']
                 wlabel = re.sub(r'\s+', '', w['label']) or (w['kind'] or '先着') + '一般発売'
-                scope = f"{r['pref']} {md(r['iso'])}{sesslab(r, multi_session)}"
+                same_day = (str(w['ed']) == r['iso'])   # 締切が公演当日＝開演時刻を併記
+                scope = f"{r['pref']} {md(r['iso'])}{sesslab(r, multi_session, same_day)}"
                 if w['sd'] >= TODAY:  # 発売前＋本日発売(今日開始)＝発売日表示／過去開始=受付中(締切)
                     typ = f"{wlabel}（{scope}）{w['sd'].month}/{w['sd'].day} {w['st']}発売"
                 else:                 # 発売中
