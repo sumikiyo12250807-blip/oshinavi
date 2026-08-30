@@ -312,8 +312,25 @@ def main():
                     if not ev['date']:
                         continue
                     D = to_date(ev['date'])
+                    url = ev['url'] or f"https://eplus.jp/sf/detail/{eid}"
+                    # 🚨🚨 窓は**その公演の -P ページ**から取る（2026-08-30 修正）。
+                    # 旧版は base ページの窓を全部集めて「締切がいちばん遅いもの」を選んでいた。
+                    # 多公演が1つの base に載るページ（Billboard Live 等）では**別公演の締切を掴む**。
+                    # 実害＝中村佳穂 2933580002：10/11・10/12・10/14 の3公演とも締切が
+                    # 2026-10-14 になっていた（実際は 10/4・10/5・10/7）。
+                    # -P ページを個別に読めば1公演1枠で確定する（refresh 側は元からこの形）。
+                    pw = allw
+                    if url != f"https://eplus.jp/sf/detail/{eid}":
+                        if url not in page_cache:
+                            try:
+                                page_cache[url] = fetch(url)
+                            except Exception:
+                                page_cache[url] = ''
+                            time.sleep(0.4)
+                        if page_cache[url]:
+                            pw = parse_windows(page_cache[url]) or allw
                     # この公演を売る枠＝締切がD近傍(D-70日〜D+3日)。その最終枠が発売前(sd>今日)の時だけ採用
-                    near = [w for w in allw
+                    near = [w for w in pw
                             if D - datetime.timedelta(70) <= w['ed'] <= D + datetime.timedelta(3)]
                     if not near:
                         continue
@@ -321,7 +338,6 @@ def main():
                     if w['ed'] < TODAY:
                         continue  # 締切済＝もう買えない（発売前も発売中も網羅＝feedback_capture_all_not_select）
                     sess = '昼' if (ev['time'] and ev['time'] < '16:00') else ('夜' if ev['time'] else '')
-                    url = ev['url'] or f"https://eplus.jp/sf/detail/{eid}"
                     rows.append({'iso': ev['date'], 'time': ev['time'], 'venue': ev['venue'],
                                  'pref': ev['pref'], 'url': url, 'w': w, 'sess': sess,
                                  'name': ev['name']})
