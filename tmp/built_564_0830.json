@@ -1,0 +1,44 @@
+[
+ {
+  "id": 564,
+  "artist": "SINON",
+  "name": "SINON",
+  "date": "2027-02-07",
+  "dateLabel": "2026年10月10日(土)〜2027年2月7日(日) 福岡・東京・山梨",
+  "venue": "全国ツアー（黒崎ひびしんホール 大ホール／武蔵村山市民会館 大ホール／山梨市民会館）",
+  "prefecture": "福岡・東京・山梨",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2616784",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=SINON%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "一般発売（山梨 R9年 1/31公演）9/19 10:00発売",
+    "date": "2026-09-19",
+    "startDate": "2026-09-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631892"
+   },
+   {
+    "type": "一般発売（福岡 10/10公演）〜10/3 23:59",
+    "date": "2026-10-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616784"
+   },
+   {
+    "type": "一般発売（東京 R9年 2/7公演）10/10 10:00発売",
+    "date": "2026-10-10",
+    "startDate": "2026-10-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630492"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-08-30"
+ }
+]
