@@ -1,10 +1,10 @@
 {
  "lg": "06",
- "total": 113,
- "pages": 12,
- "fetched_pages": 13,
- "parsed": 100,
- "new_name_in_db": 7,
+ "total": 107,
+ "pages": 11,
+ "fetched_pages": 12,
+ "parsed": 94,
+ "new_name_in_db": 3,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633380",
@@ -14,72 +14,6 @@
    "perfdate": "2026/12/26(土)",
    "venue": "名古屋港ガーデンふ頭(愛知県)",
    "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2451557",
-   "artist": "「おかあさんといっしょ」ファンターネ！がやってきた",
-   "saletype": "一般発売",
-   "rlsdate": "2026/11/1",
-   "perfdate": "2027/2/23(火・祝)",
-   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2560802",
-   "artist": "「おかあさんといっしょ」ファンターネ！とあそぼ",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/7",
-   "perfdate": "2026/12/13(日)",
-   "venue": "いなべ市北勢市民会館 さくらホール(三重県)",
-   "pref": "三重県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634752",
-   "artist": "岡田彩夢写真集『こんな夢を見た』発売記念イベント",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/23(月・祝)",
-   "venue": "ＭＡＲＵＺＥＮ＆ジュンク堂書店 札幌店(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670282",
-   "artist": "キボリノコンノ展 食べたい！木彫りアートの世界",
-   "saletype": "一般発売",
-   "rlsdate": "2026/10/9",
-   "perfdate": "2026/10/9(金) ～ 2026/11/8(日)",
-   "venue": "金沢２１世紀美術館 市民ギャラリーＡ(石川県)",
-   "pref": "石川県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634742",
-   "artist": "志田愛佳２ｎｄ写真集『ＭＯＲＥ』発売記念イベント",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/14(土)",
-   "venue": "ｍａｇｍａｂｏｏｋｓ(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670653",
-   "artist": "全国花火師競技大会「第5回にし阿波の花火」",
-   "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/14(土)",
-   "venue": "徳島県西部健康防災公園（三好市三野健康防災公園／美馬市美馬リバーサイドパーク）(徳島県)",
-   "pref": "徳島県",
    "in_db": false,
    "name_in_db": true
   },
@@ -115,17 +49,6 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625226",
-   "artist": "松原健之 クリスマスディナーショー２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/12",
-   "perfdate": "2026/12/20(日)",
-   "venue": "掛川グランドホテル シャングリラスイート(静岡県)",
-   "pref": "静岡県",
-   "in_db": false,
-   "name_in_db": false
   }
  ]
 }

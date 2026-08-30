@@ -24,6 +24,12 @@ import sys
 DRAFT_FIELDS = ('_genre', '_extraGenres', '_piaSub', '_srcgenre')
 PATH = 'index.html'
 
+# Windowsの既定(cp932)だと絵文字入りの出力で落ちるので明示する（2026-08-31）
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
 
 def main():
     ap = argparse.ArgumentParser()

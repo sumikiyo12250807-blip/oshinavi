@@ -3,9 +3,31 @@
  "total": 310,
  "pages": 31,
  "fetched_pages": 32,
- "parsed": 251,
- "new_name_in_db": 11,
+ "parsed": 259,
+ "new_name_in_db": 7,
  "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632577",
+   "artist": "梅沢富美男劇団特別公演 梅沢富美男＆研ナオコ アッ！とおどろく夢芝居",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2027/1/26(火) ・ 2027/1/29(金)",
+   "venue": "クアーズテック秦野カルチャーホール 大ホール(神奈川県)／茅ヶ崎市民文化会館 大ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630817",
+   "artist": "オズブラ生搾り",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/10",
+   "perfdate": "2026/10/30(金)",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670167",
    "artist": "PARCO PRODUCE 2026 髪結いの亭主",
@@ -14,17 +36,6 @@
    "perfdate": "2026/11/12(木) ～ 2026/11/20(金)",
    "venue": "森ノ宮ピロティホール(大阪府)",
    "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632835",
-   "artist": "グレープライブｉｎ仙台 ｖｏｌ．１９",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/19",
-   "perfdate": "2026/11/15(日)",
-   "venue": "誰も知らない劇場(宮城県)",
-   "pref": "宮城県",
    "in_db": false,
    "name_in_db": false
   },
@@ -40,37 +51,103 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634810",
-   "artist": "第５回さざん寄席 桂竹丸・蝶花楼桃花・桂宮治 落語会",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624014",
+   "artist": "劇団四季ミュージカル『コーラスライン』／岐阜",
    "saletype": "一般発売",
-   "rlsdate": "2026/11/7",
-   "perfdate": "2027/2/28(日)",
-   "venue": "谷山サザンホール(鹿児島県)",
-   "pref": "鹿児島県",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/12/6(日)",
+   "venue": "長良川国際会議場 メインホール(岐阜県)",
+   "pref": "岐阜県",
    "in_db": false,
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670513",
-   "artist": "第88回 扇辰・喬太郎の会",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/11",
-   "perfdate": "2026/10/16(金)",
-   "venue": "あうるすぽっと（豊島区立舞台芸術交流センター）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670676",
-   "artist": "大名古屋らくご祭2026",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624016",
+   "artist": "劇団四季ミュージカル『コーラスライン』／名古屋",
    "saletype": "一般発売",
    "rlsdate": "2026/9/19",
-   "perfdate": "2026/12/17(木) ～ 2026/12/20(日)",
-   "venue": "岡谷鋼機名古屋公会堂 大ホール(愛知県)／岡谷鋼機名古屋公会堂 ４Ｆホール(愛知県)",
+   "perfdate": "2026/12/8(火) ～ 2026/12/11(金)",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
    "pref": "愛知県",
    "in_db": false,
-   "name_in_db": true
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624017",
+   "artist": "劇団四季ミュージカル『コーラスライン』／稲沢",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/12/13(日)",
+   "venue": "名古屋文理大学文化フォーラム 大ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624013",
+   "artist": "劇団四季ミュージカル『コーラスライン』／四日市",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/12/2(水)",
+   "venue": "四日市市文化会館 第１ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633425",
+   "artist": "三遊亭鬼丸 落語会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/12/11(金)",
+   "venue": "さいたま市文化センター 小ホール(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634663",
+   "artist": "第９回 隅田川わたし 毎月連続落語勉強会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/11/21(土)",
+   "venue": "なかの芸能小劇場(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634656",
+   "artist": "第三回 柳家小もん独演会 真打に向かって 火事息子ネタ下ろし他",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2027/1/23(土)",
+   "venue": "日本橋社会教育会館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634664",
+   "artist": "第１０回 隅田川わたし 毎月連続落語勉強会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/12/19(土)",
+   "venue": "なかの芸能小劇場(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633453",
+   "artist": "第七回 杉友寄席",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/11(水)",
+   "venue": "渋谷区文化総合センター大和田 伝承ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670708",
@@ -84,59 +161,26 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670685",
-   "artist": "東京ポッド許可局 2026 秋の祭典 板橋大山大会",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/6",
-   "perfdate": "2026/10/3(土)",
-   "venue": "板橋区立文化会館 大ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632667",
-   "artist": "何が起こるか分からない！？ さまチャン シークレットＬＩＶＥ ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/20",
-   "perfdate": "2026/10/4(日)",
-   "venue": "パシフィコ横浜 会議センター メインホール(神奈川県)",
-   "pref": "神奈川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670549",
    "artist": "庭劇団ペニノ『埋火(うずみび)』",
    "saletype": "一般発売",
-   "rlsdate": "TODAY",
-   "perfdate": "2026/11/7(土) ・ 2026/11/8(日)",
-   "venue": "富山 オーバード・ホール 中ホール(富山県)",
-   "pref": "富山県",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/11/12(木) ～ 2026/11/15(日)",
+   "venue": "ＫＡＡＴ 神奈川芸術劇場 大スタジオ(神奈川県)",
+   "pref": "神奈川県",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633103",
-   "artist": "ｎｏｔｅｂｏｏｋ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634685",
+   "artist": "人形劇「クラバート」明石公演",
    "saletype": "一般発売",
-   "rlsdate": "2026/9/6",
-   "perfdate": "2026/11/13(金) ・ 2026/11/14(土) ・ 2026/11/15(日)",
-   "venue": "扇町ミュージアムキューブ ＣＵＢＥ０１(大阪府)",
-   "pref": "大阪府",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/22(火・祝)",
+   "venue": "明石市立西部市民会館(兵庫県)",
+   "pref": "兵庫県",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670743",
-   "artist": "「果てない ～甦る母篇～」",
-   "saletype": "一般発売",
-   "rlsdate": "2026/10/3",
-   "perfdate": "2026/11/7(土) ～ 2026/12/6(日)",
-   "venue": "シアタートラム(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670622",
@@ -150,11 +194,33 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633846",
+   "artist": "爆生！！ものまね ｉｎ 大宮",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/26",
+   "perfdate": "2026/12/19(土)",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634283",
+   "artist": "【当日引換券】ブロードウェイミュージカル「シカゴ」３０周年記念来日公演",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/9/3(木) ～ 2026/9/6(日)",
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668188",
    "artist": "ミュージカル『SHOWMAN～4番目の影武者』",
    "saletype": "一般発売",
-   "rlsdate": "2026/8/31",
-   "perfdate": "2026/9/1(火) ～ 2026/9/6(日)",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/9/8(火) ～ 2026/9/13(日)",
    "venue": "新国立劇場 小劇場(東京都)",
    "pref": "東京都",
    "in_db": false,
@@ -172,6 +238,28 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633375",
+   "artist": "ヤマトタケル ～能褒野から羽ばたいた白鳥～",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/1",
+   "perfdate": "2026/11/15(日)",
+   "venue": "亀山市文化会館 大ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633470",
+   "artist": "よしもとお笑いライブｉｎくまとり",
+   "saletype": "一般発売",
+   "rlsdate": "2026/11/21",
+   "perfdate": "2027/1/31(日)",
+   "venue": "Ｋｉｔｅｅｎｅ Ｈａｌｌ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670744",
    "artist": "『ロックンロール』",
    "saletype": "一般発売",
@@ -179,17 +267,6 @@
    "perfdate": "2026/11/6(金) ・ 2026/11/7(土) ・ 2026/11/8(日)",
    "venue": "兵庫県立芸術文化センター 阪急 中ホール(兵庫県)",
    "pref": "兵庫県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670289",
-   "artist": "WAHAHA本舗PRESENTS ワハハ本舗特別公演 「エンド(仮)」",
-   "saletype": "一般発売",
-   "rlsdate": "2026/9/5",
-   "perfdate": "2026/11/11(水) ～ 2027/2/7(日)",
-   "venue": "シアターサンモール(東京都)／ＴＨＥＡＴＲＥ１０１０(東京都)",
-   "pref": "東京都",
    "in_db": false,
    "name_in_db": true
   }
