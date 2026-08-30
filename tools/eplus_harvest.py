@@ -7,6 +7,11 @@
 import urllib.request, re, json, sys, time, datetime, unicodedata
 import html as H
 
+# 出力をリダイレクトすると Windows では stdout が cp932 になり、進捗に混ぜている絵文字（⚠️等）で
+# UnicodeEncodeError を出して**ビルドの途中で落ちる**（2026-08-30 に実際に落ちた）。
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 UA = {'User-Agent': 'Mozilla/5.0'}
 
 _HALF_KANA_RE = re.compile(r'[｡-ﾟ]+')
