@@ -1,18 +1,29 @@
 {
  "lg": "04",
- "total": 40,
- "pages": 4,
- "fetched_pages": 5,
- "parsed": 30,
+ "total": 42,
+ "pages": 5,
+ "fetched_pages": 6,
+ "parsed": 32,
  "new_name_in_db": 0,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632258",
-   "artist": "宮沢賢治生誕１３０年記念 『銀河鉄道の夜』特別上映",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2543252",
+   "artist": "桜坂劇場２０２６年映画鑑賞券",
    "saletype": "一般発売",
-   "rlsdate": "2026/9/1",
-   "perfdate": "2026/9/19(土) ～ 2026/9/25(金)",
-   "venue": "神保町シアター(東京都)",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/1(木) ～ 2026/10/31(土)",
+   "venue": "桜坂劇場(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633155",
+   "artist": "「青春ブタ野郎はディアフレンドの夢を見ない」完成披露上映会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/25",
+   "perfdate": "2026/10/4(日)",
+   "venue": "新宿バルト９(東京都)",
    "pref": "東京都",
    "in_db": false,
    "name_in_db": false

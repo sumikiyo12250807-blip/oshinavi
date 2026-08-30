@@ -1,0 +1,104 @@
+エントリのキー: id=4019, artist=4019, name=4019, date=4019, venue=4019, prefecture=4019, genre=4019, links=4019, tickets=4019, verified=4019, verifiedAt=4019, price=4018, dateLabel=4012, _piaSub=468, _genre=309, _extraGenres=309, extraGenres=176, showSalePeriod=64, xPost=20, saleEndUnknown=19, longrun=4, unverifiedNote=1
+チケットのキー: type=8472, date=8472, startDate=3685, url=3483, soldout=104, soldoutSince=101, saleEnded=7, saleEndedSince=7, saleUntilSoldOut=5, saleEndUnknown=1
+
+date がパース不能なエントリ: 0 件
+
+date < 2026-08-31 のエントリ: 67 件
+
+=== 過去エントリ内の「8/31以降」を指す文字列 ===
+id=100
+    .tickets[0].type='一般発売（大阪 8/6〜8/11公演）〜7/21 23:59' [7/21]
+id=121
+    .tickets[0].type='一般発売.（山口 8/2公演）〜7/31 23:59' [7/31]
+id=358
+    .tickets[0].type='一般発売（宮城・山形 7/25〜7/26）' [7/25]
+    .tickets[2].type='一般発売（茨城・栃木・埼玉・千葉・東京 7/29〜8/16）' [7/29]
+id=387
+    .tickets[0].type='広島公演(7/31〜8/2) 一般発売' [7/31]
+id=872
+    .tickets[0].type='一般発売（大阪 7/20公演）〜7/17 23:59' [7/20]
+    .tickets[1].type='一般発売（宮城 7/26公演）〜7/25 23:59' [7/26]
+id=2370
+    .tickets[0].type='一般発売（会期中）（兵庫 7/17〜8/30公演）〜8/30 12:00' [7/17]
+id=2378
+    .tickets[0].type='一般発売 当日券（福井 7/18〜8/30公演）〜8/30 12:00' [7/18]
+id=2386
+    .tickets[0].type='一般発売 当日券（岐阜 7/18〜8/30公演）〜8/30 16:00' [7/18]
+id=2541
+    .tickets[0].type='一般発売 当日券（石川 7/31〜8/30公演）〜8/30 17:30' [7/31]
+(該当 9 件)
+
+=== 過去エントリで startDate/date が 2026-08-31 以降のチケット ===
+id=1242 枠#2 start=None end=2026-09-04 type='視聴券受付【配信】（8/29公演）〜9/4 22:00' soldOut=None saleEnded=None status=None
+id=1637 枠#0 start=None end=2026-09-05 type='配信チケット受付【ライブ】【動画配信】（全国 8/30〜9/5公演）〜9/5 16:00' soldOut=None saleEnded=None status=None
+id=1904 枠#1 start=None end=2026-10-04 type='視聴券受付【配信】（東京 8/19〜8/23公演）〜10/4 21:00' soldOut=None saleEnded=None status=None
+(該当 3 枠)
+
+=== 過去エントリのフラグ (verified/soldOut/saleEnded/hidden 等) ===
+id=100 {'verified': True}
+id=108 {'verified': True}
+id=121 {'verified': True}
+id=196 {'verified': True}
+id=300 {'verified': True}
+id=358 {'verified': True}
+id=369 {'verified': True}
+id=387 {'verified': True}
+id=494 {'verified': True}
+id=533 {'verified': True}
+id=539 {'verified': True}
+id=543 {'verified': True}
+id=872 {'verified': True}
+id=939 {'verified': True}
+id=997 {'verified': True}
+id=1001 {'verified': True}
+id=1006 {'verified': True}
+id=1015 {'verified': True}
+id=1065 {'verified': True}
+id=1066 {'verified': True}
+id=1242 {'verified': True}
+id=1267 {'verified': True}
+id=1637 {'verified': True}
+id=1758 {'verified': True}
+id=1783 {'verified': True}
+id=1816 {'verified': True}
+id=1893 {'verified': True}
+id=1904 {'verified': True}
+id=1944 {'verified': True}
+id=1986 {'verified': True}
+id=2163 {'verified': True}
+id=2244 {'verified': True}
+id=2370 {'verified': True}
+id=2378 {'verified': True}
+id=2386 {'verified': True}
+id=2438 {'verified': True}
+id=2519 {'verified': True}
+id=2525 {'verified': True}
+id=2541 {'verified': True}
+id=2617 {'verified': True}
+id=2625 {'verified': True}
+id=2733 {'verified': True}
+id=2801 {'verified': True}
+id=2849 {'verified': True}
+id=2984 {'verified': True}
+id=3097 {'verified': True}
+id=3219 {'verified': True}
+id=3231 {'verified': True}
+id=3245 {'verified': True}
+id=3309 {'verified': True}
+id=3411 {'verified': True}
+id=3435 {'verified': True}
+id=3457 {'verified': True}
+id=3512 {'verified': True}
+id=3569 {'verified': True}
+id=3698 {'verified': True}
+id=3727 {'verified': True}
+id=3794 {'verified': True}
+id=4137 {'verified': True}
+id=4321 {'verified': True}
+id=4358 {'verified': True}
+id=4454 {'verified': True}
+id=4484 {'verified': True}
+id=4873 {'verified': True}
+id=4918 {'verified': True}
+id=4970 {'verified': True}
+id=4991 {'verified': True}
