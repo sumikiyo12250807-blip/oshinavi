@@ -382,6 +382,7 @@ def main():
                     # 2026-10-14 になっていた（実際は 10/4・10/5・10/7）。
                     # -P ページを個別に読めば1公演1枠で確定する（refresh 側は元からこの形）。
                     pw = allw
+                    own_page = False   # その公演の -P ページから窓を取れたか
                     if url != f"https://eplus.jp/sf/detail/{eid}":
                         if url not in page_cache:
                             try:
@@ -390,10 +391,21 @@ def main():
                                 page_cache[url] = ''
                             time.sleep(0.4)
                         if page_cache[url]:
-                            pw = parse_windows(page_cache[url]) or allw
-                    # この公演を売る枠＝締切がD近傍(D-70日〜D+3日)。その最終枠が発売前(sd>今日)の時だけ採用
-                    near = [w for w in pw
-                            if D - datetime.timedelta(70) <= w['ed'] <= D + datetime.timedelta(3)]
+                            _pw = parse_windows(page_cache[url])
+                            if _pw:
+                                pw = _pw; own_page = True
+                    # 🚨🚨2026-08-31 修正＝**その公演の -P ページを読めたときは日付で絞らない**。
+                    #   -P ページの窓はその公演のものだけなので、絞る必要がない。
+                    #   旧版は「締切が公演日の70日前〜3日後」で絞っており、**締切が早く閉じる
+                    #   抽選プレオーダーが範囲外で捨てられていた**（gate_eplus_slots が検出）。
+                    #   実害＝6049 上田タカヒロ(12/10公演・抽選の締切9/11)／6060 13.3g／
+                    #   6068 二見颯一(11/15公演・抽選の締切9/4＝2日足りず脱落)。
+                    #   base ページに落ちたとき(own_page=False)だけは、別公演の窓を掴まないよう従来の絞りを残す。
+                    if own_page:
+                        near = list(pw)
+                    else:
+                        near = [w for w in pw
+                                if D - datetime.timedelta(70) <= w['ed'] <= D + datetime.timedelta(3)]
                     if not near:
                         continue
                     # 🚨🚨 その公演の窓は**全部**載せる（2026-08-30 修正）。
@@ -411,14 +423,25 @@ def main():
                                      'name': ev['name']})
             if not rows:
                 print(f'  △ {akey}: 発売前公演なし → スキップ'); continue
-            # 不完全JSON-LD(都道府県空)の重複行を除去（同一公演日に情報付き行があれば空行を捨てる）
-            has_pref = {r['iso'] for r in rows if r['pref']}
-            rows = [r for r in rows if r['pref'] or r['iso'] not in has_pref]
+            # 不完全JSON-LD(都道府県空)の重複行を除去。
+            # 🚨2026-08-31 修正＝**配信チケットを巻き込んでいた**。
+            #   配信は会場が無いので pref が空になるのが正常。旧版は「同じ公演日に県つきの行が
+            #   あれば県なしの行を捨てる」だったので、**同日の会場公演があると配信枠が丸ごと消えた**
+            #   （二見颯一&青山新 11/22 の配信＋アーカイブ。gate_eplus_slots が検出）。
+            #   → 捨てるのは「同じ公演(日+時刻)」または「同じURL」に県つきの行がある時だけにする。
+            _pk = {(r['iso'], r['time']) for r in rows if r['pref']}
+            _pu = {r['url'] for r in rows if r['pref']}
+            rows = [r for r in rows
+                    if r['pref'] or ((r['iso'], r['time']) not in _pk and r['url'] not in _pu)]
             # 公演(日+セッション)で重複排除。会場/都道府県のある方を優先（同一公演が複数券種ページに出るため）
             byshow = {}
             for r in rows:
                 # 🚨キーに窓を含める＝同じ公演の「抽選」と「一般」が1つに潰れないようにする（2026-08-30）
-                key = (r['iso'], r['sess'], r['w']['label'], str(r['w']['sd']), str(r['w']['ed']))
+                # 🚨2026-08-31 修正＝キーは「昼/夜」でなく**実際の開演時刻**。
+                #   Billboard Live は 17:30 と 20:30 の2ステージ＝どちらも「夜」になり、
+                #   同じキーで潰れて **2ndステージが丸ごと消えていた**
+                #   （清春・ブギ連・鈴木茂で gate_eplus_slots が検出）。
+                key = (r['iso'], r['time'] or r['sess'], r['w']['label'], str(r['w']['sd']), str(r['w']['ed']))
                 cur = byshow.get(key)
                 if cur is None or ((r['venue'] and not cur['venue']) or (r['pref'] and not cur['pref'])):
                     byshow[key] = r
@@ -441,7 +464,11 @@ def main():
                 dlabel = (f"{jp_date(d0)} {pref} {venue}" if d0 == d1
                           else f"{jp_date(d0)}〜{jp_date(d1)} {pref} {venue}")
             else:
-                pref = '全国' if len(prefs) > 1 else (prefs[0] if prefs else '全国')
+                # 【ユーザー確定 2026-08-03】〜4県は県名を列挙、5県以上だけ「全国」。
+                # ぴあ側(build_pia_entries.PREF_ENUM_MAX)と同じ規則。e+側だけ2県でも
+                # 「全国」にしていた＝エリアで絞る人に見つけてもらえない（2026-08-31 修正）。
+                pref = ('・'.join(prefs) if 2 <= len(prefs) <= 4
+                        else (prefs[0] if len(prefs) == 1 else '全国'))
                 venue = '全国ツアー（' + '／'.join(uniq_venues) + '）'
                 dlabel = f"{jp_date(d0)}〜{jp_date(d1)} 全国ツアー"
             # チケット＝公演ごと（個別URL付与）
@@ -521,7 +548,8 @@ def main():
                     if not ev['date']:
                         continue
                     sess = '昼' if (ev['time'] and ev['time'] < '16:00') else ('夜' if ev['time'] else '')
-                    key = (ev['date'], sess)
+                    # 同上＝時刻で分ける（昼/夜だと Billboard Live の2ステージが潰れる）
+                    key = (ev['date'], ev['time'] or sess)
                     if key not in shows or (ev['venue'] and not shows[key]['venue']):
                         shows[key] = {'iso': ev['date'], 'time': ev['time'], 'venue': ev['venue'],
                                       'pref': ev['pref'], 'sess': sess,
@@ -561,7 +589,11 @@ def main():
                 dlabel = (f"{jp_date(d0)} {pref} {venue}" if d0 == d1
                           else f"{jp_date(d0)}〜{jp_date(d1)} {pref} {venue}")
             else:
-                pref = '全国' if len(prefs) > 1 else (prefs[0] if prefs else '全国')
+                # 【ユーザー確定 2026-08-03】〜4県は県名を列挙、5県以上だけ「全国」。
+                # ぴあ側(build_pia_entries.PREF_ENUM_MAX)と同じ規則。e+側だけ2県でも
+                # 「全国」にしていた＝エリアで絞る人に見つけてもらえない（2026-08-31 修正）。
+                pref = ('・'.join(prefs) if 2 <= len(prefs) <= 4
+                        else (prefs[0] if len(prefs) == 1 else '全国'))
                 venue = '全国ツアー（' + '／'.join(uniq_venues) + '）'
                 dlabel = f"{jp_date(d0)}〜{jp_date(d1)} 全国ツアー"
             tickets = []

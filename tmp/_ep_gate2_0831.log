@@ -1,0 +1,26 @@
+=== e+ 投入ゲート ===
+  エントリ 32件 / 照合したURL 53本
+  A 実ページの枠合計 62 / ビルドの枠合計 63
+  B 公演の取りこぼし 4件
+
+🚨 A 枠数が合わない 1件（**投入しない**）:
+   id6044   ハナレグミ                    実ページ0枠 ≠ ビルド1枠
+      URL: https://eplus.jp/sf/detail/4306490002-P0030002P021001
+      ビルド: 先着一般発売（東京都 11/27公演）9/2 12:00発売
+
+🚨 B 同じ公演名の他の公演がアーティストページにある 4件（**投入しない**）:
+   id6053   清春 ＋3公演
+      2026-09-16 BLAZE GOTANDA  https://eplus.jp/sf/detail/0084320001-P0030471P021001
+      2026-11-02 Billboard Live TOKYO  https://eplus.jp/sf/detail/0084320009-P0030478P021002
+      2026-11-04 Billboard Live OSAKA  https://eplus.jp/sf/detail/0084320009-P0030474P021002
+   id6060   ブギ連 ブギる心～外伝 ＋3公演
+      2026-11-16 Billboard Live TOKYO  https://eplus.jp/sf/detail/2940860002-P0030010P021002
+      2026-11-18 Billboard Live OSAKA  https://eplus.jp/sf/detail/2940860002-P0030012P021002
+      2026-11-30 Billboard Live YOKOHAMA  https://eplus.jp/sf/detail/2940860002-P0030011P021002
+   id6063   鈴木茂「LAGOON」発売50周年記念ライブ ＋2公演
+      2026-11-22 Billboard Live OSAKA  https://eplus.jp/sf/detail/1852010003-P0030038P021002
+      2026-11-28 Billboard Live TOKYO  https://eplus.jp/sf/detail/1852010003-P0030039P021002
+   id6067   二見颯一&青山新 ライブツアー2026 ＋1公演
+      2026-11-22   https://eplus.jp/sf/detail/4125060001-P0030013P021001
+
+=== ❌ FAIL: 枠または公演が落ちている。直してから再ビルドすること ===

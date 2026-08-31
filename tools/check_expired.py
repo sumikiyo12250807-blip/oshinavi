@@ -90,6 +90,26 @@ def is_expired_index(ev: dict, today: date) -> list:
     return reasons
 
 
+def has_live_ticket(ev: dict, today: date) -> list:
+    """まだ買える枠（販売終了日が今日以降・売り切れでない）を返す。
+
+    🚨2026-08-31 追加＝「公演は終わったが配信視聴券だけ生きている」型を削除候補に混ぜないため。
+    公演終了だけを理由に消すと、買える枠を道連れにする
+    （劇団かもめんたる1904／仙台貨物1242／初音ミク1637 の3件で実際に起きかけた）。
+    """
+    live = []
+    for t in ev.get('tickets') or []:
+        if t.get('soldout'):
+            continue
+        td = t.get('date', '')
+        try:
+            if date.fromisoformat(td) >= today:
+                live.append(t)
+        except ValueError:
+            continue
+    return live
+
+
 def perf_is_future(ev: dict, today: date) -> bool:
     """公演日(ev.date)が today 以降（未来 or 当日）なら True。
     日付が壊れている/不明なら「未来扱い(=保留側)」にして安全側に倒す。
@@ -132,13 +152,22 @@ def main():
     #       → 必ずWebFetchで再導出してから判断（2026-06-23 680私立恵比寿中学ファミマ先行を
     #         削除候補にしかけた事故の恒久対策。memory: feedback_pre_delete_webfetch_verify）
     # 削除候補に残るのは「公演も終わっている(ev.date < today)・かつ全販売終了」だけ。
-    idx_delete, idx_recheck = [], []
+    idx_delete, idx_recheck, idx_live = [], [], []
     for ev, r in idx_flagged:
-        if ev.get('saleEndUnknown') or perf_is_future(ev, today):
+        live = has_live_ticket(ev, today)
+        if live:
+            # 公演は終わっているが、まだ買える枠が残っている（配信視聴券など）。
+            # 消すと買える導線まで消えるので、削除候補にしない。
+            idx_live.append((ev, r, live))
+        elif ev.get('saleEndUnknown') or perf_is_future(ev, today):
             idx_recheck.append((ev, r))
         else:
             idx_delete.append((ev, r))
-    out.append(f"\n[index.html] 全{len(idx_events)}件 → 期限切れ削除候補(公演終了済) {len(idx_delete)}件 / ⚠️要再確認(公演は未来・要WebFetch) {len(idx_recheck)}件")
+    out.append(f"\n[index.html] 全{len(idx_events)}件 → 期限切れ削除候補(公演終了済) {len(idx_delete)}件 / ⚠️要再確認(公演は未来・要WebFetch) {len(idx_recheck)}件 / 📺公演終了だが買える枠あり(配信等) {len(idx_live)}件")
+    for ev, r, live in idx_live:
+        out.append(fmt_event_entry(ev, r + ["📺買える枠%d" % len(live)]))
+        for t in live:
+            out.append(f"     + 生きている枠: {t.get('type','?')}: {t.get('date','?')}")
     for ev, r in idx_delete:
         out.append(fmt_event_entry(ev, r))
         for t in ev.get('tickets', []) or []:
