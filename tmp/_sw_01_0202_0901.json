@@ -1,0 +1,117 @@
+{
+ "lg": "01",
+ "base_filter": "rlsStatus=0202",
+ "base_total": 35,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0202",
+   "label": "ALL",
+   "total": 35,
+   "parsed": 31,
+   "pages": 4,
+   "fetched_pages": 5,
+   "new": 9
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630516",
+   "artist": "新しい学校のリーダーズ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/12(木)",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627674",
+   "artist": "新しい学校のリーダーズ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/20(金)",
+   "venue": "Ｚｅｐｐ Ｎａｇｏｙａ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628267",
+   "artist": "インナージャーニー",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/12(木)",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634217",
+   "artist": "クレイジーウォウウォ！！",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/27(金)",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632529",
+   "artist": "クレイジーウォウウォ！！",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/12/12(土)",
+   "venue": "仙台ＲＯＣＫＡＴＥＲＩＡ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606881",
+   "artist": "ＧＥＮＥＲＡＴＩＯＮＳ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "マリンメッセ福岡Ａ館(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634388",
+   "artist": "フラワーカンパニーズ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2027/2/20(土) ・ 2027/2/21(日)",
+   "venue": "松江ｃａｎｏｖａ(島根県)／岡山ペパーランド(岡山県)",
+   "pref": "島根県／岡山県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632512",
+   "artist": "レミオロメン",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2027/6/26(土) ・ 2027/6/27(日)",
+   "venue": "ＳＧ ＧＲＯＵＰホールはちのへ(青森県)／仙台サンプラザホール(宮城県)",
+   "pref": "青森県／宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633694",
+   "artist": "レミオロメン",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/1",
+   "perfdate": "2027/4/10(土) ・ 2027/4/11(日) ・ 2027/6/20(日)",
+   "venue": "福岡サンパレス ホテル＆ホール(福岡県)／鳥栖市民文化会館 大ホール(佐賀県)／ベネックス長崎ブリックホール 大ホール(長崎県)",
+   "pref": "福岡県／佐賀県／長崎県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}

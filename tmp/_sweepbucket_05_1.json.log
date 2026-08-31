@@ -1,5 +1,5 @@
-lg=05 total=12 pages=2
-parsed items: 12 (fetched up to page 3)
-already in DB (eventCd一致): 12 | NOT in DB (new candidates): 0
+lg=05 total=0 pages=0
+parsed items: 0 (fetched up to page 2)
+already in DB (eventCd一致): 0 | NOT in DB (new candidates): 0
   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）
 written tmp/_sweepbucket_05_1.json

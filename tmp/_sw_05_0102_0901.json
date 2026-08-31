@@ -1,0 +1,51 @@
+{
+ "lg": "05",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 29,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 29,
+   "parsed": 27,
+   "pages": 3,
+   "fetched_pages": 4,
+   "new": 3
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630333",
+   "artist": "Ｏちゃん、キミはだあれ？松永真のデザインと大分市美術館のこれから",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/2",
+   "perfdate": "2026/10/2(金) ～ 2026/11/15(日)",
+   "venue": "大分市美術館(大分県)",
+   "pref": "大分県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622979",
+   "artist": "写真家ソール・ライターの原点 Ｏｒｉｇｉｎｓ ｉｎ Ｃｏｌｏｒ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/2",
+   "perfdate": "2026/10/2(金) ～ 2026/11/15(日)",
+   "venue": "鹿児島市立美術館(鹿児島県)",
+   "pref": "鹿児島県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670464",
+   "artist": "Hello Kitty展 -わたしが変わるとキティも変わる-",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/17",
+   "perfdate": "2026/10/17(土) ～ 2027/1/11(月・祝)",
+   "venue": "長崎県美術館 企画展示室(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
