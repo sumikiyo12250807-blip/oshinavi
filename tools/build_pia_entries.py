@@ -539,7 +539,9 @@ PIA_GENRE_MAP = {
     'シャンソン': ('chanson', None),                 # 既存ジャンル chanson に接続
     'ショー・ファンイベント': ('fanevent', None),      # 既存ジャンル fanevent に接続
     '祭り・花火大会': ('hanabi', None),               # 既存ジャンル hanabi に接続
-    '童謡・日本のうた': ('douyou', None),             # 🆕新設
+    # 🚨2026-08-31 ユーザー指示「童謡はそんなにないから音楽のそのたでいいわ」＝
+    #   独立タブ(douyou)は廃止し musicetc に寄せた（当時2件しか無く空タブになるため）。
+    '童謡・日本のうた': ('musicetc', None),
     'サーカス': ('circus', None),                    # 🆕新設（シルク・ドゥ・ソレイユ等）
     'マジック・イリュージョン': ('magic', None),        # 🆕新設
     '学園祭': ('gakusai', None),                     # 🆕新設
@@ -1060,7 +1062,7 @@ def _selftest():
     assert genre_from_subcat('イベント', 'マジック・イリュージョン', 'マジックショー') == ('magic', None)
     assert genre_from_subcat('イベント', '祭り・花火大会', '第50回花火大会') == ('hanabi', None)
     assert genre_from_subcat('音楽', 'シャンソン', 'シャンソンの夕べ') == ('chanson', None)
-    assert genre_from_subcat('音楽', '童謡・日本のうた', '日本のうたコンサート') == ('douyou', None)
+    assert genre_from_subcat('音楽', '童謡・日本のうた', '日本のうたコンサート') == ('musicetc', None)
     # ぴあの全サブカテゴリに行き先があること（人の判断枠を作らない・2026-08-26のユーザー決定）
     _holes = [ (PIA_LG_LABEL[cd[:2]], nm) for cd, nm in PIA_GENRE_CD.items()
                if nm not in PIA_GENRE_MAP and PIA_LG_LABEL[cd[:2]] not in PIA_CAT_FALLBACK ]
