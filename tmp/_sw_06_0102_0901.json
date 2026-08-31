@@ -1,0 +1,260 @@
+{
+ "lg": "06",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 124,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 124,
+   "parsed": 110,
+   "pages": 13,
+   "fetched_pages": 14,
+   "new": 22
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634198",
+   "artist": "浅草花やしき「浅草怪宴夜行－ＡＳＡＫＵＳＡ ＨＯＲＲＯＲ ＥＸＰＥＲＩＥＮＣＥ－」",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/4(日) ～ 2026/10/30(金)",
+   "venue": "浅草花やしき(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633380",
+   "artist": "ＢＥＲＩＴＡ ｐｒｅｓｅｎｔｓ ＩＳＯＧＡＩ花火劇場in名古屋港",
+   "saletype": "一般発売",
+   "rlsdate": "2026/11/28",
+   "perfdate": "2026/12/26(土)",
+   "venue": "名古屋港ガーデンふ頭(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634069",
+   "artist": "太秦映画村 １ＤＡＹ入村券／ナイトタイム入村券（１０月）",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/1(木) ～ 2026/10/31(土)",
+   "venue": "太秦映画村(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625229",
+   "artist": "エジプト研究調査の最前線",
+   "saletype": "一般発売",
+   "rlsdate": "2026/11/14",
+   "perfdate": "2027/2/21(日)",
+   "venue": "東郷町民会館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563199",
+   "artist": "「おとうさんといっしょ」レオてつコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/24",
+   "perfdate": "2027/1/16(土)",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633644",
+   "artist": "怪談和尚・三木大雲の怪談説法",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/18",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "名古屋市中村文化小劇場(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628807",
+   "artist": "川崎学園祭 お笑いライブ！！",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/6",
+   "perfdate": "2026/10/18(日)",
+   "venue": "川崎祐宣記念講堂(岡山県)",
+   "pref": "岡山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624296",
+   "artist": "京都キモノタイム２ＮＤ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/11/28(土) ・ 2026/11/29(日)",
+   "venue": "みやこめっせ 第２展示場Ｄ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630092",
+   "artist": "さるびあ落語 真打 ～東西よったり競演会～",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/18",
+   "perfdate": "2027/1/31(日)",
+   "venue": "横浜市鶴見区民文化センター サルビアホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625239",
+   "artist": "師匠が語る 弟子・藤井聡太という才能",
+   "saletype": "一般発売",
+   "rlsdate": "2026/12/12",
+   "perfdate": "2027/3/14(日)",
+   "venue": "東郷町民会館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627791",
+   "artist": "ＳＩＮＯＮ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2027/1/24(日)",
+   "venue": "刈谷市総合文化センター アイリス 小ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670179",
+   "artist": "『禅とジブリ』京都展",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2026/10/3(土) ～ 2026/12/6(日)",
+   "venue": "京都市京セラ美術館 新館 東山キューブ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634655",
+   "artist": "『禅とジブリ』京都展（期間内有効券）＋大徳寺 大慈院 坐禅会 セット券／大徳寺 大慈院 坐禅会参加券",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/3(土) ～ 2026/12/6(日)",
+   "venue": "大徳寺 大慈院(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628304",
+   "artist": "筑後ＳＡＫＥフェスタ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土) ～ 2026/10/11(日)",
+   "venue": "久留米シティプラザ 六角堂広場(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632054",
+   "artist": "でんじろう先生のドキドキわくわくサイエンスショー",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/25",
+   "perfdate": "2027/1/10(日)",
+   "venue": "カルッツかわさき（川崎市スポーツ・文化総合センター）ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670080",
+   "artist": "特別展「生きものたちの性」",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/31",
+   "perfdate": "2026/10/31(土) ～ 2027/2/21(日)",
+   "venue": "国立科学博物館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631913",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/10/31(土)",
+   "venue": "兵庫県立大学姫路工学キャンパス 体育館(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632280",
+   "artist": "ＨＡＲＡ イリュージョンマジックショー",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2026/12/19(土)",
+   "venue": "蒲郡市民会館 大ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630074",
+   "artist": "ミニさっぽろ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/3(土) ・ 2026/10/4(日)",
+   "venue": "アクセスサッポロ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633440",
+   "artist": "第８回 夜景観光士検定 ３・２級",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/12/5(土) ～ 2026/12/6(日)",
+   "venue": "自宅でのＷＥＢ受験",
+   "pref": "",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631464",
+   "artist": "第３４回 ヨコハマ ホット ロッド・カスタム ショー ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/12/6(日)",
+   "venue": "パシフィコ横浜 展示ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624826",
+   "artist": "ライフピアＤＥクリスマス",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/12/19(土)",
+   "venue": "ライフピアいちじま大ホール(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}

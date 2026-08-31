@@ -1,0 +1,73 @@
+{
+ "lg": "04",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 46,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 46,
+   "parsed": 36,
+   "pages": 5,
+   "fetched_pages": 6,
+   "new": 5
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634276",
+   "artist": "ＴＶアニメ「ＦＸ戦士くるみちゃん」先行上映会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/9/27(日)",
+   "venue": "池袋ＨＵＭＡＸシネマズ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2541265",
+   "artist": "福武レジャー券９月～１１月有効券",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/1(火) ～ 2026/11/30(月)",
+   "venue": "",
+   "pref": "",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633407",
+   "artist": "松本シネマライツ共通鑑賞券 ９月－１１月券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ～ 2026/11/30(月)",
+   "venue": "",
+   "pref": "",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632870",
+   "artist": "ミニシアター回数券 ９月－１１月券",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/1(火) ～ 2026/11/30(月)",
+   "venue": "",
+   "pref": "",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632874",
+   "artist": "ミニシアター共通券９／１～１１／３０",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/1(火) ～ 2026/11/30(月)",
+   "venue": "",
+   "pref": "",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
