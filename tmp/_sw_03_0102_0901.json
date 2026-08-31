@@ -1,0 +1,150 @@
+{
+ "lg": "03",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 121,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 121,
+   "parsed": 82,
+   "pages": 13,
+   "fetched_pages": 14,
+   "new": 12
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633301",
+   "artist": "カマタマーレ讃岐対ＦＣ岐阜 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "四国化成ＭＥＧＬＩＯスタジアム(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634739",
+   "artist": "ＳＴＡＲＤＯＭ ＮＥＷ ＹＥＡＲ ＤＲＥＡＭ ２０２７ ～ばいぽいロードＦＩＮＡＬ～",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/14",
+   "perfdate": "2027/1/3(日)",
+   "venue": "横浜武道館(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670787",
+   "artist": "第一回全世界ウェイト制空手道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/12/13(日)",
+   "venue": "Ｊ：ＣＯＭ末広体育館(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670580",
+   "artist": "第74回全日本剣道選手権大会／第65回全日本女子剣道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "日本武道館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633038",
+   "artist": "東海学生アメリカンフットボール連盟秋季リーグ戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ～ 2026/12/12(土)",
+   "venue": "四日市ドーム／他(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670619",
+   "artist": "令和8年冬巡業 大相撲長崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/12/3(木)",
+   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634087",
+   "artist": "２０２６年 プロ野球ファーム日本選手権",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/10/3(土) ・ 2026/10/4(日)",
+   "venue": "しずてつスタジアム草薙(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634000",
+   "artist": "マリーゴールド",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/11/8(日)",
+   "venue": "Ｄｕｏ ＣＥＲＥＺＯ(新潟県)",
+   "pref": "新潟県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633759",
+   "artist": "ＭＡＲＯＯＭＳ ｐｒｅｓｅｎｔｓ ＫＮＯＣＫ ＯＵＴ．６９",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/2",
+   "perfdate": "2026/10/23(金)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670604",
+   "artist": "令和八年 冬巡業 大相撲三田場所",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/12/11(金)",
+   "venue": "ＤＯＶＥＲ駒ケ谷体育館(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633717",
+   "artist": "レノファ山口ＦＣ対ギラヴァンツ北九州 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/10/31(土)",
+   "venue": "維新みらいふスタジアム(山口県)",
+   "pref": "山口県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633716",
+   "artist": "レノファ山口ＦＣ対高知ユナイテッドＳＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/10/18(日)",
+   "venue": "維新みらいふスタジアム(山口県)",
+   "pref": "山口県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
