@@ -1,34 +1,28 @@
-検索語: 高嶋ちさ子
+検索語: 大サーカス
 
-  (無フィルタ)        → 1件
-  rlsStatus=0101 → 1件
-  rlsStatus=0102 → 2件
-  rlsStatus=0201 → 3件
+  (無フィルタ)        → 3件
+  rlsStatus=0101 → 3件
+  rlsStatus=0102 → 1件
+  rlsStatus=0201 → 0件
   rlsStatus=0202 → 0件
 
-=== ヒット 4 件（URL単位・全フィルタのunion）===
+=== ヒット 3 件（URL単位・全フィルタのunion）===
 
-[先行抽選] 高嶋ちさ子のザワつく！昭和歌謡祭 2026
-  公演日: 2026/11/14(土)
-  会場  : 宮城・セキスイハイムスーパーアリーナ（グランディ・２１）(宮城県)
-  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669430
-  検出フィルタ: rlsStatus=0201
+[一般発売] 木下大サーカス奈良橿原公演
+  公演日: 2026/10/11(日) ～ 2026/10/31(土)
+  会場  : 奈良県橿原市 イオンモール橿原 特設会場(奈良県)
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668819
+  検出フィルタ: (無),rlsStatus=0101
 
-[先行抽選] 高嶋ちさ子のザワつく！音楽会 2026
-  公演日: 2026/11/15(日)
-  会場  : 宮城・セキスイハイムスーパーアリーナ（グランディ・２１）(宮城県)
-  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669487
-  検出フィルタ: rlsStatus=0201
+[一般発売] アークラ大サーカス２０２６会場内駐車場
+  公演日: 2026/11/7(土) ・ 2026/11/8(日)
+  会場  : 富士山樹空の森(静岡県)
+  発売日: 2026/9/1
+  URL   : https://ticket.pia.jp/pia/event.do?eventCd=2627519
+  検出フィルタ: (無),rlsStatus=0101,rlsStatus=0102
 
-[一般発売] めざましクラシックス ｉｎ 奥州
-  公演日: 2027/1/24(日)
-  会場  : 奥州市文化会館（Ｚホール） 大ホール(岩手県)
-  発売日: 2026/10/10
-  URL   : https://ticket.pia.jp/pia/event.do?eventCd=2629708
-  検出フィルタ: rlsStatus=0102
-
-[先行抽選] 高嶋ちさ子 12人のヴァイオリニスト コンサートツアー 2026～2027
-  公演日: 2027/2/14(日)
-  会場  : フェスティバルホール(大阪府)
-  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666550
-  検出フィルタ: (無),rlsStatus=0101,rlsStatus=0102,rlsStatus=0201
+[一般発売] 木下大サーカス岡山公演
+  公演日: 2026/6/27(土) ～ 2026/9/27(日)
+  会場  : 岡山市北区北長瀬 岡山ドーム東隣 特設会場(岡山県) 一般発売 販売期間中 ～2026/9/23(水・祝) 23:59
+  URL   : https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665755
+  検出フィルタ: (無),rlsStatus=0101
