@@ -72,6 +72,7 @@ def main():
 
     eh = load_harvester()
     cache, bad, unread, rows, miss = {}, [], [], [], []
+    note = []   # 実ページ<ビルド＝損失ではないが目で見るために残す（2026-08-31）
 
     # ---- A: 枠の数 ----
     for e in entries:
@@ -96,7 +97,11 @@ def main():
                 continue
             live = [w for w in eh.parse_windows(h) if w["ed"] >= TODAY]
             rows.append((e["id"], e.get("artist"), u, len(live), len(ts)))
-            if len(live) != len(ts):
+            # 🚨2026-08-31＝FAIL にするのは「実ページ > ビルド」＝**枠が落ちている**時だけ。
+            #   逆（実ページ < ビルド）は損失ではない。発売前の公演は個別ページに窓を出さず、
+            #   ビルドが base ページから正しく拾っていることがある（ハナレグミ・清春で実測）。
+            #   ただし黙って通さず、下で「注意」として必ず表示する。
+            if len(live) > len(ts):
                 bad.append({
                     "id": e["id"], "artist": e.get("artist"), "url": u,
                     "page": len(live), "built": len(ts),
@@ -104,6 +109,8 @@ def main():
                     "built_slots": [t.get("type") for t in ts],
                 })
 
+            elif len(live) < len(ts):
+                note.append((e["id"], e.get("artist"), u, len(live), len(ts)))
     # ---- B: 公演の取りこぼし ----
     if not a.no_shows:
         for e in entries:
@@ -133,6 +140,11 @@ def main():
                 sh = cache[su]
                 if not sh:
                     continue
+                # 🚨2026-08-31＝**買える枠が1つも無い公演は指摘しない**。
+                #   載せないのが正しい（清春 9/16 BLAZE GOTANDA＝窓ゼロ）。
+                #   ここを外さないと、正しいビルドを毎回 FAIL で止め続ける＝番人が信用されなくなる。
+                if not [w for w in eh.parse_windows(sh) if w["ed"] >= TODAY]:
+                    continue
                 for sev in eh.parse_ld(sh):
                     if (sev.get("name") or "").strip() == name:
                         extra.append((sev.get("date"), sev.get("venue"), su))
@@ -150,6 +162,12 @@ def main():
         print("\n⚠️ 読めなかったもの %d件（判定不能＝投入しない）:" % len(unread))
         for x in unread[:20]:
             print("   id%-6s %-24s %s" % (x[0], (x[1] or "")[:22], x[2]))
+    if note:
+        print()
+        print("[NOTE] 注意（FAILにはしない）＝実ページの枠 < ビルドの枠 %d件:" % len(note))
+        print("   発売前の公演は個別ページに窓を出さないことがある。ビルドはbaseページから拾っている。")
+        for x in note:
+            print("   id%-6s %-24s 実ページ%d枠 / ビルド%d枠  %s" % (x[0], (x[1] or "")[:22], x[3], x[4], x[2]))
     if bad:
         print("\n🚨 A 枠数が合わない %d件（**投入しない**）:" % len(bad))
         for b in bad:
