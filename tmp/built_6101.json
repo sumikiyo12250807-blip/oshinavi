@@ -1,0 +1,35 @@
+[
+ {
+  "id": 6101,
+  "artist": "角座でジョニーvol.8",
+  "name": "角座でジョニーvol.8",
+  "date": "2026-09-27",
+  "dateLabel": "2026年9月27日(日) 大阪 心斎橋角座",
+  "venue": "心斎橋角座",
+  "prefecture": "大阪",
+  "genre": "new",
+  "_genre": "owarai",
+  "_extraGenres": [],
+  "_piaSub": "演劇/寄席・お笑い",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2633947",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "先行（大阪 9/27公演）〜9/6 23:59",
+    "date": "2026-09-06"
+   },
+   {
+    "type": "一般発売（大阪 9/27公演）9/12 12:00発売",
+    "date": "2026-09-12",
+    "startDate": "2026-09-12"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-01"
+ }
+]
