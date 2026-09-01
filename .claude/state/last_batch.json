@@ -253,6 +253,17 @@
       "assigned": false,
       "rechecked": false,
       "note": "🚨ユーザー指示で運用変更＝**確認用の表は作らず、普通に新着へ投入して画面で見てもらう**（memory: feedback_check_on_oshinavi_not_tables）。ゲート＝gate_eplus_slots ✅PASS（実ページ79枠/ビルド80枠・公演の取りこぼし0）。投入後 reconcile_eplus で FAIL5件→3エントリを実ページで確認し、6044は誤検知（発売前の公演は-Pページに窓を出さない）、6061/6067の3枠は**Streaming+の配信枠で県が空欄のまま「（ 11/22公演）」と出ていた**ので【動画配信】表記に修正。振り分けはユーザーの確認後。"
+    },
+    {
+      "date": "2026-09-02",
+      "slot": "morning",
+      "id_from": 6270,
+      "id_to": 6356,
+      "count": 70,
+      "source": "ぴあ 発売前 rlsStatus=0102(先着)＋0202(抽選) を7ジャンル総ざらい",
+      "assigned": false,
+      "rechecked": false,
+      "note": "今日の流入＝未掲載174件（URL重複除去後）。内訳＝同名既存71（統合行き・未処理）／本日発売12（隠れ枠になるので除外）／発売日が取れない4（保留）／本当に新規87。87件をビルドして全件成立(skip 0・114枠)。🚨緩い部分一致で既存とぶつかった17件は投入せず保留し、別エージェントに「同じツアーか別物か」を実ページで調べさせた（tmp/hold_ids_0902.txt）。残り70件（91枠）を投入。投入前ゲート＝dupcheck_built 名前一致0・eventCd一致0／check_badges OK／check_order 違反0／CRLF bare-LF 0。reconcile --new＝OK70・MISSING/DROP/STALE/FETCH/QC 全0・QCカバレッジ89/91。翌朝(9/3)に①独立再照合②別エージェントの客観チェック→振り分け。"
     }
   ]
 }

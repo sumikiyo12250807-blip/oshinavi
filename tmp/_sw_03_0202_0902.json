@@ -1,0 +1,29 @@
+{
+ "lg": "03",
+ "base_filter": "rlsStatus=0202",
+ "base_total": null,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0202",
+   "label": "ALL",
+   "total": null,
+   "parsed": 5,
+   "pages": 0,
+   "fetched_pages": 2,
+   "new": 1
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670767",
+   "artist": "明治神宮外苑創建百年記念奉納試合",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/11/14(土)",
+   "venue": "神宮球場(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}

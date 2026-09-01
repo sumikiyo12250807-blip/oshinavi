@@ -1,0 +1,139 @@
+{
+ "lg": "03",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 63,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 63,
+   "parsed": 47,
+   "pages": 7,
+   "fetched_pages": 8,
+   "new": 11
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670786",
+   "artist": "カシオワールドオープンゴルフトーナメント2026",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/11/26(木) ～ 2026/11/29(日)",
+   "venue": "Ｋｏｃｈｉ黒潮カントリークラブ(高知県)",
+   "pref": "高知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633301",
+   "artist": "カマタマーレ讃岐対ＦＣ岐阜 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "四国化成ＭＥＧＬＩＯスタジアム(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633038",
+   "artist": "東海学生アメリカンフットボール連盟秋季リーグ戦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/5(土) ～ 2026/12/12(土)",
+   "venue": "四日市ドーム／他(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634151",
+   "artist": "東京ヤクルトスワローズ対ハヤテベンチャーズ静岡 ファーム・リーグ公式戦",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/9/21(月・祝) ・ 2026/9/22(火・祝) ・ 2026/9/23(水・祝)",
+   "venue": "ヤクルト戸田球場(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633576",
+   "artist": "栃木ＳＣ対松本山雅ＦＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/9/26(土)",
+   "venue": "カンセキスタジアムとちぎ(栃木県)",
+   "pref": "栃木県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670619",
+   "artist": "令和8年冬巡業 大相撲長崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/12/3(木)",
+   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670799",
+   "artist": "2026年 プロ野球ファーム日本選手権",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/10/3(土) ・ 2026/10/4(日)",
+   "venue": "しずてつスタジアム草薙(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635014",
+   "artist": "プロレスリングＢＡＳＡＲＡ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/11",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "高島平区民館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634000",
+   "artist": "マリーゴールド",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/11/8(日)",
+   "venue": "Ｄｕｏ ＣＥＲＥＺＯ(新潟県)",
+   "pref": "新潟県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635151",
+   "artist": "ＲＩＳＥ２０２",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/6",
+   "perfdate": "2026/10/17(土)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633926",
+   "artist": "乱丸フェスタ ４５回記念大会",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/3",
+   "perfdate": "2026/11/1(日)",
+   "venue": "１７６ＢＯＸ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
