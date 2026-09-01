@@ -1,0 +1,40 @@
+{
+ "lg": "05",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 29,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 29,
+   "parsed": 28,
+   "pages": 3,
+   "fetched_pages": 4,
+   "new": 2
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633768",
+   "artist": "カイ・フランク展 時代を超えるフィンランド・デザイン",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/9",
+   "perfdate": "2026/11/3(火・祝) ～ 2026/12/20(日)",
+   "venue": "美術館「えき」ＫＹＯＴＯ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670464",
+   "artist": "Hello Kitty展 -わたしが変わるとキティも変わる-",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/17",
+   "perfdate": "2026/10/17(土) ～ 2027/1/11(月・祝)",
+   "venue": "長崎県美術館 企画展示室(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
