@@ -1,0 +1,42 @@
+=== reconcile_eplus (today=2026-09-02) 対象265エントリ / e+チケット378枠 ===
+🚨 FAIL 20件（この枠だけ実ページで見直す）:
+  id5992 t15 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/2672360001-P0030099P021001
+  id5994 t0 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=18:00)
+        https://eplus.jp/sf/detail/4593650001-P0030001P021001
+  id5994 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=18:00)
+        https://eplus.jp/sf/detail/4593660001-P0030001P021001
+  id5996 t0 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=16:00)
+        https://eplus.jp/sf/detail/2933580002-P0030039P021001
+  id5996 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=16:00)
+        https://eplus.jp/sf/detail/2933580002-P0030039P021002
+  id5996 t2 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=18:00)
+        https://eplus.jp/sf/detail/2933580002-P0030038P021001
+  id5996 t3 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=19:00)
+        https://eplus.jp/sf/detail/2933580002-P0030039P021003
+  id5996 t4 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=19:00)
+        https://eplus.jp/sf/detail/2933580002-P0030039P021004
+  id5996 t5 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=21:00)
+        https://eplus.jp/sf/detail/2933580002-P0030038P021002
+  id5996 t6 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=18:00)
+        https://eplus.jp/sf/detail/2933580002-P0030040P021001
+  id5996 t7 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=21:00)
+        https://eplus.jp/sf/detail/2933580002-P0030040P021002
+  id6012 t0 [b-発売時刻ズレ] badge発売 10:00 != 実 13:00
+        https://eplus.jp/sf/detail/4575460001-P0030001P021001
+  id6013 t0 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=17:30)
+        https://eplus.jp/sf/detail/3489640001-P0030015P021001
+  id6013 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=20:00)
+        https://eplus.jp/sf/detail/3489640001-P0030015P021002
+  id6014 t0 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=16:00)
+        https://eplus.jp/sf/detail/2826230002-P0030043P021001
+  id6014 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=19:00)
+        https://eplus.jp/sf/detail/2826230002-P0030043P021002
+  id6019 t0 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=16:30)
+        https://eplus.jp/sf/detail/4581860001-P0030001P021001
+  id6019 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=20:00)
+        https://eplus.jp/sf/detail/4581860001-P0030001P021002
+  id6044 t0 [b-発売日ズレ] 発売日2026-09-02のbefore窓が実頁に無い
+        https://eplus.jp/sf/detail/4306490002-P0030002P021001
+  id6190 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4572850001-P0030002P021001

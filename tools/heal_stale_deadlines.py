@@ -56,6 +56,24 @@ def perf_key(type_):
     return m.group(1).strip() if m else (type_ or '').strip()
 
 
+def visible_slot(t, today):
+    """index.html の表示ルールと同じ判定＝「画面にバッジとして出る枠か」。
+    売り切れ・売り切れまで販売は常に表示。それ以外は締切が今日以降か、発売日がまだ先のもの。
+    （出典 feedback_heal_flattens_ticket_types）"""
+    if t.get('saleUntilSoldOut') or t.get('soldout'):
+        return True
+    sd, d = t.get('startDate'), (t.get('date') or '')
+    return not ((not sd or sd <= today) and d < today)
+
+
+def slot_key(t):
+    """🚨2026-09-02 追加。安全弁の比較キー＝「券種の基底名＋飛び先URL」。
+    perf_key は同じ公演の券種違いを「兵庫 9/17公演」1つに潰すので、
+    id3853 阪神×広島の12枠→1枠（券種ごとに別 eventCd）を検知できなかった。
+    公演で畳まず、券種と売り場で見る。（feedback_heal_flattens_ticket_types）"""
+    return (base_type(t.get('type')), (t.get('url') or '').strip())
+
+
 def carry_start_dates(old_tickets, new_tickets):
     """ヒール前の隠れ枠が持っていた「発売開始日」を、ヒール後の枠に引き継ぐ。
 
@@ -145,6 +163,19 @@ def main():
             lost = live_old - live_new
             if lost and not FORCE:
                 blocked.append((e['id'], e.get('artist', ''), sorted(lost)))
+                continue
+            # 🚨🚨【2026-09-02 追加の第2段】上の安全弁は perf_key＝公演単位でしか見ないので、
+            #    「同じ公演の券種違いが丸ごと消える」型を素通りさせる（id3853 阪神×広島 12枠→1枠）。
+            #    こちらは券種の基底名＋飛び先URLで、しかも「画面に出ている枠」で比べる。
+            #    非ぴあ枠は下の keep で据え置かれるので比較から外す。
+            vis_old = {slot_key(t) for t in (e.get('tickets') or [])
+                       if visible_slot(t, today)
+                       and (not (t.get('url') or '') or 'pia.jp' in (t.get('url') or ''))}
+            vis_new = {slot_key(t) for t in o['tickets'] if visible_slot(t, today)}
+            lost_slots = vis_old - vis_new
+            if lost_slots and not FORCE:
+                blocked.append((e['id'], e.get('artist', ''),
+                                sorted(f'{k[0]}' for k in lost_slots)))
                 continue
             carried += carry_start_dates(e.get('tickets'), o['tickets'])
             # 🚨 build() はぴあ枠しか作らない。素直に置換すると e+/楽天/ローチケの枠が消える

@@ -70,7 +70,11 @@ for it in items:
     m_url = re.search(r'href="(https://t\.pia\.jp/pia/ticketInformation\.do\?[^"]+)"', it)
     m_title = re.search(r'__title">(.*?)</p>', it, re.S)
     m_place = re.search(r'__place"[^>]*>(.*?)</span>', it, re.S)
-    m_region = re.search(r'__region">(.*?)</span>', it, re.S)
+    # 🚨2026-09-02修正：広域カード（複数県のツアー）は __region に itemprop 等の属性が付き、
+    #   `__region">` 決め打ちだと県が空欄になる（id6096 レミオロメン・id6113 新春!特撰落語会で実害）。
+    #   build_pia_entries は別の経路で正しく取れていたので登録データは無事だったが、
+    #   検証でこのツールを使うと「県が無い」と誤って読める。__place と同じ形にそろえる。
+    m_region = re.search(r'__region"[^>]*>(.*?)</span>', it, re.S)
     _dts = re.findall(r'datetime="(\d{4}-\d{2}-\d{2})', it)
     perf_start = _dts[0] if _dts else ''
     perf_end = _dts[-1] if _dts else ''
