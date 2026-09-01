@@ -117,6 +117,13 @@ def main():
         rows = list(eplus_tickets(e))
         for ti, t, u in rows:
             n_tk += 1
+            # 🚨2026-09-02追加：締切が過ぎた枠は index.html の表示ルールで画面に出ない。
+            #   出ていない枠に「実頁に窓が無い」と鳴っても直しようがない（=ノイズ）。
+            #   売り切れ/販売終了/売り切れまで販売は画面に出続けるので、ここでは外さない。
+            _d = t.get('date') or ''
+            if _d and _d < TODAY.isoformat() and not (t.get('soldout') or t.get('saleEnded')
+                                          or t.get('saleUntilSoldOut')):
+                continue
             if u not in cache:
                 try:
                     cache[u] = fetch(u)
@@ -132,7 +139,7 @@ def main():
             tp, tmd, ttime = parse_type(t.get('type', ''))
             # 配信(視聴券)は会場公演ではないので「同日複数公演＝昼夜」の集計(h)から外す
             if '配信' not in (t.get('type', '') or '') and '視聴券' not in (t.get('type', '') or ''):
-                ld_dates.append((L['date'], u))
+                ld_dates.append((L['date'], u, L.get('venue') or '', L.get('time') or ''))
             # (f) 公演日
             if tmd and L['date']:
                 lm, ld_ = int(L['date'][5:7]), int(L['date'][8:10])
@@ -171,9 +178,17 @@ def main():
                 elif all(b['status'] == 'ended' for b in same):
                     fails.append((e['id'], ti, 'c-死枠', f'発売日{sd}の窓が受付終了/予定枚数終了', u))
                 else:
-                    W = same[0]
+                    # 🚨2026-09-02追加：同じ発売日で窓が複数ある型がある。
+                    #   id6067 二見颯一&青山新の配信頁＝「【動画配信】〜11/22 16:00」と
+                    #   「【動画配信】【アーカイブ】〜11/28 22:00」が同じ 9/14 11:00 発売。
+                    #   same[0] 決め打ちだと後者を必ず「締切ズレ」と誤報した。
+                    #   登録の締切と一致する窓があればそれが自分の窓。
+                    #   どの窓とも一致しなければ従来どおり FAIL（表示ズレは必ず検出する）。
+                    _m = [b for b in same if b['ed'].isoformat() == (t.get('date') or '')]
+                    W = _m[0] if _m else same[0]
                     if t.get('date') and t['date'] != W['ed'].isoformat():
-                        fails.append((e['id'], ti, 'b-締切ズレ', f"date {t['date']} != 実 {W['ed']}", u))
+                        eds = ','.join(b['ed'].isoformat() for b in same)
+                        fails.append((e['id'], ti, 'b-締切ズレ', f"date {t['date']} != 実 [{eds}]", u))
                     if bdl and bdl[0] == 'sale' and bdl[1] and hm(bdl[1]) != hm(W['st']):
                         fails.append((e['id'], ti, 'b-発売時刻ズレ', f"badge発売 {bdl[1]} != 実 {W['st']}", u))
             else:    # 受付中（open窓＝真値。storedのedがopen窓と一致するか＋締切時刻を照合）
@@ -196,9 +211,13 @@ def main():
                         fails.append((e['id'], ti, 'b-締切ズレ', f"date {t.get('date')} != open窓ed[{eds}]", u))
         # (h) 同日複数公演の時刻。「同日で別URL(別公演)が2つ以上」の時だけ＝
         #     同URL(同一公演の別券種)は昼夜ではないので時刻を要求しない
+        #     🚨2026-09-02修正：「同日で別URLが2つ」だけだと、同じ公演のS席/A席が別URLに
+        #     分かれている型（id5994 マキナ＝どちらも 10/11 18:00）まで「時刻を入れろ」と鳴った。
+        #     時刻を入れるのは【同じ会場・同じ日に開演時刻が2種類以上ある】時だけ
+        #     （feedback_same_day_show_time_badge「こういう場合だけ」）。
         date_urls = {}
-        for d, uu in ld_dates:
-            date_urls.setdefault(d, set()).add(uu)
+        for d, uu, vn, tm in ld_dates:
+            date_urls.setdefault((d, vn), set()).add(tm)
         for ti, t, u in rows:
             if not cache.get(u):
                 continue
@@ -206,7 +225,8 @@ def main():
             if len(ld) != 1:
                 continue
             L = ld[0]
-            if len(date_urls.get(L['date'], set())) >= 2:   # 同日・別公演が2つ以上
+            _k = (L['date'], L.get('venue') or '')
+            if len(date_urls.get(_k, set())) >= 2:   # 同じ会場・同じ日に開演時刻が2種類以上
                 _, _, ttime = parse_type(t.get('type', ''))
                 if L['time'] and ttime and ttime != L['time']:
                     fails.append((e['id'], ti, 'h-時刻', f'type時刻{ttime} != LD{L["time"]}', u))

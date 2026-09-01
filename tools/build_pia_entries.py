@@ -457,7 +457,9 @@ def parse_when(state, when):
 def genre_of(n):
     """名前ベースのジャンル推測（bundleページ等でぴあカテゴリが取れない時のフォールバック）。"""
     if re.search(r'落語|寄席|独演会|二人会|お笑い|漫才|ものまね|コント|新喜劇|喜劇|講談|演芸', n): return 'owarai'
-    if re.search(r'狂言|能楽|文楽|歌舞伎|雅楽|邦楽', n): return 'dento'
+    # 舞台（演じるのを観る）と音楽（演奏を聴く）で行き先が違う＝2026-09-01の分割
+    if re.search(r'狂言|能楽|文楽|歌舞伎|日本舞踊|をどり|神楽|薪能', n): return 'dento'
+    if re.search(r'雅楽|邦楽|和太鼓|三味線|尺八|箏曲|和楽器', n): return 'hougaku'
     if re.search(r'バレエ|オペラ|クラシック|交響|管弦|フィル', n): return 'classic'
     if re.search(r'ミュージカル', n): return 'musical'
     return 'engeki'
@@ -617,10 +619,27 @@ HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|�
                        r'|taiko|shamisen|shakuhachi|gagaku|wagakki|biwa')
 def _hogaku(name):
     return bool(HOGAKU_RE.search(unicodedata.normalize('NFKC', name or '').lower()))
+
+# 🚨2026-09-02 追加：2026-09-01 に「伝統」を音楽側(hougaku)と舞台側(dento)に分けたのに、
+#   この対応表は dento のままだった＝「藝大定期邦楽 第92回」(id6159・ぴあ区分は
+#   クラシック/クラシック邦楽) が舞台側に落ちていた。
+#   線の引き方＝**演じるのを観る＝dento／演奏を聴く＝hougaku**（feedback_dento_split_music_stage）。
+#   HOGAKU_RE には能楽・浄瑠璃など舞台側の語も混ざっているので、**舞台側を先に判定する**。
+DENTO_STAGE_RE = re.compile(r'歌舞伎|能楽|能舞台|薪能|狂言|文楽|人形浄瑠璃|浄瑠璃|義太夫'
+                            r'|日本舞踊|をどり|神楽|声明')
+def _dento_stage(name):
+    return bool(DENTO_STAGE_RE.search(unicodedata.normalize('NFKC', name or '')))
 def genre_from_subcat(cat, sub, name=''):
     """ (カテゴリ,サブ,名前) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
-    if sub and '邦楽' in sub:   # 「演歌・邦楽」→ 和楽器系はdento、それ以外は演歌(enka)
-        return ('dento', None) if _hogaku(name) else ('enka', None)
+    if sub and '邦楽' in sub:
+        # 「演歌・邦楽」＝演歌と和楽器が同居／「クラシック邦楽」＝邦楽の演奏会。
+        # 舞台（歌舞伎・能・狂言…）→ dento／演奏（和太鼓・三味線・雅楽…）→ hougaku。
+        # どちらの語も無いときは、カテゴリ名で決める（演歌カテゴリなら enka）。
+        if _dento_stage(name):
+            return ('dento', None)
+        if _hogaku(name):
+            return ('hougaku', None)
+        return ('enka', None) if '演歌' in sub else ('hougaku', None)
     # 「祭り・花火大会」は花火大会と祭りが同居する1カテゴリ。名前に花火があれば hanabi、
     # 無ければ祭り＝屋外の複数組イベント＝fes（[[feedback_fes_definition]]）。2026-07-30追加。
     if sub and '花火' in sub:
@@ -938,14 +957,22 @@ def _selftest():
     # ③ 「本日発売初日」(is-beforeだが今日から販売中)は受付中扱いで終了日のみ「～7/23」を拾える
     suf, iso, sd = parse_when('受付中', '～ 2026/7/23(木) 23:59')
     assert iso == '2026-07-23' and sd is None, ('本日発売初日(受付中)', suf, iso, sd)
-    # ④ 「演歌・邦楽」カテゴリ: 和楽器名はdento、演歌歌手はenka(邦楽≠演歌・2026-06-23ユーザー指摘)
+    # ④ 「演歌・邦楽」カテゴリ: 和楽器名はhougaku、演歌歌手はenka(邦楽≠演歌・2026-06-23ユーザー指摘)
+    # 🚨2026-09-02 期待値を dento → hougaku に更新＝2026-09-01 に「伝統」を
+    #   音楽側(hougaku・演奏を聴く)と舞台側(dento・演じるのを観る)に分けたため。
+    #   歌舞伎・能・狂言など舞台側の語は引き続き dento（feedback_dento_split_music_stage）。
     assert genre_from_subcat('音楽', '演歌・邦楽', '徳永ゆうき') == ('enka', None)
-    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＯの夏フェス 和太鼓') == ('dento', None)
-    assert genre_from_subcat('音楽', '演歌・邦楽', '津軽三味線コンサート') == ('dento', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＯの夏フェス 和太鼓') == ('hougaku', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '津軽三味線コンサート') == ('hougaku', None)
     # 2026-07-31 追加＝ローマ字/全角のtaikoが漢字に当たらず enka に倒れていた（3523 神戸国際taiko音楽祭）
-    assert genre_from_subcat('音楽', '演歌・邦楽', '神戸国際taiko音楽祭2027') == ('dento', None)
-    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＩＫＯ ＦＥＳ') == ('dento', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '神戸国際taiko音楽祭2027') == ('hougaku', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＩＫＯ ＦＥＳ') == ('hougaku', None)
     assert genre_from_subcat('音楽', '演歌・邦楽', '氷川きよし特別公演') == ('enka', None)
+    # 舞台側は dento のまま／クラシック邦楽の演奏会は hougaku（id6159 藝大定期邦楽で発覚）
+    assert genre_from_subcat('音楽', '演歌・邦楽', '坂東玉三郎 日本舞踊の会') == ('dento', None)
+    assert genre_from_subcat('クラシック', 'クラシック邦楽', '藝大定期邦楽 第92回') == ('hougaku', None)
+    assert genre_from_subcat('クラシック', 'クラシック邦楽', '雅楽の夕べ') == ('hougaku', None)
+    assert genre_from_subcat('演劇', '歌舞伎・古典芸能', '錦秋十月大歌舞伎') == ('dento', None)
     # 🚨2026-08-26 ユーザー決定で「フェスティバル」を対応表に載せた＝**ぴあの言う通りにする**。
     # 旧テストは「人が最終判断するので None」だったが、その"人の判断"こそが毎回の迷いの元だった
     # （ユーザー「ぴあの言う通りでって決めてたはず／まえも言ったこと言ってる気がする」）。
@@ -1067,7 +1094,7 @@ def _selftest():
     _holes = [ (PIA_LG_LABEL[cd[:2]], nm) for cd, nm in PIA_GENRE_CD.items()
                if nm not in PIA_GENRE_MAP and PIA_LG_LABEL[cd[:2]] not in PIA_CAT_FALLBACK ]
     assert not _holes, '行き先の無いぴあサブカテゴリが残っている: %s' % (_holes,)
-    assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('dento', None)   # 既存分岐の非回帰
+    assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('hougaku', None)  # 和太鼓＝演奏を聴く側
     # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
     assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
     print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels/genre_map/amazon 回帰なし')
