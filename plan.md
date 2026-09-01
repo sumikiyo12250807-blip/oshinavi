@@ -8,6 +8,25 @@
 **状態＝index 4,185件・8,819枠／新着プール 265件（ぴあ103＋e+162）／
 push 2回消化（朝の便2回。夜の分がまだ1回残っている）／未pushコミット 0**
 
+### 🚨🚨 いちばん最初にやること＝**昼の隠れ枠ヒール（今日まだ済んでいない）＋push**
+
+18:10 に `--build` を回している途中で中断した（時間がかかるのでセッションを跨ぐことにした）。
+**`tmp/heal_stale.json` は朝7:05のまま＝作り直しが要る。**
+
+```
+python tools/heal_stale_deadlines.py --build     # 10〜20分かかる。背景で回してよい
+python tools/heal_stale_deadlines.py --apply
+node tools/check_order.js
+python tools/build_ai_page.py
+python tools/reconcile_pia.py --new
+node tools/check_zero_badge.js
+git push
+```
+理由＝ぴあは**発売時刻を過ぎてから締切を出す**。朝のヒールだけだと当日発売の枠が
+「本日発売」のまま締切なしで残る（memory: `feedback_harvest_today_sale_enddate`）。
+🚨**未pushコミットが1本ある**（X素材＋この引き継ぎ）。昼便のpushが飛んでいるので、
+ヒールを当ててから押すこと（memory: `feedback_push` / `feedback_noon_heal_missed_twice`）。
+
 ### 🌙 いますぐやること＝X投稿（20:01から予約）
 
 **素材はもう出来ている**＝📄 `tmp/x_material_0901.txt`
