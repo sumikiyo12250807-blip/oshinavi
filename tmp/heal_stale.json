@@ -8,6 +8,19 @@
   ]
  },
  {
+  "id": 413,
+  "status": "convert",
+  "artist": "桂文珍",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/29公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627160"
+   }
+  ]
+ },
+ {
   "id": 579,
   "status": "convert",
   "artist": "二見颯一",
@@ -42,6 +55,55 @@
   ]
  },
  {
+  "id": 591,
+  "status": "convert",
+  "artist": "小椋佳",
+  "tickets": [
+   {
+    "type": "一般発売（広島 12/6公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626005"
+   },
+   {
+    "type": "一般発売（愛媛 12/4公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627491"
+   },
+   {
+    "type": "一般発売（群馬 9/12公演）〜9/8 23:59",
+    "date": "2026-09-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617459"
+   },
+   {
+    "type": "一般発売（岡山 9/25公演）〜9/22 23:59",
+    "date": "2026-09-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625098"
+   },
+   {
+    "type": "一般発売（山口 10/10公演）〜10/9 23:59",
+    "date": "2026-10-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2613592"
+   },
+   {
+    "type": "一般発売（宮城・山形 10/21〜10/24公演）〜10/22 23:59",
+    "date": "2026-10-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2619749"
+   },
+   {
+    "type": "一般発売（神奈川 11/23公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620779"
+   },
+   {
+    "type": "一般発売（神奈川 12/20公演）〜12/16 23:59",
+    "date": "2026-12-16",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621964"
+   }
+  ]
+ },
+ {
   "id": 642,
   "status": "delete",
   "artist": "陰陽座",
@@ -50,15 +112,34 @@
   ]
  },
  {
+  "id": 660,
+  "status": "convert",
+  "artist": "加藤登紀子",
+  "tickets": [
+   {
+    "type": "一般発売（京都 12/20公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623800"
+   },
+   {
+    "type": "一般発売（大阪 12/27公演）10/23 10:00発売",
+    "date": "2026-10-23",
+    "startDate": "2026-10-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624972"
+   },
+   {
+    "type": "一般発売（静岡 11/29公演）〜11/25 23:59",
+    "date": "2026-11-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625716"
+   }
+  ]
+ },
+ {
   "id": 696,
   "status": "convert",
   "artist": "DRUM TAO",
   "tickets": [
-   {
-    "type": "先行（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島 12/5〜12/27公演）〜9/2 23:59",
-    "date": "2026-09-02",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633426"
-   },
    {
     "type": "一般発売（北海道 8/29〜9/7公演）〜9/5 23:59",
     "date": "2026-09-05",
@@ -131,9 +212,54 @@
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631355"
    },
    {
+    "type": "一般発売（鳥取・島根・岡山 11/17〜11/25公演）〜11/22 23:59",
+    "date": "2026-11-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624251"
+   },
+   {
     "type": "一般発売（山口 11/28公演）〜11/27 23:59",
     "date": "2026-11-27",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629588"
+   }
+  ]
+ },
+ {
+  "id": 734,
+  "status": "convert",
+  "artist": "福田こうへい",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/9公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629183"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/21公演）9/25 10:00発売",
+    "date": "2026-09-25",
+    "startDate": "2026-09-25",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631626"
+   },
+   {
+    "type": "一般発売（福島 10/3公演）〜9/30 23:59",
+    "date": "2026-09-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618732"
+   },
+   {
+    "type": "一般発売（福島 10/4公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618732"
+   },
+   {
+    "type": "一般発売（埼玉 12/7公演）〜12/2 23:59",
+    "date": "2026-12-02",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624994"
+   },
+   {
+    "type": "一般発売（大阪 R9年 2/3〜2/4公演）12/3 10:00発売",
+    "date": "2026-12-03",
+    "startDate": "2026-12-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627805"
    }
   ]
  },
@@ -146,6 +272,12 @@
     "type": "プリセール（沖縄 7/11公演）5/15 12:00発売",
     "date": "2026-05-15",
     "startDate": "2026-05-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618716"
+   },
+   {
+    "type": "一般発売（沖縄 7/11公演）5/23 10:00発売",
+    "date": "2026-05-23",
+    "startDate": "2026-05-23",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618716"
    },
    {
@@ -605,6 +737,34 @@
   ]
  },
  {
+  "id": 3370,
+  "status": "convert",
+  "artist": "ネパールの詩心～四季と祭り～",
+  "tickets": [
+   {
+    "type": "一般発売（千葉・神奈川 11/16〜11/24公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627028"
+   },
+   {
+    "type": "一般発売（静岡 11/18〜11/19公演）〜11/10 23:59",
+    "date": "2026-11-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630915"
+   },
+   {
+    "type": "一般発売（新潟 11/23公演）〜11/17 23:59",
+    "date": "2026-11-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630920"
+   },
+   {
+    "type": "一般発売（岐阜・愛知 11/20〜11/21公演）〜11/18 23:59",
+    "date": "2026-11-18",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628466"
+   }
+  ]
+ },
+ {
   "id": 3430,
   "status": "NO_PIA_URL",
   "artist": "榛葉樹人＆今井俊輔 コンサート in 仙台 Vol.4"
@@ -719,17 +879,6 @@
   ]
  },
  {
-  "id": 3571,
-  "status": "convert",
-  "artist": "HIRAETH",
-  "tickets": [
-   {
-    "type": "一般発売（東京 10/9公演）〜10/8 23:59",
-    "date": "2026-10-08"
-   }
-  ]
- },
- {
   "id": 3572,
   "status": "delete",
   "artist": "奥野真哉",
@@ -824,6 +973,18 @@
   ]
  },
  {
+  "id": 3735,
+  "status": "convert",
+  "artist": "パパイヤ鈴木の踊る昭和歌謡☆ディスコパラダイス!",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/4公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
   "id": 3739,
   "status": "delete",
   "artist": "SHIBUYA MUSIC CROSSOVER 2026 #7",
@@ -840,11 +1001,65 @@
   ]
  },
  {
+  "id": 3748,
+  "status": "convert",
+  "artist": "東京バレエ団「くるみ割り人形」仙台公演",
+  "tickets": [
+   {
+    "type": "一般発売（宮城 12/27公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 3752,
+  "status": "convert",
+  "artist": "爆笑ファンタジスタ!夢の競演!!",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/25公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
   "id": 3766,
   "status": "delete",
   "artist": "国立能楽堂 9月特別公演",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2631168"
+  ]
+ },
+ {
+  "id": 3770,
+  "status": "convert",
+  "artist": "オクサーナ・ステパニュック（S）",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/12公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627020"
+   },
+   {
+    "type": "一般発売（鳥取・島根・広島 11/28〜12/1公演）〜11/28 23:59",
+    "date": "2026-11-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625705"
+   }
+  ]
+ },
+ {
+  "id": 3771,
+  "status": "convert",
+  "artist": "東京佼成ウインドオーケストラファンタスティッククリスマス2026",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/22公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
   ]
  },
  {
@@ -916,14 +1131,10 @@
  },
  {
   "id": 3875,
-  "status": "convert",
+  "status": "delete",
   "artist": "ミュージカル「タイムトラベラーズ・ワイフ」",
-  "tickets": [
-   {
-    "type": "追加席発売（東京 9/5〜9/24公演）9/2 20:00発売",
-    "date": "2026-09-02",
-    "startDate": "2026-09-02"
-   }
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670261"
   ]
  },
  {
@@ -1022,11 +1233,6 @@
   "status": "convert",
   "artist": "矢野顕子",
   "tickets": [
-   {
-    "type": "先行【CANDY ROOM】（岡山・広島 11/24〜11/26公演）〜9/2 23:59",
-    "date": "2026-09-02",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628955"
-   },
    {
     "type": "プレリザーブ（岡山・広島 11/24〜11/26公演）〜9/3 11:00",
     "date": "2026-09-03",
@@ -1135,6 +1341,18 @@
   ]
  },
  {
+  "id": 4280,
+  "status": "convert",
+  "artist": "渋谷で毎月落語会「白鳥・彦いち・白酒三人会」",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/3公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
   "id": 4319,
   "status": "delete",
   "artist": "ハロー【一花】イチハナ～一之輔相談室～",
@@ -1156,8 +1374,14 @@
   "artist": "ENPLEX × Hello! Project 名古屋定期イベント",
   "tickets": [
    {
-    "type": "一般発売（愛知 9/7公演）〜9/6 23:59",
-    "date": "2026-09-06"
+    "type": "一般発売（愛知 5/25公演）5/16 13:00発売",
+    "date": "2026-05-16",
+    "startDate": "2026-05-16"
+   },
+   {
+    "type": "当日券（愛知 5/25公演）5/25 0:00発売",
+    "date": "2026-05-25",
+    "startDate": "2026-05-25"
    },
    {
     "type": "一般発売（愛知 10/9公演）9/26 13:00発売",
@@ -1322,6 +1546,35 @@
   ]
  },
  {
+  "id": 5234,
+  "status": "convert",
+  "artist": "Krush.192",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/26公演）9/3 12:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 5235,
+  "status": "convert",
+  "artist": "日活ロマンポルノ55周年記念「艶笑夜噺 古今東西 2026」",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/5公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【動画配信】（全国 11/5〜11/12公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
   "id": 5239,
   "status": "delete",
   "artist": "『東京リベンジャーズ』三天戦争編放送直前威弁斗～聞こえるか?時代の足音が!～",
@@ -1346,6 +1599,30 @@
   ]
  },
  {
+  "id": 5516,
+  "status": "convert",
+  "artist": "2026 Golden Moon Concert in Tokyo <By your side>",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/6公演）9/3 19:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 5517,
+  "status": "convert",
+  "artist": "松島トモ子 おしゃべりと歌で綴るコンサートVol.22",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/6公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
   "id": 5579,
   "status": "delete",
   "artist": "映画『白鳥とコウモリ』舞台挨拶",
@@ -1359,13 +1636,112 @@
   "artist": "実写映画『ルックバック』舞台挨拶",
   "tickets": [
    {
-    "type": "先行（東京 9/13公演）〜9/2 23:59",
-    "date": "2026-09-02"
-   },
-   {
     "type": "一般発売（東京 9/13公演）9/4 10:00発売",
     "date": "2026-09-04",
     "startDate": "2026-09-04"
+   }
+  ]
+ },
+ {
+  "id": 5641,
+  "status": "convert",
+  "artist": "『5秒で完全犯罪を生成する方法』公開記念舞台挨拶／前夜祭",
+  "tickets": [
+   {
+    "type": "一般発売（東京 9/10公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売（東京 9/11公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【チネチッタ】（神奈川 9/11公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【横浜ブルク13】（神奈川 9/11公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【あべのアポロシネマ】（大阪 9/12公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【TOHOシネマズ梅田】（大阪 9/12公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【大阪ステーションシティシネマ】（大阪 9/12公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 5650,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 #45 すみだクラシックへの扉",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 1/29〜1/30公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "poco会員限定先行販売（S席ランチプラン）（東京 R9年 1/29〜1/30公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売【S席※ランチチケット付】（東京 R9年 1/29〜1/30公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/29〜1/30公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5651,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 第674回定期演奏会〈トリフォニーホール・シリーズ〉",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 1/24公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/24公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5652,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 第675回定期演奏会〈トリフォニーホール・シリーズ〉",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 2/21公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売（東京 R9年 2/21公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
    }
   ]
  },
@@ -1387,6 +1763,303 @@
   "artist": "フォーレ四重奏団 第2夜",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2625007"
+  ]
+ },
+ {
+  "id": 5709,
+  "status": "convert",
+  "artist": "APF EXE MACHO MACHO CUP 2026",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 10/3公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 5725,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売【サントリーホール・シリーズ】（東京 R9年 1/23公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630145"
+   },
+   {
+    "type": "poco会員限定先行販売【サントリーホール・シリーズ】（東京 R9年 2/20公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630153"
+   },
+   {
+    "type": "poco会員限定プレイガイド最速先行【サントリーホール・シリーズ】（東京 R9年 1/23公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630145"
+   },
+   {
+    "type": "poco会員限定プレイガイド最速先行【サントリーホール・シリーズ】（東京 R9年 2/20公演）〜9/4 23:59",
+    "date": "2026-09-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630153"
+   },
+   {
+    "type": "一般発売【サントリーホール・シリーズ】（東京 R9年 1/23公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630145"
+   },
+   {
+    "type": "一般発売【サントリーホール・シリーズ】（東京 R9年 2/20公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630153"
+   },
+   {
+    "type": "一般発売【S席※ランチチケット付】（東京 9/11〜9/12公演）〜9/5 23:59",
+    "date": "2026-09-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617901"
+   },
+   {
+    "type": "一般発売（東京 9/11〜9/12公演）〜9/9 23:59",
+    "date": "2026-09-09",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617901"
+   },
+   {
+    "type": "一般発売【サントリーホール・シリーズ】（東京 9/25公演）〜9/22 23:59",
+    "date": "2026-09-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617832"
+   },
+   {
+    "type": "一般発売【トリフォニーホール・シリーズ】（東京 9/26公演）〜9/23 23:59",
+    "date": "2026-09-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617496"
+   },
+   {
+    "type": "一般発売【トリフォニーホール・シリーズ】（東京 10/17公演）〜10/14 23:59",
+    "date": "2026-10-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617501"
+   },
+   {
+    "type": "一般発売【サントリーホール・シリーズ】（東京 10/18公演）〜10/15 23:59",
+    "date": "2026-10-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617833"
+   },
+   {
+    "type": "一般発売【S席※ランチチケット付】（東京 10/23〜10/24公演）〜10/17 23:59",
+    "date": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617903"
+   },
+   {
+    "type": "一般発売（東京 10/23〜10/24公演）〜10/21 23:59",
+    "date": "2026-10-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617903"
+   },
+   {
+    "type": "一般発売【テーマ:ドイツ】（埼玉 10/25公演）〜10/22 23:59",
+    "date": "2026-10-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617923"
+   },
+   {
+    "type": "一般発売（東京 11/13〜11/14公演）〜11/11 23:59",
+    "date": "2026-11-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617905"
+   },
+   {
+    "type": "一般発売【テーマ:ロシア】（埼玉 R9年 1/31公演）〜1/28 23:59",
+    "date": "2027-01-28",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617927"
+   }
+  ]
+ },
+ {
+  "id": 5757,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 第674回定期演奏会〈サントリーホール・シリーズ〉",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 1/23公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "poco会員限定プレイガイド最速先行（東京 R9年 1/23公演）〜9/4 23:59",
+    "date": "2026-09-04"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/23公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5758,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 第675回定期演奏会〈サントリーホール・シリーズ〉",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 2/20公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "poco会員限定プレイガイド最速先行（東京 R9年 2/20公演）〜9/4 23:59",
+    "date": "2026-09-04"
+   },
+   {
+    "type": "一般発売（東京 R9年 2/20公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5759,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 特別演奏会 『スイート・バレンタイン・コンサート』―愛の物語を、音楽とバレエとともに―",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 2/14公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売（東京 R9年 2/14公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5760,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 特別演奏会 DS presents 崔 文洙 協奏曲の夕べ ～ドイツ3B～",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 2/5公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売（東京 R9年 2/5公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 5761,
+  "status": "convert",
+  "artist": "新日本フィルハーモニー交響楽団 特別演奏会 DS presents 名曲で巡る栗原壱成の世界 Vol.1 ―ついにベールを脱ぐ、“熟成”のメンデルスゾーンー",
+  "tickets": [
+   {
+    "type": "poco会員限定先行販売（東京 R9年 1/8公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/8公演）9/5 10:00発売",
+    "date": "2026-09-05",
+    "startDate": "2026-09-05"
+   }
+  ]
+ },
+ {
+  "id": 6028,
+  "status": "convert",
+  "artist": "第9回 隅田川わたし 毎月連続落語勉強会",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/21公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6029,
+  "status": "convert",
+  "artist": "第三回 柳家小もん独演会 真打に向かって 火事息子ネタ下ろし他",
+  "tickets": [
+   {
+    "type": "一般発売（東京 R9年 1/23公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6030,
+  "status": "convert",
+  "artist": "第10回 隅田川わたし 毎月連続落語勉強会",
+  "tickets": [
+   {
+    "type": "一般発売（東京 12/19公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6139,
+  "status": "convert",
+  "artist": "2026年 プロ野球ファーム日本選手権",
+  "tickets": [
+   {
+    "type": "一般発売（静岡 10/3〜10/4公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6142,
+  "status": "convert",
+  "artist": "レノファ山口FC対ギラヴァンツ北九州 明治安田J3リーグ",
+  "tickets": [
+   {
+    "type": "一般発売（山口 10/31公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6143,
+  "status": "convert",
+  "artist": "レノファ山口FC対高知ユナイテッドSC 明治安田J3リーグ",
+  "tickets": [
+   {
+    "type": "一般発売（山口 10/18公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6324,
+  "status": "convert",
+  "artist": "乱丸フェスタ 45回記念大会",
+  "tickets": [
+   {
+    "type": "一般発売（大阪 11/1公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
+  ]
+ },
+ {
+  "id": 6353,
+  "status": "convert",
+  "artist": "富田 泰子 ソプラノリサイタル",
+  "tickets": [
+   {
+    "type": "一般発売（東京 11/29公演）9/3 10:00発売",
+    "date": "2026-09-03",
+    "startDate": "2026-09-03"
+   }
   ]
  }
 ]

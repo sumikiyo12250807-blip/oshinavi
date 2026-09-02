@@ -1,0 +1,205 @@
+{
+ "lg": "06",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 127,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 127,
+   "parsed": 111,
+   "pages": 13,
+   "fetched_pages": 14,
+   "new": 17
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634270",
+   "artist": "青島ナイトアップ（神聖なる本島体験）チケット",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/18(金) ～ 2026/11/29(日)",
+   "venue": "青島神社(宮崎県)",
+   "pref": "宮崎県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635345",
+   "artist": "ａｃｏｓｔａ！＠カンテレ×天神橋筋商店街 Ｖｏｌ．５",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/11/28(土) ・ 2026/11/29(日)",
+   "venue": "天神橋筋商店街／カンテレ扇町スクエア／扇町公園(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633380",
+   "artist": "ＢＥＲＩＴＡ ｐｒｅｓｅｎｔｓ ＩＳＯＧＡＩ花火劇場in名古屋港",
+   "saletype": "一般発売",
+   "rlsdate": "2026/11/28",
+   "perfdate": "2026/12/26(土)",
+   "venue": "名古屋港ガーデンふ頭(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670797",
+   "artist": "映画名探偵プリキュア！ × TOWER RECORDS CAFE＜中目黒店＞／9月18日(金)～10月2日(金)開催分",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/18(金) ～ 2026/9/21(月・祝)",
+   "venue": "ＴＯＷＥＲ ＲＥＣＯＲＤＳ ＣＡＦＥ 中目黒店(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563199",
+   "artist": "「おとうさんといっしょ」レオてつコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/24",
+   "perfdate": "2027/1/16(土)",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624255",
+   "artist": "佐久間宣行ＰＲＥＳＥＮＴＳ 「五感爆発！－食もライブ！舞台もライブ！－」",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/9/6(日)",
+   "venue": "石川県小松市團十郎芸術劇場うらら 大ホール(石川県)",
+   "pref": "石川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627791",
+   "artist": "ＳＩＮＯＮ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2027/1/24(日)",
+   "venue": "刈谷市総合文化センター アイリス 小ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632836",
+   "artist": "しまじろうコンサート ～しまじろうとおかしのくにのハッピーパーティー～",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/12/19(土)",
+   "venue": "近江八幡市文化会館 大ホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670179",
+   "artist": "『禅とジブリ』京都展",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2026/10/3(土) ～ 2026/12/6(日)",
+   "venue": "京都市京セラ美術館 新館 東山キューブ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628304",
+   "artist": "筑後ＳＡＫＥフェスタ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土) ～ 2026/10/11(日)",
+   "venue": "久留米シティプラザ 六角堂広場(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635257",
+   "artist": "天下統一 ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/20(日)",
+   "venue": "富士スピードウェイ(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670080",
+   "artist": "特別展「生きものたちの性」",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/31",
+   "perfdate": "2026/10/31(土) ～ 2027/2/21(日)",
+   "venue": "国立科学博物館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634609",
+   "artist": "中島颯太トークショー",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/10/24(土)",
+   "venue": "倉敷芸術科学大学 体育館(岡山県)",
+   "pref": "岡山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631913",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/10/31(土)",
+   "venue": "兵庫県立大学姫路工学キャンパス 体育館(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626845",
+   "artist": "マルシィ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/24",
+   "perfdate": "2026/10/27(火)",
+   "venue": "Ｚｅｐｐ Ｆｕｋｕｏｋａ(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634245",
+   "artist": "Ｒｅｍｅｍｂｅｒ ＫＩＮＴＥＴＳＵ Ｂｕｆｆａｌｏｅｓ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/6",
+   "perfdate": "2026/10/18(日)",
+   "venue": "アイセルシュラホール(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635178",
+   "artist": "令和８年度高山やぶさめ祭花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/17(土)",
+   "venue": "高山川河川敷(鹿児島県)",
+   "pref": "鹿児島県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
