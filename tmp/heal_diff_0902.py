@@ -8,7 +8,7 @@
 import re, json, sys, subprocess
 sys.stdout.reconfigure(encoding='utf-8')
 TODAY = '2026-09-02'
-BEFORE = 'index.html.bak_0902_noon_pre'   # heal --apply が取ったバックアップ
+BEFORE = 'index.html.bak_0902_eve_pre'   # heal --apply が取ったバックアップ
 
 
 def load(path):

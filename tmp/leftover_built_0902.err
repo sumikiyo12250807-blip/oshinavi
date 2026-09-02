@@ -1,0 +1,66 @@
+  6357 OK
+  6358 skip(売切)
+  6359 OK
+  6360 skip(売切)
+  6361 skip(売切)
+  6362 skip(売切)
+  6363 skip(売切)
+  6364 OK
+  6365 OK
+  6366 OK
+  6367 OK
+  6368 skip(売切)
+  6369 OK
+  6370 skip(売切)
+  6371 OK
+  6372 skip(売切)
+  6373 OK
+  6374 OK
+  6375 skip(売切)
+  6376 skip(売切)
+  6377 skip(売切)
+  6378 OK
+  6379 skip(売切)
+  6380 skip(売切)
+  6381 skip(売切)
+  6382 OK
+  6383 OK
+  6384 OK
+  6385 skip(売切)
+  6386 skip(売切)
+  6388 OK
+  6389 skip(売切)
+  6390 skip(売切)
+  6391 OK
+  6392 skip(売切)
+  6393 OK
+  6394 OK
+  6395 skip(売切)
+  6396 OK
+  6397 OK
+  6398 skip(売切)
+  6399 skip(売切)
+  6400 skip(売切)
+  6401 OK
+構築 21 件 / skip [6358, 6360, 6361, 6362, 6363, 6368, 6370, 6372, 6375, 6376, 6377, 6379, 6380, 6381, 6385, 6386, 6389, 6390, 6392, 6395, 6398, 6399, 6400]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 16件（買える枠なのに取り込めなかった＝要対応）:
+   id6358 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2545359
+   id6360 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2610621
+   id6370 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2623779
+   id6372 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2622189
+   id6375 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2618498
+   id6376 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2632911
+   id6377 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670759
+   id6379 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670618
+   id6381 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2617535
+   id6385 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668301
+   id6386 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669204
+   id6390 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670617
+   id6395 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2619818
+   id6398 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventCd=2627387
+   id6399 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669778
+   id6400 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670622
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
