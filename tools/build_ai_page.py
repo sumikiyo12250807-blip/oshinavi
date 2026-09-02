@@ -39,6 +39,8 @@ GENRE_LABEL = {
     # 2026-08-27 同期（index.html の GENRE_LABEL と必ず一致させる）
     "chanson": "シャンソン", "musicetc": "その他",
     "circus": "サーカス", "magic": "マジック", "gakusai": "学園祭",
+    # 2026-09-03 新設（ユーザー「トークショー作って」）
+    "talkshow": "トークショー",
 }
 
 # index.html の linkDefs 順（楽天 > ぴあ > e+ > ローチケ > その他）
