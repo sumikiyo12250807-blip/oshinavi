@@ -16,7 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAT = os.path.join(ROOT, 'tmp', 'x_material_0902.txt')
 POSTS = [os.path.join(ROOT, 'tmp', 'x0902', 'post%d.txt' % i) for i in range(1, 6)]
 BUNDLE2POST = {'音楽': 1, 'クラシック': 2, 'エンタメ': 3, 'おでかけ': 4}   # 0は主役枠
-HEAD = 'OSHINAVIの"9/3発売"ピックアップ🎫'
+HEAD = 'OSHINAVIの"9/3チケット発売"ピックアップ🎫'
 
 
 def norm(s):
