@@ -1,0 +1,17 @@
+{
+ "lg": "03",
+ "base_filter": "rlsStatus=0202",
+ "base_total": null,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0202",
+   "label": "ALL",
+   "total": null,
+   "parsed": 5,
+   "pages": 0,
+   "fetched_pages": 2,
+   "new": 0
+  }
+ ],
+ "new": []
+}
