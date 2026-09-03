@@ -112,6 +112,14 @@ B.append('  </div>')
 B.append('  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" '
          'aria-controls="pickupBody">今週の主役を読む</button>')
 B.append('  <div class="pk-body" id="pickupBody" hidden>')
+# 「つづきを読む」を押した直後のリード（年末の話）＝導入文と同じ pk-lede の箱を使う。
+# 新しいクラスは作らない（[[project_weekly_pickup_article]]＝使うクラスは index.html に定義済みのものだけ）。
+intro = [x.strip() for x in secs.get("年末リード", []) if x.strip()]
+if intro:
+    B.append('      <div class="pk-lede">')
+    for p in intro:
+        B.append('        <p>%s</p>' % esc(p))
+    B.append('      </div>')
 B.append('      <h3 class="pk-h2">今週の主役</h3>')
 
 for n, (name, eid) in enumerate(MAIN):
