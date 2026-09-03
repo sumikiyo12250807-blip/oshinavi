@@ -1,0 +1,216 @@
+{
+ "lg": "06",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 127,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 127,
+   "parsed": 115,
+   "pages": 13,
+   "fetched_pages": 14,
+   "new": 18
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629364",
+   "artist": "石川県立音楽堂開館２５周年記念 ３人のリーダーが語る！！―音楽堂カルチャーナビｖｏｌ．２",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/15",
+   "perfdate": "2026/12/14(月)",
+   "venue": "石川県立音楽堂 交流ホール(石川県)",
+   "pref": "石川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633380",
+   "artist": "ＢＥＲＩＴＡ ｐｒｅｓｅｎｔｓ ＩＳＯＧＡＩ花火劇場in名古屋港",
+   "saletype": "一般発売",
+   "rlsdate": "2026/11/28",
+   "perfdate": "2026/12/26(土)",
+   "venue": "名古屋港ガーデンふ頭(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635337",
+   "artist": "ＳＢＳ 四国ブリーダーズストリート",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/11/8(日)",
+   "venue": "サン・イレブン高松(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563199",
+   "artist": "「おとうさんといっしょ」レオてつコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/24",
+   "perfdate": "2027/1/16(土)",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634682",
+   "artist": "カレーは飲み物の陣２０２６ｉｎ弥彦",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/3(土) ・ 2026/10/4(日)",
+   "venue": "弥彦村多目的施設ヤホール(新潟県)",
+   "pref": "新潟県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669974",
+   "artist": "可愛いだけじゃない!?ピングー展",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/11/21(土) ～ 2027/1/11(月・祝)",
+   "venue": "福岡市科学館 企画展示室(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626551",
+   "artist": "きかんしゃトーマス ファミリーミュージカル ソドー島の１ばんはだれだ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/2",
+   "perfdate": "2026/12/13(日)",
+   "venue": "浜松市浜北文化センター 大ホール(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635017",
+   "artist": "ＫＹＯＭＡＦ都市伝説ＬＩＶＥ２０２６ ～Ｍｒ．都市伝説 関暁夫の国際裏シンポジウム～",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/9/20(日)",
+   "venue": "ロームシアター京都 メインホール(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627791",
+   "artist": "ＳＩＮＯＮ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2027/1/24(日)",
+   "venue": "刈谷市総合文化センター アイリス 小ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632836",
+   "artist": "しまじろうコンサート ～しまじろうとおかしのくにのハッピーパーティー～",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/12/19(土)",
+   "venue": "近江八幡市文化会館 大ホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629916",
+   "artist": "スーパーヒーロースーパーライブ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2027/1/16(土)",
+   "venue": "富山県民会館 ホール(富山県)",
+   "pref": "富山県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670179",
+   "artist": "『禅とジブリ』京都展",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/3",
+   "perfdate": "2026/10/3(土) ～ 2026/12/6(日)",
+   "venue": "京都市京セラ美術館 新館 東山キューブ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634966",
+   "artist": "第５３回 全国バーテンダー技能競技大会",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "ホテルイースト２１東京(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628304",
+   "artist": "筑後ＳＡＫＥフェスタ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土) ～ 2026/10/11(日)",
+   "venue": "久留米シティプラザ 六角堂広場(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635491",
+   "artist": "ＪＩＮ ＪＵ ＨＹＵＮＧ １ｓｔ Ｊａｐａｎ Ｆａｎｍｅｅｔｉｎｇ ”Ｔａｋｅ Ｏｎｅ”",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/25",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "ＥＤＯＣＣＯ ＳＴＵＤＩＯ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670080",
+   "artist": "特別展「生きものたちの性」",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/31",
+   "perfdate": "2026/10/31(土) ～ 2027/2/21(日)",
+   "venue": "国立科学博物館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631913",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/10/31(土)",
+   "venue": "兵庫県立大学姫路工学キャンパス 体育館(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630846",
+   "artist": "山田雅人かたりの世界",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/11/21(土)",
+   "venue": "大阪市中央公会堂 大集会室(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}

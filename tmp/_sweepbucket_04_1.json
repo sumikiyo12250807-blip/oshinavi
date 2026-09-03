@@ -3,7 +3,30 @@
  "total": 0,
  "pages": 0,
  "fetched_pages": 2,
- "parsed": 0,
+ "parsed": 2,
  "new_name_in_db": 0,
- "new": []
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634521",
+   "artist": "映画『ＲＹＵＪＩ 竜二』舞台挨拶付きジャパンプレミア",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/10/7(水)",
+   "venue": "ＴＯＨＯシネマズ新宿(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670834",
+   "artist": "『藁にもすがる獣たち』大阪・岡山舞台挨拶",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2026/10/4(日) ・ 2026/10/5(月)",
+   "venue": "Ｔ・ジョイ梅田(大阪府)／イオンシネマ岡山(岡山県)／岡山メルパ(岡山県)",
+   "pref": "大阪府／岡山県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
 }

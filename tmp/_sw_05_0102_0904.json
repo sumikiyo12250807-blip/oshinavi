@@ -1,0 +1,29 @@
+{
+ "lg": "05",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 27,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 27,
+   "parsed": 26,
+   "pages": 3,
+   "fetched_pages": 4,
+   "new": 1
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670464",
+   "artist": "Hello Kitty展 -わたしが変わるとキティも変わる-",
+   "saletype": "一般発売",
+   "rlsdate": "2026/10/17",
+   "perfdate": "2026/10/17(土) ～ 2027/1/11(月・祝)",
+   "venue": "長崎県美術館 企画展示室(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
