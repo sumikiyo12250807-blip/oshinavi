@@ -1,0 +1,172 @@
+{
+ "lg": "03",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 76,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 76,
+   "parsed": 56,
+   "pages": 8,
+   "fetched_pages": 9,
+   "new": 14
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634866",
+   "artist": "【ＷＥリーグ】マイナビ仙台対ちふれＡＳエルフェン埼玉 ＷＥリーグ カップ戦 リーグステージ",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/27(日)",
+   "venue": "ユアテックスタジアム仙台(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632264",
+   "artist": "大分トリニータ対藤枝ＭＹＦＣ 明治安田Ｊ２リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/9/26(土)",
+   "venue": "クラサスドーム大分(大分県)",
+   "pref": "大分県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632818",
+   "artist": "ＡＬＬ ＪＡＰＡＮ ＣＨＥＥＲ ＤＡＮＣＥ ＣＨＡＭＰＩＯＮＳＨＩＰ ２０２６ 関東予選大会１",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/22(火・祝) ・ 2026/9/23(水・祝)",
+   "venue": "千葉ポートアリーナ(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633301",
+   "artist": "カマタマーレ讃岐対ＦＣ岐阜 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "四国化成ＭＥＧＬＩＯスタジアム(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634767",
+   "artist": "カマタマーレ讃岐対栃木ＳＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "四国化成ＭＥＧＬＩＯスタジアム(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632883",
+   "artist": "ギラヴァンツ北九州対鹿児島ユナイテッドＦＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/9/26(土)",
+   "venue": "ミクニワールドスタジアム北九州(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633578",
+   "artist": "ギラヴァンツ北九州対高知ユナイテッドＳＣ 明治安田Ｊ３リーグ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/10/3(土)",
+   "venue": "ミクニワールドスタジアム北九州(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634992",
+   "artist": "Ｋ－１ ＲＥＶＥＮＧＥ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "後楽園ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634731",
+   "artist": "センダイガールズプロレスリング＜大阪大会＞",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/6",
+   "perfdate": "2026/12/19(土)",
+   "venue": "アゼリア大正(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633805",
+   "artist": "千葉ロッテマリーンズ対東北楽天ゴールデンイーグルス 公式戦〈ワイドシート〉",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/9",
+   "perfdate": "2026/10/4(日)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670619",
+   "artist": "令和8年冬巡業 大相撲長崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/12/3(木)",
+   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635014",
+   "artist": "プロレスリングＢＡＳＡＲＡ",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/11",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "高島平区民館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632397",
+   "artist": "レバンガ北海道対千葉ジェッツ りそなグループ Ｂ．ＬＥＡＧＵＥ ２０２６－２７ Ｂ．ＬＥＡＧＵＥ ＰＲＥＭＩＥＲリーグ戦",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/10(土)",
+   "venue": "北海きたえーる(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632399",
+   "artist": "レバンガ北海道対富山グラウジーズ りそなグループ Ｂ．ＬＥＡＧＵＥ ２０２６－２７ Ｂ．ＬＥＡＧＵＥ ＰＲＥＭＩＥＲリーグ戦",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/21(水)",
+   "venue": "北海きたえーる(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}

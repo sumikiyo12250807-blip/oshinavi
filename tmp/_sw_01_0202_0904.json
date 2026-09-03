@@ -1,0 +1,205 @@
+{
+ "lg": "01",
+ "base_filter": "rlsStatus=0202",
+ "base_total": 43,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0202",
+   "label": "ALL",
+   "total": 43,
+   "parsed": 42,
+   "pages": 5,
+   "fetched_pages": 6,
+   "new": 17
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634262",
+   "artist": "稲垣潤一",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/8",
+   "perfdate": "2027/3/20(土)",
+   "venue": "上田市交流文化芸術センター 大ホール(長野県)",
+   "pref": "長野県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631894",
+   "artist": "ｅｓｑ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/12/12(土) ・ 2026/12/13(日)",
+   "venue": "岡山・城下公会堂 ｉｎ ＫＯＴＹＡＥ(岡山県)／ＳＩＸ ＯＮＥ Ｌｉｖｅ ＭＯＯＮ(広島県)",
+   "pref": "岡山県／広島県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623690",
+   "artist": "佐野元春＆ＴＨＥ ＣＯＹＯＴＥ ＢＡＮＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/12/7(月) ・ 2026/12/9(水)",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／函館サーモン・まるなまホール 大ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630654",
+   "artist": "ｓｙｒｕｐ１６ｇ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/11/1(日) ～ 2026/11/26(木)",
+   "venue": "ペニーレーン２４(北海道)／仙台Ｒｅｎｓａ(宮城県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)／ダイアモンドホール(愛知県)／ＬＩＶＥ ＶＡＮＱＵＩＳＨ(広島県)／ＤＲＵＭ ＬＯＧＯＳ(福岡県)",
+   "pref": "北海道／宮城県／長野県／愛知県／広島県／福岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630656",
+   "artist": "ｓｙｒｕｐ１６ｇ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/11/24(火)",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628920",
+   "artist": "竹原ピストル",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/12/21(月)",
+   "venue": "広島クラブクアトロ(広島県)",
+   "pref": "広島県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630301",
+   "artist": "ＤＥＥＰ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/11/28(土)",
+   "venue": "仙台ＰＩＴ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634996",
+   "artist": "東京スカパラダイスオーケストラ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/11/13(金)",
+   "venue": "出雲市民会館 大ホール(島根県)",
+   "pref": "島根県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634904",
+   "artist": "ＴＯＯＢＯＥ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/11/26(木)",
+   "venue": "仙台 ｄａｒｗｉｎ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670838",
+   "artist": "長澤知之",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/10/10(土)",
+   "venue": "くう ＣＯＯ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633800",
+   "artist": "古内東子",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/11/27(金)",
+   "venue": "Ｌｉｖｅ Ｊｕｋｅ(広島県)",
+   "pref": "広島県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634617",
+   "artist": "マザリ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2027/1/16(土)",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627689",
+   "artist": "松任谷由実",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/10/20(火) ・ 2026/10/21(水)",
+   "venue": "愛知県芸術劇場 大ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628630",
+   "artist": "ＭＯＮＯ ＮＯ ＡＷＡＲＥ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/12/4(金) ・ 2026/12/5(土)",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)／函館ＡＲＡＲＡ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622983",
+   "artist": "矢野顕子",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/9",
+   "perfdate": "2026/11/30(月)",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634240",
+   "artist": "山本彩",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2027/1/23(土)",
+   "venue": "ＬＩＶＥ ＶＡＮＱＵＩＳＨ(広島県)",
+   "pref": "広島県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631946",
+   "artist": "ｗａｃｃｉ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/12/13(日)",
+   "venue": "ウッドワンさくらぴあ 大ホール(広島県)",
+   "pref": "広島県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}

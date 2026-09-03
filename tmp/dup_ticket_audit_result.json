@@ -1,0 +1,191 @@
+{
+ "events_total": 4322,
+ "tickets_total": 8973,
+ "dup_groups_total": 196,
+ "tickets_after_collapse": 8777,
+ "categories": [
+  {
+   "category": "mixed_empty_and_single_url",
+   "group_count": 112,
+   "samples": [
+    {
+     "id": 452,
+     "name": "でんじろう先生のドキドキわくわくサイエンスショー2026",
+     "type": "一般発売（広島 8/29公演）〜8/27 23:59",
+     "date": "2026-08-27",
+     "n": 2,
+     "urls": [
+      "",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2610894"
+     ]
+    },
+    {
+     "id": 452,
+     "name": "でんじろう先生のドキドキわくわくサイエンスショー2026",
+     "type": "一般発売（愛媛 9/6公演）〜9/3 23:59",
+     "date": "2026-09-03",
+     "n": 2,
+     "urls": [
+      "",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617862"
+     ]
+    },
+    {
+     "id": 452,
+     "name": "でんじろう先生のドキドキわくわくサイエンスショー2026",
+     "type": "一般発売（千葉 9/13公演）〜9/11 23:59",
+     "date": "2026-09-11",
+     "n": 2,
+     "urls": [
+      "",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617012"
+     ]
+    },
+    {
+     "id": 567,
+     "name": "鈴木実貴子ズ",
+     "type": "一般発売（東京 12/3公演）〜12/2 23:59",
+     "date": "2026-12-02",
+     "n": 2,
+     "urls": [
+      "",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617945"
+     ]
+    },
+    {
+     "id": 583,
+     "name": "MELANCHOLIC CIRCUS",
+     "type": "一般発売（愛知 9/26公演）〜9/25 23:59",
+     "date": "2026-09-25",
+     "n": 2,
+     "urls": [
+      "",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2622462"
+     ]
+    }
+   ]
+  },
+  {
+   "category": "all_identical_url",
+   "group_count": 11,
+   "samples": [
+    {
+     "id": 72,
+     "name": "劇団四季『アナと雪の女王』東京 9月〜2027年1月公演",
+     "type": "一般発売（東京 8/1〜8/30公演）〜8/28 23:59",
+     "date": "2026-08-28",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2544495",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2544495"
+     ]
+    },
+    {
+     "id": 72,
+     "name": "劇団四季『アナと雪の女王』東京 9月〜2027年1月公演",
+     "type": "一般発売（東京 9/2〜9/30公演）〜9/28 23:59",
+     "date": "2026-09-28",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617746",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617746"
+     ]
+    },
+    {
+     "id": 72,
+     "name": "劇団四季『アナと雪の女王』東京 9月〜2027年1月公演",
+     "type": "一般発売（東京 10/1〜10/31公演）〜10/29 23:59",
+     "date": "2026-10-29",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617749",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617749"
+     ]
+    },
+    {
+     "id": 72,
+     "name": "劇団四季『アナと雪の女王』東京 9月〜2027年1月公演",
+     "type": "一般発売（東京 11/1〜11/29公演）〜11/27 23:59",
+     "date": "2026-11-27",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617752",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617752"
+     ]
+    },
+    {
+     "id": 72,
+     "name": "劇団四季『アナと雪の女王』東京 9月〜2027年1月公演",
+     "type": "一般発売（東京 12/2〜12/31公演）〜12/29 23:59",
+     "date": "2026-12-29",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617756",
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617756"
+     ]
+    }
+   ]
+  },
+  {
+   "category": "multiple_distinct_urls",
+   "group_count": 73,
+   "samples": [
+    {
+     "id": 505,
+     "name": "石若駿トリオ 2026",
+     "type": "一般発売（埼玉 R9年 1/31公演）10/9 10:00発売",
+     "date": "2026-10-09",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2615483",
+      "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670733"
+     ]
+    },
+    {
+     "id": 505,
+     "name": "石若駿トリオ 2026",
+     "type": "一般発売（新潟 10/18公演）〜10/12 23:59",
+     "date": "2026-10-12",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2618035",
+      "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670733"
+     ]
+    },
+    {
+     "id": 505,
+     "name": "石若駿トリオ 2026",
+     "type": "一般発売（茨城 10/17公演）〜10/16 23:59",
+     "date": "2026-10-16",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2617384",
+      "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670733"
+     ]
+    },
+    {
+     "id": 1634,
+     "name": "中村雅俊",
+     "type": "一般発売（東京 R9年 1/8公演）9/29 10:00発売",
+     "date": "2026-09-29",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2629578",
+      "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670529"
+     ]
+    },
+    {
+     "id": 1835,
+     "name": "牛田智大室内楽プロジェクト Vol.4 若き日の肖像",
+     "type": "一般発売（岐阜 11/22公演）9/18 10:00発売",
+     "date": "2026-09-18",
+     "n": 2,
+     "urls": [
+      "https://t.pia.jp/pia/event/event.do?eventCd=2625882",
+      "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669481"
+     ]
+    }
+   ]
+  }
+ ]
+}
