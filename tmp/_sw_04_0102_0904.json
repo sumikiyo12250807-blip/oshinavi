@@ -1,0 +1,95 @@
+{
+ "lg": "04",
+ "base_filter": "rlsStatus=0102",
+ "base_total": 42,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0102",
+   "label": "ALL",
+   "total": 42,
+   "parsed": 34,
+   "pages": 5,
+   "fetched_pages": 6,
+   "new": 7
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634521",
+   "artist": "映画『ＲＹＵＪＩ 竜二』舞台挨拶付きジャパンプレミア",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/19",
+   "perfdate": "2026/10/7(水)",
+   "venue": "ＴＯＨＯシネマズ新宿(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634964",
+   "artist": "「夫の役割、妻の役割ってなに？」 映画『佐藤さんと佐藤さん』上映とトーク",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/11/14(土)",
+   "venue": "福岡市男女共同参画推進センター・アミカス(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635304",
+   "artist": "ＺＹＯＹＵＳＡＩ ｉｎ ももち浜 ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/10/10(土) ・ 2026/10/11(日) ・ 2026/10/12(月・祝)",
+   "venue": "ももち浜 地行浜エリア(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635293",
+   "artist": "ＺＹＯＹＵＳＡＩ ｉｎ ロートハートスクエアうめきた ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/19(土) ・ 2026/9/20(日)",
+   "venue": "ＧＲＡＮＤ ＧＲＥＥＮ ＯＳＡＫＡ ロートハートスクエアうめきた(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635285",
+   "artist": "ＺＹＯＹＵＳＡＩ ＯＮＥ ＭＯＲＥ ＳＵＭＭＥＲ ｉｎ 常滑",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/22(火・祝) ・ 2026/9/23(水・祝)",
+   "venue": "常滑市りんくう海浜緑地（常滑りんくうビーチ）(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628923",
+   "artist": "ポケモン短編まつりII 劇場版ポケットモンスター短編傑作選",
+   "saletype": "一般発売",
+   "rlsdate": "TODAY",
+   "perfdate": "2026/9/19(土) ～ 2026/9/25(金)",
+   "venue": "神保町シアター(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670834",
+   "artist": "『藁にもすがる獣たち』大阪・岡山舞台挨拶",
+   "saletype": "一般発売",
+   "rlsdate": "2026/9/29",
+   "perfdate": "2026/10/4(日)",
+   "venue": "Ｔ・ジョイ梅田(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "lg": "06",
+ "base_filter": "rlsStatus=0202",
+ "base_total": 11,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0202",
+   "label": "ALL",
+   "total": 11,
+   "parsed": 9,
+   "pages": 2,
+   "fetched_pages": 3,
+   "new": 3
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670789",
+   "artist": "『エグ女TV2026』",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/5",
+   "perfdate": "2026/10/9(金) ～ 2026/10/12(月・祝)",
+   "venue": "ＩＭＭ ＴＨＥＡＴＥＲ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631263",
+   "artist": "さらばのこの本ダレが書いとんねん！ＬＩＶＥ２０２６",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/10",
+   "perfdate": "2026/10/10(土)",
+   "venue": "浅草公会堂(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670714",
+   "artist": "RECOFES.2027 in 東京国際フォーラムホールA",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/17",
+   "perfdate": "2027/2/23(火・祝)",
+   "venue": "東京国際フォーラム ホールＡ(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}

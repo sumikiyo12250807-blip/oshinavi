@@ -1,0 +1,40 @@
+{
+ "lg": "02",
+ "base_filter": "rlsStatus=0202",
+ "base_total": 22,
+ "buckets": [
+  {
+   "filter": "rlsStatus=0202",
+   "label": "ALL",
+   "total": 22,
+   "parsed": 18,
+   "pages": 3,
+   "fetched_pages": 4,
+   "new": 2
+  }
+ ],
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670827",
+   "artist": "舞台「呪術廻戦」－渋谷事変前編－",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/4",
+   "perfdate": "2026/11/14(土) ～ 2026/11/29(日)",
+   "venue": "Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)／ＳｋｙシアターＭＢＳ(大阪府)",
+   "pref": "東京都／大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625021",
+   "artist": "柳家喬太郎 独演会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/8",
+   "perfdate": "2027/2/11(木・祝)",
+   "venue": "京都府立府民ホール（アルティ）(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}
