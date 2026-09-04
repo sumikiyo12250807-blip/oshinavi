@@ -20,6 +20,10 @@ news = sorted([e for e in events if e.get("genre") == "new"], key=lambda e: e["i
 note = ""
 if "--note" in sys.argv:
     note = sys.argv[sys.argv.index("--note") + 1]
+excl = set()
+if "--exclude" in sys.argv:
+    excl = {int(x) for x in sys.argv[sys.argv.index("--exclude") + 1].split(",")}
+    news = [e for e in news if e["id"] not in excl]
 
 rows = []
 cnt = {}
