@@ -66,7 +66,15 @@ def check(path, lo, hi):
     if not HEAD.match(lines[0].strip()):
         ng.append("1行目がピックアップ見出しでない: %r" % lines[0][:40])
     # 「。」の直後が改行か（末尾と閉じ括弧・記号の前は除く）
+    # 🚨固有名詞の中の「。」は改行させない（改行すると名前が壊れる）。
+    #   ①リスト行（`時刻 名前／県`）の中 ②本文中の「モーニング娘。」
+    LISTLINE = re.compile(r"^\d{1,2}:\d{2}\s")
     for m in re.finditer(r"。(?!$)", t):
+        line_start = t.rfind("\n", 0, m.start()) + 1
+        if LISTLINE.match(t[line_start:line_start + 6]):
+            continue
+        if t[max(0, m.start() - 6):m.end()].endswith("モーニング娘。"):
+            continue
         nxt = t[m.end():m.end() + 1]
         if nxt and nxt not in "\n）」』】”":
             ng.append("「。」の直後が改行でない: …%s" % t[max(0, m.start() - 12):m.end() + 8].replace("\n", "⏎"))
