@@ -691,6 +691,7 @@
     .genre-circus     { background: rgba(126,87,194,0.18);  color: #b39ddb;       border: 1px solid rgba(126,87,194,0.35); }
     .genre-magic      { background: rgba(77,208,225,0.15);  color: #4dd0e1;       border: 1px solid rgba(77,208,225,0.35); }
     .genre-gakusai    { background: rgba(174,213,129,0.15); color: #aed581;       border: 1px solid rgba(174,213,129,0.35); }
+    .genre-event      { background: rgba(161,136,127,0.15); color: #a1887f;       border: 1px solid rgba(161,136,127,0.35); }
     .genre-talkshow   { background: rgba(255,138,101,0.15); color: #ff8a65;       border: 1px solid rgba(255,138,101,0.35); }
     .genre-fanevent   { background: rgba(240,98,146,0.15);  color: #f06292;       border: 1px solid rgba(240,98,146,0.35); }
 
@@ -1411,7 +1412,7 @@
         <button class="filter-btn" data-genre="fes">フェス</button>
         <button class="filter-btn" data-genre="hanabi">花火大会</button>
         <button class="filter-btn" data-genre="gourmet">グルメ</button>
-        <button class="filter-btn" data-genre="gakusai">学園祭</button>
+        <button class="filter-btn" data-genre="gakusai">学園祭</button><button class="filter-btn" data-genre="event">イベント</button>
       </div>
     </div>
   </div>
@@ -141940,10 +141941,7 @@
     "dateLabel": "2026年9月23日(水) 京都 WORLD KYOTO",
     "venue": "WORLD KYOTO",
     "prefecture": "京都",
-    "genre": "new",
-    "_genre": "yougaku",
-    "_extraGenres": [],
-    "_piaSub": "音楽/海外ROCK・POPS",
+    "genre": "event",
     "price": null,
     "links": {
       "rakuten": null,
@@ -146777,7 +146775,10 @@
     douyou: "童謡・唱歌", circus: "サーカス", magic: "マジック", gakusai: "学園祭",
     /* 2026-09-03 ユーザー「トークショー作って」＝ぴあの「講演会・トークショー」の行き先を
        engeki から独立させた。演劇タブに混ざっていたトーク主体の公演をここへ集める。 */
-    talkshow: "トークショー"
+    talkshow: "トークショー",
+    /* 2026-09-04 ユーザー「お出かけにイベントのジャンル作ってそれに入れて」
+       ＝複数組が出るイベント型の催しを、音楽の棚でなく おでかけ で探せるようにした。 */
+    event: "イベント"
   };
 
   // データの prefecture / 会場・公演名は短縮形（「東京」「大阪」）なので短縮名をキーにする
@@ -147178,7 +147179,7 @@
     music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","kpop","hiphop","chanson","hougaku","musicetc"],
     stage:   ["engeki","musical","dento","seiyuu","2.5ji","circus"],
     ento:    ["owarai","kaidan","dinnershow","aisatsu","youtuber","vtuber","fanevent","magic","talkshow"],
-    odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai"]
+    odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event"]
   };
 
   function eventGenres(ev) {
@@ -147221,7 +147222,7 @@
   // ※新着を追加したら末尾にidを足せば固定される（足さないとそのカードは一番下に並ぶ）
   // 2026-05-27: ⚠️相談2件(278最後の事件/285StrayKidsVR)を先頭。残り13件はid昇順(投入順)。
   // 2026-05-30: MeseMoa.47ツアー(id77)を新着に掲載。続けてぴあ新着
-  const NEW_ORDER = [6397, 6501, 6502, 6503, 6504, 6505, 6506, 6507, 6508, 6509, 6510, 6511, 6512, 6513, 6514, 6515, 6516, 6517, 6518, 6519, 6520, 6521, 6522, 6523, 6524, 6525, 6526, 6527, 6528, 6529, 6530, 6531, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6545, 6546, 6547, 6548, 6549, 6550, 6601, 6602, 6603, 6604, 6605, 6606, 6607, 6608, 6609, 6610, 6611, 6612, 6613, 6614, 6615, 6616, 6701, 6710, 6711, 6712, 6713, 6714, 6715, 6716, 6717, 6718, 6719, 6720, 6721, 6722, 6723, 6724, 6725, 6726, 6727, 6728, 6729, 6730, 6731, 6732, 6800, 6901, 6902];
+  const NEW_ORDER = [6501, 6502, 6503, 6504, 6505, 6506, 6507, 6508, 6509, 6510, 6511, 6512, 6513, 6514, 6515, 6516, 6517, 6518, 6519, 6520, 6521, 6522, 6523, 6524, 6525, 6526, 6527, 6528, 6529, 6530, 6531, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6545, 6546, 6547, 6548, 6549, 6550, 6601, 6602, 6603, 6604, 6605, 6606, 6607, 6608, 6609, 6610, 6611, 6612, 6613, 6614, 6615, 6616, 6701, 6710, 6711, 6712, 6713, 6714, 6715, 6716, 6717, 6718, 6719, 6720, 6721, 6722, 6723, 6724, 6725, 6726, 6727, 6728, 6729, 6730, 6731, 6732, 6800, 6901, 6902];
 
   function applyFilters() {
     filteredEvents = EVENTS.filter(matchEvent);

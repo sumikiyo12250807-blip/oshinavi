@@ -40,7 +40,7 @@ GENRE_LABEL = {
     "chanson": "シャンソン", "musicetc": "その他",
     "circus": "サーカス", "magic": "マジック", "gakusai": "学園祭",
     # 2026-09-03 新設（ユーザー「トークショー作って」）
-    "talkshow": "トークショー",
+    "talkshow": "トークショー", "event": "イベント",
 }
 
 # index.html の linkDefs 順（楽天 > ぴあ > e+ > ローチケ > その他）
