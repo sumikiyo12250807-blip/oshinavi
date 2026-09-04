@@ -1,0 +1,37 @@
+--- GENRE_LABEL ---
+const GENRE_LABEL = {
+    new: "✨ 新着",
+    jpop: "J-POP", rock: "ロック", kpop: "K-POP", yougaku: "洋楽",
+    hiphop: "HIP HOP", anime: "アニソン", idol: "アイドル",
+    youtuber: "YouTuber", vtuber: "VTuber", kids: "キッズ",
+    classic: "クラシック", jazz: "ジャズ", enka: "演歌", dento: "伝統", hougaku: "伝統",
+    chanson: "シャンソン", musicetc: "その他",
+    kaidan: "怪談",
+    engeki: "演劇", fes: "フェス",   /* 2026-08-13: 一度「ミュージカル」に統一したが、engeki には能/文楽/舞踊/ダンスも混ざっていて嘘になるので差し戻し。ぴあのカテゴリで再分類してから決める */
+    sports: "スポーツ", hanabi: "花火大会",
+    "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル",
+    aisatsu: "舞台挨拶", dinnershow: "ディナーショー", art: "イベントアート",
+    gourmet: "グルメ",
+    fanevent: "ファンイベント",
+    /* 2026-08-27 ユーザー「ジャンル作って　たためるようになったから躊躇なく作っていいよ」
+       ＝ぴあの66サブカテゴリ全部に行き先を作った（人が判断する枠をゼロにする）。 */
+    douyou: "童謡・唱歌", circus: "サーカス", magic: "マジック", gakusai: "学園祭",
+    /* 2026-09-03 ユーザー「トークショー作って」＝ぴあの「講演会・トークショー」の行き先を
+       engeki から独立させた。演劇タブに混ざっていたトーク主体の公演をここへ集める。 */
+    talkshow: "トークショー"
+  };
+
+--- odekake のフィルターボタン ---
+<button class="filter-btn" data-genre="sports">スポーツ</button>
+<button class="filter-btn" data-genre="art">イベントアート</button>
+<button class="filter-btn" data-genre="kids">キッズ</button>
+<button class="filter-btn" data-genre="fes">フェス</button>
+<button class="filter-btn" data-genre="hanabi">花火大会</button>
+<button class="filter-btn" data-genre="gourmet">グルメ</button>
+<button class="filter-btn" data-genre="gakusai">学園祭</button>
+
+--- .genre-gakusai 系のCSS ---
+.genre-gakusai    { background: rgba(174,213,129,0.15); color: #aed581;       border: 1px solid rgba(174,213,129,0.35); }
+.genre-hanabi     { background: rgba(255,80,150,0.15);  color: #ff5696;       border: 1px solid rgba(255,80,150,0.35); }
+.genre-gourmet    { background: rgba(232,163,61,0.15);  color: #e8a33d;       border: 1px solid rgba(232,163,61,0.35); }
+.genre-fes        { background: rgba(0,200,100,0.15);  color: #00c864;       border: 1px solid rgba(0,200,100,0.3); }
