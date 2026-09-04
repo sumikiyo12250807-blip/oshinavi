@@ -1,35 +1,33 @@
 # -*- coding: utf-8 -*-
-"""9/5 削除候補（公演終了＋全販売終了）の詳細を UTF-8 で書き出す。"""
+"""ヒールが「買える枠ゼロ」と判定した削除候補（tmp/heal_delcand_ids_0905.txt）の中身を書き出す。
+🚨 これは削除の実行リストではない。DELETE_GATE.md の「疑う6つ」を潰してから判断する。"""
 import json, re, io
 
-IDS = [673, 917, 1209, 1242, 1613, 2215, 3114, 3408, 4471, 5030, 5579]
+IDS = [int(x) for x in io.open("tmp/heal_delcand_ids_0905.txt", encoding="utf-8").read().strip().split(",")]
 OUT = "tmp/heal_delcand_0905.txt"
 
-html = io.open("index.html", encoding="utf-8").read()
-events = json.loads(re.search(r"const EVENTS = (\[.*?\]);\s*\n", html, re.S).group(1))
+html = open("index.html", encoding="utf-8").read()
+events = json.loads(re.search(r"const EVENTS = (\[.*?\]);\n", html, re.S).group(1))
 by = {e["id"]: e for e in events}
 
-buf = []
+buf = ["ヒールが出した「買える枠ゼロ」候補 %d件（今朝の削除10件は既に消えているので現物に無い分は除く）" % len(IDS), ""]
+found = 0
 for i in IDS:
     e = by.get(i)
     if not e:
-        buf.append("MISSING id=%d" % i)
         continue
-    urls = set()
-    if e.get("url"):
-        urls.add(e["url"])
+    found += 1
+    links = e.get("links") or {}
+    buf.append("id=%-5s %s | %s(%s) | 公演%s | genre=%s | 枠%d"
+               % (i, e.get("name", ""), e.get("venue", "")[:34], e.get("prefecture", ""),
+                  e.get("date"), e.get("genre"), len(e.get("tickets", []))))
     for t in e.get("tickets", []):
-        if t.get("url"):
-            urls.add(t["url"])
-    buf.append("id=%s | %s | %s | date=%s | genre=%s | venue=%s"
-               % (i, e.get("name"), e.get("title", ""), e.get("date"), e.get("genre"), e.get("venue", "")))
-    for t in e.get("tickets", []):
-        buf.append("    ticket: %s | startDate=%s date=%s soldout=%s saleEnded=%s url=%s"
-                   % (t.get("type"), t.get("startDate"), t.get("date"),
-                      t.get("soldout"), t.get("saleEnded"), t.get("url") or "-"))
-    for u in sorted(urls):
-        buf.append("    URL: %s" % u)
+        buf.append("    %s | startDate=%s date=%s soldout=%s"
+                   % (t.get("type"), t.get("startDate"), t.get("date"), t.get("soldout")))
+    for k in ("pia", "eplus", "rakuten", "lawson"):
+        if links.get(k):
+            buf.append("    %s: %s" % (k, links[k]))
     buf.append("")
 
 io.open(OUT, "w", encoding="utf-8").write("\n".join(buf))
-print("WROTE %s entries=%d" % (OUT, len([i for i in IDS if i in by])))
+print("CANDIDATES=%d / 現物に残っている=%d -> %s" % (len(IDS), found, OUT))
