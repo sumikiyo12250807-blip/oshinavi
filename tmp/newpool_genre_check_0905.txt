@@ -1,0 +1,103 @@
+=== _piaSub → _genre の対応（新着93件） ===
+
+アート/アート                      -> art         1件  ids=6535
+イベント/イベントその他                 -> musicetc    3件  ids=6536 6615 6725
+イベント/ショー・ファンイベント             -> fanevent    1件  ids=6533
+イベント/スクール・レジャー               -> kids        1件  ids=6724
+イベント/博覧会・展示会・見本市             -> art         2件  ids=6613 6723
+イベント/子供と楽しむ                  -> kids        2件  ids=6532 6537
+イベント/講演会・トークショー              -> talkshow    3件  ids=6528 6529 6614
+クラシック/オペラ・声楽                 -> classic     1件  ids=6728
+クラシック/オーケストラ                 -> classic     5件  ids=6510 6514 6517 6701 6901
+クラシック/クラシックその他               -> classic     1件  ids=6601
+クラシック/合唱                     -> classic     1件  ids=6509
+クラシック/吹奏楽                    -> classic     1件  ids=6520
+クラシック/器楽・室内楽                 -> classic    15件  ids=6505 6506 6512 6513 6516 6522 6526 6527 6616 6726 6727 6729 6730 6731 6732
+スポーツ/サッカー                    -> sports      4件  ids=6609 6610 6611 6715
+スポーツ/スポーツその他                 -> sports      1件  ids=6716
+スポーツ/バスケットボール                -> sports      2件  ids=6717 6718
+スポーツ/格闘技                     -> sports      1件  ids=6530
+映画/映画その他                     -> musicetc    1件  ids=6612
+映画/映画祭                       -> engeki      3件  ids=6719 6720 6721
+映画/舞台挨拶                      -> aisatsu     2件  ids=6531 6534
+映画/邦画                        -> engeki      1件  ids=6722
+演劇/バレエ・ダンス                   -> classic     1件  ids=6515
+演劇/ミュージカル・ショー                -> musical     2件  ids=6523 6800
+演劇/寄席・お笑い                    -> owarai     13件  ids=6507 6508 6511 6518 6519 6521 6603 6604 6605 6606 6607 6713 6714
+演劇/朗読・リーディング                 -> engeki      1件  ids=6608
+演劇/歌舞伎・古典芸能                  -> dento       1件  ids=6504
+演劇/演劇                        -> engeki      2件  ids=6524 6525
+音楽/J-POP・ROCK                -> jpop       16件  ids=6501 6502 6503 6540 6541 6542 6543 6544 6546 6547 6548 6549 6550 6602 6710 6902
+音楽/海外ROCK・POPS               -> yougaku     2件  ids=6538 6539
+音楽/演歌・邦楽                     -> enka        2件  ids=6545 6712
+音楽/音楽その他                     -> musicetc    1件  ids=6711
+
+=== 要注意（海外/伝統/その他）の実物 ===
+id=6505  多胡宏音 マリンバ・リサイタル 2026 Re: Marimba | 多胡宏音 マリンバ・リサイタル 2026 Re: Marimba | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634862
+id=6506  戸田市市制施行60周年記念事業 第19回戸田音楽祭メインコンサート 石田組コンサートツアー2026 | 戸田市市制施行60周年記念事業 第19回戸田音楽祭メインコンサート 石田組コンサートツアー2026 | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2635390
+id=6509  宇都宮第九合唱団 | 宇都宮第九合唱団 | piaSub=クラシック/合唱 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2633012
+id=6510  群馬交響楽団 | 群馬交響楽団 | piaSub=クラシック/オーケストラ | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634101
+id=6512  ギターと静寂|五十嵐紅《星と祈り》（東京公演） | ギターと静寂|五十嵐紅《星と祈り》（東京公演） | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2635267
+id=6513  ギターと静寂|五十嵐紅《星と祈り》（横浜公演） | ギターと静寂|五十嵐紅《星と祈り》（横浜公演） | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2635272
+id=6514  反田恭平&ザルツブルク・モーツァルテウム管弦楽団 | 反田恭平&ザルツブルク・モーツァルテウム管弦楽団 | piaSub=クラシック/オーケストラ | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2625088
+id=6516  第32回相模原ギターの祭典 | 第32回相模原ギターの祭典 | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634885
+id=6517  鎌倉交響楽団 | 鎌倉交響楽団 | piaSub=クラシック/オーケストラ | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634906
+id=6520  東京佼成ウインドオーケストラ 第177回定期演奏会 | 東京佼成ウインドオーケストラ 第177回定期演奏会 | piaSub=クラシック/吹奏楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634511
+id=6522  マエストロ小澤のレガシーを未来へとつなぐコンサート | マエストロ小澤のレガシーを未来へとつなぐコンサート | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670858
+id=6526  波多野睦美／大萩康司 | 波多野睦美／大萩康司 | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2635242
+id=6527  宮田大&福間洸太朗デュオ・リサイタル | 宮田大&福間洸太朗デュオ・リサイタル | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2633177
+id=6536  RECOFES.2027 in 東京国際フォーラムホールA | RECOFES.2027 in 東京国際フォーラムホールA | piaSub=イベント/イベントその他 | _genre=musicetc
+        https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670714
+id=6538  IRENE & SEULGI | IRENE & SEULGI | piaSub=音楽/海外ROCK・POPS | _genre=yougaku
+        https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670592
+id=6539  WEEZER | WEEZER | piaSub=音楽/海外ROCK・POPS | _genre=yougaku
+        https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670704
+id=6545  ちあきなおみモノマネショー | ちあきなおみモノマネショー | piaSub=音楽/演歌・邦楽 | _genre=enka
+        https://t.pia.jp/pia/event/event.do?eventCd=2634496
+id=6601  武満徹没後30年「ASOBIBA TAKEMITSU」～まだ知らない、武満徹。～ | 武満徹没後30年「ASOBIBA TAKEMITSU」～まだ知らない、武満徹。～ | piaSub=クラシック/クラシックその他 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2635567
+id=6612  「夫の役割、妻の役割ってなに?」 映画『佐藤さんと佐藤さん』上映とトーク | 「夫の役割、妻の役割ってなに?」 映画『佐藤さんと佐藤さん』上映とトーク | piaSub=映画/映画その他 | _genre=musicetc
+        https://t.pia.jp/pia/event/event.do?eventCd=2634964
+id=6615  『エグ女TV2026』 | 『エグ女TV2026』 | piaSub=イベント/イベントその他 | _genre=musicetc
+        https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670789
+id=6616  CHRISTMAS CONCERT 2026 | CHRISTMAS CONCERT 2026 | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2631246
+id=6701  日本フィルハーモニー交響楽団 第九特別演奏会2026（阪哲朗指揮） | 日本フィルハーモニー交響楽団 第九特別演奏会2026（阪哲朗指揮） | piaSub=クラシック/オーケストラ | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634652
+id=6711  山口きずな音楽祭 歌の灯火 at ISO’S BAR | 山口きずな音楽祭 歌の灯火 at ISO’S BAR | piaSub=音楽/音楽その他 | _genre=musicetc
+        https://t.pia.jp/pia/event/event.do?eventCd=2635283
+id=6712  【当日引換券】吉田兄弟 | 【当日引換券】吉田兄弟 | piaSub=音楽/演歌・邦楽 | _genre=enka
+        https://t.pia.jp/pia/event/event.do?eventCd=2635662
+id=6716  ALL JAPAN CHEER DANCE CHAMPIONSHIP 2026 関東予選大会1 | ALL JAPAN CHEER DANCE CHAMPIONSHIP 2026 関東予選大会1 | piaSub=スポーツ/スポーツその他 | _genre=sports
+        https://t.pia.jp/pia/event/event.do?eventCd=2632818
+id=6725  第53回 全国バーテンダー技能競技大会 | 第53回 全国バーテンダー技能競技大会 | piaSub=イベント/イベントその他 | _genre=musicetc
+        https://t.pia.jp/pia/event/event.do?eventCd=2634966
+id=6726  井坂実樹リサイタルシリーズin水戸 Vol.3 フルート×ギター | 井坂実樹リサイタルシリーズin水戸 Vol.3 フルート×ギター | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2635391
+id=6727  珠玉のモーツァルト その先へ | 珠玉のモーツァルト その先へ | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634883
+id=6728  2027ニューイヤー声楽フェスティヴァル | 2027ニューイヤー声楽フェスティヴァル | piaSub=クラシック/オペラ・声楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634875
+id=6729  ひと足はやい ハンドベル演奏会’26 横浜YMCAポートフレンズ | ひと足はやい ハンドベル演奏会’26 横浜YMCAポートフレンズ | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634144
+id=6730  ふたりの巨匠 色彩のハーモニー | ふたりの巨匠 色彩のハーモニー | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634881
+id=6731  ユリアンナ・アヴデーエワ（p） | ユリアンナ・アヴデーエワ（p） | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2631195
+id=6732  横浜YMCAポートフレンズ アドベントハンドベル演奏会2026 | 横浜YMCAポートフレンズ アドベントハンドベル演奏会2026 | piaSub=クラシック/器楽・室内楽 | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventCd=2634145
+id=6901  N響「第9」 | N響「第9」 | piaSub=クラシック/オーケストラ | _genre=classic
+        https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670668
