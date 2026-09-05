@@ -1,0 +1,10 @@
+=== reconcile_eplus (today=2026-09-05) 対象48エントリ / e+チケット138枠 ===
+🚨 FAIL 4件（この枠だけ実ページで見直す）:
+  id5784 t0 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030026P021001
+  id5784 t2 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030027P021001
+  id5784 t3 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030028P021001
+  id5784 t4 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030030P021001
