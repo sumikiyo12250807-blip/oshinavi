@@ -1,0 +1,102 @@
+NEWPOOL=32
+keys_union=_extraGenres, _genre, _piaSub, artist, date, dateLabel, genre, id, links, name, prefecture, price, tickets, venue, verified, verifiedAt
+
+{
+ "id": 6932,
+ "artist": "ルサンチマン",
+ "name": "ルサンチマン",
+ "date": "2026-10-30",
+ "dateLabel": "2026年10月30日(金) 愛知 池下CLUB UPSET",
+ "venue": "池下CLUB UPSET",
+ "prefecture": "愛知",
+ "genre": "new",
+ "_genre": "jpop",
+ "_extraGenres": [],
+ "_piaSub": "音楽/J-POP・ROCK",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2615218",
+  "eplus": null,
+  "amazon": "https://www.amazon.co.jp/s?k=%E3%83%AB%E3%82%B5%E3%83%B3%E3%83%81%E3%83%9E%E3%83%B3%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+ },
+ "tickets": [
+  {
+   "type": "一般発売（愛知 10/30公演）9/5 10:00発売",
+   "date": "2026-09-05",
+   "startDate": "2026-09-05"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-09-05"
+}
+
+{
+ "id": 6933,
+ "artist": "レイラ",
+ "name": "レイラ",
+ "date": "2027-01-17",
+ "dateLabel": "2027年1月17日(日) 東京 東京キネマ倶楽部",
+ "venue": "東京キネマ倶楽部",
+ "prefecture": "東京",
+ "genre": "new",
+ "_genre": "jpop",
+ "_extraGenres": [],
+ "_piaSub": "音楽/J-POP・ROCK",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2635186",
+  "eplus": null,
+  "amazon": "https://www.amazon.co.jp/s?k=%E3%83%AC%E3%82%A4%E3%83%A9%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+ },
+ "tickets": [
+  {
+   "type": "一般発売（東京 R9年 1/17公演）9/5 10:00発売",
+   "date": "2026-09-05",
+   "startDate": "2026-09-05"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-09-05"
+}
+
+{
+ "id": 6934,
+ "artist": "THE BACK HORN",
+ "name": "THE BACK HORN presents 後角祭 -koukakusai-",
+ "date": "2026-11-15",
+ "dateLabel": "2026年11月14日(土)〜2026年11月15日(日) 福島 郡山HIP SHOT JAPAN",
+ "venue": "郡山HIP SHOT JAPAN",
+ "prefecture": "福島",
+ "genre": "new",
+ "_genre": "rock",
+ "_extraGenres": [],
+ "_piaSub": null,
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": null,
+  "eplus": "https://eplus.jp/sf/detail/0030840001-P0030624P021001",
+  "amazon": null
+ },
+ "tickets": [
+  {
+   "type": "抽選プレイガイド最速先行（福島県 11/14公演）〜9/13 23:59",
+   "date": "2026-09-13",
+   "url": "https://eplus.jp/sf/detail/0030840001-P0030624P021001"
+  },
+  {
+   "type": "抽選プレイガイド最速先行（福島県 11/15公演）〜9/13 23:59",
+   "date": "2026-09-13",
+   "url": "https://eplus.jp/sf/detail/0030840001-P0030624P021002"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-09-05"
+}
+
+_genre有り=32 / 無し=0

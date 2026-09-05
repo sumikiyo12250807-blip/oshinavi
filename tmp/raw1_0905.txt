@@ -1,0 +1,30 @@
+{
+ "id": 6935,
+ "artist": "Planet",
+ "name": "Planet CHILD Music presents 『四季彩プラネタリウム』",
+ "date": "2026-10-15",
+ "dateLabel": "2026年10月15日(木) 東京都 BlackHole",
+ "venue": "BlackHole",
+ "prefecture": "東京都",
+ "genre": "new",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": null,
+  "eplus": "https://eplus.jp/sf/detail/4589250001-P0030001P021001",
+  "amazon": null
+ },
+ "tickets": [
+  {
+   "type": "先着一般発売（東京都 10/15公演）9/12 10:00発売",
+   "date": "2026-10-14",
+   "url": "https://eplus.jp/sf/detail/4589250001-P0030001P021001",
+   "startDate": "2026-09-12"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-07-21"
+}
+----KEYS----
+artist, date, dateLabel, genre, id, links, name, prefecture, price, tickets, venue, verified, verifiedAt

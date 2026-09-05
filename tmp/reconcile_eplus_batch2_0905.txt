@@ -1,0 +1,304 @@
+=== reconcile_eplus (today=2026-09-05) 対象48エントリ / e+チケット271枠 ===
+🚨 FAIL 151件（この枠だけ実ページで見直す）:
+  id3892 t14 [b-発売前化] 受付中登録だが実頁は発売前(今後開く窓あり)
+        https://eplus.jp/sf/detail/1359660001-P0030243P021001
+  id5251 t14 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5251 t15 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5251 t16 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5251 t17 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5251 t18 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5251 t19 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5251 t20 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0723550001-P0030143P021001
+  id5766 t5 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0282050001-P0030036P021001
+  id5766 t6 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0282050001-P0030036P021001
+  id5784 t0 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030026P021001
+  id5784 t2 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030027P021001
+  id5784 t3 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030028P021001
+  id5784 t4 [b-締切時刻ズレ] badge締切 23:59 != 実 18:00
+        https://eplus.jp/sf/detail/4059720001-P0030030P021001
+  id5879 t4 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030297P021001
+  id5879 t5 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030297P021001
+  id5879 t6 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030297P021002
+  id5879 t7 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030297P021002
+  id5879 t8 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030298P021002
+  id5879 t9 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030298P021002
+  id5879 t10 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030298P021001
+  id5879 t11 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030298P021001
+  id5879 t12 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030299P021001
+  id5879 t13 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030299P021001
+  id5879 t14 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030299P021002
+  id5879 t15 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030299P021002
+  id5879 t16 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030300P021002
+  id5879 t17 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030300P021002
+  id5879 t18 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030300P021001
+  id5879 t19 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030300P021001
+  id5879 t20 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030301P021001
+  id5879 t21 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030301P021001
+  id5879 t22 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030301P021002
+  id5879 t23 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/1067550001-P0030301P021002
+  id6966 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/3300420001-P0030016P021001
+  id6968 t1 [b-締切ズレ] date 2026-09-30 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t3 [b-締切ズレ] date 2026-10-02 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t4 [b-締切ズレ] date 2026-10-03 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t5 [b-締切ズレ] date 2026-10-05 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t6 [a-締切>公演日] 締切2026-10-06 > 公演2026-10-05
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t6 [b-締切ズレ] date 2026-10-06 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t7 [a-締切>公演日] 締切2026-10-07 > 公演2026-10-05
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t7 [b-締切ズレ] date 2026-10-07 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t8 [a-締切>公演日] 締切2026-10-08 > 公演2026-10-05
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t8 [b-締切ズレ] date 2026-10-08 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6968 t9 [b-締切ズレ] date 2026-09-13 != open窓ed[2026-10-01]
+        https://eplus.jp/sf/detail/3857440004-P0030033P021017
+  id6972 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0061060001-P0030201P021001
+  id6973 t0 [a-締切>公演日] 締切2026-09-06 > 公演2026-09-04
+        https://eplus.jp/sf/detail/4545910001-P0030001P021007
+  id6973 t0 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021007
+  id6973 t1 [a-締切>公演日] 締切2026-09-06 > 公演2026-09-05
+        https://eplus.jp/sf/detail/4545910001-P0030001P021001
+  id6973 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021001
+  id6973 t2 [a-締切>公演日] 締切2026-09-08 > 公演2026-09-05
+        https://eplus.jp/sf/detail/4545910001-P0030001P021001
+  id6973 t2 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021001
+  id6973 t3 [a-締切>公演日] 締切2026-09-06 > 公演2026-09-05
+        https://eplus.jp/sf/detail/4545910001-P0030001P021008
+  id6973 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021008
+  id6973 t4 [a-締切>公演日] 締切2026-09-08 > 公演2026-09-05
+        https://eplus.jp/sf/detail/4545910001-P0030001P021008
+  id6973 t4 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021008
+  id6973 t5 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021002
+  id6973 t6 [a-締切>公演日] 締切2026-09-08 > 公演2026-09-06
+        https://eplus.jp/sf/detail/4545910001-P0030001P021002
+  id6973 t6 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021002
+  id6973 t8 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021003
+  id6973 t9 [a-締切>公演日] 締切2026-09-08 > 公演2026-09-07
+        https://eplus.jp/sf/detail/4545910001-P0030001P021003
+  id6973 t9 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021003
+  id6973 t10 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021009
+  id6973 t11 [a-締切>公演日] 締切2026-09-08 > 公演2026-09-07
+        https://eplus.jp/sf/detail/4545910001-P0030001P021009
+  id6973 t11 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021009
+  id6973 t14 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021005
+  id6973 t15 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/4545910001-P0030001P021005
+  id6977 t1 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=10:30)
+        https://eplus.jp/sf/detail/4377420001-P0030002P021001
+  id6978 t0 [a-締切>公演日] 締切2026-09-17 > 公演2026-09-11
+        https://eplus.jp/sf/detail/4531610001-P0030001P021001
+  id6978 t2 [a-締切>公演日] 締切2026-10-13 > 公演2026-10-07
+        https://eplus.jp/sf/detail/4531620001-P0030001P021001
+  id6979 t3 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030818P021001
+  id6979 t4 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030818P021001
+  id6979 t5 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030818P021001
+  id6979 t6 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030818P021001
+  id6979 t10 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t11 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t12 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t13 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t14 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t15 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t16 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030796P021001
+  id6979 t19 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t20 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t21 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t22 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t23 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t24 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t25 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t26 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030819P021001
+  id6979 t27 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t28 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t29 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t30 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t31 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t32 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t33 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t34 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030820P021001
+  id6979 t42 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t43 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t44 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t45 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t46 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t47 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t48 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t49 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t50 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t51 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t52 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t53 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t54 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t55 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t56 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030793P021001
+  id6979 t58 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t59 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t60 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t61 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t62 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t63 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t64 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t65 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t66 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t67 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t68 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t69 [a-締切>公演日] 締切2026-12-03 > 公演2026-12-02
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t69 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t70 [a-締切>公演日] 締切2026-12-04 > 公演2026-12-02
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t70 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030800P021001
+  id6979 t75 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t76 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t77 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t78 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t79 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t80 [a-締切>公演日] 締切2027-01-16 > 公演2027-01-15
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t80 [b-発売日ズレ] 発売日2026-09-26のbefore窓が実頁に無い
+        https://eplus.jp/sf/detail/0255560001-P0030807P021001
+  id6979 t84 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021001
+  id6979 t85 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021001
+  id6979 t86 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021001
+  id6979 t87 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021001
+  id6979 t88 [b-発売日ズレ] 発売日2026-09-26のbefore窓が実頁に無い
+        https://eplus.jp/sf/detail/0255560001-P0030821P021001
+  id6979 t89 [b-発売日ズレ] 発売日2026-09-26のbefore窓が実頁に無い
+        https://eplus.jp/sf/detail/0255560001-P0030821P021001
+  id6979 t90 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021002
+  id6979 t91 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021002
+  id6979 t92 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021002
+  id6979 t93 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0255560001-P0030821P021002
+  id6979 t94 [b-発売日ズレ] 発売日2026-09-26のbefore窓が実頁に無い
+        https://eplus.jp/sf/detail/0255560001-P0030821P021002
+  id6979 t95 [b-発売日ズレ] 発売日2026-09-26のbefore窓が実頁に無い
+        https://eplus.jp/sf/detail/0255560001-P0030821P021002
+  id6984 t1 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0012400001-P0030307P021001
+  id6984 t2 [c-死枠] 受付中だが実頁にopen/before窓なし(全窓終了)
+        https://eplus.jp/sf/detail/0012400001-P0030307P021001
+  id6984 t5 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=12:00)
+        https://eplus.jp/sf/detail/0012400001-P0030310P021001
+  id6984 t6 [h-時刻欠] 同日複数公演だがバッジに時刻なし(LD=16:00)
+        https://eplus.jp/sf/detail/0012400001-P0030310P021002

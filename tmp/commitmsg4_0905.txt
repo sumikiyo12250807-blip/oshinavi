@@ -1,0 +1,34 @@
+ぴあ演劇・クラシックの発売前スイープから新着37エントリ51枠を投入（id6987-7024）
+
+■ 投入
+  演劇(lg=02)・クラシック(lg=07) の rlsStatus=0102/0202 スイープで見つかった完全新規。
+  同じアーティストの複数公演は1エントリにまとめ、会場別の ticket.url を刻んである。
+
+  投入前のゲート（feedback_newpool_presale_ratio_gate の3つの数字）:
+  - ページ到達率 = 4本とも最後のページまで到達
+    演劇0102 total404行 pages41→fetched42 ／ 演劇0202 total21 pages3→fetched4
+    クラシック0102 total346行 pages35→fetched36 ／ クラシック0202 total0
+  - 未掲載の内訳 = ユニーク66件 → 同名の既存へ統合24件 ／ 完全新規38件 ／ 保留1件(『ジャズ大名』＝同名の既存が3件)
+  - 投入37件は全部「これから発売」側（発売前スイープなので受付中の穴埋めはしていない）
+
+■ 1件だけ保留にした（投入していない）
+  eventCd=2629020「中部フィルハーモニー交響楽団 室内楽シリーズVol.6」（愛知・2027/3/20公演）
+  = ぴあの実ページで [発売前] なのに発売日時が空欄。
+  ビルドが [ドロップ] when='' として大声で報告した分（無言ドロップにはなっていない）。
+  推測で日付を入れるのは禁止（feedback_no_placeholder_dates）なので投入しない。
+
+■ 投入後のゲート
+  check_badges OK ／ check_dup_slots C型のみ（飛び先が違う＝触らない）／ check_order 違反0
+  CRLF 152436行すべてCRLF・LF単独0・CRCRLF 0
+  reconcile_pia --new = OK69 / MISSING2 / STALE1 / FETCH1 / QC0、照合できた枠 101/101
+
+  MISSING/STALE の中身（どちらも対処不要と確認）:
+  - id6944 サーカス／加藤実 = 別セッションが同じ販売窓を e+ で登録済み。ぴあ枠を持たないので
+    reconcile からは「ぴあに2枠あるのに登録0」に見えるだけ（feedback_vendor_priority＝売り場は1つでよい）
+  - id6613 ピングー展 = ぴあが eventCd を無効化した既知の保留案件。振り分けずプールに残している
+
+■ 注記
+  別セッション「新着表示への移行」が id6948〜6985 を使い、こちらは6987から採番した（取り決め済み）。
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_019Jt3BbvpVnPQSr331XNLyd
