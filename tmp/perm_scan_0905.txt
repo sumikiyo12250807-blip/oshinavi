@@ -1,0 +1,58 @@
+セッション記録 50本 / ツール呼び出し 15043回
+
+=== Bash（先頭コマンド別・上位40） ===
+  1051   python -                           ⛔任意コード実行
+  683    python -c                          ⛔任意コード実行
+  586    cat                                －最初から許可済み
+  430    sed -n                             －最初から許可済み
+  420    grep -n                            －最初から許可済み
+  349    ls                                 －最初から許可済み
+  284    date                               －最初から許可済み
+  240    python tools/heal_stale_deadlines. ⛔任意コード実行
+  228    git add                            －最初から許可済み
+  199    python tools/reconcile_pia.py      ⛔任意コード実行
+  116    python tools/build_pia_entries.py  ⛔任意コード実行
+  110    python tools/build_ai_page.py      ⛔任意コード実行
+  109    cp index.html                      ✅候補
+  108    python tools/check_badges.py       ⛔任意コード実行
+  92     node tools/check_order.js          ⛔任意コード実行
+  89     python tools/pia_tickets.py        ⛔任意コード実行
+  76     wc -c                              －最初から許可済み
+  70     python tools/check_expired.py      ⛔任意コード実行
+  69     wc -l                              －最初から許可済み
+  68     node tools/check_zero_badge.js     ⛔任意コード実行
+  62     python tools/mark_soldout.py       ⛔任意コード実行
+  61     python -X                          ⛔任意コード実行
+  55     git log                            －最初から許可済み
+  52     head -30                           －最初から許可済み
+  52     SP                                 ✅候補
+  51     grep -E                            －最初から許可済み
+  51     for i                              ✅候補
+  46     echo                               －最初から許可済み
+  39     git push                           －最初から許可済み
+  38     grep -c                            －最初から許可済み
+  37     sed -e                             －最初から許可済み
+  36     head -25                           －最初から許可済み
+  36     git commit                         －最初から許可済み
+  36     python tools/presale_harvest.py    ⛔任意コード実行
+  35     head -20                           －最初から許可済み
+  35     git status                         －最初から許可済み
+  35     grep -o                            －最初から許可済み
+  34     python tools/pia_kw_search.py      ⛔任意コード実行
+  33     head -40                           －最初から許可済み
+  31     python tools/eplus_detail.py       ⛔任意コード実行
+
+=== MCPツール（上位30） ===
+  299    mcp__claude-in-chrome__computer                      －書き込み/操作系
+  86     mcp__claude-in-chrome__read_page                     ✅読み取り系
+  37     mcp__claude-in-chrome__navigate                      －書き込み/操作系
+  27     mcp__claude-in-chrome__form_input                    －書き込み/操作系
+  6      mcp__claude-in-chrome__javascript_tool               －書き込み/操作系
+  5      mcp__claude-in-chrome__tabs_context_mcp              ✅読み取り系
+  3      mcp__nano-banana__generate_image                     －書き込み/操作系
+  2      mcp__nano-banana__get_configuration_status           ✅読み取り系
+  1      mcp__claude-in-chrome__find                          ✅読み取り系
+  1      mcp__claude-in-chrome__read_console_messages         ✅読み取り系
+  1      mcp__claude_ai_Gmail__search_threads                 ✅読み取り系
+  1      mcp__claude_ai_Gmail__get_thread                     ✅読み取り系
+  1      mcp__nano-banana__edit_image                         －書き込み/操作系
