@@ -1,0 +1,76 @@
+{
+ "lg": "01",
+ "total": 30,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 30,
+ "new_name_in_db": 5,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629330",
+   "artist": "佐野元春＆ＴＨＥ ＣＯＹＯＴＥ ＢＡＮＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/11/20(金) ・ 2026/11/21(土)",
+   "venue": "福岡市民ホール 大ホール(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628810",
+   "artist": "佐野元春＆ＴＨＥ ＣＯＹＯＴＥ ＢＡＮＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/12/27(日)",
+   "venue": "熊本城ホール メインホール(熊本県)",
+   "pref": "熊本県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670885",
+   "artist": "Tani Yuuki",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/12/4(金)",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630726",
+   "artist": "ｃｈｉｌｌｄｓｐｏｔ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2027/2/6(土)",
+   "venue": "仙台Ｒｅｎｓａ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634275",
+   "artist": "鶴",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/12/12(土) ・ 2026/12/13(日)",
+   "venue": "ｃｌｕｂ ＧＲＩＮＤＨＯＵＳＥ(徳島県)／高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "徳島県／香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670573",
+   "artist": "三浦大知",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/7",
+   "perfdate": "2026/11/6(金) ・ 2026/11/8(日)",
+   "venue": "倉敷市民会館(岡山県)／新来島高知重工ホール オレンジホール(高知県)",
+   "pref": "岡山県／高知県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}
