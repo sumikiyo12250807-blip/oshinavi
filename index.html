@@ -1188,7 +1188,7 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年9月6日 19:43</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年9月6日 19:55</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
@@ -75959,7 +75959,8 @@
       "lawson": null,
       "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669998",
       "eplus": null,
-      "amazon": "https://amzn.to/46tpZYx"
+      "amazon": "https://amzn.to/46tpZYx",
+      "amazonLabel": "著書"
     },
     "tickets": [
       {
@@ -135801,7 +135802,8 @@
       "lawson": null,
       "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2633644",
       "eplus": null,
-      "amazon": "https://amzn.to/46tpZYx"
+      "amazon": "https://amzn.to/46tpZYx",
+      "amazonLabel": "著書"
     },
     "tickets": [
       {
@@ -152482,7 +152484,10 @@
       .filter(d => !(hasPrimaryVendor && (d.key === "eplus" || d.key === "lawson")))
       .filter(d => !(multiTicketUrl && VENDOR_TICKET_KEYS.includes(d.key)))
       .map(d => {
-        const label = (d.key === "amazonGoods" && ev.links.amazonGoodsLabel) ? ev.links.amazonGoodsLabel : d.label;
+        // ボタンの文字はエントリごとに差し替えられる（links に "<キー>Label" を足す）。
+        // 🚨Amazonリンクの中身はCDとは限らない＝三木大雲は本しか出ないのに「最新CD」と
+        // 出ていた（2026-09-06 ユーザー指摘）。中身に合う言葉を links.amazonLabel で指定する。
+        const label = ev.links[d.key + "Label"] || d.label;
         return `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${label}</a>`;
       })
       .join("") + hotelBtn + genreAmazonBtn;
