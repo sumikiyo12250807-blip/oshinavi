@@ -412,26 +412,30 @@
       left: 20px;
       top: 50%;
       transform: translateY(-50%);
-      color: rgba(0, 229, 255, 0.6);
-      font-size: 15px;
+      color: rgba(0, 229, 255, 0.9);
+      font-size: 18px;
       pointer-events: none;
     }
 
+    /* 🚨検索窓は「探しに来た人が最初に見つける場所」。すぐ上のピックアップの
+       「折りたたむ▲」が箱いっぱいの囲み枠で、そちらに目が行って検索窓を
+       見つけられない人がいた（2026-09-06 ユーザーの家族が実際にうろうろした）。
+       枠・文字・光を一段強くして、上の箱に負けないようにしてある。 */
     #searchInput {
       width: 100%;
       background: rgba(10, 10, 10, 0.6);
-      border: 1px solid rgba(0, 229, 255, 0.4);
+      border: 2px solid rgba(0, 229, 255, 0.85);
       border-radius: 8px;
-      padding: 10px 14px 10px 38px;
+      padding: 14px 14px 14px 44px;
       color: var(--text);
-      font-size: 14px;
+      font-size: 16px;
       outline: none;
       transition: all 0.3s;
       font-family: inherit;
-      box-shadow: 0 0 12px rgba(0, 229, 255, 0.25), inset 0 0 8px rgba(0, 229, 255, 0.08);
+      box-shadow: 0 0 18px rgba(0, 229, 255, 0.45), inset 0 0 10px rgba(0, 229, 255, 0.12);
     }
 
-    #searchInput::placeholder { color: var(--text-muted); }
+    #searchInput::placeholder { color: rgba(220, 235, 240, 0.75); }
     #searchInput:focus {
       border-color: var(--accent2);
       box-shadow: 0 0 20px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.2);
@@ -1184,7 +1188,7 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年9月6日 19:18</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年9月6日 19:43</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
@@ -75954,7 +75958,8 @@
       "rakuten": null,
       "lawson": null,
       "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669998",
-      "eplus": null
+      "eplus": null,
+      "amazon": "https://amzn.to/46tpZYx"
     },
     "tickets": [
       {
@@ -135795,7 +135800,8 @@
       "rakuten": null,
       "lawson": null,
       "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2633644",
-      "eplus": null
+      "eplus": null,
+      "amazon": "https://amzn.to/46tpZYx"
     },
     "tickets": [
       {
