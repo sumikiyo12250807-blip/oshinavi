@@ -21,7 +21,9 @@ APPLY = "--apply" in sys.argv
 plan = json.load(open("tmp/merge_plan_0906.json", encoding="utf-8"))
 PAIRS = [tuple(x) for x in plan["A"]]
 
-h = open("index.html", encoding="utf-8", newline="").read()
+# 🚨 newline="" を付けて読み書きすると、json.dumps が返す LF がそのまま書かれて
+# EVENTS配列だけ LF になる（2026-09-06 に実際にやらかした）。既定の変換に任せる。
+h = open("index.html", encoding="utf-8").read()
 m = re.search(r"(  const EVENTS = )(\[.*?\])(;)", h, re.S)
 EVENTS = json.loads(m.group(2))
 byid = {e["id"]: e for e in EVENTS}
@@ -107,14 +109,14 @@ if APPLY:
     if bad:
         print("中止：枠が減るので書き込まない")
         sys.exit(1)
-    open("index.html.bak_0906_mergeA", "w", encoding="utf-8", newline="").write(h)
+    open("index.html.bak_0906_mergeA", "w", encoding="utf-8").write(h)
     new_arr = json.dumps(kept, ensure_ascii=False, indent=2)
     out = h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():]
     mo = re.search(r"(  const NEW_ORDER = \[)([^\]]*)(\];)", out)
     ids = [int(x) for x in mo.group(2).replace("\n", "").split(",") if x.strip()]
     left = [i for i in ids if i not in drop]
     out = out[:mo.start()] + mo.group(1) + ", ".join(str(i) for i in left) + mo.group(3) + out[mo.end():]
-    open("index.html", "w", encoding="utf-8", newline="").write(out)
+    open("index.html", "w", encoding="utf-8").write(out)
     with open("logs/merged_2026-09-06.md", "w", encoding="utf-8") as f:
         f.write("# 統合 2026-09-06（昼の便・A型）\n\n")
         f.write("「同じ公演日・同じ会場なのに、ぴあの eventCd が別」だけの重複を畳んだ。\n")
