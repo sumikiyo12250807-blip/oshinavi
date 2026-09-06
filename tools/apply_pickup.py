@@ -21,6 +21,20 @@ import io, os, re, sys
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 SRC = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else 'tmp/pickup0823/section.html'
+
+# ── 0. 🚨絶対条件のゲート（2026-09-06 ユーザー明示「①②は絶対条件です」）
+#    ①取りこぼしチェック ②ファクトチェック を、**いまの本文に対して**通していなければ反映しない。
+#    記録は draft.md のハッシュに結びついているので、書き直すと自動的に無効になる。
+#    Why＝2026-09-06、9/5に通したチェックを根拠に書き直した記事を公開し、
+#         故人（西村智彦）を現在形で「3人ね」と書いたまま出した。①は一度も走らせていなかった。
+#    ⚠️どうしても飛ばすなら --skip-gate（理由をユーザーに言えるときだけ）
+_draft = os.path.join(os.path.dirname(SRC), 'draft.md')
+if '--skip-gate' not in sys.argv and os.path.exists(_draft):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import pickup_gate
+    if not pickup_gate.verify(_draft):
+        sys.exit(1)
+
 h = io.open('index.html', encoding='utf-8').read()
 new = io.open(SRC, encoding='utf-8').read().rstrip()
 
