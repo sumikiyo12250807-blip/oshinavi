@@ -75,7 +75,12 @@ check(not undef, "使っている pk- クラス %d 個は全部 index.html に�
 # 8. 「。」のあとが全部 <br> か（apply_pickup.py がここで落ちる）
 body = re.sub(r"<[^>]+>", "\x00", s)
 bad = []
+# 🚨グループ名の中の「。」は例外＝改行しない（memory: feedback_x_kuten_kaigyo）。
+# 「モーニング娘。」がタイルに入って誤検出した（2026-09-06）。
+KUTEN_IN_NAME = ("モーニング娘。",)
 for m in re.finditer(r"。", s):
+    if any(s[max(0, m.end() - len(n)):m.end()] == n for n in KUTEN_IN_NAME):
+        continue
     tail = s[m.end():m.end() + 4]
     if tail.startswith("<br") or tail.startswith("</p>") or tail.startswith("</a") or tail.startswith("</s"):
         continue
