@@ -55,7 +55,8 @@ OSHINAVIの"M/Dチケット発売"ピックアップ🎫  ← 🚨1行目に必�
 （サイトへ行く理由を1〜2文）
 
 ▼チケット情報はこちら
-oshinavi.jp/?q=アーティスト名          ← 🆕2026-09-08 ユーザー決定。下の「URLの形」を見る
+oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯&status=urgent
+                                       ← 🆕2026-09-08。主役枠は?q= / まとめ枠は?genre=。下の「URLの形」を見る
 
 （締め2文・毎回違う言い回し）
 
@@ -96,12 +97,26 @@ oshinavi.jp/?q=アーティスト名          ← 🆕2026-09-08 ユーザー決
 |---|---|
 | **主役枠**（1組だけの投稿） | `oshinavi.jp/?q=松平健` ＝**その組の名前**を入れる |
 | **トレンド枠** | `oshinavi.jp/?q=トレンドに出た名前` |
-| **まとめ枠**（1投稿＝1ジャンル） | `oshinavi.jp` のまま（1つに絞れないので付けない） |
+| **まとめ枠**（1投稿＝1ジャンル） | `oshinavi.jp/?genre=owarai&status=urgent` ＝**そのジャンル＋今週発売** |
+
+🆕**まとめ枠もジャンルで絞って着地させる**（2026-09-08 ユーザー提案「まとめのところはそれぞれの選択を入れればいい」）。
+`status` は画面のボタンと同じで4つ＝`urgent`(🔴今週発売) / `soon`(🟠今月発売) / `upcoming`(先行受付前) / 省略(すべて)。
+**「明日発売のお笑いまとめ」なら `?genre=owarai&status=urgent`。**
+
+`genre` に入れる記号（画面のジャンルボタンと同じ）＝
+`jpop` `rock` `kpop` `yougaku` `hiphop` `anime` `idol` `youtuber` `vtuber` `kids`
+`classic` `jazz` `enka` `dento` `hougaku` `chanson` `musicetc` `kaidan` `engeki` `fes`
+`sports` `hanabi` `2.5ji` `seiyuu` `owarai` `musical` `aisatsu` `dinnershow` `art`
+`gourmet` `fanevent` `douyou` `circus` `magic` `gakusai` `talkshow` `event`
+
+⚠️`?q=` と `?genre=` は**同時に効かない**（q があれば q だけが効く）。
+サイトが元々「検索を始めたら絞り込みを外す」作りなので、それに合わせてある。**片方だけ書く。**
+✅`?genre=...&status=...` は**全部半角英数**なので、Xが必ずリンクとして認識する（`?q=` の日本語と違って心配がない）。
 
 - 名前は**OSHINAVIに載っている表記そのまま**（愛称・略称にしない。絞り込みは文字の一致で動く）。
 - **Why**＝GA4の実測(8/11〜9/7)で、Xから来た213人の平均滞在は**12秒**だった
   （検索から来た69人は26秒）。トップに4,400件並んでいて、自分の推しを探せずに帰っていた。
-- 🚨**リンクとして認識されるかは未実測**（Xの入力欄で確かめようとして取れなかった）。
+- 🚨**`?q=`（日本語入り）だけリンク認識が未実測**（Xの入力欄で確かめようとして取れなかった）。
   ＝**予約の前に、投稿画面で青いリンクになっているかを必ず目で見る**。
   なっていなければその1本だけ `oshinavi.jp` に戻す。
 - ⚠️`?q=` を付けても誘導先は oshinavi.jp のまま＝[[feedback_x_link_oshinavi_only]] は守れている。
