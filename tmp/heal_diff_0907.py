@@ -7,7 +7,7 @@
 import io, re, json, sys, collections
 
 TODAY = "2026-09-07"
-BEFORE = "index.html.bak_0907_night"   # 夕方のヒール直前
+BEFORE = "index.html.bak_0907_night2"   # 19時台のヒール直前
 AFTER = "index.html"
 
 

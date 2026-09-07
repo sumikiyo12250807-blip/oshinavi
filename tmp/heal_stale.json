@@ -803,6 +803,11 @@
     "date": "2026-12-25",
     "startDate": "2026-12-25",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2533289"
+   },
+   {
+    "type": "一般販売（大阪 R9年 1/17公演）〜1/15 23:59",
+    "date": "2027-01-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626935"
    }
   ]
  },
@@ -932,6 +937,11 @@
   "status": "convert",
   "artist": "秋川雅史（T）",
   "tickets": [
+   {
+    "type": "一般発売（埼玉 11/15公演）〜11/11 23:59",
+    "date": "2026-11-11",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625491"
+   },
    {
     "type": "一般発売（東京 11/25公演）〜11/21 23:59",
     "date": "2026-11-21",
@@ -1845,27 +1855,24 @@
   "artist": "WILD BLUE",
   "tickets": [
    {
-    "type": "一般発売（機材席開放販売）（宮城 9/19公演）9/7 18:00発売",
-    "date": "2026-09-07",
-    "startDate": "2026-09-07",
+    "type": "一般発売（機材席開放販売）（宮城 9/19公演）〜9/9 23:59",
+    "date": "2026-09-09",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625704"
    },
    {
-    "type": "機材席開放 追加販売（福岡 9/27公演）9/7 18:00発売",
-    "date": "2026-09-07",
-    "startDate": "2026-09-07",
+    "type": "機材席開放 追加販売（福岡 9/27公演）〜9/17 23:59",
+    "date": "2026-09-17",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628178"
-   },
-   {
-    "type": "追加販売（愛知 10/11公演）9/7 18:00発売",
-    "date": "2026-09-07",
-    "startDate": "2026-09-07",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628059"
    },
    {
     "type": "指定席追加販売（広島 10/12公演）〜10/1 23:59",
     "date": "2026-10-01",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627191"
+   },
+   {
+    "type": "追加販売（愛知 10/11公演）〜10/1 23:59",
+    "date": "2026-10-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628059"
    }
   ]
  },
@@ -2234,6 +2241,11 @@
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634831"
    },
    {
+    "type": "一般発売（大阪 11/5公演）〜11/4 23:59",
+    "date": "2026-11-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633395"
+   },
+   {
     "type": "一般発売（北海道 11/20公演）〜11/19 23:59",
     "date": "2026-11-19",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620308"
@@ -2417,17 +2429,6 @@
   ]
  },
  {
-  "id": 6097,
-  "status": "convert",
-  "artist": "IMM THEATER 寄席",
-  "tickets": [
-   {
-    "type": "一般発売（東京 9/25〜9/27公演）〜9/25 23:59",
-    "date": "2026-09-25"
-   }
-  ]
- },
- {
   "id": 6396,
   "status": "convert",
   "artist": "吉川晃司",
@@ -2484,9 +2485,8 @@
   "artist": "PON pre WALK THIS WAY ～12周年も市川で踊り明かせ編～",
   "tickets": [
    {
-    "type": "一般発売（千葉 10/17公演）9/7 19:00発売",
-    "date": "2026-09-07",
-    "startDate": "2026-09-07"
+    "type": "一般発売（千葉 10/17公演）〜10/8 23:59",
+    "date": "2026-10-08"
    }
   ]
  },
@@ -2496,9 +2496,8 @@
   "artist": "『浅倉樹々 2027年カレンダー』発売記念お渡し会",
   "tickets": [
    {
-    "type": "一般発売（大阪 11/15公演）9/7 18:00発売",
-    "date": "2026-09-07",
-    "startDate": "2026-09-07"
+    "type": "一般発売（大阪 11/15公演）〜11/8 23:59",
+    "date": "2026-11-08"
    }
   ]
  },
@@ -2508,9 +2507,8 @@
   "artist": "半田健人トークイベント『だんだん好きになっていきましょう』vol.20",
   "tickets": [
    {
-    "type": "一般発売（東京 10/4公演）9/7 18:00発売",
-    "date": "2026-09-07",
-    "startDate": "2026-09-07"
+    "type": "一般発売（東京 10/4公演）〜10/3 23:59",
+    "date": "2026-10-03"
    }
   ]
  }
