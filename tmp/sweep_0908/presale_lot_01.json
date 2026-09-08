@@ -1,0 +1,76 @@
+{
+ "lg": "01",
+ "total": 26,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 25,
+ "new_name_in_db": 3,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670650",
+   "artist": "35.7",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/14",
+   "perfdate": "2026/11/13(金)",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635143",
+   "artist": "鶴",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/8",
+   "perfdate": "2026/11/28(土) ・ 2026/11/29(日)",
+   "venue": "札幌Ｃｒａｚｙ Ｍｏｎｋｅｙ(北海道)／苫小牧ＥＬＬＣＵＢＥ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635251",
+   "artist": "なとり",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/11",
+   "perfdate": "2027/6/25(金) ・ 2027/6/26(土)",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670846",
+   "artist": "YOASOBI",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/9",
+   "perfdate": "2026/11/14(土) ・ 2026/11/15(日)",
+   "venue": "大和ハウス プレミストドーム(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635610",
+   "artist": "レミオロメン",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2027/6/5(土)",
+   "venue": "敦賀市民文化センター 大ホール(福井県)",
+   "pref": "福井県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635615",
+   "artist": "レミオロメン",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/12",
+   "perfdate": "2027/6/6(日)",
+   "venue": "本多の森北電ホール(石川県)",
+   "pref": "石川県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}

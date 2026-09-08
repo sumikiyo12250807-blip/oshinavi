@@ -1,0 +1,21 @@
+セリフ 42字 / 尺10秒に収まる目安 50字
+{
+  "model": "MiniMax-H3",
+  "content": [
+    {
+      "type": "text",
+      "text": "VOICE REQUIREMENT (highest priority): the speaking voice MUST be a MAN's voice — a warm, low-pitched adult male voice speaking Japanese, campy and theatrical, the voice of a Japanese drag queen. NEVER a female voice, never a clear high voice. The speaker is a stylized 3D-rendered cartoon Japanese drag queen with big-head chibi proportions: a short, very plump MAN performing in drag, with a huge voluminous wavy lavender-purple bouffant hairdo (no tiara, no hat) with a LARGE sparkling purple glitter bow trimmed with pearls pinned on the right side of the hair, round full cheeks, thick dark eyebrows and a clearly visible COOL BLUE-GREY five o'clock shadow — a slate-blue shaved stubble over the moustache area, jaw and cheeks with a small blue-grey goatee (never brown, never black) — heavy pink-purple eyeshadow with long lashes and sharp winged eyeliner, glossy pink lips, large silver rhinestone drop earrings, a matching rhinestone collar necklace and a rhinestone bracelet, wearing a strapless violet-purple sequinned gown with sheer puffed long sleeves, a jewelled brooch at the hip and a sparkling ruffled train, on chunky glitter platform heels. Warm, campy, bossy and theatrical. Camera locked off. Keep exactly the same framing, scale and position as the reference image — do not zoom, pan or re-compose. He performs to camera with BIG, continuous, exaggerated drag-queen gestures: he lifts and wags his index finger, opens both arms wide, puts a hand on his hip and tilts his head, shrugs, points at the viewer, and finishes with a wink and a warm smile. Constant lively motion of head, shoulders, hands and hair throughout the whole shot — never a still pose. He stays standing in the same spot and never leaves the frame. Accurate Japanese lip sync. No on-screen text, no subtitles, no watermark. Keep the background perfectly still and pixel-identical to the reference image: do NOT redraw, re-render or alter any text, letters, numbers or the logo anywhere in the frame. Only the drag queen herself moves. He says in Japanese: 「あら、いらっしゃい。\nおしのチケット、またかいのがしたの？\nオシナビをごらんなさい。」"
+    },
+    {
+      "type": "image_url",
+      "image_url": {
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAYACAIAAA...(2276494文字)"
+      },
+      "role": "reference_image"
+    }
+  ],
+  "duration": 10,
+  "resolution": "2K",
+  "ratio": "9:16"
+}
+参照画像 1枚 / 音声 0本 / --dry-run なので送信していない

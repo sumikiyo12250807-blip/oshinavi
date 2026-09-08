@@ -1,0 +1,5 @@
+踊りモード＝台詞なし（音楽に合わせて動く）
+セリフ 0字 / 尺15秒に収まる目安 75字
+task_id: 439387506802936
+    10s status=failed
+生成失敗: {"task": {"id": "439387506802936", "model": "MiniMax-H3", "status": "failed", "error": {"code": "2013", "message": "content[2].audio_url: invalid param: audio format \".mpeg\" not allowed"}, "created_at": 1788826238, "updated_at": 1788826238, "resolution": "2K", "duration": 15, "usage": {}, "ratio": "9:16", "task_type": "generation"}}

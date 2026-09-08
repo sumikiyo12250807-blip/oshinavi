@@ -1,0 +1,5 @@
+lg=02 total=11 pages=2
+parsed items: 11 (fetched up to page 3)
+already in DB (eventCd一致): 11 | NOT in DB (new candidates): 0
+  うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）
+written tmp/sweep0101_0908/02_pf45.json

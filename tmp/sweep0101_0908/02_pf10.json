@@ -1,0 +1,54 @@
+{
+ "lg": "02",
+ "total": 17,
+ "pages": 2,
+ "fetched_pages": 3,
+ "parsed": 16,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610125",
+   "artist": "梅沢富美男劇団特別公演 梅沢富美男＆研ナオコ アッ！とおどろく夢芝居",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/19(水) ～ 2026/9/24(木)",
+   "venue": "水戸市民会館 グロービスホール(茨城県)／高崎芸術劇場 大劇場(群馬県)／市川市文化会館 大ホール(千葉県)／大田区民ホール・アプリコ 大ホール(東京都)",
+   "pref": "茨城県／群馬県／千葉県／東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620238",
+   "artist": "寛平ＧＭプロデュース公演 新喜劇出前ツアー２０２６ 群馬公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/21(月・祝)",
+   "venue": "太田市民会館(群馬県)",
+   "pref": "群馬県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665734",
+   "artist": "無双!! ものまねLIVE2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/23(水・祝)",
+   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
+   "pref": "群馬県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667983",
+   "artist": "朗読劇『古事記』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "富岡市かぶら文化ホール(群馬県)",
+   "pref": "群馬県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ]
+}
