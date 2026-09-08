@@ -259,6 +259,20 @@ def build(recs, new_id):
 
 
 def _selftest():
+    # 🚨「今日」を固定してから回す。固定しないと**日付が過ぎた時点でテストが落ちて、
+    #   ゲートが動かないまま放置される**（2026-09-09 に実際「公演が全部過去」で落ちていた）。
+    #   固定日は下の雛形（公演8/29・一般発売7/25開始・二次先行8/1開始）が
+    #   「一般発売は開始済み／二次先行はこれから」になる位置に置く。
+    global TODAY
+    _real_today = TODAY
+    TODAY = datetime.date(2026, 7, 28)
+    try:
+        _selftest_body()
+    finally:
+        TODAY = _real_today
+
+
+def _selftest_body():
     rec = {
         'url': 'https://ticket.rakuten.co.jp/music/fes/rtxxxxx/',
         'name': 'テストフェス2026',

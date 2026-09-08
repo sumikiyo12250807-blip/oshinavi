@@ -185,11 +185,21 @@ def main():
         #   丸ごと1県として比較すると必ず外れるので、**分解して全部がページ側に在るか**で見る
         #   （ぴあ側の「統合バッジが多県名乗るのは正」と同じ扱い＝[[reference_reconcile_pia_qc_gate]]）。
         #   2026-07-30: id5 Rol3ert（大阪・東京の2会場）が誤検知でFAILしていた。
-        if e.get('prefecture') and e['prefecture'] != '全国' and page_pref:
+        #   🚨2026-09-09: **他社の枠が混ざったエントリでは県を突き合わせない**。
+        #   ツアー全体はぴあで押さえていて、楽天のページはその中の1都市分しか無いことがある
+        #   （id1 さだまさし＝エントリは千葉・愛知を名乗り、楽天ページは東京11月公演だけ）。
+        #   エントリ全体の県を1枚のページに求めると必ず外れる＝毎朝ノイズで鳴る。
+        mixed = any(t.get('url') and 'rakuten' not in t['url'] and 'linksynergy' not in t['url']
+                    for t in (e.get('tickets') or []))
+        if e.get('prefecture') and e['prefecture'] != '全国' and page_pref and not mixed:
             mine = [p for p in re.split(r'[・/／]', e['prefecture']) if p]
             miss = [p for p in mine if p not in page_pref]
             if miss:
                 errs.append('県 %s がページ(%s)に無い' % ('・'.join(miss), '/'.join(sorted(page_pref))))
+        elif mixed:
+            errs_note = '他社の枠が混ざるエントリなので県の突合はしない'
+            if errs_note not in errs:
+                pass   # 情報として出すほどではない（FAILにしない）
 
         if errs:
             fail += 1
