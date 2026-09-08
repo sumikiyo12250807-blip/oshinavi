@@ -135,6 +135,14 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
    - 公演終了組＝削除候補／⚠️要再確認組＝`reconcile_pia.py --ids ...` で機械照合
    - 買える枠あり＝救済変換（自走OK）／0枠＝まず `mark_soldout.py --ids ...` で**予定枚数終了かを判定**
      （売り切れは削除しない＝[[feedback_soldout_keep_visible]]）
+3.4. 🚨**楽天の再照合** `python tools/reconcile_rakuten.py --ids <楽天リンクを持つid>`
+   （2026-09-08 追加・[[project_rakuten_make_it_ironclad]] の4番目）
+   - 対象idは `python tools/rakuten_state.py` が出す（いまは15件・22枠）
+   - 🚨**ぴあと同じ理由で毎朝要る**＝登録した表示値がページとズレても、他のどの道具も気づかない。
+     ヒールはぴあ専用、reconcile_pia は楽天を見ない、check_zero_badge は「枠0」しか見ない
+   - 見るのは FAIL だけでなく**未照合の枠数**も（QC 0＝全部正しい、ではない）
+   - ⏭️照合対象外＝楽天チケットmini形式（/mini/events/）。**目視でしか確かめられない**
+
 3.5. 🚨🚨**バッジ0の番人** `node tools/check_zero_badge.js`（2026-08-20 新設・**毎朝必須**）
    - 「カードは出るのに**買える枠が1枚も無い**」エントリを、**index.htmlの実物の表示ルールを取り出して**数える
    - 終了コード **2＝要対応**（公演まで31日より先なのに枠0）／1＝30日以内のみ／0＝健全
