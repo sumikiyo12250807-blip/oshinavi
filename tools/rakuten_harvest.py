@@ -144,14 +144,18 @@ def parse_perfs(body):
         # カードが無い/会場列が空のページは平文側で拾い直す（会場空のまま載せない）
         alt = parse_perfs_text(body)
         if alt and any(p['venue'] for p in alt):
-            # 平文側は販売期間を持たないので、カード側の期間を引き継ぐ
-            if uniq:
-                for a in alt:
-                    for c in uniq:
-                        if c['date'] == a['date']:
-                            a['sale_start'], a['sale_end'] = c['sale_start'], c['sale_end']
-                            break
-            return alt
+            if not uniq:
+                return alt
+            # 🚨カード側の公演を丸ごと差し替えない＝**会場だけ**平文側から日付で埋める。
+            #   差し替えると、平文側が1公演しか拾えなかった時に公演が消える
+            #   （2026-09-09 さだまさし［東京｜11月公演］＝11/19と11/20のうち11/19が落ちた）。
+            #   カード側は販売期間(data-date)を持っているので、そちらを残すほうが情報が多い。
+            byd = {a['date']: a['venue'] for a in alt if a.get('venue')}
+            only = {v for v in byd.values()}
+            for c in uniq:
+                if not c['venue']:
+                    c['venue'] = byd.get(c['date']) or (next(iter(only)) if len(only) == 1 else '')
+            return uniq
     return uniq
 
 
@@ -172,7 +176,14 @@ def parse_perfs_text(body):
         r'(?:\s*〜\s*(?:(?P<y2>20\d{2})年\s*)?(?P<m2>\d{1,2})月\s*(?P<d2>\d{1,2})日\s*\([^)]*\))?'
         r'\s*公演時間\s*[:：]\s*(?P<time>.{0,60}?)\s*'
         r'エリア\s*[:：]\s*(?P<pref>\S{2,6}?)\s*会場\s*[:：]\s*(?P<venue>.{1,60}?)\s*'
-        r'(?P<status>販売終了|受付終了|完売|予定枚数終了|販売前|受付中|購入する|申込)')
+        # 🚨会場の後ろに販売状態の語が来ないページがある（モバイル側の帯は会場のすぐ後ろが
+        #   `var specifedDate = new Date();` の生JS）。状態の語だけを終端にしていたので
+        #   **会場が空のまま落ちて、ビルドが「会場が取れない」で丸ごとskipしていた**
+        #   （2026-09-09 発覚＝春猿火・KOKO・理芽・さだまさし東京11月＝どれも発売前の公演）。
+        #   JSの始まりも終端として認め、状態はそのとき空にする。
+        r'(?P<status>販売終了|受付終了|完売|予定枚数終了|販売前|受付中|購入する|申込'
+        r'|var |jQuery|\(function)')
+    JSMARK = ('var ', 'jQuery', '(function')
     for m in pat.finditer(txt):
         venue = re.split(r'\s*(?:var |jQuery|\(function|/\*|＜|<)', m.group('venue'))[0].strip()
         open_t = re.search(r'開演\s*(\d{1,2}:\d{2})', m.group('time') or '')
@@ -182,7 +193,9 @@ def parse_perfs_text(body):
             'time': open_t.group(1) if open_t else '',
             'pref': m.group('pref'), 'venue': venue, 'ticket_name': '',
             'sale_start': '', 'sale_end': '',
-            'status': m.group('status'),
+            # JSが終端だった＝状態の表示が無いページ。状態は空にして、
+            # 「買えるか」は販売枠(salesDisplayStatus)の期間で決めさせる（alive の②）。
+            'status': '' if m.group('status') in JSMARK else m.group('status'),
         })
     uniq, seen = [], set()
     for p in out:
