@@ -83,7 +83,10 @@ def pia_buyable(urls):
         for r in bpe.parse_cards(h):
             if r['state'] not in ('受付中', '発売前'):
                 continue
-            suf, iso, sd = bpe.parse_when(r['state'], r['when'])
+            # 🚨parse_when を直に呼ばない＝「当日券発売中」のように when が空で来る表記の
+            #   受け皿は build_pia_entries.parse_when_row に集めてある。片方だけ直すと
+            #   「登録できるのに照合がDROPと言う」ズレになる（2026-09-09 当日券）。
+            suf, iso, sd = bpe.parse_when_row(r)
             # 🚨飛び先の売り場コードまで見て同一性を判定する。ツアーのまとめページは公演日を
             # 出さないカードがあり、締切と券種名だけで畳むと別会場の枠が消える
             # （2026-08-18 杉山清貴の福岡プレリザーブを「一致」と報告して見逃した）。
@@ -378,6 +381,12 @@ def main():
         reg = [t for t in reg_all
                if not (t.get('url') or '') or 'pia.jp' in (t.get('url') or '')]
         n_other = len(reg_all) - len(reg)
+        # 🚨売り切れ(soldout)の枠は「ぴあで買えない」のが正しい姿。数に入れると必ず枠数が
+        #   合わず、毎朝ノイズで鳴り続けて本物の取りこぼしが埋もれる
+        #   （2026-09-09 id7363 時速36km の福岡＝予定枚数終了）。
+        #   ただし黙って落とさず、件数は下の表示に出す。
+        n_soldout = sum(1 for t in reg if t.get('soldout'))
+        reg = [t for t in reg if not t.get('soldout')]
         stat['other'] = stat.get('other', 0) + n_other
         # ぴあ側の実態を取得。0枠と出たら単独リトライ（偽陽性で生きた枠を殺さないため）。
         buyable, drops, errs, tries = fetch_buyable(urls, len(reg))
@@ -401,7 +410,8 @@ def main():
         if problem:
             tag = '❌' if qc_bad else ('🚨' if missing else ('💤' if stale else ('⚠️' if drops else '❌')))
             print(f'{tag} id={ev["id"]} {ev.get("artist","")[:30]} | 登録{len(reg)}枠 / ぴあ買える{len(buyable)}枠'
-                  + (f' ／ ぴあ外{n_other}枠は対象外' if n_other else ''))
+                  + (f' ／ ぴあ外{n_other}枠は対象外' if n_other else '')
+                  + (f' ／ 売り切れ{n_soldout}枠は対象外' if n_soldout else ''))
             for b in missing:
                 print(f'    🚨MISSING ぴあに [{b["state"]}] {b["suf"]} ({b["iso"]}) があるが登録に無い | {b["title"]}')
                 n_missing += 1
@@ -421,7 +431,8 @@ def main():
             n_ok += 1
             if not QUIET:
                 print(f'✅ id={ev["id"]} {ev.get("artist","")[:24]} | 登録{len(reg)}=ぴあ{len(buyable)} 一致'
-                      + (f' ／ ぴあ外{n_other}枠は対象外' if n_other else ''))
+                      + (f' ／ ぴあ外{n_other}枠は対象外' if n_other else '')
+                  + (f' ／ 売り切れ{n_soldout}枠は対象外' if n_soldout else ''))
     print(f'\n=== 集計: OK {n_ok} / 🚨MISSING {n_missing} / ⚠️DROP {n_drop} / 💤STALE {n_stale} / '
           f'❌FETCH {n_err} / ❌QC {len(qc_fail)} ===')
     # カバレッジ＝「QC 0」が“全部見て問題なし”なのか“そもそも見ていない”のかを必ず区別する。
