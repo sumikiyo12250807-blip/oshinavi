@@ -242,6 +242,7 @@ def parse_cards(h):
             'venue': card_venues[0] if len(card_venues) == 1 else '',
             'venues': card_venues, 'prefs': prefs,
             'title': txt(g(r'__title">(.*?)</p>')), 'state': state,
+            'stt': stt,   # ステータスの生文言（「当日券発売中」等の判定に使う）
             'when': txt(g(r'__status[^>]*>.*?<br>\s*<span[^>]*>(.*?)</span>')),
             'url': ticketinfo_href(it),
         })
@@ -498,6 +499,20 @@ def parse_when(state, when):
             iso = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"; t = m.group(4)
             return (f"〜{int(m.group(2))}/{int(m.group(3))} {t}" if t else f"〜{int(m.group(2))}/{int(m.group(3))}"), iso, None
     return None, None, None
+
+def parse_when_row(r):
+    """カード1枚から (suf, iso, sd) を出す。parse_when が落ちる表記の受け皿もここに集める。
+    🚨**ビルドと照合(reconcile_pia)の両方がこれを呼ぶ**＝片方だけ直すと、
+      「登録できるのに照合がDROPと言う」ズレが出る（2026-09-09 当日券で実際に起きた）。"""
+    suf, iso, sd = parse_when(r['state'], r['when'])
+    if not iso and '当日券' in (r.get('stt') or ''):
+        # 「当日券発売中」＝その日の公演の当日券。ぴあは販売期間を書かない(when='')ので
+        # parse_when が落ち、**いま本当に買える枠が丸ごと消えていた**
+        # （2026-09-09 発覚＝7434 レイラック滋賀FC／7466 新日本プロレス）。
+        # 当日券は公演が終われば売り終わるので **公演日で締める**（DELETE_GATE 6章）。
+        return '当日券', (r.get('perf_end') or r['perfdate']), None
+    return suf, iso, sd
+
 
 def genre_of(n):
     """名前ベースのジャンル推測（bundleページ等でぴあカテゴリが取れない時のフォールバック）。"""
@@ -811,7 +826,7 @@ def build(cand):
     multi = len(srcs) > 1 or len(cand.get('urls') or []) > 1
     tickets = []
     for r in rows:
-        suf, iso, sd = parse_when(r['state'], r['when'])
+        suf, iso, sd = parse_when_row(r)
         if not iso:
             # 【最重要】買えると判定したカードの日付が解析できない＝取りこぼし。
             # 黙ってcontinueすると枠が無言で消える(2026-06-23の全取りこぼしの真因)。
