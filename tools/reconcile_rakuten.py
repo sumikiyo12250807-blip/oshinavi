@@ -95,8 +95,15 @@ def main():
             except Exception as ex:
                 bad = ex
                 continue
-            perfs += R.parse_perfs(b)
-            wins += R.parse_windows(b)
+            p1, w1 = R.parse_perfs(b), R.parse_windows(b)
+            if not p1 and not w1:
+                # 🆕新型＝HTMLは空の型だけで data-event-json が指す外部JSONに中身がある。
+                #   ハーベスタ側と同じ条件で辿る（入口だけ読めて出口が読めないと照合が抜ける）。
+                ej = R.parse_event_json(b)
+                if ej:
+                    p1, w1 = ej.get('perfs') or [], ej.get('windows') or []
+            perfs += p1
+            wins += w1
         if bad and not perfs:
             fetcherr += 1
             print('❌ id=%s %s | FETCH %s' % (e['id'], e['name'][:34], bad))
