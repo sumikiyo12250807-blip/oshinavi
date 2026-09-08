@@ -174,7 +174,9 @@ def main():
                     #   ページ側だけが減る。これを鳴らすと毎回FAILになって本物が埋もれる。
                     mo, dy = (int(x) for x in one.split('/'))
                     yr = int(TODAY[:4]) + (1 if mo < int(TODAY[5:7]) - 6 else 0)
-                    if '%04d-%02d-%02d' % (yr, mo, dy) < TODAY:
+                    # 🚨当日分も鳴らさない＝楽天は「その日の公演の販売が閉じた時点」でカードを落とすので、
+                    #   今日の公演はページに残っていないことがある（2026-09-09 id3244 来舞 来夢で実証）。
+                    if '%04d-%02d-%02d' % (yr, mo, dy) <= TODAY:
                         continue
                     errs.append('バッジ公演日 %s がページに無い | %s' % (one, t['type'][:34]))
             checked_slots += 1 if checked else 0
