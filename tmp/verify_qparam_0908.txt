@@ -1,0 +1,20 @@
+=== 改行 ===
+           CRLF      bareLF  CRCRLF  孤立CR
+変更前     150949        0       0      0
+変更後     150541        0       0      0
+判定: 🚨NG
+
+=== EVENTS 件数 ===
+変更前 4492 / 変更後 4477 → 🚨NG
+
+=== 並び順まわりの指紋（バックアップと文字列比較）===
+  EVENTS.sort        見つかった=True  一致=True
+  saleStartPending   見つかった=True  一致=True
+  SORT_PRESALE       見つかった=True  一致=True
+  NEW_ORDER          見つかった=True  一致=True
+判定: OK（全ブロック一致）
+
+=== 足したコード ===
+?q= の読み取り: 1 か所（1が正）
+
+総合: 🚨要確認

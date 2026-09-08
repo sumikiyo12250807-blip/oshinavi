@@ -1,0 +1,54 @@
+{
+ "lg": "01",
+ "total": 26,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 25,
+ "new_name_in_db": 3,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631661",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/20(日)",
+   "venue": "高周波文化ホール（射水市新湊中央文化会館）(富山県)",
+   "pref": "富山県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/18(日)",
+   "venue": "クロスランドおやべ メインホール(富山県)",
+   "pref": "富山県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621206",
+   "artist": "竹原ピストル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/16(金)",
+   "venue": "Ｓｏｕｌ Ｐｏｗｅｒ(富山県)",
+   "pref": "富山県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622404",
+   "artist": "古瀬ゆうきとＴＨＥカルテットの昭和歌謡コンサート（射水９月公演）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/21(月・祝)",
+   "venue": "アイザック小杉文化ホール ラポール ひびきホール(富山県)",
+   "pref": "富山県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
