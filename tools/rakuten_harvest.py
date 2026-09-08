@@ -251,6 +251,92 @@ def win_dates(timming):
     return f, t
 
 
+def parse_event_json(body, fetcher=None):
+    """🆕【2026-09-08】楽天チケットには**2つの作り**がある。
+
+    ①従来型＝HTMLに公演カード(<div class='performance'>)と salesDisplayStatus がある
+    ②新型  ＝HTMLは空の型だけで、`data-event-json="<URL>"` が指す**外部JSON**に全部入っている
+
+    ②を読めないまま「解析不能」で捨てていた＝2026-09-08のハーベストで176件中36件が該当し、
+    そのうち**5件は公演がまだ未来＝落としてはいけないもの**だった（THE ORCHESTRA TOKYO／
+    Chalca／FES☆TIVE／ちゃーむぽっしゅ／アンスリューム）。
+    🚨「読めなかった」と「買える枠が無い」を同じ扱いにすると、こうして黙って取りこぼす。
+
+    JSONの形（実物）:
+      title / dates[ISO] / venues[{name,prefecture}] / showTimes[{open,start}]
+      sales[{label,startISO,endISO}] / tickets[{name,price,buyUrl}] / buyUrls[]
+    戻り値は parse_perfs / parse_windows と**同じ形**にそろえる。
+    """
+    m = re.search(r'data-event-json=(["\'])(.*?)\1', body, re.S)
+    if not m:
+        return None
+    ju = html.unescape(m.group(2)).strip()
+    if not ju.startswith('http'):
+        return None
+    try:
+        d = json.loads((fetcher or fetch)(ju))
+    except Exception:
+        return None
+
+    def d10(s):
+        mm = re.match(r'(\d{4})-(\d{2})-(\d{2})', str(s or ''))
+        return '%s-%s-%s' % mm.groups() if mm else ''
+
+    def dt16(s):
+        mm = re.match(r'(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})', str(s or ''))
+        return '%s-%s-%s %s' % mm.groups() if mm else ''
+
+    dates = [d10(x) for x in (d.get('dates') or []) if d10(x)]
+    venues = d.get('venues') or []
+    times = d.get('showTimes') or []
+    sales = d.get('sales') or []
+
+    # 販売枠＝いちばん遅い終了を「そのページの締切」として公演側にも持たせる（従来型と同じ扱い）
+    s_start = min([dt16(s.get('startISO')) for s in sales if dt16(s.get('startISO'))] or [''])
+    s_end = max([dt16(s.get('endISO')) for s in sales if dt16(s.get('endISO'))] or [''])
+    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+
+    perfs = []
+    for i, dd in enumerate(dates):
+        v = venues[i] if i < len(venues) else (venues[0] if venues else {})
+        t = times[i] if i < len(times) else (times[0] if times else {})
+        perfs.append({
+            'date': dd, 'end': '',
+            'time': (t.get('start') or t.get('open') or ''),
+            'pref': (v.get('prefecture') or ''),
+            'venue': (v.get('name') or ''),
+            'ticket_name': '',
+            'sale_start': s_start,
+            'sale_end': s_end,
+            # 画面の active 相当が無いので、締切が未来かどうかで受付中を決める
+            'status': '受付中' if (s_end and s_end >= now) else '販売終了',
+        })
+
+    WD = '月火水木金土日'
+
+    def timming_str(s16):
+        """"2026-05-22 21:00" → "2026/05/22(金) 21:00"。
+        🚨後段(win_dates)は実物の書式を正規表現で読むので、曜日カッコまで本物と同じ形にする。"""
+        if not s16:
+            return ''
+        y, mo, dd = int(s16[0:4]), int(s16[5:7]), int(s16[8:10])
+        w = WD[datetime.date(y, mo, dd).weekday()]
+        return '%04d/%02d/%02d(%s) %s' % (y, mo, dd, w, s16[11:16])
+
+    wins = []
+    for s in sales:
+        a, b = dt16(s.get('startISO')), dt16(s.get('endISO'))
+        if not a and not b:
+            continue
+        wins.append({
+            'type': (s.get('label') or '一般発売').strip() or '一般発売',
+            'timming': '%s 〜 %s' % (timming_str(a), timming_str(b)),
+            'status': '', 'start': a,
+        })
+    return {'name': (d.get('title') or '').strip(), 'perfs': perfs, 'windows': wins,
+            'buy_urls': [u for u in (d.get('buyUrls') or []) if u]}
+
+
 def parse_page(url, body):
     og = re.search(r'<meta[^>]+property="og:title"[^>]+content="([^"]+)"', body)
     name = html.unescape(og.group(1)) if og else ''
@@ -278,8 +364,21 @@ def parse_page(url, body):
 
     perfs = parse_perfs(body)
     wins = parse_windows(body)
+
+    # 🆕新型（HTMLは空で data-event-json が外部JSONを指す）は従来のパースでは0件になる。
+    #    公演が取れていない時だけ、JSONを辿って拾い直す（2026-09-08＝取りこぼし5件で発覚）。
+    shape = '従来型'
+    if not perfs:
+        ej = parse_event_json(body)
+        if ej and ej['perfs']:
+            shape = '新型(data-event-json)'
+            perfs = ej['perfs']
+            wins = wins or ej['windows']
+            if not name:
+                name = ej['name']
+
     return {'url': url, 'name': name, 'cats': cats, '_genre': genre,
-            'perfs': perfs, 'windows': wins}
+            'perfs': perfs, 'windows': wins, 'shape': shape}
 
 
 def alive(rec, min_days=2):
@@ -382,7 +481,36 @@ def _selftest():
     assert win_dates('2026/06/20(土) 10:00 〜 2026/06/23(火) 23:59') == ('2026-06-20 10:00', '2026-06-23 23:59')
     assert win_dates('2026/07/25(土) 10:00 〜 ') == ('2026-07-25 10:00', None)
     assert deeplink('https://ticket.rakuten.co.jp/a/').startswith('https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2F')
-    print('selftest OK: og:title/パンくずジャンル/公演カード/販売枠JSON/deeplink 回帰なし')
+
+    # 🆕【2026-09-08】新型ページ（data-event-json）の回帰。
+    # 🚨JSONは**実物をそのまま**貼る（作った本人の思い込みで書くとゲートが飾りになる＝
+    #   2026-07-30に旧形式のテストが素通りして嘘の締切を作った）。
+    ej_json = ('{"title":"THE ORCHESTRA TOKYO","dates":["2026-09-27T18:00:00+09:00"],'
+               '"venues":[{"name":"RAD HALL","prefecture":"愛知"}],'
+               '"showTimes":[{"open":"17:30","start":"18:00"}],'
+               '"sales":[{"label":"先行抽選","areas":[],"seats":[],'
+               '"startISO":"2026-05-22T21:00:00+09:00","endISO":"2026-05-26T23:59:00+09:00"},'
+               '{"label":"一般発売","areas":[],"seats":[],'
+               '"startISO":"2026-05-28T21:00:00+09:00","endISO":"2026-09-26T23:59:00+09:00"}],'
+               '"tickets":[{"name":"スタンディング","price":4500,"buyUrl":"#purchase"}],'
+               '"buyUrls":["https://idol-spot.tstar.jp/cart/performances/364568/agreement"]}')
+    ej_body = '<div data-event-json="https://example.test/x.json"></div>'
+    ej = parse_event_json(ej_body, fetcher=lambda u: ej_json)
+    assert ej and ej['name'] == 'THE ORCHESTRA TOKYO', ej
+    assert len(ej['perfs']) == 1, ej['perfs']
+    p0 = ej['perfs'][0]
+    assert p0['date'] == '2026-09-27' and p0['venue'] == 'RAD HALL' and p0['pref'] == '愛知', p0
+    assert p0['time'] == '18:00', p0
+    assert p0['sale_start'] == '2026-05-22 21:00' and p0['sale_end'] == '2026-09-26 23:59', p0
+    assert [w['type'] for w in ej['windows']] == ['先行抽選', '一般発売'], ej['windows']
+    # 組み立てた timming が、従来型と同じ書式で win_dates に読めること（ここが繋ぎ目）
+    assert win_dates(ej['windows'][1]['timming']) == ('2026-05-28 21:00', '2026-09-26 23:59'), \
+        ej['windows'][1]['timming']
+    # data-event-json が無いページで None を返す（従来型を壊さない）
+    assert parse_event_json('<html></html>') is None
+
+    print('selftest OK: og:title/パンくずジャンル/公演カード/販売枠JSON/deeplink/'
+          '新型data-event-json 回帰なし')
 
 
 def main():
@@ -407,6 +535,7 @@ def main():
         urls = urls[:args.limit]
 
     out, skipped = [], {'既存': 0, '死': 0, '解析不能': 0, '取得失敗': 0}
+    unparsed, shapes = [], {'従来型': 0, '新型(data-event-json)': 0}
     for i, (u, mod) in enumerate(urls, 1):
         try:
             body = fetch(u)
@@ -418,6 +547,7 @@ def main():
         rec['lastmod'] = mod
         if not rec['name'] or not rec['perfs']:
             skipped['解析不能'] += 1
+            unparsed.append(u)
             sys.stderr.write('  [%d/%d] 解析不能 %s\n' % (i, len(urls), u))
             continue
         if norm_name(rec['name']) in have_key:
@@ -428,6 +558,7 @@ def main():
             skipped['死'] += 1
             continue
         rec['rakuten_deeplink'] = deeplink(u)
+        shapes[rec.get('shape', '従来型')] = shapes.get(rec.get('shape', '従来型'), 0) + 1
         out.append(rec)
         sys.stderr.write('  [%d/%d] NEW %s (%d公演/%d枠)\n' % (i, len(urls), rec['name'][:34], len(rec['perfs']), len(rec['windows'])))
 
@@ -435,6 +566,23 @@ def main():
     json.dump(out, open(args.out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('\n=== 新着候補 %d件 → %s ===' % (len(out), args.out))
     print('   除外: %s' % skipped)
+    print('   ページの作り: %s' % shapes)
+
+    # 🚨【2026-09-08 新設】「解析不能」を黙って捨てない。
+    #    ぴあの reconcile が「照合できた枠 N/M」を必ず出すのと同じ考え方＝
+    #    **読めなかったものを数字にして残さないと、取りこぼしに永久に気づけない**。
+    #    実際この日、36件の解析不能のうち5件は公演がまだ未来だった。
+    n_read = len(urls) - skipped['解析不能'] - skipped['取得失敗']
+    rate = (n_read / len(urls) * 100) if urls else 0
+    print('   読めたページ: %d/%d (%.0f%%)' % (n_read, len(urls), rate))
+    if unparsed:
+        p = os.path.join('tmp', 'rakuten_unparsed.txt')
+        open(p, 'w', encoding='utf-8').write('\n'.join(unparsed))
+        print('   🚨解析不能 %d件のURLを %s に残した＝「買える枠が無い」ではなく'
+              '「読めなかった」。中身を確かめること' % (len(unparsed), p))
+    if rate < 90:
+        print('   🚨読めた率が9割を切っている＝パーサが実物に追いついていない疑い')
+        return 2
     return 0
 
 
