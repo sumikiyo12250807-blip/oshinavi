@@ -1,0 +1,29 @@
+[start] presale_first lg=01 (音楽) filter=rlsStatus=0102
+[done ] presale_first lg=01 rc=0 200s ::  NEW | 2026/9/12 | 西村ケント(g) | 2026/12/25(金) | 大阪府 |  NEW | 2026/9/12 | ＮＥＬＫＥ | 2027/7/17(土) | 岡山県 |  NEW | 2026/9/15 | Ｎｏ Ｃｅｎｔｒｅ １ Ｍｏｖｉｎｇ Ｐｉｃｔｕ | 2026/11/6(金) ・ 2026/11 | 東京都
+[start] presale_first lg=07 (クラシック) filter=rlsStatus=0102
+[done ] presale_first lg=07 rc=0 126s ::  NEW | TODAY | 日本テレマン協会マンスリーコンサート 高田泰治ゴ | 2026/12/7(月) | 大阪府 |  NEW | 2026/10/11 | 読響名曲シリーズ | 2027/1/28(木) | 東京都 |  NEW | 2026/10/11 | 読響横浜マチネーシリーズ | 2027/1/30(土) | 神奈川県
+[start] presale_first lg=02 (演劇) filter=rlsStatus=0102
+[done ] presale_first lg=02 rc=0 116s ::  NEW | 2026/11/6 | 日本列島大捜査網 THE柳沢慎吾劇場 ★ ROC | 2027/3/4(木) | 東京都 |  NEW | 2026/9/19 | 庭劇団ペニノ『埋火(うずみび)』 | 2026/11/12(木) ～ 2026/1 | 神奈川県 |  NEW | 2026/10/21 | 舞台『組曲虐殺』 | 2027/2/24(水) | 東京都
+[start] presale_first lg=06 (イベント) filter=rlsStatus=0102
+[done ] presale_first lg=06 rc=0 50s ::  NEW | 2026/9/9 | 氷川きよし クリスマスディナー＆コンサート２０２ | 2026/12/18(金) | 大阪府 |  NEW | 2026/9/16 | 不滅の力 永井豪 －永井豪記念館リバイバル－ | 2026/11/28(土) ～ 2027/1 | 京都府 |  NEW | 2026/10/14 | 米村でんじろう先生のドキドキわくわくサイエンスシ | 2027/1/17(日) | 北海道
+[start] presale_first lg=03 (スポーツ) filter=rlsStatus=0102
+[done ] presale_first lg=03 rc=0 24s ::  NEW | 2026/9/10 | マリーゴールド | 2026/11/15(日) | 静岡県 |  NEW | 2026/9/10 | マリーゴールド | 2026/11/16(月) | 東京都 |  NEW | 2026/9/11 | 横浜DeNAベイスターズ主催 ファーム・リーグ公 | 2026/9/19(土) ・ 2026/9/ | 神奈川県
+[start] presale_first lg=05 (アート) filter=rlsStatus=0102
+[done ] presale_first lg=05 rc=0 10s :: already in DB (eventCd一致): 24 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0908/presale_first_05.json
+[start] presale_first lg=04 (映画) filter=rlsStatus=0102
+[done ] presale_first lg=04 rc=0 16s ::  NEW | 2026/9/15 | 『映画名探偵プリキュア！不思議な庭と２人の秘密』 | 2026/9/19(土) | 東京都 |  NEW | 2026/9/20 | 『縁の手紙』舞台挨拶 | 2026/9/25(金) ・ 2026/9/ | 東京都 |  NEW | 2026/9/15 | 『ナギダイアリー』 大阪先行上映会 | 2026/9/18(金) | 大阪府
+[start] presale_lot lg=01 (音楽) filter=rlsStatus=0202
+[done ] presale_lot lg=01 rc=0 10s ::  NEW | 2026/9/9 | YOASOBI | 2026/11/14(土) ・ 2026/1 | 北海道 |  NEW | 2026/9/12 | レミオロメン | 2027/6/5(土) | 福井県 |  NEW | 2026/9/12 | レミオロメン | 2027/6/6(日) | 石川県
+[start] presale_lot lg=07 (クラシック) filter=rlsStatus=0202
+[done ] presale_lot lg=07 rc=0 2s :: already in DB (eventCd一致): 0 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0908/presale_lot_07.json
+[start] presale_lot lg=02 (演劇) filter=rlsStatus=0202
+[done ] presale_lot lg=02 rc=0 7s ::  NEW | 2026/9/10 | コンドルズ福岡スペシャル公演２０２６ 『ノーウー | 2026/12/5(土) | 福岡県 |  NEW | 2026/9/25 | 日本列島大捜査網 THE柳沢慎吾劇場 ★ ROC | 2027/4/11(日) | 北海道 |  NEW | 2026/9/9 | ミュージカル『南くんの恋人』 | 2026/12/6(日) ～ 2026/12 | 東京都
+[start] presale_lot lg=06 (イベント) filter=rlsStatus=0202
+[done ] presale_lot lg=06 rc=0 4s ::   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0908/presale_lot_06.json |  NEW | 2026/9/8 | 万博花火プロジェクト『第5回 万博夜空がアートに | 2026/11/21(土) | 大阪府
+[start] presale_lot lg=03 (スポーツ) filter=rlsStatus=0202
+[done ] presale_lot lg=03 rc=0 2s :: already in DB (eventCd一致): 0 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0908/presale_lot_03.json
+[start] presale_lot lg=05 (アート) filter=rlsStatus=0202
+[done ] presale_lot lg=05 rc=0 2s :: already in DB (eventCd一致): 0 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0908/presale_lot_05.json
+[start] presale_lot lg=04 (映画) filter=rlsStatus=0202
+[done ] presale_lot lg=04 rc=0 2s ::   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0908/presale_lot_04.json |  NEW | 2026/9/8 | 『ナギダイアリー』 大阪先行上映会 | 2026/9/18(金) | 大阪府
+=== 全フェーズ終了 ===

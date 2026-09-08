@@ -1,0 +1,9 @@
+EVENTS.sort        一致=True （1800文字）
+saleStartPending   一致=True （489文字）
+ticketSortKey      一致=True （412文字）
+NEW_ORDER定義        中身は変わる想定（HEAD 1255文字 / 現物 1261文字）
+SORT_PRESALE       一致=True （55文字）
+EVENTS配列           HEAD 149148行 → 現物 149192行
+SSR(AI_SSR)        HEAD 4438行 → 現物 4493行
+
+総合: 並び順ロジックはHEADと完全一致

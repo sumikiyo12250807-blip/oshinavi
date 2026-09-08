@@ -1,0 +1,29 @@
+踊りモード＝台詞なし（音楽に合わせて動く）
+セリフ 0字 / 尺15秒に収まる目安 75字
+{
+  "model": "MiniMax-H3",
+  "content": [
+    {
+      "type": "text",
+      "text": "AUDIO REQUIREMENT (highest priority): the provided audio is the MUSIC TRACK for this shot. Do not generate any speech, narration or extra voice. He performs and dances to this music, and lip-syncs only where there are clear sung words. The speaker is a stylized 3D-rendered cartoon Japanese drag queen with big-head chibi proportions: a short, very plump MAN performing in drag, with a huge voluminous wavy lavender-purple bouffant hairdo (no tiara, no hat) with a LARGE sparkling purple glitter bow trimmed with pearls pinned on the right side of the hair, round full cheeks, thick dark eyebrows and a clearly visible COOL BLUE-GREY five o'clock shadow — a slate-blue shaved stubble over the moustache area, jaw and cheeks with a small blue-grey goatee (never brown, never black) — heavy pink-purple eyeshadow with long lashes and sharp winged eyeliner, glossy pink lips, large silver rhinestone drop earrings, a matching rhinestone collar necklace and a rhinestone bracelet, wearing a strapless violet-purple sequinned gown with sheer puffed long sleeves, a jewelled brooch at the hip and a sparkling ruffled train, on chunky glitter platform heels. Warm, campy, bossy and theatrical. Camera locked off on a tripod. Never zoom, pan, tilt, dolly or re-frame — the framing is identical in the first and the last frame. He dances energetically to the music, in time with the beat: hips, shoulders, arms and hair all moving, big campy drag-queen poses, spins, hair flips, finger snaps, and a wink. He is free to travel anywhere across the frame — left, right, up and down — and may pass in front of any part of the background. 🔒 CRITICAL: his on-screen SIZE must stay exactly constant for the whole shot. He is always rendered at the same scale as in the reference image. He never walks toward or away from the camera, never grows or shrinks, no perspective or depth change, no close-up of his face. Treat him as a flat cut-out sliding around the frame at a fixed size. He always stays fully inside the frame. No on-screen text, no subtitles, no watermark. Keep the background perfectly still and pixel-identical to the reference image: do NOT redraw, re-render or alter any text, letters, numbers or the logo anywhere in the frame. Only the drag queen herself moves."
+    },
+    {
+      "type": "image_url",
+      "image_url": {
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAeACAIAAA...(1195430文字)"
+      },
+      "role": "reference_image"
+    },
+    {
+      "type": "audio_url",
+      "audio_url": {
+        "url": "data:audio/mpeg;base64,SUQzBAAAAAAHM1RJVDIAAAAOAAAD5ZiO5ZiO5...(482835文字)"
+      },
+      "role": "reference_audio"
+    }
+  ],
+  "duration": 15,
+  "resolution": "2K",
+  "ratio": "9:16"
+}
+参照画像 1枚 / 音声 1本 / --dry-run なので送信していない
