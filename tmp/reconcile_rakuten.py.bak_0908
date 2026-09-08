@@ -34,28 +34,6 @@ def md_set(dates):
     return out
 
 
-RAKUTEN_URL = re.compile(r'ticket\.rakuten\.co\.jp|linksynergy\.com/deeplink')
-
-
-def rakuten_slot(e, t):
-    """この枠を楽天のページと突き合わせてよいか。
-
-    🚨楽天リンクを持つエントリでも、枠そのものはぴあ/e+のことがある（買うボタンだけ楽天）。
-      それを楽天のページと照合すると必ず外れる＝本物のFAILが埋もれる。
-      url が楽天なら見る。url が空の枠は、そのエントリに**他社リンクが1つも無い時だけ**見る。
-    """
-    u = t.get('url') or ''
-    if u:
-        return bool(RAKUTEN_URL.search(u))
-    ls = e.get('links') or {}
-    return not any(ls.get(k) for k in ('pia', 'eplus', 'lawson'))
-
-
-def past(d):
-    """今日より前＝楽天のページからは消えている。照合できないだけで、登録が誤りとは限らない。"""
-    return bool(d) and d[:10] < TODAY
-
-
 def raw_url(u):
     m = re.search(r'murl=([^&]+)', u or '')
     if m:
@@ -126,9 +104,6 @@ def main():
         errs = []
         for t in e.get('tickets', []):
             checked = False
-            if not rakuten_slot(e, t):
-                skip_slots += 1      # 🚨楽天の枠でない＝この道具の担当外（黙って合格にしない）
-                continue
             # ① 締切（公演日で締めた/売り切れ次第終了は照合対象外＝skip）
             if t.get('saleEndUnknown') or t.get('saleUntilSoldOut'):
                 pass
@@ -140,16 +115,12 @@ def main():
                 # 公演日で締めた枠はページの公演日と一致していればOK
                 if '%d/%d' % (int(t['date'][5:7]), int(t['date'][8:10])) in page_perf_md:
                     checked = True
-                elif past(t['date']):
-                    pass             # 🚨終わった枠はページから消える＝照合できないだけ
                 else:
                     errs.append('締切 %s がページに無い | %s' % (t['date'], t['type'][:34]))
             # ② 発売日
             if t.get('startDate'):
                 if t['startDate'] in page_start:
                     checked = True
-                elif past(t['startDate']):
-                    pass             # 🚨発売済みの先行はページの販売枠から落ちる
                 else:
                     errs.append('発売日 %s がページに無い | %s' % (t['startDate'], t['type'][:34]))
             # ③ バッジの公演日
@@ -158,18 +129,10 @@ def main():
             badge = re.search(r'（[^）]*?([\d/〜]+)公演）', t['type'])
             if badge:
                 for one in badge.group(1).split('〜'):
-                    if not one:
-                        continue
-                    if one in page_perf_md:
+                    if one and one not in page_perf_md:
+                        errs.append('バッジ公演日 %s がページに無い | %s' % (one, t['type'][:34]))
+                    else:
                         checked = True
-                        continue
-                    # 🚨ラベルは「事実の会期」を書く決まりなので、初日が過ぎたツアーは
-                    #   ページ側だけが減る。これを鳴らすと毎回FAILになって本物が埋もれる。
-                    mo, dy = (int(x) for x in one.split('/'))
-                    yr = int(TODAY[:4]) + (1 if mo < int(TODAY[5:7]) - 6 else 0)
-                    if '%04d-%02d-%02d' % (yr, mo, dy) < TODAY:
-                        continue
-                    errs.append('バッジ公演日 %s がページに無い | %s' % (one, t['type'][:34]))
             checked_slots += 1 if checked else 0
             skip_slots += 0 if checked else 1
         # ④ 県。複数会場のエントリは prefecture が「大阪・東京」のように多県を名乗る（正しい表記）。
