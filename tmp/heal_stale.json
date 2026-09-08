@@ -586,10 +586,13 @@
  },
  {
   "id": 1071,
-  "status": "delete",
+  "status": "convert",
   "artist": "ミュージカル『ニコラ・テスラ～エジソンが恐れた孤高の天才～』",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668390"
+  "tickets": [
+   {
+    "type": "一般発売（大阪 10/3〜10/4公演）〜10/3 23:59",
+    "date": "2026-10-03"
+   }
   ]
  },
  {
@@ -2068,6 +2071,11 @@
     "date": "2026-09-26",
     "startDate": "2026-09-26",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626319"
+   },
+   {
+    "type": "一般発売（大阪 11/18公演）〜11/1 23:59",
+    "date": "2026-11-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628367"
    }
   ]
  },
@@ -2135,6 +2143,11 @@
   "artist": "東京フィルハーモニー交響楽団 ベートーヴェン「第九」特別演奏会",
   "tickets": [
    {
+    "type": "poco会員限定先行販売（東京 12/18公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626566"
+   },
+   {
     "type": "poco会員限定先行販売（東京 12/13公演）〜9/14 23:59",
     "date": "2026-09-14",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626564"
@@ -2145,8 +2158,9 @@
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626567"
    },
    {
-    "type": "poco会員限定先行販売（東京 12/18公演）〜9/14 23:59",
-    "date": "2026-09-14",
+    "type": "一般発売（東京 12/18公演）9/15 10:00発売",
+    "date": "2026-09-15",
+    "startDate": "2026-09-15",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626566"
    },
    {
@@ -2160,12 +2174,6 @@
     "date": "2026-09-15",
     "startDate": "2026-09-15",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626567"
-   },
-   {
-    "type": "一般発売（東京 12/18公演）9/15 10:00発売",
-    "date": "2026-09-15",
-    "startDate": "2026-09-15",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626566"
    }
   ]
  },
@@ -2182,11 +2190,6 @@
   "status": "convert",
   "artist": "来生たかお",
   "tickets": [
-   {
-    "type": "一般発売（北海道 10/2公演）〜9/30 23:59",
-    "date": "2026-09-30",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614330"
-   },
    {
     "type": "一般発売（秋田 10/4公演）〜10/1 23:59",
     "date": "2026-10-01",
@@ -2350,21 +2353,6 @@
   ]
  },
  {
-  "id": 5221,
-  "status": "convert",
-  "artist": "御園座錦秋歌舞伎",
-  "tickets": [
-   {
-    "type": "一般発売（愛知 10/3〜10/20公演）〜10/19 23:59",
-    "date": "2026-10-19"
-   },
-   {
-    "type": "学生券（当日引換券）（愛知 10/3〜10/20公演）〜10/19 23:59",
-    "date": "2026-10-19"
-   }
-  ]
- },
- {
   "id": 5226,
   "status": "delete",
   "artist": "神奈川フィルハーモニー管弦楽団 音楽堂シリーズ第38回<Classic Modern>",
@@ -2387,6 +2375,11 @@
     "type": "一般発売（大阪 11/5公演）〜11/4 23:59",
     "date": "2026-11-04",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633395"
+   },
+   {
+    "type": "一般発売（北海道 11/20公演）〜11/19 23:59",
+    "date": "2026-11-19",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620308"
    },
    {
     "type": "一般発売（香川 R9年 1/9公演）〜1/8 23:59",
@@ -2637,18 +2630,6 @@
   "artist": "センダイガールズプロレスリング<大阪大会>",
   "urls": [
    "https://t.pia.jp/pia/event/event.do?eventCd=2634731"
-  ]
- },
- {
-  "id": 7194,
-  "status": "convert",
-  "artist": "ガラフェス ～渋谷 文化的衝撃センセーション 秋の新作発表会～",
-  "tickets": [
-   {
-    "type": "一般発売（東京 11/3公演）9/8 18:00発売",
-    "date": "2026-09-08",
-    "startDate": "2026-09-08"
-   }
   ]
  }
 ]
