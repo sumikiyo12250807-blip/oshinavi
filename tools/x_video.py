@@ -21,6 +21,15 @@ import time
 import urllib.error
 import urllib.request
 
+# 🚨 Windowsの既定(cp932)だと ⚠️ や 🎬 を print した瞬間に UnicodeEncodeError で落ちる。
+#    2026-09-08、台詞の警告（長すぎ・漢字あり）を出そうとして2回続けて落ちた＝
+#    「注意を出す場面でだけ道具が死ぬ」といういちばん困る形だった。
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 API_CREATE = "https://api.minimax.io/v2/video_generation"
 API_QUERY = "https://api.minimax.io/v2/query/video_generation/{task_id}"
 MODEL = "MiniMax-H3"
@@ -58,13 +67,16 @@ VOICE = (
 CHARACTER = (
     "The speaker is a stylized 3D-rendered cartoon Japanese drag queen with big-head "
     "chibi proportions: a short, very plump MAN performing in drag, with a huge "
-    "voluminous wavy lavender-purple bouffant hairdo (no tiara, no hat), round full "
+    "voluminous wavy lavender-purple bouffant hairdo (no tiara, no hat) with a LARGE "
+    "sparkling purple glitter bow trimmed with pearls pinned on the right side of the "
+    "hair, round full "
     "cheeks, thick dark eyebrows and a clearly visible COOL BLUE-GREY five o'clock "
     "shadow — a slate-blue shaved stubble over the moustache area, jaw and cheeks with "
     "a small blue-grey goatee (never brown, never black) — "
     "heavy pink-purple eyeshadow with long lashes and sharp winged eyeliner, "
-    "glossy pink lips, large silver rhinestone drop earrings and a matching rhinestone "
-    "collar necklace, wearing a strapless violet-purple sequinned gown with sheer "
+    "glossy pink lips, large silver rhinestone drop earrings, a matching rhinestone "
+    "collar necklace and a rhinestone bracelet, "
+    "wearing a strapless violet-purple sequinned gown with sheer "
     "puffed long sleeves, a jewelled brooch at the hip and a sparkling ruffled train, "
     "on chunky glitter platform heels. Warm, campy, bossy and theatrical."
 )
@@ -123,16 +135,51 @@ VOICE_CLONE = (
 )
 
 
+# 🕺【2026-09-08 新設】音楽に合わせて踊らせるモード（--dance）。
+# ユーザー指定「**キャラクターは画面全体を動き回ってもいいけど大きさはずっと同じ大きさにして**」。
+# 朗読動画の SCENE は「その場から動くな」なので、そのままだと踊れない。
+# 🚨いちばん大事なのは「移動してよい・でも大きさは変わらない」の書き分け＝
+#   カメラに近づく/遠ざかる動きを禁じないと、H3は勝手に寄ってスケールが変わる
+#   （2026-08-23に「三脚固定・ズーム禁止」と書いてもカメラが寄った実例がある）。
+DANCE_SCENE = (
+    "Camera locked off on a tripod. Never zoom, pan, tilt, dolly or re-frame — the "
+    "framing is identical in the first and the last frame. "
+    "He dances energetically to the music, in time with the beat: hips, shoulders, arms "
+    "and hair all moving, big campy drag-queen poses, spins, hair flips, finger snaps, "
+    "and a wink. "
+    "He is free to travel anywhere across the frame — left, right, up and down — and may "
+    "pass in front of any part of the background. "
+    "🔒 CRITICAL: his on-screen SIZE must stay exactly constant for the whole shot. He is "
+    "always rendered at the same scale as in the reference image. He never walks toward "
+    "or away from the camera, never grows or shrinks, no perspective or depth change, no "
+    "close-up of his face. Treat him as a flat cut-out sliding around the frame at a "
+    "fixed size. He always stays fully inside the frame. "
+    "No on-screen text, no subtitles, no watermark."
+)
+
+# 🎵 音楽を渡す場合＝台詞を喋らせるのではなく「この曲に合わせて踊れ」と言う。
+MUSIC_GIVEN = (
+    "AUDIO REQUIREMENT (highest priority): the provided audio is the MUSIC TRACK for this "
+    "shot. Do not generate any speech, narration or extra voice. He performs and dances "
+    "to this music, and lip-syncs only where there are clear sung words."
+)
+
+
 def build_prompt(script: str, extra: str = "", audio_given: bool = False,
-                 voice_ref: bool = False) -> str:
-    if voice_ref:
-        parts = [VOICE_CLONE, CHARACTER, SCENE, BACKGROUND,
+                 voice_ref: bool = False, dance: bool = False) -> str:
+    scene = DANCE_SCENE if dance else SCENE
+    if dance:
+        parts = [MUSIC_GIVEN, CHARACTER, scene, BACKGROUND]
+        if script:
+            parts.append("The song says in Japanese: 「" + script + "」")
+    elif voice_ref:
+        parts = [VOICE_CLONE, CHARACTER, scene, BACKGROUND,
                  "He says in Japanese: 「" + script + "」"]
     elif audio_given:
-        parts = [VOICE_GIVEN, CHARACTER, SCENE, BACKGROUND,
+        parts = [VOICE_GIVEN, CHARACTER, scene, BACKGROUND,
                  "The audio says in Japanese: 「" + script + "」"]
     else:
-        parts = [VOICE, CHARACTER, SCENE, BACKGROUND,
+        parts = [VOICE, CHARACTER, scene, BACKGROUND,
                  "He says in Japanese: 「" + script + "」"]
     if extra:
         parts.append(extra)
@@ -148,6 +195,11 @@ def as_image_url(path_or_url: str) -> str:
     if not os.path.exists(path_or_url):
         sys.exit("参照画像が見つからない: " + path_or_url)
     mime = mimetypes.guess_type(path_or_url)[0] or "image/png"
+    # 🚨 mp3 の MIME は "audio/mpeg" だが、MiniMax は そこから拡張子 ".mpeg" を割り出して
+    #    「audio format ".mpeg" not allowed」で弾く（2026-09-08 実測・エラーコード2013）。
+    #    許されるのは wav / mp3 なので、明示的に "audio/mp3" に直す。
+    if mime == "audio/mpeg":
+        mime = "audio/mp3"
     with open(path_or_url, "rb") as f:
         return "data:" + mime + ";base64," + base64.b64encode(f.read()).decode("ascii")
 
@@ -206,6 +258,8 @@ def main() -> None:
     ap.add_argument("--extra", default="", help="プロンプトに足したい指示")
     ap.add_argument("--out", default=os.path.join(REPO, "tmp", "video", "odoku.mp4"))
     ap.add_argument("--dry-run", action="store_true", help="投げずにpayloadだけ表示（課金されない）")
+    ap.add_argument("--dance", action="store_true",
+                    help="音楽に合わせて踊らせる（台詞なしOK・大きさは固定のまま画面内を移動）")
     ap.add_argument("--poll", type=int, default=10, help="照会の間隔(秒)")
     ap.add_argument("--timeout", type=int, default=900, help="完了待ちの上限(秒)")
     args = ap.parse_args()
@@ -216,6 +270,8 @@ def main() -> None:
             script = f.read().strip()
     elif args.script:
         script = args.script.strip()
+    elif args.dance:
+        script = ""          # 踊るだけ＝台詞は要らない
     else:
         sys.exit("--script か --script-file が要る")
 
@@ -223,6 +279,8 @@ def main() -> None:
         sys.exit("duration は 4〜15 の範囲")
 
     limit = int(args.duration * CHARS_PER_SEC)
+    if args.dance and not script:
+        print("踊りモード＝台詞なし（音楽に合わせて動く）")
     print("セリフ %d字 / 尺%d秒に収まる目安 %d字" % (len(script), args.duration, limit))
     if len(script) > limit:
         print("⚠️ 長すぎ＝読み切れずに切れる。%d字まで削ること。" % limit)
@@ -244,7 +302,7 @@ def main() -> None:
         sys.exit("--voice-ref は --audio(声の見本) と一緒に使う")
 
     content = [{"type": "text", "text": build_prompt(
-        script, args.extra, bool(args.audio), args.voice_ref)}]
+        script, args.extra, bool(args.audio), args.voice_ref, args.dance)}]
     for r in refs:
         content.append({"type": "image_url", "image_url": {"url": as_image_url(r)}, "role": "reference_image"})
 
