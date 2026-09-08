@@ -1,0 +1,29 @@
+[start] presale_first lg=01 (音楽) filter=rlsStatus=0102
+[done ] presale_first lg=01 rc=0 212s ::  NEW | 2026/11/7 | チョーキューメイ | 2026/12/18(金) | 大阪府 |  NEW | 2026/9/12 | テレビ大陸音頭 | 2026/10/9(金) | 大阪府 |  NEW | 2026/9/12 | 天王寺楽所雅亮会 | 2026/11/24(火) | 大阪府
+[start] presale_first lg=07 (クラシック) filter=rlsStatus=0102
+[done ] presale_first lg=07 rc=0 127s ::  NEW | 2026/9/27 | マエストロ小澤のレガシーを未来へとつなぐコンサー | 2027/2/7(日) | 京都府 |  NEW | 2026/9/10 | 牧瀬愛結ピアノリサイタル | 2027/1/10(日) | 神奈川県 |  NEW | 2026/9/12 | 山縣由布夏＆贄田美羽 ファゴット＆コントラバスリ | 2027/1/10(日) | 東京都
+[start] presale_first lg=02 (演劇) filter=rlsStatus=0102
+[done ] presale_first lg=02 rc=0 119s ::  NEW | 2026/9/11 | 佑輔会 其之一 古典落語を怪談に！？実験落語会 | 2026/10/31(土) | 東京都 |  NEW | 2026/9/19 | 柳亭小痴楽 瀧川鯉八 二人会 | 2026/11/6(金) | 愛知県 |  NEW | 2026/9/12 | 笑い飯・千鳥の大喜利ライブｉｎ 山形 | 2026/10/17(土) | 山形県
+[start] presale_first lg=06 (イベント) filter=rlsStatus=0102
+[done ] presale_first lg=06 rc=0 54s ::  NEW | 2026/9/24 | ぼくたちのあそびば 初の公開収録 | 2026/10/12(月・祝) | 神奈川県 |  NEW | 2026/9/26 | 水谷千重子 クリスマスディナーショー２０２６ | 2026/12/20(日) | 福岡県 |  NEW | TODAY | ★9/15～9/27★【ミャクミャク 寝そべりぬ | 2026/9/15(火) ～ 2026/9/ | 大阪府
+[start] presale_first lg=03 (スポーツ) filter=rlsStatus=0102
+[done ] presale_first lg=03 rc=0 30s ::  NEW | 2026/9/10 | 奈良クラブ対ギラヴァンツ北九州 明治安田Ｊ３リー | 2026/10/10(土) | 奈良県 |  NEW | 2026/9/28 | プロレスリング・ノア | 2026/11/23(月・祝) | 新潟県 |  NEW | 2026/9/14 | ＨＯＯＳＴ ＣＵＰ ＫＩＮＧＳ ＫＹＯＴＯ１６ | 2026/10/25(日) | 京都府
+[start] presale_first lg=05 (アート) filter=rlsStatus=0102
+[done ] presale_first lg=05 rc=0 10s :: already in DB (eventCd一致): 23 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_first_05.json
+[start] presale_first lg=04 (映画) filter=rlsStatus=0102
+[done ] presale_first lg=04 rc=0 15s ::  NEW | TODAY | DEEN Blu-ray&DVD発売記念！「DE | 2026/9/23(水・祝) | 東京都 |  NEW | TODAY | Tommy february6・Tommy he | 2026/10/30(金) ・ 2026/1 | 東京都／愛知県／大阪府 |  NEW | 2026/9/15 | 『ナギダイアリー』 舞台挨拶 | 2026/9/18(金) | 大阪府
+[start] presale_lot lg=01 (音楽) filter=rlsStatus=0202
+[done ] presale_lot lg=01 rc=0 15s ::  NEW | 2026/9/12 | 手嶌葵 | 2027/2/13(土) | 福岡県 |  NEW | 2026/9/12 | 手嶌葵 | 2027/3/21(日・祝) | 東京都 |  NEW | 2026/9/12 | 手嶌葵 | 2027/4/25(日) | 大阪府
+[start] presale_lot lg=07 (クラシック) filter=rlsStatus=0202
+[done ] presale_lot lg=07 rc=0 1s :: already in DB (eventCd一致): 1 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_lot_07.json
+[start] presale_lot lg=02 (演劇) filter=rlsStatus=0202
+[done ] presale_lot lg=02 rc=0 8s ::   うち 1件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_lot_02.json |  NEW | 2026/9/12 | 桂米團治 独演会 | 2027/1/9(土) | 東京都
+[start] presale_lot lg=06 (イベント) filter=rlsStatus=0202
+[done ] presale_lot lg=06 rc=0 3s :: already in DB (eventCd一致): 7 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_lot_06.json
+[start] presale_lot lg=03 (スポーツ) filter=rlsStatus=0202
+[done ] presale_lot lg=03 rc=0 1s ::   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_lot_03.json |  NEW | 2026/9/10 | ＣＤＥ Ｃｈｅｅｒ Ｇａｔｅｗａｙ／ＣＤＥ Ｃｈ | 2026/10/3(土) ・ 2026/10 | 東京都
+[start] presale_lot lg=05 (アート) filter=rlsStatus=0202
+[done ] presale_lot lg=05 rc=0 2s :: already in DB (eventCd一致): 0 | NOT in DB (new candidates): 0 |   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_lot_05.json
+[start] presale_lot lg=04 (映画) filter=rlsStatus=0202
+[done ] presale_lot lg=04 rc=0 2s ::   うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた） | written tmp/sweep_0909/presale_lot_04.json |  NEW | 2026/9/9 | Tommy february6・Tommy he | 2026/10/31(土) | 神奈川県
+=== 全フェーズ終了 ===
