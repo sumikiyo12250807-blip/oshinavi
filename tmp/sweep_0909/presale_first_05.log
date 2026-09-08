@@ -1,0 +1,5 @@
+lg=05 total=24 pages=3
+parsed items: 23 (fetched up to page 4)
+already in DB (eventCd一致): 23 | NOT in DB (new candidates): 0
+  うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）
+written tmp/sweep_0909/presale_first_05.json
