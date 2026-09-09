@@ -1,0 +1,39 @@
+﻿python :   1308 OK
+At line:1 char:335
++ ... nd_0909.py; python tools/build_pia_entries.py tmp/zero_cand_0909.
+json ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : NotSpecified: (  1308 OK:String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  1509 OK
+  2276 OK
+  2748 OK
+  2864 OK
+  3287 skip(売切)
+  3531 skip(売切)
+  4056 OK
+  4060 OK
+  4071 OK
+  4085 skip(売切)
+  4088 OK
+  4102 OK
+  4111 OK
+  4114 OK
+  4370 OK
+  4386 OK
+  4392 OK
+  4399 OK
+  4406 skip(売切)
+  4923 OK
+  4954 OK
+  5155 OK
+  5161 OK
+  5191 OK
+  5669 OK
+  6297 OK
+  6325 OK
+  6359 OK
+構築 25 件 / skip [3287, 3531, 4085, 4406]
