@@ -19,7 +19,8 @@ def load(text):
     return {e['id']: e for e in json.loads(m.group(2))}
 
 
-old = load(subprocess.run(['git', 'show', 'HEAD:index.html'],
+BASE = sys.argv[1] if len(sys.argv) > 1 else 'HEAD'
+old = load(subprocess.run(['git', 'show', BASE + ':index.html'],
                           capture_output=True).stdout.decode('utf-8', 'replace'))
 new = load(open('index.html', encoding='utf-8').read())
 
@@ -38,9 +39,13 @@ today = datetime.date.today().isoformat()
 path = 'logs/assigned_%s.md' % today
 with open(path, 'w', encoding='utf-8') as f:
     f.write('# %s に新着タブから振り分けたもの（%d件）\n\n' % (today, len(rows)))
-    f.write('ぴあ由来のみ。ぴあ以外（e+／楽天）と保留分は新着タブに残してある。\n')
+    f.write('内訳＝朝にぴあ由来148件／そのあとユーザーが実物を見て確認した**ぴあ以外22件**（楽天20・e+2）。\n')
     f.write('別エージェントの独立チェック＝ぴあの区分との突合で149件中147件が対応表どおり、\n')
-    f.write('ズレ2件は「海外ROCK・POPS×韓国→kpop」の例外＝正しい。\n\n')
+    f.write('ズレ2件は「海外ROCK・POPS×韓国→kpop」の例外＝正しい。\n')
+    f.write('ぴあ以外22件も同じエージェントが売り場URLのカテゴリ階層と突き合わせて「ズレなし」。\n')
+    f.write('id7498 は楽天のURLが /event/ だけでジャンルの手がかりが無く、ユーザーが musicetc と決めた。\n\n')
+    f.write('新着タブに残してあるもの＝今日投入したぶん（翌朝の再チェックのあとで振り分ける）と、\n')
+    f.write('id7558 Tommy february6（一般発売の枠がぴあから消えた＝実態が確かめられていない）。\n\n')
     cur = None
     for i, n, g, d, u in rows:
         if g != cur:
