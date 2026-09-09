@@ -57,11 +57,26 @@ def badge_days(ty):
     return [re.sub(r'^R\d+年\s*', '', x.strip()) for x in m.group(1).split('〜')]
 
 
-def judge(ticket, by_md):
-    """その枠は 'soldout' / 'buyable' / None（判定できない）。"""
+def judge(ticket, by_md, rows=None):
+    """その枠は 'soldout' / 'buyable' / None（判定できない）。
+
+    🚨バッジが「10/4〜10/6公演」の範囲形の時は**間の日も見る**。
+      端の2日だけ見ると、真ん中の公演が買えるのに売り切れと書く事故になる。
+    """
+    days = badge_days(ticket.get('type'))
+    if not days:
+        return None
     cs = []
-    for d in badge_days(ticket.get('type')):
-        cs += by_md.get(d, [])
+    if len(days) > 1 and rows:
+        iso = {}
+        for c in rows:
+            iso.setdefault(md(c['date']), c['date'])
+        lo, hi = iso.get(days[0]), iso.get(days[-1])
+        if lo and hi:
+            cs = [c for c in rows if lo <= c['date'] <= hi]
+    if not cs:
+        for d in days:
+            cs += by_md.get(d, [])
     if not cs:
         return None
     if all(c['status'] == 'soldout' for c in cs):
@@ -127,7 +142,7 @@ def main():
         for c in rows:
             by_md.setdefault(md(c['date']), []).append(c)
         for t in slots:
-            v = judge(t, by_md)
+            v = judge(t, by_md, rows)
             if v == 'soldout' and not t.get('soldout'):
                 t['soldout'] = True
                 t['soldoutSince'] = TODAY
@@ -173,7 +188,23 @@ def _selftest():
     assert judge({'type': '一般発売（東京 10/2公演）〜9/26'}, by) is None
     # ページに無い公演も触らない
     assert judge({'type': '一般発売（東京 12/9公演）〜12/1'}, by) is None
-    print('selftest OK: バッジの公演日の取り出し / 全部売切の時だけ印 / 1枚でも買えるなら触らない')
+    # 🚨範囲バッジは**間の日も見る**＝端が売切でも真ん中が買えるなら印を付けない
+    rows = [{'date': '2026-10-04', 'status': 'soldout'},
+            {'date': '2026-10-05', 'status': 'buyable'},
+            {'date': '2026-10-06', 'status': 'soldout'}]
+    by2 = {}
+    for c in rows:
+        by2.setdefault(md(c['date']), []).append(c)
+    t = {'type': '一般発売（東京 10/4〜10/6公演）〜9/30'}
+    assert judge(t, by2, rows) == 'buyable', judge(t, by2, rows)
+    # 間も含めて全部売切なら印を付ける
+    rows2 = [dict(c, status='soldout') for c in rows]
+    by3 = {}
+    for c in rows2:
+        by3.setdefault(md(c['date']), []).append(c)
+    assert judge(t, by3, rows2) == 'soldout'
+    print('selftest OK: バッジの公演日の取り出し / 全部売切の時だけ印 / 1枚でも買えるなら触らない'
+          ' / 範囲バッジは間の日も見る')
 
 
 if __name__ == '__main__':
