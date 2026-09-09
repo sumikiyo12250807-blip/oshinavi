@@ -1,0 +1,44 @@
+﻿EVENTS行 新: 6258-162285 / 旧: 6152-161755
+エントリ数 新=4854 旧=4854
+id重複 新=0 旧=0
+
+===== 2. エントリ増減 =====
+消えたid数=0 増えたid数=0
+
+===== 1. 画面に出る枠の減少 =====
+表示枠 合計 旧=8540 新=8728 (差 +188)  ※共通idのみ
+枠が減ったエントリ数=0
+
+===== 4. date / dateLabel の変化 =====
+date/dateLabel が変わったエントリ数=0
+
+===== 3. 今日足された枠 =====
+既存エントリに枠が足されたケース数=113 (対象エントリ 40件)
+
+-- 抜き取り候補8枠 --
+id=450 | プリキュア | 名探偵プリキュア！ドリームステージ♪
+    type=一般発売（岐阜・静岡 11/3〜11/14公演）〜11/11 23:59 start=None end=2026-11-11 soldout=False
+    eventCd=b2668023
+id=571 | 竹原ピストル | 竹原ピストル 四国ツアー
+    type=2次プレリザーブ（石川 12/3公演）〜9/14 11:00 start=None end=2026-09-14 soldout=False
+    eventCd=2618185
+id=756 | ゴスペラーズ | ゴスペラーズ ライブ 2026
+    type=5次プレリザーブ（大阪 12/13公演）〜9/14 23:59 start=None end=2026-09-14 soldout=False
+    eventCd=2617777
+id=950 | 天満天神繁昌亭 | 天満天神繁昌亭
+    type=一般発売（大阪 11/18公演）9/18 10:00発売 start=2026-09-18 end=2026-09-18 soldout=False
+    eventCd=2630742
+id=1164 | 角松敏生 | 角松敏生
+    type=4次受付（宮城 12/12公演）〜9/13 23:59 start=None end=2026-09-13 soldout=False
+    eventCd=2621875
+id=1308 | 清水ミチコ | 清水ミチコ
+    type=プレリザーブ2次（広島 12/6公演）〜9/13 23:59 start=None end=2026-09-13 soldout=False
+    eventCd=b2669297
+id=1334 | a flood of circle | a flood of circle
+    type=一般発売（広島 9/20公演）〜9/19 23:59 start=2026-07-25 end=2026-09-19 soldout=False
+    eventCd=b2667868
+id=1509 | DElicious BUns FESTIVAL 2026 | DElicious BUns FESTIVAL 2026
+    type=駐車券先着先行【駐車券】（愛知 10/17〜10/18公演）〜9/13 23:59 start=None end=2026-09-13 soldout=False
+    eventCd=b2668481
+
+CDLIST=b2668023,2618185,2617777,2630742,2621875,b2669297,b2667868,b2668481

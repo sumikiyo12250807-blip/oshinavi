@@ -1,0 +1,27 @@
+﻿===== A. type完全一致での「表示枠の消失」=====
+完全一致だと消えたように見えるエントリ数=45（=書き換えを含む上限）
+
+===== B. 飛び先URLごとの表示枠数の減少 =====
+URL単位で枠が減ったエントリ数=5
+  id=571 竹原ピストル / 竹原ピストル 四国ツアー
+      x1 URL=https://ticket.pia.jp/pia/event.do?eventCd=2628920
+  id=950 天満天神繁昌亭 / 天満天神繁昌亭
+      x1 URL=https://ticket.pia.jp/pia/event.do?eventCd=2629594
+  id=1772 柳家喬太郎 独演会 / 柳家喬太郎 独演会
+      x1 URL=https://ticket.pia.jp/pia/event.do?eventCd=2625021
+  id=4103 矢野顕子 / 矢野顕子
+      x1 URL=https://ticket.pia.jp/pia/event.do?eventCd=2622983
+  id=5573 角野未来ピアノ・リサイタル / 角野未来ピアノ・リサイタル
+      x1 URL=https://ticket.pia.jp/pia/event.do?eventCd=2635476
+
+===== C. 締切の前倒し =====
+締切が前倒しされた枠数=0
+
+===== D. 表示枠0のエントリ =====
+表示枠0 旧=163 新=137 / 新たに0になったid=[]
+
+===== E. 総枠数(非表示込み) 旧=10063 新=10176 (+113) =====
+soldout 旧=176 新=176 / saleEnded 旧=5 新=5
+links が変わったエントリ数=0
+genre が変わったエントリ数=0 []
+venue が変わったエントリ数=0 []
