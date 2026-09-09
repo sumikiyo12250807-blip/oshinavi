@@ -54,7 +54,12 @@
   }
   </script>
 
+  <script>document.documentElement.classList.add("js");</script>
+
   <style>
+    /* 🚨読み込み直後にAI向けのSSR一覧が生で見えるのを防ぐ。
+       JSが動いた時だけ隠す＝JSを実行しないクローラーには今までどおり見える。 */
+    .js .ai-ssr { display: none; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
