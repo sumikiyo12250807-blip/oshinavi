@@ -1,0 +1,42 @@
+{
+ "総エントリ数": 4856,
+ "verified済み公演日が過去": 21,
+ "対象19件に入っていない過去公演": [
+  "id1904 公演2026-08-23 劇団かもめんたる 第16回公演『ピノキオの元カノ』",
+  "id2866 公演2026-09-03 The BONEZ／SHADOWS"
+ ],
+ "id5014生データ": {
+  "id": 5014,
+  "artist": "RAY YUZUKA AUTUMN EVENT 2026 “Salon de RAY”",
+  "name": "RAY YUZUKA AUTUMN EVENT 2026 “Salon de RAY”",
+  "date": "2026-09-09",
+  "dateLabel": "2026年9月9日(水) 大阪 東京建物 Brillia HALL 箕面 大ホール",
+  "venue": "東京建物 Brillia HALL 箕面 大ホール",
+  "prefecture": "大阪",
+  "genre": "jpop",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670376",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "先行（東京・大阪 9/9〜9/19公演）〜8/26 23:59",
+    "date": "2026-08-26"
+   },
+   {
+    "type": "先行（東京・大阪 9/9〜9/19公演）8/22 12:00発売",
+    "date": "2026-08-27",
+    "startDate": "2026-08-22"
+   },
+   {
+    "type": "一般発売（大阪 9/9公演）〜9/9 18:00",
+    "date": "2026-09-09"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-05"
+ }
+}

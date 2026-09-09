@@ -1,0 +1,160 @@
+# 2026-09-10 ヒールが出した削除候補 72件（**まだ1件も消していない**）
+
+ぴあだけで照合した0枠は削除理由にならない（DELETE_GATE 3章）。
+夜に e+／楽天／ローチケ／主催直販／配信視聴券まで当ててから仕分ける。
+
+## 他社あり … 1件
+
+- id=2223 宝塚歌劇星組 宝塚大劇場公演 三井住友VISAカードシアター『RRR×TAKA“R”AZUKA ～√Rama～(アールア
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668844
+
+## 売切/終了フラグあり … 59件
+
+- id=130 宝塚歌劇団 雪組
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666575
+- id=1071 ミュージカル『ニコラ・テスラ～エジソンが恐れた孤高の天才～』
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668390
+- id=2401 木根尚登
+  - https://t.pia.jp/pia/event/event.do?eventCd=2612129
+- id=2415 笑福亭鶴瓶×サンドウィッチマンLIVE『シルエット』
+  - https://t.pia.jp/pia/event/event.do?eventCd=2624199
+- id=2416 J亭スピンオフ企画44 白酒・一之輔 大手町二人会
+  - https://t.pia.jp/pia/event/event.do?eventCd=2623320
+- id=2626 センダイガールズプロレスリング
+  - https://t.pia.jp/pia/event/event.do?eventCd=2627641
+- id=2997 真空ジェシカのイベン父ちゃん・イベアンドトシ
+  - https://t.pia.jp/pia/event/event.do?eventCd=2622298
+- id=3116 CUTIE STREET 梅田みゆ 生誕祭 2026
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669934
+- id=3119 THE PAINS OF BEING PURE AT HEART
+  - https://t.pia.jp/pia/event/event.do?eventCd=2626870
+- id=3127 遊佐未森
+  - https://t.pia.jp/pia/event/event.do?eventCd=2628355
+- id=3169 野村義男
+  - https://t.pia.jp/pia/event/event.do?eventCd=2626547
+- id=3509 第56回田辺花火大会
+  - https://t.pia.jp/pia/event/event.do?eventCd=2629630
+- id=3513 大相撲九月場所
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669864
+- id=3527 中村敦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2630531
+- id=3530 林哲司 SONG FILE SPECIAL ～シティポップ HITS セレクション 2026～
+  - https://t.pia.jp/pia/event/event.do?eventCd=2626329
+- id=3572 奥野真哉
+  - https://t.pia.jp/pia/event/event.do?eventCd=2628582
+- id=3577 ロックロックこんにちは!ver.28 ～にゃーロック!ホームズ～
+  - https://t.pia.jp/pia/event/event.do?eventCd=2628028
+- id=3587 宝塚歌劇宙組 全国ツアー公演 ミュージカル・プレイ『再会』／スパーキング・イルミネイト『Diamond IMPULSE』
+  - https://t.pia.jp/pia/event/event.do?eventCd=2617652
+- id=3592 2026伝承ホール寺子屋 「渋谷金王丸伝説」&歌舞伎リーディング
+  - https://t.pia.jp/pia/event/event.do?eventCd=2624459
+- id=3594 真一文字の会 ～春風亭一之輔勉強会～
+  - https://t.pia.jp/pia/event/event.do?eventCd=2629373
+- id=3739 SHIBUYA MUSIC CROSSOVER 2026 #7
+  - https://t.pia.jp/pia/event/event.do?eventCd=2604217
+- id=3743 Uru
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665148
+- id=3766 国立能楽堂 9月特別公演
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631168
+- id=3841 阪神タイガース対中日ドラゴンズ 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631060
+- id=3849 阪神タイガース対東京ヤクルトスワローズ 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631062
+- id=3858 阪神タイガース対読売ジャイアンツ 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631130
+- id=3872 PM AGENCY 40th ANNIVERSARY LIVE スーパー大感謝祭
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668938
+- id=3875 ミュージカル「タイムトラベラーズ・ワイフ」
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670261
+- id=3896 伊藤蘭 クリスマスディナー&コンサート
+  - https://t.pia.jp/pia/event/event.do?eventCd=2629855
+- id=3907 桂三度日本公演～桂三度入門十五周年記念祭～
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631228
+- id=3937 万筆舎『R3』刊行記念落語会
+  - https://t.pia.jp/pia/event/event.do?eventCd=2625598
+- id=3965 読売ジャイアンツ対横浜DeNAベイスターズ 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2630890
+- id=3967 第一回 五圓會 ～三遊派落語研究会～
+  - https://t.pia.jp/pia/event/event.do?eventCd=2630515
+- id=3978 【阪神タイガース 公式戦・交流戦】NTTドコモビジネスファミリーシート
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665272
+- id=3979 【阪神タイガース 公式戦・交流戦】JCBエキサイトシート
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2665270
+- id=3980 【阪神タイガース】セコム ツイン・トリプルシート
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664954
+- id=3981 【阪神タイガース】パナソニックペアシート
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2664952
+- id=4080 澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert 
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670108
+- id=4164 島袋寛子
+  - https://t.pia.jp/pia/event/event.do?eventCd=2628973
+- id=4169 DEEN
+  - https://t.pia.jp/pia/event/event.do?eventCd=2629677
+- id=4197 演芸写真家 橘蓮二プロデュース 春風亭一之輔×桂二葉 二人会2026
+  - https://t.pia.jp/pia/event/event.do?eventCd=2630713
+- id=4205 第570回 花形演芸会
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631590
+- id=4268 APF SAPPHIRE CUP 2026
+  - https://t.pia.jp/pia/event/event.do?eventCd=2632466
+- id=4272 横浜DeNAベイスターズ対阪神タイガース／公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2632092
+- id=4326 Kis-My-Ft2
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668966
+- id=4611 MET JAZZ TOKYO: DAY 0
+  - https://t.pia.jp/pia/event/event.do?eventCd=2630568
+- id=4726 世界のMIDORI 再び七尾へ!! 能登復興支援事業 オーケストラ・アンサンブル金沢 第25回七尾定期公演
+  - https://t.pia.jp/pia/event/event.do?eventCd=2629338
+- id=4912 弁論2026
+  - https://t.pia.jp/pia/event/event.do?eventCd=2623645
+- id=4932 阪神タイガース対読売ジャイアンツ 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631067
+- id=4983 TVアニメ『さよならララ』最終話直前先行上映会
+  - https://t.pia.jp/pia/event/event.do?eventCd=2632689
+- id=4985 TVアニメ「文豪ストレイドッグス」振り返り上映会&トークイベント
+  - https://t.pia.jp/pia/event/event.do?eventCd=2632223
+- id=4986 TVアニメ「マジカル★エクスプローラー」第1話～第3話先行上映会
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670486
+- id=4987 TVアニメ『魔法騎士レイアース』ジャパンプレミア
+  - https://t.pia.jp/pia/event/event.do?eventCd=2630999
+- id=5123 阪神タイガース対読売ジャイアンツ 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631063
+- id=5226 神奈川フィルハーモニー管弦楽団 音楽堂シリーズ第38回<Classic Modern>
+  - https://t.pia.jp/pia/event/event.do?eventCd=2627926
+- id=5503 The Ravens
+  - https://t.pia.jp/pia/event/event.do?eventCd=2634343
+- id=5510 PURPLE BUBBLE
+  - https://t.pia.jp/pia/event/event.do?eventCd=2634324
+- id=5670 フォーレ四重奏団 第2夜
+  - https://t.pia.jp/pia/event/event.do?eventCd=2625007
+- id=7071 センダイガールズプロレスリング<大阪大会>
+  - https://t.pia.jp/pia/event/event.do?eventCd=2634731
+
+## 締切不明あり … 0件
+
+
+## ぴあだけ・要他社確認 … 9件
+
+- id=1554 高嶋ちさ子のザワつく!昭和歌謡祭 2026
+  - https://t.pia.jp/pia/event/event.do?eventCd=2625233
+- id=3994 東京カテドラルで聴く クリスマス・コンサート 2026
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670269
+- id=4108 大貫妙子
+  - https://t.pia.jp/pia/event/event.do?eventCd=2628174
+- id=4992 「メイドインアビス 烈日の黄金郷」上映記念舞台挨拶
+  - https://t.pia.jp/pia/event/event.do?eventCd=2631285
+- id=5641 『5秒で完全犯罪を生成する方法』公開記念舞台挨拶／前夜祭
+  - https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670728
+- id=6426 千葉ロッテマリーンズ対福岡ソフトバンクホークス 公式戦
+  - https://t.pia.jp/pia/event/event.do?eventCd=2633742
+- id=6915 谷山浩子・猫森集会2026
+  - https://t.pia.jp/pia/event/event.do?eventCd=2621689
+- id=6922 Hi-STANDARD
+  - https://t.pia.jp/pia/event/event.do?eventCd=2633936
+- id=7281 千葉ロッテマリーンズ対福岡ソフトバンクホークス 公式戦〈ワイドシート〉
+  - https://t.pia.jp/pia/event/event.do?eventCd=2633804
+
+## 既に消えている … 3件
+
+- id=4978 『キリコのタクト～YELL～』完成披露舞台挨拶上映会
+- id=5643 『本当にあった話（の話）』完成披露上映会
+- id=5731 『さとこはいつも』舞台挨拶付き東京先行上映
