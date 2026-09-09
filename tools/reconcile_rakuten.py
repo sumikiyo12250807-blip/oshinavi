@@ -68,9 +68,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--new', action='store_true')
     ap.add_argument('--ids', default='')
+    # 直す前のバックアップに当てて「本当に鳴るか」を確かめるための入口（陰性テスト用）
+    ap.add_argument('--index', default='index.html')
     args = ap.parse_args()
 
-    h = open('index.html', encoding='utf-8').read()
+    h = open(args.index, encoding='utf-8').read()
     m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h, re.S)
     EV = json.loads(m.group(2))
     ids = {int(x) for x in args.ids.split(',') if x.strip()}
@@ -130,6 +132,34 @@ def main():
         page_perf_md = md_set([p['date'] for p in perfs] + [p.get('end') for p in perfs])
         page_pref = {re.sub(r'[都府県]$', '', p['pref']) for p in perfs if p['pref']}
 
+        # 🚨🚨【2026-09-10 追加】「その締切は**その公演のもの**か」を見る。
+        #   ①の照合は「登録の締切がページのどこかに在るか」しか見ないので、
+        #   別の公演の締切を流用した嘘（＝ビルダーが max(カードの締切) を全公演に付けていた型）が
+        #   **ページに実在する日付なので素通りする**。2026-09-10 朝、39件を照合して FAIL 0 だったのに
+        #   実際は14エントリの締切が嘘だった（[[feedback_sale_end_unknown_display]]）。
+        #   照合＝バッジが名乗る公演日のカードの締切、または販売枠(窓)の締切。そのどちらでもなければFAIL。
+        #   🚨判定は「＝」でなく「その公演の締切より後を名乗っていないか」で見る。
+        #     嘘はたいてい「複数公演を1枠にまとめた範囲バッジ」の形で出るので、
+        #     単日バッジの等号照合だけでは1件も鳴らない（2026-09-10に実測して作り直した）。
+        card_end_by_md, iso_by_md = {}, {}
+        for p in perfs:
+            for md in md_set([p['date']]):
+                iso_by_md.setdefault(md, p['date'])
+                if p.get('sale_end'):
+                    card_end_by_md.setdefault(md, set()).add(p['sale_end'][:10])
+        perf_end_iso = {}          # 公演のISO日 → その公演で最後まで買える日
+        for p in perfs:
+            if p.get('sale_end'):
+                k = p['date']
+                v = p['sale_end'][:10]
+                if v > perf_end_iso.get(k, ''):
+                    perf_end_iso[k] = v
+        win_end = set()
+        for w in wins:
+            _f, _t = R.win_dates(w['timming'])
+            if _t:
+                win_end.add(_t[:10])
+
         errs = []
         for t in e.get('tickets', []):
             checked = False
@@ -160,11 +190,15 @@ def main():
                 else:
                     errs.append('発売日 %s がページに無い | %s' % (t['startDate'], t['type'][:34]))
             # ③ バッジの公演日
-            for md in re.findall(r'(\d{1,2}/\d{1,2})公演', t['type']) or []:
-                pass
-            badge = re.search(r'（[^）]*?([\d/〜]+)公演）', t['type'])
+            #   🚨「（愛知 R9年 1/9 13:00公演）」の形（R9年＋開演時刻つき）がある。
+            #     素朴に [\d/〜]+ で取ると時刻の「00」を拾って割れる（2026-09-10に落ちた）。
+            #     M/D（と 〜M/D）だけを名指しで取り、R9年と開演時刻は落とす。
+            _MD = r'(?:R\d+年\s*)?\d{1,2}/\d{1,2}'
+            badge = re.search(r'（[^）]*?(%s(?:〜%s)?)(?:\s+\d{1,2}:\d{2})?公演）' % (_MD, _MD),
+                              t['type'])
             if badge:
                 for one in badge.group(1).split('〜'):
+                    one = re.sub(r'^R\d+年\s*', '', one.strip())
                     if not one:
                         continue
                     if one in page_perf_md:
@@ -179,6 +213,22 @@ def main():
                     if '%04d-%02d-%02d' % (yr, mo, dy) <= TODAY:
                         continue
                     errs.append('バッジ公演日 %s がページに無い | %s' % (one, t['type'][:34]))
+            # ③-2 その締切は「その枠が名乗っている公演」のものか
+            #     ＝バッジが覆う公演のどれかで、締切がその公演のカードの締切より**後**なら嘘。
+            #     販売枠(窓)に書かれた締切ならツアー全体に効くので、それは正しい。
+            if (badge and not t.get('saleEndUnknown') and not t.get('saleUntilSoldOut')
+                    and not past(t['date']) and t['date'] not in win_end and perf_end_iso):
+                mds = [re.sub(r'^R\d+年\s*', '', x.strip()) for x in badge.group(1).split('〜')]
+                lo = iso_by_md.get(mds[0]) or min(perf_end_iso)
+                hi = iso_by_md.get(mds[-1]) or max(perf_end_iso)
+                for pd in sorted(perf_end_iso):
+                    if not (lo <= pd <= hi) or pd < TODAY:
+                        continue     # 覆っていない公演／終わった公演は見ない
+                    if t['date'] > perf_end_iso[pd]:
+                        errs.append('締切 %s は %s公演のものでない（%s公演は %s まで／販売枠の締切は %s）| %s'
+                                    % (t['date'], mds[0], pd, perf_end_iso[pd],
+                                       '/'.join(sorted(win_end)) or '無し', t['type'][:34]))
+                        break
             checked_slots += 1 if checked else 0
             skip_slots += 0 if checked else 1
         # ④ 県。複数会場のエントリは prefecture が「大阪・東京」のように多県を名乗る（正しい表記）。
