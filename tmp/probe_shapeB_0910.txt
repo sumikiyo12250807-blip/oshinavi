@@ -1,0 +1,32 @@
+===== https://ticket.rakuten.co.jp/music/jpop/rt4tkw2/
+  --- salesDisplayStatus ---
+"//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = {"190067":{"sales_group":"\u8ca9\u58f2\u671f\u9593: \u30aa\u30d5\u30a3\u30b7\u30e3\u30eb1\u6b21\u62bd\u9078\u5148\u884c","timming":"2026\/08\/27(\u6728) 21:00 \u301c 2026\/09\/13(\u65e5) 23:59","sales_status":"1","sales_info_date":"","sales_start_date":"2026-08-27 21:00:00","class":"brown-div","kind_label":"\u5148\u884c\u62bd\u9078"},"190068":{"sales_group":"\u8ca9\u58f2\u671f\u9593: \u30aa\u30d5\u30a3\u30b7\u30e3\u30eb2\u6b21\u62bd\u9078\u5148\u884c","timming":"2026\/09\/25(\u91d1) 18:00 \u301c 2026\/10\/11(\u65e5) 23:59","sales_status":"0","sales_info_date":"","sales_start_date":"2026-09-25 18:00:00","class":"brown-div","kind_label":"\u5148\u884c\u62bd\u9078"},"190069":{"sales_group":"\u8ca9\u58f2\u671f\u9593: \u30aa\u30d5\u30a3\u30b7\u30e3\u30eb3\u6b21\u5148\u7740\u5148\u884c","timming":"2026\/10\/23(\u91d1) 18:00 \u301c 2026\/11\/10(\u706b) 23:59","sales_status":
+  --- cart-button ---
+r: black; padding-left: 6px; } .performance-purchase-button-mobile { /*top:50%;*/ /*left:50%;*/ text-align: center; color: black; } .purchase-button-wrapper-mobile { margin-top:10%; margin-right: 0px; padding-left: 0px; padding-right: 15px; } .cart-button { width: 85px !important; } } </style> <label style="position: absolute;right: 28px;" id="mobile-sale-checkbox" class="widget_id_033621d5-138d-4c19-8148-cf8cbd5dcbb4"><input type="checkbox" id="show_hide_exp_perf1" />&nbsp;販売終了した公演も表示</label> <div class="wp-widge
+
+===== https://ticket.rakuten.co.jp/music/rtkb710/
+  --- salesDisplayStatus ---
+"//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = {"188668":{"sales_group":"\u8ca9\u58f2\u671f\u9593: \u5148\u884c\u62bd\u9078","timming":"2026\/08\/17(\u6708) 10:00 \u301c 2026\/08\/23 (\u65e5) 23:59","sales_status":"1","sales_info_date":"","sales_start_date":"2026-08-17 10:00:00","class":"brown-div","kind_label":"\u5148\u884c\u62bd\u9078"},"188669":{"sales_group":"\u8ca9\u58f2\u671f\u9593: \u4e00\u822c\u767a\u58f2","timming":"2026\/10\/09(\u91d1) 10:00 \u301c ","sales_status":"1","sales_info_date":"","sales_start_date":"2026-10-09 10:00:00","class":"blue-div","kind_label":"\u4e00\u822c\u767a\u58f2"}};
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sa
+  --- cart-button ---
+r: black; padding-left: 6px; } .performance-purchase-button-mobile { /*top:50%;*/ /*left:50%;*/ text-align: center; color: black; } .purchase-button-wrapper-mobile { margin-top:10%; margin-right: 0px; padding-left: 0px; padding-right: 15px; } .cart-button { width: 85px !important; } } </style> <label style="position: absolute;right: 28px;" id="mobile-sale-checkbox" class="widget_id_2b4e3fd1-274e-4778-98cb-9c37b627bd4b"><input type="checkbox" id="show_hide_exp_perf1" />&nbsp;販売終了した公演も表示</label> <div class="wp-widge
+
+===== https://ticket.rakuten.co.jp/event/rtb9s48/
+  --- 予定枚数 ---
+こちら からご覧いただけます チケット情報 テーブル席(4人席) 予定枚数終了--> 42,000円 (税込) /4人
+  --- 予定枚数 ---
+イス席(1人席) 6,500円 (税込) /1人 ※お一人様10席（10人分）まで購入可 ペアイス席(2人席) 予定枚数終了--> 14,000円 (税込) /2人
+
