@@ -1,0 +1,215 @@
+===== salesDisplayStatus @52038
+	
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div><div id="panel-1103082-0-0-6" class="so-panel widget widget_tickets-freetext" data-index="6" ><div
+			
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div><div id="panel-1103082-0-0-7" class="so-panel widget widget_tickets-freetext" data-index="7" ><div
+			
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div>			<script src="//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = false;
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sales_status'];
+						if((saleStatus == "2") && (salesDisplayStatus[key]['sales_start_date']!='')){ //sales start date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_start_date']);  
+							salesDate = salesDisplayStatus[key]['sales_start_date'];
+							if(currentDate>salesDate){
+								//console.log('curr is great-'+salesDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+								//console.log('sales is great-'+salesDate);
+								jQuery('.sales-info'+key).hide();
+							}
+						} else if((saleStatus == "3") && (salesDisplay
+
+===== salesDisplayStatus @52285
+ex="6" ><div
+			
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div><div id="panel-1103082-0-0-7" class="so-panel widget widget_tickets-freetext" data-index="7" ><div
+			
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div>			<script src="//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = false;
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sales_status'];
+						if((saleStatus == "2") && (salesDisplayStatus[key]['sales_start_date']!='')){ //sales start date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_start_date']);  
+							salesDate = salesDisplayStatus[key]['sales_start_date'];
+							if(currentDate>salesDate){
+								//console.log('curr is great-'+salesDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+								//console.log('sales is great-'+salesDate);
+								jQuery('.sales-info'+key).hide();
+							}
+						} else if((saleStatus == "3") && (salesDisplayStatus[key]['sales_info_date']!='')){ // information disclouser date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_info_date']);
+							infoDate = salesDisplayStatus[key]['sales_info_date'];
+							if(currentDate>infoDate){
+								/
+
+===== salesDisplayStatus @52357
+freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div><div id="panel-1103082-0-0-7" class="so-panel widget widget_tickets-freetext" data-index="7" ><div
+			
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div>			<script src="//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = false;
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sales_status'];
+						if((saleStatus == "2") && (salesDisplayStatus[key]['sales_start_date']!='')){ //sales start date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_start_date']);  
+							salesDate = salesDisplayStatus[key]['sales_start_date'];
+							if(currentDate>salesDate){
+								//console.log('curr is great-'+salesDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+								//console.log('sales is great-'+salesDate);
+								jQuery('.sales-info'+key).hide();
+							}
+						} else if((saleStatus == "3") && (salesDisplayStatus[key]['sales_info_date']!='')){ // information disclouser date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_info_date']);
+							infoDate = salesDisplayStatus[key]['sales_info_date'];
+							if(currentDate>infoDate){
+								//console.log('curr is great-'+infoDate);
+								jQuery('.sales-info'+ke
+
+===== sales_status @52382
+v class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div><div id="panel-1103082-0-0-7" class="so-panel widget widget_tickets-freetext" data-index="7" ><div
+			
+			class="so-widget-tickets-freetext so-widget-tickets-freetext-base"
+			
+		><div class="tickets-widget-tinymce tickets-freetext-widget">
+	　</div>
+</div></div>			<script src="//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = false;
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sales_status'];
+						if((saleStatus == "2") && (salesDisplayStatus[key]['sales_start_date']!='')){ //sales start date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_start_date']);  
+							salesDate = salesDisplayStatus[key]['sales_start_date'];
+							if(currentDate>salesDate){
+								//console.log('curr is great-'+salesDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+								//console.log('sales is great-'+salesDate);
+								jQuery('.sales-info'+key).hide();
+							}
+						} else if((saleStatus == "3") && (salesDisplayStatus[key]['sales_info_date']!='')){ // information disclouser date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_info_date']);
+							infoDate = salesDisplayStatus[key]['sales_info_date'];
+							if(currentDate>infoDate){
+								//console.log('curr is great-'+infoDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+
+
+===== sales_status @62027
+div></div></div>                                <div class='event-details-mobile-card sales-info'><div class='event-details-mobile-title'>販売期間: 一般発売</div><div class='row'><div class='col-xs-12 col-sm-12'><div class='event-details-date-mobile'><label>2026/08/01(土) 12:00 〜</label></div></div></div></div>                        </div>
+
+</div>			<script src="//tsrar.azureedge.net/wp-content/themes/hammer-ct-child/assets/js/php_date_time.min.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+                    var salesDisplayStatus = false;
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sales_status'];
+						if((saleStatus == "2") && (salesDisplayStatus[key]['sales_start_date']!='')){ //sales start date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_start_date']);  
+							salesDate = salesDisplayStatus[key]['sales_start_date'];
+							if(currentDate>salesDate){
+								//console.log('curr is great-'+salesDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+								//console.log('sales is great-'+salesDate);
+								jQuery('.sales-info'+key).hide();
+							}
+						} else if((saleStatus == "3") && (salesDisplayStatus[key]['sales_info_date']!='')){ // information disclouser date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_info_date']);
+							infoDate = salesDisplayStatus[key]['sales_info_date'];
+							if(currentDate>infoDate){
+								//console.log('curr is great-'+infoDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+
+
+===== performance_btn @81107
+olumn-3">エリア</div>
+        <div class="column-4" style="padding-left: 15px;">会場</div>
+        <div class="column-5">
+            <label style="position: absolute;right: 28px;"><input type="checkbox" id="show_hide_exp_perf" />&nbsp;販売終了した公演も表示</label>
+        </div>
+    </div>
+    <div class="performances-body">
+        <div class='performance-msg' style='justify-content: center;color: #000;padding: 10px; text-align: center;'>
+            このイベントの販売は終了しました        </div>
+        <div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-23T23:59:59","max_end_on":"2026-09-23T23:59:59"}'><div class='column-1'>ATP Monday【シングルス】予選1回戦</div><div class='column-6'>2026年 09月 28日 (月)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_1' data-perf='1'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-23T23:59:59","max_end_on":"2026-09-23T23:59:59"}'><div class='column-1'>ATP Tuesday【シングルス・ダブルス】予選2回戦</div><div class='column-6'>2026年 09月 29日 (火)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_2' data-perf='2'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-24T23:59:59","max_end_on":"2026-09-24T23:59:59"}'><div class='column-1'>セッション1【シングルス】1回戦　【ダブルス】1回戦・予選2回戦</div><div class='column-6'>2026年 09月 30日 (水)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</
+
+===== performance_btn @81585
+   <div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-23T23:59:59","max_end_on":"2026-09-23T23:59:59"}'><div class='column-1'>ATP Monday【シングルス】予選1回戦</div><div class='column-6'>2026年 09月 28日 (月)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_1' data-perf='1'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-23T23:59:59","max_end_on":"2026-09-23T23:59:59"}'><div class='column-1'>ATP Tuesday【シングルス・ダブルス】予選2回戦</div><div class='column-6'>2026年 09月 29日 (火)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_2' data-perf='2'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-24T23:59:59","max_end_on":"2026-09-24T23:59:59"}'><div class='column-1'>セッション1【シングルス】1回戦　【ダブルス】1回戦・予選2回戦</div><div class='column-6'>2026年 09月 30日 (水)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_3' data-perf='3'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-24T23:59:59","max_end_on":"2026-09-24T23:59:59"}'><div class='column-1'>セッション2【シングルス・ダブルス】1回戦</div><div class='column-6'>2026年 09月 30日 (水)</div><div class='column-2'>開場 15:30 / 開演 16:00</div><div class='column-3'>東京都</div><di
+
+===== performance_btn @82067
+ass='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-23T23:59:59","max_end_on":"2026-09-23T23:59:59"}'><div class='column-1'>ATP Tuesday【シングルス・ダブルス】予選2回戦</div><div class='column-6'>2026年 09月 29日 (火)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_2' data-perf='2'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-24T23:59:59","max_end_on":"2026-09-24T23:59:59"}'><div class='column-1'>セッション1【シングルス】1回戦　【ダブルス】1回戦・予選2回戦</div><div class='column-6'>2026年 09月 30日 (水)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_3' data-perf='3'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-24T23:59:59","max_end_on":"2026-09-24T23:59:59"}'><div class='column-1'>セッション2【シングルス・ダブルス】1回戦</div><div class='column-6'>2026年 09月 30日 (水)</div><div class='column-2'>開場 15:30 / 開演 16:00</div><div class='column-3'>東京都</div><div class='column-4'>有明コロシアム</div><div class='column-5 performance_btn perf_4' data-perf='4'>...</div></div><div class='performance active' data-date='{"min_start_on":"2026-08-01T12:00:00","max_start_on":"2026-08-01T12:00:00","min_end_on":"2026-09-25T23:59:59","max_end_on":"2026-09-25T23:59:59"}'><div class='column-1'>セッション1【シングルス・ダブルス】1回戦</div><div class='column-6'>2026年 10月 01日 (木)</div><div class='column-2'>開場 09:30 / 開演 11:00</div><div class='column-3'>東京都</div><div class='co
+
