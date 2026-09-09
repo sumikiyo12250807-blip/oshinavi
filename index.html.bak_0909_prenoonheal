@@ -9096,24 +9096,10 @@
         "date": "2026-11-07"
       },
       {
-        "type": "一般発売（石川 12/5公演）〜12/3 23:59",
-        "date": "2026-12-03",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633613"
-      },
-      {
-        "type": "一般発売（岐阜・静岡 11/3〜11/14公演）〜11/11 23:59",
-        "date": "2026-11-11",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627836"
-      },
-      {
-        "type": "一般発売（大阪・岡山・広島・山口 11/1〜11/22公演）〜11/19 23:59",
-        "date": "2026-11-19",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630348"
-      },
-      {
-        "type": "一般発売（宮城・群馬・埼玉・千葉・新潟・長野 10/12〜12/6公演）〜12/3 23:59",
-        "date": "2026-12-03",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627930"
+        "type": "一般発売（石川 12/5公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633613"
       }
     ],
     "verified": true,
@@ -10276,15 +10262,15 @@
     },
     "tickets": [
       {
+        "type": "一般発売（北海道 12/5公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630287"
+      },
+      {
         "type": "一般発売（北海道 10/23公演）〜10/21 23:59",
         "date": "2026-10-21",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621711"
-      },
-      {
-        "type": "一般発売（北海道 12/5公演）〜12/3 23:59",
-        "date": "2026-12-03",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630287",
-        "startDate": "2026-09-09"
       }
     ],
     "verified": true,
@@ -10826,19 +10812,16 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625769"
       },
       {
-        "type": "一般発売（宮城 12/15公演）〜12/6 23:59",
-        "date": "2026-12-06",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625888"
+        "type": "一般発売（宮城 12/15公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625888"
       },
       {
-        "type": "先行（広島 12/21公演）〜9/17 11:00",
+        "type": "先行（広島 12/21公演）9/4 11:00発売",
         "date": "2026-09-17",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628920"
-      },
-      {
-        "type": "2次プレリザーブ（石川 12/3公演）〜9/14 11:00",
-        "date": "2026-09-14",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632752"
+        "startDate": "2026-09-04",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628920"
       }
     ],
     "verified": true,
@@ -10955,6 +10938,12 @@
     },
     "tickets": [
       {
+        "type": "一般発売（北海道 12/4公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630281"
+      },
+      {
         "type": "一般発売（埼玉 11/30公演）9/15 10:00発売",
         "date": "2026-09-15",
         "startDate": "2026-09-15",
@@ -10964,12 +10953,6 @@
         "type": "一般発売（大阪 10/25公演）〜10/24 23:59",
         "date": "2026-10-24",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620211"
-      },
-      {
-        "type": "一般発売（北海道 12/4公演）〜12/2 23:59",
-        "date": "2026-12-02",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630281",
-        "startDate": "2026-09-09"
       },
       {
         "type": "先着一般発売（東京都 9/10公演）〜9/7 18:00",
@@ -12157,8 +12140,9 @@
         "soldoutSince": "2026-08-27"
       },
       {
-        "type": "一般発売（宮城 9/16公演）〜9/13 23:59",
-        "date": "2026-09-13",
+        "type": "一般発売（宮城 9/16公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614876"
       }
     ],
@@ -13515,8 +13499,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（山口 11/28公演）〜11/27 23:59",
-        "date": "2026-11-27",
+        "type": "一般発売（山口 11/28公演）9/1 10:00発売",
+        "date": "2026-09-01",
+        "startDate": "2026-09-01",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629588"
       },
       {
@@ -13959,8 +13944,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627788"
       },
       {
-        "type": "一般発売（大阪 12/6公演）〜12/3 23:59",
-        "date": "2026-12-03",
+        "type": "一般発売（大阪 12/6公演）9/8 10:00発売",
+        "date": "2026-09-08",
+        "startDate": "2026-09-08",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627788"
       },
       {
@@ -15474,23 +15460,24 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670117"
       },
       {
-        "type": "秋田公演 一般発売（秋田 9/18公演）〜9/17 23:59",
-        "date": "2026-09-17",
+        "type": "秋田公演 一般発売（秋田 9/18公演）〜9/2 23:59",
+        "date": "2026-09-02",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2608882"
       },
       {
-        "type": "岩手公演 一般発売（岩手 9/19公演）〜9/18 23:59",
-        "date": "2026-09-18",
+        "type": "岩手公演 一般発売（岩手 9/19公演）〜9/3 23:59",
+        "date": "2026-09-03",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2608882"
       },
       {
-        "type": "山形公演 一般発売（山形 9/21公演）〜9/20 23:59",
-        "date": "2026-09-20",
+        "type": "山形公演 一般発売（山形 9/21公演）〜9/3 23:59",
+        "date": "2026-09-03",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2608882"
       },
       {
-        "type": "一般発売（静岡 11/12公演）〜10/27 23:59",
-        "date": "2026-10-27",
+        "type": "一般発売（静岡 11/12公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617777"
       },
       {
@@ -15500,13 +15487,15 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620185"
       },
       {
-        "type": "一般発売（長野 11/8公演）〜10/22 23:59",
-        "date": "2026-10-22",
+        "type": "一般発売（長野 11/8公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620185"
       },
       {
-        "type": "仙台公演 一般発売（宮城 11/15公演）〜10/29 23:59",
-        "date": "2026-10-29",
+        "type": "仙台公演 一般発売（宮城 11/15公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2608882"
       },
       {
@@ -15555,31 +15544,6 @@
         "type": "一般発売（大分 11/1公演）〜10/15 23:59",
         "date": "2026-10-15",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627067"
-      },
-      {
-        "type": "5次プレリザーブ（大阪 12/13公演）〜9/14 23:59",
-        "date": "2026-09-14",
-        "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670117"
-      },
-      {
-        "type": "一般発売.（新潟 9/23公演）〜9/22 23:59",
-        "date": "2026-09-22",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620185"
-      },
-      {
-        "type": "一般発売（愛媛 11/20公演）〜11/4 23:59",
-        "date": "2026-11-04",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2611212"
-      },
-      {
-        "type": "一般発売（高知 11/21公演）〜11/4 23:59",
-        "date": "2026-11-04",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2611212"
-      },
-      {
-        "type": "一般発売（大阪 11/23公演）〜11/5 23:59",
-        "date": "2026-11-05",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627316"
       }
     ],
     "verified": true,
@@ -15705,6 +15669,12 @@
     },
     "tickets": [
       {
+        "type": "一般発売（北海道 12/6公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630289"
+      },
+      {
         "type": "一般発売（北海道 9/16公演）〜9/15 23:59",
         "date": "2026-09-15",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615776"
@@ -15713,12 +15683,6 @@
         "type": "一般発売（東京 10/8公演）〜10/7 23:59",
         "date": "2026-10-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615733"
-      },
-      {
-        "type": "一般発売（北海道 12/6公演）〜12/4 23:59",
-        "date": "2026-12-04",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630289",
-        "startDate": "2026-09-09"
       }
     ],
     "verified": true,
@@ -15986,6 +15950,12 @@
     },
     "tickets": [
       {
+        "type": "一般発売（埼玉 12/8公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623842"
+      },
+      {
         "type": "一般発売（神奈川 10/28公演）〜10/27 23:59",
         "date": "2026-10-27",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623798"
@@ -16004,12 +15974,6 @@
         "type": "一般発売（宮崎 11/30〜12/1公演）〜11/29 23:59",
         "date": "2026-11-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624821"
-      },
-      {
-        "type": "一般発売（埼玉 12/8公演）〜12/1 23:59",
-        "date": "2026-12-01",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623842",
-        "startDate": "2026-09-09"
       }
     ],
     "verified": true,
@@ -18747,9 +18711,10 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631744"
       },
       {
-        "type": "一般発売（大阪 11/9公演）〜11/8 23:59",
-        "date": "2026-11-08",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629594"
+        "type": "一般発売（大阪 11/9公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629594"
       },
       {
         "type": "一般発売（大阪 11/10公演）9/10 10:00発売",
@@ -18787,13 +18752,15 @@
         "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629594"
       },
       {
-        "type": "一般発売（大阪 11/5公演）〜11/4 23:59",
-        "date": "2026-11-04",
+        "type": "一般発売（大阪 11/5公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631744"
       },
       {
-        "type": "一般発売（大阪 11/7公演）〜11/6 23:59",
-        "date": "2026-11-06",
+        "type": "一般発売（大阪 11/7公演）9/7 10:00発売",
+        "date": "2026-09-07",
+        "startDate": "2026-09-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631744"
       },
       {
@@ -18826,48 +18793,6 @@
         "type": "一般発売（大阪 11/6公演）〜11/5 23:59",
         "date": "2026-11-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2631744"
-      },
-      {
-        "type": "一般発売【11/16（月）13:30公演】（大阪 11/16公演）9/16 10:00発売",
-        "date": "2026-09-16",
-        "startDate": "2026-09-16",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
-      },
-      {
-        "type": "一般発売【11/16（月）19:00公演】（大阪 11/16公演）9/16 10:00発売",
-        "date": "2026-09-16",
-        "startDate": "2026-09-16",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
-      },
-      {
-        "type": "一般発売（大阪 11/17公演）9/17 10:00発売",
-        "date": "2026-09-17",
-        "startDate": "2026-09-17",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
-      },
-      {
-        "type": "一般発売（大阪 11/19公演）9/19 10:00発売",
-        "date": "2026-09-19",
-        "startDate": "2026-09-19",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
-      },
-      {
-        "type": "一般発売（大阪 11/20公演）9/20 10:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
-      },
-      {
-        "type": "一般発売（大阪 11/21公演）9/21 10:00発売",
-        "date": "2026-09-21",
-        "startDate": "2026-09-21",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
-      },
-      {
-        "type": "一般発売（大阪 11/22公演）9/22 10:00発売",
-        "date": "2026-09-22",
-        "startDate": "2026-09-22",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630742"
       }
     ],
     "verified": true,
@@ -19504,8 +19429,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622714"
       },
       {
-        "type": "一般発売（神奈川 R9年 1/26〜1/29公演）〜1/25 23:59",
-        "date": "2027-01-25",
+        "type": "一般発売（神奈川 R9年 1/26〜1/29公演）9/4 10:00発売",
+        "date": "2026-09-04",
+        "startDate": "2026-09-04",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632577"
       },
       {
@@ -22392,8 +22318,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618235"
       },
       {
-        "type": "一般発売（新潟 11/7公演）〜10/22 23:59",
-        "date": "2026-10-22",
+        "type": "一般発売（新潟 11/7公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618235"
       },
       {
@@ -22437,11 +22364,6 @@
         "type": "一般発売（愛知 10/31公演）〜10/15 23:59",
         "date": "2026-10-15",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623758"
-      },
-      {
-        "type": "4次受付（宮城 12/12公演）〜9/13 23:59",
-        "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625370"
       }
     ],
     "verified": true,
@@ -23525,8 +23447,9 @@
         "date": "2026-10-29"
       },
       {
-        "type": "一般発売（福岡 11/1公演）〜10/31 23:59",
-        "date": "2026-10-31",
+        "type": "一般発売（福岡 11/1公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624854"
       }
     ],
@@ -25150,8 +25073,9 @@
         "date": "2026-08-11"
       },
       {
-        "type": "一般発売（仙台）（宮城 11/6公演）〜11/5 23:59",
-        "date": "2026-11-05"
+        "type": "一般発売（仙台）（宮城 11/6公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29"
       },
       {
         "type": "一般発売（神奈川 11/12公演）8/29 10:00発売",
@@ -25207,38 +25131,6 @@
         "type": "一般発売（北海道 10/22〜10/25公演）〜10/24 23:59",
         "date": "2026-10-24",
         "startDate": "2026-07-25"
-      },
-      {
-        "type": "プレリザーブ2次（沖縄 R9年 1/30〜1/31公演）〜9/17 23:59",
-        "date": "2026-09-17"
-      },
-      {
-        "type": "一般発売（石川 10/29公演）〜10/28 23:59",
-        "date": "2026-10-28"
-      },
-      {
-        "type": "一般発売（新潟・長野 10/30〜11/1公演）〜10/31 23:59",
-        "date": "2026-10-31"
-      },
-      {
-        "type": "一般発売（愛媛 11/19公演）〜11/18 23:59",
-        "date": "2026-11-18"
-      },
-      {
-        "type": "一般発売（岡山 12/4公演）〜12/3 23:59",
-        "date": "2026-12-03"
-      },
-      {
-        "type": "一般発売（鳥取 12/5公演）〜12/4 23:59",
-        "date": "2026-12-04"
-      },
-      {
-        "type": "一般発売（広島 12/18公演）〜12/17 23:59",
-        "date": "2026-12-17"
-      },
-      {
-        "type": "一般発売（福岡 12/20公演）〜12/19 23:59",
-        "date": "2026-12-19"
       }
     ],
     "verified": true,
@@ -27096,8 +26988,9 @@
         "date": "2026-10-28"
       },
       {
-        "type": "一般発売（広島 11/2公演）〜11/1 23:59",
-        "date": "2026-11-01",
+        "type": "一般発売（広島 11/2公演）9/1 10:00発売",
+        "date": "2026-09-01",
+        "startDate": "2026-09-01",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633252"
       }
     ],
@@ -27477,14 +27370,10 @@
         "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670529"
       },
       {
-        "type": "一般発売（京都 12/13公演）〜12/10 23:59",
-        "date": "2026-12-10",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628974"
-      },
-      {
-        "type": "プレリザーブ（東京 R9年 1/8公演）〜9/15 23:59",
-        "date": "2026-09-15",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629578"
+        "type": "一般発売（京都 12/13公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628974"
       }
     ],
     "verified": true,
@@ -29363,9 +29252,10 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670607"
       },
       {
-        "type": "先行（京都 R9年 2/11公演）〜9/13 23:59",
+        "type": "先行（京都 R9年 2/11公演）9/8 11:00発売",
         "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625021"
+        "startDate": "2026-09-08",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625021"
       },
       {
         "type": "一般発売（京都 R9年 2/11公演）10/2 10:00発売",
@@ -29380,8 +29270,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632590"
       },
       {
-        "type": "一般発売（大阪 11/29公演）〜11/26 23:59",
-        "date": "2026-11-26",
+        "type": "一般発売（大阪 11/29公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632590"
       }
     ],
@@ -31460,8 +31351,9 @@
         "soldoutSince": "2026-08-28"
       },
       {
-        "type": "一般発売（大阪 12/19公演）〜12/18 23:59",
-        "date": "2026-12-18",
+        "type": "一般発売（大阪 12/19公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624723"
       },
       {
@@ -31641,8 +31533,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2610035"
       },
       {
-        "type": "一般発売（京都 R9年 2/27公演）〜2/25 23:59",
-        "date": "2027-02-25",
+        "type": "一般発売（京都 R9年 2/27公演）9/4 10:00発売",
+        "date": "2026-09-04",
+        "startDate": "2026-09-04",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626766"
       },
       {
@@ -42115,8 +42008,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（宮城 R9年 3/21公演）〜3/17 23:59",
-        "date": "2027-03-17",
+        "type": "一般発売（宮城 R9年 3/21公演）9/2 10:00発売",
+        "date": "2026-09-02",
+        "startDate": "2026-09-02",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626664"
       },
       {
@@ -44635,8 +44529,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628601"
       },
       {
-        "type": "一般発売（愛知 11/23公演）〜11/22 23:59",
-        "date": "2026-11-22",
+        "type": "一般発売（愛知 11/23公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629385"
       },
       {
@@ -45385,8 +45280,9 @@
         "date": "2026-08-26"
       },
       {
-        "type": "一般発売（富山・石川・福井・長野 10/29〜11/3公演）〜11/2 23:59",
-        "date": "2026-11-02"
+        "type": "一般発売（富山・石川・福井・長野 10/29〜11/3公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29"
       },
       {
         "type": "一般発売（三重 9/19公演）〜9/3 23:59",
@@ -45416,60 +45312,6 @@
       {
         "type": "一般発売（京都 R9年 1/30公演）〜1/14 23:59",
         "date": "2027-01-14"
-      },
-      {
-        "type": "プレリザーブ5次（栃木・埼玉・東京 R9年 1/21〜2/20公演）〜9/13 23:59",
-        "date": "2026-09-13"
-      },
-      {
-        "type": "プレリザーブ（東京 R9年 1/20公演）〜9/13 23:59",
-        "date": "2026-09-13"
-      },
-      {
-        "type": "4次受付（大阪 R9年 2/14公演）〜9/15 11:00",
-        "date": "2026-09-15"
-      },
-      {
-        "type": "一般発売（新潟 10/2公演）〜9/16 23:59",
-        "date": "2026-09-16"
-      },
-      {
-        "type": "一般発売.（愛知 9/22公演）〜9/21 23:59",
-        "date": "2026-09-21"
-      },
-      {
-        "type": "一般発売.（愛知 9/23公演）〜9/22 23:59",
-        "date": "2026-09-22"
-      },
-      {
-        "type": "一般発売（東京 R9年 1/20公演）9/25 10:00発売",
-        "date": "2026-09-25",
-        "startDate": "2026-09-25"
-      },
-      {
-        "type": "一般発売（青森 10/18公演）〜9/30 23:59",
-        "date": "2026-09-30"
-      },
-      {
-        "type": "一般発売（岩手 11/8公演）〜10/21 23:59",
-        "date": "2026-10-21"
-      },
-      {
-        "type": "一般発売（静岡 R9年 2/11公演）11/28 10:00発売",
-        "date": "2026-11-28",
-        "startDate": "2026-11-28"
-      },
-      {
-        "type": "一般発売（山形 12/19公演）〜12/2 23:59",
-        "date": "2026-12-02"
-      },
-      {
-        "type": "一般発売（東京 12/23公演）〜12/7 23:59",
-        "date": "2026-12-07"
-      },
-      {
-        "type": "一般発売（神奈川 R9年 2/5公演）〜1/20 23:59",
-        "date": "2027-01-20"
       }
     ],
     "verified": true,
@@ -45627,16 +45469,6 @@
         "date": "2026-09-26",
         "startDate": "2026-09-26",
         "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669890"
-      },
-      {
-        "type": "4次プリセール【単日券】（東京 12/30〜R9年 1/1公演）〜9/14 23:59",
-        "date": "2026-09-14",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627834"
-      },
-      {
-        "type": "4次プリセール【通し券】（東京 12/30〜R9年 1/1公演）〜9/14 23:59",
-        "date": "2026-09-14",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627834"
       }
     ],
     "verified": true,
@@ -53818,10 +53650,10 @@
     },
     "tickets": [
       {
-        "type": "一般発売（神奈川 12/23公演）〜12/21 23:59",
-        "date": "2026-12-21",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628041",
-        "startDate": "2026-09-09"
+        "type": "一般発売（神奈川 12/23公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628041"
       },
       {
         "type": "一般発売（大阪 R9年 1/11公演）〜1/8 23:59",
@@ -55225,13 +55057,15 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622724"
       },
       {
-        "type": "一般発売（山梨 11/22公演）〜11/5 23:59",
-        "date": "2026-11-05",
+        "type": "一般発売（山梨 11/22公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617514"
       },
       {
-        "type": "一般発売（長野 11/28公演）〜11/12 23:59",
-        "date": "2026-11-12",
+        "type": "一般発売（長野 11/28公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624735"
       },
       {
@@ -55245,8 +55079,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628474"
       },
       {
-        "type": "一般発売（新潟 11/29公演）〜11/12 23:59",
-        "date": "2026-11-12",
+        "type": "一般発売（新潟 11/29公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628474"
       },
       {
@@ -55312,26 +55147,6 @@
         "type": "一般発売（滋賀 10/24公演・他の日程も見る）〜10/8 23:59",
         "date": "2026-10-08",
         "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670758"
-      },
-      {
-        "type": "プレリザーブ3次【紙】（福岡・大分 12/12〜12/13公演）〜9/9 23:59",
-        "date": "2026-09-09",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627289"
-      },
-      {
-        "type": "プレリザーブ3次【電子】（福岡・大分 12/12〜12/13公演）〜9/9 23:59",
-        "date": "2026-09-09",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627289"
-      },
-      {
-        "type": "一般発売（山口 11/7公演）〜10/22 23:59",
-        "date": "2026-10-22",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2618068"
-      },
-      {
-        "type": "一般発売（静岡 11/23公演）〜11/5 23:59",
-        "date": "2026-11-05",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622724"
       }
     ],
     "verified": true,
@@ -55939,8 +55754,9 @@
         "url": "https://eplus.jp/sf/detail/4021600001-P0030013P021001"
       },
       {
-        "type": "一般発売（東京 11/8公演）〜11/5 23:59",
-        "date": "2026-11-05",
+        "type": "一般発売（東京 11/8公演）9/4 10:00発売",
+        "date": "2026-09-04",
+        "startDate": "2026-09-04",
         "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633584"
       }
     ],
@@ -56325,13 +56141,15 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670038"
       },
       {
-        "type": "一般販売（大阪 10/9公演）〜10/6 23:59",
-        "date": "2026-10-06",
+        "type": "一般販売（大阪 10/9公演）8/29 12:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670038"
       },
       {
-        "type": "一般販売（東京 10/16公演）〜10/13 23:59",
-        "date": "2026-10-13",
+        "type": "一般販売（東京 10/16公演）8/29 12:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670038"
       },
       {
@@ -57514,8 +57332,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627003"
       },
       {
-        "type": "一般発売（福島 9/22公演）〜9/21 23:59",
-        "date": "2026-09-21",
+        "type": "一般発売（福島 9/22公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614264"
       }
     ],
@@ -62246,9 +62065,10 @@
         "startDate": "2026-08-25"
       },
       {
-        "type": "一般発売（大阪 11/21公演）〜11/18 23:59",
-        "date": "2026-11-18",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630846"
+        "type": "一般発売（大阪 11/21公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630846"
       }
     ],
     "verified": true,
@@ -63085,8 +62905,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（千葉・神奈川 11/16〜11/24公演）〜11/23 23:59",
-        "date": "2026-11-23",
+        "type": "一般発売（千葉・神奈川 11/16〜11/24公演）9/3 10:00発売",
+        "date": "2026-09-03",
+        "startDate": "2026-09-03",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627028"
       },
       {
@@ -64002,8 +63823,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（岡山 R9年 3/16公演）〜3/14 23:59",
-        "date": "2027-03-14",
+        "type": "一般発売（岡山 R9年 3/16公演）9/4 10:00発売",
+        "date": "2026-09-04",
+        "startDate": "2026-09-04",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630922"
       },
       {
@@ -66114,23 +65936,19 @@
     },
     "tickets": [
       {
-        "type": "先行（愛知 R9年 1/16〜1/17公演）〜9/16 23:59",
-        "date": "2026-09-16"
+        "type": "一般発売（東京 12/19〜12/23公演）9/9 11:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
+      },
+      {
+        "type": "一般発売（東京 12/13〜12/30公演）9/9 11:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       },
       {
         "type": "一般発売（愛知 R9年 1/16〜1/17公演）10/17 10:00発売",
         "date": "2026-10-17",
         "startDate": "2026-10-17"
-      },
-      {
-        "type": "一般発売（東京 12/19〜12/23公演）〜12/23 12:30",
-        "date": "2026-12-23",
-        "startDate": "2026-09-09"
-      },
-      {
-        "type": "一般発売（東京 12/13〜12/30公演）〜12/27 23:59",
-        "date": "2026-12-27",
-        "startDate": "2026-09-09"
       }
     ],
     "verified": true,
@@ -66336,13 +66154,15 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624380"
       },
       {
-        "type": "一般発売（東京 11/11〜R9年 2/7公演）〜2/4 23:59",
-        "date": "2027-02-04",
+        "type": "一般発売（東京 11/11〜R9年 2/7公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624859"
       },
       {
-        "type": "一般発売（愛知 R9年 2/13公演）〜2/13 13:30",
-        "date": "2027-02-13",
+        "type": "一般発売（愛知 R9年 2/13公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624380"
       },
       {
@@ -66399,9 +66219,10 @@
         "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670289"
       },
       {
-        "type": "一般発売（大阪 11/27〜11/29公演）〜11/26 23:59",
-        "date": "2026-11-26",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634118"
+        "type": "一般発売（大阪 11/27〜11/29公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634118"
       },
       {
         "type": "2次受付（宮城・福島 11/22〜11/23公演）〜9/8 11:00",
@@ -67291,8 +67112,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629343"
       },
       {
-        "type": "9月23日公演 一般発売（宮城 9/23公演）〜9/14 23:59",
-        "date": "2026-09-14",
+        "type": "9月23日公演 一般発売（宮城 9/23公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629343"
       },
       {
@@ -67340,21 +67162,6 @@
         "date": "2026-09-24",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627394",
         "startDate": "2026-08-22"
-      },
-      {
-        "type": "一般発売（佐賀 10/4公演）〜9/24 23:59",
-        "date": "2026-09-24",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627698"
-      },
-      {
-        "type": "一般発売（熊本 11/3公演）〜10/25 23:59",
-        "date": "2026-10-25",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627698"
-      },
-      {
-        "type": "一般発売（福岡 11/23公演）〜11/12 23:59",
-        "date": "2026-11-12",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627277"
       }
     ],
     "verified": true,
@@ -69591,13 +69398,15 @@
     },
     "tickets": [
       {
-        "type": "一般発売（宮城 12/12公演）〜12/12 13:15",
-        "date": "2026-12-12",
+        "type": "一般発売（宮城 12/12公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628370"
       },
       {
-        "type": "一般発売（福島 R9年 1/10〜1/11公演）〜1/11 13:15",
-        "date": "2027-01-11",
+        "type": "一般発売（福島 R9年 1/10〜1/11公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628379"
       },
       {
@@ -76231,8 +76040,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 R9年 1/13〜1/14公演）〜1/13 23:59",
-        "date": "2027-01-13",
+        "type": "一般発売（東京 R9年 1/13〜1/14公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628496"
       },
       {
@@ -76246,30 +76056,6 @@
         "date": "2026-10-17",
         "startDate": "2026-10-17",
         "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632240"
-      },
-      {
-        "type": "先行（福岡 R9年 2/10公演）9/18 12:00発売",
-        "date": "2026-09-28",
-        "startDate": "2026-09-18",
-        "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670158"
-      },
-      {
-        "type": "一般発売（福井 R9年 1/11公演）10/10 10:00発売",
-        "date": "2026-10-10",
-        "startDate": "2026-10-10",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633289"
-      },
-      {
-        "type": "一般発売（静岡 R9年 2/7公演）10/14 10:00発売",
-        "date": "2026-10-14",
-        "startDate": "2026-10-14",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633636"
-      },
-      {
-        "type": "一般発売（愛知 R9年 1/31公演）11/22 10:00発売",
-        "date": "2026-11-22",
-        "startDate": "2026-11-22",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632033"
       }
     ],
     "verified": true,
@@ -76348,8 +76134,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（富山 12/12公演）〜12/11 23:59",
-        "date": "2026-12-11",
+        "type": "一般発売（富山 12/12公演）9/5 10:00発売",
+        "date": "2026-09-05",
         "startDate": "2026-09-05"
       }
     ],
@@ -76634,68 +76420,81 @@
     },
     "tickets": [
       {
-        "type": "一般発売（千葉 10/9公演）〜9/30 23:59",
-        "date": "2026-09-30",
+        "type": "一般発売（千葉 10/9公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623418"
       },
       {
-        "type": "一般発売（北海道 10/18公演）〜10/8 23:59",
-        "date": "2026-10-08",
+        "type": "一般発売（北海道 10/18公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624116"
       },
       {
-        "type": "一般発売（石川 10/23公演）〜10/14 23:59",
-        "date": "2026-10-14",
+        "type": "一般発売（石川 10/23公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633020"
       },
       {
-        "type": "一般発売（岐阜 10/24公演）〜10/15 23:59",
-        "date": "2026-10-15",
+        "type": "一般発売（岐阜 10/24公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623524"
       },
       {
-        "type": "一般発売（大阪 11/1公演）〜10/22 23:59",
-        "date": "2026-10-22",
+        "type": "一般発売（大阪 11/1公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624201"
       },
       {
-        "type": "一般発売（香川 R9年 1/24公演）〜1/14 23:59",
-        "date": "2027-01-14",
+        "type": "一般発売（香川 R9年 1/24公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627705"
       },
       {
-        "type": "一般発売（宮城 R9年 1/30公演）〜1/21 23:59",
-        "date": "2027-01-21",
+        "type": "一般発売（宮城 R9年 1/30公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632628"
       },
       {
-        "type": "一般発売（栃木 R9年 1/31公演）〜1/21 23:59",
-        "date": "2027-01-21",
+        "type": "一般発売（栃木 R9年 1/31公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623418"
       },
       {
-        "type": "一般発売（神奈川 R9年 2/11公演）〜2/2 23:59",
-        "date": "2027-02-02",
+        "type": "一般発売（神奈川 R9年 2/11公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623418"
       },
       {
-        "type": "一般発売（愛知 R9年 2/13公演）〜2/4 23:59",
-        "date": "2027-02-04",
+        "type": "一般発売（愛知 R9年 2/13公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623524"
       },
       {
-        "type": "一般発売（福岡 R9年 2/21公演）〜2/11 23:59",
-        "date": "2027-02-11",
+        "type": "一般発売（福岡 R9年 2/21公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623857"
       },
       {
-        "type": "一般発売【神戸公演】（兵庫 R9年 2/23公演）〜2/14 23:59",
-        "date": "2027-02-14",
+        "type": "一般発売【神戸公演】（兵庫 R9年 2/23公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624201"
       },
       {
-        "type": "一般発売（東京 R9年 2/27公演）〜2/18 23:59",
-        "date": "2027-02-18",
+        "type": "一般発売（東京 R9年 2/27公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623418"
       },
       {
@@ -78917,8 +78716,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（大阪 R9年 3/14公演）〜3/12 23:59",
-        "date": "2027-03-12"
+        "type": "一般発売（大阪 R9年 3/14公演）8/29 10:00発売",
+        "date": "2026-08-29",
+        "startDate": "2026-08-29"
       },
       {
         "type": "一般発売（北海道・宮城・東京・愛知・福岡・沖縄 8/23〜R9年 3/27公演）〜3/25 23:59",
@@ -79755,14 +79555,6 @@
       {
         "type": "一般発売（兵庫 11/28公演）〜11/27 23:59",
         "date": "2026-11-27"
-      },
-      {
-        "type": "一般発売【朝】（兵庫 11/8公演）〜11/7 23:59",
-        "date": "2026-11-07"
-      },
-      {
-        "type": "一般発売【夜】（兵庫 11/8公演）〜11/7 23:59",
-        "date": "2026-11-07"
       }
     ],
     "verified": true,
@@ -80549,24 +80341,22 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627191"
       },
       {
-        "type": "一般発売（機材席開放販売）（宮城 9/19公演）〜9/9 23:59",
-        "date": "2026-09-09",
+        "type": "一般発売（機材席開放販売）（宮城 9/19公演）9/7 18:00発売",
+        "date": "2026-09-07",
+        "startDate": "2026-09-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625704"
       },
       {
-        "type": "機材席開放 追加販売（福岡 9/27公演）〜9/17 23:59",
-        "date": "2026-09-17",
+        "type": "機材席開放 追加販売（福岡 9/27公演）9/7 18:00発売",
+        "date": "2026-09-07",
+        "startDate": "2026-09-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628178"
       },
       {
-        "type": "追加販売（愛知 10/11公演）〜10/1 23:59",
-        "date": "2026-10-01",
+        "type": "追加販売（愛知 10/11公演）9/7 18:00発売",
+        "date": "2026-09-07",
+        "startDate": "2026-09-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628059"
-      },
-      {
-        "type": "指定席追加販売（広島 10/12公演）〜10/1 23:59",
-        "date": "2026-10-01",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627191"
       }
     ],
     "verified": true,
@@ -82607,13 +82397,15 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628955"
       },
       {
-        "type": "プリセール（青森 12/2公演）〜9/23 23:59",
-        "date": "2026-09-23",
+        "type": "プリセール（青森 12/2公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628308"
       },
       {
-        "type": "プリセール（宮城 12/4公演）〜9/23 23:59",
-        "date": "2026-09-23",
+        "type": "プリセール（宮城 12/4公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628308"
       },
       {
@@ -82647,18 +82439,21 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626319"
       },
       {
-        "type": "3次受付（北海道 11/30公演）〜9/15 11:00",
+        "type": "3次受付（北海道 11/30公演）9/9 11:00発売",
         "date": "2026-09-15",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622983"
+        "startDate": "2026-09-09",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622983"
       },
       {
-        "type": "プリセール（岡山 11/24公演）〜9/10 23:59",
-        "date": "2026-09-10",
+        "type": "プリセール（岡山 11/24公演）9/5 12:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628955"
       },
       {
-        "type": "プリセール（広島 11/26公演）〜9/10 23:59",
-        "date": "2026-09-10",
+        "type": "プリセール（広島 11/26公演）9/5 12:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628955"
       },
       {
@@ -84678,8 +84473,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 12/12〜12/13公演）〜12/10 23:59",
-        "date": "2026-12-10",
+        "type": "一般発売（東京 12/12〜12/13公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -85201,8 +84996,8 @@
     },
     "tickets": [
       {
-        "type": "プリセール（東京 11/10公演）〜9/10 23:59",
-        "date": "2026-09-10",
+        "type": "プリセール（東京 11/10公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       },
       {
@@ -85233,8 +85028,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（愛知 12/9公演）〜12/6 23:59",
-        "date": "2026-12-06",
+        "type": "一般発売（愛知 12/9公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -85260,8 +85055,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 R9年 1/15公演）〜1/12 23:59",
-        "date": "2027-01-12",
+        "type": "一般発売（東京 R9年 1/15公演）9/9 11:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -85287,8 +85082,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 R9年 2/11公演）〜2/8 23:59",
-        "date": "2027-02-08",
+        "type": "一般発売（東京 R9年 2/11公演）9/9 11:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -85314,8 +85109,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 R9年 3/20公演）〜3/17 23:59",
-        "date": "2027-03-17",
+        "type": "一般発売（東京 R9年 3/20公演）9/9 11:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -85341,8 +85136,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（山形 R9年 1/9公演）〜1/7 23:59",
-        "date": "2027-01-07",
+        "type": "一般発売（山形 R9年 1/9公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -85501,8 +85296,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（北海道 12/7公演）〜12/5 23:59",
-        "date": "2026-12-05",
+        "type": "一般発売（北海道 12/7公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -87235,8 +87030,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（京都 10/3〜10/25公演）〜10/17 23:59",
-        "date": "2026-10-17",
+        "type": "一般発売（京都 10/3〜10/25公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -87616,18 +87411,21 @@
     },
     "tickets": [
       {
-        "type": "poco会員限定先行販売（東京 12/18公演）〜9/14 23:59",
-        "date": "2026-09-14",
+        "type": "poco会員限定先行販売（東京 12/18公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626566"
       },
       {
-        "type": "poco会員限定先行販売（東京 12/13公演）〜9/14 23:59",
-        "date": "2026-09-14",
+        "type": "poco会員限定先行販売（東京 12/13公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626564"
       },
       {
-        "type": "poco会員限定先行販売（東京 12/19公演）〜9/14 23:59",
-        "date": "2026-09-14",
+        "type": "poco会員限定先行販売（東京 12/19公演）9/6 10:00発売",
+        "date": "2026-09-06",
+        "startDate": "2026-09-06",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626567"
       },
       {
@@ -93147,15 +92945,15 @@
     },
     "tickets": [
       {
+        "type": "一般発売（埼玉 12/9公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623844"
+      },
+      {
         "type": "一般発売（群馬 11/30公演）〜11/23 23:59",
         "date": "2026-11-23",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623851"
-      },
-      {
-        "type": "一般発売（埼玉 12/9公演）〜12/2 23:59",
-        "date": "2026-12-02",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623844",
-        "startDate": "2026-09-09"
       }
     ],
     "verified": true,
@@ -93934,8 +93732,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（兵庫 11/15公演）〜11/13 23:59",
-        "date": "2026-11-13",
+        "type": "一般発売（兵庫 11/15公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -94731,11 +94529,6 @@
       {
         "type": "一般発売【10/1（木）～10/12（月）】（千葉 10/1〜10/12公演）〜9/17 23:59",
         "date": "2026-09-17"
-      },
-      {
-        "type": "一般発売【11/1（日）～11/13（金）】（千葉 11/1〜11/13公演）9/13 12:00発売",
-        "date": "2026-09-13",
-        "startDate": "2026-09-13"
       }
     ],
     "verified": true,
@@ -95619,16 +95412,19 @@
         "startDate": "2026-09-09"
       },
       {
-        "type": "一般発売（愛知 10/12公演）〜9/30 23:59",
-        "date": "2026-09-30"
+        "type": "一般発売（愛知 10/12公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       },
       {
-        "type": "一般発売（栃木 10/23公演）〜10/8 23:59",
-        "date": "2026-10-08"
+        "type": "一般発売（栃木 10/23公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       },
       {
-        "type": "一般発売（福岡 10/30公演）〜10/18 23:59",
-        "date": "2026-10-18"
+        "type": "一般発売（福岡 10/30公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       },
       {
         "type": "一般発売（熊本 11/1公演）9/9 10:00発売",
@@ -95686,8 +95482,9 @@
         "startDate": "2026-09-09"
       },
       {
-        "type": "一般発売（広島 12/26公演）〜12/14 23:59",
-        "date": "2026-12-14"
+        "type": "一般発売（広島 12/26公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       }
     ],
     "verified": true,
@@ -105105,8 +104902,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（愛知 12/12公演）〜12/7 23:59",
-        "date": "2026-12-07"
+        "type": "一般発売（愛知 12/12公演）9/4 10:00発売",
+        "date": "2026-09-04",
+        "startDate": "2026-09-04"
       },
       {
         "type": "一般発売（鹿児島 10/4公演）〜10/3 23:59",
@@ -105134,8 +104932,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 11/10〜12/8公演）〜12/2 23:59",
-        "date": "2026-12-02",
+        "type": "一般発売（東京 11/10〜12/8公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -105321,8 +105119,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（三重 12/13公演）〜12/10 23:59",
-        "date": "2026-12-10",
+        "type": "一般発売（三重 12/13公演）9/7 10:00発売",
+        "date": "2026-09-07",
+        "startDate": "2026-09-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630933"
       },
       {
@@ -108669,8 +108468,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（大阪 11/5公演）〜11/4 23:59",
-        "date": "2026-11-04",
+        "type": "一般発売（大阪 11/5公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633395"
       },
       {
@@ -116468,9 +116268,9 @@
     },
     "tickets": [
       {
-        "type": "一般発売（山口 11/28公演）〜11/27 19:00",
-        "date": "2026-11-27",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629141"
+        "type": "一般発売（山口 11/28公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05"
       },
       {
         "type": "一般発売（岡山 11/29公演）9/15 10:00発売",
@@ -117098,15 +116898,10 @@
         "startDate": "2026-09-26"
       },
       {
-        "type": "一般発売（香川 9/22公演）〜9/20 23:59",
-        "date": "2026-09-20",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2635476"
-      },
-      {
-        "type": "プリセール（福岡 R9年 2/28公演）9/12 11:00発売",
-        "date": "2026-09-12",
-        "startDate": "2026-09-12",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630542"
+        "type": "一般発売（香川 9/22公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635476"
       }
     ],
     "verified": true,
@@ -122167,8 +121962,9 @@
         "startDate": "2026-09-05"
       },
       {
-        "type": "一般発売（東京 10/12公演）〜10/11 23:59",
-        "date": "2026-10-11",
+        "type": "一般発売（東京 10/12公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2635794"
       },
       {
@@ -125551,9 +125347,10 @@
         "date": "2026-10-07"
       },
       {
-        "type": "一般発売（北海道 9/13公演）〜9/12 23:59",
-        "date": "2026-09-12",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623781"
+        "type": "一般発売（北海道 9/13公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
+        "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623781"
       }
     ],
     "verified": true,
@@ -129560,8 +129357,9 @@
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634365"
       },
       {
-        "type": "一般発売（東京 9/19公演）〜9/18 23:59",
-        "date": "2026-09-18",
+        "type": "一般発売（東京 9/19公演）9/7 10:00発売",
+        "date": "2026-09-07",
+        "startDate": "2026-09-07",
         "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634365"
       },
       {
@@ -130909,8 +130707,9 @@
         "startDate": "2026-09-05"
       },
       {
-        "type": "一般発売（大阪 12/24公演）〜12/23 23:59",
-        "date": "2026-12-23",
+        "type": "一般発売（大阪 12/24公演）9/5 10:00発売",
+        "date": "2026-09-05",
+        "startDate": "2026-09-05",
         "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634887"
       }
     ],
@@ -131936,8 +131735,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（大阪 11/7公演）〜11/6 23:59",
-        "date": "2026-11-06",
+        "type": "一般発売（大阪 11/7公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -138117,8 +137916,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売【前売】（京都 11/3〜12/20公演）〜11/2 23:59",
-        "date": "2026-11-02",
+        "type": "一般発売【前売】（京都 11/3〜12/20公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -138312,8 +138111,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（岐阜 10/24〜10/25公演）〜10/23 23:59",
-        "date": "2026-10-23",
+        "type": "一般発売（岐阜 10/24〜10/25公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -139821,8 +139620,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（千葉 10/4公演）〜10/4 18:00",
-        "date": "2026-10-04",
+        "type": "一般発売（千葉 10/4公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -144065,8 +143864,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（愛知 10/26公演）〜10/25 23:59",
-        "date": "2026-10-25",
+        "type": "一般発売（愛知 10/26公演）9/5 10:00発売",
+        "date": "2026-09-05",
         "startDate": "2026-09-05"
       }
     ],
@@ -146804,8 +146603,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（京都 10/3〜10/25公演）〜10/22 23:59",
-        "date": "2026-10-22",
+        "type": "一般発売（京都 10/3〜10/25公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -148118,8 +147917,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（千葉 10/4公演）〜10/4 18:00",
-        "date": "2026-10-04",
+        "type": "一般発売（千葉 10/4公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -149857,8 +149656,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（全国 9/23公演）〜9/23 18:00",
-        "date": "2026-09-23",
+        "type": "一般発売（全国 9/23公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -150916,8 +150715,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（滋賀 11/21公演）〜11/16 23:59",
-        "date": "2026-11-16",
+        "type": "一般発売（滋賀 11/21公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -151670,8 +151469,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（神奈川 9/26公演）〜9/25 23:59",
-        "date": "2026-09-25",
+        "type": "一般発売（神奈川 9/26公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -151826,8 +151625,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 10/21公演）〜10/20 23:59",
-        "date": "2026-10-20",
+        "type": "一般発売（東京 10/21公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -152657,8 +152456,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（福岡 11/22公演）〜11/21 23:59",
-        "date": "2026-11-21",
+        "type": "一般発売（福岡 11/22公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -157488,8 +157287,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（神奈川 9/19公演）〜9/18 23:59",
-        "date": "2026-09-18",
+        "type": "一般発売（神奈川 9/19公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -158152,8 +157951,8 @@
     },
     "tickets": [
       {
-        "type": "一般発売（東京 11/13公演）〜11/12 23:59",
-        "date": "2026-11-12",
+        "type": "一般発売（東京 11/13公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -158239,13 +158038,13 @@
     },
     "tickets": [
       {
-        "type": "一般発売（神奈川 9/11〜9/27公演）〜9/24 23:59",
-        "date": "2026-09-24"
+        "type": "当日引換券発売（神奈川 9/11〜9/27公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       },
       {
-        "type": "当日引換券発売（神奈川 9/11〜9/27公演）〜9/26 23:59",
-        "date": "2026-09-26",
-        "startDate": "2026-09-09"
+        "type": "一般発売（神奈川 9/11〜9/27公演）〜9/24 23:59",
+        "date": "2026-09-24"
       }
     ],
     "verified": true,
@@ -158446,13 +158245,13 @@
     },
     "tickets": [
       {
-        "type": "一般発売（福岡 9/29公演）〜9/28 23:59",
-        "date": "2026-09-28",
+        "type": "一般発売（福岡 9/29公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       },
       {
-        "type": "一般発売【テーブルシート販売】（福岡 9/29公演）〜9/28 23:59",
-        "date": "2026-09-28",
+        "type": "一般発売【テーブルシート販売】（福岡 9/29公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
@@ -158779,12 +158578,13 @@
     },
     "tickets": [
       {
-        "type": "先行（神奈川 10/31公演）〜10/20 11:00",
-        "date": "2026-10-20"
+        "type": "一般発売（東京・愛知・大阪 10/30〜10/31公演）9/9 10:00発売",
+        "date": "2026-09-09",
+        "startDate": "2026-09-09"
       },
       {
-        "type": "一般発売（東京・愛知・大阪 10/30〜10/31公演）〜10/30 12:00",
-        "date": "2026-10-30",
+        "type": "先行（神奈川 10/31公演）9/9 10:00発売",
+        "date": "2026-10-20",
         "startDate": "2026-09-09"
       }
     ],
@@ -159193,13 +158993,13 @@
     },
     "tickets": [
       {
-        "type": "先着発売（大阪 9/15〜9/21公演）〜9/20 23:59",
-        "date": "2026-09-20",
+        "type": "先着発売（大阪 9/15〜9/21公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       },
       {
-        "type": "先着発売（大阪 9/22〜9/27公演）〜9/26 23:59",
-        "date": "2026-09-26",
+        "type": "先着発売（大阪 9/22〜9/27公演）9/9 10:00発売",
+        "date": "2026-09-09",
         "startDate": "2026-09-09"
       }
     ],
