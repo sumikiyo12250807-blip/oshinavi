@@ -44,8 +44,9 @@ m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', src, re.S)
 events = json.loads(m.group(2))
 by = {e['id']: e for e in events}
 
-built = json.load(io.open('tmp/built_merge_0910.json', encoding='utf-8'))
-cands = {c['newid']: c for c in json.load(io.open('tmp/cand_merge_0910.json', encoding='utf-8'))}
+BUILT = [a for a in sys.argv[1:] if a.endswith('.json')]
+built = json.load(io.open(BUILT[0] if BUILT else 'tmp/built_merge_0910.json', encoding='utf-8'))
+cands = {c['newid']: c for c in json.load(io.open(BUILT[1] if len(BUILT) > 1 else 'tmp/cand_merge_0910.json', encoding='utf-8'))}
 
 added = burned = 0
 touched = []
@@ -94,10 +95,19 @@ for b in built:
     # 🚨初日は**今の dateLabel に書いてある初日**から取る。
     #   e['date'] は千秋楽なので、それを初日として使うと会期が縮んで嘘になる
     #   （[[feedback_show_true_dates_not_sellable_range]]）。
-    dm = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', e.get('dateLabel') or '')
-    cur0 = '%04d-%02d-%02d' % (int(dm.group(1)), int(dm.group(2)), int(dm.group(3))) if dm else None
-    d0 = min(x for x in [cur0, e.get('date'), b.get('date')] if x)
-    d1 = max(x for x in [e.get('date'), b.get('date')] if x)
+    #   🚨千秋楽も同じ＝**今の dateLabel に書いてある最後の日**を下回らせない。
+    #     既存の date が初日で止まっているエントリがある（id942 キーウ＝date が10/31なのに
+    #     ラベルは〜12/25）ので、max を date だけで取ると会期が縮んで嘘になる。
+    #     🚨ラベルの後ろ側は「〜12月25日」と**年を書かない**ことがある（id942 キーウ）。
+    #       年なしは直前に出た年を引き継ぐ。年だけ見る正規表現だと丸ごと読み落とす。
+    ds, _y = [], None
+    for a, b2, c in re.findall(r'(?:(\d{4})年)?\s*(\d{1,2})月(\d{1,2})日', e.get('dateLabel') or ''):
+        if a:
+            _y = int(a)
+        if _y:
+            ds.append('%04d-%02d-%02d' % (_y, int(b2), int(c)))
+    d0 = min(x for x in (ds[:1] + [e.get('date'), b.get('date')]) if x)
+    d1 = max(x for x in (ds + [e.get('date'), b.get('date')]) if x)
     if prefs:
         e['prefecture'] = '・'.join(prefs)
     e['date'] = d1
