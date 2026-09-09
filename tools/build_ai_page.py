@@ -230,6 +230,10 @@ def status_text(ev, today):
     # selling
     if t.get("saleUntilSoldOut"):
         return f"{emoji} 販売中（予定枚数に達し次第終了）", d
+    if t.get("saleEndUnknown") and t.get("startDate") and parse(t["startDate"]) <= today:
+        # 売り場に「いつまで」が書かれていない枠。嘘の締切を作らず発売日だけ告げる。
+        # index.html renderCard と同じルール（ユーザー決定 2026-09-09）。
+        return f'{emoji} 販売中（{t["startDate"]}発売〜・終了日は売り場に記載なし）', t["startDate"]
     if t.get("startDate") and t["startDate"] == t.get("date"):
         # 締切未取込（ぴあ「◯/◯より発売」の単日形）。誤った「販売中〜発売日」を出さず
         # 発売日だけ告げる。index.html renderCard と同じルール（2026-07-09）。
