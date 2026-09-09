@@ -1,0 +1,97 @@
+EVENTS 総数 = 4837
+genre=="new" = 171
+うち links.pia あり = 149  / なし = 22
+
+=== 対応表どおり 147件 / ズレ 2件 ===
+id7513 KIRARA ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=kpop →期待=yougaku ｜https://t.pia.jp/pia/event/event.do?eventCd=2634673
+id7602 BOYNEXTDOOR ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=kpop →期待=yougaku ｜https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669382
+
+=== _piaSub が空(ぴあ由来だが区分不明) 0件 ===
+
+=== 対応表で行き先が決まらない(genre_from_subcat=None) 0件 ===
+
+=== 海外ROCK・POPS なのに yougaku/kpop でない ===
+該当 0件
+
+=== 海外ROCK・POPS の全件（kpop/yougaku の振り分け確認用） ===
+id7513 KIRARA ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=kpop  ｜https://t.pia.jp/pia/event/event.do?eventCd=2634673
+id7602 BOYNEXTDOOR ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=kpop  ｜https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669382
+id7604 八木山合奏団デビュー50周年コンサート ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventCd=2634637
+id7650 Yngwie Malmsteen ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventCd=2632596
+id7672 Garden Music Concert vol.2 ～ Three Blooms, One Moment ～ ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventCd=2631307
+id7674 CAT POWER ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670631
+id7681 GOOD KID ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventCd=2628885
+id7693 THE DAMNED ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventCd=2618244
+id7695 the neverminds ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669491
+id7696 REYTONS ｜_piaSub=音楽/海外ROCK・POPS ｜_genre=yougaku  ｜https://t.pia.jp/pia/event/event.do?eventCd=2617024
+該当 10件
+
+=== _piaSub に「伝統」を含む ===
+該当 0件
+
+=== _genre が hougaku / dento のもの（振り分け妥当性の目視用） ===
+id7533 国立劇場 令和8年10月歌舞伎公演 ｜_piaSub=演劇/歌舞伎・古典芸能 ｜_genre=dento  ｜https://t.pia.jp/pia/event/event.do?eventCd=2636150
+該当 1件
+
+=== _genre が空/None ===
+id7498 CDジャーナル連載10周年コンサート秋 〜柚木麻子・朝井リョウ・でか美ちゃん 書籍化記念スッペシャル〜 ｜_piaSub=(空) ｜links=rakuten,lawson,pia,eplus,amazon ｜
+該当 1件
+
+=== ぴあ以外の新着（参考・_genreの出所別） ===
+amazon,eplus,lawson,pia,rakuten 22
+
+=== 新着の _genre 分布 ===
+jpop 72
+sports 14
+owarai 10
+classic 10
+musicetc 9
+yougaku 9
+idol 8
+enka 7
+fes 6
+art 5
+jazz 3
+kpop 2
+kids 2
+musical 2
+aisatsu 2
+fanevent 2
+dinnershow 2
+anime 1
+engeki 1
+(空) 1
+dento 1
+hanabi 1
+chanson 1
+
+=== ぴあ由来の _piaSub 分布 ===
+音楽/J-POP・ROCK 67
+音楽/海外ROCK・POPS 10
+演劇/寄席・お笑い 9
+音楽/演歌・邦楽 7
+音楽/フェスティバル 5
+イベント/博覧会・展示会・見本市 5
+クラシック/オーケストラ 4
+クラシック/器楽・室内楽 4
+音楽/音楽その他 4
+スポーツ/プロレス 3
+スポーツ/サッカー 3
+イベント/イベントその他 3
+音楽/ジャズ・フュージョン 3
+演劇/ミュージカル・ショー 2
+スポーツ/スポーツその他 2
+スポーツ/バスケットボール 2
+映画/舞台挨拶 2
+イベント/ショー・ファンイベント 2
+イベント/ディナーショー 2
+演劇/歌舞伎・古典芸能 1
+演劇/人形劇・キャラクター 1
+スポーツ/相撲・武道 1
+スポーツ/格闘技 1
+映画/映画その他 1
+イベント/子供と楽しむ 1
+クラシック/オペラ・声楽 1
+音楽/童謡・日本のうた 1
+音楽/民族音楽 1
+音楽/シャンソン 1

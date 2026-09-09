@@ -1,0 +1,51 @@
+[
+ {
+  "id": 1904,
+  "artist": "劇団かもめんたる 第16回公演『ピノキオの元カノ』",
+  "date": "2026-08-23",
+  "dateLabel": "【配信視聴のみ】2026年8月19日(水)〜2026年8月23日(日) 東京 本多劇場",
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2621229",
+   "eplus": null
+  },
+  "visibleCount": 1,
+  "tickets": [
+   {
+    "type": "一般発売（東京 8/19〜8/23公演）〜8/16 23:59",
+    "date": "2026-08-16",
+    "startDate": null,
+    "soldout": false,
+    "saleEnded": false,
+    "saleUntilSoldOut": false,
+    "saleEndUnknown": false,
+    "visible": false
+   },
+   {
+    "type": "視聴券受付【配信】（東京 8/19〜8/23公演）〜10/4 21:00",
+    "date": "2026-10-04",
+    "startDate": null,
+    "soldout": false,
+    "saleEnded": false,
+    "saleUntilSoldOut": false,
+    "saleEndUnknown": false,
+    "visible": true
+   }
+  ]
+ },
+ {
+  "id": 2866,
+  "artist": "The BONEZ／SHADOWS",
+  "date": "2026-09-03",
+  "dateLabel": "2026年9月1日(火)〜2026年9月3日(木) 全国ツアー",
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669921",
+   "eplus": null
+  },
+  "visibleCount": 0,
+  "tickets": []
+ }
+]
