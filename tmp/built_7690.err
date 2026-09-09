@@ -1,0 +1,11 @@
+﻿python :   7690 OK
+At line:1 char:413
++ ... d_7690.py"; python tools/build_pia_entries.py tmp/cand_7690.json 
+> tm ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo          : NotSpecified: (  7690 OK:String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+構築 1 件 / skip []

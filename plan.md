@@ -16,6 +16,10 @@
        → そのあと **必ず** HEADと画面に出る枠数を突合（DELETE_GATE 5章）
        → 会期が縮んでいないかも見る（今朝2回とも縮んでいた）
    ・まだなら、終わるまで待たずに②③を先にやる
+   ・🚨**/clear で裏のジョブが道連れになっている可能性がある**。
+     LastWriteTime が 6:22 のまま動かず、python のプロセスも居なければ
+     **もう一度 `python tools/heal_stale_deadlines.py --build` を回すだけ**（40分ほど）。
+     朝の分を当てても害は無いが、当日発売の締切が入らないので**やり直すのが正しい**。
 
 ② 🚨【未push】朝のpush(ac903e6a)の後に **コミットが8本たまっている**。昼のpushがまだ。
    git log --oneline origin/main..HEAD で数える。
