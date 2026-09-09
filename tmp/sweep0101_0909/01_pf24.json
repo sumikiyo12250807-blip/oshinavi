@@ -1,0 +1,65 @@
+{
+ "lg": "01",
+ "total": 24,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 23,
+ "new_name_in_db": 4,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634612",
+   "artist": "アンジュルム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "シンフォニアテクノロジー響ホール伊勢 大ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627023",
+   "artist": "押尾コータロー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "松阪Ｍ’ＡＸＡ(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626926",
+   "artist": "木村家ファミリーコンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/11(水) ・ 2026/11/12(木)",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)／シンフォニアテクノロジー響ホール伊勢 大ホール(三重県)",
+   "pref": "愛知県／三重県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629130",
+   "artist": "スターダスト☆レビュー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "三重県文化会館 大ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613912",
+   "artist": "長渕剛",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "三重県文化会館 大ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ]
+}
