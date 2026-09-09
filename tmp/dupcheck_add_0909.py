@@ -4,7 +4,8 @@
 import io, json, re, sys, unicodedata
 sys.stdout.reconfigure(encoding='utf-8')
 
-built = {b['id']: b for b in json.load(io.open('tmp/blocked_built_0909.json', encoding='utf-8'))}
+SRC = sys.argv[1] if len(sys.argv) > 1 else 'tmp/blocked_built_0909.json'
+built = {b['id']: b for b in json.load(io.open(SRC, encoding='utf-8'))}
 h = io.open('index.html', encoding='utf-8', newline='').read()
 by = {e['id']: e for e in json.loads(re.search(r'const EVENTS = (\[.*?\]);\r?\n', h, re.S).group(1))}
 
