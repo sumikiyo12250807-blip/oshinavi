@@ -238,12 +238,6 @@
   "artist": "春風亭一之輔独演会",
   "tickets": [
    {
-    "type": "一般発売（神奈川 12/17公演）9/26 10:00発売",
-    "date": "2026-09-26",
-    "startDate": "2026-09-26",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632140"
-   },
-   {
     "type": "一般発売（大阪 12/23公演）9/30 10:00発売",
     "date": "2026-09-30",
     "startDate": "2026-09-30",
@@ -890,17 +884,6 @@
   ]
  },
  {
-  "id": 4119,
-  "status": "convert",
-  "artist": "稲垣潤一",
-  "tickets": [
-   {
-    "type": "一般発売（大阪 12/19公演）〜12/12 23:59",
-    "date": "2026-12-12"
-   }
-  ]
- },
- {
   "id": 4164,
   "status": "delete",
   "artist": "島袋寛子",
@@ -1252,6 +1235,11 @@
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634676"
    },
    {
+    "type": "一般発売（神奈川 12/26公演）〜12/23 23:59",
+    "date": "2026-12-23",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634748"
+   },
+   {
     "type": "一般発売【第266回芸劇シリーズ】（東京 12/28公演）〜12/24 23:59",
     "date": "2026-12-24",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2635727"
@@ -1323,16 +1311,14 @@
   "artist": "パーカーズ",
   "tickets": [
    {
-    "type": "一般発売（福岡 10/17公演）9/10 21:00発売",
-    "date": "2026-09-10",
-    "startDate": "2026-09-10",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632147"
+    "type": "一般発売（愛知 10/15公演）〜10/8 23:59",
+    "date": "2026-10-08",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632107"
    },
    {
-    "type": "一般発売（愛知 10/15公演）9/10 21:00発売",
-    "date": "2026-09-10",
-    "startDate": "2026-09-10",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632107"
+    "type": "一般発売（福岡 10/17公演）〜10/13 23:59",
+    "date": "2026-10-13",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2632147"
    }
   ]
  },
@@ -1342,9 +1328,8 @@
   "artist": "広瀬香美",
   "tickets": [
    {
-    "type": "一般発売（長崎 11/7公演）9/10 18:00発売",
-    "date": "2026-09-10",
-    "startDate": "2026-09-10"
+    "type": "一般発売（長崎 11/7公演）〜10/29 23:59",
+    "date": "2026-10-29"
    }
   ]
  },
