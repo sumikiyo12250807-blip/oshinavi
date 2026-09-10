@@ -33,9 +33,13 @@ NG_WORD = [
     ('前の投稿', '1本ずつ単独で読まれる＝他の投稿を指さない'),
 ]
 NG_RE = [
-    (re.compile(r'\d+\s*件(発売|が発売|の発売|あるわ)'), '件数の実数を書かない（「他にも◯件以上」だけが例外）'),
+    # 台本＝10未満はそのままの数でよい。2桁以上の実数だけを見る
+    (re.compile(r'(?<!他にも)\d{2,}\s*件(?!以上)(発売|が発売|の発売)'),
+     '件数の実数を書かない（「他にも◯件以上」だけが例外）'),
     (re.compile(r'https?://\s*oshinavi'), 'URLに https:// を付けない'),
-    (re.compile(r'^[^\n]*[／/][^\n]*[／/][^\n]*$', re.M), '「A／B／C」の羅列になっている行がある（1行1公演にする）'),
+    # リスト行（先頭が HH:MM）は公演名に「／」が入るので対象外
+    (re.compile(r'^(?!\d{1,2}:\d{2} )[^\n]*[／/][^\n]*[／/][^\n]*$', re.M),
+     '「A／B／C」の羅列になっている行がある（1行1公演にする）'),
 ]
 NEED = [
     ('▼チケット情報はこちら', 'CTAが無い'),
@@ -82,7 +86,9 @@ for f in files:
     if t.count('春風亭昇太') >= 2 and 'かめあり亭' in t:
         ng.append('春風亭昇太の12/10が2行になっている疑い（同じ公演なので1行にまとめる）')
     n = len(t.replace('\n', ''))
-    tails[f] = lines[-1] if lines else ''
+    # 締めは**タグ行の1つ前**（最終行はいつも #OSHINAVI…）
+    body = [x for x in lines if x.strip() and not x.strip().startswith('#')]
+    tails[f] = body[-1] if body else ''
     print('■ %s … %d字 %s' % (f, n, 'OK' if not ng else '🚨%d件' % len(ng)))
     for x in ng:
         print('    - %s' % x)
