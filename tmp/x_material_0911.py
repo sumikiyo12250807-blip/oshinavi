@@ -135,12 +135,14 @@ for title, genres, gkey in BUNDLES:
         if not rs2:
             continue
         big = [x for x in rs2 if BIG.search(x[0].get('venue') or '')]
+        # 🚨5件は「大物を並べて見せる」枠なので**同じ組は1件まで**
+        #   （県を枠ごとにしたら、ツアーの1組が5件を占めるようになった）
         seen2, pick = set(), []
         for x in (big or rs2):
-            ln = line(*x)
-            if ln in seen2:          # 同じ組・同じ時刻・同じ県は畳む
+            key = (x[0].get('artist') or x[0].get('name') or '').strip()
+            if key in seen2:
                 continue
-            seen2.add(ln)
+            seen2.add(key)
             pick.append(x)
             if len(pick) >= 5:
                 break
