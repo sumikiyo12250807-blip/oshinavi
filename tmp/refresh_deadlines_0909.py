@@ -14,7 +14,8 @@ import io, json, re, sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 SRC = sys.argv[1]
-built = {b["id"]: b for b in json.load(io.open(SRC, encoding="utf-8"))}
+# PowerShell の `>` はBOM付きUTF-8で書き出す。utf-8-sig で受けないと落ちる（2026-09-10）
+built = {b["id"]: b for b in json.load(io.open(SRC, encoding="utf-8-sig"))}
 
 h = io.open("index.html", encoding="utf-8", newline="").read()
 m = re.search(r"(  const EVENTS = )(\[.*?\])(;)", h, re.S)
