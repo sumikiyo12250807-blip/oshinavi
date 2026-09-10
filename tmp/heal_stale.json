@@ -24,6 +24,11 @@
   "artist": "ゴスペラーズ",
   "tickets": [
    {
+    "type": "5次プレリザーブ（大阪 12/13公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670117"
+   },
+   {
     "type": "秋田公演 一般発売（秋田 9/18公演）〜9/17 23:59",
     "date": "2026-09-17",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2608882"
@@ -42,6 +47,12 @@
     "type": "一般発売.（新潟 9/23公演）〜9/22 23:59",
     "date": "2026-09-22",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620185"
+   },
+   {
+    "type": "一般発売（東京 12/26公演）10/4 10:00発売",
+    "date": "2026-10-04",
+    "startDate": "2026-10-04",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2612151"
    },
    {
     "type": "一般発売（長崎 10/31公演）〜10/15 23:59",
@@ -82,6 +93,11 @@
     "type": "一般発売（大阪 11/23公演）〜11/5 23:59",
     "date": "2026-11-05",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627316"
+   },
+   {
+    "type": "一般発売（島根 11/29公演）〜11/12 23:59",
+    "date": "2026-11-12",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2620446"
    }
   ]
  },
@@ -259,10 +275,13 @@
  },
  {
   "id": 2415,
-  "status": "delete",
+  "status": "convert",
   "artist": "笑福亭鶴瓶×サンドウィッチマンLIVE『シルエット』",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2624199"
+  "tickets": [
+   {
+    "type": "一般発売（払戻再販売）（東京 9/13公演）〜9/12 23:59",
+    "date": "2026-09-12"
+   }
   ]
  },
  {
@@ -378,6 +397,16 @@
     "date": "2026-09-12",
     "startDate": "2026-09-12",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2615630"
+   },
+   {
+    "type": "一般発売（三重 10/11公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624631"
+   },
+   {
+    "type": "一般発売（愛知 10/12公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624631"
    },
    {
     "type": "一般発売（東京 11/14公演）9/26 10:00発売",
@@ -862,10 +891,13 @@
  },
  {
   "id": 4119,
-  "status": "delete",
+  "status": "convert",
   "artist": "稲垣潤一",
-  "urls": [
-   "https://t.pia.jp/pia/event/event.do?eventCd=2628511"
+  "tickets": [
+   {
+    "type": "一般発売（大阪 12/19公演）〜12/12 23:59",
+    "date": "2026-12-12"
+   }
   ]
  },
  {
@@ -1184,6 +1216,12 @@
   "artist": "林家希林落語ツアー「希」",
   "tickets": [
    {
+    "type": "一般発売（東京 12/5公演）9/10 10:00発売",
+    "date": "2026-09-10",
+    "startDate": "2026-09-10",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633219"
+   },
+   {
     "type": "一般発売（秋田 11/23公演）〜11/22 23:59",
     "date": "2026-11-22",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633213"
@@ -1212,6 +1250,11 @@
     "type": "一般発売【第265回芸劇シリーズ】（東京 12/23公演）〜12/20 23:59",
     "date": "2026-12-20",
     "url": "https://t.pia.jp/pia/event/event.do?eventCd=2634676"
+   },
+   {
+    "type": "一般発売【第266回芸劇シリーズ】（東京 12/28公演）〜12/24 23:59",
+    "date": "2026-12-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2635727"
    }
   ]
  },
