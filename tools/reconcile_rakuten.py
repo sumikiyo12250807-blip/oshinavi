@@ -83,6 +83,7 @@ def main():
     print('=== reconcile_rakuten (today=%s) 対象%d件 ===\n' % (TODAY, len(targets)))
     ok = fail = fetcherr = unparsable = 0
     skip_slots = checked_slots = 0
+    skipped = []          # 🚨未照合の**中身**を出す（数だけだと死角が見えない）
     for e in targets:
         # 統合エントリは枠ごとにURLが違う（ツアー/別券種）。**その枠のURL**を正として照合する。
         urls = [raw_url(e['links']['rakuten'])]
@@ -165,6 +166,7 @@ def main():
             checked = False
             if not rakuten_slot(e, t):
                 skip_slots += 1      # 🚨楽天の枠でない＝この道具の担当外（黙って合格にしない）
+                skipped.append((e['id'], t.get('type', ''), '楽天の枠でない'))
                 continue
             # ① 締切（公演日で締めた/売り切れ次第終了は照合対象外＝skip）
             if t.get('saleEndUnknown') or t.get('saleUntilSoldOut'):
@@ -231,6 +233,12 @@ def main():
                         break
             checked_slots += 1 if checked else 0
             skip_slots += 0 if checked else 1
+            if not checked:
+                why = ('締切が「公演日で締めた/売り切れ次第終了」で突合対象が無い'
+                       if (t.get('saleEndUnknown') or t.get('saleUntilSoldOut'))
+                       else ('終わった枠でページから消えている' if past(t.get('date'))
+                             else '照合できる値が1つも無い'))
+                skipped.append((e['id'], t.get('type', ''), why))
         # ④ 県。複数会場のエントリは prefecture が「大阪・東京」のように多県を名乗る（正しい表記）。
         #   丸ごと1県として比較すると必ず外れるので、**分解して全部がページ側に在るか**で見る
         #   （ぴあ側の「統合バッジが多県名乗るのは正」と同じ扱い＝[[reference_reconcile_pia_qc_gate]]）。
@@ -266,7 +274,9 @@ def main():
         print('   ※照合対象外＝ページ形式が違って一次情報が取れない分。「正しい」と確認できていない。')
     print('=== QC照合カバレッジ: 照合できた枠 %d / 未照合 %d ===' % (checked_slots, skip_slots))
     if skip_slots:
-        print('   ※未照合＝締切が「公演日で締めた/売り切れ次第終了」で突合対象が無い枠。正しいと確認できていない。')
+        print('   ※未照合＝「正しい」と確認できていない枠。QC 0＝全部正しい、ではない。')
+        for i, ty, why in skipped:
+            print('   ⏭️ id=%-5s %-52s … %s' % (i, ty[:52], why))
     return 1 if (fail or fetcherr) else 0
 
 
