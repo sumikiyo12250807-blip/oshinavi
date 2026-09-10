@@ -62,9 +62,15 @@ def rows(day, genres=None):
     return out
 
 
+PREF_IN_TYPE = re.compile(r'（([^）0-9]+?)\s*(?:R[0-9]+年\s*)?[0-9]{1,2}/[0-9]{1,2}')
+
+
 def line(e, t):
     nm = (e.get('artist') or e.get('name') or '').strip()
-    pref = (e.get('prefecture') or '').strip()
+    # 🚨県は**その枠の県**を使う。エントリの prefecture だとツアーで全県が並び、
+    #   「その県も明日発売」と誤読される（2026-09-10 春風亭昇太で実際に起きた）
+    m = PREF_IN_TYPE.search(t.get('type') or '')
+    pref = (m.group(1).strip() if m else (e.get('prefecture') or '').strip())
     return '%s %s／%s%s' % (timeof(t).replace('99:99', '--:--'), nm, pref,
                            '（先行）' if is_senko(t) else '')
 
@@ -144,7 +150,8 @@ for title, genres, gkey in BUNDLES:
             w(line(e, t) + '\n')
         rest = len(rs2) - len(pick)
         if rest > 0:
-            w('他にも%d件以上\n' % floor10(rest))
+            # 台本＝10の位で切り下げて「◯件以上」。**10未満はそのままの数**
+            w('他にも%d件%s\n' % (floor10(rest), '以上' if rest >= 10 else ''))
         w('```\n\n')
     w('\n')
 
