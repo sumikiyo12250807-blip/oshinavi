@@ -1,7 +1,5 @@
-Traceback (most recent call last):
-  File "C:\Users\user\oshinavi\tools\pia_tickets.py", line 64, in <module>
-    h = fetch(url)
-        ^^^^^^^^^^
-  File "C:\Users\user\oshinavi\tools\pia_tickets.py", line 58, in fetch
-    raise PiaSorry('ぴあが混雑ページに飛ばした（券種は読めていない）: ' + final)
-PiaSorry: ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10
+URL: https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670567
+全6券種 / 買える(受付中・発売前)3件（--allで終了枠も表示）
+  [受付中] 2026-11-14〜2026-11-16 京都府 京都劇場 | 「僕らの時代じゃない」〔京都〕※プレイガイド最速先行 | ～ 2026/9/15(火) 23:59
+  [受付中] 2026-11-07〜2026-11-08 愛知県 穂の国とよはし芸術劇場ＰＬＡＴ 主ホール | 「僕らの時代じゃない」〔愛知〕 | ～ 2026/9/16(水) 23:59
+  [発売前] 2026-10-08〜2026-10-27 東京都 紀伊國屋ホール | 一般発売 ／ 「僕らの時代じゃない」 | 2026/9/13(日) 10:00より発売
