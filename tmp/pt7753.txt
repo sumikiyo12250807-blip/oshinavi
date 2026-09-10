@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\user\oshinavi\tools\pia_tickets.py", line 64, in <module>
+    h = fetch(url)
+        ^^^^^^^^^^
+  File "C:\Users\user\oshinavi\tools\pia_tickets.py", line 58, in fetch
+    raise PiaSorry('ぴあが混雑ページに飛ばした（券種は読めていない）: ' + final)
+PiaSorry: ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10
