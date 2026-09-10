@@ -1,0 +1,49 @@
+[
+ {
+  "id": 7811,
+  "artist": "さだ工務店",
+  "name": "さだ工務店",
+  "date": "2027-01-22",
+  "dateLabel": "2027年1月16日(土)〜2027年1月22日(金) 大阪・愛知・東京",
+  "venue": "全国ツアー（Zepp Namba（OSAKA）／COMTEC PORTBASE／Zepp DiverCity（TOKYO））",
+  "prefecture": "大阪・愛知・東京",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2630800",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=%E3%81%95%E3%81%A0%E5%B7%A5%E5%8B%99%E5%BA%97%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "3次受付（大阪 R9年 1/16公演）〜9/13 23:59",
+    "date": "2026-09-13",
+    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630800"
+   },
+   {
+    "type": "プリセール（愛知 R9年 1/17公演）〜9/14 23:59",
+    "date": "2026-09-14",
+    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630943"
+   },
+   {
+    "type": "一般発売（愛知 R9年 1/17公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26",
+    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630943"
+   },
+   {
+    "type": "一般発売（東京 R9年 1/22公演）9/18 10:00発売",
+    "date": "2026-09-18",
+    "startDate": "2026-09-18",
+    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629072"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-10"
+ }
+]
