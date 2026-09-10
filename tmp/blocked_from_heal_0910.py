@@ -11,7 +11,7 @@ import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-log = open('tmp/heal_apply_0910.txt', encoding='utf-8').read()
+log = open('tmp/heal_apply_noon_0910.txt', encoding='utf-8').read()
 sec = log.split('🛡️')[1] if '🛡️' in log else ''
 sec = sec.split('🚨🚨')[0]
 ids = [int(x) for x in re.findall(r'id=(\d+) ', sec)]
@@ -29,8 +29,8 @@ for i in ids:
     if b and b.get('status') == 'convert' and b.get('tickets'):
         out.append({'id': i, 'tickets': b['tickets']})
 
-json.dump(out, open('tmp/blocked_built_0910.json', 'w', encoding='utf-8'),
+json.dump(out, open('tmp/blocked_built_noon_0910.json', 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
-print('ブロックされた %d件 → ビルド結果が取れた %d件 → tmp/blocked_built_0910.json'
+print('ブロックされた %d件 → ビルド結果が取れた %d件 → tmp/blocked_built_noon_0910.json'
       % (len(ids), len(out)))
 print('id: %s' % ','.join(str(i) for i in ids))
