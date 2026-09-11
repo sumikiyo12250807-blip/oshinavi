@@ -47,6 +47,20 @@ _DROPPED = []
 # 無言で間違ったジャンルが下書きされるのを防ぐため、build 後に一覧で報告する。
 # 例＝「音楽/フェスティバル」が未収載で engeki に倒れていた（3521 JAZZ井）。
 _UNMAPPED_SUB = []
+# 🆕【2026-09-11】ページの**告知文にだけ**書いてある先行（「■プレイガイド先行 受付期間：…
+# お申込はこちら」→ pia.jp/v/… の専用申込ページ）。券種カードに出ないので parse_cards が拾えない。
+# 新着の独立再導出で108件中3件見つかった（星新一朗読劇・百鬼夜鏡・UVERworld）。
+# 対象公演が告知文から決まらないことがあるので**自動では足さず、見える所に出すだけ**。
+_NOTICE_PRESALE = []
+_NOTICE_RE = re.compile(r'■\s*([^■<>]{2,40}?先行[^■<>]{0,20}?)\s*受付期間[：:]\s*([^<■]{6,60}?)\s*お申込')
+_NOTICE_URL_RE = re.compile(r'href="(https?://(?:w\.)?pia\.jp/v/[^"]+)"')
+
+
+def find_notice_presales(h):
+    """告知文の「■◯◯先行 受付期間：… お申込はこちら」と、そのページの pia.jp/v/ リンクを拾う。"""
+    plain = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', h))
+    out = [(m.group(1).strip(), m.group(2).strip()) for m in _NOTICE_RE.finditer(plain)]
+    return out, list(dict.fromkeys(_NOTICE_URL_RE.findall(h)))
 
 WD = '月火水木金土日'
 PREFS = '北海道青森岩手宮城秋田山形福島茨城栃木群馬埼玉千葉東京神奈川新潟富山石川福井山梨長野岐阜静岡愛知三重滋賀京都大阪兵庫奈良和歌山鳥取島根岡山広島山口徳島香川愛媛高知福岡佐賀長崎熊本大分宮崎鹿児島沖縄'
@@ -784,6 +798,9 @@ def build(cand):
             if is_error_page(h):
                 gone.append(u); continue
             cards = parse_cards(h)
+            _np, _nu = find_notice_presales(h)
+            if _np:
+                _NOTICE_PRESALE.append((cand.get('newid'), cand.get('artist') or '', u, _np, _nu))
             su = src_event_url(u)
             for c in cards:
                 c['_src'] = su          # このカードが載っていた公演ページ(eventCd/bundle)を記録
@@ -1194,6 +1211,16 @@ if __name__ == '__main__':
         for nid, artist, sub, g in _UNMAPPED_SUB:
             sys.stderr.write(f"   id{nid} [{sub}] → _genre={g} | {artist[:40]}\n")
         sys.stderr.write("→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。\n")
+    # 告知文にだけある先行（自動では足さない＝見える所に出すだけ・2026-09-11）
+    if _NOTICE_PRESALE:
+        sys.stderr.write(f"\n📣 告知文にだけ出ている先行 {len(_NOTICE_PRESALE)}件（券種カードに無い＝自動では足していない）:\n")
+        for nid, artist, u, items, urls in _NOTICE_PRESALE:
+            sys.stderr.write(f"   id{nid} {artist[:30]} | {u}\n")
+            for nm, per in items:
+                sys.stderr.write(f"      ■{nm} 受付期間：{per}\n")
+            for vu in urls[:3]:
+                sys.stderr.write(f"      申込: {vu}\n")
+        sys.stderr.write("→ 対象公演が1つに決まるものだけ、枠として手で足す（url は申込ページ）。\n")
     # 【最重要ゲート】買えると判定したのに取り込めなかったカードを大声で報告。
     # 1件でもあれば新しいぴあ表記を取りこぼしている＝parse_when/kenshu/状態判定を直す合図。
     if _DROPPED:
