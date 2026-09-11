@@ -70,8 +70,11 @@ sec = h2[h2.index('<section class="pickup"'):h2.index('</section>', h2.index('<s
 imgs = [s.split('?')[0] for s in re.findall(r'<img[^>]+src="([^"]+)"', sec)]
 miss = [s for s in imgs if not s.startswith(('http', 'data:')) and not os.path.exists(s)]
 KEEP_OK = ('モーニング娘。', 'わよ。')       # 名前の中の。と 文末＋ボタン は割らない
-kuten = [m.start() for m in re.finditer(r'。(?!<br>)(?!</p>)', sec)
+# 「…並ぶ。」」のように引用の閉じかっこが続く「。」は、」のあとで改行する（。と」の間で割ると 」 が次の行の頭に落ちる
+# ＝2026-09-11 ユーザー指摘）。だから 。」 はここでは咎めない。代わりに「行頭の 」」を別に数える。
+kuten = [m.start() for m in re.finditer(r'。(?!<br>)(?!</p>)(?!」)', sec)
          if not any(k in sec[max(0, m.start() - 12):m.start() + 1] for k in KEEP_OK)]
+kuten += [m.start() for m in re.finditer(r'<br>\s*」', sec)]
 
 print('差し替えた: %s → index.html' % SRC)
 print('表示状態: セクション=%s / ナビ=%s' % ('非表示' if was_hidden else '表示',
