@@ -20,7 +20,7 @@ built = json.load(open('tmp/heal_stale.json', encoding='utf-8'))
 by = {b['id']: b for b in built}
 # 🚨id3853 阪神×広島は外す＝既存が「ビジター専用応援席／一般発売」（全角スラッシュ）で
 #   ビルドが半角「/」を返すので、表記ゆれで同じ枠が二重に増える（2026-09-09 と同じ罠）。
-EXCLUDE = {3853}
+EXCLUDE = {3853, 7508}  # 7508＝追加枠が既存のプリセールと県・公演日・発売日まで同じ（書き方違いの疑い）＝保留
 out = []
 for i in ids:
     if i in EXCLUDE:
