@@ -289,7 +289,13 @@ def sibling_show_urls(html, name, fetch_fn, sleep=0.4):
 def artist_key(title):
     t = re.sub(r'^[\s　]*(先着|抽選)[\s　]+', '', title).strip()
     t = re.split(r'ワンマンツアー|ワンマンライブ|LIVE TOUR|Concert Tour|Billboard Live|THE LIVE|BIRTHDAY|[<「（(【]', t)[0]
-    t = re.split(r'[\s　]', t)[0].strip()
+    # 🚨2026-09-12 修正＝旧版はここで「最初のスペースまで」で切っていた。
+    #   英字名が全滅（a flood of circle→「a」／YOU SOCK FESTIVAL→「YOU」／Project U.D.M→「Project」）し、
+    #   しかもこの鍵でグループ分けするので、頭の1語が同じ別公演が1エントリに混ざる恐れがあった。
+    #   memory: project_eplus_harvester_bug_and_qc（2026-09-06発覚）
+    #   ⚠️出演者欄から自動で名前を作る案は 2026-09-12 に試して**8件中3件しか正解と合わなかった**
+    #   （演劇ページで別の欄を拾う／メンバー名を楽器つきで拾う／対バンの片方を落とす）。採用しない。
+    t = re.sub(r'[\s　]+', ' ', t).strip()
     return t or re.sub(r'^[\s　]*(先着|抽選)[\s　]+', '', title).strip()
 
 
@@ -511,7 +517,7 @@ def main():
                 'genre': 'new', 'price': None,
                 'links': {'rakuten': None, 'lawson': None, 'pia': None,
                           'eplus': rows[0]['url'], 'amazon': None},
-                'tickets': tickets, 'verified': True, 'verifiedAt': '2026-07-21'})
+                'tickets': tickets, 'verified': True, 'verifiedAt': str(TODAY)})
             print(f'  ○ id{nid} {akey} | 公演{len(rows)}(会場{len(uniq_venues)}) 枠{len(tickets)} | {d0}〜{d1}')
             nid += 1
         json.dump(entries, open('tmp/eplus_built.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
