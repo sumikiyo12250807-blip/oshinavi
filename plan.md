@@ -23,11 +23,20 @@
 ✅ e+ の枠0 6件＝reconcile_eplus FAIL0（URL生きている＝今のまま）
 ✅ tools/presale_harvest.py が一覧の全行（rows）を残すように＝登録済みページに後から足された窓を
    朝のスイープで拾う（tmp/window_gap_0912.py → tmp/x0912/true_missing.py）
-⏳ 走っているもの＝隠れ枠 --build（06:45〜）／新着の再チェック B・C・D（A は済・ズレは隠れ枠待ち）／楽天の特設ページ
-⏭ このあと＝heal --apply → tmp/check_heal_flatten_0910.py → tmp/blocked_from_heal_0912.py → refresh
-   → reconcile_pia --ids $(cat tmp/reconcile_ids_0912.txt)（216件）→ 救済
-   → 再チェックがそろったら tmp/compare_recheck_0912.py → 振り分け（tools/assign_genres.py --exclude 7558,7741,7744,8158,8159,8160）
-   → 発売前スイープ tmp/sweep_presale_0912.py → window_gap → 収集 → 受付中 → push
+✅ 隠れ枠ヒール194件適用＋安全弁で止まった分を上書き・追加で当てた（更新4・追加50）＝画面の枠が減ったエントリ0件
+   7508 あつこ&タニケン＝宮城の枠名を今の呼び名に揃え、大阪1/17を追加
+✅ 前夜の新着232件を別エージェント4本で再チェック → 直し7件 → **231件を振り分け**（logs/assigned_2026-09-12.md）
+   新着に残したもの＝7558/7741/7744（前から）・7946（ぴあのページが消えて後継なし）・8158〜8160（今朝入れた鳥肌実）
+✅ ユーザー決定「もう終わったイベントはけしていいよ」＝カードの日付の欄に終わった公演の日は入れない（今までどおり）
+   （今朝あたしが7882・8145だけ終わった公演まで広げてしまった→戻した。memory feedback_show_true_dates_not_sellable_range に追記）
+✅ 要再確認の照合は216件中45件で止めた（発売前スイープとぴあを取り合うため）→ 取りこぼし6件を救済
+   ⏭ **昼に残り171件**＝`python tools/reconcile_pia.py --ids $(cat tmp/reconcile_ids_rest_0912.txt)`
+📖 日曜の記事＝ユーザー指示で組み替え（深掘り＝サントリーホールの年末年始／コーラスラインの深掘りの文章はそのまま主役の枠へ）
+   ①取りこぼしチェック済み（記録済）→ ②ファクトチェック中（エージェント）→ ③全文をユーザーに見せる
+   写真＝コモンズ候補を提示済み（おすすめ Suntory_Hall_2018.jpg・CC BY-SA 4.0・Wpcpey）＝返事待ち
+⏳ 走っているもの＝発売前スイープ（tmp/sweep_presale_0912.py・08:00〜）
+⏭ このあと＝window_gap（登録済みページの窓の抜け）→ 発売前の新規ビルド・投入 → 受付中100件（tmp/cand_uk_0912.json・仮id8161〜）
+   → reconcile --new → build_ai_page → push（朝）
 ```
 
 ## ⚠️ ユーザーに聞くこと（9/12 朝の分・ぴあ以外の売り場なので）
