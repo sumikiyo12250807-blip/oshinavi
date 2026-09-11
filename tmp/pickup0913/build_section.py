@@ -39,10 +39,12 @@ def esc(t):
 
 
 def br(paras):
+    """draft.md の1行＝画面の1行。
+    🚨前号までの「。を見つけたら<br>」だと、引用の中の「…並ぶ。」」で 」 が次の行の頭に落ちた
+    （9/11 ユーザー指摘「」演出家ザックが…が改行後に来てる」）。draft.md は「。」のあとで改行済みなので、行でそのまま割る。"""
     out = []
     for p in paras:
-        t = esc(p.strip()).replace("。", "。<br>")
-        t = re.sub(r"(<br>)+$", "", t)
+        t = "<br>\n".join(esc(ln.strip()) for ln in p.strip().split("\n") if ln.strip())
         out.append("        <p>%s</p>" % t)
     return "\n".join(out)
 
@@ -208,5 +210,6 @@ print("  pk-most:%d blockquote:%d &gt;:%d |---:%d ▲▼:%d" % (s.count("pk-most
 print("  pickupClose:%d / data-pk-shut=%d pk-act=%d" % (s.count('id="pickupClose"'), s.count("data-pk-shut"),
       len(re.findall(r'class="pk-act', s))))
 print("  未定義クラス:", undefined or "なし")
-print("  「。」の未改行:", len(re.findall(r"。(?!<br>)(?!</p>)", s.replace("わよ。<span", ""))))
+print("  「。」の未改行:", len(re.findall(r"。(?!<br>)(?!</p>)(?!」)", s.replace("わよ。<span", ""))))
+print("  行頭に落ちた」:", len(re.findall(r"<br>\s*」", s)))
 print("WROTE %s (%d bytes)" % (OUT, len(s)))
