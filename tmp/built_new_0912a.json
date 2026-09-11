@@ -1,0 +1,86 @@
+[
+ {
+  "id": 99101,
+  "artist": "鳥肌実",
+  "name": "鳥肌実",
+  "date": "2026-09-21",
+  "dateLabel": "2026年9月21日(月) 富山 富山MAIRO",
+  "venue": "富山MAIRO",
+  "prefecture": "富山",
+  "genre": "new",
+  "_genre": "owarai",
+  "_extraGenres": [],
+  "_piaSub": "演劇/寄席・お笑い",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2629236",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（富山 9/21公演）〜9/20 23:59",
+    "date": "2026-09-20"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-12"
+ },
+ {
+  "id": 99102,
+  "artist": "鳥肌実",
+  "name": "鳥肌実",
+  "date": "2026-09-22",
+  "dateLabel": "2026年9月22日(火) 長野 the Venue",
+  "venue": "the Venue",
+  "prefecture": "長野",
+  "genre": "new",
+  "_genre": "owarai",
+  "_extraGenres": [],
+  "_piaSub": "演劇/寄席・お笑い",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2629235",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（長野 9/22公演）〜9/21 23:59",
+    "date": "2026-09-21"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-12"
+ },
+ {
+  "id": 99103,
+  "artist": "鳥肌実",
+  "name": "鳥肌実",
+  "date": "2026-11-21",
+  "dateLabel": "2026年11月21日(土) 沖縄 桜坂劇場 ホールB",
+  "venue": "桜坂劇場 ホールB",
+  "prefecture": "沖縄",
+  "genre": "new",
+  "_genre": "owarai",
+  "_extraGenres": [],
+  "_piaSub": "演劇/寄席・お笑い",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2631860",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（沖縄 11/21公演）〜11/20 23:59",
+    "date": "2026-11-20"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-12"
+ }
+]
