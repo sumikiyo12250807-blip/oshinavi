@@ -4,9 +4,9 @@
 import sys
 from PIL import Image
 sys.stdout.reconfigure(encoding='utf-8')
-# 21:31 の作り直し版（ラインの上にちょうど17人・演出家は男性で客席側・誰も隠さない）
-# 21:10（演出家が女性・11人）と 21:14（11人）は使わない
-SRC = r'C:\Users\user\Downloads\ChatGPT Image 2026年9月11日 21_31_22.png'
+# 21:48 の版＝ダンサーが客席を向き、演出家は客席の通路（ユーザー「まっいっか」で採用・ラインの上は18人）
+# 21:10（演出家が女性・11人）／21:14（11人）／21:31（ダンサーが舞台の奥を向いている＝向きが逆）は使わない
+SRC = r'C:\Users\user\Downloads\ChatGPT Image 2026年9月11日 21_48_33.png'
 OUT = 'img/chorusline_ai.jpg'
 im = Image.open(SRC).convert('RGB')
 w, h = im.size
