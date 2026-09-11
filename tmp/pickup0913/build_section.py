@@ -13,11 +13,15 @@ DRAFT = "tmp/pickup0913/draft.md"
 OUT = "tmp/pickup0913/section.html"
 FROM, TO = "2026-09-14", "2026-09-20"
 WD = "月火水木金土日"
+# 🆕9/12 ユーザー指示＝深掘りをサントリーホールに替え、コーラスラインの深掘りの文章はそのまま主役のコーラスラインの枠に出す
 MAIN = [("ヨーヨー・マ", [7324]),
-        ("サントリーホールの年末年始", [4771, 4772, 4850, 4845]),
         ("女王蜂", [4802]),
         ("GENERATIONS from EXILE TRIBE", [3568]),
         ("劇団四季『コーラスライン』", [4898])]
+DEEP_IDS = [4771, 4772, 4850, 4845]   # 深掘り＝サントリーホールの年末年始（プログラムごとに「発売になる公演」の箱を出す）
+FIG_CHORUS = ('        <figure class="pk-fig"><img src="img/chorusline_ai.jpg" width="1200" height="675" loading="lazy" '
+              'alt="1本の白いラインに並ぶダンサーたちと、それを見る演出家のイメージ">'
+              '<figcaption>イメージ画像（AI生成）・実際の舞台写真ではありません</figcaption></figure>')
 # サントリーホールの「発売になる公演」の箱の見出し（本文と同じ呼び名）
 SHORT = {4771: "12/24 聖夜のメサイア", 4772: "12/25 サントリーホールのクリスマス 2026",
          4850: "12/31 ウィーンの大みそか", 4845: "1/1〜1/3 ニューイヤー・コンサート"}
@@ -141,8 +145,11 @@ for n, (name, ids) in enumerate(MAIN):
           '          <span class="pk-name">%s</span>' % esc(name),
           '          <span class="pk-sale">%s</span>' % esc(sale_label(ss_all)),
           '        </button>',
-          '        <div class="pk-detail" hidden>',
-          br(paras_of(body))]
+          '        <div class="pk-detail" hidden>']
+    if name.startswith("劇団四季"):
+        # ユーザーがChatGPTで作ったイメージ画像（9/11夜）。実物の舞台写真と取り違えられないよう必ず明記する
+        B.append(FIG_CHORUS)
+    B.append(br(paras_of(body)))
     for i in ids:
         e = by_id[i]
         q = e["artist"] if len(ids) == 1 else e["name"]
@@ -172,12 +179,17 @@ B += ['      <h3 class="pk-h2">今週の深掘り</h3>',
       '          <span class="pk-name">%s</span>' % esc(dtitle),
       '        </button>',
       '        <div class="pk-detail" hidden>',
-      # ユーザーがChatGPTで作ったイメージ画像（9/11夜）。実物の舞台写真と取り違えられないよう必ず明記する
-      '        <figure class="pk-fig"><img src="img/chorusline_ai.jpg" width="1200" height="675" loading="lazy" '
-      'alt="1本の白いラインに並ぶダンサーたちと、それを見る演出家のイメージ">'
-      '<figcaption>イメージ画像（AI生成）・実際の舞台写真ではありません</figcaption></figure>',
-      br(paras_of([x for x in rest if not x.startswith("他にも気になる")])),
-      '        <button class="pk-more pk-close" type="button" data-pk-shut>閉じる</button>',
+      br(paras_of([x for x in rest if not x.startswith("他にも気になる")]))]
+print("── 深掘り")
+for i in DEEP_IDS:
+    e = by_id[i]
+    lst = show_list(week_slots(e))
+    B += ['        <a class="pk-shows" href="#" data-pk-search="%s">' % esc(e["name"]),
+          '          <b>%s<span class="pk-go">タップで探す →</span></b>' % esc(SHORT[i]),
+          '          %s' % esc(lst),
+          '        </a>']
+    print("  %s | 検索語「%s」→ %d件 | %s" % (SHORT[i], e["name"], search_ok(e["name"]), lst))
+B += ['        <button class="pk-more pk-close" type="button" data-pk-shut>閉じる</button>',
       '        </div>',
       '      </div>',
       '      <p class="pk-others-note">今週はほかにも、こんな名前が出るのよ。</p>',
