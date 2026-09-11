@@ -160,6 +160,10 @@ def page_pos(h):
     return (int(m.group(1).replace(',', '')), int(m.group(2).replace(',', ''))) if m else None
 
 items, seen = [], set()
+# 🆕2026-09-12 一覧の「行」を全部残す（URLで畳まない）。登録済みのページに、ぴあがあとから
+#   会場・先行を足した窓（同じURLの別の行）を拾うため＝tmp/window_gap_0912.py が読む。
+#   memory: feedback_existing_entries_miss_new_windows
+allrows = []
 p, same = 1, 0
 prev_sig = None
 prev_pos = None
@@ -189,6 +193,8 @@ while p <= LAST:
     else:
         same = 0
     prev_pos = pos
+    if pi and not stalled:
+        allrows.extend(pi)
     for x in pi:
         if x['url'] not in seen:
             seen.add(x['url'])
@@ -250,7 +256,9 @@ print('  うち %d件は同名の既存エントリあり＝投入時に統合�
 #   2026-08-17に受付中スイープが音楽4318件中204件＝「あ行」だけで打ち切られていたのを
 #   件数比で見つけた反省（[[feedback_newpool_presale_ratio_gate]]）。
 json.dump({'lg': LG, 'total': total, 'pages': pages, 'fetched_pages': p,
-           'parsed': len(items), 'new_name_in_db': n_name_only, 'new': new},
+           'parsed': len(items), 'new_name_in_db': n_name_only, 'new': new,
+           'rows': [{k: r.get(k) for k in ('url', 'artist', 'saletype', 'rlsdate', 'venue', 'pref')}
+                    for r in allrows]},
           open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('written', OUT)
 # print first 25 new
