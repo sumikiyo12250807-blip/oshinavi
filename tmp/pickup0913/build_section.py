@@ -156,6 +156,9 @@ for n, (name, ids) in enumerate(MAIN):
         if name.startswith("劇団四季"):
             q = "コーラスライン"
         lst = show_list(week_slots(e))
+        # 9/12 ファクトチェック指摘＝大阪 SkyシアターMBS は 12/31 に公演が無い（本文もそう書いている）。
+        # 登録の券種名はぴあの表記「12/30〜R9年 1/5」のまま触らず、記事の箱の表示だけ書き分ける
+        lst = lst.replace("12/30〜R9年 1/5 大阪", "12/30・R9年 1/1〜1/5 大阪")
         head = "発売になる公演" if len(ids) == 1 else esc(SHORT[i])
         B += ['        <a class="pk-shows" href="#" data-pk-search="%s">' % esc(q),
               '          <b>%s<span class="pk-go">タップで探す →</span></b>' % head,
