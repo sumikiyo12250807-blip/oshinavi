@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+"""ユーザーがChatGPTで作った『コーラスライン』のイメージ画像（1.9MBのPNG）を、記事用のJPGに縮める。
+加工はしない（切り抜き・文字入れなし）＝幅だけ1200pxに。"""
+import sys
+from PIL import Image
+sys.stdout.reconfigure(encoding='utf-8')
+# 21:14 の作り直し版（演出家を男性に）。21:10 の最初の版は使わない
+SRC = r'C:\Users\user\Downloads\ChatGPT Image 2026年9月11日 21_14_18.png'
+OUT = 'img/chorusline_ai.jpg'
+im = Image.open(SRC).convert('RGB')
+w, h = im.size
+im = im.resize((1200, round(h * 1200 / w)), Image.LANCZOS)
+im.save(OUT, 'JPEG', quality=82, optimize=True, progressive=True)
+import os
+print('%dx%d → %dx%d / %d KB' % (w, h, im.size[0], im.size[1], os.path.getsize(OUT) // 1024))

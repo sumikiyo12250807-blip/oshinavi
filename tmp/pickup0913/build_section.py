@@ -170,6 +170,10 @@ B += ['      <h3 class="pk-h2">今週の深掘り</h3>',
       '          <span class="pk-name">%s</span>' % esc(dtitle),
       '        </button>',
       '        <div class="pk-detail" hidden>',
+      # ユーザーがChatGPTで作ったイメージ画像（9/11夜）。実物の舞台写真と取り違えられないよう必ず明記する
+      '        <figure class="pk-fig"><img src="img/chorusline_ai.jpg" width="1200" height="676" loading="lazy" '
+      'alt="1本の白いラインに並ぶダンサーたちと、それを見る演出家のイメージ">'
+      '<figcaption>イメージ画像（AI生成）・実際の舞台写真ではありません</figcaption></figure>',
       br(paras_of([x for x in rest if not x.startswith("他にも気になる")])),
       '        <button class="pk-more pk-close" type="button" data-pk-shut>閉じる</button>',
       '        </div>',
