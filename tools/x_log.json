@@ -1174,7 +1174,7 @@
  ],
  "artists": {
   "_readme": "Xフォロワー実数。WebSearchで取得（x.com直アクセスは404/402/403）。取り方は memory: reference_x_follower_lookup。一度取ったら再調査不要。",
-  "measured": "2026-09-10",
+  "measured": "2026-09-11",
   "data": [
    {
     "name": "SEVENTEEN Japan",
@@ -1676,6 +1676,78 @@
     "handle": null,
     "followers": null,
     "note": "🚨Xに김창완 밴드のアカウントが無い。2026-09-10 確認"
+   },
+   {
+    "name": "水瀬いのり",
+    "handle": "@inoriminase",
+    "followers": 863000,
+    "note": "2026-09-11 ブラウザ実測。水瀬いのりinfo（本人とスタッフの公式）"
+   },
+   {
+    "name": "UVERworld",
+    "handle": "@UVERworld_dR2",
+    "followers": 527500,
+    "note": "2026-09-11 ブラウザ実測。UVERworld_Staff_（スタッフ公式）"
+   },
+   {
+    "name": "羽多野渉",
+    "handle": "@hatano_official",
+    "followers": 314700,
+    "note": "2026-09-11 ブラウザ実測。羽多野渉 公式"
+   },
+   {
+    "name": "モーニング娘。",
+    "handle": "@MorningMusumeMg",
+    "followers": 237300,
+    "note": "2026-09-11 ブラウザ実測。モーニング娘。'26 公式"
+   },
+   {
+    "name": "Juice=Juice",
+    "handle": "@JuiceJuice_uf",
+    "followers": 185600,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "アンジュルム",
+    "handle": "@angerme_upfront",
+    "followers": 157800,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "東京スカパラダイスオーケストラ",
+    "handle": "@tokyoskaj",
+    "followers": 116500,
+    "note": "2026-09-11 ブラウザ実測。TOKYO SKA PARADISE ORCHESTRA"
+   },
+   {
+    "name": "ねぐせ。",
+    "handle": "@neguseofficial_",
+    "followers": 113100,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "ヤングスキニー",
+    "handle": "@yang_skinny",
+    "followers": 106400,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "川崎鷹也",
+    "handle": "@kawasaki_takaya",
+    "followers": 86500,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "Girls2",
+    "handle": "@Girls2_official",
+    "followers": 49100,
+    "note": "2026-09-11 ブラウザ実測。Girls²"
+   },
+   {
+    "name": "レミオロメン",
+    "handle": "@remioromen_oa",
+    "followers": 21000,
+    "note": "2026-09-11 ブラウザ実測。レミオロメン オフィシャルアカウント"
    }
   ]
  }
