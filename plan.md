@@ -37,6 +37,10 @@
 📖✅ 日曜(9/13)の記事＝**ユーザーOK済み（9/11夜）・反映は日曜の朝**（ユーザー「でもまだだよ　日曜日ね」）
    ・ヨーヨー・マは「プログラムの説明が先、公演名・日時・チケットが最後」に並べ替え（ユーザー指示）
    ・タイルに森山直太朗(4960)・劇団四季BTTF(96)を足して14組（ユーザー「2組とも足して」）
+   ・再ファクトチェック済み（ヨーヨー・マ＝poco会員限定の先行と明記／GENERATIONS＝ライブツアー）・ゲート①②とも記録済み
+   ・深掘りにユーザーがChatGPTで作った画像 img/chorusline_ai.jpg（21:53版・17人を切り出して数えて確認）
+     キャプション「イメージ画像（AI生成）・実際の舞台写真ではありません」
+   ・引用の閉じかっこ」が次の行の頭に落ちる不具合を直した（build_section は draft の1行＝画面の1行／apply_pickup も点検）
    🌅**9/13朝の手順**＝①`python tmp/pickup0913/build_section.py`（その朝のデータで組み直す）
      ②`python tools/pickup_gate.py --verify tmp/pickup0913/draft.md` ③`python tools/apply_pickup.py tmp/pickup0913/section.html`
      ④check_badges／check_order／CRLF → build_ai_page → 朝のpushに乗せる
