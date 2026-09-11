@@ -15,6 +15,10 @@ for name in sys.argv[1:]:
     r = subprocess.run([sys.executable, 'tools/pia_kw_search.py', name],
                        capture_output=True, env={'PYTHONIOENCODING': 'utf-8', **__import__('os').environ})
     txt = (r.stdout or b'').decode('utf-8', 'replace') + (r.stderr or b'').decode('utf-8', 'replace')
+    try:
+        txt += io.open('tmp/pia_kw_search.txt', encoding='utf-8', errors='replace').read()
+    except OSError:
+        txt += '(tmp/pia_kw_search.txt が読めない)\n'
     out.write('===== %s (rc=%s) =====\n%s\n' % (name, r.returncode, txt))
     out.flush()
     time.sleep(4)
