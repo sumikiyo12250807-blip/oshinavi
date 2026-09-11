@@ -5,7 +5,45 @@
 
 ---
 
-# 🔴 いま止まっているところ（9/11 夕・/clear 直後はここから）
+# 🔴 いま止まっているところ（9/12 朝・/clear 直後はここから）
+
+```
+🌅 9/12 朝の便（06:44〜）＝ルーチンの途中。push はまだ（朝の便のいちばん最後）
+   ⏰ 昼のヒールの目覚まし＝15:05（今日の昼の発売は最遅15:00・夜は18:00/20:00/21:00）
+
+✅ 楽天＝reconcile_rakuten OK51・FAIL0（照合143/未照合62）／売り切れ点検 印1(3224)・外し1(3235)
+✅ id656 伊藤蘭＝date を事実の最終日 9/27 に（9/11で止まっていた）
+✅ 削除18件（公演終了・独立検証で反証0）… logs/removed_2026-09-12.md
+   削除NGの5件は残した＝同じツアーの残り公演が売られている
+   → ぴあで売っている分を足した（LOVEBITES 羽田9/25・ClariS 大阪9/13/有明9/18・イングヴェイ パシフィコ9/13）
+   → LOVEBITES 仙台/金沢/新潟はぴあで予定枚数終了・販売期間の日付がページに無いので載せていない
+✅ 鳥肌実 富山9/21・長野9/22・沖縄11/21 を新着へ（id8158〜8160）
+✅ 新着7882『パレイドリア』の会期を事実の 8/9東京〜9/27福岡 に（prefecture は買える新潟・福岡のまま）
+✅ 楽天の発売前 9件＝全部登録済み・発売前の枠15枠とも登録あり（tmp/rakuten_window_gap_0912.py）
+✅ e+ の枠0 6件＝reconcile_eplus FAIL0（URL生きている＝今のまま）
+✅ tools/presale_harvest.py が一覧の全行（rows）を残すように＝登録済みページに後から足された窓を
+   朝のスイープで拾う（tmp/window_gap_0912.py → tmp/x0912/true_missing.py）
+⏳ 走っているもの＝隠れ枠 --build（06:45〜）／新着の再チェック B・C・D（A は済・ズレは隠れ枠待ち）／楽天の特設ページ
+⏭ このあと＝heal --apply → tmp/check_heal_flatten_0910.py → tmp/blocked_from_heal_0912.py → refresh
+   → reconcile_pia --ids $(cat tmp/reconcile_ids_0912.txt)（216件）→ 救済
+   → 再チェックがそろったら tmp/compare_recheck_0912.py → 振り分け（tools/assign_genres.py --exclude 7558,7741,7744,8158,8159,8160）
+   → 発売前スイープ tmp/sweep_presale_0912.py → window_gap → 収集 → 受付中 → push
+```
+
+## ⚠️ ユーザーに聞くこと（9/12 朝の分・ぴあ以外の売り場なので）
+
+```
+1. 残り公演がぴあ以外でだけ売られている＝足してよいか
+   ・id4450 Ivy to Fraudulent Game 10/1 shibuya eggman（e+ https://eplus.jp/sf/word/0000062807）
+   ・id6949 ヤミテラ 9/14 大阪RUIDO・9/21 渋谷REX（e+ https://eplus.jp/sf/word/0000113733）
+   ・id3568 GENERATIONS 代々木12/22 一般 9/19 10:00〜12/21 18:00（e+ https://eplus.jp/sf/detail/1465430001-P0030088P021001）
+     （長野・有明・福井・大阪・兵庫・代々木12/23 の一般はローチケ/ticketbook のみ＝e+に無い）
+   ・未掲載 Ruiza BURNING SOUL vol.19（9/25 Zirco Tokyo・e+）／鳥肌実 八王子9/19（ぴあに無し）
+2. 女王蜂 福岡10/25 の一般(9/19)は e+ に無い（名古屋だけ e+ 9/19〜）＝売り場未確認
+3. Chrome拡張がつながっていない（夜のX予約で要る）
+```
+
+# （以下は 9/11 夕〜夜の引き継ぎ）
 
 ```
 🌙 9/11 夕〜夜
