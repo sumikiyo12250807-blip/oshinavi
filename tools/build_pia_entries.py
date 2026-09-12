@@ -697,6 +697,9 @@ HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|�
                        # 「東儀秀樹」(篳篥の雅楽師) が enka(演歌) に落ちていた。
                        # 公演名に「雅楽」の2文字が出ないことがあるので、団体名と楽器名で拾う。
                        r'|楽所|雅亮|舞楽|篳篥|龍笛|竜笛|笏拍子|東儀'
+                       # 2026-09-13 追加：「和洋楽器ユニット」は「和楽器」の3文字が並ばないので
+                       # 素通りし、id8281「和洋楽器ユニット『蒼ノトキ』ライブ」が enka(演歌) に落ちていた。
+                       r'|和洋楽器|和楽|箏曲|三曲|尺八本曲'
                        r'|taiko|shamisen|shakuhachi|gagaku|wagakki|biwa')
 def _hogaku(name):
     return bool(HOGAKU_RE.search(unicodedata.normalize('NFKC', name or '').lower()))
