@@ -22,6 +22,14 @@ DEEP_IDS = [4771, 4772, 4850, 4845]   # 深掘り＝サントリーホールの�
 FIG_CHORUS = ('        <figure class="pk-fig"><img src="img/chorusline_ai.jpg" width="1200" height="675" loading="lazy" '
               'alt="1本の白いラインに並ぶダンサーたちと、それを見る演出家のイメージ">'
               '<figcaption>イメージ画像（AI生成）・実際の舞台写真ではありません</figcaption></figure>')
+# 🆕9/12 昼 ユーザー採用＝Wikimedia Commons「File:Suntory_Hall_2018.jpg」（CC BY-SA 4.0・Wpcpey・personalityタグ無し）。
+# 🚨加工しない（Wikimedia配信の縮小版そのまま・CSSでも切らない）／クレジット＝撮影者＋ライセンス名＋ライセンス本文リンク（img/_credits.json にも記録）
+FIG_SUNTORY = ('        <figure class="pk-fig"><img src="img/suntory_hall.jpg" width="1280" height="853" loading="lazy" decoding="async" '
+               'alt="サントリーホールの正面入口と前の広場（2018年6月）">'
+               '<figcaption>2018年6月 サントリーホール正面（東京・赤坂）／Photo: '
+               '<a href="https://commons.wikimedia.org/wiki/File:Suntory_Hall_2018.jpg" target="_blank" rel="noopener">Wpcpey</a> '
+               '(<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a>)'
+               '</figcaption></figure>')
 # サントリーホールの「発売になる公演」の箱の見出し（本文と同じ呼び名）
 SHORT = {4771: "12/24 聖夜のメサイア", 4772: "12/25 サントリーホールのクリスマス 2026",
          4850: "12/31 ウィーンの大みそか", 4845: "1/1〜1/3 ニューイヤー・コンサート"}
@@ -182,6 +190,7 @@ B += ['      <h3 class="pk-h2">今週の深掘り</h3>',
       '          <span class="pk-name">%s</span>' % esc(dtitle),
       '        </button>',
       '        <div class="pk-detail" hidden>',
+      FIG_SUNTORY,
       br(paras_of([x for x in rest if not x.startswith("他にも気になる")]))]
 print("── 深掘り")
 for i in DEEP_IDS:
