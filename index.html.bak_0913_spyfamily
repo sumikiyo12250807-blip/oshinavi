@@ -690,7 +690,6 @@
     .genre-basketball { background: rgba(255,110,0,0.15);  color: #ff9933;       border: 1px solid rgba(255,110,0,0.3); }
     .genre-volleyball { background: rgba(0,180,220,0.15);  color: #44ccff;       border: 1px solid rgba(0,180,220,0.3); }
     .genre-aisatsu    { background: rgba(220,100,180,0.15); color: #e066b4;       border: 1px solid rgba(220,100,180,0.35); }
-    .genre-movie      { background: rgba(126,87,194,0.15);  color: #9575cd;       border: 1px solid rgba(126,87,194,0.35); }
     .genre-yougaku    { background: rgba(120,144,255,0.15); color: #8c9eff;       border: 1px solid rgba(120,144,255,0.35); }
     .genre-jazz       { background: rgba(38,166,154,0.15);  color: #26a69a;       border: 1px solid rgba(38,166,154,0.35); }
     .genre-dinnershow { background: rgba(217,138,160,0.15); color: #d98aa0;       border: 1px solid rgba(217,138,160,0.35); }
@@ -1447,7 +1446,6 @@ Zeppを5つ回るツアーよ。<br>
         <button class="filter-btn" data-genre="owarai">お笑い</button>
         <button class="filter-btn" data-genre="kaidan">怪談</button>
         <button class="filter-btn" data-genre="dinnershow">ディナーショー</button>
-        <button class="filter-btn" data-genre="movie">映画</button>
         <button class="filter-btn" data-genre="aisatsu">舞台挨拶</button>
         <button class="filter-btn" data-genre="youtuber">YouTuber</button>
         <button class="filter-btn" data-genre="vtuber">VTuber</button>
@@ -9091,7 +9089,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年9月9日〜12月29日 全国ツアー",
     "venue": "全国ツアー（ウェスタ川越／東京建物ブリリアホール／やまぎん県民ホール／御園座／兵庫県立芸術文化センター／博多座）",
     "prefecture": "全国",
-    "genre": "musical",
+    "genre": "2.5ji",
     "price": null,
     "links": {
       "rakuten": null,
@@ -9161,15 +9159,11 @@ Zeppを5つ回るツアーよ。<br>
       {
         "type": "一般発売（愛知 12/13〜12/19公演）9/13 10:00発売",
         "date": "2026-09-13",
-        "startDate": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623310"
+        "startDate": "2026-09-13"
       }
     ],
     "verified": true,
-    "verifiedAt": "2026-05-30",
-    "extraGenres": [
-      "2.5ji"
-    ]
+    "verifiedAt": "2026-05-30"
   },
   {
     "id": 356,
@@ -70300,7 +70294,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年11月18日(水) 大阪 東大阪市文化創造館 ジャトーハーモニー 小ホール",
     "venue": "東大阪市文化創造館 ジャトーハーモニー 小ホール",
     "prefecture": "大阪",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -70810,7 +70804,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年9月22日(火)〜2026年9月23日(水) 愛知 御園座",
     "venue": "御園座",
     "prefecture": "愛知",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -71439,7 +71433,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年9月22日(火)〜2026年11月15日(日) 岐阜 ぎふしんフォーラム 大ホール／他",
     "venue": "ぎふしんフォーラム 大ホール／他",
     "prefecture": "岐阜",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -71979,7 +71973,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年9月18日(金) 全国 全国の上映劇場",
     "venue": "全国の上映劇場",
     "prefecture": "全国",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -72736,7 +72730,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年11月7日(土) 神奈川 横浜市南公会堂",
     "venue": "横浜市南公会堂",
     "prefecture": "神奈川",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -94939,6 +94933,32 @@ Zeppを5つ回るツアーよ。<br>
         "type": "一般発売（東京 12/4公演）9/16 10:00発売",
         "date": "2026-09-16",
         "startDate": "2026-09-16"
+      }
+    ],
+    "verified": true,
+    "verifiedAt": "2026-08-18"
+  },
+  {
+    "id": 4615,
+    "artist": "ミュージカル『SPY×FAMILY 2 爆弾犬篇&豪華客船篇』",
+    "name": "ミュージカル『SPY×FAMILY 2 爆弾犬篇&豪華客船篇』",
+    "date": "2026-12-19",
+    "dateLabel": "2026年12月13日(日)〜2026年12月19日(土) 愛知 御園座",
+    "venue": "御園座",
+    "prefecture": "愛知",
+    "genre": "musical",
+    "price": null,
+    "links": {
+      "rakuten": null,
+      "lawson": null,
+      "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2623310",
+      "eplus": null
+    },
+    "tickets": [
+      {
+        "type": "一般発売（愛知 12/13〜12/19公演）9/13 10:00発売",
+        "date": "2026-09-13",
+        "startDate": "2026-09-13"
       }
     ],
     "verified": true,
@@ -159153,7 +159173,7 @@ Zeppを5つ回るツアーよ。<br>
     "venue": "全国ツアー（ローソン・ユナイテッドシネマ STYLE-S みなとみらい／ユナイテッド・シネマ豊洲／ミッドランドスクエアシネマ／なんばパークスシネマ）",
     "prefecture": "神奈川・東京・愛知・大阪",
     "genre": "new",
-    "_genre": "movie",
+    "_genre": "musicetc",
     "_extraGenres": [],
     "_piaSub": "映画/映画その他",
     "price": null,
@@ -175046,7 +175066,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年11月12日(木) 岐阜 ぎふ清流文化プラザ 長良川ホール",
     "venue": "ぎふ清流文化プラザ 長良川ホール",
     "prefecture": "岐阜",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -175072,7 +175092,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年10月22日(木) 滋賀 長浜文化芸術会館",
     "venue": "長浜文化芸術会館",
     "prefecture": "滋賀",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -175098,7 +175118,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2026年11月13日(金)〜2026年11月26日(木) 愛知",
     "venue": "全国ツアー（名古屋市中川文化小劇場／名古屋市東文化小劇場）",
     "prefecture": "愛知",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -175150,7 +175170,7 @@ Zeppを5つ回るツアーよ。<br>
     "dateLabel": "2027年1月8日(金) 全国 全国の上映劇場",
     "venue": "全国の上映劇場",
     "prefecture": "全国",
-    "genre": "movie",
+    "genre": "engeki",
     "price": null,
     "links": {
       "rakuten": null,
@@ -176511,9 +176531,6 @@ Zeppを5つ回るツアーよ。<br>
     sports: "スポーツ", hanabi: "花火大会",
     "2.5ji": "2.5次元", seiyuu: "声優", owarai: "お笑い", musical: "ミュージカル",
     aisatsu: "舞台挨拶", dinnershow: "ディナーショー", art: "イベントアート",
-    /* 2026-09-13 ユーザー「映画ジャンル作って」＝ぴあの「映画/邦画・洋画・映画祭・映画その他」が
-       engeki(演劇)に落ちていて、上映会が演劇タブのノイズになっていた。舞台挨拶(aisatsu)はそのまま。 */
-    movie: "映画",
     gourmet: "グルメ",
     fanevent: "ファンイベント",
     /* 2026-08-27 ユーザー「ジャンル作って　たためるようになったから躊躇なく作っていいよ」
@@ -176937,7 +176954,7 @@ Zeppを5つ回るツアーよ。<br>
   const GENRE_GROUPS = {
     music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","kpop","hiphop","chanson","hougaku","musicetc"],
     stage:   ["engeki","musical","dento","seiyuu","2.5ji","circus"],
-    ento:    ["owarai","kaidan","dinnershow","movie","aisatsu","youtuber","vtuber","fanevent","magic","talkshow"],
+    ento:    ["owarai","kaidan","dinnershow","aisatsu","youtuber","vtuber","fanevent","magic","talkshow"],
     odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event"]
   };
 
