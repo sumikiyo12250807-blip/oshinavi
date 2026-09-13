@@ -1,0 +1,1236 @@
+# -*- coding: utf-8 -*-
+"""ぴあ候補リストから OSHINAVI エントリ(T-SQUARE形)を【決定論的に】構築する。
+WebFetch要約に一切頼らず、HTMLを機械パースして全券種・全公演期間・時刻を拾う。
+（取りこぼし根絶。memory: reference_pia_tickets_tool / feedback_capture_all_deadlines_on_add）
+
+入力: 候補JSON = [{"newid":int, "artist":str, "urls":[url,...]}, ...]
+  例: python tools/build_pia_entries.py tmp/candidates.json > tmp/entries.json
+出力: genre:"new"・verified:true・_genre(下書き) 付きのエントリ配列(JSON)。
+  そのまま inject すれば新着投入できる。投入前に必ず tools/check_badges.py を回す。
+
+取り込む券種: 受付中(販売期間中/受付中) と 発売前 のみ。受付終了/予定枚数終了/結果発表前は除外。
+公演日: datetimeペア(初日,千秋楽)を範囲で取得。複数日は「M/D〜M/D公演」。
+"""
+import json, re, sys, io, time, urllib.request, urllib.parse, html as _html, datetime, unicodedata
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+# ぴあHTMLは全角ローマ字/数字(ＡＳＨ／ＲＩＺＩＮ．５４)をそのまま返す。サイトの既存891件は半角
+# なので、出口で半角に正規化する(2026-06-25・全角混入でレビューが進まない事故の恒久対策)。
+# （）／〜～は意味のある記号(バッジ/ツアー列挙/期間)なのでNFKCで壊さないよう退避して保護する。
+_FW_PROT = {'（': '', '）': '', '／': '', '〜': '', '～': ''}
+_FW_UNPROT = {v: k for k, v in _FW_PROT.items()}
+def norm_fw(s):
+    if not isinstance(s, str) or not s:
+        return s
+    for k, v in _FW_PROT.items():
+        s = s.replace(k, v)
+    s = unicodedata.normalize('NFKC', s)
+    for k, v in _FW_UNPROT.items():
+        s = s.replace(k, v)
+    return s
+
+# 「最新CD」リンク(links.amazon)を自動付与する音楽系ジャンル。フェス/sports/engeki/owarai/
+# dento/kids/musical等は付けない(汎用グッズボタンに任せる)。memory: reference_amazon_affiliate
+MUSIC_GENRES = {'jpop', 'rock', 'idol', 'kpop', 'hiphop', 'classic', 'anime', 'seiyuu', 'vtuber', 'youtuber', 'enka', 'jazz'}
+def amazon_cd(name):
+    """アーティスト名からAmazon音楽カテゴリ検索リンクを作る。イベント名の尻尾は落とす。"""
+    kw = re.sub(r'＜.*?＞', '', name); kw = re.sub(r'（.*?）', '', kw)
+    kw = re.split(r'\s+(?:トーク|コンサート|ツアー|ＬＩＶＥ|LIVE|Ｌｉｖｅ|ライブ|リサイタル|ギター|シネマ|２０[０-９]{2}|20\d\d|ｉｎ|周年)', kw)[0].strip('　 ').strip()
+    if not kw:
+        return None
+    return 'https://www.amazon.co.jp/s?k=' + urllib.parse.quote(kw + ' CD') + '&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22'
+
+# 「買えると判定したのに取り込めなかったカード」を貯める(無言ドロップ撲滅・2026-06-23)。
+# build後に__main__が大声で報告し、1件でもあれば非ゼロ終了でゲートする。
+_DROPPED = []
+# ぴあが返したサブカテゴリが PIA_GENRE_MAP に無く、名前ベース fallback に倒れた分（2026-07-31追加）。
+# 無言で間違ったジャンルが下書きされるのを防ぐため、build 後に一覧で報告する。
+# 例＝「音楽/フェスティバル」が未収載で engeki に倒れていた（3521 JAZZ井）。
+_UNMAPPED_SUB = []
+# 🆕【2026-09-11】ページの**告知文にだけ**書いてある先行（「■プレイガイド先行 受付期間：…
+# お申込はこちら」→ pia.jp/v/… の専用申込ページ）。券種カードに出ないので parse_cards が拾えない。
+# 新着の独立再導出で108件中3件見つかった（星新一朗読劇・百鬼夜鏡・UVERworld）。
+# 対象公演が告知文から決まらないことがあるので**自動では足さず、見える所に出すだけ**。
+_NOTICE_PRESALE = []
+_NOTICE_RE = re.compile(r'■\s*([^■<>]{2,40}?先行[^■<>]{0,20}?)\s*受付期間[：:]\s*([^<■]{6,60}?)\s*お申込')
+_NOTICE_URL_RE = re.compile(r'href="(https?://(?:w\.)?pia\.jp/v/[^"]+)"')
+
+
+def find_notice_presales(h):
+    """告知文の「■◯◯先行 受付期間：… お申込はこちら」と、そのページの pia.jp/v/ リンクを拾う。"""
+    plain = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', h))
+    out = [(m.group(1).strip(), m.group(2).strip()) for m in _NOTICE_RE.finditer(plain)]
+    return out, list(dict.fromkeys(_NOTICE_URL_RE.findall(h)))
+
+WD = '月火水木金土日'
+PREFS = '北海道青森岩手宮城秋田山形福島茨城栃木群馬埼玉千葉東京神奈川新潟富山石川福井山梨長野岐阜静岡愛知三重滋賀京都大阪兵庫奈良和歌山鳥取島根岡山広島山口徳島香川愛媛高知福岡佐賀長崎熊本大分宮崎鹿児島沖縄'
+PREF_RE = re.compile('(' + '|'.join(['北海道','神奈川','和歌山','鹿児島'] + [p for p in ['青森','岩手','宮城','秋田','山形','福島','茨城','栃木','群馬','埼玉','千葉','東京','新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知','福岡','佐賀','長崎','熊本','大分','宮崎','沖縄']]) + ')(?:都|道|府|県)?')
+def extract_prefs(*texts):
+    seen, out = set(), []
+    for t in texts:
+        for m in PREF_RE.findall(t or ''):
+            if m not in seen:
+                seen.add(m); out.append(m)
+    return out
+
+def is_preflist(place):
+    """place が「県名の羅列」だけ(実会場名でない)か。全国ツアーのバンドル行は
+    __place に「東京／大阪／愛知」の形で県が入る。"""
+    if not place:
+        return False
+    return not PREF_RE.sub('', place).replace('／', '').replace('・', '').replace('　', '').strip()
+
+def prefs_for(region, place):
+    """券種カードの都道府県を決める。
+
+    【最重要】実会場名から県名を拾ってはいけない。会場名に他県の名が入っていると誤検出し、
+    複数県扱い → prefecture が「全国」に化ける（2026-07-14 ANN WILSON＝会場「東京建物
+    Brillia HALL 箕面 大ホール」は"大阪"の劇場なのに、会場名の"東京"を拾って大阪・東京の
+    2県と読み全国になっていた）。ぴあが出す __region が正。
+    会場名を見るのは ①place が県名の羅列(=複数県ツアー行) ②region が空 の時だけ。"""
+    if is_preflist(place):
+        return extract_prefs(region, place)
+    prefs = extract_prefs(region)
+    if not prefs:
+        prefs = extract_prefs(place)   # regionが取れない時だけ会場名から推測
+    return prefs
+def normalize_pia_url(u):
+    """ticketInformation.do?...&rlsCd=XXX は『特定リリース専用ページ』で、そのリリースが
+    終了すると買える枠ゼロを返す（イベント全体ではまだ受付中でも）。誤って販売中エントリを
+    削除候補化する事故の元なので、必ず event.do（イベント全体）に正規化してから取得する。
+    （2026-06-26 美川憲一/コロッケ誤削除候補化の恒久対策）"""
+    if not u or 'ticketInformation.do' not in u:
+        return u
+    mb = re.search(r'eventBundleCd=(\w+)', u)
+    if mb:
+        return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
+    me = re.search(r'eventCd=(\w+)', u)
+    if me:
+        return 'https://t.pia.jp/pia/event/event.do?eventCd=' + me.group(1)
+    return u
+
+class PiaSorry(Exception):
+    """ぴあの混雑ページ(sorry.pia.jp)に飛ばされた＝券種が読めていない。"""
+
+
+def fetch(u):
+    """🚨2026-08-06追加＝ぴあは混雑すると 302 で sorry.pia.jp に飛ばす。
+    そのHTMLに券種カードは1枚も無いので、黙って解析すると「買える枠ゼロ」に見える。
+    heal_stale_deadlines は build() の結果で tickets を置き換えるため、
+    **この静かな0で実在する枠が消える**（2026-08-06実害＝2735の2会場・615の1枠）。
+    飛ばされたら例外にして、上位の _DROPPED / FETCH-ERR に必ず出す。"""
+    u = normalize_pia_url(u)
+    req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        final = r.geturl()
+        body = r.read().decode('utf-8', 'replace')
+    if 'sorry.pia' in final or 'sorry.pia' in body[:4000]:
+        raise PiaSorry('ぴあが混雑ページに飛ばした（券種は読めていない）: ' + final)
+    return body
+
+def is_error_page(h):
+    """ぴあのエラー/確認ページ判定。eventCdが無効化/削除/差し替えされるとイベント本文でなく
+    「ご確認ください」(error-container)が返る。0カードと区別できず無言で枠を失う原因なので
+    明示検出する(2026-06-30 風輪のeventCd 2623808が朝有効→夜無効化=ご確認ください の取りこぼし)。"""
+    return bool(h) and ('<title>ご確認ください' in h or 'class="error-container"' in h)
+
+class WpiaFormPage(Exception):
+    """【誤削除の罠】ぴあが券種を w.pia.jp/t/xxx（WEB直販ページ）で出すイベントは、t.pia.jp 側に
+    ticketSalesCard-2024 の券種カードを1枚も持たない。パーサは0カード→「買える枠ゼロ」と読み、
+    販売中のエントリを削除候補に出してしまう（2026-07-15 nobinobi 2026＝当日12:00発売開始の
+    フェスを危うく削除するところだった）。カード0かつw.pia.jpリンク有り＝機械照合の対象外なので、
+    Noneを返さず例外で止める。呼び出し側は削除候補にせず人間の目視へ回すこと。"""
+
+class PiaEventGone(Exception):
+    """【購入ボタンが無言で死ぬ罠】ぴあは eventCd を後から無効化し、同じ興行を
+    eventBundleCd のツアーページに作り直すことがある。無効化された eventCd は HTTP 200 のまま
+    「ご確認ください／ご指定の公演情報が見つかりませんでした」を返すので、券種カードは0枚。
+    0枠と区別せずに扱うと **販売中のイベントが「買える枠ゼロ＝削除候補」に化ける**
+    （2026-08-12 実害＝2605 ザ・シスターズハイ／4120 PompadollS。どちらも投入時のゲートは
+     通っており、その後ぴあがURLを消した。ユーザーが画面で「タップしても飛ばない」と発見）。
+    is_error_page() 自体は 2026-06-30 から在ったが reconcile_pia でしか呼ばれておらず、
+    heal_stale_deadlines は素通しだった＝穴。build() で例外にして全呼び出し元に効かせる。
+    受け取った側は **削除候補にせず、tools/pia_kw_search.py で後継URLを探すこと**。"""
+
+
+def wpia_only(h):
+    """券種カードが1枚も無く、w.pia.jp の購入リンクがある＝WEB直販形式のページ。"""
+    if not h:
+        return False
+    return 'ticketSalesList-2024__item' not in h and 'https://w.pia.jp/t/' in h
+def txt(s): return _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s or ''))).strip()
+def wd(iso):
+    y, m, d = map(int, iso.split('-')); return WD[datetime.date(y, m, d).weekday()]
+def jp(iso):
+    y, m, d = map(int, iso.split('-')); return f"{y}年{m}月{d}日({wd(iso)})"
+def prefshort(p): return p if p == '北海道' else re.sub(r'(都|道|府|県)$', '', p)
+def md(iso): _, m, d = iso.split('-'); return f"{int(m)}/{int(d)}"
+def era(iso):
+    """公演年が当年(today基準)より先なら令和略記「R{N}年 」(2027→R9年/2028→R10年)。当年以下は空。
+    旧md()は年を捨てており2027公演のR9年表記が毎回抜けていた恒久対策(2026-06-28・feedback_r9_year_notation)。"""
+    y = int(iso[:4]); base = datetime.date.today().year
+    return f"R{y - 2018}年 " if y > base else ''
+def mdbadge(start, end):
+    """公演日バッジ。単日=R{N}年付M/D。範囲=同年(同era)なら先頭だけ・異年は両端にera。
+    ※異年で開始側のeraを落とすバグがあった(2027→2028ツアーでstart=2027のR9年が消えた=2026-06-30
+    Vaundy 2027-2028で発覚)。es='' なら自然に省略されるので両端付けが正しい。"""
+    s_md = f"{int(start[5:7])}/{int(start[8:10])}"; e_md = f"{int(end[5:7])}/{int(end[8:10])}"
+    es, ee = era(start), era(end)
+    if start == end: return f"{es}{s_md}"
+    if es == ee: return f"{es}{s_md}〜{e_md}"
+    return f"{es}{s_md}〜{ee}{e_md}"
+def ecd_url(u):
+    mm = re.search(r'eventCd=(\w+)', u or ''); return 'https://t.pia.jp/pia/event/event.do?eventCd=' + mm.group(1) if mm else None
+
+def src_event_url(u):
+    """候補の元URL(eventCd or eventBundleCd)から、その公演ページの event.do URL を作る。
+    抽選券(lotRlsCd hrefでeventCd無し)に「由来ページ」のurlを付けてボタン誤誘導を防ぐため。"""
+    mb = re.search(r'eventBundleCd=(\w+)', u or '')
+    if mb: return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
+    return ecd_url(u)
+
+# 🚨2026-08-27＝ぴあの券種リンクには**2つの形**がある。
+#   ① https://t.pia.jp/pia/ticketInformation.do?eventCd=..&rlsCd=..   （大多数）
+#   ② http://ticket.pia.jp/sp/ticketInformation.do?eventCd=..&rlsCd=.. （スマホ形式・httpでホストも違う）
+#   旧実装は①しか拾わず、②のページでは url が空になっていた。url は
+#   **枠の同一性(slot_code)** と **発売前の締切を券種ページから補う処理** の両方で使うので、
+#   空だと「別の売り場なのに同じ枠と見なして畳む」事故につながる（[[feedback_pia_parser_flattens_slots]]）。
+#   実例＝『グレンギャリー・グレンロス』(eventCd=2623908)／「ロックンロール」(eventCd=2631631)。
+_TICKETINFO_RE = re.compile(r'href="(https?://(?:t\.pia\.jp/pia|ticket\.pia\.jp/(?:pia|sp))/ticketInformation\.do\?[^"]+)"')
+
+def ticketinfo_href(card_html):
+    """券種カードから ticketInformation.do のURLを取り、正規の https://t.pia.jp/pia/ 形に揃える。"""
+    m = _TICKETINFO_RE.search(card_html or '')
+    if not m:
+        return None
+    u = _html.unescape(m.group(1))
+    q = u.split('ticketInformation.do?', 1)[1]
+    return 'https://t.pia.jp/pia/ticketInformation.do?' + q
+
+
+def parse_cards(h):
+    rows = []
+    for it in re.split(r'(?=<li class="ticketSalesList-2024__item)', h):
+        if 'ticketSalesCard-2024__status' not in it: continue
+        g = lambda p: (re.search(p, it, re.S).group(1) if re.search(p, it, re.S) else '')
+        dts = re.findall(r'datetime="(\d{4}-\d{2}-\d{2})', it)
+        stat = re.search(r'__status (is-[\w-]+)">(.*?)(?:<br|</p>)', it, re.S)
+        cls = stat.group(1) if stat else ''
+        stt = txt(stat.group(2)) if stat else ''
+        # ステータスは【HTMLクラス】基準で判定（文言ゆれに強い）。
+        # is-active=受付中 / is-before=発売前(「まもなく抽選受付」等の先行も拾う) / それ以外=対象外。
+        # ただし売切・終了・結果発表は文言でも明示除外（クラスがactive/beforeでも保険）。
+        # ※2026-06-20: 「まもなく抽選受付」(is-before)を受付終了と誤判定しプレリザーブ3枠ドロップした反省。
+        # 「本サイト取扱なし」＝ぴあにページはあるが ぴあでは買えない券(店頭のみ等)。
+        # 発売日も書かれない(when='')ので、除外しないと毎回 parse_when が落ちて取りこぼし警告で
+        # ビルドがゲートされる(2026-07-16 / 07-20 に同じ 風とロック芋煮会シャトルバス券 で2回停止)。
+        # ぴあで買えない＝購入導線を作れないので対象外。他ベンダー単独の券を落とす話ではない
+        # (memory: feedback_vendor_priority ＝ローチケ/e+単独は載せる)。
+        # 「貸切公演」＝主催者が枠ごと買い上げた回。ぴあにカードは出るが一般には売らないので
+        # 発売日も書かれず(when='')、放置すると毎回 parse_when が落ちて取りこぼし警告でビルドが
+        # 止まる（2026-09-07 中部フィル 室内楽シリーズVol.6 / 09-08 も同型で2回停止）。
+        # 🚨判定するのは【ステータス文言】だけ＝公演名に「ぴあ貸切公演」と入る実売の回
+        #   （5424 新国立劇場バレエ団 ぴあスペシャルデー）を巻き添えにしない。
+        if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|販売期間終了|終了しました|結果発表|取扱なし|貸切公演)', stt):
+            state = '受付終了'
+        elif cls == 'is-active' or re.search(r'(販売期間中|受付中|発売中|販売中|発売初日|本日発売)', stt):
+            # ※「本日発売初日」はクラスがis-beforeでも“今日から販売中”＝受付中扱い。
+            #   発売前(これから)と取り違えると parse_when が終了日のみ「～7/23」を解析できず脱落する
+            #   (2026-06-23 めざましWANGANフェス8/5 New Beginning Fesがドロップした反省)。
+            state = '受付中'
+        elif cls == 'is-before' or '発売前' in stt or 'まもなく' in stt:
+            state = '発売前'
+        else:
+            state = '受付終了'
+        # 🚨 __place は1枚のカードに複数入る（多会場ツアーは [県の羅列, 会場1, 会場2, …]）。
+        # 以前は re.search で【1個目だけ】読んでいたため、多会場だと1個目＝県の羅列を掴んで
+        # is_preflist→venue='' となり「全国ツアー（）」の空カッコ会場が量産されていた
+        # （2026-07-27 発見。それまで毎バッチ手作業で会場名を埋めていた）。
+        places = [txt(x) for x in re.findall(r'__place"[^>]*>(.*?)</span>', it, re.S)]
+        place = places[0] if places else ''
+        card_venues = list(dict.fromkeys(p for p in places if p and not is_preflist(p)))
+        region = txt(g(r'__region">(.*?)</span>'))
+        prefs = prefs_for(region, place)   # 実会場名からは県を拾わない(全国化バグの恒久対策)
+        rows.append({
+            'perfdate': dts[0] if dts else '', 'perf_end': dts[-1] if dts else '',
+            'venue': card_venues[0] if len(card_venues) == 1 else '',
+            'venues': card_venues, 'prefs': prefs,
+            'title': txt(g(r'__title">(.*?)</p>')), 'state': state,
+            'stt': stt,   # ステータスの生文言（「当日券発売中」等の判定に使う）
+            'when': txt(g(r'__status[^>]*>.*?<br>\s*<span[^>]*>(.*?)</span>')),
+            'url': ticketinfo_href(it),
+        })
+    seen, u = set(), []
+    for r in rows:
+        # 🚨枠の同一性は【飛び先の売り場コード】で決まる。見た目の文言・公演日・締切が同じでも、
+        # eventCd/rlsCd/lotRlsCd が違えば別の売り場＝畳んだら導線が消える。
+        # ツアーのまとめページは公演日を出さないカードがあり、それを畳むと枠が丸ごと消える
+        # （2026-08-17 Juice=Juice 7枠→3枠／2026-08-18 杉山清貴の福岡プレリザーブ見逃し）。
+        k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'], r['when'],
+             slot_code(r.get('url')))
+        if k in seen: continue
+        seen.add(k); u.append(r)
+    fill_when_from_ticketinfo(u)
+    return u
+
+# 一覧カードに発売日が出ない発売前枠がある（ぴあの表示は「販売停止（発売日待ちです）」だけ）。
+# その枠は when='' になり、parse_when が解析できず【買える枠なのに丸ごと落ちる】。
+# 2026-08-19 に 天満天神繁昌亭(950/4673) の 10/31公演 で発覚＝券種ページには
+# 「発売開始 2026/8/31(月) 10:00～」と書いてある。一覧に無いときだけ券種ページを読んで補う。
+_WHEN_RE = re.compile(r'発売開始\s*(\d{4}/\d{1,2}/\d{1,2}\([^)]{1,3}\))\s*(?:昼|夜)?\s*(\d{1,2}:\d{2})')
+
+def fill_when_from_ticketinfo(rows):
+    for r in rows:
+        if r['state'] != '発売前' or r['when'] or not r.get('url'):
+            continue
+        try:
+            # 🚨fetch() は ticketInformation.do を event.do へ正規化してしまう（別用途の安全策）。
+            #   ここは券種ページそのものを読みたいので、正規化せずに取りに行く。
+            req = urllib.request.Request(r['url'], headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                if 'sorry.pia' in resp.geturl():
+                    continue
+                h = resp.read().decode('utf-8', 'replace')
+        except Exception:
+            continue
+        if 'sorry.pia' in h[:4000]:
+            continue
+        m = _WHEN_RE.search(txt(h))
+        if m:
+            # 一覧カードと同じ「YYYY/M/D(曜) HH:MM より発売」形へ揃える（parse_when がこの形を読む）
+            r['when'] = '%s %s より発売' % (m.group(1), m.group(2))
+
+def slot_code(url):
+    """ぴあの券種カードのリンク先から「売り場の識別子」を作る。
+    eventCd=どの公演か / rlsCd=どの一般発売枠か / lotRlsCd=どの抽選先行枠か。
+    この3つが同じなら同一の売り場、1つでも違えば別の売り場。
+    [[feedback_pia_parser_flattens_slots]] / [[feedback_dedup_badges_keeps_urls]]"""
+    if not url:
+        return ''
+    return '|'.join((re.search(k + r'=(\w+)', url).group(1)
+                     if re.search(k + r'=(\w+)', url) else '')
+                    for k in ('eventCd', 'rlsCd', 'lotRlsCd'))
+
+
+def drop_labels_in_name(type_str, name):
+    """券種名の【ラベル】が公演名にも入っているなら冗長なので落とす。
+    例: 公演名「【かわさきジャズ2026】しんゆりJAZZストリーム」の枠が
+        「一般発売【かわさきジャズ2026】」になるとバッジが二重に名乗って読みにくい。
+    「【学生限定LIVE】」「【サイン会付き】」のように公演名に無いものは券種の区別なので残す。"""
+    n = norm_fw(name or '')
+    def _f(m):
+        return '' if norm_fw(m.group(1)) in n else m.group(0)
+    return re.sub(r'【(.*?)】', _f, type_str)
+
+def kenshu(title):
+    labels = []
+    base = _kenshu_base(title, labels)
+    # 説明ラベル(【11月平日限定】【サイン会付き】【座席券】等)は券種名に戻す。落とすと特典違い・
+    # 席種違いの枠が同じバッジ文字列になり「同じバッジが2つ」に見える(2026-07-15 ミルキー☆サブウェイ展
+    # のサイン会付き券／特別展「生きものたちの性」の11月平日限定券で発覚)。
+    return base + ''.join(f'【{x}】' for x in labels)
+
+# 囲みの中身が「券種語だけ」かを判定するための除去パターン。これで消して何も残らなければ
+# 装飾囲み(【一般発売】〔当日引換券〕)＝落とす。何か残れば席種/特典の説明ラベル
+# (〔テーブルシート販売〕【11月平日限定】)＝券種を区別する情報なので残す（2026-07-30）。
+# 旧版は「発売|販売|…を含めば落とす」だったので〔テーブルシート販売〕まで落ちていた。
+_DECOR_RE = re.compile(r'(一般|発売|販売|先行|受付|抽選|当日|引換|券|プリセール|プレリザーブ|'
+                       r'プレリク|最速|オフィシャル|プレイガイド|次|[0-9０-９]|[・／/　 ])')
+
+_BR_OPEN, _BR_CLOSE = '（(【〔［＜〈', '）)】〕］＞〉'
+
+def _split_top(s, sep):
+    """囲みの深さ0にある sep で1回だけ切る。見つからなければ None。
+
+    🚨囲みの中の「／」は席種名の区切り（「一般発売（帯広／車椅子席）」）であって
+    「券種 ／ 公演名」の区切りではない。素の str.split だと中で切れて券種名が
+    「一般発売（帯広」に化ける（2026-09-05 LiSA 4052 / 怒髪天 722 で発覚）。
+    """
+    d, i, n = 0, 0, len(sep)
+    while i < len(s):
+        c = s[i]
+        if c in _BR_OPEN:
+            d += 1
+        elif c in _BR_CLOSE:
+            d = max(0, d - 1)
+        elif d == 0 and s.startswith(sep, i):
+            return s[:i], s[i + n:]
+        i += 1
+    return None
+
+def _kenshu_base(title, labels):
+    # ＜...＞【...】〔...〕［...］の囲み(公演日/区分指定)を全部除去。中の全角／を区切りと誤認して
+    # 「一般発売（９」「一般発売【６」等に化けるのを防ぐ(2026-06-23 JUJU・KAWAII LABで発覚)。
+    def _brace(m):
+        inner = m.group(1).strip()
+        # 落とすのは①券種語の装飾囲み(【一般発売】【先行】)②公演日の囲み(【６／２７公演】)。
+        # それ以外＝券種を区別する説明ラベル(【11月平日限定】【座席券】)は labels に退避して残す。
+        # 🚨「『公演』の字を含めば丸ごと落とす」は乱暴すぎた（2026-08-26 サンパレス六甲
+        # ウィンターディナーショーで発覚）。ぴあは同じ日の別回を **＜昼公演＞＜夜公演＞** と書く。
+        # 落とすと2枠とも「一般発売」になり、**同じ文言に潰れて dedup で片方が消える**
+        # （[[feedback_pia_parser_flattens_slots]]／[[feedback_same_day_show_time_badge]]）。
+        # → 日付・曜日カッコ・区切り・「公演」の字を取り除いた残りが空の時だけ落とす。
+        _bare = re.sub(r'[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}', '', inner)
+        _bare = re.sub(r'[（(][月火水木金土日祝・\s　]*[）)]', '', _bare)
+        _bare = re.sub(r'[\s　・／/]', '', _bare).replace('公演', '')
+        if not _bare or not _DECOR_RE.sub('', inner):
+            return ''
+        # 🚨「M／D 形を含む囲みは丸ごと落とす」は乱暴すぎた（2026-07-30 THE AWAODORI で発覚）。
+        # ぴあは【８／１３（木）第２部】のように**日付と一緒に区別語**を入れることがあり、落とすと
+        # 同じ会場の別公演が「一般発売【株式会社バル 紺屋町演舞場】」で**2枚とも同じ文字列**になる
+        # ＝ユーザーが8/13の第2部を選べない（席種ラベル落ちと同型・reconcileは枠数一致で気づけない）。
+        # → 日付・曜日カッコ・区切りを取り除いた残りが空なら落とす、何か残るなら残す。
+        rest = re.sub(r'[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}', '', inner)
+        rest = re.sub(r'[（(][月火水木金土日祝・\s　]*[）)]', '', rest)
+        rest = re.sub(r'[\s　・／/]', '', rest)
+        if not rest:
+            return ''
+        # ③県名だけの囲み(〔大阪〕〔東京・兵庫〕)は落とす。県はバッジ側で（県 M/D公演）と
+        #   付け直すので、残すと二重に名乗る（2026-07-30）。
+        #   「＜京都公演＞」のように**県名＋「公演」**の形も同じ（2026-08-26 追加）。
+        #   ＝「一般発売【京都公演】（京都 12/19公演）」と二重に名乗るのを防ぐ。
+        #   ただし「昼公演」「夜公演」は県名ではないので残る。
+        if inner and not re.sub(PREF_RE, '', inner).strip('・／/、,　 '):
+            return ''
+        if _bare and not re.sub(PREF_RE, '', _bare).strip('・／/、,　 '):
+            return ''
+        if inner:
+            # 残すラベル内の全角／は日付の区切り(【8／13（木）第2部】)。norm_fw は ／ を
+            # ツアー会場の区切りとして保護するのでここで半角化しておく（サイト表記は半角が既定
+            # ＝[[feedback_newpool_fullwidth_halfwidth]]。バッジに全角／が残ると化け検出にも当たる）。
+            labels.append(inner.replace('／', '/'))
+        return ''
+    # ＜…＞も同じ扱い。＜６／２４公演＞は落とすが、＜学生限定LIVE＞＜2DAY通し券＞は券種を分ける
+    # 情報なので残す（落とすと学生限定券と通常券が同じ「一般発売」バッジになり1枠に潰れる。
+    # 2026-07-15 KAWAII LAB. MATESで発覚）。
+    t = re.sub(r'＜(.*?)＞', _brace, title)
+    # 〈…〉(U+3008/3009) は ＜…＞(U+FF1C/FF1E) と別文字。ここが抜けていたため
+    # 「一般発売〈１１／１３（金）公演〉」の中の全角／が券種/公演名の区切りと誤認され、
+    # base=「一般発売〈11」＋label「13（金）公演〉」→ **「一般発売〈11【13（金）公演〉】」**と
+    # 化けていた（2026-08-14 siruko 4258/4259・いぎなり東北産 1149 で発覚。囲み落としの
+    # 抜け穴としては ＜＞【】〔〕［］ に続く第5の型）。
+    t = re.sub(r'〈(.*?)〉', _brace, t)
+    t = re.sub(r'【(.*?)】', _brace, t)
+    # 〔…〕［…］も同じ扱い。旧版は無条件除去だったため「一般発売〔テーブルシート販売〕」が
+    # 「一般発売」に潰れ、通常券と同じバッジ文字列になっていた（2026-07-30 ギラヴァンツ北九州で
+    # 発覚＝KAWAII LAB.の学生限定券と同型の事故。reconcileは枠数一致なので気づけない）。
+    t = re.sub(r'〔(.*?)〕', _brace, t)
+    t = re.sub(r'［(.*?)］', _brace, t)
+    # ◎K-1.CLUB◎一般発売 のように【同じ記号で囲んだ装飾ラベル】を先頭に付ける表記がある。
+    # 先頭/末尾stripでは内側の記号が残る（2026-07-13 K-1 WORLD MAXで発覚）。囲みごと落とす。
+    t = re.sub(r'^([●○◎★☆■◆])[^●○◎★☆■◆]*\1', '', t).strip()
+    # （９／２２公演）等の丸カッコ公演日も除去。type側で（県 M/D公演）を付け直すので不要。
+    # 曜日を入れ子カッコで書く「（１０／３０（金）公演）」形があるので1段の入れ子を許す。
+    # 内側の（金）で外側のマッチが切れると公演日カッコが残り、下の「券種／公演名」splitが
+    # 中の全角／を区切りと誤認して券種名が「一般発売（１０」に化ける（2026-07-24 摩天楼オペラ）。
+    _INNER = r'(?:[^（）]|（[^（）]*）)*'
+    # 🚨「／を含む丸カッコは丸ごと落とす」は乱暴すぎた（2026-09-05 LiSA 4052 で発覚）。
+    # 「一般発売（帯広／車椅子席）」の囲みまで消えて**車椅子席の枠が通常券と同じ
+    # 「一般発売」に潰れ**、同じ文言のバッジが2枚並んだ（[[feedback_pia_parser_flattens_slots]]
+    # ／KAWAII LAB.の学生限定券と同型）。落とすのは「公演」の字か M／D の日付形を含む囲みだけ。
+    _DATEP = r'[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}'
+    t = re.sub(r'（' + _INNER + r'(?:公演|' + _DATEP + r')' + _INNER + r'）', '', t)
+    # 半角丸カッコ「(１／１０公演)」も同じ扱い。全角しか見ていなかったため囲みが残り、
+    # 下の「券種／公演名」splitが中の全角／を区切りと誤認して券種名が
+    # 「一般発売(1【10公演)】」に化けていた（2026-09-05 怒髪天 722 で発覚）。
+    _INNER_H = r'(?:[^()]|\([^()]*\))*'
+    t = re.sub(r'\(' + _INNER_H + r'(?:公演|' + _DATEP + r')' + _INNER_H + r'\)', '', t)
+    # 「９／１８（金）一般発売」のように公演日を券種名の頭に付ける表記がある。この／を下の
+    # 「券種／公演名」区切りと誤認すると券種名が「9」だけになる（2026-07-14 巨人×中日で発覚）。
+    t = re.sub(r'^[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}\s*(?:（[^（）]*）|\([^()]*\))?\s*', '', t).strip()
+    KW = (r'(プレイガイド最速先行|最速先行|オフィシャル先行|\d次プレリザーブ|プレリザーブ\d次|'
+          r'プレリザーブ|\d次受付|プリセール|一般発売|一般販売|当日引換券|当日券|先行)')
+    if '／' in t:
+        # 🚨ぴあは「券種 ／ 公演名」を**前後スペース付きの「 ／ 」**で区切り、券種名の中の
+        # 席種は「一般発売／勝欲の秋シート」のようにスペース無しで繋ぐ。旧版はスペース無しの
+        # 「／」で切っていたため席種名が丸ごと落ち、同じ「一般発売」バッジが何枚も並んだ
+        # （2026-07-30 巨人×中日の勝欲の秋シート／浦和レッズのメインアッパー指定席で発覚。
+        #  reconcileは枠数一致なので気づけない＝KAWAII LAB.学生限定券と同型の事故）。
+        sep = ' ／ ' if ' ／ ' in t else '／'
+        # 🚨切るのは**囲みの外にある／だけ**（2026-09-05）。囲みの中の／は席種の区切りで、
+        # 素の split だと「一般発売（帯広／車椅子席） ／ ＬｉＳＡ」が「一般発売（帯広」に化ける。
+        parts = _split_top(t, sep)
+        if parts is None and sep == ' ／ ':
+            parts = _split_top(t, '／')
+        # 先頭/末尾の飾り記号(●○★@※等)はぴあ表記の装飾。バッジに出さない(2026-07-10)。
+        head = (parts[0] if parts else t).strip('　 .・●○◎◆◇■□★☆@＠※〇▼▲').strip()
+        # head の中に「／」が残る＝「券種語／席種名」。席種名は券種を区別する情報なので
+        # ラベルに退避して残す（落とすと席種違いが1枠に潰れて買えない席が見えなくなる）。
+        sub = _split_top(head, '／')
+        if sub:
+            kwp, seat = sub
+            if re.search(KW, kwp) and seat.strip():
+                labels.append(seat.strip())
+                head = kwp.strip()
+        # 囲みごと残った席種名の中の全角／は半角に寄せる（バッジに全角／が残ると
+        # check_badges の化け検出に当たる＝[[feedback_newpool_fullwidth_halfwidth]]）。
+        head = head.replace('／', '/')
+        # ぴあは「券種 ／ 公演名」が基本だが、公演名そのものに／を含み「公演名★2次受付〔東京〕」と
+        # 出す枠がある。この場合 head は公演名の断片＝券種でない（2026-07-14『いきなり本読み!』で発覚）。
+        # head に券種語が無ければ、元の文字列から券種語を拾い直す。
+        if head and not re.search(r'(発売|販売|先行|受付|プリセール|プレリザーブ|当日|抽選)', head):
+            m = re.search(KW, t)
+            if m:
+                return m.group(1)
+        return head or '一般発売'
+    m = re.search(KW, t)
+    return m.group(1) if m else '先行'
+
+def parse_when(state, when):
+    if state == '発売前':
+        m = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?\s*より発売', when)
+        if m:
+            iso = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"; t = m.group(4)
+            return (f"{int(m.group(2))}/{int(m.group(3))} {t}発売" if t else f"{int(m.group(2))}/{int(m.group(3))}発売"), iso, iso
+        # プレリザーブ/抽選受付など「START(日 時) ～ END」レンジ形。
+        # 例: "2026/6/20(土) 11:00 ～ 2026/6/28(日) 23:59"
+        # START=発売日→startDate(カウントダウン先)、END=販売終了日→date(発売時刻後の「〜締切」表示)。
+        # 2026-07-09修正: 従来ENDを捨てdate=STARTにしていたため、発売時刻を過ぎると「販売中〜発売日」に
+        # 壊れて表示された(ユーザー指摘・倉敷歌謡コンサート等16件)。ENDを取り込み date=END/startDate=START に。
+        m2 = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?\s*～\s*(?:(\d{4})/(\d{1,2})/(\d{1,2}))?', when)
+        if m2:
+            iso = f"{m2.group(1)}-{int(m2.group(2)):02d}-{int(m2.group(3)):02d}"; t = m2.group(4)
+            end = f"{m2.group(5)}-{int(m2.group(6)):02d}-{int(m2.group(7)):02d}" if m2.group(5) else iso
+            return (f"{int(m2.group(2))}/{int(m2.group(3))} {t}発売" if t else f"{int(m2.group(2))}/{int(m2.group(3))}発売"), end, iso
+        # 終了日だけの形「～ END」で来る先行(本日発売初日の前日等)→ENDを採り販売中形で拾う。
+        # 開始日が読めずNoneで無言ドロップしていた(2026-06-24 琉球フェスFM沖縄先着先行の反省)。
+        m3 = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?', when)
+        if m3:
+            iso = f"{m3.group(1)}-{int(m3.group(2)):02d}-{int(m3.group(3)):02d}"; t = m3.group(4)
+            return (f"〜{int(m3.group(2))}/{int(m3.group(3))} {t}" if t else f"〜{int(m3.group(2))}/{int(m3.group(3))}"), iso, None
+        # 時刻だけの「HH:MMより発売」(日付なし) = 本日発売。ぴあは“当日に発売開始する枠”を日付省略で
+        # 時刻だけ書く(将来発売は必ずYYYY/M/D形で書く)。日付が読めずNoneで無言ドロップしていた当日引換券/
+        # 本日発売を today で拾う。2026-06-30 飯田洋輔の当日引換券「18:00より発売」=本日(6/30)発売の取り
+        # こぼしが真因(FRUITS ZIPPER 115/NXMERCY/LANAも同型)。実HTML確認: is-before「本日発売初日」に
+        # 切替わる前の発売前表示が時刻のみだった。
+        m4 = re.search(r'(\d{1,2}:\d{2})\s*より発売', when)
+        if m4 and not re.search(r'\d{4}/\d', when):
+            td = datetime.date.today()
+            return f"{td.month}/{td.day} {m4.group(1)}発売", td.isoformat(), td.isoformat()
+    else:
+        m = re.search(r'～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*[^\d:：～]*(\d{1,2}:\d{2})?', when)
+        if m:
+            iso = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"; t = m.group(4)
+            return (f"〜{int(m.group(2))}/{int(m.group(3))} {t}" if t else f"〜{int(m.group(2))}/{int(m.group(3))}"), iso, None
+    return None, None, None
+
+def parse_when_row(r):
+    """カード1枚から (suf, iso, sd) を出す。parse_when が落ちる表記の受け皿もここに集める。
+    🚨**ビルドと照合(reconcile_pia)の両方がこれを呼ぶ**＝片方だけ直すと、
+      「登録できるのに照合がDROPと言う」ズレが出る（2026-09-09 当日券で実際に起きた）。"""
+    suf, iso, sd = parse_when(r['state'], r['when'])
+    if not iso and '当日券' in (r.get('stt') or ''):
+        # 「当日券発売中」＝その日の公演の当日券。ぴあは販売期間を書かない(when='')ので
+        # parse_when が落ち、**いま本当に買える枠が丸ごと消えていた**
+        # （2026-09-09 発覚＝7434 レイラック滋賀FC／7466 新日本プロレス）。
+        # 当日券は公演が終われば売り終わるので **公演日で締める**（DELETE_GATE 6章）。
+        return '当日券', (r.get('perf_end') or r['perfdate']), None
+    return suf, iso, sd
+
+
+def genre_of(n):
+    """名前ベースのジャンル推測（bundleページ等でぴあカテゴリが取れない時のフォールバック）。"""
+    if re.search(r'落語|寄席|独演会|二人会|お笑い|漫才|ものまね|コント|新喜劇|喜劇|講談|演芸', n): return 'owarai'
+    # 舞台（演じるのを観る）と音楽（演奏を聴く）で行き先が違う＝2026-09-01の分割
+    if re.search(r'狂言|能楽|文楽|歌舞伎|日本舞踊|をどり|神楽|薪能', n): return 'dento'
+    if re.search(r'雅楽|邦楽|和太鼓|三味線|尺八|箏曲|和楽器', n): return 'hougaku'
+    if re.search(r'バレエ|オペラ|クラシック|交響|管弦|フィル', n): return 'classic'
+    if re.search(r'ミュージカル', n): return 'musical'
+    return 'engeki'
+
+# ぴあ個別公演ページの <title> 末尾 [カテゴリ サブカテゴリ] → OSHINAVIジャンル(主, 追加)
+# 2026-06-20 演劇50件で実証・ユーザー確定。memory: project_vendor_genre_autoassign
+PIA_GENRE_MAP = {
+    # 演劇カテゴリ
+    '寄席・お笑い': ('owarai', None),
+    '歌舞伎・古典芸能': ('dento', None),
+    'バレエ・ダンス': ('classic', 'engeki'),   # バレエ=classic+engeki両方方式
+    '人形劇・キャラクター': ('kids', None),
+    'ミュージカル・ショー': ('musical', None),
+    '朗読・リーディング': ('engeki', None),
+    '演劇': ('engeki', None),
+    '演劇その他': ('engeki', None),
+    # 音楽カテゴリ（粒度はぴあ依存・J-POP・ROCKは粗いので人が最終判断）
+    'ジャズ・フュージョン': ('jazz', None),
+    '演歌・邦楽': ('enka', None),
+    'クラシック': ('classic', None),
+    'J-POP・ROCK': ('jpop', None),
+    # 🚨🚨2026-08-26 ユーザー判断で jpop → musicetc（表示「その他」）に**再変更**。
+    #   あたしは 8/24 に「**その他タブは誰も開かない＝埋もれる**」と書いて jpop に落としたが、
+    #   ユーザーに理屈をひっくり返された：
+    #     「その他で検索する人はいないからってあなた言ってた
+    #      **でも、他に見つけられないとき、その他見るかもしれない**」
+    #   ＝その他は「誰も開かない箱」ではなく「**他で見つからなかった人が最後に開く砦**」。
+    #   しかも jpop に入れると、対談シリーズ・シネマコンサート・周年イベントまで音楽タブに混ざり、
+    #   **J-POPを探しに来た人のノイズになる**。その他へ寄せれば音楽タブの純度も上がる（両得）。
+    #   🚨ユーザー「**その他は私が作ろうって言ったのに、あなたが阻止したのよ／やっぱり作らないとダメよ**」
+    '音楽その他': ('musicetc', None),
+    # 🚨2026-08-26 追加＝ぴあが**カテゴリとして**「フェスティバル」と言っているならそれに従う。
+    # ユーザー「**ぴあの言う通りでって決めてたはず／まえも言ったこと言ってる気がする**」。
+    # [[feedback_fes_definition]]の「屋内はfesにしない」は**名前に「フェス」が付いているだけ**の時の話
+    # （2026-06-23にあたしが名前だけ見て屋内イベントを fes にしようとして叱られた件）で、
+    # ぴあのカテゴリ判定とは別の軸。人の最終判断を挟むから毎回迷って二度手間になっていた。
+    'フェスティバル': ('fes', None),
+    # 2026-07-29 追加＝実ページの<title>で存在を確認したカテゴリ。
+    # 旧版は対応表に無いと _piaSub ごと捨てていたので、そもそも存在に気づけなかった。
+    '海外ROCK・POPS': ('yougaku', None),      # SQUEEZE(梅田クラブクアトロ)で確認
+    '民族音楽': ('yougaku', None),             # ネパールの詩心～四季と祭り～で確認（海外の音楽）
+    # 2026-07-30 追加＝イベントカテゴリに fallback が無く、genre_of(名前キーワード)で
+    # engeki へ倒れていた（にゃんだらけ21・スキップとローファー展・夏まつり2件が engeki 下書き）。
+    '博覧会・展示会・見本市': ('art', None),    # 深堀隆介展・キボリノコンノ展・にゃんだらけで確認
+    # 2026-07-30 追加(第2弾)＝イベントカテゴリのサブが未収載で、また engeki へ倒れていた分。
+    # 「対応表に無いサブは名前ベースfallback＝だいたい engeki」という穴を1つずつ潰す。
+    '子供と楽しむ': ('kids', None),             # 「おかあさんといっしょ」ファンターネ!で確認
+    'アミューズメント': ('kids', None),          # マクセル アクアパーク品川(水族館入場券)で確認
+    'スクール・レジャー': ('kids', None),        # わんにゃん夜ふかし縁日で確認
+    # 2026-08-03 追加(第3弾)＝映画/アート/イベントのサブが未収載で、また engeki へ倒れていた分
+    # （新着50件で18件が fallback＝下書きの3分の1が誤り）。OSHINAVI側に既にあるジャンルへ寄せる。
+    '舞台挨拶': ('aisatsu', None),              # 仮面ライダーゼッツ／SEKIRO／スクライドで確認（表示名「舞台挨拶」）
+    'アート': ('art', None),                    # 竹久夢二展・細田守の原点/展・画家とモデルで確認
+    'アニメ音楽': ('anime', None),               # きたまえ↑2026で確認（ぴあが明示している）
+    'ディナーショー': ('dinnershow', None),       # 新浜レオン ディナーショーで確認
+    '邦画': ('movie', None),                    # 2026-09-13 ユーザー「映画ジャンル作って」＝演劇タブから独立
+    # 🚨2026-08-26 engeki → musicetc。映画の「その他」を演劇タブに置く理由が無い。
+    '映画その他': ('movie', None),               # 2026-09-13 映画タブができたのでそちらへ（大分類のタブがあるものはそこへ）
+    '映画祭': ('movie', None),
+    'ライブビューイング': ('engeki', None),        # 宝塚の千秋楽中継で確認（中継元が音楽なら要手直し）
+    # 🚨2026-09-03 engeki → talkshow（ユーザー「トークショー作って」）。
+    #   トーク主体の公演が演劇タブに混ざっていて、演劇を探しに来た人のノイズになっていた。
+    '講演会・トークショー': ('talkshow', None),
+    # 🚨2026-08-26 engeki → musicetc（表示「その他」）。イベントの「その他」を演劇タブに置くと、
+    #   演劇を探しに来た人のノイズになる。行き先が無いものは**その他という砦**に置く
+    #   （ユーザー「他に見つけられないとき、その他見るかもしれない」）。
+    #   ⚠️ただし「その他」タブをカテゴリごとに乱造はしない＝受け皿は musicetc の1つで足りる
+    #   （ユーザー「**出て来たらその他作ればいい／みんな作ることはない**」）。
+    'イベントその他': ('musicetc', None),
+    # 2026-08-26 追加＝コード表にはあったが対応表に無く、名前fallbackで倒れていた。
+    # スポーツはタブがあるので「その他」に落とさずスポーツで拾う（BOAT RACE 尼崎で確認）。
+    'スポーツその他': ('sports', None),
+    # 2026-08-04 追加(第4弾)＝また名前fallbackで engeki に倒れていた分。倒れ先は同じでも、
+    # 対応表に載せておけば「なぜ engeki か」が機械の判断として残る（未収載は毎回人が見る枠になる）。
+    '洋画': ('movie', None),                    # 「邦画」と揃える
+    'パフォーマンス': ('engeki', None),           # シルク・ドゥ・ソレイユ クーザで確認（サーカス/舞台系）
+    # 🚨🚨2026-08-27＝ユーザー「**ジャンル作って　たためるようになったから躊躇なく作っていいよ**」。
+    #   これで**ぴあの66サブカテゴリ全部に行き先がある**状態になった＝人が判断する枠はゼロ。
+    #   （旧コメント「ショー・ファンイベントは入れない＝アーティストで決まる」は失効。
+    #     入れないと名前fallbackで engeki に倒れるだけで、結局あたしが毎回迷っていた）
+    'シャンソン': ('chanson', None),                 # 既存ジャンル chanson に接続
+    'ショー・ファンイベント': ('fanevent', None),      # 既存ジャンル fanevent に接続
+    '祭り・花火大会': ('hanabi', None),               # 既存ジャンル hanabi に接続
+    # 🚨2026-08-31 ユーザー指示「童謡はそんなにないから音楽のそのたでいいわ」＝
+    #   独立タブ(douyou)は廃止し musicetc に寄せた（当時2件しか無く空タブになるため）。
+    '童謡・日本のうた': ('musicetc', None),
+    'サーカス': ('circus', None),                    # 🆕新設（シルク・ドゥ・ソレイユ等）
+    'マジック・イリュージョン': ('magic', None),        # 🆕新設
+    '学園祭': ('gakusai', None),                     # 🆕新設
+}
+# トップカテゴリ単位のフォールバック（サブカテゴリがMAP未収載の時）
+# 「イベント/イベントその他」等のサブが拾えないものはここで受ける。イベントは中身が
+# 雑多（前夜祭・物販くじ・展示）なので art に倒さず、engeki にも倒さず**人に相談**させたいが、
+# 下書きが空だと投入ゲートで止まるので art を仮置きせず None のまま（=名前ベースfallback）にする。
+PIA_CAT_FALLBACK = {'スポーツ': ('sports', None), 'クラシック': ('classic', None)}
+
+def pia_subcat(h):
+    """HTMLの<title>から (カテゴリ, サブカテゴリ) を抽出。bundleページ等で取れなければ None。"""
+    m = re.search(r'<title>([^<]*)</title>', h or '')
+    if not m: return None
+    title = _html.unescape(m.group(1))
+    mc = re.search(r'\[([^\]\s]+)\s+(.+?)のチケット', title)
+    return (mc.group(1), mc.group(2)) if mc else None
+
+# 🆕【2026-08-25】bundleページ(eventBundleCd)は <title> にサブジャンルが入らず、中の
+#   個別eventCdへのリンクも無いことがある＝旧来の2段フォールバックが両方空振りして、
+#   名前ベースの推測に倒れていた（きゃりーぱみゅぱみゅ→engeki／GOODWARP→engeki の誤り）。
+#   実HTMLには隠しinput `genreCd` に、ぴあの詳細検索(search_dtl_input.do)の sg と
+#   同じサブジャンルコードが入っている。**fetchを増やさずにぴあのカテゴリが取れる**。
+#   コード表は search_dtl_input.do の sg オプションから採取（2026-08-25 実測・66種）。
+PIA_LG_LABEL = {'01': '音楽', '02': '演劇', '03': 'スポーツ', '04': '映画',
+                '05': 'アート', '06': 'イベント', '07': 'クラシック'}
+PIA_GENRE_CD = {
+    '0100101': 'ジャズ・フュージョン', '0100102': 'J-POP・ROCK', '0100103': '演歌・邦楽',
+    '0100104': '童謡・日本のうた', '0100105': 'アニメ音楽', '0100106': 'シャンソン',
+    '0100108': '海外ROCK・POPS', '0100109': '民族音楽', '0100111': 'フェスティバル',
+    '0100199': '音楽その他',
+    '0200101': '演劇', '0200102': '朗読・リーディング', '0200103': 'ミュージカル・ショー',
+    '0200104': '人形劇・キャラクター', '0200105': 'バレエ・ダンス', '0200106': 'パフォーマンス',
+    '0200107': 'フェスティバル', '0200108': '歌舞伎・古典芸能', '0200109': '寄席・お笑い',
+    '0200199': '演劇その他',
+    '0300101': 'サッカー', '0300102': '野球', '0300103': 'ラグビー',
+    '0300104': 'バスケットボール', '0300105': 'バレーボール', '0300106': 'アメフト',
+    '0300107': '球技その他', '0300108': 'プロレス', '0300109': 'ボクシング',
+    '0300110': '格闘技', '0300111': '相撲・武道', '0300112': 'モータースポーツ',
+    '0300113': 'スイム・マリンスポーツ', '0300114': 'フィギュアスケート・ウィンタースポーツ',
+    '0300115': 'ゴルフ', '0300116': 'eスポーツ', '0300117': 'ソフトボール',
+    '0300199': 'スポーツその他',
+    '0400101': '邦画', '0400102': '洋画', '0400103': '舞台挨拶', '0400104': '映画祭',
+    '0400105': 'ライブビューイング', '0400199': '映画その他',
+    '0500101': 'アート',
+    '0600101': '講演会・トークショー', '0600102': '子供と楽しむ', '0600103': 'サーカス',
+    '0600104': 'マジック・イリュージョン', '0600105': 'パフォーマンス',
+    '0600106': 'ショー・ファンイベント', '0600107': '祭り・花火大会', '0600108': 'ディナーショー',
+    '0600109': '博覧会・展示会・見本市', '0600110': 'スクール・レジャー', '0600111': '学園祭',
+    '0600112': 'アミューズメント', '0600199': 'イベントその他',
+    '0700101': 'オーケストラ', '0700102': '器楽・室内楽', '0700103': 'オペラ・声楽',
+    '0700104': '吹奏楽', '0700105': '合唱', '0700106': 'クラシック邦楽',
+    '0700107': 'フェスティバル・ガラコンサート', '0700199': 'クラシックその他',
+}
+
+def pia_subcat_by_cd(h):
+    """bundleページの隠しinput genreCd から (カテゴリ, サブカテゴリ) を取る。取れなければ None。"""
+    m = re.search(r'genreCd"\s*value="(\d{7})"', h or '')
+    if not m: return None
+    cd = m.group(1)
+    cat, sub = PIA_LG_LABEL.get(cd[:2]), PIA_GENRE_CD.get(cd)
+    return (cat, sub) if (cat and sub) else None
+
+# 邦楽(和楽器)を示す語。ぴあの「演歌・邦楽」は演歌(enka)と邦楽(和楽器=dento)を1カテゴリに
+# まとめているので、名前にこれらが含まれれば dento、無ければ enka に分ける(2026-06-23ユーザー指摘)。
+# 🚨ローマ字表記も拾う（2026-07-31）＝「神戸国際taiko音楽祭2027」が漢字の「太鼓」を含まず
+# enka に倒れていた。照合前に NFKC+小文字化するので全角「ＴＡＩＫＯ」も当たる。
+# 誤爆が怖い短語（koto 等）は入れない。
+HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|雅楽|民謡|和楽器|邦楽|篠笛|笙|能楽|長唄|常磐津'
+                       # 2026-08-19 追加：琵琶が入っておらず「琵琶絵巻 坂田美子」が enka(演歌) に落ちていた
+                       # （検証エージェントの指摘で発覚）。同じ型の邦楽語をまとめて足す。
+                       r'|琵琶|義太夫|清元|新内|小唄|端唄|地唄|浄瑠璃|詩吟|囃子|能舞台'
+                       # 2026-09-10 追加：雅楽の団体・楽器名が入っておらず
+                       # 「天王寺楽所雅亮会」(id7520・雅楽/天王寺舞楽の伝承団体) と
+                       # 「東儀秀樹」(篳篥の雅楽師) が enka(演歌) に落ちていた。
+                       # 公演名に「雅楽」の2文字が出ないことがあるので、団体名と楽器名で拾う。
+                       r'|楽所|雅亮|舞楽|篳篥|龍笛|竜笛|笏拍子|東儀'
+                       # 2026-09-13 追加：「和洋楽器ユニット」は「和楽器」の3文字が並ばないので
+                       # 素通りし、id8281「和洋楽器ユニット『蒼ノトキ』ライブ」が enka(演歌) に落ちていた。
+                       r'|和洋楽器|和楽|箏曲|三曲|尺八本曲'
+                       r'|taiko|shamisen|shakuhachi|gagaku|wagakki|biwa')
+def _hogaku(name):
+    return bool(HOGAKU_RE.search(unicodedata.normalize('NFKC', name or '').lower()))
+
+# 🚨2026-09-02 追加：2026-09-01 に「伝統」を音楽側(hougaku)と舞台側(dento)に分けたのに、
+#   この対応表は dento のままだった＝「藝大定期邦楽 第92回」(id6159・ぴあ区分は
+#   クラシック/クラシック邦楽) が舞台側に落ちていた。
+#   線の引き方＝**演じるのを観る＝dento／演奏を聴く＝hougaku**（feedback_dento_split_music_stage）。
+#   HOGAKU_RE には能楽・浄瑠璃など舞台側の語も混ざっているので、**舞台側を先に判定する**。
+DENTO_STAGE_RE = re.compile(r'歌舞伎|能楽|能舞台|薪能|狂言|文楽|人形浄瑠璃|浄瑠璃|義太夫'
+                            r'|日本舞踊|をどり|神楽|声明')
+def _dento_stage(name):
+    return bool(DENTO_STAGE_RE.search(unicodedata.normalize('NFKC', name or '')))
+def genre_from_subcat(cat, sub, name=''):
+    """ (カテゴリ,サブ,名前) → (主ジャンル, 追加ジャンル or None)。判定不能なら None。"""
+    if sub and '邦楽' in sub:
+        # 「演歌・邦楽」＝演歌と和楽器が同居／「クラシック邦楽」＝邦楽の演奏会。
+        # 舞台（歌舞伎・能・狂言…）→ dento／演奏（和太鼓・三味線・雅楽…）→ hougaku。
+        # どちらの語も無いときは、カテゴリ名で決める（演歌カテゴリなら enka）。
+        if _dento_stage(name):
+            return ('dento', None)
+        if _hogaku(name):
+            return ('hougaku', None)
+        return ('enka', None) if '演歌' in sub else ('hougaku', None)
+    # 「祭り・花火大会」は花火大会と祭りが同居する1カテゴリ。名前に花火があれば hanabi、
+    # 無ければ祭り＝屋外の複数組イベント＝fes（[[feedback_fes_definition]]）。2026-07-30追加。
+    if sub and '花火' in sub:
+        return ('hanabi', None) if re.search(r'花火', name or '') else ('fes', None)
+    if sub and sub in PIA_GENRE_MAP: return PIA_GENRE_MAP[sub]
+    if sub:
+        for k, v in PIA_GENRE_MAP.items():
+            if k in sub or sub in k: return v
+    return PIA_CAT_FALLBACK.get(cat)
+
+# 【同じ文言のバッジが並ぶ罠の恒久対策・2026-08-22】
+# ぴあは別々の売り場（会場違い・席種違い・企画違い）を同じ券種名で出すことがあり、
+# kenshu() が券種名を削ると **バッジ文言が完全に一致してしまう**。画面では見分けられず、
+# dedup_badges を流すと片方が畳まれて**実在する売り場への導線が消える**
+# （[[feedback_pia_parser_flattens_slots]] / [[feedback_dedup_badges_keeps_urls]]）。
+# 実例＝4971 映画『ホーム スイート ホーム』(イオンシネマ板橋と kino cinema 新宿が同文言)、
+#       5016 TJHiroshima(ゴルフ場4か所)、4114 Yung Kai(席種3種)、2642 高校野球決勝(席種7種)。
+# → 文言がぶつかった組にだけ、①会場名 ②タイトルの差分 の順で見分け札を足す。
+#    ぶつかっていない枠には一切触らない（既存の出力を変えない）。
+def _uniq_suffix(vals):
+    """同じ組の中で「そこだけ違う部分」を返す。共通の頭とお尻を落として差分だけ残す。"""
+    if len(set(vals)) < 2:
+        return None
+    head = 0
+    while head < min(len(v) for v in vals) and len({v[head] for v in vals}) == 1:
+        head += 1
+    tail = 0
+    while tail < min(len(v) for v in vals) - head and len({v[-1 - tail] for v in vals}) == 1:
+        tail += 1
+    # 囲み記号は札の【】と二重になるので落とす（【＜追加公演＞】にならないように）
+    out = [v[head:len(v) - tail].strip('　 ／/・-−＜＞〔〕［］【】<>()（）') for v in vals]
+    # 片方だけ差分がある形（「一般発売」と「一般発売＜追加公演＞」）は、差分がある側にだけ
+    # 見分け札を付ければ区別できる。全部空でなければ採用する（2026-08-22 ニッチェで発覚）。
+    if not any(out) or len(set(out)) < 2:
+        return None
+    return out
+
+
+def disambiguate(tickets, newid=None):
+    """バッジ文言がぶつかった枠に見分け札【…】を付ける。付けられなければ大声で報告する。"""
+    groups = {}
+    for t in tickets:
+        groups.setdefault((t['type'], t['date']), []).append(t)
+    for (typ, _d), g in groups.items():
+        if len(g) < 2:
+            continue
+        label = None
+        vens = [t['_venue'] for t in g]
+        if len(set(vens)) == len(g) and all(vens):
+            label = vens                      # ①会場が全部違う＝会場名で見分ける
+        else:
+            label = _uniq_suffix([t['_title'] for t in g])   # ②タイトルの差分で見分ける
+        if not label:
+            # 見分けようがない＝ぴあ側が本当に同じ文言。無言で潰さず報告して人が見る。
+            _DROPPED.append((newid, 'SAME-BADGE', '同じ文言のバッジ%d枚' % len(g), typ[:40]))
+            continue
+        for t, lb in zip(g, label):
+            if not lb:
+                continue          # 差分が無い側は素のままで、付いた側と区別できる
+            ks, sep, rest = t['type'].partition('（')
+            t['type'] = f"{ks}【{lb}】{sep}{rest}"
+    for t in tickets:
+        t.pop('_venue', None)
+        t.pop('_title', None)
+    return tickets
+
+
+def build(cand):
+    allrows, htmls = [], []
+    gone = []
+    for u in cand['urls']:
+        try:
+            h = fetch(u); htmls.append(h)
+            # eventCdが無効化されたページ。0カードと混ぜると削除候補に化けるので印を付ける。
+            if is_error_page(h):
+                gone.append(u); continue
+            cards = parse_cards(h)
+            _np, _nu = find_notice_presales(h)
+            if _np:
+                _NOTICE_PRESALE.append((cand.get('newid'), cand.get('artist') or '', u, _np, _nu))
+            su = src_event_url(u)
+            for c in cards:
+                c['_src'] = su          # このカードが載っていた公演ページ(eventCd/bundle)を記録
+            allrows += cards; time.sleep(0.25)
+        except Exception as ex:
+            # フェッチ/パース失敗を無言で握り潰さない（買える枠を黙って失う原因）
+            _DROPPED.append((cand.get('newid'), 'FETCH-ERR', str(ex)[:80], u))
+    buy = [r for r in allrows if r['state'] in ('受付中', '発売前')]
+    seen, rows = set(), []
+    for r in buy:
+        k = (r['perfdate'], r['perf_end'], r['venue'], r['title'], r['state'])
+        if k in seen: continue
+        seen.add(k); rows.append(r)
+    if not rows:
+        # 【購入ボタンが無言で死ぬ罠】参照先のeventCdがぴあ側で無効化されている＝0枠ではない。
+        # 削除候補に出すと販売中の興行を消すので例外で止める（[[PiaEventGone]]）。
+        if gone and not allrows:
+            raise PiaEventGone(
+                'ぴあが無効化したURL(ご確認ください)＝eventCd削除/差替。'
+                'tools/pia_kw_search.py で後継URLを探すこと: ' + ', '.join(gone))
+        # 【誤削除の罠】買える枠ゼロに見えても、ページがw.pia.jp直販形式なら「券種カードが無い」
+        # だけで実際は販売中のことがある。Noneを返すと呼び出し側が削除候補にするので例外で止める。
+        if any(wpia_only(h) for h in htmls):
+            raise WpiaFormPage(f"w.pia.jp直販形式(券種カード0)＝機械照合できない。実ページを目視で確認: {cand['urls']}")
+        return None
+    # カードが複数会場を持つ（多会場ツアー行）ときは r['venues'] を全部展開する。
+    # r['venue'] だけ見ると多会場カードが空扱いになり「全国ツアー（）」になる。
+    venues = list(dict.fromkeys(
+        v for r in rows
+        for v in (r.get('venues') or ([r['venue']] if r.get('venue') else []))))
+    prefs = list(dict.fromkeys(p for r in rows for p in r['prefs']))
+    starts = sorted(r['perfdate'] for r in rows if r['perfdate'])
+    ends = sorted((r.get('perf_end') or r['perfdate']) for r in rows if r['perfdate'])
+    # multi=「買える券種が複数の公演ページ(eventCd/bundle)由来」。この時だけ各ticketに会場別url
+    # を付ける(=下のベンダーボタンを自動非表示にして1会場誤誘導を防ぐ)。単一ページ由来なら
+    # links.pia=その1ページが全券種を載せるのでボタンはそのまま正しく機能する。
+    srcs = set(r.get('_src') for r in rows if r.get('_src'))
+    # 🚨2026-08-27＝旧実装は multi = len(srcs) > 1（買える枠が複数ページに散っている時だけ
+    #   各ticketにurlを付ける）だった。ところが**統合で古いURLと新しいURLを両方渡した時、
+    #   古い側の枠が全部終わっていると srcs は新しいURL1本だけになり multi=False**＝
+    #   ticket.url が1つも付かない。links.pia は候補URLの1本目（＝古い死にかけのページ）なので、
+    #   **買うボタンも reconcile も、枠が1つも無いページを見る**ことになる。
+    #   実害＝2026-08-27 の統合で 565 the shes gone/メレンゲ が登録10枠/ぴあ0枠（全部STALE）。
+    #   → **URLを2本以上渡された時は常に各ticketにurlを付ける**（[[feedback_build_pia_multiurl_loses_ticket_url]]）。
+    multi = len(srcs) > 1 or len(cand.get('urls') or []) > 1
+    tickets = []
+    for r in rows:
+        suf, iso, sd = parse_when_row(r)
+        if not iso:
+            # 【最重要】買えると判定したカードの日付が解析できない＝取りこぼし。
+            # 黙ってcontinueすると枠が無言で消える(2026-06-23の全取りこぼしの真因)。
+            # 必ず記録して build 後に大声で報告する。新しいぴあ表記が来たら即バレる。
+            _DROPPED.append((cand.get('newid'), r.get('state'), r.get('when', ''), r.get('title', '')[:40]))
+            continue
+        pe = r.get('perf_end') or r['perfdate']
+        mdr = mdbadge(r['perfdate'], pe)   # 2027公演は自動でR9年付与(年が抜けない)
+        _pf = '・'.join(r['prefs']) if r['prefs'] else '全国'   # 複数県は全部載せる(字は小さめ表示)。県名取れなければ全国
+        ks = drop_labels_in_name(kenshu(r['title']), cand.get('artist'))
+        t = {'type': f"{ks}（{_pf} {mdr}公演）{suf}", 'date': iso}
+        # disambiguate() が「同じ文言のバッジ」を見分けるのに使う。出口で必ず消す。
+        t['_venue'] = r.get('venue') or ''
+        t['_title'] = r.get('title') or ''
+        if sd: t['startDate'] = sd
+        # 抽選券(先行/プレリザーブ)はhrefがlotRlsCdでeventCd無し→由来ページ(_src)のurlで補完。
+        # これで複数会場エントリの全ticketにurlが付き、ボタン誤誘導が消える(2026-06-23恒久修正)。
+        if multi:
+            tu = ecd_url(r['url']) or r.get('_src')
+            if tu: t['url'] = tu
+        tickets.append(t)
+    tickets = disambiguate(tickets, cand.get('newid'))
+    tickets.sort(key=lambda t: t['date'])
+    # 全会場を列挙する（[:4]で打切ると大規模ツアーの大半の会場が消える＝2026-07-01発覚
+    # ディズニー・オン・クラシック18県中4会場しか出ず「アクトシティ浜松が抜けてる」）。
+    venue = venues[0] if len(venues) == 1 else '全国ツアー（' + '／'.join(venues) + '）'
+    # 【ユーザー確定 2026-08-03】少数県(〜4県)は「愛知・大阪」と県名を列挙する。
+    # 「全国」だと画面でその県の公演だと分からず探せない（既存の書き方＝id268「東京・愛知・大阪・福岡」）。
+    # 5県以上は列挙が長くなりすぎるので従来どおり「全国」。
+    # ※地方フィルタはバッジの県名から拾うので([[eventRegions]])、どちらでも地方では出る。
+    PREF_ENUM_MAX = 4
+    if len(prefs) == 1:
+        pref = prefs[0]
+    elif 2 <= len(prefs) <= PREF_ENUM_MAX:
+        pref = '・'.join(prefs)
+    else:
+        pref = '全国'
+    # 同一公演日の枠が2つ以上あると starts が ['8/3','8/3'] になり、len==1 を満たさず範囲形に落ちて
+    # 「2026年8月3日(月)〜2026年8月3日(月)」と冗長表示になっていた(2026-07-15 KAWAII LAB.等4件)。
+    # 判定は件数でなく「最早の開始日==最遅の終了日」＝実質単日か、で行う。
+    if starts and ends[-1] == starts[0]:
+        dl = f"{jp(starts[0])} {pref} {venues[0] if venues else ''}".strip()
+    else:
+        tail = '全国ツアー' if pref == '全国' else (pref + ' ' + (venues[0] if len(venues) == 1 else '')).strip()
+        dl = f"{jp(starts[0])}〜{jp(ends[-1])} {tail}".strip()
+    # 🚨2026-08-27＝links.pia は「候補URLの1本目」固定だった。統合で古いURLを先に渡すと、
+    #   買える枠が1つも無いページが購入ボタンの飛び先になる（上の multi と同じ事故の片割れ）。
+    #   → **実際に買える枠が取れたページ(_src)を優先**する。1本目がその中にあればそのまま使う。
+    u0 = cand['urls'][0]
+    def _norm_event_url(u):
+        mb = re.search(r'eventBundleCd=(\w+)', u or '')
+        if mb:
+            return 'https://t.pia.jp/pia/event/event.do?eventBundleCd=' + mb.group(1)
+        return ecd_url(u)
+    pia = _norm_event_url(u0)
+    if srcs and pia not in srcs:
+        # 1本目からは買える枠が取れていない＝そのページに飛ばしても買えない。
+        # 実際に枠が取れたページのうち、いちばん早い枠のものを選ぶ。
+        first_src = next((r.get('_src') for r in rows if r.get('_src')), None)
+        if first_src:
+            pia = first_src
+    # ジャンル下ごしらえ: ぴあカテゴリ優先 → 取れなければ個別ページを1つ引く → それでも無ければ名前ベース
+    #
+    # 🚨 _piaSub は「PIA_GENRE_MAP に載っているカテゴリ」だけでなく、**ぴあが返したカテゴリは
+    # 必ず記録する**。旧版は genre_from_subcat が None（対応表に無いサブカテゴリ）だと
+    # sub_used を '' のまま捨てていたため、レビュー時に「ぴあが何と言っていたか」が消え、
+    # 人間が名前だけを見て推測する羽目になっていた（2026-07-29発覚＝実ページの<title>には
+    # ちゃんと [音楽 民族音楽] [イベント ショー・ファンイベント] [音楽 海外ROCK・POPS] と
+    # 書いてあったのに _piaSub='' で、engekiへのfallbackだけが残っていた）。
+    # 記録さえ残れば振り分けは「ぴあのカテゴリを見て決める」で済む（[[project_vendor_genre_autoassign]]）。
+    pg, sub_used = None, ''
+    for h in htmls:
+        sc = pia_subcat(h)
+        if not sc:
+            continue
+        if not sub_used:
+            sub_used = f"{sc[0]}/{sc[1]}"     # 対応表に無くても、ぴあの言い分は残す
+        if genre_from_subcat(*sc, cand['artist']):
+            pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
+    if not pg:  # bundleページは<title>にサブ無し → 隠しinput genreCd から取る(fetch不要)
+        for h in htmls:
+            sc = pia_subcat_by_cd(h)
+            if not sc:
+                continue
+            if not sub_used:
+                sub_used = f"{sc[0]}/{sc[1]}"
+            if genre_from_subcat(*sc, cand['artist']):
+                pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
+    if not pg:  # それでも駄目なら 個別eventCdページを1つ引いて再試行
+        for r in rows:
+            eu = ecd_url(r.get('url'))
+            if not eu: continue
+            try:
+                sc = pia_subcat(fetch(eu)); time.sleep(0.2)
+            except Exception:
+                sc = None
+            if not sc:
+                continue
+            if not sub_used:
+                sub_used = f"{sc[0]}/{sc[1]}"
+            if genre_from_subcat(*sc, cand['artist']):
+                pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
+    main_genre, extra = pg if pg else (genre_of(cand['artist']), None)
+    if not pg and sub_used:
+        # ぴあはカテゴリを言っているのに対応表に無い＝名前fallbackの結果は信用しない方がいい
+        _UNMAPPED_SUB.append((cand.get('newid'), cand['artist'], sub_used, main_genre))
+    links = {'rakuten': None, 'lawson': None, 'pia': pia, 'eplus': None}
+    # 音楽系の単独/グループ名義は「最新CD」リンクを自動付与(合同公演／×は除外＝レビューで判断)。
+    if main_genre in MUSIC_GENRES and not re.search(r'／|×', cand['artist']):
+        # 🚨全角のままAmazonに渡すと検索が1件もヒットしない（ぴあHTMLは「ＣｉＯＮ」等の
+        # 全角ラテンを返す）。表示側と同じく norm_fw で半角化してからクエリにする
+        # （2026-07-30発覚＝12件のCDリンクが死んでいた）。
+        amz = amazon_cd(norm_fw(cand['artist']))
+        if amz:
+            links['amazon'] = amz
+    # 出口で全角ローマ字/数字を半角化（表示フィールドのみ。URL/日付/_piaSubは触らない）。
+    for t in tickets:
+        t['type'] = norm_fw(t['type'])
+    return {'id': cand['newid'], 'artist': norm_fw(cand['artist']), 'name': norm_fw(cand['artist']), 'date': ends[-1],
+            'dateLabel': norm_fw(dl), 'venue': norm_fw(venue), 'prefecture': pref, 'genre': 'new',
+            '_genre': main_genre, '_extraGenres': [extra] if extra else [], '_piaSub': sub_used,
+            'price': None, 'links': links,
+            'tickets': tickets, 'verified': True, 'verifiedAt': datetime.date.today().isoformat()}
+
+def _selftest():
+    """過去の取りこぼし/化けバグの回帰防止テスト(2026-06-23)。`python tools/build_pia_entries.py --selftest`"""
+    # ① 時刻プレフィックスは列挙せず「数字/コロン以外は何でも飛ばす」robust方式。
+    #    昼/夜/朝/午前/午後/正午/未知語/プレフィックス無し すべてで脱落しない。
+    # (state, when, exp_date, exp_startDate, exp_suffix)
+    # 発売前レンジ「START ～ END」: date=END(締切) / startDate=START(発売日) / badge=発売日
+    cases = [
+        ('発売前', '2026/6/28(日) 昼12:00 ～ 2026/7/12(日) 23:59', '2026-07-12', '2026-06-28', '6/28 12:00発売'),
+        ('発売前', '2026/6/28(日) 夜18:00 ～ 2026/7/12(日) 23:59', '2026-07-12', '2026-06-28', '6/28 18:00発売'),
+        ('発売前', '2026/6/28(日) 午前10:00 ～ 2026/7/1(火) 23:59', '2026-07-01', '2026-06-28', '6/28 10:00発売'),
+        ('発売前', '2026/6/28(日) 13:00 ～ 2026/7/1(火) 23:59', '2026-07-01', '2026-06-28', '6/28 13:00発売'),  # プレフィックス無し
+        ('発売前', '2026/6/24(水) 11:00 ～ 2026/6/30(火) 11:00', '2026-06-30', '2026-06-24', '6/24 11:00発売'),
+        # 「より発売」単日形(END無し)→ date=startDate=発売日(従来通り)
+        ('発売前', '2026/7/25(土) 昼12:00より発売', '2026-07-25', '2026-07-25', '7/25 12:00発売'),
+        ('発売前', '2026/7/25(土) 14:00より発売', '2026-07-25', '2026-07-25', '7/25 14:00発売'),
+        ('発売前', '2026/7/25(土) 10:00より発売', '2026-07-25', '2026-07-25', '7/25 10:00発売'),
+        ('受付中', '～ 2026/10/21(水) 夜23:59', '2026-10-21', None, '〜10/21 23:59'),
+        ('受付中', '～ 2026/10/21(水) 13:00', '2026-10-21', None, '〜10/21 13:00'),
+        ('発売前', '～ 2026/6/24(水) 23:59', '2026-06-24', None, '〜6/24 23:59'),  # 終了日だけの先行(琉球フェスFM沖縄)→無言ドロップ防止
+    ]
+    for st, w, exp_iso, exp_sd, exp_suf in cases:
+        suf, iso, sd = parse_when(st, w)
+        assert iso == exp_iso and sd == exp_sd and suf == exp_suf, (w, '→', suf, iso, sd)
+    # 時刻だけの「HH:MMより発売」(日付なし)= 本日発売 → today を採る(無言ドロップ根絶。2026-06-30飯田の
+    # 当日引換券「18:00より発売」=本日発売の取りこぼし対策)。todayは可変なので動的に照合。
+    _td = datetime.date.today()
+    for w, hhmm in [('18:00より発売', '18:00'), ('当日引換券 10:00より発売', '10:00')]:
+        suf, iso, sd = parse_when('発売前', w)
+        assert iso == _td.isoformat() and sd == _td.isoformat(), ('本日発売', w, suf, iso, sd)
+        assert suf == f"{_td.month}/{_td.day} {hhmm}発売", ('本日発売suf', w, suf)
+    # 将来発売(YYYY/M/D形)は today に化けない(m4が誤爆しない)
+    suf, iso, sd = parse_when('発売前', '2026/9/9(水) 18:00より発売')
+    assert iso == '2026-09-09', ('将来発売がm4誤爆', suf, iso)
+    # ② 全角カッコ/角カッコ/山カッコの公演日「（９／２２公演）」「【６／２７公演】」でkenshuが化けない
+    assert kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ')
+    assert kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ')
+    # 曜日の入れ子カッコ（2026-07-24 摩天楼オペラ＝「一般発売（１０」に化けた）
+    assert kenshu('一般発売（１０／３０（金）公演） ／ 摩天楼オペラ') == '一般発売', \
+        kenshu('一般発売（１０／３０（金）公演） ／ 摩天楼オペラ')
+    assert kenshu('一般発売【６／２７公演】 ／ ＫＡＷＡＩＩ ＬＡＢ') == '一般発売', kenshu('一般発売【６／２７公演】 ／ ＫＡＷＡＩＩ ＬＡＢ')
+    # 〈…〉(U+3008/3009・＜＞とは別文字)の公演日囲み。抜けていて「一般発売〈11【13（金）公演〉】」に
+    # 化けていた（2026-08-14 siruko 4258/4259）
+    assert kenshu('一般発売〈１１／１３（金）公演〉 ／ ｓｉｒｕｋｏ Ｆａｎ Ｍｅｅｔｉｎｇ') == '一般発売', \
+        kenshu('一般発売〈１１／１３（金）公演〉 ／ ｓｉｒｕｋｏ Ｆａｎ Ｍｅｅｔｉｎｇ')
+    assert kenshu('一般発売〈８／１３公演〉 ／ いぎなり東北産') == '一般発売', \
+        kenshu('一般発売〈８／１３公演〉 ／ いぎなり東北産')
+    # 〈…〉でも中身が区別語なら残す（〔テーブルシート販売〕と同じ扱い）
+    assert kenshu('一般発売〈学生限定〉 ／ テスト') == '一般発売【学生限定】', \
+        kenshu('一般発売〈学生限定〉 ／ テスト')
+    # 🚨半角丸カッコの公演日。全角しか見ていなくて「一般発売(1【10公演)】」に化けていた
+    # （2026-09-05 怒髪天 722）
+    assert kenshu('一般発売(１／１０公演) ／ 怒髪天') == '一般発売', kenshu('一般発売(１／１０公演) ／ 怒髪天')
+    assert kenshu('一般発売(1／11公演) ／ 怒髪天') == '一般発売', kenshu('一般発売(1／11公演) ／ 怒髪天')
+    # 🚨囲みの中の／は席種の区切り＝落とすと車椅子席が通常券と同じ「一般発売」に潰れる
+    # （2026-09-05 LiSA 4052。同じ文言のバッジが2枚並ぶ＝買える席が見えなくなる）
+    assert kenshu('一般発売（帯広／車椅子席） ／ ＬｉＳＡ') == '一般発売（帯広/車椅子席）', \
+        kenshu('一般発売（帯広／車椅子席） ／ ＬｉＳＡ')
+    assert kenshu('一般発売（帯広） ／ ＬｉＳＡ') == '一般発売（帯広）', kenshu('一般発売（帯広） ／ ＬｉＳＡ')
+    assert kenshu('「奥華子」プレリザーブ') == 'プレリザーブ', kenshu('「奥華子」プレリザーブ')
+    # ②' ぴあ表記の飾り記号(●○★@※)はバッジに出さない(2026-07-10 さだまさし「●一般発売」で発覚)
+    assert kenshu('●一般発売 ／ さだまさし') == '一般発売', kenshu('●一般発売 ／ さだまさし')
+    assert kenshu('☆一般発売 ／ ディズニー・オン・クラシック') == '一般発売'
+    assert kenshu('@プリセール ／ さだまさし') == 'プリセール'
+    # ②'' ◎…◎ の囲み装飾ラベル（2026-07-13 K-1 WORLD MAX）
+    assert kenshu('◎K-1.CLUB◎一般発売 ／ Ｋ－１ ＷＯＲＬＤ ＭＡＸ') == '一般発売', kenshu('◎K-1.CLUB◎一般発売 ／ Ｋ－１ ＷＯＲＬＤ ＭＡＸ')
+    assert kenshu('◎K-1.CLUB 限定◎有料会員先行発売 ／ Ｋ－１') == '有料会員先行発売', kenshu('◎K-1.CLUB 限定◎有料会員先行発売 ／ Ｋ－１')
+    # ②'' 券種名の頭に付く公演日「９／１８（金）一般発売」（2026-07-14 読売ジャイアンツ対中日）
+    #     この／を「券種／公演名」の区切りと誤読すると券種名が「9」だけになる
+    assert kenshu('９／１８（金）一般発売 ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦') == '一般発売', \
+        kenshu('９／１８（金）一般発売 ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦')
+    assert kenshu('9/19 一般発売 ／ 巨人戦') == '一般発売', kenshu('9/19 一般発売 ／ 巨人戦')
+    # ②''' 公演名そのものに／が入り「公演名★2次受付〔県〕」形で出る枠（2026-07-14『いきなり本読み!』）
+    assert kenshu('『いきなり本読み！In IMM／いきなり本読み！サテライト』★2次受付〔東京〕') == '2次受付', \
+        kenshu('『いきなり本読み！In IMM／いきなり本読み！サテライト』★2次受付〔東京〕')
+    # ③ 「本日発売初日」(is-beforeだが今日から販売中)は受付中扱いで終了日のみ「～7/23」を拾える
+    suf, iso, sd = parse_when('受付中', '～ 2026/7/23(木) 23:59')
+    assert iso == '2026-07-23' and sd is None, ('本日発売初日(受付中)', suf, iso, sd)
+    # ④ 「演歌・邦楽」カテゴリ: 和楽器名はhougaku、演歌歌手はenka(邦楽≠演歌・2026-06-23ユーザー指摘)
+    # 🚨2026-09-02 期待値を dento → hougaku に更新＝2026-09-01 に「伝統」を
+    #   音楽側(hougaku・演奏を聴く)と舞台側(dento・演じるのを観る)に分けたため。
+    #   歌舞伎・能・狂言など舞台側の語は引き続き dento（feedback_dento_split_music_stage）。
+    assert genre_from_subcat('音楽', '演歌・邦楽', '徳永ゆうき') == ('enka', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＯの夏フェス 和太鼓') == ('hougaku', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '津軽三味線コンサート') == ('hougaku', None)
+    # 2026-07-31 追加＝ローマ字/全角のtaikoが漢字に当たらず enka に倒れていた（3523 神戸国際taiko音楽祭）
+    assert genre_from_subcat('音楽', '演歌・邦楽', '神戸国際taiko音楽祭2027') == ('hougaku', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', 'ＴＡＩＫＯ ＦＥＳ') == ('hougaku', None)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '氷川きよし特別公演') == ('enka', None)
+    # 舞台側は dento のまま／クラシック邦楽の演奏会は hougaku（id6159 藝大定期邦楽で発覚）
+    assert genre_from_subcat('音楽', '演歌・邦楽', '坂東玉三郎 日本舞踊の会') == ('dento', None)
+    assert genre_from_subcat('クラシック', 'クラシック邦楽', '藝大定期邦楽 第92回') == ('hougaku', None)
+    assert genre_from_subcat('クラシック', 'クラシック邦楽', '雅楽の夕べ') == ('hougaku', None)
+    assert genre_from_subcat('演劇', '歌舞伎・古典芸能', '錦秋十月大歌舞伎') == ('dento', None)
+    # 🚨2026-08-26 ユーザー決定で「フェスティバル」を対応表に載せた＝**ぴあの言う通りにする**。
+    # 旧テストは「人が最終判断するので None」だったが、その"人の判断"こそが毎回の迷いの元だった
+    # （ユーザー「ぴあの言う通りでって決めてたはず／まえも言ったこと言ってる気がする」）。
+    assert genre_from_subcat('音楽', 'フェスティバル', '大人のくつろぎ音楽堂フェス「JAZZ井」2026') == ('fes', None)
+    # 「〜その他」は musicetc（表示「その他」）＝他で見つからなかった人が最後に開く砦。
+    # jpop や engeki の大箱に混ぜると、そのタブを探しに来た人のノイズになる（2026-08-26 ユーザー判断）。
+    assert genre_from_subcat('音楽', '音楽その他', 'なにかのコンサート') == ('musicetc', None)
+    assert genre_from_subcat('イベント', 'イベントその他', 'なにかの展示') == ('musicetc', None)
+    assert genre_from_subcat('映画', '映画その他', 'なにかの上映') == ('movie', None)
+    assert genre_from_subcat('スポーツ', 'スポーツその他', 'BOAT RACE 尼崎') == ('sports', None)
+    # 対応表に無いサブカテゴリは None を返す＝名前fallback＋_UNMAPPED_SUB 報告に回る
+    assert genre_from_subcat('音楽', 'まだ知らないサブ', 'なにか') is None
+    # ⑤ R9年(令和9年=2027)自動付与: 当年(today)より先の公演年は略記が付く・範囲は端点別
+    assert era('2026-12-27') == '' and era('2027-01-09').strip() == 'R9年', '当年=空/翌年=R9年'
+    assert mdbadge('2027-01-30', '2027-01-30') == 'R9年 1/30', '単日2027'
+    assert mdbadge('2026-11-08', '2026-11-08') == '11/8', '単日2026'
+    assert mdbadge('2027-01-09', '2027-01-11') == 'R9年 1/9〜1/11', '範囲同年(2027)は先頭だけ'
+    assert mdbadge('2026-12-03', '2027-01-08') == '12/3〜R9年 1/8', '範囲異年は終了側にR9年'
+    assert mdbadge('2026-11-07', '2026-11-08') == '11/7〜11/8', '範囲同年(2026)は素'
+    # 両端とも将来年の異年範囲(2027→2028)は開始側のeraも残す(Vaundy 2027-2028でR9年が落ちた反省)
+    assert mdbadge('2027-08-14', '2028-02-27') == 'R9年 8/14〜R10年 2/27', '異年2027→2028は両端era'
+    assert mdbadge('2028-02-27', '2028-02-27') == 'R10年 2/27', '単日2028=R10年'
+    # ⑥ w.pia.jp直販形式の検出（2026-07-15 nobinobi 2026を誤って削除候補にした事故の回帰テスト）
+    #    券種カード0＋w.pia.jpリンク有り=販売中でも0枠に見える → 削除候補にしてはいけない
+    assert wpia_only('<div>チケット情報<a href="https://w.pia.jp/t/nobinobi26-2days/">チケット購入</a></div>') is True
+    assert wpia_only('<li class="ticketSalesList-2024__item"><p class="ticketSalesCard-2024__status is-active">受付中</p></li>') is False
+    assert wpia_only('<html><body>券種の無い普通のページ</body></html>') is False
+    # 券種カードとw.pia.jpが同居するページは通常パースできるので罠ではない
+    assert wpia_only('<li class="ticketSalesList-2024__item">…</li><a href="https://w.pia.jp/t/x/">購入</a>') is False
+    # ⑦ 都道府県は__regionが正・実会場名から拾わない（2026-07-14 ANN WILSONの「全国」化バグ）
+    assert prefs_for('大阪', '東京建物 Brillia HALL 箕面 大ホール') == ['大阪'], prefs_for('大阪', '東京建物 Brillia HALL 箕面 大ホール')
+    assert prefs_for('北海道', 'Zepp Sapporo') == ['北海道']
+    assert prefs_for('東京', '東京／大阪／愛知') == ['東京', '大阪', '愛知'], '県名の羅列(複数県ツアー行)は会場名側も拾う'
+    assert prefs_for('', '東京建物 Brillia HALL') == ['東京'], 'regionが空の時だけ会場名から推測'
+    assert is_preflist('東京／大阪') is True and is_preflist('Zepp Sapporo') is False
+    # ⑧ 【…】は装飾なら落とし、券種を区別する説明ラベルは残す
+    #    (2026-07-15 サイン会付き券・11月平日限定券が「一般発売」に潰れ同一バッジ化した回帰テスト)
+    assert kenshu('一般発売【亀山陽平監督 サイン会付き】 ／ 銀河特急 ミルキー☆サブウェイ') == '一般発売【亀山陽平監督 サイン会付き】', \
+        kenshu('一般発売【亀山陽平監督 サイン会付き】 ／ 銀河特急 ミルキー☆サブウェイ')
+    assert kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」') == '超早割チケット【１１月平日限定】', \
+        kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」')
+    assert kenshu('【一般発売】 ／ 工藤静香') == '一般発売', kenshu('【一般発売】 ／ 工藤静香')   # 装飾囲みは落とす
+    # ⑨ 「本サイト取扱なし」=ぴあでは買えない券(店頭のみ)は対象外にする
+    #    発売日が書かれず when='' になるため、除外しないと取りこぼし警告でビルドが毎回止まる
+    #    (2026-07-16 / 07-20 に同じ 風とロック芋煮会シャトルバス券 で2回停止した回帰テスト)
+    _no_deal = ('<li class="ticketSalesList-2024__item">'
+                '<p class="ticketSalesCard-2024__status is-before">本サイト取扱なし</p>'
+                '<p class="ticketSalesCard-2024__title">一般発売 ／ 風とロック芋煮会 シャトルバス券</p></li>')
+    assert parse_cards(_no_deal)[0]['state'] == '受付終了', parse_cards(_no_deal)
+    # 通常の発売前カードは今まで通り拾う（除外を広げすぎていないことの確認）
+    _before = ('<li class="ticketSalesList-2024__item">'
+               '<p class="ticketSalesCard-2024__status is-before">発売前</p>'
+               '<p class="ticketSalesCard-2024__title">一般発売 ／ テスト公演</p></li>')
+    assert parse_cards(_before)[0]['state'] == '発売前', parse_cards(_before)
+    assert kenshu('一般発売 ／ ＺＩＧＧＹ') == '一般発売'
+    # ＜…＞も同様：公演日囲みは落とし、券種を分ける説明は残す（学生限定LIVE券が通常券と同一バッジに潰れた）
+    assert kenshu('一般発売 ／ ＫＡＷＡＩＩ ＬＡＢ． ＭＡＴＥＳ＜学生限定ＬＩＶＥ＞') == '一般発売【学生限定ＬＩＶＥ】', \
+        kenshu('一般発売 ／ ＫＡＷＡＩＩ ＬＡＢ． ＭＡＴＥＳ＜学生限定ＬＩＶＥ＞')
+    # 🚨同じ日の別回＝＜昼公演＞＜夜公演＞は残す（2026-08-26 サンパレス六甲ディナーショー）。
+    # 「『公演』の字を含めば落とす」だった頃は2枠とも「一般発売」に潰れ、dedupで片方が消えた。
+    assert kenshu('一般発売＜昼公演＞') == '一般発売【昼公演】', kenshu('一般発売＜昼公演＞')
+    assert kenshu('一般発売＜夜公演＞') == '一般発売【夜公演】', kenshu('一般発売＜夜公演＞')
+    # 公演日そのものの囲みは今までどおり落とす
+    assert kenshu('一般発売＜６／２４公演＞') == '一般発売', kenshu('一般発売＜６／２４公演＞')
+    assert kenshu('一般発売＜１０／３０（金）公演＞') == '一般発売', kenshu('一般発売＜１０／３０（金）公演＞')
+    # 県名＋「公演」も落とす（バッジ側で（京都 12/19公演）と付くので二重に名乗らせない）
+    assert kenshu('一般発売＜京都公演＞') == '一般発売', kenshu('一般発売＜京都公演＞')
+    # ⑨ 公演名に既にあるラベルはバッジで二重に名乗らない（かわさきジャズ2026）／無いものは残す
+    assert drop_labels_in_name('一般発売【かわさきジャズ2026】', '【かわさきジャズ2026】しんゆりJAZZストリーム DAY1') == '一般発売'
+    assert drop_labels_in_name('一般発売【学生限定LIVE】', 'KAWAII LAB. MATES／KAWAII LAB. SOUTH') == '一般発売【学生限定LIVE】'
+    assert drop_labels_in_name('超早割チケット【11月平日限定】', '特別展「生きものたちの性」') == '超早割チケット【11月平日限定】'
+    # ⑬ 「券種語／席種名 ／ 公演名」の席種名を残す（2026-07-30 巨人×中日・浦和レッズ）
+    assert kenshu('一般発売／勝欲の秋シート（９／８） ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦') \
+        == '一般発売【勝欲の秋シート】', \
+        kenshu('一般発売／勝欲の秋シート（９／８） ／ 読売ジャイアンツ対中日ドラゴンズ 公式戦')
+    assert kenshu('一般発売／メインアッパー指定席・ビジター指定席・ビジター自由席 ／ 浦和レッズ対東京ヴェルディ 明治安田Ｊ１リーグ') \
+        == '一般発売【メインアッパー指定席・ビジター指定席・ビジター自由席】', \
+        kenshu('一般発売／メインアッパー指定席・ビジター指定席・ビジター自由席 ／ 浦和レッズ対東京ヴェルディ 明治安田Ｊ１リーグ')
+    # 席種の無い普通形は今まで通り（区切りがスペース付きでも無しでも）
+    assert kenshu('一般発売 ／ 田中彩子 ハイコロラトゥーラの魅力《春の声》') == '一般発売'
+    assert kenshu('プレリザーブ／ＴＨＥ ＹＥＬＬＯＷ ＭＯＮＫＥＹ') == 'プレリザーブ'
+    # ⑫ 〔…〕の席種ラベルは残す・県名だけの〔…〕は落とす（2026-07-30 ギラヴァンツ北九州）
+    assert kenshu('一般発売〔テーブルシート販売〕 ／ ギラヴァンツ北九州対松本山雅ＦＣ') == '一般発売【テーブルシート販売】', \
+        kenshu('一般発売〔テーブルシート販売〕 ／ ギラヴァンツ北九州対松本山雅ＦＣ')
+    assert kenshu('ぴあカードで確率UP 舞台『キュー』★2次受付〔大阪〕') == '2次受付', \
+        kenshu('ぴあカードで確率UP 舞台『キュー』★2次受付〔大阪〕')
+    assert kenshu('先行 ／ テスト公演〔東京・兵庫〕') == '先行', kenshu('先行 ／ テスト公演〔東京・兵庫〕')
+    # 🚨日付＋区別語の囲みは残す（2026-07-30 THE AWAODORI＝落とすと同じ会場の2枠が同じバッジになる）
+    assert kenshu('一般発売【８／１３（木）第２部】 ／ ＴＨＥ ＡＷＡＯＤＯＲＩ＜株式会社バル 紺屋町演舞場＞') \
+        == '一般発売【株式会社バル 紺屋町演舞場】【８/１３（木）第２部】', \
+        kenshu('一般発売【８／１３（木）第２部】 ／ ＴＨＥ ＡＷＡＯＤＯＲＩ＜株式会社バル 紺屋町演舞場＞')
+    # 日付だけの囲みは今まで通り落とす（区別情報が無いので二重に名乗るだけ）
+    assert kenshu('一般発売【８／１３】 ／ テスト') == '一般発売', kenshu('一般発売【８／１３】 ／ テスト')
+    assert kenshu('一般発売【８／１３（木）】 ／ テスト') == '一般発売', kenshu('一般発売【８／１３（木）】 ／ テスト')
+    # ⑩ ジャンル対応表（2026-07-30 追加）＝イベントカテゴリが engeki に倒れていた回帰テスト
+    assert genre_from_subcat('イベント', '祭り・花火大会', '第28回にっぽんど真ん中祭り') == ('fes', None)
+    assert genre_from_subcat('イベント', '祭り・花火大会', 'いたみ花火大会') == ('hanabi', None)
+    assert genre_from_subcat('イベント', '博覧会・展示会・見本市', 'にゃんだらけ21') == ('art', None)
+    # 2026-07-30(第2弾)＝イベント系サブの未収載で engeki へ倒れていた分の回帰
+    assert genre_from_subcat('イベント', '子供と楽しむ', '「おかあさんといっしょ」ファンターネ!がやってきた') == ('kids', None)
+    assert genre_from_subcat('イベント', 'アミューズメント', 'マクセル アクアパーク品川') == ('kids', None)
+    assert genre_from_subcat('イベント', 'スクール・レジャー', 'わんにゃん夜ふかし縁日') == ('kids', None)
+    # 「イベントその他」は 2026-08-03 に engeki、**2026-08-26 に musicetc（その他）へ再変更**。
+    # 将棋の対局前夜祭を演劇タブに置いても誰も探しに来ない＝その他という砦のほうが見つかる。
+    assert genre_from_subcat('イベント', 'イベントその他', '第39期竜王戦第2局三島対局 前夜祭') == ('musicetc', None)
+    # 2026-08-04(第4弾)の回帰
+    assert genre_from_subcat('映画', '洋画', 'わたしは、ダニエル・ブレイク') == ('movie', None)
+    assert genre_from_subcat('イベント', 'パフォーマンス', 'シルク・ドゥ・ソレイユ クーザ') == ('engeki', None)
+    # 🚨2026-08-27＝ユーザー「ジャンル作って　たためるようになったから躊躇なく作っていいよ」。
+    #   ぴあの66サブカテゴリ全部に行き先を作った＝**未収載（人が判断する枠）はゼロ**。
+    assert genre_from_subcat('イベント', 'ショー・ファンイベント', '瀬戸利樹 写真集発売記念イベント') == ('fanevent', None)
+    assert genre_from_subcat('イベント', '学園祭', '桃子 トークショー') == ('gakusai', None)
+    assert genre_from_subcat('イベント', 'サーカス', 'シルク・ドゥ・ソレイユ') == ('circus', None)
+    assert genre_from_subcat('イベント', 'マジック・イリュージョン', 'マジックショー') == ('magic', None)
+    assert genre_from_subcat('イベント', '祭り・花火大会', '第50回花火大会') == ('hanabi', None)
+    assert genre_from_subcat('音楽', 'シャンソン', 'シャンソンの夕べ') == ('chanson', None)
+    assert genre_from_subcat('音楽', '童謡・日本のうた', '日本のうたコンサート') == ('musicetc', None)
+    # ぴあの全サブカテゴリに行き先があること（人の判断枠を作らない・2026-08-26のユーザー決定）
+    _holes = [ (PIA_LG_LABEL[cd[:2]], nm) for cd, nm in PIA_GENRE_CD.items()
+               if nm not in PIA_GENRE_MAP and PIA_LG_LABEL[cd[:2]] not in PIA_CAT_FALLBACK ]
+    assert not _holes, '行き先の無いぴあサブカテゴリが残っている: %s' % (_holes,)
+    assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('hougaku', None)  # 和太鼓＝演奏を聴く側
+    # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
+    assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
+    print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels/genre_map/amazon 回帰なし')
+
+if __name__ == '__main__':
+    if '--selftest' in sys.argv:
+        _selftest(); sys.exit(0)
+    cands = json.load(open(sys.argv[1], encoding='utf-8'))
+    out, skip = [], []
+    for c in cands:
+        e = build(c)
+        (out.append(e) if e else skip.append(c['newid']))
+        sys.stderr.write(f"  {c['newid']} {'OK' if e else 'skip(売切)'}\n")
+    print(json.dumps(out, ensure_ascii=False, indent=1))
+    sys.stderr.write(f"構築 {len(out)} 件 / skip {skip}\n")
+    # 対応表に無いサブカテゴリ＝下書きジャンルが名前fallback＝レビューで人が見る枠。
+    # 止めはしない（下書きが空だと投入ゲートで止まるため）が、必ず目に入るように出す。
+    if _UNMAPPED_SUB:
+        sys.stderr.write(f"\n⚠️ PIA_GENRE_MAP 未収載のサブカテゴリ {len(_UNMAPPED_SUB)}件"
+                         f"（下書きは名前fallback＝要確認）:\n")
+        for nid, artist, sub, g in _UNMAPPED_SUB:
+            sys.stderr.write(f"   id{nid} [{sub}] → _genre={g} | {artist[:40]}\n")
+        sys.stderr.write("→ 正しければ PIA_GENRE_MAP に足すこと（次回から自動で当たる）。\n")
+    # 告知文にだけある先行（自動では足さない＝見える所に出すだけ・2026-09-11）
+    if _NOTICE_PRESALE:
+        sys.stderr.write(f"\n📣 告知文にだけ出ている先行 {len(_NOTICE_PRESALE)}件（券種カードに無い＝自動では足していない）:\n")
+        for nid, artist, u, items, urls in _NOTICE_PRESALE:
+            sys.stderr.write(f"   id{nid} {artist[:30]} | {u}\n")
+            for nm, per in items:
+                sys.stderr.write(f"      ■{nm} 受付期間：{per}\n")
+            for vu in urls[:3]:
+                sys.stderr.write(f"      申込: {vu}\n")
+        sys.stderr.write("→ 対象公演が1つに決まるものだけ、枠として手で足す（url は申込ページ）。\n")
+    # 【最重要ゲート】買えると判定したのに取り込めなかったカードを大声で報告。
+    # 1件でもあれば新しいぴあ表記を取りこぼしている＝parse_when/kenshu/状態判定を直す合図。
+    if _DROPPED:
+        sys.stderr.write("\n" + "!" * 60 + "\n")
+        sys.stderr.write(f"⚠️ 取りこぼし {len(_DROPPED)}件（買える枠なのに取り込めなかった＝要対応）:\n")
+        for nid, st, when, title in _DROPPED:
+            sys.stderr.write(f"   id{nid} [{st}] when={when!r} | {title}\n")
+        sys.stderr.write("→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。\n")
+        sys.stderr.write("!" * 60 + "\n")
+        sys.exit(3)   # 非ゼロ終了でパイプライン(投入前)を止める
