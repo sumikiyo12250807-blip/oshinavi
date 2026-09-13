@@ -431,7 +431,7 @@
       background: rgba(10, 10, 10, 0.6);
       border: 2px solid rgba(0, 229, 255, 0.85);
       border-radius: 8px;
-      padding: 14px 14px 14px 44px;
+      padding: 14px 48px 14px 44px;
       color: var(--text);
       font-size: 16px;
       outline: none;
@@ -439,6 +439,31 @@
       font-family: inherit;
       box-shadow: 0 0 18px rgba(0, 229, 255, 0.45), inset 0 0 10px rgba(0, 229, 255, 0.12);
     }
+
+    /* 【×ボタン】検索窓に入れた文字を一気に消す（2026-09-14 ユーザー指示）。
+       文字が空の時は出さない＝:placeholder-shown で決めるので、候補クリックや ?q= で
+       文字が入った時も JS なしで自動で出る。携帯で押しやすいよう当たり判定は36px四方。 */
+    #searchClear {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: transparent;
+      color: rgba(0, 229, 255, 0.95);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #searchClear:hover, #searchClear:focus-visible { background: rgba(0, 229, 255, 0.18); outline: none; }
+    #searchInput:placeholder-shown + #searchClear { display: none; }
 
     #searchInput::placeholder { color: rgba(220, 235, 240, 0.75); }
     #searchInput:focus {
@@ -1406,6 +1431,7 @@ Zeppを5つ回るツアーよ。<br>
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="アーティスト名・イベント名で検索…">
+    <button type="button" id="searchClear" aria-label="検索の文字を消す" title="検索の文字を消す">✕</button>
     <div id="searchSuggest"></div>
   </div>
 
@@ -177341,6 +177367,21 @@ Zeppを5つ回るツアーよ。<br>
     searchInput.addEventListener("blur", () => {
       setTimeout(() => suggest.classList.remove("open"), 150);
     });
+
+    // 【×ボタン】検索窓に入れた文字を一気に消す（2026-09-14 ユーザー指示「検索窓に入れた文字を一気に消せるボタンが必要」）。
+    //   出す/隠すは CSS の :placeholder-shown 任せ（候補クリック・?q= で文字が入った時も自動で出る）。
+    //   🚨消したあと画面は動かさない（feedback_search_autoscroll「検索文字を空に戻した時も動かさない」）。
+    //   続けて別の名前を打てるように、カーソルは検索窓に戻す。
+    const searchClear = document.getElementById("searchClear");
+    if (searchClear) {
+      searchClear.addEventListener("click", () => {
+        searchInput.value = "";
+        searchQuery = "";
+        suggest.classList.remove("open");
+        applyFilters();
+        searchInput.focus();
+      });
+    }
 
     // 【今週のピックアップ】記事の中の「発売になる公演」やアーティスト名を押したら、
     // その名前で検索した状態にして結果まで動かす（2026-08-20 ユーザー指示）。
