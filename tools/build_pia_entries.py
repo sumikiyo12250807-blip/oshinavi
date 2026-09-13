@@ -231,7 +231,9 @@ def parse_cards(h):
         # 止まる（2026-09-07 中部フィル 室内楽シリーズVol.6 / 09-08 も同型で2回停止）。
         # 🚨判定するのは【ステータス文言】だけ＝公演名に「ぴあ貸切公演」と入る実売の回
         #   （5424 新国立劇場バレエ団 ぴあスペシャルデー）を巻き添えにしない。
-        if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|販売期間終了|終了しました|結果発表|取扱なし|貸切公演)', stt):
+        # 🚨「この公演は中止になりました」＝クラスは is-before のまま＝発売前と読んで中止の公演を載せかけた
+        #   （2026-09-14 id8686『TOUCH FIVE』＝7/15・7/28発売の枠が組み上がった。取りこぼし警告で気づいた）。
+        if re.search(r'(予定枚数|完売|売り?切|受付は?終了|販売終了|販売期間終了|終了しました|結果発表|取扱なし|貸切公演|中止)', stt):
             state = '受付終了'
         elif cls == 'is-active' or re.search(r'(販売期間中|受付中|発売中|販売中|発売初日|本日発売)', stt):
             # ※「本日発売初日」はクラスがis-beforeでも“今日から販売中”＝受付中扱い。
@@ -1123,6 +1125,12 @@ def _selftest():
                '<p class="ticketSalesCard-2024__status is-before">発売前</p>'
                '<p class="ticketSalesCard-2024__title">一般発売 ／ テスト公演</p></li>')
     assert parse_cards(_before)[0]['state'] == '発売前', parse_cards(_before)
+    # ⑨-2 「この公演は中止になりました」＝クラスは is-before のまま＝発売前と読むと中止の公演を載せる
+    #    （2026-09-14 id8686『TOUCH FIVE』の回帰テスト）
+    _cancel = ('<li class="ticketSalesList-2024__item">'
+               '<p class="ticketSalesCard-2024__status is-before">この公演は中止になりました</p>'
+               '<p class="ticketSalesCard-2024__title">一般発売 ／ 2026 SHOW MUSICAL 『TOUCH FIVE』</p></li>')
+    assert parse_cards(_cancel)[0]['state'] == '受付終了', parse_cards(_cancel)
     assert kenshu('一般発売 ／ ＺＩＧＧＹ') == '一般発売'
     # ＜…＞も同様：公演日囲みは落とし、券種を分ける説明は残す（学生限定LIVE券が通常券と同一バッジに潰れた）
     assert kenshu('一般発売 ／ ＫＡＷＡＩＩ ＬＡＢ． ＭＡＴＥＳ＜学生限定ＬＩＶＥ＞') == '一般発売【学生限定ＬＩＶＥ】', \
