@@ -984,16 +984,24 @@
       border: 1px solid rgba(180, 120, 60, 0.35);
     }
 
+    /* 2026-09-13 ユーザー指示＝アフィリで報酬が入るボタン(Amazon/ホテル)は
+       塗りつぶし＋少し大きくして目立たせる。提携が拒否されたぴあは控えめのまま行の最後へ。 */
     .btn-amazon {
-      background: rgba(255, 153, 0, 0.15);
-      color: #ffb84d;
-      border: 1px solid rgba(255, 153, 0, 0.35);
+      background: #ff9900;
+      color: #1a1a1a;
+      border: 1px solid #ffc46b;
+      box-shadow: 0 0 12px rgba(255, 153, 0, 0.4);
+      padding: 7px 16px;
+      font-size: 13px;
     }
 
     .btn-hotel {
-      background: rgba(0, 180, 120, 0.12);
-      color: #4dd8a0;
-      border: 1px solid rgba(0, 180, 120, 0.3);
+      background: #00c887;
+      color: #0a0a0a;
+      border: 1px solid #6fffc4;
+      box-shadow: 0 0 12px rgba(0, 200, 135, 0.35);
+      padding: 7px 16px;
+      font-size: 13px;
     }
 
     .btn-rakuten {
@@ -176923,49 +176931,57 @@ Zeppを5つ回るツアーよ。<br>
     // ボタン順序: 楽天（最優先・アフィリ承認済）→ ぴあ → e+ → ローチケ → その他
     const linkDefs = [
       { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
-      { key: "pia",      label: "チケットぴあ",     cls: "btn-pia",      icon: "🎟" },
       { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
       { key: "lawson",   label: "ローソンチケット", cls: "btn-lawson",   icon: "🎫" },
       { key: "fany",     label: "FANYチケット",     cls: "btn-fany",     icon: "🎤" },
       { key: "yoshimoto",label: "吉本オンライン",   cls: "btn-yoshimoto",icon: "📺" },
       { key: "tvasahi",  label: "テレ朝チケット",   cls: "btn-tvasahi",  icon: "📺" },
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
-      { key: "amazon",   label: "最新CD",            cls: "btn-amazon",   icon: "🛒" },
-      { key: "amazonGoods", label: "グッズAmazon",   cls: "btn-amazon",   icon: "🛒" },
-      { key: "amazon2",  label: "最新CD②",          cls: "btn-amazon",   icon: "🛒" },
+      { key: "amazon",   label: "予習する（最新CD）", cls: "btn-amazon",   icon: "🎧" },
+      { key: "amazonGoods", label: "グッズを見る",   cls: "btn-amazon",   icon: "🛍" },
+      { key: "amazon2",  label: "予習する（最新CD②）", cls: "btn-amazon", icon: "🎧" },
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" }
     ];
     // ホテル予約: Expedia（バリューコマース sid=3769972 / pid=892633446・報酬4.4%）。2026-06-13 楽天トラベル・trivagoから差し替え
     const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">🏨 会場近くのホテルを探す</a>`;
     const hotelBtn = HOTEL_EXPEDIA_BTN;
-    const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "コンサートアイテム" };
-    const PENLIGHT_AMAZON = { url: "https://amzn.to/4trBSqX", label: "コンサートグッズ" };
-    const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "ライブ用耳栓" };
-    const OWARAI_AMAZON = { url: "https://amzn.to/42i7Yu5", label: "お笑いグッズ" };
+    const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "応援グッズをそろえる" }; // 飛び先は「コンサートグッズ」検索
+    // 2026-09-13 ユーザー指示＝「ペンライトは現地で買うもの・うちわは家で作って持っていくもの」。
+    // 旧 https://amzn.to/4trBSqX は「コンサートグッズ」検索だった（ボタンの文字と中身が合っていなかった）。
+    // 実測で商品59件ヒットを確認してから差し替え（reference_amazon_affiliate の data-asin 判定）。
+    const UCHIWA_AMAZON = { url: "https://www.amazon.co.jp/s?k=%E5%BF%9C%E6%8F%B4%E3%81%86%E3%81%A1%E3%82%8F%20%E6%89%8B%E4%BD%9C%E3%82%8A%20%E3%82%BB%E3%83%83%E3%83%88&tag=oshinavi0a-22", label: "応援うちわを作る" };
+    const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "耳栓を用意する" };
+    // ⛔2026-09-13から未使用（お笑いもうちわに変えた）。ユーザー提供リンクなので消さずに残す＝飛び先は「コンサートイベントグッズ」検索
+    const OWARAI_AMAZON = { url: "https://amzn.to/42i7Yu5", label: "イベントグッズを見る" };
+    // 2026-09-13 ユーザー指示＝クラシックに「応援グッズ」は合わないので演劇と同じオペラグラスに
+    const OPERAGLASS_AMAZON = { url: "https://amzn.to/47ZHLUm", label: "オペラグラスを用意する" }; // 飛び先は「オペラグラス 観劇」検索
+    // 2026-09-13 ユーザー指示＝花火のボタンが「フェス グッズ」に飛んでいたので花火大会用に差し替え
+    // （実測で商品53件ヒットを確認＝reference_amazon_affiliate の data-asin 判定）
+    const HANABI_AMAZON = { url: "https://www.amazon.co.jp/s?k=%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%20%E6%8C%81%E3%81%A1%E7%89%A9&tag=oshinavi0a-22", label: "花火の持ち物をそろえる" };
     // 2026-09-03 ユーザー指定でぬりえに差し替え（旧＝知育玩具 https://amzn.to/49jivJa）
-    const KIDS_AMAZON = { url: "https://amzn.to/4qTnpV0", label: "ぬりえ" };
-    const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦便利アイテム" };
-    const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦便利アイテム" };
+    const KIDS_AMAZON = { url: "https://amzn.to/4qTnpV0", label: "ぬりえを見る" };
+    const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦グッズをそろえる" };
+    const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦グッズをそろえる" };
     const BASEBALL_RE = /タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球/;
     const GENRE_AMAZON_LINKS = {
-      new:      PENLIGHT_AMAZON,
-      fes:      { url: "https://amzn.to/4uprRe4", label: "フェスアイテム" },
-      hanabi:   { url: "https://amzn.to/3OkhAB4", label: "花火大会グッズ" },
-      engeki:   { url: "https://amzn.to/47ZHLUm", label: "オペラグラス" },
-      jpop:     PENLIGHT_AMAZON,
-      kpop:     PENLIGHT_AMAZON,
+      new:      CONCERT_AMAZON,   // 新着はジャンル混在なので応援グッズ
+      fes:      { url: "https://amzn.to/4uprRe4", label: "フェスの持ち物をそろえる" },
+      hanabi:   HANABI_AMAZON,
+      engeki:   OPERAGLASS_AMAZON,
+      jpop:     UCHIWA_AMAZON,
+      kpop:     UCHIWA_AMAZON,
       rock:     ROCK_AMAZON,
       hiphop:   CONCERT_AMAZON,
-      idol:     CONCERT_AMAZON,
+      idol:     UCHIWA_AMAZON,    // うちわを手作りして持っていく文化がある
       anime:    CONCERT_AMAZON,
-      classic:  CONCERT_AMAZON,
-      youtuber: CONCERT_AMAZON,
-      vtuber:   CONCERT_AMAZON,
-      owarai:   OWARAI_AMAZON,
+      classic:  OPERAGLASS_AMAZON,
+      youtuber: UCHIWA_AMAZON,   // 2026-09-13 推しに会いに行く枠＝うちわへ
+      vtuber:   UCHIWA_AMAZON,   // 同上
+      owarai:   UCHIWA_AMAZON,   // 2026-09-13 ユーザー「お笑いも推しに会いに行くだから」＝うちわへ
       kids:     KIDS_AMAZON,
-      seiyuu:   PENLIGHT_AMAZON,
-      "2.5ji":  PENLIGHT_AMAZON,
-      fanevent: PENLIGHT_AMAZON,
+      seiyuu:   UCHIWA_AMAZON,
+      "2.5ji":  UCHIWA_AMAZON,
+      fanevent: UCHIWA_AMAZON,
       chanson:  CONCERT_AMAZON,
       musicetc: CONCERT_AMAZON,
     };
@@ -176985,18 +177001,23 @@ Zeppを5つ回るツアーよ。<br>
     const uniqTicketUrls = [...new Set((ev.tickets || []).map(t => t.url).filter(Boolean))];
     const multiTicketUrl = uniqTicketUrls.length > 1;
     const VENDOR_TICKET_KEYS = ["rakuten", "pia", "eplus", "lawson", "fany", "yoshimoto", "tvasahi", "shochiku", "official"];
+    // ボタンの文字はエントリごとに差し替えられる（links に "<キー>Label" を足す）。
+    // 🚨Amazonリンクの中身はCDとは限らない＝三木大雲は本しか出ないのに「最新CD」と
+    // 出ていた（2026-09-06 ユーザー指摘）。中身に合う言葉を links.amazonLabel で指定する。
+    const btnHTML = (d) => {
+      const label = ev.links[d.key + "Label"] || d.label;
+      return `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${label}</a>`;
+    };
+    // 2026-09-13 ユーザー指示＝ぴあはアフィリ提携が拒否された（reference_affiliate_status）ので
+    // 行のいちばん最後へ回す。報酬が入る 楽天(先頭)・ホテル(Expedia)・Amazon を前に出して目立たせる。
+    const PIA_DEF = { key: "pia", label: "チケットぴあ", cls: "btn-pia", icon: "🎟" };
+    const piaBtn = (ev.links && ev.links.pia && !multiTicketUrl) ? btnHTML(PIA_DEF) : "";
     const linksHTML = linkDefs
       .filter(d => ev.links && ev.links[d.key])
       .filter(d => !(hasPrimaryVendor && (d.key === "eplus" || d.key === "lawson")))
       .filter(d => !(multiTicketUrl && VENDOR_TICKET_KEYS.includes(d.key)))
-      .map(d => {
-        // ボタンの文字はエントリごとに差し替えられる（links に "<キー>Label" を足す）。
-        // 🚨Amazonリンクの中身はCDとは限らない＝三木大雲は本しか出ないのに「最新CD」と
-        // 出ていた（2026-09-06 ユーザー指摘）。中身に合う言葉を links.amazonLabel で指定する。
-        const label = ev.links[d.key + "Label"] || d.label;
-        return `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${label}</a>`;
-      })
-      .join("") + hotelBtn + genreAmazonBtn;
+      .map(btnHTML)
+      .join("") + hotelBtn + genreAmazonBtn + piaBtn;
 
     return `
       <div class="event-card"
