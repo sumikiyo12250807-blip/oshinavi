@@ -1029,6 +1029,17 @@
       font-size: 13px;
     }
 
+    /* 【ネオンの画像ボタン】画像があるボタンは塗り・枠・余白を消して絵だけを出す（高さ36px・2026-09-14）。
+       画像がまだ無いボタンは上の .btn-amazon／.btn-hotel の文字ボタンのまま。 */
+    .ticket-link-btn.btn-img {
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+      line-height: 0;
+    }
+    .btn-img-pic { height: 36px; width: auto; display: block; }
+
     .btn-rakuten {
       background: rgba(191, 0, 0, 0.12);
       color: #ff6666;
@@ -176969,7 +176980,19 @@ Zeppを5つ回るツアーよ。<br>
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" }
     ];
     // ホテル予約: Expedia（バリューコマース sid=3769972 / pid=892633446・報酬4.4%）。2026-06-13 楽天トラベル・trivagoから差し替え
-    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">🏨 会場近くのホテルを探す</a>`;
+    // 【ネオンの画像ボタン】（2026-09-13 ユーザーがチャッピーで作った画像・表示の高さ36px）
+    //   文言ごとに画像を割り当てる＝同じ文言のボタンはどのジャンルでも同じ絵になる。
+    //   画像がまだ無い文言は今の文字ボタンのまま。alt に文言を入れて検索・読み上げに残す。
+    //   画像を足す時は img/ に置いて、ここに1行足すだけ。
+    const BTN_IMG = {
+      "会場近くのホテルを探す": "img/btn_hotel.png",
+      "応援うちわを作る": "img/btn_uchiwa.png",
+    };
+    const btnInner = (icon, label) => BTN_IMG[label]
+      ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
+      : `${icon} ${label}`;
+    const btnImgCls = (label) => BTN_IMG[label] ? " btn-img" : "";
+    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel${btnImgCls("会場近くのホテルを探す")}" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">${btnInner("🏨", "会場近くのホテルを探す")}</a>`;
     const hotelBtn = HOTEL_EXPEDIA_BTN;
     const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "応援グッズをそろえる" }; // 飛び先は「コンサートグッズ」検索
     // 2026-09-13 ユーザー指示＝「ペンライトは現地で買うもの・うちわは家で作って持っていくもの」。
@@ -177018,7 +177041,7 @@ Zeppを5つ回るツアーよ。<br>
         : OTHER_SPORTS_AMAZON;
     }
     const genreAmazonBtn = genreAmazon
-      ? `<a class="ticket-link-btn btn-amazon" href="${genreAmazon.url}" target="_blank" rel="noopener">🛍 ${genreAmazon.label}</a>`
+      ? `<a class="ticket-link-btn btn-amazon${btnImgCls(genreAmazon.label)}" href="${genreAmazon.url}" target="_blank" rel="noopener">${btnInner("🛍", genreAmazon.label)}</a>`
       : '';
     // 楽天 or ぴあが登録されていれば e+/ローチケは非表示（アフィリ優先）
     const hasPrimaryVendor = ev.links && (ev.links.rakuten || ev.links.pia);
