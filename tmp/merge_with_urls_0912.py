@@ -65,6 +65,7 @@ cands = {c['newid']: c for c in json.load(io.open(BUILT[1] if len(BUILT) > 1 els
 
 added = burned = 0
 touched = []
+twins = []   # 既存と同じ県・公演日・締切で、券種名だけ違う枠（二重の入口かもしれない）
 for b in built:
     e = by.get(cands[b['id']].get('target', b['id']))
     if not e:
@@ -80,10 +81,21 @@ for b in built:
 
     # ② 既存に無い骨格の枠だけ足す。**そのページのURLを焼き込む**
     have = {head(t.get('type')) for t in (e.get('tickets') or [])}
+    # 🚨9/14＝骨格（券種名つき）で比べるので、ぴあが同じ売り場を別の書き方で出すと二重に足す
+    #   （3710 札幌対大分＝まとめページ経由の「一般発売【明治安田J2リーグ】」「一般発売【■■■車いす…】」が、
+    #    公演ページの「一般発売」「一般発売【車いす…】」と同じ売り場＝同じ県・公演日・締切で2つずつ並んだ）。
+    #   ただし同じ県・公演日・締切でも本当に別の売り場（会場ホール別の前売券・単日/通し券・紙/電子）が普通にある
+    #   ＝9/14 の点検で26枠中24枠がそれ。**機械で捨てると買える枠を落とす**ので、足したうえで一覧に出して目で確かめる
+    #   （見分け方＝まとめページの枠の飛び先 eventCd が、既存の枠の url と同じなら二重）。
+    have_key = {(re.sub(r'^.*?(（[^（）]*公演）)', r'\1', t.get('type') or ''), t.get('date')): t.get('type')
+                for t in (e.get('tickets') or [])}
     news = []
     for bt in b.get('tickets') or []:
         if head(bt.get('type')) in have:
             continue
+        k = (re.sub(r'^.*?(（[^（）]*公演）)', r'\1', bt.get('type') or ''), bt.get('date'))
+        if k in have_key:
+            twins.append((e['id'], bt.get('type'), have_key[k]))
         t = dict(bt)
         t['url'] = bt.get('url') or srcurl
         news.append(t)
@@ -154,6 +166,10 @@ print('足した枠 %d / 既存のurl空に焼き込んだ %d / 触ったエン�
       % (added, burned, len(touched)))
 for i, n, k, v in touched:
     print('  id=%-5s %-34s ＋%d枠  %s' % (i, n, k, v))
+if twins:
+    print('\n⚠️ 既存と同じ県・公演日・締切で券種名だけ違う枠 %d（二重の入口かもしれない＝足す前に飛び先 eventCd を見る）' % len(twins))
+    for i, new_t, old_t in twins:
+        print('  id=%-5s 足す: %s\n         既存: %s' % (i, new_t, old_t))
 
 if not APPLY:
     print('\n(--apply で書き込み)')
