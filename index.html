@@ -642,7 +642,10 @@
       padding-left: 12px;
       border-left: 2px solid rgba(255,255,255,0.18);
     }
-    .filter-btn.gg-all { font-weight: 700; }
+    /* 「音楽すべて」などのボタンは画面から消す（2026-09-14 ユーザー指示「音楽すべてとか舞台全てのボタンを無くして」）。
+       見出し（音楽・舞台…）を押した時にこのボタンを「選んだ状態」にして絞り込む＝部品としては残す。
+       残しておくと、検索で絞り込みを外す処理（clearNarrowing）や、見出しを光らせる :has() がそのまま効く。 */
+    .filter-btn.gg-all { display: none; }
 
     /* ── メイン ── */
     main {
@@ -176014,6 +176017,18 @@ Zeppを5つ回るツアーよ。<br>
         // 一度に開くのは1グループだけ（27個が一気に出ると畳んだ意味がない）
         document.querySelectorAll(".genre-group.open").forEach(g => g.classList.remove("open"));
         if (!wasOpen) grp.classList.add("open");
+        // 【見出しを押したら、そのグループ全体で絞り込む】（2026-09-14 ユーザー指示
+        //   「音楽 舞台 エンタメを押したら、すぐに音楽すべてや舞台全てに選択されるようにして」）
+        //   画面から消した「音楽すべて」ボタン（.gg-all）を選んだ状態にする＝ジャンルボタンを押した時と同じ中身。
+        //   🚨開く時だけ選ぶ。閉じる時は選択を変えない（中の「お笑い」等を選んだあと畳んでも、お笑いのまま）。
+        //   🚨ここでは画面を動かさない（revealResultCount を呼ばない）＝開いた中から細かいジャンルを選ぶ人がいるため。
+        const all = grp.querySelector(".filter-btn.gg-all");
+        if (!wasOpen && all) {
+          document.querySelectorAll(".filter-btn[data-genre]").forEach(b => b.classList.remove("active"));
+          all.classList.add("active");
+          activeGenre = all.dataset.genre;
+          applyFilters();
+        }
       });
     });
 
