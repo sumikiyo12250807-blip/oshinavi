@@ -115,7 +115,7 @@ for ln in lines[1:]:
         cur = m.group(1).strip(); secs[cur] = []
     else:
         secs.setdefault(cur, []).append(ln)
-lede = [x for x in secs["（導入）"] if x.strip()]
+lede_raw = secs["（導入）"]
 
 
 def paras_of(body):
@@ -135,8 +135,12 @@ B = ['<section class="pickup" id="pickup">',
      '  <h2 class="pk-title">%s</h2>' % esc(title),
      '  <p class="pk-sub">9/14(月)〜9/20(日)にチケットの発売が始まるアーティスト紹介</p>',
      '  <div class="pk-lede">']
+# 🚨導入は「空行で段落を割る」＝1つの段落に2文入れたら <br> でつなぐ（2026-09-13）。
+#   1行=1段落にしていたので、深掘りの予告を2文に割ると pk-tease の点線が文の途中に入った。
+lede = paras_of(lede_raw)
 for i, p in enumerate(lede):
-    B.append('    <p%s>%s</p>' % (' class="pk-tease"' if i == len(lede) - 1 else "", esc(p.strip())))
+    t = "<br>\n".join(esc(ln.strip()) for ln in p.split("\n") if ln.strip())
+    B.append('    <p%s>%s</p>' % (' class="pk-tease"' if i == len(lede) - 1 else "", t))
 B += ['  </div>',
       '  <button class="pk-more" id="pickupMore" type="button" aria-expanded="false" '
       'aria-controls="pickupBody">今週の主役を読む</button>',
