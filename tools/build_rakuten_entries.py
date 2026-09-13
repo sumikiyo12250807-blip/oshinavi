@@ -517,6 +517,24 @@ def main():
 
     import rakuten_harvest as RH
     rows = json.load(open(args.src, encoding='utf-8'))
+    # 🚨 rakuten_presale_harvest.py の出力は perfs が「件数(int)」＝ここにそのまま渡すと build() で TypeError になる
+    #    （2026-09-13・09-14 と2日続けて踏んだ）。その形の行は rakuten_harvest のパーサでページを読み直して揃える。
+    fixed = []
+    for r in rows:
+        if isinstance(r.get('perfs'), list):
+            fixed.append(r)
+            continue
+        try:
+            rec = RH.parse_page(r['url'], RH.fetch(r['url']))
+        except Exception as ex:
+            sys.stderr.write('  skip %s (読み直せなかった: %s)\n' % ((r.get('name') or '')[:40], str(ex)[:60]))
+            continue
+        if not rec:
+            sys.stderr.write('  skip %s (読み直したが解析できない形式)\n' % (r.get('name') or '')[:40])
+            continue
+        sys.stderr.write('  読み直した %s（perfs が件数の形だった）\n' % (rec.get('name') or '')[:40])
+        fixed.append(rec)
+    rows = fixed
     groups = {}
     for r in rows:
         groups.setdefault(RH.norm_name(r['name']), []).append(r)
