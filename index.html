@@ -208936,37 +208936,37 @@ Zeppを5つ回るツアーよ。<br>
     //   画像を足す時は img/ に置いて、ここに1行足すだけ。
     // 🚨2026-09-14 朝 ユーザー「ホテルとチケットのボタンだけ変わってて変だからそろえて／今日帰ったら全部作って載せるから戻して」
     //   ＝画像が2枚だけ混ざるとちぐはぐ。全部の画像がそろうまでは空にして、今までの文字ボタンで出す。
-    //   そろったら下の2行を戻し、残り7枚を1行ずつ足す（img/btn_hotel.png・img/btn_uchiwa.png は置いたまま）。
-    //   "会場近くのホテルを探す": "img/btn_hotel.png",
-    //   "応援うちわを作る": "img/btn_uchiwa.png",
+    //   🆕2026-09-14 夜 ユーザー決定＝ボタンの文字を短くした（案①）。画像は新しい文字で9枚作り直す＝そろったら9行足す。
+    //   遠征の宿を探す／推しうちわを作る／推し活グッズ／ライブ用耳栓／オペラグラス／フェスの必需品／花火の必需品／観戦グッズ／ぬりえ
+    //   （img/btn_hotel.png・img/btn_uchiwa.png は旧文言「会場近くのホテルを探す」「応援うちわを作る」の画像＝使わない）
     const BTN_IMG = {};
     const btnInner = (icon, label) => BTN_IMG[label]
       ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
       : `${icon} ${label}`;
     const btnImgCls = (label) => BTN_IMG[label] ? " btn-img" : "";
-    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel${btnImgCls("会場近くのホテルを探す")}" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">${btnInner("🏨", "会場近くのホテルを探す")}</a>`;
+    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel${btnImgCls("遠征の宿を探す")}" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">${btnInner("🏨", "遠征の宿を探す")}</a>`;
     const hotelBtn = HOTEL_EXPEDIA_BTN;
-    const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "応援グッズをそろえる" }; // 飛び先は「コンサートグッズ」検索
+    const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "推し活グッズ" }; // 飛び先は「コンサートグッズ」検索
     // 2026-09-13 ユーザー指示＝「ペンライトは現地で買うもの・うちわは家で作って持っていくもの」。
     // 旧 https://amzn.to/4trBSqX は「コンサートグッズ」検索だった（ボタンの文字と中身が合っていなかった）。
     // 実測で商品59件ヒットを確認してから差し替え（reference_amazon_affiliate の data-asin 判定）。
-    const UCHIWA_AMAZON = { url: "https://www.amazon.co.jp/s?k=%E5%BF%9C%E6%8F%B4%E3%81%86%E3%81%A1%E3%82%8F%20%E6%89%8B%E4%BD%9C%E3%82%8A%20%E3%82%BB%E3%83%83%E3%83%88&tag=oshinavi0a-22", label: "応援うちわを作る" };
-    const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "耳栓を用意する" };
+    const UCHIWA_AMAZON = { url: "https://www.amazon.co.jp/s?k=%E5%BF%9C%E6%8F%B4%E3%81%86%E3%81%A1%E3%82%8F%20%E6%89%8B%E4%BD%9C%E3%82%8A%20%E3%82%BB%E3%83%83%E3%83%88&tag=oshinavi0a-22", label: "推しうちわを作る" };
+    const ROCK_AMAZON = { url: "https://amzn.to/48LOZM1", label: "ライブ用耳栓" };
     // ⛔2026-09-13から未使用（お笑いもうちわに変えた）。ユーザー提供リンクなので消さずに残す＝飛び先は「コンサートイベントグッズ」検索
     const OWARAI_AMAZON = { url: "https://amzn.to/42i7Yu5", label: "イベントグッズを見る" };
     // 2026-09-13 ユーザー指示＝クラシックに「応援グッズ」は合わないので演劇と同じオペラグラスに
-    const OPERAGLASS_AMAZON = { url: "https://amzn.to/47ZHLUm", label: "オペラグラスを用意する" }; // 飛び先は「オペラグラス 観劇」検索
+    const OPERAGLASS_AMAZON = { url: "https://amzn.to/47ZHLUm", label: "オペラグラス" }; // 飛び先は「オペラグラス 観劇」検索
     // 2026-09-13 ユーザー指示＝花火のボタンが「フェス グッズ」に飛んでいたので花火大会用に差し替え
     // （実測で商品53件ヒットを確認＝reference_amazon_affiliate の data-asin 判定）
-    const HANABI_AMAZON = { url: "https://www.amazon.co.jp/s?k=%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%20%E6%8C%81%E3%81%A1%E7%89%A9&tag=oshinavi0a-22", label: "花火の持ち物をそろえる" };
+    const HANABI_AMAZON = { url: "https://www.amazon.co.jp/s?k=%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%20%E6%8C%81%E3%81%A1%E7%89%A9&tag=oshinavi0a-22", label: "花火の必需品" };
     // 2026-09-03 ユーザー指定でぬりえに差し替え（旧＝知育玩具 https://amzn.to/49jivJa）
-    const KIDS_AMAZON = { url: "https://amzn.to/4qTnpV0", label: "ぬりえを見る" };
-    const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦グッズをそろえる" };
-    const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦グッズをそろえる" };
+    const KIDS_AMAZON = { url: "https://amzn.to/4qTnpV0", label: "ぬりえ" };
+    const BASEBALL_AMAZON = { url: "https://amzn.to/4cjW1IR", label: "観戦グッズ" };
+    const OTHER_SPORTS_AMAZON = { url: "https://amzn.to/4vqJXOw", label: "観戦グッズ" };
     const BASEBALL_RE = /タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球/;
     const GENRE_AMAZON_LINKS = {
       new:      CONCERT_AMAZON,   // 新着はジャンル混在なので応援グッズ
-      fes:      { url: "https://amzn.to/4uprRe4", label: "フェスの持ち物をそろえる" },
+      fes:      { url: "https://amzn.to/4uprRe4", label: "フェスの必需品" },
       hanabi:   HANABI_AMAZON,
       engeki:   OPERAGLASS_AMAZON,
       jpop:     UCHIWA_AMAZON,
