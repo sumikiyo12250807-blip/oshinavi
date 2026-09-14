@@ -1,23 +1,36 @@
 [
  {
-  "id": 6340,
+  "id": 3406,
   "status": "convert",
-  "artist": "I am I Presents ハーモニー・コンサート 2027",
+  "artist": "反田恭平&ザルツブルク・モーツァルテウム管弦楽団 日本ツアー2027",
   "tickets": [
    {
-    "type": "プレリザーブ（東京・兵庫 R9年 1/21〜1/27公演）9/15 10:00発売",
-    "date": "2026-09-23",
-    "startDate": "2026-09-15"
+    "type": "プリセール（神奈川 R9年 3/15公演）9/15 10:00発売",
+    "date": "2026-09-15",
+    "startDate": "2026-09-15",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629758"
    },
    {
-    "type": "一般販売（東京 R9年 1/21公演）10/3 10:00発売",
-    "date": "2026-10-03",
-    "startDate": "2026-10-03"
+    "type": "一般発売（WEB受付）（神奈川 R9年 3/15公演）9/22 10:00発売",
+    "date": "2026-09-22",
+    "startDate": "2026-09-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629758"
    },
    {
-    "type": "一般販売（兵庫 R9年 1/27公演）10/3 10:00発売",
-    "date": "2026-10-03",
-    "startDate": "2026-10-03"
+    "type": "一般発売（福岡 R9年 3/17公演）9/27 10:00発売",
+    "date": "2026-09-27",
+    "startDate": "2026-09-27",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626599"
+   },
+   {
+    "type": "一般発売（岡山 R9年 3/16公演）〜3/14 23:59",
+    "date": "2027-03-14",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630922"
+   },
+   {
+    "type": "一般発売（東京 R9年 3/25公演）〜3/22 23:59",
+    "date": "2027-03-22",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624462"
    }
   ]
  }
