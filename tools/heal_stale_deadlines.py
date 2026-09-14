@@ -66,12 +66,22 @@ def visible_slot(t, today):
     return not ((not sd or sd <= today) and d < today)
 
 
+def _url_id(u):
+    """飛び先の「売り場の番号」＝eventBundleCd／eventCd／lotRlsCd。番号が無ければURLそのまま。
+    🚨2026-09-14 追加＝ぴあは同じ売り場を ticket.pia.jp/pia/event.do?eventCd=X と
+    t.pia.jp/pia/event/event.do?eventCd=X の2通りで書く。URLの文字で比べると同じ枠を「消える」と数え、
+    安全弁が5件（5155・5332・5411・7326・8405）を止めた＝どれもぴあで無くなった枠は0だった。"""
+    m = re.search(r'(eventBundleCd|eventCd|lotRlsCd)=(\w+)', u or '')
+    return '%s=%s' % m.groups() if m else (u or '').strip()
+
+
 def slot_key(t):
-    """🚨2026-09-02 追加。安全弁の比較キー＝「券種の基底名＋飛び先URL」。
+    """🚨2026-09-02 追加。安全弁の比較キー＝「券種の基底名＋飛び先（売り場の番号）」。
     perf_key は同じ公演の券種違いを「兵庫 9/17公演」1つに潰すので、
     id3853 阪神×広島の12枠→1枠（券種ごとに別 eventCd）を検知できなかった。
-    公演で畳まず、券種と売り場で見る。（feedback_heal_flattens_ticket_types）"""
-    return (base_type(t.get('type')), (t.get('url') or '').strip())
+    公演で畳まず、券種と売り場で見る。（feedback_heal_flattens_ticket_types）
+    飛び先はURLの書き方でなく売り場の番号で比べる（2026-09-14・_url_id）。"""
+    return (base_type(t.get('type')), _url_id(t.get('url')))
 
 
 def carry_start_dates(old_tickets, new_tickets):
