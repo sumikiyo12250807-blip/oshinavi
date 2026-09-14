@@ -62,6 +62,7 @@ W('# 検証%s の買える枠が登録で覆われているか（締切日・県
 miss_ids = 0
 miss_slots = 0
 checked = 0
+stale = []   # 逆向き＝登録で見えているのに、検証係の読んだ買える枠のどれとも合わない枠
 for r in sorted(rows, key=lambda x: x['id']):
     e = by.get(r['id'])
     if not e:
@@ -94,6 +95,41 @@ for r in sorted(rows, key=lambda x: x['id']):
                 break
         if not ok:
             lost.append(s)
+    # 逆向き＝登録で見えている「ぴあの枠」が、検証係の読んだ買える枠のどれかと合うか（締切日・県・公演日）。
+    #   合わない＝ぴあではもう買えない（販売終了・予定枚数終了）のに画面では買えるように出ている疑い。
+    #   🚨1対1で組む＝同じ締切の枠が4つあって1つだけ予定枚数終了の時、「どれかと合えばよい」だと
+    #   残り3つと合ったことにされて隠れる（検証Wの対象はみなこの形）。合う相手の少ない枠から順に、
+    #   まだ使っていない買える枠を1つずつ割り当て、相手が残っていない登録の枠を出す。
+    live = [s for s in r.get('slots') or [] if s.get('state') in ('受付中', '発売前')]
+    pairs = []
+    for t, sp in spans:
+        u = t.get('url') or (e.get('links') or {}).get('pia') or ''
+        if 'pia.jp' not in u:
+            continue
+        cand = []
+        for k, s in enumerate(live):
+            end = (s.get('end') or '')[:10]
+            start = (s.get('start') or '')[:10]
+            if not ((end and t.get('date') == end) or (t.get('startDate') and start and t.get('startDate') == start)
+                    or (not end and t.get('date') == start)):
+                continue
+            if not sp:
+                cand.append(k)
+                continue
+            prefs, a, b = sp
+            sd = s.get('show_date') or ''
+            sd_end = s.get('show_date_end') or sd
+            pf = pshort(s.get('pref'))
+            if ('全国' in prefs or pf in prefs or not pf) and (a <= sd <= b or a <= sd_end <= b or (sd <= a and b <= sd_end)):
+                cand.append(k)
+        pairs.append((t, cand))
+    used = set()
+    for t, cand in sorted(pairs, key=lambda x: len(x[1])):
+        free = [k for k in cand if k not in used]
+        if free:
+            used.add(free[0])
+        else:
+            stale.append((r['id'], (e.get('name') or '')[:30], t.get('type'), t.get('date')))
     if lost:
         miss_ids += 1
         miss_slots += len(lost)
@@ -105,7 +141,11 @@ for r in sorted(rows, key=lambda x: x['id']):
         if len(lost) > 12:
             W('  - ほか %d枠\n' % (len(lost) - 12))
         W('  - 登録：%s\n' % ' ／ '.join(t.get('type') for t in tix[:6]))
-W('\n読めた %d件 / 突き合わせた買える枠 %d / 覆う登録が無い枠がある %d件・%d枠\n' % (len(rows), checked, miss_ids, miss_slots))
+W('\n## 逆向き＝登録で見えているのに、ぴあで買える枠のどれとも合わない %d枠\n\n' % len(stale))
+for i, n, ty, d in stale:
+    W('- id%s %s ｜%s（date %s）\n' % (i, n, ty, d))
+W('\n読めた %d件 / 突き合わせた買える枠 %d / 覆う登録が無い枠がある %d件・%d枠 / 逆向きで合わない登録の枠 %d\n' % (
+    len(rows), checked, miss_ids, miss_slots, len(stale)))
 out.close()
-print('読めた %d件 / 突き合わせた買える枠 %d / 覆う登録が無い枠がある %d件・%d枠 → tmp/deadline_cover_%s_0914.md' % (
-    len(rows), checked, miss_ids, miss_slots, GRP))
+print('読めた %d件 / 突き合わせた買える枠 %d / 覆う登録が無い枠がある %d件・%d枠 / 逆向きで合わない登録の枠 %d → tmp/deadline_cover_%s_0914.md' % (
+    len(rows), checked, miss_ids, miss_slots, len(stale), GRP))
