@@ -117,6 +117,13 @@ def main():
             narrowed = [w for w in cands if kind and (kind in nlabel(w['label']) or nlabel(w['label']) in kind)]
             if len({(w['ed'], w['et'], w['stxt']) for w in narrowed}) == 1:
                 cands = narrowed
+        # 見出しが同じ窓が2つ（「先着 受付」＝ライブ配信〜当日とアーカイブ〜1週間後）で決まらない時は、
+        # 枠がもう持っている締切日（date）と同じ日に終わる窓を選ぶ＝登録を作った時点で対応は決まっている
+        # （2026-09-14 6067 二見颯一&青山新【動画配信】11/22・【アーカイブ】11/28）。券種名はページの奥（JS）で読めない。
+        if len({(w['ed'], w['et'], w['stxt']) for w in cands}) > 1:
+            same_day = [w for w in cands if w['ed'].isoformat() == t.get('date')]
+            if len({(w['ed'], w['et'], w['stxt']) for w in same_day}) == 1:
+                cands = same_day
         if not cands:
             res['NOMATCH'].append(row + [' / '.join('%s %s〜%s %s %s' % (w['label'][:16], w['sd'], w['ed'], w['et'], w['stxt']) for w in ws)[:200]])
             continue
