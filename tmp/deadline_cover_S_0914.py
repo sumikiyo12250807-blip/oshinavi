@@ -31,6 +31,11 @@ def pshort(p):
     return p if p == '北海道' else re.sub(r'(都|府|県)$', '', p)
 
 
+def pshort_set(p):
+    """検証係は1枚のカードで複数県を売る枠を「山口県／東京都」とひとまとめで書く＝県の集合にして比べる。"""
+    return {pshort(x) for x in re.split(r'[／/・]', unicodedata.normalize('NFKC', p or '')) if x.strip()}
+
+
 def show_span(ty):
     """（香川・愛媛 10/21〜10/23公演）→ ({'香川','愛媛'}, '2026-10-21', '2026-10-23')。全国は県を問わない。"""
     mm = re.search(r'（([^（）]*?)\s*((?:R9年\s*)?\d{1,2}/\d{1,2})(?:\s*\d{1,2}:\d{2})?(?:〜((?:R9年\s*)?\d{1,2}/\d{1,2}))?公演）', ty or '')
@@ -80,7 +85,7 @@ for r in sorted(rows, key=lambda x: x['id']):
         checked += 1
         sd = s.get('show_date') or ''
         sd_end = s.get('show_date_end') or sd
-        pf = pshort(s.get('pref'))
+        pf = pshort_set(s.get('pref'))
         ok = False
         for t, sp in spans:
             day_ok = (end and t.get('date') == end) or (not end and start and t.get('startDate') == start)
@@ -90,7 +95,7 @@ for r in sorted(rows, key=lambda x: x['id']):
                 ok = True
                 break
             prefs, a, b = sp
-            if ('全国' in prefs or pf in prefs or not pf) and (a <= sd <= b or a <= sd_end <= b or (sd <= a and b <= sd_end)):
+            if ('全国' in prefs or (pf & prefs) or not pf) and (a <= sd <= b or a <= sd_end <= b or (sd <= a and b <= sd_end)):
                 ok = True
                 break
         if not ok:
@@ -119,8 +124,8 @@ for r in sorted(rows, key=lambda x: x['id']):
             prefs, a, b = sp
             sd = s.get('show_date') or ''
             sd_end = s.get('show_date_end') or sd
-            pf = pshort(s.get('pref'))
-            if ('全国' in prefs or pf in prefs or not pf) and (a <= sd <= b or a <= sd_end <= b or (sd <= a and b <= sd_end)):
+            pf = pshort_set(s.get('pref'))
+            if ('全国' in prefs or (pf & prefs) or not pf) and (a <= sd <= b or a <= sd_end <= b or (sd <= a and b <= sd_end)):
                 cand.append(k)
         pairs.append((t, cand))
     used = set()
