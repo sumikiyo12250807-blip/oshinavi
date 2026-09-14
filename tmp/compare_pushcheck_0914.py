@@ -55,7 +55,8 @@ for r in sorted(rows, key=lambda x: x['id']):
         continue
     flags = []
     shows = r.get('shows') or []
-    last = max((s.get('date') or '' for s in shows), default='')
+    # 会期のある公演（展覧会・通し券）は date＝初日・date_end＝最終日で来る＝最終日で比べる（9/14 9241・9394 の見かけで直した）
+    last = max((s.get('date_end') or s.get('date') or '' for s in shows), default='')
     if last and last != e.get('date'):
         flags.append('千秋楽 登録%s／実%s' % (e.get('date'), last))
     live = [s for s in (r.get('slots') or []) if (s.get('state') or '') in ('受付中', '発売前')]
