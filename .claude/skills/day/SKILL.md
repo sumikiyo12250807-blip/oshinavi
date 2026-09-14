@@ -161,6 +161,10 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
 
 4. **隠れ枠ヒール** `heal_stale_deadlines.py` → `--build` → `--apply`
    - 安全弁が出た子は**実ページを単発で確認して手で当てる**
+     🆕（2026-09-14）手で当てる時は**足し算**＝`tmp/heal_blocked_union_1805.py` の形（取り直しを全部入れ、元の枠は置き換えられた分だけ外す）。
+     止まるのは混雑だけでなく「取り直しが拾わない枠」（売り切れ印・まとめページ版の飛び先・飛び先が空）がある時。
+     🚨売り切れの印付きの枠は**締切が過去でも残す**（画面に「予定枚数終了」で出ている）。当てたら `tmp/heal_head_compare_1805.py` で
+     HEAD と出る枠を突き合わせ、減ったエントリ0を確かめる。消えそうな枠は `tmp/heal_blocked_slotstatus_1805.py` でぴあを1枠ずつ読む
 5. **🆕「〆切日に発売時刻がくっつく」型の掃除**（2026-08-16 ユーザーがスクショで発見）
    - 検出＝`startDate == today` かつ `date > today` かつ type が「M/D HH:MM発売」形（not soldout）
    - 直し＝`heal_stale_deadlines.py --ids ... --build → --apply`。雛形 `tmp/today_started_0816.py`
