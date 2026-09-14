@@ -1,0 +1,9 @@
+=== reconcile_pia (today=2026-09-14) 対象2件 ===
+
+✅ id=9862 都響スペシャル | 登録1=ぴあ1 一致
+💤 id=9890 JET STREAM LIVE 2026 in 渋谷音楽祭  | 登録1枠 / ぴあ買える0枠
+    ❌FETCH ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark= | https://t.pia.jp/pia/event/event.do?eventCd=2627430
+    💤STALE 登録「プレリザーブ3次（東京 10/18公演）〜9/16 23:59」(2026-09-16) がぴあの買える枠に無い
+
+=== 集計: OK 1 / 🚨MISSING 0 / ⚠️DROP 0 / 💤STALE 1 / ❌FETCH 1 / ❌QC 0 ===
+=== QC照合カバレッジ: 照合できた枠 1/1 ===
