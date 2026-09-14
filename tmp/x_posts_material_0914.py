@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
-"""9/13夜のX投稿（明日9/14発売）の素材を、投稿1本ずつに割って1枚にする。Fableに渡すのはこれと X_SCRIPT.md だけ。
-・明日9/14発売＝その投稿のジャンルを全部（同じ時刻・名前・県・先行の行は1行にまとめる）
-・9/15・9/16＝その投稿のジャンルから箱の大きい順に5件、残りは「他にも◯件以上」（10の位で切り下げ・10未満はそのまま）
-🚨「発売開始」＝ticket.startDate がその日のもの。新着プール（振り分け前）は出さない。売り切れ枠は出さない。
+"""9/14夜のX投稿（明日9/15発売）の素材を、投稿1本ずつに割って1枚にする。Fableに渡すのはこれと X_SCRIPT.md だけ。
+・明日9/15発売＝その投稿のジャンルを全部（同じ時刻・名前・県・先行の行は1行にまとめる）
+・9/16・9/17＝その投稿のジャンルから箱の大きい順に5件、残りは「他にも◯件」＝X_SCRIPT の四捨五入（2026-09-13 ユーザー修正）
+  下1桁0〜4＝切り下げて「◯件以上」／5〜9＝切り上げて「◯件近く」／10未満はそのまま
+🚨「発売開始」＝ticket.startDate がその日のもの。新着プール（振り分け前＝genre:new）は出さない（?genre= の着地先に出ないため）。
+  売り切れ枠は出さない。新着プールにある明日発売の数は、最後に参考として出す。
 出力: tmp/x0914/material.md
 """
 import collections, datetime, io, json, os, re
-DAYS = ['2026-09-14', '2026-09-15', '2026-09-16']
+DAYS = ['2026-09-15', '2026-09-16', '2026-09-17']
 WD = '月火水木金土日'
 GROUPS = [  # (投稿の名前, [genre...], URLのgenre)
     ('音楽（J-POP・ロック・洋楽）', ['jpop', 'rock', 'yougaku'], 'jpop'),
@@ -29,22 +31,30 @@ def bigness(v):
 
 
 def more(n):
+    """X_SCRIPT 中身の決まり3＝四捨五入（11→10件以上／14→10件以上／15→20件近く／129→130件近く）。"""
     if n <= 0:
         return None
     if n < 10:
         return '他にも%d件あるわ' % n
-    return '他にも%d件以上あるわ' % (n // 10 * 10)
+    if n % 10 <= 4:
+        return '他にも%d件以上あるわ' % (n // 10 * 10)
+    return '他にも%d件近くあるわ' % ((n // 10 + 1) * 10)
 
+
+assert more(11) == '他にも10件以上あるわ' and more(14) == '他にも10件以上あるわ'
+assert more(15) == '他にも20件近くあるわ' and more(129) == '他にも130件近くあるわ' and more(5) == '他にも5件あるわ'
 
 h = io.open('index.html', encoding='utf-8').read()
 EV = json.loads(re.search(r'  const EVENTS = (\[.*?\]);', h, re.S).group(1))
 rows = {d: collections.defaultdict(list) for d in DAYS}
+newpool = collections.Counter()
 for e in EV:
-    if e.get('genre') == 'new':
-        continue
     for t in e.get('tickets') or []:
         sd = t.get('startDate')
         if sd not in rows or t.get('soldout'):
+            continue
+        if e.get('genre') == 'new':
+            newpool[sd] += 1
             continue
         ty = t.get('type') or ''
         m = re.search(r'(\d{1,2}):(\d{2})\s*発売', ty)
@@ -56,10 +66,10 @@ for e in EV:
         senko = any(k in ty for k in ('先行', 'プレリザーブ', '抽選', 'プリセール', 'プレオーダー'))
         rows[sd][e.get('genre')].append((hhmm, e.get('name') or '', pref, e.get('venue') or '', senko))
 
-os.makedirs('tmp/x0913', exist_ok=True)
+os.makedirs('tmp/x0914', exist_ok=True)
 o = io.open('tmp/x0914/material.md', 'w', encoding='utf-8')
 W = o.write
-W('# 9/12夜のX投稿の素材（明日 9/13(日) 発売）\n\n')
+W('# 9/14夜のX投稿の素材（明日 9/15(火) 発売）\n\n')
 W('ここにある事実だけで書くこと。ここに無い情報（経歴・音楽的特徴・人気）は書かない。\n\n')
 for gi, (title, gs, urlg) in enumerate(GROUPS, 1):
     W('\n---\n\n## まとめ枠 %d：%s\n\nURL＝ oshinavi.jp/?genre=%s&status=urgent\n' % (gi, title, urlg))
@@ -90,3 +100,4 @@ for gi, (title, gs, urlg) in enumerate(GROUPS, 1):
                 W('（%s）\n' % mm)
 o.close()
 print('→ tmp/x0914/material.md')
+print('参考＝新着プール（振り分け前・素材に入れていない）にある発売開始の枠: ' + ' / '.join('%s %d枠' % (d, newpool[d]) for d in DAYS))
