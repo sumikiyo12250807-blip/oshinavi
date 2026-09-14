@@ -824,6 +824,26 @@ def disambiguate(tickets, newid=None):
     return tickets
 
 
+def span_rows(allrows, buy_rows, today=None):
+    """会期（date/dateLabel/venue/prefecture）を作る行＝「これから行われる全公演」。
+    🚨2026-09-14＝会期を買える枠（buy_rows）だけで作っていた＝売り切れ・先行だけの先の公演が会期から落ちた
+      （9855 反田恭平が「10/24〜11/13」＝本当は 12/14 静岡まで。feedback_show_true_dates_not_sellable_range 違反の型）。
+    入れる＝公演（最終日）が今日以降の行。予定枚数終了・受付終了でも入れる（公演は行われる）。
+    入れない＝もう終わった公演（2026-09-12 ユーザー決定）／中止・延期（その日には行われない）。
+    枠（tickets）は今までどおり買える行だけ＝ここは日付と場所の欄だけに使う。"""
+    today = today or datetime.date.today().isoformat()
+    out = list(buy_rows)
+    for r in allrows:
+        if not r.get('perfdate') or r in out:
+            continue
+        if (r.get('perf_end') or r['perfdate']) < today:
+            continue
+        if re.search(r'(中止|延期)', r.get('stt') or ''):
+            continue
+        out.append(r)
+    return out
+
+
 def build(cand):
     allrows, htmls = [], []
     gone = []
@@ -864,12 +884,14 @@ def build(cand):
         return None
     # カードが複数会場を持つ（多会場ツアー行）ときは r['venues'] を全部展開する。
     # r['venue'] だけ見ると多会場カードが空扱いになり「全国ツアー（）」になる。
+    # 会期と場所の欄は「これから行われる全公演」から作る（span_rows・2026-09-14）。枠は rows（買える行）のまま。
+    span = span_rows(allrows, rows)
     venues = list(dict.fromkeys(
-        v for r in rows
+        v for r in span
         for v in (r.get('venues') or ([r['venue']] if r.get('venue') else []))))
-    prefs = list(dict.fromkeys(p for r in rows for p in r['prefs']))
-    starts = sorted(r['perfdate'] for r in rows if r['perfdate'])
-    ends = sorted((r.get('perf_end') or r['perfdate']) for r in rows if r['perfdate'])
+    prefs = list(dict.fromkeys(p for r in span for p in r['prefs']))
+    starts = sorted(r['perfdate'] for r in span if r['perfdate'])
+    ends = sorted((r.get('perf_end') or r['perfdate']) for r in span if r['perfdate'])
     # multi=「買える券種が複数の公演ページ(eventCd/bundle)由来」。この時だけ各ticketに会場別url
     # を付ける(=下のベンダーボタンを自動非表示にして1会場誤誘導を防ぐ)。単一ページ由来なら
     # links.pia=その1ページが全券種を載せるのでボタンはそのまま正しく機能する。
@@ -1253,7 +1275,19 @@ def _selftest():
     assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('hougaku', None)  # 和太鼓＝演奏を聴く側
     # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
     assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
-    print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels/genre_map/amazon 回帰なし')
+    # ⑫ 会期は「これから行われる全公演」から作る（9855 反田恭平＝買える枠だけで 10/24〜11/13 に縮んでいた・2026-09-14）
+    _buy = [{'perfdate': '2026-10-24', 'perf_end': '2026-10-24', 'prefs': ['東京'], 'stt': '販売期間中'},
+            {'perfdate': '2026-11-13', 'perf_end': '2026-11-13', 'prefs': ['東京'], 'stt': '発売前'}]
+    _all = _buy + [
+        {'perfdate': '2026-12-14', 'perf_end': '2026-12-14', 'prefs': ['静岡'], 'stt': '予定枚数終了'},   # これから＝入れる
+        {'perfdate': '2026-08-01', 'perf_end': '2026-08-01', 'prefs': ['大阪'], 'stt': '販売終了'},       # 終わった＝入れない
+        {'perfdate': '2026-12-20', 'perf_end': '2026-12-20', 'prefs': ['福岡'], 'stt': 'この公演は中止になりました'},  # 中止＝入れない
+        {'perfdate': '2026-07-01', 'perf_end': '2026-10-01', 'prefs': ['京都'], 'stt': '受付終了'},       # 会期中の展覧会＝入れる
+        {'perfdate': '', 'perf_end': '', 'prefs': [], 'stt': '受付終了'}]                                   # 日付なし＝入れない
+    _sp = span_rows(_all, _buy, today='2026-09-14')
+    assert sorted(r['perf_end'] for r in _sp) == ['2026-10-01', '2026-10-24', '2026-11-13', '2026-12-14'], _sp
+    assert span_rows(_buy, _buy, today='2026-09-14') == _buy          # 先の公演が無ければ今までと同じ
+    print('selftest OK: parse_when/kenshu/R9年(mdbadge)/wpia_only/prefs_for/labels/genre_map/amazon/会期span 回帰なし')
 
 if __name__ == '__main__':
     if '--selftest' in sys.argv:
