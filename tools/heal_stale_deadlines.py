@@ -192,10 +192,15 @@ def main():
             #    （2026-08-05・ネクライトーキー3545のローチケ3枠が消えるところだった）。
             #    ただし同じ公演をぴあ側が持ち始めていたら二重表示になるので、公演単位で名寄せし
             #    「ぴあに無い公演の非ぴあ枠」だけ据え置く（購入先の優先はぴあ>ローチケ）。
+            # 🚨2026-09-16 追加＝同じ公演でも「ぴあに無い受付」の非ぴあ枠は残す。
+            #    旧＝公演単位で名寄せしたので、ぴあがその公演を売り始めると **ローチケだけのプレリク先行まで** 落ちた
+            #    （5717 一青窈 宮崎・鹿児島の抽選プレリク2次 9/16 12:00＋一般 9/26 の4枠。HEAD突合で発見・手で戻した）。
+            #    券種名（県 公演日）が同じ枠だけを「ぴあと二重」とみなして落とす（購入先の優先はぴあ>ローチケのまま）。
             newk = {perf_key(t.get('type')) for t in o['tickets']}
+            newbase = {base_type(t.get('type')) for t in o['tickets']}
             keep = [t for t in (e.get('tickets') or [])
                     if (t.get('url') or '') and 'pia.jp' not in (t.get('url') or '')
-                    and perf_key(t.get('type')) not in newk]
+                    and (perf_key(t.get('type')) not in newk or base_type(t.get('type')) not in newbase)]
             kept_n += len(keep)
             e['tickets'] = list(o['tickets']) + keep
             changed += 1
