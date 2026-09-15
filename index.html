@@ -215427,19 +215427,23 @@ Zeppを5つ回るツアーよ。<br>
     //   🚨2026-09-15 夜 ユーザー「会場近くのホテルを探す　ってお願いしたのに／勝手に決めて載せないでほしい」＝ホテルは元の文字に戻した（「遠征の宿を探す」は使わない）
     //   （img/btn_uchiwa.png は旧文言「応援うちわを作る」の画像＝使わない）
     // 🆕2026-09-15 夜 ユーザー「とりあえずこれで並べてみて」＝届いた5枚を入れた（そのあと耳栓・フェス・CD・花火も足した＝画像にするボタンは全部そろった）。
-    //   ぬりえは画像なし＝文字ボタンのまま（9/15 夜 ユーザー「塗り絵はなくていい」）。
     //   キーは今のボタンの文字。画像の中の文字はユーザーが作ったまま（ホテル＝「会場近くの宿を探す」・うちわ＝「応援うちわを作る」）。
+    // 🆕2026-09-15 夜 ユーザー「最新のCDが一番しっくり来てて、こんな風に全部をそろえたい」→見本を見て「いいわ　全部作って」
+    //   ＝CDの画像を型にして、字とアイコンだけ差し替えた画像（img/btn2_*.png・作り方は tmp/btn/btn_from_cd_0915.py）。
+    //   ぬりえ・チケットぴあもこの型で足した（ユーザー「ぬりえ　も作って」「チケットぴあも作ってあげて」）。
+    //   ホテルとうちわは、ボタンの文字と画像の字のどちらにするかユーザーが決めるまで、ユーザーが作った画像のまま。
     const BTN_IMG = {
       "会場近くのホテルを探す": "img/btn_hotel_0915.png",
       "推しうちわを作る": "img/btn_uchiwa_0915.png",
-      "推し活グッズ": "img/btn_goods_0915.png",
-      "オペラグラス": "img/btn_operaglass_0915.png",
-      "観戦グッズ": "img/btn_kansen_0915.png",
-      // 🆕9/15 夜 Geminiで作った3枚（CDの画像の文字は「最新のCD」＝ユーザーが作ったまま）
-      "ライブ用耳栓": "img/btn_earplug_0915.png",
-      "フェスの必需品": "img/btn_fes_0915.png",
       "予習する（最新CD）": "img/btn_cd_0915.png",
-      "花火の必需品": "img/btn_hanabi_0915.png",
+      "推し活グッズ": "img/btn2_goods.png",
+      "オペラグラス": "img/btn2_operaglass.png",
+      "観戦グッズ": "img/btn2_kansen.png",
+      "ライブ用耳栓": "img/btn2_earplug.png",
+      "フェスの必需品": "img/btn2_fes.png",
+      "花火の必需品": "img/btn2_hanabi.png",
+      "ぬりえ": "img/btn2_nurie.png",
+      "チケットぴあ": "img/btn2_pia.png",
     };
     const btnInner = (icon, label) => BTN_IMG[label]
       ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
