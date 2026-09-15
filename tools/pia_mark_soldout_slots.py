@@ -31,6 +31,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 
 sys.path.insert(0, 'tools')
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
@@ -58,12 +59,48 @@ def card_day(around):
     return {'%d/%d' % (int(a), int(b)) for a, b in ds}
 
 
+STATUS_RE = re.compile(r'__status\s+(is-[\w-]+)"[^>]*>(.*?)(?:<br|</p>|</span>)', re.S)  # pia_statustext.statuses と同じ
+
+
+def cards_of(html):
+    """statuses と同じ (状態, クラス, 手前の地の文) に、紙／電子の印を足して返す。
+    🚨2026-09-16 ASKA 山形12/13＝カードの「紙」「電子」は状態の文言から約1,580字前のタグの中にあり、
+    statuses の「手前1,400字・タグを外した文」には入らない＝生のHTMLの手前3,000字でいちばん近い方を拾い、文の後ろに付ける。"""
+    out = []
+    for txt, cls, around in statuses(html):
+        out.append([txt, cls, around])
+    i = 0
+    for m in STATUS_RE.finditer(html):
+        if i >= len(out):
+            break
+        raw = unicodedata.normalize('NFKC', html[max(0, m.start() - 3000):m.start()])
+        a, b = raw.rfind('紙'), raw.rfind('電子')
+        if a >= 0 or b >= 0:
+            out[i][2] += ' ［%s］' % ('紙' if a > b else '電子')
+        i += 1
+    return [tuple(x) for x in out]
+
+
+def kind_of(s):
+    """紙／電子の別。カードは「手前の文の中でいちばん近い方」で決める（手前に前のカードの名前も入っているため）。"""
+    s = unicodedata.normalize('NFKC', s or '')
+    a, b = s.rfind('紙'), s.rfind('電子')
+    if a < 0 and b < 0:
+        return None
+    return '紙' if a > b else '電子'
+
+
 def judge(ty, cards):
-    """('soldout'|'saleended'|None, 見たカード数)。"""
+    """('soldout'|'saleended'|'alive'|None, 見たカード数)。"""
     days = set(badge_days(ty))
     if not days:
         return None, 0
-    mine = [(txt, cls) for txt, cls, around in cards if card_day(around) & days]
+    mine = [(txt, cls, around) for txt, cls, around in cards if card_day(around) & days]
+    # 🚨2026-09-16 ASKA 山形12/13＝紙が受付中なのを見て電子の印まで外した＝枠が紙か電子なら、同じ種類のカードだけで決める
+    k = kind_of(ty)
+    if k:
+        mine = [c for c in mine if kind_of(c[2]) in (k, None)]
+    mine = [(txt, cls) for txt, cls, _ in mine]
     if not mine:
         return None, 0
     if any(ALIVE.search(t) for t, _ in mine):
@@ -104,7 +141,7 @@ def main():
                 continue
             if u not in cache:
                 try:
-                    cache[u] = statuses(fetch(u))
+                    cache[u] = cards_of(fetch(u))
                 except Exception as ex:
                     cache[u] = []
                     print('   取得できなかった %s (%r)' % (u, ex))
@@ -165,6 +202,11 @@ def _selftest():
     assert judge('一般発売（東京 9/25公演）〜9/24', mixed)[0] is None       # 判定がつかない＝触らない（外さない）
     wo = [('この公演は予定枚数を終了いたしました', 'is-before', '2026/9/25(金)')]
     assert judge('一般発売（東京 9/25公演）〜9/24', wo)[0] == 'soldout'
+    # 紙と電子は別の枠（ASKA 山形12/13＝紙が受付中・電子が予定枚数終了）
+    pe = [('販売期間中', 'is-active', '一般発売（山形／紙チケット） 2026/12/13(日)'),
+          ('予定枚数終了', 'is-active', '一般発売（山形／紙チケット） 2026/12/13(日) 一般発売（山形／電子チケット） 2026/12/13(日)')]
+    assert judge('一般発売（山形/電子チケット）（山形 12/13公演）〜11/5 23:59', pe)[0] == 'soldout'
+    assert judge('一般発売（山形/紙チケット）（山形 12/13公演）〜11/5 23:59', pe)[0] == 'alive'
     assert judge('一般発売（東京 12/1公演）〜11/30', cards2)[0] is None  # 別の公演日は見ない
     print('selftest OK: バッジの公演日 / カードの公演日 / 全部売切だけ印 / 1つでも生きていたら触らない')
 
