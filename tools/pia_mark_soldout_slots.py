@@ -38,7 +38,7 @@ from build_pia_entries import fetch            # noqa: E402
 from pia_statustext import statuses            # noqa: E402
 
 TODAY = datetime.date.today().isoformat()
-SOLD = re.compile(r'予定枚数終了|完売|売切')
+SOLD = re.compile(r'予定枚数(?:を)?終了|完売|売切')  # 「この公演は予定枚数を終了いたしました」も売り切れ（3875・2026-09-16）
 ENDED = re.compile(r'販売終了|受付終了|終了しました')
 ALIVE = re.compile(r'受付中|販売期間中|発売前|販売前|受付前|発売中')
 BADGE = re.compile(r'（[^（）]*?((?:R\d+年\s*)?\d{1,2}/\d{1,2}(?:〜(?:R\d+年\s*)?\d{1,2}/\d{1,2})?)'
@@ -67,7 +67,7 @@ def judge(ty, cards):
     if not mine:
         return None, 0
     if any(ALIVE.search(t) for t, _ in mine):
-        return None, len(mine)          # 1つでも生きている＝触らない
+        return 'alive', len(mine)       # 1つでも生きている＝印を付けない（付いていれば外す）
     if all(SOLD.search(t) for t, _ in mine):
         return 'soldout', len(mine)
     if all(SOLD.search(t) or ENDED.search(t) for t, _ in mine):
@@ -124,7 +124,10 @@ def main():
                 t['saleEndedSince'] = TODAY
                 marked += 1
                 print('⚪ id=%-5s %-50s → 販売終了（カード%d枚）' % (e['id'], t['type'][:50], n))
-            elif v is None and t.get('soldout') and n:
+            # 🚨外すのは「買える言い方がはっきりあった」時だけ（2026-09-16）。
+            #   旧＝ v is None（判定がつかない）でも外していた＝「本サイト取扱なし」「予定枚数を終了いたしました」の
+            #   カードが混ざると 3513 大相撲・3875 の売り切れの印を10枠まとめて外そうとした（ぴあは全部売り切れ）
+            elif v == 'alive' and t.get('soldout'):
                 t.pop('soldout', None)
                 t.pop('soldoutSince', None)
                 t.pop('saleEnded', None)
@@ -156,7 +159,12 @@ def _selftest():
     assert judge('一般発売（東京 9/25公演）〜9/24', cards2)[0] == 'soldout'
     cards3 = [('予定枚数終了', 'is-active', ' 2026/9/25(金) 渋谷 '),
               ('受付中', 'is-active', ' 2026/9/25(金) 渋谷 ')]
-    assert judge('一般発売（東京 9/25公演）〜9/24', cards3)[0] is None   # 1つでも生きていたら触らない
+    assert judge('一般発売（東京 9/25公演）〜9/24', cards3)[0] == 'alive'   # 1つでも生きていたら印を付けない（付いていれば外す）
+    # 2026-09-16 の穴＝判定がつかない（本サイト取扱なし が混ざる）時に印を外していた／「予定枚数を終了」を売り切れと読めなかった
+    mixed = [('予定枚数終了', 'is-active', '2026/9/25(金)'), ('本サイト取扱なし', 'is-before', '2026/9/25(金)')]
+    assert judge('一般発売（東京 9/25公演）〜9/24', mixed)[0] is None       # 判定がつかない＝触らない（外さない）
+    wo = [('この公演は予定枚数を終了いたしました', 'is-before', '2026/9/25(金)')]
+    assert judge('一般発売（東京 9/25公演）〜9/24', wo)[0] == 'soldout'
     assert judge('一般発売（東京 12/1公演）〜11/30', cards2)[0] is None  # 別の公演日は見ない
     print('selftest OK: バッジの公演日 / カードの公演日 / 全部売切だけ印 / 1つでも生きていたら触らない')
 
