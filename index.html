@@ -215592,7 +215592,7 @@ Zeppを5つ回るツアーよ。<br>
         ? BASEBALL_AMAZON
         : OTHER_SPORTS_AMAZON;
     }
-    const genreAmazonBtn = genreAmazon
+    let genreAmazonBtn = genreAmazon   // let＝作品のグッズボタンがあるキッズでは下で空にする（ユーザー「ぬりえいらないよ　けして」）
       ? `<a class="ticket-link-btn btn-amazon${btnImgCls(genreAmazon.label)}" href="${genreAmazon.url}" target="_blank" rel="noopener">${btnInner("🛍", genreAmazon.label)}</a>`
       : '';
     // 🆕2026-09-15 夜 子ども向けは作品ごとのAmazonボタンを「足す」（ジャンルの「ぬりえ」は残す）
@@ -215634,6 +215634,9 @@ Zeppを5つ回るツアーよ。<br>
     const kidsWorkBtn = kidsWork
       ? `<a class="ticket-link-btn btn-amazon${btnImgCls(kidsWork.label)}" href="${kidsWork.url}" target="_blank" rel="noopener">${btnInner("🛍", kidsWork.label)}</a>`
       : '';
+    // 9/15 夜 ユーザー「ぬりえいらないよ　けして」＝作品のグッズボタンがあるキッズのカードでは「ぬりえ」を出さない
+    //   （専用の amazonGoods がある 309 しまじろう・43 シナモロールも同じ）。作品の無いキッズのカードの「ぬりえ」はユーザーの返事待ち。
+    if (ev.genre === 'kids' && (kidsWork || (ev.links && ev.links.amazonGoods))) genreAmazonBtn = '';
     // 楽天 or ぴあが登録されていれば e+/ローチケは非表示（アフィリ優先）
     const hasPrimaryVendor = ev.links && (ev.links.rakuten || ev.links.pia);
     // 各バッジ(ticket)が別URLに飛ぶ統合エントリ(公演ごとにURLが違う)は、
