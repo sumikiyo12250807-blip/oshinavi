@@ -741,8 +741,9 @@ def genre_from_subcat(cat, sub, name=''):
         return ('enka', None) if '演歌' in sub else ('hougaku', None)
     # 「祭り・花火大会」は花火大会と祭りが同居する1カテゴリ。名前に花火があれば hanabi、
     # 無ければ祭り＝屋外の複数組イベント＝fes（[[feedback_fes_definition]]）。2026-07-30追加。
+    # 🚨2026-09-15＝「華火」表記（東京湾大華火祭・道新・秋華火）が fes に落ちていた＝花火の当て字も拾う。
     if sub and '花火' in sub:
-        return ('hanabi', None) if re.search(r'花火', name or '') else ('fes', None)
+        return ('hanabi', None) if re.search(r'花火|華火', name or '') else ('fes', None)
     if sub and sub in PIA_GENRE_MAP: return PIA_GENRE_MAP[sub]
     if sub:
         for k, v in PIA_GENRE_MAP.items():
@@ -1248,6 +1249,7 @@ def _selftest():
     # ⑩ ジャンル対応表（2026-07-30 追加）＝イベントカテゴリが engeki に倒れていた回帰テスト
     assert genre_from_subcat('イベント', '祭り・花火大会', '第28回にっぽんど真ん中祭り') == ('fes', None)
     assert genre_from_subcat('イベント', '祭り・花火大会', 'いたみ花火大会') == ('hanabi', None)
+    assert genre_from_subcat('イベント', '祭り・花火大会', '中央区制80周年記念・港区政80周年記念 東京湾大華火祭') == ('hanabi', None)
     assert genre_from_subcat('イベント', '博覧会・展示会・見本市', 'にゃんだらけ21') == ('art', None)
     # 2026-07-30(第2弾)＝イベント系サブの未収載で engeki へ倒れていた分の回帰
     assert genre_from_subcat('イベント', '子供と楽しむ', '「おかあさんといっしょ」ファンターネ!がやってきた') == ('kids', None)
