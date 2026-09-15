@@ -687,6 +687,21 @@
     }
 
     .result-meta span { color: var(--text); font-weight: 700; }
+    /* 【2026-09-15】URLで絞った状態で着地した人への帯「絞り込み中：◯◯ ✕全部見る」。
+       色は新しく作らない＝黒地に白字・件数の行と同じ字の大きさ（ユーザーの配色の決まり 2026-08-29） */
+    .narrow-bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      margin: 6px 0 10px; padding: 8px 10px;
+      background: var(--bg2); border: 1px solid rgba(255,255,255,0.35); border-radius: 8px;
+      font-size: 12px; color: var(--text);
+    }
+    .narrow-bar[hidden] { display: none; }
+    .narrow-bar b { color: #fff; font-weight: 700; }
+    #narrowBarClear {
+      flex: none; background: var(--bg3); color: #fff;
+      border: 1px solid rgba(255,255,255,0.35); border-radius: 999px;
+      font-size: 12px; padding: 4px 10px; cursor: pointer;
+    }
 
     /* ── イベントカード ── */
     .event-list {
@@ -1590,6 +1605,10 @@ Zeppを5つ回るツアーよ。<br>
 <main>
   <div class="result-meta">
     <span id="resultCount">6192</span> 件のイベント
+  </div>
+  <div class="narrow-bar" id="narrowBar" hidden>
+    <span>絞り込み中：<b id="narrowBarText"></b></span>
+    <button type="button" id="narrowBarClear">✕ 全部見る</button>
   </div>
 
   <div class="event-list" id="eventList">
@@ -208651,6 +208670,33 @@ Zeppを5つ回るツアーよ。<br>
     document.getElementById("resultCount").textContent = filteredEvents.length;
     document.getElementById("emptyState").style.display = filteredEvents.length === 0 ? "block" : "none";
     renderNextBatch();
+    updateNarrowBar();
+  }
+
+  // 【2026-09-15 ユーザー決定「帯は出していいわ」】X等のURL（?genre= ?status= ?area=）で絞った状態で着地した人に、
+  //   件数の行の下へ「絞り込み中：お笑い・今週発売　✕ 全部見る」を出す。絞られていると気づかず帰るのを防ぐ。
+  //   出すのはURLで着地した時だけ（narrowBarOn）。ボタンを押し直したら文字をその場で合わせ、
+  //   絞り込みが全部外れたら消す＝画面の帯と中身を食い違わせない。?q= は検索窓に名前が出るので出さない。
+  let narrowBarOn = false;
+  function updateNarrowBar() {
+    const bar = document.getElementById("narrowBar");
+    if (!bar) return;
+    if (!narrowBarOn || (activeGenre === "all" && activeStatus === "all" && activeRegion === "all")) {
+      bar.hidden = true;
+      narrowBarOn = false;
+      return;
+    }
+    // ボタンの文字から先頭の絵文字（🔴・🌏 など）を落として使う
+    const lab = sel => {
+      const b = document.querySelector(sel);
+      return b ? b.textContent.replace(/^[^0-9A-Za-z぀-ヿ㐀-鿿]+/, "").trim() : "";
+    };
+    const parts = [];
+    if (activeGenre !== "all") parts.push(lab(".filter-btn.active[data-genre]"));
+    if (activeStatus !== "all") parts.push(lab(".filter-btn.active[data-status]"));
+    if (activeRegion !== "all") parts.push(lab(".filter-btn.active[data-region]"));
+    document.getElementById("narrowBarText").textContent = parts.filter(Boolean).join("・");
+    bar.hidden = false;
   }
 
   // ────────────────────────────────────────────────
@@ -208817,6 +208863,9 @@ Zeppを5つ回るツアーよ。<br>
     function isNarrowed() {
       return activeGenre !== "all" || activeStatus !== "all" || activeRegion !== "all";
     }
+    // 帯の「✕ 全部見る」＝ジャンル・ステータス・エリアを全部「すべて」に戻す（帯は applyFilters の中で消える）
+    const narrowBarClear = document.getElementById("narrowBarClear");
+    if (narrowBarClear) narrowBarClear.addEventListener("click", () => { clearNarrowing(); applyFilters(); });
 
     searchInput.addEventListener("input", e => {
       const q = e.target.value.trim();
@@ -209009,6 +209058,8 @@ Zeppを5つ回るツアーよ。<br>
           const b = document.querySelector('[data-region="' + ar + '"]');
           if (b) { b.click(); landed = true; }
         }
+        // URLで絞って着地した＝「絞り込み中」の帯を出す（2026-09-15 ユーザー決定）
+        if (landed) { narrowBarOn = true; updateNarrowBar(); }
       }
 
       if (q0) {
