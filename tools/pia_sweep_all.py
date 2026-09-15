@@ -112,14 +112,25 @@ def plan_buckets():
                                 'sg=%s %s / %s' % (sg, lab, rlab), t2))
             else:
                 # さらに都道府県で割る
+                # 🚨地域の外の pf を当てると、ぴあは「地域全体＋その県」の合算を返す（2026-09-15 実測＝
+                #   関東甲信越 1,310件に pf=23 愛知 → 1,706件・pf=27 大阪 → 1,759件）。
+                #   地域の中の県は必ず地域の件数より少ない（東京 811・神奈川 164・茨城 43）。
+                #   → t3 < t2 の県だけ残す。地域外の37県を拾うと同じページを約5,000回余計に読んでいた。
                 print('    %s も %d件 → 都道府県で割る' % (rlab, t2))
+                kept = 0
                 for pf in ['%02d' % i for i in range(1, 48)]:
                     t3 = total_of('%s&sg=%s&rg=%s&pf=%s' % (BASE, sg, rg, pf))
                     time.sleep(0.4)
-                    if not t3:
+                    if not t3 or t3 >= t2:
                         continue
+                    kept += 1
                     buckets.append(('%s&sg=%s&rg=%s&pf=%s' % (BASE, sg, rg, pf),
                                     'sg=%s %s / %s / pf=%s' % (sg, lab, rlab, pf), t3))
+                if not kept:
+                    # 県で割れなかった（1県に集中している等）＝地域のまま回して頭打ちを警告に残す
+                    print('    ⚠️ %s は県で割れなかった → 地域のまま（1000件の頭打ちあり）' % rlab)
+                    buckets.append(('%s&sg=%s&rg=%s' % (BASE, sg, rg),
+                                    'sg=%s %s / %s（県で割れず）' % (sg, lab, rlab), t2))
     return buckets, base_total
 
 
