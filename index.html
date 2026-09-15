@@ -215434,6 +215434,10 @@ Zeppを5つ回るツアーよ。<br>
       "推し活グッズ": "img/btn_goods_0915.png",
       "オペラグラス": "img/btn_operaglass_0915.png",
       "観戦グッズ": "img/btn_kansen_0915.png",
+      // 🆕9/15 夜 Geminiで作った3枚（CDの画像の文字は「最新のCD」＝ユーザーが作ったまま）
+      "ライブ用耳栓": "img/btn_earplug_0915.png",
+      "フェスの必需品": "img/btn_fes_0915.png",
+      "予習する（最新CD）": "img/btn_cd_0915.png",
     };
     const btnInner = (icon, label) => BTN_IMG[label]
       ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
@@ -215502,7 +215506,7 @@ Zeppを5つ回るツアーよ。<br>
     // 出ていた（2026-09-06 ユーザー指摘）。中身に合う言葉を links.amazonLabel で指定する。
     const btnHTML = (d) => {
       const label = ev.links[d.key + "Label"] || d.label;
-      return `<a class="ticket-link-btn ${d.cls}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${d.icon} ${label}</a>`;
+      return `<a class="ticket-link-btn ${d.cls}${btnImgCls(label)}" href="${ev.links[d.key]}" target="_blank" rel="noopener">${btnInner(d.icon, label)}</a>`;
     };
     // 2026-09-13 ユーザー指示＝ぴあはアフィリ提携が拒否された（reference_affiliate_status）ので
     // 行のいちばん最後へ回す。報酬が入る 楽天(先頭)・ホテル(Expedia)・Amazon を前に出して目立たせる。

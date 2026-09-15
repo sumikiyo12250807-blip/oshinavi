@@ -10,7 +10,9 @@ import os
 import sys
 from PIL import Image
 
-PAD, H, FRAC = 12, 88, 0.85
+PAD, H = 12, 88
+# 枠の線が暗い画像（Geminiの最新のCD＝上の線が6割しか光っていない）は環境変数 BTN_FRAC で下げる
+FRAC = float(os.environ.get('BTN_FRAC', '0.85'))
 args = sys.argv[1:]
 for src, dst in zip(args[0::2], args[1::2]):
     im = Image.open(src).convert('RGB')
