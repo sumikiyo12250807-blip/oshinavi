@@ -50,6 +50,15 @@ JOBS = [
     ("shimajiro", "しまじろうグッズ", None, None, None),
 ]
 
+# 9/15 夜 ユーザー「グッズで作って」＝子ども向けの作品ごとの「〇〇グッズ」。--kids-goods で tmp/btn_tpl/kids_goods.json の使える分だけ作る
+# （名前は kg01〜。シンドバッドは検索で出るのが小説や別アニメ＝公演と関係ないので外す）
+KG_EXCLUDE = {"シンドバッドグッズ"}
+if '--kids-goods' in sys.argv:
+    import json as _json
+    _kg = [r for r in _json.load(open('tmp/btn_tpl/kids_goods.json', encoding='utf-8')) if r['ok'] and r['label'] not in KG_EXCLUDE]
+    JOBS = [("kg%02d" % (i + 1), r['label'], None, None, None) for i, r in enumerate(_kg)]
+    sys.argv = [a for a in sys.argv if a != '--kids-goods']
+
 
 def load(path):
     return np.asarray(Image.open(path).convert('RGB')).astype(np.float32)
