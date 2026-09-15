@@ -215423,14 +215423,15 @@ Zeppを5つ回るツアーよ。<br>
     // 🚨2026-09-14 朝 ユーザー「ホテルとチケットのボタンだけ変わってて変だからそろえて／今日帰ったら全部作って載せるから戻して」
     //   ＝画像が2枚だけ混ざるとちぐはぐ。全部の画像がそろうまでは空にして、今までの文字ボタンで出す。
     //   🆕2026-09-14 夜 ユーザー決定＝ボタンの文字を短くした（案①）。画像は新しい文字で9枚作り直す＝そろったら9行足す。
-    //   遠征の宿を探す／推しうちわを作る／推し活グッズ／ライブ用耳栓／オペラグラス／フェスの必需品／花火の必需品／観戦グッズ／ぬりえ
-    //   （img/btn_hotel.png・img/btn_uchiwa.png は旧文言「会場近くのホテルを探す」「応援うちわを作る」の画像＝使わない）
+    //   会場近くのホテルを探す／推しうちわを作る／推し活グッズ／ライブ用耳栓／オペラグラス／フェスの必需品／花火の必需品／観戦グッズ／ぬりえ
+    //   🚨2026-09-15 夜 ユーザー「会場近くのホテルを探す　ってお願いしたのに／勝手に決めて載せないでほしい」＝ホテルは元の文字に戻した（「遠征の宿を探す」は使わない）
+    //   （img/btn_uchiwa.png は旧文言「応援うちわを作る」の画像＝使わない）
     const BTN_IMG = {};
     const btnInner = (icon, label) => BTN_IMG[label]
       ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
       : `${icon} ${label}`;
     const btnImgCls = (label) => BTN_IMG[label] ? " btn-img" : "";
-    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel${btnImgCls("遠征の宿を探す")}" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">${btnInner("🏨", "遠征の宿を探す")}</a>`;
+    const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel${btnImgCls("会場近くのホテルを探す")}" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">${btnInner("🏨", "会場近くのホテルを探す")}</a>`;
     const hotelBtn = HOTEL_EXPEDIA_BTN;
     const CONCERT_AMAZON = { url: "https://amzn.to/3OnUo4K", label: "推し活グッズ" }; // 飛び先は「コンサートグッズ」検索
     // 2026-09-13 ユーザー指示＝「ペンライトは現地で買うもの・うちわは家で作って持っていくもの」。
