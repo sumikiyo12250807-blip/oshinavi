@@ -51,7 +51,14 @@ def main():
 
     buf = []
     for cd in args:
-        url = 'https://t.pia.jp/pia/event/event.do?eventCd=%s' % cd
+        # 2026-09-16 まとめページの番号（b〜）を eventCd= で開いて中身が空になった（WATWING・TRiDENT・バズリズム）
+        # ＝ b で始まる番号は eventBundleCd=、URLそのものはそのまま使う
+        if cd.startswith('http'):
+            url = cd
+        elif cd.startswith('b'):
+            url = 'https://t.pia.jp/pia/event/event.do?eventBundleCd=%s' % cd
+        else:
+            url = 'https://t.pia.jp/pia/event/event.do?eventCd=%s' % cd
         buf.append('■ %s' % url)
         try:
             h = fetch(url)
