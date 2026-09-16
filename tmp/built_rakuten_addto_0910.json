@@ -32,7 +32,7 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
  },
  {
   "id": 7585,
@@ -73,7 +73,7 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
  },
  {
   "id": 7584,
@@ -120,7 +120,7 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
  },
  {
   "id": 7583,
@@ -167,7 +167,7 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
  },
  {
   "id": 2949,
@@ -202,7 +202,7 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
  },
  {
   "id": 1,
@@ -232,7 +232,7 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
  },
  {
   "id": 3514,
@@ -267,6 +267,41 @@
    }
   ],
   "verified": true,
-  "verifiedAt": "2026-09-10"
+  "verifiedAt": "2026-09-11"
+ },
+ {
+  "id": 2808,
+  "artist": "Baycurrent Classic Presented by LEXUS",
+  "name": "Baycurrent Classic Presented by LEXUS",
+  "date": "2026-10-11",
+  "dateLabel": "2026年10月5日(月)〜2026年10月11日(日) 神奈川 横浜カントリークラブ",
+  "venue": "横浜カントリークラブ",
+  "prefecture": "神奈川",
+  "genre": "new",
+  "_genre": "sports",
+  "_srcgenre": "rakuten",
+  "price": null,
+  "links": {
+   "rakuten": "https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fsports%2Frtv9m00%2F",
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "amazon": null
+  },
+  "tickets": [
+   {
+    "type": "バーディー価格（神奈川 10/5〜10/11公演）〜9/27 23:59",
+    "date": "2026-09-27",
+    "url": "https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fsports%2Frtv9m00%2F"
+   },
+   {
+    "type": "レギュラー価格（神奈川 10/5〜10/11公演）9/28 00:00発売 〜10/10 23:59",
+    "date": "2026-10-10",
+    "startDate": "2026-09-28",
+    "url": "https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fsports%2Frtv9m00%2F"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-11"
  }
 ]

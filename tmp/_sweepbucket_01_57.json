@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 18,
- "pages": 2,
- "fetched_pages": 3,
- "parsed": 13,
- "new_name_in_db": 3,
+ "total": 21,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 16,
+ "new_name_in_db": 4,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626885",
@@ -15,18 +15,7 @@
    "venue": "アメリカングラフィティーズ(京都府)／ぺいあのＰＬＵＳ’(熊本県)",
    "pref": "京都府／熊本県",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629922",
-   "artist": "影山ヒロノブ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土) ・ 2026/10/12(月・祝)",
-   "venue": "ＯＹＥ ＣＯＭＯ ＶＡ(広島県)／Ｍｏｎｋ(愛媛県)",
-   "pref": "広島県／愛媛県",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667305",
@@ -51,17 +40,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668073",
-   "artist": "ナガノアニエラフェスタ2026",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土) ～ 2026/9/20(日)",
-   "venue": "佐久市駒場公園(長野県)",
-   "pref": "長野県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669714",
    "artist": "林ゆうき",
    "saletype": "一般発売",
@@ -71,17 +49,136 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621858",
+   "artist": "ＡｎｉｓｏｎＣｌａｓｓｉｃＪａｐａｎコンサート Ｅｐｉｓｏｄ１０",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "さいたま市プラザノース(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667821",
+   "artist": "ANI-ROCK FES.2026「僕のヒーローアカデミア PLUS ULTRA LIVE」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "国立代々木競技場 第一体育館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626885",
+   "artist": "影山ヒロノブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アメリカングラフィティーズ(京都府)／ぺいあのＰＬＵＳ’(熊本県)",
+   "pref": "京都府／熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629922",
+   "artist": "影山ヒロノブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＹＥ ＣＯＭＯ ＶＡ(広島県)／Ｍｏｎｋ(愛媛県)",
+   "pref": "広島県／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627772",
+   "artist": "きたまえ↑２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市民交流プラザ クリエイティブスタジオ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635417",
+   "artist": "神戸市室内管弦楽団 公開録音公演「涼宮ハルヒの四奏」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸文化ホール 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670108",
+   "artist": "澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert -",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京ガーデンシアター(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633942",
+   "artist": "スーパー戦隊魂 ＸＸ ２０２６ ～ＦＯＲＥＶＥＲ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)／なんばＨａｔｃｈ(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630760",
+   "artist": "ＣｈｏｕＣｈｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｄｕｏ ＭＵＳＩＣ ＥＸＣＨＡＮＧＥ(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668974",
+   "artist": "PERSONA LIVE TOUR 2026 - Resonance -",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669734",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "市川市文化会館 大ホール(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667305",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 コンサートホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669435",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "栃木県総合文化センター メインホール(栃木県)",
+   "pref": "栃木県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668073",
+   "artist": "ナガノアニエラフェスタ2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "佐久市駒場公園(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669714",
+   "artist": "林ゆうき",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京国際フォーラム ホールＣ(東京都)",
+   "pref": "東京都"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606390",
    "artist": "春奈るな",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/5(土)",
-   "venue": "ＩＮＳＡ(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": false
+   "venue": "原宿ＲＵＩＤＯ(東京都)",
+   "pref": "東京都"
   }
  ]
 }

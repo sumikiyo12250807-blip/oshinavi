@@ -1,51 +1,18 @@
 {
  "lg": "01",
- "total": 241,
- "pages": 25,
- "fetched_pages": 26,
- "parsed": 196,
- "new_name_in_db": 33,
+ "total": 269,
+ "pages": 27,
+ "fetched_pages": 28,
+ "parsed": 214,
+ "new_name_in_db": 17,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669627",
-   "artist": "藍井エイル",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634488",
+   "artist": "ＡＫＩＨＩＤＥ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/28(土)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618892",
-   "artist": "新居昭乃",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "ＰＬＡＮＴ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615518",
-   "artist": "杏里",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/10(火)",
-   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
-   "artist": "eastern youth",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/12(土)",
-   "venue": "ペニーレーン２４(北海道)",
+   "perfdate": "2026/11/8(日)",
+   "venue": "あうん堂ホール(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
@@ -62,28 +29,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616870",
-   "artist": "ＥｖｅｒＢｒｉｇｈｔｅｌｌｅｒ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/22(土) ～ 2026/10/11(日)",
-   "venue": "ＶｙＰａｓｓ．(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／ｓｈｉｍｏｋｉｔａｚａｗａ ＴＨＲＥＥ(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＨＯＫＡＧＥ－火影－(大阪府)",
-   "pref": "北海道／宮城県／東京都／神奈川県／京都府／大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615098",
-   "artist": "ＦＭ ＮＯＲＴＨ ＷＡＶＥ ｐｒｅｓｅｎｔｓ ＦＯＮＳ ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/4(金)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611567",
    "artist": "Ｅｌｅｍｅｎｔ Ｓｉｃｋｓ",
    "saletype": "一般発売",
@@ -95,56 +40,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669950",
-   "artist": "AK-69",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土)",
-   "venue": "帯広ＭＥＧＡ ＳＴＯＮＥ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666199",
-   "artist": "大森靖子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/3(土)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670559",
-   "artist": "奥華子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/19(木)",
-   "venue": "札幌市教育文化会館 小ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614325",
    "artist": "小椋佳",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/9/28(月)",
    "venue": "札幌コンサートホールＫｉｔａｒａ 大ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618708",
-   "artist": "尾崎亜美",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/23(水)",
-   "venue": "札幌市教育文化会館 大ホール(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
@@ -183,136 +84,15 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665597",
-   "artist": "Organic Call",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667745",
+   "artist": "Cloudy",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/20(日)",
-   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
+   "perfdate": "2026/11/1(日)",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620817",
-   "artist": "金子智也",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/14(土) ～ 2026/11/29(日)",
-   "venue": "あうん堂ホール(北海道)／旭川市神楽公民館 木楽輪(北海道)／ジョブキタ北八劇場(北海道)／ホールアンクラージュ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616909",
-   "artist": "かりゆし５８",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/12(木)",
-   "venue": "共済ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670613",
-   "artist": "KALMA",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/30(金)",
-   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624293",
-   "artist": "君島大空",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/31(月)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626860",
-   "artist": "９ｍｍ Ｐａｒａｂｅｌｌｕｍ Ｂｕｌｌｅｔ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/9(金)",
-   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670654",
-   "artist": "クレイジーケンバンド",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/22(木)",
-   "venue": "札幌市教育文化会館 大ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
-   "artist": "KOTORI pre.“12” Tour",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669841",
-   "artist": "KOHAKU",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/4(金) ～ 2026/9/18(金)",
-   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ３ｒｄ(宮城県)／Ｓｈｉｂｕｙａ Ｍｉｌｋｙｗａｙ(東京都)／ＲＡＤ ＳＥＶＥＮ(愛知県)／ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
-   "pref": "北海道／宮城県／東京都／愛知県／大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618685",
-   "artist": "ｇｏ！ｇｏ！ｖａｎｉｌｌａｓ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/15(木)",
-   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668353",
-   "artist": "Saucy Dog",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土)",
-   "venue": "真駒内セキスイハイムアイスアリーナ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563931",
-   "artist": "サニーデイ・サービス",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/18(金)",
-   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669877",
@@ -326,45 +106,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669905",
-   "artist": "the band apart",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/27(金)",
-   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669203",
-   "artist": "時速36km",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/26(土)",
-   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625747",
-   "artist": "ｓｕｍｉｋａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/5(木) ・ 2026/11/6(金)",
+   "perfdate": "2026/10/30(金) ・ 2026/10/31(土)",
    "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620308",
-   "artist": "セックスマシーン！！",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/20(金)",
-   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
@@ -381,114 +128,37 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617999",
-   "artist": "タイトル未定",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671017",
+   "artist": "TOWER RECORDS “NO MUSIC, NO LIFE.” presents UNFRAMED－30th Anniversary Live Series－",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/31(月)",
-   "venue": "カナモトホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614209",
-   "artist": "ｔａｃｉｃａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/24(土)",
-   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
-   "artist": "つきみ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/4/26(日) ～ 2027/1/17(日)",
-   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
-   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615997",
-   "artist": "ＴＯＭＯＶＳＫＹ トモフ出航６０周年記念ツアー 『３度目のハタチ』“北海道編”",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/3(土)",
-   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619046",
-   "artist": "ＴＲＩＰＬＡＮＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/6/28(日) ～ 2026/9/6(日)",
-   "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
-   "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609363",
-   "artist": "ＴＲＩＰＬＡＮＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/25(日)",
+   "perfdate": "2026/10/4(日)",
    "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613327",
-   "artist": "怒髪天",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670952",
+   "artist": "テレビ大陸音頭",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "留萌市中央公民館 小ホール(北海道)",
-   "pref": "北海道",
+   "perfdate": "2026/10/11(日) ・ 2026/10/17(土)",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／新宿ｒｅｄ ｃｌｏｔｈ(東京都)",
+   "pref": "北海道／東京都",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
-   "artist": "中島卓偉",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670902",
+   "artist": "Night Tempo",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/28(土)",
-   "venue": "ＰＬＡＮＴ(北海道)",
+   "perfdate": "2026/11/6(金)",
+   "venue": "札幌近松(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622561",
-   "artist": "中田裕二",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/25(金)",
-   "venue": "モエレ沼公園 ガラスのピラミッド(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614429",
-   "artist": "長渕剛",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/21(月・祝)",
-   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666783",
@@ -497,17 +167,6 @@
    "rlsdate": "",
    "perfdate": "2026/10/28(水)",
    "venue": "カナモトホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633271",
-   "artist": "ねぐせ。",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/15(日)",
-   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
@@ -524,17 +183,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613074",
-   "artist": "半崎美子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/8(日)",
-   "venue": "札幌市教育文化会館 大ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624001",
    "artist": "ＨＡＭＢＵＲＧＥＲ ＢＯＹＳ",
    "saletype": "一般発売",
@@ -546,103 +194,15 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
-   "artist": "ＰａｓｓＣｏｄｅ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670705",
+   "artist": "First Love is Never Returned",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/27(金)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624377",
-   "artist": "ＰａｓｓＣｏｄｅ＜ＶＩＰ ＵＰＧＲＡＤＥ ＰＡＣＫＡＧＥ＞",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/27(金)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632346",
-   "artist": "ＨＩＫＡＲＩ ＳＡＰＰＯＲＯ ＳＰＡＲＫＬＥ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/2(金)",
-   "venue": "ＰＬＡＮＴ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626792",
-   "artist": "ビッケブランカ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "札幌市教育文化会館 大ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669195",
-   "artist": "fav me",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/15(火)",
-   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668986",
-   "artist": "フォレスタコンサート",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/14(月)",
-   "venue": "札幌コンサートホールＫｉｔａｒａ 大ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668977",
-   "artist": "04 Limited Sazabys",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/1(日)",
-   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "perfdate": "2026/11/7(土)",
+   "venue": "ＶｙＰａｓｓ．(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620100",
-   "artist": "藤澤ノリマサ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "慧燈寺(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627310",
-   "artist": "ふみ あなたの街でピアノ弾きます ｉｎ 池田町",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/23(水・祝)",
-   "venue": "池田町田園ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615089",
@@ -656,89 +216,12 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615087",
-   "artist": "ふみ ～僕の街で発表会～ あなたも演奏しませんか？＆ｍｉｎｉふみライブ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671062",
+   "artist": "フルカワユタカ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/3(土)",
-   "venue": "ふきのとうホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
-   "artist": "THE FRANK VOX",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/17(土)",
-   "venue": "札幌Ｃｒａｚｙ Ｍｏｎｋｅｙ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631478",
-   "artist": "プッシュプルポット",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/23(月・祝)",
-   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623781",
-   "artist": "ｐｌｅｎｔｙ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/13(日)",
-   "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618466",
-   "artist": "細坪基佳",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/4(金)",
-   "venue": "札幌市教育文化会館 小ホール(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630652",
-   "artist": "北海道歌旅座ザ・コンサート２０２６小樽公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/20(日)",
-   "venue": "旧カトリック住之江教会(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620271",
-   "artist": "Ｍｉｌｅｓｔｏｎｅ ｆｏｒ １０ ｙｅａｒｓ＆ＬＩＶＥ ＨＯＵＳＥ ＤＩＧ ｐｒｅｓｅｎｔｓ ＤＩＧ ＦＥＳＴ ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
-   "venue": "イベントホール赤れんが(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623366",
-   "artist": "摩天楼オペラ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/18(金)",
-   "venue": "ペニーレーン２４(北海道)",
+   "perfdate": "2026/10/4(日)",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
@@ -755,48 +238,26 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623954",
-   "artist": "ＭＩＨＯ ＦＵＫＵＨＡＲＡ Ａｃｏｕｓｔｉｃ Ｓｏｕｌ ２０２６",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620264",
+   "artist": "ＴＨＥ ＭＯＤＳ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/25(金)",
-   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564511",
-   "artist": "moon drop",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/4(金)",
-   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "perfdate": "2026/11/7(土)",
+   "venue": "ペニーレーン２４(北海道)",
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624679",
-   "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 帯広公演",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671011",
+   "artist": "ももいろクローバーZ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/30(日)",
-   "venue": "ＭＥＬＬＯＷ ＭＥＬＬＯＷ(北海道)",
+   "perfdate": "2026/12/3(木)",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
    "pref": "北海道",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624681",
-   "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 函館公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/2(水)",
-   "venue": "函館ＡＲＡＲＡ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623115",
@@ -808,61 +269,1752 @@
    "pref": "北海道",
    "in_db": false,
    "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619873",
+   "artist": "Ｉ Ｄｏｎ’ｔ Ｌｉｋｅ Ｍｏｎｄａｙｓ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669627",
+   "artist": "藍井エイル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634488",
+   "artist": "ＡＫＩＨＩＤＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あうん堂ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625248",
+   "artist": "ＡＳＩＡＮ ＫＵＮＧ－ＦＵ ＧＥＮＥＲＡＴＩＯＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621386",
+   "artist": "ＡＤＡＭ ａｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667868",
+   "artist": "a flood of circle",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／函館ＡＲＡＲＡ(北海道)／ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622448",
+   "artist": "荒谷翔大",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615518",
+   "artist": "杏里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665661",
+   "artist": "家入レオ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564372",
+   "artist": "いきものがかり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621709",
+   "artist": "ＴＨＥイナズマ戦隊",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
+   "artist": "稲葉浩志",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666010",
+   "artist": "indigo la End",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
+   "artist": "eastern youth",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634113",
+   "artist": "打首獄門同好会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667277",
+   "artist": "ウルフルズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)／根室市総合文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667673",
+   "artist": "Age Factory",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "帯広ＭＥＧＡ ＳＴＯＮＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667673",
+   "artist": "Age Factory",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625164",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中標津町総合文化会館 しるべっとホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631489",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670918",
+   "artist": "EverBrighteller",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＶｙＰａｓｓ．(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／ｓｈｉｍｏｋｉｔａｚａｗａ ＴＨＲＥＥ(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＨＯＫＡＧＥ－火影－(大阪府)",
+   "pref": "北海道／宮城県／東京都／神奈川県／京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611567",
+   "artist": "Ｅｌｅｍｅｎｔ Ｓｉｃｋｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)／Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)／Ｚｅｐｐ Ｎａｇｏｙａ(愛知県)／Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)／Ｚｅｐｐ Ｆｕｋｕｏｋａ(福岡県)",
+   "pref": "北海道／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669950",
+   "artist": "AK-69",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "帯広ＭＥＧＡ ＳＴＯＮＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621430",
+   "artist": "おいしくるメロンパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670077",
+   "artist": "OGRE YOU ASSHOLE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619912",
+   "artist": "大黒摩季",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市民文化会館 大ホール(北海道)／北ガス市民ホール 大ホール(北海道)／札幌文化芸術劇場ｈｉｔａｒｕ(北海道)／幕別町百年記念ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666508",
+   "artist": "大橋ちっぽけ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622078",
+   "artist": "大原櫻子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666199",
+   "artist": "大森靖子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670559",
+   "artist": "奥華子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 小ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614325",
+   "artist": "小椋佳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌コンサートホールＫｉｔａｒａ 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618708",
+   "artist": "尾崎亜美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623314",
+   "artist": "押尾コータロー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
+   "artist": "Ochunism",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667786",
+   "artist": "音田雅則",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669162",
+   "artist": "HONEST",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｂｒｅｗ ｉｔ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666571",
+   "artist": "Omoinotake",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630785",
+   "artist": "小山田壮平",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669794",
+   "artist": "オレンジスパイニクラブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666269",
+   "artist": "ORANGE RANGE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "名寄市民文化センター ＥＮ－ＲＡＹホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634415",
+   "artist": "ｏｎちゃん！６チャン！！アイドルまつり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665597",
+   "artist": "Organic Call",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624348",
+   "artist": "オータムカントリーツアー２０２６ 札幌",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌コンサートホールＫｉｔａｒａ 小ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668439",
+   "artist": "Ovall",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613940",
+   "artist": "海蔵亮太",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＶｙＰａｓｓ．(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629138",
+   "artist": "ｋｅｉｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668501",
+   "artist": "加藤和樹&THE DRASTICS/JOKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667343",
+   "artist": "kanekoayano",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620817",
+   "artist": "金子智也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あうん堂ホール(北海道)／旭川市神楽公民館 木楽輪(北海道)／ジョブキタ北八劇場(北海道)／ホールアンクラージュ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616909",
+   "artist": "かりゆし５８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670613",
+   "artist": "KALMA",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627260",
+   "artist": "河口恭吾",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "裏小樽モンパルナス(北海道)／東川町地域交流センター 交流プラザ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625456",
+   "artist": "川崎鷹也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617592",
+   "artist": "Ｋｈａｋｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624299",
+   "artist": "ガラスの靴は落とさない",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)／下北沢ＤａｉｓｙＢａｒ(東京都)",
+   "pref": "北海道／東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621985",
+   "artist": "Ｇａｌｉｌｅｏ Ｇａｌｉｌｅｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614330",
+   "artist": "来生たかお",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628901",
+   "artist": "キノコホテル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)／Ｒｅｖｏｌｖｅｒ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669624",
+   "artist": "奇妙礼太郎BAND",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612932",
+   "artist": "キュウソネコカミ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626860",
+   "artist": "９ｍｍ Ｐａｒａｂｅｌｌｕｍ Ｂｕｌｌｅｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626860",
+   "artist": "９ｍｍ Ｐａｒａｂｅｌｌｕｍ Ｂｕｌｌｅｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667745",
+   "artist": "Cloudy",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623371",
+   "artist": "栗林みな実",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670654",
+   "artist": "クレイジーケンバンド",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632250",
+   "artist": "ＴＨＥ ＧＲＯＯＶＥＲＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
+   "artist": "KOTORI pre.“12” Tour",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669841",
+   "artist": "KOHAKU",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ３ｒｄ(宮城県)／Ｓｈｉｂｕｙａ Ｍｉｌｋｙｗａｙ(東京都)／ＲＡＤ ＳＥＶＥＮ(愛知県)／ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
+   "pref": "北海道／宮城県／東京都／愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669952",
+   "artist": "コブクロ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624135",
+   "artist": "ｋｏｂｏｒｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621917",
+   "artist": "Ｃｏｒｎｅｌｉｕｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669281",
+   "artist": "COPES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669310",
+   "artist": "coldrain",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618685",
+   "artist": "ｇｏ！ｇｏ！ｖａｎｉｌｌａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669448",
+   "artist": "サイダーガール",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614432",
+   "artist": "斉藤和義",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668353",
+   "artist": "Saucy Dog",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "真駒内セキスイハイムアイスアリーナ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667141",
+   "artist": "さだまさし",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622940",
+   "artist": "佐藤竹善",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670419",
+   "artist": "さとうもか",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／岡山・Ｂｌｕｅ Ｂｌｕｅｓ(岡山県)／ＦＯＯＬＳ ＧＯＬＤ(福岡県)",
+   "pref": "北海道／岡山県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563931",
+   "artist": "サニーデイ・サービス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669877",
+   "artist": "THE YELLOW MONKEY",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669642",
+   "artist": "ザ50回転ズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669985",
+   "artist": "ザ・シスターズハイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／静岡ＵＭＢＥＲ(静岡県)／池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)／神戸 太陽と虎(兵庫県)／ＡＬＭＩＧＨＴＹ(広島県)／ＴＯＯＮＩＣＥ(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／栃木県／群馬県／東京都／新潟県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669905",
+   "artist": "the band apart",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612876",
+   "artist": "Ｔｈｅ Ｂｉｓｃａｔｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670081",
+   "artist": "THE BAWDIES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽 ＧＯＬＤＳＴＯＮＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669601",
+   "artist": "柴咲コウ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620113",
+   "artist": "シンガーズハイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623316",
+   "artist": "ＳＨＥ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669203",
+   "artist": "時速36km",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635161",
+   "artist": "自爆",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636744",
+   "artist": "Ｇ－ＦＲＥＡＫ ＦＡＣＴＯＲＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669282",
+   "artist": "SPECIAL OTHERS",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625747",
+   "artist": "ｓｕｍｉｋａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623698",
+   "artist": "四星球",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668417",
+   "artist": "セカンドバッカー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632532",
+   "artist": "瀬川あやか",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620308",
+   "artist": "セックスマシーン！！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668541",
+   "artist": "芹澤優",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630365",
+   "artist": "Ｓｏａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608247",
+   "artist": "ｓｏｕｌｓｉｎ－ｇ ａｎｄ ｈｉｓ ｂａｎｄ ２０２６ 単独公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "函館金森ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626282",
+   "artist": "曾我泰久",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市時計台ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668520",
+   "artist": "ソナーポケット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635130",
+   "artist": "ＳＯＲＡＯＮ Ａｕｔｕｍｎ’２６ 秋空の音楽祭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "美唄市 美しき唄の広場 －そらち工業団地－(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635130",
+   "artist": "ＳＯＲＡＯＮ Ａｕｔｕｍｎ’２６ 秋空の音楽祭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "美唄市 美しき唄の広場 －そらち工業団地－(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628024",
+   "artist": "高瀬統也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614209",
+   "artist": "ｔａｃｉｃａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631641",
+   "artist": "田島貴男",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671017",
+   "artist": "TOWER RECORDS “NO MUSIC, NO LIFE.” presents UNFRAMED－30th Anniversary Live Series－",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667379",
+   "artist": "w.o.d.",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630639",
+   "artist": "超能力戦士ドリアン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "函館ＡＲＡＲＡ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625753",
+   "artist": "Ｃｈｉｌｌｉ Ｂｅａｎｓ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632357",
+   "artist": "Ｔｓｕｋｉｓａｍｕ Ｍｕｔｔｏｎ Ｎｅｔｗｏｒｋ ｐｒｅｓｅｎｔｓ ”月寒羊祭り”秋祭り編",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
+   "artist": "つきみ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624629",
+   "artist": "つしまみれ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)／Ｒｅｖｏｌｖｅｒ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669128",
+   "artist": "TMG",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670952",
+   "artist": "テレビ大陸音頭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／新宿ｒｅｄ ｃｌｏｔｈ(東京都)",
+   "pref": "北海道／東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630783",
+   "artist": "ＤＹＧＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634393",
+   "artist": "ＴＯＯＢＯＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)／ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615997",
+   "artist": "ＴＯＭＯＶＳＫＹ トモフ出航６０周年記念ツアー 『３度目のハタチ』“北海道編”",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609363",
+   "artist": "ＴＲＩＰＬＡＮＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667158",
+   "artist": "TRUST RECORDS presents.TRUST NIGHT 2026 / TRUST TOUR 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629795",
+   "artist": "堂島孝平",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613327",
+   "artist": "怒髪天",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "市民劇場ヲタル座(北海道)／モエレ沼公園 ガラスのピラミッド(北海道)／留萌市中央公民館 小ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669091",
+   "artist": "ドリアン・ロロブリジーダ The Entertainment!! 20th Anniversary Special",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670902",
+   "artist": "Night Tempo",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626037",
+   "artist": "ＮＩＧＨＴＭＡＲＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620511",
+   "artist": "Ｎａｏ Ｙｏｓｈｉｏｋａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
+   "artist": "中島卓偉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618009",
+   "artist": "中嶋ユキノ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668948",
+   "artist": "中田裕二",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "モエレ沼公園 ガラスのピラミッド(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670838",
+   "artist": "長澤知之",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "くう ＣＯＯ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666783",
+   "artist": "なとり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669946",
+   "artist": "ナナヲアカリ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2601515",
+   "artist": "Ｎｏ．１８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619213",
+   "artist": "日食なつこ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669485",
+   "artist": "ネクライトーキー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633271",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633737",
+   "artist": "ＮＥＬＫＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625615",
+   "artist": "花冷え。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670807",
+   "artist": "半崎美子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624001",
+   "artist": "ＨＡＭＢＵＲＧＥＲ ＢＯＹＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670132",
+   "artist": "ハンブレッダーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620527",
+   "artist": "Ｈｕｍｐ Ｂａｃｋ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630614",
+   "artist": "ＨＡＭＭＥＲ ＢＡＬＬ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
+   "artist": "ＰａｓｓＣｏｄｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624377",
+   "artist": "ＰａｓｓＣｏｄｅ＜ＶＩＰ ＵＰＧＲＡＤＥ ＰＡＣＫＡＧＥ＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664691",
+   "artist": "PERSONZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632346",
+   "artist": "ＨＩＫＡＲＩ ＳＡＰＰＯＲＯ ＳＰＡＲＫＬＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666777",
+   "artist": "羊文学",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630537",
+   "artist": "ヒルクライム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626792",
+   "artist": "ビッケブランカ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623150",
+   "artist": "ＰＩＧＭＯＮＺ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／ｃｌｕｂ ｃｈａｎｇｅ(岩手県)／ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ２ｎｄ(宮城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／ＷＷＷ Ｘ(東京都)／ＲＡＤ ＮＩＮＥ(愛知県)／ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)／神戸 太陽と虎(兵庫県)／ＤＲＵＭ ＳＯＮ(福岡県)／熊本Ｂ．９ Ｖ２(熊本県)",
+   "pref": "北海道／岩手県／宮城県／埼玉県／東京都／愛知県／大阪府／兵庫県／福岡県／熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669195",
+   "artist": "fav me",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670705",
+   "artist": "First Love is Never Returned",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＶｙＰａｓｓ．(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628257",
+   "artist": "ｆｏｘ ｃａｐｔｕｒｅ ｐｌａｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰＩＲＩＴＵＡＬ ＬＯＵＮＧＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668977",
+   "artist": "04 Limited Sazabys",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670843",
+   "artist": "藤田朋子＆桑山哲也「笑顔満祭コンサート」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌コンサートホールＫｉｔａｒａ 小ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627310",
+   "artist": "ふみ あなたの街でピアノ弾きます ｉｎ 池田町",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "池田町田園ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625498",
+   "artist": "ふみ 芸術の秋なのでピアノで遊びませんか？＆ふみライブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "エルム楽器千歳支店ミュージックサロン(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615089",
+   "artist": "ふみ 芸術の秋なのでやっぱり今年もライブやります。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ふきのとうホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615087",
+   "artist": "ふみ ～僕の街で発表会～ あなたも演奏しませんか？＆ｍｉｎｉふみライブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ふきのとうホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
+   "artist": "THE FRANK VOX",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌Ｃｒａｚｙ Ｍｏｎｋｅｙ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671062",
+   "artist": "フルカワユタカ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667965",
+   "artist": "BRADIO",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668893",
+   "artist": "BLUE ENCOUNT",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669834",
+   "artist": "BLUE MOON MUSIC FEST. 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "キトウシ森林公園(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668345",
+   "artist": "BREAKERZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633571",
+   "artist": "ＢＵＧＹ ＣＲＡＸＯＮＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＯＵＮＤ ＣＲＵＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631478",
+   "artist": "プッシュプルポット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631682",
+   "artist": "ＰＥＤＲＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "函館ＡＲＡＲＡ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630652",
+   "artist": "北海道歌旅座ザ・コンサート２０２６小樽公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旧カトリック住之江教会(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622405",
+   "artist": "ＰｏｍｐａｄｏｌｌＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621851",
+   "artist": "マカロニえんぴつ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "真駒内セキスイハイムアイスアリーナ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627532",
+   "artist": "真心ブラザーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623366",
+   "artist": "摩天楼オペラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626404",
+   "artist": "眞名子新",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",
+   "artist": "maya ongaku",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "モエレ沼公園 ガラスのピラミッド(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623799",
+   "artist": "みのや雅彦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市民文化会館 小ホール(北海道)／音更町文化センター ふれあいホール(北海道)／共済ホール(北海道)／函館金森ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623954",
+   "artist": "ＭＩＨＯ ＦＵＫＵＨＡＲＡ Ａｃｏｕｓｔｉｃ Ｓｏｕｌ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626035",
+   "artist": "宮川大聖",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616603",
+   "artist": "ｍｉｌｅｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626474",
+   "artist": "Ｍａｙ’ｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
+   "artist": "メリクレット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620264",
+   "artist": "ＴＨＥ ＭＯＤＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
+   "artist": "MONO NO AWARE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671011",
+   "artist": "ももいろクローバーZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621931",
+   "artist": "森恵",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623115",
+   "artist": "森大翔",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631033",
+   "artist": "ＭＯＮＫＥＹ ＭＡＪＩＫ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668840",
+   "artist": "薬師丸ひろ子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628058",
+   "artist": "ヤバイＴシャツ屋さん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668961",
+   "artist": "山崎育三郎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616890",
+   "artist": "友希",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563724",
+   "artist": "横山だいすけ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "江別市民会館 大ホール(北海道)／カナモトホール(北海道)／苫小牧市民文化ホール グランドホール(北海道)／函館サーモン・まるなまホール 大ホール(北海道)",
+   "pref": "北海道"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669968",
    "artist": "横山裕",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/28(月) ・ 2026/9/29(火)",
    "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631104",
+   "artist": "Ｙｏｓｈｉ 独演会 ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｔｕｄｉｏ Ｓｏｌｉｄ(北海道)／ＥＳＰ ＧＲＯＯＶＥ ＬＯＵＮＧＥ(東京都)／ＰＡＮＨＥＡＤ ＧＲＯＯＶＥ(大阪府)",
+   "pref": "北海道／東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633065",
+   "artist": "ｙｏｓｕｇａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＡＳＩＮＯ ＤＲＩＶＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624481",
+   "artist": "ＹＯＮＡ ＹＯＮＡ ＷＥＥＫＥＮＤＥＲＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669055",
+   "artist": "夜の本気ダンス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668739",
+   "artist": "LAUSBUB",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670455",
+   "artist": "LAST ALLIANCE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620565",
+   "artist": "ラックライフ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629805",
+   "artist": "リアクション ザ ブッタ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＬＡＮＴ(北海道)",
+   "pref": "北海道"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667696",
    "artist": "reGretGirl",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/12(木)",
    "venue": "ペニーレーン２４(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "北海道"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669261",
-   "artist": "Ringwanderung",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670883",
+   "artist": "LiSA",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/8/30(日)",
-   "venue": "札幌近松(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
+   "venue": "帯広市民文化ホール 大ホール(北海道)",
+   "pref": "北海道"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665615",
-   "artist": "Rayflower",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670883",
+   "artist": "LiSA",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622085",
+   "artist": "Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621618",
+   "artist": "ＬＩＮＤＢＥＲＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670283",
+   "artist": "ReoNa",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627692",
+   "artist": "ＬＥＴ ＭＥ ＫＮＯＷ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＳＳＩＥ ＨＡＬＬ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615103",
+   "artist": "レトロリロン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667661",
+   "artist": "Rockon Social Club",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633419",
    "artist": "和田唱",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/12(月・祝)",
    "venue": "ＳＰｉＣＥ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": true
+   "pref": "北海道"
   }
  ]
 }

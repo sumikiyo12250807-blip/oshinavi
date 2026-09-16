@@ -1,33 +1,11 @@
 {
  "lg": "01",
- "total": 70,
+ "total": 68,
  "pages": 7,
  "fetched_pages": 8,
- "parsed": 68,
- "new_name_in_db": 18,
+ "parsed": 66,
+ "new_name_in_db": 20,
  "new": [
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614893",
-   "artist": "杏里",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/13(日)",
-   "venue": "新潟県民会館 大ホール(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
-   "artist": "eastern youth",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/1(日)",
-   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": true
-  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631659",
    "artist": "ＨＹ",
@@ -40,17 +18,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612208",
-   "artist": "江崎文武",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "Ｇｉｏｉａ Ｍｉａ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617617",
    "artist": "大森靖子",
    "saletype": "一般発売",
@@ -59,7 +26,7 @@
    "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
    "pref": "新潟県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
@@ -95,28 +62,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616752",
-   "artist": "ＣＨＥＭＩＳＴＲＹ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土)",
-   "venue": "柏崎市文化会館アルフォーレ 大ホール(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624709",
-   "artist": "Ｃｏｎｔｏｎ Ｃａｎｄｙ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/24(木)",
-   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613481",
    "artist": "Ｇｏｄｉｅｇｏ",
    "saletype": "一般発売",
@@ -136,7 +81,7 @@
    "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
    "pref": "新潟県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622929",
@@ -150,44 +95,11 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630623",
-   "artist": "佐藤ひらりコンサート",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/17(土)",
-   "venue": "川上会館(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2543254",
-   "artist": "財津和夫／姫野達也",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "新潟県民会館 大ホール(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630843",
-   "artist": "ｔｈｅ ｂａｎｄ ａｐａｒｔ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/3(土)",
-   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624908",
-   "artist": "ＳｉＭ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/4(金)",
+   "perfdate": "2026/10/15(木) ・ 2026/10/16(金)",
    "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
    "pref": "新潟県",
    "in_db": false,
@@ -202,7 +114,7 @@
    "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
    "pref": "新潟県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621206",
@@ -225,28 +137,6 @@
    "pref": "新潟県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
-   "artist": "つきみ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/4/26(日) ～ 2027/1/17(日)",
-   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
-   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621412",
-   "artist": "ＴＲＡｅＬＬ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土) ・ 2026/9/13(日)",
-   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)／ｓｈｉｒａｓａｇｉ／白鷺美術(石川県)",
-   "pref": "新潟県／石川県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616099",
@@ -293,28 +183,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
-   "artist": "ＰａｓｓＣｏｄｅ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/12(月・祝)",
-   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624377",
-   "artist": "ＰａｓｓＣｏｄｅ＜ＶＩＰ ＵＰＧＲＡＤＥ ＰＡＣＫＡＧＥ＞",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/12(月・祝)",
-   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627851",
    "artist": "Ｆｅａｒ，ａｎｄ Ｌｏａｔｈｉｎｇ ｉｎ Ｌａｓ Ｖｅｇａｓ",
    "saletype": "一般発売",
@@ -326,26 +194,15 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
-   "artist": "THE FRANK VOX",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671011",
+   "artist": "ももいろクローバーZ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
-   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)",
-   "pref": "新潟県／石川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623867",
-   "artist": "ｐｌｅｎｔｙ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/17(土)",
-   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "perfdate": "2026/11/22(日)",
+   "venue": "新潟テルサ(新潟県)",
    "pref": "新潟県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
@@ -359,17 +216,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669968",
-   "artist": "横山裕",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/18(金)",
-   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
-   "pref": "新潟県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621423",
    "artist": "ＬＯＶＥＢＩＴＥＳ",
    "saletype": "一般発売",
@@ -379,6 +225,544 @@
    "pref": "新潟県",
    "in_db": false,
    "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667868",
+   "artist": "a flood of circle",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)／長野ライブハウスＪ(長野県)",
+   "pref": "新潟県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666010",
+   "artist": "indigo la End",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟テルサ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
+   "artist": "eastern youth",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634164",
+   "artist": "打首獄門同好会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟テルサ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631659",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "加茂文化会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623464",
+   "artist": "おいしくるメロンパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617617",
+   "artist": "大森靖子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
+   "artist": "Ochunism",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666571",
+   "artist": "Omoinotake",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟市民芸術文化会館 劇場(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669794",
+   "artist": "オレンジスパイニクラブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668501",
+   "artist": "加藤和樹&THE DRASTICS/JOKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618235",
+   "artist": "角松敏生",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622706",
+   "artist": "かりゆし５８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟市音楽文化会館(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668966",
+   "artist": "Kis-My-Ft2",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "朱鷺メッセ 新潟コンベンションセンター(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627362",
+   "artist": "キュウソネコカミ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624709",
+   "artist": "Ｃｏｎｔｏｎ Ｃａｎｄｙ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669310",
+   "artist": "coldrain",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670117",
+   "artist": "ゴスペラーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613481",
+   "artist": "Ｇｏｄｉｅｇｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)／神戸文化ホール 大ホール(兵庫県)／ベネックス長崎ブリックホール 大ホール(長崎県)",
+   "pref": "新潟県／兵庫県／長崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627492",
+   "artist": "ｇｏ！ｇｏ！ｖａｎｉｌｌａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627492",
+   "artist": "ｇｏ！ｇｏ！ｖａｎｉｌｌａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622929",
+   "artist": "斉藤和義",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟テルサ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635613",
+   "artist": "ＴＨＯＵ（ＳＡ）ＮＤＳ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "加茂山公園 野外ステージ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626893",
+   "artist": "佐藤竹善",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｇｉｏｉａ Ｍｉａ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630623",
+   "artist": "佐藤ひらりコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川上会館(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629326",
+   "artist": "Ｓｕｎｄａｅ Ｍａｙ Ｃｌｕｂ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669642",
+   "artist": "ザ50回転ズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)／長野ライブハウスＪ(長野県)",
+   "pref": "新潟県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669985",
+   "artist": "ザ・シスターズハイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／静岡ＵＭＢＥＲ(静岡県)／池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)／神戸 太陽と虎(兵庫県)／ＡＬＭＩＧＨＴＹ(広島県)／ＴＯＯＮＩＣＥ(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／栃木県／群馬県／東京都／新潟県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630843",
+   "artist": "ｔｈｅ ｂａｎｄ ａｐａｒｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669309",
+   "artist": "Chevon",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634227",
+   "artist": "ＳＨＥ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625797",
+   "artist": "スターダスト☆レビュー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アミューズメント佐渡 大ホール(新潟県)／新潟市民芸術文化会館 劇場(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622204",
+   "artist": "３ｍａｒｋｅｔｓ［ ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631354",
+   "artist": "関取花",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｇｉｏｉａ Ｍｉａ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621206",
+   "artist": "竹原ピストル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625383",
+   "artist": "ちゃくら",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
+   "artist": "つきみ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633269",
+   "artist": "ＤＹＧＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616099",
+   "artist": "怒髪天",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622403",
+   "artist": "中嶋ユキノ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669485",
+   "artist": "ネクライトーキー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633422",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669607",
+   "artist": "NOISEMAKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "新潟県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668681",
+   "artist": "HUSKING BEE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633379",
+   "artist": "花冷え。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
+   "artist": "ＰａｓｓＣｏｄｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624377",
+   "artist": "ＰａｓｓＣｏｄｅ＜ＶＩＰ ＵＰＧＲＡＤＥ ＰＡＣＫＡＧＥ＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664691",
+   "artist": "PERSONZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟市民芸術文化会館 劇場(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630942",
+   "artist": "ヒルクライム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟テルサ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627851",
+   "artist": "Ｆｅａｒ，ａｎｄ Ｌｏａｔｈｉｎｇ ｉｎ Ｌａｓ Ｖｅｇａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623867",
+   "artist": "ｐｌｅｎｔｙ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621692",
+   "artist": "ペルシカリア",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)／松本ＡＬＥＣＸ(長野県)",
+   "pref": "新潟県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670338",
+   "artist": "布袋寅泰",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631936",
+   "artist": "ＰｏｍｐａｄｏｌｌＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622197",
+   "artist": "松平健 マツケンサンバコンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666580",
+   "artist": "南佳孝",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｇｉｏｉａ Ｍｉａ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635294",
+   "artist": "ＭＡＹＳＯＮ’ｓ ＰＡＲＴＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
+   "artist": "MONO NO AWARE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671011",
+   "artist": "ももいろクローバーZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟テルサ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670758",
+   "artist": "森高千里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長岡市立劇場 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668840",
+   "artist": "薬師丸ひろ子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟県民会館 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
+   "artist": "山本リンダ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長岡市立劇場 大ホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669968",
+   "artist": "横山裕",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621423",
+   "artist": "ＬＯＶＥＢＩＴＥＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＩＩＧＡＴＡ ＬＯＴＳ(新潟県)",
+   "pref": "新潟県"
   }
  ]
 }
