@@ -1,0 +1,419 @@
+{
+ "lg": "01",
+ "total": 44,
+ "pages": 5,
+ "fetched_pages": 6,
+ "parsed": 44,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629621",
+   "artist": "愛はズボーンＰｒｅｓｅｎｔｓ「アメ村天国２０２６」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "perfdate": "2026/11/14(土)",
+   "venue": "ＳＵＮＨＡＬＬ／ＡＮＩＭＡ／Ｐａｎｇｅａ／ＢＲＯＮＺＥ／ＨＯＫＡＧＥ／ｉｉｉｅ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635886",
+   "artist": "アンと私",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "perfdate": "2027/1/31(日)",
+   "venue": "仙台ＭＡＣＡＮＡ(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632678",
+   "artist": "ＡＲＴ ＧＡＲＦＵＮＫＥＬ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "perfdate": "2026/11/27(金)",
+   "venue": "三重県文化会館 大ホール(三重県)",
+   "pref": "三重県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635468",
+   "artist": "岩崎宏美",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "perfdate": "2027/1/8(金)",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626398",
+   "artist": "ＤＩＡＵＲＡ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/25",
+   "perfdate": "2026/11/22(日) ・ 2026/11/23(月・祝)",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629621",
+   "artist": "愛はズボーンＰｒｅｓｅｎｔｓ「アメ村天国２０２６」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "ＳＵＮＨＡＬＬ／ＡＮＩＭＡ／Ｐａｎｇｅａ／ＢＲＯＮＺＥ／ＨＯＫＡＧＥ／ｉｉｉｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627216",
+   "artist": "浅井健一",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "帯広ＭＥＧＡ ＳＴＯＮＥ(北海道)／ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635000",
+   "artist": "安部恭弘",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/30",
+   "venue": "ＳＨＩＢＵＹＡ ＰＬＥＡＳＵＲＥ ＰＬＥＡＳＵＲＥ(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635002",
+   "artist": "安部恭弘",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/30",
+   "venue": "ＳＨＩＢＵＹＡ ＰＬＥＡＳＵＲＥ ＰＬＥＡＳＵＲＥ(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635886",
+   "artist": "アンと私",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "仙台ＭＡＣＡＮＡ(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632678",
+   "artist": "ＡＲＴ ＧＡＲＦＵＮＫＥＬ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "三重県文化会館 大ホール(三重県)",
+   "pref": "三重県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635168",
+   "artist": "稲垣潤一",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/23",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635180",
+   "artist": "稲垣潤一",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/23",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633651",
+   "artist": "イルカ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "venue": "刈谷市総合文化センター アイリス 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635468",
+   "artist": "岩崎宏美",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636833",
+   "artist": "ｅｓｑ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ２／３（ＶＪ－４）(栃木県)",
+   "pref": "栃木県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670093",
+   "artist": "M-line Special 2026 Autumn ～NOCTURNE～",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670158",
+   "artist": "カキンツハルカ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "venue": "Ｚｅｐｐ Ｆｕｋｕｏｋａ(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633734",
+   "artist": "神はサイコロを振らない",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "venue": "Ｚｅｐｐ Ｓａｐｐｏｒｏ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669827",
+   "artist": "CANDY TUNE",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "米子コンベンションセンター ＢｉＧ ＳＨｉＰ(鳥取県)／広島文化学園ＨＢＧホール(広島県)",
+   "pref": "鳥取県／広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670654",
+   "artist": "クレイジーケンバンド",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/15",
+   "venue": "ホクト文化ホール 中ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627654",
+   "artist": "ＧＬＡＹ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "venue": "北海きたえーる(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625426",
+   "artist": "ｇｏｅｔｈｅ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "venue": "ｅｌｌ．ＦＩＴＳ ＡＬＬ(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636819",
+   "artist": "笹川美和",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "あいおいニッセイ同和損保 ザ・フェニックスホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623690",
+   "artist": "佐野元春＆ＴＨＥ ＣＯＹＯＴＥ ＢＡＮＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／函館サーモン・まるなまホール 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625742",
+   "artist": "佐野元春＆ＴＨＥ ＣＯＹＯＴＥ ＢＡＮＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632795",
+   "artist": "椎名慶治",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "Ｌｉｖｅ Ｊｕｋｅ(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635166",
+   "artist": "ＳＩＯＮ’Ｓ ＳＱＵＡＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633666",
+   "artist": "新春歌謡フェスティバル ｉｎ いなべ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/21",
+   "venue": "いなべ市北勢市民会館 さくらホール(三重県)",
+   "pref": "三重県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622958",
+   "artist": "高中正義",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "新潟市民芸術文化会館 劇場(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631648",
+   "artist": "高中正義",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "金沢市文化ホール(石川県)／長野市芸術館 メインホール(長野県)",
+   "pref": "石川県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632752",
+   "artist": "竹原ピストル",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "ＲＥＤＳＵＮ(石川県)",
+   "pref": "石川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670885",
+   "artist": "Tani Yuuki",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624183",
+   "artist": "ｃｈｉｌｌｄｓｐｏｔ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "ペニーレーン２４(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635135",
+   "artist": "ＴＳＵＫＥＭＥＮ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/17",
+   "venue": "渋谷区文化総合センター大和田 さくらホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626398",
+   "artist": "ＤＩＡＵＲＡ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/25",
+   "venue": "ＳＰｉＣＥ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670528",
+   "artist": "東京スカパラダイスオーケストラ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "本多の森北電ホール(石川県)／フェニックス・プラザ エルピス 大ホール(福井県)",
+   "pref": "石川県／福井県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635762",
+   "artist": "戸川純",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/23",
+   "venue": "東京キネマ倶楽部(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636570",
+   "artist": "西村由紀江",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "ＷＡＫＯゲバントホール(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634908",
+   "artist": "平松愛理",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/20",
+   "venue": "ふきのとうホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670113",
+   "artist": "People In The Box",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/19",
+   "venue": "札幌近松(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633746",
+   "artist": "ＦＩＶＥ ＮＥＷ ＯＬＤ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/24",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628021",
+   "artist": "布施明",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/21",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637074",
+   "artist": "ＷＨＩＴＥ ＪＡＭ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "ＬＩＶＥ ＲＯＸＹ ＳＨＩＺＵＯＫＡ(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627831",
+   "artist": "松山千春",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/16",
+   "venue": "米子コンベンションセンター ＢｉＧ ＳＨｉＰ 多目的ホール(鳥取県)／広島文化学園ＨＢＧホール(広島県)",
+   "pref": "鳥取県／広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631676",
+   "artist": "南こうせつ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/25",
+   "venue": "とうほう・みんなの文化センター 大ホール(福島県)",
+   "pref": "福島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633949",
+   "artist": "八神純子",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/23",
+   "venue": "茅ヶ崎市民文化会館 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633964",
+   "artist": "八神純子",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/23",
+   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670984",
+   "artist": "「ロックマン」オーケストラコンサート",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/21",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  }
+ ]
+}

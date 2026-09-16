@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\user\oshinavi\tools\build_pia_entries.py", line 1201, in <module>
+    cands = json.load(open(sys.argv[1], encoding='utf-8'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'https://t.pia.jp/pia/event/event.do?eventBundleCd=b2671016'

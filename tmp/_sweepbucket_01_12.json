@@ -3,74 +3,30 @@
  "total": 71,
  "pages": 8,
  "fetched_pages": 9,
- "parsed": 64,
- "new_name_in_db": 12,
+ "parsed": 66,
+ "new_name_in_db": 10,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613366",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668403",
    "artist": "イルカ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/18(日)",
-   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
+   "perfdate": "2026/10/4(日)",
+   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
    "pref": "埼玉県",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625164",
-   "artist": "ＨＹ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671054",
+   "artist": "コドモパーティーIII",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/22(火・祝)",
-   "venue": "狭山市市民会館 大ホール(埼玉県)",
+   "perfdate": "2026/9/27(日)",
+   "venue": "正和工業にじいろホール 大ホール(埼玉県)",
    "pref": "埼玉県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669791",
-   "artist": "＆TEAM",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
-   "venue": "ベルーナドーム(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670559",
-   "artist": "奥華子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/8(木)",
-   "venue": "彩の国さいたま芸術劇場 音楽ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616173",
-   "artist": "ＣＨＥＭＩＳＴＲＹ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/10(木)",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
-   "artist": "KOTORI pre.“12” Tour",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/8/7(金) ・ 2026/9/3(木) ・ 2026/10/21(水)",
-   "venue": "宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／越谷ＥＡＳＹＧＯＩＮＧＳ(埼玉県)／Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
-   "pref": "栃木県／埼玉県／東京都",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622062",
@@ -82,17 +38,6 @@
    "pref": "埼玉県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667117",
-   "artist": "The 51st anniversary 俺たちの旅 スペシャルコンサート ～まだまだ旅は終わらない～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/9(月)",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619123",
@@ -117,6 +62,39 @@
    "name_in_db": true
   },
   {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/14(土)",
+   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625297",
+   "artist": "スターダスト☆レビュー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "熊谷スポーツ文化公園 彩の国くまがやドーム(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635790",
+   "artist": "零［Ｈｚ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/24(土)",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626958",
    "artist": "タブレット純 魅惑の世界",
    "saletype": "一般発売",
@@ -128,26 +106,15 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619046",
-   "artist": "ＴＲＩＰＬＡＮＥ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671055",
+   "artist": "DXTEEN × ぴあ presents K-Monday ON STAGE #01",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/6/28(日) ～ 2026/9/6(日)",
-   "venue": "ｕｋｉｇｍｏ(北海道)／ＳＴＵＤＩＯ ＺＯＯＷＥＥ(北海道)／ＨＩＰＳＴＥＲ(北海道)／ｍｕｓｉｃａ ｈａｌｌ ｃａｆｅ(北海道)／モーリス(北海道)／Ｃａｆｅ ｄｅ Ｌｕｃｉｌｌｅ(宮城県)／モルタルレコード(埼玉県)／ＡＰＯＬＬＯ(千葉県)／溝ノ口劇場(神奈川県)／Ｍｕｓｉｃ Ｂａｒ Ｐｅｒｃｈ(愛知県)／Ｐｉｔｔｏｓ．西天満(大阪府)／ＬＩＶ ＬＡＢＯ(福岡県)／ｔｓｕｋｉｍｉ(熊本県)／ＷＩＣＫＹ’Ｓ ＨＯＵＳＥ(鹿児島県)",
-   "pref": "北海道／宮城県／埼玉県／千葉県／神奈川県／愛知県／大阪府／福岡県／熊本県／鹿児島県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
-   "artist": "中島卓偉",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/27(日)",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "perfdate": "2026/9/21(月・祝)",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
    "pref": "埼玉県",
    "in_db": false,
-   "name_in_db": true
+   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669294",
@@ -161,39 +128,6 @@
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
-   "artist": "THE FRANK VOX",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/6/13(土) ～ 2026/10/25(日)",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ２／３（ＶＪ－４）(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)／Ｓｈｉｂｕｙａ ＷＷＷ(東京都)／ＳＵＰＥＲＮＯＶＡ ＫＡＷＡＳＡＫＩ(神奈川県)",
-   "pref": "栃木県／群馬県／埼玉県／千葉県／東京都／神奈川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670573",
-   "artist": "三浦大知",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "三郷市文化会館 大ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625366",
-   "artist": "ＭＹＴＨ ＆ ＲＯＩＤ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/12(月・祝)",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620720",
    "artist": "南こうせつ",
    "saletype": "一般発売",
@@ -201,28 +135,6 @@
    "perfdate": "2026/10/3(土) ・ 2026/10/24(土) ・ 2026/10/25(日)",
    "venue": "渋川市民会館 大ホール(群馬県)／グローバルソフトウェア本庄文化ホール(埼玉県)／パストラルかぞ 大ホール(埼玉県)",
    "pref": "群馬県／埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664749",
-   "artist": "めいちゃん",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/5(土) ・ 2026/12/6(日)",
-   "venue": "ベルーナドーム(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628604",
-   "artist": "モーニング娘。’２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
-   "venue": "和光市民文化センター サンアゼリア 大ホール(埼玉県)",
-   "pref": "埼玉県",
    "in_db": false,
    "name_in_db": true
   },
@@ -247,17 +159,552 @@
    "pref": "埼玉県",
    "in_db": false,
    "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615172",
+   "artist": "杏里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668403",
+   "artist": "イルカ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613366",
+   "artist": "イルカ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618405",
+   "artist": "歌心りえ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ウェスタ川越 ヤオコー大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633094",
+   "artist": "ウルトラ寿司ふぁいやー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667277",
+   "artist": "ウルフルズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "さいたま市文化センター 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617158",
+   "artist": "ＥＸＩＬＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670559",
+   "artist": "奥華子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "彩の国さいたま芸術劇場 音楽ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631867",
+   "artist": "加藤登紀子 ほろ酔いコンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)／ヒューリックホール東京(東京都)／関内ホール 大ホール(神奈川県)",
+   "pref": "埼玉県／東京都／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631867",
+   "artist": "加藤登紀子 ほろ酔いコンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621687",
+   "artist": "角松敏生",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "さいたま市文化センター 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625260",
+   "artist": "岸谷香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "幸手市民文化体育館（アスカル幸手） さくらホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630745",
+   "artist": "ＫＯＴＯＫＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
+   "artist": "KOTORI pre.“12” Tour",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／越谷ＥＡＳＹＧＯＩＮＧＳ(埼玉県)／Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
+   "pref": "栃木県／埼玉県／東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671054",
+   "artist": "コドモパーティーIII",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "正和工業にじいろホール 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622062",
+   "artist": "斉藤和義",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667141",
+   "artist": "さだまさし",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633093",
+   "artist": "沢田研二",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667117",
+   "artist": "The 51st anniversary 俺たちの旅 スペシャルコンサート ～まだまだ旅は終わらない～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619123",
+   "artist": "ＳＩＮＯＮ 奇跡の歌声 ～カーペンターズコンサート ｉｎ 栗橋～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "栗橋文化会館（イリス）(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669601",
+   "artist": "柴咲コウ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "三郷市文化会館 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669623",
+   "artist": "柴田淳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626828",
+   "artist": "島袋寛子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670544",
+   "artist": "C&K",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "三郷市文化会館 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633693",
+   "artist": "時代を彩る歌姫たち",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ウェスタ川越 ヤオコー大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667017",
+   "artist": "JUJU",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
+   "artist": "杉山清貴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625297",
+   "artist": "スターダスト☆レビュー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "熊谷スポーツ文化公園 彩の国くまがやドーム(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635433",
+   "artist": "スターダスト☆レビュー〈駐車券〉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "熊谷スポーツ文化公園 彩の国くまがやドーム(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669282",
+   "artist": "SPECIAL OTHERS",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／ＬＩＱＵＩＤＲＯＯＭ",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624316",
+   "artist": "青春のアイドルヒットステージ 松本伊代・早見優・森口博子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ウェスタ川越 ヤオコー大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607858",
+   "artist": "世良公則",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "深谷市民文化会館 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629774",
+   "artist": "零［Ｈｚ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635790",
+   "artist": "零［Ｈｚ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668510",
+   "artist": "高中正義",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626958",
+   "artist": "タブレット純 魅惑の世界",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "所沢市民文化センターミューズ キューブホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612073",
+   "artist": "ツチヤカレン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671055",
+   "artist": "DXTEEN × ぴあ presents K-Monday ON STAGE #01",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670528",
+   "artist": "東京スカパラダイスオーケストラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625543",
+   "artist": "ｔｏｃｏｎｏｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)",
+   "pref": "茨城県／栃木県／埼玉県／千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
+   "artist": "中島卓偉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666369",
+   "artist": "中村耕一+JAYWALK",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620159",
+   "artist": "名渡山遼",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・山伸サステインホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669946",
+   "artist": "ナナヲアカリ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669485",
+   "artist": "ネクライトーキー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669294",
+   "artist": "Northern19／39degrees",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｌａｄｄｅｒｌａｄｄｅｒ(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627433",
+   "artist": "林部智史",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)／東京国際フォーラム ホールＣ(東京都)",
+   "pref": "埼玉県／東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666668",
+   "artist": "平原綾香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "所沢市民文化センターミューズ アークホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666668",
+   "artist": "平原綾香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "所沢市民文化センターミューズ アークホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623150",
+   "artist": "ＰＩＧＭＯＮＺ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／ｃｌｕｂ ｃｈａｎｇｅ(岩手県)／ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ２ｎｄ(宮城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／ＷＷＷ Ｘ(東京都)／ＲＡＤ ＮＩＮＥ(愛知県)／ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)／神戸 太陽と虎(兵庫県)／ＤＲＵＭ ＳＯＮ(福岡県)／熊本Ｂ．９ Ｖ２(熊本県)",
+   "pref": "北海道／岩手県／宮城県／埼玉県／東京都／愛知県／大阪府／兵庫県／福岡県／熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617703",
+   "artist": "フォレスタ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622129",
+   "artist": "布施明",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
+   "artist": "THE FRANK VOX",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ２／３（ＶＪ－４）(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)／Ｓｈｉｂｕｙａ ＷＷＷ(東京都)／ＳＵＰＥＲＮＯＶＡ ＫＡＷＡＳＡＫＩ(神奈川県)",
+   "pref": "栃木県／群馬県／埼玉県／千葉県／東京都／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666817",
+   "artist": "flumpool",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "狭山市市民会館 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668345",
+   "artist": "BREAKERZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670338",
+   "artist": "布袋寅泰",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628268",
+   "artist": "真心ブラザーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670573",
+   "artist": "三浦大知",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622919",
+   "artist": "美川憲一／コロッケ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)／ウェスタ川越 ヤオコー大ホール(埼玉県)／サンシティ越谷市民ホール 大ホール(埼玉県)／ぎふしんフォーラム 大ホール(岐阜県)／三重県文化会館 大ホール(三重県)",
+   "pref": "茨城県／埼玉県／岐阜県／三重県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625366",
+   "artist": "ＭＹＴＨ ＆ ＲＯＩＤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620720",
+   "artist": "南こうせつ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "渋川市民会館 大ホール(群馬県)／グローバルソフトウェア本庄文化ホール(埼玉県)／パストラルかぞ 大ホール(埼玉県)",
+   "pref": "群馬県／埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664749",
+   "artist": "めいちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ベルーナドーム(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
+   "artist": "MONO NO AWARE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
+   "artist": "山本リンダ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633077",
+   "artist": "ｙｏｓｕｇａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628186",
+   "artist": "リアクション ザ ブッタ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
+   "pref": "埼玉県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669912",
    "artist": "渡辺美里",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/8(日)",
    "venue": "ベルーナドーム(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "埼玉県"
   }
  ]
 }

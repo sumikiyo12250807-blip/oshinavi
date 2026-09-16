@@ -1,0 +1,701 @@
+# 新着の独立再導出と登録値の突合（2026-09-16）
+
+- **id8351 Chevon**（下書き jpop）
+  - 県 登録「京都・東京」に「愛知県」が無い
+- **id8396 Billyrrom**（下書き jpop）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629542&rlsCd=00
+- **id8397 HEAVY METAL SOUNDHOUSE 2026 45TH ANNIVER**（下書き jpop）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635010&rlsCd=00
+- **id8403 SHERBETS**（下書き jpop）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?lotRlsCd=33510
+- **id8404 TSUKEMEN**（下書き jpop）
+  - 千秋楽(縮む) 登録2027-02-23／実2027-02-07
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?lotRlsCd=23380；詳細ページが読めな
+- **id8405 TK from 凛として時雨**（下書き jpop）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?lotRlsCd=34862；詳細ページが読めな
+- **id8408 【当日引換券】『アメリカン・ドリーム』**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636849&rlsCd=00
+- **id8409 三遊亭兼好 3月の平日昼の独演会 二ツ目ゲストあり（1席）**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636626&rlsCd=00
+- **id8410 三遊亭兼好 2月の平日昼の独演会 二ツ目ゲストあり（1席）**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636625&rlsCd=00
+- **id8411 玉川太福独演会 威風堂々Vol.6**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636757&rlsCd=00
+- **id8412 第11回 隅田川わたし 毎月連続落語勉強会**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636627&rlsCd=00
+- **id8413 第12回 隅田川わたし 毎月連続落語勉強会 勉強会開始から1年!**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636628&rlsCd=00
+- **id8414 【当日引換券】東京バレエ団「白鳥の湖」**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636325&rlsCd=00
+- **id8415 なみき落語会 令和8年度東区芸術文化祭事業 柳亭小痴楽 蝶花楼桃花 二人会 スペ**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631817&rlsCd=00
+- **id8416 第28回JFL VONDS市原FC対いわてグルージャ盛岡**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636693&rlsCd=00
+- **id8419 映画『暗夜行路』特別上映 in 白樺芸術祭ABIKO 2026**（下書き movie）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635259&rlsCd=00
+- **id8420 映画『東京物語』特別上映 in 白樺芸術祭ABIKO 2026**（下書き movie）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635427&rlsCd=00
+- **id8421 アンミカ スペシャルトークショー**（下書き gakusai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631280&rlsCd=00
+- **id8422 梶裕貴トークショー**（下書き gakusai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636317&rlsCd=00
+- **id8424 足利真貴×古田友哉COUNTERPOINTことばと音vol.1**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636129&rlsCd=00
+- **id8425 上野優子リサイタル「プロコフィエフ・ソナタ全曲シリーズ第6回」**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633765&rlsCd=00
+- **id8426 大阪桐蔭高等学校吹奏楽部 高梁市特別公演2026**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636719&rlsCd=00
+- **id8427 高木凜々子（vl）**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636197&rlsCd=00
+- **id8430 原田奏子ピアノリサイタル**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636497&rlsCd=00
+- **id8431 横浜交響楽団第750回定期演奏会**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633145&rlsCd=00
+- **id8502 碧き海～サイドストーリー～**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629831&rlsCd=00
+- **id8509 AARON CHEN**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633762&rlsCd=00
+- **id8513 市川猿四郎さんに学ぶ 歌舞伎のみかた楽しみ方スーパー講座 横須賀**（下書き dento）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632213&rlsCd=00
+- **id8522 梅沢富美男劇団**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625216&rlsCd=00
+- **id8529 演芸平家物語**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2602874&rlsCd=00
+- **id8536 おかげ横丁 第414回 9月みそか寄席**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634725&rlsCd=00
+- **id8541 『海底骨歌』**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2626603&rlsCd=00
+- **id8544 カズキのタネ**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2626223&rlsCd=00
+- **id8554 桂文珍 独演会**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2611016&rlsCd=00
+- **id8565 神田伊織10周年4DAYS『難波戦記4』『朝顔日記4』ネタ下ろし**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2618611&rlsCd=00
+- **id8573 ガクテンソク単独ライブツアー2026「九分九厘」**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2615365&rlsCd=00
+- **id8579 禁断の笑福亭べ瓶玉川太福二人会**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2614085&rlsCd=00
+- **id8590 劇団四季「マンマ・ミーア!」／広島**（下書き musical）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620524&rlsCd=00
+- **id8598 小泉八雲 朗読のしらべ「思ひ出の記 セツが語ったヘルンの怪談」**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631208&rlsCd=00
+- **id8611 コンカリーニョ20周年記念提携企画 昭和レディの「コンカリーニョでお祭り騒ぎ!!**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620305&rlsCd=00
+- **id8616 最強!ものまねフェスin名古屋**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627644&rlsCd=00
+- **id8621 札幌劇場祭TGR2026 ocomenoco**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631649&rlsCd=00
+- **id8626 札幌劇場祭TGR2026 劇団夕結び**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631665&rlsCd=00
+- **id8631 札幌劇場祭TGR2026 トランク機械シアター**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631644&rlsCd=00
+- **id8636 札幌劇場祭TGR2026 MAM**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631650&rlsCd=00
+- **id8640 三代目林家菊丸独演会2026～上方人情噺の世界～**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634377&rlsCd=00
+- **id8643 三遊亭兼好 11月の平日昼の独演会 ゲスト・瀧川鯉白 トーク付き**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625301&rlsCd=00
+- **id8645 三遊亭兼好 12月の平日昼の独演会 ゲスト三遊亭愛二郎 トーク付**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625303&rlsCd=00
+- **id8648 三遊亭兼好 独演会 ～兼好ランドにようこそIII～**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2621096&rlsCd=00
+- **id8653 三遊亭白鳥独演会 白鳥ジャパン Vol.25 in横浜**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620200&rlsCd=00
+- **id8654 三遊亭白鳥 柳家三三 二人会 Vol.9**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2606050&rlsCd=00
+- **id8658 三遊亭わん丈独演会・落語わん丈**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2623765&rlsCd=00
+- **id8665 芝浜亭 十月 落語&活弁**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634719&rlsCd=00
+- **id8670 島之内寄席**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632153&rlsCd=00
+- **id8680 春風亭百栄ほのぼの独演会 あの名作『絶句』とそのネタ解説、他**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625029&rlsCd=00
+- **id8687 しろ八 市遼 東村山 祝 二ツ目昇進落語会**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625121&rlsCd=00
+- **id8693 スクールアイドルミュージカル**（下書き musical）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?lotRlsCd=18294；詳細ページが読めな
+- **id8696 隅田川馬石10月のコツコツ的毎月連続落語会 蔵出し『真田小僧』他**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627742&rlsCd=00
+- **id8698 青年劇場**（下書き engeki）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627337&rlsCd=00
+- **id8702 仙臺舞篝【SENDAI MAI KAGARI】**（下書き classic）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632545&rlsCd=00
+- **id8706 宝井琴鶴 芸道20周年企画 四季の琴鶴 冬 ゲストあり**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2619035&rlsCd=00
+- **id8712 立川小春志芸歴二十周年記念落語会**（下書き owarai）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2618636&rlsCd=00
+- **id8754 2027 IIHF 女子アジア選手権**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633764&rlsCd=00
+- **id8765 第20回アジア競技大会／応援Plus<応援グッズ>**（下書き sports）
+  - 県 登録「愛知」に「東京都」が無い
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2616647&rlsCd=00
+- **id8770 第20回アジア競技大会／ソフトボール**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2610349&rlsCd=00
+- **id8786 第20回アジア競技大会／ボクシング**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2610286&rlsCd=00
+- **id8787 第20回アジア競技大会／野球**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2610147&rlsCd=00
+- **id8790 第5回アジアパラ競技大会／応援Plus<応援グッズ>**（下書き sports）
+  - 県 登録「愛知」に「東京都」が無い
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2616649&rlsCd=00
+- **id8796 第5回アジアパラ競技大会／パラアーチェリー**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2611066&rlsCd=00
+- **id8803 第5回アジアパラ競技大会／パラフェンシング**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2611249&rlsCd=00
+- **id8804 第5回アジアパラ競技大会／パラ陸上競技**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620097&rlsCd=00
+- **id8807 【WEリーグ】セレッソ大阪ヤンマーレディース対RB大宮アルディージャWOMEN **（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631699&rlsCd=00
+- **id8810 【WEリーグ】セレッソ大阪ヤンマーレディース対ノジマステラ神奈川相模原 WEリー**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2630298&rlsCd=00
+- **id8814 SLS TOKYO 2026 presented by MinebeaMitsu**（下書き sports）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2628978&rlsCd=01
+- **id8817 『F GAME.7』in 代々木第一体育館**（下書き musicetc）
+  - note: 詳細ページが読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631519&rlsCd=00
+- **id8819 第52回 ANAオープンゴルフトーナメント**（下書き sports）
+  - ジャンル 登録「スポーツ/ゴルフ」／実「ntSgenreCd:0300115」
+- **id8820 ACNチャンピオンシップゴルフトーナメント2026**（下書き sports）
+  - ジャンル 登録「スポーツ/ゴルフ」／実「ntSgenreCd:0300115」
+- **id8827 OZアカデミー女子プロレス**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ 分類:プロレス ／ ntSgenreCd:0300108」
+- **id8833 ≪会場・盛岡駅間送迎バス≫いわて盛岡シティマラソン2026**（下書き sports）
+  - ジャンル 登録「スポーツ/スポーツその他」／実「ntSgenreCd:0300199」
+- **id8838 川口オートレース（9／16～9／18）第5特別観覧席**（下書き sports）
+  - ジャンル 登録「スポーツ/スポーツその他」／実「パンくず:スポーツ ／ ntSgenreCd:0300199」
+- **id8840 [大学]関西大学ラグビーAリーグ**（下書き sports）
+  - ジャンル 登録「スポーツ/ラグビー」／実「ntSgenreCd:0300103」
+- **id8848 GLEAT Ver.32**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ 分類:プロレス ／ ntSgenreCd:0300108」
+- **id8857 埼玉西武ライオンズ対東北楽天ゴールデンイーグルス 公式戦**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「パンくず:スポーツ ／ ntSgenreCd:0300102」
+- **id8864 JCCA筑波ミーティングエンデュランス**（下書き sports）
+  - ジャンル 登録「スポーツ/モータースポーツ」／実「パンくず:スポーツ ／ ntSgenreCd:0300112」
+- **id8877 全日本プロレス<行田大会>**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ ntSgenreCd:0300108」
+- **id8882 宝ヶ池わいわいフェスタ2026**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ ntSgenreCd:0300108」
+- **id8909 東京六大学野球 2026秋季リーグ戦**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「分類:東京六大学野球連盟 ／ ntSgenreCd:0300102」
+- **id8911 徳島インディゴソックスホームゲーム 四国アイランドリーグplus2026**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「パンくず:スポーツ ／ ntSgenreCd:0300102」
+- **id8918 【土日祝日時指定】中日（3塁側）対北海道日本ハム（1塁側） ファーム・リーグ公式**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「パンくず:スポーツ ／ ntSgenreCd:0300102」
+- **id8921 名古屋オルクス EXTREME ICE HOCKEY LEAGUE 2026-2**（下書き sports）
+  - ジャンル 登録「スポーツ/フィギュアスケート・ウィンタースポーツ」／実「ntSgenreCd:0300114」
+- **id8938 広島東洋カープ対中日ドラゴンズ 公式戦**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「パンくず:スポーツ ／ ntSgenreCd:0300102」
+- **id8943 第1回 ぴあ さっぽろ皐月リレーマラソン&ハーフマラソン**（下書き sports）
+  - ジャンル 登録「スポーツ/スポーツその他」／実「分類:マラソン ／ ntSgenreCd:0300199」
+- **id8953 福岡ソフトバンクホークス 英国風パブ HUB スポーツバーシート観戦 （9／4～**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「パンくず:スポーツ ／ ntSgenreCd:0300102」
+- **id8966 福岡ソフトバンクホークス ファーム公式戦（9／11～9／20） タマスタ筑後ハー**（下書き sports）
+  - ジャンル 登録「スポーツ/野球」／実「パンくず:スポーツ ／ ntSgenreCd:0300102」
+- **id8973 プロレスリングWAVE**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ 分類:プロレス ／ ntSgenreCd:0300108」
+- **id8985 hotシュシュ**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ 分類:プロレス ／ ntSgenreCd:0300108」
+- **id8986 hotシュシュ**（下書き sports）
+  - ジャンル 登録「スポーツ/プロレス」／実「パンくず:スポーツ ／ 分類:プロレス ／ ntSgenreCd:0300108」
+- **id9003 2026 三井住友VISA太平洋マスターズ**（下書き sports）
+  - ジャンル 登録「スポーツ/ゴルフ」／実「ntSgenreCd:0300115」
+- **id9006 横浜ノースドックラン2026**（下書き sports）
+  - ジャンル 登録「スポーツ/スポーツその他」／実「パンくず:スポーツ ／ ntSgenreCd:0300199」
+- **id9007 読売ジャイアンツ主催 2026ファーム・リーグ公式戦**（下書き sports）
+  - 県 登録「東京」に「山梨県」が無い
+  - ジャンル 登録「スポーツ/野球」／実「ntSgenreCd:0300102」
+- **id9013 令和8年 秋巡業 大相撲おおさか舞洲場所**（下書き sports）
+  - ジャンル 登録「スポーツ/相撲・武道」／実「パンくず:スポーツ ／ 分類:大相撲 ／ ntSgenreCd:0300111」
+- **id9014 令和八年 秋巡業 大相撲笠岡場所**（下書き sports）
+  - ジャンル 登録「スポーツ/相撲・武道」／実「パンくず:スポーツ ／ 分類:大相撲 ／ ntSgenreCd:0300111」
+- **id9016 令和八年 秋巡業 大相撲高山場所**（下書き sports）
+  - ジャンル 登録「スポーツ/相撲・武道」／実「パンくず:スポーツ ／ 分類:大相撲 ／ ntSgenreCd:0300111」
+- **id9017 令和八年 秋巡業 大相撲長浜場所**（下書き sports）
+  - ジャンル 登録「スポーツ/相撲・武道」／実「分類:大相撲 ／ ntSgenreCd:0300111」
+- **id9024 ヴィアティン三重対アスルクラロ沼津 第28回 JFLリーグ戦**（下書き sports）
+  - ジャンル 登録「スポーツ/サッカー」／実「パンくず:スポーツ ／ ntSgenreCd:0300101」
+- **id9031 ヴィアティン三重対横河武蔵野FC 第28回 JFLリーグ戦**（下書き sports）
+  - ジャンル 登録「スポーツ/サッカー」／実「パンくず:スポーツ ／ ntSgenreCd:0300101」
+- **id9033 ヴィアティン三重対ヴェルスパ大分 第28回 JFLリーグ戦**（下書き sports）
+  - ジャンル 登録「スポーツ/サッカー」／実「パンくず:スポーツ ／ ntSgenreCd:0300101」
+- **id9039 桜坂劇場2026年映画鑑賞券**（下書き movie）
+  - ジャンル 登録「映画/映画その他」／実「パンくず:映画 ／ ntSgenreCd:0400199」
+- **id9047 DEEN Blu-ray&DVD発売記念!「DEEN at BUDOKAN 20**（下書き movie）
+  - ジャンル 登録「映画/映画その他」／実「ntSgenreCd:0400199」
+- **id9052 PFFアワード2026受賞作上映**（下書き movie）
+  - ジャンル 登録「映画/映画祭」／実「パンくず:映画 ／ ntSgenreCd:0400104」
+- **id9056 ミニシアター回数券**（下書き movie）
+  - ジャンル 登録「映画/映画その他」／実「ntSgenreCd:0400199」
+- **id9064 1.旧尾崎テオドラ邸アフタヌーンティ+ギャラリー／ガラスの仮面展**（下書き art）
+  - ジャンル 登録「アート/アート」／実「パンくず:アート ／ ntSgenreCd:0500101」
+- **id9072 長崎歴史文化博物館／常設展**（下書き art）
+  - ジャンル 登録「アート/アート」／実「パンくず:アート ／ ntSgenreCd:0500101」
+- **id9089 「OUTBURN」inINABE**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「パンくず:イベント ／ ntSgenreCd:0600199」
+- **id9090 第8回秋川流域花火大会**（下書き hanabi）
+  - ジャンル 登録「イベント/祭り・花火大会」／実「分類:花火大会 ／ ntSgenreCd:0600107」
+- **id9101 あばれる君 熱血授業in掛川**（下書き talkshow）
+  - ジャンル 登録「イベント/講演会・トークショー」／実「パンくず:イベント ／ ntSgenreCd:0600101」
+- **id9102 AVANT JAM 2026**（下書き engeki）
+  - ジャンル 登録「イベント/パフォーマンス」／実「ntSgenreCd:0600105」
+- **id9108 ALPHA DRIVE ONE × TOWER RECORDS CAFE<渋谷店**（下書き kids）
+  - ジャンル 登録「イベント/スクール・レジャー」／実「ntSgenreCd:0600110」
+- **id9113 池の平ファミリーランド**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9115 池の平ファミリーランド入園券&ゴルフセット券**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9117 池の平ファミリーランド入園券&どうぶつ王国入場セット券**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9123 1999展-存在しないあの日の記憶- <9/19(土)～9/27(日) 土日祝休**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9127 雨穴の変な世界展。【通常日券:平日】**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9128 雨穴の変な世界展。【特定日券:10/24(土)、25(日)、31(土)】**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9129 雨穴の変な世界展。【特定日券:11/1(日)、3(火・祝)、7(土)、8(日)、**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9130 雨穴の変な世界展。【特定日券:11/21(土)～23(月・祝)、28(土)、29**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9131 雨穴の変な世界展。【特定日券:12/5(土)、6(日)、12(土)、13(日)、**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9132 雨穴の変な世界展。【特定日券:12/24(木)～31(木)】**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9133 雨穴の変な世界展。【特定日券:27/1/1(金・祝)～7(木)】**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9134 雨穴の変な世界展。【特定日券:27/1/9(土)～11(月・祝)、16(土)、1**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9139 映画名探偵プリキュア! × TOWER RECORDS CAFE<大阪ステーショ**（下書き kids）
+  - ジャンル 登録「イベント/スクール・レジャー」／実「ntSgenreCd:0600110」
+- **id9149 恵那峡遊覧船**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9151 エンジン2026 in 岐阜**（下書き talkshow）
+  - ジャンル 登録「イベント/講演会・トークショー」／実「ntSgenreCd:0600101 || パンくず:イベント ／ ntSgenreCd:0600101」
+- **id9152 大分マリーンパレス水族館「うみたまご」／入館券**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9169 2026 ONF FANMEETING IN JAPAN : Autumn Pi**（下書き fanevent）
+  - ジャンル 登録「イベント/ショー・ファンイベント」／実「分類:韓流エンタテインメント ／ ntSgenreCd:0600106」
+- **id9170 2026 ONG SEONGWU FANMEETING <Let's go-ON**（下書き fanevent）
+  - ジャンル 登録「イベント/ショー・ファンイベント」／実「分類:韓流エンタテインメント ／ ntSgenreCd:0600106」
+- **id9178 第85回川崎市制記念多摩川花火大会**（下書き hanabi）
+  - ジャンル 登録「イベント/祭り・花火大会」／実「分類:花火大会 ／ ntSgenreCd:0600107」
+- **id9181 城島高原パーク 入園券**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9183 北区花火会**（下書き hanabi）
+  - ジャンル 登録「イベント/祭り・花火大会」／実「分類:花火大会 ／ ntSgenreCd:0600107」
+- **id9184 喫茶来(きっさこ) TOKOROZAWA TEA FES 2026 テイスティン**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「ntSgenreCd:0600199」
+- **id9185 木下大サーカス奈良橿原公演**（下書き circus）
+  - ジャンル 登録「イベント/サーカス」／実「ntSgenreCd:0600103」
+- **id9186 木下大サーカス岡山公演**（下書き circus）
+  - ジャンル 登録「イベント/サーカス」／実「ntSgenreCd:0600103」
+- **id9193 京都国際マンガ・アニメフェア2026**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「パンくず:イベント ／ ntSgenreCd:0600199」
+- **id9205 神戸イルミナージュ（※カウントダウンイベントの為12／31は入場不可）**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「パンくず:イベント ／ ntSgenreCd:0600199」
+- **id9221 『佐々木莉佳子 2027年カレンダー』発売記念お渡し会**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「パンくず:イベント ／ ntSgenreCd:0600199」
+- **id9225 サンリオピューロランド パスポート**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9235 しまねの地酒フェアin松江**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「パンくず:イベント ／ ntSgenreCd:0600199」
+- **id9241 ジミー大西「ホームタウン」愛媛展**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「パンくず:イベント ／ ntSgenreCd:0600109」
+- **id9247 ストーンミュージアム博石館 入館券**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9261 誕生85周年記念 トムとジェリー展 君が笑うと、僕も笑っちゃう**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「パンくず:イベント ／ ntSgenreCd:0600109」
+- **id9267 中央区制80周年記念・港区政80周年記念 東京湾大華火祭**（下書き hanabi）
+  - ジャンル 登録「イベント/祭り・花火大会」／実「分類:花火大会 ／ ntSgenreCd:0600107」
+- **id9274 TVアニメ『進撃の巨人』×ニジゲンノモリ 昼夜セット券（9／1～9／30入場分）**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9285 TVアニメ『進撃の巨人』×ニジゲンノモリ プレミアムセット券（12／1～12／1**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9308 特別展「いきもの超ワールド展 国立科学博物館×ダーウィンが来た!」【10／3～1**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「パンくず:イベント ／ ntSgenreCd:0600109」
+- **id9319 豊臣兄弟! 名古屋中村 大河ドラマ館 当日入館券**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9322 虎バンフェス ～2003阪神V戦士同窓会～**（下書き talkshow）
+  - ジャンル 登録「イベント/講演会・トークショー」／実「パンくず:イベント ／ ntSgenreCd:0600101」
+- **id9323 【動画配信】新木宏典の「未定」**（下書き talkshow）
+  - ジャンル 登録「イベント/講演会・トークショー」／実「パンくず:イベント ／ ntSgenreCd:0600101」
+- **id9326 日暮&月白の闇鍋パジャマパーティー**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「ntSgenreCd:0600199」
+- **id9354 NARUTO&BORUTO忍里 VIPジャーニーパス（7／27～12／31入場分**（下書き kids）
+  - ジャンル 登録「イベント/アミューズメント」／実「パンくず:イベント ／ ntSgenreCd:0600112」
+- **id9362 博多旧市街ライトアップウォーク2026**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「パンくず:イベント ／ ntSgenreCd:0600199」
+- **id9365 ハニーレモンソーダ完結記念展**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「ntSgenreCd:0600109」
+- **id9373 100%ドラえもん&フレンズ in 東京〈9/16～20入場分〉**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2629685 のパンくず）」
+- **id9374 100%ドラえもん&フレンズ in 東京〈9/21～25入場分〉**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2629686 のパンくず）」
+- **id9375 100%ドラえもん&フレンズ in 東京〈9/26～30入場分〉**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2629687 のパンくず）」
+- **id9382 「ピクサーの世界展」〈9/15～9/17〉**（下書き art）
+  - 枠 登録1／実2
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2608514 のパンくず）」
+- **id9383 「ピクサーの世界展」〈9/18～9/20〉**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2608515 のパンくず） / イベント」
+- **id9384 「ピクサーの世界展」〈9/21～9/24〉**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2608516 のパンくず）」
+- **id9387 「ピクサーの世界展」〈10/2～10/4〉**（下書き art）
+  - ジャンル 登録「イベント/博覧会・展示会・見本市」／実「イベント（まとめ内の公演 eventCd=2608519 のパンくず）」
+- **id9391 FAN FUN CHARITY MATCH ～プロ野球OB本気の一戦～**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「イベント（まとめ内の公演 eventCd=2616498 のパンくず）」
+- **id9453 夜の遊園地貸切り大合コン**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「イベント（まとめ内の公演 eventCd=2617227 のパンくず）」
+- **id9457 リアル脱出ゲーム×名探偵コナン『疾風の追走からの脱出』**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「イベント（まとめ内の公演 eventCd=2618092 のパンくず）」
+- **id9458 RYUICHI SAKAMOTO&TIN DRUM 「KAGAMI+」<サンライ**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「イベント（まとめ内の公演 eventCd=2631429 のパンくず）」
+- **id9468 THE WORLD OF BIOHAZARD 30周年展〈12/12(土)～12**（下書き musicetc）
+  - ジャンル 登録「イベント/イベントその他」／実「イベント（まとめ内の公演 eventCd=2625559 のパンくず）」
+- **id9516 五十嵐紅トリオ|シネマ・セレクション**（下書き classic）
+  - 県 登録「石川・宮城」に「広島県」が無い
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック（まとめ内の公演 eventCd=2608143 のパンくず）」
+- **id9517 五十嵐紅トリオ|ジブリ 2026**（下書き classic）
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック（まとめ内の公演 eventCd=2608103 のパンくず）」
+- **id9523 石田組 コンサートツアー2026**（下書き classic）
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック（まとめ内の公演 eventCd=2544602 のパンくず）」
+- **id9541 第九&運命 ～ウクライナ国立歌劇場管弦楽団～**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック（まとめ内の公演 eventCd=2617289 のパンくず）」
+- **id9555 NHK交響楽団演奏会**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック（まとめ内の公演 eventCd=2624313 のパンくず）」
+- **id9568 及川浩治ピアノ・リサイタル 「リスト、ショパン、ラフマニノフ～3人の天才の物語」**（下書き classic）
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック（まとめ内の公演 eventCd=2615838 のパンくず）」
+- **id9654 ガボール・タカーチ=ナジ(指揮)／藤田真央(ピアノ)／ヴェルビエ祝祭室内管弦楽団**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック（まとめ内の公演 eventCd=2607993 のパンくず）」
+- **id9698 夜ピアノ 2026 season**（下書き classic）
+  - ジャンル 登録「クラシック/クラシックその他」／実「クラシック（まとめ内の公演 eventCd=2600230 のパンくず）」
+- **id9703 芸劇ブランチコンサート ～石田泰尚の玉手箱～ 第56回・第57回・第58回**（下書き classic）
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック（まとめ内の公演 eventCd=2624766 のパンくず）」
+- **id9805 榛葉樹人&今井俊輔デュオコンサート2026～秋の一日～**（下書き classic）
+  - 県 登録「東京」に「兵庫県」が無い
+- **id9855 反田恭平 ピアノリサイタル 2026**（下書き classic）
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック（まとめ内の公演 eventCd=2617423 のパンくず）」
+- **id9863 都響スペシャル**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック（まとめ内の公演 eventCd=2624514 のパンくず）」
+- **id9870 日本フィルハーモニー交響楽団 第423回横浜定期演奏会**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック（まとめ内の公演 eventCd=2627084 のパンくず）」
+- **id9890 JET STREAM LIVE 2026 in 渋谷音楽祭 supported **（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?lotRlsCd=23918；券種ページを読めな
+- **id9891 SHIBUYA SYMPHONIC BEAT supported by BOAT**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634196&rlsCd=00
+- **id9892 富士山河口湖ピアノフェスティバル2026**（下書き fes）
+  - 枠 登録2／実3
+  - ジャンル 登録「クラシック/フェスティバル・ガラコンサート」／実「クラシック フェスティバル・ガラコンサート」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2616237&rlsCd=00
+- **id9894 【ファイナル】東京MINATO CITY国際音楽コンクール**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック オーケストラ / パンくず:クラシック」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2624570&rlsCd=00
+- **id9895 日本オペラ協会公演 日本オペラシリーズNo.89「天守物語」**（下書き classic）
+  - ジャンル 登録「クラシック/オペラ・声楽」／実「クラシック オペラ・声楽 / パンくず:クラシック」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2611391&rlsCd=00
+- **id9896 10大ピアノ協奏曲 「若林顕」**（下書き classic）
+  - ジャンル 登録「クラシック/器楽・室内楽」／実「クラシック 器楽・室内楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627441&rlsCd=00
+- **id9897 第20回 林家たけ平独演会 -「佃島」ほか、口演いたします-**（下書き owarai）
+  - ジャンル 登録「演劇/寄席・お笑い」／実「演劇 寄席・お笑い / パンくず:演劇」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2621699&rlsCd=00
+- **id9902 豊岡演劇祭2026**（下書き engeki）
+  - ジャンル 登録「演劇/演劇」／実「演劇 演劇」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2628758&rlsCd=00
+- **id9903 ニューイヤー・コンサート2027 ウィーン・フォルクスオーパー交響楽団**（下書き classic）
+  - ジャンル 登録「クラシック/オーケストラ」／実「クラシック オーケストラ / パンくず:クラシック」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2541381&rlsCd=00
+- **id9910 ディーン醐醍&フレンズ 明日に架ける橋2026**（下書き jazz）
+  - ジャンル 登録「音楽/ジャズ・フュージョン」／実「音楽 ジャズ・フュージョン / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2623171&rlsCd=00
+- **id9938 かりゆし58**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2622706&rlsCd=00
+- **id9939 かりゆし58**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2617148&rlsCd=00
+- **id9946 CUTIE STREET**（下書き jpop）
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635331&rlsCd=00
+- **id9963 澤田知可子**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2622687&rlsCd=00
+- **id9979 CiON’s Love Call 2026 supported by BEEEE**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635622&rlsCd=00
+- **id9980 SHE’S**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634674&rlsCd=00
+- **id9988 菅原圭**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634681&rlsCd=00
+- **id9992 スターダスト☆レビュー**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625297&rlsCd=00
+- **id10009 竹原ピストル**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2621206&rlsCd=00
+- **id10017 DXTEEN × ぴあ presents K-Monday ON STAGE #**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633403&rlsCd=00
+- **id10024 TRIPLANE**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2603334&rlsCd=00
+- **id10027 堂島孝平**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629748&rlsCd=00
+- **id10035 HIGH SYNC #3**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634999&rlsCd=00
+- **id10044 FANTASTIC◇CIRCUS**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2616186&rlsCd=00
+- **id10058 プッシュプルポット**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632483&rlsCd=00
+- **id10068 Boiler Room Tokyo 2026**（下書き jpop）
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632032&rlsCd=00
+- **id10070 MARTIN ACOUSTIC LIVE FES Rebirth Tour 20**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634308&rlsCd=00
+- **id10096 細坪基佳**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2624989&rlsCd=00
+- **id10098 MAYSON's PARTY**（下書き jpop）
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627111&rlsCd=00
+- **id10101 SHE’S**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634671&rlsCd=00
+- **id10111 かりゆし58**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620430&rlsCd=00
+- **id10114 SHE’S**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627109&rlsCd=00
+- **id10120 かりゆし58**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2622568&rlsCd=00
+- **id10141 TENDOUJI**（下書き jpop）
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2610520&rlsCd=00
+- **id10143 堂島孝平**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634969&rlsCd=00
+- **id10145 スターダスト☆レビュー**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629130&rlsCd=00
+- **id10157 堂本剛**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2618923&rlsCd=00
+- **id10167 かりゆし58**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2619090&rlsCd=00
+- **id10204 堂島孝平**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2631958&rlsCd=00
+- **id10217 SHE’S**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2624374&rlsCd=00
+- **id10226 半崎美子**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620634&rlsCd=00
+- **id10228 ハルカミライ**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629561&rlsCd=00
+- **id10238 K**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2620735&rlsCd=00
+- **id10244 堂島孝平**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633758&rlsCd=00
+- **id10247 シューク・フラッシュ!**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2607558&rlsCd=00
+- **id10248 半崎美子**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2621018&rlsCd=00
+- **id10253 かりゆし58**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2621452&rlsCd=00
+- **id10254 下津光史（踊ってばかりの国）**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2626799&rlsCd=00
+- **id10255 Teechi**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2615321&rlsCd=00
+- **id10259 灯火日和／Gum Girl**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635847&rlsCd=00
+- **id10264 NEE**（下書き jpop）
+  - 県 登録「大阪」に「東京都」が無い
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625897&rlsCd=00
+- **id10274 THE MICRO HEAD 4N'S**（下書き jpop）
+  - 県 登録「大阪」に「山形県」が無い
+  - 中止等 延期:一般発売 ／ ＴＨＥ ＭＩＣＲＯ ＨＥＡＤ ４Ｎ’Ｓ ／ 延期:●一般発売 ／ ＴＨＥ ＭＩＣＲＯ ＨＥＡＤ ４Ｎ’Ｓ
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627953&rlsCd=00
+- **id10277 MATCH**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636053&rlsCd=00
+- **id10290 LET ME KNOW**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632867&rlsCd=00
+- **id10316 LET ME KNOW**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629931&rlsCd=00
+- **id10324 細坪基佳**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2608783&rlsCd=00
+- **id10326 細坪基佳**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625259&rlsCd=00
+- **id10328 Music Share Vol.2 ～僕の好きな歌～**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627180&rlsCd=00
+- **id10332 LET ME KNOW**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632760&rlsCd=00
+- **id10333 LOSALIOS**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2630893&rlsCd=00
+- **id10342 プッシュプルポット**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2632975&rlsCd=00
+- **id10343 プッシュプルポット**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2628660&rlsCd=00
+- **id10347 MYTH & ROID**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2621118&rlsCd=00
+- **id10366 辰巳ゆうと**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627233&rlsCd=00
+- **id10376 福田こうへい**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2622189&rlsCd=00
+- **id10378 舟木一夫**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2618159&rlsCd=00
+- **id10379 舟木一夫**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2625987&rlsCd=00
+- **id10380 舟木一夫**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2623786&rlsCd=00
+- **id10381 舟木一夫**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2623256&rlsCd=00
+- **id10382 舟木一夫**（下書き enka）
+  - ジャンル 登録「音楽/演歌・邦楽」／実「音楽 演歌・邦楽 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2627612&rlsCd=00
+- **id10393 QUEENS OF THE STONE AGE**（下書き yougaku）
+  - ジャンル 登録「音楽/海外ROCK・POPS」／実「音楽 海外ROCK・POPS / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2629926&rlsCd=00
+- **id10397 Hans Zimmer**（下書き yougaku）
+  - 中止等 取扱なし:※特設サイトよりお申込ください。※ ／ Ｈａｎｓ Ｚｉｍｍｅ
+  - ジャンル 登録「音楽/海外ROCK・POPS」／実「音楽 海外ROCK・POPS」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636316&rlsCd=00
+- **id10398 WHIB**（下書き yougaku）
+  - ジャンル 登録「音楽/海外ROCK・POPS」／実「音楽 海外ROCK・POPS / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636255&rlsCd=00
+- **id10399 WHIB**（下書き yougaku）
+  - ジャンル 登録「音楽/海外ROCK・POPS」／実「音楽 海外ROCK・POPS / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636305&rlsCd=00
+- **id10407 GFEST.2026**（下書き fes）
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2624852&rlsCd=00
+- **id10410 WAJYU BEAT STADIUM 2026**（下書き fes）
+  - ジャンル 登録「音楽/フェスティバル」／実「音楽 フェスティバル / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636472&rlsCd=00
+- **id10415 下関きずな音楽祭VOL.6**（下書き musicetc）
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2622113&rlsCd=00
+- **id10416 10／17(土) 湖畔の秋空と赤い花火 郡山駅直行便バス往復チケット**（下書き musicetc）
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634706&rlsCd=00
+- **id10417 10／17(土) 湖畔の秋空と赤い花火 猪苗代駅発着シャトルバス券往復チケット<**（下書き musicetc）
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2634703&rlsCd=00
+- **id10418 ストバイのO N E S O U N D D A N C E**（下書き musicetc）
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2626103&rlsCd=00
+- **id10419 【動画配信】いきづらい部! 2nd LIVE Dou-Da? DOING! ～R**（下書き musicetc）
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633993&rlsCd=00
+- **id10422 1st CONCERT 「THE QUEENS」 TOKYO**（下書き musicetc）
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2635595&rlsCd=00
+- **id10425 kantoku**（下書き jpop）
+  - ジャンル 登録「音楽/J-POP・ROCK」／実「音楽 J-POP・ROCK / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2636929&rlsCd=00
+- **id10429 黒坂黒太郎 歌とコカリナのコンサート ～故郷の山に～**（下書き musicetc）
+  - 枠 登録1／実0
+  - ジャンル 登録「音楽/音楽その他」／実「音楽 音楽その他 / パンくず:音楽」
+  - note: 券種ページを読めなかった: https://t.pia.jp/pia/ticketInformation.do?eventCd=2633917&rlsCd=00
+- **id10430 笹川美和**（下書き jpop）
+  - 枠 登録2／実0
+  - note: 読めなかった: https://t.pia.jp/pia/event/event.do?eventCd=2636819
+- **id10431 佐藤実絵子／あきいちこ／袈裟丸祐介**（下書き jpop）
+  - 枠 登録1／実0
+  - note: 読めなかった: https://t.pia.jp/pia/event/event.do?eventCd=2637194
+- **id10439 goethe**（下書き jpop）
+  - 枠 登録1／実0
+  - note: ぴあが「ご指定の公演情報が見つかりませんでした」を返す: https://t.pia.jp/pia/event/event.do?eventCd=2625426
+- **id10443 『志の輔らくご in PARCO 2027』**（下書き owarai）
+  - 枠 登録1／実19
+- **id10444 「昇吉の会」**（下書き owarai）
+  - 枠 登録1／実2
+- **id10446 蛇の道に用がある。**（下書き engeki）
+  - 枠 登録1／実11
+- **id10447 10月国立演芸場寄席（5日～9日）**（下書き owarai）
+  - 枠 登録1／実5
+- **id10448 10月国立演芸場寄席（14日～18日）**（下書き owarai）
+  - 枠 登録1／実5
+- **id10453 プリエールプロデュース「あわいの乙女ちゃん」**（下書き engeki）
+  - 枠 登録1／実8
+- **id10454 牧阿佐美バレヱ団「眠れる森の美女」（全幕）**（下書き classic）
+  - 枠 登録1／実2
+- **id10455 ミュージカル『テニスの王子様』4thシーズン 全国大会 青学vs立海 後編／東京**（下書き musical）
+  - 枠 登録1／実9
+- **id10456 ミュージカル『テニスの王子様』4thシーズン 全国大会 青学vs立海 後編／大阪**（下書き musical）
+  - 枠 登録1／実12
+- **id10457 ミュージカル『テニスの王子様』4thシーズン 全国大会 青学vs立海 後編／愛知**（下書き musical）
+  - 枠 登録1／実9
+- **id10458 ミュージカル『テニスの王子様』4thシーズン 全国大会 青学vs立海 後編／福岡**（下書き musical）
+  - 枠 登録1／実4
+- **id10459 ミュージカル『テニスの王子様』4thシーズン 全国大会 青学vs立海 後編／東京**（下書き musical）
+  - 枠 登録1／実14
+- **id10460 yoowa『GARDEN』**（下書き engeki）
+  - 枠 登録1／実5
+- **id10470 愛知・名古屋2026大会／OAWホスピタリティラウンジ**（下書き sports）
+  - 枠 登録1／実18
+- **id10472 映画『白鳥とコウモリ』舞台挨拶**（下書き aisatsu）
+  - 枠 登録2／実4
+- **id10474 舞台『魔法使いの約束』エチュードシリーズ ディレイビューイング**（下書き movie）
+  - 枠 登録2／実32
+- **id10475 「マッチング TRUE LOVE」初日舞台挨拶**（下書き aisatsu）
+  - 枠 登録3／実8
+- **id10479 恐竜ラボ!ギガ・ミッション from DINO-A-LIVE**（下書き musicetc）
+  - 枠 登録6／実18
+- **id10498 藤田めぐみのショパン24のエチュード全曲演奏会とマスタークラス**（下書き classic）
+  - 枠 登録1／実2
+- **id10536 新時空間体験Vol.2 継承**（下書き engeki）
+  - 枠 登録1／実3
+- **id10624 Kukaku映画会 木挽町のあだ討ち**（下書き movie）
+  - 枠 登録1／実2
+- **id10628 ～HOKKAIDO FOOVIE FESTIVAL連携企画・北海道演劇財団30周**（下書き movie）
+  - 枠 登録2／実16
+- **id10638 岡咲美保・関根瞳の24時のシンデレラ 1周年記念イベント**（下書き musicetc）
+  - 枠 登録1／実2
+- **id10647 ストーリーを追体験する探索型ミステリーイベント「5000番地にて」**（下書き musicetc）
+  - 枠 登録3／実160
+- **id10661 「松岡広大のDressing Park」公開ラジオ収録イベント**（下書き talkshow）
+  - 枠 登録1／実2
+- **id10717 荒牧陽子&ビューティーこくぶ クリスマスディナーショー**（下書き dinnershow）
+  - 枠 登録1／実2
+- **id10718 Piano Dream Land 2026**（下書き classic）
+  - 枠 登録1／実4
+- **id10719 第54回 関西マーチングコンテスト**（下書き classic）
+  - 枠 登録2／実8
+- **id10745 第十回せせらぎ寄席**（下書き owarai）
+  - 枠 登録1／実2
+
+読めた 430件 / ズレあり 302件
+内訳: 千秋楽(伸ばす) 0 / 千秋楽(縮む) 1 / 県 8 / 枠 35 / ジャンル 187 / 中止等 2 / 読めない 161

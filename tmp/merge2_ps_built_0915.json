@@ -1,0 +1,65 @@
+[
+ {
+  "id": 10432,
+  "artist": "syrup16g",
+  "name": "syrup16g",
+  "date": "2026-11-26",
+  "dateLabel": "2026年11月26日(木) 長野 長野CLUB JUNK BOX",
+  "venue": "長野CLUB JUNK BOX",
+  "prefecture": "長野",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [],
+  "_piaSub": "音楽/J-POP・ROCK",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2635725",
+   "eplus": null,
+   "amazon": "https://www.amazon.co.jp/s?k=syrup16g%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
+  },
+  "tickets": [
+   {
+    "type": "プレリザーブ（長野 11/26公演）〜9/23 11:00",
+    "date": "2026-09-23"
+   },
+   {
+    "type": "一般発売（長野 11/26公演）9/26 10:00発売",
+    "date": "2026-09-26",
+    "startDate": "2026-09-26"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-15"
+ },
+ {
+  "id": 10465,
+  "artist": "新日本プロレス",
+  "name": "新日本プロレス",
+  "date": "2026-10-27",
+  "dateLabel": "2026年10月27日(火) 茨城 イーエスはなもも体育館",
+  "venue": "イーエスはなもも体育館",
+  "prefecture": "茨城",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_piaSub": "スポーツ/プロレス",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2633247",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（茨城 10/27公演）9/16 10:00発売",
+    "date": "2026-09-16",
+    "startDate": "2026-09-16"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-15"
+ }
+]

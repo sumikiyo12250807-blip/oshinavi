@@ -1,0 +1,66 @@
+{
+ "lg": "07",
+ "total": 0,
+ "pages": 0,
+ "fetched_pages": 2,
+ "parsed": 4,
+ "new_name_in_db": 1,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636050",
+   "artist": "ＦＵＭＩ Ｃｈｒｉｓｔｍａｓ Ｄｉｎｎｅｒ Ｌｉｖｅ ２０２６",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "perfdate": "2026/12/18(金)",
+   "venue": "ピエトラ・セレーナ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671072",
+   "artist": "ららら♪プレミアムコンサート 石田Salon FUKUOKA",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "perfdate": "2027/2/22(月)",
+   "venue": "アクロス福岡 福岡シンフォニーホール(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636050",
+   "artist": "ＦＵＭＩ Ｃｈｒｉｓｔｍａｓ Ｄｉｎｎｅｒ Ｌｉｖｅ ２０２６",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "venue": "ピエトラ・セレーナ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629708",
+   "artist": "めざましクラシックス ｉｎ 奥州",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/19",
+   "venue": "奥州市文化会館（Ｚホール） 大ホール(岩手県)",
+   "pref": "岩手県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671072",
+   "artist": "ららら♪プレミアムコンサート 石田Salon FUKUOKA",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/18",
+   "venue": "アクロス福岡 福岡シンフォニーホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670984",
+   "artist": "「ロックマン」オーケストラコンサート",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/21",
+   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
+   "pref": "埼玉県"
+  }
+ ]
+}
