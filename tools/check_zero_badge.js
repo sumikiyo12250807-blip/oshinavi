@@ -20,6 +20,7 @@
 //
 //   node tools/check_zero_badge.js            … 一覧を出す
 //   node tools/check_zero_badge.js --ids      … 要対応(31日より先)の id をカンマ区切りで出す
+//   node tools/check_zero_badge.js --near-ids … 参考(30日以内)の id を全部カンマ区切りで出す
 //   node tools/check_zero_badge.js 2026-08-20 … 日付を指定して検証
 //
 // 終了コード: 2=要対応あり(公演まで31日より先で枠0) / 1=近い公演のみ枠0 / 0=健全
@@ -68,6 +69,11 @@ for (const ev of EVENTS) {
 if (wantIds) {
   console.log(far.map(x => x.ev.id).join(','));
   process.exit(far.length ? 2 : 0);
+}
+// 30日以内の分も全部照合できるように（一覧は15件しか出さないため・2026-09-17）
+if (args.includes('--near-ids')) {
+  console.log(near.map(x => x.ev.id).join(','));
+  process.exit(near.length ? 1 : 0);
 }
 
 const link = ev => (ev.links || {}).pia || (ev.links || {}).eplus || (ev.links || {}).official || '(リンク無し)';
