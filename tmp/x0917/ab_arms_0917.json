@@ -1,0 +1,25 @@
+{
+ "_why": "2026-09-17に出す9本の『結び』のA/B。9/19に測るとき、どの投稿がどちらの腕かを本文から推測せずに済むように先に残す（feedback_x_ctr_observations＝判定は2日後）。",
+ "date": "2026-09-17",
+ "variable": "結び（最後の2行）",
+ "arms": {
+  "言い切り": ["post04", "post06", "post08"],
+  "問いかけ": ["post05", "post07", "post09"]
+ },
+ "untouched": {
+  "主役枠": ["post01", "post02", "post03"],
+  "_why": "主役型は全文が手元にある母数41本しかなく、ほとんどの分割で15本に届かない＝今夜は動かさない"
+ },
+ "baseline_0916": {
+  "母数": "まとめ型95本（2日以上たった325本のうち全文が手元にある分）",
+  "言い切り": {"n": 54, "clicks_per_post": 1.35, "clicks_per_post_drop_top": 1.19, "imp_median": 1290.5},
+  "問いかけ": {"n": 41, "clicks_per_post": 1.00, "clicks_per_post_drop_top": 0.90, "imp_median": 1456}
+ },
+ "how_to_measure": [
+  "9/19に x.com/i/account_analytics の Content CSV を tmp/x_content_0919.csv に置く",
+  "python tools/x_features.py tmp/x_content_0919.csv --kind まとめ",
+  "『結びが問いかけか』の表を見る＝全体と外れ値除きの両方が同じ向きの時だけ結論にする",
+  "この9本だけを見るのでは母数3対3で足りない＝9/16までの95本に足して見る"
+ ],
+ "next_variable": "次の投稿の予告（あり/なし）＝9/16実測でクリック1.03対1.94だが母数18で保留。結びの決着がついてから1つだけ変える"
+}
