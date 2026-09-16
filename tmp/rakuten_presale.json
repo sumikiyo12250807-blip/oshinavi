@@ -1,6 +1,40 @@
 {
  "presale": [
   {
+   "url": "https://ticket.rakuten.co.jp/sports/rtep121/",
+   "name": "ビリー・ジーン・キング・カップ by Gainbridge 2026 Play-Offs 「 日本 対 アルゼンチン 」",
+   "_genre": "sports",
+   "perfs": 2,
+   "first": "2026-11-21",
+   "last": "2026-11-22",
+   "presale_windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/09/19(土) 12:00 〜 "
+    }
+   ],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/09/19(土) 12:00 〜 "
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2026-11-21",
+     "time": "12:00",
+     "status": "unknown",
+     "buy_url": ""
+    },
+    {
+     "date": "2026-11-22",
+     "time": "11:00",
+     "status": "unknown",
+     "buy_url": ""
+    }
+   ]
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtzppty/",
    "name": "「@JAM PARTY vol.125」",
    "_genre": "idol",
@@ -490,18 +524,12 @@
    "url": "https://ticket.rakuten.co.jp/stage/rtnh09a/",
    "name": "舞台『いつかアイツに会いに行く -BEYOND THE MOON-』",
    "_genre": "engeki",
-   "perfs": 7,
-   "first": "2026-09-17",
+   "perfs": 6,
+   "first": "2026-09-19",
    "last": "2026-09-22",
    "presale_windows": [],
    "windows": [],
    "status_rows": [
-    {
-     "date": "2026-09-17",
-     "time": "14:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368726"
-    },
     {
      "date": "2026-09-19",
      "time": "12:00",
@@ -537,6 +565,30 @@
      "time": "12:00",
      "status": "buyable",
      "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368732"
+    }
+   ]
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/rtzp42a/",
+   "name": "乃木坂46 42ndSGアンダーライブ",
+   "_genre": "jpop",
+   "perfs": 2,
+   "first": "2026-09-29",
+   "last": "2026-09-30",
+   "presale_windows": [],
+   "windows": [],
+   "status_rows": [
+    {
+     "date": "2026-09-29",
+     "time": "18:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366774"
+    },
+    {
+     "date": "2026-09-30",
+     "time": "18:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366775"
     }
    ]
   },
@@ -2023,26 +2075,6 @@
    ]
   },
   {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtzzz65/",
-   "name": "ちゃーむぽっしゅ",
-   "_genre": "idol",
-   "perfs": 1,
-   "first": "2026-09-17",
-   "last": "2026-09-17",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "先行抽選",
-     "timming": "2026/07/21(火) 19:00 〜 2026/08/02(日) 23:59"
-    },
-    {
-     "type": "一般発売",
-     "timming": "2026/08/04(火) 19:00 〜 2026/09/16(水) 23:59"
-    }
-   ],
-   "status_rows": []
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/stage/comedy/rtbc808/",
    "name": "ハリウッドザコシショウのミニ単独ライブシリーズSEASON17 嫌な気持ちにさせツアー",
    "_genre": "owarai",
@@ -2343,32 +2375,7 @@
      "timming": "2026/08/15(土) 10:00 〜"
     }
    ],
-   "status_rows": [
-    {
-     "date": "2026-09-20",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366237"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "17:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366238"
-    },
-    {
-     "date": "2026-09-21",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366239"
-    },
-    {
-     "date": "2026-09-21",
-     "time": "17:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366240"
-    }
-   ]
+   "status_rows": []
   },
   {
    "url": "https://ticket.rakuten.co.jp/music/rtza922/",
@@ -2670,29 +2677,6 @@
    "status_rows": []
   },
   {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtbc917/",
-   "name": "アップアップガールズ（2） 『にきちゃん大決戦っ！！in Zepp Shinjuku』",
-   "_genre": "idol",
-   "perfs": 1,
-   "first": "2026-09-17",
-   "last": "2026-09-17",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026/06/06(土) 10:00 〜 "
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-17",
-     "time": "18:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/364213"
-    }
-   ]
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtzzz45/",
    "name": "THE ORCHESTRA TOKYO",
    "_genre": "idol",
@@ -2894,30 +2878,6 @@
   }
  ],
  "soldout": [
-  {
-   "url": "https://ticket.rakuten.co.jp/music/rtzp42a/",
-   "name": "乃木坂46 42ndSGアンダーライブ",
-   "_genre": "jpop",
-   "perfs": 2,
-   "first": "2026-09-29",
-   "last": "2026-09-30",
-   "presale_windows": [],
-   "windows": [],
-   "status_rows": [
-    {
-     "date": "2026-09-29",
-     "time": "18:30",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
-     "date": "2026-09-30",
-     "time": "18:30",
-     "status": "soldout",
-     "buy_url": ""
-    }
-   ]
-  },
   {
    "url": "https://ticket.rakuten.co.jp/stage/rtza921/",
    "name": "爆笑!!お笑いスーパーライブ in 小田原",
@@ -3555,6 +3515,26 @@
     {
      "type": "一般発売",
      "timming": "2026/07/21(火) 20:00 〜 2026/08/22(土) 15:59"
+    }
+   ],
+   "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtzzz65/",
+   "name": "ちゃーむぽっしゅ",
+   "_genre": "idol",
+   "perfs": 1,
+   "first": "2026-09-17",
+   "last": "2026-09-17",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "先行抽選",
+     "timming": "2026/07/21(火) 19:00 〜 2026/08/02(日) 23:59"
+    },
+    {
+     "type": "一般発売",
+     "timming": "2026/08/04(火) 19:00 〜 2026/09/16(水) 23:59"
     }
    ],
    "status_rows": []
@@ -4566,6 +4546,22 @@
     {
      "type": "一般発売［兵庫・京都］",
      "timming": "2026/06/06(土) 10:00 〜"
+    }
+   ],
+   "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtbc917/",
+   "name": "アップアップガールズ（2） 『にきちゃん大決戦っ！！in Zepp Shinjuku』",
+   "_genre": "idol",
+   "perfs": 1,
+   "first": "2026-09-17",
+   "last": "2026-09-17",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/06/06(土) 10:00 〜 "
     }
    ],
    "status_rows": []
@@ -22659,22 +22655,6 @@
    "status_rows": []
   },
   {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/rtgckmy/",
-   "name": "奇妙礼太郎BAND［大阪］",
-   "_genre": "jpop",
-   "perfs": 1,
-   "first": "2025-06-29",
-   "last": "2025-06-29",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2025/04/05(土) 10:00 〜"
-    }
-   ],
-   "status_rows": []
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/music/rtudcyn/",
    "name": "CYNDI LAUPER｜シンディ・ローパー［東京］",
    "_genre": "jpop",
@@ -22690,6 +22670,22 @@
     {
      "type": "一般発売",
      "timming": "2024/11/16(土) 10:00 〜\n※立見指定 4/5(土)10:00 〜"
+    }
+   ],
+   "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/rtgckmy/",
+   "name": "奇妙礼太郎BAND［大阪］",
+   "_genre": "jpop",
+   "perfs": 1,
+   "first": "2025-06-29",
+   "last": "2025-06-29",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2025/04/05(土) 10:00 〜"
     }
    ],
    "status_rows": []

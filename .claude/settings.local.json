@@ -1067,6 +1067,10 @@
           {
             "type": "command",
             "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/user/oshinavi/.claude/hooks/shift_guard.ps1\""
+          },
+          {
+            "type": "command",
+            "command": "python \"C:/Users/user/oshinavi/.claude/hooks/no_plan_close_guard.py\""
           }
         ]
       }
