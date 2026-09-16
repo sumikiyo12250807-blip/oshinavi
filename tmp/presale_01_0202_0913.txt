@@ -1,0 +1,5 @@
+lg=01 total=21 pages=3
+parsed items: 21 (fetched up to page 4)
+already in DB (eventCd一致): 21 | NOT in DB (new candidates): 0
+  うち 0件は同名の既存エントリあり＝投入時に統合を検討（旧実装はここを丸ごと捨てていた）
+written tmp/presale_01_0202_0913.json

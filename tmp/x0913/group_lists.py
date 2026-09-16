@@ -68,7 +68,7 @@ def regroup(lines):
         x[0], x[1], '・'.join([p for p in x[2] if p != '配信'] + [p for p in x[2] if p == '配信']), x[3]) for x in out]
 
 
-for f in sorted(glob.glob('tmp/x0913/post*.txt')):
+for f in sorted(glob.glob('tmp/x0914/post*.txt')):
     t = io.open(f, encoding='utf-8-sig').read()
     L = t.split('\n')
     new, block = [], []

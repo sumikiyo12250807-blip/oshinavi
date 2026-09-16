@@ -1,6 +1,6 @@
-# 楽天「これから発売」の仕分け（tmp/rakuten_presale_0910.json）
+# 楽天「これから発売」の仕分け（tmp/rakuten_presale_0911.json）
 
-発売前のページ **9件** ＝ 既存に足す 7 / 同名だがURL違い 1 / 新規 1
+発売前のページ **10件** ＝ 既存に足す 8 / 同名だがURL違い 0 / 新規 2
 
 ## ① 既存に発売前の枠を足す
 
@@ -30,15 +30,19 @@
 - id=3514 BERITA presents　ISOGAI花火劇場in名古屋港
   - 🎯一般発売 | 2026/11/28(土) 10:00 〜 2026/12/26 (土) 17:00
   - https://ticket.rakuten.co.jp/event/rtisaaj/
+- id=2808 Baycurrent Classic Presented by LEXUS
+  - 🎯レギュラー価格 | 2026/09/28(月) 00:00 〜 2026/10/10 (土) 23:59
+  - https://ticket.rakuten.co.jp/sports/rtv9m00/
 
 ## ② 名前は同じだがURLが違う（別公演か別ページか見る）
 
-- Baycurrent Classic Presented by LEXUS
-    ⇔ 既存 id=2808 [sports] 公演2026-10-11
-  - https://ticket.rakuten.co.jp/sports/rtv9m00/
 
 ## ③ 新規（ビルドして投入）
 
-- ミュージカル『星影の人』―沖田総司・まぼろしの青春―［長野］ ／ 公演 2026-12-12〜2026-12-13 ／ _genre=musical
-  - 🎯一般発売 | 2026/09/11(金) 10:00 〜 
-  - https://ticket.rakuten.co.jp/stage/musical/rtqn123/
+- 【配信｜Rakuten TV】Meychan live tour 2026 “Number 0” 〜Number ／ 公演 2026-10-11〜2026-10-15 ／ _genre=jpop
+  - 🎯早割 | 2026/09/13(日) 19:00 〜 2026/09/20(日) 23:59
+  - 🎯一般 | 2026/09/21(月) 19:00 〜 2026/10/15(木) 20:00
+  - https://ticket.rakuten.co.jp/music/jpop/rtxx101/
+- 木下グループジャパンオープンテニスチャンピオンシップス2026／WTA250女子 ／ 公演 2026-10-17〜2026-10-25 ／ _genre=sports
+  - 🎯一般発売 | 2026/09/12(土) 12:00 〜 
+  - https://ticket.rakuten.co.jp/sports/rtep017/

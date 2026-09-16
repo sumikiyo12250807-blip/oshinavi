@@ -1,10 +1,10 @@
 {
  "lg": "01",
- "total": 39,
- "pages": 4,
- "fetched_pages": 5,
- "parsed": 38,
- "new_name_in_db": 10,
+ "total": 43,
+ "pages": 5,
+ "fetched_pages": 6,
+ "parsed": 41,
+ "new_name_in_db": 9,
  "new": [
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
@@ -29,61 +29,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666143",
-   "artist": "SILENT SIREN",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/9(金)",
-   "venue": "水戸ライトハウス(茨城県)",
-   "pref": "茨城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
-   "artist": "鈴木雅之",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/11(日)",
-   "venue": "水戸市民会館 グロービスホール(茨城県)",
-   "pref": "茨城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622376",
-   "artist": "３ｍａｒｋｅｔｓ［ ］",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/23(金)",
-   "venue": "水戸ライトハウス(茨城県)",
-   "pref": "茨城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624150",
-   "artist": "ＴａＮａＢａＴａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "水戸 ＰＡＰＥＲ ＭＯＯＮ(茨城県)",
-   "pref": "茨城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
-   "artist": "つきみ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/4/26(日) ～ 2027/1/17(日)",
-   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
-   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622214",
    "artist": "デラックス×デラックス",
    "saletype": "一般発売",
@@ -91,28 +36,6 @@
    "perfdate": "2026/7/26(日) ・ 2026/9/19(土)",
    "venue": "水戸ライトハウス(茨城県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
    "pref": "茨城県／長野県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614684",
-   "artist": "怒髪天",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/14(土)",
-   "venue": "水戸ライトハウス(茨城県)",
-   "pref": "茨城県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
-   "artist": "中島卓偉",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/31(日)",
-   "venue": "水戸ライトハウス(茨城県)",
-   "pref": "茨城県",
    "in_db": false,
    "name_in_db": true
   },
@@ -161,26 +84,356 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624687",
-   "artist": "元ｃｌａｓｓ 日浦孝則ライブツアー２０２６ 日立公演",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671008",
+   "artist": "モーニング娘。’26",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/12(土)",
-   "venue": "Ｍｕｓｉｃ＆Ｌｉｔｔｌｅ Ｂａｒ ＮｅｏＮ(茨城県)",
+   "perfdate": "2026/9/26(土)",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
    "pref": "茨城県",
    "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665615",
-   "artist": "Rayflower",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623939",
+   "artist": "Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/12(土) ・ 2026/9/13(日)",
-   "venue": "水戸ライトハウス(茨城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)",
-   "pref": "茨城県／栃木県",
+   "perfdate": "2026/10/25(日)",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県",
    "in_db": false,
    "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633763",
+   "artist": "ＡＳＫＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670340",
+   "artist": "アンジュルム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615165",
+   "artist": "杏里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
+   "artist": "稲葉浩志",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・ヒロサワ・シティ会館 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668252",
+   "artist": "Wienners",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624983",
+   "artist": "歌心りえ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612839",
+   "artist": "うた友の輪コンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ノバホール 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
+   "artist": "Ochunism",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624304",
+   "artist": "小野リサ ｗｉｔｈ フェビアン・レザ・パネ Ｄｕｏ Ｄｅｌｉｇｈｔｓ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "常陸太田市民交流センター パルティホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668425",
+   "artist": "華原朋美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "クラフトシビックホール土浦 大ホール(茨城県)／宇都宮市文化会館 大ホール(栃木県)／浦安市文化会館 大ホール(千葉県)／厚木市文化会館 大ホール(神奈川県)／ＹＣＣ県民文化ホール 大ホール(山梨県)",
+   "pref": "茨城県／栃木県／千葉県／神奈川県／山梨県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625186",
+   "artist": "川崎鷹也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669787",
+   "artist": "kurage",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633039",
+   "artist": "ｋｏｂｏｒｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620175",
+   "artist": "Ｇｏｄｉｅｇｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621956",
+   "artist": "最強！！歌マネＬＩＶＥ ｉｎ 水戸 荒牧陽子×松浦航大",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・ヒロサワ・シティ会館 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666143",
+   "artist": "SILENT SIREN",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669642",
+   "artist": "ザ50回転ズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)",
+   "pref": "茨城県／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667017",
+   "artist": "JUJU",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
+   "artist": "鈴木雅之",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669282",
+   "artist": "SPECIAL OTHERS",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)／Ｃｌｕｂ ＪＡＭＭＥＲ’Ｓ ＴＡＫＡＳＡＫＩ(群馬県)",
+   "pref": "茨城県／栃木県／群馬県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622376",
+   "artist": "３ｍａｒｋｅｔｓ［ ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
+   "artist": "つきみ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622214",
+   "artist": "デラックス×デラックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "茨城県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625543",
+   "artist": "ｔｏｃｏｎｏｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)",
+   "pref": "茨城県／栃木県／埼玉県／千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667158",
+   "artist": "TRUST RECORDS presents.TRUST NIGHT 2026 / TRUST TOUR 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614684",
+   "artist": "怒髪天",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
+   "artist": "中島卓偉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669946",
+   "artist": "ナナヲアカリ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669607",
+   "artist": "NOISEMAKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)／千葉ＬＯＯＫ(千葉県)／ＬＩＱＵＩＤＲＯＯＭ(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)",
+   "pref": "茨城県／千葉県／東京都／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626940",
+   "artist": "花冷え。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ひたちなか市文化会館 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617573",
+   "artist": "半崎美子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神栖市文化センター(茨城県)／ひたちなか市文化会館 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632483",
+   "artist": "プッシュプルポット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669770",
+   "artist": "PEDRO",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸ライトハウス(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631678",
+   "artist": "松平健",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・ヒロサワ・シティ会館 大ホール(茨城県)／小山市立文化センター 大ホール(栃木県)",
+   "pref": "茨城県／栃木県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622919",
+   "artist": "美川憲一／コロッケ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)／ウェスタ川越 ヤオコー大ホール(埼玉県)／サンシティ越谷市民ホール 大ホール(埼玉県)／ぎふしんフォーラム 大ホール(岐阜県)／三重県文化会館 大ホール(三重県)",
+   "pref": "茨城県／埼玉県／岐阜県／三重県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623374",
+   "artist": "南こうせつ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "クラフトシビックホール土浦 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671008",
+   "artist": "モーニング娘。’26",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668840",
+   "artist": "薬師丸ひろ子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623939",
+   "artist": "Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "水戸市民会館 グロービスホール(茨城県)",
+   "pref": "茨城県"
   }
  ]
 }
