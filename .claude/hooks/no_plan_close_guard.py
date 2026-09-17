@@ -61,6 +61,9 @@ def main():
     hits = [p for p in PATTERNS if re.search(p, tail, re.M)]
     if not hits:
         return 0
+    # ❓付きの相談（ユーザーが決める方針の質問）は止めない。ただし push・削除・振り分けの許可を聞いている時は止める（2026-09-17 誤作動2回目）
+    if '❓' in tail and not re.search(r'(push|プッシュ|押し|削除|消し|振り分け)', tail):
+        return 0
     # X投稿の文面は「ユーザーが見てから予約」が正しいゲート（X_SCRIPT.md ⛔）＝その確認では止めない（2026-09-17 誤作動）
     if re.search(r'予約', tail) and re.search(r'(投稿|文面|本文|ピックアップ)', text):
         return 0
