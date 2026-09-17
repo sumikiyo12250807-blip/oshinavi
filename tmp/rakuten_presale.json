@@ -435,6 +435,82 @@
  ],
  "onsale": [
   {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/rtol231/",
+   "name": "高中正義［追加公演］",
+   "_genre": "jpop",
+   "perfs": 1,
+   "first": "2026-12-31",
+   "last": "2026-12-31",
+   "presale_windows": [],
+   "windows": [],
+   "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/sports/winter-sports/fskating/rtkt40f/",
+   "name": "日本公演40周年記念 ディズニー・オン・アイス “Let’s Party!”［船橋］",
+   "_genre": "sports",
+   "perfs": 8,
+   "first": "2026-09-26",
+   "last": "2026-09-28",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/04/16(木) 10:00 〜 "
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2026-09-26",
+     "time": "10:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359295"
+    },
+    {
+     "date": "2026-09-26",
+     "time": "13:45",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359381"
+    },
+    {
+     "date": "2026-09-26",
+     "time": "17:45",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359382"
+    },
+    {
+     "date": "2026-09-27",
+     "time": "10:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359383"
+    },
+    {
+     "date": "2026-09-27",
+     "time": "13:45",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359384"
+    },
+    {
+     "date": "2026-09-27",
+     "time": "17:45",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359385"
+    },
+    {
+     "date": "2026-09-28",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359386"
+    },
+    {
+     "date": "2026-09-28",
+     "time": "15:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359387"
+    }
+   ]
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/fes/rtkd178/",
    "name": "LIVE AZUMA 2026",
    "_genre": "fes",
@@ -1241,8 +1317,8 @@
    "url": "https://ticket.rakuten.co.jp/music/jpop/rtol267/",
    "name": "高中正義［全国］",
    "_genre": "jpop",
-   "perfs": 11,
-   "first": "2026-09-18",
+   "perfs": 10,
+   "first": "2026-10-11",
    "last": "2027-01-30",
    "presale_windows": [],
    "windows": [
@@ -1264,12 +1340,6 @@
     }
    ],
    "status_rows": [
-    {
-     "date": "2026-09-18",
-     "time": "18:30",
-     "status": "soldout",
-     "buy_url": ""
-    },
     {
      "date": "2026-10-11",
      "time": "17:00",
