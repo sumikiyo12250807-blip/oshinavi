@@ -61,6 +61,9 @@ def main():
     hits = [p for p in PATTERNS if re.search(p, tail, re.M)]
     if not hits:
         return 0
+    # X投稿の文面は「ユーザーが見てから予約」が正しいゲート（X_SCRIPT.md ⛔）＝その確認では止めない（2026-09-17 誤作動）
+    if re.search(r'予約', tail) and re.search(r'(投稿|文面|本文|ピックアップ)', text):
+        return 0
     state = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'state')
     os.makedirs(state, exist_ok=True)
     seen_f = os.path.join(state, 'plan_close_seen.txt')
@@ -77,6 +80,10 @@ def main():
 
 
 if __name__ == '__main__':
+    try:
+        sys.stderr.reconfigure(encoding='utf-8')  # Windows の既定 cp932 だと表示が化ける
+    except Exception:
+        pass
     try:
         sys.exit(main())
     except Exception:
