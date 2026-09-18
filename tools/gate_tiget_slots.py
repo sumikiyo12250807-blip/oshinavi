@@ -27,6 +27,7 @@ import io
 import json
 import re
 import sys
+import time
 
 _KEEP = []          # 🚨ラッパーを生かしておく入れ物（下を読む）
 
@@ -56,6 +57,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--ids', default='')
     ap.add_argument('--today', default=datetime.date.today().isoformat())
+    # 🚨TIGETを叩きすぎないための間。全件（1,900件超）回す時は必ず入れる
+    ap.add_argument('--sleep', type=float, default=0.4)
     a = ap.parse_args()
 
     h = open('index.html', encoding='utf-8', newline='').read()
@@ -93,6 +96,7 @@ def main():
                 rebuilt += built['tickets']
         if bad:
             continue
+        time.sleep(a.sleep)
         reg = [t for t in (e.get('tickets') or []) if 'tiget.net' in (t.get('url') or '')]
 
         def key(t):

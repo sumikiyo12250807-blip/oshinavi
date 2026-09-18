@@ -34,7 +34,22 @@ import sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 WD = '月火水木金土日'
-CAT_GENRE = {'81': 'youtuber', '84': 'vtuber'}
+# 🚨TIGETのカテゴリ → OSHINAVIのジャンル（**売り場の言う通りに機械で写す**＝人が判断する枠を作らない）
+#   2026-09-18＝カテゴリを8つに広げたのに対応表が81/84しか無く、**1,906件が全部 youtuber の下書き**に
+#   なっていた（投入前に気づいた）。カテゴリを足す時はここも足す。
+CAT_GENRE = {
+    '81': 'youtuber',     # YouTuber
+    '84': 'vtuber',       # VTuber
+    '29': 'idol',         # アイドル
+    '45': 'fanevent',     # ショー／ファンイベント
+    '46': 'talkshow',     # トークショー／講演会
+    '41': 'anime',        # アニメ／ゲーム／声優 … ⚠️OSHINAVI側は anime(アニソン)/seiyuu(声優)/2.5ji に
+                          #    分かれていて、TIGETの1カテゴリと1対1にならない。下書きは anime にしてユーザーに聞く
+    '79': 'utaite',       # 歌い手  … 🆕OSHINAVIに無いジャンル（振り分け前にタブを作る）
+    '80': 'vocaloid',     # ボカロ  … 🆕同じ
+}
+# 🆕まだ index.html にタブが無いジャンル＝振り分け（ユーザー確認後）の前に作る必要がある
+GENRE_NEEDS_TAB = ('utaite', 'vocaloid')
 LIVE = ('is-available',)
 UNOPENED = 'is-unopened'
 SOLDOUT = ('is-unavailable', 'btn-unable')
@@ -108,20 +123,27 @@ def ticket_name(raw):
     nm = (raw or '').strip()
     # 券種名にくっついた公演日の重複表記を落とす（「優先入場 2026年10月18日(日) 12:00開場」の後半）
     nm = re.sub(r'\s*\d{4}年\d{1,2}月\d{1,2}日.*$', '', nm).strip()
+    # 🚨頭の「[9/28・19:00]」のような日付・時刻の札を落とす（2026-09-18＝12215・12897）。
+    #    バッジには（9/28公演）が入るので重複だし、check_badges が「略記/半端範囲」として弾く。
+    nm = re.sub(r'^[\[［][\d/・:：\s\-—〜~]+[\]］]\s*', '', nm).strip()
     if not nm:
         return 'チケット'
     if re.search(r'開場|開演|終演', nm):
         return 'チケット'
     # 🚨全角「／」と半角カッコは check_badges が「パース化け」として弾く（2026-09-18 id11381）。
     #    TIGETの主催者が書いた本物の券種名なので、記号だけそろえる。
-    nm = nm.replace('／', '・').replace('(', '（').replace(')', '）')
+    nm = (nm.replace('／', '・').replace('(', '（').replace(')', '）')
+            .replace('[', '［').replace(']', '］'))
     # 🚨カッコの途中で切らない（【対象者様限定】…【特定クラ で不均衡になった＝id11384）。
     #    28字より短くても、元からカッコが閉じていない名前（TIGETの主催者が書きかけた形）があるので
     #    **長さに関係なく**そろうところまで戻す。
     cut = nm[:28]
     while cut and not _balanced(cut):
         cut = cut[:-1]
-    return (cut or nm[:28]).rstrip('・、 /')
+    # 🚨そろえた結果が空になる＝頭から開きカッコで始まって28字で閉じない名前
+    #    （2026-09-18＝「［ナチュスク10周年記念！祝い＆応援して欲しいTシャツ&…」）。
+    #    そのまま28字を返すとカッコ不均衡のまま出てしまうので「チケット」に倒す。
+    return cut.rstrip('・、 /') if cut else 'チケット'
 
 
 def sale_start(ev):
@@ -145,6 +167,12 @@ def build(ev, today):
     future = [d for d in dates if d >= today]
     if not future:
         return None, '公演が終わっている'
+    # 🚨主催者が作った試し書き・雛形が混ざる（2026-09-18＝公演名が「当日払い」で増上寺・2030/12/31、
+    #    「コリコリ(対バン用)」で大和ハウス プレミストドーム・2032/9/20）。
+    #    本物のチケットが2年以上先に売り出されることは無いので、そこで切る（載せると嘘になる）。
+    limit = (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat()
+    if future[0] > limit:
+        return None, '公演日が2年より先＝主催者の試し書き・雛形の疑い'
 
     pref = ev.get('prefecture')
     ss_date, ss_time = sale_start(ev)
@@ -217,7 +245,9 @@ def build(ev, today):
         'venue': ev.get('venue') or '（会場未定）',
         'prefecture': pref or '',
         'genre': 'new',
-        '_genre': genres[0] if genres else 'youtuber',
+        # 🚨カテゴリが対応表に無いまま既定値に落とすと、気づかずに全部同じジャンルになる。
+        #    無いカテゴリは musicetc（その他＝最後の砦）に落として、報告で分かるようにする。
+        '_genre': genres[0] if genres else 'musicetc',
         '_extraGenres': genres[1:],
         '_srcgenre': 'tiget:' + ','.join(cats),
         'price': None,
@@ -333,6 +363,13 @@ def _selftest():
     t3 = e3['tickets'][0]
     assert t3['type'] == '自由席（大阪 10/18公演）8/20 11:40発売〜', t3['type']
     assert t3['saleEndUnknown'] is True and t3['date'] == '2026-10-18' and t3['startDate'] == '2026-08-20', t3
+    # 公演日が2年より先＝主催者の試し書き・雛形の疑い
+    ev6 = json.loads(json.dumps(ev))
+    ev6['programs'][0]['date'] = '2030-12-31'
+    assert build(ev6, '2026-09-18')[0] is None, '2年より先を載せてしまう'
+    ev7 = json.loads(json.dumps(ev))
+    ev7['programs'][0]['date'] = '2028-09-01'          # 2年以内はふつうに載せる
+    assert build(ev7, '2026-09-18')[0] is not None
     # offersのvalidFromが食い違うときは発売日を書かない＝その枠は載せない
     ev4 = json.loads(json.dumps(ev3))
     ev4['ld_offers'] = [{'valid_from': '2026-08-20'}, {'valid_from': '2026-09-01'}]
@@ -354,6 +391,8 @@ def _selftest():
                '【配信】おうちで見るワンマン', 'Torimochi virtual live vol.028 DAY-1'):
         assert not is_seller_side(nm), nm
     assert ticket_name('A／後方チケット(スタンディング)') == 'A・後方チケット（スタンディング）'
+    assert ticket_name('[9/28・19:00] 入場整理券') == '入場整理券', ticket_name('[9/28・19:00] 入場整理券')
+    assert ticket_name('［ナチュスク10周年記念！祝い＆応援して欲しいTシャツ&グッズ付きチケット］') == 'チケット'
     long = ticket_name('【対象者様限定】ファンミーティング参加チケット【特定クラスタ様向け】')
     assert _balanced(long) and long == '【対象者様限定】ファンミーティング参加チケット', long
     # ツアーを畳む
