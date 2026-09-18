@@ -1,0 +1,61 @@
+# 県が分からない会場（88件・59会場）／新着タブの先頭に並べた
+
+- **RE:LIVE HALL**（7件）id12287 ｜ https://tiget.net/events/513624
+- **千本桜ホール**（6件）id13149 ｜ https://tiget.net/events/514210
+- **ハウディーズ・プラザ**（4件）id11445 ｜ https://tiget.net/events/518674
+- **Cafe & Bar & goodmusic Yise**（3件）id11402 ｜ https://tiget.net/events/506886
+- **SPACE BLANZ**（3件）id12453 ｜ https://tiget.net/events/517880
+- **cafe MENU**（3件）id11520 ｜ https://tiget.net/events/522711
+- **コナンスタジオ**（3件）id11695 ｜ https://tiget.net/events/516299
+- **NeoBrotherz**（2件）id11531 ｜ https://tiget.net/events/516491
+- **THE THEATER Live & レンタルスペース**（2件）id12369 ｜ https://tiget.net/events/518217
+- **TwinBox GARAGE**（2件）id11563 ｜ https://tiget.net/events/519971
+- **さすらいの御霊**（2件）id12529 ｜ https://tiget.net/events/455744
+- **ライブスペース スペシャルカラーズ**（2件）id11701 ｜ https://tiget.net/events/519845
+- **全天候型こども広場Mu-Mo（ムーモ）**（2件）id12084 ｜ https://tiget.net/events/500493
+- **月夜のケダモノ**（2件）id11557 ｜ https://tiget.net/events/488948
+- **-**（1件）id12278 ｜ https://tiget.net/events/518956
+- **AREA559**（1件）id12621 ｜ https://tiget.net/events/514532
+- **ASPIRE**（1件）id11462 ｜ https://tiget.net/events/519961
+- **AZTiC canova**（1件）id11928 ｜ https://tiget.net/events/517346
+- **Clair Jouet By あにめろでぃ♪ 1F**（1件）id12917 ｜ https://tiget.net/events/519077
+- **Clair Jouet By あにめろでぃ♪ 3F**（1件）id12905 ｜ https://tiget.net/events/519074
+- **LIVE HOUSE OSSA**（1件）id13196 ｜ https://tiget.net/events/455682
+- **LIVE HOUSE evoL by GRANDMILAGE**（1件）id11797 ｜ https://tiget.net/events/517853
+- **LIVEHOUSE ROOKIES**（1件）id12907 ｜ https://tiget.net/events/520463
+- **LiVE STAGE NERVE**（1件）id11763 ｜ https://tiget.net/events/520816
+- **LiVESTAGE NERVE**（1件）id11411 ｜ https://tiget.net/events/523370
+- **LiveCafe & Bar テイア**（1件）id12297 ｜ https://tiget.net/events/521737
+- **MANHOLE**（1件）id11990 ｜ https://tiget.net/events/518016
+- **Music Lab濱書房**（1件）id13007 ｜ https://tiget.net/events/502732
+- **Nakano space Q**（1件）id12819 ｜ https://tiget.net/events/502722
+- **PALLASROSE**（1件）id12349 ｜ https://tiget.net/events/506477
+- **PEACE CAFE**（1件）id11766 ｜ https://tiget.net/events/523563
+- **Rental Space 88**（1件）id12983 ｜ https://tiget.net/events/512245
+- **SUGAR BAR**（1件）id11588 ｜ https://tiget.net/events/521551
+- **SUNHALO THEATER**（1件）id11428 ｜ https://tiget.net/events/519287
+- **SuMiKa**（1件）id11954 ｜ https://tiget.net/events/521266
+- **TRANSIT**（1件）id12714 ｜ https://tiget.net/events/520123
+- **The Modern Lovers**（1件）id11330 ｜ https://tiget.net/events/498290
+- **UECHU**（1件）id12788 ｜ https://tiget.net/events/505139
+- **Vanda Melilie**（1件）id12717 ｜ https://tiget.net/events/520004
+- **cafe&bar Legato**（1件）id13013 ｜ https://tiget.net/events/512753
+- **evoL by GRANDMIRAGE**（1件）id12033 ｜ https://tiget.net/events/519766
+- **mix cafe CREME**（1件）id12316 ｜ https://tiget.net/events/517208
+- **アミューズメントバー 遊vita**（1件）id12098 ｜ https://tiget.net/events/517210
+- **カフェスタジオSUONO**（1件）id13252 ｜ https://tiget.net/events/516623
+- **コジマホールディングス西区民文化センター ２階スタジオ**（1件）id12653 ｜ https://tiget.net/events/508325
+- **ゼロスタジオ - Fresh!Studio**（1件）id11497 ｜ https://tiget.net/events/514846
+- **ベルウッド**（1件）id13166 ｜ https://tiget.net/events/515141
+- **ベースメントモンスター王子**（1件）id13318 ｜ https://tiget.net/events/519545
+- **ミコノス**（1件）id12460 ｜ https://tiget.net/events/522300
+- **ライブハウスリク**（1件）id13228 ｜ https://tiget.net/events/444554
+- **仙都会館 8階会議室**（1件）id12356 ｜ https://tiget.net/events/508021
+- **国宝山 甘露院 醫王寺**（1件）id11336 ｜ https://tiget.net/events/511431
+- **撮影スタジオ**（1件）id12891 ｜ https://tiget.net/events/522509
+- **浄土真宗本願寺派 一念寺**（1件）id12968 ｜ https://tiget.net/events/519123
+- **購入者へ別途告知**（1件）id12512 ｜ https://tiget.net/events/481061
+- **響の森 桶川市民ホール プチホール**（1件）id12318 ｜ https://tiget.net/events/497129
+- **高槻 JK's BIRD**（1件）id12890 ｜ https://tiget.net/events/497176
+- **４Kスタジオ**（1件）id11397 ｜ https://tiget.net/events/521257
+- **ＳＡＫＵＲＡスタジオ**（1件）id12125 ｜ https://tiget.net/events/519854
