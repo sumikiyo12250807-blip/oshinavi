@@ -1,0 +1,114 @@
+
+{
+    "@context": "http://schema.org/",
+    "@type": "Event",
+    "name": "バトル形式怪談ライブ【埼玉vs千葉-因縁の対決-】", //イベント名
+    "startDate": "2026年11月14日(土)T14:00:+0900", //イベント開始時刻
+    "location": {
+        "@type": "Place",
+        "name": "氷川劇場 大宮氷川参道ニノ鳥居前", //会場名
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "NaN", //住所(番地)
+            "addressLocality": "さいたま市", //都市名(市区町村)
+            "postalCode": "330-0803", //郵便番号
+            "addressRegion": "埼玉県", //都道府県
+            "addressCountry": "JP"
+        }
+    },
+    "image": "https://d13rtcers002cb.cloudfront.net/images/2349c8b0-efd6-45c1-8f64-f762b10f6d9a_thumbnail_l", //OGimage
+    "description": "バトル形式怪談ライブ
+
+VSシリーズ始動
+
+
+
+埼玉vs千葉
+
+-因縁の対決-
+
+
+
+長年首都圏3位争いを続ける埼玉県と千葉県
+
+埼玉県民の日に千葉勢が乗り込み怪談バトルを繰り広げる
+
+どちらの県の怪談が心に響くのか？
+
+そして、ここで因縁の対決に決着がつくのか⁉︎
+
+乞うご期待！
+
+
+
+●日時●
+
+2026年11月14日(土)
+
+開場14:00 開演14:30
+
+
+
+●出演●
+
+・埼玉勢
+
+彩魂怪談BASE
+
+Esutta、線六本、不二山えふ
+
+・千葉勢
+
+一条ま〜太郎
+
+タコス八郎
+
+道野草太
+
+
+
+●会場●
+
+賑之杜 氷川劇場
+
+埼玉県さいたま市大宮区高鼻町2-1-1 Bibli B1
+
+
+
+●チケット●
+
+3000円(ドリンク代別途必要)
+
+
+
+当ライブは参加型となっております。スマホのライトやペンライトを振っていただき、どちらの県の怪談が心に響いたかを投票します。
+
+怖いだけではなく感動した、沁みた、面白かった等、心に響いた方にアクションをしていただけたらと思います。
+
+また、埼玉勢は埼玉の怪談、千葉勢は千葉の怪談を語る予定となっております。
+
+終演後物販を行います。物販の時間は合流も出来るようになっております。皆様が交流出来るよう譲り合い、協力し合いながらお楽しみください。", //OGdescription
+    "offers":
+    {
+        "@type": "Offer",
+        "url": "https://tiget.net/events/517518", //イベントページのURL
+        "price": "3000", //チケット販売・予約金額
+        "priceCurrency": "JPY",
+        "availability": "http://schema.org/InStock",
+        "validFrom": "2026-08-25T19:08:+0900" //チケット販売開始時刻
+    },
+    "performer": [
+    {
+        "@type": "PerformingGroup",
+        "name": "#&lt;Performer:0x000055f4073cc840&gt;",
+        "sameAs": "https://tiget.net/events/517518"
+    },
+    {
+        "@type": "PerformingGroup",
+        "name": "#&lt;Performer:0x000055f4073cc778&gt;",
+        "sameAs": "https://tiget.net/events/517518"
+    },
+    {
+        "@type": "PerformingGroup",
+        "name": "#&lt;Performer:0x000055f4073cc6b0&gt;",
+    

@@ -1,0 +1,13 @@
+[
+      { key: "rakuten",  label: "楽天チケット",       cls: "btn-rakuten",  icon: "🎫" },
+      { key: "eplus",    label: "e+",               cls: "btn-eplus",    icon: "🎪" },
+      { key: "lawson",   label: "ローソンチケット", cls: "btn-lawson",   icon: "🎫" },
+      { key: "fany",     label: "FANYチケット",     cls: "btn-fany",     icon: "🎤" },
+      { key: "yoshimoto",label: "吉本オンライン",   cls: "btn-yoshimoto",icon: "📺" },
+      { key: "tvasahi",  label: "テレ朝チケット",   cls: "btn-tvasahi",  icon: "📺" },
+      { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
+      { key: "amazon",   label: "予習する（最新CD）", cls: "btn-amazon",   icon: "🎧" },
+      { key: "amazonGoods", label: "グッズを見る",   cls: "btn-amazon",   icon: "🛍" },
+      { key: "amazon2",  label: "予習する（最新CD②）", cls: "btn-amazon", icon: "🎧" },
+      { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" }
+    ]

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\user\oshinavi\tools\gate_tiget_slots.py", line 42, in <module>
+    BT = _load('tools/build_tiget_entries.py', 'bt')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\oshinavi\tools\gate_tiget_slots.py", line 37, in _load
+    spec.loader.exec_module(mod)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\user\oshinavi\tools/build_tiget_entries.py", line 34, in <module>
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file
