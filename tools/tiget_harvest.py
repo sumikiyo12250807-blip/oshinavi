@@ -117,7 +117,40 @@ PLACE_PREF = {
     '堺筋本町': '大阪', '日本橋': '大阪',   # ⚠️日本橋は東京にもあるが、TIGETのライブ会場は大阪側が多い
     # 京都
     '祇園': '京都', '河原町': '京都',
+    # 追加（2026-09-18・ユーザーが調べる前に機械で潰せる分）
+    '松江': '島根', '長堀橋': '大阪', '北参道': '東京', '鶴見': '神奈川', '大久保': '東京',
+    '本八幡': '千葉', '柏': '千葉', '船橋': '千葉', '松戸': '千葉',
+    '大分': '大分', '宇部': '山口', '今治': '愛媛', '米子': '鳥取',
+    # 🚨「都内」は東京都内の意味＝これは事実（推測ではない）
+    '都内': '東京',
+    # 東京23区の区名（区名が書いてあれば東京で確定）
+    '千代田区': '東京', '中央区東京': '東京', '港区': '東京', '新宿区': '東京', '文京区': '東京',
+    '台東区': '東京', '墨田区': '東京', '江東区': '東京', '品川区': '東京', '目黒区': '東京',
+    '大田区': '東京', '世田谷': '東京', '渋谷区': '東京', '中野区': '東京', '杉並区': '東京',
+    '豊島区': '東京', '北区東京': '東京', '荒川区': '東京', '板橋区': '東京', '練馬区': '東京',
+    '足立区': '東京', '足立': '東京', '葛飾': '東京', 'かつしか': '東京', '江戸川区': '東京',
+    'としま': '東京',
+    # 東京のその他の地名（会場名に出る形）
+    '代々木': '東京', '笹塚': '東京', '池尻大橋': '東京', '三軒茶屋': '東京', '阿佐谷': '東京',
+    '江戸川橋': '東京', '小岩': '東京', '表参道': '東京', '茅場町': '東京', '多摩センター': '東京',
+    '上馬': '東京', '神楽坂': '東京', '中目黒': '東京', '中延': '東京', '大塚': '東京',
+    # そのほか（地名と県が1対1のもの）
+    '溝ノ口': '神奈川', '溝の口': '神奈川', '洗足学園': '神奈川', '彦根': '滋賀', 'ひこね': '滋賀',
+    'とくしま': '徳島', '五泉': '新潟', '大須': '愛知', '掛川': '静岡', '越谷': '埼玉',
 }
+# 🚨ローマ字で書く会場が多い（Gotanda G6／GT LIVE TOKYO／SHIBUYA FOWS／HAKATA…）。
+#   大文字小文字を無視して当てる。これも地名と県の対応＝事実なので推測ではない。
+PLACE_PREF_ROMA = {
+    'TOKYO': '東京', 'SHIBUYA': '東京', 'SHINJUKU': '東京', 'IKEBUKURO': '東京',
+    'AKIHABARA': '東京', 'GOTANDA': '東京', 'SHIMOKITAZAWA': '東京', 'KICHIJOJI': '東京',
+    'UENO': '東京', 'ASAKUSA': '東京', 'ROPPONGI': '東京', 'HARAJUKU': '東京',
+    'YOKOHAMA': '神奈川', 'KAWASAKI': '神奈川', 'SAPPORO': '北海道', 'SENDAI': '宮城',
+    'NAGOYA': '愛知', 'OSAKA': '大阪', 'UMEDA': '大阪', 'NAMBA': '大阪', 'SHINSAIBASHI': '大阪',
+    'KYOTO': '京都', 'KOBE': '兵庫', 'HAKATA': '福岡', 'FUKUOKA': '福岡',
+    'HIROSHIMA': '広島', 'OKAYAMA': '岡山', 'NIIGATA': '新潟', 'KANAZAWA': '石川',
+    'OKINAWA': '沖縄', 'NAHA': '沖縄', 'SAITAMA': '埼玉', 'CHIBA': '千葉',
+}
+_ROMA_KEYS = sorted(PLACE_PREF_ROMA, key=len, reverse=True)
 # 長い地名から当てる（「西川口」を「川口」より先に見る／「GOTANDA」など）
 _PLACE_KEYS = sorted(PLACE_PREF, key=len, reverse=True)
 
@@ -142,6 +175,10 @@ def pref_from_place(text):
     for p in BARE_PREF:
         if p != '東京' and p in scan:
             return p
+    up = t.upper()
+    for k in _ROMA_KEYS:
+        if k in up:
+            return PLACE_PREF_ROMA[k]
     return None
 
 
@@ -339,7 +376,17 @@ def _selftest():
     assert pref_from_place('広島アイドルライブ「POPAPIPUPEPOPA NEO」') == '広島'
     assert pref_from_place('東京都内某所') == '東京'
     assert pref_from_place('京都劇場') == '京都'              # 「東京都」に誤マッチしないこと
+    assert pref_from_place('Gotanda G6') == '東京'            # 小文字でも当てる
+    assert pref_from_place('GT LIVE TOKYO') == '東京'
+    assert pref_from_place('GIGS YOKOHAMA TSURUMI') == '神奈川'
+    assert pref_from_place('ベイサイドライブホール BY ACTIVE HAKATA') == '福岡'
+    assert pref_from_place('松江canova') == '島根'
+    assert pref_from_place('都内某所') == '東京'              # 「都内」は東京都内の意味
+    assert pref_from_place('としま区民センター６階') == '東京'
+    assert pref_from_place('溝ノ口劇場') == '神奈川'
+    assert pref_from_place('ひこね市文化プラザ グランドホール') == '滋賀'
     assert pref_from_place('月夜のケダモノ') is None          # 決まらないものは空のまま
+    assert pref_from_place('Nakano space Q') is None         # 中野は東京/長野で決まらない
     assert pref_from_place('ライブスペース スペシャルカラーズ') is None
     lm = parse_list_meta('<div class="col-xs-12 ev">'
                          "<div class='c-statusbox__tag'>あと64日</div>"
