@@ -231,6 +231,22 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      🚨登録済みなのに**発売前の枠だけ抜けている**型が出る（理芽・KOKO・春猿火で実証）＝
        新規投入だけでなく**既存への足し込み**も必ず見る。
      🚨ぴあ以外なので**振り分けはユーザーの確認後**（新着タブに置く）
+   - 🆕🚨**TIGET（チゲット）も毎朝回す**（2026-09-18 ユーザー指示「朝のスイープにTIGET足しといて」）
+     ```
+     python tools/tiget_harvest.py --cats 81,84,79,80,45,46,41,29 --stop-known 1 \
+            --out tmp/tiget_MMDD.json
+     python tools/build_tiget_entries.py tmp/tiget_MMDD.json --out tmp/built_tiget_MMDD.json
+     python tools/gate_tiget_slots.py     # 🔒 exit 0 以外なら投入しない
+     ```
+     🎯**`--stop-known 1` が毎朝用**＝一覧は新着順なので「登録済みだけのページ」に当たった時点で
+       そのカテゴリを打ち切り、**個別ページも未登録の分だけ**引く（1カテゴリ1〜3ページで済む）。
+       付けないと2,000件を全部引いて1時間かかる（初回だけ全部引く）。
+     🚨**TIGETは「告知したらすぐ売り出す」売り場**＝発売前の状態が短い。だから**毎日見ることが効く**
+       （[[reference_tiget_harvest]]／ユーザー「告知して探す人が oshinavi.jp から見つけられれば
+        それが私の目指すところ」）。
+     ⛔**出す側の申込は載せない**＝ビルダーの `is_seller_side()` が自動で外す
+       （出店ブース・即売会スペース・参加エントリー・駐車・案内登録）。
+     🚨ぴあ以外なので**振り分けはユーザーの確認後**（新着タブに置くまでは自走）
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
    - FETCHが出たら**ぴあの混雑ページ**を疑って該当だけ再照合（巻き添えのSTALEも消える）

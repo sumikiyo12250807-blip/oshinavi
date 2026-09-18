@@ -246,11 +246,27 @@ def main():
     ap.add_argument('--out', default='tmp/tiget_harvest.json')
     ap.add_argument('--sleep', type=float, default=1.0)
     ap.add_argument('--limit', type=int, default=0)
+    # 🆕毎朝のスイープ用＝一覧は新着順なので「登録済みばかりのページ」に当たったら止める。
+    #   これで1カテゴリ1〜3ページ（全部で数十件）で済む。0 を渡すと従来どおり最後のページまで。
+    ap.add_argument('--stop-known', type=int, default=0,
+                    help='登録済みだけのページがこの回数続いたら、そのカテゴリを打ち切る（毎朝用は 1）')
+    ap.add_argument('--index', default='index.html', help='登録済みidを読むファイル')
     a = ap.parse_args([x for x in sys.argv[1:] if x != '--selftest'])
+
+    known = set()
+    if a.stop_known:
+        try:
+            known = set(re.findall(r'tiget\.net/events/(\d+)',
+                                   io.open(a.index, encoding='utf-8', newline='').read()))
+            print(f'  登録済みのTIGETイベント {len(known)}件（新着順で追い越したら打ち切る）')
+        except Exception as e:
+            print(f'  ⚠️登録済みidが読めなかった（打ち切りなしで回す）: {str(e)[:60]}')
+            known = set()
 
     events, order = {}, []
     for cat in a.cats.split(','):
         page, last = 1, 1
+        allknown = 0
         while page <= last:
             u = f'{BASE}/events?categories={cat}&sort=new_arrivals' + (f'&page={page}' if page > 1 else '')
             html = fetch(u)
@@ -264,11 +280,23 @@ def main():
                 if cat not in events[i]['cats']:
                     events[i]['cats'].append(cat)
                 events[i]['list'].update(lm.get(i) or {})
-            print(f'  一覧 cat={cat}({CAT_NAME.get(cat, cat)}) page={page}/{last} … {len(ids)}件 / 累計{len(order)}件')
+            fresh = [i for i in ids if i not in known]
+            print(f'  一覧 cat={cat}({CAT_NAME.get(cat, cat)}) page={page}/{last} … {len(ids)}件'
+                  f'（未登録{len(fresh)}件）/ 累計{len(order)}件')
             page += 1
             time.sleep(a.sleep)
+            if a.stop_known and ids:
+                allknown = allknown + 1 if not fresh else 0
+                if allknown >= a.stop_known:
+                    print(f'  → 登録済みだけのページが{allknown}枚続いたので cat={cat} は打ち切り')
+                    break
 
     rows, errs = [], []
+    # 打ち切りモードでは、個別ページを引くのも**未登録の分だけ**（毎朝の負荷を軽くする）
+    if a.stop_known and known:
+        skipped_known = [i for i in order if i in known]
+        order = [i for i in order if i not in known]
+        print(f'  登録済み {len(skipped_known)}件は個別ページを引かない / これから引く {len(order)}件')
     todo = order[:a.limit] if a.limit else order
     for n, eid in enumerate(todo, 1):
         try:
