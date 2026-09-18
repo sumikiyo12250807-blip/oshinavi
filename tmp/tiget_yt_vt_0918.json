@@ -1,0 +1,9215 @@
+{
+ "cats": "81,84",
+ "events": [
+  {
+   "id": "521257",
+   "url": "https://tiget.net/events/521257",
+   "name": "日高里緒 Acoustic Studio Live",
+   "venue": "４Kスタジオ",
+   "prefecture": null,
+   "performers": [
+    "日高里緒"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月15日(木) 18:45開場",
+     "date": "2026-10-15",
+     "tickets": [
+      {
+       "name": "チケット予約 当日会場払い",
+       "price": 3500,
+       "class": "is-unable is-unavailable",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable"
+   ],
+   "detail_date": "2026-10-15",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 3500,
+     "valid_from": "2026-09-07",
+     "valid_from_time": "23:16",
+     "availability": "SoldOut"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月15日(木)"
+   }
+  },
+  {
+   "id": "512153",
+   "url": "https://tiget.net/events/512153",
+   "name": "てらコワ6",
+   "venue": "圓隆院",
+   "prefecture": "東京",
+   "performers": [
+    "チビルマ",
+    "松村進吉"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月21日(土) 16:10開場",
+     "date": "2026-11-21",
+     "tickets": [
+      {
+       "name": "開場16:10/ 開演16:30/終演19:00予定（途中休憩あり）",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.12 21:00 ~ 2026.11.21 16:30",
+         "parsed": [
+          "2026-09-12",
+          "21:00",
+          "2026-11-21",
+          "16:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.12 21:00 ~ 2026.11.17 23:59",
+         "parsed": [
+          "2026-09-12",
+          "21:00",
+          "2026-11-17",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-11-21",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3720,
+     "valid_from": "2026-08-05",
+     "valid_from_time": "00:34",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月21日(土)"
+   }
+  },
+  {
+   "id": "517518",
+   "url": "https://tiget.net/events/517518",
+   "name": "バトル形式怪談ライブ【埼玉vs千葉-因縁の対決-】",
+   "venue": "氷川劇場 大宮氷川参道ニノ鳥居前",
+   "prefecture": "埼玉",
+   "performers": [
+    "一条ま〜太郎",
+    "Esutta",
+    "線六本",
+    "タコス八郎",
+    "不二山えふ",
+    "道野草太"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月14日(土) 14:00開場",
+     "date": "2026-11-14",
+     "tickets": [
+      {
+       "name": "自由席",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-11-14",
+   "ld_region": "埼玉県",
+   "ld_offers": [
+    {
+     "price": 3000,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "19:08",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "埼玉県",
+    "play_date": "2026年11月14日(土)"
+   }
+  },
+  {
+   "id": "516776",
+   "url": "https://tiget.net/events/516776",
+   "name": "「最」ライブツアー2026 in 福岡",
+   "venue": "Buddy up!",
+   "prefecture": "福岡",
+   "performers": [
+    "もん",
+    "立花萌香"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年12月12日(土) 13:00開場",
+     "date": "2026-12-12",
+     "tickets": [
+      {
+       "name": "優先入場",
+       "price": 5500,
+       "class": "is-unable is-unopened",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.11.01 21:00 ~ 2026.12.11 23:59",
+         "parsed": [
+          "2026-11-01",
+          "21:00",
+          "2026-12-11",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.11.01 21:00 ~ 2026.12.08 23:59",
+         "parsed": [
+          "2026-11-01",
+          "21:00",
+          "2026-12-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般",
+       "price": 3500,
+       "class": "is-unable is-unopened",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.11.01 21:00 ~ 2026.12.11 23:59",
+         "parsed": [
+          "2026-11-01",
+          "21:00",
+          "2026-12-11",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.11.01 21:00 ~ 2026.12.08 23:59",
+         "parsed": [
+          "2026-11-01",
+          "21:00",
+          "2026-12-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unopened",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-12-12",
+   "ld_region": "福岡県",
+   "ld_offers": [
+    {
+     "price": 5720,
+     "valid_from": "2026-11-01",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-11-01",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "福岡県",
+    "play_date": "2026年12月12日(土)"
+   }
+  },
+  {
+   "id": "517288",
+   "url": "https://tiget.net/events/517288",
+   "name": "「最」ライブツアー2026 in 仙台",
+   "venue": "live studio ripple",
+   "prefecture": "宮城",
+   "performers": [
+    "もん",
+    "立花萌香"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月29日(日) 15:15開場",
+     "date": "2026-11-29",
+     "tickets": [
+      {
+       "name": "優先入場",
+       "price": 5500,
+       "class": "is-unable is-unopened",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.10.24 21:00 ~ 2026.11.28 23:59",
+         "parsed": [
+          "2026-10-24",
+          "21:00",
+          "2026-11-28",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.10.24 21:00 ~ 2026.11.25 23:59",
+         "parsed": [
+          "2026-10-24",
+          "21:00",
+          "2026-11-25",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般",
+       "price": 3500,
+       "class": "is-unable is-unopened",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.10.24 21:00 ~ 2026.11.28 23:59",
+         "parsed": [
+          "2026-10-24",
+          "21:00",
+          "2026-11-28",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.10.24 21:00 ~ 2026.11.25 23:59",
+         "parsed": [
+          "2026-10-24",
+          "21:00",
+          "2026-11-25",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unopened",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-11-29",
+   "ld_region": "宮城県",
+   "ld_offers": [
+    {
+     "price": 5720,
+     "valid_from": "2026-10-24",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-10-24",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "宮城県",
+    "play_date": "2026年11月29日(日)"
+   }
+  },
+  {
+   "id": "516777",
+   "url": "https://tiget.net/events/516777",
+   "name": "「最」ライブツアー2026 in 宮古島",
+   "venue": "GOOD LUCK!",
+   "prefecture": "沖縄",
+   "performers": [
+    "もん",
+    "立花萌香"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月08日(日) 16:30開場",
+     "date": "2026-11-08",
+     "tickets": [
+      {
+       "name": "優先入場",
+       "price": 5500,
+       "class": "is-unable is-unopened",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.10.04 21:00 ~ 2026.11.07 23:59",
+         "parsed": [
+          "2026-10-04",
+          "21:00",
+          "2026-11-07",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.10.04 21:00 ~ 2026.11.04 23:59",
+         "parsed": [
+          "2026-10-04",
+          "21:00",
+          "2026-11-04",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般",
+       "price": 3500,
+       "class": "is-unable is-unopened",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.10.04 21:00 ~ 2026.11.07 23:59",
+         "parsed": [
+          "2026-10-04",
+          "21:00",
+          "2026-11-07",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.10.04 21:00 ~ 2026.11.04 23:59",
+         "parsed": [
+          "2026-10-04",
+          "21:00",
+          "2026-11-04",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unopened",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-11-08",
+   "ld_region": "沖縄県",
+   "ld_offers": [
+    {
+     "price": 5720,
+     "valid_from": "2026-10-04",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-10-04",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "沖縄県",
+    "play_date": "2026年11月08日(日)"
+   }
+  },
+  {
+   "id": "516046",
+   "url": "https://tiget.net/events/516046",
+   "name": "「最」ライブツアー2026 in 大阪",
+   "venue": "J．Bridgeビル",
+   "prefecture": "大阪",
+   "performers": [
+    "もん",
+    "立花萌香"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月18日(日) 12:00開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "優先入場",
+       "price": 5500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.13 21:00 ~ 2026.10.17 23:59",
+         "parsed": [
+          "2026-09-13",
+          "21:00",
+          "2026-10-17",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.13 21:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-13",
+          "21:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.13 21:00 ~ 2026.10.17 23:59",
+         "parsed": [
+          "2026-09-13",
+          "21:00",
+          "2026-10-17",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.13 21:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-13",
+          "21:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-18",
+   "ld_region": "大阪府",
+   "ld_offers": [
+    {
+     "price": 5720,
+     "valid_from": "2026-08-20",
+     "valid_from_time": "11:40",
+     "availability": "InStock"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-08-20",
+     "valid_from_time": "11:40",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "大阪府",
+    "play_date": "2026年10月18日(日)"
+   }
+  },
+  {
+   "id": "517298",
+   "url": "https://tiget.net/events/517298",
+   "name": "改めまして、私たち「アイドルのいる生活」です！in大阪",
+   "venue": "PICCADILLY PREMIUM",
+   "prefecture": "大阪",
+   "performers": [
+    "立花萌香",
+    "アイドルのいる生活"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月17日(土) 12:30開場",
+     "date": "2026-10-17",
+     "tickets": [
+      {
+       "name": "VIP",
+       "price": 8000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.12 20:00 ~ 2026.10.16 23:59",
+         "parsed": [
+          "2026-09-12",
+          "20:00",
+          "2026-10-16",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.12 20:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-12",
+          "20:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.12 20:00 ~ 2026.10.16 23:59",
+         "parsed": [
+          "2026-09-12",
+          "20:00",
+          "2026-10-16",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.12 20:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-12",
+          "20:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining",
+    "is-available"
+   ],
+   "detail_date": "2026-10-17",
+   "ld_region": "大阪府",
+   "ld_offers": [
+    {
+     "price": 8220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "21:33",
+     "availability": "InStock"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "21:33",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "大阪府",
+    "play_date": "2026年10月17日(土)"
+   }
+  },
+  {
+   "id": "520814",
+   "url": "https://tiget.net/events/520814",
+   "name": "すけあやROOM1111 全力ゲームバラエティVol.4",
+   "venue": "SpemoLOUNGE大井町",
+   "prefecture": "東京",
+   "performers": [
+    "小篠亮介",
+    "馬場桜佑",
+    "田中綾美",
+    "峯崎圭輔"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月24日(木) 18:30開場",
+     "date": "2026-09-24",
+     "tickets": [
+      {
+       "name": "会場観覧チケット",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 21:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "21:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 21:00 ~ 2026.09.20 23:59",
+         "parsed": [
+          "2026-09-09",
+          "21:00",
+          "2026-09-20",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-24",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 2220,
+     "valid_from": "2026-09-06",
+     "valid_from_time": "16:48",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月24日(木)"
+   }
+  },
+  {
+   "id": "516924",
+   "url": "https://tiget.net/events/516924",
+   "name": "余白章 ---赦されない祝祭---",
+   "venue": "エモーシア神楽坂",
+   "prefecture": "東京",
+   "performers": [
+    "永久",
+    "怜",
+    "達也",
+    "陽音"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 12:30開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "両部最前確約プレミアムチケット",
+       "price": 11000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "1部 プレミアムチケット",
+       "price": 5500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "1部 一般チケット",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月10日(土) 17:30開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "2部 プレミアムチケット",
+       "price": 5500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "2部 一般チケット",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 11000,
+     "valid_from": "2026-08-23",
+     "valid_from_time": "18:22",
+     "availability": "InStock"
+    },
+    {
+     "price": 5500,
+     "valid_from": "2026-08-23",
+     "valid_from_time": "18:22",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-08-23",
+     "valid_from_time": "18:22",
+     "availability": "InStock"
+    },
+    {
+     "price": 5500,
+     "valid_from": "2026-08-23",
+     "valid_from_time": "18:22",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-08-23",
+     "valid_from_time": "18:22",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "520239",
+   "url": "https://tiget.net/events/520239",
+   "name": "おっさんラジコン倶楽部 チャンネル登録1万人達成記念オフ会",
+   "venue": "船橋ダートフィールド",
+   "prefecture": null,
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年11月21日(土) 08:00開場",
+     "date": "2026-11-21",
+     "tickets": [
+      {
+       "name": "サーキット使用料込みイベント参加チケット",
+       "price": 3500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-11-21",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 3500,
+     "valid_from": "2026-09-04",
+     "valid_from_time": "12:11",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年11月21日(土)"
+   }
+  },
+  {
+   "id": "510288",
+   "url": "https://tiget.net/events/510288",
+   "name": "コウタ10周年LIVE MANYMANYHAPPY～コウタのやりたい10のこと～",
+   "venue": "横浜市港北公会堂",
+   "prefecture": "神奈川",
+   "performers": [
+    "コウタ",
+    "宮前コウタ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "",
+     "date": null,
+     "tickets": []
+    }
+   ],
+   "statuses": [],
+   "detail_date": "2026-12-18",
+   "ld_region": "神奈川県",
+   "ld_offers": [
+    {
+     "price": 3720,
+     "valid_from": "2026-09-19",
+     "valid_from_time": "10:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 2720,
+     "valid_from": "2026-09-19",
+     "valid_from_time": "10:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 1220,
+     "valid_from": "2026-09-19",
+     "valid_from_time": "10:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "神奈川県",
+    "play_date": "2026年12月18日(金)"
+   }
+  },
+  {
+   "id": "519149",
+   "url": "https://tiget.net/events/519149",
+   "name": "ドラマ&映画『災』大好き芸人トークライブ 〜あいつは一体何者なんだ？〜",
+   "venue": "ふらっとすぎはち（コミュニティふらっと高円寺南）",
+   "prefecture": "東京",
+   "performers": [
+    "あんこ",
+    "シテントル山賀"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月28日(月) 19:15開場",
+     "date": "2026-09-28",
+     "tickets": [
+      {
+       "name": "自由席",
+       "price": 1000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-28",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 1000,
+     "valid_from": "2026-09-01",
+     "valid_from_time": "12:21",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月28日(月)"
+   }
+  },
+  {
+   "id": "515592",
+   "url": "https://tiget.net/events/515592",
+   "name": "KOTTY 1st ファンミーティング～本日も結構なお手前で～",
+   "venue": "WISH BASE大阪スカイビル前店",
+   "prefecture": null,
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月27日(日) 13:10開場",
+     "date": "2026-09-27",
+     "tickets": [
+      {
+       "name": "1部 一般",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "1部 高校生以下",
+       "price": 1000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "通し一般",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "通し 高校生以下",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年09月27日(日) 15:30開場",
+     "date": "2026-09-27",
+     "tickets": [
+      {
+       "name": "2部一般",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "2部 高校生以下",
+       "price": 1000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.09 10:00 ~ 2026.09.23 23:59",
+         "parsed": [
+          "2026-09-09",
+          "10:00",
+          "2026-09-23",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-unable is-unavailable",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unavailable"
+   ],
+   "detail_date": "2026-09-27",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 2220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 1220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:55",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 1220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:55",
+     "availability": "SoldOut"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年09月27日(日)"
+   }
+  },
+  {
+   "id": "517249",
+   "url": "https://tiget.net/events/517249",
+   "name": "【ぶいきゃすコレクション】ミニライブ【輝常うどん様 / いねかりたんぼ様】(10/18開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "輝常うどん",
+    "いねかりたんぼ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月18日(日) 17:15開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "ミニライブチケット+アーカイブチケット【輝常うどん様 / いねかりたんぼ様】",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.18 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-18",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ミニライブチケット【輝常うどん様 / いねかりたんぼ様 】",
+       "price": 5000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.18 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-18",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "アーカイブチケット【輝常うどん様 / いねかりたんぼ様】",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-18",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:33",
+     "availability": "InStock"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:33",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:33",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月18日(日)"
+   }
+  },
+  {
+   "id": "517235",
+   "url": "https://tiget.net/events/517235",
+   "name": "【ぶいきゃすコレクション】ファンミーティング(2026/10/18開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "月見らび",
+    "マリートリコロール"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月18日(日) 11:45開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "月見らび様_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.18 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-18",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "月見らび様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.18 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-18",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月18日(日) 13:45開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "マリートリコロール様_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.18 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-18",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "マリートリコロール様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.18 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-18",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.14 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-14",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-18",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:06",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:06",
+     "availability": "InStock"
+    },
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:06",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "19:06",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月18日(日)"
+   }
+  },
+  {
+   "id": "517219",
+   "url": "https://tiget.net/events/517219",
+   "name": "【ぶいきゃすコレクション】ミニライブ【あいぷろ様 / はむぷら様】(10/17開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "じゃんがりあん",
+    "天ノ羽うゆ",
+    "音沙汰あんな",
+    "ばに団長",
+    "花鞠ゆら"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月17日(土) 17:15開場",
+     "date": "2026-10-17",
+     "tickets": [
+      {
+       "name": "ミニライブチケット+アーカイブチケット【あいぷろ様 / はむぷら様】",
+       "price": 6000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ミニライブチケット【あいぷろ様 / はむぷら様】",
+       "price": 5000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "アーカイブチケット【あいぷろ様 / はむぷら様】",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.16 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-16",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining",
+    "is-available is-fewremaining",
+    "is-available"
+   ],
+   "detail_date": "2026-10-17",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:16",
+     "availability": "InStock"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:16",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:16",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月17日(土)"
+   }
+  },
+  {
+   "id": "517215",
+   "url": "https://tiget.net/events/517215",
+   "name": "【ぶいきゃすコレクション】ファンミーティング(2026/10/17開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "じゃんがりあん",
+    "天ノ羽うゆ",
+    "音沙汰あんな",
+    "ばに団長",
+    "花鞠ゆら"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月17日(土) 11:45開場",
+     "date": "2026-10-17",
+     "tickets": [
+      {
+       "name": "はむぷら様【じゃんがりあん様・天ノ羽うゆ様】_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "はむぷら様【じゃんがりあん様・天ノ羽うゆ様】様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月17日(土) 13:45開場",
+     "date": "2026-10-17",
+     "tickets": [
+      {
+       "name": "あいぷろ様【音沙汰あんな様・ばに団長様・花鞠ゆら様】_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "あいぷろ様【音沙汰あんな様・ばに団長様・花鞠ゆら様】_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.17 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-17",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-17",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:09",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:09",
+     "availability": "InStock"
+    },
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:09",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:09",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月17日(土)"
+   }
+  },
+  {
+   "id": "517214",
+   "url": "https://tiget.net/events/517214",
+   "name": "【ぶいきゃすコレクション】ミニライブ【葵井詩雫様 / 百瀬ヒバナ様 / あかつきるき様】(10/12開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "葵井詩雫",
+    "百瀬ヒバナ",
+    "あかつきるき"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月12日(月祝) 17:15開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "ミニライブチケット+アーカイブチケット【葵井詩雫様 / 百瀬ヒバナ様 / あかつきるき様】",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.12 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-12",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ミニライブチケット【葵井詩雫様 / 百瀬ヒバナ様 / あかつきるき様】",
+       "price": 5000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.12 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-12",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "アーカイブチケット【葵井詩雫様 / 百瀬ヒバナ様 / あかつきるき様】",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available is-fewremaining",
+    "is-available"
+   ],
+   "detail_date": "2026-10-12",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:00",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "18:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月12日(月祝)"
+   }
+  },
+  {
+   "id": "517212",
+   "url": "https://tiget.net/events/517212",
+   "name": "【ぶいきゃすコレクション】ファンミーティング(2026/10/12開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "かぐch",
+    "葵井詩雫"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月12日(月祝) 11:45開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "かぐch様_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.12 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-12",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "かぐch様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.12 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-12",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月12日(月祝) 13:45開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "葵井詩雫様_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.12 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-12",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "葵井詩雫様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.12 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-12",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-12",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:55",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:55",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月12日(月祝)"
+   }
+  },
+  {
+   "id": "517198",
+   "url": "https://tiget.net/events/517198",
+   "name": "【ぶいきゃすコレクション】ミニライブ【胡桃澤もも様 / NoirLop××様（濡羽しゅあ様・花丸ちよ様）】(10/11開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "胡桃澤もも",
+    "濡羽しゅあ",
+    "花丸ちよ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月11日(日) 17:15開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "ミニライブチケット+アーカイブチケット【胡桃澤もも様 / Noir Lop××様（濡羽しゅあ様・花丸ちよ様）】",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ミニライブチケット【胡桃澤もも様 / NoirLopxx様（濡羽しゅあ様・花丸ちよ様）】",
+       "price": 5000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "アーカイブチケット【胡桃澤もも様 / Noir Lop××様（濡羽しゅあ様・花丸ちよ様）】",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:21",
+     "availability": "InStock"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:21",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "17:21",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月11日(日)"
+   }
+  },
+  {
+   "id": "517188",
+   "url": "https://tiget.net/events/517188",
+   "name": "【ぶいきゃすコレクション】ファンミーティング(2026/10/11開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "猫田なつな",
+    "餅々さくら",
+    "伊織ねめあ",
+    "魔昏るい",
+    "百目鬼える"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月11日(日) 11:45開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "猫田なつな様_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "猫田なつな様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月11日(日) 13:45開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "凸凹カルテット様（餅々さくら様・伊織ねめあ様・魔昏るい様・百目鬼える様）_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "凸凹カルテット様（餅々さくら様・伊織ねめあ様・魔昏るい様・百目鬼える様）_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.11 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-11",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:53",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:53",
+     "availability": "InStock"
+    },
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:53",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:53",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月11日(日)"
+   }
+  },
+  {
+   "id": "517183",
+   "url": "https://tiget.net/events/517183",
+   "name": "【ぶいきゃすコレクション】ミニライブ【狼谷はるか様 / BΣretta Crossrain様 / 倉田理音様】(10/10開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "狼谷はるか",
+    "BΣretta Crossrain",
+    "倉田理音"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 17:15開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "ミニライブチケット+アーカイブチケット（狼谷はるか様 / BΣretta Crossrain様 / 倉田理音様）",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ミニライブチケット（狼谷はるか様 / BΣretta Crossrain様 / 倉田理音様）",
+       "price": 5000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 17:30",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "17:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "アーカイブチケット（狼谷はるか様 / BΣretta Crossrain様 / 倉田理音様）",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.09 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-09",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available is-fewremaining",
+    "is-available"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:38",
+     "availability": "InStock"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:38",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "16:38",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "517163",
+   "url": "https://tiget.net/events/517163",
+   "name": "【ぶいきゃすコレクション】ファンミーティング(2026/10/10開催分)",
+   "venue": "新宿マルイ メン",
+   "prefecture": "東京",
+   "performers": [
+    "氷室うつろ",
+    "ヴィヴ・シルヴィ",
+    "猫滅刃とばり様",
+    "アビス・ソング・シンドローム"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 11:45開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "氷室うつろ様_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "氷室うつろ様_ファンミーティング券",
+       "price": 4000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 12:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月10日(土) 13:45開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "人類滅亡部（ヴィヴ・シルヴィ様・猫滅刃とばり様・アビス・ソング・シンドローム様）_ファンミーティング＋2ショット撮影券",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "人類滅亡部（ヴィヴ・シルヴィ様・猫滅刃とばり様・アビス・ソング・シンドローム様）_ファンミーティング券",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.10 14:00",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-10",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 18:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-09-05",
+          "18:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-unable is-unavailable",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "15:44",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "15:44",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 6220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "15:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-24",
+     "valid_from_time": "15:44",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "518060",
+   "url": "https://tiget.net/events/518060",
+   "name": "Say acheese! vol.2",
+   "venue": "心斎橋駅周辺の会場",
+   "prefecture": null,
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年10月11日(日) 15:00開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "VIPチケット",
+       "price": 25000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.30 12:00 ~ 2026.10.11 15:00",
+         "parsed": [
+          "2026-08-30",
+          "12:00",
+          "2026-10-11",
+          "15:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.30 12:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-30",
+          "12:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般チケット",
+       "price": 2500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.30 12:00 ~ 2026.09.20 23:59",
+         "parsed": [
+          "2026-08-30",
+          "12:00",
+          "2026-09-20",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.30 12:00 ~ 2026.09.20 23:59",
+         "parsed": [
+          "2026-08-30",
+          "12:00",
+          "2026-09-20",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "チェキ券【VIPチケットor一般チケット購入者】",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 25220,
+     "valid_from": "2026-08-27",
+     "valid_from_time": "19:43",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 2720,
+     "valid_from": "2026-08-27",
+     "valid_from_time": "19:43",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-27",
+     "valid_from_time": "19:43",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月11日(日)"
+   }
+  },
+  {
+   "id": "518335",
+   "url": "https://tiget.net/events/518335",
+   "name": "9/22(火•祝)まゆぴぴファンミ@東京",
+   "venue": "Cafe & Bar 星狼",
+   "prefecture": "東京",
+   "performers": [
+    "まゆぴぴ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月22日(火祝) 11:30開場",
+     "date": "2026-09-22",
+     "tickets": [
+      {
+       "name": "通し券",
+       "price": 6600,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "1部券",
+       "price": 3850,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年09月22日(火祝) 13:00開場",
+     "date": "2026-09-22",
+     "tickets": [
+      {
+       "name": "2部券",
+       "price": 3850,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-09-22",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6600,
+     "valid_from": "2026-08-28",
+     "valid_from_time": "23:09",
+     "availability": "InStock"
+    },
+    {
+     "price": 3850,
+     "valid_from": "2026-08-28",
+     "valid_from_time": "23:09",
+     "availability": "InStock"
+    },
+    {
+     "price": 3850,
+     "valid_from": "2026-08-28",
+     "valid_from_time": "23:09",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月22日(火祝)"
+   }
+  },
+  {
+   "id": "516045",
+   "url": "https://tiget.net/events/516045",
+   "name": "「最」ライブツアー2026 in 名古屋",
+   "venue": "Lives FARM",
+   "prefecture": "愛知",
+   "performers": [
+    "もん",
+    "立花萌香"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月26日(土) 13:00開場",
+     "date": "2026-09-26",
+     "tickets": [
+      {
+       "name": "優先入場",
+       "price": 5500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.29 21:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-08-29",
+          "21:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.29 21:00 ~ 2026.09.22 23:59",
+         "parsed": [
+          "2026-08-29",
+          "21:00",
+          "2026-09-22",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.29 21:00 ~ 2026.09.25 23:59",
+         "parsed": [
+          "2026-08-29",
+          "21:00",
+          "2026-09-25",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.29 21:00 ~ 2026.09.22 23:59",
+         "parsed": [
+          "2026-08-29",
+          "21:00",
+          "2026-09-22",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-09-26",
+   "ld_region": "愛知県",
+   "ld_offers": [
+    {
+     "price": 5720,
+     "valid_from": "2026-08-20",
+     "valid_from_time": "11:36",
+     "availability": "InStock"
+    },
+    {
+     "price": 3720,
+     "valid_from": "2026-08-20",
+     "valid_from_time": "11:36",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "愛知県",
+    "play_date": "2026年09月26日(土)"
+   }
+  },
+  {
+   "id": "491013",
+   "url": "https://tiget.net/events/491013",
+   "name": "高野いつか弾き語りライブ【Someday】",
+   "venue": "演家-SHITORAYA-",
+   "prefecture": "東京",
+   "performers": [
+    "高野いつか"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月01日(木) 18:30開場",
+     "date": "2026-10-01",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3500,
+       "class": "btn-unable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.24 17:00 ~ 2026.09.30 23:59",
+         "parsed": [
+          "2026-08-24",
+          "17:00",
+          "2026-09-30",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "btn-unable"
+   ],
+   "detail_date": "2026-10-01",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3720,
+     "valid_from": "2026-05-18",
+     "valid_from_time": "10:38",
+     "availability": "SoldOut"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月01日(木)"
+   }
+  },
+  {
+   "id": "511670",
+   "url": "https://tiget.net/events/511670",
+   "name": "難波大 ピアノリサイタルin神戸〜クラシックの「癒し」と「情熱」〜",
+   "venue": "KOBE BOTHALL（神戸ビーオーティーホール）",
+   "prefecture": "兵庫",
+   "performers": [
+    "難波大"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月24日(土) 15:30開場",
+     "date": "2026-10-24",
+     "tickets": [
+      {
+       "name": "全席自由席",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.30 12:00 ~ 2026.10.24 16:00",
+         "parsed": [
+          "2026-08-30",
+          "12:00",
+          "2026-10-24",
+          "16:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.30 12:00 ~ 2026.10.20 23:59",
+         "parsed": [
+          "2026-08-30",
+          "12:00",
+          "2026-10-20",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-24",
+   "ld_region": "兵庫県",
+   "ld_offers": [
+    {
+     "price": 3220,
+     "valid_from": "2026-08-03",
+     "valid_from_time": "13:51",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "兵庫県",
+    "play_date": "2026年10月24日(土)"
+   }
+  },
+  {
+   "id": "516472",
+   "url": "https://tiget.net/events/516472",
+   "name": "エスターク先輩の福岡オフ会！",
+   "venue": "福岡市内 某所",
+   "prefecture": null,
+   "performers": [
+    "エスターク先輩"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月22日(日) 12:00開場",
+     "date": "2026-11-22",
+     "tickets": [
+      {
+       "name": "",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.21 19:00 ~ 2026.11.22 23:59",
+         "parsed": [
+          "2026-08-21",
+          "19:00",
+          "2026-11-22",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.21 19:00 ~ 2026.11.18 23:59",
+         "parsed": [
+          "2026-08-21",
+          "19:00",
+          "2026-11-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-11-22",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-21",
+     "valid_from_time": "17:50",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年11月22日(日)"
+   }
+  },
+  {
+   "id": "516471",
+   "url": "https://tiget.net/events/516471",
+   "name": "エスターク先輩のチーズケーキオフ会！",
+   "venue": "東京都内某所",
+   "prefecture": "東京",
+   "performers": [
+    "エスターク先輩"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月24日(土) 12:00開場",
+     "date": "2026-10-24",
+     "tickets": [
+      {
+       "name": "",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.21 19:00 ~ 2026.10.24 23:59",
+         "parsed": [
+          "2026-08-21",
+          "19:00",
+          "2026-10-24",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.21 19:00 ~ 2026.10.20 23:59",
+         "parsed": [
+          "2026-08-21",
+          "19:00",
+          "2026-10-20",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-24",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-21",
+     "valid_from_time": "17:45",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月24日(土)"
+   }
+  },
+  {
+   "id": "514844",
+   "url": "https://tiget.net/events/514844",
+   "name": "ゆめりすひみちゅのライブ～まかろちゃん・のあちゃんバースデー～",
+   "venue": "リトルスターホール",
+   "prefecture": "熊本",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月21日(月祝) 12:00開場",
+     "date": "2026-09-21",
+     "tickets": [
+      {
+       "name": "一般",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "学生",
+       "price": 500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "オンラインお留守番パック (映像 ＆ 写真データ同梱)",
+       "price": 1500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.19 20:00 ~ 2026.09.20 22:00",
+         "parsed": [
+          "2026-08-19",
+          "20:00",
+          "2026-09-20",
+          "22:00"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-09-21",
+   "ld_region": "熊本県",
+   "ld_offers": [
+    {
+     "price": 2000,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "16:50",
+     "availability": "InStock"
+    },
+    {
+     "price": 500,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "16:50",
+     "availability": "InStock"
+    },
+    {
+     "price": 1720,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "16:50",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "熊本県",
+    "play_date": "2026年09月21日(月祝)"
+   }
+  },
+  {
+   "id": "515461",
+   "url": "https://tiget.net/events/515461",
+   "name": "いまいりさ🎂ワンマンライブ🎂~帰る場所~",
+   "venue": "アプロ赤坂-LIVE COMMUNICATION Aphro Akasaka-",
+   "prefecture": "東京",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年11月10日(火) 18:30開場",
+     "date": "2026-11-10",
+     "tickets": [
+      {
+       "name": "VIP席(前列着席)",
+       "price": 10000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.20 00:00 ~ 2026.11.10 19:00",
+         "parsed": [
+          "2026-08-20",
+          "00:00",
+          "2026-11-10",
+          "19:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.20 00:00 ~ 2026.11.06 23:59",
+         "parsed": [
+          "2026-08-20",
+          "00:00",
+          "2026-11-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "通常席",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.18 05:00 ~ 2026.11.10 19:00",
+         "parsed": [
+          "2026-08-18",
+          "05:00",
+          "2026-11-10",
+          "19:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.18 05:00 ~ 2026.11.06 23:59",
+         "parsed": [
+          "2026-08-18",
+          "05:00",
+          "2026-11-06",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-available"
+   ],
+   "detail_date": "2026-11-10",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "03:40",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 4220,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "03:40",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月10日(火)"
+   }
+  },
+  {
+   "id": "513788",
+   "url": "https://tiget.net/events/513788",
+   "name": "おすずTikTok10万人フォロワー記念イベント",
+   "venue": "【貸切可能・隠れ家BAR】Cafe&Bar DC Shinsaibashi",
+   "prefecture": "大阪",
+   "performers": [
+    "おすず"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月11日(日) 13:30開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "SSチケット",
+       "price": 20000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.18 12:00 ~ 2026.10.11 14:00",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-10-11",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.18 12:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Sチケット",
+       "price": 15000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.18 12:00 ~ 2026.10.11 14:00",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-10-11",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.18 12:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Oチケット",
+       "price": 5000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.18 12:00 ~ 2026.08.19 23:59",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-08-19",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.18 12:00 ~ 2026.08.19 23:59",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-08-19",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Zチケット",
+       "price": 3000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.18 12:00 ~ 2026.08.19 23:59",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-08-19",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.18 12:00 ~ 2026.08.19 23:59",
+         "parsed": [
+          "2026-08-18",
+          "12:00",
+          "2026-08-19",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Oチケット",
+       "price": 5000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.20 12:00 ~ 2026.10.11 14:00",
+         "parsed": [
+          "2026-08-20",
+          "12:00",
+          "2026-10-11",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.20 12:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-20",
+          "12:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Zチケット",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.20 12:00 ~ 2026.10.11 14:00",
+         "parsed": [
+          "2026-08-20",
+          "12:00",
+          "2026-10-11",
+          "14:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.20 12:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-20",
+          "12:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-unable is-unavailable",
+    "is-unable is-closed",
+    "is-unable is-closed",
+    "is-unable is-unavailable",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": "大阪府",
+   "ld_offers": [
+    {
+     "price": 20220,
+     "valid_from": "2026-08-11",
+     "valid_from_time": "10:57",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 15220,
+     "valid_from": "2026-08-11",
+     "valid_from_time": "10:57",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-11",
+     "valid_from_time": "10:57",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-11",
+     "valid_from_time": "10:57",
+     "availability": "InStock"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-08-11",
+     "valid_from_time": "10:57",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-11",
+     "valid_from_time": "10:57",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "大阪府",
+    "play_date": "2026年10月11日(日)"
+   }
+  },
+  {
+   "id": "510710",
+   "url": "https://tiget.net/events/510710",
+   "name": "Snack Bar KONJYO〜根性月がママになる夜〜",
+   "venue": "大塚ドリームシアター",
+   "prefecture": "東京",
+   "performers": [
+    "垣内D納言",
+    "根性月"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月03日(土) 18:30開場",
+     "date": "2026-10-03",
+     "tickets": [
+      {
+       "name": "",
+       "price": 5000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-03",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 5000,
+     "valid_from": "2026-07-30",
+     "valid_from_time": "15:38",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月03日(土)"
+   }
+  },
+  {
+   "id": "513403",
+   "url": "https://tiget.net/events/513403",
+   "name": "さんとら10万人記念イベント ～さんとらと〇〇〇〇初対面！？～",
+   "venue": "扇町ミュージアムキューブCUBE02",
+   "prefecture": "大阪",
+   "performers": [
+    "芦田雄太",
+    "riho",
+    "おすず"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 12:15開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "がちとらチケット(指定席)",
+       "price": 25000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.14 12:00 ~ 2026.10.10 13:00",
+         "parsed": [
+          "2026-08-14",
+          "12:00",
+          "2026-10-10",
+          "13:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.14 12:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-08-14",
+          "12:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "先行チケット(自由席)",
+       "price": 3000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.14 12:00 ~ 2026.08.16 11:59",
+         "parsed": [
+          "2026-08-14",
+          "12:00",
+          "2026-08-16",
+          "11:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.14 12:00 ~ 2026.08.16 11:59",
+         "parsed": [
+          "2026-08-14",
+          "12:00",
+          "2026-08-16",
+          "11:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "一般チケット(自由席)",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.16 12:00 ~ 2026.10.10 13:00",
+         "parsed": [
+          "2026-08-16",
+          "12:00",
+          "2026-10-10",
+          "13:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.16 12:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-08-16",
+          "12:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "学生チケット【中学生・高校生のみ】(自由席)",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.16 12:00 ~ 2026.10.10 13:00",
+         "parsed": [
+          "2026-08-16",
+          "12:00",
+          "2026-10-10",
+          "13:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.16 12:00 ~ 2026.10.06 23:59",
+         "parsed": [
+          "2026-08-16",
+          "12:00",
+          "2026-10-06",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "囲み写真券【参加チケット購入者限定】",
+       "price": 2000,
+       "class": "is-unable is-unopened",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-unable is-closed",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "大阪府",
+   "ld_offers": [
+    {
+     "price": 25220,
+     "valid_from": "2026-08-09",
+     "valid_from_time": "18:31",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-09",
+     "valid_from_time": "18:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-08-09",
+     "valid_from_time": "18:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-08-09",
+     "valid_from_time": "18:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-09",
+     "valid_from_time": "18:31",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "大阪府",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "511668",
+   "url": "https://tiget.net/events/511668",
+   "name": "スミワタル ピアノリサイタル2026",
+   "venue": "KOBE BOTHALL（神戸ビーオーティーホール）",
+   "prefecture": "兵庫",
+   "performers": [
+    "スミワタル"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月03日(土) 15:30開場",
+     "date": "2026-10-03",
+     "tickets": [
+      {
+       "name": "全席自由席",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.16 12:00 ~ 2026.10.03 16:00",
+         "parsed": [
+          "2026-08-16",
+          "12:00",
+          "2026-10-03",
+          "16:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.16 12:00 ~ 2026.09.29 23:59",
+         "parsed": [
+          "2026-08-16",
+          "12:00",
+          "2026-09-29",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-03",
+   "ld_region": "兵庫県",
+   "ld_offers": [
+    {
+     "price": 3720,
+     "valid_from": "2026-08-03",
+     "valid_from_time": "13:30",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "兵庫県",
+    "play_date": "2026年10月03日(土)"
+   }
+  },
+  {
+   "id": "510707",
+   "url": "https://tiget.net/events/510707",
+   "name": "ねぶたるみ生誕祭イベント〜もう歳は数えねぇ〜",
+   "venue": "大塚ドリームシアター",
+   "prefecture": "東京",
+   "performers": [
+    "ねぶたるみ",
+    "Mリア",
+    "垣内D納言"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月04日(日) 17:30開場",
+     "date": "2026-10-04",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-04",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3500,
+     "valid_from": "2026-07-30",
+     "valid_from_time": "15:31",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月04日(日)"
+   }
+  },
+  {
+   "id": "510704",
+   "url": "https://tiget.net/events/510704",
+   "name": "ねぶたるみちゃんねるオフ会 in 青森 vol.2",
+   "venue": "市乃蔵",
+   "prefecture": "青森",
+   "performers": [
+    "ねぶたるみ",
+    "Mリア",
+    "垣内D納言"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月01日(日) 16:00開場",
+     "date": "2026-11-01",
+     "tickets": [
+      {
+       "name": "",
+       "price": 8500,
+       "class": "is-available is-fewremaining",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-11-01",
+   "ld_region": "青森県",
+   "ld_offers": [
+    {
+     "price": 8500,
+     "valid_from": "2026-07-30",
+     "valid_from_time": "15:20",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "青森県",
+    "play_date": "2026年11月01日(日)"
+   }
+  },
+  {
+   "id": "511527",
+   "url": "https://tiget.net/events/511527",
+   "name": "お女郎 お鰻 お怪談",
+   "venue": "女郎うなぎ福助",
+   "prefecture": "埼玉",
+   "performers": [
+    "ファンキー中村",
+    "川奈まり子"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 10:30開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "参加チケット",
+       "price": 12000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "埼玉県",
+   "ld_offers": [
+    {
+     "price": 12000,
+     "valid_from": "2026-08-02",
+     "valid_from_time": "17:37",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "埼玉県",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "511431",
+   "url": "https://tiget.net/events/511431",
+   "name": "スペシャルトリオ怪談ライブ5th",
+   "venue": "国宝山 甘露院 醫王寺",
+   "prefecture": null,
+   "performers": [
+    "西浦和也",
+    "カチモード代表児玉氏",
+    "ファンキー中村"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月04日(日) 15:30開場",
+     "date": "2026-10-04",
+     "tickets": [
+      {
+       "name": "",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-04",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 4000,
+     "valid_from": "2026-08-02",
+     "valid_from_time": "12:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月04日(日)"
+   }
+  },
+  {
+   "id": "511136",
+   "url": "https://tiget.net/events/511136",
+   "name": "Happy Halloween！Trick or Stage！",
+   "venue": "waiwaihall神保町",
+   "prefecture": "東京",
+   "performers": [
+    "つゆ",
+    "天蘭",
+    "相導一静",
+    "まはっと",
+    "瀬那イクヤ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月18日(日) 11:15開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "一般チケット【先着順】",
+       "price": 0,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-18",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 0,
+     "valid_from": "2026-07-31",
+     "valid_from_time": "23:39",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81",
+    "84"
+   ],
+   "cat_names": [
+    "YouTuber",
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月18日(日)"
+   }
+  },
+  {
+   "id": "511139",
+   "url": "https://tiget.net/events/511139",
+   "name": "Happy Halloween！Trick or Stage！メッセージボード",
+   "venue": "waiwaihall神保町",
+   "prefecture": "東京",
+   "performers": [
+    "つゆ",
+    "天蘭",
+    "相導一静",
+    "まはっと",
+    "瀬那イクヤ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月18日(日) 11:15開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "【つゆ】メッセージボード受付",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【天蘭】メッセージボード受付",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【まはっと】メッセージボード受付",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【相導一静】メッセージボード受付",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【瀬那イクヤ】メッセージボード受付",
+       "price": 2000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.05 22:00 ~ 2026.09.26 23:59",
+         "parsed": [
+          "2026-09-05",
+          "22:00",
+          "2026-09-26",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-18",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 2220,
+     "valid_from": "2026-07-31",
+     "valid_from_time": "23:45",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-07-31",
+     "valid_from_time": "23:45",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-07-31",
+     "valid_from_time": "23:45",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-07-31",
+     "valid_from_time": "23:45",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-07-31",
+     "valid_from_time": "23:45",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81",
+    "84"
+   ],
+   "cat_names": [
+    "YouTuber",
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月18日(日)"
+   }
+  },
+  {
+   "id": "511301",
+   "url": "https://tiget.net/events/511301",
+   "name": "【2次募集】夕霧×エスターク先輩 大阪初オフ会",
+   "venue": "大阪心斎橋某所",
+   "prefecture": null,
+   "performers": [
+    "エスターク先輩",
+    "夕霧(DaizyStripper、SUN PROPOZE)"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月23日(水祝) 15:45開場",
+     "date": "2026-09-23",
+     "tickets": [
+      {
+       "name": "",
+       "price": 10000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.01 19:00 ~ 2026.08.23 23:59",
+         "parsed": [
+          "2026-08-01",
+          "19:00",
+          "2026-08-23",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.01 19:00 ~ 2026.08.23 23:59",
+         "parsed": [
+          "2026-08-01",
+          "19:00",
+          "2026-08-23",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-23",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-08-01",
+     "valid_from_time": "19:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年09月23日(水祝)"
+   }
+  },
+  {
+   "id": "488065",
+   "url": "https://tiget.net/events/488065",
+   "name": "こわミゾ 2026 〜秋の怪〜",
+   "venue": "溝ノ口劇場",
+   "prefecture": "神奈川",
+   "performers": [
+    "川口英之",
+    "チビルマ",
+    "ハニトラ梅木",
+    "吉田悠軌",
+    "響洋平",
+    "夜馬裕"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月12日(月祝) 15:20開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "①通し（先行割引抽選販売）※キャンセル・分配不可/入れ替え制/本人のみ有効/スクショ不可",
+       "price": 9500,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.01 00:00 ~ 2026.08.10 23:59",
+         "parsed": [
+          "2026-08-01",
+          "00:00",
+          "2026-08-10",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.01 00:00 ~ 2026.08.10 23:59",
+         "parsed": [
+          "2026-08-01",
+          "00:00",
+          "2026-08-10",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月12日(月祝) 15:20開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "②1部",
+       "price": 5500,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.11 20:00 ~ 2026.10.12 15:45",
+         "parsed": [
+          "2026-08-11",
+          "20:00",
+          "2026-10-12",
+          "15:45"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.11 20:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-08-11",
+          "20:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月12日(月祝) 18:20開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "③ 2部",
+       "price": 5500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.11 20:00 ~ 2026.10.12 18:45",
+         "parsed": [
+          "2026-08-11",
+          "20:00",
+          "2026-10-12",
+          "18:45"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.11 20:00 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-08-11",
+          "20:00",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed",
+    "is-available is-fewremaining",
+    "is-available"
+   ],
+   "detail_date": "2026-10-12",
+   "ld_region": "神奈川県",
+   "ld_offers": [
+    {
+     "price": 9720,
+     "valid_from": "2026-05-06",
+     "valid_from_time": "20:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 5720,
+     "valid_from": "2026-05-06",
+     "valid_from_time": "20:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 5720,
+     "valid_from": "2026-05-06",
+     "valid_from_time": "20:32",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "神奈川県",
+    "play_date": "2026年10月12日(月祝)"
+   }
+  },
+  {
+   "id": "498290",
+   "url": "https://tiget.net/events/498290",
+   "name": "パクユソンの独演会 DA.GA.NE！vol.2",
+   "venue": "The Modern Lovers",
+   "prefecture": null,
+   "performers": [
+    "パクユソン"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月27日(日) 16:30開場",
+     "date": "2026-09-27",
+     "tickets": [
+      {
+       "name": "全席イスあり。自由席。",
+       "price": 1800,
+       "class": "is-available is-fewremaining",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-09-27",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 1800,
+     "valid_from": "2026-06-13",
+     "valid_from_time": "12:42",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年09月27日(日)"
+   }
+  },
+  {
+   "id": "502632",
+   "url": "https://tiget.net/events/502632",
+   "name": "SARAH BIRTHDAY LIVE 2026 〜stargazer’s cafe〜",
+   "venue": "Live CafeBar Roman",
+   "prefecture": "東京",
+   "performers": [
+    "SARAH（from Nine Universe）"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月21日(月祝) 18:30開場",
+     "date": "2026-09-21",
+     "tickets": [
+      {
+       "name": "S席",
+       "price": 10000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.07.25 22:00 ~ 2026.07.30 23:59",
+         "parsed": [
+          "2026-07-25",
+          "22:00",
+          "2026-07-30",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "A席",
+       "price": 5000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.01 22:00 ~ 2026.09.20 23:59",
+         "parsed": [
+          "2026-08-01",
+          "22:00",
+          "2026-09-20",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "立ち見",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.01 22:00 ~ 2026.09.20 23:59",
+         "parsed": [
+          "2026-08-01",
+          "22:00",
+          "2026-09-20",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-09-21",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-06-29",
+     "valid_from_time": "16:59",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 5220,
+     "valid_from": "2026-06-29",
+     "valid_from_time": "16:59",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-06-29",
+     "valid_from_time": "16:59",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月21日(月祝)"
+   }
+  },
+  {
+   "id": "509045",
+   "url": "https://tiget.net/events/509045",
+   "name": "禁断之箱-パンドラのはこ-",
+   "venue": "氷川劇場 大宮氷川参道ニノ鳥居前",
+   "prefecture": "埼玉",
+   "performers": [
+    "不二山えふ",
+    "Esutta",
+    "線六本",
+    "宜月裕斗"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月26日(土) 14:00開場",
+     "date": "2026-09-26",
+     "tickets": [
+      {
+       "name": "自由席",
+       "price": 3000,
+       "class": "is-available is-fewremaining",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-09-26",
+   "ld_region": "埼玉県",
+   "ld_offers": [
+    {
+     "price": 3000,
+     "valid_from": "2026-07-23",
+     "valid_from_time": "15:51",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "埼玉県",
+    "play_date": "2026年09月26日(土)"
+   }
+  },
+  {
+   "id": "508669",
+   "url": "https://tiget.net/events/508669",
+   "name": "nenemelo主催ライブvol.1",
+   "venue": "LIVEHOUSE 下北沢 ろくでもない夜",
+   "prefecture": "東京",
+   "performers": [
+    "アヤメアヤ",
+    "松村美月",
+    "nenenone"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月03日(土) 10:00開場",
+     "date": "2026-10-03",
+     "tickets": [
+      {
+       "name": "VIPチケット",
+       "price": 8000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.07.25 20:00 ~ 2026.10.03 10:30",
+         "parsed": [
+          "2026-07-25",
+          "20:00",
+          "2026-10-03",
+          "10:30"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "通常チケット",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.07.25 21:00 ~ 2026.10.03 10:30",
+         "parsed": [
+          "2026-07-25",
+          "21:00",
+          "2026-10-03",
+          "10:30"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-03",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 8220,
+     "valid_from": "2026-07-21",
+     "valid_from_time": "22:17",
+     "availability": "InStock"
+    },
+    {
+     "price": 3220,
+     "valid_from": "2026-07-21",
+     "valid_from_time": "22:17",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月03日(土)"
+   }
+  },
+  {
+   "id": "505160",
+   "url": "https://tiget.net/events/505160",
+   "name": "C.A.T. FESTIVAL Vol.2",
+   "venue": "ユニオンベース",
+   "prefecture": "千葉",
+   "performers": [
+    "マック堺、ジャハナン族長、サワ、かすみん、トレーサーマン"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月18日(日) 08:00開場",
+     "date": "2026-10-18",
+     "tickets": [
+      {
+       "name": "",
+       "price": 4800,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-18",
+   "ld_region": "千葉県",
+   "ld_offers": [
+    {
+     "price": 4800,
+     "valid_from": "2026-07-08",
+     "valid_from_time": "13:31",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "千葉県",
+    "play_date": "2026年10月18日(日)"
+   }
+  },
+  {
+   "id": "503941",
+   "url": "https://tiget.net/events/503941",
+   "name": "満開パフェのお楽しみ会 〜ドカ盛り！⭐︎ウエハース多めでお願いします〜",
+   "venue": "新宿44ファンタジーホール",
+   "prefecture": "東京",
+   "performers": [
+    "元山日菜子",
+    "カクイ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月25日(金) 19:00開場",
+     "date": "2026-09-25",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-25",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3000,
+     "valid_from": "2026-07-03",
+     "valid_from_time": "17:34",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月25日(金)"
+   }
+  },
+  {
+   "id": "500125",
+   "url": "https://tiget.net/events/500125",
+   "name": "垣内ミル納言のじゃあ言わせていただきますけど！公開生配信vol.4",
+   "venue": "Stage & Curry lucky base",
+   "prefecture": "東京",
+   "performers": [
+    "松戸クラス",
+    "垣内D納言"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月22日(火祝) 19:00開場",
+     "date": "2026-09-22",
+     "tickets": [
+      {
+       "name": "自由席",
+       "price": 2500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-22",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 2500,
+     "valid_from": "2026-06-20",
+     "valid_from_time": "01:35",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月22日(火祝)"
+   }
+  },
+  {
+   "id": "503145",
+   "url": "https://tiget.net/events/503145",
+   "name": "夕霧×エスターク先輩 大阪初オフ会",
+   "venue": "大阪心斎橋某所",
+   "prefecture": null,
+   "performers": [
+    "エスターク先輩",
+    "夕霧(DaizyStripper、SUN PROPOZE)"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月23日(水祝) 15:45開場",
+     "date": "2026-09-23",
+     "tickets": [
+      {
+       "name": "",
+       "price": 10000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.07.01 19:00 ~ 2026.07.18 23:59",
+         "parsed": [
+          "2026-07-01",
+          "19:00",
+          "2026-07-18",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.07.01 19:00 ~ 2026.07.18 23:59",
+         "parsed": [
+          "2026-07-01",
+          "19:00",
+          "2026-07-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-23",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-07-01",
+     "valid_from_time": "19:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年09月23日(水祝)"
+   }
+  },
+  {
+   "id": "464407",
+   "url": "https://tiget.net/events/464407",
+   "name": "シダックスのこれできる？選手権&ビンゴ大会2026",
+   "venue": "エポックなかはら (川崎市総合福祉センター)",
+   "prefecture": "神奈川",
+   "performers": [
+    "シダックス",
+    "こうたろう"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 12:00開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "VIP席(1部2部通し)",
+       "price": 33000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ": ~ 2026.10.10 13:00",
+         "parsed": null
+        }
+       ]
+      },
+      {
+       "name": "1部2部通しチケット",
+       "price": 3300,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ": ~ 2026.10.10 13:00",
+         "parsed": null
+        }
+       ]
+      },
+      {
+       "name": "スタン宙出場チケット※1部2部通しチケット付き",
+       "price": 4400,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ": ~ 2026.10.10 13:00",
+         "parsed": null
+        }
+       ]
+      },
+      {
+       "name": "鉄棒早逆上がり選手権出場チケット※1部2部通しチケット付き",
+       "price": 4400,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ": ~ 2026.10.10 13:00",
+         "parsed": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining",
+    "is-available",
+    "is-unable is-unavailable",
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "神奈川県",
+   "ld_offers": [
+    {
+     "price": 33220,
+     "valid_from": "2026-02-03",
+     "valid_from_time": "17:39",
+     "availability": "InStock"
+    },
+    {
+     "price": 3520,
+     "valid_from": "2026-02-03",
+     "valid_from_time": "17:39",
+     "availability": "InStock"
+    },
+    {
+     "price": 4620,
+     "valid_from": "2026-02-03",
+     "valid_from_time": "17:39",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 4620,
+     "valid_from": "2026-02-03",
+     "valid_from_time": "17:39",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "神奈川県",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "492770",
+   "url": "https://tiget.net/events/492770",
+   "name": "ヴェルナー第1回単独ライブ「ヴェルナーの『お』単独」",
+   "venue": "関交協ハーモニックホール",
+   "prefecture": "東京",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年10月23日(金) 18:30開場",
+     "date": "2026-10-23",
+     "tickets": [
+      {
+       "name": "前売券（事前決済）",
+       "price": 2500,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.20 21:01 ~ 2026.10.23 12:00",
+         "parsed": [
+          "2026-06-20",
+          "21:01",
+          "2026-10-23",
+          "12:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.20 21:01 ~ 2026.10.19 23:59",
+         "parsed": [
+          "2026-06-20",
+          "21:01",
+          "2026-10-19",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "前売券（現地決済）",
+       "price": 2500,
+       "class": "is-unable is-unavailable",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-unable is-unavailable"
+   ],
+   "detail_date": "2026-10-23",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 2720,
+     "valid_from": "2026-05-24",
+     "valid_from_time": "21:09",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 2500,
+     "valid_from": "2026-05-24",
+     "valid_from_time": "21:09",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 2800,
+     "valid_from": "2026-05-24",
+     "valid_from_time": "21:09",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月23日(金)"
+   }
+  },
+  {
+   "id": "498540",
+   "url": "https://tiget.net/events/498540",
+   "name": "毎日が楽しくない単独ライブ「マーガレットを忘れないで」",
+   "venue": "西川口 Galaxy",
+   "prefecture": "埼玉",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 18:00開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "通常チケット",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "埼玉県",
+   "ld_offers": [
+    {
+     "price": 3000,
+     "valid_from": "2026-06-14",
+     "valid_from_time": "18:42",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "埼玉県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "495023",
+   "url": "https://tiget.net/events/495023",
+   "name": "インターネットカラオケマツリ〜バーチャル・リアル〜",
+   "venue": "SOUNDNOTE AKIHABARA（サウンドノート秋葉原）",
+   "prefecture": "東京",
+   "performers": [
+    "リリイ・プリュム",
+    "夢深める",
+    "サラ・スヴァティー",
+    "八雲うつろ",
+    "つゆり",
+    "望月うとと",
+    "伝輝うなき",
+    "椿貴",
+    "柳うい",
+    "りのん"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月10日(土) 11:20開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "通しチケット",
+       "price": 7500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "【特典付き】通しチケット",
+       "price": 11000,
+       "class": "is-unable is-closed",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月10日(土) 11:20開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "昼の部入場チケット",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "【特典付き】昼の部入場チケット",
+       "price": 6000,
+       "class": "is-unable is-closed",
+       "periods": []
+      },
+      {
+       "name": "昼の部箱推しチケット",
+       "price": 10000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "【特典付き】昼の部箱推しチケット",
+       "price": 12000,
+       "class": "is-unable is-closed",
+       "periods": []
+      },
+      {
+       "name": "昼の部応援(DD)チケット（現地用オプション。演者を複数推したい場合のための追加購入チケットです。）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月10日(土) 18:00開場",
+     "date": "2026-10-10",
+     "tickets": [
+      {
+       "name": "夜の部入場チケット",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "【特典付き】夜の部入場チケット",
+       "price": 6000,
+       "class": "is-unable is-closed",
+       "periods": []
+      },
+      {
+       "name": "夜の部箱推しチケット",
+       "price": 10000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "【特典付き】夜の部箱推しチケット",
+       "price": 12000,
+       "class": "is-unable is-closed",
+       "periods": []
+      },
+      {
+       "name": "夜の部応援(DD)チケット（現地用オプション。演者を複数推したい場合のための追加購入チケットです。）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-unable is-closed",
+    "is-available",
+    "is-unable is-closed",
+    "is-available",
+    "is-unable is-closed",
+    "is-available",
+    "is-available",
+    "is-unable is-closed",
+    "is-available",
+    "is-unable is-closed",
+    "is-available"
+   ],
+   "detail_date": "2026-10-10",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 6000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 10000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 12000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 6000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 10000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 12000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 7500,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    },
+    {
+     "price": 11000,
+     "valid_from": "2026-06-01",
+     "valid_from_time": "19:32",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81",
+    "84"
+   ],
+   "cat_names": [
+    "YouTuber",
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月10日(土)"
+   }
+  },
+  {
+   "id": "492429",
+   "url": "https://tiget.net/events/492429",
+   "name": "エスターク先輩×夕霧 スペシャルアフターパーティー",
+   "venue": "東京都内某所",
+   "prefecture": "東京",
+   "performers": [
+    "エスターク先輩",
+    "夕霧(DaizyStripper、SUN PROPOZE)"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月27日(日) 20:15開場",
+     "date": "2026-09-27",
+     "tickets": [
+      {
+       "name": "",
+       "price": 10000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.23 20:00 ~ 2026.06.21 20:00",
+         "parsed": [
+          "2026-05-23",
+          "20:00",
+          "2026-06-21",
+          "20:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.23 20:00 ~ 2026.06.21 20:00",
+         "parsed": [
+          "2026-05-23",
+          "20:00",
+          "2026-06-21",
+          "20:00"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-27",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-05-23",
+     "valid_from_time": "20:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "play_date": "2026年09月27日(日)"
+   }
+  },
+  {
+   "id": "486370",
+   "url": "https://tiget.net/events/486370",
+   "name": "まにこ Birthday Eve One-man Live「シアーギフト」",
+   "venue": "表参道GROUND",
+   "prefecture": "東京",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年10月17日(土) 12:00開場",
+     "date": "2026-10-17",
+     "tickets": [
+      {
+       "name": "【プレミア特典付き】最前列チケット",
+       "price": 10000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.22 12:30 ~ 2026.10.17 09:00",
+         "parsed": [
+          "2026-05-22",
+          "12:30",
+          "2026-10-17",
+          "09:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.22 12:30 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-05-22",
+          "12:30",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "通常席",
+       "price": 5500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.22 12:30 ~ 2026.10.17 09:00",
+         "parsed": [
+          "2026-05-22",
+          "12:30",
+          "2026-10-17",
+          "09:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.22 12:30 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-05-22",
+          "12:30",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【高校生以下】通常席",
+       "price": 2500,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.22 12:30 ~ 2026.10.17 09:00",
+         "parsed": [
+          "2026-05-22",
+          "12:30",
+          "2026-10-17",
+          "09:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.22 12:30 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-05-22",
+          "12:30",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-available",
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-10-17",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-04-29",
+     "valid_from_time": "21:33",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 5720,
+     "valid_from": "2026-04-29",
+     "valid_from_time": "21:33",
+     "availability": "InStock"
+    },
+    {
+     "price": 2720,
+     "valid_from": "2026-04-29",
+     "valid_from_time": "21:33",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月17日(土)"
+   }
+  },
+  {
+   "id": "491000",
+   "url": "https://tiget.net/events/491000",
+   "name": "びびの怖語2026",
+   "venue": "池袋東口ゲキパ",
+   "prefecture": "東京",
+   "performers": [
+    "びびっとな"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月14日(土) 12:30開場",
+     "date": "2026-11-14",
+     "tickets": [
+      {
+       "name": "自由席",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-11-14",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 2000,
+     "valid_from": "2026-05-18",
+     "valid_from_time": "09:05",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月14日(土)"
+   }
+  },
+  {
+   "id": "490697",
+   "url": "https://tiget.net/events/490697",
+   "name": "秋祭〜MATSURI〜2026",
+   "venue": "住吉区民センター",
+   "prefecture": "大阪",
+   "performers": [
+    "SMT Primo"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月17日(土) 11:30開場",
+     "date": "2026-10-17",
+     "tickets": [
+      {
+       "name": "",
+       "price": 17000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.17 07:39 ~ 2026.10.17 23:59",
+         "parsed": [
+          "2026-05-17",
+          "07:39",
+          "2026-10-17",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.17 07:39 ~ 2026.10.13 23:59",
+         "parsed": [
+          "2026-05-17",
+          "07:39",
+          "2026-10-13",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-17",
+   "ld_region": "大阪府",
+   "ld_offers": [
+    {
+     "price": 17220,
+     "valid_from": "2026-05-16",
+     "valid_from_time": "14:23",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "大阪府",
+    "play_date": "2026年10月17日(土)"
+   }
+  },
+  {
+   "id": "487675",
+   "url": "https://tiget.net/events/487675",
+   "name": "【特別企画】 花村きり チェキ撮影会",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [
+    "花村きり"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 13:50開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "花村きり チェキ撮影",
+       "price": 1000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.16 21:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-16",
+          "21:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1220,
+     "valid_from": "2026-05-04",
+     "valid_from_time": "23:08",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "487309",
+   "url": "https://tiget.net/events/487309",
+   "name": "ブイ×カケ フェス ゲストレイヤーチェキ撮影会",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [
+    "夜霧よみ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 13:50開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "夜霧よみ チェキ撮影",
+       "price": 1000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.16 21:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-16",
+          "21:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1220,
+     "valid_from": "2026-05-03",
+     "valid_from_time": "08:08",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "487308",
+   "url": "https://tiget.net/events/487308",
+   "name": "ブイ×カケ フェス ゲストレイヤーチェキ撮影会",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [
+    "狼月いすず"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 13:50開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "狼月いすず チェキ撮影",
+       "price": 1000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.16 21:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-16",
+          "21:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1220,
+     "valid_from": "2026-05-03",
+     "valid_from_time": "07:47",
+     "availability": "SoldOut"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "485274",
+   "url": "https://tiget.net/events/485274",
+   "name": "ブイ×カケ フェス ゲストレイヤーチェキ撮影会",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [
+    "世界えるか"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 13:50開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "世界えるか チェキ撮影",
+       "price": 1000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.16 21:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-16",
+          "21:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1220,
+     "valid_from": "2026-04-25",
+     "valid_from_time": "22:22",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "485937",
+   "url": "https://tiget.net/events/485937",
+   "name": "大月ゲームサミット2026",
+   "venue": "大月市立 大月短期大学",
+   "prefecture": "山梨",
+   "performers": [
+    "インパルス板倉",
+    "しろくる",
+    "おにや",
+    "いしいそうたろう",
+    "あおちゃんぺ",
+    "青木美菜",
+    "服部廉太郎"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月26日(土) 11:00開場",
+     "date": "2026-09-26",
+     "tickets": [
+      {
+       "name": "一般入場チケット",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 06:00 ~ 2026.09.26 11:00",
+         "parsed": [
+          "2026-05-01",
+          "06:00",
+          "2026-09-26",
+          "11:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.01 06:00 ~ 2026.09.22 23:59",
+         "parsed": [
+          "2026-05-01",
+          "06:00",
+          "2026-09-22",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "こども入場チケット（中学３年生まで）",
+       "price": 1000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 06:00 ~ 2026.09.26 11:00",
+         "parsed": [
+          "2026-05-01",
+          "06:00",
+          "2026-09-26",
+          "11:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.05.01 06:00 ~ 2026.09.22 23:59",
+         "parsed": [
+          "2026-05-01",
+          "06:00",
+          "2026-09-22",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-09-26",
+   "ld_region": "山梨県",
+   "ld_offers": [
+    {
+     "price": 3220,
+     "valid_from": "2026-04-28",
+     "valid_from_time": "11:52",
+     "availability": "InStock"
+    },
+    {
+     "price": 1220,
+     "valid_from": "2026-04-28",
+     "valid_from_time": "11:52",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81",
+    "84"
+   ],
+   "cat_names": [
+    "YouTuber",
+    "VTuber"
+   ],
+   "list": {
+    "area": "山梨県",
+    "play_date": "2026年09月26日(土)"
+   }
+  },
+  {
+   "id": "483458",
+   "url": "https://tiget.net/events/483458",
+   "name": "歌ってみます。",
+   "venue": "ライブハウス サウンドクリークドッポ 四ツ谷",
+   "prefecture": "東京",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 18:00開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "自由席",
+       "price": 3500,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.04.25 19:00 ~ 2026.09.19 18:30",
+         "parsed": [
+          "2026-04-25",
+          "19:00",
+          "2026-09-19",
+          "18:30"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3720,
+     "valid_from": "2026-04-18",
+     "valid_from_time": "20:04",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "482077",
+   "url": "https://tiget.net/events/482077",
+   "name": "もののけフェス2026【チケット先行案内登録】",
+   "venue": "台東区民会館",
+   "prefecture": "東京",
+   "performers": [
+    "もののけ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月21日(月祝) 00:00開場",
+     "date": "2026-09-21",
+     "tickets": [
+      {
+       "name": "先行案内登録",
+       "price": 0,
+       "class": "is-unable is-closed",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-21",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 0,
+     "valid_from": "2026-04-13",
+     "valid_from_time": "20:46",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月21日(月祝)"
+   }
+  },
+  {
+   "id": "476542",
+   "url": "https://tiget.net/events/476542",
+   "name": "ブイ×カケ フェス 事前予約駐車場",
+   "venue": "徳育保健センター",
+   "prefecture": "静岡",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 09:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "事前予約駐車券",
+       "price": 400,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 21:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-01",
+          "21:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 620,
+     "valid_from": "2026-03-22",
+     "valid_from_time": "13:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "474934",
+   "url": "https://tiget.net/events/474934",
+   "name": "☆VTuber様限定！ご本人様のグッズ委託販売&配布ブース",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 09:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "☆VTuber様限定 グッズ委託販売&配布",
+       "price": 0,
+       "class": "is-unable is-closed",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 0,
+     "valid_from": "2026-05-01",
+     "valid_from_time": "21:30",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "474931",
+   "url": "https://tiget.net/events/474931",
+   "name": "第3回 ブイ×カケフェス VTuberグッズ即売会",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 09:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "1スペース (机0.5台(約90cm))",
+       "price": 2600,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 21:30 ~ 2026.05.30 23:59",
+         "parsed": [
+          "2026-05-01",
+          "21:30",
+          "2026-05-30",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 2820,
+     "valid_from": "2026-05-01",
+     "valid_from_time": "21:30",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "474924",
+   "url": "https://tiget.net/events/474924",
+   "name": "第三回 ブイ×カケ フェス Vtuberコスプレ&撮影参加エントリーフォーム",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 10:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "コスプレチケット",
+       "price": 1600,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 12:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-01",
+          "12:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "撮影チケット",
+       "price": 1600,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 00:00 ~ 2026.09.18 23:59",
+         "parsed": [
+          "2026-05-01",
+          "00:00",
+          "2026-09-18",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1820,
+     "valid_from": "2026-03-15",
+     "valid_from_time": "21:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 1820,
+     "valid_from": "2026-03-15",
+     "valid_from_time": "21:31",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "474921",
+   "url": "https://tiget.net/events/474921",
+   "name": "痛車二輪エントリーフォーム＠第三回ブイ×カケフェス",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 09:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "エントリーチケット",
+       "price": 1100,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 21:30 ~ 2026.05.31 23:59",
+         "parsed": [
+          "2026-05-01",
+          "21:30",
+          "2026-05-31",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1320,
+     "valid_from": "2026-05-01",
+     "valid_from_time": "21:30",
+     "availability": "SoldOut"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "474906",
+   "url": "https://tiget.net/events/474906",
+   "name": "痛車(四輪)エントリーフォーム＠第三回ブイ×カケフェス",
+   "venue": "掛川市生涯学習センター",
+   "prefecture": "静岡",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 09:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "エントリーチケット",
+       "price": 1600,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.05.01 21:30 ~ 2026.05.31 23:59",
+         "parsed": [
+          "2026-05-01",
+          "21:30",
+          "2026-05-31",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "静岡県",
+   "ld_offers": [
+    {
+     "price": 1820,
+     "valid_from": "2026-05-01",
+     "valid_from_time": "21:30",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "静岡県",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "457276",
+   "url": "https://tiget.net/events/457276",
+   "name": "ねぶたるみ青森公演〜ただいま青森〜",
+   "venue": "THE THEATER Live & レンタルスペース",
+   "prefecture": "青森",
+   "performers": [
+    "ねぶたるみ",
+    "Mリア",
+    "垣内D納言"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月31日(土) 18:30開場",
+     "date": "2026-10-31",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3500,
+       "class": "is-available is-fewremaining",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-10-31",
+   "ld_region": "青森県",
+   "ld_offers": [
+    {
+     "price": 3500,
+     "valid_from": "2026-01-07",
+     "valid_from_time": "20:28",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "81"
+   ],
+   "cat_names": [
+    "YouTuber"
+   ],
+   "list": {
+    "area": "青森県",
+    "play_date": "2026年10月31日(土)"
+   }
+  },
+  {
+   "id": "522754",
+   "url": "https://tiget.net/events/522754",
+   "name": "「Pilina★Night☆Fever Vol.５ 〜BLAST〜」",
+   "venue": "アキバステラキューブ",
+   "prefecture": "東京",
+   "performers": [
+    "★aspera astra☆（佐伯華夏、中原ゆの）",
+    "森園そら",
+    "柳楽花乃",
+    "長谷川茉優"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月22日(日) 12:30開場",
+     "date": "2026-11-22",
+     "tickets": [
+      {
+       "name": "VIP／前方特典付きチケット(椅子)",
+       "price": 4000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.14 00:01 ~ 2026.11.22 12:30",
+         "parsed": [
+          "2026-09-14",
+          "00:01",
+          "2026-11-22",
+          "12:30"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "S／先着一般チケット(椅子)",
+       "price": 3500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "A／後方チケット(スタンディング)",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-11-22",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4220,
+     "valid_from": "2026-09-13",
+     "valid_from_time": "18:20",
+     "availability": "InStock"
+    },
+    {
+     "price": 3500,
+     "valid_from": "2026-09-13",
+     "valid_from_time": "18:20",
+     "availability": "InStock"
+    },
+    {
+     "price": 3000,
+     "valid_from": "2026-09-13",
+     "valid_from_time": "18:20",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月22日(日)"
+   }
+  },
+  {
+   "id": "522249",
+   "url": "https://tiget.net/events/522249",
+   "name": "Torimochi virtual live vol.028 DAY-2",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "はなごろも",
+    "雨丸ねむ",
+    "此花咲良",
+    "神楽桃",
+    "Sarah_",
+    "NiBOSHI",
+    "真綿アルマ",
+    "鳴鬼ルナ",
+    "狐ノ里たけのこ",
+    "酔眠はやね"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月22日(日) 11:00開場",
+     "date": "2026-11-22",
+     "tickets": [
+      {
+       "name": "現地入場チケット（昼の部）",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "１DAY（1日通し券）",
+       "price": 8000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（昼の部）",
+       "price": 5000,
+       "class": "is-unable is-unopened",
+       "periods": []
+      },
+      {
+       "name": "メモリアル特典チケット（昼）（直筆サイン色紙（6人））",
+       "price": 13500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年11月22日(日) 16:55開場",
+     "date": "2026-11-22",
+     "tickets": [
+      {
+       "name": "現地入場チケット（夜の部）",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（夜の部）",
+       "price": 5000,
+       "class": "is-unable is-unopened",
+       "periods": []
+      },
+      {
+       "name": "メモリアル特典チケット（夜）（直筆サイン色紙（6人））",
+       "price": 13500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened",
+    "is-available"
+   ],
+   "detail_date": "2026-11-22",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 8000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 5000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 13500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 5000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    },
+    {
+     "price": 13500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:11",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月22日(日)"
+   }
+  },
+  {
+   "id": "522238",
+   "url": "https://tiget.net/events/522238",
+   "name": "Torimochi virtual live vol.028 DAY-1",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "綿詩あや",
+    "市丸三九",
+    "卯月るな",
+    "蒼以ウタ",
+    "幸世いのり",
+    "駆空なぎ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月21日(土) 11:30開場",
+     "date": "2026-11-21",
+     "tickets": [
+      {
+       "name": "現地入場チケット",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット(演者を複数応援できる追加購入チケットです。)",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "メモリアル特典チケット（直筆サイン色紙（6人））",
+       "price": 13500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券",
+       "price": 5000,
+       "class": "is-unable is-unopened",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-11-21",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "13:59",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "13:59",
+     "availability": "InStock"
+    },
+    {
+     "price": 13500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "13:59",
+     "availability": "InStock"
+    },
+    {
+     "price": 5000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "13:59",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月21日(土)"
+   }
+  },
+  {
+   "id": "522256",
+   "url": "https://tiget.net/events/522256",
+   "name": "Torimochi virtual live vol.028 DAY-3",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "いとうすとら",
+    "[F]uwa",
+    "丁香樹アイロ",
+    "リム・オランジュ",
+    "もあこ",
+    "速水らいむ",
+    "逆巻あのん",
+    "翡翠 音華",
+    "依yori",
+    "魔姫ラウラ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月28日(土) 11:30開場",
+     "date": "2026-11-28",
+     "tickets": [
+      {
+       "name": "現地入場チケット（昼の部）",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "１DAY（1日通し券）",
+       "price": 8000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（昼の部）",
+       "price": 5000,
+       "class": "is-unable is-unopened",
+       "periods": []
+      },
+      {
+       "name": "メモリアル特典チケット（昼）（直筆サイン色紙（6人））",
+       "price": 13500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年11月28日(土) 17:35開場",
+     "date": "2026-11-28",
+     "tickets": [
+      {
+       "name": "現地入場チケット（夜の部）",
+       "price": 4500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（夜の部）",
+       "price": 5000,
+       "class": "is-unable is-unopened",
+       "periods": []
+      },
+      {
+       "name": "メモリアル特典チケット（夜）（直筆サイン色紙（6人））",
+       "price": 13500,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened",
+    "is-available"
+   ],
+   "detail_date": "2026-11-28",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 8000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 5000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 13500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 5000,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    },
+    {
+     "price": 13500,
+     "valid_from": "2026-09-11",
+     "valid_from_time": "14:31",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年11月28日(土)"
+   }
+  },
+  {
+   "id": "520146",
+   "url": "https://tiget.net/events/520146",
+   "name": "Limited",
+   "venue": "上野 Untitled(イベント&ライブスペース)",
+   "prefecture": "東京",
+   "performers": [
+    "篠月羽天",
+    "点",
+    "ナナサキ",
+    "龍拡散",
+    "流紀"
+   ],
+   "programs": [
+    {
+     "datetime_text": "",
+     "date": null,
+     "tickets": []
+    }
+   ],
+   "statuses": [],
+   "detail_date": "2026-10-12",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 2000,
+     "valid_from": "2026-09-30",
+     "valid_from_time": "21:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月12日(月祝)"
+   }
+  },
+  {
+   "id": "517366",
+   "url": "https://tiget.net/events/517366",
+   "name": "ホシアツメ 𝐅𝐈𝐑𝐒𝐓 𝐀𝐍𝐃 𝐋𝐀𝐒𝐓 𝐎𝐍𝐄-𝐌𝐀𝐍 𝐋𝐈𝐕𝐄 摩擦と革命 ~𝐩𝐫𝐢𝐬𝐦~",
+   "venue": "unravel tokyo",
+   "prefecture": "東京",
+   "performers": [
+    "ホシアツメ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年12月05日(土) 14:30開場",
+     "date": "2026-12-05",
+     "tickets": [
+      {
+       "name": "ライブチケット",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.05 15:30",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-05",
+          "15:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.01 23:59",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-01",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "ライブチケット(ファンミーティング付)",
+       "price": 11000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.05 15:30",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-05",
+          "15:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.01 23:59",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-01",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【対象者様限定】ファンミーティング参加チケット【特定クラファン支援者様(ライブ確約チケットをお持ちの方)限定】",
+       "price": 4500,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.05 15:30",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-05",
+          "15:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.01 23:59",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-01",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年12月05日(土) 19:30開場",
+     "date": "2026-12-05",
+     "tickets": [
+      {
+       "name": "【ことり】お渡し会チケット【限定30枠】※ファンミーティングチケット必須",
+       "price": 2000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.05 19:30",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-05",
+          "19:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.01 23:59",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-01",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【りず】お渡し会チケット【限定30枠】 ※ファンミーティングチケット必須",
+       "price": 2000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.05 19:30",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-05",
+          "19:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.01 23:59",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-01",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "【よつ】お渡し会チケット【限定30枠】 ※ファンミーティングチケット必須",
+       "price": 2000,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.05 19:30",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-05",
+          "19:30"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.09.08 21:30 ~ 2026.12.01 23:59",
+         "parsed": [
+          "2026-09-08",
+          "21:30",
+          "2026-12-01",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available is-fewremaining",
+    "is-available is-fewremaining",
+    "is-available is-fewremaining",
+    "is-available is-fewremaining"
+   ],
+   "detail_date": "2026-12-05",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 6220,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "09:08",
+     "availability": "InStock"
+    },
+    {
+     "price": 11220,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "09:08",
+     "availability": "InStock"
+    },
+    {
+     "price": 4720,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "09:08",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "09:08",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "09:08",
+     "availability": "InStock"
+    },
+    {
+     "price": 2220,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "09:08",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年12月05日(土)"
+   }
+  },
+  {
+   "id": "494645",
+   "url": "https://tiget.net/events/494645",
+   "name": "汐音かなう生誕祭2026 -Aqour Memoria-",
+   "venue": "アプロ赤坂-LIVE COMMUNICATION Aphro Akasaka-",
+   "prefecture": "東京",
+   "performers": [
+    "汐音かなう",
+    "薄荷ミント",
+    "星見マル",
+    "鬼響-Belle Flower-",
+    "いぶにぃ",
+    "ふわわ♪",
+    "鬼宿",
+    "チャド",
+    "こーひぃ",
+    "マスクマンレオ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月24日(土) 16:50開場",
+     "date": "2026-10-24",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.30 20:44 ~ 2026.10.24 23:59",
+         "parsed": [
+          "2026-08-30",
+          "20:44",
+          "2026-10-24",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.30 20:44 ~ 2026.10.20 23:59",
+         "parsed": [
+          "2026-08-30",
+          "20:44",
+          "2026-10-20",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-24",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3220,
+     "valid_from": "2026-05-31",
+     "valid_from_time": "10:14",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月24日(土)"
+   }
+  },
+  {
+   "id": "516086",
+   "url": "https://tiget.net/events/516086",
+   "name": "YURiコス＠百合が原公園",
+   "venue": "リリリカフェ【百合が原公園内】",
+   "prefecture": null,
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "",
+     "date": null,
+     "tickets": [
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available is-fewremaining",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "",
+       "price": null,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.11 00:00",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-11",
+          "00:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.06.26 16:19 ~ 2026.10.08 23:59",
+         "parsed": [
+          "2026-06-26",
+          "16:19",
+          "2026-10-08",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available is-fewremaining",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": null,
+   "ld_offers": [],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月11日(日) 〜 10月12日(月祝)"
+   }
+  },
+  {
+   "id": "494643",
+   "url": "https://tiget.net/events/494643",
+   "name": "みんかな生誕祭2026 -Halo Bubble!!-",
+   "venue": "アプロ赤坂-LIVE COMMUNICATION Aphro Akasaka-",
+   "prefecture": "東京",
+   "performers": [
+    "汐音かなう",
+    "薄荷ミント",
+    "pasuta",
+    "こーひぃ",
+    "ちーちゃん",
+    "きななぎ きな"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月24日(土) 11:30開場",
+     "date": "2026-10-24",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.28 00:07 ~ 2026.10.24 23:59",
+         "parsed": [
+          "2026-08-28",
+          "00:07",
+          "2026-10-24",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.28 00:07 ~ 2026.10.20 23:59",
+         "parsed": [
+          "2026-08-28",
+          "00:07",
+          "2026-10-20",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-10-24",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3220,
+     "valid_from": "2026-05-31",
+     "valid_from_time": "10:12",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月24日(土)"
+   }
+  },
+  {
+   "id": "517390",
+   "url": "https://tiget.net/events/517390",
+   "name": "ハロパ！～みんなでハロウィン～",
+   "venue": "+ICHICAFE（名古屋）",
+   "prefecture": null,
+   "performers": [
+    "真白やっこ",
+    "ケルイム",
+    "小日向雨。",
+    "Akar！",
+    "＃プリン族",
+    "長月志温",
+    "花笠 海月",
+    "月揺 ひろな"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月31日(土) 11:00開場",
+     "date": "2026-10-31",
+     "tickets": [
+      {
+       "name": "リスナー参加チケット",
+       "price": 2500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "トートバッグ追加申込",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-31",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 2500,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "12:19",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-25",
+     "valid_from_time": "12:19",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月31日(土)"
+   }
+  },
+  {
+   "id": "515839",
+   "url": "https://tiget.net/events/515839",
+   "name": "TRY!!!～なんでもアリのハロウィンパーティー！",
+   "venue": "イベントバー エデン 横浜",
+   "prefecture": "神奈川",
+   "performers": [
+    "虎井おん",
+    "らぶてん",
+    "継木マイラ"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月31日(土) 11:45開場",
+     "date": "2026-10-31",
+     "tickets": [
+      {
+       "name": "1部～遊びの時間～",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月31日(土) 14:45開場",
+     "date": "2026-10-31",
+     "tickets": [
+      {
+       "name": "2部～禊の時間～",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月31日(土) 17:45開場",
+     "date": "2026-10-31",
+     "tickets": [
+      {
+       "name": "3部～秘密の時間～",
+       "price": 3000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-31",
+   "ld_region": "神奈川県",
+   "ld_offers": [
+    {
+     "price": 3000,
+     "valid_from": "2026-08-19",
+     "valid_from_time": "15:45",
+     "availability": "InStock"
+    },
+    {
+     "price": 3000,
+     "valid_from": "2026-08-19",
+     "valid_from_time": "15:45",
+     "availability": "InStock"
+    },
+    {
+     "price": 3000,
+     "valid_from": "2026-08-19",
+     "valid_from_time": "15:45",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "神奈川県",
+    "play_date": "2026年10月31日(土)"
+   }
+  },
+  {
+   "id": "515594",
+   "url": "https://tiget.net/events/515594",
+   "name": "BirdLimeTrap vol.012 DAY2",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "Hakusyu",
+    "巻乃もなか",
+    "小夜セレネ",
+    "箱乃なかみ",
+    "夏芽みのり",
+    "らびぱれ!!",
+    "朱音 蜜柑",
+    "ゆきね-幸音-",
+    "波音羊",
+    "あおしろい。"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月12日(月祝) 11:00開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "メモリアル特典チケット（昼）一般チケット＋デジタルサイン色紙（昼） ＋フライヤーポストカード＋フェイクチケット",
+       "price": 10500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "一般チケット（昼）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "1DAYチケット",
+       "price": 7000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月12日(月祝) 16:50開場",
+     "date": "2026-10-12",
+     "tickets": [
+      {
+       "name": "メモリアル特典チケット（夜）一般チケット＋デジタルサイン色紙（夜） ＋フライヤーポストカード＋フェイクチケット",
+       "price": 10500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "一般チケット（夜）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-12",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 10500,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    },
+    {
+     "price": 7000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    },
+    {
+     "price": 10500,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "17:01",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月12日(月祝)"
+   }
+  },
+  {
+   "id": "515591",
+   "url": "https://tiget.net/events/515591",
+   "name": "BirdLimeTrap vol.012 DAY1",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "茶飯",
+    "結繋心音",
+    "あまねもも",
+    "川田ゆゆら",
+    "未確認動物うまぴ",
+    "乙女ノ浪漫",
+    "釣鐘ふうり",
+    "狗甘わをん",
+    "LOCO",
+    "詩芽れをん"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月11日(日) 11:50開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "メモリアル特典チケット（昼）一般チケット＋デジタルサイン色紙（昼） ＋フライヤーポストカード＋フェイクチケット（あまねももさん対象外）",
+       "price": 10500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "一般チケット（昼）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "1DAYチケット",
+       "price": 7000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月11日(日) 17:30開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "メモリアル特典チケット（夜）一般チケット＋デジタルサイン色紙（夜） ＋フライヤーポストカード＋フェイクチケット",
+       "price": 10500,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "一般チケット（夜）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 10500,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    },
+    {
+     "price": 7000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    },
+    {
+     "price": 10500,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-18",
+     "valid_from_time": "16:54",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月11日(日)"
+   }
+  },
+  {
+   "id": "514766",
+   "url": "https://tiget.net/events/514766",
+   "name": "VSinger StarS - vol.2 -",
+   "venue": "秋葉原Galaxy",
+   "prefecture": "東京",
+   "performers": [
+    "夕月ティア",
+    "三軒しらべ",
+    "み音",
+    "白餅だんご",
+    "小宵/Koyoi",
+    "桜羽ほのあ",
+    "魔法少女シュネー",
+    "ちも＊",
+    "メルシュ-Malstrøm-",
+    "黒咲ルシア"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月03日(土) 11:40開場",
+     "date": "2026-10-03",
+     "tickets": [
+      {
+       "name": "メモリアル特典チケット（昼）一般チケット＋デジタルサイン色紙（昼） ＋フライヤーポストカード＋フェイクチケット",
+       "price": 10400,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "一般チケット（昼）",
+       "price": 4400,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "1DAYチケット",
+       "price": 7800,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年10月03日(土) 17:40開場",
+     "date": "2026-10-03",
+     "tickets": [
+      {
+       "name": "メモリアル特典チケット（夜）一般チケット＋デジタルサイン色紙（夜） ＋フライヤーポストカード＋フェイクチケット",
+       "price": 10400,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "一般チケット（夜）",
+       "price": 4400,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜）",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-available"
+   ],
+   "detail_date": "2026-10-03",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 10400,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 4400,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 7800,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 10400,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 4400,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-08-15",
+     "valid_from_time": "05:44",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年10月03日(土)"
+   }
+  },
+  {
+   "id": "506897",
+   "url": "https://tiget.net/events/506897",
+   "name": "少女革命計画 × 岡田美術館「ぬいぐるみお泊り会」",
+   "venue": "岡田美術館",
+   "prefecture": "神奈川",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月25日(金) 20:00開場",
+     "date": "2026-09-25",
+     "tickets": [
+      {
+       "name": "ぬいぐるみお泊り会参加券",
+       "price": 5000,
+       "class": "is-unable is-closed",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.14 20:00 ~ 2026.08.31 23:59",
+         "parsed": [
+          "2026-08-14",
+          "20:00",
+          "2026-08-31",
+          "23:59"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.14 20:00 ~ 2026.08.31 23:59",
+         "parsed": [
+          "2026-08-14",
+          "20:00",
+          "2026-08-31",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-25",
+   "ld_region": "神奈川県",
+   "ld_offers": [
+    {
+     "price": 5220,
+     "valid_from": "2026-08-14",
+     "valid_from_time": "20:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "神奈川県",
+    "play_date": "2026年09月25日(金)"
+   }
+  },
+  {
+   "id": "510414",
+   "url": "https://tiget.net/events/510414",
+   "name": "FLANICA FES",
+   "venue": "東京都豊島区某所",
+   "prefecture": "東京",
+   "performers": [
+    "FLANICA",
+    "百瀬ヒバナ",
+    "あかつきるき",
+    "shin",
+    "羊羊"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年10月11日(日) 16:00開場",
+     "date": "2026-10-11",
+     "tickets": [
+      {
+       "name": "Sチケット",
+       "price": 10000,
+       "class": "is-unable is-unavailable",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.04 20:00 ~ 2026.10.11 17:00",
+         "parsed": [
+          "2026-08-04",
+          "20:00",
+          "2026-10-11",
+          "17:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.04 20:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-04",
+          "20:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "通常チケット",
+       "price": 6000,
+       "class": "is-available",
+       "periods": [
+        {
+         "pay": "カード決済",
+         "text": ":2026.08.04 20:00 ~ 2026.10.11 17:00",
+         "parsed": [
+          "2026-08-04",
+          "20:00",
+          "2026-10-11",
+          "17:00"
+         ]
+        },
+        {
+         "pay": "コンビニ決済",
+         "text": ":2026.08.04 20:00 ~ 2026.10.07 23:59",
+         "parsed": [
+          "2026-08-04",
+          "20:00",
+          "2026-10-07",
+          "23:59"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-unavailable",
+    "is-available"
+   ],
+   "detail_date": "2026-10-11",
+   "ld_region": null,
+   "ld_offers": [
+    {
+     "price": 10220,
+     "valid_from": "2026-07-29",
+     "valid_from_time": "15:24",
+     "availability": "SoldOut"
+    },
+    {
+     "price": 6220,
+     "valid_from": "2026-07-29",
+     "valid_from_time": "15:24",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "play_date": "2026年10月11日(日)"
+   }
+  },
+  {
+   "id": "507555",
+   "url": "https://tiget.net/events/507555",
+   "name": "Torimochi virtual live vol.027 DAY-1",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "のり＊",
+    "もあこ",
+    "スラたん",
+    "綿芽なの",
+    "御祈れ〜汰",
+    "LOCO",
+    "愛乃芽咲夜",
+    "皐月",
+    "皇ソウビ",
+    "夕凪潮"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月19日(土) 11:30開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "現地入場チケット（昼の部）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "１DAY（1日通し券）",
+       "price": 7000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（昼の部）",
+       "price": 4500,
+       "class": "is-unable is-unopened",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年09月19日(土) 17:35開場",
+     "date": "2026-09-19",
+     "tickets": [
+      {
+       "name": "現地入場チケット（夜の部）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（夜の部）",
+       "price": 4500,
+       "class": "is-unable is-unopened",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-09-19",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    },
+    {
+     "price": 7000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:15",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月19日(土)"
+   }
+  },
+  {
+   "id": "507556",
+   "url": "https://tiget.net/events/507556",
+   "name": "Torimochi virtual live vol.027 DAY-2",
+   "venue": "ライブハウス クラブドロシー",
+   "prefecture": "東京",
+   "performers": [
+    "朱月星華",
+    "雪城ゆあああああ",
+    "あおすずあさぎ",
+    "狐妃ｰkikiｰ",
+    "天上ノア",
+    "野田六実",
+    "奈落ゆい",
+    "小鳥遊うた",
+    "水音らい",
+    "黒切名呼"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年09月20日(日) 11:00開場",
+     "date": "2026-09-20",
+     "tickets": [
+      {
+       "name": "現地入場チケット（昼の部）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（昼の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "１DAY（1日通し券）",
+       "price": 7000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（昼の部）",
+       "price": 4500,
+       "class": "is-unable is-unopened",
+       "periods": []
+      }
+     ]
+    },
+    {
+     "datetime_text": "2026年09月20日(日) 16:55開場",
+     "date": "2026-09-20",
+     "tickets": [
+      {
+       "name": "現地入場チケット（夜の部）",
+       "price": 4000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "応援チケット（夜の部）演者を複数応援できる追加購入チケットです。",
+       "price": 2000,
+       "class": "is-available",
+       "periods": []
+      },
+      {
+       "name": "当日券（夜の部）",
+       "price": 4500,
+       "class": "is-unable is-unopened",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened",
+    "is-available",
+    "is-available",
+    "is-unable is-unopened"
+   ],
+   "detail_date": "2026-09-20",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 4000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    },
+    {
+     "price": 7000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    },
+    {
+     "price": 4000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    },
+    {
+     "price": 2000,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    },
+    {
+     "price": 4500,
+     "valid_from": "2026-07-16",
+     "valid_from_time": "20:25",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月20日(日)"
+   }
+  },
+  {
+   "id": "495983",
+   "url": "https://tiget.net/events/495983",
+   "name": "rE:音LIVE!!",
+   "venue": "大塚Hearts Next",
+   "prefecture": "東京",
+   "performers": [],
+   "programs": [
+    {
+     "datetime_text": "2026年09月20日(日) 17:10開場",
+     "date": "2026-09-20",
+     "tickets": [
+      {
+       "name": "",
+       "price": 3400,
+       "class": "is-unable is-closed",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-unable is-closed"
+   ],
+   "detail_date": "2026-09-20",
+   "ld_region": "東京都",
+   "ld_offers": [
+    {
+     "price": 3400,
+     "valid_from": "2026-07-20",
+     "valid_from_time": "20:00",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "東京都",
+    "play_date": "2026年09月20日(日)"
+   }
+  },
+  {
+   "id": "499519",
+   "url": "https://tiget.net/events/499519",
+   "name": "SO.ON project LaV LIVE TOUR 2026「LaV with you!!」【大阪公演】",
+   "venue": "大阪スクールオブミュージック専門学校 / 大阪ダンス・俳優＆舞台芸術専門学校",
+   "prefecture": "大阪",
+   "performers": [
+    "SO.ON project LaV"
+   ],
+   "programs": [
+    {
+     "datetime_text": "2026年11月29日(日) 17:30開場",
+     "date": "2026-11-29",
+     "tickets": [
+      {
+       "name": "整理番号付き入場券",
+       "price": 0,
+       "class": "is-available",
+       "periods": []
+      }
+     ]
+    }
+   ],
+   "statuses": [
+    "is-available"
+   ],
+   "detail_date": "2026-11-29",
+   "ld_region": "大阪府",
+   "ld_offers": [
+    {
+     "price": 0,
+     "valid_from": "2026-06-17",
+     "valid_from_time": "17:52",
+     "availability": "InStock"
+    }
+   ],
+   "cats": [
+    "84"
+   ],
+   "cat_names": [
+    "VTuber"
+   ],
+   "list": {
+    "area": "大阪府",
+    "play_date": "2026年11月29日(日)"
+   }
+  }
+ ],
+ "errors": []
+}
