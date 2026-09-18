@@ -182,6 +182,43 @@ def pref_from_place(text):
     return None
 
 
+# 🎯🎯2026-09-18 ユーザーが見つけた＝**会場の欄を押すとGoogleマップが開いて県が分かる**。
+#   TIGETのHTMLには住所が無いが、会場リンクが `https://maps.google.com/?cid=<cid>` の形。
+#   そのcidに **`&output=embed`** を付けると**2.6KBの軽いページ**が返り、住所が丸ごと入っている
+#   （実測＝「〒169-0072 東京都新宿区大久保１丁目１７−８ RE:LIVE HALL」）。
+#   ⚠️`output=embed` を付けないと800KBのJSの殻が返るだけで住所は取れない。
+_CID_CACHE = {}
+
+
+def pref_from_cid(cid, sleep=0.4):
+    """GoogleマップのcidからJ都道府県を取る（`output=embed` の軽いページを読む）。"""
+    if not cid:
+        return None
+    if cid in _CID_CACHE:
+        return _CID_CACHE[cid]
+    # 🚨Googleには**ブラウザのUAと日本語のAccept-Language**で行く。
+    #    道具の共通UA（OSHINAVI-harvest）で引くと住所が日本語で返らず、県が1件も取れなかった
+    #    （2026-09-18＝88件ぜんぶ None になって気づいた）。
+    req = urllib.request.Request(
+        'https://maps.google.com/maps?cid=%s&output=embed' % cid,
+        headers={'User-Agent': ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                                '(KHTML, like Gecko) Chrome/120.0 Safari/537.36'),
+                 'Accept-Language': 'ja,en;q=0.8'})
+    try:
+        h = urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
+    except Exception:
+        _CID_CACHE[cid] = None
+        return None
+    m = re.search(r'(東京都|大阪府|京都府|北海道|[一-龥]{2,3}県)', h)
+    p = None
+    if m:
+        p = m.group(1)
+        p = p if p == '北海道' else p[:-1]
+    _CID_CACHE[cid] = p
+    time.sleep(sleep)
+    return p
+
+
 def parse_jp_date(s):
     """「2026年10月18日(日)」→ 2026-10-18"""
     m = re.search(r'(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日', s or '')
@@ -257,6 +294,9 @@ def parse_event(html, eid):
     #    JSON-LD の addressRegion を控えの県として持つ（2026-09-18＝バッジが「（会場 11/21公演）」になった）。
     rm = re.search(r'"addressRegion":\s*"([^"]+)"', html)
     out['ld_region'] = rm.group(1) if rm else None
+    # 会場リンクのGoogleマップcid（これがあれば県は確実に取れる）
+    cm = re.search(r'href="https?://maps\.google\.com/\?cid=(\d+)"', sec.get('会場', ''))
+    out['venue_cid'] = cm.group(1) if cm else None
     # 県の優先順＝①会場名の県名 ②JSON-LDのaddressRegion ③会場名・公演名の地名（対応表）
     #   ④（呼ぶ側で）一覧の「場所：」。⚠️配信だけのイベントは県を入れない（会場が「配信」）
     out['prefecture'] = pref_of(ven) or pref_of(out['ld_region'] or '')
