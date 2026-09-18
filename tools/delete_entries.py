@@ -69,7 +69,12 @@ def delete_entries(filepath: str, del_ids: set):
     depth = 0
     in_array = False
     end_idx = None
-    for idx in range(start_idx, len(lines)):
+    # 公演名に片方だけの [ ] が入ると括弧の数え上げが狂う（2026-09-19 TIGET）＝行頭の "];" を先に探す
+    for idx in range(start_idx + 1, len(lines)):
+        if re.match(r'\];\s*$', lines[idx]):
+            end_idx = idx
+            break
+    for idx in range(start_idx, len(lines) if end_idx is None else 0):
         for ch in lines[idx]:
             if ch == '[':
                 depth += 1
