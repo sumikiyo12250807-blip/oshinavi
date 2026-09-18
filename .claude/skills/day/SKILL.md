@@ -236,8 +236,12 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      python tools/tiget_harvest.py --cats 81,84,79,80,45,46,41,29 --stop-known 1 \
             --out tmp/tiget_MMDD.json
      python tools/build_tiget_entries.py tmp/tiget_MMDD.json --out tmp/built_tiget_MMDD.json
-     python tools/gate_tiget_slots.py     # 🔒 exit 0 以外なら投入しない
+     python tools/inject_tiget.py tmp/built_tiget_MMDD.json            # 調べるだけ
+     python tools/inject_tiget.py tmp/built_tiget_MMDD.json --apply    # 投入（genre:"new"）
+     python tools/gate_tiget_slots.py     # 🔒 exit 0 以外なら投入しない（投入後にも回す）
      ```
+     `inject_tiget.py` が二重登録を外す（①TIGETのURLが既にある ②名前×公演日が一致 ③同名の登録あり）。
+     ②③は**入れずに報告**＝畳む先があるかは人が見る。投入後に「プールの件数＝NEW_ORDERの件数」を数える。
      🎯**`--stop-known 1` が毎朝用**＝一覧は新着順なので「登録済みだけのページ」に当たった時点で
        そのカテゴリを打ち切り、**個別ページも未登録の分だけ**引く（1カテゴリ1〜3ページで済む）。
        付けないと2,000件を全部引いて1時間かかる（初回だけ全部引く）。
