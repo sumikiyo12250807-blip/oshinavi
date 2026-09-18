@@ -120,7 +120,7 @@ PLACE_PREF = {
     # 追加（2026-09-18・ユーザーが調べる前に機械で潰せる分）
     '松江': '島根', '長堀橋': '大阪', '北参道': '東京', '鶴見': '神奈川', '大久保': '東京',
     '本八幡': '千葉', '柏': '千葉', '船橋': '千葉', '松戸': '千葉',
-    '大分': '大分', '宇部': '山口', '今治': '愛媛', '米子': '鳥取',
+    '大分': '大分', '宇部': '山口', '今治': '愛媛', '米子': '鳥取', '高槻': '大阪',
     # 🚨「都内」は東京都内の意味＝これは事実（推測ではない）
     '都内': '東京',
     # 東京23区の区名（区名が書いてあれば東京で確定）
@@ -151,6 +151,15 @@ PLACE_PREF_ROMA = {
     'OKINAWA': '沖縄', 'NAHA': '沖縄', 'SAITAMA': '埼玉', 'CHIBA': '千葉',
 }
 _ROMA_KEYS = sorted(PLACE_PREF_ROMA, key=len, reverse=True)
+
+# 🚨会場名に地名が入っていない箱＝**ユーザーが住所を調べて教えてくれた分**をここに足す。
+#   （地図のcidが無い会場は機械で引けないので、ここが最後の受け皿）
+#   足す時は「調べた住所」をコメントに残す＝あとで疑わしくなった時に辿れるように。
+VENUE_PREF = {
+    'SPACE BLANZ': '東京',      # 〒170-0011 東京都豊島区池袋本町4-45-1 芙蓉ビル 1F&B1F（2026-09-18 ユーザー調べ）
+    'Mu-Mo': '福岡',            # 〒811-3437 福岡県宗像市久原400 全天候型こども広場Mu-Mo（2026-09-18 ユーザー調べ）
+    'ムーモ': '福岡',            # 同じ箱のカナ表記
+}
 # 長い地名から当てる（「西川口」を「川口」より先に見る／「GOTANDA」など）
 _PLACE_KEYS = sorted(PLACE_PREF, key=len, reverse=True)
 
@@ -165,6 +174,9 @@ BARE_PREF = ('北海道 青森 岩手 宮城 秋田 山形 福島 茨城 栃木 
 def pref_from_place(text):
     """会場名・公演名の地名から県を当てる。表にある地名と県名の短い形だけ＝推測はしない。"""
     t = text or ''
+    for k, v in VENUE_PREF.items():          # 調べて分かった会場は最優先
+        if k in t:
+            return v
     for k in _PLACE_KEYS:
         if k in t:
             return PLACE_PREF[k]
@@ -425,6 +437,9 @@ def _selftest():
     assert pref_from_place('としま区民センター６階') == '東京'
     assert pref_from_place('溝ノ口劇場') == '神奈川'
     assert pref_from_place('ひこね市文化プラザ グランドホール') == '滋賀'
+    assert pref_from_place('SPACE BLANZ') == '東京'           # 調べて分かった会場の表
+    assert pref_from_place('全天候型こども広場Mu-Mo（ムーモ）') == '福岡'
+    assert pref_from_place("高槻 JK's BIRD") == '大阪'
     assert pref_from_place('月夜のケダモノ') is None          # 決まらないものは空のまま
     assert pref_from_place('Nakano space Q') is None         # 中野は東京/長野で決まらない
     assert pref_from_place('ライブスペース スペシャルカラーズ') is None
