@@ -86,6 +86,65 @@ def pref_of(text):
     return None
 
 
+# 🚨🚨2026-09-18 ユーザー決定＝**地名から県名を入れる**
+#   「県名でお願い」。理由＝県が空だと**AREA（地方）の絞り込みから漏れる**
+#   （絞り込みは券種名→prefecture→会場名の順に**県名そのもの**を探すので、
+#    「仙台市青葉区」「池袋西口公園」「GOTANDA G6」では拾えない）。
+#   ⚠️入れるのは**地名と県の対応が事実として決まっているものだけ**。
+#     推測になる曖昧な地名（中野＝東京/長野、府中＝東京/広島 など）は**表に入れない**。
+#   ⚠️「津」「堺」のような他の語に混ざる1文字地名も入れない（誤爆する）。
+PLACE_PREF = {
+    # 政令市・県庁所在地など（県名と違う書き方のもの）
+    '札幌': '北海道', '函館': '北海道', '旭川': '北海道', '小樽': '北海道', '百合が原': '北海道',
+    '仙台': '宮城', '盛岡': '岩手', '郡山': '福島', '会津': '福島',
+    'さいたま': '埼玉', '大宮': '埼玉', '川越': '埼玉', '西川口': '埼玉', '川口': '埼玉',
+    '横浜': '神奈川', '川崎': '神奈川', '相模原': '神奈川', '藤沢': '神奈川',
+    '宇都宮': '栃木', '高崎': '群馬', '前橋': '群馬', '水戸': '茨城', 'つくば': '茨城',
+    '甲府': '山梨', '松本': '長野', '金沢': '石川', '名古屋': '愛知', '豊橋': '愛知', '岡崎': '愛知',
+    '浜松': '静岡', '沼津': '静岡', '四日市': '三重', '大津': '滋賀',
+    '神戸': '兵庫', '姫路': '兵庫', '西宮': '兵庫', '尼崎': '兵庫',
+    '北九州': '福岡', '博多': '福岡', '天神': '福岡', '小倉': '福岡',
+    '那覇': '沖縄', '下関': '山口', '倉敷': '岡山', '福山': '広島',
+    # 東京の地名（ライブハウスの所在地に出る形）
+    '渋谷': '東京', '新宿': '東京', '池袋': '東京', '原宿': '東京', '秋葉原': '東京',
+    '上野': '東京', '浅草': '東京', '品川': '東京', '五反田': '東京', 'GOTANDA': '東京',
+    '高円寺': '東京', '吉祥寺': '東京', '下北沢': '東京', '恵比寿': '東京', '六本木': '東京',
+    '赤坂': '東京', '銀座': '東京', '有楽町': '東京', '錦糸町': '東京', '北千住': '東京',
+    '荻窪': '東京', '目黒': '東京', '大井町': '東京', '新木場': '東京', '豊洲': '東京',
+    '立川': '東京', '八王子': '東京', '町田': '東京', '代官山': '東京', '青山': '東京',
+    # 大阪の地名
+    '梅田': '大阪', '難波': '大阪', 'なんば': '大阪', '心斎橋': '大阪', '天王寺': '大阪',
+    '堺筋本町': '大阪', '日本橋': '大阪',   # ⚠️日本橋は東京にもあるが、TIGETのライブ会場は大阪側が多い
+    # 京都
+    '祇園': '京都', '河原町': '京都',
+}
+# 長い地名から当てる（「西川口」を「川口」より先に見る／「GOTANDA」など）
+_PLACE_KEYS = sorted(PLACE_PREF, key=len, reverse=True)
+
+
+# 🚨`pref_of` は「福岡県」の形しか見ない＝「マリンメッセ福岡B館」は拾えない。
+#   県名の**短い形**もここで見る（これは推測でなく事実）。
+BARE_PREF = ('北海道 青森 岩手 宮城 秋田 山形 福島 茨城 栃木 群馬 埼玉 千葉 東京 神奈川 新潟 富山 '
+             '石川 福井 山梨 長野 岐阜 静岡 愛知 三重 滋賀 京都 大阪 兵庫 奈良 和歌山 鳥取 島根 '
+             '岡山 広島 山口 徳島 香川 愛媛 高知 福岡 佐賀 長崎 熊本 大分 宮崎 鹿児島 沖縄').split()
+
+
+def pref_from_place(text):
+    """会場名・公演名の地名から県を当てる。表にある地名と県名の短い形だけ＝推測はしない。"""
+    t = text or ''
+    for k in _PLACE_KEYS:
+        if k in t:
+            return PLACE_PREF[k]
+    # 🚨「京都」が「東京都」に誤マッチしないよう、東京を先に潰してから見る（index.html と同じ手）
+    scan = t.replace('東京', '東京_')
+    if '東京_' in scan:
+        return '東京'
+    for p in BARE_PREF:
+        if p != '東京' and p in scan:
+            return p
+    return None
+
+
 def parse_jp_date(s):
     """「2026年10月18日(日)」→ 2026-10-18"""
     m = re.search(r'(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日', s or '')
@@ -161,7 +220,11 @@ def parse_event(html, eid):
     #    JSON-LD の addressRegion を控えの県として持つ（2026-09-18＝バッジが「（会場 11/21公演）」になった）。
     rm = re.search(r'"addressRegion":\s*"([^"]+)"', html)
     out['ld_region'] = rm.group(1) if rm else None
+    # 県の優先順＝①会場名の県名 ②JSON-LDのaddressRegion ③会場名・公演名の地名（対応表）
+    #   ④（呼ぶ側で）一覧の「場所：」。⚠️配信だけのイベントは県を入れない（会場が「配信」）
     out['prefecture'] = pref_of(ven) or pref_of(out['ld_region'] or '')
+    if not out['prefecture'] and not re.search(r'配信|オンライン|アーカイブ', ven + (out['name'] or '')):
+        out['prefecture'] = pref_from_place(ven) or pref_from_place(out['name'] or '')
     # 出演者は <a href="/performers/…">名前</a> だけを取る（説明文を巻き込まないため）
     out['performers'] = [unesc(strip_tags(x)) for x in
                          re.findall(r'<a href="/performers/\d+">(.*?)</a>', sec.get('出演者', ''), re.S)][:10]
@@ -265,6 +328,19 @@ def _selftest():
     ids, mx = parse_list_page('<a href="/events/1"></a><a href="/events/2"></a><a href="/events?categories=81&amp;page=3">')
     assert ids == ['1', '2'] and mx == 3, (ids, mx)
     # カードは <div class="col-xs-12 …> で区切られ、札（あと○日）はタイトルより**前**に出る
+    # 🚨地名→県の対応表（表にあるものだけ・曖昧な地名は入れない）
+    assert pref_from_place('マリンメッセ福岡B館') == '福岡'
+    assert pref_from_place('仙台市青葉区中央2-5-7') == '宮城'
+    assert pref_from_place('池袋西口公園 グローバルリングシアター') == '東京'
+    assert pref_from_place('GOTANDA G6') == '東京'
+    assert pref_from_place('西川口Lavis') == '埼玉'          # 川口より先に当たること
+    assert pref_from_place('リリリカフェ【百合が原公園内】') == '北海道'
+    assert pref_from_place('名古屋駅 周辺') == '愛知'
+    assert pref_from_place('広島アイドルライブ「POPAPIPUPEPOPA NEO」') == '広島'
+    assert pref_from_place('東京都内某所') == '東京'
+    assert pref_from_place('京都劇場') == '京都'              # 「東京都」に誤マッチしないこと
+    assert pref_from_place('月夜のケダモノ') is None          # 決まらないものは空のまま
+    assert pref_from_place('ライブスペース スペシャルカラーズ') is None
     lm = parse_list_meta('<div class="col-xs-12 ev">'
                          "<div class='c-statusbox__tag'>あと64日</div>"
                          '<div class="event-title"><a href="/events/9">名</a></div>'
