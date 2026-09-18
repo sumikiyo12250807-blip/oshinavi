@@ -32,7 +32,10 @@ NG_URL = re.compile(r"https?://\s*oshinavi\.jp|oshinavi\.jp/?\?x=")
 #   X投稿の読者への呼びかけとは別（memory: feedback_tone_onee）。
 #   8/25のmemoryにも「あなたの推しの番が回ってきたとき」という推奨例がある。
 NG_2ND = ["あんた", "みなさん", "皆さん", "皆様", "みなさま"]
-BANNED = ["生で浴び"]                      # memory: feedback_x_phrase_blacklist
+# memory: feedback_x_phrase_blacklist
+#   🆕2026-09-18 ユーザー「動くわ　この言葉はもう使わないで　動くってよくわからない」＝
+#   「席が動く」「一斉に動く」「動き出す」は何が起きるのか言っていない。「発売になる」と書く。
+BANNED = ["生で浴び", "動く", "動き出", "動いて", "動いた", "動きだ"]
 NG_REF = ["さっきの", "ひとつ前の投稿", "前の投稿", "先ほどの投稿"]
 NG_COUNT = re.compile(r"\d+\s*件(発売|が発売|の発売)")
 WD = "月火水木金土日"

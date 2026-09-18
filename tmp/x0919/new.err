@@ -1,0 +1,12 @@
+﻿python :   900000 OK
+At line:1 char:302
++ ... tch {} } }; python tools/build_pia_entries.py tmp/x0919/cands_new.jso ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  900000 OK:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  900001 OK
+  900002 OK
+  900003 OK
+  900004 OK
+構築 5 件 / skip []
