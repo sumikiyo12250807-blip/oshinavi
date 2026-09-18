@@ -1,0 +1,72 @@
+== A. 道具が「載せない」と判断した理由の内訳（組み上がりのskipped） ==
+   枠が読めない: 80件
+   買える枠も受付前の枠も無い（全部 売切れ／受付終了）: 7件
+   出す側の申込（出店・参加エントリー・駐車・案内登録）: 7件
+   公演が終わっている: 4件
+
+== B. 生データ 2043件のうち登録に無い 93件の行き先 ==
+   道具が落とした：枠が読めない: 78件
+      events/510288 コウタ10周年LIVE MANYMANYHAPPY～コウタのやりたい
+      events/520146 Limited
+      events/523993 おいでませ
+      events/523858 【Level MAX Street Vol.2〜和ノ陣〜】
+      events/523853 【The Curse and Waltz】
+   道具が落とした：出す側の申込（出店・参加エントリー・駐車・案内登録）: 7件
+      events/482077 もののけフェス2026【チケット先行案内登録】
+      events/476542 ブイ×カケ フェス 事前予約駐車場
+      events/474934 ☆VTuber様限定！ご本人様のグッズ委託販売&配布ブース
+      events/474931 第3回 ブイ×カケフェス VTuberグッズ即売会
+      events/474924 第三回 ブイ×カケ フェス Vtuberコスプレ&撮影参加エントリー
+   道具が落とした：公演が終わっている: 3件
+      events/512049 たくなるLIVE vol.１
+      events/515063 呪物メイト Special Talk Event 田中俊行とマユリカ
+      events/517668 【配信版】もやのみ企画第3弾 点を線にするために〜支援のあり方を考え
+   投入で保留：名前×公演日が登録と一致: 2件
+      events/514550 一凛3rdワンマンライブ OPERATION : DEEP COVE
+      events/507696 ガラフェス ～渋谷 文化的衝撃センセーション 秋の新作発表会～
+   🚨説明できない: 2件
+      events/514140 コリコリ(対バン用)
+      events/421311 当日払い
+   投入で保留：同名の登録あり id[7999]: 1件
+      events/516253 HERO 19th Anniversary Special FanM
+
+== C. 生データで券種が1つも取れていないイベント ==
+   12件（うち statuses が空でない＝一覧では売っていた: 0件）
+      events/510288 コウタ10周年LIVE MANYMANYHAPPY～コウタの programs=1 statuses=[] list=あと91日
+      events/520146 Limited                        programs=1 statuses=[] list=あと24日
+      events/521319 Contrast’s of stage~1st Annive programs=1 statuses=[] list=あと22日
+      events/516705 月宵ユト誕生日ライブ 今夜の君はどんな色？          programs=1 statuses=[] list=あと120日
+      events/522428 がしゃずまのDio de Duo vol.2         programs=1 statuses=[] list=あと92日
+      events/523835 もうひとつのOpenSesame －文化による第３の開国ー  programs=1 statuses=[] list=あと51日
+      events/522933 新人声優の気になるエンタメニュース 公開ラジオイベント    programs=1 statuses=[] list=あと32日
+      events/521928 第2回ビリケン座 船場deロードショー！           programs=1 statuses=[] list=あと92日
+      events/523992 AviEARTH &白清蓮presents          programs=1 statuses=[] list=あと28日
+      events/523722 FUSION MOVE FES Vol.3          programs=1 statuses=[] list=あと33日
+      events/523685 理想の少女 1stワンマンLIVE 『ONE DREAM』  programs=1 statuses=[] list=あと44日
+      events/520916 りゅうのすけBirthday One Man Live “M programs=1 statuses=[] list=あと79日
+
+== D. 県が空 281件の実態（生データに何が入っているか） ==
+   ld_region=None list.area=None : 280件
+   ld_region='Tokyo' list.area='Tokyo' : 1件
+   ＝県が空の理由は「TIGET側にも県が無い」（推測で県を当てていない＝方針どおり）
+
+== E. 出す側・推し活でない券種の棚卸し（券種名を広い辞書で当てる） ==
+   「出店」: 2枠  例=[(12480, '出店ブース'), (12821, 'yen販売のみの出店者')]
+   「ブース」: 1枠  例=[(12480, '出店ブース')]
+   「出演」: 1枠  例=[(11947, '自由席（TIGET予約 or 出演者から取り置き）')]
+   「協賛」: 3枠  例=[(13146, 'mike予約（ステージ装飾協賛込み）'), (13146, '渡辺あゆ香予約（ステージ装飾協賛込み）'), (13146, 'ステージ装飾協賛のみ')]
+   「投げ銭」: 2枠  例=[(11536, 'FREE ENTRY ※投げ銭歓迎'), (12228, 'FREE ENTRY ※投げ銭歓迎')]
+
+== F. 券種名が「チケット」に倒れた枠の原因（生データの元の名前） ==
+   ②名前が空: 1177枠
+      id11326 元の名前=
+      id11335 元の名前=
+      id11336 元の名前=
+      id11337 元の名前=
+   ③TIGET側が本当に「チケット」: 9枠
+      id11544 元の名前=チケット
+      id11638 元の名前=チケット
+      id11639 元の名前=チケット
+      id11710 元の名前=チケット
+   ①進行案内（開場/開演/終演）が名前に入っている: 1枠
+      id11376 元の名前=開場16:10/ 開演16:30/終演19:00予定（途中休憩あり）
