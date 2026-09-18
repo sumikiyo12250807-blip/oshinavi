@@ -181,10 +181,23 @@ def build(ev, today):
         d = p.get('date')
         if not d or d < today:
             continue
-        for t in p['tickets']:
+        # 🚨同じ公演の中で券種名がぶつかると、**画面に同じバッジが並んで区別がつかない**
+        #    （2026-09-18＝98エントリでこれが起きた。「チケット（岐阜 3/7公演）〜3/7 14:00」が3つ）。
+        #    真因は2つ＝①TIGETの主催者が別の券種に同じ名前を付けている
+        #              ②こちらの ticket_name() が「開場/開演」入りの名前を全部「チケット」に倒す
+        #    ぶつかって**値段が違うなら値段を添えて見分ける**（値段はページに書いてある本物の情報）。
+        #    値段まで同じなら本当の重複なので、後ろでまとめて1つに畳む。
+        names = [ticket_name(t.get('name')) for t in p['tickets']]
+        prices = [t.get('price') for t in p['tickets']]
+        multi = {n for n in names if names.count(n) > 1}
+        for i, t in enumerate(p['tickets']):
             st = state_of(t.get('class'))
             per = last_period(t)
-            nm = ticket_name(t.get('name'))
+            nm = names[i]
+            if nm in multi and prices[i] is not None:
+                same = {prices[j] for j, n in enumerate(names) if n == nm}
+                if len(same) > 1:
+                    nm = '%s %s円' % (nm, format(prices[i], ','))
             # 🚨県が分からないイベントがある（主催者が住所を登録していない＝会場名にも一覧にも
             #    JSON-LDにも県が無い。2026-09-18 に7件）。会場名の市名から県を当てるのは推測なので
             #    **バッジから県を落とす**。カードには📍会場名が出るので場所は読める。
@@ -220,6 +233,19 @@ def build(ev, today):
                     tk['saleEnded'] = True
                     tk['saleEndedSince'] = today
                 tickets.append(tk)
+    # 🚨まったく同じ枠（券種名・締切・飛び先・印がぜんぶ同じ）は1つに畳む。
+    #    画面では見分けられないので、並べても利用者の役に立たない。
+    #    ⚠️飛び先が違うなら畳まない（[[feedback_dedup_badges_keeps_urls]]）＝キーにurlを入れている。
+    seen, uniq = set(), []
+    for t in tickets:
+        k = (t.get('type'), t.get('date'), t.get('startDate'), t.get('url'),
+             bool(t.get('soldout')), bool(t.get('saleEnded')), bool(t.get('saleEndUnknown')))
+        if k in seen:
+            continue
+        seen.add(k)
+        uniq.append(t)
+    tickets = uniq
+
     if not tickets:
         return None, '枠が読めない'
     # 🚨🚨2026-09-18 ユーザー決定＝**全部載せる**。
@@ -363,6 +389,22 @@ def _selftest():
     t3 = e3['tickets'][0]
     assert t3['type'] == '自由席（大阪 10/18公演）8/20 11:40発売〜', t3['type']
     assert t3['saleEndUnknown'] is True and t3['date'] == '2026-10-18' and t3['startDate'] == '2026-08-20', t3
+    # 🚨同じ公演で券種名がぶつかる＝値段が違えば値段で見分ける／値段も同じなら1つに畳む
+    ev8 = json.loads(json.dumps(ev))
+    ev8['programs'][0]['tickets'] = [
+        {'name': '開場17:00 開演17:30', 'class': 'is-available', 'price': 3000,
+         'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]},
+        {'name': '開場18:00 開演18:30', 'class': 'is-available', 'price': 4000,
+         'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]},
+    ]
+    e8, _ = build(ev8, '2026-09-18')
+    ty8 = sorted(t['type'] for t in e8['tickets'])
+    assert ty8 == ['チケット 3,000円（大阪 10/18公演）〜10/17 23:59',
+                   'チケット 4,000円（大阪 10/18公演）〜10/17 23:59'], ty8
+    ev9 = json.loads(json.dumps(ev8))
+    ev9['programs'][0]['tickets'][1]['price'] = 3000        # 値段も同じ＝本当の重複
+    e9, _ = build(ev9, '2026-09-18')
+    assert len(e9['tickets']) == 1, [t['type'] for t in e9['tickets']]
     # 公演日が2年より先＝主催者の試し書き・雛形の疑い
     ev6 = json.loads(json.dumps(ev))
     ev6['programs'][0]['date'] = '2030-12-31'
