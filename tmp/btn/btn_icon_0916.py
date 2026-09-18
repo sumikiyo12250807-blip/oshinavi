@@ -210,6 +210,14 @@ def make_icon(kind):
 JOBS = {
     'hotel': ('hotel_logo', '会場近くのホテルを探す', 'hotel'),
     'pia': ('pia_logo', 'チケットぴあ', 'ticket'),
+    # 🆕2026-09-18 ユーザー「**楽天チケットのボタンもローチケのもそろえて作らないとだね**」
+    #   ＝ぴあだけ画像で、他の売り場は字＋絵文字のままだったので、同じ型でそろえた。
+    #   ⚠️各社のロゴは手元に無いし勝手に使えないので、**ぴあと同じ「もぎる半券」の線画**で統一する
+    #   （ブランドのロゴを真似て描くのはやらない）。
+    'rakuten': ('rakuten_logo', '楽天チケット', 'ticket'),
+    'lawson': ('lawson_logo', 'ローソンチケット', 'ticket'),
+    'eplus': ('eplus_logo', 'e+', 'ticket'),
+    'tiget': ('tiget_logo', 'TIGET', 'ticket'),
 }
 
 
