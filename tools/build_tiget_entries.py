@@ -232,11 +232,19 @@ def build(ev, today):
             when = f'{md(d)} {ptime}公演' if ptime else f'{md(d)}公演'
             head = f'{nm}（{pref} {when}）' if pref else f'{nm}（{when}）'
             if st == 'unopened':
-                if not per:
-                    continue                      # 受付前で開始日が読めない＝推測で日付を作らない
-                tickets.append({'type': f'{head}{md(per[0])} {per[1]}発売'.rstrip(),
-                                'date': per[0], 'startDate': per[0], 'url': ev['url']})
-                has_live = True
+                if per:
+                    tickets.append({'type': f'{head}{md(per[0])} {per[1]}発売'.rstrip(),
+                                    'date': per[0], 'startDate': per[0], 'url': ev['url']})
+                    has_live = True
+                elif ss_date and ss_date >= today:
+                    # 🚨受付前で受付期間の欄が無い時は JSON-LD の validFrom が発売日。
+                    #    ただし**今日以降のときだけ**使う（2026-09-18＝「当日券」の validFrom は
+                    #    そのイベントが売り出された日で**過去**＝流用すると過ぎた日を発売日にしてしまう）。
+                    #    これで63イベントの発売前が拾えるようになった。
+                    tickets.append({'type': f'{head}{md(ss_date)} {ss_time}発売'.replace('  ', ' ').rstrip(),
+                                    'date': ss_date, 'startDate': ss_date, 'url': ev['url']})
+                    has_live = True
+                # validFrom が過去・取れない＝推測で日付を作らないので載せない
             elif st == 'live':
                 if per:
                     # 🚨締切が公演日より後なら公演日で締める（[[feedback_sale_end_cap_show_date]]）。
@@ -431,6 +439,17 @@ def _selftest():
     t3 = e3['tickets'][0]
     assert t3['type'] == '自由席（大阪 10/18公演）8/20 11:40発売〜', t3['type']
     assert t3['saleEndUnknown'] is True and t3['date'] == '2026-10-18' and t3['startDate'] == '2026-08-20', t3
+    # 🚨受付前で受付期間の欄が無い＝validFrom が今日以降なら発売日として使う／過去なら載せない
+    evU = json.loads(json.dumps(ev))
+    evU['programs'][0]['tickets'] = [{'name': '一般チケット', 'class': 'is-unable is-unopened',
+                                      'price': 2500, 'periods': []}]
+    evU['ld_offers'] = [{'valid_from': '2026-09-27', 'valid_from_time': '20:00'}]
+    eU, _ = build(evU, '2026-09-18')
+    assert eU['tickets'][0]['type'] == '一般チケット（大阪 10/18公演）9/27 20:00発売', eU['tickets'][0]
+    assert eU['tickets'][0]['startDate'] == '2026-09-27'
+    evU2 = json.loads(json.dumps(evU))
+    evU2['ld_offers'] = [{'valid_from': '2026-07-16', 'valid_from_time': '19:00'}]   # 過去＝使わない
+    assert build(evU2, '2026-09-18')[0] is None, '過ぎた日を発売日にしてしまう'
     # 🚨同じ日に公演が2つ以上＝バッジに開場時刻を入れる（昼夜・時間帯予約を潰さない）
     evT = json.loads(json.dumps(ev))
     evT['programs'] = [
