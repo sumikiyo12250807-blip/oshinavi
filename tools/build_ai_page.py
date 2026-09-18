@@ -48,7 +48,7 @@ GENRE_LABEL = {
 # index.html の linkDefs 順（楽天 > ぴあ > e+ > ローチケ > その他）
 VENDOR_ORDER = [
     ("rakuten", "楽天チケット"), ("pia", "チケットぴあ"), ("eplus", "e+"),
-    ("lawson", "ローチケ"), ("fany", "FANY"), ("yoshimoto", "吉本オンライン"),
+    ("lawson", "ローチケ"), ("tiget", "TIGET"), ("fany", "FANY"), ("yoshimoto", "吉本オンライン"),
     ("tvasahi", "テレ朝チケット"), ("shochiku", "松竹チケット"), ("official", "公式"),
 ]
 

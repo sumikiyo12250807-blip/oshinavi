@@ -1,0 +1,26 @@
+Y",
+        "availability": "http://schema.org/InStock",
+        "validFrom": "2026-08-20T11:40:+0900" //チケット販売開始時刻
+    },
+    {
+        "@type": "Offer",
+        "url": "https://tiget.net/events/516046", //イベントページのURL
+        "price": "3720", //チケット販売・予約金額
+        "priceCurrency": "JPY",
+        "availability": "http://schema.org/InStock",
+        "validFrom": "2026-08-20T11:40:+0900" //チケット販売開始時刻
+    }
+    ],
+    "performer": [
+    {
+        "@type": "PerformingGroup",
+        "name": "#&lt;Performer:0x000055a935099e10&gt;",
+        "sameAs": "https://tiget.net/events/516046"
+    },
+    {
+        "@type": "PerformingGroup",
+        "name": "#&lt;Performer:0x000055a9350999b0&gt;",
+        "sameAs": "https://tiget.net/events/516046"
+    }
+    ]
+}
