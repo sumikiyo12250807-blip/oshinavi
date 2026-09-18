@@ -108,9 +108,14 @@ def parse_list_meta(html):
        11件が県なしだった＝2026-09-18）。**一覧の event-area は TIGET自身が持っている都道府県**なので、
        これを県の正とする（会場名から市名を推測して県を当てるのは推測になるのでやらない）。"""
     meta = {}
-    for cm in re.finditer(r'<div class="event-title"><a href="/events/(\d+)">(.*?)</a></div>(.*?)(?=<div class="col-xs-12|$)',
-                          html, re.S):
-        eid, blk = cm.group(1), cm.group(3)
+    # 🚨「あと○日」「完売」の札（c-statusbox__tag）は event-title より**前**に出るので、
+    #    タイトルから後ろだけ見ると取れない（2026-09-18 に取りこぼした）。カード全体で切る。
+    for cm in re.finditer(r'<div class="col-xs-12(.*?)(?=<div class="col-xs-12|$)', html, re.S):
+        blk = cm.group(1)
+        im = re.search(r'<div class="event-title"><a href="/events/(\d+)">', blk)
+        if not im:
+            continue
+        eid = im.group(1)
         am = re.search(r'class="event-area">\s*場所：([^<]+)</div>', blk)
         pd = re.search(r'class="play-date">\s*開催：([^<]+)</div>', blk)
         st = re.search(r"class='c-statusbox__tag'>([^<]+)<", blk)
@@ -183,7 +188,13 @@ def parse_event(html, eid):
         blk = pm.group(1)
         dt = strip_tags(re.search(r'__program__datetime">(.*?)</div>', blk, re.S).group(1)) if re.search(r'__program__datetime">', blk) else ''
         dt = unesc(dt).replace('▼', '').strip()
-        prog = {'datetime_text': dt, 'date': parse_jp_date(dt), 'tickets': []}
+        # 🚨公演の塊の見出しから日付が読めないことがある（主催者が自由に書くので
+        #    「1部／2部」だけ、といった形がある）。2026-09-18 に3件が「公演日なし」になり
+        #    **開催が終わったものと誤判定して落とした**（コウタ10周年・Limited・YURiコス）。
+        #    → 読めなければ「イベント詳細の開催日」で埋める（さらに一覧の開催日が控え＝呼ぶ側で入れる）。
+        prog = {'datetime_text': dt,
+                'date': parse_jp_date(dt) or out.get('detail_date'),
+                'tickets': []}
         # 🚨券種の塊は「次の c-ordering-btn まで」で切る。閉じタグの並びで切ると
         #   2つめの受付期間（コンビニ決済）を落とす（2026-09-18 に実測で気づいた）。
         parts = re.split(r'<div class="c-ordering-btn ([^"]*)">', blk)
@@ -218,10 +229,14 @@ def _selftest():
     assert pref_of('どこかの箱') is None
     ids, mx = parse_list_page('<a href="/events/1"></a><a href="/events/2"></a><a href="/events?categories=81&amp;page=3">')
     assert ids == ['1', '2'] and mx == 3, (ids, mx)
-    lm = parse_list_meta('<div class="event-title"><a href="/events/9">名</a></div>'
+    # カードは <div class="col-xs-12 …> で区切られ、札（あと○日）はタイトルより**前**に出る
+    lm = parse_list_meta('<div class="col-xs-12 ev">'
+                         "<div class='c-statusbox__tag'>あと64日</div>"
+                         '<div class="event-title"><a href="/events/9">名</a></div>'
                          '<div class="play-date">開催：2026年11月21日(土)</div>'
                          '<div class="event-area">場所：東京都</div>')
     assert lm['9']['area'] == '東京都' and lm['9']['play_date'] == '2026年11月21日(土)', lm
+    assert lm['9']['status_tag'] == 'あと64日', lm
     print('selftest OK: parse_jp_date/parse_period/pref_of/parse_list_page/parse_list_meta')
 
 
@@ -263,6 +278,13 @@ def main():
             d['list'] = events[eid].get('list') or {}
             # 県は「一覧の 場所：」が正（TIGET自身が持っている値）。無いときだけ会場名/JSON-LDから
             d['prefecture'] = pref_of(d['list'].get('area') or '') or d['prefecture']
+            # 公演日が読めなかった塊は、一覧の「開催：」で埋める（最後の控え）
+            lpd = parse_jp_date(d['list'].get('play_date') or '')
+            if lpd:
+                d['detail_date'] = d.get('detail_date') or lpd
+                for p in d['programs']:
+                    if not p.get('date'):
+                        p['date'] = lpd
             rows.append(d)
             slots = sum(len(p['tickets']) for p in d['programs'])
             print(f'  [{n}/{len(todo)}] {eid} {(d["name"] or "")[:34]} 公演{len(d["programs"])}/券種{slots}')

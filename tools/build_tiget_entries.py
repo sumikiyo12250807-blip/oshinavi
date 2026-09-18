@@ -160,10 +160,11 @@ def build(ev, today):
                                     'saleEndUnknown': True, 'url': ev['url']})
                     has_live = True
             elif st in ('soldout', 'closed'):
-                if not per:
-                    continue
-                tk = {'type': f'{head}〜{md(per[2])} {per[3]}'.rstrip(),
-                      'date': per[2], 'url': ev['url'], 'soldout': True,
+                # 🚨受付期間が無い売切れ・受付終了もある（当日会場払いの券種など）。
+                #    印は「予定枚数終了」「販売終了」なので締切は要らない＝**公演日を置き場にする**
+                #    （バッジに「〜」は付けない＝締切を作らない）。2026-09-18 に4件を落としていた。
+                tk = {'type': (f'{head}〜{md(per[2])} {per[3]}'.rstrip() if per else head),
+                      'date': (per[2] if per else d), 'url': ev['url'], 'soldout': True,
                       'soldoutSince': today}
                 if st == 'closed':
                     tk['saleEnded'] = True
@@ -171,8 +172,13 @@ def build(ev, today):
                 tickets.append(tk)
     if not tickets:
         return None, '枠が読めない'
-    if not has_live:
-        return None, '買える枠も受付前の枠も無い（全部 売切れ／受付終了）'
+    # 🚨🚨2026-09-18 ユーザー決定＝**全部載せる**。
+    #   「YouTubeのイベントは告知してからすぐ売ってる／告知して探す人が oshinavi.jp から
+    #     見つけられればそれが私の目指すところ／特にカウントダウンがメインというわけではなく、
+    #     推し活がしやすいを目指してるわけだから、**全部載せてほしい**」
+    #   ＝売切れ・販売終了だけのイベントも、**公演がこれからなら**印を付けて載せる
+    #   （[[feedback_soldout_keep_visible]]／[[feedback_saleended_vs_soldout]]と同じ扱い）。
+    #   ⛔旧＝買える枠が1つも無ければ新規で載せない（10件を落としていた）
 
     perf = [x for x in (ev.get('performers') or []) if x]
     name = ev.get('name') or ''
@@ -284,10 +290,20 @@ def _selftest():
     assert e['tickets'][0]['type'] == '一般（大阪 10/18公演）〜10/17 23:59', e['tickets'][0]
     assert e['tickets'][1].get('saleEnded') is True
     assert e['links']['tiget'] == 'u' and 'amazon' not in e['links']
-    # 全部 受付終了 なら新規では載せない
+    # 🚨2026-09-18 ユーザー決定＝全部載せる。全部が受付終了でも**公演がこれからなら載せる**
     ev2 = json.loads(json.dumps(ev))
     ev2['programs'][0]['tickets'][0]['class'] = 'is-unable is-closed'
-    assert build(ev2, '2026-09-18')[0] is None
+    e2, why2 = build(ev2, '2026-09-18')
+    assert e2 and all(t.get('soldout') for t in e2['tickets']), (e2, why2)
+    assert all(t.get('saleEnded') for t in e2['tickets']), e2['tickets']
+    # 公演が終わっているものは載せない（ここは変えない）
+    assert build(ev2, '2026-10-19')[0] is None
+    # 受付期間が無い売切れも載せる＝公演日を置き場にして「〜」は付けない
+    ev5 = json.loads(json.dumps(ev))
+    ev5['programs'][0]['tickets'] = [{'name': '当日会場払い', 'class': 'is-unable is-unavailable', 'periods': []}]
+    e5, _ = build(ev5, '2026-09-18')
+    assert e5['tickets'][0]['type'] == '当日会場払い（大阪 10/18公演）', e5['tickets'][0]
+    assert e5['tickets'][0]['date'] == '2026-10-18' and e5['tickets'][0]['soldout'] is True
     # 受付期間が無い（当日支払い）＝発売日に〜を後ろ付けして販売中・締切は作らない
     ev3 = json.loads(json.dumps(ev))
     ev3['programs'][0]['tickets'] = [{'name': '自由席', 'class': 'is-available', 'periods': []}]
