@@ -1,6 +1,15 @@
 ﻿# ▶▶ 2026-09-19（土）朝の便へ引き継ぎ（9/18 夜の便で書いた）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -39,6 +48,15 @@
 # ▶▶ 2026-09-18（金）朝の便（05:20〜）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -76,6 +94,15 @@
    - その後 reconcile_pia --ids で ①前夜の新着3バッチ（11058〜11164）の独立再照合 ②枠0の67件
    - 振り分け＝新着プール104件のうち ぴあ97件は自走／楽天8件・ローチケ1件はユーザー確認後
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -85,6 +112,15 @@
 # ▶▶ /clear のあとはここから（2026-09-17 21:40 夜の締め）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -120,6 +156,15 @@
   6 8765・8790 応援グッズの県／コンサドーレと天皇杯アイスタの駐車券だけのページ（10617・10618・10970・10971・11121）
   7 真プレミアムナイト撮影会（撮影会を載せた前例なし＝保留）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -128,6 +173,15 @@
 
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -144,6 +198,15 @@
    ゲート＝check_badges OK（11305 反田恭平の半角カッコを全角に直した）・reconcile --new 139件＝OK130・全0・照合147/151枠
 ✅ 楽天の未登録候補＝販売中65件から「本当に未登録9件／似た登録13件」（tmp/rak_dedup_0918.txt）＝夜か翌朝に投入
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -151,6 +214,15 @@
    🚨跳ねた1本を外した検算を並べる／母数1対5なので**勝ち負けを言い切らない**
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -180,6 +252,15 @@
     もののけフェス【チケット先行案内登録】／VTuber様限定グッズ委託販売ブース／
     VTuberグッズ即売会スペース／痛車(四輪)・痛車二輪エントリーフォーム／ブイ×カケ事前予約駐車場
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -189,6 +270,15 @@
 # ▶▶ 2026-09-17（木）朝の便（06:17〜）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -228,6 +318,15 @@
 ⏭ 20:16・20:31 の投稿のリンクが ?q= の日本語まで効いているか実物で確かめる
 ⚠️ 数だけ1つ違って枠の特定が出ない4件＝727 西村由紀江・3674 クーザ・5155 きゃりー・5595 マザリ（ぴあが「東京・神奈川」を公演ごとに数える形＝きゃりーとマザリは中身を見て抜け無し）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -237,6 +336,15 @@
 # ▶▶ /clear のあとはここから（2026-09-16 20:00 引き継ぎ＝夜の締めを実施中）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -308,6 +416,15 @@
   5 8765・8790 応援グッズの県
   6 コンサドーレの駐車券だけのページ（10617・10618・10970・10971）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -317,6 +434,15 @@
 # ▶ 2026-09-16 夜（X準備の総ざらい第2弾）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -393,6 +519,15 @@
 ⏭ 21:33＝夜の締めと3回目のpush（19:30発売の10763 はここでヒール）
 ⏭ 文面9本はOK待ち（予約は20:01から15分おき）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -401,6 +536,15 @@
 
 # ▶ /clear のあとはここから（2026-09-15 21:45 引き継ぎ）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -479,6 +623,15 @@
   ❓ 10762 新日本プロレス 赤磐（ローチケ）の振り分け＝ぴあ以外なのでユーザーの確認後
   ❓ 8765・8790 応援グッズの県／10617・10618 駐車券だけのページ（【駐車券】の札で出すか）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -487,6 +640,15 @@
 
 # 🌙 2026-09-16（水）夜の便＝X準備（16:3x〜・tmp/x0917）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -506,6 +668,15 @@
 ✅ ⑧全文をユーザーに見せた（17:0x）→ **OK待ち**。OKが出たら20:01から15分おきに9本予約
 ⏭ 1863 の混雑ページは時間を置いて読み直して決着（予定枚数終了）／2121 は文言を直接読んで決着
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -514,6 +685,15 @@
 
 # 📊 2026-09-16（水）Xの数字とGA4（15:4x・ユーザー依頼）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -537,6 +717,15 @@
 ✅ GA4（過去28日 8/19〜9/15）＝セッション430／Organic Social 232（54%）・Direct 110（26%）・Organic Search 71（17%）・Unassigned 19・Referral 6・AI Assistant 3・Cross-network 3
    エンゲージメント率39.77%・平均滞在27秒・イベント1,841。8/29の「t.co が8割」より検索と直接の割合が増えた（理由は断定しない）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -545,6 +734,15 @@
 
 # ☀️ 2026-09-16（水）昼の便（13:05〜）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -571,6 +769,15 @@
    ・買える枠0＝朝89件→昼91件（昼に入った5件は印済み・直った3件＝3118・3896・5051）
    ・隠れ枠は45枠（朝は131枠）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -579,6 +786,15 @@
 
 # 🌅 2026-09-16（水）朝の便（06:10〜）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -655,6 +871,15 @@
 ✅ 7618 鈴木雅之＝公式38公演とぴあ38公演が日付・県とも一致（公式にだけ／ぴあにだけ＝0）→ tmp/grow_7618_0916.py（買える2＝福岡10/3・10/4〜9/17／予定枚数終了12に印／販売終了だけの東京9/22の片方・長野は足さない）＝ヒール適用のあとに --apply
    ✅ 別物＝3897 X'mas Private Hotel Tour＝ぴあを名前で引いたら神戸12/15（2629849）の1公演だけ＝登録どおり（ほかのホテル7公演と石垣 11/21 はぴあで売っていない）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -663,6 +888,15 @@
 
 # 🌙 2026-09-15（火）夜の便（17:02〜・X準備＝tmp/x0916）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -709,6 +943,15 @@
 ⏰ 19:40 予約の締め／21:33 夜の締めとpush（今日3回目）＝CronList で2本とも入っているのを確認
 ❓ Amazon ボタンの文字の入れ方（1 頭に「Amazon｜」（おすすめ）／2 2行目に小さく／3 語尾に（Amazon））＝返事待ち
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -717,6 +960,15 @@
 
 # 🌅 2026-09-15（火）朝の便（08:59〜）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -815,6 +1067,15 @@
    手元（127.0.0.1 経由で同じファイル）で ?genre=owarai&status=urgent → 56件＋帯「お笑い・今週発売」、✕ → 6293件・帯なし
 ❓ 次は問5（Amazon アソシエイトの申し込み日＝Gmail で探していい？）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -859,6 +1120,15 @@
 # 🌅 2026-09-14（月）朝の便（05:21〜）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1153,6 +1423,15 @@
    ・振り分けの保留3件＝8172 瑛人×SANIMYOK／7558 Tommy february6／7946 源 上映会
    ・🗓 月曜＝「今週のピックアップ」の素材集め（project_weekly_rhythm_and_morphic）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1227,6 +1506,15 @@
 # 🔴 いま止まっているところ（9/13 朝・/clear 直後はここから）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1316,6 +1604,15 @@
      ③ 8322 淀川花火・8178 ボロフェスタ＝既存の券だけのエントリに寄せる？ 別のまま？
      ④ Amazonの申し込み日をGmailで探していい？
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1327,6 +1624,15 @@
 # 🕘 ひとつ前（9/12 朝・参考）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1483,6 +1789,15 @@
    （Commons File:Suntory_Hall_2018.jpg・CC BY-SA 4.0・Wpcpey・personalityタグ無し・加工なし・img/_credits.json 記録済み）
    build_section.py の FIG_SUNTORY で深掘りの本文の頭に出す。日曜朝は下の手順のまま（①組み直し→②gate→③反映）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1492,6 +1807,15 @@
 ## ⚠️ ユーザーに聞くこと（9/12 朝の分・ぴあ以外の売り場なので）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1506,6 +1830,15 @@
 2. 女王蜂 福岡10/25 の一般(9/19)は e+ に無い（名古屋だけ e+ 9/19〜）＝売り場未確認
 3. Chrome拡張がつながっていない（夜のX予約で要る）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1515,6 +1848,15 @@
 # （以下は 9/11 夕〜夜の引き継ぎ）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1572,6 +1914,15 @@
    ・越谷は主催10:00／ぴあ11:00 と書き分け
 📝 last_batch に 8154〜8157（夕方の窓の取りこぼし4件）を後追いで記録した
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1579,6 +1930,15 @@
    🚨跳ねた1本を外した検算を並べる／母数1対5なので**勝ち負けを言い切らない**
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1608,6 +1968,15 @@
    日乃まそら7998（9/26 duo）／8102 FIELDS SO GOOD（発売前2枠の日付が読めない＝パーサーの穴）
 ⏸ 福田こうへいが4エントリに割れている（734/7386/7411/7422）＝畳むのは宿題
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1617,6 +1986,15 @@
 ## ⚠️ 夜の「お疲れ様」で聞くこと（9/11 朝の分）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1633,6 +2011,15 @@
      高知・観音寺・松山・高松・福山・広島はどこにも未掲載
 3. （9/9から持ち越し）「買える枠0のまま1か月以上先」＝いま49件。販売終了バッジで出すか今のまま置くか
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1640,6 +2027,15 @@
    🚨跳ねた1本を外した検算を並べる／母数1対5なので**勝ち負けを言い切らない**
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1671,6 +2067,15 @@
    （今夜ぴあを何度も叩いた後だった。時間を空けて単発で確認する）
    削除候補75件はDELETE_GATE未通過＝**消していない**
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1683,6 +2088,15 @@
 ## ✅ 9/10夜までに終わったこと
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1711,6 +2125,15 @@
 ✅ 記事の素材＝**tmp/pickup_tiles_0914.txt**（タイル12行＋主役5組の窓内枠を全部）
    道具＝python tmp/pickup_tiles_0914.py
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1720,6 +2143,15 @@
 ## 🚨 主役の裏取りで出た宿題（9/10夜）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1742,6 +2174,15 @@
    ⚠️深掘りの本文を書く前にここを片付ける。書いてから直すと①②のやり直しになる
      （[[feedback_article_recheck_after_rewrite]]）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1751,6 +2192,15 @@
 ## ⏭ ここから（9/11以降・公開は9/13朝）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1765,6 +2215,15 @@
 4. セトリ（曲順）は**今週は入れない見込み**＝主役のツアーが全部これから始まる（10月〜）ので
    2件以上で一致する実績がまだ無い。取れたら深掘りに折りたたみで入れる
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1772,6 +2231,15 @@
    🚨跳ねた1本を外した検算を並べる／母数1対5なので**勝ち負けを言い切らない**
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1799,6 +2267,15 @@
 分量＝主役5組（厚く）＋名前タイル12組＋深掘り1組。本文はFableに書かせる（素材はこちらで揃える）。
 公開先＝index.html の `<section class="pickup" id="pickup">`（別ページにしない）。古い号は差し替えで消す。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1809,6 +2286,15 @@
 # ⏭ 持ち越し（9/10 夜）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1836,6 +2322,15 @@
 7. 枠0（check_zero_badge）65件 … 大半は「先行が終わって一般発売待ち」型
 8. 楽天20件・e+2件の振り分け … ユーザーの返事待ち（もらうまで聞き続ける）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1846,6 +2341,15 @@
 # 🆕 9/10 に分かったこと（道具とmemoryに反映ずみ）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1868,6 +2372,15 @@
    手順書＝tools/ltike_week_scan.md。**page は0始まり**。
    9/14週と9/21週で9件拾った（櫻坂46・HAPPINESS JAM 2026 は**ぴあにも楽天にも無かった**）。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1878,6 +2391,15 @@
 # 🆕 9/10 に始めた定常チェック＝ローチケの週スキャン（毎週やる）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1898,6 +2420,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 実測（2週）＝9/14週 61件/59名 → 5件追加、9/21週 57件/38名 → 6件追加
 いちばんの収穫＝**櫻坂46（ぴあにも楽天にも無かった）**と HAPPINESS JAM 2026
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1908,6 +2439,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # ⏭ 次の便に持ち越したもの（9/10 昼）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1937,6 +2477,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 7. 枠0（check_zero_badge）65件 … 大半は「先行が終わって一般発売待ち」型
 8. 週末の記事（9/13 日曜の朝公開）… 素材は tmp/pickup_window_0914.txt（302件/299組）。主役5組がまだ
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1947,6 +2496,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # ✅ 9/10 楽天チケットのゲート＝どこまで出来たか（ユーザー指摘4件から）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -1993,6 +2551,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
  2. **別レイアウト9件の売り状態**＝これは**楽天が公開していない**と調べ切った（道具の穴ではない）。
     締切は照合できているので「買えない枠を出し続ける」ことにはならない。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2002,6 +2569,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # 🚨 消さずに残した／直す必要があるもの
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2029,6 +2605,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
    大半は「先行だけ登録されていて一般発売がまだ発表されていない」型。
    → 出し方（販売終了バッジを付けるか今のまま置くか）を夜の「お疲れ様」で聞く。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2042,6 +2627,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # ☀️ 9/9(水) 昼の便でやること
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2095,6 +2689,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 
 5. 昼のpushは「本日発売の枠に締切を入れて表記を差し替えたあと」
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2104,6 +2707,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # 🌙 9/9(水) 夜の便
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2118,6 +2730,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
        母数15本未満は判定しない決まりなので、**1本では結論を出さず数字だけ貯める**。
 3. 予約したら、投稿に出した公演の取りこぼしをぴあで総ざらいしてから push
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2127,6 +2748,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 ## ⚠️ 夜の「お疲れ様」で聞くこと（溜めている分）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2167,6 +2797,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
    （id7091 宮城12/19／id7137 静岡12/27／id7561 神奈川12/5）。ツアーは1エントリの決まりだが
    既存2件が先に割れていたので、今日は投入だけして統合は保留にした。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2178,6 +2817,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # 👀 【9/9 ユーザーが目視する分】楽天の「読めなかったページ」
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2212,6 +2860,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
    ⚠️9/9朝に楽天ハーベストを回し直した（直近3日更新の11件）＝**新着はゼロ**。
      読めなかったのは上の 1（クーザ）だけで、残り10件は既に載せてある分だった。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2223,6 +2880,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 # 🌅 9/9(水)の朝にやったこと（記録）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2258,6 +2924,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
    一覧は logs/assigned_2026-09-09.md
 ✅ 朝のpush＝ac903e6a（5121bc2d..ac903e6a）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2267,6 +2942,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 ## 🌞 9/9(水)の昼にやったこと（記録・pushはまだ）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2320,6 +3004,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
   今日は83→55件（-28）。**建てつけは全部そろっている**ので毎朝回せる。
   ⚠️ticket.url が付かないのは**このエントリ群の元からの形**（カードは links.pia に飛ぶ）＝退行ではない。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2349,6 +3042,15 @@ memory: project_big_artist_crosscheck ／ 手順書: tools/ltike_week_scan.md
 ## 🎟 9/8夜の楽天ハーベスト（記録）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2370,6 +3072,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
   ③ **新型(data-event-json)をハーベスタは読めるのに照合ツールが読めなかった**
      ＝入口だけ硬くしても鉄壁にならない、の実例。投入した3件が照合対象外になって発覚
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2379,6 +3090,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 ## 🧹 9/8夜の総ざらいでやったこと（記録）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2391,12 +3111,30 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 🚨「ぴあの検索に出る＝登録済み」ではない。**登録していないeventCdは reconcile では永久に見えない**
   → だから夜の総ざらいは毎回やる価値がある（今日は1回で75枠出た）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
    🚨まとめ型どうしで比べる（④ 対 ⑤〜⑨）＝主役は型が違うので混ぜない
    🚨跳ねた1本を外した検算を並べる／母数1対5なので**勝ち負けを言い切らない**
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2408,6 +3146,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 # 🌙 9/8(火)の夜の便（X投稿・着手17:00）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2432,6 +3179,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 4. 予約したら、投稿に出した公演の取りこぼしをぴあで総ざらいしてから push
 5. ⚠️20:00-21:00 はリンクシェアの管理画面がメンテ（アフィリまわりを触るならそれ以外の時間）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2443,6 +3199,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 # ☀️ 9/8(火)の昼の便でやること（朝から持ち越し）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2502,6 +3267,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
    ＝実物を見てもらってから決める。file:///C:/Users/user/oshinavi/index.html?q=松平健
    戻すなら X_SCRIPT.md の1行と memory の要約行。サイト側の?q=は残しても無害。
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2513,6 +3287,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 # 🌅 9/8(火)の朝いちでやること
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2545,6 +3328,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
    ・**公式サイトも少し見て文章を厚くする**（ただし公式に無いことは書かない）
    ・🆕**主役3本に画像を付けて母数を貯める**＝1日3本×5日で15本＝週内に画像の効果を判定できる
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2554,6 +3346,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 # ☀️ 9/7(月)の昼・夜でやること（済）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2580,6 +3381,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
    ・トレンド8位までと在庫を突き合わせる → 主役1本 → ジャンル別まとめ
    ・予約したら、投稿に出した公演の取りこぼしをぴあで総ざらいして潰してから push
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2746,6 +3556,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
 # 🌅 9/7(月)の朝いちでやること（全部消化・記録として残す）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2789,6 +3608,15 @@ sitemapの直近60日更新 115件 → 読めた 108件（94%）→ 新着候補
          renderCard は「公演日を過ぎた売り切れは出さない」安全弁を持つので実際は画面に出ない**はず**。
          🚨判定式を `node tools/check_zero_badge.js` が使っている**実物の条件式**に合わせてから決める
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2900,6 +3728,15 @@ push 8回（多すぎ・9/7は3回に戻す）。X投稿8本を20:01〜21:46で�
 # ☀️ 9/6(日)の昼の便でやること（済・記録として残す）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2917,6 +3754,15 @@ push 8回（多すぎ・9/7は3回に戻す）。X投稿8本を20:01〜21:46で�
    🚨畳んだら tmp/check_lost_urls_0826.py で ticket.url が落ちていないか点検
 3. 本日発売の枠に締切が入って「本日発売 〜M/D」になったのを確認してから push（昼の1回）
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2962,6 +3808,15 @@ push 8回（多すぎ・9/7は3回に戻す）。X投稿8本を20:01〜21:46で�
 # ☀️ 9/5(土)の昼の便（13:05にアラームが鳴る）
 
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
@@ -2989,6 +3844,15 @@ push 8回（多すぎ・9/7は3回に戻す）。X投稿8本を20:01〜21:46で�
 6. push（昼の1回）＝本日発売の枠に締切が入った状態にしてから
    🚨未pushコミット **bb9afaff**（朝のe+2件）が残っている＝昼のpushで一緒に上げる
 ```
+🚨🚨【9/19 朝・pushの前にやる】TIGET 4,085件の投入＝**まず500件で重さを測る**
+   ユーザー「今後いっぱい入れる予定だったから、平気なら一気に入れてほしいけど、
+             明日の朝やってみましょ　プッシュの前にね」
+   素材＝tmp/x0919/built_tiget_all.json（組み上がり4,167件／載せない43件）
+   inject_tiget の下見＝put=4085 dup=0 maybe=82（maybeは投入せず報告）
+   ① 500件だけ --apply → build_ai_page → ユーザーに「携帯で開いて重さを見て」と頼む
+   ② 平気なら残り3,585件を一気に → 🔒gate_tiget_slots.py（4,085件だと1時間20分かかる）
+   ③ 重かったら止めて分割読み込みを考える＝[[project_index_html_size_ceiling]]
+   📏いま13.3MB(8,592件) → 全部入れると17.6MB
 📊 【9/20（日）に必ずやる】ユーザー依頼「動画ありとなしの数字、2日後に比べて教えて」
    台帳＝tmp/x0919/media_ab.json（9/18夜の9本／④だけ20秒動画・①②③は画像・⑤〜⑨なし）
    x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → tools/x_analyze.py
