@@ -201,22 +201,57 @@ def parse_event(html, eid):
         for k in range(1, len(parts) - 1, 2):
             cls, tb = parts[k].strip(), parts[k + 1]
             out['statuses'].append(cls)
-            nm = re.search(r'__content__name">(.*?)</div>\s*<div class="c-ordering-btn__content__status', tb, re.S)
-            raw = nm.group(1) if nm else ''
-            name = unesc(strip_tags(re.sub(r'<div class="play-date-label">.*?</div>', ' ', raw, flags=re.S)))
-            price = None
-            pm2 = re.search(r'([0-9,]+)\s*円', name)
-            if pm2:
-                price = int(pm2.group(1).replace(',', ''))
-                name = name.replace(pm2.group(0), '').strip()
+            # 🚨🚨TIGETには券種の書き方が**2種類**ある（2026-09-18＝片方しか読んでおらず
+            #    61イベント・432枠が「名前も値段も無い」状態で入った）。
+            #    A（単発もの）: <div class="c-ordering-btn__content__name">優先入場<br>
+            #                   <div class="play-date-label">…</div>5,500円</div>
+            #    B（複数日・複数枠もの）: <div class="c-ordering-btn__content-main-event__name">
+            #                   <span class='c-ordering-ticket-name'>名前</span><br>
+            #                   <span class='c-ordering-ticket-date'>2027年03月07日(日) 10:00開場</span><br>
+            #                   <span class="c-ordering-ticket-price">110円</span></div>
+            #    🚨Bは**券種ごとに公演日時を持ち、公演の塊に見出しが無い**＝日付もここから取る。
+            name, price, tdate, ttime = '', None, None, None
+            nb = re.search(r"c-ordering-ticket-name'>(.*?)</span>", tb, re.S)
+            if nb:
+                name = unesc(strip_tags(nb.group(1)))
+                pb = re.search(r'c-ordering-ticket-price">\s*([0-9,]+)\s*円', tb)
+                if pb:
+                    price = int(pb.group(1).replace(',', ''))
+                db = re.search(r"c-ordering-ticket-date'>(.*?)</span>", tb, re.S)
+                if db:
+                    dt2 = unesc(strip_tags(db.group(1)))
+                    tdate = parse_jp_date(dt2)
+                    tm2 = re.search(r'(\d{1,2}):(\d{2})', dt2)
+                    ttime = '%d:%s' % (int(tm2.group(1)), tm2.group(2)) if tm2 else None
+            else:
+                nm = re.search(r'__content__name">(.*?)</div>\s*<div class="c-ordering-btn__content__status', tb, re.S)
+                raw = nm.group(1) if nm else ''
+                name = unesc(strip_tags(re.sub(r'<div class="play-date-label">.*?</div>', ' ', raw, flags=re.S)))
+                pm2 = re.search(r'([0-9,]+)\s*円', name)
+                if pm2:
+                    price = int(pm2.group(1).replace(',', ''))
+                    name = name.replace(pm2.group(0), '').strip()
             periods = []
             for lm, vm in zip(re.finditer(r'purchase-period__label">(.*?)</div>', tb, re.S),
                               re.finditer(r'purchase-period__value">(.*?)</div>', tb, re.S)):
                 periods.append({'pay': unesc(strip_tags(lm.group(1))),
                                 'text': unesc(strip_tags(vm.group(1))),
                                 'parsed': parse_period(strip_tags(vm.group(1)))})
-            prog['tickets'].append({'name': name, 'price': price, 'class': cls, 'periods': periods})
-        out['programs'].append(prog)
+            prog['tickets'].append({'name': name, 'price': price, 'class': cls,
+                                    'date': tdate, 'time': ttime, 'periods': periods})
+        # 🚨B形は券種ごとに公演日時を持つ＝公演の塊の見出しが無いので、券種の日付で塊を割り直す。
+        #    これをしないと「1つの公演に45券種」に見えて、昼夜も日別も潰れる。
+        if any(t.get('date') for t in prog['tickets']):
+            byday = {}
+            for t in prog['tickets']:
+                k = (t.get('date') or prog['date'], t.get('time'))
+                byday.setdefault(k, []).append(t)
+            for (dd, tt), ts in byday.items():
+                out['programs'].append({
+                    'datetime_text': ('%s %s開場' % (dd, tt)) if tt else (dd or ''),
+                    'date': dd, 'tickets': ts})
+        else:
+            out['programs'].append(prog)
     return out
 
 
@@ -237,7 +272,24 @@ def _selftest():
                          '<div class="event-area">場所：東京都</div>')
     assert lm['9']['area'] == '東京都' and lm['9']['play_date'] == '2026年11月21日(土)', lm
     assert lm['9']['status_tag'] == 'あと64日', lm
-    print('selftest OK: parse_jp_date/parse_period/pref_of/parse_list_page/parse_list_meta')
+    # 🚨券種の書き方B（複数日・複数枠もの）＝名前・値段・公演日時が span で入る形
+    htmlB = ('<div class="pg-event__ordering__program">'
+             '<div class="c-ordering-btn is-available ">'
+             '<div class="c-ordering-btn__content-main-event__name">'
+             "<span class='c-ordering-ticket-name'>AAA. 個人協賛</span><br>"
+             "<span class='c-ordering-ticket-date'> 2027年03月07日(日) 10:00開場 </span> <br>"
+             '<span class="c-ordering-ticket-price">110円</span></div>'
+             '<div class="c-ordering-btn__content__status"><span>事前支払い</span></div>'
+             '<div class="purchase-period"><div class="purchase-period__label">カード決済</div>'
+             '<div class="purchase-period__value">:2026.04.27 03:48 ~ 2027.03.07 14:00</div></div>'
+             '</div></div><div class="pg-event__ordering__caption">')
+    dB = parse_event(htmlB, '1')
+    assert len(dB['programs']) == 1, dB['programs']
+    tB = dB['programs'][0]['tickets'][0]
+    assert tB['name'] == 'AAA. 個人協賛' and tB['price'] == 110, tB
+    assert dB['programs'][0]['date'] == '2027-03-07', dB['programs'][0]
+    assert tB['periods'][0]['parsed'][2] == '2027-03-07', tB['periods']
+    print('selftest OK: parse_jp_date/parse_period/pref_of/parse_list_page/parse_list_meta/券種B形')
 
 
 def main():
