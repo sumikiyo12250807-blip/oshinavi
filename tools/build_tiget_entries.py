@@ -80,6 +80,12 @@ def jp(iso):
     return '%d年%d月%d日(%s)' % (y, m, d, WD[datetime.date(y, m, d).weekday()])
 
 
+def prog_time(p):
+    """公演の塊の見出しから開場時刻を取る（「2026年09月27日(日) 11:30開場」→ 11:30）。"""
+    m = re.search(r'(\d{1,2}):(\d{2})', p.get('datetime_text') or '')
+    return '%d:%s' % (int(m.group(1)), m.group(2)) if m else None
+
+
 def last_period(t):
     """券種の受付期間のうち、いちばん遅い終了日時を返す → (開始iso, 開始hm, 終了iso, 終了hm)"""
     ps = [p['parsed'] for p in (t.get('periods') or []) if p.get('parsed')]
@@ -161,6 +167,13 @@ def sale_start(ev):
 def build(ev, today):
     if is_seller_side(ev.get('name')):
         return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
+    # 🚨主催者の雛形が730日の線をすり抜ける（2026-09-18＝id13228 公演名「予約」・
+    #    公演2027-11-18 なのに**発売日が2025-11-18**＝1年10か月前）。
+    #    ありふれた1語の公演名で、発売日が1年以上前のものは雛形として弾く。
+    ss = sale_start(ev)[0]
+    if (ev.get('name') or '').strip() in ('予約', 'チケット', 'テスト', '当日払い', '前売') and ss:
+        if ss < (datetime.date.fromisoformat(today) - datetime.timedelta(days=365)).isoformat():
+            return None, '公演名が1語＋発売日が1年より前＝主催者の雛形の疑い'
     cats = ev.get('cats') or []
     genres = [CAT_GENRE[c] for c in cats if c in CAT_GENRE]
     dates = sorted({p['date'] for p in ev['programs'] if p.get('date')})
@@ -176,11 +189,21 @@ def build(ev, today):
 
     pref = ev.get('prefecture')
     ss_date, ss_time = sale_start(ev)
+    # 🚨🚨同じ日に公演が2つ以上あるエントリは、バッジに**開場時刻**を入れる。
+    #    入れないと「昼の部」「夜の部」や時間帯予約が同じ文字になり、後ろの重複つぶしで
+    #    **本物の別枠が消える**（2026-09-18＝198エントリ・113枠が潰れていた。
+    #    id510796 ひでじビールは11:00〜17:00の30分刻み17枠が1枠になっていた）。
+    #    決まり＝[[feedback_same_day_show_time_badge]]（同会場同日の時間違いは公演時間を入れる）。
+    percount = {}
+    for p in ev['programs']:
+        if p.get('date'):
+            percount[p['date']] = percount.get(p['date'], 0) + 1
     tickets, has_live = [], False
     for p in ev['programs']:
         d = p.get('date')
         if not d or d < today:
             continue
+        ptime = prog_time(p) if percount.get(d, 0) > 1 else None
         # 🚨同じ公演の中で券種名がぶつかると、**画面に同じバッジが並んで区別がつかない**
         #    （2026-09-18＝98エントリでこれが起きた。「チケット（岐阜 3/7公演）〜3/7 14:00」が3つ）。
         #    真因は2つ＝①TIGETの主催者が別の券種に同じ名前を付けている
@@ -193,6 +216,11 @@ def build(ev, today):
         for i, t in enumerate(p['tickets']):
             st = state_of(t.get('class'))
             per = last_period(t)
+            # 🚨出す側は**券種名にも**当てる（2026-09-18＝id12480「出店ブース」・
+            #    id12821「yen販売のみの出店者」・id13146「ステージ装飾協賛のみ」が残っていた）。
+            #    ⚠️「取り置き」「チェキ撮影」は推しに会う側なので巻き添えにしない。
+            if is_seller_side(t.get('name')) and not re.search(r'取り置き|取置|チェキ', t.get('name') or ''):
+                continue
             nm = names[i]
             if nm in multi and prices[i] is not None:
                 same = {prices[j] for j, n in enumerate(names) if n == nm}
@@ -201,7 +229,8 @@ def build(ev, today):
             # 🚨県が分からないイベントがある（主催者が住所を登録していない＝会場名にも一覧にも
             #    JSON-LDにも県が無い。2026-09-18 に7件）。会場名の市名から県を当てるのは推測なので
             #    **バッジから県を落とす**。カードには📍会場名が出るので場所は読める。
-            head = f'{nm}（{pref} {md(d)}公演）' if pref else f'{nm}（{md(d)}公演）'
+            when = f'{md(d)} {ptime}公演' if ptime else f'{md(d)}公演'
+            head = f'{nm}（{pref} {when}）' if pref else f'{nm}（{when}）'
             if st == 'unopened':
                 if not per:
                     continue                      # 受付前で開始日が読めない＝推測で日付を作らない
@@ -210,8 +239,13 @@ def build(ev, today):
                 has_live = True
             elif st == 'live':
                 if per:
-                    tickets.append({'type': f'{head}〜{md(per[2])} {per[3]}'.rstrip(),
-                                    'date': per[2], 'url': ev['url']})
+                    # 🚨締切が公演日より後なら公演日で締める（[[feedback_sale_end_cap_show_date]]）。
+                    #    ⚠️配信・視聴チケットは公演の後も買えるので例外（巻き添えで嘘にしない）。
+                    end, endt = per[2], per[3]
+                    if end > d and not re.search(r'配信|視聴|アーカイブ', nm):
+                        end, endt = d, ''
+                    tickets.append({'type': f'{head}〜{md(end)} {endt}'.rstrip(),
+                                    'date': end, 'url': ev['url']})
                     has_live = True
                 elif ss_date:
                     # 🚨「当日支払い」の券種は受付期間の欄がHTMLに出ない＝**締切がどこにも書いていない**。
@@ -286,7 +320,12 @@ def build(ev, today):
     return e, None
 
 
-CITY_SUFFIX = re.compile(r'\s*(?:in|In|IN|＜|<|〜|~|＠|@)\s*[^\s＞>]{1,12}(?:公演)?\s*[＞>]?\s*$')
+# 🚨ツアーの尻尾＝会場を表す札だけを剥がす。
+#   2026-09-18＝`〜vol.1〜`『〈14時の部〉』`~live.12~` まで剥がして**別商品・別公演を畳んでいた**
+#   （id12767 能楽いろは＝〈通し券〉5,500円と〈14時の部〉3,000円が1エントリに／id11869・12758・12427・12312）。
+#   ⛔剥がさない＝vol. / の部 / DAY / live. / 通し / 先行 / 回 / 夜 / 昼 …（別の商品・別の公演）
+CITY_SUFFIX = re.compile(r'\s*(?:in|In|IN|＠|@)\s*[^\s＞>〈〉]{1,12}(?:公演)?\s*$')
+NOT_A_PLACE = re.compile(r'vol|Vol|VOL|ｖｏｌ|の部|DAY|Day|day|live|LIVE|通し|先行|[0-9]+回|昼|夜|部$')
 
 
 def tour_key(e):
@@ -295,8 +334,11 @@ def tour_key(e):
        TIGETは**会場ごとに別ページ**で売る。決まりは「ツアー・複数会場は1エントリ」
        （feedback_tour_consolidate）なので、ここで束ねて各枠に会場別URLを焼き込む
        （feedback_tour_per_ticket_url）。"""
+    m = CITY_SUFFIX.search(e['name'])
+    if not m or NOT_A_PLACE.search(m.group(0)):
+        return None
     base = CITY_SUFFIX.sub('', e['name']).strip()
-    if len(base) < 4 or base == e['name']:
+    if len(base) < 4:
         return None
     return (e['artist'], base)
 
@@ -389,6 +431,47 @@ def _selftest():
     t3 = e3['tickets'][0]
     assert t3['type'] == '自由席（大阪 10/18公演）8/20 11:40発売〜', t3['type']
     assert t3['saleEndUnknown'] is True and t3['date'] == '2026-10-18' and t3['startDate'] == '2026-08-20', t3
+    # 🚨同じ日に公演が2つ以上＝バッジに開場時刻を入れる（昼夜・時間帯予約を潰さない）
+    evT = json.loads(json.dumps(ev))
+    evT['programs'] = [
+        {'date': '2026-10-18', 'datetime_text': '2026年10月18日(日)　11:00開場',
+         'tickets': [{'name': 'BBQ予約', 'class': 'is-available', 'price': 4000,
+                      'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]}]},
+        {'date': '2026-10-18', 'datetime_text': '2026年10月18日(日)　11:30開場',
+         'tickets': [{'name': 'BBQ予約', 'class': 'is-available', 'price': 4000,
+                      'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]}]},
+    ]
+    eT, _ = build(evT, '2026-09-18')
+    tyT = sorted(t['type'] for t in eT['tickets'])
+    assert tyT == ['BBQ予約（大阪 10/18 11:00公演）〜10/17 23:59',
+                   'BBQ予約（大阪 10/18 11:30公演）〜10/17 23:59'], tyT
+    # 🚨締切が公演日より後なら公演日で締める（配信は例外）
+    evC = json.loads(json.dumps(ev))
+    evC['programs'][0]['tickets'] = [
+        {'name': '一般', 'class': 'is-available', 'price': 3000,
+         'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-25', '21:00']}]},
+        {'name': '【配信】視聴チケット', 'class': 'is-available', 'price': 2000,
+         'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-25', '21:00']}]}]
+    eC, _ = build(evC, '2026-09-18')
+    got = {t['type']: t['date'] for t in eC['tickets']}
+    assert got.get('一般（大阪 10/18公演）〜10/18') == '2026-10-18', got
+    assert got.get('【配信】視聴チケット（大阪 10/18公演）〜10/25 21:00') == '2026-10-25', got
+    # 🚨出す側は券種名にも当てる（取り置き・チェキは巻き添えにしない）
+    evS = json.loads(json.dumps(ev))
+    evS['programs'][0]['tickets'] = [
+        {'name': '出店ブース', 'class': 'is-available', 'price': 3000,
+         'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]},
+        {'name': '自由席（TIGET予約 or 出演者から取り置き）', 'class': 'is-available', 'price': 2500,
+         'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]}]
+    eS, _ = build(evS, '2026-09-18')
+    assert len(eS['tickets']) == 1 and '自由席' in eS['tickets'][0]['type'], [t['type'] for t in eS['tickets']]
+    # 🚨ツアー畳み＝会場の札だけ剥がす（vol./の部/通し券は別商品なので畳まない）
+    def mk2(nm):
+        return {'artist': 'A', 'name': nm, 'venue': 'v', 'prefecture': '東京', 'date': '2026-10-01',
+                'dateLabel': '', 'links': {'tiget': 'u'}, 'tickets': []}
+    assert tour_key(mk2('能楽いろは〈通し券〉')) is None
+    assert tour_key(mk2('定期公演 vol.87')) is None
+    assert tour_key(mk2('Aライブ in 大阪')) == ('A', 'Aライブ')
     # 🚨同じ公演で券種名がぶつかる＝値段が違えば値段で見分ける／値段も同じなら1つに畳む
     ev8 = json.loads(json.dumps(ev))
     ev8['programs'][0]['tickets'] = [
