@@ -1,0 +1,29 @@
+﻿python :   4490 OK
+At line:1 char:327
++ ... Seconds 20; python tools/build_pia_entries.py tmp/x0919/cands3_retry. ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  4490 OK:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  950 OK
+  8296 OK
+  2992 OK
+構築 4 件 / skip []
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+⚠️ 取りこぼし 6件（買える枠なのに取り込めなかった＝要対応）:
+   id4490 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pi
+a/event/event.do?eventCd=2631943
+   id4490 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pi
+a/event/event.do?eventCd=2631948
+   id4490 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pi
+a/event/event.do?eventCd=2631942
+   id4490 [FETCH-ERR] when='The read operation timed out' | https://l-tike.com/order/?gLcode=11604&gPfKey=2026073100000
+2263530&gEntryMthd=01&gScheduleNo=1&gCarrierCd=08&gPfName=%E3%82%A2%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%AB%E3%83%A0&gBaseV
+enueCd=12704
+   id4490 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.
+jp/pia/event.do?eventCd=2634612
+   id950 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia
+/event/event.do?eventCd=2628866
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

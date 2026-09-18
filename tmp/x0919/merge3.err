@@ -1,0 +1,51 @@
+﻿python :   4328 OK
+At line:1 char:302
++ ... tch {} } }; python tools/build_pia_entries.py tmp/x0919/cands3_merge. ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  4328 OK:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  11073 OK
+  3483 OK
+  564 OK
+  4490 OK
+  6095 OK
+  6291 OK
+  7335 OK
+  3537 OK
+  72 OK
+  3915 OK
+  7907 OK
+  950 OK
+  4802 OK
+  3471 OK
+  523 OK
+  1625 OK
+  1214 OK
+  3750 OK
+  876 OK
+  8296 OK
+  2121 OK
+  2254 OK
+  3118 OK
+  6274 OK
+  5054 OK
+  6414 OK
+  11071 OK
+  3575 OK
+  2992 OK
+構築 30 件 / skip []
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+⚠️ 取りこぼし 4件（買える枠なのに取り込めなかった＝要対応）:
+   id4490 [FETCH-ERR] when='The read operation timed out' | https://l-tike.com/order/?gLcode=11604&gPfKey=2026073100000
+2263530&gEntryMthd=01&gScheduleNo=1&gCarrierCd=08&gPfName=%E3%82%A2%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%AB%E3%83%A0&gBaseV
+enueCd=12704
+   id950 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pia
+/event/event.do?eventCd=2628866
+   id8296 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://t.pia.jp/pi
+a/event/event.do?eventCd=2636362
+   id2992 [FETCH-ERR] when='ぴあが混雑ページに飛ばした（券種は読めていない）: http://sorry.pia.jp/nt2/pia/?mark=type-L10' | https://ticket.pia.
+jp/pia/event.do?eventBundleCd=b2670177
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
