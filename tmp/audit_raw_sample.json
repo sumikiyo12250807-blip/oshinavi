@@ -1,0 +1,140 @@
+[
+ {
+  "id": "523993",
+  "url": "https://tiget.net/events/523993",
+  "name": "おいでませ",
+  "venue": "中野名曲堂",
+  "prefecture": "東京",
+  "performers": [
+   "鈴木花純",
+   "牛山もも"
+  ],
+  "programs": [
+   {
+    "datetime_text": "2026年09月26日(土) 14:45開場",
+    "date": "2026-09-26",
+    "tickets": [
+     {
+      "name": "自由席",
+      "price": 2000,
+      "class": "is-unable is-unopened",
+      "periods": []
+     }
+    ]
+   }
+  ],
+  "statuses": [
+   "is-unable is-unopened"
+  ],
+  "detail_date": "2026-09-26",
+  "ld_region": "東京都",
+  "ld_offers": [
+   {
+    "price": 2000,
+    "valid_from": "2026-09-18",
+    "valid_from_time": "21:00",
+    "availability": "InStock"
+   }
+  ],
+  "cats": [
+   "79",
+   "29"
+  ],
+  "cat_names": [
+   "歌い手",
+   "アイドル"
+  ],
+  "list": {
+   "area": "東京都",
+   "play_date": "2026年09月26日(土)",
+   "status_tag": "あと8日"
+  }
+ },
+ {
+  "id": "523900",
+  "url": "https://tiget.net/events/523900",
+  "name": "宴 ~E'n~ & ReTAKE",
+  "venue": "SHIBUYA CYCLONE",
+  "prefecture": "東京",
+  "performers": [
+   "崚平",
+   "響丞",
+   "ココシン",
+   "フジモン",
+   "月詠",
+   "ｰru.ikuro-",
+   "07Girl's",
+   "よしだ",
+   "近識",
+   "りぃく"
+  ],
+  "programs": [
+   {
+    "datetime_text": "2026年10月17日(土) 15:30開場",
+    "date": "2026-10-17",
+    "tickets": [
+     {
+      "name": "入場チケット¥2,400 (ドリンク代別途) 2,400円",
+      "price": 600,
+      "class": "is-available",
+      "periods": [
+       {
+        "pay": "抽選日",
+        "text": ":2026.09.30 23:59",
+        "parsed": null
+       },
+       {
+        "pay": "カード決済",
+        "text": ":2026.09.17 20:12 ~ 2026.09.30 23:58",
+        "parsed": [
+         "2026-09-17",
+         "20:12",
+         "2026-09-30",
+         "23:58"
+        ]
+       },
+       {
+        "pay": "コンビニ決済",
+        "text": ":2026.09.17 20:12 ~ 2026.09.30 23:58",
+        "parsed": [
+         "2026-09-17",
+         "20:12",
+         "2026-09-30",
+         "23:58"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "statuses": [
+   "is-available"
+  ],
+  "detail_date": "2026-10-17",
+  "ld_region": "東京都",
+  "ld_offers": [
+   {
+    "price": 2620,
+    "valid_from": "2026-09-17",
+    "valid_from_time": "20:11",
+    "availability": "InStock"
+   }
+  ],
+  "cats": [
+   "79",
+   "80",
+   "41"
+  ],
+  "cat_names": [
+   "歌い手",
+   "ボカロ",
+   "アニメ／ゲーム／声優"
+  ],
+  "list": {
+   "area": "東京都",
+   "play_date": "2026年10月17日(土)",
+   "status_tag": "あと29日"
+  }
+ }
+]
