@@ -1,0 +1,25 @@
+{
+  "_comment": "2026-09-18夜の9本＝添付の有無で数字を比べるための台帳。ユーザー「動画ありとなしの数字、2日後に比べて教えて」。判定はX_SCRIPT/project_x_improvement_loopどおり【投稿の2日後＝9/20】。母数が9本しかないので『勝ち負けを言い切らない』こと。",
+  "measure_on": "2026-09-20",
+  "account": "@oshinavinavi",
+  "posts": [
+    {"n": 1, "at": "20:01", "kind": "主役", "topic": "YOASOBI", "media": "画像", "file": "tmp/promo/x_yoasobi.jpg"},
+    {"n": 2, "at": "20:11", "kind": "主役", "topic": "西川貴教", "media": "画像", "file": "tmp/promo/x_nishikawa.jpg"},
+    {"n": 3, "at": "20:21", "kind": "主役", "topic": "柴咲コウ", "media": "画像", "file": "tmp/promo/x_shibasaki.jpg"},
+    {"n": 4, "at": "20:31", "kind": "まとめ", "topic": "音楽(JPOP/ロック/洋楽)", "media": "動画20秒", "file": "tmp/mv/oshinavi_h3_20s_x.mp4"},
+    {"n": 5, "at": "20:41", "kind": "まとめ", "topic": "クラシック/ジャズ/邦楽", "media": "なし"},
+    {"n": 6, "at": "20:51", "kind": "まとめ", "topic": "お笑い/落語", "media": "なし"},
+    {"n": 7, "at": "21:01", "kind": "まとめ", "topic": "舞台", "media": "なし"},
+    {"n": 8, "at": "21:11", "kind": "まとめ", "topic": "スポーツ", "media": "なし"},
+    {"n": 9, "at": "21:21", "kind": "まとめ", "topic": "イベント", "media": "なし"}
+  ],
+  "how_to_compare": [
+    "🚨まとめ型どうしで比べる＝④(動画)と⑤〜⑨(なし)。主役①②③は型が違うので混ぜない（X_SCRIPT 6番・型で絞らないと字数と混ざる）",
+    "見るのは インプ / リンククリック / 1本あたりクリック / CTR の4つ",
+    "🚨跳ねた1本を外した検算を必ず並べる（外れ値1本で群が持ち上がる・8/31に1日で2回踏んだ）",
+    "母数＝動画1本 対 なし5本。**これでは勝ち負けを言えない**＝『こう見えた』までにして、次の日も動画を1本足して積む",
+    "道具＝ x.com/i/account_analytics の Content CSV → tmp/x_content_0920.csv → python tools/x_analyze.py"
+  ],
+  "first_reading_2026-09-18T20:35": {"post4_video_imp": 206, "post3_image_imp": 56,
+    "note": "出だし30分ほどの暫定値。④は出て4分・③は出て14分の時点なので、この比較には使えない（時間がそろっていない）"}
+}
