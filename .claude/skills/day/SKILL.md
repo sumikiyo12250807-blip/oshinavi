@@ -242,7 +242,12 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      python tools/inject_tiget.py tmp/built_tiget_MMDD.json            # 調べるだけ
      python tools/inject_tiget.py tmp/built_tiget_MMDD.json --apply    # 投入（genre:"new"）
      python tools/gate_tiget_slots.py     # 🔒 exit 0 以外なら投入しない（投入後にも回す）
+     python tools/heal_tiget.py           # 🆕2026-09-19 番人が鳴った分を実ページから作り直して下見 → --apply
+     python tools/gate_tiget_slots.py --ids <直したid>   # 0 に戻ったのを確かめる
      ```
+     🆕🚨**TIGETは毎日ずれる**（当日券が足される・売り切れの印が付く）＝9/19朝に2,461件中152件が食い違った。
+     ぴあのヒールはTIGETを見ないので、**毎朝 `gate_tiget_slots.py`（全件・約25分）→ `heal_tiget.py --apply`** を回す。
+     作り直しが空（出す側・過去・読めない）の件は触らない＝消さない。
      `inject_tiget.py` が二重登録を外す（①TIGETのURLが既にある ②名前×公演日が一致 ③同名の登録あり）。
      ②③は**入れずに報告**＝畳む先があるかは人が見る。投入後に「プールの件数＝NEW_ORDERの件数」を数える。
      🎯**`--stop-known 1` が毎朝用**＝一覧は新着順なので「登録済みだけのページ」に当たった時点で

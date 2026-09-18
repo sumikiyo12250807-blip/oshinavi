@@ -63,20 +63,12 @@ def extract_events_array(filepath: str):
     if not m:
         raise RuntimeError(f"{filepath}: const EVENTS not found")
     start = m.start(1)
-    depth = 0
-    end = None
-    for i in range(start, len(text)):
-        c = text[i]
-        if c == "[":
-            depth += 1
-        elif c == "]":
-            depth -= 1
-            if depth == 0:
-                end = i + 1
-                break
-    if end is None:
-        raise RuntimeError(f"{filepath}: array end not found")
-    return json.loads(text[start:end])
+    # 公演名に片方だけの [ ] が入ると括弧の数え上げが狂う（2026-09-19 TIGET）＝JSONとして文字列ごと読む
+    try:
+        events, _ = json.JSONDecoder().raw_decode(text, start)
+    except ValueError as ex:
+        raise RuntimeError(f"{filepath}: array end not found ({ex})")
+    return events
 
 
 def parse(s):
