@@ -233,8 +233,11 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      🚨ぴあ以外なので**振り分けはユーザーの確認後**（新着タブに置く）
    - 🆕🚨**TIGET（チゲット）も毎朝回す**（2026-09-18 ユーザー指示「朝のスイープにTIGET足しといて」）
      ```
-     python tools/tiget_harvest.py --cats 81,84,79,80,45,46,41,29 --stop-known 1 \
-            --out tmp/tiget_MMDD.json
+     python tools/tiget_harvest.py --stop-known 1 --out tmp/tiget_MMDD.json
+       # 🆕2026-09-18 ユーザー「うん　毎日確認お願いします」＝**--cats を書かない＝葉カテゴリ50個を全部回す**。
+       #   9/18まではYouTuber/VTuberなど8個だけで、64個中56個を見ていなかった。
+       #   ぴあに出ない小さなライブは 31(邦楽ポップ／ロック)・53(お笑い／寄席)・54(演劇) に溜まる。
+       # 🚫回さない5個＝ビジネス/技術/投資セミナー・ジム（推しに会いに行く枠ではない）＝ツールのCAT_SKIP
      python tools/build_tiget_entries.py tmp/tiget_MMDD.json --out tmp/built_tiget_MMDD.json
      python tools/inject_tiget.py tmp/built_tiget_MMDD.json            # 調べるだけ
      python tools/inject_tiget.py tmp/built_tiget_MMDD.json --apply    # 投入（genre:"new"）
