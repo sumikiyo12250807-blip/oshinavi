@@ -840,6 +840,17 @@
       "assigned": false,
       "rechecked": false,
       "note": "TIGETは基本利用無料で個人が売れる仕組みで、カテゴリにYouTuber/VTuberが正式にある＝ぴあに出ない小さなイベントの本場。券種名・価格・公演日・会場・受付期間（決済方法ごと）・売り状態が全部ページにある。売り状態の対応＝is-available:買える／is-fewremaining:残りわずか／is-unopened:受付前／is-unavailable:売切れ／is-closed:受付終了。🚨「当日支払い」の券種は受付期間の欄が出ない（94枠）＝公演日を締切に流用せず、JSON-LDのvalidFromで『M/D HH:MM発売〜』＋saleEndUnknownにした（実測95件中94件が全offer同日・食い違い0）。県は一覧の『場所：』が正（7件はTIGETのどこにも県が無いのでバッジから県を落とした）。ゲート＝tools/gate_tiget_slots.py（実ページから枠を作り直して全件突合）＝一致69・食い違い0・読めなかった0／check_badges OK（券種名の全角／と半角カッコをそろえ、カッコの途中で切らない形に直して27枠を現物編集）／並び順違反0。購入ボタンは index.html の linkDefs／VENDOR_TICKET_KEYS／CSS .btn-tiget と build_ai_page.py の VENDOR_ORDER に tiget を追加。ゲートが既存 id2764 一凛の『終わった7月の4公演が枠と会期に残っている』のも見つけたので直した。翌朝(9/19)に①独立再照合②別エージェントの客観チェック→⛔振り分けはユーザー確認後（ぴあ以外）。"
+    },
+    {
+      "date": "2026-09-18",
+      "slot": "evening",
+      "id_from": 13327,
+      "id_to": 13333,
+      "count": 7,
+      "source": "ぴあ 明日〜3日後発売の突き合わせ（lg=01/02/03/06/07）で出た未登録",
+      "assigned": false,
+      "rechecked": false,
+      "note": "X投稿の素材を作る前の突き合わせ。抜け46件のうち足し込み26件＋新規7件。🚫駐車券だけの売り場1件は入れていない（出す側／推しに会う枠でない）。足し込みで「買える枠0」が6件直った（2743秋山黄色・4038コブクロ・4820BALLISTIK BOYZ・4047山下大輝・7332ACTORS☆LEAGUE・6528さらばのこの本）"
     }
   ]
 }
