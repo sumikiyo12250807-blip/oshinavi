@@ -13,7 +13,7 @@
 🌙 夜の締めでやること（22:52）
    ① ヒール：22:00・22:45発売（ぴあ分だけ。TIGET枠はぴあのヒールでは扱えない）
    ② TIGETの番人 → tools/heal_tiget.py --apply（今日の18〜22時発売のTIGET枠が多い）
-   ③ 新着のぴあ3件を振り分け（別エージェントでぴあ表記を確認してから）＝id17236 mementoa／17237 Team337 X-OVER WEEK／17238 日本フィル第九特別演奏会2026
+   ✅③ ぴあ3件は振り分け済み（20:4x・commit 60949d88）＝第九の売り切れ2枠も足した。道具に assign_genres --only を追加
    ④ reconcile_pia --new → build_ai_page → check_badges／check_order → commit → 夜のpush（承認不要）
    ⑤ 🚨記事の段は9/13号のまま押す（9/20号は日曜朝）＝`git diff origin/main -- index.html | grep -c "pk-"` が 0 を確かめてから
 
