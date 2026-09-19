@@ -4,6 +4,10 @@
 ✅ 朝push＝削除70・ヒール214＋足し算78・TIGET486投入＋150件取り直し・楽天足し込み・id13333の飛び先
    logs/removed_2026-09-19.md ／ tools/heal_tiget.py 新設（毎朝 番人→heal_tiget）
    delete_entries / build_ai_page / check_expired＝片方だけの[ で配列を見失う罠を直した
+📰🚨【9/20(日) 朝のpushで公開】ユーザー決定「日曜の朝に出して」＝9/20号はユーザーOK済み・関所①②記録済み
+   python tools/apply_pickup.py tmp/pickup0920/section.html   ← ゲートありで通る（draft=cf1ba5794daf121f）
+   → build_ai_page → 朝のpush。土曜のpush用に index.html の記事の段は公開中の版（9/13号）に戻してある
+   ⚠️ draft.md を1文字でも触ったら①②をかけ直すこと（pickup_gate がハッシュで止める）
 ⏳ 返事待ち（聞き続ける）
    ①携帯で重さ → 平気なら TIGET残り tmp/x0919/built_tiget_rest.json（3,589件）を昼に一気に
    ✅②id3683 ムビチケ『超かぐや姫!』＝ユーザー「残す」（9/19）→ 販売終了の印を付けた。
