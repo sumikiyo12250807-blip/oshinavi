@@ -146,7 +146,7 @@ oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯&status=urgent
 **「明日発売のお笑いまとめ」なら `?genre=owarai&status=urgent`。**
 
 `genre` に入れる記号（画面のジャンルボタンと同じ）＝
-`jpop` `rock` `kpop` `yougaku` `hiphop` `anime` `idol` `youtuber` `vtuber` `kids`
+`jpop` `rock` `kpop` `yougaku` `hiphop` `anime` `idol` `youtuber` `vtuber` `tiktoker` `kids`
 `classic` `jazz` `enka` `dento` `hougaku` `chanson` `musicetc` `kaidan` `engeki` `fes`
 `sports` `hanabi` `2.5ji` `seiyuu` `owarai` `musical` `aisatsu` `dinnershow` `art`
 `gourmet` `fanevent` `douyou` `circus` `magic` `gakusai` `talkshow` `event`
