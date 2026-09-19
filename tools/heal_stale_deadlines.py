@@ -151,7 +151,13 @@ def main():
     if '--apply' in sys.argv:
         if not os.path.exists(OUT):
             print(f'!! {OUT} が無い。先に --build を実行して。'); return
-        built = {o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
+        # --ids で build したのに --apply に --ids を付け忘れると、前の便の heal_stale.json を
+        # 当ててしまう（2026-09-19 21:06 に176件分を当てかけた）。古い取り直しは当てない。
+        age_h = (time.time() - os.path.getmtime(OUT)) / 3600
+        if age_h > 2 and '--force-old' not in sys.argv:
+            print(f'!! {OUT} は {age_h:.1f} 時間前の取り直し。--ids で build したなら --apply にも同じ --ids を付けて。'
+                  f'（本当に古いのを当てるなら --force-old）'); return
+        built ={o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
         changed = carried = kept_n = 0
         blocked = []
         FORCE = '--force-shrink' in sys.argv
