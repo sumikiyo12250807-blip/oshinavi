@@ -92,18 +92,71 @@ def perf_span(perfs):
 _WIN_DT = r'(20\d{2})/(\d{2})/(\d{2})\s*\([^)]*\)\s*(\d{1,2}:\d{2})'
 
 
+def norm_timming(timming):
+    """🚨販売期間の文字列を半角に揃えてから読む（2026-09-20 追加）。
+
+    楽天は時刻を**全角コロン**で書くページがある＝`2026/07/11(土) 00：00 〜 2026/09/23(水) 17：00`。
+    _WIN_DT は半角の `:` しか見ないので (None, None) が返り、呼び出し側の `if not sd: continue` で
+    **その窓が丸ごと落ちる**。実害＝id未登録「ゴールドマン コレクション 河鍋暁斎の世界［兵庫］」の
+    2枠が「買える枠なし」で捨てられていた（〜9/23 17:00 はまだ受付中）。
+    """
+    if not timming:
+        return ''
+    return (timming.replace('：', ':').replace('／', '/')
+            .replace('（', '(').replace('）', ')'))
+
+
 def win_end_iso(timming):
-    ds = re.findall(_WIN_DT, timming or '')
+    ds = re.findall(_WIN_DT, norm_timming(timming))
     if len(ds) < 2:
         return None, None
     return '%s-%s-%s' % ds[1][:3], ds[1][3]
 
 
 def win_start_iso(timming):
-    ds = re.findall(_WIN_DT, timming or '')
+    ds = re.findall(_WIN_DT, norm_timming(timming))
     if not ds:
         return None, None
     return '%s-%s-%s' % ds[0][:3], ds[0][3]
+
+
+def mk_ticket(label, gp, ed, et, need_time, sd, st, url, today):
+    """販売枠を1本作る。窓(windows)から作る時とカードから作る時で**同じ文言・同じ決まり**にする
+    ために切り出した（2026-09-20）。締切済みなら None を返す。"""
+    if ed and ed < today:
+        return None                                # 締切済み＝載せない
+    span = perf_span(gp)
+    pref_txt = '・'.join(dict.fromkeys(pref_short(p['pref']) for p in gp if p['pref']))
+    last_r = max((p.get('end') or p['date']) for p in gp)
+    # 開演時刻を入れるのは2つの時だけ（[[feedback_same_day_show_time_badge]]・増やさない）
+    #   ①同じ公演日・会場に締切違いが並ぶ（バッジが同じ文字になって見分けられない）
+    #   ②受付の締切が公演当日にある（何時の回に間に合う締切か分からない）
+    same_day = bool(ed) and {ed} == {p['date'] for p in gp}
+    if (need_time or same_day) and all(p.get('time') for p in gp):
+        tms = '・'.join(dict.fromkeys(p['time'] for p in gp))
+        if tms and '〜' not in span:
+            span = '%s %s' % (span, tms)
+    t = {}
+    if ed:
+        # 受付終了が公演日より後なら公演日で締める（[[feedback_sale_end_cap_show_date]]）
+        if ed > last_r:
+            ed, et = last_r, ''
+        t['type'] = ('%s（%s %s公演）〜%s %s' % (label, pref_txt, span, r9(ed), et)).strip()
+        t['date'] = ed
+    else:
+        t['type'] = '%s（%s %s公演）〜%s公演日' % (label, pref_txt, span, r9(last_r))
+        t['date'] = last_r
+        t['saleEndUnknown'] = True
+    if sd and sd > today:
+        t['startDate'] = sd
+        t['type'] = t['type'].replace('公演）', '公演）%s %s発売 ' % (r9(sd), st), 1).strip()
+    if t.get('startDate') == t['date'] or (sd and sd == t['date']):
+        # 発売日=締切日の単日形＝当日券。そのままだと「隠れ枠」になり、
+        # ヒール(heal_stale_deadlines)はぴあ専用なので誰も直せず画面から消える。
+        # 当日券は事実として「売り切れ次第終了」なのでフラグを立てて除外対象にする。
+        t['saleUntilSoldOut'] = True
+    t['url'] = deeplink(url)
+    return t
 
 
 def deeplink(u):
@@ -199,6 +252,7 @@ def build(recs, new_id):
         amb_perf = {k for k in by_perf if len(seen_dv[k[:3]]) > 1}
         ambiguous = {ce: all(k in amb_perf for k in by_perf if perf_end[k] == ce)
                      for ce in by_slot}
+        made0 = len(tickets)
         for w in r['windows']:
             sd, st = win_start_iso(w['timming'])
             ed0, et0 = win_end_iso(w['timming'])
@@ -211,42 +265,57 @@ def build(recs, new_id):
                 chunks = []
                 for ce in sorted(by_slot, key=lambda s: s or '9999'):
                     chunks.append((by_slot[ce], (ce[:10] or None), ce[11:16], ambiguous[ce]))
+            label = re.sub(r'\s+', ' ', w['type'] or '一般発売').strip()
             for gp, ed, et, need_time in chunks:
-                if ed and ed < today:
-                    continue                           # 締切済み＝載せない
-                span = perf_span(gp)
-                pref_txt = '・'.join(dict.fromkeys(pref_short(p['pref']) for p in gp if p['pref']))
-                last_r = max((p.get('end') or p['date']) for p in gp)
-                # 開演時刻を入れるのは2つの時だけ（[[feedback_same_day_show_time_badge]]・増やさない）
-                #   ①同じ公演日・会場に締切違いが並ぶ（バッジが同じ文字になって見分けられない）
-                #   ②受付の締切が公演当日にある（何時の回に間に合う締切か分からない）
-                same_day = bool(ed) and {ed} == {p['date'] for p in gp}
-                if (need_time or same_day) and all(p.get('time') for p in gp):
-                    tms = '・'.join(dict.fromkeys(p['time'] for p in gp))
-                    if tms and '〜' not in span:
-                        span = '%s %s' % (span, tms)
-                label = re.sub(r'\s+', ' ', w['type'] or '一般発売').strip()
-                t = {}
-                if ed:
-                    # 受付終了が公演日より後なら公演日で締める（[[feedback_sale_end_cap_show_date]]）
-                    if ed > last_r:
-                        ed, et = last_r, ''
-                    t['type'] = ('%s（%s %s公演）〜%s %s' % (label, pref_txt, span, r9(ed), et)).strip()
-                    t['date'] = ed
-                else:
-                    t['type'] = '%s（%s %s公演）〜%s公演日' % (label, pref_txt, span, r9(last_r))
-                    t['date'] = last_r
-                    t['saleEndUnknown'] = True
-                if sd > today:
-                    t['startDate'] = sd
-                    t['type'] = t['type'].replace('公演）', '公演）%s %s発売 ' % (r9(sd), st), 1).strip()
-                if t.get('startDate') == t['date'] or sd == t['date']:
-                    # 発売日=締切日の単日形＝当日券。そのままだと「隠れ枠」になり、
-                    # ヒール(heal_stale_deadlines)はぴあ専用なので誰も直せず画面から消える。
-                    # 当日券は事実として「売り切れ次第終了」なのでフラグを立てて除外対象にする。
-                    t['saleUntilSoldOut'] = True
-                t['url'] = deeplink(r['url'])
-                tickets.append(t)
+                t = mk_ticket(label, gp, ed, et, need_time, sd, st, r['url'], today)
+                if t:
+                    tickets.append(t)
+
+        # 🚨🚨【2026-09-20 新設】窓から1本も作れなかった時だけ、**公演カードの販売期間**で枠を作る。
+        #    Why＝「販売枠(windows)」が空のページ／窓が全部終わっているページでも、
+        #      公演カードは1枚ずつ生きた販売期間(min_start_on / max_end_on)を持っていて、
+        #      画面には「購入する」が並んでいる。それを丸ごと '買える枠なし' で捨てていた。
+        #    実測（2026-09-20・飛ばされた18ページを1枚ずつ開いて確認）＝9ページに買える行が37本。
+        #      ①windows空 …… 関東大学バスケ2巡目(17公演・丸ごと未登録)／乃木坂46 42ndSGアンダー
+        #                      ライブ【一般視聴】／@JAM the Field vol.30／スタンレーレディス
+        #      ②windows全部終了 … n.SSign／コドモパーティーIII／高中正義 全国／LOVEBITES 全国
+        #    🚨この型は `reconcile_rakuten` も `rakuten_mark_soldout` も捕まえられない
+        #      ＝どちらも「登録済みの枠」しか見ないので、登録されなかったページは視界の外。
+        #    束ね方は窓ありの時と同じ（締切ごとに公演を束ねる＝[[feedback_sale_end_unknown_display]]）。
+        #    🚨🚨歯止め（2026-09-20・入れる直前に気づいた）＝**カードが「受付中」で、かつ
+        #      販売終了日時(max_end_on)を持っている束だけ**を枠にする。
+        #      Why＝カードが取れない mini 形式のページは `parse_perfs_text()` が平文から拾うので
+        #      販売期間が空になり、この道が「〜公演日＋saleEndUnknown」＝**販売中の枠**を作ってしまう。
+        #      ところがその手のページは実物を見ると「購入する」が0本で「販売終了」と書いてある。
+        #      ＝**買えないものを「買える」として載せる嘘**になる（[[feedback_no_fake_info]]）。
+        #      実測（2026-09-20）＝この歯止めが無いと 藤井フミヤ／大阪芸術花火（市民割）／
+        #      木下大サーカス／Rakuten GirlsAward／秦基博［神奈川］／アップアップガールズ（フェス）／
+        #      高中正義［追加公演］12/31 に嘘の「販売中」が立った（どれも楽天では買えない）。
+        #    🚨束ねる単位は「締切」**だけ**ではなく「締切＋券種名」。
+        #      Why＝束ねる決まりの狙いは「画面に見分けのつかない badge が2つ並ぶのを防ぐ」こと。
+        #      券種名が違えば badge の文字も違うので、まとめる理由が無い。まとめると嘘になる＝
+        #      関東大学バスケ2巡目で「リーグ戦シーズンシート(自由席) 9/23〜10/25」と
+        #      「10/25の白鴎大2会場」が締切10/24で同じだからと1枠になり、
+        #      **「9/23〜10/25公演が10/24まで買える」**という嘘の枠が出た（9/23の試合は9/22締切）。
+        #      reconcile_rakuten がこれを FAIL で捕まえた（2026-09-20）。
+        if len(tickets) == made0 and by_slot:
+            by_slot2 = {}
+            for ce, g in by_slot.items():
+                for p in g:
+                    if p.get('status') != '受付中':
+                        continue
+                    nm = re.sub(r'\s+', ' ', (p.get('ticket_name') or '')).strip()
+                    by_slot2.setdefault((ce, nm), []).append(p)
+            for ce, nm in sorted(by_slot2, key=lambda k: (k[0] or '9999', k[1])):
+                gp = by_slot2[(ce, nm)]
+                if not ce:
+                    continue
+                ss = sorted(p.get('sale_start') or '' for p in gp if p.get('sale_start'))
+                sd, st = (ss[0][:10], ss[0][11:16]) if ss else ('', '')
+                t = mk_ticket(nm or '一般発売', gp, (ce[:10] or None), ce[11:16],
+                              ambiguous.get(ce, False), sd, st, r['url'], today)
+                if t:
+                    tickets.append(t)
 
     # 同じ表記・同じ締切・同じ飛び先の枠は1つにする。楽天は「一般発売」を販売枠に2つ
     # 並べることがあり（片方に終わりが書いてあり片方は空）、そのまま出すと画面に
@@ -501,8 +570,72 @@ def _selftest_body():
     assert '（東京 11/19〜11/20公演）' in e8['tickets'][0]['type'], e8['tickets'][0]['type']
     assert e8['tickets'][0]['date'] == '2026-11-11', e8['tickets']
 
+    # 🚨2026-09-20追加①＝**全角コロン**の販売期間が読めること。
+    #   実害＝「ゴールドマン コレクション 河鍋暁斎の世界［兵庫］」が（まだ〜9/23 17:00 受付中なのに）
+    #         win_start_iso が (None,None) を返して窓ごと落ち、'買える枠なし' で捨てられていた。
+    assert win_start_iso('2026/07/11(土) 00：00 〜 2026/09/23(水) 17：00') == ('2026-07-11', '00:00')
+    assert win_end_iso('2026/07/11(土) 00：00 〜 2026/09/23(水) 17：00') == ('2026-09-23', '17:00')
+
+    # 🚨2026-09-20追加②＝**windowsが空／窓が全部終了**でも、公演カードの販売期間で枠を作ること。
+    #   実害＝関東大学バスケ2巡目（17公演・買える行17本）が丸ごと未登録だった。
+    #   ⚠️このテストが落ちたら「買える枠なし」で捨てる嘘が戻っている。
+    cards = [{'date': '2026-09-23', 'end': '', 'time': '11:00', 'pref': '東京都',
+              'venue': 'テスト体育館', 'status': '受付中', 'ticket_name': '一般発売',
+              'sale_start': '2026-09-18 12:00', 'sale_end': '2026-09-22 23:59'},
+             {'date': '2026-10-25', 'end': '', 'time': '13:00', 'pref': '東京都',
+              'venue': 'テスト体育館', 'status': '受付中', 'ticket_name': 'シーズンシート',
+              'sale_start': '2026-09-18 12:00', 'sale_end': '2026-10-24 23:59'}]
+    rec9 = {'url': 'https://ticket.rakuten.co.jp/sports/basketball/rtxxbb0/',
+            'name': 'テストリーグ戦2巡目', '_genre': 'sports',
+            'perfs': [dict(c) for c in cards], 'windows': []}
+    e9, why9 = build(rec9, 9993)
+    assert e9, 'windows空で捨ててはいけない: %s' % why9
+    assert len(e9['tickets']) == 2, e9['tickets']
+    d9 = sorted(t['date'] for t in e9['tickets'])
+    assert d9 == ['2026-09-22', '2026-10-24'], d9        # 締切は公演ごとに別（max を流用しない）
+    assert all(t.get('saleEndUnknown') is None for t in e9['tickets']), e9['tickets']
+    assert any('シーズンシート' in t['type'] for t in e9['tickets']), e9['tickets']
+    # 🚨締切が同じでも**券種名が違えば別の枠**（まとめると「9/23〜10/25が10/24まで買える」の嘘になる）
+    cards2 = cards + [{'date': '2026-09-23', 'end': '2026-10-25', 'time': '', 'pref': '全国',
+                       'venue': '各会場', 'status': '受付中',
+                       'ticket_name': 'リーグ戦シーズンシート(自由席)',
+                       'sale_start': '2026-09-18 12:00', 'sale_end': '2026-10-24 23:59'}]
+    e14, _ = build(dict(rec9, perfs=[dict(c) for c in cards2], windows=[]), 9998)
+    assert len(e14['tickets']) == 3, e14['tickets']
+    seat = [t for t in e14['tickets'] if 'リーグ戦シーズンシート' in t['type']]
+    assert len(seat) == 1 and '9/23〜10/25公演' in seat[0]['type'], e14['tickets']
+    other = [t for t in e14['tickets'] if 'リーグ戦シーズンシート' not in t['type']]
+    assert all('9/23〜10/25' not in t['type'] for t in other), other
+    # 窓が全部終了している形でも同じ結果になること
+    rec10 = dict(rec9, perfs=[dict(c) for c in cards], windows=[
+        {'type': '先行', 'timming': '2026/05/01(金) 10:00 〜 2026/05/10(日) 23:59',
+         'status': '0', 'start': ''}])
+    e10, why10 = build(rec10, 9994)
+    assert e10, '窓が全部終了でも捨ててはいけない: %s' % why10
+    assert sorted(t['date'] for t in e10['tickets']) == d9, e10['tickets']
+    # 🚨窓が1本でも生きていたら従来どおり窓だけで作る（フォールバックが二重に効かない）
+    rec11 = dict(rec9, perfs=[dict(c) for c in cards], windows=[
+        {'type': '一般発売', 'timming': '2026/07/01(水) 10:00 〜 2026/10/20(火) 23:59',
+         'status': '0', 'start': ''}])
+    e11, _ = build(rec11, 9995)
+    assert len(e11['tickets']) == 1, e11['tickets']
+    # 🚨🚨歯止め＝カードが「販売終了」／販売期間が空の束からは枠を作らない。
+    #   これが無いと mini形式のページ（平文から拾うので販売期間が空）に
+    #   「〜公演日＋saleEndUnknown」の**嘘の販売中**が立つ（2026-09-20 に投入直前で気づいた）。
+    rec12 = dict(rec9, windows=[], perfs=[
+        {'date': '2026-10-18', 'end': '', 'time': '', 'pref': '東京都', 'venue': 'テスト会場',
+         'status': '販売終了', 'ticket_name': '一般発売', 'sale_start': '', 'sale_end': ''}])
+    e12, why12 = build(rec12, 9996)
+    assert e12 is None and why12 == '買える枠なし', (e12, why12)
+    rec13 = dict(rec9, windows=[], perfs=[
+        {'date': '2026-10-18', 'end': '', 'time': '', 'pref': '東京都', 'venue': 'テスト会場',
+         'status': '受付中', 'ticket_name': '一般発売', 'sale_start': '', 'sale_end': ''}])
+    e13, why13 = build(rec13, 9997)
+    assert e13 is None and why13 == '買える枠なし', (e13, why13)   # 販売期間が空なら作らない
+
     print('selftest OK: 締切不明→公演日+saleEndUnknown / 発売前startDate / 終了枠除去 / deeplink / R9年'
-          ' / 会場の表記ゆれ統合 / 単日形 / 半角カナ全角化 / 締切なし窓は公演ごとに枠を割る')
+          ' / 会場の表記ゆれ統合 / 単日形 / 半角カナ全角化 / 締切なし窓は公演ごとに枠を割る'
+          ' / 全角コロンの販売期間 / windows空・全終了はカードの販売期間で枠を作る')
 
 
 def main():
