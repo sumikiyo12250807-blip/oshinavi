@@ -23,7 +23,7 @@ from datetime import date, datetime
 GENRE_LABEL = {
     "new": "✨新着", "jpop": "J-POP", "rock": "ロック", "kpop": "K-POP",
     "yougaku": "洋楽", "hiphop": "HIP HOP", "anime": "アニソン", "idol": "アイドル",
-    "youtuber": "YouTuber", "vtuber": "VTuber", "kids": "キッズ",
+    "youtuber": "YouTuber", "vtuber": "VTuber", "tiktoker": "TikToker", "kids": "キッズ",
     # 2026-09-18 ユーザー「歌い手とボカロのタブ作って」＝index.html の GENRE_LABEL と必ず同じ内容に
     "utaite": "歌い手", "vocaloid": "ボカロ",
     # 2026-08-14 追加（index.html の GENRE_LABEL と必ず一致させる）。
