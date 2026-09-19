@@ -49,6 +49,11 @@ PATH_GENRE = [
     ('/event/matsuri/', 'hanabi'), ('/event/museum/', 'art'), ('/event/exhibition/', 'art'),
     ('/event/circus/', 'kids'), ('/event/themepark/', 'kids'), ('/event/show/', 'engeki'),
     ('/sports/', 'sports'),
+    # 🚨最後の砦＝小分類の付かない /event/ は楽天が「イベント」と言っているので event に写す。
+    #    これが無いと _genre が空のまま新着プールに残り、assign_genres が全件止まる
+    #    （2026-09-20＝id13820 ウルトラヒーローズ THE LIVE /event/rtntutt/ で3,892件の振り分けが止まった）。
+    #    人が最終判断する枠を作らない＝[[feedback_genre_pia_asis_and_other]]。必ず一番下に置くこと。
+    ('/event/', 'event'),
 ]
 
 # パンくず(楽天カテゴリ) → OSHINAVIジャンルの下書き。ぴあのPIA_GENRE_MAPと同じ役割。
