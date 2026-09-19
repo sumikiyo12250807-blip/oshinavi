@@ -153,6 +153,11 @@ def main():
             print(f'!! {OUT} が無い。先に --build を実行して。'); return
         # --ids で build したのに --apply に --ids を付け忘れると、前の便の heal_stale.json を
         # 当ててしまう（2026-09-19 21:06 に176件分を当てかけた）。古い取り直しは当てない。
+        IDS_OUT = 'tmp/heal_ids.json'
+        if (not ids and os.path.exists(IDS_OUT) and '--force-old' not in sys.argv
+                and os.path.getmtime(IDS_OUT) > os.path.getmtime(OUT)):
+            print(f'!! 直前の取り直しは --ids 版（{IDS_OUT} の方が新しい）。--apply にも同じ --ids を付けて。'
+                  f'（{OUT} を本当に当てるなら --force-old）'); return
         age_h = (time.time() - os.path.getmtime(OUT)) / 3600
         if age_h > 2 and '--force-old' not in sys.argv:
             print(f'!! {OUT} は {age_h:.1f} 時間前の取り直し。--ids で build したなら --apply にも同じ --ids を付けて。'
