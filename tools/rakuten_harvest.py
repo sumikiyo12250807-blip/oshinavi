@@ -230,8 +230,14 @@ def parse_windows(body):
                 'start': (v.get('sales_start_date') or '')[:16],
             })
     if not wins:
+        # 🚨券種名に**数字が入る**枠がある（「2次先行抽選」「高中正義公式ホームページ1次最速先行」）。
+        #   旧 `[^0-9]{0,20}?` は数字で切れてマッチせず、**販売枠が丸ごと0本**になっていた。
+        #   その結果 build_rakuten_entries がカードの販売終了日時（公演前日）を締切にして、
+        #   秦 基博［神奈川］が「〜11/7 23:59」＝実際は「2次先行抽選 〜9/23 23:59」という
+        #   **1か月半も長い嘘**になるところだった（2026-09-20・実ページを開いて発覚）。
+        #   このページは `var salesDisplayStatus = false;` でJS側が空なので、ここが唯一の受け皿。
         txt = strip_tags(body)
-        for mm in re.finditer(r'販売期間\s*[:：]\s*(?P<type>[^0-9]{0,20}?)\s*'
+        for mm in re.finditer(r'販売期間\s*[:：]\s*(?P<type>[^\n]{0,24}?)\s*'
                               r'(?P<from>20\d{2}/\d{2}/\d{2}\s*\([^)]*\)\s*\d{1,2}:\d{2})\s*〜\s*'
                               r'(?P<to>20\d{2}/\d{2}/\d{2}\s*\([^)]*\)\s*\d{1,2}:\d{2})?', txt):
             wins.append({
@@ -527,8 +533,24 @@ def _selftest():
     # data-event-json が無いページで None を返す（従来型を壊さない）
     assert parse_event_json('<html></html>') is None
 
+    # 🚨2026-09-20追加＝`var salesDisplayStatus = false;` のページは本文の「販売期間:」行が
+    #   唯一の受け皿。**券種名に数字が入る枠**（2次先行抽選／…1次最速先行）が読めること。
+    #   旧実装は `[^0-9]` で数字に当たって落ち、販売枠0本→カードの日付が締切に化けていた
+    #   （秦 基博［神奈川］が「〜11/7」＝実際は「2次先行抽選 〜9/23」の1か月半の嘘）。
+    for src, want_type, want_tim in (
+        ("var salesDisplayStatus = false;<div class='column-1'>販売期間: 2次先行抽選</div>"
+         "<div class='column-2'>2026/09/07(月) 12:00 〜 2026/09/23(水) 23:59</div>",
+         '2次先行抽選', '2026/09/07(月) 12:00 〜 2026/09/23(水) 23:59'),
+        ("var salesDisplayStatus = false;<div class='column-1'>販売期間: 高中正義公式ホームページ1次最速先行</div>"
+         "<div class='column-2'>2026/09/17(木) 18:00 〜 2026/09/30(水) 23:59</div>",
+         '高中正義公式ホームページ1次最速先行', '2026/09/17(木) 18:00 〜 2026/09/30(水) 23:59'),
+    ):
+        w = parse_windows(src)
+        assert len(w) == 1 and w[0]['type'] == want_type, w
+        assert w[0]['timming'] == want_tim, w
+
     print('selftest OK: og:title/パンくずジャンル/公演カード/販売枠JSON/deeplink/'
-          '新型data-event-json 回帰なし')
+          '新型data-event-json/販売期間の券種名に数字 回帰なし')
 
 
 def main():
