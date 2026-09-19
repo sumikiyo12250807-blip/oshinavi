@@ -35,8 +35,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--exclude', default='', help='振り分けから外すid（削除候補など）')
+    # プールにTIGET等ユーザー確認待ちが大量にある時、ぴあ由来だけ出すため（2026-09-19）
+    ap.add_argument('--only', default='', help='このidだけ振り分ける（カンマ区切り）')
     args = ap.parse_args()
     skip = {int(x) for x in args.exclude.split(',') if x.strip()}
+    only = {int(x) for x in args.only.split(',') if x.strip()}
 
     # index.html は CRLF。newline='' を付けずに読み書きすると全行 LF 化し、
     # sort_guard が「並び順ロジックを書き換えた」と誤ブロックする（2026-07-26 事故）。
@@ -47,7 +50,8 @@ def main():
     assert m, 'EVENTS配列が見つからない'
     events = json.loads(m.group(2))
 
-    targets = [e for e in events if e.get('genre') == 'new' and e['id'] not in skip]
+    targets = [e for e in events if e.get('genre') == 'new' and e['id'] not in skip
+               and (not only or e['id'] in only)]
     if not targets:
         print('genre:"new" のエントリが無い')
         return 0
