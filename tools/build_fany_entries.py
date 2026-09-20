@@ -274,8 +274,11 @@ def build_one(p, today, genre_map, unknown):
 
     if not tickets:
         return None, '載せられる枠が無い'
-    if not has_live:
-        return None, '買える枠・発売前の枠が1つも無い'
+    # 🚨🚨2026-09-18 ユーザー決定＝**全部載せる**（[[feedback_oshinavi_concept]]）。
+    #   「カウントダウンがメインというわけではなく、推し活がしやすいを目指してるわけだから、
+    #     全部載せてほしい」＝**公演がこれからなら**売切れ・先行終了だけでも印を付けて載せる。
+    #   ⛔旧＝買える枠が1つも無ければ載せない。2026-09-21 の初回投入でこれを入れてしまい、
+    #      85件を落としていた（TIGET側は9/18に同じ条件を外してある）。has_live は数えるだけ。
 
     # まったく同じ枠は1つに畳む（飛び先が違うなら畳まない＝[[feedback_dedup_badges_keeps_urls]]）
     seen, uniq = set(), []
@@ -380,9 +383,11 @@ def _selftest():
     assert e2['tickets'][0]['date'] == '2026-10-01', e2['tickets'][0]
     assert e2['tickets'][0]['type'] == '一般発売（大阪 10/1公演）〜10/1', e2['tickets'][0]
 
-    # ③ 抽選受付終了＝先行終了の印（消さずに残す）。買える枠が無ければ新規では載せない
+    # ③ 抽選受付終了＝先行終了の印（消さずに残す）。
+    #    🚨**買える枠が1つも無くても、公演がこれからなら載せる**（feedback_oshinavi_concept）
     e3, why3 = build_one(mk(performance_sales=[sale('抽選受付終了')]), today, gm, collections.Counter())
-    assert e3 is None and '買える枠' in why3, (e3, why3)
+    assert e3 is not None, (e3, why3)
+    assert e3['tickets'][0]['soldout'] and e3['tickets'][0]['presaleEnded'], e3['tickets'][0]
     e3b, _ = build_one(mk(performance_sales=[sale('先着発売中'), sale('抽選受付終了', nm='FANY ID抽選先行',
                                                                 url='https://x/reception/9/2')]),
                        today, gm, collections.Counter())

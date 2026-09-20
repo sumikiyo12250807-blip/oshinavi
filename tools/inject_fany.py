@@ -53,6 +53,11 @@ def main():
     m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h, re.S)
     EVENTS = json.loads(m.group(2))
 
+    # 🚨重複は**公演単位**で見る＝申込URL `/reception/<sales_id>/<performance_id>` の
+    #   performance_id。event_id（/event/detail/<id>）で見ると、**同じイベントの別公演**が
+    #   全部「登録済み」に見えて入らない（1公演＝1エントリにしているので事故になる。
+    #   2026-09-21＝再投入で85件が丸ごと弾かれるところだった）。
+    have_perf = set(re.findall(r'fany\.lol/reception/\d+/(\d+)', h))
     have_urls = set(re.findall(r'ticket\.fany\.lol/event/detail/(\d+)', h))
     # 名前×公演日×会場 の索引（会場は表記ゆれがあるので正規化して部分一致でも見る）
     trio, by_name = set(), {}
@@ -69,8 +74,13 @@ def main():
 
     put, dup, maybe = [], [], []
     for e in sorted(built, key=lambda x: (x.get('date') or '', x.get('name') or '')):
+        perfs = {m for t in (e.get('tickets') or [])
+                 for m in re.findall(r'fany\.lol/reception/\d+/(\d+)', t.get('url') or '')}
+        if perfs and perfs <= have_perf:
+            dup.append((e, 'この公演（performance %s）は既に登録にある' % sorted(perfs)))
+            continue
         fid = re.search(r'/event/detail/(\d+)', e['links'].get('fany') or '')
-        if fid and fid.group(1) in have_urls:
+        if not perfs and fid and fid.group(1) in have_urls:
             dup.append((e, 'FANYのURLが既に登録にある %s' % fid.group(1)))
             continue
         na, nn, nv = norm(e.get('artist')), norm(e.get('name')), norm(e.get('venue'))
