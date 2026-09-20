@@ -15,6 +15,15 @@ OUT = sys.argv[2] if len(sys.argv) > 2 else 'tmp/presale_%s.json' % LG
 FILTER = sys.argv[3] if len(sys.argv) > 3 else 'rlsIn=03'
 if '=' not in FILTER:           # 後方互換: '03' だけ渡されたら rlsIn=03 とみなす
     FILTER = 'rlsIn=' + FILTER
+# 🆕2026-09-21 第4引数=ページ範囲 'from=61,to=120'。
+#   受付中(rlsStatus=0101)は音楽だけで484ページ＝1回では回り切らない（1ページ十数秒）。
+#   分けて回せるようにした。既定は from=1・to=400（従来と同じ）。
+#   ⚠️件数の取得には必ず1ページ目を引く（現在位置の終端判定に total が要る）。
+_RANGE = sys.argv[4] if len(sys.argv) > 4 else ''
+_mf = re.search(r'from=(\d+)', _RANGE)
+_mt2 = re.search(r'to=(\d+)', _RANGE)
+P_FROM = int(_mf.group(1)) if _mf else 1
+P_TO = int(_mt2.group(1)) if _mt2 else 400
 
 
 def _selftest():
@@ -164,11 +173,13 @@ items, seen = [], set()
 #   会場・先行を足した窓（同じURLの別の行）を拾うため＝tmp/window_gap_0912.py が読む。
 #   memory: feedback_existing_entries_miss_new_windows
 allrows = []
-p, same = 1, 0
+p, same = P_FROM, 0
 prev_sig = None
 prev_pos = None
-h = h1
-LAST = min(400, max(pages, 1))
+h = h1 if P_FROM == 1 else fetch(P_FROM)
+LAST = min(P_TO, max(pages, 1))
+if P_FROM != 1 or P_TO != 400:
+    print('ページ範囲 %d〜%d（想定%dページ中）' % (P_FROM, LAST, pages))
 while p <= LAST:
     try:
         pi = parse_page(h)
