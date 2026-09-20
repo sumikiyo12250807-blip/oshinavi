@@ -1,0 +1,127 @@
+=== event のキー ===
+['analytics', 'blurb', 'category', 'date_notes', 'details', 'display_date_period', 'display_open_date', 'do_feature_top_media', 'do_show_venue', 'gallery_items', 'genres', 'has_active_rental_stream', 'has_purchased_tickets', 'has_streaming_ticket', 'hide_stream_list', 'id', 'image_aspect_ratio', 'image_code', 'is_hybrid_streaming_venue', 'is_rental', 'is_using_item_page_custom_theme', 'name', 'performers', 'show_type', 'status', 'status_warning', 'streams', 'subtitle', 'tags', 'tickets', 'venue']
+
+=== 日付・会場・名前らしい値 ===
+  date_notes                         = ''
+  do_show_venue                      = 'True'
+  is_hybrid_streaming_venue          = 'False'
+  name                               = '9月21日 13:00開演「ＲＥＳＥＴ」公演'
+  status_warning                     = 'None'
+  subtitle                           = ''
+
+=== event.venue ===
+{
+ "data": {
+  "id": 15697,
+  "name": "AKB48劇場",
+  "image_url": "https://media.zaiko.io/zaiko/pf_1/1_3wdpll4amwboid402mc23",
+  "address": "東京都千代田区外神田４丁目３−３ ミナミビル ８階",
+  "location": "東京都, 日本",
+  "map_url": "https://maps.google.com/maps?q=35.7007415,139.7719487&z=16&t=m",
+  "map_open_url": "https://www.google.com/maps/search/?api=1&query=AKB48+Theater&query_place_id=ChIJ7S15lB2MGGAR1OyKlPbL8mA",
+  "homepage_url": "https://www.akb48.co.jp/",
+  "type": "concert_hall"
+ }
+}
+
+=== event.tickets 7件 / 1件目の全部 ===
+{
+ "id": 208681,
+ "can_do_lottery_application": false,
+ "currency": "JPY",
+ "discounted_display_price": "¥4,300",
+ "display_price": "¥4,300",
+ "display_fee": "",
+ "front_text": null,
+ "is_lottery": true,
+ "is_lottery_application_in_future": false,
+ "is_rental": false,
+ "is_sale_ended": true,
+ "is_sale_started": true,
+ "is_sold_out": true,
+ "is_stream": false,
+ "lottery_end_date": {
+  "timestamp": 1789369200,
+  "iso": "2026-09-14T07:00:00.000000Z",
+  "date_string": "2026-09-14",
+  "time_string": "16:00",
+  "datetime_string": "09月14日 (月) 16:00",
+  "datetime_string_with_year": "09月14日 (月) 16:00 JST",
+  "admin_datetime_string": "2026/9/14 16:00",
+  "timezone": {
+   "name": "Asia/Tokyo",
+   "abbreviated_name": "JST",
+   "display_name_with_offset": "日本時間 (GMT+09:00)"
+  }
+ },
+ "lottery_start_date": {
+  "timestamp": 1789110000,
+  "iso": "2026-09-11T07:00:00.000000Z",
+  "date_string": "2026-09-11",
+  "time_string": "16:00",
+  "datetime_string": "09月11日 (金) 16:00",
+  "datetime_string_with_year": "09月11日 (金) 16:00 JST",
+  "admin_datetime_string": "2026/9/11 16:00",
+  "timezone": {
+   "name": "Asia/Tokyo",
+   "abbreviated_name": "JST",
+   "display_name_with_offset": "日本時間 (GMT+09:00)"
+  }
+ },
+ "on_sale_from": {
+  "timestamp": 1789470000,
+  "iso": "2026-09-15T11:00:00.000000Z",
+  "date_string": "2026-09-15",
+  "time_string": "20:00",
+  "datetime_string": "09月15日 (火) 20:00",
+  "datetime_string_with_year": "09月15日 (火) 20:00 JST",
+  "admin_datetime_string": "2026/9/15 20:00",
+  "timezone": {
+   "name": "Asia/Tokyo",
+   "abbreviated_name": "JST",
+   "display_name_with_offset": "日本時間 (GMT+09:00)"
+  }
+ },
+ "on_sale_until": {
+  "timestamp": 1789556400,
+  "iso": "2026-09-16T11:00:00.000000Z",
+  "date_string": "2026-09-16",
+  "time_string": "20:00",
+  "datetime_string": "09月16日 (水) 20:00",
+  "datetime_string_with_year": "09月16日 (水) 20:00 JST",
+  "admin_datetime_string": "2026/9/16 20:00",
+  "timezone": {
+   "name": "Asia/Tokyo",
+   "abbreviated_name": "JST",
+   "display_name_with_offset": "日本時間 (GMT+09:00)"
+  }
+ },
+ "override_datetime_period": {
+  "start": {
+   "timestamp": 1789963200,
+   "iso": "2026-09-21T04:00:00.000000Z",
+   "date_string": "2026-09-21",
+   "time_string": "13:00",
+   "datetime_string": "09月21日 (月) 13:00",
+   "datetime_string_with_year": "09月21日 (月) 13:00 JST",
+   "admin_datetime_string": "2026/9/21 13:00",
+   "timezone": {
+    "name": "Asia/Tokyo",
+    "abbreviated_name": "JST",
+    "display_name_with_offset": "日本時間 (GMT+09:00)"
+   }
+  },
+  "end": {
+   "timestamp": 1789970400,
+   "iso": "2026-09-21T06:00:00.000000Z",
+   "date_string": "2026-09-21",
+   "tim
+
+=== 全券種の要点 ===
+  {"can_do_lottery_application": false, "discounted_display_price": "¥4,300", "display_price": "¥4,300", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 4300, "ref_name": "映像倉庫会員枠", "has_won_lottery": false}
+  {"can_do_lottery_application": false, "discounted_display_price": "¥4,300", "display_price": "¥4,300", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 4300, "ref_name": "柱の会 会員枠", "has_won_lottery": false}
+  {"can_do_lottery_application": false, "discounted_display_price": "¥4,300", "display_price": "¥4,300", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 4300, "ref_name": "一般枠", "has_won_lottery": false}
+  {"can_do_lottery_application": false, "discounted_display_price": "¥4,300", "display_price": "¥4,300", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 4300, "ref_name": "ファミリー・カップル枠", "has_won_lottery": false}
+  {"can_do_lottery_application": false, "discounted_display_price": "¥4,300", "display_price": "¥4,300", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 4300, "ref_name": "女性・小中学生枠", "has_won_lottery": false}
+  {"can_do_lottery_application": false, "discounted_display_price": "¥4,300", "display_price": "¥4,300", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 4300, "ref_name": "100発98中権利", "has_won_lottery": false}
+  {"can_do_lottery_application": false, "discounted_display_price": "¥1,800", "display_price": "¥1,800", "is_lottery": true, "is_lottery_application_in_future": false, "is_sale_ended": true, "is_sale_started": true, "is_sold_out": true, "price": 1800, "ref_name": "お見送り会参加権付きロビー観覧チケット", "has_won_lottery": false}

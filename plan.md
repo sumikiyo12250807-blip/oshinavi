@@ -20,6 +20,13 @@
      直したときは**コードのコメントも同じターンで直す**（[[feedback_rules_one_place_and_fix_summaries]]）。
    ⚠️`build_tiget_entries.py` の docstring 24行目にも失効した記述が残っている（挙動は正しい）。
 
+🆕🎤【ZAIKO＝新しい売り場・入口は割れた（2026-09-21 夕方）】
+   登録0件。AKB48劇場・hololive・声優公演が入る＝ぴあに出ない推しの受け皿。
+   取り方は memory [[reference_zaiko_harvest]] に全部書いた（一覧30件/ページ・hasMoreでページ送り・
+   個別ページの props.event に会場/県/出演者/ジャンル/券種/価格/is_sold_out まで入っている）。
+   🚨**表示側に zaiko が無い**＝index.html の linkDefs・CSS・build_ai_page の VENDOR_ORDER に足してから投入する。
+   次の手＝①ハーベスタを書く（カテゴリ5種×ページ送り）②ビルダー（売り切れも載せる）③番人 ④投入
+
 🔶【残っている宿題】
    ① TIGETの番人が **食い違い158件・読めなかった54件**（tmp/gate_tiget_report.txt）＝
       `python tools/heal_tiget.py` → `--apply` → `gate_tiget_slots.py --ids <直したid>` をかけていない

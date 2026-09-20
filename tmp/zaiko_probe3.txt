@@ -1,0 +1,66 @@
+component = 'Microsite/MicrositeEventItem'
+url = '/ja/e/2026-0921-1300'
+
+=== props のキー ===
+['app_domain', 'app_url', 'cache_ttl', 'client_support_url', 'config', 'currentLocale', 'displaysEventTextAsVideo', 'errors', 'event', 'events', 'footerLinks', 'google_map_svg_url', 'headerLinks', 'imgserv_url', 'is_item_page', 'is_using_item_page_custom_theme', 'localizedPathPatterns', 'maintenanceStatus', 'meta_pixel', 'path', 'profile', 'profileSocialLinks', 'supportUrl', 'supportedLocales', 'theme_colors', 'ziggy']
+
+=== 辞書の配列（大きい順・上位8）===
+  props.event.performers                            8件  キー=['details', 'genres', 'genres_detail', 'id', 'image_code', 'image_url', 'links', 'name', 'thumbnail']
+  props.event.tickets                               7件  キー=['can_do_lottery_application', 'currency', 'discounted_display_price', 'display_fee', 'display_price', 'front_text', 'has_won_lottery', 'id', 'is_geolocked', 'is_lottery', 'is_lottery_application_in_future', 'is_rental', 'is_sale_ended', 'is_sale_started']
+  props.footerLinks                                 5件  キー=['key', 'name', 'url']
+
+=== props.event.performers（8件）の1件目 ===
+{
+ "id": 60988,
+ "name": "岩立沙穂",
+ "image_code": "1_49smnjqh7vg2ivfhbah01",
+ "image_url": "https://media.zaiko.io/zaiko/1_49smnjqh7vg2ivfhbah01",
+ "details": "ニックネーム: さっほー\n生年月日: 1994年10月04日\n出身地: 神奈川県",
+ "links": [
+  {
+   "display_title": "Instagram",
+   "title": "instagram",
+   "url": "https://www.instagram.com/saho_iwatate104",
+   "icon_url": "https://cdn.zaiko.io/public/img/external_link/instagram.svg"
+  },
+  {
+   "display_title": "X (旧Twitter)",
+   "title": "twitter",
+   "url": "https://x.com/yahho_sahho",
+   "icon_url": "https://cdn.zaiko.io/public/img/external_link/x.svg"
+  }
+ ],
+ "genres": [
+  {
+   "id": 55,
+   "name": "Idol"
+  }
+ ],
+ "genres_detail": "Idol",
+ "thumbnail": {
+  "urls": {
+   "square_1_1": "https://media.zaiko.io/zaiko/pf_1/w_200/h_200/1_49smnjqh7vg2ivfhbah01.png",
+   "tall_3_4": "https://media.zaiko.io/zaiko/pf_1/w_200/h_267/1_49smnjqh7vg2ivfhbah01.png",
+   "wide_4_3": "https://media.zaiko.io/zaiko/pf_1/w_200/h_150/1_49smnjqh7vg2ivfhbah01.png",
+   "wide_16_9": "https://media.zaiko.io/zaiko/pf_1/w_200/h_113/1_49smnjqh7vg2ivfhbah01.png"
+  }
+ }
+}
+
+=== 同じ配列の title/日付/URLらしい値を10件 ===
+  {"name": "岩立沙穂", "image_url": "https://media.zaiko.io/zaiko/1_49smnjqh7vg2ivfhbah01"}
+  {"name": "行天優莉奈", "image_url": "https://media.zaiko.io/zaiko/1_4axu7jqvwca5b4krqwlso"}
+  {"name": "黒須遥香", "image_url": "https://media.zaiko.io/zaiko/1_4axu7b5dciv7q4u1t4ts0"}
+  {"name": "徳永羚海", "image_url": "https://media.zaiko.io/zaiko/1_49smox9coi1pw34929lah"}
+  {"name": "橋本陽菜", "image_url": "https://media.zaiko.io/zaiko/1_49smp5rscr6rmv6ho6wdj"}
+  {"name": "福岡聖菜", "image_url": "https://media.zaiko.io/zaiko/1_49smohv448am7quvlo4mq"}
+  {"name": "森川優", "image_url": "https://media.zaiko.io/zaiko/1_49smfyig6roxe7oluynch"}
+  {"name": "正鋳真優", "image_url": "https://media.zaiko.io/zaiko/1_49smqvleitg4vg1n4q3xb"}
+
+=== ページ送り・件数らしいキー ===
+  props.is_using_item_page_custom_theme = False
+  props.event.venue.data.homepage_url = 'https://www.akb48.co.jp/'
+  props.event.is_using_item_page_custom_theme = False
+  props.event.tickets[0].discounted_display_price = '¥4,300'
+  props.event.tickets[1].discounted_display_price = '¥4,300'
+  props.is_item_page = True
