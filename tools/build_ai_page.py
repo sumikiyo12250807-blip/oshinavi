@@ -208,8 +208,18 @@ def status_text(ev, today):
             # 「予定枚数終了(売り切れ)」と「販売終了(販売期間が終わっただけ)」を混ぜない
             # （ユーザー選択 2026-08-14）。1枠でも本当に売り切れているなら売り切れとして出す。
             real_sold = [t for t in (ev.get("tickets") or [])
-                         if t.get("soldout") and not t.get("saleEnded")]
-            label = "⚫ 予定枚数終了" if real_sold else "⚪ 販売終了"
+                         if t.get("soldout") and not t.get("saleEnded")
+                         and not t.get("presaleEnded")]
+            # 🆕「先行終了」＝先行抽選の受付が終わっただけで、**一般発売はこれから来ることがある**
+            #   （ユーザー指示 2026-09-20）。全部の枠が先行終了なら「販売終了」と書かない＝嘘になる。
+            pre_only = ([t for t in (ev.get("tickets") or []) if t.get("presaleEnded")]
+                        and not real_sold
+                        and not [t for t in (ev.get("tickets") or [])
+                                 if t.get("saleEnded") and not t.get("presaleEnded")])
+            if pre_only:
+                label = "🔵 先行終了（一般発売はこれから）"
+            else:
+                label = "⚫ 予定枚数終了" if real_sold else "⚪ 販売終了"
             return label, ev.get("date") or "9999-99-99"
         return "⚪ 販売終了", "9999-99-99"
     d, kind, t = na
