@@ -991,6 +991,21 @@
       background: rgba(120, 130, 150, 0.14);
     }
 
+    /* 先行終了＝先行抽選の受付が終わっただけ。**一般発売はこれから来ることがある**
+       （ユーザー指示 2026-09-20「先行終了のバッジ出してみて」）。
+       「販売終了」と書くと「もう買えない」という嘘になるので別の文言にする。
+       予定枚数終了(実線グレー)・販売終了(点線グレー)と見分くため、点線＋薄い青にする。 */
+    .ticket-item.soldout .ticket-soldout-badge.presaleended {
+      border-style: dashed;
+      border-color: rgba(90, 140, 200, 0.55);
+      background: rgba(90, 140, 200, 0.14);
+      color: var(--text-muted);
+      /* 🚨この1つだけ文字を大きくする（ユーザー指示 2026-09-20「先行終了の文字をもう少し大きめにして」）。
+         予定枚数終了・販売終了の 11px には触らない＝言われた1か所だけ直す。 */
+      font-size: 13px;
+      padding: 3px 9px;
+    }
+
     /* ── チケット価格 & リンクボタン ── */
     .card-footer {
       padding: 10px 20px 14px 24px;
@@ -1307,7 +1322,7 @@
 </div>
 
 <div class="last-updated">
-  <span class="lu-stamp" id="lastUpdated">最終更新：2026年9月20日 19:45</span>
+  <span class="lu-stamp" id="lastUpdated">最終更新：2026年9月20日 20:50</span>
   <span class="lu-note">毎日更新中。販売状況は更新時点のものです。ご購入前に各プレイガイドで最新をご確認ください。</span>
 </div>
 
@@ -1674,7 +1689,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 
 <main>
   <div class="result-meta">
-    <span id="resultCount">12054</span> 件のイベント
+    <span id="resultCount">12075</span> 件のイベント
   </div>
   <div class="narrow-bar" id="narrowBar" hidden>
     <span>絞り込み中：<b id="narrowBarText"></b></span>
@@ -1684,7 +1699,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
   <div class="event-list" id="eventList">
 <!-- AI_SSR_START -->
 <div class="ai-ssr">
-<p>OSHINAVI チケット発売日情報｜全12054件（2026-09-20更新・発売日が近い順）。50件ずつの一覧は <a href="/ai.html">/ai.html</a>。</p><ul>
+<p>OSHINAVI チケット発売日情報｜全12075件（2026-09-20更新・発売日が近い順）。50件ずつの一覧は <a href="/ai.html">/ai.html</a>。</p><ul>
 <li>🟠 本日発売（2026-09-20発売）｜劇団四季『バック・トゥ・ザ・フューチャー』東京公演／劇団四季／SMBCグループ ミュージカルシアター JR東日本四季劇場［秋］（東京）／2025年4月6日(日)〜2027年9月30日(木) 東京｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2456223">チケットぴあ</a></li>
 <li>🔴 本日発売（2026-09-20発売）｜小野リサ 2026／小野リサ／全国ツアー（鎌倉芸術館 大ホール／キャナルシティ劇場／秋田エプソンゆざわホール 大ホール／常陸太田市民交流センター パルティホール）（神奈川・福岡・秋田・茨城）／2026年9月13日(日)〜2026年12月5日(土) 神奈川・福岡・秋田・茨城｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2615479">チケットぴあ</a></li>
 <li>🟠 本日発売（2026-09-20発売）｜坂本冬美 2026／坂本冬美／Home&amp;nicoホール 大ホール（全国）／2026年9月14日(月)〜2027年1月19日(火) 全国｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2619600">チケットぴあ</a></li>
@@ -1756,21 +1771,16 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 本日発売（〜2027-03-17まで）｜田辺いちか独演会 其の一 ゲストあり／田辺いちか独演会 其の一 ゲストあり／日本橋社会教育会館（東京）／2027年3月18日(木) 東京 日本橋社会教育会館｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2637647">チケットぴあ</a></li>
 <li>🟢 本日発売（〜2026-10-31まで）｜新日本プロレス&lt;赤磐大会&gt;／新日本プロレス&lt;赤磐大会&gt;／山陽ふれあい公園 総合体育館（岡山）／2026年11月1日(日) 岡山 山陽ふれあい公園 総合体育館｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2637337">チケットぴあ</a></li>
 <li>🟢 本日発売（〜2026-12-04まで）｜MIZUHO BLUE CHALLENGE NADESHIKO 2026 青さで、挑め。／MIZUHO BLUE CHALLENGE NADESHIKO 2026 青さで、挑め。／JFE晴れの国スタジアム（岡山）／2026年12月5日(土) 岡山 JFE晴れの国スタジアム｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2636097">チケットぴあ</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜#神推しがいるセカイVol.33／ガトーショコラは半分こ♡／Mikko♡dol／音ノ木坂学院スクールユニドル部／上野AL-TEMA｜LIVE HALL UENO AL-TEMA（東京）／2026年10月17日(土) 東京｜購入: <a href="https://tiget.net/events/522580">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜BEAR 1st ONE MAN LIVE 2026 Day One ～ここから始まる物語～／ベアー／クロシロ／愛音虎／MANHOLE（東京）／2026年11月22日(日) 東京｜購入: <a href="https://tiget.net/events/501409">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜ひきこもりですが何か？- インターネットエンジェル降臨 -／天使ぴよ/あせと/L-ｴﾙ-/otra historia/我夢/鴉/Kanzaki Noa/coco/紫苑/しど/ちょの/smoking area51(不二/カズシ)／MAHARAJA ROPPONGI（東京）／2026年11月22日(日)｜購入: <a href="https://tiget.net/events/521957">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜ZAKURO BD ONE-MAN LIVE『CROWN ME』各部一般チケット／柘榴-zakuro-／新宿Cat&#x27;s hole（東京）／2027年1月24日(日) 東京｜購入: <a href="https://tiget.net/events/505702">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜HARU ONE-MAN LIVE 『Road to 京都劇場 vol.1 in Tokyo』一般先行／HARU／unravel tokyo（東京）／2027年2月7日(日) 東京｜購入: <a href="https://tiget.net/events/518213">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜THE ONE NIGHT vol.12／THE ONE NIGHT vol.12／キャバーンビート（福岡）／2026年10月2日(金) 福岡｜購入: <a href="https://tiget.net/events/523319">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜RISEOVER優勝記念「感謝の無料ライブ＆パーティー！」／グランステラ／擬人化にゃんた／PRISM⭐︎PRINCESS／西川口Lavis（埼玉）／2026年10月15日(木)｜購入: <a href="https://tiget.net/events/523253">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜イエスハッピー！デビュー15周年記念ワンマンライブ！〜15周年イヤーも輝かなきゃもったいなくない？〜／イエスハッピー！／イエハピバンド／OSAKA MUSE（大阪）／2026年12月27日(日) 大阪｜購入: <a href="https://tiget.net/events/523677">TIGET</a></li>
 <li>🟢 本日発売（〜2026-11-11まで）｜SHUUBI／SHUUBI／Live spot RAG（京都）／2026年11月14日(土) 京都 Live spot RAG｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2637458">チケットぴあ</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜STREET FESTA! presents テレスト‼／EURO’N NIGHT／ふぁんたす！／うぃるめり！／KuRaGe 心斎橋ライブハウス（大阪）／2026年9月25日(金) 大阪｜購入: <a href="https://tiget.net/events/524071">TIGET</a></li>
 <li>🟢 本日発売（〜2026-10-05まで）｜Osaka Shion Wind Orchestra ドラゴンクエストコンサート／Osaka Shion Wind Orchestra ドラゴンクエストコンサート／全国ツアー（アクロス福岡 福岡シンフォニーホール／ベネックス長崎ブリックホール 大ホール／下関市民会館 大ホール）（福岡・長崎・山口）／2027年3月12日(金)〜2027年3月14日(日) 福岡・長崎・山口｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2621850">チケットぴあ</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜【札幌】おだともあき弾き語りワンマン「おだ会2026 〜札幌出張編〜」〈夕公演〉／おだともあき／としΩ／Cafe de Felice（北海道）／2026年10月3日(土) 北海道｜購入: <a href="https://tiget.net/events/522282">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜LIVE IN TENKAI 2026/10/04／LIVE IN TENKAI 2026/10/04／天海（熊本）／2026年10月4日(日) 熊本｜購入: <a href="https://tiget.net/events/522960">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜ミステリーGenius／信野樹奈／岩本乙華／Sapporo-Link&#x27;sHALL（北海道）／2026年10月9日(金) 北海道｜購入: <a href="https://tiget.net/events/524106">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜〜秋だけど〜なつ祭り／〜秋だけど〜なつ祭り／横浜YTJホール（神奈川）／2026年10月18日(日) 神奈川｜購入: <a href="https://tiget.net/events/515833">TIGET</a></li>
 <li>🟢 本日発売（〜2026-09-27まで）｜爆生!!お笑い in 所沢／爆生!!お笑い in 所沢／所沢市民文化センターミューズ アークホール（埼玉）／2027年1月17日(日) 埼玉 所沢市民文化センターミューズ アークホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634598">チケットぴあ</a></li>
 <li>🟢 本日発売（〜2026-11-05まで）｜フットサル国際親善試合&lt;第1戦&gt;／フットサル国際親善試合&lt;第1戦&gt;／クラサス武道スポーツセンター（大分）／2026年11月6日(金) 大分 クラサス武道スポーツセンター｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2635073">チケットぴあ</a></li>
 <li>🟢 本日発売（〜2026-11-07まで）｜フットサル国際親善試合&lt;第2戦&gt;／フットサル国際親善試合&lt;第2戦&gt;／クラサス武道スポーツセンター（大分）／2026年11月8日(日) 大分 クラサス武道スポーツセンター｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2635074">チケットぴあ</a></li>
@@ -1787,12 +1797,11 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜9月21日『MAID IN HELL』／9月21日『MAID IN HELL』／池袋 SOUND PEACE（東京）／2026年9月21日(月) 東京｜購入: <a href="https://tiget.net/events/524375">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜9月21日『ドグマエッジ』／9月21日『ドグマエッジ』／池袋 SOUND PEACE（東京）／2026年9月21日(月) 東京｜購入: <a href="https://tiget.net/events/524377">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜IDOL InteglatioN-0921-／IDOL InteglatioN-0921-／秋葉原ZEST（東京）／2026年9月21日(月) 東京｜購入: <a href="https://tiget.net/events/524437">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜STAR LAND!! vol.17 緊急無銭ライブ／STAR LAND!! vol.17 緊急無銭ライブ／KLANG RAYZ(exラビステ)（北海道）／2026年9月21日(月) 北海道｜購入: <a href="https://tiget.net/events/524462">TIGET</a></li>
+<li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜STAR LAND!! vol.17 緊急無銭ライブ／STAR LAND!! vol.17 緊急無銭ライブ／KLANG RAYZ(exラビステ)（北海道）／2026年9月21日(月) 北海道｜購入: <a href="https://tiget.net/events/524462">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜LOVE NECTER vol.47／LOVE NECTER vol.47／KLANG RAYZ(exラビステ)（北海道）／2026年9月23日(水) 北海道｜購入: <a href="https://tiget.net/events/524460">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜HELLO JAPAN!!／ガンジャバンギラス／SUNHALO THEATER（福岡）／2026年9月28日(月) 福岡｜購入: <a href="https://tiget.net/events/524322">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜LOG-IN BONUS DAY4／ReignVail／Ver.0̸／ALBERTO／space Zero スペースゼロ（宮城）／2026年9月28日(月) 宮城｜購入: <a href="https://tiget.net/events/524394">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜ふくろうFM「Golden Time」公開収録／ふくろうFM「Golden Time」公開収録／平賀スクエア（東京）／2026年9月28日(月) 東京｜購入: <a href="https://tiget.net/events/524182">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜花乃衣美優オンライン（9/28）／花乃衣美優オンライン（9/28）／オンライン（）／2026年9月28日(月)｜購入: <a href="https://tiget.net/events/524348">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜MUSIC SALON vol.6／Dr.UNDY／Henri（東京）／2026年9月29日(火) 東京｜購入: <a href="https://tiget.net/events/524137">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜相方不在ライブ／けーた／相性はいいよね／エビランド／新宿永谷ホール(新宿Fu-)801号室（東京）／2026年10月1日(木) 東京｜購入: <a href="https://tiget.net/events/524455">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜「未公開ハロウィン曲」Music Videoエキストラ／IQ99／ゼロポイント与野基地（埼玉）／2026年10月2日(金) 埼玉｜購入: <a href="https://tiget.net/events/524376">TIGET</a></li>
@@ -1804,27 +1813,21 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 本日発売（2026-09-20発売）｜小野亜里沙 担当企画 【秋の音楽浴】 〜音楽で、ととのう。〜／小野亜里沙／ゴリ山田カバ男／山中啓輔／神楽坂天窓（東京）／2026年10月4日(日) 東京｜購入: <a href="https://tiget.net/events/524454">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜CULTURE HOLIC 新体制お披露目／CULTURE HOLIC／東京カルチャーカルチャー（東京）／2026年10月6日(火) 東京｜購入: <a href="https://tiget.net/events/524410">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜お誕生日当日！とってもかわいいまりなちゃん『とってもかわいい印象派コンサートvol.2』／とってもかわいいまりなちゃん／ロックンロール以外は全部嘘（東京）／2026年10月7日(水) 東京｜購入: <a href="https://tiget.net/events/524459">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜#キラら部 ファンミーティング ~齋藤きらら単独公演 好きなことしちゃいます編~／斎藤きらら／ギミラブ！／花透あきな／￼ 仙台ネオブラザーズ（宮城）／2026年10月9日(金) 宮城｜購入: <a href="https://tiget.net/events/524354">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜DooDooDooMiuMiuMiu×コバラヘル SPLIT TOUR 『Candy Noisy Night』／DooDooDooMiuMiuMiu×コバラヘル SPLIT TOUR 『Candy Noisy Night』／space Zero スペースゼロ（宮城）／2026年10月9日(金) 宮城｜購入: <a href="https://tiget.net/events/524398">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜これピコ(仮)名村造船所撮影会(初)【10/10】／これピコ(仮)名村造船所撮影会(初)【10/10】／クリエイティブセンター大阪（大阪）／2026年10月10日(土) 大阪｜購入: <a href="https://tiget.net/events/524523">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜エプコン／ラクイチラクザ／ソノシート／徳原旅行／板橋シアター咲（東京）／2026年10月10日(土) 東京｜購入: <a href="https://tiget.net/events/523885">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜ラクイチラクザコント大放出ライブ／ラクイチラクザ／板橋シアター咲（東京）／2026年10月10日(土) 東京｜購入: <a href="https://tiget.net/events/523882">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜これピコ(仮)名村造船所撮影会(初)【10/11】／これピコ(仮)名村造船所撮影会(初)【10/11】／クリエイティブセンター大阪（大阪）／2026年10月11日(日) 大阪｜購入: <a href="https://tiget.net/events/524521">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜泥の世代／エルクシダー／祝。エぺ／みのり／ハイジアV-1（東京）／2026年10月11日(日) 東京｜購入: <a href="https://tiget.net/events/524448">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜10/12昼 FREE LIVE !!／リンナ／結芽乃／伊谷亜子／shibuya gee-ge.（東京）／2026年10月12日(月) 東京｜購入: <a href="https://tiget.net/events/524085">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜Nice to meet you party!／プテラノドン／さとうしょうこ／ミーゴス／くさのね劇場梅田本店（大阪）／2026年10月12日(月) 大阪｜購入: <a href="https://tiget.net/events/524525">TIGET</a></li>
 <li>🔴 本日発売（2026-09-20発売）｜10/16(金)ルミナリアフェス／異国のルミナリア／SUE ME／大塚Hearts Next（東京）／2026年10月16日(金) 東京｜購入: <a href="https://tiget.net/events/524279">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜FNB ～Friday Night Boost !～ 10/16／ひつじねいり／鉄筋くらぶ57／グラム／銀座お笑いPLACE（東京）／2026年10月16日(金) 東京｜購入: <a href="https://tiget.net/events/524353">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜秋のゆったりまったり密会＠秘密結社RIO／秋のゆったりまったり密会＠秘密結社RIO／参加者のみにお知らせ（）／2026年10月17日(土)｜購入: <a href="https://tiget.net/events/524261">TIGET</a></li>
 <li>🟠 販売中・締切まであと27日（〜2026-10-17）｜10/18(Sun)Midnight★Mess - CYBERPUNK CLUB 1018🦄 at Club ArcH／Mistress MAYA／DJ rXr／DJ Noveli／ArcH（東京）／2026年10月18日(日) 東京｜購入: <a href="https://tiget.net/events/524439">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜音崎オト生誕祭 「眠りの国」／AVACLUB／Hellzapoppin’／YUGUREMI／AOHARIUM TOKYO（東京）／2026年10月18日(日) 東京｜購入: <a href="https://tiget.net/events/524308">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜大喜利サーモンへいお待ち／大石／兄弟体制／惹女香花／高井戸地域区民センター（東京）／2026年10月21日(水) 東京｜購入: <a href="https://tiget.net/events/524116">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜プロ野球～トークのドラフト会議～【2026 10/22(木)】／よふかしイエロー永田／コンチェルト 池水／にしね・ザ・タイガー／キイロイエイ（大阪）／2026年10月22日(木) 大阪｜購入: <a href="https://tiget.net/events/524434">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜走るタコちゃん！走れタコちゃん！いや、走るべきタコちゃん！／ニセほっけ／アオドラ／でぃ／池袋ムーブメントスタジオ（東京）／2026年10月25日(日) 東京｜購入: <a href="https://tiget.net/events/523627">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜10/28 FREE LIVE !!／みつば／石川 倫歌／平絵里香／shibuya gee-ge.（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/524119">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜Sparkly Mints 1周年記念 無銭単独公演／Sparkly Mints／MsmileBOX渋谷（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/524044">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜サシサシ魂!サイヤング☓ピュンパティ編／サイヤング／ピュンパティ／新宿バッシュ!!（東京）／2026年10月29日(木) 東京｜購入: <a href="https://tiget.net/events/524529">TIGET</a></li>
-<li>🟢 本日発売（2026-09-20発売）｜わんだふる！ぷちワンマン In Tokyo／柊木りお／東京都新宿区四谷4丁目9（5階）（東京）／2026年11月1日(日) 東京｜購入: <a href="https://tiget.net/events/524504">TIGET</a></li>
 <li>🟢 本日発売（2026-09-20発売）｜ふるさとの女優 vol.9／タワー／ガクヅケ／日本クレール／池袋西口GEKIBA（東京）／2026年11月13日(金) 東京｜購入: <a href="https://tiget.net/events/524143">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜フルコースVol.13／フルコースVol.13／XENON（北海道）／2026年11月13日(金) 北海道｜購入: <a href="https://tiget.net/events/524372">TIGET</a></li>
 <li>🟢 2026-09-20〜発売中（終了日は売り場に記載なし）｜LIVE 恵福浩司一周忌記念SPECIAL ～後編～ 藤井康一／八木のぶお／照本史／Moccoly ＠人形町サロンゴカフェ ※チケット代金は会場払い／藤井康一／八木のぶお／照本史／365 サロンゴカフェ（東京）／2026年11月14日(土) 東京｜購入: <a href="https://tiget.net/events/524385">TIGET</a></li>
@@ -3733,6 +3736,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-08-25〜発売中（終了日は売り場に記載なし）｜LONG PARTY RECORDS Pre.『スラム』vol.39／大黒崚吾 (鉄風東京)／永野元大(MOCKEN)／ながたなをや(DNA GAINZ)／PECKHAM / ペッカム（東京）／2026年9月25日(金) 東京｜購入: <a href="https://tiget.net/events/517420">TIGET</a></li>
 <li>🟢 2026-07-27〜発売中（終了日は売り場に記載なし）｜Planet K 3rd Anniversary 〜2MAN SERIES〜／町田直隆バンド／ザ・ラヂオカセッツ／トブトリオトス／吉祥寺Planet K（東京）／2026年9月25日(金) 東京｜購入: <a href="https://tiget.net/events/509849">TIGET</a></li>
 <li>🟢 2026-08-19〜発売中（終了日は売り場に記載なし）｜ROHO KIKOKU KIKAKU／ろうほう／The Navydolls／ソナチネ／Live house Kiruna（大阪）／2026年9月25日(金) 大阪｜購入: <a href="https://tiget.net/events/515758">TIGET</a></li>
+<li>🔴 販売中・締切まであと5日（〜2026-09-25）｜STREET FESTA! presents テレスト‼／EURO’N NIGHT／ふぁんたす！／うぃるめり！／KuRaGe 心斎橋ライブハウス（大阪）／2026年9月25日(金) 大阪｜購入: <a href="https://tiget.net/events/524071">TIGET</a></li>
 <li>🟢 2026-08-05〜発売中（終了日は売り場に記載なし）｜club vijon×赤猿presents【お前のバナナはどこにある?!】／赤猿／Hitch Hikers／自由追求論／北堀江club vijon（大阪）／2026年9月25日(金) 大阪｜購入: <a href="https://tiget.net/events/512336">TIGET</a></li>
 <li>🟢 2026-06-19〜発売中（終了日は売り場に記載なし）｜mod presents「Alpha-Beta」vol.32／redmecca.com／mist wonder／rasamizki／柴崎mod（）／2026年9月25日(金)｜購入: <a href="https://tiget.net/events/499995">TIGET</a></li>
 <li>🟢 2026-08-01〜発売中（終了日は売り場に記載なし）｜◆「週末の予感・・・」9/25(黄金)／WeaJ／MARY RUE／曖昧中毒／ネオ東京 池袋手刀ドーム（東京）／2026年9月25日(金) 東京｜購入: <a href="https://tiget.net/events/511287">TIGET</a></li>
@@ -4261,6 +4265,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-08-14〜発売中（終了日は売り場に記載なし）｜頑張れ！大喜利幼稚園！／ジャック・ロラン／パープル牧場／#りょーへー／新宿Fu-+803（東京）／2026年9月26日(土) 東京｜購入: <a href="https://tiget.net/events/514602">TIGET</a></li>
 <li>🔴 販売中・締切まであと6日（〜2026-09-26）｜【各部】NANIWA SPLASH - DAY 2 -／白田まい／倉坂くるる／米倉みゆ／中之島GATEサウスピア（大阪）／2026年9月27日(日) 大阪｜購入: <a href="https://tiget.net/events/513236">TIGET</a></li>
 <li>🔴 販売中・締切まであと6日（〜2026-09-26）｜カレーとビールとトロンボーンと砂塚恵 ~9月の激動お疲れ会~／小池隼人／砂塚恵／timbre（東京）／2026年9月27日(日) 東京｜購入: <a href="https://tiget.net/events/512189">TIGET</a></li>
+<li>🔴 販売中・締切まであと6日（〜2026-09-26）｜秋のゆったりまったり密会＠秘密結社RIO／秋のゆったりまったり密会＠秘密結社RIO／参加者のみにお知らせ（）／2026年10月17日(土)｜購入: <a href="https://tiget.net/events/524261">TIGET</a></li>
 <li>🔴 発売開始まであと7日（2026-09-27発売）｜最強！！歌マネＬＩＶＥ ｉｎ 水戸 荒牧陽子×松浦航大／最強！！歌マネＬＩＶＥ ｉｎ 水戸 荒牧陽子×松浦航大／全国ツアー（ザ・ヒロサワ・シティ会館 大ホール／市民会館シアーズホーム夢ホール（熊本市民会館））（茨城・熊本）／2026年11月23日(月)〜2027年1月29日(金) 茨城・熊本｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2621956">チケットぴあ</a></li>
 <li>🔴 発売開始まであと7日（2026-09-27発売）｜人間椅子／人間椅子／エレクトリック・レディ・ランド（愛知・宮城・北海道）／2026年11月11日(水)〜2026年11月20日(金) 愛知・宮城・北海道｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2632892">チケットぴあ</a></li>
 <li>🔴 発売開始まであと7日（2026-09-27発売）｜羽山みずき／羽山みずき／荘銀タクト鶴岡 大ホール（山形）／2027年3月27日(土) 山形 荘銀タクト鶴岡 大ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2629829">チケットぴあ</a></li>
@@ -4779,6 +4784,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-09-06〜発売中（終了日は売り場に記載なし）｜群青団地新ネタライブ『笛越豆腐』／群青団地／リバーマン／さすらいラビ―／池袋東口ゲキパ（東京）／2026年9月28日(月) 東京｜購入: <a href="https://tiget.net/events/520877">TIGET</a></li>
 <li>🟠 販売中・締切まであと8日（〜2026-09-28）｜yolufa presents &quot;Eureka&quot; vol.6／yolufa／mona records（東京）／2026年11月13日(金) 東京｜購入: <a href="https://tiget.net/events/521802">TIGET</a></li>
 <li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜MA7MEL実験室vol.7／MA7MEL／DA・BAMBI／新宿SAMURAI（東京）／2026年9月28日(月) 東京｜購入: <a href="https://tiget.net/events/524175">TIGET</a></li>
+<li>🟠 販売中・締切まであと8日（〜2026-09-28）｜花乃衣美優オンライン（9/28）／花乃衣美優オンライン（9/28）／オンライン（）／2026年9月28日(月)｜購入: <a href="https://tiget.net/events/524348">TIGET</a></li>
 <li>🟠 販売中・締切まであと8日（〜2026-09-28）｜STRING OF PEACE vol.3／ユメノツヅキ／Madam&#x27;s／HELLO THE LILAC／CYPRESS LOUNGE by sunhall west（）／2026年9月29日(火)｜購入: <a href="https://tiget.net/events/524285">TIGET</a></li>
 <li>🟠 発売開始まであと9日（2026-09-29発売）｜立川晴の輔 独演会／立川晴の輔 独演会／全国ツアー（本巣市民文化ホール／北國新聞赤羽ホール／菊川文化会館アエル 大ホール）（岐阜・石川・静岡）／2026年9月20日(日)〜2027年2月23日(火) 岐阜・石川・静岡｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2618876">チケットぴあ</a></li>
 <li>🟠 発売開始まであと9日（2026-09-29発売）｜劇団四季「リトルマーメイド」／舞浜 「シェフ・ミッキー」セットチケット／劇団四季「リトルマーメイド」／舞浜 「シェフ・ミッキー」セットチケット／ディズニーアンバサダー（R）ホテル カジュアル・ダイニング「シェフ・ミッキー」（千葉）／2026年10月1日(木)〜2026年10月31日(土) 千葉 ディズニーアンバサダー（R）ホテル カジュアル・ダイニング「シェフ・ミッキー」｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669708">チケットぴあ</a></li>
@@ -6111,6 +6117,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-09-01〜発売中（終了日は売り場に記載なし）｜DY CUBE presents 感性の法則&quot;端&quot;／縹 白／梨奈／とみい れな／下北沢 DY CUBE（東京）／2026年10月4日(日) 東京｜購入: <a href="https://tiget.net/events/519379">TIGET</a></li>
 <li>🟢 2026-09-14〜発売中（終了日は売り場に記載なし）｜HAKUCHU YOSE 20 @中野の劇場サッチー／あおいちゃん／アルバカーキ／イワサキ／中野の劇場サッチー（東京）／2026年10月4日(日) 東京｜購入: <a href="https://tiget.net/events/523073">TIGET</a></li>
 <li>🟠 販売中・締切まであと14日（〜2026-10-04）｜INTHIS vol.75／INTHIS vol.75／Thunder Snake ATSUGI / STUDIO Snake（神奈川）／2026年10月4日(日) 神奈川｜購入: <a href="https://tiget.net/events/518911">TIGET</a></li>
+<li>🟢 2026-09-14〜発売中（終了日は売り場に記載なし）｜LIVE IN TENKAI 2026/10/04／LIVE IN TENKAI 2026/10/04／天海（熊本）／2026年10月4日(日) 熊本｜購入: <a href="https://tiget.net/events/522960">TIGET</a></li>
 <li>🟢 2026-07-29〜発売中（終了日は売り場に記載なし）｜Loupx garoux presents「Half a person」／チムニィ／Loupx garoux／柴崎mod（）／2026年10月4日(日)｜購入: <a href="https://tiget.net/events/510555">TIGET</a></li>
 <li>🟠 2026-08-31〜発売中（終了日は売り場に記載なし）｜MAXIMUM／鎌／ウォーターズ／プロポーズ／銀座お笑いPLACE（東京）／2026年10月4日(日) 東京｜購入: <a href="https://tiget.net/events/518966">TIGET</a></li>
 <li>🟢 2026-09-16〜発売中（終了日は売り場に記載なし）｜MCあんにゅライブ-manipulator クロダセイイチ／MCあんにゅ／Watasino／Ness／mod（東京）／2026年10月4日(日) 東京｜購入: <a href="https://tiget.net/events/523542">TIGET</a></li>
@@ -6834,6 +6841,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟠 販売中・締切まであと19日（〜2026-10-09）｜ハイサイトレインツアー2026 特急編「東京公演」／ハイサイトレインツアー2026 特急編「東京公演」／SHIBUYA TAKE OFF 7（東京）／2026年10月24日(土) 東京｜購入: <a href="https://tiget.net/events/510530">TIGET</a></li>
 <li>🟠 販売中・締切まであと19日（〜2026-10-09）｜ハイサイトレインツアー2026 特急編「沖縄公演」／ハイサイトレインツアー2026 特急編「沖縄公演」／ライブハウスMOD’S（東京）／2026年10月30日(金) 東京｜購入: <a href="https://tiget.net/events/510542">TIGET</a></li>
 <li>🟠 販売中・締切まであと19日（〜2026-10-09）｜「@JAM the Field vol.30」／「@JAM the Field vol.30」／GARDEN新木場FACTORY（東京）／2026年10月10日(土) 東京 GARDEN新木場FACTORY｜購入: <a href="https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&amp;mid=53531&amp;murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fmusic%2Fjpop%2Fidle%2Frtzpa30%2F">楽天チケット</a></li>
+<li>🟠 販売中・締切まであと19日（〜2026-10-09）｜#キラら部 ファンミーティング ~齋藤きらら単独公演 好きなことしちゃいます編~／斎藤きらら／ギミラブ！／花透あきな／￼ 仙台ネオブラザーズ（宮城）／2026年10月9日(金) 宮城｜購入: <a href="https://tiget.net/events/524354">TIGET</a></li>
 <li>🟠 販売中・締切まであと19日（〜2026-10-09）｜高橋明日香 Birthday Party~39~／高橋明日香／Nakano space Q（東京）／2026年10月10日(土) 東京｜購入: <a href="https://tiget.net/events/521536">TIGET</a></li>
 <li>🟠 発売開始まであと20日（2026-10-10発売）｜キーウ・クラシック・バレエ 2026 全国ツアー／キーウ・クラシック・バレエ／全国ツアー（全国）／2026年10月30日(金)〜2026年12月26日(土) 全国｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667971">チケットぴあ</a></li>
 <li>🟠 発売開始まであと20日（2026-10-10発売）｜ザ・ニュースペーパー／ザ・ニュースペーパー／全国ツアー（大宮ソニックシティ 小ホール／日経ホール／サンケイホールブリーゼ／横浜市鶴見区民文化センター サルビアホール／町田市民ホール／京都劇場）（全国）／2026年9月26日(土)〜2027年1月9日(土) 全国ツアー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2623985">チケットぴあ</a></li>
@@ -7473,6 +7481,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-09-14〜発売中（終了日は売り場に記載なし）｜青秋ライブ／マリリン／舞台袖（大阪）／2026年10月12日(月) 大阪｜購入: <a href="https://tiget.net/events/523079">TIGET</a></li>
 <li>🟠 販売中・締切まであと22日（〜2026-10-12）｜ALL FUNNY 2／大場陽介／髙野真器／海月陽斗／スタジオK（）／2026年10月13日(火)｜購入: <a href="https://tiget.net/events/522967">TIGET</a></li>
 <li>🟠 販売中・締切まであと22日（〜2026-10-12）｜PRIDE LAND Vol.4／BYEE the ROUND／Hello Sleepwalkers／渋谷チェルシーホテル（東京）／2026年11月27日(金) 東京｜購入: <a href="https://tiget.net/events/512401">TIGET</a></li>
+<li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜10/12昼 FREE LIVE !!／リンナ／結芽乃／伊谷亜子／shibuya gee-ge.（東京）／2026年10月12日(月) 東京｜購入: <a href="https://tiget.net/events/524085">TIGET</a></li>
 <li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜Ac!u pre. Pretty Gang Station／AC!U GROMOV CHIMAIRA／WEVOM／castellapark／大塚Hearts Next（東京）／2026年10月12日(月) 東京｜購入: <a href="https://tiget.net/events/523995">TIGET</a></li>
 <li>🟠 販売中・締切まであと22日（〜2026-10-12）｜🌟南條ななみのタコパオフ会🐙𓈒 𓂂𓏸🌟／南條ななみ／ガールズバー 推しカノ（東京）／2026年10月12日(月) 東京｜購入: <a href="https://tiget.net/events/524058">TIGET</a></li>
 <li>🟠 発売開始まであと23日（2026-10-13発売）｜Gospel Together 2026 ヤマハ講師コンサート ～淡野保昌 80th Anniversary～／Gospel／なかのZERO 大ホール（東京都）／2026-10-13 東京都 なかのZERO 大ホール｜購入: <a href="https://eplus.jp/sf/detail/4500660001-P0030001P021001">e+</a></li>
@@ -7752,6 +7761,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟠 販売中・締切まであと25日（〜2026-10-15）｜Li-V-RAVE 遥川みのり生誕祭2026【前夜祭】／Li-V-RAVE／西川口Lavis（埼玉）／2026年10月16日(金)｜購入: <a href="https://tiget.net/events/518420">TIGET</a></li>
 <li>🟠 販売中・締切まであと25日（〜2026-10-15）｜恋白みる料理イベント ～2026ハロウィン🎃👻～／恋白みる／明大前（東京）／2026年10月17日(土) 東京｜購入: <a href="https://tiget.net/events/521299">TIGET</a></li>
 <li>🟠 販売中・締切まであと25日（〜2026-10-15）｜Melo＊Traum 定期公演『DREAM DIARY』vol.1／Melo＊Traum／Shibuya Milkyway LIVE&amp;BAR（東京）／2026年10月23日(金) 東京｜購入: <a href="https://tiget.net/events/522576">TIGET</a></li>
+<li>🟢 2026-09-15〜発売中（終了日は売り場に記載なし）｜RISEOVER優勝記念「感謝の無料ライブ＆パーティー！」／グランステラ／擬人化にゃんた／PRISM⭐︎PRINCESS／西川口Lavis（埼玉）／2026年10月15日(木)｜購入: <a href="https://tiget.net/events/523253">TIGET</a></li>
 <li>🟢 2026-08-22〜発売中（終了日は売り場に記載なし）｜10/15 WINNERプロジェクト 東京vol.3／tami／mibuki／みきなつみ／shibuya gee-ge.（東京）／2026年10月15日(木) 東京｜購入: <a href="https://tiget.net/events/516660">TIGET</a></li>
 <li>🟢 2026-09-15〜発売中（終了日は売り場に記載なし）｜2015→vol.23／いかちゃん／電気武田／なかよし／GINZA ART BOX 7（東京）／2026年10月15日(木) 東京｜購入: <a href="https://tiget.net/events/523310">TIGET</a></li>
 <li>🟢 2026-08-27〜発売中（終了日は売り場に記載なし）｜AUTUMN RIOT -3MAN SPECIAL-／mezcolanza／The_eek／Mellows／unravel tokyo（東京）／2026年10月15日(木) 東京｜購入: <a href="https://tiget.net/events/517990">TIGET</a></li>
@@ -7879,6 +7889,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-08-31〜発売中（終了日は売り場に記載なし）｜ますちゃん生誕祭2026／ますちゃん／浜松FORCE（静岡）／2026年10月16日(金) 静岡｜購入: <a href="https://tiget.net/events/518953">TIGET</a></li>
 <li>🟢 2026-09-07〜発売中（終了日は売り場に記載なし）｜残響倫理／残響のリフレイン／SQRRL／RETRORAIN／unravel tokyo（東京）／2026年10月16日(金) 東京｜購入: <a href="https://tiget.net/events/521049">TIGET</a></li>
 <li>🟠 販売中・締切まであと26日（〜2026-10-16）｜第14回RAKU・GO・三道楽(らくごさんどら） 「彦いちプラスワン Vol.4 彦いち、たっぷり。」／林家彦いち／入船亭扇兆／コジマホールディングス西区民文化センター ２階スタジオ（広島）／2026年10月16日(金)｜購入: <a href="https://tiget.net/events/508325">TIGET</a></li>
+<li>🟠 販売中・締切まであと26日（〜2026-10-16）｜#神推しがいるセカイVol.33／ガトーショコラは半分こ♡／Mikko♡dol／音ノ木坂学院スクールユニドル部／上野AL-TEMA｜LIVE HALL UENO AL-TEMA（東京）／2026年10月17日(土) 東京｜購入: <a href="https://tiget.net/events/522580">TIGET</a></li>
 <li>🟠 販売中・締切まであと26日（〜2026-10-16）｜Li-V-RAVE 遥川みのり生誕祭2026【本祭】／Li-V-RAVE／西川口Lavis（埼玉）／2026年10月17日(土)｜購入: <a href="https://tiget.net/events/518424">TIGET</a></li>
 <li>🟠 販売中・締切まであと26日（〜2026-10-16）｜けっぱって東北 4thワンマンライブ『ふるさと2026』全国ツアー 【福岡】前哨戦／けっぱって東北／ルナリウム／パピマシェ／ライブハウスＣＢ（福岡）／2026年10月17日(土) 福岡｜購入: <a href="https://tiget.net/events/503980">TIGET</a></li>
 <li>🟠 販売中・締切まであと26日（〜2026-10-16）｜けっぱって東北 4thワンマンライブ『ふるさと2026』全国ツアー 【福岡】本戦／けっぱって東北／ルナリウム／SIR／ライブハウスＣＢ（福岡）／2026年10月17日(土) 福岡｜購入: <a href="https://tiget.net/events/503990">TIGET</a></li>
@@ -8306,6 +8317,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-08-30〜発売中（終了日は売り場に記載なし）｜【予選B】KUSANONE-1グランプリ グランドチャンピオン大会／あざみカントリー／アクセル／花道すいろ・りくろ／くさのね劇場梅田本店（大阪）／2026年10月18日(日) 大阪｜購入: <a href="https://tiget.net/events/518685">TIGET</a></li>
 <li>🟢 2026-09-10〜発売中（終了日は売り場に記載なし）｜【来場予約】10/18※昼公演「写真で一曲（動画もあるよ）」／真田柊太／江島圭祐／ヨギ サネキ／someno kyoto（京都）／2026年10月18日(日) 京都｜購入: <a href="https://tiget.net/events/521885">TIGET</a></li>
 <li>🟢 2026-08-30〜発売中（終了日は売り場に記載なし）｜【決勝】KUSANONE-1グランプリ グランドチャンピオン大会／【決勝】KUSANONE-1グランプリ グランドチャンピオン大会／くさのね劇場梅田本店（大阪）／2026年10月18日(日) 大阪｜購入: <a href="https://tiget.net/events/518689">TIGET</a></li>
+<li>🟢 2026-08-19〜発売中（終了日は売り場に記載なし）｜〜秋だけど〜なつ祭り／〜秋だけど〜なつ祭り／横浜YTJホール（神奈川）／2026年10月18日(日) 神奈川｜購入: <a href="https://tiget.net/events/515833">TIGET</a></li>
 <li>🟢 2026-08-30〜発売中（終了日は売り場に記載なし）｜あなたに一途、とりいちず／上層教育／マッチ／チートイツ／舞台袖（大阪）／2026年10月18日(日) 大阪｜購入: <a href="https://tiget.net/events/518718">TIGET</a></li>
 <li>🟢 2026-07-10〜発売中（終了日は売り場に記載なし）｜おうどんと愉快な仲間たちよる10月のつどい／おうどん／せぶこ／ぺすか／秋葉原ハンドレッド2（東京）／2026年10月18日(日) 東京｜購入: <a href="https://tiget.net/events/505771">TIGET</a></li>
 <li>🟢 2026-09-07〜発売中（終了日は売り場に記載なし）｜かち上げ／マルカ食堂／ザ超電導ズ／ドロシー／中野Vスタジオ（東京）／2026年10月18日(日) 東京｜購入: <a href="https://tiget.net/events/521106">TIGET</a></li>
@@ -9379,7 +9391,9 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🔵 販売中・締切まであと38日（〜2026-10-28）｜踊物語vol.34／あやぱ／かもだしょ／きょりっくあ／クラブ マーキュリー（大阪）／2026年10月28日(水) 大阪｜購入: <a href="https://tiget.net/events/520936">TIGET</a></li>
 <li>🟢 2026-09-04〜発売中（終了日は売り場に記載なし）｜音笑交差点vol.3〜好きが交わるみんなの夜〜／島崎大／やすぴー。／パラダイムシフト／下北沢おてまえ（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/520263">TIGET</a></li>
 <li>🔵 販売中・締切まであと38日（〜2026-10-28）｜10/29(木)「Honey Collection -Halloween After Dark-」／FAPPINESS／Club♡Bunny／T-AR&#x27;S DROP／ライブハウス クレッシェンド（東京）／2026年10月29日(木) 東京｜購入: <a href="https://tiget.net/events/520576">TIGET</a></li>
+<li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜10/28 FREE LIVE !!／みつば／石川 倫歌／平絵里香／shibuya gee-ge.（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/524119">TIGET</a></li>
 <li>🟢 2026-09-17〜発売中（終了日は売り場に記載なし）｜OWLscroll &amp; Tear Rabbits &amp; CURE SQUIRREL Pre. 『MERRY BAD DREAM』／戦国アニマル極楽浄土／闇雲／ミヤコワスレ／池袋 SOUND PEACE（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/523926">TIGET</a></li>
+<li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜Sparkly Mints 1周年記念 無銭単独公演／Sparkly Mints／MsmileBOX渋谷（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/524044">TIGET</a></li>
 <li>🟢 2026-09-19〜発売中（終了日は売り場に記載なし）｜「ごめんあそばせ 60分漫才ライブ〜ウケ切らへんかったら豊一に幽閉ライブ〜」／ごめんあそばせ／吹田市立豊一市民センター（大阪）／2026年10月28日(水) 大阪｜購入: <a href="https://tiget.net/events/524185">TIGET</a></li>
 <li>🟢 2026-09-15〜発売中（終了日は売り場に記載なし）｜いい夜寄席気分 vol.3／おせつときょうた／三遊亭遊子／アートスペース兜座（東京）／2026年10月28日(水) 東京｜購入: <a href="https://tiget.net/events/523386">TIGET</a></li>
 <li>🔵 発売開始まであと39日（2026-10-29発売）｜稲垣潤一／稲垣潤一／J:COMホール八王子（東京）／2027年2月23日(火) 東京 J:COMホール八王子｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2635361">チケットぴあ</a></li>
@@ -9499,7 +9513,6 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜Girl&#x27;s UP!!! vol.422／Girl&#x27;s UP!!! vol.422／Shibuya eggman（東京）／2026年10月29日(木) 東京｜購入: <a href="https://tiget.net/events/524014">TIGET</a></li>
 <li>🟢 2026-09-17〜発売中（終了日は売り場に記載なし）｜Planet K特別企画 ハシグチカナデリヤ×ロンドンタナカ 「名曲分析！曲作り講座！」 -弾き語りもやるよ-／ハシグチカナデリヤ／ロンドンタナカ／吉祥寺Planet K（東京）／2026年10月29日(木) 東京｜購入: <a href="https://tiget.net/events/523896">TIGET</a></li>
 <li>🔵 発売開始まであと40日（2026-10-30発売）｜齋藤志野（fl）／齋藤志野（fl）／東京オペラシティ リサイタルホール（東京）／2027年1月26日(火) 東京 東京オペラシティ リサイタルホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2631350">チケットぴあ</a></li>
-<li>🔵 発売開始まであと40日（2026-10-30発売）｜高嶋ちさ子 12人のヴァイオリニスト／高嶋ちさ子 12人のヴァイオリニスト／札幌コンサートホールKitara 大ホール（北海道）／2027年2月23日(火) 北海道 札幌コンサートホールKitara 大ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2636335">チケットぴあ</a></li>
 <li>🔵 販売中・締切まであと40日（〜2026-10-30）｜木村家ファミリー／木村家ファミリー／全国ツアー（全国）／2026年11月5日(木)〜2026年11月6日(金) 全国ツアー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2624734">チケットぴあ</a></li>
 <li>🔵 販売中・締切まであと40日（〜2026-10-30）｜レディオサイエンス／レディオサイエンス／誰も知らない劇場（宮城）／2026年10月31日(土) 宮城 誰も知らない劇場｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2625135">チケットぴあ</a></li>
 <li>🟢 販売中・締切まであと40日（〜2026-10-30）｜小原孝（p）／小原孝（p）／よみうり大手町ホール（東京）／2026年11月3日(火) 東京 よみうり大手町ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2621972">チケットぴあ</a></li>
@@ -9783,6 +9796,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>🔵 販売中・締切まであと41日（〜2026-10-31）｜ハロウィン撮影会＆チェキ会／柊木りお／すたじお金魚（東京）／2026年10月31日(土) 東京｜購入: <a href="https://tiget.net/events/524311">TIGET</a></li>
 <li>🟢 2026-09-19〜発売中（終了日は売り場に記載なし）｜メイタイブキとマミモンシンテターゼが先輩と後輩と四段を呼び出して新ネタ披露した後みんなで仲良くなるライブ【扉】／メイタイブキ／マミモンシンテターゼ／四段／新宿永谷ホール(新宿Fu-)+801（東京）／2026年10月31日(土) 東京｜購入: <a href="https://tiget.net/events/524186">TIGET</a></li>
 <li>🟢 2026-09-18〜発売中（終了日は売り場に記載なし）｜ラティオっスと肉合戦vol.14／はるのすけ／おーしゃんず／えりんぎ探偵／atTHEATRE（東京）／2026年10月31日(土) 東京｜購入: <a href="https://tiget.net/events/524118">TIGET</a></li>
+<li>🔵 販売中・締切まであと41日（〜2026-10-31）｜わんだふる！ぷちワンマン In Tokyo／柊木りお／東京都新宿区四谷4丁目9（5階）（東京）／2026年11月1日(日) 東京｜購入: <a href="https://tiget.net/events/524504">TIGET</a></li>
 <li>🔵 発売開始まであと42日（2026-11-01発売）｜第2回チャリティークリスマスライブ2026／第2回チャリティークリスマスライブ2026／千葉市生涯学習センターホール（千葉）／2026年12月20日(日) 千葉 千葉市生涯学習センターホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2619075">チケットぴあ</a></li>
 <li>🔵 発売開始まであと42日（2026-11-01発売）｜Xmasファミリー☆コンサート クリスマスのおくりもの ～うたってかなでて♪キラキラ星空コンサート～／Xmasファミリー☆コンサート クリスマスのおくりもの ～うたってかなでて♪キラキラ星空コンサート～／福井県児童科学館（エンゼルランドふくい）スペースシアター（福井）／2026年12月12日(土) 福井 福井県児童科学館（エンゼルランドふくい）スペースシアター｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2632675">チケットぴあ</a></li>
 <li>🟢 販売中・締切まであと42日（〜2026-11-01）｜ホセ・カレーラス テノール・リサイタル 〜my way〜／ホセ・カレーラス／サントリーホール 大ホール（東京）／2026-11-05｜購入: <a href="https://eplus.jp/sf/detail/0021490001-P0030093P021001">e+</a></li>
@@ -13606,6 +13620,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜Hi-STANDARD／Hi-STANDARD／全国ツアー（熊本B.9 V1／鹿児島CAPARVOホール／広島クラブクアトロ／渋谷CLUB QUATTRO）（熊本・鹿児島・広島・東京）／2026年9月7日(月)〜2026年10月19日(月) 熊本・鹿児島・広島・東京｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2633936">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜Spicy Sessions -THE LIVE- 2026／Spicy Sessions -THE LIVE- 2026／TACHIKAWA STAGE GARDEN（東京）／2026年10月20日(火) 東京 TACHIKAWA STAGE GARDEN｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670476">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜蠱毒／ユクトモ／風呂釜くん／中野Vスタジオ（東京）／2026年10月20日(火) 東京｜購入: <a href="https://tiget.net/events/521899">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜第39期竜王戦第2局三島対局 前夜祭／第39期竜王戦第2局三島対局 前夜祭／みしまプラザホテル マーキス（静岡）／2026年10月21日(水) 静岡 みしまプラザホテル マーキス｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2626657">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜By Steps Vol.1 [ 篠原望 Irisリリース記念 Acoustic Night ]／By Steps Vol.1 [ 篠原望 Irisリリース記念 Acoustic Night ]／神楽坂天窓（東京）／2026年10月21日(水) 東京｜購入: <a href="https://tiget.net/events/499604">TIGET</a></li>
 <li>⚫ 予定枚数終了｜演芸写真家 橘蓮二プロデュース 春風亭一之輔×桂二葉 二人会2026／演芸写真家 橘蓮二プロデュース 春風亭一之輔×桂二葉 二人会2026／京都芸術劇場 春秋座（京都芸術大学内）（京都）／2026年10月23日(金) 京都 京都芸術劇場 春秋座（京都芸術大学内）｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2630713">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜ヴェルナー第1回単独ライブ「ヴェルナーの『お』単独」／ヴェルナー第1回単独ライブ「ヴェルナーの『お』単独」／関交協ハーモニックホール（東京）／2026年10月23日(金) 東京｜購入: <a href="https://tiget.net/events/492770">TIGET</a></li>
@@ -13642,6 +13657,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜青葉紘季Oneman Live The Last Day of 40s 〜Sentimental Forty〜／青葉紘季／guest musician:松浦はすみ／CCO（東京）／2026年10月31日(土) 東京｜購入: <a href="https://tiget.net/events/506887">TIGET</a></li>
 <li>⚫ 予定枚数終了｜水谷千重子の宴ジョインコンサート2026／水谷千重子の宴ジョインコンサート2026／全国ツアー（福岡市民ホール 大ホール／東京ガーデンシアター／やまぎん県民ホール／フェスティバルホール／Niterra日本特殊陶業市民会館 フォレストホール／広島国際会議場フェニックスホール）（全国）／2026年11月1日(日) 広島 広島国際会議場フェニックスホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667488">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜PURPLE BUBBLE／PURPLE BUBBLE／LIVE SQUARE 2nd LINE（大阪）／2026年11月1日(日) 大阪 LIVE SQUARE 2nd LINE｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634324">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜第14回ヒコロヒー単独公演「燃える家」／第14回ヒコロヒー単独公演「燃える家」／飛行船シアター（東京）／2026年10月30日(金)〜2026年11月1日(日) 東京 飛行船シアター｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2631592">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜「GirlPoP 90’s VOL1」／「GirlPoP 90’s VOL1」／TOKYO FMホール（東京）／2026年11月1日(日) 東京 TOKYO FMホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2633158">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜Sugar.U 1st EP Sweet Sugar Release Live 「Birth」／Sugar.U／三軒茶屋GRAPEFRUIT MOON（東京）／2026年11月1日(日) 東京｜購入: <a href="https://tiget.net/events/518818">TIGET</a></li>
 <li>⚫ 予定枚数終了｜しぃみゅーじあむ撮影会 【ゲストモデル さやちゃん 】専用予約ページ／しぃみゅーじあむ撮影会 【ゲストモデル さやちゃん 】専用予約ページ／予約者のみ連絡（）／2026年11月1日(日)｜購入: <a href="https://tiget.net/events/523175">TIGET</a></li>
@@ -13671,6 +13687,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜第28回あきた落語愛喬会「柳家喬太郎独演会」／第28回あきた落語愛喬会「柳家喬太郎独演会」／あきた芸術劇場ミルハス 小ホールB（秋田）／2026年11月14日(土) 秋田 あきた芸術劇場ミルハス 小ホールB｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634886">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜『log in.』vol.1／Co.二郎a.k.a.(自由)／cafe&amp;bar Legato（）／2026年11月14日(土)｜購入: <a href="https://tiget.net/events/512753">TIGET</a></li>
 <li>⚫ 予定枚数終了｜近藤康平個展『ACCUMULATION』後半 opening event／近藤康平／内澤崇仁 (androp)／CHUBBY（東京）／2026年11月14日(土) 東京｜購入: <a href="https://tiget.net/events/515258">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜RAINCOVER／RAINCOVER／KYOTO MUSE（京都）／2026年11月15日(日) 京都 KYOTO MUSE｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2625334">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜EPISODE vol.4 2部／屍／田中レドラ／ギブ／LIVEHOUSE Tick-Tuck / Rehearsal Studio Noi（大阪）／2026年11月15日(日) 大阪｜購入: <a href="https://tiget.net/events/520324">TIGET</a></li>
 <li>⚪ 販売終了｜鈴木千絵 oneman live &quot;piece&quot; 【First Piece】／鈴木千絵 oneman live &quot;piece&quot; 【First Piece】／吉祥寺Planet K（東京）／2026年11月15日(日) 東京｜購入: <a href="https://tiget.net/events/490893">TIGET</a></li>
 <li>⚫ 予定枚数終了｜ゆとりくんアコースティックライブ「メロい夜」／ゆとりくん／小林ファンキ風格／三軒茶屋グレープフルーツムーン（東京）／2026年11月15日(日) 東京｜購入: <a href="https://tiget.net/events/519426">TIGET</a></li>
@@ -13687,6 +13704,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜TVアニメ「文豪ストレイドッグス」振り返り上映会&amp;トークイベント／TVアニメ「文豪ストレイドッグス」振り返り上映会&amp;トークイベント／丸の内ピカデリー（東京）／2026年9月5日(土)〜2026年11月21日(土) 東京 丸の内ピカデリー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2632223">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜X-pt. 20th Anniversary Live SPECIAL THANKS THE BACK HORN / a flood of circle／X-pt.／高知X-pt.（高知県）／2026年11月21日(土) 高知県 高知X-pt.｜購入: <a href="https://eplus.jp/sf/detail/4587300001-P0030001P021001">e+</a></li>
 <li>⚫ 予定枚数終了｜後藤ひろひとーく～DEAD MAN TALKING／後藤ひろひとーく～DEAD MAN TALKING／全国ツアー（ロフトプラスワン／Loft PlusOne West）（東京・大阪）／2026年11月15日(日)〜2026年11月21日(土) 東京・大阪｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634768">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜佐野元春&amp;THE COYOTE BAND／佐野元春&amp;THE COYOTE BAND／福岡市民ホール 大ホール（福岡）／2026年11月20日(金)〜2026年11月21日(土) 福岡 福岡市民ホール 大ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2629330">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜大槻能楽堂自主公演能 特別公演 王朝のロマン／大槻能楽堂自主公演能 特別公演 王朝のロマン／大槻能楽堂（大阪）／2026年11月21日(土) 大阪 大槻能楽堂｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669265">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜プライドの高い深夜のコンビニアルバイト”surprise one-man tour 名古屋”／プライドの高い深夜のコンビニアルバイト”surprise one-man tour 名古屋”／新栄RADmini（愛知）／2026年11月21日(土) 愛知｜購入: <a href="https://tiget.net/events/494497">TIGET</a></li>
 <li>⚫ 予定枚数終了｜大貫妙子／大貫妙子／昭和女子大学 人見記念講堂（東京）／2026年11月22日(日) 東京 昭和女子大学 人見記念講堂｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2628174">チケットぴあ</a></li>
@@ -13696,7 +13714,9 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜百々和宏と69ers TOUR2026 ”ATSUKAN BOYS” 大阪・塚本 HOWLIN&#x27;BAR 公演／百々和宏と69ers／ハウリンバー（大阪）／2026年11月22日(日) 大阪｜購入: <a href="https://tiget.net/events/513347">TIGET</a></li>
 <li>⚫ 予定枚数終了｜星野みちる 20th「michiru time」Special !!／星野みちる／GRAPES KITASANDO（東京）／2026年11月23日(月) 東京｜購入: <a href="https://tiget.net/events/519680">TIGET</a></li>
 <li>⚪ 販売終了｜ALL I WANT 2026 2DAYS ONE-MAN『俺たちが狂わないと。』 DAY1／ALL I WANT／渋谷 eggman（東京）／2026年11月24日(火) 東京｜購入: <a href="https://tiget.net/events/517022">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜椎名林檎／椎名林檎／全国ツアー（あきた芸術劇場ミルハス 大ホール／市川市文化会館 大ホール／東京国際フォーラム ホールA／アクトシティ浜松 大ホール／神戸国際会館こくさいホール／松山市民会館 大ホール／iichiko グランシアタ）（全国）／2026年10月30日(金)〜2026年11月26日(木) 全国ツアー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670162">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜The Ravens／The Ravens／UNIT（東京）／2026年11月26日(木) 東京 UNIT｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634343">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜放送50周年記念 第20回「徹子の部屋」コンサート／放送50周年記念 第20回「徹子の部屋」コンサート／東京国際フォーラム ホールA（東京）／2026年11月27日(金) 東京 東京国際フォーラム ホールA｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2616808">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜世界のMIDORI 再び七尾へ!! 能登復興支援事業 オーケストラ・アンサンブル金沢 第25回七尾定期公演／世界のMIDORI 再び七尾へ!! 能登復興支援事業 オーケストラ・アンサンブル金沢 第25回七尾定期公演／七尾市文化ホール 大ホール（石川）／2026年11月28日(土) 石川 七尾市文化ホール 大ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2629338">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜Layers High 『SILENT KNIGHT』③※11/28(土)Aキャスト予約フォーム／三頭彩乃／菅野玲雄／森田花音／神戸三宮シアター・エートー（兵庫）／2026年11月28日(土) 兵庫｜購入: <a href="https://tiget.net/events/519866">TIGET</a></li>
 <li>⚫ 予定枚数終了｜MET JAZZ TOKYO: DAY 0／MET JAZZ TOKYO: DAY 0／オーチャードホール（東京）／2026年11月29日(日) 東京 オーチャードホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2630568">チケットぴあ</a></li>
@@ -13706,6 +13726,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜ブギ連 ブギる心～外伝／ブギ連／全国ツアー（Billboard Live TOKYO／Billboard Live OSAKA／Billboard Live YOKOHAMA）（東京都・大阪府・神奈川県）／2026年11月16日(月)〜2026年11月30日(月) 全国ツアー｜購入: <a href="https://eplus.jp/sf/detail/2940860002-P0030010P021001">e+</a></li>
 <li>⚫ 予定枚数終了｜アルゲリッチが奏で継ぐ2日間／アルゲリッチが奏で継ぐ2日間／全国ツアー（サントリーホール 大ホール／すみだトリフォニーホール 大ホール）（東京）／2026年11月25日(水)〜2026年12月1日(火) 東京｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2630163">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜奥野真哉／奥野真哉／LIQUIDROOM（東京）／2026年12月2日(水) 東京 LIQUIDROOM｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2628582">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜LiLi／LiLi／豊洲PIT（東京）／2026年12月3日(木) 東京 豊洲PIT｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670800">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜東京カテドラルで聴く クリスマス・コンサート 2026／東京カテドラルで聴く クリスマス・コンサート 2026／東京カテドラル関口教会聖マリア大聖堂（東京）／2026年12月4日(金) 東京 東京カテドラル関口教会聖マリア大聖堂｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670269">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜弁論2026／弁論2026／全国ツアー（東京エレクトロンホール宮城／SAWARAPIA 大ホール／ロームシアター京都 メインホール／東京ガーデンシアター）（宮城・福岡・京都・東京）／2026年11月4日(水)〜2026年12月4日(金) 宮城・福岡・京都・東京｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2623645">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜ホラーババア／川奈まり子／よりみちなぎ／山村茜／AFTER PARTY TOKYO（東京）／2026年12月4日(金) 東京｜購入: <a href="https://tiget.net/events/522451">TIGET</a></li>
@@ -13721,24 +13742,39 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
 <li>⚫ 予定枚数終了｜愛探眼影ユキナInstagramフォロワー20万人突破記念 先着150名限定無料ワンマンツアー “Viral Curse”大阪編／愛探眼影／心斎橋CLAPPER（大阪）／2026年12月8日(火) 大阪｜購入: <a href="https://tiget.net/events/518466">TIGET</a></li>
 <li>⚫ 予定枚数終了｜フォーレ四重奏団 第2夜／フォーレ四重奏団 第2夜／TOPPANホール（東京）／2026年12月9日(水) 東京 TOPPANホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2625007">チケットぴあ</a></li>
 <li>⚪ 販売終了｜かめあり亭 第93弾! 春風亭昇太 独演会 -春らんまん。Part.14-／かめあり亭 第93弾! 春風亭昇太 独演会 -春らんまん。Part.14-／かめありリリオホール（東京）／2026年12月10日(木) 東京 かめありリリオホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669992">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜OddRe:／OddRe:／cube garden（北海道）／2026年11月1日(日) 北海道 cube garden｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2627690">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜FAKE STANCE pre. &quot;show me your stance&quot;／FAKE STANCE／All Good Soldiers／Stellarleap／LIVE HAUS（東京）／2026年12月12日(土) 東京｜購入: <a href="https://tiget.net/events/523053">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜KAWAII LAB. SESSION／KAWAII LAB. SESSION／有明アリーナ（東京）／2026年12月12日(土)〜2026年12月13日(日) 東京 有明アリーナ｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2631397">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜森口博子 クリスマスディナー&amp;ライブ2026／森口博子 クリスマスディナー&amp;ライブ2026／神戸ポートピアホテル・大輪田の間（兵庫）／2026年12月13日(日) 兵庫 神戸ポートピアホテル・大輪田の間｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634561">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜ハナレグミ faraway so close 2026 ～ハナレグミwith sweet thing fall in Autumn～／ハナレグミ／全国ツアー（Billboard Live TOKYO／Billboard Live OSAKA）（東京都・大阪府）／2026年11月27日(金)〜2026年12月13日(日) 全国ツアー｜購入: <a href="https://eplus.jp/sf/detail/4306490002-P0030002P021001">e+</a></li>
 <li>⚫ 予定枚数終了｜一宮光輝 20th ANNIVERSARY LIVE「CANDY」／一宮光輝 20th ANNIVERSARY LIVE「CANDY」／大阪梅田マンツーマン音楽スクールTrue Happiness（大阪）／2026年12月13日(日) 大阪｜購入: <a href="https://tiget.net/events/515641">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜高嶋ちさ子のザワつく!昭和歌謡祭 2026／高嶋ちさ子のザワつく!昭和歌謡祭 2026／国立代々木競技場 第一体育館（東京）／2026年12月15日(火) 東京 国立代々木競技場 第一体育館｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2625233">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜【最終回】また帰ってきた！３金落語 12ヶ月連続 毎月ネタ下ろし落語会／林家やま彦／三遊亭ごはんつぶ／三遊亭萬都／フリースペース「無何有」（東京）／2026年12月18日(金) 東京｜購入: <a href="https://tiget.net/events/422501">TIGET</a></li>
 <li>⚫ 予定枚数終了｜がしゃずまのDio de Duo vol.2／がしゃずまのDio de Duo vol.2／Rock酒場Dio（東京）／2026年12月19日(土) 東京｜購入: <a href="https://tiget.net/events/522428">TIGET</a></li>
 <li>⚫ 予定枚数終了｜稲葉浩志／稲葉浩志／全国ツアー（長良川国際会議場 メインホール／三重県文化会館 大ホール）（全国）／2026年10月4日(日)〜2026年12月20日(日) 全国ツアー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669355">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜Chevon／Chevon／全国ツアー（平安神宮 大極殿前特設ステージ／日本武道館）（京都・東京）／2026年10月10日(土)〜2026年12月21日(月) 京都・東京｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2563874">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜第一回 五圓會 ～三遊派落語研究会～／第一回 五圓會 ～三遊派落語研究会～／日本橋公会堂（日本橋劇場）（東京）／2026年12月22日(火) 東京 日本橋公会堂（日本橋劇場）｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2630515">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜T.M.Revolution／T.M.Revolution／全国ツアー（堺市民芸術文化ホール（フェニーチェ堺） 大ホール／カルッツかわさき（川崎市スポーツ・文化総合センター）ホール／愛知県芸術劇場 大ホール）（大阪・神奈川・愛知）／2026年11月21日(土)〜2026年12月27日(日) 大阪・神奈川・愛知｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2635579">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜花宮初奈／花宮初奈／TACHIKAWA STAGE GARDEN（東京）／2026年12月31日(木) 東京 TACHIKAWA STAGE GARDEN｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2625344">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜ウルフルズ／ウルフルズ／フェスティバルホール（大阪）／2026年12月31日(木) 大阪 フェスティバルホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2628863">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜愛探眼影ユキナInstagramフォロワー20万人突破記念 先着150名限定無料ワンマンツアー “Viral Curse”東京編／愛探眼影／Zirco Tokyo（東京）／2027年1月3日(日) 東京｜購入: <a href="https://tiget.net/events/518473">TIGET</a></li>
 <li>⚫ 予定枚数終了｜山根一仁&amp;阪田知樹 デュオ・リサイタル／山根一仁&amp;阪田知樹 デュオ・リサイタル／小金井 宮地楽器ホール 大ホール（東京）／2027年1月9日(土) 東京 小金井 宮地楽器ホール 大ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2625604">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜BUDDiiS／BUDDiiS／東京ガーデンシアター（東京）／2027年1月16日(土) 東京 東京ガーデンシアター｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2629662">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜上野通明（チェロ）&amp;レミ・ジュニエ（ピアノ）／上野通明（チェロ）&amp;レミ・ジュニエ（ピアノ）／TOPPANホール（東京）／2027年1月18日(月) 東京 TOPPANホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2627313">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜ZAKURO BD ONE-MAN LIVE『CROWN ME』各部Sチケット／柘榴-zakuro-／新宿Cat&#x27;s hole（東京）／2027年1月24日(日) 東京｜購入: <a href="https://tiget.net/events/505699">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜浪漫派マシュマロ／浪漫派マシュマロ／全国ツアー（ペニーレーン24／Zepp Shinjuku（TOKYO）／GORILLA HALL OSAKA／DIME）（北海道・東京・大阪・香川）／2026年11月8日(日)〜2027年1月29日(金) 北海道・東京・大阪・香川｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669171">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜神奈川フィルハーモニー管弦楽団 音楽堂シリーズ第38回&lt;Classic Modern&gt;／神奈川フィルハーモニー管弦楽団 音楽堂シリーズ第38回&lt;Classic Modern&gt;／神奈川県立音楽堂（木のホール）（神奈川）／2027年1月30日(土) 神奈川 神奈川県立音楽堂（木のホール）｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2627926">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜Ayumu Imazu／Ayumu Imazu／日本武道館（東京）／2027年1月31日(日) 東京 日本武道館｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2624429">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜桂吉弥／桂吉弥／東大阪市文化創造館 ジャトーハーモニー 小ホール（大阪）／2027年1月31日(日) 大阪 東大阪市文化創造館 ジャトーハーモニー 小ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2634585">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜Midnight Grand Orchestra／Midnight Grand Orchestra／幕張メッセ 国際展示場 4～6ホール（千葉）／2027年2月11日(木) 千葉 幕張メッセ 国際展示場 4～6ホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2667494">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜MEGADETH／MEGADETH／グランキューブ大阪 メインホール（大阪）／2027年2月22日(月) 大阪 グランキューブ大阪 メインホール｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670791">チケットぴあ</a></li>
 <li>⚫ 予定枚数終了｜澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert -／澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert -／東京ガーデンシアター（東京）／2027年2月27日(土) 東京 東京ガーデンシアター｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670108">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜Osaka GLOW Glow-in-the-Dark Dance Performance&amp;Experience／Osaka GLOW Glow-in-the-Dark Dance Performance&amp;Experience／STUDIO WREXX（大阪）／2026年10月24日(土)〜2027年3月21日(日) 大阪 STUDIO WREXX｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2631839">チケットぴあ</a></li>
 <li>⚪ 販売終了｜玉樹凜久活動10周年ワンマン ＆ 生誕主催ライブ(タイトル仮)ワンコインチケット(期間・枚数限定)／玉樹凜久／上野音横丁（東京）／2027年4月3日(土) 東京｜購入: <a href="https://tiget.net/events/500304">TIGET</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜Suchmos／Suchmos／全国ツアー（ゼビオアリーナ仙台／Kアリーナ横浜／GLION ARENA KOBE／マリンメッセ福岡B館）（宮城・神奈川・兵庫・福岡）／2027年3月13日(土)〜2027年5月2日(日) 宮城・神奈川・兵庫・福岡｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2668000">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜Eve／Eve／全国ツアー（トーサイクラシックホール岩手 大ホール／栃木県総合文化センター メインホール／フェニックス・プラザ エルピス 大ホール／アクトシティ浜松 大ホール／ロームシアター京都 メインホール／倉敷市民会館／広島文化学園HBGホール／松山市民会館 大ホール／熊本城ホール メインホール）（全国）／2027年4月11日(日)〜2027年6月13日(日) 全国ツアー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2670151">チケットぴあ</a></li>
 <li>⚪ 販売終了｜MASS OF THE FERMENTING DREGS／MASS OF THE FERMENTING DREGS／LIQUIDROOM（東京）／2027年11月7日(日) 東京 LIQUIDROOM｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventCd=2631947">チケットぴあ</a></li>
+<li>🔵 先行終了（一般発売はこれから）｜Vaundy JAPAN ARENA TOUR 2027-2028／Vaundy JAPAN ARENA TOUR 2027-2028／全国ツアー（真駒内セキスイハイムアイスアリーナ／盛岡タカヤアリーナ／ゼビオアリーナ仙台／サンドーム福井／IGアリーナ／クロコくんホール／大阪城ホール／GLION ARENA KOBE／広島グリーンアリーナ／あなぶきアリーナ香川／グランメッセ熊本）（全国）／2027年8月14日(土)〜2028年2月27日(日) 全国ツアー｜購入: <a href="https://t.pia.jp/pia/event/event.do?eventBundleCd=b2666592">チケットぴあ</a></li>
 </ul></div>
 <!-- AI_SSR_END -->
     <!-- JS で描画 -->
@@ -34372,7 +34408,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "2次プレリザーブ（東京 12/15公演）〜8/11 23:59",
-        "date": "2026-08-11"
+        "date": "2026-08-11",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "一般発売（福岡 9/12公演）8/22 10:00発売",
@@ -34381,7 +34420,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
       },
       {
         "type": "先行（宮城 11/14公演）〜8/25 11:00",
-        "date": "2026-08-25"
+        "date": "2026-08-25",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -52821,7 +52863,8 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
       {
         "type": "一般発売（北海道 R9年 2/23公演）10/30 10:00発売",
         "date": "2026-10-30",
-        "startDate": "2026-10-30"
+        "startDate": "2026-10-30",
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2636335"
       },
       {
         "type": "一般発売（富山・石川・福井・長野 10/29〜11/3公演）〜11/2 23:59",
@@ -73443,7 +73486,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ（静岡 10/21公演）〜8/31 23:59",
-        "date": "2026-08-31"
+        "date": "2026-08-31",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -87614,7 +87660,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（千葉 R9年 2/11公演）〜9/6 23:59",
-        "date": "2026-09-06"
+        "date": "2026-09-06",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -88056,7 +88105,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ2次（北海道・岩手・宮城・福井・愛知・大阪・兵庫・広島・香川・熊本 R9年 8/14〜R10年 2/27公演）〜9/5 23:59",
-        "date": "2026-09-05"
+        "date": "2026-09-05",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -88084,7 +88136,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（岩手・栃木・福井・静岡・京都・岡山・広島・愛媛・熊本 R9年 4/11〜6/13公演）〜9/15 23:59",
-        "date": "2026-09-15"
+        "date": "2026-09-15",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -88636,7 +88691,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "オフィシャル先行（東京 12/31公演）〜8/11 23:59",
-        "date": "2026-08-11"
+        "date": "2026-08-11",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -88785,11 +88843,17 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ（東京 12/12〜12/13公演）〜8/16 23:59",
-        "date": "2026-08-16"
+        "date": "2026-08-16",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ2次（東京 12/12〜12/13公演）〜9/13 23:59",
-        "date": "2026-09-13"
+        "date": "2026-09-13",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -89312,7 +89376,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（東京 11/27公演）〜8/18 23:59",
-        "date": "2026-08-18"
+        "date": "2026-08-18",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -89735,7 +89802,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（京都 11/15公演）〜9/13 23:59",
-        "date": "2026-09-13"
+        "date": "2026-09-13",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -96506,11 +96576,17 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ（秋田・千葉・東京・静岡・兵庫・愛媛・大分 10/30〜11/26公演）〜8/20 23:59",
-        "date": "2026-08-20"
+        "date": "2026-08-20",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "先行【全国】（秋田・千葉・東京・静岡・兵庫・愛媛・大分 10/30〜11/26公演）〜8/30 23:59",
-        "date": "2026-08-30"
+        "date": "2026-08-30",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -96936,11 +97012,17 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ（東京 R9年 1/16公演）〜8/30 23:59",
-        "date": "2026-08-30"
+        "date": "2026-08-30",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ2次（東京 R9年 1/16〜1/17公演）〜9/16 23:59",
-        "date": "2026-09-16"
+        "date": "2026-09-16",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -97407,15 +97489,24 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
       {
         "type": "先行（東京 R9年 1/31公演）〜8/23 23:59",
         "date": "2026-08-23",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624429"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624429",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "先行（東京 R9年 1/31公演）〜8/31 23:59",
-        "date": "2026-08-31"
+        "date": "2026-08-31",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ（東京 R9年 1/31公演）〜9/13 23:59",
-        "date": "2026-09-13"
+        "date": "2026-09-13",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -97753,32 +97844,53 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "最速先行（大阪 11/21公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "最速先行（大阪 11/22公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "最速先行（神奈川 12/21公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "最速先行（神奈川 12/22公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "最速先行（愛知 12/26公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "最速先行（愛知 12/27公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ（愛知 12/26公演）〜9/17 23:59",
         "date": "2026-09-17",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2635579"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2635579",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -97971,7 +98083,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "オフィシャル先行（大阪 10/24〜R9年 3/21公演）〜8/23 23:59",
-        "date": "2026-08-23"
+        "date": "2026-08-23",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -98034,11 +98149,17 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（宮城・神奈川・兵庫・福岡 R9年 3/13〜5/2公演）〜8/21 23:59",
-        "date": "2026-08-21"
+        "date": "2026-08-21",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "先行（宮城・神奈川・兵庫・福岡 R9年 3/14〜5/2公演）〜9/15 23:59",
-        "date": "2026-09-15"
+        "date": "2026-09-15",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -104979,27 +105100,42 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
       {
         "type": "プレリザーブ（北海道 11/1公演）〜9/13 23:59",
         "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627690"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2627690",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ（広島 11/14公演）〜9/13 23:59",
         "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629257"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629257",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ（宮城 11/26公演）〜9/13 23:59",
         "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628623"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2628623",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ（愛知 12/11公演）〜9/13 23:59",
         "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633005"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2633005",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ（大阪 12/12公演）〜9/13 23:59",
         "date": "2026-09-13",
-        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629296"
+        "url": "https://t.pia.jp/pia/event/event.do?eventCd=2629296",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -105424,11 +105560,17 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
       {
         "type": "プレリザーブ【運命も神様も邪魔すんなよ、じゃあまた明日ねツアー】（北海道・東京・大阪・広島・香川 10/18〜R9年 1/29公演）8/21 18:00発売",
         "date": "2026-08-30",
-        "startDate": "2026-08-21"
+        "startDate": "2026-08-21",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "プレリザーブ2次【運命も神様も邪魔すんなよ、じゃあまた明日ねツアー】（北海道・東京・大阪・香川 11/8〜R9年 1/29公演）〜9/16 23:59",
-        "date": "2026-09-16"
+        "date": "2026-09-16",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -108734,16 +108876,25 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ（大阪 12/31公演）〜8/30 23:59",
-        "date": "2026-08-30"
+        "date": "2026-08-30",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "先行（大阪 12/31公演）〜9/7 23:59",
-        "date": "2026-09-07"
+        "date": "2026-09-07",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       },
       {
         "type": "抽選プレリク先行（大阪 12/31公演）〜9/15 23:59",
         "date": "2026-09-15",
-        "url": "https://l-tike.com/order/?gLcode=54774&gPfKey=20260724000002257908&gEntryMthd=03&gScheduleNo=2&gCarrierCd=08&gPfName=%E3%82%A6%E3%83%AB%E3%83%95%E3%83%AB%E3%82%BA&gBaseVenueCd=53674"
+        "url": "https://l-tike.com/order/?gLcode=54774&gPfKey=20260724000002257908&gEntryMthd=03&gScheduleNo=2&gCarrierCd=08&gPfName=%E3%82%A6%E3%83%AB%E3%83%95%E3%83%AB%E3%82%BA&gBaseVenueCd=53674",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -127874,7 +128025,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
       {
         "type": "先行（東京 10/30〜11/1公演）9/3 18:00発売",
         "date": "2026-09-09",
-        "startDate": "2026-09-03"
+        "startDate": "2026-09-03",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -153949,7 +154103,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "プレリザーブ（東京 12/3公演）〜9/17 23:59",
-        "date": "2026-09-17"
+        "date": "2026-09-17",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -155381,7 +155538,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（福岡 11/20〜11/21公演）〜9/16 23:59",
-        "date": "2026-09-16"
+        "date": "2026-09-16",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -162463,7 +162623,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     "tickets": [
       {
         "type": "先行（大阪 R9年 1/31公演）〜9/15 11:00",
-        "date": "2026-09-15"
+        "date": "2026-09-15",
+        "soldout": true,
+        "presaleEnded": true,
+        "presaleEndedSince": "2026-09-20"
       }
     ],
     "verified": true,
@@ -168690,33 +168853,6 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
         "type": "一般発売（千葉・静岡 R9年 2/26〜3/1公演）〜2/24 23:59",
         "date": "2027-02-24",
         "startDate": "2026-09-10"
-      }
-    ],
-    "verified": true,
-    "verifiedAt": "2026-09-10"
-  },
-  {
-    "id": 7761,
-    "artist": "高嶋ちさ子 12人のヴァイオリニスト",
-    "name": "高嶋ちさ子 12人のヴァイオリニスト",
-    "date": "2027-02-23",
-    "dateLabel": "2027年2月23日(火) 北海道 札幌コンサートホールKitara 大ホール",
-    "venue": "札幌コンサートホールKitara 大ホール",
-    "prefecture": "北海道",
-    "genre": "classic",
-    "price": null,
-    "links": {
-      "rakuten": null,
-      "lawson": null,
-      "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2636335",
-      "eplus": null,
-      "amazon": "https://www.amazon.co.jp/s?k=%E9%AB%98%E5%B6%8B%E3%81%A1%E3%81%95%E5%AD%90%2012%E4%BA%BA%E3%81%AE%E3%83%B4%E3%82%A1%E3%82%A4%E3%82%AA%E3%83%AA%E3%83%8B%E3%82%B9%E3%83%88%20CD&i=specialty-aps&srs=26200021051&tag=oshinavi0a-22"
-    },
-    "tickets": [
-      {
-        "type": "一般発売（北海道 R9年 2/23公演）10/30 10:00発売",
-        "date": "2026-10-30",
-        "startDate": "2026-10-30"
       }
     ],
     "verified": true,
@@ -268257,21 +268393,22 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "優先入場（通常エリアのみ）（東京 10/17公演）9/20 19:30発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "優先入場（通常エリアのみ）（東京 10/17公演）〜10/16 23:59",
+        "date": "2026-10-16",
         "url": "https://tiget.net/events/522580"
       },
       {
-        "type": "カメラパス付きチケット（通常エリアでの場所取りNG）（東京 10/17公演）9/20 19:30発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "カメラパス付きチケット（通常エリアでの場所取りNG）（東京 10/17公演）9/12 18:44発売〜",
+        "date": "2026-10-17",
+        "startDate": "2026-09-12",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/522580"
       },
       {
-        "type": "予約（東京 10/17公演）9/20 19:30発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "予約（東京 10/17公演）9/12 18:44発売〜",
+        "date": "2026-10-17",
+        "startDate": "2026-09-12",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/522580"
       }
     ],
@@ -283815,36 +283952,36 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
         "date": "2026-07-26",
         "url": "https://tiget.net/events/501409",
         "soldout": true,
-        "soldoutSince": "2026-09-19",
+        "soldoutSince": "2026-09-20",
         "saleEnded": true,
-        "saleEndedSince": "2026-09-19"
+        "saleEndedSince": "2026-09-20"
       },
       {
         "type": "【メンシプ先行】A席チケット（東京 11/22公演）〜7/26 23:59",
         "date": "2026-07-26",
         "url": "https://tiget.net/events/501409",
         "soldout": true,
-        "soldoutSince": "2026-09-19",
+        "soldoutSince": "2026-09-20",
         "saleEnded": true,
-        "saleEndedSince": "2026-09-19"
+        "saleEndedSince": "2026-09-20"
       },
       {
         "type": "【一次先行】B席チケット（東京 11/22公演）〜9/5 23:59",
         "date": "2026-09-05",
         "url": "https://tiget.net/events/501409",
         "soldout": true,
-        "soldoutSince": "2026-09-19",
+        "soldoutSince": "2026-09-20",
         "saleEnded": true,
-        "saleEndedSince": "2026-09-19"
+        "saleEndedSince": "2026-09-20"
       },
       {
         "type": "【一次先行】立ち見チケット（東京 11/22公演）〜9/5 23:59",
         "date": "2026-09-05",
         "url": "https://tiget.net/events/501409",
         "soldout": true,
-        "soldoutSince": "2026-09-19",
+        "soldoutSince": "2026-09-20",
         "saleEnded": true,
-        "saleEndedSince": "2026-09-19"
+        "saleEndedSince": "2026-09-20"
       },
       {
         "type": "【追加チケット】B席チケット（東京 11/22公演）9/20 21:30発売",
@@ -288245,9 +288382,8 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "1部 一般チケット（東京 1/24 14:00公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "1部 一般チケット（東京 1/24 14:00公演）〜1/23 23:59",
+        "date": "2027-01-23",
         "url": "https://tiget.net/events/505702"
       },
       {
@@ -291098,9 +291234,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "前売り（埼玉 10/15公演）9/20 19:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "前売り（埼玉 10/15公演）9/15 17:34発売〜",
+        "date": "2026-10-15",
+        "startDate": "2026-09-15",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/523253"
       }
     ],
@@ -303230,15 +303367,13 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "優先エリア（大阪 9/25公演）9/20 19:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "優先エリア（大阪 9/25公演）〜9/25 18:00",
+        "date": "2026-09-25",
         "url": "https://tiget.net/events/524071"
       },
       {
-        "type": "一般（大阪 9/25公演）9/20 19:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "一般（大阪 9/25公演）〜9/25 18:00",
+        "date": "2026-09-25",
         "url": "https://tiget.net/events/524071"
       }
     ],
@@ -341462,9 +341597,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "S席（熊本 10/4公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "S席（熊本 10/4公演）9/14 16:17発売〜",
+        "date": "2026-10-04",
+        "startDate": "2026-09-14",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/522960"
       }
     ],
@@ -370588,9 +370724,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "自由席（神奈川 10/18公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "自由席（神奈川 10/18公演）8/19 15:28発売〜",
+        "date": "2026-10-18",
+        "startDate": "2026-08-19",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/515833"
       }
     ],
@@ -424273,9 +424410,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "チケット（北海道 9/21公演）9/20 20:00発売",
-        "date": "2026-09-20",
+        "type": "チケット（北海道 9/21公演）9/20 16:19発売〜",
+        "date": "2026-09-21",
         "startDate": "2026-09-20",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/524462"
       }
     ],
@@ -425073,9 +425211,8 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "チケット（9/28公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "チケット（9/28公演）〜9/28 21:00",
+        "date": "2026-09-28",
         "url": "https://tiget.net/events/524348"
       }
     ],
@@ -426360,15 +426497,13 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "#キラキラチケット（宮城 10/9公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "#キラキラチケット（宮城 10/9公演）〜10/9 12:00",
+        "date": "2026-10-09",
         "url": "https://tiget.net/events/524354"
       },
       {
-        "type": "#ら部チケット（宮城 10/9公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "#ら部チケット（宮城 10/9公演）〜10/9 12:00",
+        "date": "2026-10-09",
         "url": "https://tiget.net/events/524354"
       }
     ],
@@ -427053,9 +427188,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "チケット（東京 10/12公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "チケット（東京 10/12公演）9/18 16:41発売〜",
+        "date": "2026-10-12",
+        "startDate": "2026-09-18",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/524085"
       }
     ],
@@ -427952,15 +428088,15 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "キャンプチケット（大人）（10/17公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
-        "url": "https://tiget.net/events/524261"
+        "type": "キャンプチケット（大人）（10/17公演）〜9/26 20:00",
+        "date": "2026-09-26",
+        "url": "https://tiget.net/events/524261",
+        "soldout": true,
+        "soldoutSince": "2026-09-20"
       },
       {
-        "type": "キャンプチケット（中学生以下）（10/17公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "キャンプチケット（中学生以下）（10/17公演）〜9/26 20:00",
+        "date": "2026-09-26",
         "url": "https://tiget.net/events/524261"
       }
     ],
@@ -429223,9 +429359,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "チケット（東京 10/28公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "チケット（東京 10/28公演）9/18 19:30発売〜",
+        "date": "2026-10-28",
+        "startDate": "2026-09-18",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/524119"
       }
     ],
@@ -429293,9 +429430,10 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "無銭前売チケット（東京 10/28公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "無銭前売チケット（東京 10/28公演）9/18 14:50発売〜",
+        "date": "2026-10-28",
+        "startDate": "2026-09-18",
+        "saleEndUnknown": true,
         "url": "https://tiget.net/events/524044"
       }
     ],
@@ -430001,15 +430139,13 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
     },
     "tickets": [
       {
-        "type": "Aチケット（東京 11/1公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "Aチケット（東京 11/1公演）〜10/31 23:59",
+        "date": "2026-10-31",
         "url": "https://tiget.net/events/524504"
       },
       {
-        "type": "Bチケット（東京 11/1公演）9/20 20:00発売",
-        "date": "2026-09-20",
-        "startDate": "2026-09-20",
+        "type": "Bチケット（東京 11/1公演）〜10/31 23:59",
+        "date": "2026-10-31",
         "url": "https://tiget.net/events/524504"
       }
     ],
@@ -432951,7 +433087,7 @@ I〜Vの初期録音のCDには「ドラクエ・サウンドの原点はこれ�
               <span class="ticket-type-text">${highlightShowDate(shrinkPrefList(badgeType))}</span>
             </div>
             <div class="ticket-date">${formatDate(t.date)}</div>
-            <div class="ticket-soldout-badge${t.saleEnded ? " saleended" : ""}">${t.saleEnded ? "販売終了" : "予定枚数終了"}</div>`;
+            <div class="ticket-soldout-badge${t.presaleEnded ? " presaleended" : (t.saleEnded ? " saleended" : "")}">${t.presaleEnded ? "先行終了" : (t.saleEnded ? "販売終了" : "予定枚数終了")}</div>`;
         return soldLinkUrl
           ? `<a class="ticket-item soldout ticket-item-link" href="${soldLinkUrl}" target="_blank" rel="noopener">${soldInner}</a>`
           : `<div class="ticket-item soldout">${soldInner}</div>`;
