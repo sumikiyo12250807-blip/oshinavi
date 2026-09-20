@@ -13,15 +13,19 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 h = io.open('index.html', encoding='utf-8', newline='').read()
 have_cd = set(re.findall(r'event(?:Cd|BundleCd)=([0-9a-z]+)', h))
 
+PAT = sys.argv[1] if len(sys.argv) > 1 else 'tmp/x0921/presale_*.json'
+OUT = sys.argv[2] if len(sys.argv) > 2 else 'tmp/x0921/cands.json'
+BASE = int(sys.argv[3]) if len(sys.argv) > 3 else 91000
+
 rows = []
-for f in sorted(glob.glob('tmp/x0921/presale_*.json')):
+for f in sorted(glob.glob(PAT)):
     d = json.load(io.open(f, encoding='utf-8'))
     for r in (d.get('new') or []):
         r['_lg'] = d.get('lg')
         rows.append(r)
 
 keys = sorted({k for r in rows for k in r})
-out = io.open('tmp/x0921/cands_report.txt', 'w', encoding='utf-8')
+out = io.open(OUT.replace('.json', '_report.txt'), 'w', encoding='utf-8')
 out.write('未登録 %d件 / レコードのキー: %s\n\n' % (len(rows), keys))
 
 cands, skipped = {}, []
@@ -35,11 +39,11 @@ for r in rows:
         skipped.append((r.get('artist') or r.get('name'), '', 'URLが無い'))
         continue
     name = (r.get('artist') or r.get('name') or '').strip()
-    d = cands.setdefault(name, {'newid': 91000 + len(cands), 'artist': name, 'urls': []})
+    d = cands.setdefault(name, {'newid': BASE + len(cands), 'artist': name, 'urls': []})
     if url not in d['urls']:
         d['urls'].append(url)
 
-json.dump(list(cands.values()), io.open('tmp/x0921/cands.json', 'w', encoding='utf-8'),
+json.dump(list(cands.values()), io.open(OUT, 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
 out.write('=== 組む候補 %d件 ===\n' % len(cands))
 for c in cands.values():
@@ -48,4 +52,4 @@ out.write('\n=== 外した %d件 ===\n' % len(skipped))
 for n, u, why in skipped:
     out.write('  %-36s %-60s %s\n' % ((n or '')[:36], u[:60], why))
 out.close()
-print('候補 %d件 / 外した %d件 → tmp/x0921/cands.json' % (len(cands), len(skipped)))
+print('候補 %d件 / 外した %d件 → %s' % (len(cands), len(skipped), OUT))
