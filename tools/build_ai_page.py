@@ -24,6 +24,7 @@ GENRE_LABEL = {
     "new": "✨新着", "jpop": "J-POP", "rock": "ロック", "kpop": "K-POP",
     "yougaku": "洋楽", "hiphop": "HIP HOP", "anime": "アニソン", "idol": "アイドル",
     "youtuber": "YouTuber", "vtuber": "VTuber", "tiktoker": "TikToker", "kids": "キッズ",
+    "club": "クラブ／DJ",   # 2026-09-21 ZAIKOのクラブ／DJイベントの行き先
     # 2026-09-18 ユーザー「歌い手とボカロのタブ作って」＝index.html の GENRE_LABEL と必ず同じ内容に
     "utaite": "歌い手", "vocaloid": "ボカロ",
     # 2026-08-14 追加（index.html の GENRE_LABEL と必ず一致させる）。
@@ -50,7 +51,8 @@ GENRE_LABEL = {
 # index.html の linkDefs 順（楽天 > ぴあ > e+ > ローチケ > その他）
 VENDOR_ORDER = [
     ("rakuten", "楽天チケット"), ("pia", "チケットぴあ"), ("eplus", "e+"),
-    ("lawson", "ローチケ"), ("tiget", "TIGET"), ("fany", "FANY"), ("yoshimoto", "吉本オンライン"),
+    ("lawson", "ローチケ"), ("tiget", "TIGET"), ("fany", "FANY"), ("zaiko", "ZAIKO"),
+    ("yoshimoto", "吉本オンライン"),
     ("tvasahi", "テレ朝チケット"), ("shochiku", "松竹チケット"), ("official", "公式"),
 ]
 
