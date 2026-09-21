@@ -8,8 +8,8 @@
 
 | 券種のフラグ | OSHINAVI |
 |---|---|
-| `is_sold_out` | `soldout: true`（**予定枚数終了**） |
-| `is_sale_ended`（売切でない） | `soldout` ＋ `saleEnded`（**販売終了**） |
+| `is_sold_out` ＋ `is_sale_ended`（**必ずセットで立つ**） | 先着＝`soldout`＋`saleEnded`（**販売終了**）／抽選＝`soldout`＋`presaleEnded`（**先行終了**） |
+| 🚨「予定枚数終了」は**出さない** | ZAIKOのデータに「売り切れた」と名乗る根拠が無い（実ページも「抽選申込期間はすでに終了しています」「販売終了日 …」としか書かない） |
 | `is_sale_started` が False | 発売前。🚨**開始日時がデータに無い**ので、日付を作らず載せない |
 | どれでもない | 買える。締切は `lottery_end_date`（無ければ公演日を置き場＋`saleEndUnknown`） |
 
@@ -258,12 +258,18 @@ def build_one(listrow, det, today, unknown):
         if t.get('is_sold_out') or t.get('is_sale_ended'):
             tk = {'type': ('%s〜%s %s' % (head, mdp(ed), edt or '')).rstrip() if ed else head,
                   'date': ed or t_d, 'url': url, 'soldout': True, 'soldoutSince': today}
-            # 🚨ZAIKOは**売り切れた枠にも is_sale_ended を立てる**（期間も終わるから）。
-            #   だから「is_sold_out でなければ販売終了」と読むと **saleEnded が1枠も付かない**
-            #   （2026-09-21 エージェントの指摘＝230枠が「予定枚数終了」に丸められていた）。
-            #   ✅**is_sold_out が立っていない終了＝販売終了（期間が終わっただけ）**
-            #   （[[feedback_saleended_vs_soldout]]＝2つは別のバッジ）
-            if t.get('is_sale_ended') and not t.get('is_sold_out'):
+            # 🚨🚨ZAIKOは **is_sold_out と is_sale_ended を必ずセットで立てる**（実測＝片方だけは0枠）。
+            #   ＝フラグからは「売り切れた」のか「期間が終わっただけ」なのか**区別できない**。
+            #   実ページの文字を見たら（div-official /ja/item/381246）、
+            #     抽選の枠＝「**抽選申込期間はすでに終了しています**」
+            #     先着の枠＝「販売終了日 …」
+            #   ＝**売り切れとは書いていない**。なのに「予定枚数終了」と出すのは嘘になる
+            #   （[[feedback_no_fake_info]]／[[feedback_saleended_vs_soldout]]）。
+            #   ✅**抽選の枠＝先行終了（presaleEnded）／先着の枠＝販売終了（saleEnded）**にする。
+            #   「予定枚数終了」はZAIKOでは**出さない**（売り切れを名乗る根拠がデータに無い）。
+            if t.get('is_lottery'):
+                tk['presaleEnded'] = True
+            else:
                 tk['saleEnded'] = True
                 tk['saleEndedSince'] = today
             tickets.append(tk)
@@ -383,18 +389,18 @@ def _selftest():
     assert e['_genre'] == 'idol' and e['links']['zaiko'] == lr['url']
     assert e['dateLabel'] == '2026年10月1日(木) 19:00開演', e['dateLabel']
 
-    # ② 売り切れ＝予定枚数終了の印（**公演がこれからなら載せる**）
-    e2, why2 = build_one(lr, mk([tk(is_sold_out=True)]), today, unk)
+    # ② 🚨ZAIKOは売切と終了をセットで立てる＝**「予定枚数終了」を名乗らない**。
+    #    先着の枠が終わった＝**販売終了**（実ページも「販売終了日 …」と書く）
+    e2, why2 = build_one(lr, mk([tk(is_sold_out=True, is_sale_ended=True)]), today, unk)
     assert e2 is not None, (e2, why2)
-    assert e2['tickets'][0]['soldout'] and 'saleEnded' not in e2['tickets'][0], e2['tickets'][0]
+    assert e2['tickets'][0]['soldout'] and e2['tickets'][0]['saleEnded'], e2['tickets'][0]
+    assert 'presaleEnded' not in e2['tickets'][0], e2['tickets'][0]
 
-    # ③ 販売終了（売切ではない）＝saleEnded も付ける
-    e3, _ = build_one(lr, mk([tk(is_sale_ended=True)]), today, unk)
-    assert e3['tickets'][0]['soldout'] and e3['tickets'][0]['saleEnded'], e3['tickets'][0]
-
-    # ③-2 🚨ZAIKOは売り切れた枠にも is_sale_ended を立てる＝**売り切れは saleEnded を付けない**
-    e3b, _ = build_one(lr, mk([tk(is_sold_out=True, is_sale_ended=True)]), today, unk)
-    assert e3b['tickets'][0]['soldout'] and 'saleEnded' not in e3b['tickets'][0], e3b['tickets'][0]
+    # ③ 抽選の枠が終わった＝**先行終了**（実ページ「抽選申込期間はすでに終了しています」）
+    e3, _ = build_one(lr, mk([tk(is_sold_out=True, is_sale_ended=True, is_lottery=True)]),
+                      today, unk)
+    assert e3['tickets'][0]['soldout'] and e3['tickets'][0]['presaleEnded'], e3['tickets'][0]
+    assert 'saleEnded' not in e3['tickets'][0], e3['tickets'][0]
 
     # ③-3 🚨「00:00」は開演時刻ではない（ZAIKOが入れていないだけ）＝バッジに書かない
     e3c, _ = build_one(dict(lr, time='00:00'), mk([tk()]), today, unk)
