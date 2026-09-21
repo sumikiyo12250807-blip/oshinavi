@@ -280,12 +280,17 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      python tools/inject_fany.py tmp/built_fany_MMDD.json          # 調べるだけ（何件入るか）
      python tools/inject_fany.py tmp/built_fany_MMDD.json --apply  # 投入（genre:"new"）
      python tools/gate_fany_slots.py --src tmp/fany_MMDD.json      # 🔒番人（同じ一覧で全件突合・exit 0 以外なら直す）
+     python tools/heal_fany.py --src tmp/fany_MMDD.json            # 下見（何件当てるか・安全弁で止めた件）
+     python tools/heal_fany.py --src tmp/fany_MMDD.json --apply    # 枠を売り場の今の状態で作り直す
+     python tools/gate_fany_slots.py --src tmp/fany_MMDD.json      # 🔒番人をもう一度（残りは「今日の公演」だけのはず）
      ```
      **Why**＝FANYの登録2,873件のうち**発売前は123件（2.5%）だけ**。吉本の公演は一覧に出た時にはもう先行が
      始まっていることが多い＝**出た直後に拾わないと「発売前」のうちに載せられない**（9/21夜の点検で
      夕方に出たばかりの公演が1件見つかった＝id20892）。
      🚨`inject_fany.py` は自分で `index.html.bak_MMDD_fany` を書く＝同じ日に2回流すと前の控えを上書きする。
-     🚨ヒールの道具（heal_fany）はまだ無い＝番人が鳴ったら食い違いの枠を報告して直す。
+     🔧ヒール＝`heal_fany.py`（2026-09-21夜に新設）＝**番人→heal_fany --apply→番人**。tickets だけ差し替え
+     （会場・日付表記・出演者・ジャンルは触らない）。一覧に無い公演・印なしの枠が消える件は触らずに報告、
+     売り切れ・先行終了の印付き枠は残す。🚨本日発売の枠は放っておくと「9/21 HH:MM発売」のまま締切が付かない。
      🚨**完売を一覧で判定しない**（「予定枚数終了」の文言が無い）／**1公演＝1エントリ**（出演者が日替わり）。
      🚨ぴあ以外なので**振り分けはユーザーの確認後**。詳しくは [[reference_fany_ticket]]
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
