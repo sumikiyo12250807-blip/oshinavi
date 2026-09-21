@@ -1,0 +1,30 @@
+カード 4枚
+
+state=受付終了   when=''
+  title=一般発売＜１１／２７公演＞ ／ ＡＣＥ ＣＯＬＬＥＣＴＩＯＮ
+  perfdate=2026-11-27 perf_end=2026-11-27 venue=梅田 ＢＡＮＧＢＯＯ
+  url=https://t.pia.jp/pia/ticketInformation.do?eventCd=2621690&rlsCd=001
+
+state=受付終了   when=''
+  title=一般発売＜１２／４公演＞ ／ ＡＣＥ ＣＯＬＬＥＣＴＩＯＮ
+  perfdate=2026-12-04 perf_end=2026-12-04 venue=新栄シャングリラ
+  url=https://t.pia.jp/pia/ticketInformation.do?eventCd=2621690&rlsCd=002
+
+state=受付終了   when=''
+  title=一般発売＜１２／９公演＞ ／ ＡＣＥ ＣＯＬＬＥＣＴＩＯＮ
+  perfdate=2026-12-09 perf_end=2026-12-09 venue=Ｓｐｏｔｉｆｙ Ｏ－ＷＥＳＴ
+  url=https://t.pia.jp/pia/ticketInformation.do?eventCd=2621690&rlsCd=003
+
+state=受付終了   when=''
+  title=「ACE COLLECTION」プレリザーブ
+  perfdate=2026-11-27 perf_end=2026-12-09 venue=
+  url=https://t.pia.jp/pia/ticketInformation.do?lotRlsCd=07608
+
+=== 生HTMLの status 文言 ===
+  is-active    予定枚数終了
+  is-active    予定枚数終了
+  is-active    予定枚数終了
+  is-before    抽選受付終了
+  is-active    予定枚数終了
+  is-active    予定枚数終了
+  is-active    予定枚数終了
