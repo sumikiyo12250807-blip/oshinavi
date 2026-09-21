@@ -7,7 +7,9 @@
 ## やること（inject_tiget.py と同じ作法）
 
 1. **二重登録を外す**
-   - ① FANYのURL（`ticket.fany.lol/event/detail/<id>`）が既に index.html にある → 入れない
+   - ① その**公演id**（申込URL `/reception/<sales_id>/<performance_id>`）が既に登録にある → 入れない
+     （イベント単位の `/event/detail/<id>` では見ない＝同じイベントの別公演が消える。
+      申込URLを1つも持たない組み上がりだけ、イベントURLで見る）
    - ② 正規化した名前 × 公演日 × 会場 が登録と一致 → ⚠️**入れずに報告**
      🚨会場まで見るのは、FANYの公演名が「本公演　１回目」のように**使い回しの名前**で、
         名前＋日付だけだと**別の劇場の別公演を同じものと誤判定する**から
@@ -20,6 +22,24 @@
 5. index.html は CRLF。json.dumps の改行を CRLF に直してから書く
 
 🚨ぴあ以外なので**振り分けはユーザーの確認後**＝ここは `genre:"new"` で止める。
+
+## 2026-09-21 夜の穴（直した）
+
+番人 gate_fany_slots で「売り場にあるのに登録に無い枠」が、これからの公演だけで52件123枠出た
+（山里亮太の140 11/13・11/15、よしもと落語 二人会 10/18・11/8 など）。公演id（performance_id）の
+照合は正しかったが、②「名前×公演日×会場」の索引が**登録エントリ本文の全ISO日付**（＝各枠の
+**締切日**も）を「公演日」として積んでいたため、同じイベントの**翌日公演の一般発売締切（前日
+23:59）**が「この日の公演は登録済み」に見え、別公演が要確認で落ちていた。直し方＝
+- 登録側が **FANYの申込URL（/reception/）を持つエントリ**（＝FANYで入れた1公演1エントリ）は、
+  索引に**その公演日（date）だけ**を積む。しかも**同じ event_id 同士は②を見ない**
+  （同じイベントの別公演・同日の別開演時刻は公演idで区別できる＝①で足りる）
+- それ以外（ぴあ等の別売り場のエントリ・links.fany を足し込んだぴあ登録）は従来どおり本文の
+  日付で見る（ツアーの別日を拾うため）＝別売り場との二重は引き続き要確認で止める
+- ただし**そのイベントが既にFANYの1公演1エントリで入っている**なら、別売り場の登録に当たっても
+  止めない。初回投入で、ぴあの通し登録（例 山里亮太の140 東京 11/9〜11/15＝締切11/13）に
+  当たった日（11/13・11/15）だけが落ち、残りの日はFANYで入っていた＝同じイベントが歯抜けになり、
+  番人が毎日「売り場にあるのに登録に無い」と鳴らしていた（9/21夜の52件123枠の正体はこれ）
+`python tools/inject_fany.py --selftest` で判定を確かめられる。
 """
 import argparse
 import datetime
@@ -38,7 +58,124 @@ def norm(s):
     return re.sub(r'[\s　・･,，.。!！?？~〜\-—–_/／\(\)（）\[\]【】「」『』"\'’]', '', s)
 
 
+RE_PERF = re.compile(r'fany\.lol/reception/\d+/(\d+)')
+RE_EVT = re.compile(r'fany\.lol/event/detail/(\d+)')
+
+
+def _perfs(e):
+    return {p for t in (e.get('tickets') or []) for p in RE_PERF.findall(t.get('url') or '')}
+
+
+def _evt(e):
+    m = RE_EVT.search((e.get('links') or {}).get('fany') or '')
+    return m.group(1) if m else None
+
+
+def classify(built, EVENTS):
+    """組み上がりを (put, dup, maybe) に分ける。判定の本体（--selftest はここを試す）。
+
+    🚨重複は**公演単位**で見る＝申込URL `/reception/<sales_id>/<performance_id>` の
+      performance_id。event_id（/event/detail/<id>）で見ると、**同じイベントの別公演**が
+      全部「登録済み」に見えて入らない（1公演＝1エントリにしているので事故になる）。
+    """
+    have_perf, have_evt, fany_evts = set(), set(), set()
+    # 名前×公演日×会場 → その索引を積んだ登録エントリの event_id（FANYエントリなら）の集合
+    trio = {}
+    for e in EVENTS:
+        ps = _perfs(e)
+        have_perf |= ps
+        ev = _evt(e)
+        if ev:
+            have_evt.add(ev)
+        if ps and ev:
+            fany_evts.add(ev)
+        if ps:
+            # FANYで入れた1公演1エントリ＝公演日だけ。締切日を公演日と取り違えない（2026-09-21）
+            days, tag = {e.get('date')} - {None, ''}, ev
+        else:
+            # 別売り場のエントリ＝本文の日付を全部（ツアーの別日も拾う）。event_id では免除しない
+            days, tag = set(re.findall(r'\d{4}-\d{2}-\d{2}', json.dumps(e, ensure_ascii=False))), None
+        ven = norm(e.get('venue'))
+        for n in {norm(e.get('artist')), norm(e.get('name'))} - {''}:
+            for d in days:
+                trio.setdefault((n, d, ven), set()).add(tag)
+
+    put, dup, maybe = [], [], []
+    for e in sorted(built, key=lambda x: (x.get('date') or '', x.get('name') or '')):
+        perfs = _perfs(e)
+        if perfs and perfs <= have_perf:
+            dup.append((e, 'この公演（performance %s）は既に登録にある' % sorted(perfs)))
+            continue
+        fid = _evt(e)
+        if not perfs and fid and fid in have_evt:
+            dup.append((e, 'FANYのURLが既に登録にある %s' % fid))
+            continue
+        na, nn, nv = norm(e.get('artist')), norm(e.get('name')), norm(e.get('venue'))
+        hit = set()
+        for n in {na, nn} - {''}:
+            hit |= trio.get((n, e.get('date'), nv), set())
+        # 同じ event_id のFANYエントリだけに当たった＝同じイベントの別公演（公演idは①で見た）
+        others = hit - {fid}
+        # このイベントは既に**FANYの1公演1エントリで入っている**＝残りの公演だけ別売り場の登録を
+        # 理由に止めると、同じイベントの公演が歯抜けになる（2026-09-21＝山里亮太の140 東京は
+        # 11/9〜11/15のうち11/13・11/15だけ、ぴあの通し登録に当たって落ちていた）
+        if fid in fany_evts:
+            others.discard(None)
+        if others:
+            maybe.append((e, '名前×公演日×会場が登録と一致'))
+            continue
+        put.append(e)
+    return put, dup, maybe
+
+
+def _selftest():
+    def fe(eid, date, perf, name='本公演　１回目', venue='なんばグランド花月', deadline=None):
+        return {'id': perf, 'artist': 'A', 'name': name, 'date': date, 'venue': venue,
+                'links': {'fany': 'https://ticket.fany.lol/event/detail/%s' % eid},
+                'tickets': [{'type': '一般発売', 'date': deadline or date,
+                             'url': 'https://ticket.fany.lol/reception/1/%s' % perf}]}
+    reg = [
+        # 登録済み FANY：event 100 の 11/14 公演（一般発売の締切が前日 11/13）
+        fe(100, '2026-11-14', 5001, deadline='2026-11-13'),
+        # 登録済み FANY：event 200 の 10/18 11:30 公演
+        fe(200, '2026-10-18', 6001),
+        # ぴあ登録（links.fany を足し込んだ形）：12/1 公演、FANYの申込URLは持たない
+        {'id': 9, 'artist': 'B', 'name': 'Bライブ', 'date': '2026-12-01', 'venue': 'Zepp',
+         'links': {'fany': 'https://ticket.fany.lol/event/detail/300', 'pia': 'x'},
+         'tickets': [{'type': '一般', 'date': '2026-11-20', 'url': 'https://t.pia.jp/x'}]},
+        # 別イベントの FANY エントリ：同名・同会場・12/5
+        fe(400, '2026-12-05', 7001, name='共通の名前', venue='劇場X'),
+        # ぴあの通し登録（11/9〜11/15・締切11/13）＋ 同じ公演のFANY 11/9 が既に1公演1エントリで入っている
+        {'id': 10, 'artist': 'C', 'name': 'C独演会', 'date': '2026-11-15', 'venue': 'ホールY',
+         'links': {'pia': 'x'},
+         'tickets': [{'type': '一般', 'date': '2026-11-13', 'url': 'https://t.pia.jp/y'}]},
+        fe(500, '2026-11-09', 9001, 'C独演会', 'ホールY'),
+    ]
+    cases = [
+        ('同じ公演id＝重複', fe(100, '2026-11-14', 5001), 'dup'),
+        ('同じイベントの前日公演（締切日と同じ日）＝入れる', fe(100, '2026-11-13', 5002), 'put'),
+        ('同じイベント・同じ日の別開演時刻＝入れる', fe(200, '2026-10-18', 6002), 'put'),
+        ('ぴあ登録と名前×日×会場が一致＝要確認', fe(300, '2026-12-01', 8001, 'Bライブ', 'Zepp'), 'maybe'),
+        ('別イベントのFANYと名前×日×会場が一致＝要確認', fe(401, '2026-12-05', 7002, '共通の名前', '劇場X'), 'maybe'),
+        ('同名でも別日＝入れる', fe(401, '2026-12-06', 7003, '共通の名前', '劇場X'), 'put'),
+        ('ぴあ通し登録に当たるが同じイベントのFANYが既にある＝入れる（歯抜けにしない）',
+         fe(500, '2026-11-13', 9002, 'C独演会', 'ホールY'), 'put'),
+        ('同じ条件でFANYの兄弟が無い別イベント＝要確認', fe(501, '2026-11-15', 9101, 'C独演会', 'ホールY'), 'maybe'),
+    ]
+    ng = 0
+    for label, b, want in cases:
+        put, dup, maybe = classify([b], reg)
+        got = 'put' if put else 'dup' if dup else 'maybe'
+        ok = got == want
+        ng += not ok
+        print('%s %s（期待 %s／結果 %s）' % ('OK' if ok else 'NG', label, want, got))
+    print('selftest %s' % ('OK' if not ng else 'NG %d' % ng))
+    return 1 if ng else 0
+
+
 def main():
+    if '--selftest' in sys.argv:
+        sys.exit(_selftest())
     ap = argparse.ArgumentParser()
     ap.add_argument('src')
     ap.add_argument('--apply', action='store_true')
@@ -53,41 +190,7 @@ def main():
     m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', h, re.S)
     EVENTS = json.loads(m.group(2))
 
-    # 🚨重複は**公演単位**で見る＝申込URL `/reception/<sales_id>/<performance_id>` の
-    #   performance_id。event_id（/event/detail/<id>）で見ると、**同じイベントの別公演**が
-    #   全部「登録済み」に見えて入らない（1公演＝1エントリにしているので事故になる。
-    #   2026-09-21＝再投入で85件が丸ごと弾かれるところだった）。
-    have_perf = set(re.findall(r'fany\.lol/reception/\d+/(\d+)', h))
-    have_urls = set(re.findall(r'ticket\.fany\.lol/event/detail/(\d+)', h))
-    # 名前×公演日×会場 の索引（会場は表記ゆれがあるので正規化して部分一致でも見る）
-    trio, by_name = set(), {}
-    for e in EVENTS:
-        blob = json.dumps(e, ensure_ascii=False)
-        days = set(re.findall(r'\d{4}-\d{2}-\d{2}', blob))
-        ven = norm(e.get('venue'))
-        for n in {norm(e.get('artist')), norm(e.get('name'))}:
-            if not n:
-                continue
-            by_name.setdefault(n, []).append(e['id'])
-            for d in days:
-                trio.add((n, d, ven))
-
-    put, dup, maybe = [], [], []
-    for e in sorted(built, key=lambda x: (x.get('date') or '', x.get('name') or '')):
-        perfs = {m for t in (e.get('tickets') or [])
-                 for m in re.findall(r'fany\.lol/reception/\d+/(\d+)', t.get('url') or '')}
-        if perfs and perfs <= have_perf:
-            dup.append((e, 'この公演（performance %s）は既に登録にある' % sorted(perfs)))
-            continue
-        fid = re.search(r'/event/detail/(\d+)', e['links'].get('fany') or '')
-        if not perfs and fid and fid.group(1) in have_urls:
-            dup.append((e, 'FANYのURLが既に登録にある %s' % fid.group(1)))
-            continue
-        na, nn, nv = norm(e.get('artist')), norm(e.get('name')), norm(e.get('venue'))
-        if (na, e['date'], nv) in trio or (nn, e['date'], nv) in trio:
-            maybe.append((e, '名前×公演日×会場が登録と一致'))
-            continue
-        put.append(e)
+    put, dup, maybe = classify(built, EVENTS)
 
     if a.limit:
         put, rest = put[:a.limit], put[a.limit:]
