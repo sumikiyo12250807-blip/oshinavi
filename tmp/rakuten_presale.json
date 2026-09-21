@@ -1,34 +1,50 @@
 {
  "presale": [
   {
-   "url": "https://ticket.rakuten.co.jp/sports/rtep121/",
-   "name": "ビリー・ジーン・キング・カップ by Gainbridge 2026 Play-Offs 「 日本 対 アルゼンチン 」",
-   "_genre": "sports",
+   "url": "https://ticket.rakuten.co.jp/event/rtntutt/",
+   "name": "ウルトラヒーローズ THE LIVE 〜英雄への道〜 in 千葉県浦安",
+   "_genre": "event",
    "perfs": 2,
-   "first": "2026-11-21",
-   "last": "2026-11-22",
+   "first": "2027-01-10",
+   "last": "2027-01-10",
    "presale_windows": [
     {
+     "type": "楽天チケット最速先行",
+     "timming": "2026/09/25(金) 10:00 〜 2026/09/28 (月) 23:59"
+    },
+    {
+     "type": "楽天チケット2次先行",
+     "timming": "2026/10/03(土) 10:00 〜 2026/10/12 (月) 23:59"
+    },
+    {
      "type": "一般発売",
-     "timming": "2026/09/19(土) 12:00 〜 "
+     "timming": "2026/10/17(土) 10:00 〜 2027/01/09 (土) 23:59"
     }
    ],
    "windows": [
     {
+     "type": "楽天チケット最速先行",
+     "timming": "2026/09/25(金) 10:00 〜 2026/09/28 (月) 23:59"
+    },
+    {
+     "type": "楽天チケット2次先行",
+     "timming": "2026/10/03(土) 10:00 〜 2026/10/12 (月) 23:59"
+    },
+    {
      "type": "一般発売",
-     "timming": "2026/09/19(土) 12:00 〜 "
+     "timming": "2026/10/17(土) 10:00 〜 2027/01/09 (土) 23:59"
     }
    ],
    "status_rows": [
     {
-     "date": "2026-11-21",
-     "time": "12:00",
+     "date": "2027-01-10",
+     "time": "13:00",
      "status": "unknown",
      "buy_url": ""
     },
     {
-     "date": "2026-11-22",
-     "time": "11:00",
+     "date": "2027-01-10",
+     "time": "16:00",
      "status": "unknown",
      "buy_url": ""
     }
@@ -71,42 +87,6 @@
      "time": "16:30",
      "status": "unknown",
      "buy_url": ""
-    }
-   ]
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/rtxx101/",
-   "name": "【配信｜Rakuten TV】Meychan live tour 2026 “Number 0” 〜Number 0 Tour Final Special 公演〜",
-   "_genre": "jpop",
-   "perfs": 1,
-   "first": "2026-10-11",
-   "last": "2026-10-15",
-   "presale_windows": [
-    {
-     "type": "一般",
-     "timming": "2026/09/21(月) 19:00 〜 2026/10/15(木) 20:00"
-    }
-   ],
-   "windows": [
-    {
-     "type": "超早割",
-     "timming": "2026/09/10(木) 19:00 〜 2026/09/12(土) 23:59"
-    },
-    {
-     "type": "早割",
-     "timming": "2026/09/13(日) 19:00 〜 2026/09/20(日) 23:59"
-    },
-    {
-     "type": "一般",
-     "timming": "2026/09/21(月) 19:00 〜 2026/10/15(木) 20:00"
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-10-11",
-     "time": "19:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369411"
     }
    ]
   },
@@ -276,7 +256,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtyt103/",
    "name": "『禅とジブリ』京都展 [京都]",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-10-03",
    "last": "2026-12-06",
@@ -333,7 +313,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtisaaj/",
    "name": "BERITA presents　ISOGAI花火劇場in名古屋港",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-12-26",
    "last": "2026-12-26",
@@ -435,6 +415,159 @@
  ],
  "onsale": [
   {
+   "url": "https://ticket.rakuten.co.jp/music/fes/rtax918/",
+   "name": "ULTRA JAPAN 2027",
+   "_genre": "fes",
+   "perfs": 1,
+   "first": "2027-09-18",
+   "last": "2027-09-19",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "オフィシャル先着先行第一弾",
+     "timming": "2026/09/20(日) 21:00 〜 2026/09/30(水) 23:59"
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2027-09-18",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369977"
+    }
+   ]
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/sports/basketball/rt3abb0/",
+   "name": "第102回関東大学バスケットボールリーグ戦2巡目",
+   "_genre": "sports",
+   "perfs": 17,
+   "first": "2026-09-23",
+   "last": "2026-10-25",
+   "presale_windows": [],
+   "windows": [],
+   "status_rows": [
+    {
+     "date": "2026-09-23",
+     "time": "00:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369842"
+    },
+    {
+     "date": "2026-09-23",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369841"
+    },
+    {
+     "date": "2026-09-23",
+     "time": "14:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369843"
+    },
+    {
+     "date": "2026-09-26",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369845"
+    },
+    {
+     "date": "2026-09-26",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369844"
+    },
+    {
+     "date": "2026-09-27",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369856"
+    },
+    {
+     "date": "2026-09-27",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369846"
+    },
+    {
+     "date": "2026-10-03",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369847"
+    },
+    {
+     "date": "2026-10-03",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369848"
+    },
+    {
+     "date": "2026-10-04",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369850"
+    },
+    {
+     "date": "2026-10-04",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369849"
+    },
+    {
+     "date": "2026-10-17",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369852"
+    },
+    {
+     "date": "2026-10-18",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369851"
+    },
+    {
+     "date": "2026-10-24",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369853"
+    },
+    {
+     "date": "2026-10-24",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369854"
+    },
+    {
+     "date": "2026-10-25",
+     "time": "10:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369857"
+    },
+    {
+     "date": "2026-10-25",
+     "time": "11:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369855"
+    }
+   ]
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/jrock/rtlj219/",
+   "name": "GLAY［福岡］",
+   "_genre": "jpop",
+   "perfs": 2,
+   "first": "2026-12-19",
+   "last": "2026-12-20",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "楽天チケット抽選先行",
+     "timming": "2026/09/20(日) 12:00 〜 2026/10/05(月) 23:59"
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/jpop/rtol231/",
    "name": "高中正義［追加公演］",
    "_genre": "jpop",
@@ -442,7 +575,12 @@
    "first": "2026-12-31",
    "last": "2026-12-31",
    "presale_windows": [],
-   "windows": [],
+   "windows": [
+    {
+     "type": "高中正義公式ホームページ1次最速先行",
+     "timming": "2026/09/17(木) 18:00 〜 2026/09/30(水) 23:59"
+    }
+   ],
    "status_rows": []
   },
   {
@@ -507,6 +645,35 @@
      "time": "15:00",
      "status": "buyable",
      "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/359387"
+    }
+   ]
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/sports/rtep121/",
+   "name": "ビリー・ジーン・キング・カップ by Gainbridge 2026 Play-Offs 「 日本 対 アルゼンチン 」",
+   "_genre": "sports",
+   "perfs": 2,
+   "first": "2026-11-21",
+   "last": "2026-11-22",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/09/19(土) 12:00 〜 "
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2026-11-21",
+     "time": "12:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369859"
+    },
+    {
+     "date": "2026-11-22",
+     "time": "11:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369860"
     }
    ]
   },
@@ -600,71 +767,17 @@
    "url": "https://ticket.rakuten.co.jp/stage/rtnh09a/",
    "name": "舞台『いつかアイツに会いに行く -BEYOND THE MOON-』",
    "_genre": "engeki",
-   "perfs": 6,
-   "first": "2026-09-19",
+   "perfs": 1,
+   "first": "2026-09-22",
    "last": "2026-09-22",
    "presale_windows": [],
    "windows": [],
    "status_rows": [
     {
-     "date": "2026-09-19",
-     "time": "12:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368727"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "17:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368728"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "12:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368729"
-    },
-    {
-     "date": "2026-09-21",
-     "time": "12:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368730"
-    },
-    {
-     "date": "2026-09-21",
-     "time": "17:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368731"
-    },
-    {
      "date": "2026-09-22",
      "time": "12:00",
      "status": "buyable",
      "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368732"
-    }
-   ]
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/music/rtzp42a/",
-   "name": "乃木坂46 42ndSGアンダーライブ",
-   "_genre": "jpop",
-   "perfs": 2,
-   "first": "2026-09-29",
-   "last": "2026-09-30",
-   "presale_windows": [],
-   "windows": [],
-   "status_rows": [
-    {
-     "date": "2026-09-29",
-     "time": "18:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366774"
-    },
-    {
-     "date": "2026-09-30",
-     "time": "18:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366775"
     }
    ]
   },
@@ -751,41 +864,6 @@
    ]
   },
   {
-   "url": "https://ticket.rakuten.co.jp/music/fes/rtax026/",
-   "name": "ULTRA JAPAN 2026",
-   "_genre": "fes",
-   "perfs": 3,
-   "first": "2026-09-19",
-   "last": "2026-09-20",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "オフィシャル先着先行第一弾",
-     "timming": "2025/09/15(月) 12:00 〜 2026/04/15(水) 23:59"
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-19",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/350881"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/362136"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/362137"
-    }
-   ]
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtyu011/",
    "name": "にきちゃんといっしょ ! THANK YOU SONIC LIVE !",
    "_genre": "idol",
@@ -800,6 +878,37 @@
     }
    ],
    "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/rtxx101/",
+   "name": "【配信｜Rakuten TV】Meychan live tour 2026 “Number 0” 〜Number 0 Tour Final Special 公演〜",
+   "_genre": "jpop",
+   "perfs": 1,
+   "first": "2026-10-11",
+   "last": "2026-10-15",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "超早割",
+     "timming": "2026/09/10(木) 19:00 〜 2026/09/12(土) 23:59"
+    },
+    {
+     "type": "早割",
+     "timming": "2026/09/13(日) 19:00 〜 2026/09/20(日) 23:59"
+    },
+    {
+     "type": "一般",
+     "timming": "2026/09/21(月) 19:00 〜 2026/10/15(木) 20:00"
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2026-10-11",
+     "time": "19:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369411"
+    }
+   ]
   },
   {
    "url": "https://ticket.rakuten.co.jp/sports/rtep017/",
@@ -961,7 +1070,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtnotto/",
    "name": "TVアニメ 『凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録』 1話・2話・3話 最速上映会&スペシャルイベント",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-09-22",
    "last": "2026-09-22",
@@ -995,7 +1104,12 @@
    "first": "2026-11-08",
    "last": "2026-11-08",
    "presale_windows": [],
-   "windows": [],
+   "windows": [
+    {
+     "type": "2次先行抽選",
+     "timming": "2026/09/07(月) 12:00 〜 2026/09/23(水) 23:59"
+    }
+   ],
    "status_rows": []
   },
   {
@@ -1094,7 +1208,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvm927/",
    "name": "コドモパーティーIII［埼玉・宮城］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 4,
    "first": "2026-09-27",
    "last": "2026-10-03",
@@ -1110,13 +1224,13 @@
      "date": "2026-09-27",
      "time": "12:00",
      "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/367520"
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369917"
     },
     {
      "date": "2026-09-27",
      "time": "16:00",
      "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/367521"
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369918"
     },
     {
      "date": "2026-10-03",
@@ -1129,52 +1243,6 @@
      "time": "16:00",
      "status": "buyable",
      "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/367523"
-    }
-   ]
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtbc183/",
-   "name": "アップアップガールズ（２） にきちゃん大決戦っ！！後夜祭",
-   "_genre": "idol",
-   "perfs": 1,
-   "first": "2026-09-21",
-   "last": "2026-09-21",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026/09/05(土) 10:00 〜 "
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-21",
-     "time": "18:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368927"
-    }
-   ]
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtyu920/",
-   "name": "アップアップガールズ（プロレス）",
-   "_genre": "idol",
-   "perfs": 1,
-   "first": "2026-09-20",
-   "last": "2026-09-20",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026/09/01(火) 12:00 〜 "
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-20",
-     "time": "12:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369084"
     }
    ]
   },
@@ -1214,14 +1282,14 @@
     {
      "date": "2026-10-10",
      "time": "11:30",
-     "status": "unknown",
-     "buy_url": ""
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369295"
     },
     {
      "date": "2026-10-10",
      "time": "17:00",
-     "status": "unknown",
-     "buy_url": ""
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369297"
     }
    ]
   },
@@ -1319,7 +1387,7 @@
    "_genre": "jpop",
    "perfs": 10,
    "first": "2026-10-11",
-   "last": "2027-01-30",
+   "last": "2026-12-28",
    "presale_windows": [],
    "windows": [
     {
@@ -1361,8 +1429,8 @@
     {
      "date": "2026-11-26",
      "time": "18:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/363293"
+     "status": "soldout",
+     "buy_url": ""
     },
     {
      "date": "2026-11-27",
@@ -1395,8 +1463,8 @@
      "buy_url": ""
     },
     {
-     "date": "2027-01-30",
-     "time": "17:00",
+     "date": "2026-12-28",
+     "time": "16:00",
      "status": "unknown",
      "buy_url": ""
     }
@@ -1442,63 +1510,9 @@
    ]
   },
   {
-   "url": "https://ticket.rakuten.co.jp/sports/basketball/rt3abk0/",
-   "name": "第102回関東大学バスケットボールリーグ戦１巡目",
-   "_genre": "sports",
-   "perfs": 7,
-   "first": "2026-08-22",
-   "last": "2026-09-20",
-   "presale_windows": [],
-   "windows": [],
-   "status_rows": [
-    {
-     "date": "2026-08-22",
-     "time": "00:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368659"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368679"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368678"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "15:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368680"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368682"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368681"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "15:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368684"
-    }
-   ]
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/event/rtkt926/",
    "name": "Rakuten GirlsAward 2026 AUTUMN/WINTER｜ガールズアワード",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-09-26",
    "last": "2026-09-26",
@@ -1544,8 +1558,8 @@
    "url": "https://ticket.rakuten.co.jp/music/rtax088/",
    "name": "MATSURI［全国］",
    "_genre": "jpop",
-   "perfs": 15,
-   "first": "2026-09-19",
+   "perfs": 11,
+   "first": "2026-10-16",
    "last": "2026-12-06",
    "presale_windows": [],
    "windows": [
@@ -1555,30 +1569,6 @@
     }
    ],
    "status_rows": [
-    {
-     "date": "2026-09-19",
-     "time": "13:30",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
-     "date": "2026-09-19",
-     "time": "17:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366859"
-    },
-    {
-     "date": "2026-09-22",
-     "time": "13:30",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
-     "date": "2026-09-22",
-     "time": "17:30",
-     "status": "soldout",
-     "buy_url": ""
-    },
     {
      "date": "2026-10-16",
      "time": "14:30",
@@ -1651,8 +1641,8 @@
    "url": "https://ticket.rakuten.co.jp/music/jpop/jrock/rtvclot/",
    "name": "LOVEBITES［全国］",
    "_genre": "jpop",
-   "perfs": 4,
-   "first": "2026-09-19",
+   "perfs": 2,
+   "first": "2026-09-25",
    "last": "2026-09-26",
    "presale_windows": [],
    "windows": [
@@ -1663,18 +1653,6 @@
    ],
    "status_rows": [
     {
-     "date": "2026-09-19",
-     "time": "17:00",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
-     "date": "2026-09-21",
-     "time": "17:00",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
      "date": "2026-09-25",
      "time": "19:00",
      "status": "buyable",
@@ -1683,8 +1661,8 @@
     {
      "date": "2026-09-26",
      "time": "16:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366223"
+     "status": "soldout",
+     "buy_url": ""
     }
    ]
   },
@@ -2145,42 +2123,9 @@
    ]
   },
   {
-   "url": "https://ticket.rakuten.co.jp/stage/comedy/rtbc808/",
-   "name": "ハリウッドザコシショウのミニ単独ライブシリーズSEASON17 嫌な気持ちにさせツアー",
-   "_genre": "owarai",
-   "perfs": 2,
-   "first": "2026-09-20",
-   "last": "2026-09-20",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026/07/18(土) 10:00 〜 "
-    },
-    {
-     "type": "一般発売（公開収録イベント・追加公演）",
-     "timming": "2026/07/25(土) 10:00 〜 "
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-20",
-     "time": "14:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/368858"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "17:30",
-     "status": "soldout",
-     "buy_url": ""
-    }
-   ]
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/event/rtntuts/",
    "name": "ウルトラヒーローズ THE LIVE 〜オメガ・アーク・ブレーザー 新世代ヒーロー集結〜 in 千葉県柏",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-11-14",
    "last": "2026-11-14",
@@ -2222,7 +2167,12 @@
    "first": "2026-10-09",
    "last": "2026-10-11",
    "presale_windows": [],
-   "windows": [],
+   "windows": [
+    {
+     "type": "一般発売 【3枚つづり券】",
+     "timming": "2026/07/28(火) 10:00 〜 2026/09/24(木) 23:59"
+    }
+   ],
    "status_rows": [
     {
      "date": "2026-10-09",
@@ -2247,77 +2197,6 @@
      "time": "07:30",
      "status": "buyable",
      "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366586"
-    }
-   ]
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/music/fes/rtzpbdy/",
-   "name": "New Acoustic Camp 2026",
-   "_genre": "fes",
-   "perfs": 9,
-   "first": "2026-09-19",
-   "last": "2026-09-20",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026年7月16日(木)18:00 〜 \n※先着順。販売予定枚数に達し次第受付終了となります"
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-19",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366845"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366846"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366851"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "10:00",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
-     "date": "2026-09-19",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366850"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366853"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366847"
-    },
-    {
-     "date": "2026-09-19",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366848"
-    },
-    {
-     "date": "2026-09-20",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/366852"
     }
    ]
   },
@@ -2389,7 +2268,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtntuti/",
    "name": "ウルトラヒーローズ THE LIVE 〜オメガ・アーク・ブレーザー 新世代ヒーロー集結〜 in 仙台",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-11-01",
    "last": "2026-11-01",
@@ -2424,30 +2303,6 @@
    ]
   },
   {
-   "url": "https://ticket.rakuten.co.jp/stage/performance/rtctnp6/",
-   "name": "ANA presents ナーポオケラ 2026",
-   "_genre": "engeki",
-   "perfs": 4,
-   "first": "2026-09-20",
-   "last": "2026-09-21",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "楽天チケット先着1次",
-     "timming": "2026/06/13(土) 12:00 〜 2026/06/30(火) 23:59"
-    },
-    {
-     "type": "楽天チケット先着2次",
-     "timming": "2026/07/04(土) 12:00 〜 2026/08/13(木) 23:59"
-    },
-    {
-     "type": "一般発売",
-     "timming": "2026/08/15(土) 10:00 〜"
-    }
-   ],
-   "status_rows": []
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/music/rtza922/",
    "name": "ディズニー・オン・クラシック 〜まほうの夜の音楽会 2026［神奈川・茨城・群馬・埼玉］",
    "_genre": "jpop",
@@ -2465,8 +2320,8 @@
     {
      "date": "2026-09-22",
      "time": "17:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/365274"
+     "status": "soldout",
+     "buy_url": ""
     },
     {
      "date": "2026-09-23",
@@ -2571,29 +2426,6 @@
    ]
   },
   {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtbc921/",
-   "name": "アップアップガールズ（仮）From 0.1 〜 伝説になるでっかい一歩 〜",
-   "_genre": "idol",
-   "perfs": 1,
-   "first": "2026-09-21",
-   "last": "2026-09-21",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026/06/27(土) 10:00 〜 "
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-09-21",
-     "time": "14:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/364944"
-    }
-   ]
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/event/matsuri/rtg2672/",
    "name": "【泉佐野市民割・田尻町民割】大阪芸術花火2026",
    "_genre": "hanabi",
@@ -2668,7 +2500,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtntuth/",
    "name": "ウルトラヒーローズ THE LIVE 〜オメガ・アーク・ブレーザー 新世代ヒーロー集結〜 in 兵庫",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-09-26",
    "last": "2026-09-26",
@@ -2773,7 +2605,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtyt711/",
    "name": "ゴールドマン　コレクション　河鍋暁斎の世界［兵庫］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-07-11",
    "last": "2026-09-23",
@@ -2911,7 +2743,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtrk718/",
    "name": "特別展「氷河期展　人類が見た４万年前の世界」［福岡］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-07-18",
    "last": "2026-09-27",
@@ -2938,7 +2770,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtck026/",
    "name": "世界最大級の大スペクタクル☆スーパーミラクルイリュージョン☆木下大サーカス岡山公演【早割ﾍﾟｱ券（自由席）】",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-06-27",
    "last": "2026-09-27",
@@ -2949,29 +2781,24 @@
  ],
  "soldout": [
   {
-   "url": "https://ticket.rakuten.co.jp/stage/rtza921/",
-   "name": "爆笑!!お笑いスーパーライブ in 小田原",
-   "_genre": "engeki",
+   "url": "https://ticket.rakuten.co.jp/music/rtzp42a/",
+   "name": "乃木坂46 42ndSGアンダーライブ",
+   "_genre": "jpop",
    "perfs": 2,
-   "first": "2026-09-21",
-   "last": "2026-09-21",
+   "first": "2026-09-29",
+   "last": "2026-09-30",
    "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2026/07/03(金) 10:00 〜 "
-    }
-   ],
+   "windows": [],
    "status_rows": [
     {
-     "date": "2026-09-21",
-     "time": "11:30",
+     "date": "2026-09-29",
+     "time": "18:30",
      "status": "soldout",
      "buy_url": ""
     },
     {
-     "date": "2026-09-21",
-     "time": "15:30",
+     "date": "2026-09-30",
+     "time": "18:30",
      "status": "soldout",
      "buy_url": ""
     }
@@ -3037,6 +2864,22 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/music/fes/rtax026/",
+   "name": "ULTRA JAPAN 2026",
+   "_genre": "fes",
+   "perfs": 3,
+   "first": "2026-09-19",
+   "last": "2026-09-20",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "オフィシャル先着先行第一弾",
+     "timming": "2025/09/15(月) 12:00 〜 2026/04/15(水) 23:59"
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/stage/rtzaboa/",
    "name": "来舞 来夢〜BEAT OF AUDITION〜",
    "_genre": "engeki",
@@ -3053,9 +2896,25 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtbc183/",
+   "name": "アップアップガールズ（２） にきちゃん大決戦っ！！後夜祭",
+   "_genre": "idol",
+   "perfs": 1,
+   "first": "2026-09-21",
+   "last": "2026-09-21",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/09/05(土) 10:00 〜 "
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/event/rtmlhk6/",
    "name": "北海道芸術花火2026",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-09-05",
    "last": "2026-09-05",
@@ -3081,6 +2940,22 @@
    "last": "2026-09-13",
    "presale_windows": [],
    "windows": [],
+   "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtyu920/",
+   "name": "アップアップガールズ（プロレス）",
+   "_genre": "idol",
+   "perfs": 1,
+   "first": "2026-09-20",
+   "last": "2026-09-20",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/09/01(火) 12:00 〜 "
+    }
+   ],
    "status_rows": []
   },
   {
@@ -3190,9 +3065,20 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/sports/basketball/rt3abk0/",
+   "name": "第102回関東大学バスケットボールリーグ戦１巡目",
+   "_genre": "sports",
+   "perfs": 23,
+   "first": "2026-08-22",
+   "last": "2026-09-20",
+   "presale_windows": [],
+   "windows": [],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/event/rtaz913/",
    "name": "東北未来芸術花火2026 〜明日へのマーチ 桑田佳祐SP〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-09-13",
    "last": "2026-09-13",
@@ -3255,7 +3141,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtyu912/",
    "name": "CDジャーナル連載10周年コンサート秋 〜柚木麻子・朝井リョウ・でか美ちゃん 書籍化記念スッペシャル〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-09-12",
    "last": "2026-09-12",
@@ -3350,7 +3236,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvm890/",
    "name": "コドモパーティーIII［大分］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-08-09",
    "last": "2026-08-09",
@@ -3508,7 +3394,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rti9in6/",
    "name": "2026いなしき夏まつり花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-08-22",
    "last": "2026-08-22",
@@ -3694,9 +3580,29 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/stage/comedy/rtbc808/",
+   "name": "ハリウッドザコシショウのミニ単独ライブシリーズSEASON17 嫌な気持ちにさせツアー",
+   "_genre": "owarai",
+   "perfs": 2,
+   "first": "2026-09-20",
+   "last": "2026-09-20",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/07/18(土) 10:00 〜 "
+    },
+    {
+     "type": "一般発売（公開収録イベント・追加公演）",
+     "timming": "2026/07/25(土) 10:00 〜 "
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/event/rtvco5z/",
    "name": "第51回江戸川区花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-08-01",
    "last": "2026-08-01",
@@ -3721,9 +3627,25 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/music/fes/rtzpbdy/",
+   "name": "New Acoustic Camp 2026",
+   "_genre": "fes",
+   "perfs": 3,
+   "first": "2026-09-19",
+   "last": "2026-09-20",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026年7月16日(木)18:00 〜 \n※先着順。販売予定枚数に達し次第受付終了となります"
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/event/rtex812/",
    "name": "よ〜い！スターと！トビダスクール　夏の遠足(えんそく)ライブ",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-08-12",
    "last": "2026-08-12",
@@ -3804,7 +3726,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvznmn/",
    "name": "第79回 沼津夏まつり・狩野川花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-07-25",
    "last": "2026-07-26",
@@ -4033,9 +3955,49 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/stage/performance/rtctnp6/",
+   "name": "ANA presents ナーポオケラ 2026",
+   "_genre": "engeki",
+   "perfs": 4,
+   "first": "2026-09-20",
+   "last": "2026-09-21",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "楽天チケット先着1次",
+     "timming": "2026/06/13(土) 12:00 〜 2026/06/30(火) 23:59"
+    },
+    {
+     "type": "楽天チケット先着2次",
+     "timming": "2026/07/04(土) 12:00 〜 2026/08/13(木) 23:59"
+    },
+    {
+     "type": "一般発売",
+     "timming": "2026/08/15(土) 10:00 〜"
+    }
+   ],
+   "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/stage/rtza921/",
+   "name": "爆笑!!お笑いスーパーライブ in 小田原",
+   "_genre": "engeki",
+   "perfs": 2,
+   "first": "2026-09-21",
+   "last": "2026-09-21",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/07/03(金) 10:00 〜 "
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/event/rtgjt26/",
    "name": "第52回高崎まつり大花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2026-08-22",
    "last": "2026-08-22",
@@ -4108,6 +4070,22 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtbc921/",
+   "name": "アップアップガールズ（仮）From 0.1 〜 伝説になるでっかい一歩 〜",
+   "_genre": "idol",
+   "perfs": 1,
+   "first": "2026-09-21",
+   "last": "2026-09-21",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2026/06/27(土) 10:00 〜 "
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/kpop/rtccsjf/",
    "name": "SE7EN JAPAN Fan Meeting 2026 “SE7EN ELE7EN”",
    "_genre": "kpop",
@@ -4166,7 +4144,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtw9s80/",
    "name": "第78回　諏訪湖祭湖上花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-08-15",
    "last": "2026-08-15",
@@ -4349,7 +4327,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtntutg/",
    "name": "ウルトラヒーローズ THE LIVE 〜オメガ・アーク・ブレーザー 新世代ヒーロー集結〜 in 岐阜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-09-12",
    "last": "2026-09-12",
@@ -4563,7 +4541,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtj2hnc/",
    "name": "立川まつり国営昭和記念公園　花火大会2026",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-07-25",
    "last": "2026-07-25",
@@ -5169,7 +5147,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtww667/",
    "name": "NEC presents FUJI ＆ SUN ’26",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2026-06-06",
    "last": "2026-06-07",
@@ -5315,7 +5293,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtjmmrf/",
    "name": "愛知牧場 SUMMER FESTIVAL",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-07-19",
    "last": "2026-07-19",
@@ -5680,7 +5658,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtrkftu/",
    "name": "ゴジラ博 in 福岡",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-06-04",
    "last": "2026-06-22",
@@ -5720,7 +5698,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtpa227/",
    "name": "Stancenation Japan 2026 OSAKA",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-05-24",
    "last": "2026-05-24",
@@ -5740,7 +5718,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rth0026/",
    "name": "「ナジャ・グランディーバとおしゃれな仲間たち」",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-08-02",
    "last": "2026-08-02",
@@ -5868,7 +5846,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtdsutr/",
    "name": "ULTRAMAN EXHIBITION -ウルトラマンシリーズ６０周年展- in スペースLABO",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-07-10",
    "last": "2026-08-30",
@@ -5956,7 +5934,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtgy055/",
    "name": "ギャルフェス 2026",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-05-05",
    "last": "2026-05-05",
@@ -6161,7 +6139,12 @@
    "first": "2026-05-30",
    "last": "2026-05-30",
    "presale_windows": [],
-   "windows": [],
+   "windows": [
+    {
+     "type": "一般発売 ＜1部＞",
+     "timming": "2026/05/07(木) 18:00 〜 "
+    }
+   ],
    "status_rows": []
   },
   {
@@ -6231,7 +6214,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rte1ss6/",
    "name": "Symphonic Starmine 2026",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-05-09",
    "last": "2026-05-09",
@@ -6377,7 +6360,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzz717/",
    "name": "ヨコハマ恐竜展2026 〜恐竜の食卓大図鑑〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-07-17",
    "last": "2026-09-06",
@@ -6433,7 +6416,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rty40r8/",
    "name": "令和8年度 米沢上杉まつり 川中島合戦",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-05-03",
    "last": "2026-05-03",
@@ -6691,7 +6674,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtkt26s/",
    "name": "Rakuten GirlsAward 2026 SPRING/SUMMER｜ガールズアワード",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-04-18",
    "last": "2026-04-18",
@@ -6719,7 +6702,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtp7423/",
    "name": "彩木咲良生誕イベント2026",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-04-23",
    "last": "2026-04-23",
@@ -7002,7 +6985,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtmx313/",
    "name": "KIM HYEYOON│キム・ヘユン",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-03-13",
    "last": "2026-03-13",
@@ -7396,7 +7379,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtkt417/",
    "name": "TVアニメ放送30周年記念『名探偵コナン スペシャルコンサート2026』［神奈川］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-04-17",
    "last": "2026-04-18",
@@ -7416,7 +7399,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtsp425/",
    "name": "DINO-A-LIVE DINO SAFARI 2026［東京］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 34,
    "first": "2026-04-24",
    "last": "2026-05-06",
@@ -7564,7 +7547,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtpa226/",
    "name": "Nostalgic 2days（ノスタルジック2デイズ）",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-02-21",
    "last": "2026-02-22",
@@ -7700,7 +7683,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtcsutr/",
    "name": "ULTRAMAN EXHIBITION -ウルトラマンシリーズ60周年展- in ひらかたパーク",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-04-18",
    "last": "2026-06-28",
@@ -8335,7 +8318,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rty6sa3/",
    "name": "第9回SAKEフェス in ヨコハマ",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-03-19",
    "last": "2026-03-21",
@@ -8373,7 +8356,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtkd1kg/",
    "name": "一条工務店 presents 恐竜ラボ！ギガ・ミッション from DINO-A-LIVE［宮城］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 4,
    "first": "2026-03-14",
    "last": "2026-03-15",
@@ -8837,7 +8820,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtkn652/",
    "name": "一条工務店 presents　恐竜ラボ！ギガ・ミッション from DINO-A-LIVE［福岡］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 4,
    "first": "2026-05-02",
    "last": "2026-05-03",
@@ -9064,7 +9047,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtu2328/",
    "name": "「吉川鉄道研究部」第3回番組イベント",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-02-08",
    "last": "2026-02-08",
@@ -9340,7 +9323,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvmfes/",
    "name": "Harajuku Festival vol.1 〜子ども心を救え〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2026-01-03",
    "last": "2026-01-03",
@@ -9371,7 +9354,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtsrtmn/",
    "name": "田中達也展 みたてのくみたて［長崎］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-03-12",
    "last": "2026-04-13",
@@ -9715,7 +9698,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtza411/",
    "name": "仮面ライダースーパーライブ2026［茨城・栃木・埼玉］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 6,
    "first": "2026-04-05",
    "last": "2026-05-30",
@@ -9952,7 +9935,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzpbal/",
    "name": "早川隆久投手、安田悠馬選手 -2025 SPECIAL TALKSHOW-",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-12-15",
    "last": "2025-12-15",
@@ -10143,7 +10126,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtf3oku/",
    "name": "岡島体育祭2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-12-21",
    "last": "2025-12-21",
@@ -10319,7 +10302,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzadal/",
    "name": "一条工務店 presents 恐竜ラボ！ギガ・ミッション from DINO-A-LIVE ［千葉・埼玉］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 8,
    "first": "2026-04-04",
    "last": "2026-04-19",
@@ -11355,7 +11338,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtc9m11/",
    "name": "アイドルマスター SideM　「レトローズスペシャルパーティ」",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2025-11-01",
    "last": "2025-11-23",
@@ -11423,7 +11406,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtouo50/",
    "name": "OSAKAアート＆てづくりバザールVOL.50",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-12-20",
    "last": "2025-12-21",
@@ -11439,7 +11422,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rt3rj25/",
    "name": "Japan Mobility Show Nagoya 2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-11-22",
    "last": "2025-11-24",
@@ -11479,7 +11462,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtpiasa/",
    "name": "Bruno Mars Fireworks Show 2025 Saitama",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-11-01",
    "last": "2025-11-01",
@@ -11858,7 +11841,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtouoyo/",
    "name": "Pet博2026横浜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2026-01-10",
    "last": "2026-01-12",
@@ -12014,7 +11997,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtct25k/",
    "name": "Hello Kitty展-わたしが変わるとキティも変わる-［名古屋］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-12-19",
    "last": "2026-02-15",
@@ -12030,7 +12013,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtkt528/",
    "name": "Rakuten GirlsAward 2025 AUTUMN/WINTER｜ガールズアワード",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-10-18",
    "last": "2025-10-18",
@@ -12847,7 +12830,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtydv32/",
    "name": "View Stage Collection Vol.32",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-09-14",
    "last": "2025-09-14",
@@ -12900,7 +12883,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtidtod/",
    "name": "トークも淑女の嗜みでして　公開収録vol.1",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-09-07",
    "last": "2025-09-07",
@@ -12972,7 +12955,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtc9526/",
    "name": "TVアニメ『出禁のモグラ』“この世”のハロウィンパーティ",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-10-26",
    "last": "2025-10-26",
@@ -13335,7 +13318,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtkb101/",
    "name": "斉藤壮馬・石川界人のダメじゃないラジオ　「俺らラジオがしたいです」",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-10-12",
    "last": "2025-10-12",
@@ -14133,7 +14116,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtts726/",
    "name": "巨大恐竜展 2025 ［大阪］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-26",
    "last": "2025-08-29",
@@ -14205,7 +14188,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvosak/",
    "name": "2025 大阪・関西万博 入場チケット",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-04-13",
    "last": "2025-10-13",
@@ -14247,7 +14230,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtmx551/",
    "name": "Channel K ＆ Music Kプレゼンツ 映画「沖縄ブルーノート」舞台挨拶付き特別上映会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-08-21",
    "last": "2025-08-21",
@@ -14376,7 +14359,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtctpdm/",
    "name": "ハウスクラフト Presents DOG Marche",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-10-25",
    "last": "2025-10-26",
@@ -14564,7 +14547,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzf526/",
    "name": "秋酒祭 岐阜〜岐阜の地酒に酔う 2025〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-10-25",
    "last": "2025-10-26",
@@ -14580,7 +14563,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzf405/",
    "name": "秋酒祭 愛知〜AUTUMN SAKE FEST 2025〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-10-04",
    "last": "2025-10-05",
@@ -14676,7 +14659,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtisaai/",
    "name": "ISOGAI花火劇場in名古屋港",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-12-20",
    "last": "2025-12-20",
@@ -14959,7 +14942,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtd0906/",
    "name": "盛岡どんぱ2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2025-09-06",
    "last": "2025-09-06",
@@ -14995,7 +14978,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/event-other/rtouosf/",
    "name": "大阪・お城フェス2025【セミナー・フォーラム】［大阪］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2025-08-09",
    "last": "2025-08-10",
@@ -15011,7 +14994,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/event-other/rtouc25/",
    "name": "◆◆公演終了◆◆大阪・お城フェス2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-08-09",
    "last": "2025-08-10",
@@ -15491,7 +15474,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvkykn/",
    "name": "ゆいかれん　Birthday Party 2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-09-13",
    "last": "2025-09-13",
@@ -15623,7 +15606,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtu2830/",
    "name": "吉川鉄道研究部トークライブ ロマンスカーミュージアム編",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-08-30",
    "last": "2025-08-30",
@@ -15750,7 +15733,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzf210/",
    "name": "OSAKA SAKE SQUARE 2025〜オオサカ サケ スクエア 2025〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-09-20",
    "last": "2025-09-21",
@@ -15782,7 +15765,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtgjt25/",
    "name": "第51回高崎まつり大花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-08-23",
    "last": "2025-08-23",
@@ -15927,7 +15910,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rti9in5/",
    "name": "2025　いなしき夏まつり花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-08-23",
    "last": "2025-08-23",
@@ -15974,7 +15957,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/event-other/rtyt25y/",
    "name": "NAKED meets 二条城 2025 夕涼み",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-25",
    "last": "2025-08-24",
@@ -16256,7 +16239,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtts127/",
    "name": "Hello Kitty展 ―わたしが変わるとキティも変わる―［京都］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-09-25",
    "last": "2025-12-07",
@@ -16408,7 +16391,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtqrnnb/",
    "name": "「SK∞ エスケーエイト」∞WEEKスペシャルイベント EXTRA PART",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-08-10",
    "last": "2025-08-10",
@@ -16451,7 +16434,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtmx260/",
    "name": "バニーとお兄さんたち Japan Fanmeeting",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-06-20",
    "last": "2025-06-20",
@@ -16926,7 +16909,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvm531/",
    "name": "Harajuku Festival vol.1 〜子ども心を救え〜［佐賀］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-08-31",
    "last": "2025-08-31",
@@ -17042,7 +17025,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtlbeei/",
    "name": "【特別ご優待受付】ビールフェスin東急歌舞伎町タワー5階",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-25",
    "last": "2025-07-27",
@@ -17189,7 +17172,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rt6scma/",
    "name": "くれいじーまぐねっと",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 9,
    "first": "2025-08-06",
    "last": "2025-08-30",
@@ -17542,7 +17525,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtbsbs1/",
    "name": "MINIATURE LIFE展 田中達也 見立ての世界［大分］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-11",
    "last": "2025-09-23",
@@ -17804,7 +17787,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtgrtkn/",
    "name": "たきの花火2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-06-29",
    "last": "2025-06-29",
@@ -17844,7 +17827,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtgrbbq/",
    "name": "たきの花火2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-06-29",
    "last": "2025-06-29",
@@ -17892,7 +17875,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvco55/",
    "name": "第50回江戸川区花火大会",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-08-02",
    "last": "2025-08-02",
@@ -18203,7 +18186,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtqrvha/",
    "name": "「花は咲く、修羅の如く」スペシャルイベント　すもももももももものうち",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-06-29",
    "last": "2025-06-29",
@@ -18665,7 +18648,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtbcndd/",
    "name": "緒方恵美［東京］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-06-06",
    "last": "2025-06-06",
@@ -18785,7 +18768,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzf440/",
    "name": "SAKAE SAKE SQUARE 2025〜サカエ サケ スクエア 2025〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-19",
    "last": "2025-07-21",
@@ -18801,7 +18784,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtc9622/",
    "name": "文豪とアルケミスト『幻想怪奇譚 〜帝國図書館文士劇〜』",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-06-22",
    "last": "2025-06-22",
@@ -18897,7 +18880,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtazmpp/",
    "name": "『ポールプリンセス!!』 Blue Star Dream Live",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-06-14",
    "last": "2025-06-14",
@@ -19201,7 +19184,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtlhaaj/",
    "name": "小松昌平の盤・番・絆（BAN・BAN・BAN）! 第31回、第32回",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-05-25",
    "last": "2025-05-25",
@@ -19221,7 +19204,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtlhaah/",
    "name": "たすくとしょうや　第45回、第46回",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-07-27",
    "last": "2025-07-27",
@@ -19452,7 +19435,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtsptyp/",
    "name": "でんじろう先生のドキドキわくわくサイエンスショー Part2［埼玉］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-08-03",
    "last": "2025-08-03",
@@ -19776,7 +19759,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtmlhk5/",
    "name": "北海道芸術花火2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-09-06",
    "last": "2025-09-06",
@@ -20063,7 +20046,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtzf723/",
    "name": "YOKOHAMA SAKE SQUARE 2025〜ヨコハマ サケ スクエア 2025〜",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-12",
    "last": "2025-07-13",
@@ -20111,7 +20094,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtg3sjo/",
    "name": "STANCENATION JAPAN 2025 OSAKA",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-05-25",
    "last": "2025-05-25",
@@ -20259,7 +20242,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtvpwmn/",
    "name": "虫たちのナイトワンダーランド　体験型！暗闇の昆虫展［東京］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-08-08",
    "last": "2025-08-31",
@@ -20637,7 +20620,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/talkshow/rtlhaal/",
    "name": "SECOND LINE Presents みんなに会いに行くよ! スペシャル 2025.07 in 静岡",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-07-26",
    "last": "2025-07-26",
@@ -20657,7 +20640,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/talkshow/rtlhaak/",
    "name": "SECOND LINE Presents みんなに会いに行くよ! 第21回 in 富山",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-07-20",
    "last": "2025-07-20",
@@ -20873,7 +20856,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtktr25/",
    "name": "Rakuten GirlsAward 2025 SPRING/SUMMER｜ガールズアワード",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-05-03",
    "last": "2025-05-03",
@@ -20897,7 +20880,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtts193/",
    "name": "特別展 『昆虫 MANIAC』［大阪］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-12",
    "last": "2025-09-23",
@@ -21028,7 +21011,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtb6551/",
    "name": "TOKYO DOG SHOW 2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2025-06-27",
    "last": "2025-06-29",
@@ -21244,7 +21227,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtsptyt/",
    "name": "でんじろう先生のドキドキわくわくサイエンスショー Part2［栃木］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-07-21",
    "last": "2025-07-21",
@@ -22014,7 +21997,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtgyvvg/",
    "name": "ギャルフェス 2025",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 3,
    "first": "2025-05-05",
    "last": "2025-05-11",
@@ -22254,7 +22237,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rt2kamr/",
    "name": "第44回みつなか名画鑑賞会「あまろっく」",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-06-06",
    "last": "2025-06-06",
@@ -22366,7 +22349,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtijkf5/",
    "name": "第21回こどもフェスティバルアドベンチャーワールド”25",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-05-03",
    "last": "2025-05-06",
@@ -22545,7 +22528,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtlhaai/",
    "name": "佐藤サン、もう1杯 Presents 佐藤サン、もう1杯 公開録音イべント 2025.05.18",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-05-18",
    "last": "2025-05-18",
@@ -22725,6 +22708,22 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/music/jpop/rtgckmy/",
+   "name": "奇妙礼太郎BAND［大阪］",
+   "_genre": "jpop",
+   "perfs": 1,
+   "first": "2025-06-29",
+   "last": "2025-06-29",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売",
+     "timming": "2025/04/05(土) 10:00 〜"
+    }
+   ],
+   "status_rows": []
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/rtudcyn/",
    "name": "CYNDI LAUPER｜シンディ・ローパー［東京］",
    "_genre": "jpop",
@@ -22745,25 +22744,9 @@
    "status_rows": []
   },
   {
-   "url": "https://ticket.rakuten.co.jp/music/jpop/rtgckmy/",
-   "name": "奇妙礼太郎BAND［大阪］",
-   "_genre": "jpop",
-   "perfs": 1,
-   "first": "2025-06-29",
-   "last": "2025-06-29",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売",
-     "timming": "2025/04/05(土) 10:00 〜"
-    }
-   ],
-   "status_rows": []
-  },
-  {
    "url": "https://ticket.rakuten.co.jp/event/rtoovfu/",
    "name": "深堀隆介展 水面のゆらぎの中へ［大阪］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-07-05",
    "last": "2025-09-07",
@@ -22799,7 +22782,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rttsujj/",
    "name": "逆境回顧録 大カイジ展［大阪］",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-04-05",
    "last": "2025-05-11",
@@ -23035,7 +23018,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtu2ndy/",
    "name": "「吉川鉄道研究部　出発式＆トークライブ」",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 1,
    "first": "2025-04-26",
    "last": "2025-04-26",
@@ -23114,7 +23097,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rtxbebb/",
    "name": "映画「ヨウゼン」公開御礼舞台挨拶",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-04-10",
    "last": "2025-04-10",
@@ -23352,7 +23335,7 @@
   {
    "url": "https://ticket.rakuten.co.jp/event/rthfzbn/",
    "name": "TVアニメ「ダンダダン」それってファンミじゃんよ!!",
-   "_genre": "",
+   "_genre": "event",
    "perfs": 2,
    "first": "2025-04-26",
    "last": "2025-04-26",
