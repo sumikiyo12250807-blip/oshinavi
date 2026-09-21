@@ -272,6 +272,22 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      🎯**1時間で未登録が39件増えた**＝新着が流れ込むので毎日効く。
      🚨**番人は自分で個別ページを引く**（harvestの--detailは未登録分しか引かないので流用できない）。
      🚨ぴあ以外なので**振り分けはユーザーの確認後**。詳しくは [[reference_zaiko_harvest]]
+   - 🆕🎭**FANYチケット（吉本）も毎朝回す**（2026-09-21夜 ユーザー「うん、入れて」）
+     ```
+     python tools/fany_harvest.py --selftest ; python tools/build_fany_entries.py --selftest
+     python tools/fany_harvest.py --from <今日> --to <今日+半年> --out tmp/fany_MMDD.json
+     python tools/build_fany_entries.py tmp/fany_MMDD.json --out tmp/built_fany_MMDD.json
+     python tools/inject_fany.py tmp/built_fany_MMDD.json          # 調べるだけ（何件入るか）
+     python tools/inject_fany.py tmp/built_fany_MMDD.json --apply  # 投入（genre:"new"）
+     python tools/gate_fany_slots.py --src tmp/fany_MMDD.json      # 🔒番人（同じ一覧で全件突合・exit 0 以外なら直す）
+     ```
+     **Why**＝FANYの登録2,873件のうち**発売前は123件（2.5%）だけ**。吉本の公演は一覧に出た時にはもう先行が
+     始まっていることが多い＝**出た直後に拾わないと「発売前」のうちに載せられない**（9/21夜の点検で
+     夕方に出たばかりの公演が1件見つかった＝id20892）。
+     🚨`inject_fany.py` は自分で `index.html.bak_MMDD_fany` を書く＝同じ日に2回流すと前の控えを上書きする。
+     🚨ヒールの道具（heal_fany）はまだ無い＝番人が鳴ったら食い違いの枠を報告して直す。
+     🚨**完売を一覧で判定しない**（「予定枚数終了」の文言が無い）／**1公演＝1エントリ**（出演者が日替わり）。
+     🚨ぴあ以外なので**振り分けはユーザーの確認後**。詳しくは [[reference_fany_ticket]]
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
    - FETCHが出たら**ぴあの混雑ページ**を疑って該当だけ再照合（巻き添えのSTALEも消える）
