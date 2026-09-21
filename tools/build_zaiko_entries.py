@@ -1,0 +1,431 @@
+# -*- coding: utf-8 -*-
+"""ZAIKOのハーベスト結果から OSHINAVI のエントリを組む（T-SQUARE形テンプレート）。
+
+  python tools/build_zaiko_entries.py tmp/zaiko_MMDD.json --out tmp/built_zaiko_MMDD.json
+  python tools/build_zaiko_entries.py --selftest
+
+## 売り状態の読み方（ZAIKOはブール値で明示される＝文言を読まなくていい）
+
+| 券種のフラグ | OSHINAVI |
+|---|---|
+| `is_sold_out` | `soldout: true`（**予定枚数終了**） |
+| `is_sale_ended`（売切でない） | `soldout` ＋ `saleEnded`（**販売終了**） |
+| `is_sale_started` が False | 発売前。🚨**開始日時がデータに無い**ので、日付を作らず載せない |
+| どれでもない | 買える。締切は `lottery_end_date`（無ければ公演日を置き場＋`saleEndUnknown`） |
+
+🚨**公演がこれからなら売切れ・販売終了でも載せる**（[[feedback_oshinavi_concept]]）。
+   ⛔「買える枠が1つも無ければ載せない」は**失効ルール**＝2026-09-21にFANYで85件落とした反省。
+
+## エントリの単位＝1イベント＝1エントリ
+ZAIKOは1ページ＝1公演（`/ja/e/<slug>`）。飛び先は券種ごとに分かれないので、
+**全券種に同じイベントURLを付ける**（それが実際の申込ページ）。
+"""
+import argparse
+import collections
+import datetime
+import io
+import json
+import re
+import sys
+
+try:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+except Exception:
+    pass
+
+WD = '月火水木金土日'
+
+# ZAIKOのジャンル名 → OSHINAVIのジャンル（**売り場の言う通りに機械で写す**
+# ＝[[feedback_genre_pia_asis_and_other]]）。
+# 🚨🚨2026-09-21＝**実データ461件の語彙55種類を数えてから書いた**（初版は推測で書いて34種類が
+#   写せず、425件のうち272件が musicetc に落ちた＝その他は最後の砦なのに過半になった）。
+#   ZAIKOの中身はクラブ系が主役（Techno 126・House 95・Trance 40・Electronic 71）。
+#   ⚠️`event.genres` は**全件空**で、ジャンルは `performers[].genres` にしか入っていない。
+# 🚨表に無いジャンルが来たら **写さずに数えて報告する**（黙って musicetc に倒さない）。
+ZAIKO_GENRE = {
+    # ── クラブ／DJ（2026-09-21 ユーザー「作って」でジャンルを新設した行き先）──
+    'Techno': 'club', 'House': 'club', 'Electronic': 'club', 'Trance': 'club',
+    'Psychedelic': 'club', 'Electro': 'club', 'Bass Music': 'club', 'Drum & Bass': 'club',
+    'Disco': 'club', 'EDM': 'club', 'Dubstep': 'club', 'Ambient': 'club',
+    'Tech House': 'club', 'Dance': 'club', 'HardStyle': 'club', 'Breaks': 'club',
+    'Chill out': 'club', 'Dub': 'club', 'Lounge': 'club', 'Allmix': 'club',
+    # ── 音楽 ──
+    'Hip hop': 'hiphop', 'Trap': 'hiphop', 'Reggae': 'hiphop',
+    'Idol': 'idol',
+    'Pop': 'jpop', 'R&B': 'jpop', 'Soul': 'jpop', 'Funk': 'jpop',
+    'Rock': 'rock', 'Alternative': 'rock', 'Indie': 'rock', 'Punk': 'rock',
+    'Metal': 'rock', 'Visual': 'rock',
+    'Jazz': 'jazz', 'Classical': 'classic',
+    'Japanese music': 'hougaku', 'K-POP': 'kpop', 'Asian': 'yougaku',
+    'Anime': 'anime', 'Anime & Manga': 'anime', 'VTuber': 'vtuber',
+    'Acoustic': 'musicetc', 'Folk': 'musicetc', 'Crossover': 'musicetc',
+    'Instrumental': 'musicetc', 'Noise': 'musicetc', 'Music': 'musicetc',
+    'Others': 'musicetc',
+    # ── 音楽以外 ──
+    'Comedy': 'owarai', 'Wrestling': 'sports', 'Art & Design': 'art',
+    'Culture': 'event', 'Culture & Subculture': 'event',
+    # ⛔写さない＝ジャンルではなく「形式」の札。'Live'（78回）は生演奏という意味で、
+    #   これを何かのジャンルに倒すと嘘になる。件数は多いが**無視するのが正しい**。
+    'Live': None,
+}
+GENRE_FALLBACK = 'musicetc'
+
+# 🚨一覧のカテゴリ → ジャンル（**出演者のジャンルが空のときの受け皿**）。
+#   2026-09-21 実測＝461件のうち**269件は performers[].genres が空**（ZAIKOは任意入力らしい）。
+#   そのまま musicetc に落とすと「その他」が過半になる（＝[[feedback_genre_pia_asis_and_other]]の
+#   「その他は最後の砦」に反する）。カテゴリは**売り場が分類した事実**なので写してよい。
+CAT_GENRE = {
+    'clubs-nightlife': 'club',
+    'performances-shows': 'engeki',
+    'festivals-fairs': 'fes',
+    'tournaments-competitions': 'sports',
+    'concerts-live-music': 'musicetc',   # 音楽だがZAIKOに細分が無い＝ここだけ「その他」
+}
+
+PREF47 = ('北海道 青森県 岩手県 宮城県 秋田県 山形県 福島県 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 '
+          '神奈川県 新潟県 富山県 石川県 福井県 山梨県 長野県 岐阜県 静岡県 愛知県 三重県 滋賀県 京都府 '
+          '大阪府 兵庫県 奈良県 和歌山県 鳥取県 島根県 岡山県 広島県 山口県 徳島県 香川県 愛媛県 高知県 '
+          '福岡県 佐賀県 長崎県 熊本県 大分県 宮崎県 鹿児島県 沖縄県').split()
+
+SELLER_SIDE = re.compile(
+    r'委託販売|即売会|出店|ブース(?:出展|申込)?|'
+    r'エントリーフォーム|参加エントリ|出場エントリ|'
+    r'駐車|案内登録|先行案内'
+)
+
+_PAIRS = ('（）', '「」', '『』', '【】', '＜＞', '〔〕', '［］', '〈〉')
+
+
+def era(y):
+    return 'R%d年 ' % (y - 2018) if y > datetime.date.today().year else ''
+
+
+def md(iso):
+    """公演日のバッジ用＝翌年以降は令和略記を付ける（[[feedback_r9_year_notation]]）。"""
+    y, m, d = int(iso[:4]), int(iso[5:7]), int(iso[8:10])
+    return '%s%d/%d' % (era(y), m, d)
+
+
+def mdp(iso):
+    """締切用＝**年を付けない**。既存21,898枠を数えて確かめた流儀＝
+    公演日（カッコの中）にはR9年を付け、締切（カッコの後の〜）には付けない。
+    ここを md() にすると「〜R9年 2/1 23:59」になって既存と食い違う（2026-09-21）。"""
+    return '%d/%d' % (int(iso[5:7]), int(iso[8:10]))
+
+
+def jp(iso, extra=''):
+    y, m, d = int(iso[:4]), int(iso[5:7]), int(iso[8:10])
+    s = '%d年%d月%d日(%s)' % (y, m, d, WD[datetime.date(y, m, d).weekday()])
+    return (s + ' ' + extra).strip() if extra else s
+
+
+def pref_of(det, listrow):
+    """県。①会場の location「東京都, 日本」 ②一覧の pref ③住所 の順。無ければ空。"""
+    for src in ((det or {}).get('venue_location'), (listrow or {}).get('pref'),
+                (det or {}).get('venue_address')):
+        for n in PREF47:
+            if n in (src or ''):
+                return n if n == '北海道' else n[:-1]
+    return ''
+
+
+def _balanced(s):
+    return all(s.count(a) == s.count(b) for a, b in _PAIRS)
+
+
+def ticket_name(raw, is_lottery, is_stream):
+    """券種名を整える。空なら「チケット」。抽選・配信は分かるように添える。"""
+    nm = re.sub(r'\s+', ' ', (raw or '')).strip()
+    nm = re.sub(r'^[●○◆■▲☆★]+', '', nm).strip()
+    nm = re.sub(r'\s*\d{4}年\d{1,2}月\d{1,2}日.*$', '', nm).strip()
+    if not nm:
+        nm = '抽選チケット' if is_lottery else 'チケット'
+    nm = (nm.replace('／', '・').replace('(', '（').replace(')', '）')
+            .replace('[', '［').replace(']', '］'))
+    if is_stream and '配信' not in nm:
+        nm = nm + '（配信）'
+    cut = nm[:28]
+    while cut and not _balanced(cut):
+        cut = cut[:-1]
+    return cut.rstrip('・、 /') if cut else 'チケット'
+
+
+def artist_of(det, listrow):
+    """出演者の先頭3組。取れなければイベント名。"""
+    names = [(p.get('name') or '').strip() for p in ((det or {}).get('performers') or [])]
+    names = [n for n in names if n and not re.fullmatch(r'ほか|他|など|MC|ゲスト', n)]
+    if names:
+        return '／'.join(names[:3])
+    return ((det or {}).get('name') or (listrow or {}).get('title') or 'ZAIKO').strip()
+
+
+def genres_of(det, unknown, cat=None):
+    """ジャンルを写す。イベントのジャンル → 出演者のジャンル の順。未知は数えて報告。"""
+    got = []
+    for g in ((det or {}).get('genres') or []):
+        if g in ZAIKO_GENRE:
+            if ZAIKO_GENRE[g]:
+                got.append(ZAIKO_GENRE[g])
+        elif g:
+            unknown[g] += 1
+    for p in ((det or {}).get('performers') or []):
+        for g in (p.get('genres') or []):
+            if g in ZAIKO_GENRE:
+                if ZAIKO_GENRE[g]:
+                    got.append(ZAIKO_GENRE[g])
+            elif g:
+                unknown[g] += 1
+    if not got and cat in CAT_GENRE:
+        got.append(CAT_GENRE[cat])       # 出演者のジャンルが空＝一覧のカテゴリで補う
+    return list(dict.fromkeys(got))
+
+
+def build_one(listrow, det, today, unknown):
+    """1イベント＝1エントリ。載せられないときは (None, 理由)。"""
+    name = re.sub(r'\s+', ' ', (det or {}).get('name') or listrow.get('title') or '').strip()
+    if SELLER_SIDE.search(name):
+        return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
+    d = listrow.get('date')
+    if not d:
+        return None, '公演日が取れない'
+    if d < today:
+        return None, '公演が終わっている'
+    limit = (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat()
+    if d > limit:
+        return None, '公演日が2年より先＝試し書きの疑い'
+    if not det:
+        return None, '個別ページが読めなかった（券種が分からない）'
+
+    pref = pref_of(det, listrow)
+    stime = listrow.get('time') or ''
+    venue = re.sub(r'\s+', ' ', (det.get('venue_name') or listrow.get('venue') or '')).strip()
+    url = listrow['url']
+    when = '%s %s公演' % (md(d), stime) if stime else '%s公演' % md(d)
+
+    tickets, has_live = [], False
+    tks = det.get('tickets') or []
+    names = [ticket_name(t.get('name'), t.get('is_lottery'), t.get('is_stream')) for t in tks]
+    for i, t in enumerate(tks):
+        if SELLER_SIDE.search(t.get('name') or ''):
+            continue
+        nm = names[i]
+        if names.count(nm) > 1:
+            # 🚨同じ券種名が並ぶと**画面で見分けられない**（ZAIKOは券種名が空の枠が
+            #   1,066/1,267枠＝ほとんど「チケット」に倒れる）。
+            #   値段が違うなら**値段を添える**＝ページに書いてある本物の情報で見分ける
+            #   （TIGET・FANYのビルダーと同じ流儀）。値段まで同じなら番号で分ける。
+            prices = [(x.get('price') or '').strip() for x in tks]
+            same = {prices[j] for j, n2 in enumerate(names) if n2 == nm}
+            if len(same) > 1 and prices[i]:
+                nm = '%s %s' % (nm, prices[i])
+            else:
+                nm = '%s（%d）' % (nm, names[:i].count(nm) + 1)
+        head = '%s（%s %s）' % (nm, pref, when) if pref else '%s（%s）' % (nm, when)
+        ed, edt = t.get('end_date'), t.get('end_time')
+        if t.get('is_sold_out') or t.get('is_sale_ended'):
+            tk = {'type': ('%s〜%s %s' % (head, mdp(ed), edt or '')).rstrip() if ed else head,
+                  'date': ed or d, 'url': url, 'soldout': True, 'soldoutSince': today}
+            if not t.get('is_sold_out'):
+                tk['saleEnded'] = True
+                tk['saleEndedSince'] = today
+            tickets.append(tk)
+        elif not t.get('is_sale_started'):
+            # 🚨受付前だが**開始日時がデータに無い**＝日付を作らない（[[feedback_no_placeholder_dates]]）
+            continue
+        else:
+            if ed:
+                end, endt = ed, edt
+                # 締切が公演日より後なら公演日で締める（配信・視聴は例外）
+                if end > d and not re.search(r'配信|視聴|アーカイブ', nm):
+                    end, endt = d, ''
+                tickets.append({'type': ('%s〜%s %s' % (head, mdp(end), endt or '')).rstrip(),
+                                'date': end, 'url': url})
+            else:
+                # 締切がどこにも書かれていない＝締切を作らず公演日を置き場にする
+                tickets.append({'type': '%s販売中' % head, 'date': d,
+                                'saleEndUnknown': True, 'url': url})
+            has_live = True
+
+    if not tickets:
+        return None, '載せられる枠が無い'
+
+    seen, uniq = set(), []
+    for t in tickets:
+        k = (t.get('type'), t.get('date'), t.get('url'), bool(t.get('soldout')),
+             bool(t.get('saleEnded')), bool(t.get('saleEndUnknown')))
+        if k in seen:
+            continue
+        seen.add(k)
+        uniq.append(t)
+
+    gs = genres_of(det, unknown, listrow.get('cat')) or [GENRE_FALLBACK]
+    return {
+        'id': None,
+        'artist': artist_of(det, listrow),
+        'name': name,
+        'date': d,
+        'dateLabel': jp(d, ('%s開演' % stime) if stime else ''),
+        'venue': venue,
+        'prefecture': pref,
+        'genre': 'new',
+        '_genre': gs[0],
+        '_extraGenres': gs[1:],
+        '_srcgenre': 'zaiko:%s' % ','.join((det.get('genres') or []) or ['?']),
+        'price': None,
+        'links': {'rakuten': None, 'lawson': None, 'pia': None, 'eplus': None, 'zaiko': url},
+        'tickets': uniq,
+        'verified': True,
+        'verifiedAt': today,
+        '_has_live': has_live,
+    }, None
+
+
+def build_all(path, out_path, today):
+    d = json.load(io.open(path, encoding='utf-8'))
+    det = d.get('details') or {}
+    unknown = collections.Counter()
+    built, why = [], collections.Counter()
+    for r in d.get('list') or []:
+        e, reason = build_one(r, det.get(r['url']), today, unknown)
+        if e:
+            built.append(e)
+        else:
+            why[reason] += 1
+    live = sum(1 for e in built if e.pop('_has_live', False))
+    with io.open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(built, f, ensure_ascii=False, indent=1)
+    print('組めた %d件（うち買える枠あり %d件）/ 一覧 %d件 → %s'
+          % (len(built), live, len(d.get('list') or []), out_path))
+    print('枠 %d枠' % sum(len(e['tickets']) for e in built))
+    for k, n in why.most_common():
+        print('  載せなかった: %-44s %d件' % (k, n))
+    if unknown:
+        print('🚨表に無いジャンル（写せなかった）: %s' % dict(unknown))
+    print('  ジャンル: %s' % dict(collections.Counter(e['_genre'] for e in built)))
+    return 0
+
+
+def _selftest():
+    today = '2026-09-21'
+    unk = collections.Counter()
+    lr = {'url': 'https://akb48.zaiko.io/ja/e/2026-1001', 'title': '10月1日公演',
+          'date': '2026-10-01', 'time': '19:00', 'venue': 'AKB48劇場', 'pref': '東京都',
+          'cat': 'concerts-live-music'}
+
+    def mk(tickets, **kw):
+        d = {'name': '10月1日公演', 'venue_name': 'AKB48劇場',
+             'venue_location': '東京都, 日本', 'venue_address': '東京都千代田区',
+             'genres': ['Idol'], 'performers': [{'name': '岩立沙穂', 'genres': ['Idol']},
+                                                {'name': '柏木由紀', 'genres': ['Idol']}],
+             'tickets': tickets}
+        d.update(kw)
+        return d
+
+    def tk(**kw):
+        t = {'name': '一般', 'price': '¥4,300', 'is_lottery': False, 'is_sale_started': True,
+             'is_sale_ended': False, 'is_sold_out': False, 'is_stream': False,
+             'end_date': '2026-09-30', 'end_time': '23:59'}
+        t.update(kw)
+        return t
+
+    # ① 買える枠＝締切つき。県・公演時刻・出演者・ジャンルが入る
+    e, _ = build_one(lr, mk([tk()]), today, unk)
+    assert e['tickets'][0]['type'] == '一般（東京 10/1 19:00公演）〜9/30 23:59', e['tickets'][0]
+    assert e['artist'] == '岩立沙穂／柏木由紀' and e['prefecture'] == '東京'
+    assert e['_genre'] == 'idol' and e['links']['zaiko'] == lr['url']
+    assert e['dateLabel'] == '2026年10月1日(木) 19:00開演', e['dateLabel']
+
+    # ② 売り切れ＝予定枚数終了の印（**公演がこれからなら載せる**）
+    e2, why2 = build_one(lr, mk([tk(is_sold_out=True)]), today, unk)
+    assert e2 is not None, (e2, why2)
+    assert e2['tickets'][0]['soldout'] and 'saleEnded' not in e2['tickets'][0], e2['tickets'][0]
+
+    # ③ 販売終了（売切ではない）＝saleEnded も付ける
+    e3, _ = build_one(lr, mk([tk(is_sale_ended=True)]), today, unk)
+    assert e3['tickets'][0]['soldout'] and e3['tickets'][0]['saleEnded'], e3['tickets'][0]
+
+    # ④ 締切が公演日より後なら公演日で締める。配信は例外
+    e4, _ = build_one(lr, mk([tk(end_date='2026-10-05')]), today, unk)
+    assert e4['tickets'][0]['date'] == '2026-10-01', e4['tickets'][0]
+    e4b, _ = build_one(lr, mk([tk(is_stream=True, end_date='2026-10-05')]), today, unk)
+    assert e4b['tickets'][0]['date'] == '2026-10-05', e4b['tickets'][0]
+    assert '配信' in e4b['tickets'][0]['type'], e4b['tickets'][0]
+
+    # ⑤ 締切がどこにも無い＝締切を作らず「販売中」＋saleEndUnknown（公演日を置き場に）
+    e5, _ = build_one(lr, mk([tk(end_date=None, end_time=None)]), today, unk)
+    assert e5['tickets'][0]['saleEndUnknown'] and e5['tickets'][0]['date'] == '2026-10-01'
+    assert e5['tickets'][0]['type'].endswith('販売中'), e5['tickets'][0]
+
+    # ⑥ 受付前（開始日時がデータに無い）＝日付を作らないので載せない
+    e6, why6 = build_one(lr, mk([tk(is_sale_started=False)]), today, unk)
+    assert e6 is None and '枠が無い' in why6, (e6, why6)
+
+    # ⑦ 公演が終わっている／個別が読めない／出す側
+    assert build_one(dict(lr, date='2026-09-20'), mk([tk()]), today, unk)[0] is None
+    assert build_one(lr, None, today, unk)[0] is None
+    assert build_one(dict(lr, title='出店ブース申込'),
+                     mk([tk()], name='出店ブース申込'), today, unk)[0] is None
+
+    # ⑧ 券種名が空＝「チケット」／抽選なら「抽選チケット」／同名は番号で分ける
+    e8, _ = build_one(lr, mk([tk(name=''), tk(name='', is_lottery=True)]), today, unk)
+    kinds = [t['type'].split('（')[0] for t in e8['tickets']]
+    assert kinds == ['チケット', '抽選チケット'], kinds
+
+    # ⑨ 表に無いジャンルは写さずに数える
+    unk2 = collections.Counter()
+    e9, _ = build_one(lr, mk([tk()], genres=['Kabuki'], performers=[]), today, unk2)
+    assert unk2['Kabuki'] == 1 and e9['_genre'] == GENRE_FALLBACK, (unk2, e9['_genre'])
+
+    # ⑧-2 券種名が空で値段が違うなら**値段を添えて見分ける**（番号だけにしない）
+    e8b, _ = build_one(lr, mk([tk(name='', price='¥4,300'), tk(name='', price='¥6,000')]),
+                       today, unk)
+    heads8 = [t['type'].split('（東京')[0] for t in e8b['tickets']]
+    assert heads8 == ['チケット ¥4,300', 'チケット ¥6,000'], heads8
+    # 値段まで同じなら番号で分ける
+    e8c, _ = build_one(lr, mk([tk(name='', price='¥4,300'), tk(name='', price='¥4,300')]),
+                       today, unk)
+    heads8c = [t['type'].split('（東京')[0] for t in e8c['tickets']]
+    assert heads8c == ['チケット（1）', 'チケット（2）'], heads8c
+
+    # ⑨-2 出演者のジャンルが空＝一覧のカテゴリで補う（clubs-nightlife → club）
+    unk3 = collections.Counter()
+    e9b, _ = build_one(dict(lr, cat='clubs-nightlife'),
+                       mk([tk()], genres=[], performers=[{'name': 'DJ テスト', 'genres': []}]),
+                       today, unk3)
+    assert e9b['_genre'] == 'club', e9b['_genre']
+    assert not unk3, unk3
+    # 大会・競技はスポーツへ／演劇・ショーは演劇へ
+    for _cat, _want in (('tournaments-competitions', 'sports'),
+                        ('performances-shows', 'engeki'),
+                        ('festivals-fairs', 'fes')):
+        _e, _ = build_one(dict(lr, cat=_cat), mk([tk()], genres=[], performers=[]),
+                          today, collections.Counter())
+        assert _e['_genre'] == _want, (_cat, _e['_genre'])
+
+    # ⑩ 2027公演はR9年表記
+    e10, _ = build_one(dict(lr, date='2027-02-11'),
+                       mk([tk(end_date='2027-02-01')]), today, unk)
+    assert 'R9年 2/11 19:00公演' in e10['tickets'][0]['type'], e10['tickets'][0]
+    # 🚨締切側には年を付けない（既存の流儀）
+    assert e10['tickets'][0]['type'].endswith('〜2/1 23:59'), e10['tickets'][0]
+
+    print('selftest OK')
+    return 0
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('src', nargs='?')
+    ap.add_argument('--out', default=None)
+    ap.add_argument('--selftest', action='store_true')
+    a = ap.parse_args()
+    if a.selftest:
+        return _selftest()
+    if not a.src:
+        ap.error('ハーベスト結果のJSONを渡して（例 tmp/zaiko_0921d.json）')
+    today = datetime.date.today().isoformat()
+    return build_all(a.src, a.out or a.src.replace('.json', '_built.json'), today)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
