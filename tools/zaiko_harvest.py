@@ -169,10 +169,26 @@ def parse_event(html, url):
         'tickets': [],
     }
     for t in ev.get('tickets') or []:
-        led = t.get('lottery_end_date') or {}
+        # 🚨2026-09-21に取りこぼしを直した＝**発売開始日時も券種名も本当はある**。
+        #   `on_sale_from`/`on_sale_until`（先着）と `lottery_start_date`/`lottery_end_date`（抽選）が
+        #   それぞれ {date_string, time_string, iso} を持つ。初版は lottery_end_date だけ見ていたので
+        #   **受付前153枠を「開始日が無い」と判断して落としていた**。
+        #   券種名は `front_text` が空でも **`ref_name`（「映像倉庫会員枠」など）に入っている**。
+        def dt(key):
+            v = t.get(key) or {}
+            return {'date': v.get('date_string'), 'time': v.get('time_string'), 'iso': v.get('iso')}
+        led, lsd = dt('lottery_end_date'), dt('lottery_start_date')
+        osf, osu = dt('on_sale_from'), dt('on_sale_until')
+        # 抽選なら抽選の期間、先着なら on_sale の期間を「その券種の受付期間」とする
+        start = lsd if t.get('is_lottery') and lsd['date'] else (osf if osf['date'] else lsd)
+        end = led if t.get('is_lottery') and led['date'] else (osu if osu['date'] else led)
         out['tickets'].append({
             'id': t.get('id'),
-            'name': t.get('front_text') or '',
+            # 🚨**ref_name が本当の券種名**（「前売券/ADVANCE」「ODYSSEY 3days PASS」）。
+            #   `front_text` は**注意書き・説明文**（「20歳未満の方、公共機関が発行する…」）で、
+            #   券種名として使うと画面に説明文が並ぶ（2026-09-21 エージェントの指摘で判明）。
+            'name': t.get('ref_name') or '',
+            'front_text': t.get('front_text') or '',
             'price': t.get('display_price'),
             'is_lottery': t.get('is_lottery'),
             'is_sale_started': t.get('is_sale_started'),
@@ -180,9 +196,13 @@ def parse_event(html, url):
             'is_sold_out': t.get('is_sold_out'),
             'is_stream': t.get('is_stream'),
             'can_apply': t.get('can_do_lottery_application'),
-            'end_date': led.get('date_string'),
-            'end_time': led.get('time_string'),
-            'end_iso': led.get('iso'),
+            'start_date': start['date'], 'start_time': start['time'],
+            'end_date': end['date'], 'end_time': end['time'], 'end_iso': end['iso'],
+            'buy_url': t.get('url') or '',
+            # 🚨**券種ごとの公演日時の上書き**。1ページに複数公演を詰めるページがあり
+            #   （ダウ9000は4公演／新しい学校のリーダーズは5会場）、これを読まないと
+            #   全部イベントの初日で並んで**書いていない日付を書く**ことになる（2026-09-21）。
+            'perf_dt': ((t.get('override_datetime_period') or {}).get('datetime_string') or ''),
         })
     return out
 
