@@ -119,6 +119,27 @@ def jp(iso, extra=''):
     return (s + ' ' + extra).strip() if extra else s
 
 
+def perf_dt_of(t, base_date):
+    """券種の `override_datetime_period`（「11月09日 (月) 19:00 – 終了時間未定」）から
+    **その券種の公演日と開演時刻**を読む。年は入っていないので base_date（イベントの公演日）の年を使い、
+    月日が base より前なら翌年と見る（年末年始のまたぎ）。取れなければ (None, None)。
+    🚨これを読まないと、1ページに複数公演あるページで全部イベントの初日になる（2026-09-21）。"""
+    s = t.get('perf_dt') or ''
+    m = re.search(r'(\d{1,2})月(\d{1,2})日[^\d]*(?:(\d{1,2}):(\d{2}))?', s)
+    if not m:
+        return None, None
+    y = int(base_date[:4])
+    mo, dy = int(m.group(1)), int(m.group(2))
+    if (mo, dy) < (int(base_date[5:7]), int(base_date[8:10])):
+        y += 1
+    try:
+        d = datetime.date(y, mo, dy).isoformat()
+    except ValueError:
+        return None, None
+    hm = '%d:%s' % (int(m.group(3)), m.group(4)) if m.group(3) else None
+    return d, hm
+
+
 def pref_of(det, listrow):
     """県。①会場の location「東京都, 日本」 ②一覧の pref ③住所 の順。無ければ空。"""
     for src in ((det or {}).get('venue_location'), (listrow or {}).get('pref'),
@@ -197,7 +218,12 @@ def build_one(listrow, det, today, unknown):
         return None, '個別ページが読めなかった（券種が分からない）'
 
     pref = pref_of(det, listrow)
+    # 🚨**「00:00」は開演時刻ではない**＝ZAIKO側が時刻を入れていないだけ。
+    #   バッジに「10/14 00:00公演」と出すと**書いていない時刻を書く**ことになる
+    #   （2026-09-21 エージェントの指摘＝24件がこの形だった）。
     stime = listrow.get('time') or ''
+    if stime in ('00:00', '0:00'):
+        stime = ''
     venue = re.sub(r'\s+', ' ', (det.get('venue_name') or listrow.get('venue') or '')).strip()
     url = listrow['url']
     when = '%s %s公演' % (md(d), stime) if stime else '%s公演' % md(d)
@@ -208,6 +234,13 @@ def build_one(listrow, det, today, unknown):
     for i, t in enumerate(tks):
         if SELLER_SIDE.search(t.get('name') or ''):
             continue
+        # 🚨券種ごとに公演日時が書いてあるなら**その枠はその日の公演**として出す
+        #   （1ページに複数公演・複数会場を詰めるページがある）
+        t_d, t_hm = perf_dt_of(t, d)
+        if t_d:
+            when_t = '%s %s公演' % (md(t_d), t_hm) if t_hm and t_hm not in ('0:00',) else '%s公演' % md(t_d)
+        else:
+            when_t, t_d = when, d
         nm = names[i]
         if names.count(nm) > 1:
             # 🚨同じ券種名が並ぶと**画面で見分けられない**（ZAIKOは券種名が空の枠が
@@ -220,29 +253,43 @@ def build_one(listrow, det, today, unknown):
                 nm = '%s %s' % (nm, prices[i])
             else:
                 nm = '%s（%d）' % (nm, names[:i].count(nm) + 1)
-        head = '%s（%s %s）' % (nm, pref, when) if pref else '%s（%s）' % (nm, when)
+        head = '%s（%s %s）' % (nm, pref, when_t) if pref else '%s（%s）' % (nm, when_t)
         ed, edt = t.get('end_date'), t.get('end_time')
         if t.get('is_sold_out') or t.get('is_sale_ended'):
             tk = {'type': ('%s〜%s %s' % (head, mdp(ed), edt or '')).rstrip() if ed else head,
-                  'date': ed or d, 'url': url, 'soldout': True, 'soldoutSince': today}
-            if not t.get('is_sold_out'):
+                  'date': ed or t_d, 'url': url, 'soldout': True, 'soldoutSince': today}
+            # 🚨ZAIKOは**売り切れた枠にも is_sale_ended を立てる**（期間も終わるから）。
+            #   だから「is_sold_out でなければ販売終了」と読むと **saleEnded が1枠も付かない**
+            #   （2026-09-21 エージェントの指摘＝230枠が「予定枚数終了」に丸められていた）。
+            #   ✅**is_sold_out が立っていない終了＝販売終了（期間が終わっただけ）**
+            #   （[[feedback_saleended_vs_soldout]]＝2つは別のバッジ）
+            if t.get('is_sale_ended') and not t.get('is_sold_out'):
                 tk['saleEnded'] = True
                 tk['saleEndedSince'] = today
             tickets.append(tk)
         elif not t.get('is_sale_started'):
-            # 🚨受付前だが**開始日時がデータに無い**＝日付を作らない（[[feedback_no_placeholder_dates]]）
-            continue
+            # 🚨2026-09-21に直した＝**発売開始日時はデータにある**（先着は on_sale_from、
+            #   抽選は lottery_start_date）。初版は lottery_end_date だけ見ていて、
+            #   受付前153枠を「日付が無い」と判断して落としていた。
+            #   開始日が**今日以降のときだけ**載せる（過去の開始日は別の理由でまだ始まっていない形＝
+            #   推測で日付を作らないので触らない）。
+            sd, sdt = t.get('start_date'), t.get('start_time')
+            if not sd or sd < today:
+                continue
+            tickets.append({'type': ('%s%s %s発売' % (head, md(sd), sdt or '')).rstrip(),
+                            'date': sd, 'startDate': sd, 'url': url})
+            has_live = True
         else:
             if ed:
                 end, endt = ed, edt
                 # 締切が公演日より後なら公演日で締める（配信・視聴は例外）
-                if end > d and not re.search(r'配信|視聴|アーカイブ', nm):
-                    end, endt = d, ''
+                if end > t_d and not re.search(r'配信|視聴|アーカイブ', nm):
+                    end, endt = t_d, ''
                 tickets.append({'type': ('%s〜%s %s' % (head, mdp(end), endt or '')).rstrip(),
                                 'date': end, 'url': url})
             else:
                 # 締切がどこにも書かれていない＝締切を作らず公演日を置き場にする
-                tickets.append({'type': '%s販売中' % head, 'date': d,
+                tickets.append({'type': '%s販売中' % head, 'date': t_d,
                                 'saleEndUnknown': True, 'url': url})
             has_live = True
 
@@ -324,7 +371,8 @@ def _selftest():
     def tk(**kw):
         t = {'name': '一般', 'price': '¥4,300', 'is_lottery': False, 'is_sale_started': True,
              'is_sale_ended': False, 'is_sold_out': False, 'is_stream': False,
-             'end_date': '2026-09-30', 'end_time': '23:59'}
+             'start_date': '2026-08-01', 'start_time': '10:00',
+             'end_date': '2026-09-30', 'end_time': '23:59', 'perf_dt': ''}
         t.update(kw)
         return t
 
@@ -344,6 +392,16 @@ def _selftest():
     e3, _ = build_one(lr, mk([tk(is_sale_ended=True)]), today, unk)
     assert e3['tickets'][0]['soldout'] and e3['tickets'][0]['saleEnded'], e3['tickets'][0]
 
+    # ③-2 🚨ZAIKOは売り切れた枠にも is_sale_ended を立てる＝**売り切れは saleEnded を付けない**
+    e3b, _ = build_one(lr, mk([tk(is_sold_out=True, is_sale_ended=True)]), today, unk)
+    assert e3b['tickets'][0]['soldout'] and 'saleEnded' not in e3b['tickets'][0], e3b['tickets'][0]
+
+    # ③-3 🚨「00:00」は開演時刻ではない（ZAIKOが入れていないだけ）＝バッジに書かない
+    e3c, _ = build_one(dict(lr, time='00:00'), mk([tk()]), today, unk)
+    assert '00:00公演' not in e3c['tickets'][0]['type'], e3c['tickets'][0]
+    assert e3c['tickets'][0]['type'].startswith('一般（東京 10/1公演）'), e3c['tickets'][0]
+    assert '開演' not in e3c['dateLabel'], e3c['dateLabel']
+
     # ④ 締切が公演日より後なら公演日で締める。配信は例外
     e4, _ = build_one(lr, mk([tk(end_date='2026-10-05')]), today, unk)
     assert e4['tickets'][0]['date'] == '2026-10-01', e4['tickets'][0]
@@ -356,9 +414,16 @@ def _selftest():
     assert e5['tickets'][0]['saleEndUnknown'] and e5['tickets'][0]['date'] == '2026-10-01'
     assert e5['tickets'][0]['type'].endswith('販売中'), e5['tickets'][0]
 
-    # ⑥ 受付前（開始日時がデータに無い）＝日付を作らないので載せない
-    e6, why6 = build_one(lr, mk([tk(is_sale_started=False)]), today, unk)
-    assert e6 is None and '枠が無い' in why6, (e6, why6)
+    # ⑥ 受付前＝**開始日（on_sale_from / lottery_start_date）があるなら「M/D HH:MM発売」で載せる**
+    e6, _ = build_one(lr, mk([tk(is_sale_started=False,
+                                start_date='2026-09-25', start_time='20:00')]), today, unk)
+    assert e6['tickets'][0]['type'] == '一般（東京 10/1 19:00公演）9/25 20:00発売', e6['tickets'][0]
+    assert e6['tickets'][0]['startDate'] == '2026-09-25', e6['tickets'][0]
+    # 開始日が無い／過去なら載せない（推測で日付を作らない）
+    e6b, why6b = build_one(lr, mk([tk(is_sale_started=False, start_date=None)]), today, unk)
+    assert e6b is None, (e6b, why6b)
+    e6c, _ = build_one(lr, mk([tk(is_sale_started=False, start_date='2026-09-01')]), today, unk)
+    assert e6c is None, e6c
 
     # ⑦ 公演が終わっている／個別が読めない／出す側
     assert build_one(dict(lr, date='2026-09-20'), mk([tk()]), today, unk)[0] is None
@@ -370,6 +435,26 @@ def _selftest():
     e8, _ = build_one(lr, mk([tk(name=''), tk(name='', is_lottery=True)]), today, unk)
     kinds = [t['type'].split('（')[0] for t in e8['tickets']]
     assert kinds == ['チケット', '抽選チケット'], kinds
+
+    # ⑧-3 🚨駐車券は**券種名（ref_name）で外す**（front_textしか見ないと素通りする）
+    e8d, _ = build_one(lr, mk([tk(), tk(name='両会場駐車券', price='¥4,000')]), today, unk)
+    assert len(e8d['tickets']) == 1, [t['type'] for t in e8d['tickets']]
+    assert '駐車' not in e8d['tickets'][0]['type'], e8d['tickets'][0]
+
+    # ⑧-4 🚨券種ごとに公演日時が書いてあるなら**その日の公演として出す**
+    #     （1ページに複数公演・複数会場を詰めるページ＝ダウ9000は4公演／
+    #      新しい学校のリーダーズは5会場。読まないと全部イベント初日になり嘘になる）
+    e8e, _ = build_one(lr, mk([
+        tk(name='【一般先着】10/15(木)13時開演', perf_dt='10月15日 (木) 13:00 – 終了時間未定',
+           end_date='2026-10-15', end_time='23:59'),
+        tk(name='【一般先着】10/16(金)13時開演', perf_dt='10月16日 (金) 13:00 – 終了時間未定',
+           end_date='2026-10-16', end_time='23:59')]), today, unk)
+    got8e = [t['type'] for t in e8e['tickets']]
+    assert '（東京 10/15 13:00公演）' in got8e[0], got8e
+    assert '（東京 10/16 13:00公演）' in got8e[1], got8e
+    # 上書きが無いときはイベントの公演日を使う（従来どおり）
+    e8f, _ = build_one(lr, mk([tk()]), today, unk)
+    assert '（東京 10/1 19:00公演）' in e8f['tickets'][0]['type'], e8f['tickets'][0]
 
     # ⑨ 表に無いジャンルは写さずに数える
     unk2 = collections.Counter()

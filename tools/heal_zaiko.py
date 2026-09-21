@@ -63,6 +63,11 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--ids', default='')
     ap.add_argument('--sleep', type=float, default=0.5)
+    # 🚨作り直し用＝**足し算せず取り直しで丸ごと置き換える**。
+    #   券種名の作り方そのものを直した時（2026-09-21 ref_name へ）は、古い名前の枠を
+    #   「売り切れだから残す」と足してしまうと**ニセの券種名が残る**ので置き換えが正しい。
+    #   ⚠️枠が減る件は報告に出す（[[feedback_heal_flattens_ticket_types]]）。
+    ap.add_argument('--replace', action='store_true')
     ap.add_argument('--selftest', action='store_true')
     a = ap.parse_args()
     if a.selftest:
@@ -104,7 +109,7 @@ def main():
             time.sleep(a.sleep)
             continue
         old = e.get('tickets') or []
-        merged = merge_slots(old, new)
+        merged = new if a.replace else merge_slots(old, new)
         if {GZ.key(t) for t in merged} == {GZ.key(t) for t in old}:
             same += 1
         else:
