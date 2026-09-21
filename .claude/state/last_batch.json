@@ -873,6 +873,28 @@
    "assigned": false,
    "rechecked": false,
    "note": "skip3件＝券種が0で組めなかった（カマタマーレ讃岐×ツエーゲン金沢 2636729／カマタマーレ讃岐×ロアッソ熊本 2636728／筑後SAKEフェスタ2026 2628304）＝w.pia直販形式かページが立つ前の疑い＝明日以降に再度拾う。reconcile_pia --new＝OK29/MISSING0/DROP0/STALE0/FETCH0/QC0（照合できた枠73/77・skip4は同締切の枠が複数で対を確定できない分）。🚨投入時にidが仮番号91000台で入ったので、その場でバックアップに戻して20345〜20371に振り直した。"
+  },
+  {
+   "date": "2026-09-22",
+   "slot": "morning-zaiko",
+   "id_from": 20926,
+   "id_to": 20960,
+   "count": 35,
+   "source": "ZAIKO zaiko_harvest --detail（未登録41件→投入35・既存と同じ公演の疑い6件は保留）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "番人 gate_zaiko_slots→heal_zaiko --apply 済み（残り2件は印付き枠だけ）"
+  },
+  {
+   "date": "2026-09-22",
+   "slot": "morning-fany",
+   "id_from": 20961,
+   "id_to": 20973,
+   "count": 13,
+   "source": "FANY fany_harvest 9/22〜3/22（投入13・URL重複2783・要確認63）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "heal_fany 96件202枠を当てた。番人の残り11件は9/21公演"
   }
  ]
 }
