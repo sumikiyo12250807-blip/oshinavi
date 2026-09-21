@@ -259,6 +259,19 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      ⛔**出す側の申込は載せない**＝ビルダーの `is_seller_side()` が自動で外す
        （出店ブース・即売会スペース・参加エントリー・駐車・案内登録）。
      🚨ぴあ以外なので**振り分けはユーザーの確認後**（新着タブに置くまでは自走）
+   - 🆕🎤**ZAIKO（zaiko.io）も毎朝回す**（2026-09-21 ユーザー「Zaikoを見て」→「作って」）
+     ```
+     python tools/zaiko_harvest.py --out tmp/zaiko_MMDD.json --detail
+     python tools/build_zaiko_entries.py tmp/zaiko_MMDD.json --out tmp/built_zaiko_MMDD.json
+     python tools/inject_zaiko.py tmp/built_zaiko_MMDD.json --apply
+     python tools/gate_zaiko_slots.py        # 🔒番人（自分で個別を引く・exit 0 以外なら直す）
+     python tools/heal_zaiko.py --apply      # 鳴った分を作り直して当てる
+     python tools/gate_zaiko_slots.py --ids <直したid>   # 0 に戻ったのを確かめる
+     ```
+     AKB48劇場・声優公演・クラブ／DJ・小箱のライブが入る（ぴあに出ない）。
+     🎯**1時間で未登録が39件増えた**＝新着が流れ込むので毎日効く。
+     🚨**番人は自分で個別ページを引く**（harvestの--detailは未登録分しか引かないので流用できない）。
+     🚨ぴあ以外なので**振り分けはユーザーの確認後**。詳しくは [[reference_zaiko_harvest]]
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
    - FETCHが出たら**ぴあの混雑ページ**を疑って該当だけ再照合（巻き添えのSTALEも消える）
