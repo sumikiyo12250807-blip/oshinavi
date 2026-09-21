@@ -218,6 +218,10 @@ JOBS = {
     'lawson': ('lawson_logo', 'ローソンチケット', 'ticket'),
     'eplus': ('eplus_logo', 'e+', 'ticket'),
     'tiget': ('tiget_logo', 'TIGET', 'ticket'),
+    # 🆕2026-09-21 ユーザー「FANYとZaikoのボタンも作らないとだね」＝9/21に入れた2つの売り場も同じ型でそろえる
+    #   （文字は index.html の linkDefs の label と同じ＝BTN_IMG はボタンの文字で引く）
+    'fany': ('fany_logo', 'FANYチケット', 'ticket'),
+    'zaiko': ('zaiko_logo', 'ZAIKO', 'ticket'),
 }
 
 
