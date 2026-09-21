@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""ぴあの発売前一覧（指定ジャンル・先着0102/抽選0202）を全ページ読み、発売日が 9/20〜9/22 の行を全部出して、
+"""ぴあの発売前一覧（指定ジャンル・先着0102/抽選0202）を全ページ読み、発売日が 9/12〜9/14 の行を全部出して、
 OSHINAVIにその発売日の枠があるかを突き合わせる（読むだけ）。
 使い方: python tmp/x0920/pia_days_list.py <lg>   例: 01=音楽 02=演劇 07=クラシック 06=イベント 03=スポーツ
 🚨 presale_harvest は読み込むと本体が走るので、一覧の読み取り部分（parse_page）だけを取り出して使う。
@@ -7,7 +7,7 @@ OSHINAVIにその発売日の枠があるかを突き合わせる（読むだけ
 import io, json, re, sys, time, urllib.request
 sys.stdout.reconfigure(encoding='utf-8')
 LG = sys.argv[1] if len(sys.argv) > 1 else '01'
-DAYS = {'2026/9/20': '2026-09-20', '2026/9/21': '2026-09-21', '2026/9/22': '2026-09-22'}
+DAYS = {'2026/9/21': '2026-09-21', '2026/9/22': '2026-09-22', '2026/9/23': '2026-09-23', '2026/9/24': '2026-09-24'}
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
 # presale_harvest.py から関数定義だけを取り出して使う（本体は走らせない）
@@ -49,7 +49,7 @@ for iso, r in sorted(hits, key=lambda x: x[0]):
     has = bool(e) and any(t.get('startDate') == iso for t in e.get('tickets') or [])
     if not has:
         miss.append((iso, r, e))
-print('ぴあ lg=%s で9/20〜9/22発売の行 %d件 ／ OSHINAVIにその日の枠が無い %d件' % (LG, len(hits), len(miss)))
+print('ぴあ lg=%s で9/12〜9/14発売の行 %d件 ／ OSHINAVIにその日の枠が無い %d件' % (LG, len(hits), len(miss)))
 for iso, r, e in miss:
     print('  %s %s | %s | %s | %s' % (iso, r.get('artist'), r.get('saletype'), r.get('venue'),
           ('登録あり id%s（その日の枠なし）' % e['id']) if e else ('未登録 ' + r['url'])))

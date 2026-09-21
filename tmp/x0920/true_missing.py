@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """pia_days_list.py の結果（eventCdで見て「その日の枠なし」）を、名前＋県＋発売日でもう一度確かめて、
 本当に抜けているものだけを出す（読むだけ）。統合で別URLのまま入っている枠を「抜け」と数えないため。
-使い方: python tmp/x0920/true_missing.py tmp/x0920/pia_days_01.txt
-出力: 画面 ＋ tmp/x0920/true_missing_<lg>.json（url・どのエントリに足すか）"""
+使い方: python tmp/x0912/true_missing.py tmp/x0912/pia_days_01.txt
+出力: 画面 ＋ tmp/x0912/true_missing_<lg>.json（url・どのエントリに足すか）"""
 import io, json, re, sys, unicodedata
 sys.stdout.reconfigure(encoding='utf-8')
 SRC = sys.argv[1]
