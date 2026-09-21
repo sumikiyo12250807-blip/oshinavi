@@ -1,0 +1,74 @@
+受付前の枠を持つイベント 63件
+
+=== https://akb48.zaiko.io/ja/e/reset-0929-1830
+9月29日 18:30開演「ＲＥＳＥＴ」公演
+  --- 受付前の券種（全キー）---
+    can_do_lottery_application               = True
+    currency                                 = JPY
+    discounted_display_price                 = ¥4,300
+    display_fee                              = 
+    display_price                            = ¥4,300
+    front_text                               = None
+    has_won_lottery                          = False
+    id                                       = 208757
+    is_geolocked                             = False
+    is_lottery                               = True
+    is_lottery_application_in_future         = False
+    is_rental                                = False
+    is_sale_ended                            = False
+    is_sale_started                          = False
+    is_sold_out                              = False
+    is_stream                                = False
+    lottery_end_date                         = {'timestamp': 1790060400, 'iso': '2026-09-22T07:00:00.000000Z', 'date_string': '2026-09-22', 'time_string': '16:00', 'datetime_str
+    lottery_start_date                       = {'timestamp': 1789110000, 'iso': '2026-09-11T07:00:00.000000Z', 'date_string': '2026-09-11', 'time_string': '16:00', 'datetime_str
+    on_sale_from                             = {'timestamp': 1790161200, 'iso': '2026-09-23T11:00:00.000000Z', 'date_string': '2026-09-23', 'time_string': '20:00', 'datetime_str
+    on_sale_until                            = {'timestamp': 1790247600, 'iso': '2026-09-24T11:00:00.000000Z', 'date_string': '2026-09-24', 'time_string': '20:00', 'datetime_str
+    override_datetime_period                 = {'datetime_string': '09月29日 (火) 18:30 – 20:30'}
+    price                                    = 4300
+    ref_name                                 = 映像倉庫会員枠
+    show_type                                = {'value': 'offline'}
+    url                                      = https://akb48.zaiko.io/buy/1C5J:Sj3:12e8b
+
+  --- event 側の日付・販売系 ---
+    date_notes                       = 
+    display_date_period              = {"start": {"timestamp": 1790674200, "iso": "2026-09-29T09:30:00.000000Z", "date_string": "2026-09-29", "time_string": "18:30", "datetime_string": "09月
+    display_open_date                = {"timestamp": 1790672400, "iso": "2026-09-29T09:00:00.000000Z", "date_string": "2026-09-29", "time_string": "18:00", "datetime_string": "09月29日 (火) 18
+    status                           = {"slug": "confirmed", "name": "Public"}
+    status_warning                   = None
+
+=== https://akb48.zaiko.io/ja/e/kokokarada-0930-1830
+9月30日 18:30開演 「ここからだ」公演
+  --- 受付前の券種（全キー）---
+    can_do_lottery_application               = True
+    currency                                 = JPY
+    discounted_display_price                 = ¥4,300
+    display_fee                              = 
+    display_price                            = ¥4,300
+    front_text                               = None
+    has_won_lottery                          = False
+    id                                       = 208776
+    is_geolocked                             = False
+    is_lottery                               = True
+    is_lottery_application_in_future         = False
+    is_rental                                = False
+    is_sale_ended                            = False
+    is_sale_started                          = False
+    is_sold_out                              = False
+    is_stream                                = False
+    lottery_end_date                         = {'timestamp': 1790146800, 'iso': '2026-09-23T07:00:00.000000Z', 'date_string': '2026-09-23', 'time_string': '16:00', 'datetime_str
+    lottery_start_date                       = {'timestamp': 1789110000, 'iso': '2026-09-11T07:00:00.000000Z', 'date_string': '2026-09-11', 'time_string': '16:00', 'datetime_str
+    on_sale_from                             = {'timestamp': 1790247600, 'iso': '2026-09-24T11:00:00.000000Z', 'date_string': '2026-09-24', 'time_string': '20:00', 'datetime_str
+    on_sale_until                            = {'timestamp': 1790334000, 'iso': '2026-09-25T11:00:00.000000Z', 'date_string': '2026-09-25', 'time_string': '20:00', 'datetime_str
+    override_datetime_period                 = {'datetime_string': '09月30日 (水) 18:30 – 20:30'}
+    price                                    = 4300
+    ref_name                                 = 映像倉庫会員枠
+    show_type                                = {'value': 'offline'}
+    url                                      = https://akb48.zaiko.io/buy/1C5K:Sjm:941d6
+
+  --- event 側の日付・販売系 ---
+    date_notes                       = 
+    display_date_period              = {"start": {"timestamp": 1790760600, "iso": "2026-09-30T09:30:00.000000Z", "date_string": "2026-09-30", "time_string": "18:30", "datetime_string": "09月
+    display_open_date                = {"timestamp": 1790758800, "iso": "2026-09-30T09:00:00.000000Z", "date_string": "2026-09-30", "time_string": "18:00", "datetime_string": "09月30日 (水) 18
+    status                           = {"slug": "confirmed", "name": "Public"}
+    status_warning                   = None
+
