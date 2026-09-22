@@ -48,6 +48,12 @@ JOBS = [
     ("pia", "チケットぴあ", None, None, None),
     # 9/15 夜 ユーザー「しまじろうグッズもつくってね」＝字だけ（キャラクターの絵は権利があるので使わない）
     ("shimajiro", "しまじろうグッズ", None, None, None),
+    # 9/22 夜 ユーザー「応援グッズとか、ほかにも、ボタン揃えて欲しいの」＝まだ字のまま出ていたグッズ系を字だけの型で足す
+    ("ouen", "応援グッズ", None, None, None),
+    ("aladdin", "アラジングッズ", None, None, None),
+    ("denjiro", "でんじろう先生", None, None, None),
+    ("goodsmiru", "グッズを見る", None, None, None),
+    ("chosho", "著書", None, None, None),   # Amazonの本のボタン（links.amazonLabel）
 ]
 
 # 9/15 夜 ユーザー「グッズで作って」＝子ども向けの作品ごとの「〇〇グッズ」。--kids-goods で tmp/btn_tpl/kids_goods.json の使える分だけ作る

@@ -222,6 +222,8 @@ JOBS = {
     #   （文字は index.html の linkDefs の label と同じ＝BTN_IMG はボタンの文字で引く）
     'fany': ('fany_logo', 'FANYチケット', 'ticket'),
     'zaiko': ('zaiko_logo', 'ZAIKO', 'ticket'),
+    # 9/22 夜 ユーザー「ボタン揃えて欲しいの」＝公式サイトの売り場ボタンも同じ型に
+    'official': ('official_logo', '公式チケット', 'ticket'),
 }
 
 
