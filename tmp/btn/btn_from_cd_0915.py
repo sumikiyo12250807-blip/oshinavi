@@ -53,7 +53,7 @@ JOBS = [
     ("aladdin", "アラジングッズ", None, None, None),
     ("denjiro", "でんじろう先生", None, None, None),
     ("goodsmiru", "グッズを見る", None, None, None),
-    ("chosho", "著書", None, None, None),   # Amazonの本のボタン（links.amazonLabel）
+    ("miki_chosho", "三木大雲の著書", None, None, None),   # 9/22 夜 ユーザー「著書はぼやぼやしてる／三木大雲の著書にして」（2文字だと光でにじんで見える）
 ]
 
 # 9/15 夜 ユーザー「グッズで作って」＝子ども向けの作品ごとの「〇〇グッズ」。--kids-goods で tmp/btn_tpl/kids_goods.json の使える分だけ作る
