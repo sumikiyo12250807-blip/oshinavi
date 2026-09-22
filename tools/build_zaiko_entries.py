@@ -273,6 +273,14 @@ def build_one(listrow, det, today, unknown):
                 tk['saleEnded'] = True
                 tk['saleEndedSince'] = today
             tickets.append(tk)
+        elif t.get('is_lottery') and ed and ed < today:
+            # 🚨2026-09-22 抽選の申込が終わったあと、当選者の支払い期間（on_sale_until）の間は
+            #   ZAIKOが is_sold_out も is_sale_ended も立てない（天川はの・おかしばのしゃべり場で実測）。
+            #   申込はもうできない＝買える枠ではない。印が無いと締切が過去の枠だけ残って
+            #   「カードは出るのに買える枠0」になる（check_zero_badge で発覚）。上と同じく先行終了にする。
+            tickets.append({'type': ('%s〜%s %s' % (head, mdp(ed), edt or '')).rstrip(),
+                            'date': ed, 'url': url, 'soldout': True, 'soldoutSince': today,
+                            'presaleEnded': True})
         elif not t.get('is_sale_started'):
             # 🚨2026-09-21に直した＝**発売開始日時はデータにある**（先着は on_sale_from、
             #   抽選は lottery_start_date）。初版は lottery_end_date だけ見ていて、
@@ -401,6 +409,14 @@ def _selftest():
                       today, unk)
     assert e3['tickets'][0]['soldout'] and e3['tickets'][0]['presaleEnded'], e3['tickets'][0]
     assert 'saleEnded' not in e3['tickets'][0], e3['tickets'][0]
+
+    # ③-2 🚨抽選の申込が終わって当選者の支払い期間の間は、フラグが立たない（2026-09-22 実測）
+    #     ＝申込締切が過去の抽選枠は先行終了にする。締切が先なら今までどおり買える枠
+    e3b, _ = build_one(lr, mk([tk(is_lottery=True, is_sale_started=True, end_date='2026-09-05')]),
+                       today, unk)
+    assert e3b['tickets'][0].get('presaleEnded') and e3b['tickets'][0].get('soldout'), e3b['tickets'][0]
+    e3d, _ = build_one(lr, mk([tk(is_lottery=True, is_sale_started=True)]), today, unk)
+    assert not e3d['tickets'][0].get('soldout'), e3d['tickets'][0]
 
     # ③-3 🚨「00:00」は開演時刻ではない（ZAIKOが入れていないだけ）＝バッジに書かない
     e3c, _ = build_one(dict(lr, time='00:00'), mk([tk()]), today, unk)
