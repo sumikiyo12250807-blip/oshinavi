@@ -27,7 +27,10 @@ sys.path.insert(0, 'tools')
 
 
 def load_events(path='index.html'):
-    text = io.open(path, encoding='utf-8').read()
+    # 🚨 newline='' で読む＝universal newlines だと CRLF が LF に化けて、
+    #    書き戻した時に EVENTS の外側まで LF になる（sort_guard が正しく止めてくれた・2026-09-23）。
+    #    [[feedback_index_html_crlf_preserve]]
+    text = io.open(path, encoding='utf-8', newline='').read()
     m = re.search(r'const\s+EVENTS\s*=\s*(\[)', text)
     if not m:
         raise RuntimeError('const EVENTS not found')
@@ -37,10 +40,11 @@ def load_events(path='index.html'):
 
 
 def slot_key(t):
-    """同じ枠かどうかの鍵＝券種名（日付部分を落とす）＋締切＋飛び先URL。
-    飛び先が違えば別の枠として残す。"""
-    ty = re.sub(r'\d', '', t.get('type') or '')
-    return (ty, t.get('date'), t.get('url') or '')
+    """同じ枠かどうかの鍵＝券種名そのまま＋締切＋飛び先URL。
+    🚨券種名から数字を落としてはいけない（2026-09-23）＝ONE SAMURAI 5 で
+       「CAT1」「CAT4」「CAT 2」「CAT 3」が全部同じ鍵になり、6枠が2枠に潰れた。
+    飛び先が違えば別の枠として残す（[[feedback_dedup_badges_keeps_urls]]）。"""
+    return (t.get('type') or '', t.get('date'), t.get('url') or '')
 
 
 def fold(events, pairs, log):
@@ -87,6 +91,8 @@ def selftest():
             {'type': '一般発売（東京 11/18公演）〜11/17 23:59', 'date': '2026-11-17', 'url': 'P1'}]},
         {'id': 2, 'name': 'X', 'links': {'zaiko': 'Z'}, 'tickets': [
             {'type': 'VIP（11/18 17:30公演）〜11/17 23:59', 'date': '2026-11-17'},
+            {'type': 'CAT1（11/18 17:30公演）〜11/17 23:59', 'date': '2026-11-17'},
+            {'type': 'CAT4（11/18 17:30公演）〜11/17 23:59', 'date': '2026-11-17'},
             {'type': 'CAT3（11/18 17:30公演）〜11/17 23:59', 'date': '2026-11-17', 'soldout': True}]},
     ]
     log = []
@@ -95,8 +101,8 @@ def selftest():
     recv = evs[0]
     if recv['links'].get('zaiko') != 'Z':
         print('NG ①受け側に links.zaiko が入っていない'); ok = False
-    if len(recv['tickets']) != 3:
-        print('NG ②枠が足し算になっていない（%d枠）' % len(recv['tickets'])); ok = False
+    if len(recv['tickets']) != 5:
+        print('NG ②枠が足し算になっていない（%d枠）＝数字違いの券種が潰れた疑い' % len(recv['tickets'])); ok = False
     if any(t.get('url') != 'Z' for t in recv['tickets'][1:]):
         print('NG ③ZAIKO側の枠に飛び先URLが焼かれていない'); ok = False
     if recv['tickets'][0].get('url') != 'P1':
@@ -108,7 +114,7 @@ def selftest():
     # 同じ枠を二度足さない
     log2 = []
     fold(evs, [(2, 1)], log2)
-    if len(recv['tickets']) != 3:
+    if len(recv['tickets']) != 5:
         print('NG ⑦二度流すと枠が増える（%d枠）' % len(recv['tickets'])); ok = False
     print('selftest: %s' % ('全部OK' if ok else '失敗あり'))
     return 0 if ok else 1
@@ -139,17 +145,25 @@ def main():
     out = io.open('tmp/fold_zaiko_report.txt', 'w', encoding='utf-8')
     out.write('\n'.join(log) + '\n')
     out.close()
-    print('\n'.join(log))
+    # コンソールは cp932 なので日本語を直接出すと落ちる。中身は報告ファイルで読む
+    sys.stdout.write('done: tmp/fold_zaiko_report.txt\n')
 
     if not a.apply:
-        print('\n(--apply で書き込み)')
+        sys.stdout.write('(--apply de write)\n')
         return 0
-    # 🚨 改行コードを保つ＝元の書き方（1スペース字下げ・CRLF）に合わせる
+    # 🚨 改行コードを保つ＝元の書き方（2スペース字下げ・CRLF）に合わせる。
+    #    text は newline='' で読んでいるので EVENTS の外側は元のまま。
     body = json.dumps(events, ensure_ascii=False, indent=2)
     body = body.replace('\r\n', '\n').replace('\n', '\r\n')
     newtext = text[:start] + body + text[end:]
-    io.open(a.file, 'w', encoding='utf-8', newline='').write(newtext)
-    print('書き込み完了: %s' % a.file)
+    before = io.open(a.file, 'rb').read()
+    data = newtext.encode('utf-8')
+    # 指紋＝EVENTSの外側の改行が減っていないこと（LFだけの行が増えていないこと）
+    if data.count(b'\r\n') != data.count(b'\n'):
+        sys.stdout.write('ABORT: CRLF broken (crlf=%d lf=%d)\n' % (data.count(b'\r\n'), data.count(b'\n')))
+        return 1
+    io.open(a.file, 'wb').write(data)
+    sys.stdout.write('written: %s (crlf %d -> %d)\n' % (a.file, before.count(b'\r\n'), data.count(b'\r\n')))
     return 0
 
 
