@@ -13,7 +13,10 @@
    🩹ぴあ隠れ枠 24件＋足し算61件（消えた枠0）／e+本日発売20枠／ZAIKO 2件販売終了印
    🗂MEMORY.md 35.8KB→16.9KB（リンク231本そのまま）
    🩹TIGET 75件ヒール（番人5243一致）＋新着30件（22881〜22910）／新着プール368＝NEW_ORDER368
-   🎬フラッシュダンス風動画を生成中（ユーザー承認・$1.30・task 445032822366514）
+   🎬🌙【今夜やる】フラッシュダンス風動画を**今夜のまとめ投稿1本に付ける**（ユーザー「いいね、今夜のまとめに付けて」）
+      ファイル＝tmp/video/flash_0924/flash_0924.mp4（15秒・13.9MB）／コマ＝contact.png
+      付けたら tmp/x_media_log.json に1行足す（動画0:15・まとめ・どのジャンルか）
+      生成済み（ユーザー承認・$1.30・task 445032822366514・残高 約$8.75）
       素材 tmp/video/flash_0924/（ref_chair.png＝渡した参照画像・song_32_47.mp3・storyboard_4.png）
       道具 tools/flash_storyboard.py（サイトを撮って広告を消しキャラと椅子を置く）／flash_boards.py（流れの絵コンテ）／draw_chair.py
 ⏳ 走行中＝ぴあ要再確認278件 reconcile（tmp/x0924/recon_recheck.txt）
