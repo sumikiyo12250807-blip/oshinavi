@@ -1,0 +1,112 @@
+tmp/fany_0921.json  公演 2930件 / 総枠 7791枠
+引いた範囲 {'from': '2026-09-21', 'to': '2027-03-31'}  総件数の申告 2930
+
+=== 売り状態の文言（display_sales_status）===
+  抽選受付終了                     4649枠
+  先着発売中                      2673枠
+  先着発売前                       148枠
+  抽選受付中                       148枠
+  抽選受付前                       100枠
+  先着発売終了                       73枠
+
+=== アイコン（display_sales_style）===
+  fany_icon__soldout           4722枠
+  fany_icon__sold              2821枠
+  fany_icon__beforeRelease      248枠
+
+=== 文言×アイコンの組み合わせ ===
+  抽選受付終了                   fany_icon__soldout           4649枠
+  先着発売中                    fany_icon__sold              2673枠
+  先着発売前                    fany_icon__beforeRelease      148枠
+  抽選受付中                    fany_icon__sold               148枠
+  抽選受付前                    fany_icon__beforeRelease      100枠
+  先着発売終了                   fany_icon__soldout             73枠
+
+=== 公演の形（class）===  01=単日
+  01       2895件
+  02         35件
+
+枠が0の公演 0件 / 受付開始が空 0枠 / 受付終了が空 0枠
+
+=== 1公演あたりの枠数 ===
+   1枠 …   697件
+   2枠 …    50件
+   3枠 …  1866件
+   4枠 …   223件
+   5枠 …    74件
+   6枠 …    13件
+   7枠 …     5件
+   9枠 …     1件
+  12枠 …     1件
+
+=== 申込の飛び先の形 ===
+  reception              7791枠
+
+=== 会場名に入っている県（上位20）===
+  大阪府         1096件
+  東京都         1060件
+  福岡県          155件
+  千葉県          128件
+  埼玉県          107件
+  愛知県           88件
+  静岡県           47件
+  北海道           43件
+  沖縄県           29件
+  広島県           21件
+  兵庫県           14件
+  石川県           14件
+  宮城県           13件
+  京都府           11件
+  新潟県           10件
+  熊本県            9件
+  長野県            8件
+  香川県            6件
+  滋賀県            6件
+  神奈川県           5件
+
+=== prefecture_code（上位20）===
+  13     2984枠
+  27     2698枠
+  40      451枠
+  12      372枠
+  11      275枠
+  23      181枠
+  22      140枠
+  01       98枠
+  47       57枠
+  34       57枠
+  04       47枠
+  17       46枠
+  15       38枠
+  28       37枠
+  26       32枠
+  43       31枠
+  37       21枠
+  18       17枠
+  20       15枠
+  25       15枠
+
+=== ジャンル別の公演数（売り場の申告）===
+  genre=30   2887件
+  genre=31     48件
+  genre=32     49件
+  genre=33      4件
+  genre=34      0件
+  genre=35      0件
+  genre=36      0件
+  genre=37     42件
+  genre=38   1213件
+
+取れなかった要求 0個
+
+=== 期間もの（class != 01）の例 5件 ===
+  ≪通し券≫Soul InFight Brothers リリー / 西川口Hearts（埼玉県） / 2026/09/22(<span class="g-dayofweek">火</span>) 〜 2026/09/22(<span class="g-dayofweek">火</span>) / class=02
+  【5公演通し券】森ノ宮マンゲキ漫才の日 / 森ノ宮よしもと漫才劇場（大阪府） / 2026/09/23(<span class="g-dayofweek_holiday">水・祝</span>) 〜 2026/09/23(<span class="g-dayofweek_holiday">水・祝</span>) / class=02
+  【9／23通し券】さしより通し券 / よしもと幕張イオンモール劇場（千葉県） / 2026/09/23(<span class="g-dayofweek_holiday">水・祝</span>) 〜 2026/09/23(<span class="g-dayofweek_holiday">水・祝</span>) / class=02
+  【9／26通し券】イチキップリンと通しで幕張で遊ぼう！券 / よしもと幕張イオンモール劇場（千葉県） / 2026/09/26(<span class="g-dayofweek_sat">土</span>) 〜 2026/09/26(<span class="g-dayofweek_sat">土</span>) / class=02
+  【通し券】ぎおんまつり／GIONトーク in 兵庫 / 新開地アートひろば ホール（兵庫県） / 2026/09/26(<span class="g-dayofweek_sat">土</span>) 〜 2026/09/26(<span class="g-dayofweek_sat">土</span>) / class=02
+
+=== 単日の例 3件（日付の書き方）===
+  '2026/09/21(<span class="g-dayofweek_holiday">月・祝</span>)'
+  '2026/09/21(<span class="g-dayofweek_holiday">月・祝</span>)'
+  '2026/09/21(<span class="g-dayofweek_holiday">月・祝</span>)'

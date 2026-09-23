@@ -1,0 +1,355 @@
+{
+ "lg": "02",
+ "total": 36,
+ "pages": 4,
+ "fetched_pages": 5,
+ "parsed": 36,
+ "new_name_in_db": 3,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625956",
+   "artist": "桂二葉独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/1(木)",
+   "venue": "茅ヶ崎市民文化会館 小ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621160",
+   "artist": "関内寄席 立川志の輔独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "関内ホール 大ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624306",
+   "artist": "春風亭一之輔独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/29(木)",
+   "venue": "麻生文化センター 川崎市麻生市民館(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622115",
+   "artist": "第二十二回春風亭昇羊落語会～羊旅２０２６～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/28(月)",
+   "venue": "大和文化創造拠点 やまと芸術文化ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626686",
+   "artist": "柳家喬太郎 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/20(火)",
+   "venue": "横浜にぎわい座 芸能ホール(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625956",
+   "artist": "桂二葉独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "茅ヶ崎市民文化会館 小ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622495",
+   "artist": "桂文枝・春風亭小朝 東西落語名人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628387",
+   "artist": "桂文珍独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "麻生文化センター 川崎市麻生市民館(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626693",
+   "artist": "桂宮治 全国ツアー２０２６ ～Ｒｅｍｅｍｂｅｒ Ｍｉｙａｊｉ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜にぎわい座 芸能ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616691",
+   "artist": "川崎いのちの電話チャリティ寄席 柳家三三独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "エポックなかはら(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621160",
+   "artist": "関内寄席 立川志の輔独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619072",
+   "artist": "関内寄席 柳家喬太郎・蝶花楼桃花・三遊亭わん丈 三人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629536",
+   "artist": "きらら落語会 ～月亭方正 独演会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "鎌倉生涯学習センター（きらら鎌倉）ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621853",
+   "artist": "第１７９回 グリーンホール八起寄席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "相模女子大学グリーンホール 多目的ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624728",
+   "artist": "第１８０回 グリーンホール八起寄席すぺしゃる 瀧川鯉昇・立川談之助二人会 ｗｉｔｈ 相模原女流落語家たち",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "相模女子大学グリーンホール 多目的ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635546",
+   "artist": "三遊亭兼好独演会～よこはま落語会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜市吉野町市民プラザ(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632602",
+   "artist": "三遊亭白鳥独演会 白鳥ジャパン Ｖｏｌ．２６ ｉｎ横浜",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜にぎわい座 芸能ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625887",
+   "artist": "ザ・ニュースペーパー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜市鶴見区民文化センター サルビアホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624306",
+   "artist": "春風亭一之輔独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "麻生文化センター 川崎市麻生市民館(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627573",
+   "artist": "春風亭小朝・春風亭昇太 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619331",
+   "artist": "春風亭柳枝・蝶花楼桃花 二人会～よこはま落語会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜市吉野町市民プラザ(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630363",
+   "artist": "立川吉笑独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜にぎわい座 芸能ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632182",
+   "artist": "立川志の八落語会「しのはちの巣ＩＮ横浜Ｖｏｌ．３０」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 小ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631448",
+   "artist": "立川生九郎落語ＳＨＯＷ ｉｎ横浜",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜にぎわい座 のげシャーレ（小ホール）(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627090",
+   "artist": "立川寸志 真打昇進披露 さがみはら落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ほねごり杜のホールはしもと 多目的室(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622115",
+   "artist": "第二十二回春風亭昇羊落語会～羊旅２０２６～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大和文化創造拠点 やまと芸術文化ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625198",
+   "artist": "第６回推し選寄席 秋の夜長の関内「推し」祭り",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 小ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634485",
+   "artist": "第六回みずきー寄席 柳家喬太郎 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜市港北区民文化センター ミズキーホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631706",
+   "artist": "特撰落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "草加市文化会館ホール(埼玉県)／亀戸文化センター カメリアホール(東京都)／クアーズテック秦野カルチャーホール 大ホール(神奈川県)",
+   "pref": "埼玉県／東京都／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669646",
+   "artist": "ナイツ独演会 「国民の皆さん」ではなく「国民の一部の皆さん」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)／浅草公会堂(東京都)／有楽町よみうりホール(東京都)／鎌倉芸術館 大ホール(神奈川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ロームシアター京都 サウスホール(京都府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "北海道／東京都／神奈川県／愛知県／京都府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632667",
+   "artist": "何が起こるか分からない！？ さまチャン シークレットＬＩＶＥ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "パシフィコ横浜 会議センター メインホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668505",
+   "artist": "日本列島大捜査網 THE柳沢慎吾劇場 ★ ROCK45TOUR",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小田原三の丸ホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633920",
+   "artist": "七代目三遊亭円楽独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 小ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620133",
+   "artist": "兵動大樹のおしゃべり大好き。４８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)／横浜にぎわい座 芸能ホール(神奈川県)",
+   "pref": "東京都／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631336",
+   "artist": "柳家喬太郎・桃月庵白酒・三遊亭兼好 三人会～よこはま落語会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神奈川県立音楽堂（木のホール）(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626686",
+   "artist": "柳家喬太郎 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜にぎわい座 芸能ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636513",
+   "artist": "よしもとお笑いライブｉｎ川崎２０２６秋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カルッツかわさき（川崎市スポーツ・文化総合センター）ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634481",
+   "artist": "よしもとお笑いライブｉｎ座間２０２６～秋の夜、笑いでおなかいっぱい～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ハーモニーホール座間 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621258",
+   "artist": "柳亭市馬・柳家花緑・柳家喬太郎 ～柳の家の三人会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ほねごり杜のホールはしもと ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622447",
+   "artist": "柳亭市馬・柳家三三 二人会 ｗｉｔｈ ロケット団",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "関内ホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632407",
+   "artist": "柳亭小痴楽独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川崎市アートセンター アルテリオ小劇場(神奈川県)",
+   "pref": "神奈川県"
+  }
+ ]
+}

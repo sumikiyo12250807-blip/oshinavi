@@ -1,0 +1,69 @@
+                <option value="35" >ゲーム</option>
+                                    <option value="36" >映画／ライブビューイング</option>
+                                    <option value="37" >アート／イベント</option>
+                                    <option value="38" >よしもとの劇場以外の公演</option>
+                  
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+            <div class="g-searchBtn">
+            <input type="hidden" name="search_type" value="form">
+              <button class="s-btn g-btn-reset" name="reset-btn" type="button">クリア</button>
+              <button class="s-btn g-btn-orange" type="submit">検索</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      
+<div class="fany_g-resultList g-container-block">
+    <div class="fany_g-title">
+                <span>検索結果</span>
+        <span class="fany_g-resultCnt"><span>2875</span>件</span>
+            </div>
+
+        <form name="fany-ngk_search" method="GET" action="/search/event" role="form">
+        <div class="g-accordion-wrap g-accordion-wrap__color">
+            <div class="g-accordion-item">
+                <span class="g-accordion-header">絞り込み検索<i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </div>
+            <div id="fany-detail-search" class="g-accordion-body">
+                <table class="g-search-table">
+                    <tr class="g-toggle online real both">
+                                                    <th>出演者/公演名/会場名</th>
+                        
+                        <td>
+                            <div class="g-inputGroup">
+                                <input class="g-input" type="text" name="keywords" value="" placeholder="出演者/公演名/会場名で絞り込む">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="g-toggle online real both">
+                        <th>公演日</th>
+                        <td>
+                            <div class="g-inputGroup">
+                                <div class="g-inputGroup__inner datepicker_from">
+                                    <input class="g-input g-input_s datepicker" type="text" name="from" value=""
+                                        placeholder="日付を選択" readonly="readonly">
+                                </div>
+                                <span class="g-input__fromTo">〜</span>
+                                <div class="g-inputGroup__inner datepicker_to">
+                                    <input class="g-input g-input_s datepicker" type="text" name="to" value=""
+                                        placeholder="日付を選択" readonly="readonly">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="g-toggle online real both">
+                        <th>先行（抽選）販売</th>
+                        <td>
+                            <div class="g-checkbox">
+                                <input class="visually-hidden" type="checkbox" name="ngk_beforeReception" 
+                                    id="ngk_beforeReception_detail">
+                                <label for="ngk_beforeReception_detail">受付前</label>
+                                <input class="visually-hidden" type="checkbox" name="ngk_accepting"  id="ngk_accepting_detail">
+                                <label for="ngk_accepting_detail">受付中</label>
+                            </div>
+             

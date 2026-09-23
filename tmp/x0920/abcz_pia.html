@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- 広告用Script -->
+    <script>
+      var _ua = window.navigator.userAgent.toLowerCase();
+      //グローバル変数に定義 PC,SP判定 bodyタグでも使用
+      _isSPforAd = false;
+      if (_ua.indexOf("ipad") != -1
+        || _ua.indexOf("iphone") != -1
+        || _ua.indexOf("ipod") != -1
+        || _ua.indexOf("android") != -1
+        || (_ua.indexOf("firefox") != -1 && _ua.indexOf("tablet") != -1)
+        || (_ua.indexOf("firefox") != -1 && _ua.indexOf("mobile") != -1)
+        || (_ua.indexOf("windows") != -1 && _ua.indexOf("phone") != -1)
+        || (_ua.indexOf("windows") != -1 && _ua.indexOf("touch") != -1 && _ua.indexOf("tablet pc") == -1)
+        || _ua.indexOf("kindle") != -1
+        || _ua.indexOf("silk") != -1
+        || _ua.indexOf("playbook") != -1
+        || _ua.indexOf("blackberry") != -1) {
+        _isSPforAd = true;
+      }
+
+      var _hasSummaryPage = false;
+      //サマリーページか詳細ページかで広告の出しわけが必要なので判定
+      _isSummaryPage = false;
+      _hasSummaryPage = true; 
+      if (_hasSummaryPage) {
+        let search = window.location.search;
+        var queries = {};
+        let queryStr = window.location.search.slice(1);
+        queryStr.split('&').forEach(function (queryStr) {
+          var queryArr = queryStr.split('=');
+          queries[queryArr[0]] = queryArr[1];
+        });
+        if (queries.detail) {
+          //詳細ページ
+          _isSummaryPage = false;
+        } else {
+          _isSummaryPage = true;
+        }
+      }
+      //PR記事(=広告非表示)かどうかのフラグ GTM用に追加
+      _noShowAdArea = false;
+
+    </script>
+    <!-- /広告用Script -->
+
+    <!-- DataLayer -->
+                                                                            <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'media-group':'ぴあ音楽',
+        'recommendable':'',
+        'article-type':'',
+        'artistcd':['A6110079'],
+        'artistcd-pia':[],
+        'artistName':['A.B.C-Z'],
+        'eventtitle':['A.B.C-Z'],
+        'movie-id':[],
+        'event-id':['478875'],
+        'castName':[],
+        'eventcd-pia':['2618882','2618875'],
+        'genre':['音楽'],
+        'event-genre-sub':['ポップス／ロック'],
+        'page-Type':'article',
+        'page-category':'ニュース',
+        'page-property':['注目の記事'],
+        'media':'ぴあ',
+        'published_time':'2026-07-29T12:00:00+09:00',
+        'modified_time':'2026-07-29T11:27:42+09:00',
+        'pubyear':'2026',
+        'pubmonth':'202607',
+        'pubday':'20260729',
+        'expirationtime':'',
+        'articleid':'499952',
+        'pianist':[],
+        'paid':'false'
+      });
+    </script>
+    <!-- End DataLayer -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KPTJN7J');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- ========================================================== google analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126036756-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-126036756-1');
+    </script>
+    <!-- ========================================================== /google analytics -->
+
+    <!-- Google Tag Manager 広告用-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NC2N383R');
+      </script>
+    <!-- End Google Tag Manager -->
+
+    <title>A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ - ぴあ音楽</title>
+
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ",
+        "image": "/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/origin.jpeg",
+        "datePublished": "2026-07-29T12:00:00+09:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ぴあ",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "/contents/image/logo_pia_h60.png?v=1773279139646"
+          }
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "ぴあ"
+        }
+      }
+    </script>
+
+    <!-- ========================================================== META common -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- ========================================================== /META common -->
+
+    <!-- ========================================================== META for web and webwiew -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <meta name="keywords"  content="ぴあ,音楽,ニュース">
+    <meta name="description"  content="A.B.C-Zが10枚目のアルバム『The Way of L.O.V-E』を9月30日(水)にリリースすることが決定した。7月にリリースした3rd EP『THE WAY』が現在進行形のA.B...">
+    <meta property="og:title"  content="A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ">
+    <meta property="og:description"  content="A.B.C-Zが10枚目のアルバム『The Way of L.O.V-E』を9月30日(水)にリリースすることが決定した。7月にリリースした3rd EP『THE WAY』が現在進行形のA.B...">
+    <meta property="og:image"  content="https://lp.p.pia.jp/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/origin.jpeg">
+    <meta property="og:type"  content="article">
+    <meta property="og:url"  content="https://lp.p.pia.jp/article/news/499952/index.html">
+    <meta property="og:site_name"  content="ぴあ">
+    <meta name="twitter:card"  content="summary_large_image">
+    <meta name="cXenseParse:pia-app-eventtitle"  content="A.B.C-Z">
+    <meta name="cXenseParse:pia-app-event-id"  content="478875">
+    <meta name="cXenseParse:pia-app-genre-sub"  content="ポップス／ロック">
+    <meta name="cXenseParse:pia-app-eventcd-pia"  content="2618882">
+    <meta name="cXenseParse:pia-app-eventcd-pia"  content="2618875">
+    <meta name="cXenseParse:pia-app-artistName"  content="A.B.C-Z">
+    <meta name="cXenseParse:pia-app-artistcd-pia"  content="A6110079">
+    <meta name="cXenseParse:pia-app-media-group"  content="ぴあ音楽">
+    <meta name="cXenseParse:pia-app-genre"  content="音楽">
+    <meta name="cXenseParse:pia-app-page-type"  content="article">
+    <meta name="cXenseParse:pia-app-page-category"  content="ニュース">
+    <meta name="cXenseParse:pia-app-page-property"  content="注目の記事">
+    <meta name="cXenseParse:pia-app-media"  content="ぴあ">
+    <meta property="article:published_time"  content="2026-07-29T12:00:00+09:00">
+    <meta property="article:modified_time"  content="2026-07-29T11:27:42+09:00">
+    <meta name="cXenseParse:pia-app-pubyear"  content="2026">
+    <meta name="cXenseParse:pia-app-pubmonth"  content="202607">
+    <meta name="cXenseParse:pia-app-pubday"  content="20260729">
+    <meta name="cXenseParse:recs:expirationtime"  content="">
+    <meta name="cXenseParse:recs:articleId"  content="499952">
+    <meta name="cXenseParse:pia-app-contents-id"  content="499952">
+    <meta name="cXenseParse:pia-app-paid"  content="無料">
+    <meta name="cXenseParse:pia-app-article-detail"  content="true">
+    <meta name="cXenseParse:pia-app-tmbimg"  content="https://lp.p.pia.jp/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/thumbnail">
+    <meta name="twitter:site"  content="@eiga_pia">
+    <meta property="og:country-name" content="Japan">
+    <link rel="shortcut icon" type="image/x-icon" href="/contents/image/favicon2.ico">
+    <link rel="icon" type="image/png" href="/contents/image/android-touch-icon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/contents/image/apple-touch-icon.png" size="180x180">
+    <meta name="msapplication-TileImage" content="/contents/image/ms-touch-icon.png"/>
+    <meta name="msapplication-TileColor" content="#3e3a39"/>
+    <meta name="theme-color" content="#FFFFFF" >
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="canonical" href="https://lp.p.pia.jp/article/news/499952/index.html?detail=true">
+    <!-- ========================================================== /META for web and webview -->
+
+    <!-- ========================================================== JS -->
+    <script defer src="/scripts/vendor.js?v=1773279139646"></script>
+    <script defer src="/scripts/cnt-s-v4.js?v=1773279139646"></script>
+
+    <!-- ========================================================== /JS -->
+
+    <!-- ========================================================== CSS common -->
+    <link rel="stylesheet" type="text/css" media="screen, tv, print" href="/contents/css/reset.css?v=1773279139646">
+    <link rel="stylesheet" type="text/css" media="screen, tv, print" href="/contents/css/global.css?v=1773279139646">
+    <!--[if IE 9.0]>
+    <link rel="stylesheet" type="text/css" media="screen, tv, print" href="/contents/css/ie9.css">
+    <![endif]-->
+    <!-- ========================================================== /CSS common -->
+
+    <!-- ========================================================== CSS-->
+    <link rel="stylesheet" type="text/css" media="screen, print" href="/contents/css/cnt-s-v3.css?v=1773279139646">
+    <link rel="stylesheet" type="text/css" media="screen, print" href="/contents/css/media/pia.css?v=1773279139646">
+    <link rel="stylesheet" type="text/css" media="screen, print" href="/contents/css/piawebCommon.css?v=1773279139646">
+    <link rel="stylesheet" type="text/css" media="screen, print" href="/contents/css/lib/simplePagination.css?v=1773279139646">
+    <!-- ========================================================== /CSS-->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '386777465264246');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"　src="https://www.facebook.com/tr?id=386777465264246&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+    <!-- //Connect Container: pia.jp -->
+    <script src="//get.s-onetag.com/ff8848a1-5a0f-4cfb-8abd-f2737da16ae5/tag.min.js" async defer></script>
+    <link rel="preload" href="/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/origin.jpeg" as="image">
+  </head>
+
+  <body id="Share" class="">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPTJN7J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC2N383R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v8.0&appId=687777744687253&autoLogAppEvents=1" nonce="2fV4uG91"></script>
+
+    <!-- co-modal -->
+    <div class="co-modal js-modal">
+      <div class="co-modal__closeArea js-dialog-close"></div>
+      <!-- md-dialog -->
+      <div class="md-dialog">
+        <div class="md-dialog__inner">
+          <div class="md-dialog__header">
+            <div class="md-dialog__header__closeBtn js-dialog-close"></div>
+          </div>
+          <div class="md-dialog__content">
+            <!-- md-appdialog -->
+            <div class="md-appdialog">
+              <div class="md-appdialog__bannerArea js-ua js-ua-spOnly">
+                <a class="md-appdialog__banner md-appdialog__banner--appstore js-ua-iphoneOnly td-link-appstore" href="https://dpia.onelink.me/4S2T/696d859"><img class="md-appdialog__banner--appstore" src="/contents/image/button_appstore.png" alt="Download on the App Store"></a>
+                <a class="md-appdialog__banner md-appdialog__banner--googleplay js-ua-androidOnly td-link-googleplay" href="https://dpia.onelink.me/4S2T/696d859"><img class="md-appdialog__banner--googleplay" src="/contents/image/button_googleplay.png" alt="ANDROID APP ON Google Play"></a>
+              </div>
+              <div class="md-appdialog__bannerArea js-ua js-ua-pcOnly">
+                <a class="md-appdialog__banner md-appdialog__banner--appstore td-link-appstore" href="https://itunes.apple.com/jp/app/ぴあ/id983122727?l=ja&ls=1&mt=8" target="div-gpt-ad-1623063362452-0"><img class="md-appdialog__banner--appstore" src="/contents/image/button_appstore.png" alt="Download on the App Store"></a>
+                <a class="md-appdialog__banner md-appdialog__banner--googleplay td-link-googleplay" href="https://play.google.com/store/apps/details?id=jp.pia.corporate.pia" target="_blank"><img class="md-appdialog__banner--googleplay" src="/contents/image/button_googleplay.png" alt="ANDROID APP ON Google Play"></a>
+              </div>
+            </div>
+            <!-- /md-appdialog -->
+          </div>
+        </div>
+      </div>
+      <!-- md-dialog -->
+    </div>
+    <!-- /co-modal -->
+
+    <div id="Wrapper" class="is-ready-for-pc is-summary-page">
+
+      <div id="genre-header-component" data-version="?v=1773279139646" data-main-genre='music'></div>
+      
+
+
+      <div class="adArea-pc0 musicAdArea0"></div>
+
+      <!-- mainContents -->
+      <div id="mainContents" class="mainContents theme--news" data-param='{"contentTypeId":2,"contentId":"3c2e1ede-1e22-4dc9-823d-2a6e36cef44d"}'>
+        <div id="mainContents__inner">
+          <main>
+            <div class="mainContents__innerWrapper">
+              <div class="mainContents__breadCrumb">
+                <a class="mainContents__breadCrumb__link" href="/">ぴあ 総合TOP</a>&nbsp;>
+                <span class="mainContents__breadCrumb__link">A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ</span>
+              </div>
+
+              <div class="adArea-pc1 musicAdArea1"></div>
+
+              <article>
+                <!-- co-contentArea -->
+                <div class="co-contentArea">
+                  <!-- co-contentArea__inner -->
+                  <div class="co-contentArea__inner">
+                    <!-- md-mainTitleArea -->
+                    <div class="md-mainTitleArea">
+
+                        <div class="md-mainTitleArea__summaryPage-flexbox--pc">
+                          <div>
+                        <h1 class="md-mainTitleArea__title md-mainTitleArea__title--sharePage">A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ</h1>
+
+                        <div class="md-mainTitleArea__info md-mainTitleArea__info--sharePage">
+
+                          <p class="md-mainTitleArea__info__genreWrapper">
+                            <span class="md-mainTitleArea__info__genreLabel md-mainTitleArea__info__genreLabel--music">音楽</span>
+                          </p>
+
+                          <div class="md-mainTitleArea__info__break">
+                            <p class="md-mainTitleArea__info__articleType">
+                                  ニュース
+                            </p>
+
+                            <p class="md-mainTitleArea__info__media"><a class="title" href="https://lp.p.pia.jp/media/1/index.html">ぴあ</a></p>
+                            
+                            <p class="md-mainTitleArea__info__date"><time itemprop="datepublished" datetime="2026-07-29T12:00:00+09:00">26/7/29(水) 12:00</time></p>
+                          </div>
+                        </div>
+            
+
+                        </div>
+                        <div class="md-mainTitleArea__summaryPage-photoArea md-mainTitleArea__summaryPage-photoArea--kai js-ua-pcOnly">
+                          <a class="md-mainTitleArea__summaryPage-photoLink" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html">
+                            <img class="md-mainTitleArea__summaryPage-photo lazyload" data-src="/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/origin.jpeg" alt="">
+                            <img class="md-mainTitleArea__summaryPage-photoArea__icon" src="/contents/image/icon_summary_photo2.png" width="40" height="40" alt="アイコン">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="adArea-sp1 musicAdArea14 adForDetail"></div>
+
+                      <!-- co-parallax-mainvisualShare -->
+                      <div class="co-parallax-mainvisualShare js-parallax-mainvisualShare">
+                        <div class="co-parallax-mainvisualShare__inner">
+                          <!-- md-mainVisual -->
+                          <div class="md-mainVisual">
+                            <div class="md-mainVisual__link">
+                              <img class="md-mainVisual__photo" src="/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/origin.jpeg" alt="">
+                            </div>
+                          </div>
+                          <!-- /md-mainVisual -->
+                        </div>
+                      </div>
+                      <!-- /co-parallax-mainvisualShare -->
+
+                      <p class="md-mainTitleArea__imageCaption md-mainTitleArea__imageCaption--sharePage">A.B.C-Z</p>
+                      <div class="md-mainTitleArea__spacer md-mainTitleArea__spacer--summary"></div>
+
+                      <div class="adArea-pc2 musicAdArea2 adForDetail"></div>
+
+                      <!-- サマリーページの本文サマリ -->
+                      <div class="md-mainTitleArea__summaryPage-flexbox">
+                        <div class="md-mainTitleArea__summaryPage-photoArea js-ua-spOnly">
+                          <a class="md-mainTitleArea__summaryPage-photoLink" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html">
+                            <span class="md-mainTitleArea__summaryPage-photo" style="background-image:url('/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/origin.jpeg');"></span>
+                            <img class="md-mainTitleArea__summaryPage-photoArea__icon" src="/contents/image/icon_summary_photo2.png" width="40" height="40" alt="アイコン">
+                          </a>
+                        </div>
+                        <p class="md-summary-text">
+                        </p>
+                      </div>
+
+                      <a class="md-summary-readmore-btn" href="https://lp.p.pia.jp/article/news/499952/index.html?detail=true">続きを読む</a>
+                      <div class="md-summary-readmoreArea">
+                        <a class="md-summary-readmore-textLink" href="https://lp.p.pia.jp/article/news/499952/index.html?detail=true">このままWebで読む</a>
+                        <a class="js-app-open md-summary-readmore-btn--sp" data-content-id="3c2e1ede-1e22-4dc9-823d-2a6e36cef44d" data-content-type-id="2" data-onelink-url="https://dpia.onelink.me/4S2T/696d859" href="javascript:void(0);">続きをアプリで読む</a>
+                      </div>
+
+                      <div class="adArea-pc3 musicAdArea3 adForSummary"></div>
+                      <div class="adArea-sp2 musicAdArea15 adForSummary"></div>
+
+                      <!-- photoAndVideo -->
+                      <div class="photoAndVideo">
+                        <div class="photoAndVideo__inner photoAndVideo__inner--photo">
+                          <div class="photoAndVideo__head">
+                            <p class="photoAndVideo__head__title">フォトギャラリー<span class="photoAndVideo__head__photoCount">(2件)</span></p>
+                            <a class="photoAndVideo__head__more" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html">すべて見る</a>
+                          </div>
+                          <ul class="photoAndVideo__photoList">
+                            <li class="photoAndVideo__photoList__item">
+                              <a class="photoAndVideo__photoList__link" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html?id=1">
+                                <img class="photoAndVideo__photoList__thumbnail lazyload" data-src="/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/thumbnail">
+                              </a>
+                            </li>
+                            <li class="photoAndVideo__photoList__item">
+                              <a class="photoAndVideo__photoList__link" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html?id=2">
+                                <img class="photoAndVideo__photoList__thumbnail lazyload" data-src="/shared/materials/efc9a303-d423-42c1-8b07-63df9a829546/thumbnail">
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="adArea-pc4 musicAdArea4 adForSummary"></div>
+                      <div class="adArea-sp3 musicAdArea16 adForSummary"></div>
+                      <!-- /photoAndVideo -->
+
+                      <!-- ======================================================================== pianistListView -->
+                      <div id="recommend-block-01"></div>
+                      <div class="adArea-pc5 musicAdArea5 adForSummary"></div>
+                      <div class="adArea-sp4 musicAdArea17 adForSummary"></div>
+                      <!-- ======================================================================== /pianistListView -->
+
+                      <!-- ======================================================================== フリーエリア -->
+                      
+                      <!-- md-mainTitleArea__content -->
+                      <div class="md-mainTitleArea__content">
+                        <div class="snsShareWrapper">
+                          <!-- ======================================================================== SnsShareButtonList -->
+                          <div id="sns-share-component-1" data-title="A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ - ぴあ音楽" data-onelink-url="https://dpia.onelink.me/4S2T/696d859"></div>
+                          <!-- ======================================================================== /SnsShareButtonList -->
+                        </div>
+
+
+                        <!-- ページングのカレントページ表示 -->
+                        <div class="pageCountWrapper">
+                          <p class="pageCount"></p>
+                        </div>
+
+
+                        <p class="md-articleText">
+A.B.C-Zが10枚目のアルバム『The Way of L.O.V-E』を9月30日(水)にリリースすることが決定した。
+</p>
+
+<p class="md-articleText">
+7月にリリースした3rd EP『THE WAY』が現在進行形のA.B.C-Zを提示した作品だったのに対し、今作は現在進行形のA.B.C-Zからさまざまな形の「L.O.V-E」を提示するミクスチャーリバイバルアルバムとなっている。
+</p>
+
+<p class="md-articleText">
+早期予約特典は「L.O.V-Eステッカー」。ミュージックビデオが話題を集める「マジマジック」の印象的なシーンをデザインしたソロステッカーと、新規撮り下ろしビジュアルの集合ステッカーのセットで、スマートフォンの裏にも挟めるサイズのお守りのようなアイテムとなる。
+</p>
+
+<p class="md-articleText">
+さらに、アルバムを携えた『A.B.C-Z Concert Tour 2026 The Way of L.O.V-E』を10月より開催することも決定。ワンマンツアーに先駆けて開催される自主企画ツーマンライブフェス『A.B.C-Z CONNECTION Vol.2』の一般発売は、8月1日(土)12:00よりスタートする。
+</p>
+
+<p class="md-articleText">
+2027年にデビュー15周年を迎えるA.B.C-Z。節目に向けて精力的な活動を続ける彼らの今後にも注目だ。
+</p>
+
+<div style="border:1px solid #ddd; padding:15px; margin:20px 0;">
+<p class="md-articleText">
+＜リリース情報＞<br>
+<strong>10thアルバム『The Way of L.O.V-E』</strong><br>
+9月30日(水)発売<br>
+初回限定盤A：4,620円（税込）<br>
+初回限定盤B：4,620円（税込）<br>
+通常盤：2,970円（税込）<br>
+配信盤：同時配信<br><br>
+▼CD予約<br>
+<a href="https://abcz.lnk.to/TheWayofLOVE_CD" target="_blank">https://abcz.lnk.to/TheWayofLOVE_CD</a><br>
+▼商品情報<br>
+<a href="https://abcz.ponycanyon.co.jp/discography/al/15.html" target="_blank">https://abcz.ponycanyon.co.jp/discography/al/15.html</a>
+</p>
+
+<p class="md-articleText">
+＜早期予約特典＞<br>
+L.O.V-Eステッカー（集合＋ソロ）<br>
+
+<div class="md-thumbnailList">
+<figure class="md-thumbnailList__item">
+<div class="md-thumbnailList__photo"><img style="width:60%; display: block; margin-left: auto; margin-right: auto;" class="newpia_material" src="/shared/materials/efc9a303-d423-42c1-8b07-63df9a829546/origin.jpg" alt=""></div>
+<!--画像キャプション挿入タグここから-->
+<center>
+<figcaption class="md-thumbnailList__caption" style="padding: 6px 16px;"></figcaption>
+</center>
+<!--//画像キャプション挿入タグここまで-->
+</figure>
+</div>
+<p class="md-articleText">
+▼特設サイト<br>
+<a href="https://abcz.ponycanyon.co.jp/10thal/" target="_blank">https://abcz.ponycanyon.co.jp/10thal/</a>
+</p>
+</div>
+
+<div style="border:1px solid #ddd; padding:15px; margin:20px 0;">
+<p class="md-articleText">
+＜ツアー情報＞<br>
+<strong>『A.B.C-Z Concert Tour 2026 The Way of L.O.V-E』</strong><br>
+10月14日(水)～15日(木) 大阪・オリックス劇場<br>
+10月19日(月)～20日(火) 愛知・刈谷市総合文化センター 大ホール<br>
+10月31日(土)～11月1日(日) 東京・東京ガーデンシアター<br>
+11月24日(火) 福岡・福岡サンパレス
+</p>
+
+<p class="md-articleText">
+＜公演情報＞<br>
+<strong>『A.B.C-Z CONNECTION Vol.2』</strong><br>
+8月19日(水) 大阪・グランキューブ大阪 メインホール<br>
+開場17:00／開演18:00<br>
+出演：A.B.C-Z、ZiDol<br><br>
+8月29日(土) 神奈川・パシフィコ横浜 国立大ホール<br>
+開場16:00／開演17:00<br>
+出演：A.B.C-Z、新浜レオン<br><br>
+8月30日(日) 神奈川・パシフィコ横浜 国立大ホール<br>
+開場16:00／開演17:00<br>
+出演：A.B.C-Z、大黒摩季
+</p>
+<p class="md-articleText">
+【チケット情報】<br>
+全席指定：11,500円（税込）<br>
+一般発売：8月1日(土)12:00～<br>
+※3歳以上チケット必要。2歳以下は2名につき1枚チケット必要<br><br>
+▼公式サイト<br>
+<a href="https://abcz.ponycanyon.co.jp/live_connection-2/index.html" target="_blank">https://abcz.ponycanyon.co.jp/live_connection-2/index.html</a>
+</p>
+</div>
+
+<h4 class="md-articleH4">A.B.C-Z Official Website</h4>
+<p class="md-articleText" style="font-size:11pt; margin-top:5px;">
+<a href="https://abcz.ponycanyon.co.jp/" target="_blank">https://abcz.ponycanyon.co.jp/</a>
+</p>
+
+
+
+                        <!-- ページネーションのエリア -->
+                        <div class="pageNationWrapper">
+                          <a class="nextPageTitleLink">
+                            <span class="nextPageLabel">次のページ</span>
+                            <span class="nextPageTitle"></span>
+                            <span></span>
+                          </a>
+                          <!-- ページネーションボタン -->
+                          <div class="pageNationButtonWrapper"></div>
+                        </div>
+
+                        <div class="snsShareWrapper">
+                          <!-- ======================================================================== SnsShareButtonList -->
+                          <div id="sns-share-component-2" data-title="A.B.C-Z、10thアルバム『The Way of L.O.V-E』発売決定　10月から全国ツアーへ - ぴあ音楽" data-onelink-url="https://dpia.onelink.me/4S2T/696d859"></div>
+                          <!-- ======================================================================== /SnsShareButtonList -->
+                        </div>
+
+                        <div class="adArea-pc3 musicAdArea3 adForDetail"></div>
+                        <div class="adArea-sp2 musicAdArea15 adForDetail"></div>
+
+                        <!-- photoAndVideo -->
+                        <div class="photoAndVideo">
+                          <div class="photoAndVideo__inner photoAndVideo__inner--photo">
+                            <div class="photoAndVideo__head">
+                              <p class="photoAndVideo__head__title">フォトギャラリー<span class="photoAndVideo__head__photoCount">(2件)</span></p>
+                              <a class="photoAndVideo__head__more" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html">すべて見る</a>
+                            </div>
+                            <ul class="photoAndVideo__photoList">
+                              <li class="photoAndVideo__photoList__item">
+                                <a class="photoAndVideo__photoList__link" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html?id=1">
+                                  <img class="photoAndVideo__photoList__thumbnail lazyload" data-src="/shared/materials/36a57fc1-dc9f-4c76-a90d-a43936042116/thumbnail">
+                                </a>
+                              </li>
+                              <li class="photoAndVideo__photoList__item">
+                                <a class="photoAndVideo__photoList__link" href="https://lp.p.pia.jp/article/news/499952/photo-gallery/index.html?id=2">
+                                  <img class="photoAndVideo__photoList__thumbnail lazyload" data-src="/shared/materials/efc9a303-d423-42c1-8b07-63df9a829546/thumbnail">
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="adArea-pc4 musicAdArea4 adForDetail"></div>
+                        <div class="adArea-sp3 musicAdArea16 adForDetail"></div>
+                        <!-- /photoAndVideo -->
+
+                          <div id="recommend-block-02"></div>
+
+                        <div class="adArea-pc5 musicAdArea5 adForDetail"></div>
+                        <div class="adArea-sp4 musicAdArea17 adForDetail"></div>
+
+                      </div>
+                      <!-- md-mainTitleArea__content -->
+
+                      <!-- ======================================================================== /フリーエリア -->
+                    </div><!-- /md-mainTitleArea -->
+                  </div><!-- /co-contentArea__inner -->
+                </div><!-- /co-contentArea -->
+
+                <!-- ======================================================================== RelationalContents -->
+                <div id="relational-contents-component" data-ad="true" data-is-gtm-ad="true" data-main-genre="music"></div>
+                <!-- ======================================================================== /RelationalContents -->
+
+                <!-- ページネーションのエリア -->
+                <div class="pageNationWrapper pageNationWrapper--forLastPage">
+                  <a class="nextPageTitleLink">
+                    <span class="nextPageLabel">次のページ</span><span class="nextPageTitle"></span><span></span>
+                  </a>
+                  <!-- ページネーションボタン -->
+                  <div class="pageNationButtonWrapper">
+                  </div>
+                </div>
+
+              </article>
+
+              <!-- ======================================================================== NewArrivalNews -->
+              <div id="newArrival-news-component"></div>
+              <!-- ======================================================================== /NewArrivalNews -->
+
+              <div class="adArea-pc8 musicAdArea8"></div>
+              <div class="adArea-sp7 musicAdArea20"></div>
+
+              <!-- ======================================================================== tieupListSp -->
+              <div id="tieup-list-component"></div>
+              <!-- ======================================================================== /tieupListSp -->
+
+              <div class="adArea-sp8 musicAdArea21"></div>
+
+              <!-- co-blank -->
+              <div class="co-blank co-blank--2xl co-blank--flat"></div>
+              <!-- co-blank -->
+
+            </div>
+            <!-- /mainContents__innerWrapper -->
+          </main>
+        </div>
+        <div id="right-column-component" data-is-ad="true" data-is-gtm-ad="true"></div>
+      </div>
+      <!-- /mainContents -->
+
+      <!-- ======================================================================== PiawebFooter -->
+      <div id="piaweb-footer-component" data-onelink="https://dpia.onelink.me/4S2T/696d859" data-ad="true" data-is-gtm-ad="true"></div>
+      <!-- ======================================================================== /PiawebFooter -->
+      <div id="advert-fixed-component" data-is-gtm-ad="true" data-main-genre="music"></div>
+      <!-- /mainContents -->
+    </div>
+    <!-- /Wrapper -->
+
+    <!-- ======================================================================== PiawebSideNavi -->
+    <div id="piaweb-sidenavi-component" data-is-share="true"></div>
+    <!-- ======================================================================== /PiawebSideNavi -->
+
+    <!-- ======================================================================== PiawebSearchBox -->
+    <div id="piaweb-search-box-component" data-is-share="true"></div>
+    <!-- ======================================================================== /PiawebSearchBox -->
+  </body>
+</html>

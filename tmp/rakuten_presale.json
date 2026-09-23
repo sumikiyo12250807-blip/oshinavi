@@ -415,6 +415,30 @@
  ],
  "onsale": [
   {
+   "url": "https://ticket.rakuten.co.jp/music/rtzp929/",
+   "name": "【一般視聴チケット】櫻坂46 15th Single BACKS LIVE!!",
+   "_genre": "jpop",
+   "perfs": 2,
+   "first": "2026-09-29",
+   "last": "2026-10-05",
+   "presale_windows": [],
+   "windows": [],
+   "status_rows": [
+    {
+     "date": "2026-09-29",
+     "time": "",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369728"
+    },
+    {
+     "date": "2026-09-30",
+     "time": "",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369729"
+    }
+   ]
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/jpop/idle/rtyu133/",
    "name": "アップアップガールズ（仮）単独ライブ",
    "_genre": "idol",
@@ -473,7 +497,7 @@
    "url": "https://ticket.rakuten.co.jp/sports/basketball/rt3abb0/",
    "name": "第102回関東大学バスケットボールリーグ戦2巡目",
    "_genre": "sports",
-   "perfs": 17,
+   "perfs": 15,
    "first": "2026-09-23",
    "last": "2026-10-25",
    "presale_windows": [],
@@ -484,18 +508,6 @@
      "time": "00:00",
      "status": "buyable",
      "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369842"
-    },
-    {
-     "date": "2026-09-23",
-     "time": "11:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369841"
-    },
-    {
-     "date": "2026-09-23",
-     "time": "14:30",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369843"
     },
     {
      "date": "2026-09-26",
@@ -792,6 +804,30 @@
      "time": "19:00",
      "status": "soldout",
      "buy_url": ""
+    }
+   ]
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/music/rtzp42a/",
+   "name": "乃木坂46 42ndSGアンダーライブ",
+   "_genre": "jpop",
+   "perfs": 2,
+   "first": "2026-09-29",
+   "last": "2026-09-30",
+   "presale_windows": [],
+   "windows": [],
+   "status_rows": [
+    {
+     "date": "2026-09-29",
+     "time": "18:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369831"
+    },
+    {
+     "date": "2026-09-30",
+     "time": "18:30",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/369832"
     }
    ]
   },
@@ -2291,8 +2327,8 @@
    "url": "https://ticket.rakuten.co.jp/music/rtza922/",
    "name": "ディズニー・オン・クラシック 〜まほうの夜の音楽会 2026［神奈川・茨城・群馬・埼玉］",
    "_genre": "jpop",
-   "perfs": 4,
-   "first": "2026-09-23",
+   "perfs": 3,
+   "first": "2026-12-11",
    "last": "2026-12-26",
    "presale_windows": [],
    "windows": [
@@ -2302,12 +2338,6 @@
     }
    ],
    "status_rows": [
-    {
-     "date": "2026-09-23",
-     "time": "17:00",
-     "status": "soldout",
-     "buy_url": ""
-    },
     {
      "date": "2026-12-11",
      "time": "18:30",
@@ -2419,33 +2449,6 @@
     }
    ],
    "status_rows": []
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/event/museum/rtbp717/",
-   "name": "国宝リボーン　高精細複製画が綴る 美の夢",
-   "_genre": "art",
-   "perfs": 1,
-   "first": "2026-07-17",
-   "last": "2026-09-23",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売［前売］",
-     "timming": "2026/06/23(火) 10:00 〜 2026/07/16 (木) 23:59"
-    },
-    {
-     "type": "一般発売［当日］",
-     "timming": "2026/07/17(金) 00:00 〜 2026/09/23 (水) 12:00"
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-07-17",
-     "time": "10:00",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/365216"
-    }
-   ]
   },
   {
    "url": "https://ticket.rakuten.co.jp/music/classic/rtmc111/",
@@ -2580,33 +2583,6 @@
     }
    ],
    "status_rows": []
-  },
-  {
-   "url": "https://ticket.rakuten.co.jp/event/rtyt711/",
-   "name": "ゴールドマン　コレクション　河鍋暁斎の世界［兵庫］",
-   "_genre": "event",
-   "perfs": 1,
-   "first": "2026-07-11",
-   "last": "2026-09-23",
-   "presale_windows": [],
-   "windows": [
-    {
-     "type": "一般発売［前売］",
-     "timming": "2026/05/11(月) 10：00 〜 2026/07/10(金) 23：59"
-    },
-    {
-     "type": "一般発売［当日］",
-     "timming": "2026/07/11(土) 00：00 〜 2026/09/23(水) 17：00"
-    }
-   ],
-   "status_rows": [
-    {
-     "date": "2026-07-11",
-     "time": "",
-     "status": "buyable",
-     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/363193"
-    }
-   ]
   },
   {
    "url": "https://ticket.rakuten.co.jp/music/rttf723/",
@@ -2759,30 +2735,6 @@
   }
  ],
  "soldout": [
-  {
-   "url": "https://ticket.rakuten.co.jp/music/rtzp42a/",
-   "name": "乃木坂46 42ndSGアンダーライブ",
-   "_genre": "jpop",
-   "perfs": 2,
-   "first": "2026-09-29",
-   "last": "2026-09-30",
-   "presale_windows": [],
-   "windows": [],
-   "status_rows": [
-    {
-     "date": "2026-09-29",
-     "time": "18:30",
-     "status": "soldout",
-     "buy_url": ""
-    },
-    {
-     "date": "2026-09-30",
-     "time": "18:30",
-     "status": "soldout",
-     "buy_url": ""
-    }
-   ]
-  },
   {
    "url": "https://ticket.rakuten.co.jp/stage/traditional-arts/kabuki/rt1e095/",
    "name": "尾上右近自主公演 第十回「研の會」FINAL",
@@ -4211,6 +4163,33 @@
    "status_rows": []
   },
   {
+   "url": "https://ticket.rakuten.co.jp/event/museum/rtbp717/",
+   "name": "国宝リボーン　高精細複製画が綴る 美の夢",
+   "_genre": "art",
+   "perfs": 1,
+   "first": "2026-07-17",
+   "last": "2026-09-23",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売［前売］",
+     "timming": "2026/06/23(火) 10:00 〜 2026/07/16 (木) 23:59"
+    },
+    {
+     "type": "一般発売［当日］",
+     "timming": "2026/07/17(金) 00:00 〜 2026/09/23 (水) 12:00"
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2026-07-17",
+     "time": "10:00",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/365216"
+    }
+   ]
+  },
+  {
    "url": "https://ticket.rakuten.co.jp/music/fes/rtn6822/",
    "name": "Sky Jamboree 2026",
    "_genre": "fes",
@@ -5263,6 +5242,33 @@
     }
    ],
    "status_rows": []
+  },
+  {
+   "url": "https://ticket.rakuten.co.jp/event/rtyt711/",
+   "name": "ゴールドマン　コレクション　河鍋暁斎の世界［兵庫］",
+   "_genre": "event",
+   "perfs": 1,
+   "first": "2026-07-11",
+   "last": "2026-09-23",
+   "presale_windows": [],
+   "windows": [
+    {
+     "type": "一般発売［前売］",
+     "timming": "2026/05/11(月) 10：00 〜 2026/07/10(金) 23：59"
+    },
+    {
+     "type": "一般発売［当日］",
+     "timming": "2026/07/11(土) 00：00 〜 2026/09/23(水) 17：00"
+    }
+   ],
+   "status_rows": [
+    {
+     "date": "2026-07-11",
+     "time": "",
+     "status": "buyable",
+     "buy_url": "https://ticket.rakuten.co.jp/cart/performances/agreement/363193"
+    }
+   ]
   },
   {
    "url": "https://ticket.rakuten.co.jp/music/rtzpbdn/",

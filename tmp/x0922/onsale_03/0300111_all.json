@@ -1,0 +1,495 @@
+{
+ "lg": "03",
+ "total": 86,
+ "pages": 9,
+ "fetched_pages": 10,
+ "parsed": 44,
+ "new_name_in_db": 6,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622215",
+   "artist": "令和８年 秋巡業 大相撲狭山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/8(木)",
+   "venue": "狭山市民総合体育館(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667535",
+   "artist": "第20回アジア競技大会／武術太極拳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/20(日) ～ 2026/9/24(木)",
+   "venue": "愛知県武道館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670489",
+   "artist": "骨髄バンクチャリティー第58回オープントーナメント全日本空手道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土) ・ 2026/10/11(日)",
+   "venue": "東京体育館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670787",
+   "artist": "第一回全世界ウェイト制空手道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/13(日)",
+   "venue": "Ｊ：ＣＯＭ末広体育館(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670580",
+   "artist": "第74回全日本剣道選手権大会／第65回全日本女子剣道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "日本武道館(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670619",
+   "artist": "令和8年冬巡業 大相撲長崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/3(木)",
+   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671199",
+   "artist": "Life is Pure ぴあトークバトル 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "江戸東京博物館 大ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668005",
+   "artist": "令和8年 秋巡業 大相撲明石場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/20(火)",
+   "venue": "にっしんタコちゃんアリーナ(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670027",
+   "artist": "令和八年 冬巡業 大相撲静岡場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/13(日)",
+   "venue": "静岡県草薙総合運動場 このはなアリーナ(静岡県)",
+   "pref": "静岡県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622215",
+   "artist": "令和８年 秋巡業 大相撲狭山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "狭山市民総合体育館(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615031",
+   "artist": "令和八年秋巡業 大相撲秩父場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "秩父市文化体育センター(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668841",
+   "artist": "令和8年秋巡業 大相撲つくば場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "つくばカピオアリーナ(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667524",
+   "artist": "第20回アジア競技大会／空手",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "豊橋市総合体育館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667522",
+   "artist": "第20回アジア競技大会／柔道",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知国際アリーナ(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667528",
+   "artist": "第20回アジア競技大会／テコンドー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "豊橋市総合体育館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667535",
+   "artist": "第20回アジア競技大会／武術太極拳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知県武道館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667541",
+   "artist": "第5回アジアパラ競技大会／パラ柔道",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知県武道館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635779",
+   "artist": "遠藤引退北陣襲名披露大相撲＜イス席＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "両国国技館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622236",
+   "artist": "令和８年 冬巡業 大相撲天草場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "天草市民センター 体育館(熊本県)",
+   "pref": "熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616373",
+   "artist": "大相撲宇部場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "宇部市俵田翁記念体育館(山口県)",
+   "pref": "山口県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670781",
+   "artist": "大相撲九州場所(十一月場所)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡国際センター(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670781",
+   "artist": "大相撲九州場所(十一月場所)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡国際センター(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669864",
+   "artist": "大相撲九月場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "両国国技館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669864",
+   "artist": "大相撲九月場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "両国国技館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670489",
+   "artist": "骨髄バンクチャリティー第58回オープントーナメント全日本空手道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京体育館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670787",
+   "artist": "第一回全世界ウェイト制空手道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｊ：ＣＯＭ末広体育館(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635496",
+   "artist": "２０２６年度全日本学生柔道体重別選手権大会（男子４５回 女子４２回）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日本武道館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670580",
+   "artist": "第74回全日本剣道選手権大会／第65回全日本女子剣道選手権大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日本武道館(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628825",
+   "artist": "第４３回 中国柔拳演武大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "渋谷区文化総合センター大和田 さくらホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622758",
+   "artist": "富士市制施行６０周年記念 令和８年 冬巡業 大相撲富士場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北里アリーナ富士(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670584",
+   "artist": "令和8年冬巡業 大相撲うるま場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "うるま市石川多目的ドーム(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670619",
+   "artist": "令和8年冬巡業 大相撲長崎場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＡＰＰＩＮＥＳＳ ＡＲＥＮＡ(長崎県)",
+   "pref": "長崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671199",
+   "artist": "Life is Pure ぴあトークバトル 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "江戸東京博物館 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668005",
+   "artist": "令和8年 秋巡業 大相撲明石場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "にっしんタコちゃんアリーナ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621116",
+   "artist": "令和八年 冬巡業 大相撲飯塚場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "飯塚市総合体育館(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667582",
+   "artist": "令和八年 秋巡業 大相撲射水場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アルビス小杉総合体育センター(富山県)",
+   "pref": "富山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668404",
+   "artist": "令和八年 秋巡業 大相撲海老名場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "海老名運動公園 総合体育館(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668404",
+   "artist": "令和八年 秋巡業 大相撲海老名場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "海老名運動公園 総合体育館(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616252",
+   "artist": "令和８年 秋巡業 大相撲おおさか舞洲場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "おおきにアリーナ舞洲(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616218",
+   "artist": "令和八年 秋巡業 大相撲笠岡場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "かさしんアリーナ(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667583",
+   "artist": "令和八年 秋巡業 大相撲かほく場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "とり野菜みそ ＢＬＵＥＣＡＴＳ ＡＲＥＮＡ(石川県)",
+   "pref": "石川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613412",
+   "artist": "令和八年 秋巡業 大相撲高山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "飛騨高山ビッグアリーナ(岐阜県)",
+   "pref": "岐阜県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668292",
+   "artist": "令和八年 秋巡業 大相撲長浜場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "県民共済ドーム長浜(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613429",
+   "artist": "令和八年 秋巡業 大相撲松本場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "エア・ウォーターアリーナ 松本(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668809",
+   "artist": "令和八年 秋巡業 大相撲和気場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和気町体育館(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619037",
+   "artist": "令和八年大相撲秋巡業 岡山場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シゲトーアリーナ岡山(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636051",
+   "artist": "令和八年九州場所大相撲 お土産引換券 ※本券ではご入場できません。※別途入場券が必要です。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡国際センター(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670525",
+   "artist": "令和八年 冬巡業 大相撲姶良場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ビーラインスポーツパーク姶良 体育館(鹿児島県)",
+   "pref": "鹿児島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669103",
+   "artist": "令和八年 冬巡業 大相撲宇治場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "山城総合運動公園（太陽が丘） 体育館(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669490",
+   "artist": "令和八年 冬巡業 大相撲呉場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シシンヨー オークアリーナ(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670604",
+   "artist": "令和八年 冬巡業 大相撲三田場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＯＶＥＲ駒ケ谷体育館(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670027",
+   "artist": "令和八年 冬巡業 大相撲静岡場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "静岡県草薙総合運動場 このはなアリーナ(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669102",
+   "artist": "令和八年 冬巡業 大相撲西宮場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｆｅ ｐａｒｔｎｅｒ Ａｒｅｎａ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669102",
+   "artist": "令和八年 冬巡業 大相撲西宮場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｆｅ ｐａｒｔｎｅｒ Ａｒｅｎａ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623646",
+   "artist": "令和８年 冬巡業 大相撲延岡場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アスリートタウン延岡アリーナ(宮崎県)",
+   "pref": "宮崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670568",
+   "artist": "令和八年 冬巡業 大相撲蓮田場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "蓮田市総合市民体育館（パルシー）(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621119",
+   "artist": "令和八年 冬巡業 大相撲平塚場所",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "トッケイセキュリティ平塚総合体育館(神奈川県)",
+   "pref": "神奈川県"
+  }
+ ]
+}

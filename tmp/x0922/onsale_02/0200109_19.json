@@ -1,0 +1,58 @@
+{
+ "lg": "02",
+ "total": 0,
+ "pages": 0,
+ "fetched_pages": 2,
+ "parsed": 3,
+ "new_name_in_db": 1,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665734",
+   "artist": "無双!! ものまねLIVE2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/8(日)",
+   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
+   "pref": "山梨県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627541",
+   "artist": "よしもとお笑いライブｉｎ甲府２０２６ ～収穫の秋！大爆笑収穫祭～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/28(月)",
+   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
+   "pref": "山梨県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636461",
+   "artist": "ナイチンゲールダンス中野なかるてぃんｐｒｅｓｅｎｔｓ日本一大きい寄席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "リッチダイヤモンド総合市民会館 芸術ホール(山梨県)",
+   "pref": "山梨県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665734",
+   "artist": "無双!! ものまねLIVE2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
+   "pref": "山梨県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627541",
+   "artist": "よしもとお笑いライブｉｎ甲府２０２６ ～収穫の秋！大爆笑収穫祭～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
+   "pref": "山梨県"
+  }
+ ]
+}

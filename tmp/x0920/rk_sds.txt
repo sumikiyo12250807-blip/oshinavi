@@ -1,0 +1,25 @@
+salesDisplayStatus = false;
+					
+					var saleStatus = 0;
+					var infoDate,salesDate;
+					var currentDate = gmdate( 'Y-m-d H:i:s', ( ((new Date).getTime() / 1000) + ( 9 * 3600 ) ) );
+					//console.log('curent-'+currentDate);
+
+					jQuery.each(salesDisplayStatus, function(key, value) {          
+						saleStatus = salesDisplayStatus[key]['sales_status'];
+						if((saleStatus == "2") && (salesDisplayStatus[key]['sales_start_date']!='')){ //sales start date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_start_date']);  
+							salesDate = salesDisplayStatus[key]['sales_start_date'];
+							if(currentDate>salesDate){
+								//console.log('curr is great-'+salesDate);
+								jQuery('.sales-info'+key).show();
+							}else{
+								//console.log('sales is great-'+salesDate);
+								jQuery('.sales-info'+key).hide();
+							}
+						} else if((saleStatus == "3") && (salesDisplayStatus[key]['sales_info_date']!='')){ // information disclouser date
+							//console.log(key+"-"+salesDisplayStatus[key]['sales_info_date']);
+							infoDate = salesDisplayStatus[key]['sales_info_date'];
+							if(currentDate>infoDate){
+								//console.log('curr is great-'+infoDate);
+								jQue
