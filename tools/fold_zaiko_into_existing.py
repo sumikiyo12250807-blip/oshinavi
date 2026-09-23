@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""ZAIKO単独エントリを、同じ公演の既存エントリ（ぴあ/楽天/e+）へ畳む。
+"""同じ公演で2つに割れたエントリを1本へ畳む（消す側→残す側）。
+
+🆕2026-09-23＝売り場によらない形にした（ZAIKO⇔ぴあ だけでなく ぴあ⇔楽天 でも使える）。
 
 ユーザー決定（2026-09-22夜）＝「**ぴあ優先・ボタンは全部載せる**」
 ＝ 既存（ぴあ側）のエントリに `links.zaiko` を足し、ZAIKO側の販売枠を
@@ -57,14 +59,24 @@ def fold(events, pairs, log):
         if z is None or t is None:
             log.append('  ⚠️ id=%s→%s : どちらかが見つからない（z=%s t=%s）' % (zid, tid, z is not None, t is not None))
             continue
-        zurl = (z.get('links') or {}).get('zaiko')
+        # 消す側が持っている売り場のリンクを全部受け側へ移す（ZAIKOに限らない）。
+        # 🆕2026-09-23＝ぴあ⇔楽天の二重（大阪芸術花火）も同じ形なので一般化した。
+        zlinks = {k: v for k, v in (z.get('links') or {}).items() if v}
+        zurl = None
+        for k in ('zaiko', 'tiget', 'fany', 'rakuten', 'pia', 'eplus', 'lawson'):
+            if zlinks.get(k):
+                zurl = zlinks[k]
+                break
         if not zurl:
-            log.append('  ⚠️ id=%s : ZAIKOのURLが無いので畳まない' % zid)
+            log.append('  ⚠️ id=%s : 売り場のURLが1つも無いので畳まない' % zid)
             continue
-        # 1) 受け側に links.zaiko を足す（既にあれば触らない）
+        # 1) 受け側に、受け側が持っていない売り場のリンクだけ足す（上書きしない）
         links = t.setdefault('links', {})
-        if not links.get('zaiko'):
-            links['zaiko'] = zurl
+        for k, v in zlinks.items():
+            if k == 'amazon':
+                continue
+            if not links.get(k):
+                links[k] = v
         # 2) ZAIKO側の枠を、飛び先URLを焼いてから足す
         have = set(slot_key(x) for x in (t.get('tickets') or []))
         added = 0
