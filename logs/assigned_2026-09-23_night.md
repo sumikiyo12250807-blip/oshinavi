@@ -309,3 +309,98 @@
 22527	owarai	fany:30,38	田津原理音新ネタライブ「ポシブる夜」	https://ticket.fany.lol/event/detail/21336
 22528	owarai	fany:30	コーナー AND THE CITY	https://ticket.fany.lol/event/detail/21342
 22529	owarai	fany:30	大喜利 AND THE CITY	https://ticket.fany.lol/event/detail/21341
+振り分け 37件（売り場の申告どおり・推測ゼロ）
+新着プール 385→348件 ／ NEW_ORDER 385→348
+
+== 売り場別 ==
+  zaiko      37
+
+== ジャンル別 ==
+  idol           18
+  musicetc        4
+  hiphop          3
+  club            3
+  engeki          3
+  rock            3
+  vtuber          1
+  jpop            1
+  event           1
+
+== 明細（id / ジャンル / 売り場の申告 / 公演名 / URL）==
+20928	hiphop	zaiko:Hip hop	LAST NIGHT OF THE HOLIDAY at GHOST OSAKA	https://ghostosaka.zaiko.io/ja/e/last-night-holiday-osaka
+20929	hiphop	zaiko:Hip hop	THURSDAY NIGHT at GHOST OSAKA	https://ghostosaka.zaiko.io/ja/e/ghost-thursday-sept26
+20930	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-osaka
+20931	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amemoyono-travel2027
+20932	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-fukui
+20933	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-nagoya
+20934	idol	zaiko:Idol	ARCANA PROJECT presents Halloween Concert THE MOON	https://dearstage.zaiko.io/ja/e/arcana-halloween-moon
+20935	idol	zaiko:Idol	バンもん！HELLOWEEN2026	https://perfectmusic.zaiko.io/ja/e/banmon-helloween26
+20936	club	zaiko:Drum & Bass	BOU TOKYO SHOW	https://circus.zaiko.io/ja/e/bou-tokyo-26
+20937	hiphop	zaiko:Hip hop	Urban Jam	https://zerotokyo.zaiko.io/ja/e/urban-jam-0926
+20938	vtuber	zaiko:Alternative,Pop,Rock	藍海のん 1st one-man LIVE 『indigo Prologue』	https://nonaomi.zaiko.io/ja/e/indigo-prologue
+20939	musicetc	zaiko:?	俺だけを見ろッ！vol.3	https://livehousecentral.zaiko.io/ja/e/oremiro-vol3
+20940	engeki	zaiko:?	【OSK日本歌劇団】神奈川県横須賀市公演 トップスター翼和希 REVUE SHOW!（2026年10月）	https://osk-revue.zaiko.io/ja/e/tsubasa-revue-26
+20941	rock	zaiko:Live,Rock,Visual	Angelo「THE TRINITY」	https://angelo.zaiko.io/ja/e/angelo-trinity-2026
+20942	rock	zaiko:Visual,Rock	DIV PRE-RECHARGE ONEMAN TOUR / TOKYO FINAL	https://div-official.zaiko.io/ja/item/381254
+20944	idol	zaiko:Idol	山手線ほぼ一周ツアー 秋葉原駅編 「ディアステージ駅へようこそ✩.*˚」	https://dearstage.zaiko.io/ja/e/akiba-diastage-tour-26
+20945	idol	zaiko:Idol	fishbowlライブハウスショートツアー 「ケンガイ2026」in TOKYO	https://fishbowl2021.zaiko.io/ja/e/fishbowl-kengai-tokyo-2026
+20946	idol	zaiko:Live,Idol	ダイバーサバイバー1stワンマンライブ	https://starman.zaiko.io/ja/e/diversurvivor-1st-oneman
+20947	musicetc	zaiko:Japanese music	有弦無限-ユウゲンムゲン-	https://cosmospro.zaiko.io/ja/e/ygmg2026
+20948	jpop	zaiko:?	【白金祭アーティストライブ】サイサイときめき注意報♡2026	https://shirokanefes.zaiko.io/ja/e/saisai-platinum-fest-2026
+20949	engeki	zaiko:?	【白金祭お笑いライブ】笑撃	https://shirokanefes.zaiko.io/ja/e/platinum-fest-comedy-2026
+20950	engeki	zaiko:?	「仲良しに決まってるじゃないか！超スピンオフイベント 岡田千優季サーティワンバースディイベント ～ 一人でやれるモン、できるモン、がんばるモン、モンモンモン ～ いつでも戻っておいでスペシャル！｣	https://amuleto-event-event.zaiko.io/ja/e/okada-birthday-31
+20951	club	zaiko:House,Techno	Marcellus Pittman Japan tour 2026 in Nagoya	https://club-mago.zaiko.io/ja/e/marcellus-pittman-nagoya-26
+20952	idol	zaiko:Idol	BEST FRIENDS DJ	https://dearstage.zaiko.io/ja/e/bestfriends-dj-2026
+20953	idol	zaiko:Idol	Bellemule 4thワンマンライブ「ランウェイ」	https://dearstage.zaiko.io/ja/e/bellemule-4th-runway
+20954	idol	zaiko:Idol	fishbowlライブハウスショートツアー「ケンガイ2026」in OSAKA	https://fishbowl2021.zaiko.io/ja/e/fishbowl-kengai-osaka
+20955	idol	zaiko:Idol	fishbowlライブハウスショートツアー 「ケンガイ2026」in NAGOYA	https://fishbowl2021.zaiko.io/ja/e/kengai-nagoya-2026
+20956	musicetc	zaiko:Noise	boris with merzbow -performing "dronevil"-	https://borisheavyrocks.zaiko.io/ja/e/boris-dronevil-2026
+20957	musicetc	zaiko:?	『ヒョンなおしまい。」	https://aoism.zaiko.io/ja/e/hyon-oshinmai-2026
+20958	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027 【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-hiroshima
+20959	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-kobe
+20960	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesola-final
+22397	idol	zaiko:?	9月29日 18:30開演「ＲＥＳＥＴ」公演	https://akb48.zaiko.io/ja/e/reset-0929-1830
+22398	idol	zaiko:Idol	はなみゅかりっこー 〜やっぱ大好きしか出てこない〜	https://ds-shinsaibashi.zaiko.io/ja/e/hanamew-kariko-osaka
+22399	club	zaiko:Techno	CHRØNOS 2nd Anniversary	https://cultureofasia.zaiko.io/ja/e/chronos-2ndanniv
+22400	event	zaiko:Live	"U" -Aoide Launch Party-	https://aoide.zaiko.io/ja/e/u-aoide-launch-party
+22401	rock	zaiko:Japanese music,Rock	SunSet Swish LIVE 2026	https://mahoroza.zaiko.io/ja/e/ssslive2026mahoroza
+ZAIKO 取り直し 37件（変わった 19 / 同じ 18 / 読めず 0）
+
+== 明細（id / 新 / 旧 / 売り場のイベント側ジャンル / 公演名）==
+20928	hiphop	club	Hip hop	LAST NIGHT OF THE HOLIDAY at GHOST OSAKA
+20929	hiphop	club	Hip hop	THURSDAY NIGHT at GHOST OSAKA
+20930	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】
+20931	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】
+20932	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】
+20933	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】
+20934	idol	musicetc	Idol	ARCANA PROJECT presents Halloween Concert THE MOON
+20935	idol	musicetc	Idol	バンもん！HELLOWEEN2026
+20936	club	club	Drum & Bass	BOU TOKYO SHOW
+20937	hiphop	hiphop	Hip hop	Urban Jam
+20938	vtuber	vtuber	Alternative|Pop|Rock	藍海のん 1st one-man LIVE 『indigo Prologue』
+20939	(据え置き)	musicetc	Live	俺だけを見ろッ！vol.3
+20940	(据え置き)	engeki		【OSK日本歌劇団】神奈川県横須賀市公演 トップスター翼和希 REVUE SHOW!（2026年10月）
+20941	rock	rock	Live|Rock|Visual	Angelo「THE TRINITY」
+20942	rock	rock	Visual|Rock	DIV PRE-RECHARGE ONEMAN TOUR / TOKYO FINAL
+20944	idol	musicetc	Idol	山手線ほぼ一周ツアー 秋葉原駅編 「ディアステージ駅へようこそ✩.*˚」
+20945	idol	musicetc	Idol	fishbowlライブハウスショートツアー 「ケンガイ2026」in TOKYO
+20946	idol	musicetc	Live|Idol	ダイバーサバイバー1stワンマンライブ
+20947	musicetc	musicetc	Japanese music	有弦無限-ユウゲンムゲン-
+20948	jpop	jpop		【白金祭アーティストライブ】サイサイときめき注意報♡2026
+20949	(据え置き)	engeki		【白金祭お笑いライブ】笑撃
+20950	(据え置き)	engeki		「仲良しに決まってるじゃないか！超スピンオフイベント 岡田千優季サーティワンバースディイベント ～ 一人でやれるモン、できるモン、がんばるモン、モンモンモン ～ いつでも戻っておいでスペシャル！｣
+20951	club	club	House|Techno	Marcellus Pittman Japan tour 2026 in Nagoya
+20952	idol	musicetc	Idol	BEST FRIENDS DJ
+20953	idol	musicetc	Idol	Bellemule 4thワンマンライブ「ランウェイ」
+20954	idol	musicetc	Idol	fishbowlライブハウスショートツアー「ケンガイ2026」in OSAKA
+20955	idol	musicetc	Idol	fishbowlライブハウスショートツアー 「ケンガイ2026」in NAGOYA
+20956	musicetc	musicetc	Noise	boris with merzbow -performing "dronevil"-
+20957	(据え置き)	musicetc		『ヒョンなおしまい。」
+20958	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027 【雨過天晴】
+20959	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】
+20960	idol	musicetc	Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】
+22397	idol	idol		9月29日 18:30開演「ＲＥＳＥＴ」公演
+22398	idol	musicetc	Idol	はなみゅかりっこー 〜やっぱ大好きしか出てこない〜
+22399	club	club	Techno	CHRØNOS 2nd Anniversary
+22400	event	event	Live	"U" -Aoide Launch Party-
+22401	rock	rock	Japanese music|Rock	SunSet Swish LIVE 2026

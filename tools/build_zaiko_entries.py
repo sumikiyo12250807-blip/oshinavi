@@ -56,7 +56,7 @@ ZAIKO_GENRE = {
     'Rock': 'rock', 'Alternative': 'rock', 'Indie': 'rock', 'Punk': 'rock',
     'Metal': 'rock', 'Visual': 'rock',
     'Jazz': 'jazz', 'Classical': 'classic',
-    'Japanese music': 'hougaku', 'K-POP': 'kpop', 'Asian': 'yougaku',
+    'K-POP': 'kpop', 'Asian': 'yougaku',
     'Anime': 'anime', 'Anime & Manga': 'anime', 'VTuber': 'vtuber',
     'Acoustic': 'musicetc', 'Folk': 'musicetc', 'Crossover': 'musicetc',
     'Instrumental': 'musicetc', 'Noise': 'musicetc', 'Music': 'musicetc',
@@ -67,6 +67,14 @@ ZAIKO_GENRE = {
     # ⛔写さない＝ジャンルではなく「形式」の札。'Live'（78回）は生演奏という意味で、
     #   これを何かのジャンルに倒すと嘘になる。件数は多いが**無視するのが正しい**。
     'Live': None,
+    # ⛔🆕2026-09-23＝`Japanese music` も写さない（旧 hougaku は取り消し）。
+    #   これは「日本の音楽」という**大分類**で、和楽器(hougaku)の意味ではない
+    #   （実例＝SunSet Swish は `Japanese music, Rock` のJ-ROCKバンド／
+    #    有弦無限は `Japanese music` ＋出演者 `Metal, Anime`）。
+    #   TIGETの31「邦楽」が日本のポップスを指すのと同じ罠（[[feedback_kpop_vs_yougaku]]の隣）。
+    #   写さずに落とせば、細分（Rock/Metal/Anime）が付いていればそちらが効き、
+    #   何も無ければ musicetc＝その他の砦に落ちる。どちらも嘘にならない。
+    'Japanese music': None,
 }
 GENRE_FALLBACK = 'musicetc'
 
@@ -181,14 +189,14 @@ def artist_of(det, listrow):
 
 
 def genres_of(det, unknown, cat=None):
-    """ジャンルを写す。イベントのジャンル → 出演者のジャンル の順。未知は数えて報告。"""
+    """ジャンルを写す。**出演者のジャンル → イベントのジャンル** の順。未知は数えて報告。
+    🚨🆕2026-09-23に順番を入れ替えた。それまではイベント側が先だったが、
+       イベント側は1件も読めていなかった（ハーベスタが dict を list として回していた）ので
+       実質「出演者だけ」で動いていた。ハーベスタを直した今、イベント側を先にすると
+       **出演者に付いた強い札（VTuberなど）がイベント側の広い札に負ける**
+       （実例＝20938 藍海のん＝出演者 VTuber／イベント Alternative,Pop,Rock）。
+       具体的な出演者側を先に読み、イベント側は足りない分を補う形にする。"""
     got = []
-    for g in ((det or {}).get('genres') or []):
-        if g in ZAIKO_GENRE:
-            if ZAIKO_GENRE[g]:
-                got.append(ZAIKO_GENRE[g])
-        elif g:
-            unknown[g] += 1
     for p in ((det or {}).get('performers') or []):
         for g in (p.get('genres') or []):
             if g in ZAIKO_GENRE:
@@ -196,6 +204,12 @@ def genres_of(det, unknown, cat=None):
                     got.append(ZAIKO_GENRE[g])
             elif g:
                 unknown[g] += 1
+    for g in ((det or {}).get('genres') or []):
+        if g in ZAIKO_GENRE:
+            if ZAIKO_GENRE[g]:
+                got.append(ZAIKO_GENRE[g])
+        elif g:
+            unknown[g] += 1
     if not got and cat in CAT_GENRE:
         got.append(CAT_GENRE[cat])       # 出演者のジャンルが空＝一覧のカテゴリで補う
     return list(dict.fromkeys(got))
@@ -501,6 +515,26 @@ def _selftest():
                        today, unk3)
     assert e9b['_genre'] == 'club', e9b['_genre']
     assert not unk3, unk3
+
+    # ⑨-3 🆕2026-09-23＝イベント側のジャンルが効く（ハーベスタが dict を読めるようになった分）。
+    #      出演者が空でも「売り場が Idol と言っている」なら idol。その他に落とさない。
+    unk4 = collections.Counter()
+    e9c, _ = build_one(dict(lr, cat='concerts-live-music'),
+                       mk([tk()], genres=['Idol'], performers=[]), today, unk4)
+    assert e9c['_genre'] == 'idol', e9c['_genre']
+    # ⑨-4 出演者の札のほうが具体的なときは出演者が勝つ（VTuber がイベント側の Rock に負けない）
+    e9d, _ = build_one(lr, mk([tk()], genres=['Alternative', 'Pop', 'Rock'],
+                              performers=[{'name': '藍海テスト', 'genres': ['VTuber', 'Rock']}]),
+                       today, unk4)
+    assert e9d['_genre'] == 'vtuber', e9d['_genre']
+    # ⑨-5 `Japanese music` は大分類なので写さない（和楽器の意味ではない）。
+    #      細分があればそちらが効き、無ければ その他 に落ちる。
+    e9e, _ = build_one(lr, mk([tk()], genres=['Japanese music', 'Rock'], performers=[]), today, unk4)
+    assert e9e['_genre'] == 'rock', e9e['_genre']
+    e9f, _ = build_one(dict(lr, cat='concerts-live-music'),
+                       mk([tk()], genres=['Japanese music'], performers=[]), today, unk4)
+    assert e9f['_genre'] == GENRE_FALLBACK, e9f['_genre']
+    assert not unk4, unk4
     # 大会・競技はスポーツへ／演劇・ショーは演劇へ
     for _cat, _want in (('tournaments-competitions', 'sports'),
                         ('performances-shows', 'engeki'),
