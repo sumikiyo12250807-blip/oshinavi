@@ -45,7 +45,7 @@ for n, (eid, url) in enumerate(rows, 1):
     if n % 25 == 0:
         sys.stdout.write('%d/%d\n' % (n, len(rows)))
         sys.stdout.flush()
-    time.sleep(0.4)
+    time.sleep(float(sys.argv[3]) if len(sys.argv) > 3 else 0.4)
 
 io.open(out_path, 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False, indent=1))
 sys.stdout.write('DONE %d rows / err %d -> %s\n' % (len(rows), err, out_path))
