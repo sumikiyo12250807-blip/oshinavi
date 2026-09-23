@@ -421,8 +421,23 @@ def parse_event(html, eid):
                 periods.append({'pay': unesc(strip_tags(lm.group(1))),
                                 'text': unesc(strip_tags(vm.group(1))),
                                 'parsed': parse_period(strip_tags(vm.group(1)))})
+            # 🆕2026-09-24 「当日支払い」「受付前」の券種は受付期間の欄の代わりに、券種の下の注記
+            #   （c-ordering-btn__subs__caption）に「受付：2026.10.03 10:00 〜」「受付終了日時：2026.09.25 23:59」
+            #   と書く。読んでいなかったので30件56枠が「締切不明」、受付前の券種が抜けていた（独立チェックで発覚）。
+            cap = ' '.join(unesc(strip_tags(c)) for c in
+                           re.findall(r'subs__caption">(.*?)</p>', tb, re.S))
+            start_at = end_at = None
+            ms = re.search(r'受付[：:]\s*(\d{4})\.(\d{1,2})\.(\d{1,2})\s+(\d{1,2}):(\d{2})\s*〜', cap)
+            if ms:
+                start_at = ('%s-%02d-%02d' % (ms.group(1), int(ms.group(2)), int(ms.group(3))),
+                            '%d:%s' % (int(ms.group(4)), ms.group(5)))
+            me = re.search(r'受付終了日時[：:]\s*(\d{4})\.(\d{1,2})\.(\d{1,2})\s+(\d{1,2}):(\d{2})', cap)
+            if me:
+                end_at = ('%s-%02d-%02d' % (me.group(1), int(me.group(2)), int(me.group(3))),
+                          '%d:%s' % (int(me.group(4)), me.group(5)))
             prog['tickets'].append({'name': name, 'price': price, 'class': cls,
-                                    'date': tdate, 'time': ttime, 'periods': periods})
+                                    'date': tdate, 'time': ttime, 'periods': periods,
+                                    'start_at': start_at, 'end_at': end_at})
         # 🚨B形は券種ごとに公演日時を持つ＝公演の塊の見出しが無いので、券種の日付で塊を割り直す。
         #    これをしないと「1つの公演に45券種」に見えて、昼夜も日別も潰れる。
         if any(t.get('date') for t in prog['tickets']):
