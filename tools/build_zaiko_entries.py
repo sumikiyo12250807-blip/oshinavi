@@ -63,8 +63,14 @@ ZAIKO_GENRE = {
     'Others': 'musicetc',
     # ── 音楽以外 ──
     'Comedy': 'owarai', 'Wrestling': 'sports', 'Art & Design': 'art',
-    # 2026-09-23追加＝夜の収集で「表に無い」と報告された分（売り場がスポーツと言っている）
+    # 2026-09-23追加＝夜の収集と番人が「表に無い」と報告した分。
+    #   海外の音楽は [[feedback_kaigai_is_area]]＋ぴあの「民族音楽→yougaku」に合わせて yougaku へ。
     'Sports & Fitness': 'sports', 'Body building': 'sports',
+    'Esports': 'sports', 'Soccer': 'sports', 'Sumo': 'sports',
+    'Goth': 'rock',
+    'African': 'yougaku', 'Afrobeats': 'yougaku', 'Latin': 'yougaku',
+    'Soca': 'yougaku', 'Oldies': 'yougaku',
+    'Owarai': 'owarai', 'Food & Drink': 'gourmet',
     'Culture': 'event', 'Culture & Subculture': 'event',
     # ⛔写さない＝ジャンルではなく「形式」の札。'Live'（78回）は生演奏という意味で、
     #   これを何かのジャンルに倒すと嘘になる。件数は多いが**無視するのが正しい**。
