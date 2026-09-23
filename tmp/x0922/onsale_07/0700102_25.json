@@ -1,0 +1,85 @@
+{
+ "lg": "07",
+ "total": 0,
+ "pages": 0,
+ "fetched_pages": 2,
+ "parsed": 5,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669496",
+   "artist": "五十嵐紅｜ギターと静寂 特別公演『バロック』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/5(木)",
+   "venue": "フィガロホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669498",
+   "artist": "五十嵐紅｜ギターと静寂 特別公演『星と祈り』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/5(木)",
+   "venue": "フィガロホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633847",
+   "artist": "光行いちご（ｐ）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/22(日)",
+   "venue": "近江八幡市文化会館 大ホール(滋賀県)",
+   "pref": "滋賀県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669496",
+   "artist": "五十嵐紅｜ギターと静寂 特別公演『バロック』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フィガロホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669498",
+   "artist": "五十嵐紅｜ギターと静寂 特別公演『星と祈り』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フィガロホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617659",
+   "artist": "久間あゆみピアノリサイタル 山河を眺め、北欧の音楽を楽しむ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "立木音楽堂(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630619",
+   "artist": "ＫＬＡＶＩＥＲ ＱＵＡＲＴＥＴＴ ～絢爛のロマン～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "近江八幡市文化会館 大ホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633847",
+   "artist": "光行いちご（ｐ）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "近江八幡市文化会館 大ホール(滋賀県)",
+   "pref": "滋賀県"
+  }
+ ]
+}

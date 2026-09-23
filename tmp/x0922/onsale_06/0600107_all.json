@@ -1,0 +1,351 @@
+{
+ "lg": "06",
+ "total": 47,
+ "pages": 5,
+ "fetched_pages": 6,
+ "parsed": 29,
+ "new_name_in_db": 4,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669299",
+   "artist": "大阪芸術花火2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "りんくう公園特設会場(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669988",
+   "artist": "城陽秋花火 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/4(日)",
+   "venue": "京都府立木津川運動公園(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671088",
+   "artist": "常滑市民花火大会2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "ボートレースとこなめ(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621185",
+   "artist": "長崎くんち・諏訪神社さじき席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/7(水) ・ 2026/10/9(金)",
+   "venue": "諏訪神社(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620564",
+   "artist": "長崎くんち 中央公園観覧券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/7(水) ・ 2026/10/8(木)",
+   "venue": "中央公園くんち観覧場(長崎県)",
+   "pref": "長崎県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670068",
+   "artist": "第38回なにわ淀川花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/17(土)",
+   "venue": "淀川河川敷（十三側）(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632225",
+   "artist": "～ ｈｏｌｏｌｉｖｅ ｐｒｏｄｕｃｔｉｏｎ ９ｔｈ Ａｎｎｉｖｅｒｓａｒｙ Ｆｉｒｅｗｏｒｋｓ ～Ｂｌｏｏｍｉｎｇ Ｄｒｅａｍｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/15(木)",
+   "venue": "埼玉スタジアム２００２(埼玉県)",
+   "pref": "埼玉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637248",
+   "artist": "ＭＡＩＺＵＲＵ ＰＬＡＹＢＡＣＫ ＦＥＳ．舞鶴花火祭り２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "ＭＡＩＺＵＲＵ Ｐ．Ｂ． Ｈａｒｂｏｒ Ｐａｒｋ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637490",
+   "artist": "ＭＡＩＺＵＲＵ ＰＬＡＹＢＡＣＫ ＦＥＳ．舞鶴花火祭り２０２６ 【駐車券】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "ＭＡＩＺＵＲＵ Ｐ．Ｂ． Ｈａｒｂｏｒ Ｐａｒｋ(京都府)",
+   "pref": "京都府",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669369",
+   "artist": "第8回秋川流域花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京サマーランド第２駐車場(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627586",
+   "artist": "第４６回いたみ花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "猪名川神津大橋周辺河川敷(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669299",
+   "artist": "大阪芸術花火2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "りんくう公園特設会場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669982",
+   "artist": "KASHIHARA SKY PALETTE 万葉花火 supported by Anker",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "橿原運動公園(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668949",
+   "artist": "第85回川崎市制記念多摩川花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川崎市高津区・多摩川河川敷(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669847",
+   "artist": "北区花火会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "荒川河川敷 赤羽会場(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669847",
+   "artist": "北区花火会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "荒川河川敷 川口会場(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669022",
+   "artist": "くきのうみ花火の祭典",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北九州市若松区久岐の浜７－１周辺(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626323",
+   "artist": "時代祭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "御池通(京都府)／京都御苑(京都府)／平安神宮道(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669988",
+   "artist": "城陽秋花火 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都府立木津川運動公園(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629911",
+   "artist": "第２９回 仙台みちのくＹＯＳＡＫＯＩまつり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "勾当台公園会場(宮城県)／定禅寺通パレード会場(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670653",
+   "artist": "全国花火師競技大会「第5回にし阿波の花火」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "徳島県西部健康防災公園（三好市三野健康防災公園／美馬市美馬リバーサイドパーク）(徳島県)",
+   "pref": "徳島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629630",
+   "artist": "第５６回田辺花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "田辺市扇ヶ浜(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626829",
+   "artist": "第３回渥美半島花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "田原市総合体育館周辺(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670860",
+   "artist": "第6回花火甲子園",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ラグーナビーチ（大塚海浜緑地）(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669497",
+   "artist": "中央区制８０周年記念・港区政８０周年記念 東京湾大華火祭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "港エリア／台場エリア(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637085",
+   "artist": "刀水橋花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "利根川河川敷とね運動場(群馬県)",
+   "pref": "群馬県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671088",
+   "artist": "常滑市民花火大会2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ボートレースとこなめ(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622098",
+   "artist": "第３１回 豊橋 炎の祭典",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "豊橋総合スポーツ公園 かもめ広場少年サッカー場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621185",
+   "artist": "長崎くんち・諏訪神社さじき席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "諏訪神社(長崎県)",
+   "pref": "長崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620564",
+   "artist": "長崎くんち 中央公園観覧券",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中央公園くんち観覧場(長崎県)",
+   "pref": "長崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669142",
+   "artist": "流山花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "流山１～３丁目地先の江戸川堤(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670068",
+   "artist": "第38回なにわ淀川花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "淀川河川敷（十三側）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633312",
+   "artist": "ＢｉｈｏｋｕＦｉｒｅｗｏｒｋｓ＆ファンタジーステージ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "国営備北丘陵公園(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632225",
+   "artist": "～ ｈｏｌｏｌｉｖｅ ｐｒｏｄｕｃｔｉｏｎ ９ｔｈ Ａｎｎｉｖｅｒｓａｒｙ Ｆｉｒｅｗｏｒｋｓ ～Ｂｌｏｏｍｉｎｇ Ｄｒｅａｍｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "埼玉スタジアム２００２(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637248",
+   "artist": "ＭＡＩＺＵＲＵ ＰＬＡＹＢＡＣＫ ＦＥＳ．舞鶴花火祭り２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＭＡＩＺＵＲＵ Ｐ．Ｂ． Ｈａｒｂｏｒ Ｐａｒｋ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637490",
+   "artist": "ＭＡＩＺＵＲＵ ＰＬＡＹＢＡＣＫ ＦＥＳ．舞鶴花火祭り２０２６ 【駐車券】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＭＡＩＺＵＲＵ Ｐ．Ｂ． Ｈａｒｂｏｒ Ｐａｒｋ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635362",
+   "artist": "第７１回松代藩真田十万石まつり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "松代城跡 特設会場(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635178",
+   "artist": "令和８年度高山やぶさめ祭花火大会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高山川河川敷(鹿児島県)",
+   "pref": "鹿児島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669884",
+   "artist": "rockin'star Carnival 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "国営ひたち海浜公園(茨城県)",
+   "pref": "茨城県"
+  }
+ ]
+}

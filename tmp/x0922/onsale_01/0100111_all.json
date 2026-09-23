@@ -1,0 +1,397 @@
+{
+ "lg": "01",
+ "total": 79,
+ "pages": 8,
+ "fetched_pages": 9,
+ "parsed": 42,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670509",
+   "artist": "AIR JAM 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/7(土)",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670816",
+   "artist": "STARフェス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土) ・ 2026/10/11(日)",
+   "venue": "ぴあアリーナＭＭ(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670111",
+   "artist": "りんご音楽祭2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土) ～ 2026/9/27(日)",
+   "venue": "アルプス公園(長野県)",
+   "pref": "長野県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669494",
+   "artist": "秋田CARAVAN MUSIC FES 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "秋田県にかほ市・象潟グラウンド(秋田県)",
+   "pref": "秋田県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633802",
+   "artist": "ＡＷＡＪＩＮ Ｆｅｓ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アワジアースミュージアム(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669449",
+   "artist": "OURSONGS IN THE PARK 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なごアグリパーク(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668250",
+   "artist": "September JAM(ARTS／風とロック芋煮会／オハラ☆ブレイク’26／湖畔の秋空と赤い花火)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "天神浜オートキャンプ場(福島県)",
+   "pref": "福島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629497",
+   "artist": "ＩＺＵＭＯ ＯＲＯＣＨＩ ＦＥＳ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "松江市総合体育館(島根県)",
+   "pref": "島根県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670375",
+   "artist": "INSPIRATION by SUNSETLIVE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＩＮＮ ＴＨＥ ＰＡＲＫ 福岡(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670375",
+   "artist": "INSPIRATION by SUNSETLIVE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＩＮＮ ＴＨＥ ＰＡＲＫ 福岡(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670509",
+   "artist": "AIR JAM 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＺＯＺＯマリンスタジアム(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670692",
+   "artist": "a-nation 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "お台場ａ－ｎａｔｉｏｎ特設会場(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625483",
+   "artist": "大人のくつろぎ音楽堂フェス「ＪＡＺＺ井」２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ハーモニーホールふくい 大ホール(福井県)",
+   "pref": "福井県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669472",
+   "artist": "overhead fes'2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アイネットやまびこドーム(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670116",
+   "artist": "Karatsu Drop Festival 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "虹の松原海水浴場 東の浜(佐賀県)",
+   "pref": "佐賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635152",
+   "artist": "ガラフェス ～渋谷 文化的衝撃センセーション 秋の新作発表会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623656",
+   "artist": "第６８回熊本県芸術文化祭オープニングステージ「マーラー／交響曲第２番≪復活≫」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "熊本県立劇場 コンサートホール(熊本県)",
+   "pref": "熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631359",
+   "artist": "クロマンタＲＯＣＫ－ＦＥＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "道の駅 おおゆ(秋田県)",
+   "pref": "秋田県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670301",
+   "artist": "Kobe Calling 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＩＩＴＯ（デザイン・クリエイティブセンター神戸）(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669961",
+   "artist": "KOYABU SONIC 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "インテックス大阪 ４号館・５号館(大阪府) 一般発売 販売期間中 ～2026/9/22(火・祝) 23:59",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623791",
+   "artist": "ＧＯ ＯＵＴ ＣＡＭＰ ｖｏｌ．２２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ふもとっぱら(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624979",
+   "artist": "ＳＡＰＰＯＲＯ ＣＩＴＹ ＪＡＺＺ ２０２６ ＴＨＥＡＴＥＲ ＪＡＺＺ ＬＩＶＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625113",
+   "artist": "ＳＡＰＰＯＲＯ ＣＩＴＹ ＪＡＺＺ ２０２６ ユニバーサルジャズライブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市民交流プラザ クリエイティブスタジオ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669247",
+   "artist": "GFEST.2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｇメッセ群馬(群馬県)",
+   "pref": "群馬県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670816",
+   "artist": "STARフェス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ぴあアリーナＭＭ(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668481",
+   "artist": "DElicious BUns FESTIVAL 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "常滑りんくうビーチ海浜部(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621620",
+   "artist": "ＢＵＲＳＴ ＭＡＸ’ ２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "立久恵峡わかあゆの里(島根県)",
+   "pref": "島根県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633238",
+   "artist": "ＨＥＲＯ ＧＡＴＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "代々木公園 野外ステージ(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669822",
+   "artist": "Fantastic Date fm MEGA★ROCKS 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台市内９会場(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669767",
+   "artist": "THE BOOSTER ROCK FES.2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "函館市緑の島 特設ステージ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626081",
+   "artist": "１゜Ｆｅｓｔｉｖａｌ ｄｏ Ｃｈｏｒｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ギター文化館(茨城県)／シエロミュージックサロン(兵庫県)／中華会舘 東亜ホール(兵庫県)",
+   "pref": "茨城県／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670560",
+   "artist": "ボロフェスタ2026～25th anniversary～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都メトロ／ＫＢＳホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669493",
+   "artist": "Mt.FUJIMAKI 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "山中湖交流プラザきらら(山梨県)",
+   "pref": "山梨県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666623",
+   "artist": "マグロック & ポップ 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "清水マリンパーク(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670895",
+   "artist": "MASHUP FESTIVAL kobe’26",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＴＴＥＩ ＰＡＲＫ／アトア他 神戸ベイエリア複数会場(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620203",
+   "artist": "横芝光町ＳＴＲＥＥＴ ＴＯ Ｂ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ふれあい坂田池公園陸上競技場(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669495",
+   "artist": "LIVE AZUMA 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福島あづま球場／あづま総合運動公園(福島県)",
+   "pref": "福島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670790",
+   "artist": "RADIO！READY GO！SPECIAL",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大手町三井ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670400",
+   "artist": "RE：MEDIA FESTIVAL 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛媛県武道館(愛媛県)",
+   "pref": "愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670111",
+   "artist": "りんご音楽祭2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アルプス公園(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612488",
+   "artist": "ＬＥＯＦＥＳ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あさひ賃貸 りんくうステージ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668029",
+   "artist": "Rockroshi Starry Music Festival 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "六呂師高原(福井県)",
+   "pref": "福井県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669884",
+   "artist": "rockin'star Carnival 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "国営ひたち海浜公園(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636472",
+   "artist": "ＷＡＪＹＵ ＢＥＡＴ ＳＴＡＤＩＵＭ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "国営木曽三川公園 木曽三川公園センター 北ゾーン(岐阜県)",
+   "pref": "岐阜県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667749",
+   "artist": "WANIMA presents 1CHANCE FESTIVAL 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "熊本県農業公園カントリーパーク(熊本県)",
+   "pref": "熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667749",
+   "artist": "WANIMA presents 1CHANCE FESTIVAL 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "熊本県農業公園カントリーパーク(熊本県)",
+   "pref": "熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670264",
+   "artist": "ONE PARK HANGOUT FES2026 in OYABE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "三井アウトレットパーク 北陸小矢部 特設会場(富山県)",
+   "pref": "富山県"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+静岡県の前後:
+.play_date).format('YYYY年MM月DD日（dd）')); $("#show-modal-start-time").text("・開場 " + ticket.open_time + "／開演 " + ticket.start_time); }; if (ticket.is_stream_only == true) { $("#show-modal-is_stream").text("ライブ配信"); }else{ $("#show-modal-is_stream").text(""); } if (ticket.is_sgc == true) { $("#show-modal-is_sgc").html("備考 ■主催:東京ガールズコレクション実行委員会 ■共催:静岡県、静岡市■公式メディア:girlswalker ■企画/制作:株式会社W TOKYO ■公式ハッシュタグ:#TGCしずおか公式X:@TGCnews 公式TikTok:@tgc_official 公式Instagram:tgc_staff ■お問合せ:サンデーフォークプロモーション静岡 TEL:054-284-9999 ※4歳以上はチケットが必要です"); }else{ $("#show-modal-is_sgc").text(""); } if (ticket.is_hokuriku == true) { $("#show-modal-is_hokuriku"
+
+title=BM照合型 のチケット購入・予約は TIGET から
+主催者=それゆけいけっぺ

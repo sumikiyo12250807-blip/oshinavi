@@ -6,7 +6,7 @@
 import io, json, re, sys, collections
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-TODAY = '2026-09-21'
+TODAY = '2026-09-22'
 tag = sys.argv[1] if len(sys.argv) > 1 else 'before'
 
 h = io.open('index.html', encoding='utf-8', newline='').read()

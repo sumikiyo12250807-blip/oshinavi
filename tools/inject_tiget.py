@@ -43,6 +43,13 @@ def main():
     ap.add_argument('src')
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--report', default='tmp/inject_tiget_report.txt')
+    # 🚨🆕2026-09-23＝③「同名の登録あり（**公演日は違う**）」を入れられるようにした。
+    #   ②「名前×公演日が一致」は今までどおり止める（本当の二重登録）。
+    #   ③はTIGETに多い**定期公演のvol.違い**（I☆Cicle vol.95／Teamくれれっ娘！Vol.1380 など）で、
+    #   既存も vol. ごとに別エントリで登録している＝止めると**別の日の公演を丸ごと落とす**。
+    #   実測 2026-09-23 夜＝要確認96件のうち88件がこれだった（[[feedback_harvest_name_dedup_blindspot]]
+    #   ＝名前で重複を判定すると巻き添えが出る、と同じ型）。
+    ap.add_argument('--same-name-ok', action='store_true')
     a = ap.parse_args()
 
     src = json.load(open(a.src, encoding='utf-8'))
@@ -76,9 +83,11 @@ def main():
             maybe.append((e, '名前×公演日が登録と一致'))
             continue
         hit = sorted(set((by_name.get(na) or []) + (by_name.get(nn) or [])))
-        if hit:
+        if hit and not a.same_name_ok:
             maybe.append((e, '同名の登録あり id%s' % hit[:6]))
             continue
+        if hit:
+            e['_samename'] = hit[:6]     # 後から追える印（畳む先の候補）
         put.append(e)
 
     lb = json.load(io.open('.claude/state/last_batch.json', encoding='utf-8'))['batches']

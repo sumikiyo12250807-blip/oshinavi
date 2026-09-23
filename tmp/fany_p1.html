@@ -1,0 +1,1293 @@
+<!-- デザインタイプ3 -->
+  <!DOCTYPE html>
+  <html lang="ja">
+      <head>
+          <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+                  <title>イベント検索 | FANYチケット</title>
+        <style>
+      :root {
+        --bg-copyright-url: url("https://cdn.funity.live/assets/img/bg-copyright.png")
+      }
+    </style>
+    <script>
+      //cdn-init start
+      var cdn_domain = "https://cdn.funity.live";
+      //cdn-init end
+    </script>
+          <link rel="icon" href="https://cdn.funity.live/13/CLT-S02-06/13/3/20241122200415382633.ico">
+        
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/module.css?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f">
+
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/editor_reset.css?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f">
+    <link rel="stylesheet" type="text/css" href="https://cdn.funity.live/13/css/style.css?v=51">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="/assets/css/design_type2/jquery-ui.min.css">
+          <link rel="stylesheet" href="/assets/css/design_type2/reset.css">
+          <link rel="stylesheet" href="/assets/css/design_type3/fany.css?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f">
+          <link rel="stylesheet" href="/assets/css/design_type2/font-awesome-4.5.0.min.css">
+          <link rel="stylesheet" href="/assets/css/design_type3/fany_datepicker.css">
+          <link rel="stylesheet" href="/assets/css/design_type3/style.css">
+
+          <script src="/assets/js/design_type2/jquery-3.6.0.slim.min.js"></script>
+          <script src="/assets/js/design_type2/jquery-ui.min.js" defer></script>
+          <script src="/assets/js/design_type3/fany_script.js?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f" defer></script>
+          <script src="/assets/js/design_type3/datepicker-ja.js?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f" defer></script>
+          <script src="/assets/js/design_type3/fany_datepicker.js?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f" defer></script>
+          <script src="/assets/js/design_type3/1.8.1_slick_slick.min.js?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f" defer></script>
+          <script src="/assets/js/main.js?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f" defer></script>
+          <script src="/assets/js/ec.js?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f" defer></script>
+          <script src="/assets/js/vendor.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.js"></script>
+                    
+                                  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NPWRFPDG');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) EVENTIFY-yoshimoto-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5M7SSSXZM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5M7SSSXZM');
+</script>
+<!-- End Google tag (gtag.js) EVENTIFY-yoshimoto-->
+
+<script>
+function is_smart_mobile(){
+    $useragents = array(
+        'iPhone', // iPhone
+        'iPod', // iPod touch
+        'Android.*Mobile', // 1.5+ Android *** Only mobile
+        'Windows.*Phone', // *** Windows Phone
+        'dream', // Pre 1.5 Android
+        'CUPCAKE', // 1.5+ Android
+        'blackberry9500', // Storm
+        'blackberry9530', // Storm
+        'blackberry9520', // Storm v2
+        'blackberry9550', // Storm v2
+        'blackberry9800', // Torch
+        'webOS', // Palm Pre Experimental
+        'incognito', // Other iPhone browser
+        'webmate' // Other iPhone browser
+
+    );
+    $pattern = '/'.implode('|', $useragents).'/i';
+    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+}
+</script>
+                </head>
+      <body id="design_type_3-body">
+                        <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPWRFPDG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <!--スマホページなら、ラフピーバナーを表示-->   <?php if(is_smart_mobile()):?>     <a href="https://yappli.plus/yoshimotolaughp_ticketyoshimoto" id="SmBnLink" style="display:none;">         <img src="https://cdn.funity.live/fany/img/header_fany.png" style="width:100%; height:auto; margin: 0 0 -5px 0;">     </a>     <script>if ((navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('iPad') != -1 || navigator.userAgent.indexOf('iPod') != -1 || navigator.userAgent.indexOf('Android') != -1) && navigator.userAgent.indexOf('Yappli') == -1) { document.getElementById("SmBnLink").style.display="block"; }</script>   <?php endif;?>                    <div class="g-wrapper">
+              <section id="fany-main">
+      <div id="header">
+        <div id="header">
+          <div class="fany">
+            <div class="fany-header">
+              <div class="fany-header_logo">
+                <a href="https://fany.lol/" target="_blank" rel="noopener" style="background-image: url(https://cdn.funity.live/assets/img/design_type3/logo/FANY_logo_white.svg);" aria-describedby="a11y-new-window-external-message"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-fany-header">
+            <h1 class="fany-logo g-header_logo">
+                                <a style="background-repeat: no-repeat; height: 36px;" href="/" data-logo_url="https://cdn.funity.live/13/CLT-S02-06/13/1/20241122200414903859.png"></a>
+                            </h1>
+            <div class="fany-mypage">
+              <a href="/mypage"><i class="fa fa-user"></i><span class="icon-desc">マイページ</span></a>
+            </div>
+            <div class="hamburger fany-hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="hamburger_menu fany-hamburger_menu icon-desc">メニュー</span>
+
+            <nav class="globalMenuSp">
+              <ul>
+                <li><a href="/stc/user_guide">ご利用ガイド</a></li>
+                <li><a href="/mypage">マイページ</a></li>
+                <li><a href="https://id.yoshimoto.co.jp/signup_intro.html">新規会員登録</a></li>
+                <li><a href="/notice">お知らせ</a></li>
+                <li><a href="/event/refund">公演中止・延期のお知らせ</a></li>
+                <li><a href="/stc/other">本サイト以外のご購入方法</a></li>
+                <li><a href="/faq">FAQ・お問い合わせ</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="fany-search">
+        <div class="g-accordion-wrap">
+          <div class="g-accordion-item">
+            <span class="g-accordion-header">劇場<small>から探す</small><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+          <div class="g-accordion-body">
+            <ul>
+              <!-- 劇場 -->
+                            <li>
+                <a
+                  href="/ngk"
+                >なんばグランド花月<small
+                  >/ 大阪 なんば</small></a></li>
+                            <li>
+                <a
+                  href="/lumine"
+                >ルミネtheよしもと<small
+                  >/ 東京 新宿</small></a></li>
+                            <li>
+                <a
+                  href="/manzaigekijyo"
+                >よしもと漫才劇場<small
+                  >/ 大阪 なんば</small></a></li>
+                            <li>
+                <a
+                  href="/morinomiya_manzaigekijyo"
+                >森ノ宮よしもと漫才劇場<small
+                  >/ 大阪 森ノ宮</small></a></li>
+                            <li>
+                <a
+                  href="/shibuya_manzaigekijyo"
+                >渋谷よしもと漫才劇場<small
+                  >/ 東京 渋谷</small></a></li>
+                            <li>
+                <a
+                  href="/jimbocho_manzaigekijyo"
+                >神保町よしもと漫才劇場<small
+                  >/ 東京 神保町</small></a></li>
+                            <li>
+                <a
+                  href="/dotonbori"
+                >よしもと道頓堀シアター<small
+                  >/ 大阪 道頓堀</small></a></li>
+                            <li>
+                <a
+                  href="/roppongi"
+                >YOSHIMOTO ROPPONGI THEATER<small
+                  >/ 東京 六本木</small></a></li>
+                            <li>
+                <a
+                  href="/makuhari"
+                >よしもと幕張イオンモール劇場<small
+                  >/ 千葉 幕張</small></a></li>
+                            <li>
+                <a
+                  href="/omiya"
+                >大宮ラクーンよしもと劇場<small
+                  >/ 埼玉 大宮</small></a></li>
+                            <li>
+                <a
+                  href="/fukuokagekijyo"
+                >よしもと福岡 大和証券劇場<small
+                  >/ 福岡 福岡</small></a></li>
+                            <li>
+                <a
+                  href="/numazu"
+                >沼津ラクーンよしもと劇場<small
+                  >/ 静岡 沼津</small></a></li>
+                          </ul>
+          </div>
+        </div>
+      </div>
+      <form class="fany-search" name="fany-search" method="GET" action="/search/event" role="form">
+        <div class="g-search_container">
+          <div>
+            <div class="g-inputGroup">
+              <input class="g-input" type="text" name="keywords" value="" placeholder="出演者/公演名/会場名で検索">
+              <input type="hidden" name="search_type" value="search_string">
+              <input type="submit" value="&#xf002">
+            </div>
+          </div>
+        </div>
+      </form>
+      <form class="fany-search" name="fany-search" method="GET" action="/search/event" role="form">
+        <div class="g-accordion-wrap">
+          <div class="g-accordion-item">
+            <span class="g-accordion-header">詳細検索<i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+          <div class="g-accordion-body">
+            <table class="g-search-table">
+              <tr class="g-toggle online real both">
+                <th>出演者/公演名/会場名</th>
+                <td>
+                  <div class="g-inputGroup">
+                    <input class="g-input" type="text" name="keywords" value="" placeholder="出演者/公演名/会場名で検索">
+                  </div>
+                </td>
+              </tr>
+              <tr class="g-toggle online real both">
+                <th>公演日</th>
+                <td>
+                  <div class="g-inputGroup">
+                    <div class="g-inputGroup__inner datepicker_from">
+                      <input class="g-input fany-input g-input_s datepicker" type="text" name="from" value="" placeholder="日付を選択" readonly="readonly">
+                    </div>
+                    <span class="g-input__fromTo">〜</span>
+                    <div class="g-inputGroup__inner datepicker_to">
+                      <input class="g-input fany-input g-input_s datepicker" type="text" name="to" value="" placeholder="日付を選択" readonly="readonly">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="g-toggle online real both">
+
+                <th>先行（抽選）販売</th>
+                <td>
+                  <div class="g-checkbox">
+                    <input  class="visually-hidden" type="checkbox" name="ngk_beforeReception" id="ngk_beforeReception" >
+                    <label for="ngk_beforeReception">受付前</label>
+                    <input class="visually-hidden" type="checkbox" name="ngk_accepting" id="ngk_accepting" >
+                    <label for="ngk_accepting">受付中</label>
+                  </div>
+                </td>
+            </tr>
+          <tr class="g-toggle real both">
+            <th>都道府県</th>
+            <td>
+              <div class="g-inputGroup">
+                <select class="g-input" name="prefectures">
+                  <option value="0" selected>選択してください</option>
+
+                                    <optgroup label="北海道地方">
+                                            <option value="01" >北海道</option>
+                                        </optgroup>
+                                    <optgroup label="東北地方">
+                                            <option value="02" >青森</option>
+                                            <option value="03" >岩手</option>
+                                            <option value="04" >宮城</option>
+                                            <option value="05" >秋田</option>
+                                            <option value="06" >山形</option>
+                                            <option value="07" >福島</option>
+                                        </optgroup>
+                                    <optgroup label="関東地方">
+                                            <option value="08" >茨城</option>
+                                            <option value="09" >栃木</option>
+                                            <option value="10" >群馬</option>
+                                            <option value="11" >埼玉</option>
+                                            <option value="12" >千葉</option>
+                                            <option value="13" >東京</option>
+                                            <option value="14" >神奈川</option>
+                                        </optgroup>
+                                    <optgroup label="中部地方">
+                                            <option value="15" >新潟</option>
+                                            <option value="16" >富山</option>
+                                            <option value="17" >石川</option>
+                                            <option value="18" >福井</option>
+                                            <option value="19" >山梨</option>
+                                            <option value="20" >長野</option>
+                                            <option value="21" >岐阜</option>
+                                            <option value="22" >静岡</option>
+                                            <option value="23" >愛知</option>
+                                        </optgroup>
+                                    <optgroup label="近畿地方">
+                                            <option value="24" >三重</option>
+                                            <option value="25" >滋賀</option>
+                                            <option value="26" >京都</option>
+                                            <option value="27" >大阪</option>
+                                            <option value="28" >兵庫</option>
+                                            <option value="29" >奈良</option>
+                                            <option value="30" >和歌山</option>
+                                        </optgroup>
+                                    <optgroup label="中国地方">
+                                            <option value="31" >鳥取</option>
+                                            <option value="32" >島根</option>
+                                            <option value="33" >岡山</option>
+                                            <option value="34" >広島</option>
+                                            <option value="35" >山口</option>
+                                        </optgroup>
+                                    <optgroup label="四国地方">
+                                            <option value="36" >徳島</option>
+                                            <option value="37" >香川</option>
+                                            <option value="38" >愛媛</option>
+                                            <option value="39" >高知</option>
+                                        </optgroup>
+                                    <optgroup label="九州地方">
+                                            <option value="40" >福岡</option>
+                                            <option value="41" >佐賀</option>
+                                            <option value="42" >長崎</option>
+                                            <option value="43" >熊本</option>
+                                            <option value="44" >大分</option>
+                                            <option value="45" >宮崎</option>
+                                            <option value="46" >鹿児島</option>
+                                            <option value="47" >沖縄</option>
+                                        </optgroup>
+                  
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr class="g-toggle online real both">
+            <th>ジャンル</th>
+            <td>
+              <div class="g-inputGroup">
+                <select class="g-input" name="genre">
+                  <option value="0" selected>選択してください</option>
+
+                                    <option value="30" >お笑い</option>
+                                    <option value="31" >音楽</option>
+                                    <option value="32" >演劇／ステージ</option>
+                                    <option value="33" >スポーツ</option>
+                                    <option value="34" >アニメ</option>
+                                    <option value="35" >ゲーム</option>
+                                    <option value="36" >映画／ライブビューイング</option>
+                                    <option value="37" >アート／イベント</option>
+                                    <option value="38" >よしもとの劇場以外の公演</option>
+                  
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+            <div class="g-searchBtn">
+            <input type="hidden" name="search_type" value="form">
+              <button class="s-btn g-btn-reset" name="reset-btn" type="button">クリア</button>
+              <button class="s-btn g-btn-orange" type="submit">検索</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      
+<div class="fany_g-resultList g-container-block">
+    <div class="fany_g-title">
+                <span>検索結果</span>
+        <span class="fany_g-resultCnt"><span>621</span>件</span>
+            </div>
+
+        <form name="fany-ngk_search" method="GET" action="/search/event" role="form">
+        <div class="g-accordion-wrap g-accordion-wrap__color">
+            <div class="g-accordion-item">
+                <span class="g-accordion-header">絞り込み検索<i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </div>
+            <div id="fany-detail-search" class="g-accordion-body">
+                <table class="g-search-table">
+                    <tr class="g-toggle online real both">
+                                                    <th>出演者/公演名/会場名</th>
+                        
+                        <td>
+                            <div class="g-inputGroup">
+                                <input class="g-input" type="text" name="keywords" value="" placeholder="出演者/公演名/会場名で絞り込む">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="g-toggle online real both">
+                        <th>公演日</th>
+                        <td>
+                            <div class="g-inputGroup">
+                                <div class="g-inputGroup__inner datepicker_from">
+                                    <input class="g-input g-input_s datepicker" type="text" name="from" value=""
+                                        placeholder="日付を選択" readonly="readonly">
+                                </div>
+                                <span class="g-input__fromTo">〜</span>
+                                <div class="g-inputGroup__inner datepicker_to">
+                                    <input class="g-input g-input_s datepicker" type="text" name="to" value=""
+                                        placeholder="日付を選択" readonly="readonly">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="g-toggle online real both">
+                        <th>先行（抽選）販売</th>
+                        <td>
+                            <div class="g-checkbox">
+                                <input class="visually-hidden" type="checkbox" name="ngk_beforeReception" 
+                                    id="ngk_beforeReception_detail">
+                                <label for="ngk_beforeReception_detail">受付前</label>
+                                <input class="visually-hidden" type="checkbox" name="ngk_accepting"  id="ngk_accepting_detail">
+                                <label for="ngk_accepting_detail">受付中</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="g-toggle online real both">
+                        <th>先着販売</th>
+                        <td>
+                            <div class="g-checkbox">
+                                <input class="visually-hidden" type="checkbox" name="ngk_beforesale" 
+                                    id="ngk_beforesale">
+                                <label for="ngk_beforesale">発売前</label>
+                                <input class="visually-hidden" type="checkbox" name="ngk_sale"  id="ngk_sale">
+                                <label for="ngk_sale">発売中</label>
+                            </div>
+                        </td>
+                    </tr>
+                                            <tr class="g-toggle real both">
+                            <th>都道府県</th>
+                            <td>
+                                <div class="g-inputGroup">
+                                    <select class="g-input" name="prefectures">
+                                        <option value="0" selected>選択してください</option>
+
+                                                                                    <optgroup label="北海道地方">
+                                                                                                    <option value="01" >北海道</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="東北地方">
+                                                                                                    <option value="02" >青森</option>
+                                                                                                    <option value="03" >岩手</option>
+                                                                                                    <option value="04" >宮城</option>
+                                                                                                    <option value="05" >秋田</option>
+                                                                                                    <option value="06" >山形</option>
+                                                                                                    <option value="07" >福島</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="関東地方">
+                                                                                                    <option value="08" >茨城</option>
+                                                                                                    <option value="09" >栃木</option>
+                                                                                                    <option value="10" >群馬</option>
+                                                                                                    <option value="11" >埼玉</option>
+                                                                                                    <option value="12" >千葉</option>
+                                                                                                    <option value="13" >東京</option>
+                                                                                                    <option value="14" >神奈川</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="中部地方">
+                                                                                                    <option value="15" >新潟</option>
+                                                                                                    <option value="16" >富山</option>
+                                                                                                    <option value="17" >石川</option>
+                                                                                                    <option value="18" >福井</option>
+                                                                                                    <option value="19" >山梨</option>
+                                                                                                    <option value="20" >長野</option>
+                                                                                                    <option value="21" >岐阜</option>
+                                                                                                    <option value="22" >静岡</option>
+                                                                                                    <option value="23" >愛知</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="近畿地方">
+                                                                                                    <option value="24" >三重</option>
+                                                                                                    <option value="25" >滋賀</option>
+                                                                                                    <option value="26" >京都</option>
+                                                                                                    <option value="27" >大阪</option>
+                                                                                                    <option value="28" >兵庫</option>
+                                                                                                    <option value="29" >奈良</option>
+                                                                                                    <option value="30" >和歌山</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="中国地方">
+                                                                                                    <option value="31" >鳥取</option>
+                                                                                                    <option value="32" >島根</option>
+                                                                                                    <option value="33" >岡山</option>
+                                                                                                    <option value="34" >広島</option>
+                                                                                                    <option value="35" >山口</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="四国地方">
+                                                                                                    <option value="36" >徳島</option>
+                                                                                                    <option value="37" >香川</option>
+                                                                                                    <option value="38" >愛媛</option>
+                                                                                                    <option value="39" >高知</option>
+                                                                                            </optgroup>
+                                                                                    <optgroup label="九州地方">
+                                                                                                    <option value="40" >福岡</option>
+                                                                                                    <option value="41" >佐賀</option>
+                                                                                                    <option value="42" >長崎</option>
+                                                                                                    <option value="43" >熊本</option>
+                                                                                                    <option value="44" >大分</option>
+                                                                                                    <option value="45" >宮崎</option>
+                                                                                                    <option value="46" >鹿児島</option>
+                                                                                                    <option value="47" >沖縄</option>
+                                                                                            </optgroup>
+                                        
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                                        <tr class="g-toggle online real both">
+                        <th>ジャンル</th>
+                        <td>
+                            <div class="g-inputGroup">
+                                <select class="g-input" name="genre">
+                                    <option value="0" selected>選択してください</option>
+
+                                                                            <option value="30" >お笑い</option>
+                                                                            <option value="31" >音楽</option>
+                                                                            <option value="32" >演劇／ステージ</option>
+                                                                            <option value="33" >スポーツ</option>
+                                                                            <option value="34" >アニメ</option>
+                                                                            <option value="35" >ゲーム</option>
+                                                                            <option value="36" >映画／ライブビューイング</option>
+                                                                            <option value="37" >アート／イベント</option>
+                                                                            <option value="38" >よしもとの劇場以外の公演</option>
+                                    
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="g-searchBtn">
+                    <input type="hidden" name="search_type" value="form">
+                    <button class="s-btn g-btn-reset" type="button" name="reset-btn">クリア</button>
+                    <button class="s-btn g-btn-orange" type="submit">検索</button>
+                </div>
+            </div>
+        </div>
+    </form>
+        <!-- 検索結果 -->
+
+    <div class="fany_performanceListBox">
+        <div id="fany-search-result" class="fany_performanceListBox__outline">
+            
+            <input id="display_item_count" type="hidden" value=10 />
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 09:40  開演 10:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">マンゲキお笑いライブSP</div>
+                        <div class="fany_performanceListBox__headerVenue">よしもと漫才劇場（大阪府）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">[ネタ出演者]ギャロップ／モンスターエンジン／タナからイケダ／ヘンダーソン／さや香／ゆにばーす／オズワルド／ダブルヒガシ／ドーナツ・ピーナツ／華山／丸亀じゃんご／愛凛冴／うただ／cacao／ぐろう／苺ちゃん
+[スペシャルアクト]〈サッカー芸人〉／丸亀じゃんご 北村／ファンファーレと熱狂 奥／ごぞうろっぷ ソウタヤマモト／タレンチ コバタ
+[ゲームコーナー][前説]バリアシオン</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61593/49959 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/08/05(<span class="g-dayofweek">水</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 08:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61591/49959 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61592/49959 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 09:30  開演 10:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">本公演　１回目【シルバーウィーク特別興行】</div>
+                        <div class="fany_performanceListBox__headerVenue">なんばグランド花月（大阪府）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">[漫才・落語]中田カウス 漫才のDENDO／桂小枝／ハイヒール／COWCOW／ギャロップ／モンスターエンジン／ロングコートダディ／オズワルド／ダブルヒガシ
+[新喜劇]吉田裕／内場勝則／島田珠代／山田花子／島田一の介／浅香あき恵／安尾信乃助／ケン／烏川耕一／伊賀健二／高橋靖子／のぶよし／前田まみ／レイチェル／小西武蔵／伊丹祐貴／野崎塁／野呂桃花／林ゆい</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/57857/47665 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/07/01(<span class="g-dayofweek">水</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 08:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/57855/47665 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/06/25(<span class="g-dayofweek">木</span>) 11:00〜2026/06/28(<span class="g-dayofweek_sun">日</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/57856/47665 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/06/25(<span class="g-dayofweek">木</span>) 11:00〜2026/06/28(<span class="g-dayofweek_sun">日</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 09:30  開演 10:30</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">【後半2日通し券・9/22(火)1日券】KOYABU SONIC 2026</div>
+                        <div class="fany_performanceListBox__headerVenue">インテックス大阪　4号館、5号館（大阪府）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">≪9/21 出演アーティスト≫
+新しい学校のリーダーズ、カジヒデキ、くまま（オープニングアクト10:00出演）、サニーデイ・サービス、サバシスター、竹下☆ぱらだいす×MADAMADA、ニガミ17才、ブランデー戦記、Red Eye
+
+≪9/21 出演芸人≫
+相席スタート、アキナ、エバース、エルフ、カゲヤマ、カベポスター、クロスバー直撃、佐久間一行、しずる、ジャングルポケット、シャンプーハット、白物屋家電ノ助、スリムクラブ、ダイアン、ちょんまげラーメン、軟水、ネルソンズ、NON STYLE、ビスケットブラザーズ、ピュート、フットボールアワー、ヘッドライト、紅しょうが、見取り図、めぞん、隣人、レインボー、笑い飯
+
+≪9/21 フォートナイトエリア≫
+Unger、今別府直之、宇都宮まき、かめてぃん、川畑泰史、キャプテンしょーた、しゅんてゃん、土屋翼(ミカボ)、寺本航(テンプルカントリー)、吉田裕、らいと、らいふがーど、LiaqN
+
+--------------------
+≪9/22 出演アーティスト≫
+石崎ひゅーい、きゃりーぱみゅぱみゅ、TOKYO No.1 SOUL SET、tricot、NEWS、のん＆the tears of knight、HALCALI、ホフディラン、吉本新喜劇ィズ、luv、ZiDol（オープニングアクト10:00出演）
+
+≪9/22 出演芸人≫
+エルフ、オズワルド、蛙亭、キンタロー。、さや香、サルゴリラ、スーパーマラドーナ、スマイル、そいつどいつ、タイムマシーン３号、たくろう、ダブルヒガシ、男性ブランコ、ツートライブ、トット、ドンデコルテ、なかやまきんに君、２丁拳銃、博多華丸・大吉、ハリウッドザコシショウ、ヒコロヒー、紅しょうが、ミカボ、吉田たち
+
+≪9/22 フォートナイトエリア≫
+今別府直之、宇都宮まき、川畑泰史、酒井藍、すっちー、土屋翼(ミカボ)、寺本航(テンプルカントリー)、諸見里大介、らいふがーど、LiaqN
+
+--------------------
+≪9/23 出演アーティスト≫
+EGO-WRAPPIN&#039;、コレサワ、サンボマスター、ジェニーハイ、水曜日のカンパネラ、スチャダラパー、たこやき野球連盟、モナキ、yama
+
+≪9/23 出演芸人≫
+今井らいぱち、エルフ、蛙亭、金属バット、コットン、ジャルジャル、滝音、ニッポンの社長、バッテリィズ、ぱーてぃーちゃん、藤崎マーケット、紅しょうが、マユリカ、ミルクボーイ、矢野・兵動、ロングコートダディ
+
+≪9/23 フォートナイトエリア≫
+今別府直之、宇都宮まき、川畑泰史、酒井藍、すっちー、土屋翼(ミカボ)、寺本航(テンプルカントリー)、bykn、Minipiyo、諸見里大介、らいふがーど、LiaqN
+</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/54840/45209 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/07/29(<span class="g-dayofweek">水</span>) 11:00〜2026/09/22(<span class="g-dayofweek">火</span>) 17:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>先着発売終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/54837/45209 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>最速特割先着先行（先着販売）</span>
+                                                <span>受付期間：2026/05/29(<span class="g-dayofweek">金</span>) 13:00〜2026/06/23(<span class="g-dayofweek">火</span>) 23:59</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>先着発売終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/54839/45209 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>2次特割先着先行（先着販売）</span>
+                                                <span>受付期間：2026/06/24(<span class="g-dayofweek">水</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 23:59</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 10:45  開演 11:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">渋谷マンゲキお笑いライブ</div>
+                        <div class="fany_performanceListBox__headerVenue">渋谷よしもと漫才劇場（東京都）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">[ネタ＆コーナーライブ]ザ・パンチ／ななまがり／ダンビラムーチョ／めぞん／ヨネダ2000／イチゴ／やさしいズ／田津原理音／スーパーサイズ・ミー／素敵じゃないか／太鵬
+[ コーナー出演者]MC：めぞん／ダンビラムーチョ／太鵬／イチゴ</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61296/49872 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/08/05(<span class="g-dayofweek">水</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 09:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61294/49872 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61295/49872 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 10:45  開演 11:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">神保町マンゲキお笑いライブ</div>
+                        <div class="fany_performanceListBox__headerVenue">神保町よしもと漫才劇場（東京都）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">[ネタ出演者]カベポスター／マルセイユ／キンボシ／ケビンス／ラニーノーズ／9番街レトロ／ぺ／き展／ド天国／照山おうちごはん／あなたとネ
+[コーナー出演者]MC：マルセイユ／ケビンス／ド天国／あなたとネ</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61274/49835 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/08/05(<span class="g-dayofweek">水</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 09:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61272/49835 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61273/49835 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 10:30  開演 11:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">よしもとお笑い森ノ宮劇場</div>
+                        <div class="fany_performanceListBox__headerVenue">COOL JAPAN PARK OSAKA TTホール（大阪府）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">笑い飯／ヘンダーソン／ロングコートダディ／ちょんまげラーメン／オズワルド／さや香
+[新喜劇]アキ／末成映薫／西川忠志／Mr.オクレ／中條健一／清水けんじ／五十嵐サキ／太田芳伸／信濃岳夫／大黒笑けいけい／佐藤太一郎／多和田上人／けんたくん／立花えこ</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/59336/47977 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/07/01(<span class="g-dayofweek">水</span>) 10:00〜2026/09/21(<span class="g-dayofweek_holiday">月・祝</span>) 23:59</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 10:30  開演 11:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">ルミネtheよしもと シルバーウィーク特別公演＜１回目＞</div>
+                        <div class="fany_performanceListBox__headerVenue">ルミネtheよしもと（東京都）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">テンダラー／５ＧＡＰ／銀シャリ／兼光タカシ／もりやすバンバンビガロ／囲碁将棋／マヂカルラブリー／ジャングルポケット</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/57334/46265 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/07/05(<span class="g-dayofweek_sun">日</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 09:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/57324/46265 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/06/25(<span class="g-dayofweek">木</span>) 11:00〜2026/06/28(<span class="g-dayofweek_sun">日</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/57329/46265 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/06/25(<span class="g-dayofweek">木</span>) 11:00〜2026/06/28(<span class="g-dayofweek_sun">日</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 10:30  開演 11:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">第七回 大阪落語祭「中秋大吉寄席」</div>
+                        <div class="fany_performanceListBox__headerVenue">国立文楽劇場（大阪府）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">桂弥壱、笑福亭生寿、笑福亭仁智＜仲入＞立川志らく、笑福亭鉄瓶</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/51064/43082 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/05/16(<span class="g-dayofweek_sat">土</span>) 10:00〜2026/09/21(<span class="g-dayofweek_holiday">月・祝</span>) 23:59</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 10:45  開演 11:00</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">森ノ宮Kakeru翔SP</div>
+                        <div class="fany_performanceListBox__headerVenue">森ノ宮よしもと漫才劇場（大阪府）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">どんちっち／三遊間／オニイチャン／空前メテオ／キョンビ／シカノシンプ／天ロクの丘／宛先プレーン／彼岸花／岡田浩太朗／野良レール／ちあき／ゆくえ</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61409/49989 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/08/05(<span class="g-dayofweek">水</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 09:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61405/49989 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/61407/49989 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/25(<span class="g-dayofweek_sat">土</span>) 11:00〜2026/07/28(<span class="g-dayofweek">火</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                            <div>
+                    <h4 class="fany_performanceListBox__header">
+                        <div>
+                                                    <span class="fany_performanceListBox__headerPerformanceDate">2026/09/22(<span class="g-dayofweek">火</span>)</span><span class="fany_performanceListBox__headerOpenStartTime">開場 11:15  開演 11:30</span>
+                                                </div>
+                        <div class="fany_performanceListBox__headerTitle">福岡よしもとお笑いライブ</div>
+                        <div class="fany_performanceListBox__headerVenue">よしもと福岡 大和証券劇場（福岡県）</div>
+                    </h4>
+                    <div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">
+                        <dl>
+                                                    <dt><strong>出演</strong></dt>
+                            <dd><p class="preview_block">エバース／パンクブーブー／バイク川崎バイク／Dr.ハインリッヒ／例えば炎／ゼロカラン／プー＆ムー／メタルラック／しゃかりき／気になるあの娘／スポットライト／〔前説〕動物男児／＜ゲームコーナー＞</p></dd>
+                                                </dl>
+                        <dl>
+                            <dd>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__sold>
+                                            <li>先着発売中</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/59965/48598 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>一般発売</span>
+                                                <span>受付期間：2026/07/20(<span class="g-dayofweek_holiday">月・祝</span>) 10:00〜2026/09/22(<span class="g-dayofweek">火</span>) 09:30</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/59963/48598 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>●FANY IDプレミアムメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/10(<span class="g-dayofweek">金</span>) 11:00〜2026/07/13(<span class="g-dayofweek">月</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                                    <div class="fany_g-ticketInfo fany_g-ticket_lottery">
+                                        <ul class=fany_icon__soldout>
+                                            <li>抽選受付終了</li>
+                                                                                    </ul>
+                                        <a href=https://ticket.fany.lol/reception/59964/48598 rel="modal:open">
+                                            <div class="fany_g-ticketInfo__text">
+                                                <span>FANY IDメンバー抽選先行</span>
+                                                <span>受付期間：2026/07/10(<span class="g-dayofweek">金</span>) 11:00〜2026/07/13(<span class="g-dayofweek">月</span>) 11:00</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                    </div>
+    </div>
+            <div class="loader" style="display:none"></div>
+        <div class="more-btn" onclick="loadMore()">
+            <button>もっと見る</button>
+        </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $(function(){
+                const search_uri = window.location.href;
+                console.log(search_uri);
+                document.cookie = `search_uri=${search_uri}; Path=/`;
+            });
+        });
+        function loadMore() {
+            $('.more-btn').hide();
+            $('.loader').show();
+            const queryString = window.location.search;
+            const offset = parseInt($('#display_item_count').val());
+            let url = "/search/event_more";
+            if (queryString) {
+                url += queryString + "&offset=" + offset;
+            } else {
+                url += "?offset=" + offset;
+            }
+                        $.ajax({
+                url: url,
+                success: function(response) {
+                    const newElement = generateNewElement(response.performances);
+                    const currentElement = $('#fany-search-result').html();
+                    $('#fany-search-result').html(currentElement + newElement);
+                    const newOffset = offset + response.load_count;
+                    $('#display_item_count').val(newOffset);
+                    if (newOffset >= 621) {
+                        $('.more-btn').remove();
+                        $('.loader').remove();
+                    } else {
+                        $('.more-btn').show();
+                        $('.loader').hide();
+                    }
+                }
+            });
+        }
+
+        function generateNewElement(performances) {
+            function htmlEscape (s) {
+                if (!s) {
+                    return s;
+                } else if (typeof s !== "string") {
+                    return htmlEscape( s.toString() );
+                }
+                return s.replace(/[&'"<>]/g, m=>({
+                    "&": "&amp;",
+                    "'": "&apos;",
+                    '"': '&quot;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                })[m] );
+            }
+            let loadElement = "";
+            performances.forEach(performance => {
+                let element = `<div>`;
+                element +=          `<h4 class="fany_performanceListBox__header">`;
+                element +=              `<div>`;
+                element +=                  `<span class="fany_performanceListBox__headerPerformanceDate">`;
+                if (performance.class == '01') {
+                    element +=                  performance.performance_date;
+                } else {
+                    element +=                  performance.valid_period_start_date + ` ～ ` + performance.valid_period_finish_date;
+                }
+                element +=                  `</span>`;
+                element +=                  `<span class="fany_performanceListBox__headerOpenStartTime">` + htmlEscape(performance.open_start_time_text) + `</span>`;
+                element +=              `</div>`;
+                element +=              `<div class="fany_performanceListBox__headerTitle">` + htmlEscape(performance.name) + `</div>`;
+                element +=              `<div class="fany_performanceListBox__headerVenue">` + htmlEscape(performance.venue_name) + `</div>`;
+                element +=          `</h4>`;
+                element +=          `<div class="fany_performanceListBox__stageInfo" style="padding-left: 10px">`;
+                element +=              `<dl>`;
+                if(performance.performer_detail) {
+                    element +=              `<dt><strong>出演</strong></dt><dd><p class="preview_block">` + htmlEscape(performance.performer_detail) + `</p></dd>`;
+                }
+                element +=              `</dl>`;
+                element +=              `<dl>`;
+                element +=                  `<dd>`;
+                const performance_sales = performance.performance_sales;
+                performance_sales.forEach(performance_sale => {
+                    element +=                  `<div class="fany_g-ticketInfo fany_g-ticket_lottery">`;
+                    element +=                      `<ul class=` + htmlEscape(performance_sale.display_sales_style) + `>`;
+                    element +=                          `<li>` + htmlEscape(performance_sale.display_sales_status) + `</li>`;
+                    if (performance_sale.chips) {
+                        element +=                      `<li style="margin-left: 1px; background-color: #166827;">` + htmlEscape(performance_sale.chips) + `</li>`;
+                    }
+                    element +=                      `</ul>`;
+                    element +=                      `<a href=` + htmlEscape(performance_sale.destination_url) + ` rel="modal:open">`;
+                    element +=                          `<div class="fany_g-ticketInfo__text">`;
+                    element +=                              `<span>` + htmlEscape(performance_sale.sales_name) + `</span>`;
+                    element +=                              `<span>受付期間：` + performance_sale.sales_start_datetime + `〜` + performance_sale.sales_end_datetime + `</span>`;
+                    element +=                          `</div>`;
+                    element +=                      `</a>`;
+                    element +=                  `</div>`;
+                })
+                element +=                  `</dd>`;
+                element +=              `</dl>`;
+                element +=          `</div>`;
+                element +=      `</div>`;
+
+                loadElement += element;
+            })
+            return loadElement;
+        }
+    </script>
+</div>
+
+
+    </section>
+
+    <div class="fany-footer__content">
+      <div class="fany-footer__inner">
+        <div class="fany-footer__item">
+          <ul class="fany-footer__linklist">
+            <li class="fany-footer__linklist-item list-acd">
+              <label for="fanyService">FANY関連サービス</label>
+              <input type="checkbox" id="fanyService"><i class="fa fa-angle-down" aria-hidden="true"></i>
+              <ul>
+                <li><a href="https://ticket.fany.lol/" target="_blank">FANYチケット</a></li>
+                <li><a href="https://online-ticket.yoshimoto.co.jp/" target="_blank">FANYオンラインチケット</a></li>
+                <li><a href="https://osaka-channel.hikaritv.net/" target="_blank">FANYチャンネル</a></li>
+                <li><a href="https://commu.fany.lol" target="_blank">FANYコミュ</a></li>
+                <li><a href="https://mall.fany.lol" target="_blank">FANYモール</a></li>
+                <li><a href="https://cf.fany.lol" target="_blank">FANYクラウドファンディング</a></li>
+                <li><a href="https://x.fany.lol/" target="_blank">FANY X</a></li>
+                <li><a href="https://id.yoshimoto.co.jp/" target="_blank">FANY ID</a></li>
+                <li><a href="https://fany.lol/#fanyapp" target="_blank">FANYアプリ</a></li>
+                <li><a href="https://twitter.com/fany_news" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/X_w100.png')"></span>X</a></li>
+                <li><a href="https://www.youtube.com/channel/UCr_8SkzM9zCFV-vLvd9jgRw" target="_blank"><span class="link-icon" style="height: 18px; background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/YouTube_w100.png')"></span>YouTube</a></li>
+              </ul>
+            </li>
+            <li class="fany-footer__linklist-item list-acd">
+              <label for="theater">劇場公式HP</label>
+              <input type="checkbox" id="theater"><i class="fa fa-angle-down" aria-hidden="true"></i>
+              <ul>
+
+                <!-- 劇場 -->
+                                <li>
+                  <a
+                    href="https://ngk.yoshimoto.co.jp/"
+                  >なんばグランド花月<small
+                    >/ 大阪 なんば</small></a></li>
+                                <li>
+                  <a
+                    href="https://lumine.yoshimoto.co.jp/"
+                  >ルミネtheよしもと<small
+                    >/ 東京 新宿</small></a></li>
+                                <li>
+                  <a
+                    href="https://manzaigekijyo.yoshimoto.co.jp/"
+                  >よしもと漫才劇場<small
+                    >/ 大阪 なんば</small></a></li>
+                                <li>
+                  <a
+                    href="https://morinomiya-manzaigekijyo.yoshimoto.co.jp/"
+                  >森ノ宮よしもと漫才劇場<small
+                    >/ 大阪 森ノ宮</small></a></li>
+                                <li>
+                  <a
+                    href="https://shibuya-manzaigekijyo.yoshimoto.co.jp/"
+                  >渋谷よしもと漫才劇場<small
+                    >/ 東京 渋谷</small></a></li>
+                                <li>
+                  <a
+                    href="https://jimbocho-manzaigekijyo.yoshimoto.co.jp/"
+                  >神保町よしもと漫才劇場<small
+                    >/ 東京 神保町</small></a></li>
+                                <li>
+                  <a
+                    href="https://dotonbori.yoshimoto.co.jp/"
+                  >よしもと道頓堀シアター<small
+                    >/ 大阪 道頓堀</small></a></li>
+                                <li>
+                  <a
+                    href="https://roppongi.yoshimoto.co.jp/"
+                  >YOSHIMOTO ROPPONGI THEATER<small
+                    >/ 東京 六本木</small></a></li>
+                                <li>
+                  <a
+                    href="https://makuhari.yoshimoto.co.jp/"
+                  >よしもと幕張イオンモール劇場<small
+                    >/ 千葉 幕張</small></a></li>
+                                <li>
+                  <a
+                    href="https://omiya.yoshimoto.co.jp/"
+                  >大宮ラクーンよしもと劇場<small
+                    >/ 埼玉 大宮</small></a></li>
+                                <li>
+                  <a
+                    href="https://fukuokagekijyo.yoshimoto.co.jp/"
+                  >よしもと福岡 大和証券劇場<small
+                    >/ 福岡 福岡</small></a></li>
+                                <li>
+                  <a
+                    href="https://numazu.yoshimoto.co.jp/"
+                  >沼津ラクーンよしもと劇場<small
+                    >/ 静岡 沼津</small></a></li>
+                
+              </ul>
+            </li>
+            <li class="fany-footer__linklist-item list-acd">
+              <label for="yoshimoto">企業情報</label>
+              <input type="checkbox" id="yoshimoto"><i class="fa fa-angle-down" aria-hidden="true"></i>
+              <ul>
+                <li><a href="https://www.yoshimoto.co.jp/" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/logo/yoshimoto_logo.jpeg')"></span>吉本興業ホールディングス株式会社</a></li>
+                <li><a href="https://twitter.com/yoshimoto_cojp" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/X_w100.png')"></span>X</a></li>
+                <li><a href="https://www.instagram.com/yoshimoto.official/" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/Instagram_w100.png')"></span>Instagram</a></li>
+                <li><a href="https://www.youtube.com/user/yoshimotokogyo" target="_blank"><span class="link-icon" style="height: 18px; background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/YouTube_w100.png')"></span>YouTube</a></li>
+                <li><a href="https://lin.ee/xD33Ves" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/LINE_w100.png')"></span>LINE</a></li>
+              </ul>
+            </li>
+            <li class="fany-footer__linklist-item"><a href="/rule/terms">利用規約</a></li>
+            <li class="fany-footer__linklist-item"><a href="https://id.yoshimoto.co.jp/s/privacy.html">プライバシーポリシー</a></li>
+            <li class="fany-footer__linklist-item"><a href="/rule/specific">特商法の表記</a></li>
+            <li class="fany-footer__linklist-item"><a href="https://www.yoshimoto.co.jp/policy/ticket_policy/">チケット販売及び観劇約款</a></li>
+            <li class="fany-footer__linklist-item"><a href="https://www.yoshimoto.co.jp/policy/declaration">反社会的勢力排除宣言</a></li>
+            <li class="fany-footer__linklist-item"><a href="/stc/requirement">推奨環境・セキュリティ</a></li>
+            <li class="fany-footer__linklist-item"><a href="/faq">FAQ・お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+                <p class="cmark">Copyright (c) YOSHIMOTO KOGYO. All Rights Reserved.</p>
+              </div>
+    </div>
+<!-- フッタ -->
+<!--back to top-->
+<p class="g-back-to-top"><a href="#" data-scroll>PAGE TOP</a></p>
+<!--/back to top-->
+<!--modal-->
+<div class="g-modal" aria-hidden="true">
+  <div class="g-modal_backdrop"></div>
+  <div class="g-modal_spacer"></div>
+  <div class="g-modal_content">
+    <button class="g-modal_close" type="button" aria-label="モーダルを閉じる"><i class="g-i g-i-close" aria-hidden="true"></i></button>
+  </div>
+  <div class="g-modal_spacer"></div>
+</div>
+<!--/modal-->          </div>
+      </body>
+  </html>
