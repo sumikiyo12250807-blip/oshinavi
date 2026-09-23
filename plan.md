@@ -8,9 +8,14 @@
       PLAYBOOKのpush行・day手順書に「commit直前に compact_events --apply」を足した
    🎫楽天＝照合（7494は昨日終わった枠・17243は既知）／売り切れ印2枠（5608・8382）
    ⏰アラーム 12:05昼／17:03 X準備／19:41予約／22:07夜ヒール／23:12夜push
-⏳ 走行中＝ぴあ隠れ枠 --build（233件381枠）／FANY一覧 tmp/fany_0924.json／TIGET番人／ZAIKO番人／楽天発売前
-🔶 残り＝heal_fany --src tmp/fany_0924.json --apply（24枠を入れ直す）→番人／ぴあ要再確認278件 reconcile（tmp/x0924/recheck_pia.txt）
-   ／TIGET・ZAIKOのヒール／新着収集（ぴあ発売前・TIGET・ZAIKO・FANY）／push直前 reconcile --new→build_ai_page→compact_events
+   🩹FANY 157件作り直し（消えた24枠が戻った）＋新着163件（22713〜22875）／NEW_ORDERのずれ（22618・22711）直し
+   🐛ZAIKO＝一覧の日付が締切側のことがある→個別の開演を使うよう修正・8件組み直し（雨模様のソラリス2027/1が9/24扱いだった）＋新着5件
+   🩹ぴあ隠れ枠 24件＋足し算61件（消えた枠0）／e+本日発売20枠／ZAIKO 2件販売終了印
+   🗂MEMORY.md 35.8KB→16.9KB（リンク231本そのまま）
+⏳ 走行中＝ぴあ要再確認278件 reconcile（tmp/x0924/recon_recheck.txt）／TIGET番人
+🔶 残り＝TIGETヒール／新着収集（ぴあ発売前・TIGET）／push直前 reconcile --new→build_ai_page→compact_events
+   ⏸楽天の販売中で未登録4件（昼に）＝GirlsAward 9/26 rtkt926 は新規／藤井フミヤ10/10 rtol238⇔id1621(10/18)
+     ／大阪芸術花火の市民割 rtg2672⇔id3239／木下大サーカス岡山 rtck026⇔id9186＝足すか別立てかを見比べる
 ```
 
 # ▶▶ ✅ 9/24 にやる＝**B（EVENTSを詰めて書く）**（9/23夜 ユーザー「Bだけやっといて」）
