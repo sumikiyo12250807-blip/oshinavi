@@ -62,7 +62,7 @@ OSHINAVIの"M/Dチケット発売"ピックアップ🎫  ← 🚨1行目に必�
 （サイトへ行く理由を1〜2文）
 
 ▼チケット情報はこちら
-oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯&status=urgent
+oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯
                                        ← 🆕2026-09-08。主役枠は?q= / まとめ枠は?genre=。下の「URLの形」を見る
 
 （締め2文・毎回違う言い回し）
@@ -146,11 +146,18 @@ oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯&status=urgent
 |---|---|
 | **主役枠**（1組だけの投稿） | `oshinavi.jp/?q=%E6%9D%BE%E5%B9%B3%E5%81%A5`（松平健）＝**その組の名前を %エンコード**（`tools/x_qlink.py`） |
 | **トレンド枠** | `oshinavi.jp/?q=`＋トレンドに出た名前を %エンコード |
-| **まとめ枠**（1投稿＝1ジャンル） | `oshinavi.jp/?genre=owarai&status=urgent` ＝**そのジャンル＋今週発売** |
+| **まとめ枠**（1投稿＝1ジャンル） | `oshinavi.jp/?genre=owarai` ＝**そのジャンルだけ**。🚨`&status=` は付けない |
 
 🆕**まとめ枠もジャンルで絞って着地させる**（2026-09-08 ユーザー提案「まとめのところはそれぞれの選択を入れればいい」）。
-`status` は画面のボタンと同じで4つ＝`urgent`(🔴今週発売) / `soon`(🟠今月発売) / `upcoming`(先行受付前) / 省略(すべて)。
-**「明日発売のお笑いまとめ」なら `?genre=owarai&status=urgent`。**
+**「明日発売のお笑いまとめ」なら `?genre=owarai`。**
+
+🚨🚨**2026-09-23 ユーザー指摘＝`&status=urgent` を付けない。**
+「**５件しか出てこない**」「**下に出した絞ったURL かえって使いにくい**」
+「**絞り込みが何の絞り込みか　分かりにくいとクリックした後しんどい**」。
+`status=urgent` は「発売開始日が**7日以内**の枠を持つ公演だけ」＝まとめ投稿の中身がほとんど消える。
+実測（9/23・登録16,298件）＝kids 233→**10**／seiyuu 23→**3**／fanevent 236→**17**／
+idol 969→**71**／owarai 4,754→**154**／絞りなし全体 16,298→**808**。
+→ **`status` は書かない。ジャンルだけで着地させる。**
 
 `genre` に入れる記号（画面のジャンルボタンと同じ）＝
 `jpop` `rock` `kpop` `yougaku` `hiphop` `anime` `idol` `youtuber` `vtuber` `tiktoker` `kids`
@@ -160,7 +167,7 @@ oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯&status=urgent
 
 ⚠️`?q=` と `?genre=` は**同時に効かない**（q があれば q だけが効く）。
 サイトが元々「検索を始めたら絞り込みを外す」作りなので、それに合わせてある。**片方だけ書く。**
-✅`?genre=...&status=...` は**全部半角英数**なので、Xが必ずリンクとして認識する（`?q=` の日本語と違って心配がない）。
+✅`?genre=...` は**全部半角英数**なので、Xが必ずリンクとして認識する（`?q=` の日本語と違って心配がない）。
 
 - 名前は**OSHINAVIに載っている表記そのまま**（愛称・略称にしない。絞り込みは文字の一致で動く）。
 - **Why**＝GA4の実測(8/11〜9/7)で、Xから来た213人の平均滞在は**12秒**だった
@@ -225,7 +232,7 @@ oshinavi.jp/?q=名前  または  oshinavi.jp/?genre=◯◯&status=urgent
 - ✅**道具＝`python tmp/x0923/check_genre_land.py`**（毎晩、文面を見せる前に回す）。
   サイトの絞り込み（index.html の `matchGenre`）と同じ判定＝`ev.genre` が一致 **または**
   `ev.extraGenres` に含まれる **または** engeki→2.5ji/seiyuu/musical の特例。
-- ✅**ジャンルが多すぎて1つに絞れない投稿は、ジャンルを外して `oshinavi.jp/?status=urgent`**
+- ✅**ジャンルが多すぎて1つに絞れない投稿は、素の `oshinavi.jp`**（🚨旧＝`?status=urgent` は2026-09-23に失効）
   （`status` は `genre` と別に効く＝今週発売の全ジャンルが出る）。2026-09-23の⑨は14行中9行が
   `?genre=event` で出なかったのでこの形にした。
 - ✅1〜2ジャンルはみ出す程度なら、**リンクを1本足す**（⑧に `?genre=musicetc` を足した）。
