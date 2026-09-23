@@ -690,3 +690,37 @@ e+ 振り分け 271件（売り場のカテゴリをそのまま写した）
 21425	seiyuu	voiceactor-live	声優 高橋伸也デビュー25周年記念_高橋伸也ファンミーティング	https://eplus.jp/sf/detail/4596510001-P0030001P021001
 21426	seiyuu	voiceactor-live	歩サラ・胡桃ふゅのコードネームはHHH 第3弾エージェントサミット「リスパイ大作戦」	https://eplus.jp/sf/detail/4074100002-P0030011P021002
 21427	seiyuu	voiceactor-live	みのぶ『ゆるキャン△』ふるさとまつり2026 トークショー 【第1部】 みのぶで「絶対うまい」ものを食べる会 3食目!	https://eplus.jp/sf/detail/4593010001-P0030001P021001
+振り分け 1件（売り場の申告どおり・推測ゼロ）
+新着プール 172→171件 ／ NEW_ORDER 171→170
+
+== 売り場別 ==
+  pia         1
+
+== ジャンル別 ==
+  art             1
+
+== 明細（id / ジャンル / 売り場の申告 / 公演名 / URL）==
+22712	art		『時をかける少女』20周年記念 細田守の原点/展	https://t.pia.jp/pia/event/event.do?eventBundleCd=b2671091
+=== heal_zaiko (today=2026-09-23) 対象436件 ===
+
+id20571  2026 観戦型ダンス公演 Organized Play⚽️ @ すみだパークシアター倉
+    https://organized-play.zaiko.io/ja/e/orgplay-soccer-26
+    - 外す: 【公開ゲネプロ】オンライン観戦💻10/2（金）19:00（東京 10/2 19:00公演）〜10/2 19:00
+    - 外す: 【一般】オンライン観戦💻10/3（土）15:00~（東京 10/2 19:00公演）〜10/2 23:59
+    + 足す: 【公開ゲネプロ】オンライン観戦💻10/2（金）19:00（東京 10/2 19:00公演）〜10/2
+    + 足す: 【一般】オンライン観戦💻10/3（土）15:00~（東京 10/2 19:00公演）〜10/2
+id20718  「Fifth Blue Session 」 @ AOYAMA 月見ル君想フ
+    https://dearstage.zaiko.io/ja/e/fifth-blue-session
+    + 足す: 【先着】一般チケット（東京 10/19 19:00公演）〜10/18 23:59
+id20729  Central West Championship(NATURAL・OPEN) @ ラブリーホール（河内長野市立文化会館）
+    https://zenix.zaiko.io/ja/e/26centralwc
+    - 外す: 学生・シニア割S席チケット（大阪 10/24 10:10公演）〜10/23 23:59
+    + 足す: 学生・シニア割S席チケット（大阪 10/24 10:10公演）〜10/23 23:59（売り切れ印）
+id20879  ULTRA JAPAN 2027 @ お台場ULTRA PARK特設会場
+    https://iflyer.zaiko.io/ja/e/ultrajapan2027
+    - 外す: オフィシャル先着先行第一弾（東京 R9年 9/18〜R9年 9/19公演）〜9/30 23:59
+
+=== 436件のうち 当てる 4 / 変化なし 427 / 取り直しが空 5 / 読めなかった 0 ===
+取り直しが空（触っていない）: [20485, 20486, 20945, 20954, 20955]
+当てた 4件 / backup index.html.bak_0923_zaikoheal
+CRCRLF 0 / 素のLF 0 （どちらも0が正）
