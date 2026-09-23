@@ -1,0 +1,597 @@
+[
+ {
+  "id": null,
+  "artist": "DIV",
+  "name": "DIV PRE-RECHARGE ONEMAN TOUR / SAITAMA",
+  "date": "2026-09-25",
+  "dateLabel": "2026年9月25日(金) 18:00開演",
+  "venue": "西川口Live House Hearts",
+  "prefecture": "埼玉",
+  "genre": "new",
+  "_genre": "rock",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Visual,Rock",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://div-official.zaiko.io/ja/item/381246"
+  },
+  "tickets": [
+   {
+    "type": "【一次先行/B】入場チケット（埼玉 9/25 18:00公演）〜8/23 23:59",
+    "date": "2026-08-23",
+    "url": "https://div-official.zaiko.io/ja/item/381246",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "presaleEnded": true
+   },
+   {
+    "type": "【前売り/C】（埼玉 9/25 18:00公演）〜9/24 23:59",
+    "date": "2026-09-24",
+    "url": "https://div-official.zaiko.io/ja/item/381246"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "airattic",
+  "name": "airattic LAST ONEMAN 「SynchroniCities」",
+  "date": "2026-09-26",
+  "dateLabel": "2026年9月26日(土) 12:00開演",
+  "venue": "Zaiko Live",
+  "prefecture": "",
+  "genre": "new",
+  "_genre": "idol",
+  "_extraGenres": [
+   "jpop"
+  ],
+  "_srcgenre": "zaiko:Idol,Pop",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://sova-llc.zaiko.io/ja/e/airattic-synchronicities"
+  },
+  "tickets": [
+   {
+    "type": "Streaming Ticket（配信）（9/26 12:00公演）〜10/26 21:00",
+    "date": "2026-10-26",
+    "url": "https://sova-llc.zaiko.io/ja/e/airattic-synchronicities"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "ギャランティーク和恵",
+  "name": "MY歌謡アーカイブス in 十話音 Vol.2",
+  "date": "2026-10-07",
+  "dateLabel": "2026年10月7日(水) 19:30開演",
+  "venue": "Zaiko Live",
+  "prefecture": "",
+  "genre": "new",
+  "_genre": "musicetc",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:?",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://moremorelove.zaiko.io/ja/e/my-kayo-archives-vol2"
+  },
+  "tickets": [
+   {
+    "type": "オンラインチケット（配信）（10/7 19:30公演）〜10/7 23:59",
+    "date": "2026-10-07",
+    "url": "https://moremorelove.zaiko.io/ja/e/my-kayo-archives-vol2"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "ChouCho",
+  "name": "ChouCho Presents GIRLS und PANZER Special Live",
+  "date": "2026-10-25",
+  "dateLabel": "2026年10月25日(日) 17:00開演",
+  "venue": "duo MUSIC EXCHANGE",
+  "prefecture": "東京",
+  "genre": "new",
+  "_genre": "jpop",
+  "_extraGenres": [
+   "anime"
+  ],
+  "_srcgenre": "zaiko:Anime,Pop",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://highwaystar-inc.zaiko.io/ja/e/choucho-gup-live"
+  },
+  "tickets": [
+   {
+    "type": "SUPER VIP 指定席チケット（東京 10/25 17:00公演）〜6/21 23:59",
+    "date": "2026-06-21",
+    "url": "https://highwaystar-inc.zaiko.io/ja/e/choucho-gup-live",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "presaleEnded": true
+   },
+   {
+    "type": "SUPER VIPスタンディングチケット（東京 10/25 17:00公演）〜6/21 23:59",
+    "date": "2026-06-21",
+    "url": "https://highwaystar-inc.zaiko.io/ja/e/choucho-gup-live",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "presaleEnded": true
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "銀河鉄道ナイトラインスペシャルライブVol.2",
+  "name": "銀河鉄道ナイトラインスペシャルライブVol.2",
+  "date": "2026-10-31",
+  "dateLabel": "2026年10月31日(土) 12:30開演",
+  "venue": "KuRaGe 心斎橋ライブハウス",
+  "prefecture": "大阪",
+  "genre": "new",
+  "_genre": "vtuber",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Live,VTuber",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://starman.zaiko.io/ja/e/gingatetsudo-nightline-vol2"
+  },
+  "tickets": [
+   {
+    "type": "Aチケット（最前列 / 配信アーカイブ1ヶ月付）（大阪 10/31 12:30公演）9/30 22:00発売",
+    "date": "2026-09-30",
+    "startDate": "2026-09-30",
+    "url": "https://starman.zaiko.io/ja/e/gingatetsudo-nightline-vol2"
+   },
+   {
+    "type": "Bチケット（2列目以降着座席）（大阪 10/31 12:30公演）9/30 22:00発売",
+    "date": "2026-09-30",
+    "startDate": "2026-09-30",
+    "url": "https://starman.zaiko.io/ja/e/gingatetsudo-nightline-vol2"
+   },
+   {
+    "type": "Cチケット（後方立ち見席）（大阪 10/31 12:30公演）9/30 22:00発売",
+    "date": "2026-09-30",
+    "startDate": "2026-09-30",
+    "url": "https://starman.zaiko.io/ja/e/gingatetsudo-nightline-vol2"
+   },
+   {
+    "type": "配信チケット（大阪 10/31 12:30公演）9/30 22:00発売",
+    "date": "2026-09-30",
+    "startDate": "2026-09-30",
+    "url": "https://starman.zaiko.io/ja/e/gingatetsudo-nightline-vol2"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "DIV",
+  "name": "DIV PRE-RECHARGE ONEMAN TOUR / KANAGAWA",
+  "date": "2026-11-02",
+  "dateLabel": "2026年11月2日(月) 18:30開演",
+  "venue": "Serbian Night",
+  "prefecture": "神奈川",
+  "genre": "new",
+  "_genre": "rock",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Visual,Rock",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://div-official.zaiko.io/ja/item/381252"
+  },
+  "tickets": [
+   {
+    "type": "【一次先行/B】入場チケット（神奈川 11/2 18:30公演）〜8/23 23:59",
+    "date": "2026-08-23",
+    "url": "https://div-official.zaiko.io/ja/item/381252",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "presaleEnded": true
+   },
+   {
+    "type": "【前売り/C】入場チケット（神奈川 11/2 18:30公演）〜11/1 23:59",
+    "date": "2026-11-01",
+    "url": "https://div-official.zaiko.io/ja/item/381252"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "平松愛理",
+  "name": "【福岡】平松愛理 Autumn Live 弾き語りツアー2026 ～ SLOW ROOM ～",
+  "date": "2026-11-17",
+  "dateLabel": "2026年11月17日(火) 19:00開演",
+  "venue": "ROOMS",
+  "prefecture": "福岡",
+  "genre": "new",
+  "_genre": "musicetc",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:?",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://airihiramatsu-autumnlive-tokyo.zaiko.io/ja/e/airi-autumn-live-2026fukuoka"
+  },
+  "tickets": [
+   {
+    "type": "【FC先行】福岡公演（福岡 11/17 19:00公演）〜9/19 23:59",
+    "date": "2026-09-19",
+    "url": "https://airihiramatsu-autumnlive-tokyo.zaiko.io/ja/e/airi-autumn-live-2026fukuoka",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "DIV",
+  "name": "DIV PRE-RECHARGE ONEMAN TOUR / TOKYO FINAL",
+  "date": "2026-10-04",
+  "dateLabel": "2026年10月4日(日) 23:59開演",
+  "venue": "WWW X",
+  "prefecture": "東京",
+  "genre": "new",
+  "_genre": "rock",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Visual,Rock",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://div-official.zaiko.io/ja/item/381254"
+  },
+  "tickets": [
+   {
+    "type": "【前売り/C】入場チケット（東京 11/22 17:15公演）10/17 10:00発売",
+    "date": "2026-10-17",
+    "startDate": "2026-10-17",
+    "url": "https://div-official.zaiko.io/ja/item/381254"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "Marcellus Pittman Japan Tour",
+  "name": "Marcellus Pittman Japan Tour",
+  "date": "2026-11-07",
+  "dateLabel": "2026年11月7日(土) 22:00開演",
+  "venue": "club JOULE",
+  "prefecture": "大阪",
+  "genre": "new",
+  "_genre": "club",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:House",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://joule-live.zaiko.io/ja/e/marcellus-pittman-japan-26"
+  },
+  "tickets": [
+   {
+    "type": "Adv（大阪 11/7 22:00公演）〜11/7 21:00",
+    "date": "2026-11-07",
+    "url": "https://joule-live.zaiko.io/ja/e/marcellus-pittman-japan-26"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "ONE SAMURAI ４",
+  "name": "ONE SAMURAI ４",
+  "date": "2026-10-17",
+  "dateLabel": "2026年10月17日(土) 16:00開演",
+  "venue": "有明アリーナ",
+  "prefecture": "東京",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Sports & Fitness",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+  },
+  "tickets": [
+   {
+    "type": "VVIP（1st Row）（1）（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "VVIP（1）（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "VIP（1）（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "CAT1 ¥55,000（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "CAT 2 ¥44,000（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "CAT 3 ¥16,500（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "CAT 3 WC （with companion） ¥16,500（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "CAT4 ¥13,200（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "CAT 4 WC （with companion） ¥13,200（東京 10/17 16:00公演）〜10/16 23:59",
+    "date": "2026-10-16",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4"
+   },
+   {
+    "type": "VVIP（1st Row）（2）（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "VVIP（2）（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "VIP（2）（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "CAT1 ¥44,000（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "CAT 2 ¥35,200（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "CAT 3 ¥13,200（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "CAT 3 WC （with companion） ¥13,200（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "CAT4 ¥10,560（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   },
+   {
+    "type": "CAT 4 WC （with companion） ¥10,560（東京 10/17 16:00公演）〜7/23 23:59",
+    "date": "2026-07-23",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-4",
+    "soldout": true,
+    "soldoutSince": "2026-09-23",
+    "saleEnded": true,
+    "saleEndedSince": "2026-09-23"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "11/23　マッスルゲート北陸大会",
+  "name": "11/23 マッスルゲート北陸大会",
+  "date": "2026-11-23",
+  "dateLabel": "2026年11月23日(月) 11:30開演",
+  "venue": "石川県文教会館 ホール",
+  "prefecture": "石川",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Sports & Fitness,Body building",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://musclegate.zaiko.io/ja/e/musclegate-hokuriku-26"
+  },
+  "tickets": [
+   {
+    "type": "VIP席（指定席）（石川 11/23 11:30公演）9/25 18:00発売",
+    "date": "2026-09-25",
+    "startDate": "2026-09-25",
+    "url": "https://musclegate.zaiko.io/ja/e/musclegate-hokuriku-26"
+   },
+   {
+    "type": "S席（指定席）（石川 11/23 11:30公演）9/25 18:00発売",
+    "date": "2026-09-25",
+    "startDate": "2026-09-25",
+    "url": "https://musclegate.zaiko.io/ja/e/musclegate-hokuriku-26"
+   },
+   {
+    "type": "A席（自由席）（石川 11/23 11:30公演）9/25 18:00発売",
+    "date": "2026-09-25",
+    "startDate": "2026-09-25",
+    "url": "https://musclegate.zaiko.io/ja/e/musclegate-hokuriku-26"
+   },
+   {
+    "type": "車椅子席（自由席）（石川 11/23 11:30公演）9/25 18:00発売",
+    "date": "2026-09-25",
+    "startDate": "2026-09-25",
+    "url": "https://musclegate.zaiko.io/ja/e/musclegate-hokuriku-26"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ },
+ {
+  "id": null,
+  "artist": "ONE SAMURAI 6",
+  "name": "ONE SAMURAI 6",
+  "date": "2026-12-02",
+  "dateLabel": "2026年12月2日(水) 18:00開演",
+  "venue": "横浜BUNTAI",
+  "prefecture": "神奈川",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_srcgenre": "zaiko:Sports & Fitness",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": null,
+   "eplus": null,
+   "zaiko": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+  },
+  "tickets": [
+   {
+    "type": "VVIP（First Row）（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "VIP（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 1（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 2（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 3 WC （with companion）（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 3（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 4（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 5（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   },
+   {
+    "type": "CAT 6（神奈川 12/2 18:00公演）〜12/1 23:59",
+    "date": "2026-12-01",
+    "url": "https://onechampionship.zaiko.io/ja/e/one-samurai-6"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-23"
+ }
+]
