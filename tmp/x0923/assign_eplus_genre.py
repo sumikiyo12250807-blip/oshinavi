@@ -30,6 +30,7 @@ MAP = {
     'anime-song': 'anime',
     'hiphop-rap': 'hiphop',
     'visual': 'rock',            # ヴィジュアル系＝ロックの下位
+    'voiceactor-live': 'seiyuu',
     'popular-song': 'enka',      # 歌謡曲＝ぴあの「演歌・邦楽→enka」に合わせる
     'reggae': 'yougaku',         # 海外の音楽（ぴあの「民族音楽→yougaku」と同じ扱い）
     'bossanova-latin': 'yougaku',
@@ -49,7 +50,7 @@ MAP = {
 }
 
 raw = {}
-for p in ('tmp/x0923/eplus_genre_raw.json', 'tmp/x0923/eplus_genre_retry.json'):
+for p in ('tmp/x0923/eplus_genre_raw.json', 'tmp/x0923/eplus_genre_retry.json', 'tmp/x0923/eplus_genre_retry2.json'):
     try:
         d = json.load(io.open(p, encoding='utf-8'))
     except Exception:
