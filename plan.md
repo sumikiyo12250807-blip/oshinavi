@@ -30,6 +30,12 @@
      → `Japanese music` は写さない（大分類で和楽器ではない・SunSet Swish が hougaku に落ちる）
    📝 memoryを直した＝reference_eplus_harvest（ジャンルの取り方）と reference_zaiko_harvest（誤診の訂正）＋MEMORY.md
 
+🔧【今夜ふえた道具】
+   ・`tools/cta_count.py`＝**X投稿のCTAが着地先で何件出すか**を数える（`--posts tmp/xMMDD`）。
+     10件を切るまとめ枠が exit 2 で鳴る。**文面を見せる前に回す**（X_SCRIPT.mdにも書いた）
+   ・`tools/eplus_genre.py`＝e+のジャンルを個別ページの `/sf/live/<slug>` から写す（3秒間隔・selftest付き）
+   ・`tools/inject_tiget.py --same-name-ok`＝「同名だけど別の日」を落とさない
+
 🔴【残した77件】
    ・TIGET73件＝**今夜入れた分＝ユーザーがまだ見ていない**ので振り分けない
    ・FANY 3件（20961・20962・20963 えりぽんに会えた記念日vol.3）＝FANYの37「アート/イベント」を
