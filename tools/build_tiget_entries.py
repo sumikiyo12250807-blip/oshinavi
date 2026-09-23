@@ -278,10 +278,27 @@ def build(ev, today):
             #    **バッジから県を落とす**。カードには📍会場名が出るので場所は読める。
             when = f'{md(d)} {ptime}公演' if ptime else f'{md(d)}公演'
             head = f'{nm}（{pref} {when}）' if pref else f'{nm}（{when}）'
+            # 🆕2026-09-24 券種の下の注記（受付：… 〜／受付終了日時：…）＝受付期間の欄が無い券種の発売と締切
+            sa, ea = t.get('start_at'), t.get('end_at')
+            if ea and ea[0] > d and not re.search(r'配信|視聴|アーカイブ', nm):
+                ea = (d, '')                       # 締切が公演日より後なら公演日で締める
             if st == 'unopened':
                 if per:
-                    tickets.append({'type': f'{head}{md(per[0])} {per[1]}発売'.rstrip(),
-                                    'date': per[0], 'startDate': per[0], 'url': ev['url']})
+                    # 🚨2026-09-24 発売前でも締切（受付期間の終わり）を持つ＝date=発売日だと発売日の翌0時に消える
+                    #   （FANYで24枠が消えたのと同じ型）。
+                    end, endt = per[2], per[3]
+                    if end > d and not re.search(r'配信|視聴|アーカイブ', nm):
+                        end, endt = d, ''
+                    tickets.append({'type': f'{head}{md(per[0])} {per[1]}発売〜{md(end)} {endt}'.replace('  ', ' ').rstrip(),
+                                    'date': end, 'startDate': per[0], 'url': ev['url']})
+                    has_live = True
+                elif sa and sa[0] >= today:
+                    tk = {'type': f'{head}{md(sa[0])} {sa[1]}発売'.rstrip(), 'date': sa[0],
+                          'startDate': sa[0], 'url': ev['url']}
+                    if ea and ea[0] >= sa[0]:
+                        tk['type'] = f'{head}{md(sa[0])} {sa[1]}発売〜{md(ea[0])} {ea[1]}'.replace('  ', ' ').rstrip()
+                        tk['date'] = ea[0]
+                    tickets.append(tk)
                     has_live = True
                 elif ss_date and ss_date >= today:
                     # 🚨受付前で受付期間の欄が無い時は JSON-LD の validFrom が発売日。
@@ -301,6 +318,15 @@ def build(ev, today):
                         end, endt = d, ''
                     tickets.append({'type': f'{head}〜{md(end)} {endt}'.rstrip(),
                                     'date': end, 'url': ev['url']})
+                    has_live = True
+                elif ea:
+                    # 🆕2026-09-24 「当日支払い」でも注記に受付終了日時があれば、それが締切
+                    s0 = sa or ((ss_date, ss_time) if ss_date else None)
+                    tk = {'type': f'{head}〜{md(ea[0])} {ea[1]}'.rstrip(), 'date': ea[0], 'url': ev['url']}
+                    if s0 and s0[0] >= today:
+                        tk['startDate'] = s0[0]
+                        tk['type'] = f'{head}{md(s0[0])} {s0[1]}発売〜{md(ea[0])} {ea[1]}'.replace('  ', ' ').rstrip()
+                    tickets.append(tk)
                     has_live = True
                 elif ss_date:
                     # 🚨「当日支払い」の券種は受付期間の欄がHTMLに出ない＝**締切がどこにも書いていない**。
@@ -486,6 +512,26 @@ def _selftest():
     t3 = e3['tickets'][0]
     assert t3['type'] == '自由席（大阪 10/18公演）8/20 11:40発売〜', t3['type']
     assert t3['saleEndUnknown'] is True and t3['date'] == '2026-10-18' and t3['startDate'] == '2026-08-20', t3
+    # 🆕2026-09-24 当日支払いでも注記に「受付終了日時」があれば締切にする（締切不明にしない）
+    ev3b = json.loads(json.dumps(ev))
+    ev3b['programs'][0]['tickets'] = [{'name': '自由席', 'class': 'is-available', 'periods': [],
+                                       'end_at': ['2026-10-17', '23:59']}]
+    t3b = build(ev3b, '2026-09-18')[0]['tickets'][0]
+    assert t3b['type'] == '自由席（大阪 10/18公演）〜10/17 23:59' and t3b['date'] == '2026-10-17', t3b
+    assert 'saleEndUnknown' not in t3b, t3b
+    # 🆕発売前（受付期間あり）は発売〜締切で持つ＝発売日の翌0時に消えない
+    ev3c = json.loads(json.dumps(ev))
+    ev3c['programs'][0]['tickets'] = [{'name': '一般', 'class': 'is-unable is-unopened',
+                                       'periods': [{'parsed': ['2026-09-25', '19:15', '2026-10-17', '23:59']}]}]
+    t3c = build(ev3c, '2026-09-18')[0]['tickets'][0]
+    assert t3c['type'] == '一般（大阪 10/18公演）9/25 19:15発売〜10/17 23:59', t3c
+    assert t3c['startDate'] == '2026-09-25' and t3c['date'] == '2026-10-17', t3c
+    # 🆕受付前で受付期間の欄が無くても、注記「受付：… 〜」があれば発売日（validFrom より優先）
+    ev3d = json.loads(json.dumps(ev))
+    ev3d['programs'][0]['tickets'] = [{'name': '一般予約', 'class': 'is-unable is-unopened', 'periods': [],
+                                       'start_at': ['2026-10-03', '10:00']}]
+    t3d = build(ev3d, '2026-09-18')[0]['tickets'][0]
+    assert t3d['type'] == '一般予約（大阪 10/18公演）10/3 10:00発売' and t3d['startDate'] == '2026-10-03', t3d
     # 🚨受付前で受付期間の欄が無い＝validFrom が今日以降なら発売日として使う／過去なら載せない
     evU = json.loads(json.dumps(ev))
     evU['programs'][0]['tickets'] = [{'name': '一般チケット', 'class': 'is-unable is-unopened',

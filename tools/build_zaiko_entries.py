@@ -314,10 +314,31 @@ def build_one(listrow, det, today, unknown):
             #   開始日が**今日以降のときだけ**載せる（過去の開始日は別の理由でまだ始まっていない形＝
             #   推測で日付を作らないので触らない）。
             sd, sdt = t.get('start_date'), t.get('start_time')
+            # 🚨2026-09-24 ZAIKOは**抽選の受付期間の真っ最中でも is_sale_started=False のまま**
+            #   （AKB48劇場 id22876＝9/11〜9/25 の一般枠ほか4枠が受付中なのに落ちていた・独立チェックで発覚）。
+            #   開始が過去で締切が今日以降＝**期間の中**なので、受付中として締切つきで載せる。
+            #   ⚠️**抽選だけ**に当てる＝先着で「開始が過去なのに未開始」は販売を止めた形もあるので従来どおり載せない
+            if t.get('is_lottery') and sd and sd < today and ed and ed >= today:
+                end, endt = ed, edt
+                if end > t_d and not re.search(r'配信|視聴|アーカイブ', nm):
+                    end, endt = t_d, ''
+                tickets.append({'type': ('%s〜%s %s' % (head, mdp(end), endt or '')).rstrip(),
+                                'date': end, 'url': url})
+                has_live = True
+                continue
             if not sd or sd < today:
                 continue
-            tickets.append({'type': ('%s%s %s発売' % (head, md(sd), sdt or '')).rstrip(),
-                            'date': sd, 'startDate': sd, 'url': url})
+            tk = {'type': ('%s%s %s発売' % (head, md(sd), sdt or '')).rstrip(),
+                  'date': sd, 'startDate': sd, 'url': url}
+            # 🚨2026-09-24 発売前でも締切を持つ＝date=発売日だと発売日の翌0時に画面から消える
+            #   （独立チェックで id22878 ChumToto・22708 銀河鉄道ナイトライン・22710 マッスルゲート北陸）
+            if ed and ed >= sd:
+                end, endt = ed, edt
+                if end > t_d and not re.search(r'配信|視聴|アーカイブ', nm):
+                    end, endt = t_d, ''
+                tk['type'] = ('%s%s %s発売〜%s %s' % (head, md(sd), sdt or '', mdp(end), endt or '')).replace('  ', ' ').rstrip()
+                tk['date'] = end
+            tickets.append(tk)
             has_live = True
         else:
             if ed:
@@ -474,8 +495,16 @@ def _selftest():
     # ⑥ 受付前＝**開始日（on_sale_from / lottery_start_date）があるなら「M/D HH:MM発売」で載せる**
     e6, _ = build_one(lr, mk([tk(is_sale_started=False,
                                 start_date='2026-09-25', start_time='20:00')]), today, unk)
-    assert e6['tickets'][0]['type'] == '一般（東京 10/1 19:00公演）9/25 20:00発売', e6['tickets'][0]
-    assert e6['tickets'][0]['startDate'] == '2026-09-25', e6['tickets'][0]
+    #    🚨2026-09-24 締切（end_date）があれば「発売〜締切」・date=締切（発売日の翌0時に消えないように）
+    assert e6['tickets'][0]['type'] == '一般（東京 10/1 19:00公演）9/25 20:00発売〜9/30 23:59', e6['tickets'][0]
+    assert e6['tickets'][0]['startDate'] == '2026-09-25' and e6['tickets'][0]['date'] == '2026-09-30', e6['tickets'][0]
+    # ⑥-3 🚨受付期間の最中なのに is_sale_started=False（ZAIKOの抽選）＝受付中として締切つきで載せる
+    e6d, _ = build_one(lr, mk([tk(is_sale_started=False, is_lottery=True, start_date='2026-09-11',
+                                  start_time='16:00', end_date='2026-09-25', end_time='16:00')]), today, unk)
+    assert e6d['tickets'][0]['date'] == '2026-09-25' and not e6d['tickets'][0].get('soldout'), e6d['tickets']
+    e6c, _ = build_one(lr, mk([tk(is_sale_started=False, start_date='2026-09-25', start_time='20:00',
+                                  end_date=None, end_time=None)]), today, unk)
+    assert e6c['tickets'][0]['type'] == '一般（東京 10/1 19:00公演）9/25 20:00発売', e6c['tickets'][0]
     # 開始日が無い／過去なら載せない（推測で日付を作らない）
     e6b, why6b = build_one(lr, mk([tk(is_sale_started=False, start_date=None)]), today, unk)
     assert e6b is None, (e6b, why6b)
