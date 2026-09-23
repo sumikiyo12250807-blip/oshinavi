@@ -10,8 +10,8 @@
 |----------------------|--------------------|-------|----------|
 | 先着発売中           | fany_icon__sold    | 2,673 | 買える（〜終了日時） |
 | 抽選受付中           | fany_icon__sold    |   148 | 買える（〜終了日時） |
-| 先着発売前           | beforeRelease      |   148 | 発売前（M/D HH:MM発売） |
-| 抽選受付前           | beforeRelease      |   100 | 発売前（M/D HH:MM発売） |
+| 先着発売前           | beforeRelease      |   148 | 発売前（M/D HH:MM発売〜締切。締切が無い時だけ M/D HH:MM発売） |
+| 抽選受付前           | beforeRelease      |   100 | 発売前（M/D HH:MM発売〜締切。締切が無い時だけ M/D HH:MM発売） |
 | 先着発売終了         | fany_icon__soldout |    73 | `soldout`＋`saleEnded`（販売終了） |
 | 抽選受付終了         | fany_icon__soldout | 4,649 | `soldout`＋`presaleEnded`（**先行終了**） |
 
@@ -242,8 +242,20 @@ def build_one(p, today, genre_map, unknown):
         if st in PRE_ST:
             if not sd or sd < today:
                 continue                 # 発売前なのに開始日が過去＝推測で日付を作らない
-            tickets.append({'type': ('%s%s %s発売' % (head, md(sd), sdt or '')).rstrip(),
-                            'date': sd, 'startDate': sd, 'url': url})
+            # 🚨2026-09-24 一覧は発売前の枠にも締切（計算済みの実日時）を持っている。
+            #   date=発売日で作ると、発売日を過ぎた0時に画面から消えた（9/23夜に24枠）
+            #   ＝締切があれば「M/D HH:MM発売〜M/D HH:MM」で作る。締切が無い時だけ従来の形
+            if ed and ed >= sd:
+                end, endt = ed, edt
+                if end > (dend or d) and not re.search(r'配信|視聴|アーカイブ', nm):
+                    end, endt = (dend or d), ''
+                tickets.append({'type': ('%s%s %s発売〜%s %s'
+                                         % (head, md(sd), sdt or '', md(end), endt or ''))
+                                        .replace('  ', ' ').rstrip(),
+                                'date': end, 'startDate': sd, 'url': url})
+            else:
+                tickets.append({'type': ('%s%s %s発売' % (head, md(sd), sdt or '')).rstrip(),
+                                'date': sd, 'startDate': sd, 'url': url})
             has_live = True
         elif st in LIVE_ST:
             if not ed:
@@ -402,10 +414,20 @@ def _selftest():
     assert t4['soldout'] and t4['saleEnded'], t4
 
     # ⑤ 発売前＝M/D HH:MM発売。開始日が過去の「発売前」は載せない（推測で日付を作らない）
+    #    🚨締切があれば発売〜締切で持つ（date=発売日だと発売日の翌0時に消える＝2026-09-24）
     e5, _ = build_one(mk(performance_sales=[sale('先着発売前', s0='20260925110000')]),
                       today, gm, collections.Counter())
-    assert e5['tickets'][0]['type'] == '一般発売（大阪 10/1公演）9/25 11:00発売', e5['tickets'][0]
+    assert e5['tickets'][0]['type'] == '一般発売（大阪 10/1公演）9/25 11:00発売〜9/30 8:00', e5['tickets'][0]
     assert e5['tickets'][0]['startDate'] == '2026-09-25'
+    assert e5['tickets'][0]['date'] == '2026-09-30', e5['tickets'][0]
+    e5c, _ = build_one(mk(performance_sales=[sale('先着発売前', s0='20260925110000', s1='')]),
+                       today, gm, collections.Counter())
+    assert e5c['tickets'][0]['type'] == '一般発売（大阪 10/1公演）9/25 11:00発売', e5c['tickets'][0]
+    assert e5c['tickets'][0]['date'] == '2026-09-25'
+    e5d, _ = build_one(mk(performance_sales=[sale('先着発売前', s0='20260925110000',
+                                                   s1='20261010235900')]),
+                       today, gm, collections.Counter())
+    assert e5d['tickets'][0]['date'] == '2026-10-01', e5d['tickets'][0]   # 公演日で締める
     e5b, why5 = build_one(mk(performance_sales=[sale('先着発売前', s0='20260901110000')]),
                           today, gm, collections.Counter())
     assert e5b is None, e5b
