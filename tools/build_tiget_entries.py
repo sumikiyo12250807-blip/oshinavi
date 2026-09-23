@@ -156,6 +156,12 @@ SELLER_SIDE = re.compile(
 )
 
 
+# 🆕2026-09-24 ユーザー決定「チェキ通販は外して」＝グッズ・チェキの**通信販売だけ**のページは載せない
+#   （id22620「Bunny La Crew オンラインチェキ通販」。開催日の欄は販売締切を入れてあるだけ）。
+#   ⚠️駐車券・グッズ引換券（現場で使う）と配信視聴券は載せる＝ここには入れない。
+NOT_EVENT = re.compile(r'通販|通信販売')
+
+
 def is_seller_side(name):
     """「出す側」の申込ページか（＝推しに会いに行く券ではない）。"""
     return bool(SELLER_SIDE.search(name or ''))
@@ -214,6 +220,8 @@ def sale_start(ev):
 def build(ev, today):
     if is_seller_side(ev.get('name')):
         return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
+    if NOT_EVENT.search(ev.get('name') or ''):
+        return None, '通信販売だけのページ（会いに行く現場が無い）'
     # 🚨主催者の雛形が730日の線をすり抜ける（2026-09-18＝id13228 公演名「予約」・
     #    公演2027-11-18 なのに**発売日が2025-11-18**＝1年10か月前）。
     #    ありふれた1語の公演名で、発売日が1年以上前のものは雛形として弾く。
