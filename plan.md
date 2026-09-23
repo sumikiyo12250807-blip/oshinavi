@@ -12,7 +12,12 @@
    🐛ZAIKO＝一覧の日付が締切側のことがある→個別の開演を使うよう修正・8件組み直し（雨模様のソラリス2027/1が9/24扱いだった）＋新着5件
    🩹ぴあ隠れ枠 24件＋足し算61件（消えた枠0）／e+本日発売20枠／ZAIKO 2件販売終了印
    🗂MEMORY.md 35.8KB→16.9KB（リンク231本そのまま）
-⏳ 走行中＝ぴあ要再確認278件 reconcile（tmp/x0924/recon_recheck.txt）／TIGET番人
+   🩹TIGET 75件ヒール（番人5243一致）＋新着30件（22881〜22910）／新着プール368＝NEW_ORDER368
+   🎬フラッシュダンス風動画を生成中（ユーザー承認・$1.30・task 445032822366514）
+      素材 tmp/video/flash_0924/（ref_chair.png＝渡した参照画像・song_32_47.mp3・storyboard_4.png）
+      道具 tools/flash_storyboard.py（サイトを撮って広告を消しキャラと椅子を置く）／flash_boards.py（流れの絵コンテ）／draw_chair.py
+⏳ 走行中＝ぴあ要再確認278件 reconcile（tmp/x0924/recon_recheck.txt）
+   ／別エージェントの新着チェック2本（ユーザー依頼＝TIGET191・FANY/ZAIKO177）→疑義を直してからpush
 🔶 残り＝TIGETヒール／新着収集（ぴあ発売前・TIGET）／push直前 reconcile --new→build_ai_page→compact_events
    ⏸楽天の販売中で未登録4件（昼に）＝GirlsAward 9/26 rtkt926 は新規／藤井フミヤ10/10 rtol238⇔id1621(10/18)
      ／大阪芸術花火の市民割 rtg2672⇔id3239／木下大サーカス岡山 rtck026⇔id9186＝足すか別立てかを見比べる
