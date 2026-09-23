@@ -6,9 +6,8 @@
   python tools/delete_entries.py --file index.html --ids 30,53
 
 【方針】
-- HTML内の `const EVENTS = [...];` 配列を行ベースに解析
-- 指定idのエントリブロック ({...}) を行ごと削除
-- 配列末尾の余計なカンマも調整
+- HTML内の `const EVENTS = [...];` 配列を JSON として読み、指定idを外して**読んだ時と同じ形**で書き戻す
+  （🆕2026-09-24 行ベースの解析をやめた＝compact_events の「1件1行」でも動くように）
 - 削除前にバックアップを取るのは呼び出し側の責任
 """
 import argparse
@@ -55,65 +54,29 @@ def find_entry_blocks(lines, start_idx, end_idx):
 
 
 def delete_entries(filepath: str, del_ids: set):
-    with open(filepath, encoding='utf-8') as f:
-        lines = f.readlines()
-
-    # EVENTS配列の範囲を見つける
-    start_idx = None
-    for idx, ln in enumerate(lines):
-        if re.search(r'const\s+EVENTS\s*=\s*\[', ln):
-            start_idx = idx
-            break
-    if start_idx is None:
-        raise RuntimeError(f"{filepath}: const EVENTS not found")
-    depth = 0
-    in_array = False
-    end_idx = None
-    # 公演名に片方だけの [ ] が入ると括弧の数え上げが狂う（2026-09-19 TIGET）＝行頭の "];" を先に探す
-    for idx in range(start_idx + 1, len(lines)):
-        if re.match(r'\];\s*$', lines[idx]):
-            end_idx = idx
-            break
-    for idx in range(start_idx, len(lines) if end_idx is None else 0):
-        for ch in lines[idx]:
-            if ch == '[':
-                depth += 1
-                in_array = True
-            elif ch == ']':
-                depth -= 1
-                if in_array and depth == 0:
-                    end_idx = idx
-                    break
-        if end_idx is not None:
-            break
-    if end_idx is None:
-        raise RuntimeError(f"{filepath}: array end not found")
-
-    print(f"{filepath}: array lines {start_idx+1}-{end_idx+1}")
-    blocks = find_entry_blocks(lines, start_idx + 1, end_idx)
-    print(f"{filepath}: {len(blocks)}件のエントリ検出")
-
-    to_delete = [b for b in blocks if b[0] in del_ids]
-    found_ids = {b[0] for b in to_delete}
+    """🆕2026-09-24 行で数えるのをやめて JSON で読む＝indent=2 でも「1件1行」（compact_events）でも同じに動く。
+    書き戻しは**読んだ時と同じ形**で（詰めてあれば詰めたまま・CRLFはCRLFのまま）。"""
+    import os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import compact_events as CE
+    text = open(filepath, encoding='utf-8', newline='').read()
+    s, end, events = CE.locate(text)
+    compact = CE.is_compact(text)
+    nl = '\r\n' if '\r\n' in text[:s] else '\n'
+    print(f"{filepath}: {len(events)}件のエントリ検出（{'1件1行' if compact else 'indent=2'}）")
+    found_ids = {e.get('id') for e in events if e.get('id') in del_ids}
     missing = del_ids - found_ids
     if missing:
         print(f"{filepath}: ⚠️ MISSING IDs (HTMLに見つからない): {sorted(missing)}")
-    print(f"{filepath}: 削除実行 {len(to_delete)}件 → {sorted(found_ids)}")
-
-    del_line_set = set()
-    for _, s, e in to_delete:
-        for k in range(s, e + 1):
-            del_line_set.add(k)
-
-    new_lines = [ln for k, ln in enumerate(lines) if k not in del_line_set]
-    new_text = ''.join(new_lines)
-    # 配列末尾の余計なカンマ調整: "},\n  ];" → "}\n  ];"
-    new_text = re.sub(r'},(\s*\n\s*\];)', r'}\1', new_text)
-
-    with open(filepath, 'w', encoding='utf-8') as f:
+    print(f"{filepath}: 削除実行 {len(found_ids)}件 → {sorted(found_ids)}")
+    kept = [e for e in events if e.get('id') not in del_ids]
+    new_text = text[:s] + CE.dump(kept, compact, nl) + text[end:]
+    if CE.load(new_text) != kept:
+        raise RuntimeError('書き戻した EVENTS が読み戻せない')
+    with open(filepath, 'w', encoding='utf-8', newline='') as f:
         f.write(new_text)
     print(f"{filepath}: 書き込み完了")
-    return len(to_delete)
+    return len(found_ids)
 
 
 def main():
