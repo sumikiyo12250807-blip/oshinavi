@@ -183,7 +183,7 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
    - 🚨**ジャンルに迷う件・エージェントと判定が割れた件は振り分けずプールに残して報告**（[[feedback_consultation_mark]]）
    - 🆕**公演名＋割り当てジャンル＋URLの一覧を報告＋`logs/assigned_YYYY-MM-DD.md` に残す**（新着タブが空になる代わりの「見る場所」）
 8. commit
-9. **push**＝GO待ち不要（1日3回まで）。SSR再生成と `reconcile_pia --new` を**push直前に必ず**。**上げたら何を上げたか1行報告**（[[feedback_push]]）
+9. **push**＝GO待ち不要（1日3回まで）。SSR再生成と `reconcile_pia --new` を**push直前に必ず**。🆕**その後、commitの直前に `python tools/compact_events.py --apply`**（2026-09-24〜・EVENTSを1件1行に詰める＝約4.4MB減。昼・夜のpushも同じ）。**上げたら何を上げたか1行報告**（[[feedback_push]]）
 
 ## ⏰ 朝の便で1日の予定を立てたら、**同じターンで予定の時刻を全部アラームに入れる**（2026-09-14 ユーザー指摘）
 

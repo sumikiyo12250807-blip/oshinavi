@@ -1,3 +1,18 @@
+# ▶▶ 9/24(木) 朝の便（05:43〜・途中経過）
+
+```
+✅ 済み
+   🗑削除440件（公演9/23までで終了・独立チェック疑義ゼロ）logs/removed_2026-09-24.md（0f26e904）
+   🔧FANY＝真因は「発売前の枠が締切を捨てて date=発売日 で作っていた」（相対表現ではなかった）→ビルダー修正・selftest⑤
+   📦B＝tools/compact_events.py 新設（写しで 24.28→19.83MB・中身同じ）／delete_entries を JSON読みに（両形式で同結果）
+      PLAYBOOKのpush行・day手順書に「commit直前に compact_events --apply」を足した
+   🎫楽天＝照合（7494は昨日終わった枠・17243は既知）／売り切れ印2枠（5608・8382）
+   ⏰アラーム 12:05昼／17:03 X準備／19:41予約／22:07夜ヒール／23:12夜push
+⏳ 走行中＝ぴあ隠れ枠 --build（233件381枠）／FANY一覧 tmp/fany_0924.json／TIGET番人／ZAIKO番人／楽天発売前
+🔶 残り＝heal_fany --src tmp/fany_0924.json --apply（24枠を入れ直す）→番人／ぴあ要再確認278件 reconcile（tmp/x0924/recheck_pia.txt）
+   ／TIGET・ZAIKOのヒール／新着収集（ぴあ発売前・TIGET・ZAIKO・FANY）／push直前 reconcile --new→build_ai_page→compact_events
+```
+
 # ▶▶ ✅ 9/24 にやる＝**B（EVENTSを詰めて書く）**（9/23夜 ユーザー「Bだけやっといて」）
 
 ```

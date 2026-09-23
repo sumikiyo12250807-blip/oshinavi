@@ -63,7 +63,7 @@ push・削除・振り分け、**3つとも自走してよい**。ただし**必
 | **エントリ修正/統合** | 自走 | feedback_tour_consolidate / feedback_tour_per_ticket_url / feedback_bundle_full_rederive / feedback_multiwindow_webfetch_verify | ツアーは1エントリ／各公演に個別URL／全URL開いて再導出 |
 | **表示・並び順いじる** | 要確認 | feedback_display_order / feedback_display_rules / feedback_ask_what_user_sees | 本日発売は一日中先頭／写経検証NG(実物eval)／「直ってない」は画面の実物を1つ聞く |
 | **X投稿** | 選定は自走／**文面は要確認** | 🚨🚨**まず feedback_x_post_method_0825 を全文Read（これが決定版・字数も締めもここで決まる）** / project_sns_promotion / **feedback_x_pick_bigname_miss** / feedback_model_routing_fable / feedback_x_link_oshinavi_only / feedback_x_no_link_spam / feedback_x_deadline_vs_presale_by_genre | 🚨**2026-08-17変更＝選定はユーザーに聞かない。Xフォロワー多い順で上位4本＋まとめ1本・着手は早く（夜まで待たない）・文面まで作っておく**／説明書かない・気持ちの代弁／URLは素のoshinavi.jp／ツアー名は公式裏取り／文字数機械カウント／フォロワー数はポスト数・Instagramと取り違えない・取れなければ「取れなかった」と書く |
-| **push** | 🚨**自走・承認不要（朝昼夜とも）** | feedback_push / feedback_selfrun_gates_only_two / project_netlify_credits | 1日3回（朝昼夜の便ごと）・便の中身を直し切ってから・push前に reconcile --new と build_ai_page・**押す予告をしない＝押してから「押した」と報告**（⛔失効＝「1日2回・事前確認・ブラウザチェック」） |
+| **push** | 🚨**自走・承認不要（朝昼夜とも）** | feedback_push / feedback_selfrun_gates_only_two / project_netlify_credits | 🆕🚨**2026-09-24＝push直前の最後に `python tools/compact_events.py --apply`**（EVENTSを1件1行に詰める・約4.4MB減・中身は同じ。他の道具は indent=2 で書き戻すので、build_ai_page のあと・commitの直前に回す）。1日3回（朝昼夜の便ごと）・便の中身を直し切ってから・push前に reconcile --new と build_ai_page・**押す予告をしない＝押してから「押した」と報告**（⛔失効＝「1日2回・事前確認・ブラウザチェック」） |
 
 ---
 
