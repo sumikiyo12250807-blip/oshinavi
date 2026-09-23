@@ -52,6 +52,15 @@ CATS = {
 }
 
 
+def _names(v):
+    """ZAIKOのジャンル欄から名前だけを取る。
+    🚨形が2通りある＝イベント側は `{"data":[{"id":55,"name":"Idol"}]}`、出演者側は `[{...}]`。
+    どちらも受ける（2026-09-23＝dict側を読めておらずイベントのジャンルが全件空になっていた）。"""
+    if isinstance(v, dict):
+        v = v.get('data') or []
+    return [g.get('name') for g in (v or []) if isinstance(g, dict) and g.get('name')]
+
+
 def fetch(url, tries=4, sleep=1.0):
     """本文を返す。取れなければ None（**嘘の空配列を返さない**）。"""
     last = None
@@ -161,10 +170,13 @@ def parse_event(html, url):
         'venue_name': ven.get('name') or '',
         'venue_address': ven.get('address') or '',
         'venue_location': ven.get('location') or '',
-        'genres': [g.get('name') for g in (ev.get('genres') or []) if isinstance(g, dict)],
-        'performers': [{'name': p.get('name'),
-                        'genres': [g.get('name') for g in (p.get('genres') or [])
-                                   if isinstance(g, dict)]}
+        # 🚨🚨2026-09-23に直した＝イベント側のジャンルを**1件も読めていなかった**。
+        #   実ページは `"genres":{"data":[{"id":55,"name":"Idol"}]}` ＝ dict で包まれている。
+        #   dict を for で回すと文字列 'data' が1個出るだけで isinstance(...,dict) が偽になり、
+        #   常に空リストになっていた。おかげで「売り場が Idol と言っている17件」が
+        #   その他(musicetc)に落ちていた（[[feedback_genre_pia_asis_and_other]]＝その他は最後の砦）。
+        'genres': _names(ev.get('genres')),
+        'performers': [{'name': p.get('name'), 'genres': _names(p.get('genres'))}
                        for p in (ev.get('performers') or [])],
         'tickets': [],
     }
@@ -270,6 +282,12 @@ def _selftest():
     if not d:
         print('🚨一覧の data-page が読めない'); return 1
     props = d.get('props') or {}
+    # ⓪ ジャンル欄の2つの形（2026-09-23の取りこぼし＝dict側を読めていなかった）
+    assert _names({'data': [{'id': 55, 'name': 'Idol'}]}) == ['Idol'], 'dict形が読めない'
+    assert _names([{'id': 1, 'name': 'Rock'}, {'name': 'Pop'}]) == ['Rock', 'Pop'], 'list形が読めない'
+    assert _names(None) == [] and _names({}) == [] and _names([]) == []
+    assert _names({'data': [{'id': 9}]}) == [], '名前の無い要素は落とす'
+
     items = (props.get('group') or {}).get('items') or []
     print('selftest 一覧 %d件 / hasMore=%s' % (len(items), props.get('hasMore')))
     ok = ok and len(items) > 0

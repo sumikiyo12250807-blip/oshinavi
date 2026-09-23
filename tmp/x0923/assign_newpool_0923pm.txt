@@ -1,311 +1,55 @@
-振り分け 284件（売り場の申告どおり・推測ゼロ）
-新着プール 669→385件 ／ NEW_ORDER 669→385
+振り分け 37件（売り場の申告どおり・推測ゼロ）
+新着プール 385→348件 ／ NEW_ORDER 385→348
 
 == 売り場別 ==
-  tiget     263
-  fany       19
-  rakuten     2
+  zaiko      37
 
 == ジャンル別 ==
-  owarai         93
-  idol           81
-  jpop           63
-  hiphop          8
-  event           7
-  talkshow        6
-  yougaku         5
-  fanevent        4
-  utaite          4
+  idol           18
   musicetc        4
-  jazz            4
-  sports          1
-  anime           1
-  classic         1
-  enka            1
-  fes             1
+  hiphop          3
+  club            3
+  engeki          3
+  rock            3
+  vtuber          1
+  jpop            1
+  event           1
 
 == 明細（id / ジャンル / 売り場の申告 / 公演名 / URL）==
-20964	owarai	fany:30,38	10km記録会（淀川寛平マラソン2026公式拡大練習会）	https://ticket.fany.lol/event/detail/21335
-20965	owarai	fany:30,38	小杉ライブ～帰ってきたコメディこすっちょ～	https://ticket.fany.lol/event/detail/21094
-20966	owarai	fany:30,38	NSC東京30期ライブ「秋の夜長と、三十（みそ）。」	https://ticket.fany.lol/event/detail/21192
-20967	owarai	fany:30,38	NSC東京31期ライブ「color」#11	https://ticket.fany.lol/event/detail/21175
-20968	owarai	fany:30,38	蛙亭とイチオクの間	https://ticket.fany.lol/event/detail/21407
-20969	owarai	fany:30,38	NSC東京30期ライブ「RUSH」#9	https://ticket.fany.lol/event/detail/21193
-20970	owarai	fany:30,38	NSC東京31期ライブ「31色兼備(さいしょくけんび)」	https://ticket.fany.lol/event/detail/21195
-20971	owarai	fany:30,38	淀川寛平マラソン2026第５回練習会	https://ticket.fany.lol/event/detail/21351
-20972	owarai	fany:30,38	月亭方正落語会 月一方正噺～全十回～	https://ticket.fany.lol/event/detail/21325
-20973	owarai	fany:30,38	方正八光二人会	https://ticket.fany.lol/event/detail/21333
-20980	idol	tiget:29,31,32	MiNO10周年&かつお生誕 アフタートーク&ミニライブ	https://tiget.net/events/524737
-20981	idol	tiget:29	OWLscroll LABEL 無規制ツーマンLIVE『極点衝突』	https://tiget.net/events/524784
-20982	idol	tiget:29,31,32	かつお。お誕生日会 ~人生初の生誕祭お疲れ様でした会〜	https://tiget.net/events/524740
-20983	idol	tiget:29	にーも茶屋〜メンバーが軽く歌う編〜	https://tiget.net/events/524785
-20984	idol	tiget:29	広島アイドルライブ「POPAPIPUPEPOPA NEO」	https://tiget.net/events/524154
-20985	idol	tiget:29	あしたもはれのひ！vol.26 ～爆熱注意報！オルスタSP～	https://tiget.net/events/524650
-20986	idol	tiget:29	陽乃ほのか主催 あしたもはれのひ！ vol.26 〜爆熱注意報！オルスタSP〜	https://tiget.net/events/524639
-20987	fanevent	tiget:45	9/26（土）おでかけ撮影会@渋谷	https://tiget.net/events/524726
-20988	yougaku	tiget:38	JSB48非公開リハ	https://tiget.net/events/524548
-20989	idol	tiget:29	『CureDoLL』	https://tiget.net/events/524663
-20990	idol	tiget:29	『MIXVORTEX』	https://tiget.net/events/524664
-20991	idol	tiget:29	『Nage Summit』	https://tiget.net/events/524665
-20992	idol	tiget:29	『遊撃少女』	https://tiget.net/events/524666
-20993	idol	tiget:29,30,34,42,43	【9/26（土）】たたら祭り内 Galaxy特設野外ステージ 前方撮影エリアチケット	https://tiget.net/events/524167
-20994	event	tiget:52	あいら撮影交流会	https://tiget.net/events/524441
-20995	owarai	tiget:53	そろそろ決めませんか？vol.4	https://tiget.net/events/524556
-20996	idol	tiget:29,31,35,43	ツインテールナイト愛野可奈予約	https://tiget.net/events/524766
-20997	owarai	tiget:53	ネト作計	https://tiget.net/events/524620
-20998	owarai	tiget:53	後1回で獲れるのに50円玉しかない。	https://tiget.net/events/524623
-20999	idol	tiget:29	『ドグマエッジ』	https://tiget.net/events/524704
-21000	idol	tiget:29	『池袋グラフィティ』	https://tiget.net/events/524703
-21001	idol	tiget:29,30,31,34,42	【9/27（日）】たたら祭り内 Galaxy特設野外ステージ 前方撮影エリアチケット	https://tiget.net/events/524172
-21002	talkshow	tiget:46,52	【9月27日】ファンミーティング（チェキ会）	https://tiget.net/events/523154
-21003	idol	tiget:29	アユスクファンミーティング!! 〜ワンマン映像上映会〜	https://tiget.net/events/524359
-21004	event	tiget:52	アルプスおとめとりんごもぎ体験	https://tiget.net/events/524751
-21005	idol	tiget:29	合同撮影会(9/27)	https://tiget.net/events/524705
-21006	jpop	tiget:31	杉本ラララ １京と42歳バースデー トーク少なめワンマン 「ビコーズ ミュージシャン３」	https://tiget.net/events/524193
-21007	sports	tiget:72	Fukuoka ARTIE'S ~2026 season~④	https://tiget.net/events/524070
-21008	owarai	tiget:53	カチカチ山 vol.4	https://tiget.net/events/524603
-21009	idol	tiget:29	『 大宮I☆DOLL Cafe＠cafeMENU 』	https://tiget.net/events/524608
-21010	owarai	tiget:53	名大落研9月学内ライブ『おいしいもんはたくさんあるけど』	https://tiget.net/events/524680
-21011	utaite	tiget:79	凜ふぇす mini	https://tiget.net/events/523951
-21012	owarai	tiget:53	M1勝つぜライブ-漫才師組合員と一緒-	https://tiget.net/events/524685
-21013	owarai	tiget:53	お笑いライブ💰RAGS TO RICHES.vol.937💰	https://tiget.net/events/524713
-21014	yougaku	tiget:36,38	KUZUHA & AICHI DUO★LIVE 〜アコースティック日和 Vol.8〜 @ GREEN METALLIC TERRACE	https://tiget.net/events/518146
-21015	owarai	tiget:53	ロイヤルペイダート20	https://tiget.net/events/524374
-21016	idol	tiget:29,52,77	始発待ちアンダーグラウンドの｢花火、見に行ってみる？｣	https://tiget.net/events/523085
-21017	idol	tiget:29,31,32,52,55	第110回 きんさい！みんさい！狐魂祭！	https://tiget.net/events/524612
-21018	owarai	tiget:53	『漫才キングスマン』	https://tiget.net/events/524510
-21019	idol	tiget:29	【10/4 一般チケット】あにもふっ！半周年記念主催イベント	https://tiget.net/events/524761
-21020	owarai	tiget:53	大喜利ペーパーテスト 「試喜利験６」	https://tiget.net/events/524607
-21021	jpop	tiget:31	sunset BLUE 11th Anniversary "coral blue"	https://tiget.net/events/522538
-21022	talkshow	tiget:46,53	『かまぼこ体育館と河本太とまつもとの蒲田温泉大爆笑トークライブ』	https://tiget.net/events/524265
-21023	owarai	tiget:53	即興ネタ対策ライブ	https://tiget.net/events/517123
-21024	idol	tiget:29	LLC - LOVE LIVE CLUB - vol.42	https://tiget.net/events/524425
-21025	idol	tiget:29,52,53	なおかほ酒場	https://tiget.net/events/523620
-21027	idol	tiget:29	のーぷらん。瀬戸栞 生誕祭2026	https://tiget.net/events/524793
-21028	idol	tiget:29,31	はいばず瑞お誕じょーび会「 軌条の宇宙論 」	https://tiget.net/events/524453
-21029	owarai	tiget:53	みんなのペチカvol.223	https://tiget.net/events/522119
-21030	idol	tiget:29,31,41	桃知みなみバースデーLIVE2026	https://tiget.net/events/522411
-21031	idol	tiget:29	白黒アリス無規制主催3MAN【侵略的交流曲 - 第“暴”楽章 - 】	https://tiget.net/events/524360
-21032	idol	tiget:29	UNiFY ラブリーチャージ Tour 2026 あふたーとーく&特典会	https://tiget.net/events/521101
-21033	jpop	tiget:31	『OTONARI vol.47』	https://tiget.net/events/524541
-21034	idol	tiget:29,31	ミラクルTOYBOX	https://tiget.net/events/523883
-21035	owarai	tiget:53	10/14(水) 漫腹〜まんぷく〜	https://tiget.net/events/524205
-21037	owarai	tiget:53	第八回つめたいごはん新ネタライブ『昨日の敵』	https://tiget.net/events/524647
-21038	jpop	tiget:31,36	WALL pre. 【Punks Without Borders】	https://tiget.net/events/524758
-21039	fanevent	tiget:45	おらさ愛に恋vol.2	https://tiget.net/events/524544
-21040	talkshow	tiget:46,53,55	positive!新ネタライブ「stand up⤴︎」	https://tiget.net/events/523417
-21041	anime	tiget:41,55,79,80,82	『CLUB SCRUM』¿童処？×やわまる主催ライブ	https://tiget.net/events/524207
-21042	idol	tiget:29,45,52	そえるん焼肉オフ会	https://tiget.net/events/524433
-21043	owarai	tiget:53	みんなのペチカvol.224	https://tiget.net/events/514776
-21044	idol	tiget:29	スーパーマカロニサラダ主催イベント「スパマカフェス vol.1」	https://tiget.net/events/523942
-21045	idol	tiget:29	㊗️ゆりうどん誕生日モルックオフ会	https://tiget.net/events/524706
-21046	idol	tiget:29,31,35,77	東京咖喱喰部プレゼンツ【第2回】ジルとジョンのカレー定例会	https://tiget.net/events/523204
-21047	owarai	tiget:53	10/18(日)V-1で#ワイガヤ《1部》	https://tiget.net/events/524559
-21048	owarai	tiget:53	10/18(日)V-1で#ワイガヤ《2部》	https://tiget.net/events/524560
-21049	owarai	tiget:53	10/18(日)V-1で#ワイガヤ《3部》	https://tiget.net/events/524563
-21050	event	tiget:52,79	「 共鳴 」 #2 ~閃光の架け橋~ 1部	https://tiget.net/events/524759
-21051	event	tiget:52,79	「 共鳴 」 #2 ~閃光の架け橋~ 1部	https://tiget.net/events/524755
-21052	event	tiget:52,79	「 共鳴 」 #2 ~閃光の架け橋~ 2部	https://tiget.net/events/524760
-21053	event	tiget:52,79	「 共鳴 」 #2 ~閃光の架け橋~ 2部	https://tiget.net/events/524756
-21054	utaite	tiget:79,80,81,84	だくーん達による歌祭り！Vol.2.5	https://tiget.net/events/524072
-21055	owarai	tiget:53	公開ジャーナリズム3	https://tiget.net/events/524575
-21056	owarai	tiget:53	ブランニュー中野	https://tiget.net/events/524742
-21057	talkshow	tiget:46,53	喫茶トークライブ➈	https://tiget.net/events/524597
-21058	idol	tiget:29,31	LIQUID連続主催「暗黒倶楽部‐第二夜‐」	https://tiget.net/events/524200
-21059	idol	tiget:29,55	FUSION MOVE FES Vol.3	https://tiget.net/events/523722
-21060	owarai	tiget:53	ぼくらのペチカvol.44	https://tiget.net/events/514778
-21061	jpop	tiget:31	大樹祭2026 〜夕暮れのひとり唄〜	https://tiget.net/events/524767
-21062	jpop	tiget:31,43	弾語旋律祭	https://tiget.net/events/523714
-21063	jpop	tiget:31	新宿SACT! pre. 「Sactone-Proud！2026」	https://tiget.net/events/524679
-21064	idol	tiget:29,43	アイドルクロス〜コラボな夜祭とついでにみやっち生誕祭〜	https://tiget.net/events/517905
-21065	owarai	tiget:53	水掛論Vol5	https://tiget.net/events/524686
-21066	talkshow	tiget:46	祝！連載完結 -- 「復讐が足りない」が足りない！冬野梅子トークイベント	https://tiget.net/events/524728
-21067	fanevent	tiget:45	EN – KANZANJI TEMPLE	https://tiget.net/events/524571
-21068	utaite	tiget:79,80	BE:YOND	https://tiget.net/events/524732
-21069	utaite	tiget:79,80	BE:YOND	https://tiget.net/events/524734
-21070	owarai	tiget:53	スタメン	https://tiget.net/events/524573
-21071	owarai	tiget:53	ネターボエンジン	https://tiget.net/events/524552
-21072	owarai	tiget:53	10/26ぶちぬき魂!プレーオフ	https://tiget.net/events/524753
-21073	owarai	tiget:53	10/26吠えろ!MC魂!	https://tiget.net/events/524748
-21074	owarai	tiget:53	第７６回ヤンヤン魂!	https://tiget.net/events/524752
-21075	owarai	tiget:53	軟式トークチーム『メモジョイ』	https://tiget.net/events/524716
-21076	owarai	tiget:53	バトンロード vol.1	https://tiget.net/events/523954
-21077	owarai	tiget:53	10/29ぶちぬき魂!プレーオフ	https://tiget.net/events/524745
-21078	idol	tiget:29	『YOUまいみぃ』Vol.2 〜秋のいたずら🎃🦇👻 Halloweenパーティー〜	https://tiget.net/events/524576
-21079	owarai	tiget:53	グツグツ魂!	https://tiget.net/events/524747
-21080	jpop	tiget:31,41,43,52,79	Twinkle Booster presents vol.38「おでかけ！ミュージックパレット6 ～歌姫ハロウィン！～」	https://tiget.net/events/523978
-21081	jpop	tiget:31	いたづら ACOUSTIC LIVE 『涼風に吹かれて』	https://tiget.net/events/524568
-21082	jpop	tiget:31,35,43	Яyokei Night 〜Яyokeiの曲しか歌えません（笑）〜	https://tiget.net/events/521789
-21083	idol	tiget:29,31,41,80	歌姫クエスト23〜歌の源〜	https://tiget.net/events/524554
-21084	jpop	tiget:31,35	【11/2(Mon)】 灯人 / Clumsy. / 白昼夢 / 大谷修登	https://tiget.net/events/524347
-21085	idol	tiget:29,31,79	森田理紗子 Birthday One man live 2026【東京 渋谷LOFT HEAVEN】	https://tiget.net/events/524604
-21086	jpop	tiget:31,33	Beautiful is Life 20	https://tiget.net/events/524621
-21087	jpop	tiget:31,35	【10/31(Sat)】 Loojy / 3 Tone Sunburst / 夜明け前五時	https://tiget.net/events/524622
-21088	jpop	tiget:31,35	【11/6(Fri)】 はぴぐら / 怜音-REON- / Mam_i_ / 在多ヒデハル / 花鏡紅璃	https://tiget.net/events/524325
-21089	yougaku	tiget:36	Strip Joint 3rd Album 『PRAYERS IN SPIRAL』Release Party Extra	https://tiget.net/events/524678
-21090	owarai	tiget:53	キャンディー	https://tiget.net/events/524567
-21091	jpop	tiget:31	嘘VISUAL FES ～最後の四天王～	https://tiget.net/events/524781
-21092	jpop	tiget:31	GOLD SOUNDZ	https://tiget.net/events/524293
-21093	jpop	tiget:31	～HeartBeat 21th Anniversary Event～ 「Beat Emotion」vol.19	https://tiget.net/events/524268
-21094	musicetc	tiget:35,39	LIVE かずま ソロワンマンライブ ＠人形町サロンゴカフェ ※チケット代金は会場払い	https://tiget.net/events/524628
-21095	jazz	tiget:30,39,43,47	徳島ファド会 月例会11月特別編	https://tiget.net/events/524782
-21096	idol	tiget:29	I-CONNECTION♯13 ～5th Anniversary そして、僕らは。～	https://tiget.net/events/524307
-21097	jpop	tiget:31	[WEIRD TV Special MADAME EDWARDA 45th Anniversary GIG “DIVINUS DEUS”]11/14	https://tiget.net/events/524580
-21098	idol	tiget:29	姫 陽依 クラファン参加者限定 オフ会	https://tiget.net/events/524730
-21099	owarai	tiget:53	荒川ROLLIN' #1	https://tiget.net/events/524633
-21100	classic	tiget:40,68,70	女声合唱団「桐」第2回定期演奏会 ──信長貴富作品個展──	https://tiget.net/events/515962
-21101	owarai	tiget:53	関西3回生同期ライブ「風来坊」vol.5	https://tiget.net/events/524750
-21102	jpop	tiget:31,35,36,43	JAM presents「Proust 」	https://tiget.net/events/524346
-21103	jpop	tiget:31,35	birthday live 『26』	https://tiget.net/events/524614
-21104	jpop	tiget:31,52	【DOYAMarvelous vol.11】	https://tiget.net/events/524295
-21105	owarai	tiget:53	第二回 立石のあて書き-1グランプリ	https://tiget.net/events/524731
-21106	jpop	tiget:31,35,41,43	『ロマンティックポエマー2MAN LIVE!!』〜大阪府高槻市〜	https://tiget.net/events/524615
-21107	idol	tiget:29,35	星来 ワンマンLIVE2026	https://tiget.net/events/522262
-21108	jpop	tiget:31	Smokin' In The ”BOYS ROOM”	https://tiget.net/events/522215
-21109	yougaku	tiget:38	勝田 一樹(Sax)×加藤素朗(Gt&Mani) New Sax Edition Vol.36（昼公演）	https://tiget.net/events/481553
-21110	jpop	tiget:31	板橋ファイト！ 弾き語りワンマンライブ 「空ばかり見ていた」	https://tiget.net/events/523742
-21111	jpop	tiget:31	11/24(火) 「落果 presents G27 Yusuke 爆誕 Stakes」	https://tiget.net/events/524294
-21112	jpop	tiget:31,35	『よとふうか~HOME16周年記念ライブ 21日目』〜福岡〜	https://tiget.net/events/524565
-21113	owarai	tiget:53	高校ズの放課後トークvol.29	https://tiget.net/events/524600
-21114	idol	tiget:29,55	『 わた誕2026 』~ こんなに大きくなりました！~	https://tiget.net/events/522945
-21115	jpop	tiget:31,52	赤いアフロ&BANGBOO pre. 【ロード・オブ・ザ・アフロ】 アフロから始まるWINDING ROAD	https://tiget.net/events/521650
-21116	jpop	tiget:31,49	ハシグチカナデリヤと ゲーム音楽の ひとりツーマンLIVE vol.2	https://tiget.net/events/524409
-21117	idol	tiget:29	L♡VE UNLOCK	https://tiget.net/events/524587
-21118	owarai	tiget:53	セゾン	https://tiget.net/events/524770
-21119	jpop	tiget:31,33,45,47	namami acoustic one-man live "HERE" vol.2	https://tiget.net/events/524379
-21120	idol	tiget:29,31,79	森田理紗子 Birthday One man live 2026【大阪 中津Vi-code】	https://tiget.net/events/524605
-21121	jpop	tiget:31	iYURi 1st ONE MAN LIVE “SET SAIL”	https://tiget.net/events/523792
-21122	jpop	tiget:31,32,42,43,52	Celebration vol.10	https://tiget.net/events/522978
-21123	jpop	tiget:31,34,35,45,47	NeoBallad聖夜会2026	https://tiget.net/events/524464
-21124	jpop	tiget:31	Real Beat ~3drummers LIVE~	https://tiget.net/events/524336
-21125	yougaku	tiget:38	勝田 一樹(Sax)×加藤素朗(Gt&Mani) New Sax Edition Vol.37（昼公演）	https://tiget.net/events/481554
-21126	jpop	tiget:31,35	しんきろうのまち presents "BOY, GIRL, GUITAR" in TOKYO	https://tiget.net/events/524362
-21127	jpop	tiget:31	カノン感謝祭～10年間のありがとう～	https://tiget.net/events/517206
-21128	jpop	tiget:31	「DONSHARI 」"GUMADAC-式"	https://tiget.net/events/524062
-21145	idol	rakuten	アップアップガールズ（仮）単独ライブ	https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fmusic%2Fjpop%2Fidle%2Frtyu133%2F
-21146	idol	rakuten	アップアップガールズ（フェス）2026	https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl=https%3A%2F%2Fticket.rakuten.co.jp%2Fmusic%2Fjpop%2Fidle%2Frtbc021%2F
-22402	idol	tiget:29	【 S☆UTHERN CROSS クロフェスレッスン見守り会】	https://tiget.net/events/524926
-22403	owarai	tiget:53	ダックツアーズの売れる前に喋っとく	https://tiget.net/events/524874
-22404	idol	tiget:29	NERVEでしょ〜たいむ	https://tiget.net/events/524399
-22405	idol	tiget:29,41,43	「ゆめのせいと語らnight？」	https://tiget.net/events/525018
-22406	idol	tiget:29,41,43,52,55	東北おどってみた革命『ODOREVO』-オドレボ-	https://tiget.net/events/524961
-22407	idol	tiget:29	BOYS BANQUET	https://tiget.net/events/524049
-22408	idol	tiget:29	miniエコプラフェス vol.80	https://tiget.net/events/524402
-22409	idol	tiget:29	miniエコプラフェス vol.81	https://tiget.net/events/524403
-22410	owarai	tiget:53	あちゃちゃ寄席 vol.21	https://tiget.net/events/524949
-22411	idol	tiget:29	広島アイドルライブイベント「特別な日」絶×魔 FREE 2 MAN LIVE	https://tiget.net/events/524823
-22412	idol	tiget:29	9月27日(日) 南歩唯 野外個人撮影会	https://tiget.net/events/524982
-22413	idol	tiget:29	UNiFY(Rap team) 1st ONEMAN LIVE	https://tiget.net/events/524009
-22414	idol	tiget:29	きゅんきゅん♡さるどじゅ Vol.1	https://tiget.net/events/524778
-22415	idol	tiget:29	バカサバイバー	https://tiget.net/events/524813
-22416	idol	tiget:29	Nosquael 9月定期ライブ「SECRET SETLIST LIVE」	https://tiget.net/events/524930
-22417	idol	tiget:29,31,35	Lunatoi'l主催『月灯りの下、まちあわせ-3回目の約束-』	https://tiget.net/events/525004
-22418	hiphop	tiget:32,42	mono’s Ark phonia -Acoustic LIVE ep.1- ※N.R.R専用取り置き	https://tiget.net/events/518686
-22419	idol	tiget:29	かなめ×みぐコラボライブ	https://tiget.net/events/524836
-22420	owarai	tiget:53	10/3(土)キャラバン特別編・キャラバンSP寄席	https://tiget.net/events/524887
-22421	hiphop	tiget:32,42	Picobit×N.R.R pre. 『FROM CHAOS VOL.1』※N.R.R専用取り置き	https://tiget.net/events/516513
-22422	jpop	tiget:31	『Manifesto vol.8』-弾き語り 30 minutes Battle-	https://tiget.net/events/525000
-22423	idol	tiget:29,45,50,52,77	こゆきちゃんにからまれ隊 あぁかわいい(笑)	https://tiget.net/events/524668
-22424	idol	tiget:29	『あみ生誕祭~あみちゃんさいつよ~』	https://tiget.net/events/525012
-22425	idol	tiget:29	【10/04】【1部】FUTURE QUEEN	https://tiget.net/events/524772
-22426	idol	tiget:29	【10/04】【2部】FUTURE QUEEN	https://tiget.net/events/524773
-22427	idol	tiget:29,45,50,52,77	こゆきちゃんにからまれ隊 これ好きかも(照)	https://tiget.net/events/524684
-22428	idol	tiget:29	アイドルカレッジ 金沢お土産企画	https://tiget.net/events/524267
-22429	owarai	tiget:53	シアターココファーストサンデー	https://tiget.net/events/525022
-22430	owarai	tiget:53	ロケットダイブ	https://tiget.net/events/523936
-22431	owarai	tiget:53	角座ひる寄席vol.11	https://tiget.net/events/524656
-22432	owarai	tiget:53	高円寺スラバーノッカー #45	https://tiget.net/events/524627
-22433	owarai	tiget:53	NOROSHI対策ライブ2026 予選第1回	https://tiget.net/events/524774
-22434	owarai	tiget:53	芸人たちの短歌会VSおかか時代	https://tiget.net/events/524799
-22435	owarai	tiget:53	アクアベリーの新ネタ5本ライブ「ゴールデンケバブ」	https://tiget.net/events/524810
-22436	owarai	tiget:53	新ガチンコファイトクラブ	https://tiget.net/events/525009
-22437	owarai	tiget:53	究極ハリキリ劇場 16ゲーム目	https://tiget.net/events/524804
-22438	owarai	tiget:53	アルパカ寄席	https://tiget.net/events/525028
-22439	owarai	tiget:53	花咲く空間 vol.12 ～実力派芸人×落語家～	https://tiget.net/events/524956
-22440	owarai	tiget:53	NOTグリフィン寄席	https://tiget.net/events/524882
-22441	owarai	tiget:53	デカロボットver.10	https://tiget.net/events/524980
-22442	owarai	tiget:53	鬼ゴリ	https://tiget.net/events/524522
-22443	jpop	tiget:31,32,35,42	DooDooDooMiuMiuMiu×コバラヘルSPLIT TOUR『Candy Noisy Night』 ※N.R.R専用取り置き	https://tiget.net/events/524104
-22444	musicetc	tiget:43	松藤量平live 大阪cafeなかちよ 10月	https://tiget.net/events/524053
-22445	musicetc	tiget:35,39	花井健児ライブツアー2026 ＠人形町サロンゴカフェ ※チケット代金は会場払い	https://tiget.net/events/524890
-22446	owarai	tiget:53	10/12(月祝)ワンコイン30分お笑いライブ「シモキタキャラバン」	https://tiget.net/events/524905
-22447	hiphop	tiget:32,48	朝練ガールズのシークレットベース！vol.2 〜秘密のコメディ教室〜	https://tiget.net/events/522400
-22448	idol	tiget:29	琉球パラダイス!!	https://tiget.net/events/524444
-22449	idol	tiget:29	琉球パラダイス!!	https://tiget.net/events/524443
-22450	owarai	tiget:53	第18回 お笑いライブ「横浜ファンタジスタ」	https://tiget.net/events/524506
-22451	owarai	tiget:53	※疲れている人は見てください	https://tiget.net/events/524954
-22452	idol	tiget:29	スワスワちゃんのKAWAII HORROR NIGHT	https://tiget.net/events/524849
-22453	idol	tiget:29,31,53,79,80	10/15(木) 初台DOORS AIBECK 単独公演 『現実破壊主義』 ALBUM RELEASE PARTY	https://tiget.net/events/525007
-22454	owarai	tiget:53	HOSバトルライブ「オスマン5」	https://tiget.net/events/524902
-22455	jpop	tiget:31	ORANGE HOUSE＆HARUTO主催オンラインフリーライブ【ハルみかん】	https://tiget.net/events/524908
-22456	jpop	tiget:33,35,37,43	JAM presents「BEDROOM TALKS 」	https://tiget.net/events/524809
-22458	enka	tiget:34,35,47	生の宴5	https://tiget.net/events/524938
-22459	owarai	tiget:53	12分ある！	https://tiget.net/events/524959
-22461	idol	tiget:29	ゼロキョリハーツ空町柚希生誕祭2026 そらまちハーツクリニック	https://tiget.net/events/523922
-22462	owarai	tiget:53	フリップの秋	https://tiget.net/events/524952
-22463	owarai	tiget:53	10〜香盤シャッフルライブ〜	https://tiget.net/events/524826
-22464	hiphop	tiget:32,42	N.R.R pre.『IGNITION/RED』Release Tour 2026 In TOKYO Tour FINAL※N.R.R専用取り置き	https://tiget.net/events/521772
-22465	jpop	tiget:31	『OTO-GENIC』	https://tiget.net/events/524910
-22466	jpop	tiget:31	『ハピコレ!!vol.635』	https://tiget.net/events/524446
-22467	jpop	tiget:31,43	YOKOHAMA ReNY beta presents Mermaid Rhapsody vol.27	https://tiget.net/events/524870
-22469	idol	tiget:29,31,53,79,80	2026/10/23（FRI）🥀 AIBECK となりのアイル生誕祭 となりの宴2026 まさかの無規制なので全力でやっちゃってスペシャル(?) 📍新宿SAMURAI	https://tiget.net/events/525013
-22470	jpop	tiget:31	fascinate	https://tiget.net/events/524342
-22471	jpop	tiget:31	宇宙を突き抜けよっ	https://tiget.net/events/524861
-22472	event	tiget:52,77	6周年記念！もち部お祝い企画	https://tiget.net/events/524873
-22473	jazz	tiget:30,31,33,35,38	JAM TREE JAMMIN’ 261024	https://tiget.net/events/524447
-22474	owarai	tiget:53	ビリーケンイチ	https://tiget.net/events/525019
-22475	owarai	tiget:53	尾身、龍になる	https://tiget.net/events/524933
-22476	fanevent	tiget:45,46,50,51,52	斎藤恭代 10月 ファンミーティング	https://tiget.net/events/524901
-22477	owarai	tiget:53	笑待状	https://tiget.net/events/524630
-22478	owarai	tiget:53	ビリーケンイチ	https://tiget.net/events/525016
-22479	owarai	tiget:53	新ネタライブ‼︎サラニアケッパナシ	https://tiget.net/events/525020
-22480	owarai	tiget:53	『覚醒』vol.4	https://tiget.net/events/525008
-22481	hiphop	tiget:32,42	cig out × FOWS pre.『cig night ~Now cig out 1st anniversary~』※N.R.R専用取り置き	https://tiget.net/events/522776
-22482	owarai	tiget:53	「時々、先生が見回りが来る寝大喜利2泊目」	https://tiget.net/events/524805
-22483	idol	tiget:29	HALLOWEEN KAWAII FANATIC vol.2 Supported by #DSPMLIVE	https://tiget.net/events/520215
-22484	owarai	tiget:53	おちもりんランプ〜先輩ゲストにネタを見てもらうライブ〜	https://tiget.net/events/524624
-22485	idol	tiget:29	スペアアイドルライブ Vol.20 〜ハロウィンライブ〜	https://tiget.net/events/524258
-22486	jpop	tiget:31	応援チケット専用:ノワールフェス	https://tiget.net/events/524838
-22487	talkshow	tiget:46,53	10/31(土)トークライブ「細かすぎて伝わらない男たち」	https://tiget.net/events/524491
-22488	owarai	tiget:53	10/31(土)ワンコイン30分お笑いライブ「シモキタキャラバン」	https://tiget.net/events/524921
-22489	owarai	tiget:53	YOSHIZUMI2	https://tiget.net/events/524825
-22490	jpop	tiget:31	尼丁隆吉＆後藤凌 Two man Live	https://tiget.net/events/524512
-22491	hiphop	tiget:32,42	『CAMP FIRE 2026』※N.R.R専用取り置き	https://tiget.net/events/516940
-22492	owarai	tiget:53	Over50〜第八話〜	https://tiget.net/events/524967
-22493	jpop	tiget:31	11/14(土) 「Amiliyah Presents~Princess kimi Birthday Show~」	https://tiget.net/events/524897
-22494	jpop	tiget:31	ノワールフェス	https://tiget.net/events/524837
-22495	fes	tiget:42,45	LOOP-Quatre-	https://tiget.net/events/524888
-22496	jpop	tiget:31,52	One last dance(For)Lane boy&BANGBOO pre.【Catch'n My Vibe Of BANGBOO】	https://tiget.net/events/521434
-22497	jpop	tiget:31	『Low Light -Robbie Horlick Japan Tour 2026-』	https://tiget.net/events/524881
-22498	musicetc	tiget:43	R&RHEAVEN	https://tiget.net/events/524969
-22499	jpop	tiget:31	i ♡ BT -Born into the BeaT generation-「打撃黙示録3」	https://tiget.net/events/524610
-22500	idol	tiget:29,31,35	イイ夫婦の日 LOVE LOVE LIVE	https://tiget.net/events/520321
-22501	jpop	tiget:31	3rd Anniversary one man live Rendezvous	https://tiget.net/events/525025
-22502	jpop	tiget:31,35,43	アコースティック気分のツーマンライブ〜其の二〜	https://tiget.net/events/524583
-22503	hiphop	tiget:32,36,42,59	【11/24】合トレ～弾き語りマッチョへの道～	https://tiget.net/events/523766
-22504	owarai	tiget:53	隔月のロックマン	https://tiget.net/events/524884
-22505	hiphop	tiget:32,36,42,59	【11/26】合トレ～弾き語りマッチョへの道～	https://tiget.net/events/523774
-22506	idol	tiget:29,31,45,79	きくちくん 10周年ライブツアー＠埼玉県志木市	https://tiget.net/events/506481
-22507	idol	tiget:29,31,43,45,46	伸太郎＆水萌みず〜秋の学園祭〜	https://tiget.net/events/524951
-22508	jpop	tiget:31	LIVEHOLIC presents."革命ロジック2026”supported by Skream! & 激ロック-後夜祭DAY1-	https://tiget.net/events/524743
-22509	jpop	tiget:31	LIVEHOLIC presents."革命ロジック2026”supported by Skream! & 激ロック-後夜祭DAY2-	https://tiget.net/events/524744
-22510	jpop	tiget:31,35,41,49	【RED NIGHT FES vol.5～3rd Anniversary～】	https://tiget.net/events/524875
-22511	jazz	tiget:30,31,33,36,38	【昼公演】“Holiday & Birthday Live” 堀桂(Vo.) × 杉山悟史(P.) @徳島 GOTO'S BAR	https://tiget.net/events/524841
-22512	idol	tiget:29,31	スター街道酔いどれツアーファイナル〜SNG生誕祭〜	https://tiget.net/events/524972
-22513	jpop	tiget:31,35	【12/9(Wed)】 一騎当千	https://tiget.net/events/524343
-22514	jpop	tiget:31,35	【12/9(Wed)】 一騎当千	https://tiget.net/events/524344
-22515	jpop	tiget:31	【北海道公演】神谷友志 弾き語りワンマンライブ ～Hummingbird's Hideaway Vol.3～	https://tiget.net/events/524783
-22516	jpop	tiget:31,35	UlulU presents "Liberty of passage"	https://tiget.net/events/523613
-22517	jazz	tiget:30,31	清水明日香 弾き語りライブ「年おくり 歌おくり 2026 to 2027」	https://tiget.net/events/521825
-22518	jpop	tiget:31	1/17(日)「Live or Die 2027」	https://tiget.net/events/524634
-22519	jpop	tiget:31,41	to the North vol.4 -Homemade Magic-	https://tiget.net/events/520924
-22520	owarai	tiget:53	楽屋A寄席 in 喜楽館vol.3	https://tiget.net/events/524824
-22521	owarai	fany:30	秋の幕張場所	https://ticket.fany.lol/event/detail/21338
-22522	owarai	fany:30	女王蜂	https://ticket.fany.lol/event/detail/21349
-22523	owarai	fany:30	本田たかお1on1	https://ticket.fany.lol/event/detail/21194
-22524	owarai	fany:30	ノザカラ	https://ticket.fany.lol/event/detail/21340
-22525	owarai	fany:30	野澤輸出の勝負大喜利	https://ticket.fany.lol/event/detail/21339
-22526	owarai	fany:30,31,38	若手芸人HIPHOP同好会 2026年10月号	https://ticket.fany.lol/event/detail/21409
-22527	owarai	fany:30,38	田津原理音新ネタライブ「ポシブる夜」	https://ticket.fany.lol/event/detail/21336
-22528	owarai	fany:30	コーナー AND THE CITY	https://ticket.fany.lol/event/detail/21342
-22529	owarai	fany:30	大喜利 AND THE CITY	https://ticket.fany.lol/event/detail/21341
+20928	hiphop	zaiko:Hip hop	LAST NIGHT OF THE HOLIDAY at GHOST OSAKA	https://ghostosaka.zaiko.io/ja/e/last-night-holiday-osaka
+20929	hiphop	zaiko:Hip hop	THURSDAY NIGHT at GHOST OSAKA	https://ghostosaka.zaiko.io/ja/e/ghost-thursday-sept26
+20930	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-osaka
+20931	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amemoyono-travel2027
+20932	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-fukui
+20933	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-nagoya
+20934	idol	zaiko:Idol	ARCANA PROJECT presents Halloween Concert THE MOON	https://dearstage.zaiko.io/ja/e/arcana-halloween-moon
+20935	idol	zaiko:Idol	バンもん！HELLOWEEN2026	https://perfectmusic.zaiko.io/ja/e/banmon-helloween26
+20936	club	zaiko:Drum & Bass	BOU TOKYO SHOW	https://circus.zaiko.io/ja/e/bou-tokyo-26
+20937	hiphop	zaiko:Hip hop	Urban Jam	https://zerotokyo.zaiko.io/ja/e/urban-jam-0926
+20938	vtuber	zaiko:Alternative,Pop,Rock	藍海のん 1st one-man LIVE 『indigo Prologue』	https://nonaomi.zaiko.io/ja/e/indigo-prologue
+20939	musicetc	zaiko:?	俺だけを見ろッ！vol.3	https://livehousecentral.zaiko.io/ja/e/oremiro-vol3
+20940	engeki	zaiko:?	【OSK日本歌劇団】神奈川県横須賀市公演 トップスター翼和希 REVUE SHOW!（2026年10月）	https://osk-revue.zaiko.io/ja/e/tsubasa-revue-26
+20941	rock	zaiko:Live,Rock,Visual	Angelo「THE TRINITY」	https://angelo.zaiko.io/ja/e/angelo-trinity-2026
+20942	rock	zaiko:Visual,Rock	DIV PRE-RECHARGE ONEMAN TOUR / TOKYO FINAL	https://div-official.zaiko.io/ja/item/381254
+20944	idol	zaiko:Idol	山手線ほぼ一周ツアー 秋葉原駅編 「ディアステージ駅へようこそ✩.*˚」	https://dearstage.zaiko.io/ja/e/akiba-diastage-tour-26
+20945	idol	zaiko:Idol	fishbowlライブハウスショートツアー 「ケンガイ2026」in TOKYO	https://fishbowl2021.zaiko.io/ja/e/fishbowl-kengai-tokyo-2026
+20946	idol	zaiko:Live,Idol	ダイバーサバイバー1stワンマンライブ	https://starman.zaiko.io/ja/e/diversurvivor-1st-oneman
+20947	musicetc	zaiko:Japanese music	有弦無限-ユウゲンムゲン-	https://cosmospro.zaiko.io/ja/e/ygmg2026
+20948	jpop	zaiko:?	【白金祭アーティストライブ】サイサイときめき注意報♡2026	https://shirokanefes.zaiko.io/ja/e/saisai-platinum-fest-2026
+20949	engeki	zaiko:?	【白金祭お笑いライブ】笑撃	https://shirokanefes.zaiko.io/ja/e/platinum-fest-comedy-2026
+20950	engeki	zaiko:?	「仲良しに決まってるじゃないか！超スピンオフイベント 岡田千優季サーティワンバースディイベント ～ 一人でやれるモン、できるモン、がんばるモン、モンモンモン ～ いつでも戻っておいでスペシャル！｣	https://amuleto-event-event.zaiko.io/ja/e/okada-birthday-31
+20951	club	zaiko:House,Techno	Marcellus Pittman Japan tour 2026 in Nagoya	https://club-mago.zaiko.io/ja/e/marcellus-pittman-nagoya-26
+20952	idol	zaiko:Idol	BEST FRIENDS DJ	https://dearstage.zaiko.io/ja/e/bestfriends-dj-2026
+20953	idol	zaiko:Idol	Bellemule 4thワンマンライブ「ランウェイ」	https://dearstage.zaiko.io/ja/e/bellemule-4th-runway
+20954	idol	zaiko:Idol	fishbowlライブハウスショートツアー「ケンガイ2026」in OSAKA	https://fishbowl2021.zaiko.io/ja/e/fishbowl-kengai-osaka
+20955	idol	zaiko:Idol	fishbowlライブハウスショートツアー 「ケンガイ2026」in NAGOYA	https://fishbowl2021.zaiko.io/ja/e/kengai-nagoya-2026
+20956	musicetc	zaiko:Noise	boris with merzbow -performing "dronevil"-	https://borisheavyrocks.zaiko.io/ja/e/boris-dronevil-2026
+20957	musicetc	zaiko:?	『ヒョンなおしまい。」	https://aoism.zaiko.io/ja/e/hyon-oshinmai-2026
+20958	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027 【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-hiroshima
+20959	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesolaonemantour2027-kobe
+20960	idol	zaiko:Idol	雨模様のソラリス ONE MAN TOUR 2027【雨過天晴】	https://perfectmusic.zaiko.io/ja/e/amesola-final
+22397	idol	zaiko:?	9月29日 18:30開演「ＲＥＳＥＴ」公演	https://akb48.zaiko.io/ja/e/reset-0929-1830
+22398	idol	zaiko:Idol	はなみゅかりっこー 〜やっぱ大好きしか出てこない〜	https://ds-shinsaibashi.zaiko.io/ja/e/hanamew-kariko-osaka
+22399	club	zaiko:Techno	CHRØNOS 2nd Anniversary	https://cultureofasia.zaiko.io/ja/e/chronos-2ndanniv
+22400	event	zaiko:Live	"U" -Aoide Launch Party-	https://aoide.zaiko.io/ja/e/u-aoide-launch-party
+22401	rock	zaiko:Japanese music,Rock	SunSet Swish LIVE 2026	https://mahoroza.zaiko.io/ja/e/ssslive2026mahoroza
