@@ -906,6 +906,28 @@
    "assigned": true,
    "rechecked": false,
    "note": "9/22夜に投入。reconcile_pia --new＝OK665・照合628/633。振り分けは 2a6b624b で667件（ぴあのカテゴリを機械で写す・客観チェック全件一致＋抜き取り30/30）。駐車券だけ(id21952)・グッズ引換券だけ(id21974)の2件は保留→9/23朝にユーザー『載せる』で振り分け済み(5a42adba)。9/23朝に独立再照合をやること。"
+  },
+  {
+   "date": "2026-09-24",
+   "slot": "morning",
+   "id_from": 22713,
+   "id_to": 22875,
+   "count": 163,
+   "source": "FANY一覧 tmp/fany_0924.json（新しく出た公演）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "番人 gate_fany_slots 一致1525・食い違い1（販売終了印の枠＝ヒールが残す決まり）。ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-09-24",
+   "slot": "morning",
+   "id_from": 22876,
+   "id_to": 22880,
+   "count": 5,
+   "source": "ZAIKO tmp/zaiko_0924.json",
+   "assigned": false,
+   "rechecked": false,
+   "note": "公演日の取り違えをビルダーで直した後に組んだ。番人一致（1件は県名の有無だけ）。ぴあ以外＝振り分けはユーザー確認後"
   }
  ]
 }
