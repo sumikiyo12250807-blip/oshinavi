@@ -12,6 +12,16 @@
    → 直したら `--selftest` → 既存24枠を `heal_fany.py --src <一覧> --apply` で入れ直す
      （🚨`--src` を付けないと一覧を半年分引き直して**十数分かかる**＝9/23夜に踏んだ）
 
+🎯【直すのに使える材料が一覧JSONに入っている】`tmp/fany_MMDD.json` の
+   `performances[].performance_sales[]` に**相対締切のフラグがそのまま入っている**:
+     `is_performance_end_date_number_flag`（公演日を基準に終わるか）
+     `performance_end_date_number`（公演日から何日か・0=当日）／`performance_end_time`（"16:00"）
+     ＋ 開始側も `is_performance_start_date_number_flag` / `performance_start_date_number` / `performance_start_time`
+     ＋ `display_sales_status`（"抽選受付終了" など）／`sale_status_order_number`
+   → **実ページを引き直さなくても、一覧から締切を計算できる**。
+     `締切 = 公演日 - performance_end_date_number 日 の performance_end_time`（フラグが true の時）
+   ⚠️先頭の公演で見たらフラグは false だった＝**true の公演を数えてから**直す。
+
 ⚠️24枠すべてが「公演日 HH:MM」形式とは限らない（実ページで確かめたのは1件）。
    直す前に24枠ぶんの受付終了の文言を機械で集めて、形を数えてから直す。
    対象＝id17869/18031/18032/20964/20968/20971/20972/20973/22521 ほか（本日発売のFANY枠）
