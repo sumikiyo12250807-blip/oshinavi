@@ -1,52 +1,80 @@
-新着プール 合計 77件
+新着プール 合計 171件
 
 == 売り場別 ==
-  tiget        73
+  tiget       162
+  zaiko         5
   fany          3
   eplus         1
 
 == _genre（ビルダーが決めたジャンル）を持つか ==
   eplus      _genreなし    1
   fany       _genreあり    3
-  tiget      _genreあり   73
+  tiget      _genreあり  162
+  zaiko      _genreあり    5
 
-機械で決まる（_genreあり） 76件 / 決まらない 1件
+機械で決まる（_genreあり） 170件 / 決まらない 1件
 
 == _genre の内訳 ==
-  jpop           24
-  owarai         15
-  idol           12
+  jpop           54
+  idol           48
+  owarai         22
   fanevent       11
+  musicetc        5
+  event           5
+  yougaku         4
   art             3
   talkshow        3
-  event           3
   engeki          3
-  musicetc        1
+  jazz            3
+  enka            2
+  hiphop          2
   utaite          1
+  gourmet         1
+  vtuber          1
+  club            1
+  sports          1
 
 == _srcgenre（売り場の申告）上位 ==
-  tiget:31           20
-  tiget:53           14
+  tiget:31           46
+  tiget:29           35
+  tiget:53           21
   tiget:45,46,52      8
-  tiget:29            7
+  tiget:29,31         4
+  tiget:43            4
+  tiget:52            4
   fany:37,38          3
-  tiget:52            3
-  tiget:29,52         2
+  tiget:29,52         3
+  tiget:36,38         3
   tiget:46            2
   tiget:45,52         2
   tiget:31,43         2
   tiget:54,55,57,61    2
-  tiget:29,31         1
+  tiget:29,43,55      2
+  tiget:30,70         2
+  tiget:34            2
+  tiget:32,34         2
   tiget:29,45,46      1
   tiget:31,34,42,47    1
   tiget:29,31,55,80    1
   tiget:31,36         1
-  tiget:43            1
   tiget:53,60         1
   tiget:79,80         1
   tiget:46,53         1
   tiget:45,46,81      1
   tiget:55            1
+  tiget:77            1
+  tiget:30,36,38      1
+  tiget:47            1
+  tiget:31,35         1
+  tiget:31,35,79      1
+  tiget:36            1
+  tiget:29,55         1
+  tiget:31,43,45,46,52    1
+  tiget:31,79         1
+  zaiko:Idol,Pop      1
+  zaiko:?             1
+  zaiko:Live,VTuber    1
+  zaiko:House         1
 
 == _genre が無い分の売り場別 ==
   eplus         1
