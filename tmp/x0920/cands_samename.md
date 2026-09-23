@@ -1,0 +1,88 @@
+# 同名の既存エントリがある新候補 43件（自動では畳まない）
+
+- ANISON PREMIUM LIVE ささきいさお×堀江美都子×影山ヒロノブ×遠藤正明（2026/9/26 発売 / 公演 2026/12/13(日) / 宮城県）既存 id[4093]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670741
+- 石崎ひゅーい（2026/10/2 発売 / 公演 2026/10/30(金) / 宮城県）既存 id[7845]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671140
+- イルカ（2026/10/11 発売 / 公演 2027/1/17(日) / 埼玉県）既存 id[620]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2635674
+- ｅｓｑ（2026/9/26 発売 / 公演 2026/12/6(日) / 大阪府）既存 id[4173]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2632160
+- FTISLAND（ 発売 / 公演 2026/9/20(日) / ）既存 id[5045]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670480
+- 9mm Parabellum Bullet（2026/10/3 発売 / 公演 2026/12/5(土) / 山形県）既存 id[4366]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671174
+- KIRARA（2026/9/26 発売 / 公演 2026/11/12(木) / 東京都）既存 id[7513]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671135
+- GLIM SPANKY（2026/9/26 発売 / 公演 2026/11/15(日) / 東京都）既存 id[5524]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671102
+- saccharin（2026/10/3 発売 / 公演 2027/1/10(日) ・ 2027/1/30(土) / 東京都／大阪府）既存 id[7515]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670987
+- 佐野元春&THE COYOTE BAND（2026/10/3 発売 / 公演 2026/12/27(日) / 熊本県）既存 id[3117, 7113, 7114]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671244
+- 白井貴子 ＆ THE CRAZY BOYS（2026/10/16 発売 / 公演 2027/1/23(土) / 神奈川県）既存 id[7201]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670941
+- ｓｙｒｕｐ１６ｇ（2026/9/26 発売 / 公演 2026/11/24(火) / 大阪府）既存 id[5526, 5527, 5528, 7029]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2631304
+- 神聖かまってちゃん（2026/10/2 発売 / 公演 2026/11/20(金) / 大阪府）既存 id[6081]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671171
+- Jane Remover（2026/10/3 発売 / 公演 2026/12/9(水) / 東京都）既存 id[10779]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671173
+- 杉山清貴（2026/10/10 発売 / 公演 2026/12/19(土) / 神奈川県）既存 id[2254]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2635678
+- 超☆社会的サンダル（2026/10/3 発売 / 公演 2026/11/22(日) / 東京都）既存 id[1489]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2636476
+- 東京スカパラダイスオーケストラ（2026/9/27 発売 / 公演 2026/11/25(水) / 富山県）既存 id[4236]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2630905
+- ＴＯＭＯＶＳＫＹ（2026/9/24 発売 / 公演 2026/12/14(月) / 大阪府）既存 id[695]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2637080
+- NOTD（2026/10/10 発売 / 公演 2027/2/26(金) / 大阪府）既存 id[10784, 10785]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671243
+- 名誉伝説（2026/9/30 発売 / 公演 2026/12/4(金) / 東京都）既存 id[11199]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671240
+- モーニング娘。’26（2026/10/3 発売 / 公演 2026/10/31(土) ・ 2026/11/1(日) / 岩手県／宮城県）既存 id[3422]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671008
+- 遊佐未森（2026/10/17 発売 / 公演 2026/12/17(木) ・ 2026/12/18(金) / 東京都）既存 id[3127]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2636702
+- ルサンチマン（2026/9/26 発売 / 公演 2026/11/18(水) / 福岡県）既存 id[6932]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2613312
+- ルサンチマン（2026/9/26 発売 / 公演 2026/11/20(金) / 大阪府）既存 id[6932]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2614665
+- 綾小路きみまろ 爆笑スーパーライブ２０２７（2026/9/20 発売 / 公演 2027/3/27(土) ・ 2027/4/3(土) / 新潟県／長野県）既存 id[3187]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2636775
+- 桂米團治 独演会（2026/9/30 発売 / 公演 2027/1/9(土) / 東京都）既存 id[2638]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670964
+- 寛平ＧＭプロデュース公演『新喜劇出前ツアー２０２６』 ～コテコテのお笑い お届けします～（2026/9/21 発売 / 公演 2027/3/22(月・祝) / 長崎県）既存 id[6307]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2637320
+- きかんしゃトーマス ファミリーミュージカル ソドー島の1 ばんはだれだ（2026/10/1 発売 / 公演 2026/12/26(土) ・ 2026/12/27(日) / 北海道）既存 id[6523]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2637210
+- 劇団「ハイキュー!!」“勝者と敗者”（2026/10/18 発売 / 公演 2026/12/19(土) ～ 2026/12/27(日) / 東京都）既存 id[6105]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671087
+- 新宿末廣亭10月余一会（2026/9/21 発売 / 公演 2026/10/31(土) / 東京都）既存 id[8296]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671176
+- 『ジャズ大名』（2026/9/21 発売 / 公演 2026/12/19(土) ～ 2026/12/29(火) / 神奈川県）既存 id[5436]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670869
+- 『ジャズ大名』（2026/10/10 発売 / 公演 2027/1/16(土) ・ 2027/1/17(日) / 岡山県）既存 id[5436]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2636564
+- 舞台「ぼくのドラゴンがごはんを食べない!!」（TODAY 発売 / 公演 2026/11/5(木) ～ 2026/12/6(日) / 東京都／大阪府）既存 id[6414]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670853
+- Bunkamura Production 2026／DISCOVER WORLD THEAT（2026/10/3 発売 / 公演 2026/11/6(金) ～ 2026/11/30(月) / 東京都）既存 id[5394]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670907
+- 柳家喬太郎 独演会（2026/10/2 発売 / 公演 2027/2/4(木) / 岡山県）既存 id[1772]
+  - https://ticket.pia.jp/pia/event.do?eventCd=2635832
+- 石田組年末感謝祭2026（2026/10/17 発売 / 公演 2026/12/30(水) ・ 2026/12/31(木) / 神奈川県）既存 id[5421]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670771
+- 映像の世紀コンサート（2026/10/3 発売 / 公演 2026/12/17(木) / 東京都）既存 id[7300]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670944
+- 芸劇リサイタル・シリーズ 「VS」 Vol.12 福間洸太朗×フロリアン・ノアック（2026/10/3 発売 / 公演 2027/2/19(金) / 東京都）既存 id[5408]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670755
+- 芸劇リサイタル・シリーズ 「VS」 Vol.11 ルーカス＆アルトゥール・ユッセン（2026/10/3 発売 / 公演 2027/1/23(土) / 東京都）既存 id[5409]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670754
+- シエナ・ウインド・オーケストラ 第60回定期演奏会（2026/9/25 発売 / 公演 2027/2/13(土) / 東京都）既存 id[7062]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671090
+- 読響名曲シリーズ（2026/10/11 発売 / 公演 2027/1/28(木) / 東京都）既存 id[2080]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670253
+- 読響横浜マチネーシリーズ（2026/10/11 発売 / 公演 2027/1/30(土) / 神奈川県）既存 id[2081]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670252
+- ららら♪プレミアムコンサート 石田Salon FUKUOKA（2026/10/10 発売 / 公演 2027/2/22(月) / 福岡県）既存 id[8363]
+  - https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671072

@@ -1,0 +1,411 @@
+{
+ "lg": "01",
+ "total": 47,
+ "pages": 5,
+ "fetched_pages": 6,
+ "parsed": 43,
+ "new_name_in_db": 4,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614211",
+   "artist": "杏里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/13(日)",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "アイム・ユニバース てだこホール 大ホール(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614541",
+   "artist": "細坪基佳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/16(金)",
+   "venue": "琉球新報ホール(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671204",
+   "artist": "吉田兄弟",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "パレット市民劇場(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669535",
+   "artist": "琉球フェスティバル2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/23(水・祝)",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637282",
+   "artist": "ｏｕｔｓｉｄｅ ｙｏｓｈｉｎｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＢ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620235",
+   "artist": "アン・サリー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＡ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614211",
+   "artist": "杏里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632579",
+   "artist": "Ａｎｌｙ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂セントラル(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624233",
+   "artist": "池間由布子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "那覇・Ｓｏｕｎｄ Ｍ’ｓ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625276",
+   "artist": "稲垣潤一・八神純子 ～歌は時を越えて～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
+   "artist": "稲葉浩志",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634254",
+   "artist": "打首獄門同好会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂セントラル(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631488",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 展示棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669950",
+   "artist": "AK-69",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｅｐｉｃａ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667343",
+   "artist": "kanekoayano",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アイム・ユニバース てだこホール 大ホール(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621452",
+   "artist": "かりゆし５８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563931",
+   "artist": "サニーデイ・サービス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｏｕｔｐｕｔ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626799",
+   "artist": "下津光史（踊ってばかりの国）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＢ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621698",
+   "artist": "－真天地開闢集団－ジグザグ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633057",
+   "artist": "ｊｉｍａｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＢ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
+   "artist": "鈴木雅之",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "石垣市民会館(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669282",
+   "artist": "SPECIAL OTHERS",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂セントラル(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665969",
+   "artist": "鶴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｏｕｔｐｕｔ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615321",
+   "artist": "Ｔｅｅｃｈｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631543",
+   "artist": "ＤＩＡＭＡＮＴＥＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＭＯＤ’Ｓ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631960",
+   "artist": "ＤＹＧＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂セントラル(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619877",
+   "artist": "デラックス×デラックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624236",
+   "artist": "友部正人",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "那覇・Ｓｏｕｎｄ Ｍ’ｓ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624234",
+   "artist": "友部正人／池間由布子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＢ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626098",
+   "artist": "二階堂和美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＡ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612447",
+   "artist": "２０２６昭和１０１年音街巡旅",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＯＲＥＳＴ ＢＬＵＥ(青森県)／ＳＨＩＢＵＹＡ ＰＬＥＡＳＵＲＥ ＰＬＥＡＳＵＲＥ(東京都)／横浜ＹＴＪホール(神奈川県)／Ｌｉｖｅ Ｈｏｕｓｅ 浜松 窓枠(静岡県)／ボトムライン(愛知県)／四日市ＣＬＵＢ ＲＯＯＴＳ(三重県)／宇治市文化センター 小ホール(京都府)／心斎橋ＪＡＮＵＳ(大阪府)／高知キャラバンサライ(高知県)／Ｇａｔｅ’ｓ７(福岡県)／大分音楽館(大分県)／Ｄｕｃｋｂｉｌｌ(鹿児島県)／ＣＬＵＢ Ｌｏｕｎｇｅ ＣＲＯＷＮ(沖縄県)",
+   "pref": "青森県／東京都／神奈川県／静岡県／愛知県／三重県／京都府／大阪府／高知県／福岡県／大分県／鹿児島県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668681",
+   "artist": "HUSKING BEE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｏｕｔｐｕｔ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620232",
+   "artist": "浜田真理子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＡ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アイム・ユニバース てだこホール 大ホール(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631427",
+   "artist": "Ｈｅｌｌｏ Ｓｌｅｅｐｗａｌｋｅｒｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂セントラル(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664691",
+   "artist": "PERSONZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "てんぶす那覇 テンブスホール(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636045",
+   "artist": "比屋定篤子ｗｉｔｈ笹子重治",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜坂劇場 ホールＢ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668938",
+   "artist": "PM AGENCY 40th ANNIVERSARY LIVE スーパー大感謝祭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 展示棟(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614541",
+   "artist": "細坪基佳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "琉球新報ホール(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664826",
+   "artist": "Maki",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｏｕｔｐｕｔ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617998",
+   "artist": "森恵",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＭＯＤ’Ｓ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629348",
+   "artist": "山木康世",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｃｒｏｓｓｏｖｅｒ Ｃａｆｅ’ ６１４(沖縄県)／桜坂劇場 ホールＢ(沖縄県)／那覇・Ｓｏｕｎｄ Ｍ’ｓ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629340",
+   "artist": "山口洋（ＨＥＡＴＷＡＶＥ）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "那覇・Ｓｏｕｎｄ Ｍ’ｓ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671204",
+   "artist": "吉田兄弟",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "パレット市民劇場(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632247",
+   "artist": "米倉利紀",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "宮古島Ｓｕｐｅｒ Ｓｔａｒ(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669535",
+   "artist": "琉球フェスティバル2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "沖縄コンベンションセンター 劇場棟(沖縄県)",
+   "pref": "沖縄県"
+  }
+ ]
+}

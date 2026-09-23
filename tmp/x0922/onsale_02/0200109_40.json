@@ -1,0 +1,435 @@
+{
+ "lg": "02",
+ "total": 70,
+ "pages": 7,
+ "fetched_pages": 8,
+ "parsed": 44,
+ "new_name_in_db": 3,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670144",
+   "artist": "綾小路きみまろ 爆笑！スーパーライブ2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/1(火) ・ 2026/12/3(木)",
+   "venue": "飯塚市文化会館 イイヅカコスモスコモン 大ホール(福岡県)／デンカ大牟田文化会館 大ホール(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/16(金)",
+   "venue": "よしもと福岡 大和証券劇場(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629305",
+   "artist": "柳家花緑・桂春蝶 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/19(土)",
+   "venue": "西鉄ホール(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630022",
+   "artist": "柳家喬太郎 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/20(日)",
+   "venue": "北九州国際会議場 メインホール(福岡県)",
+   "pref": "福岡県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633767",
+   "artist": "Ｌｏｖｅ Ｍｅ Ｄｏの開運・占いトークライブ！『守護龍占術２０２７』発売記念全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/19(土) ～ 2026/10/31(土)",
+   "venue": "リンクモア平安閣市民ホール(青森県)／新潟市民プラザ ホール(新潟県)／石川県小松市團十郎芸術劇場うらら 大ホール(石川県)／ＪＲ九州ホール(福岡県)／カクイックス交流センター(鹿児島県)",
+   "pref": "青森県／新潟県／石川県／福岡県／鹿児島県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633642",
+   "artist": "アブナイ ヨセ 全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "宮城県／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670144",
+   "artist": "綾小路きみまろ 爆笑！スーパーライブ2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "飯塚市文化会館 イイヅカコスモスコモン 大ホール(福岡県)／デンカ大牟田文化会館 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634339",
+   "artist": "ＦＦＧホール特選落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＦＧホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621050",
+   "artist": "お多福寄席 柳家喬太郎 桃月庵白酒",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電気ビルみらいホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627635",
+   "artist": "桂まん我ひとり会・博多 第５０回スペシャル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクロス福岡 円形ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634287",
+   "artist": "桂宮治 全国ツアー２０２６ ～Ｒｅｍｅｍｂｅｒ Ｍｉｙａｊｉ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "西鉄ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627179",
+   "artist": "第４回ｃａｆｅ ｃａｕｓａ橘家文蔵の会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃａｆｅ ｃａｕｓａ(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634414",
+   "artist": "神田松麻呂 日本縦断講談会 ～赤穂義士伝編～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市大雪クリスタルホール レセプション室(北海道)／札幌市民交流プラザ クリエイティブスタジオ(北海道)／とかちプラザ レインボーホール(北海道)／北海道ハウスタウンプラザ 講堂(北海道)／北海道立釧路芸術館 アートホール(北海道)／江戸東京博物館 小ホール(東京都)／百年長屋(大阪府)／コジマホールディングス西区民文化センター 大広間(広島県)／ぽんプラザホール(福岡県)",
+   "pref": "北海道／東京都／大阪府／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632060",
+   "artist": "第１１回きく麿レストラン 北九州出張編",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃａｆｅ ｃａｕｓａ(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609428",
+   "artist": "銀シャリ単独ライブ２０２６「ベシャリの帝王 萬才銀次郎」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／有楽町よみうりホール(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／神戸新聞松方ホール(兵庫県)／福岡国際会議場 メインホール(福岡県)",
+   "pref": "宮城県／東京都／愛知県／兵庫県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619366",
+   "artist": "こすもす寄席 立川志らく・三遊亭萬橘 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "イイヅカコスモスコモン 中ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632668",
+   "artist": "コチソバ創立１５周年記念落語会ｖｏｌ．０ 第１５．５回コチソバ寄席 きく麿レストラン福岡出張編 Ｖｏｌ．１１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "コチソバ博多店(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627177",
+   "artist": "コチソバ創立１５周年記念落語会ｖｏｌ．１ 第１６回コチソバ寄席 三遊亭天どん・露の紫二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "コチソバ天神店(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627178",
+   "artist": "コチソバ創立１５周年記念落語会ｖｏｌ．２ 第１７回コチソバ寄席 橘家文蔵・橘家文太親子会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "コチソバ博多店(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624437",
+   "artist": "第１５回コチソバ寄席 第７回橘家文吾の会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "コチソバ博多店(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619760",
+   "artist": "サルゴリラのコントと旅２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "よしもと福岡 大和証券劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629719",
+   "artist": "第２３回三遊亭わん丈の会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡市美術館 ミュージアムホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614433",
+   "artist": "ＴＨＥ ＳＥＣＯＮＤ ライブツアー２０２６～今、全盛期の漫才師達～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／東京エレクトロンホール宮城(宮城県)／有楽町よみうりホール(東京都)／石川県小松市團十郎芸術劇場うらら 大ホール(石川県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／福岡国際会議場 メインホール(福岡県)／熊本城ホール メインホール(熊本県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／石川県／大阪府／福岡県／熊本県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610572",
+   "artist": "春風亭昇太 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あしや夢リアホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618746",
+   "artist": "春風亭柳枝、柳家福多楼 二人会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "甘棠館Ｓｈｏｗ劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622046",
+   "artist": "次代育成落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡トヨタホールスカラエスパシオ(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630326",
+   "artist": "立川生九郎落語ＳＨＯＷ ｉｎ太宰府",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "太宰府館３Ｆまほろばホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617820",
+   "artist": "立川生九郎落語ＳＨＯＷ ｉｎ福岡",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクロス福岡 円形ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633308",
+   "artist": "田辺いちか真打昇進披露の会 ～第１５回北九州つながり寄席～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "黒崎ひびしんホール 中ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633311",
+   "artist": "田辺いちか真打昇進披露の会 ～第４８回博多つながり寄席～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡トヨタホールスカラエスパシオ(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623267",
+   "artist": "第３回 橘家圓太郎 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡アジア美術館 あじびホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624427",
+   "artist": "ダブルインパクトツアー２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／めぐろパーシモンホール 大ホール(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／福岡国際会議場 メインホール(福岡県)",
+   "pref": "北海道／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623083",
+   "artist": "月亭方正 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｊ：ＣＯＭ北九州芸術劇場 中劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669987",
+   "artist": "トータルテンボス全国漫才ツアー2026「ニコイチ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "よしもと福岡 大和証券劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669646",
+   "artist": "ナイツ独演会 「国民の皆さん」ではなく「国民の一部の皆さん」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)／浅草公会堂(東京都)／有楽町よみうりホール(東京都)／鎌倉芸術館 大ホール(神奈川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ロームシアター京都 サウスホール(京都府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "北海道／東京都／神奈川県／愛知県／京都府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631817",
+   "artist": "なみき落語会 令和８年度東区芸術文化祭事業 柳亭小痴楽 蝶花楼桃花 二人会 スペシャルゲスト 風間杜夫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なみきホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668505",
+   "artist": "日本列島大捜査網 THE柳沢慎吾劇場 ★ ROCK45TOUR",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "キャナルシティ劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "よしもと福岡 大和証券劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669778",
+   "artist": "博多・天神落語まつり 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＦＧホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669778",
+   "artist": "博多・天神落語まつり 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "西鉄ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669778",
+   "artist": "博多・天神落語まつり 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＦＧホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626138",
+   "artist": "爆音漫才選集",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台ＰＩＴ(宮城県)／Ｚｅｐｐ Ｆｕｋｕｏｋａ(福岡県)",
+   "pref": "宮城県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627372",
+   "artist": "第６１回ひなたの会 真打昇進記念公演 ～雷門五郎、柳家小はん 二人会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡アジア美術館 あじびホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619955",
+   "artist": "兵動大樹のおしゃべり大好き。４８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)／富山県教育文化会館(富山県)／石川県文教会館ホール(石川県)／浜松市福祉交流センター ホール(静岡県)／なんばグランド花月(大阪府)／おかやま未来ホール(岡山県)／広島ＪＭＳアステールプラザ 大ホール(広島県)／レクザムホール 小ホール(香川県)／松前総合文化センター 広域学習ホール(愛媛県)／新来島高知重工ホール オレンジホール(高知県)／福岡サンパレス(福岡県)／佐賀市立東与賀文化ホール(佐賀県)／熊本城ホール シビックホール（多目的ホール）(熊本県)／宮崎市清武文化会館 半九ホール(宮崎県)／ライカ南国ホール(鹿児島県)",
+   "pref": "北海道／富山県／石川県／静岡県／大阪府／岡山県／広島県／香川県／愛媛県／高知県／福岡県／佐賀県／熊本県／宮崎県／鹿児島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629718",
+   "artist": "第１１回冬休み子ども寄席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡市美術館 ミュージアムホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623645",
+   "artist": "弁論２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617962",
+   "artist": "僕らの別荘 全国ツアー ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／電力ホール(宮城県)／Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)／中日ホール(愛知県)／福岡国際会議場 メインホール(福岡県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／愛知県／福岡県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632645",
+   "artist": "マルゲリータ男とキャンパスガール～ＪＡＲＵＪＡＲＵ ＣＯＮＴＥ ＴＯＵＲ ２０２６ＡＷ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／日立システムズホール仙台 シアターホール(宮城県)／ＩＭＭ ＴＨＥＡＴＥＲ(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＴＴホール(大阪府)／広島ＪＭＳアステールプラザ 中ホール(広島県)／福岡市民ホール 中ホール(福岡県)",
+   "pref": "北海道／宮城県／東京都／愛知県／大阪府／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629305",
+   "artist": "柳家花緑・桂春蝶 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "西鉄ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630022",
+   "artist": "柳家喬太郎 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北九州国際会議場 メインホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633767",
+   "artist": "Ｌｏｖｅ Ｍｅ Ｄｏの開運・占いトークライブ！『守護龍占術２０２７』発売記念全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "リンクモア平安閣市民ホール(青森県)／新潟市民プラザ ホール(新潟県)／石川県小松市團十郎芸術劇場うらら 大ホール(石川県)／ＪＲ九州ホール(福岡県)／カクイックス交流センター(鹿児島県)",
+   "pref": "青森県／新潟県／石川県／福岡県／鹿児島県"
+  }
+ ]
+}

@@ -1,0 +1,499 @@
+{
+ "lg": "07",
+ "total": 58,
+ "pages": 6,
+ "fetched_pages": 7,
+ "parsed": 54,
+ "new_name_in_db": 1,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624200",
+   "artist": "大阪桐蔭高等学校吹奏楽部 サンタコンサート ｉｎ 加西",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/13(日)",
+   "venue": "加西市民会館 文化ホール(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631618",
+   "artist": "大阪桐蔭高等学校吹奏楽部 特別公演 ｉｎ 大和郡山",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/10(土)",
+   "venue": "ＤＭＧ ＭＯＲＩ やまと郡山城ホール 大ホール(奈良県)",
+   "pref": "奈良県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632196",
+   "artist": "仙台吹奏楽団 第８３回定期演奏会 杜の都のちょっとくだけた音楽会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/15(日)",
+   "venue": "東北大学百周年記念会館 川内萩ホール(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622893",
+   "artist": "ビッグバンド／ウインドオーケストラの響演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/9(金)",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622895",
+   "artist": "ビッグバンド／ウインドオーケストラの響演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2027/3/11(木)",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668894",
+   "artist": "宇宙戦艦ヤマト祭り≪YAMATO ＆ VILLAINS!!≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜みなとみらいホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623825",
+   "artist": "英国国王陛下の近衛軍楽隊",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知県芸術劇場 コンサートホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623699",
+   "artist": "英国国王陛下の近衛軍楽隊 《コールドストリーム・ガーズ・バンド》",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617683",
+   "artist": "英国国王陛下の近衛軍楽隊 《コールドストリーム・ガーズ・バンド》",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜みなとみらいホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625093",
+   "artist": "英国国王陛下の近衛軍楽隊 《コールドストリーム・ガーズ・バンド》",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "守山市民ホール 大ホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614897",
+   "artist": "「エヴァンゲリオン」ウインドシンフォニー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619773",
+   "artist": "Ｏｓａｋａ Ｓｈｉｏｎ Ｗｉｎｄ Ｏｒｃｈｅｓｔｒａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都コンサートホール 大ホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619775",
+   "artist": "Ｏｓａｋａ Ｓｈｉｏｎ Ｗｉｎｄ Ｏｒｃｈｅｓｔｒａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・シンフォニーホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620202",
+   "artist": "Ｏｓａｋａ Ｓｈｉｏｎ Ｗｉｎｄ Ｏｒｃｈｅｓｔｒａ ドラゴンクエストコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "立命館いばらきフューチャープラザ グランドホール(大阪府)／なら１００年会館 大ホール(奈良県)",
+   "pref": "大阪府／奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632897",
+   "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 ｉｎ 東京",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "文京シビックホール 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622918",
+   "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 ｉｎ 成田",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "成田国際文化会館 大ホール(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623810",
+   "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 ｉｎ 新座",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新座市民会館 ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623365",
+   "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 ｉｎ 韮崎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京エレクトロン韮崎文化ホール 大ホール(山梨県)",
+   "pref": "山梨県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630442",
+   "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 ｉｎ 日野",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ひの煉瓦ホール（日野市民会館） 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632898",
+   "artist": "大阪桐蔭高等学校吹奏楽部 関東公演 ｉｎ 横浜",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜みなとみらいホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632302",
+   "artist": "大阪桐蔭高等学校吹奏楽部 サンタコンサート ｉｎ 大阪狭山 ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＡＹＡＫＡホール（大阪狭山市文化会館） 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624200",
+   "artist": "大阪桐蔭高等学校吹奏楽部 サンタコンサート ｉｎ 加西",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "加西市民会館 文化ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600395",
+   "artist": "大阪桐蔭高等学校吹奏楽部 サンタコンサートｉｎ福山",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ふくやま芸術文化ホール リーデンローズ 大ホール(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636719",
+   "artist": "大阪桐蔭高等学校吹奏楽部 高梁市特別公演２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高梁総合文化会館(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636727",
+   "artist": "大阪桐蔭高等学校吹奏楽部 特別公演 ｉｎ 赤穂",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "赤穂化成ハーモニーホール 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631629",
+   "artist": "大阪桐蔭高等学校吹奏楽部 特別公演 ｉｎ 福井",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ハーモニーホールふくい 大ホール(福井県)",
+   "pref": "福井県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636106",
+   "artist": "大阪桐蔭高等学校吹奏楽部 特別公演 ｉｎ 大和郡山",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＭＧ ＭＯＲＩ やまと郡山城ホール 大ホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631618",
+   "artist": "大阪桐蔭高等学校吹奏楽部 特別公演 ｉｎ 大和郡山",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＭＧ ＭＯＲＩ やまと郡山城ホール 大ホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622368",
+   "artist": "親子で楽しむクラシックコンサート「音楽の絵本～ブラスサンタ ｗｉｔｈ サキソフォックス～」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "深谷市民文化会館 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618238",
+   "artist": "親子のためのクラシックコンサート 音楽の絵本～エレガンス～ ｉｎ うさぎホール",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "袋井市月見の里学遊館 うさぎホール(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623039",
+   "artist": "親子のためのクラシックコンサート 音楽の絵本～ダンディズム～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "黒崎ひびしんホール 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634965",
+   "artist": "第５４回 関西マーチングコンテスト",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ａｓｕｅアリーナ大阪(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625439",
+   "artist": "北里大学北里会文化会吹奏楽団第４２回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "相模原市民会館(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623958",
+   "artist": "ＧＡＭＥ ＭＵＳＩＣ ｏｎ ＢＲＡＳＳ ～遥かなる冒険の世界へ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小金井 宮地楽器ホール 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669081",
+   "artist": "佐渡裕 シエナ・ウインド・オーケストラ ブラスの祭典2026 in 葛飾",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "かつしかシンフォニーヒルズ モーツァルトホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631160",
+   "artist": "佐渡裕（指揮）／シエナ・ウインド・オーケストラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "南相馬市民文化会館 大ホール(福島県)",
+   "pref": "福島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623057",
+   "artist": "佐渡裕指揮 シエナ・ウインド・オーケストラ≪ブラスの祭典２０２６≫",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "枚方市総合文化芸術センター 関西医大 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632995",
+   "artist": "Ｓｈｉｏｎ×１７ＬＩＶＥ Ｏｓａｋａ Ｓｈｉｏｎ Ｗｉｎｄ Ｏｒｃｈｅｓｔｒａクリスマスコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・シンフォニーホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618010",
+   "artist": "ズーラシアンブラス ブラバン祭り 大阪公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＡＹＡＫＡホール（大阪狭山市文化会館） 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632196",
+   "artist": "仙台吹奏楽団 第８３回定期演奏会 杜の都のちょっとくだけた音楽会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東北大学百周年記念会館 川内萩ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626794",
+   "artist": "第４５回 全日本小学生バンドフェスティバル【フロア部門】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626787",
+   "artist": "第３９回 全日本マーチングコンテスト 中学生の部",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617156",
+   "artist": "創立５０周年記念 寒河江吹奏楽団 第３９回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "寒河江市市民文化会館(山形県)",
+   "pref": "山形県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632567",
+   "artist": "第２８回全日本高等学校吹奏楽大会ｉｎ横浜",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜みなとみらいホール 大ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624973",
+   "artist": "東京佼成ウインドオーケストラ 第１７６回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 コンサートホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629005",
+   "artist": "東京佼成ウインドオーケストラファンタスティッククリスマス２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 コンサートホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629881",
+   "artist": "苫小牧音楽祭２０２６ Ｓｔａｎｄ ｕｐ ＴＯＭＡＫＯＭＡＩ 音楽の絵本～ブラス・バトル～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "苫小牧市民文化ホール グランドホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634653",
+   "artist": "【動画配信】第５４回関西マーチングコンテスト",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＰＩＡ ＬＩＶＥ ＳＴＲＥＡＭ",
+   "pref": ""
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617906",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635620",
+   "artist": "第２５回 西日本バンドフェスティバル２０２６ ｉｎ 姫路",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクリエひめじ 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631863",
+   "artist": "ＰＡＮＤＡ ＷＩＮＤ ＯＲＣＨＥＳＴＲＡ Ｃｈｒｉｓｔｍａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "調布市グリーンホール 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626668",
+   "artist": "広島ウインドオーケストラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "広島ＪＭＳアステールプラザ 大ホール(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622893",
+   "artist": "ビッグバンド／ウインドオーケストラの響演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622895",
+   "artist": "ビッグバンド／ウインドオーケストラの響演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617391",
+   "artist": "ＢＲＡＳＳ ＰＯＷＥＲ “Ｓｏｕｎｄｓ Ｇｏｏｄ！” ｖｏｌ．４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡サンパレス ホテル＆ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627235",
+   "artist": "ブリヂストン吹奏楽団久留米 下関チャリティーコンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "下関市民会館 大ホール(山口県)",
+   "pref": "山口県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626202",
+   "artist": "マーチング・カーニバルｉｎ別府２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ビーコンプラザ コンベンションホール(大分県)",
+   "pref": "大分県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625479",
+   "artist": "ミューザ川崎市民吹奏楽祭２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ミューザ川崎シンフォニーホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2541929",
+   "artist": "山形交響楽団／東京佼成ウインドオーケストラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "やまぎん県民ホール(山形県)",
+   "pref": "山形県"
+  }
+ ]
+}

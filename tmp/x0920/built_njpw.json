@@ -1,0 +1,60 @@
+[
+ {
+  "id": 90201,
+  "artist": "新日本プロレス",
+  "name": "新日本プロレス",
+  "date": "2026-11-21",
+  "dateLabel": "2026年11月21日(土) 神奈川 藤沢市秩父宮記念体育館",
+  "venue": "藤沢市秩父宮記念体育館",
+  "prefecture": "神奈川",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_piaSub": "スポーツ/プロレス",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2633600",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/21公演）9/20 10:00発売",
+    "date": "2026-09-20",
+    "startDate": "2026-09-20"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-19"
+ },
+ {
+  "id": 90202,
+  "artist": "新日本プロレス",
+  "name": "新日本プロレス",
+  "date": "2026-11-23",
+  "dateLabel": "2026年11月23日(月) 神奈川 横浜武道館",
+  "venue": "横浜武道館",
+  "prefecture": "神奈川",
+  "genre": "new",
+  "_genre": "sports",
+  "_extraGenres": [],
+  "_piaSub": "スポーツ/プロレス",
+  "price": null,
+  "links": {
+   "rakuten": null,
+   "lawson": null,
+   "pia": "https://t.pia.jp/pia/event/event.do?eventCd=2633661",
+   "eplus": null
+  },
+  "tickets": [
+   {
+    "type": "一般発売（神奈川 11/23公演）9/20 10:00発売",
+    "date": "2026-09-20",
+    "startDate": "2026-09-20"
+   }
+  ],
+  "verified": true,
+  "verifiedAt": "2026-09-19"
+ }
+]

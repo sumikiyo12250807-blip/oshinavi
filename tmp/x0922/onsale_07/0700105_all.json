@@ -1,0 +1,431 @@
+{
+ "lg": "07",
+ "total": 40,
+ "pages": 4,
+ "fetched_pages": 5,
+ "parsed": 40,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670526",
+   "artist": "藝大フィルハーモニア管弦楽団 合唱定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/12(木)",
+   "venue": "サンパール荒川 大ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670674",
+   "artist": "サントリーホール クリスマスコンサート 2026 バッハ・コレギウム・ジャパン「聖夜のメサイア」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/24(木)",
+   "venue": "サントリーホール 大ホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625041",
+   "artist": "ＴＦＭ合唱団第３７回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/8(日)",
+   "venue": "ライフポートとよはし コンサートホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619292",
+   "artist": "東京混声合唱団 堺特別演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/14(土)",
+   "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626952",
+   "artist": "東京混声合唱団特別演奏会東混オールスターズ～田中信昭メモリアル～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/23(金)",
+   "venue": "東京芸術劇場 コンサートホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617478",
+   "artist": "同志社混声合唱団＜東京＞２０２６コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "かつしかシンフォニーヒルズ モーツァルトホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617692",
+   "artist": "バッハ ヨハネ受難曲 東京Ｊ．Ｓ．バッハ合唱団第３１回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/3(土)",
+   "venue": "練馬文化センター 大ホール（こぶしホール）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667994",
+   "artist": "「フォーレ・レクイエム」コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/16(月)",
+   "venue": "かつしかシンフォニーヒルズ モーツァルトホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667584",
+   "artist": "六本木男声合唱団ZIG-ZAG",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/22(木)",
+   "venue": "東京カテドラル関口教会聖マリア大聖堂(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615638",
+   "artist": "アンサンブル・ソネット愛媛 第２４回演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛媛県生涯学習センター 県民小劇場(愛媛県)",
+   "pref": "愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625357",
+   "artist": "Ｅｎｓｅｍｂｌｅ１４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "浜離宮朝日ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633012",
+   "artist": "宇都宮第九合唱団",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "宇都宮市文化会館 大ホール(栃木県)",
+   "pref": "栃木県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634216",
+   "artist": "第６０回ＨＢＣ少年少女合唱団定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631162",
+   "artist": "大阪コレギウム・ムジクム第１３４回大阪定期公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "住友生命いずみホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625323",
+   "artist": "大阪コレギウム・ムジクム第４３回京都公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都府立府民ホール（アルティ）(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631042",
+   "artist": "大阪バッハ合唱団第３４回演奏会ロ短調ミサ曲",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "兵庫県立芸術文化センター ＫＯＢＥＬＣＯ大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614996",
+   "artist": "オーケストラ・リベラ・クラシカ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "第一生命ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630432",
+   "artist": "関西学院グリークラブプレミアムコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ワキタコルディアホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622117",
+   "artist": "合唱団ＬＡｂ Ｃｏｎｃｅｒｔ＃１０",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "府中の森芸術劇場 ウィーンホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613692",
+   "artist": "合唱団鯨第７５回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "文京シビックホール 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629232",
+   "artist": "合唱団 四季 クリスマスコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "住友生命いずみホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670526",
+   "artist": "藝大フィルハーモニア管弦楽団 合唱定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンパール荒川 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619612",
+   "artist": "神戸フロイデ合唱団 定期演奏会 ヴィヴァルディ／ラター",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "兵庫県立芸術文化センター ＫＯＢＥＬＣＯ大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633723",
+   "artist": "越の国室内合唱団 ＶＯＸ ＯＲＡＴＴＡ １５周年記念コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長岡リリックホール コンサートホール(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628104",
+   "artist": "コーロ・ヌオーヴォ 第６６回演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "せたがやイーグレットホール（世田谷区民会館）(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670674",
+   "artist": "サントリーホール クリスマスコンサート 2026 バッハ・コレギウム・ジャパン「聖夜のメサイア」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サントリーホール 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669340",
+   "artist": "ザクセン声楽アンサンブル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カルッツかわさき（川崎市スポーツ・文化総合センター）ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633908",
+   "artist": "昭和の名曲コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "瀬谷区民文化センター あじさいプラザ(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625827",
+   "artist": "十字架上の七つの言葉 I",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620757",
+   "artist": "鈴木優人（指揮）／バッハ・コレギウム・ジャパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "軽井沢大賀ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629253",
+   "artist": "第九ひろしま ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "広島サンプラザホール(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630318",
+   "artist": "第１２回みなと第九を歌う会演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ミューザ川崎シンフォニーホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625596",
+   "artist": "第４０回記念津山第九演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "津山文化センター 大ホール(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625041",
+   "artist": "ＴＦＭ合唱団第３７回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ライフポートとよはし コンサートホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628864",
+   "artist": "東京オラトリエンコール第３３回演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "第一生命ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619292",
+   "artist": "東京混声合唱団 堺特別演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626952",
+   "artist": "東京混声合唱団特別演奏会東混オールスターズ～田中信昭メモリアル～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 コンサートホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617478",
+   "artist": "同志社混声合唱団＜東京＞２０２６コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "かつしかシンフォニーヒルズ モーツァルトホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621112",
+   "artist": "バッハ・コレギウム・ジャパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626664",
+   "artist": "バッハ・コレギウム・ジャパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東北大学百周年記念会館 川内萩ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617692",
+   "artist": "バッハ ヨハネ受難曲 東京Ｊ．Ｓ．バッハ合唱団第３１回定期演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "練馬文化センター 大ホール（こぶしホール）(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667994",
+   "artist": "「フォーレ・レクイエム」コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "かつしかシンフォニーヒルズ モーツァルトホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2611407",
+   "artist": "ベートーヴェン“第九”演奏会２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "岡山市総合文化体育館(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622479",
+   "artist": "北とぴあ国際音楽祭２０２６「栄光のヴェネツィア－水の都に響く１６世紀の音楽」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北とぴあ さくらホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626110",
+   "artist": "ホールアドバイザー松居直美企画 言葉は音楽、音楽は言葉 Ｖｏｌ．８ ＭＵＺＡパイプオルガン クリスマス・コンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ミューザ川崎シンフォニーホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633334",
+   "artist": "「マニフィカト」～マリアの賛歌～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630212",
+   "artist": "ヨス・ファン・フェルトホーフェン合唱団",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京オペラシティ コンサートホール：タケミツメモリアル(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629238",
+   "artist": "リリア第九演奏会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "川口リリア・フカガワみらいホール（エプロンステージ）(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667584",
+   "artist": "六本木男声合唱団ZIG-ZAG",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京カテドラル関口教会聖マリア大聖堂(東京都)",
+   "pref": "東京都"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+FORM: <form class="fany-search" name="fany-search" method="GET" action="/search/event" role="form">
+FORM: <form class="fany-search" name="fany-search" method="GET" action="/search/event" role="form">
+  input name: from
+  input name: genre
+  input name: keywords
+  input name: ngk_accepting
+  input name: ngk_beforeReception
+  input name: prefectures
+  input name: search_type
+  input name: to
+  input name: viewport
+  link?: /assets/css/design_type3/fany.css?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f
+  link?: /assets/css/editor_reset.css?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f
+  link?: /assets/css/module.css?v=d1c531f5b633c097f5b2e1c4a25110f86fb3c47f
+  link?: https://cdn.funity.live/13/css/style.css?v=51
+  link?: https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap
+  link?: https://ticket.fany.lol/search/event?keywords=%E6%BB%9D%E9%9F%B3&amp;search_type=search_string
+  link?: https://ticket.fany.lol/search/event?keywords=%E8%9B%99%E4%BA%AD&amp;search_type=search_string

@@ -1,0 +1,11 @@
+  4490 OK
+  950 OK
+  8296 OK
+  2992 OK
+構築 4 件 / skip []
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\u26a0\ufe0f 取りこぼし 1件（買える枠なのに取り込めなかった＝要対応）:
+   id4490 [FETCH-ERR] when='The read operation timed out' | https://l-tike.com/order/?gLcode=11604&gPfKey=20260731000002263530&gEntryMthd=01&gScheduleNo=1&gCarrierCd=08&gPfName=%E3%82%A2%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%AB%E3%83%A0&gBaseVenueCd=12704
+→ parse_when/kenshu/状態判定にこの表記を足してから再構築すること。
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -1,0 +1,365 @@
+{
+ "lg": "02",
+ "total": 41,
+ "pages": 5,
+ "fetched_pages": 6,
+ "parsed": 40,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670805",
+   "artist": "神韻日本公演2027",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2027/3/30(火) ・ 2027/3/31(水)",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/25(日)",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633443",
+   "artist": "【花座特別公演】花さぽ寄席２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/16(金)",
+   "venue": "仙台市シルバーセンター 交流ホール(宮城県)",
+   "pref": "宮城県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619526",
+   "artist": "あっちこっちカンパニ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＴＴホール(大阪府)／松山市民会館 中ホール(愛媛県)",
+   "pref": "宮城県／大阪府／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633642",
+   "artist": "アブナイ ヨセ 全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "宮城県／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668064",
+   "artist": "『Yerma イェルマ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "多賀城市民会館 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668890",
+   "artist": "M&Oplaysプロデュース『ブランク』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台銀行ホール イズミティ２１ 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669026",
+   "artist": "ガクテンソク単独ライブツアー2026「九分九厘」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／有楽町よみうりホール(東京都)／倉敷市芸文館ホール(岡山県)／レクザムホール 小ホール(香川県)",
+   "pref": "宮城県／東京都／岡山県／香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667971",
+   "artist": "キーウ・クラシック・バレエ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "タイハクホール名取 大ホール(宮城県)／小山市立文化センター 大ホール(栃木県)／ウェスタ川越 ヤオコー大ホール(埼玉県)／市原市市民会館 大ホール(千葉県)／新宿文化センター 大ホール(東京都)／福生市民会館 大ホール（もくせいホール）(東京都)／小田原三の丸ホール 大ホール(神奈川県)／アクトシティ浜松 大ホール(静岡県)／ウッドワンさくらぴあ 大ホール(広島県)",
+   "pref": "宮城県／栃木県／埼玉県／千葉県／東京都／神奈川県／静岡県／広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609428",
+   "artist": "銀シャリ単独ライブ２０２６「ベシャリの帝王 萬才銀次郎」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／有楽町よみうりホール(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／神戸新聞松方ホール(兵庫県)／福岡国際会議場 メインホール(福岡県)",
+   "pref": "宮城県／東京都／愛知県／兵庫県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632835",
+   "artist": "グレープライブｉｎ仙台 ｖｏｌ．１９",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "誰も知らない劇場(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617318",
+   "artist": "劇団四季ファミリーミュージカル「王様の耳はロバの耳」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "岩沼市民会館 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630887",
+   "artist": "佐久間一行ＬＩＶＥ ＴＯＵＲ２０２６－２０２７「３０周年コントセレクション」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌ザ・ルーテルホール(北海道)／仙台市シルバーセンター 交流ホール(宮城県)／水戸市民会館 ユードムホール(茨城県)／今池ガスホール(愛知県)／さん太ホール(岡山県)",
+   "pref": "北海道／宮城県／茨城県／愛知県／岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614433",
+   "artist": "ＴＨＥ ＳＥＣＯＮＤ ライブツアー２０２６～今、全盛期の漫才師達～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／東京エレクトロンホール宮城(宮城県)／有楽町よみうりホール(東京都)／石川県小松市團十郎芸術劇場うらら 大ホール(石川県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／福岡国際会議場 メインホール(福岡県)／熊本城ホール メインホール(熊本県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／石川県／大阪府／福岡県／熊本県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670805",
+   "artist": "神韻日本公演2027",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629919",
+   "artist": "滋慶学園ＣＯＭグループ 社会貢献ミュージカル「明日への扉 Ｈｏｓｐｉｔａｌ Ｏｆ Ｍｉｒａｃｌｅ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日立システムズホール仙台 シアターホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632545",
+   "artist": "仙臺舞篝【ＳＥＮＤＡＩ ＭＡＩ ＫＡＧＡＲＩ】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "能－ＢＯＸ（せんだい演劇工房１０－ＢＯＸ別館）(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630098",
+   "artist": "ソーゾーシーＴＯＵＲ２０２６ 仙台公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台市シルバーセンター 交流ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620475",
+   "artist": "立川小春志芸歴二十周年記念落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台市シルバーセンター 交流ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621604",
+   "artist": "東京バレエ団「くるみ割り人形」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台銀行ホール イズミティ２１ 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669987",
+   "artist": "トータルテンボス全国漫才ツアー2026「ニコイチ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669646",
+   "artist": "ナイツ独演会 「国民の皆さん」ではなく「国民の一部の皆さん」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "多賀城市民会館 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615970",
+   "artist": "人形浄瑠璃「文楽」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633443",
+   "artist": "【花座特別公演】花さぽ寄席２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台市シルバーセンター 交流ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626138",
+   "artist": "爆音漫才選集",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台ＰＩＴ(宮城県)／Ｚｅｐｐ Ｆｕｋｕｏｋａ(福岡県)",
+   "pref": "宮城県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627200",
+   "artist": "爆笑！！お笑いフェスｉｎ仙台",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台サンプラザホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623453",
+   "artist": "第６回 日立システムズホール仙台 パフォーマンスフェスティバル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日立システムズホール仙台 コンサートホール(宮城県)／日立システムズホール仙台 シアターホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625101",
+   "artist": "日立システムズホール仙台 ファミリークリスマスコンサート 音楽と朗読でおくる「アラジン」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日立システムズホール仙台 シアターホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623377",
+   "artist": "兵動大樹のおしゃべり大好き。４８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669771",
+   "artist": "舞台「桶狭間の義経」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623645",
+   "artist": "弁論２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617371",
+   "artist": "「星屑の町～忘却篇」宮城公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "タイハクホール名取 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617962",
+   "artist": "僕らの別荘 全国ツアー ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／電力ホール(宮城県)／Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)／中日ホール(愛知県)／福岡国際会議場 メインホール(福岡県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／愛知県／福岡県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632645",
+   "artist": "マルゲリータ男とキャンパスガール～ＪＡＲＵＪＡＲＵ ＣＯＮＴＥ ＴＯＵＲ ２０２６ＡＷ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／日立システムズホール仙台 シアターホール(宮城県)／ＩＭＭ ＴＨＥＡＴＥＲ(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＴＴホール(大阪府)／広島ＪＭＳアステールプラザ 中ホール(広島県)／福岡市民ホール 中ホール(福岡県)",
+   "pref": "北海道／宮城県／東京都／愛知県／大阪府／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629369",
+   "artist": "宮川大輔×ケンドーコバヤシ トークライブ あんぎゃー 宮城公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "多賀城市民会館 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667799",
+   "artist": "ミュージカル『シークレットステージ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台銀行ホール イズミティ２１ 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668023",
+   "artist": "名探偵プリキュア！ ドリームステージ♪",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "タイハクホール名取 大ホール(宮城県)／藤岡市みかぼみらい館 大ホール(群馬県)／大宮ソニックシティ 大ホール(埼玉県)／狭山市市民会館 大ホール(埼玉県)／森のホール２１ 大ホール(千葉県)／上越文化会館(新潟県)／レザンホール 大ホール(長野県)",
+   "pref": "宮城県／群馬県／埼玉県／千葉県／新潟県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670278",
+   "artist": "ヨーロッパ企画特別興行「世界の終わりかけとスリーコード」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "多賀城市民会館 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625625",
+   "artist": "柳亭小痴楽 全国ツアー カチコミ’２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "トークネットホール仙台 小ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668845",
+   "artist": "リーディングドラマ「すぐ死ぬんだから」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633564",
+   "artist": "ロングコートダディ単独ライブツアー「月光もたらす」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日立システムズホール仙台 シアターホール(宮城県)／名古屋芸術大学アートスクエア 大ホール(愛知県)",
+   "pref": "宮城県／愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616379",
+   "artist": "「笑いの芸術 野村万作・萬斎 狂言公演」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
+  }
+ ]
+}

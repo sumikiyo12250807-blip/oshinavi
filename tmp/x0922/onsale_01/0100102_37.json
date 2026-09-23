@@ -1,0 +1,842 @@
+{
+ "lg": "01",
+ "total": 93,
+ "pages": 10,
+ "fetched_pages": 11,
+ "parsed": 90,
+ "new_name_in_db": 8,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622736",
+   "artist": "ウルフルズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "シアターマド（丸亀市民会館）(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669162",
+   "artist": "HONEST",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/6/27(土) ～ 2026/10/7(水)",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ３ｒｄ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／ｙａｎａｇａｓｅ ａｎｔｓ(岐阜県)／静岡ＵＭＢＥＲ(静岡県)／ＣＬＵＢ Ｚｉｏｎ(愛知県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)／神戸 太陽と虎(兵庫県)／ＣＲＡＺＹＭＡＭＡ ２ｎｄ Ｒｏｏｍ(岡山県)／ＡＬＭＩＧＨＴＹ(広島県)／ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "宮城県／栃木県／東京都／神奈川県／岐阜県／静岡県／愛知県／大阪府／兵庫県／岡山県／広島県／香川県／福岡県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629031",
+   "artist": "竹原ピストル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/5(土)",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617551",
+   "artist": "徳永英明",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666783",
+   "artist": "なとり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/26(土)",
+   "venue": "サンポートホール高松 大ホール(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/23(月・祝)",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636851",
+   "artist": "バックドロップシンデレラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/27(金)",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625809",
+   "artist": "ＴＨＥ ＢＥＡＴ ＧＡＲＤＥＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/11(日)",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622628",
+   "artist": "ペルシカリア",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/24(土)",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665615",
+   "artist": "Rayflower",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/29(土) ～ 2026/9/27(日)",
+   "venue": "米子ｌａｕｇｈｓ(鳥取県)／松江ｃａｎｏｖａ(島根県)／ＹＥＢＩＳＵ ＹＡ ＰＲＯ(岡山県)／ＤＩＭＥ(香川県)／松山サロンキティ(愛媛県)",
+   "pref": "鳥取県／島根県／岡山県／香川県／愛媛県",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623021",
+   "artist": "Ｉ Ｄｏｎ’ｔ Ｌｉｋｅ Ｍｏｎｄａｙｓ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669964",
+   "artist": "秋山黄色",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622456",
+   "artist": "ＡＳＫＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)／松山市民会館 大ホール(愛媛県)",
+   "pref": "香川県／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667868",
+   "artist": "a flood of circle",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668352",
+   "artist": "絢香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665661",
+   "artist": "家入レオ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 小ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564372",
+   "artist": "いきものがかり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
+   "artist": "稲葉浩志",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666010",
+   "artist": "indigo la End",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンポートホール高松 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628267",
+   "artist": "インナージャーニー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622736",
+   "artist": "ウルフルズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターマド（丸亀市民会館）(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621384",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターマド（丸亀市民会館）(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669950",
+   "artist": "AK-69",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620284",
+   "artist": "おいしくるメロンパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
+   "artist": "Ochunism",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669162",
+   "artist": "HONEST",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ｅｎｎ ３ｒｄ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／ｙａｎａｇａｓｅ ａｎｔｓ(岐阜県)／静岡ＵＭＢＥＲ(静岡県)／ＣＬＵＢ Ｚｉｏｎ(愛知県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)／神戸 太陽と虎(兵庫県)／ＣＲＡＺＹＭＡＭＡ ２ｎｄ Ｒｏｏｍ(岡山県)／ＡＬＭＩＧＨＴＹ(広島県)／ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "宮城県／栃木県／東京都／神奈川県／岐阜県／静岡県／愛知県／大阪府／兵庫県／岡山県／広島県／香川県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630992",
+   "artist": "小山田壮平",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669794",
+   "artist": "オレンジスパイニクラブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666269",
+   "artist": "ORANGE RANGE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターマド（丸亀市民会館）(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668501",
+   "artist": "加藤和樹&THE DRASTICS/JOKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620421",
+   "artist": "かりゆし５８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "朝日段ボールホール国分寺(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669948",
+   "artist": "吉川晃司",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627249",
+   "artist": "キュウソネコカミ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632539",
+   "artist": "清春",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669952",
+   "artist": "コブクロ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626292",
+   "artist": "ｋｏｂｏｒｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669281",
+   "artist": "COPES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670082",
+   "artist": "さとう。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ 燦庫－ＳＡＮＫＯ－(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630829",
+   "artist": "Ｓｕｎｄａｅ Ｍａｙ Ｃｌｕｂ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669642",
+   "artist": "ザ50回転ズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｌｕｂ ＧＲＩＮＤＨＯＵＳＥ(徳島県)／ＤＩＭＥ(香川県)",
+   "pref": "徳島県／香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669985",
+   "artist": "ザ・シスターズハイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／静岡ＵＭＢＥＲ(静岡県)／池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)／神戸 太陽と虎(兵庫県)／ＡＬＭＩＧＨＴＹ(広島県)／ＴＯＯＮＩＣＥ(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／栃木県／群馬県／東京都／新潟県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670081",
+   "artist": "THE BAWDIES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669309",
+   "artist": "Chevon",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669601",
+   "artist": "柴咲コウ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンポートホール高松 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630693",
+   "artist": "シンガーズハイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624374",
+   "artist": "ＳＨＥ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665889",
+   "artist": "the shes gone",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627269",
+   "artist": "杉山清貴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンポートホール高松 第２小ホール(香川県)／松山市総合コミュニティセンター コスモシアター(愛媛県)／高知市文化プラザかるぽーと 龍馬学園イベントホール(高知県)",
+   "pref": "香川県／愛媛県／高知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623412",
+   "artist": "ＳＣＯＯＢＩＥ ＤＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
+   "artist": "鈴木雅之",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616565",
+   "artist": "鈴木康博",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松・ＳＵＭＵＳ ｃａｆｅ(香川県)／風来坊(愛媛県)",
+   "pref": "香川県／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621857",
+   "artist": "３ｍａｒｋｅｔｓ［ ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623753",
+   "artist": "四星球",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668417",
+   "artist": "セカンドバッカー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629346",
+   "artist": "関取花",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "栗林公園 商工奨励館(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620294",
+   "artist": "セックスマシーン！！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632694",
+   "artist": "Ｓｏａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629031",
+   "artist": "竹原ピストル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625893",
+   "artist": "ちゃくら",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626303",
+   "artist": "Ｃｈｉｌｌｉ Ｂｅａｎｓ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)／松山サロンキティ(愛媛県)",
+   "pref": "香川県／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
+   "artist": "つきみ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634275",
+   "artist": "鶴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｌｕｂ ＧＲＩＮＤＨＯＵＳＥ(徳島県)／高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "徳島県／香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632194",
+   "artist": "ＤＹＧＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622293",
+   "artist": "デラックス×デラックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)／高知Ｘ－ｐｔ．(高知県)",
+   "pref": "香川県／高知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632413",
+   "artist": "東京スカパラダイスオーケストラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンポートホール高松 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636854",
+   "artist": "ＴＯＯＢＯＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617551",
+   "artist": "徳永英明",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632423",
+   "artist": "堂島孝平",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ 燦庫－ＳＡＮＫＯ－(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616975",
+   "artist": "怒髪天",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623159",
+   "artist": "中嶋ユキノ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｒｅｅｄ(広島県)／ＤＩＭＥ(香川県)",
+   "pref": "広島県／香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666783",
+   "artist": "なとり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンポートホール高松 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669485",
+   "artist": "ネクライトーキー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632753",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669607",
+   "artist": "NOISEMAKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636851",
+   "artist": "バックドロップシンデレラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
+   "artist": "ＰａｓｓＣｏｄｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624377",
+   "artist": "ＰａｓｓＣｏｄｅ＜ＶＩＰ ＵＰＧＲＡＤＥ ＰＡＣＫＡＧＥ＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625809",
+   "artist": "ＴＨＥ ＢＥＡＴ ＧＡＲＤＥＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667965",
+   "artist": "BRADIO",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668893",
+   "artist": "BLUE ENCOUNT",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 小ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628660",
+   "artist": "プッシュプルポット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632236",
+   "artist": "ＰＥＤＲＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622628",
+   "artist": "ペルシカリア",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631880",
+   "artist": "Ｐｅｎｔｈｏｕｓｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670338",
+   "artist": "布袋寅泰",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630303",
+   "artist": "真心ブラザーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ｆｅｓｔｈａｌｌｅ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628365",
+   "artist": "松山千春",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)／しこちゅ～ホール（四国中央市市民文化ホール） 大ホール(愛媛県)",
+   "pref": "香川県／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635156",
+   "artist": "ＭＡＹＳＯＮ’ｓ ＰＡＲＴＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＴＯＯＮＩＣＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
+   "artist": "メリクレット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｓｏｕｎｄ ｓｐａｃｅ ＲＩＺＩＮ’(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
+   "artist": "MONO NO AWARE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628023",
+   "artist": "ＹＵＭＥＢＡＮＣＨＩ×ＤＵＫＥ企画『瀬戸内共同戦線』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633256",
+   "artist": "ｙｏｓｕｇａｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669055",
+   "artist": "夜の本気ダンス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629339",
+   "artist": "リアクション ザ ブッタ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620837",
+   "artist": "ＬＩＮＤＢＥＲＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松ＭＯＮＳＴＥＲ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668255",
+   "artist": "リーガルリリー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＩＭＥ(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665615",
+   "artist": "Rayflower",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "米子ｌａｕｇｈｓ(鳥取県)／松江ｃａｎｏｖａ(島根県)／ＹＥＢＩＳＵ ＹＡ ＰＲＯ(岡山県)／ＤＩＭＥ(香川県)／松山サロンキティ(愛媛県)",
+   "pref": "鳥取県／島根県／岡山県／香川県／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625646",
+   "artist": "ＲＯＴＴＥＮＧＲＡＦＦＴＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "高松オリーブホール(香川県)",
+   "pref": "香川県"
+  }
+ ]
+}

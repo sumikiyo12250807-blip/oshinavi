@@ -1,0 +1,577 @@
+{
+ "lg": "02",
+ "total": 61,
+ "pages": 7,
+ "fetched_pages": 8,
+ "parsed": 61,
+ "new_name_in_db": 2,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613580",
+   "artist": "立川談春 独演会 ２０２６ 秋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/22(木)",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619388",
+   "artist": "ＣＨＯＣＯＬＡＴＥ ＰＬＡＮＥＴ ＬＩＶＥ ＴＯＵＲ ２０２６ 「Ｓｐａｃｙ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木) ～ 2026/9/27(日)",
+   "venue": "カナモトホール(北海道)／あきた芸術劇場ミルハス 中ホール(秋田県)／けんしん郡山文化センター 中ホール(福島県)／東京建物 ぴあ シアター(東京都)／有楽町よみうりホール(東京都)／金沢市文化ホール(石川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／京都劇場(京都府)／下関市生涯学習プラザ 海のホール(山口県)／新来島高知重工ホール グリーンホール(高知県)／チトセピアホール(長崎県)／琉球新報ホール(沖縄県)",
+   "pref": "北海道／秋田県／福島県／東京都／石川県／愛知県／京都府／山口県／高知県／長崎県／沖縄県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/30(金)",
+   "venue": "愛知県産業労働センター ウインクあいち 大ホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667068",
+   "artist": "ミキ漫2026全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/19(土) ～ 2026/11/29(日)",
+   "venue": "旭川市公会堂(北海道)／いわき芸術文化交流館アリオス セキショウ中劇場(福島県)／ホクト文化ホール 中ホール(長野県)／犬山市民文化会館(愛知県)／米子市文化ホール メインホール(鳥取県)",
+   "pref": "北海道／福島県／長野県／愛知県／鳥取県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603974",
+   "artist": "ゆめたろう寄席「初春の会」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2027/3/6(土)",
+   "venue": "ゆめたろうプラザ（武豊町民会館） 響きホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630814",
+   "artist": "吉原あさひひとり会ｖｏｌ．４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/19(土)",
+   "venue": "ＨＩＴＯＭＩホール(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629215",
+   "artist": "鈴々舎美馬ひとり会ｖｏｌ．６～かちがわ若手落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/27(日)",
+   "venue": "ホテルプラザ勝川(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627777",
+   "artist": "アインシュタイン結成１５周年記念ツアー「ゲストシュタインin名古屋」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "御園座(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629735",
+   "artist": "第６４回あきつ落語会 松柳亭鶴枝独演会 その二",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大須演芸場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627357",
+   "artist": "第６３回あきつ落語会 談笑 ＤＥ ＳＨＯＷ １７ ～立川談笑独演会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633642",
+   "artist": "アブナイ ヨセ 全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／ＬＩＮＥ ＣＵＢＥ ＳＨＩＢＵＹＡ(東京都)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "宮城県／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630903",
+   "artist": "大須演芸場 １０月定席寄席",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大須演芸場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614037",
+   "artist": "花鳥風月 一龍斎貞鏡独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "名古屋市中村文化小劇場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635341",
+   "artist": "桂吉弥独演会 Ｖｏｌ．２４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629463",
+   "artist": "第５７回 桂文我独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "穂の国とよはし芸術劇場ＰＬＡＴ アートスペース(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624637",
+   "artist": "桂文我落語四百席 名古屋編",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "名古屋クラウンホテル 楓の間(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631045",
+   "artist": "桂まん我ひとり会・名古屋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＩＴＯＭＩホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623560",
+   "artist": "桂宮治 全国ツアー ２０２６ ～Ｒｅｍｅｍｂｅｒ Ｍｉｙａｊｉ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636813",
+   "artist": "桂優々地獄八景亡者戯２０２６東名阪ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日本橋 兜座(東京都)／蛙屋(愛知県)／北御堂津村別院 ３階研修室(大阪府)",
+   "pref": "東京都／愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630621",
+   "artist": "神奈月 ソロライブツアー ものまねＬＯＶＥ２０２６ ｉｎ 名古屋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東別院テラスホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635909",
+   "artist": "教育おたのしみ会～笑いとげんじつ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "有楽町朝日ホール(東京都)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)",
+   "pref": "東京都／愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609428",
+   "artist": "銀シャリ単独ライブ２０２６「ベシャリの帝王 萬才銀次郎」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "電力ホール(宮城県)／有楽町よみうりホール(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／神戸新聞松方ホール(兵庫県)／福岡国際会議場 メインホール(福岡県)",
+   "pref": "宮城県／東京都／愛知県／兵庫県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630436",
+   "artist": "くしかつの会 ２０２６ 桂吉弥 桂春蝶 桂かい枝 三人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627644",
+   "artist": "最強！ものまねフェスｉｎ名古屋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630887",
+   "artist": "佐久間一行ＬＩＶＥ ＴＯＵＲ２０２６－２０２７「３０周年コントセレクション」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌ザ・ルーテルホール(北海道)／仙台市シルバーセンター 交流ホール(宮城県)／水戸市民会館 ユードムホール(茨城県)／今池ガスホール(愛知県)／さん太ホール(岡山県)",
+   "pref": "北海道／宮城県／茨城県／愛知県／岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619466",
+   "artist": "サルゴリラのコントと旅２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)／青森市男女共同参画プラザ（カダール） ＡＶ多機能ホール(青森県)／石川県教育会館(石川県)／今池ガスホール(愛知県)／朝日生命ホール(大阪府)／広島ＪＭＳアステールプラザ 中ホール(広島県)／サンポートホール高松 第１小ホール(香川県)／熊本市男女共同参画センターはあもにい メインホール(熊本県)",
+   "pref": "北海道／青森県／石川県／愛知県／大阪府／広島県／香川県／熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634377",
+   "artist": "三代目林家菊丸独演会２０２６～上方人情噺の世界～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大須演芸場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636824",
+   "artist": "【三遊亭】ごはんつぶ☆萬都ふたり会ＶＯＬ．２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＩＴＯＭＩホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629243",
+   "artist": "三遊亭ごはんつぶひとり会～かちがわ若手落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＩＴＯＭＩホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630816",
+   "artist": "三遊亭東村山ひとり会ｖｏｌ．１～かちがわ若手落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＪＲ勝川駅前ルネック７階会議室(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623037",
+   "artist": "座長・酒井藍ｉｎ御園座 吉本新喜劇＆バラエティーショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "御園座(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614839",
+   "artist": "清水ミチコ ＴＡＬＫ＆ＬＩＶＥ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "安城市民会館 サルビアホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623729",
+   "artist": "春風亭小朝独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "扶桑文化会館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621121",
+   "artist": "笑福亭たま名古屋独演会～２０２６秋～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669342",
+   "artist": "笑福亭鉄瓶独演会 東名阪ツアー2026年",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なかの芸能小劇場(東京都)／ＨＩＴＯＭＩホール(愛知県)",
+   "pref": "東京都／愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632201",
+   "artist": "昭和５７年会五派勢揃い",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大須演芸場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624206",
+   "artist": "しんしろ寄席 ～華麗なる 林家正蔵一門会～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新城文化会館 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610607",
+   "artist": "ソーゾーシー ＴＯＵＲ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619620",
+   "artist": "立川小春志芸歴二十周年記念落語会ｉｎ名古屋（第６２回あきつ落語会） ～演目：怪談牡丹燈籠より「忠僕孝助の槍」ほか",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631259",
+   "artist": "立川志の太郎 春風亭昇羊ふたり会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "栄能楽堂(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613580",
+   "artist": "立川談春 独演会 ２０２６ 秋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670676",
+   "artist": "大名古屋らくご祭2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "岡谷鋼機名古屋公会堂 大ホール(愛知県)／岡谷鋼機名古屋公会堂 ４Ｆホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613675",
+   "artist": "第二十二回高砂落語会 桂三四郎 三遊亭わん丈 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大須演芸場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624427",
+   "artist": "ダブルインパクトツアー２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／めぐろパーシモンホール 大ホール(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／福岡国際会議場 メインホール(福岡県)",
+   "pref": "北海道／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632592",
+   "artist": "『千原ジュニアのヘベレケ』トークライブ２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "岡谷鋼機名古屋公会堂 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625214",
+   "artist": "蝶花楼桃花・林家あずみ 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "出光スクエアちた やまももホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619388",
+   "artist": "ＣＨＯＣＯＬＡＴＥ ＰＬＡＮＥＴ ＬＩＶＥ ＴＯＵＲ ２０２６ 「Ｓｐａｃｙ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)／あきた芸術劇場ミルハス 中ホール(秋田県)／けんしん郡山文化センター 中ホール(福島県)／東京建物 ぴあ シアター(東京都)／有楽町よみうりホール(東京都)／金沢市文化ホール(石川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／京都劇場(京都府)／下関市生涯学習プラザ 海のホール(山口県)／新来島高知重工ホール グリーンホール(高知県)／チトセピアホール(長崎県)／琉球新報ホール(沖縄県)",
+   "pref": "北海道／秋田県／福島県／東京都／石川県／愛知県／京都府／山口県／高知県／長崎県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626011",
+   "artist": "ツートライブ漫才ツアー『闊歩旅’２６』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大須演芸場(愛知県)／近鉄アート館(大阪府)",
+   "pref": "愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627142",
+   "artist": "天才ピアニスト×ヨネダ２０００ ツーマンライブ「あっちこっちカンパニ～ 愛知公演」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "御園座(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630027",
+   "artist": "鳥肌実 名古屋毒炎会「アルゴリズム演説」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "名古屋クラブクアトロ(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669987",
+   "artist": "トータルテンボス全国漫才ツアー2026「ニコイチ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "御園座(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669646",
+   "artist": "ナイツ独演会 「国民の皆さん」ではなく「国民の一部の皆さん」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)／浅草公会堂(東京都)／有楽町よみうりホール(東京都)／鎌倉芸術館 大ホール(神奈川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ロームシアター京都 サウスホール(京都府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "北海道／東京都／神奈川県／愛知県／京都府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知県産業労働センター ウインクあいち 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622962",
+   "artist": "ハッピネス・ヒル寄席その二十 三遊亭小遊三・桂宮治 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "幸田町民会館 さくらホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636554",
+   "artist": "爆音漫才選集",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "豊洲ＰＩＴ(東京都)／Ｚｅｐｐ Ｎａｇｏｙａ(愛知県)",
+   "pref": "東京都／愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623304",
+   "artist": "兵動大樹のおしゃべり大好き。４８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "御園座(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622848",
+   "artist": "第７１回 へきなん落語 蝶花楼桃花 独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "碧南市芸術文化ホール シアターサウス(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617962",
+   "artist": "僕らの別荘 全国ツアー ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／電力ホール(宮城県)／Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)／中日ホール(愛知県)／福岡国際会議場 メインホール(福岡県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／愛知県／福岡県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632645",
+   "artist": "マルゲリータ男とキャンパスガール～ＪＡＲＵＪＡＲＵ ＣＯＮＴＥ ＴＯＵＲ ２０２６ＡＷ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／日立システムズホール仙台 シアターホール(宮城県)／ＩＭＭ ＴＨＥＡＴＥＲ(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＴＴホール(大阪府)／広島ＪＭＳアステールプラザ 中ホール(広島県)／福岡市民ホール 中ホール(福岡県)",
+   "pref": "北海道／宮城県／東京都／愛知県／大阪府／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667068",
+   "artist": "ミキ漫2026全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市公会堂(北海道)／いわき芸術文化交流館アリオス セキショウ中劇場(福島県)／ホクト文化ホール 中ホール(長野県)／犬山市民文化会館(愛知県)／米子市文化ホール メインホール(鳥取県)",
+   "pref": "北海道／福島県／長野県／愛知県／鳥取県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631858",
+   "artist": "第二十六回 柳家花緑独演会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627352",
+   "artist": "柳家喬太郎独演会 Ｖｏｌ．１９",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "名古屋市青少年文化センター アートピアホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622857",
+   "artist": "柳家しろ八 二ツ目昇進披露公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "文化フォーラム春日井・視聴覚ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603974",
+   "artist": "ゆめたろう寄席「初春の会」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ゆめたろうプラザ（武豊町民会館） 響きホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630814",
+   "artist": "吉原あさひひとり会ｖｏｌ．４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＩＴＯＭＩホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634280",
+   "artist": "柳亭小痴楽 瀧川鯉八 二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "中電ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629215",
+   "artist": "鈴々舎美馬ひとり会ｖｏｌ．６～かちがわ若手落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホテルプラザ勝川(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633564",
+   "artist": "ロングコートダディ単独ライブツアー「月光もたらす」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日立システムズホール仙台 シアターホール(宮城県)／名古屋芸術大学アートスクエア 大ホール(愛知県)",
+   "pref": "宮城県／愛知県"
+  }
+ ]
+}

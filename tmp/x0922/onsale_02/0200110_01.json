@@ -1,0 +1,793 @@
+{
+ "lg": "02",
+ "total": 78,
+ "pages": 8,
+ "fetched_pages": 9,
+ "parsed": 77,
+ "new_name_in_db": 6,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628475",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 秋の大文化祭！２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/19(木) ～ 2026/11/23(月・祝)",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669674",
+   "artist": "カズキのタネツアー 2026 S4K",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/11(日)",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619388",
+   "artist": "ＣＨＯＣＯＬＡＴＥ ＰＬＡＮＥＴ ＬＩＶＥ ＴＯＵＲ ２０２６ 「Ｓｐａｃｙ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/8/6(木) ～ 2026/9/27(日)",
+   "venue": "カナモトホール(北海道)／あきた芸術劇場ミルハス 中ホール(秋田県)／けんしん郡山文化センター 中ホール(福島県)／東京建物 ぴあ シアター(東京都)／有楽町よみうりホール(東京都)／金沢市文化ホール(石川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／京都劇場(京都府)／下関市生涯学習プラザ 海のホール(山口県)／新来島高知重工ホール グリーンホール(高知県)／チトセピアホール(長崎県)／琉球新報ホール(沖縄県)",
+   "pref": "北海道／秋田県／福島県／東京都／石川県／愛知県／京都府／山口県／高知県／長崎県／沖縄県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619338",
+   "artist": "ＴＶｈ落語「林家つる子 三遊亭わん丈 二人会」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/7(土)",
+   "venue": "札幌市教育文化会館 小ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628056",
+   "artist": "ＴＶｈ落語「柳家三三 独演会」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/10(火)",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630441",
+   "artist": "第２６３回道新寄席 春風亭一之輔独演会 【旭川】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/8(火)",
+   "venue": "旭川市公会堂(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/5(月)",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622943",
+   "artist": "人形浄瑠璃 文楽",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/21(水)",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669989",
+   "artist": "NON STYLE LIVE 2026 ～リバーシ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/24(土) ～ 2026/12/21(月)",
+   "venue": "カナモトホール(北海道)／Ｋａｎａｄｅｖｉａ Ｈａｌｌ(東京都)／金沢歌劇座(石川県)／大津市民会館 大ホール(滋賀県)／梅田芸術劇場メインホール(大阪府)／サンポートホール高松 大ホール(香川県)",
+   "pref": "北海道／東京都／石川県／滋賀県／大阪府／香川県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634857",
+   "artist": "白鳥の湖",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "函館市民会館 大ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617928",
+   "artist": "マヂカルラブリー・囲碁将棋のワクワクドキドキツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/7/24(金) ・ 2026/8/22(土) ・ 2026/11/22(日)",
+   "venue": "小樽市民会館(北海道)／新潟市民プラザ ホール(新潟県)／しまなみ交流館（テアトロシェルネ） ホール(広島県)",
+   "pref": "北海道／新潟県／広島県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667068",
+   "artist": "ミキ漫2026全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/9/19(土) ～ 2026/11/29(日)",
+   "venue": "旭川市公会堂(北海道)／いわき芸術文化交流館アリオス セキショウ中劇場(福島県)／ホクト文化ホール 中ホール(長野県)／犬山市民文化会館(愛知県)／米子市文化ホール メインホール(鳥取県)",
+   "pref": "北海道／福島県／長野県／愛知県／鳥取県",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630319",
+   "artist": "妖怪大縁会第九怪公演妖怪百歌物語地獄篇",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/31(土)",
+   "venue": "北翔大学札幌円山キャンパス多目的ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624990",
+   "artist": "朗読劇「古事記」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/12(月・祝)",
+   "venue": "音更町文化センター ふれあいホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623871",
+   "artist": "朗読劇「古事記」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/14(水)",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道",
+   "in_db": false,
+   "name_in_db": true
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628475",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 秋の大文化祭！２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633464",
+   "artist": "『旭川演芸祭２０２６』旭川をみんなで盛り上げよう",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市公会堂(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668936",
+   "artist": "『アメリカン・ドリーム』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621626",
+   "artist": "市原佐都子／Ｑ『キティ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市民交流プラザ クリエイティブスタジオ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625216",
+   "artist": "梅沢富美男劇団",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "帯広市民文化ホール 大ホール(北海道)／北ガス市民ホール 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630817",
+   "artist": "オズブラ生搾り",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669674",
+   "artist": "カズキのタネツアー 2026 S4K",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃｕｂｅ ｇａｒｄｅｎ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669443",
+   "artist": "カズキのタネ Presents kazuki＆Show-hey DANCE WORKSHOP",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＤＡＮＣＥ ＳＴＵＤＩＯ ＮＡＴＩＶＥ ２ｎｄ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629769",
+   "artist": "桂宮治 全国ツアー２０２６ ～Ｒｅｍｅｍｂｅｒ Ｍｉｙａｊｉ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626841",
+   "artist": "桂宮治 全国ツアー２０２６ ～Ｒｅｍｅｍｂｅｒ Ｍｉｙａｊｉ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市公会堂(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625086",
+   "artist": "桂宮治 独演会 当別町文化公演事業",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "とうべつ学園体育館(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617400",
+   "artist": "神田松麻呂独演会ｉｎ札幌",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌ザ・ルーテルホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634414",
+   "artist": "神田松麻呂 日本縦断講談会 ～赤穂義士伝編～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市大雪クリスタルホール レセプション室(北海道)／札幌市民交流プラザ クリエイティブスタジオ(北海道)／とかちプラザ レインボーホール(北海道)／北海道ハウスタウンプラザ 講堂(北海道)／北海道立釧路芸術館 アートホール(北海道)／江戸東京博物館 小ホール(東京都)／百年長屋(大阪府)／コジマホールディングス西区民文化センター 大広間(広島県)／ぽんプラザホール(福岡県)",
+   "pref": "北海道／東京都／大阪府／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627440",
+   "artist": "劇団アンパサンド『立ち止まるには近すぎる』札幌公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669148",
+   "artist": "劇団四季ミュージカル『コーラスライン』／全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市民文化会館 大ホール(北海道)／音更町文化センター 大ホール(北海道)／カナモトホール(北海道)／苫小牧市民文化ホール グランドホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632344",
+   "artist": "劇団フルーツバスケット第３３回オリジナルミュージカル公演 フェアリーテイル ヒーローズ ＳＡＧＡII 『ＡＬＩＣＥ×ＡＬＩＣＥ－ふたつの国の英雄たち－』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌コンベンションセンター 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620305",
+   "artist": "コンカリーニョ２０周年記念提携企画 昭和レディの「コンカリーニョでお祭り騒ぎ！！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630887",
+   "artist": "佐久間一行ＬＩＶＥ ＴＯＵＲ２０２６－２０２７「３０周年コントセレクション」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌ザ・ルーテルホール(北海道)／仙台市シルバーセンター 交流ホール(宮城県)／水戸市民会館 ユードムホール(茨城県)／今池ガスホール(愛知県)／さん太ホール(岡山県)",
+   "pref": "北海道／宮城県／茨城県／愛知県／岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631669",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 演劇企画団体 瓶詰企画",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "演劇専用小劇場ＢＬＯＣＨ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631649",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ ｏｃｏｍｅｎｏｃｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターＺＯＯ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631652",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 劇団怪獣無法地帯",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ターミナルプラザことにパトス(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631647",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 劇団新劇場",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631653",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 劇団内臓天国",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターＺＯＯ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631630",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 劇団ｆｉｒｅｗｏｒｋｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631665",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 劇団夕結び",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターＺＯＯ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631632",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ コレット曰く",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターＺＯＯ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634203",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 後手必殺ファジィ集合",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＥＶＥＮＴ ＳＰＡＣＥ ＥＤｉＴ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631638",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ さっぽろ学生演劇祭２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "演劇専用小劇場ＢＬＯＣＨ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631663",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 札幌市教育文化会館事業課",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ジョブキタ北八劇場(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631646",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 座・れら／札幌ろうあ劇団舞夢",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市こどもの劇場やまびこ座(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628476",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 弦巻楽団",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ターミナルプラザことにパトス(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631644",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ トランク機械シアター",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市こども人形劇場 こぐま座(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630819",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 長谷川恒希のひとり芝居実行委員会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "演劇専用小劇場ＢＬＯＣＨ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631643",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 星くずロンリネス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "演劇専用小劇場ＢＬＯＣＨ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631673",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 北海道二期会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632908",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 北海道二期会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631650",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ ＭＡＭ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ターミナルプラザことにパトス(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628652",
+   "artist": "札幌座第６４回公演 『クリスマス・キャロル』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアターＺＯＯ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625428",
+   "artist": "札幌能楽会 リラの街札幌能",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619466",
+   "artist": "サルゴリラのコントと旅２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)／青森市男女共同参画プラザ（カダール） ＡＶ多機能ホール(青森県)／石川県教育会館(石川県)／今池ガスホール(愛知県)／朝日生命ホール(大阪府)／広島ＪＭＳアステールプラザ 中ホール(広島県)／サンポートホール高松 第１小ホール(香川県)／熊本市男女共同参画センターはあもにい メインホール(熊本県)",
+   "pref": "北海道／青森県／石川県／愛知県／大阪府／広島県／香川県／熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669288",
+   "artist": "三遊亭天どん・三遊亭円楽二人会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "松尾ジンギスカン 札幌北１９条東店(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614433",
+   "artist": "ＴＨＥ ＳＥＣＯＮＤ ライブツアー２０２６～今、全盛期の漫才師達～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／東京エレクトロンホール宮城(宮城県)／有楽町よみうりホール(東京都)／石川県小松市團十郎芸術劇場うらら 大ホール(石川県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／福岡国際会議場 メインホール(福岡県)／熊本城ホール メインホール(熊本県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／石川県／大阪府／福岡県／熊本県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669977",
+   "artist": "タクフェス第14弾『北の島から』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618638",
+   "artist": "立川小春志芸歴二十周年記念落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北海道立釧路芸術館 アートホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619859",
+   "artist": "立川小春志芸歴二十周年記念落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "阿寒湖温泉アイヌコタンオンネチセ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619852",
+   "artist": "立川小春志芸歴二十周年記念落語会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "幕別町百年記念ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624427",
+   "artist": "ダブルインパクトツアー２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／めぐろパーシモンホール 大ホール(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)／福岡国際会議場 メインホール(福岡県)",
+   "pref": "北海道／東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619388",
+   "artist": "ＣＨＯＣＯＬＡＴＥ ＰＬＡＮＥＴ ＬＩＶＥ ＴＯＵＲ ２０２６ 「Ｓｐａｃｙ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)／あきた芸術劇場ミルハス 中ホール(秋田県)／けんしん郡山文化センター 中ホール(福島県)／東京建物 ぴあ シアター(東京都)／有楽町よみうりホール(東京都)／金沢市文化ホール(石川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／京都劇場(京都府)／下関市生涯学習プラザ 海のホール(山口県)／新来島高知重工ホール グリーンホール(高知県)／チトセピアホール(長崎県)／琉球新報ホール(沖縄県)",
+   "pref": "北海道／秋田県／福島県／東京都／石川県／愛知県／京都府／山口県／高知県／長崎県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619338",
+   "artist": "ＴＶｈ落語「林家つる子 三遊亭わん丈 二人会」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 小ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628056",
+   "artist": "ＴＶｈ落語「柳家三三 独演会」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636340",
+   "artist": "トット漫才全国ツアー「一路漫進」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民センター マリンホール(北海道)／てんぶす那覇 テンブスホール(沖縄県)",
+   "pref": "北海道／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636349",
+   "artist": "トットーク",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民センター マリンホール(北海道)／てんぶす那覇 テンブスホール(沖縄県)",
+   "pref": "北海道／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623043",
+   "artist": "鳥肌実 札幌毒炎会 「アルゴリズム演説」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ターミナルプラザことにパトス(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669987",
+   "artist": "トータルテンボス全国漫才ツアー2026「ニコイチ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)／会津若松市文化センター 文化ホール(福島県)／新潟市民プラザ ホール(新潟県)／福井県国際交流会館(福井県)／コジマホールディングス西区民文化センター(広島県)／サンポートホール高松 第１小ホール(香川県)／メディキット県民文化センター イベントホール(宮崎県)",
+   "pref": "北海道／福島県／新潟県／福井県／広島県／香川県／宮崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630441",
+   "artist": "第２６３回道新寄席 春風亭一之輔独演会 【旭川】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市公会堂(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617487",
+   "artist": "道新寄席 落語家生活２０周年記念ツアー 蝶花楼桃花独演会 札幌公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌エルプラザホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630066",
+   "artist": "第２６１回／第２６２回道新寄席 落語教育委員会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)／砂川市地域交流センターゆう 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669646",
+   "artist": "ナイツ独演会 「国民の皆さん」ではなく「国民の一部の皆さん」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)／浅草公会堂(東京都)／有楽町よみうりホール(東京都)／鎌倉芸術館 大ホール(神奈川県)／愛知県産業労働センター ウインクあいち 大ホール(愛知県)／ロームシアター京都 サウスホール(京都府)／ＳＡＷＡＲＡＰＩＡ 大ホール(福岡県)",
+   "pref": "北海道／東京都／神奈川県／愛知県／京都府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621856",
+   "artist": "ニューヨーク単独ライブ「ニューヨークの横からシツレ～します！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622943",
+   "artist": "人形浄瑠璃 文楽",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669989",
+   "artist": "NON STYLE LIVE 2026 ～リバーシ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)／Ｋａｎａｄｅｖｉａ Ｈａｌｌ(東京都)／金沢歌劇座(石川県)／大津市民会館 大ホール(滋賀県)／梅田芸術劇場メインホール(大阪府)／サンポートホール高松 大ホール(香川県)",
+   "pref": "北海道／東京都／石川県／滋賀県／大阪府／香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634857",
+   "artist": "白鳥の湖",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "函館市民会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619955",
+   "artist": "兵動大樹のおしゃべり大好き。４８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)／富山県教育文化会館(富山県)／石川県文教会館ホール(石川県)／浜松市福祉交流センター ホール(静岡県)／なんばグランド花月(大阪府)／おかやま未来ホール(岡山県)／広島ＪＭＳアステールプラザ 大ホール(広島県)／レクザムホール 小ホール(香川県)／松前総合文化センター 広域学習ホール(愛媛県)／新来島高知重工ホール オレンジホール(高知県)／福岡サンパレス(福岡県)／佐賀市立東与賀文化ホール(佐賀県)／熊本城ホール シビックホール（多目的ホール）(熊本県)／宮崎市清武文化会館 半九ホール(宮崎県)／ライカ南国ホール(鹿児島県)",
+   "pref": "北海道／富山県／石川県／静岡県／大阪府／岡山県／広島県／香川県／愛媛県／高知県／福岡県／佐賀県／熊本県／宮崎県／鹿児島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626677",
+   "artist": "星屑の会『星屑の町～忘却篇』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622674",
+   "artist": "「星屑の町忘却篇」苫小牧公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "苫小牧市民文化ホール グランドホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617962",
+   "artist": "僕らの別荘 全国ツアー ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／電力ホール(宮城県)／Ｓｈｉｂｕｙａ ＬＯＶＥＺ(東京都)／中日ホール(愛知県)／福岡国際会議場 メインホール(福岡県)／那覇文化芸術劇場 なはーと 大劇場(沖縄県)",
+   "pref": "北海道／宮城県／東京都／愛知県／福岡県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617928",
+   "artist": "マヂカルラブリー・囲碁将棋のワクワクドキドキツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民会館(北海道)／新潟市民プラザ ホール(新潟県)／しまなみ交流館（テアトロシェルネ） ホール(広島県)",
+   "pref": "北海道／新潟県／広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632645",
+   "artist": "マルゲリータ男とキャンパスガール～ＪＡＲＵＪＡＲＵ ＣＯＮＴＥ ＴＯＵＲ ２０２６ＡＷ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)／日立システムズホール仙台 シアターホール(宮城県)／ＩＭＭ ＴＨＥＡＴＥＲ(東京都)／Ｎｉｔｅｒｒａ日本特殊陶業市民会館 ビレッジホール(愛知県)／ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＴＴホール(大阪府)／広島ＪＭＳアステールプラザ 中ホール(広島県)／福岡市民ホール 中ホール(福岡県)",
+   "pref": "北海道／宮城県／東京都／愛知県／大阪府／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636557",
+   "artist": "漫才選集",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市民文化会館 大ホール(北海道)／金沢歌劇座(石川県)",
+   "pref": "北海道／石川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667068",
+   "artist": "ミキ漫2026全国ツアー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旭川市公会堂(北海道)／いわき芸術文化交流館アリオス セキショウ中劇場(福島県)／ホクト文化ホール 中ホール(長野県)／犬山市民文化会館(愛知県)／米子市文化ホール メインホール(鳥取県)",
+   "pref": "北海道／福島県／長野県／愛知県／鳥取県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669515",
+   "artist": "ミュージカル 「ALICE ～不思議の国のアリスより～」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "帯広市民文化ホール 大ホール(北海道)／カナモトホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668337",
+   "artist": "ミュージカル『ミス・サイゴン』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌文化芸術劇場ｈｉｔａｒｕ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630319",
+   "artist": "妖怪大縁会第九怪公演妖怪百歌物語地獄篇",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北翔大学札幌円山キャンパス多目的ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629537",
+   "artist": "令和八年度松前神楽北海道連合保存会合同公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "小樽市民センター マリンホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624990",
+   "artist": "朗読劇「古事記」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "音更町文化センター ふれあいホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623871",
+   "artist": "朗読劇「古事記」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625674",
+   "artist": "ＯＮＥＯＲ８「台所の女たちへ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "共済ホール(北海道)",
+   "pref": "北海道"
+  }
+ ]
+}
