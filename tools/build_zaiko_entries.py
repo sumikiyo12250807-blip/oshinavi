@@ -228,7 +228,11 @@ def build_one(listrow, det, today, unknown):
     name = re.sub(r'\s+', ' ', (det or {}).get('name') or listrow.get('title') or '').strip()
     if SELLER_SIDE.search(name):
         return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
-    d = listrow.get('date')
+    # 🚨2026-09-24 一覧の日付（tags の countdown）は**公演日とは限らない**＝AKB48劇場・雨模様のソラリスなどで
+    #   締切側の日付が入っていた（2027/1 の公演が「9/24公演」で登録され、翌朝の削除に乗るところだった）。
+    #   個別ページの display_date_period.start（画面の「開演」）を優先し、無い時だけ一覧の日付を使う。
+    dp = ((det or {}).get('display_date_period') or {}).get('start') or {}
+    d = dp.get('date_string') or listrow.get('date')
     if not d:
         return None, '公演日が取れない'
     if d < today:
@@ -243,7 +247,7 @@ def build_one(listrow, det, today, unknown):
     # 🚨**「00:00」は開演時刻ではない**＝ZAIKO側が時刻を入れていないだけ。
     #   バッジに「10/14 00:00公演」と出すと**書いていない時刻を書く**ことになる
     #   （2026-09-21 エージェントの指摘＝24件がこの形だった）。
-    stime = listrow.get('time') or ''
+    stime = (dp.get('time_string') if dp.get('date_string') else '') or listrow.get('time') or ''
     if stime in ('00:00', '0:00'):
         stime = ''
     venue = re.sub(r'\s+', ' ', (det.get('venue_name') or listrow.get('venue') or '')).strip()
@@ -418,6 +422,15 @@ def _selftest():
     assert e['artist'] == '岩立沙穂／柏木由紀' and e['prefecture'] == '東京'
     assert e['_genre'] == 'idol' and e['links']['zaiko'] == lr['url']
     assert e['dateLabel'] == '2026年10月1日(木) 19:00開演', e['dateLabel']
+
+    # ①-2 🚨一覧の日付より個別ページの開演（display_date_period）を優先（2026-09-24 AKB48劇場で一覧が3日前を出した）
+    lr2 = dict(lr, date='2026-09-27', time='16:00')
+    dp = {'start': {'date_string': '2026-09-30', 'time_string': '18:30'}}
+    e1b, _ = build_one(lr2, mk([tk()], display_date_period=dp), today, unk)
+    assert e1b['date'] == '2026-09-30' and e1b['dateLabel'] == '2026年9月30日(水) 18:30開演', e1b['dateLabel']
+    assert '9/30 18:30公演' in e1b['tickets'][0]['type'], e1b['tickets'][0]
+    e1c, _ = build_one(lr2, mk([tk()]), today, unk)          # 個別に無ければ一覧のまま
+    assert e1c['date'] == '2026-09-27', e1c['date']
 
     # ② 🚨ZAIKOは売切と終了をセットで立てる＝**「予定枚数終了」を名乗らない**。
     #    先着の枠が終わった＝**販売終了**（実ページも「販売終了日 …」と書く）
