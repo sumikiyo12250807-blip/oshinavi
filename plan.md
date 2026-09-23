@@ -49,6 +49,12 @@
    feedback_candidate_list_stable_numbering／feedback_review_keep_order
    🚨消す前に「後継へ移す1行」をユーザーに見せる（project_memory_audit）
 
+🛒【楽天＝夜に収集済み・投入は明朝】`tmp/x0923/rakuten_presale_0923pm.json`（材料は .md）
+   ・発売前10件＝理芽/KOKO/春猿火（神椿・12月公演・**9/25 18:00に2次抽選先行**）／
+     ウルトラヒーローズTHE LIVE 浦安（**9/25 10:00 最速先行**）／@JAM PARTY vol.125（9/28 20:00一般）ほか
+   ・手順＝`build_rakuten_entries.py <cand> --start-id N` → `reconcile_rakuten.py --new`（FAILなら投入しない）
+   ・🚨**読めなかった102件**＝「無い」ではなく「確かめられていない」。朝にもう一度回す
+
 🎯【明朝の宿題】
    ① **id21232 ゴスペラーズ全国ツアー（22会場・17枠）＝ id756（ぴあ・25枠）と同じツアー**。**新着プールなので未公開＝害は出ていない**
      ・404なのは `links.eplus` の代表URL（`-P0030745`）**だけ**。**枠に入っている16個の個別URLは全部生きている**（実測 err 0・全部 j-pop）
