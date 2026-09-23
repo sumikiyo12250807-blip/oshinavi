@@ -63,6 +63,8 @@ ZAIKO_GENRE = {
     'Others': 'musicetc',
     # ── 音楽以外 ──
     'Comedy': 'owarai', 'Wrestling': 'sports', 'Art & Design': 'art',
+    # 2026-09-23追加＝夜の収集で「表に無い」と報告された分（売り場がスポーツと言っている）
+    'Sports & Fitness': 'sports', 'Body building': 'sports',
     'Culture': 'event', 'Culture & Subculture': 'event',
     # ⛔写さない＝ジャンルではなく「形式」の札。'Live'（78回）は生演奏という意味で、
     #   これを何かのジャンルに倒すと嘘になる。件数は多いが**無視するのが正しい**。
