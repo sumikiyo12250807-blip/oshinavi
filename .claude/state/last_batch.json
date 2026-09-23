@@ -928,6 +928,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "公演日の取り違えをビルダーで直した後に組んだ。番人一致（1件は県名の有無だけ）。ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-09-24",
+   "slot": "morning",
+   "id_from": 22881,
+   "id_to": 22910,
+   "count": 30,
+   "source": "TIGET tmp/tiget_0924.json（--stop-known 1）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "ぴあ以外＝振り分けはユーザー確認後"
   }
  ]
 }
