@@ -109,7 +109,12 @@ def main():
             time.sleep(a.sleep)
             continue
         old = e.get('tickets') or []
-        merged = new if a.replace else merge_slots(old, new)
+        # 🚨2026-09-24 ぴあのエントリに links.zaiko を足した形（id7217 平松愛理）で、**ぴあの枠まで消した**
+        #   （飛び先URLが空のぴあ枠を自分の枠と見なした）。作り直すのは**飛び先がZAIKOの枠だけ**、
+        #   それ以外の売り場の枠はそのまま前に残す。
+        others = [t for t in old if 'zaiko.io' not in (t.get('url') or '')]
+        mine = [t for t in old if 'zaiko.io' in (t.get('url') or '')]
+        merged = others + (new if a.replace else merge_slots(mine, new))
         if {GZ.key(t) for t in merged} == {GZ.key(t) for t in old}:
             same += 1
         else:
