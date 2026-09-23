@@ -36,6 +36,13 @@
      いま art（美術展）に倒している。中身はブロマイド・サイン会＝**fanevent が筋**。聞きたい
    ・e+ 1件＝下のゴスペラーズ
 
+🗂【memory棚卸しの続き】228件・索引と実ファイルの食い違いは0。統合候補（中身が短い順12件）＝
+   feedback_display_rules／feedback_ticket_date／feedback_filter_selector／project_netlify_credits／
+   feedback_consultation_mark／reference_x_external_link_article／feedback_short_reports／
+   feedback_no_unauthorized_register／feedback_one_url_only／feedback_review_identify_by_url／
+   feedback_candidate_list_stable_numbering／feedback_review_keep_order
+   🚨消す前に「後継へ移す1行」をユーザーに見せる（project_memory_audit）
+
 🎯【明朝の宿題】
    ① **id21232 ゴスペラーズ全国ツアー（22会場・17枠）＝ id756（ぴあ・25枠）と同じツアー**。**新着プールなので未公開＝害は出ていない**
      ・404なのは `links.eplus` の代表URL（`-P0030745`）**だけ**。**枠に入っている16個の個別URLは全部生きている**（実測 err 0・全部 j-pop）
