@@ -939,6 +939,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-09-25",
+   "slot": "morning",
+   "id_from": 22950,
+   "id_to": 23012,
+   "count": 63,
+   "source": "ZAIKO tmp/zaiko_0925.json",
+   "assigned": false,
+   "rechecked": false,
+   "note": "番人 一致63・食い違い0。名前×公演日×会場一致の6件は入れず(tmp/inject_zaiko_report.txt)。ぴあ以外＝振り分けはユーザー確認後"
   }
  ]
 }
