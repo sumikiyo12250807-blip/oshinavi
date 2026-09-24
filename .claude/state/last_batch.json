@@ -950,6 +950,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "番人 一致63・食い違い0。名前×公演日×会場一致の6件は入れず(tmp/inject_zaiko_report.txt)。ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-09-25",
+   "slot": "morning",
+   "id_from": 23013,
+   "id_to": 23544,
+   "count": 532,
+   "source": "FANY tmp/fany_0925.json（11月分が一斉に出た＝478件）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "heal_fany 108件→番人 一致1773・食い違い1。名前×公演日×会場一致の61件は入れず。ぴあ以外＝振り分けはユーザー確認後"
   }
  ]
 }
