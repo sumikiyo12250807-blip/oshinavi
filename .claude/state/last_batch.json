@@ -961,6 +961,28 @@
    "assigned": false,
    "rechecked": false,
    "note": "heal_fany 108件→番人 一致1773・食い違い1。名前×公演日×会場一致の61件は入れず。ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-09-25",
+   "slot": "morning",
+   "id_from": 23545,
+   "id_to": 23728,
+   "count": 153,
+   "source": "ぴあ発売前スイープ 7ジャンル×rlsStatus 0102/0202（tmp/x0925/presale_*）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --new OK152・照合158/178。既存28件へ33枠足し込み。skip(売切)6件は入れず"
+  },
+  {
+   "date": "2026-09-25",
+   "slot": "morning",
+   "id_from": 23729,
+   "id_to": 23892,
+   "count": 164,
+   "source": "TIGET tmp/tiget_0925.json（--stop-known 1）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "番人 一致164。ぴあ以外＝振り分けはユーザー確認後"
   }
  ]
 }
