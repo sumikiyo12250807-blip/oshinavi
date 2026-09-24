@@ -19,8 +19,12 @@
       生成済み（ユーザー承認・$1.30・task 445032822366514・残高 約$8.75）
       素材 tmp/video/flash_0924/（ref_chair.png＝渡した参照画像・song_32_47.mp3・storyboard_4.png）
       道具 tools/flash_storyboard.py（サイトを撮って広告を消しキャラと椅子を置く）／flash_boards.py（流れの絵コンテ）／draw_chair.py
-⏳ 走行中＝ぴあ要再確認278件 reconcile（tmp/x0924/recon_recheck.txt）
-   ／別エージェントの新着チェック2本（ユーザー依頼＝TIGET191・FANY/ZAIKO177）→疑義を直してからpush
+   🔍ぴあ要再確認278＝OK257・MISSING21件取り直し（照合OK20）
+   🔍別エージェントの新着チェック（ユーザー依頼）＝FANY166全一致／TIGET疑義36／ZAIKO疑義6
+     →道具を直した：TIGET＝券種の下の注記（受付：〜／受付終了日時）を読む・発売前も締切／ZAIKO＝発売前も締切・抽選は期間内なら受付中
+     →ZAIKO 62件ヒール（heal_zaikoがぴあ枠を消す穴→直してid7217の2枠を戻した）
+   ✅チェキ通販（id22620）＝ユーザー「A 載せていいわ」＝通販も推し活（memory更新・除外は撤回）
+⏳ 走行中＝TIGETヒール（番人 一致3680・食い違い1672＝形が変わった分）→HEAD突合→朝push
 🔶 残り＝TIGETヒール／新着収集（ぴあ発売前・TIGET）／push直前 reconcile --new→build_ai_page→compact_events
    ⏸楽天の販売中で未登録4件（昼に）＝GirlsAward 9/26 rtkt926 は新規／藤井フミヤ10/10 rtol238⇔id1621(10/18)
      ／大阪芸術花火の市民割 rtg2672⇔id3239／木下大サーカス岡山 rtck026⇔id9186＝足すか別立てかを見比べる
