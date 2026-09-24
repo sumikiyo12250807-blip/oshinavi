@@ -1,3 +1,39 @@
+# ▶▶ 9/24(木) 夜 /clear 後にやること（20:00ごろ書いた）
+
+```
+🚨【アラームは /clear で消える＝入れ直す】CronCreate で ①22:07 夜のヒール ②23:12 夜のpush
+
+✅ X予約済み＝9本 20:01〜22:01（15分おき・予約一覧で9本の時刻を確認済み）
+   ①ヒロアカ ②ヤクルト ③青春ブタ野郎 ④J-POP/ロック🎬動画(tmp/video/flash_0924/flash_0924_x.mp4) ⑤アイドル ⑥お笑い ⑦クラシック/舞台 ⑧スポーツ ⑨イベント
+   本文 tmp/x0924/post01〜09.txt ／ 台帳 tmp/x_media_log.json に④を記録済み（2日後=9/26に動画あり/なしを比べる）
+
+🔴 22:07 夜のヒール（今夜18〜23:30発売のTIGET・ぴあの枠に締切）
+   python tools/heal_tiget.py → --apply（TIGET番人の食い違いから。ほかの売り場の枠は残す作り）
+   python tools/heal_stale_deadlines.py --build → --apply → 止まった分は tmp/x0924/blocked_ids.py → tmp/x0924/heal_union.py --apply
+   python tmp/heal_head_compare_1805.py で「画面に出る枠が減ったエントリ」を数える（数が同じで書き換わっただけは消えていない）
+🔴 23:12 夜のpush（未pushの分＝7.5の取り込み35件・総ざらい9件・振り分け395件・X素材ほか）
+   python tools/reconcile_pia.py --new → python tools/build_ai_page.py → 🆕python tools/compact_events.py --apply
+   → check_order / check_badges / CRLF指紋 → git add index.html sitemap.xml ai.html ai_*.html → commit → push
+   → git log origin/main..HEAD が空を確認 → plan.md に締めを書く
+
+⏳ 返事待ち（お疲れ様でまとめて聞く）
+   ① 携帯で「暗い1〜2秒」が変わったか（朝から19.85MBで公開中）
+   ② ゴスペラーズ id21232（e+）がぴあ id756 と二重＝e+にしか無い枠あり→券種名に売り場を書くか（新着に残してある）
+   ③ 売り場が消えた2件 id17410 DEAD BY DAY NIGHT／id13297 SPAフェス36（消すか販売終了印で残すか）
+   ④ id21880 林家希林＝ぴあ「後日、販売を予定」のまま
+   ⑤ でんじろう先生のキッズ（id6151・7298・9172）に extraGenres=kids を足すか
+🖥 サイトの宿題（表示の変更＝形を見せて確認してから）
+   ・トップの「今週のピックアップ」の導入が長く、スマホで一覧の場所を見失う
+   ・いま何で絞っているのか分かりにくい＝「○○で絞っています／解除」の帯
+🔶 宿題：O-MENZ（9/26一般・eventCd=2638302）と野口五郎（山形先行）の足し込み／ぴあの古い隠れ枠37枠の片付け
+
+📖 今日決まったこと（X_SCRIPT・memory 反映済み）
+   ・まとめ枠のCTAは素の oshinavi.jp（絞り込みURLなし）／主役は ?q= を残し「◯◯で絞り込んだ画面が開く」と1行書く
+   ・明日発売が100件超のまとめは箱の大きい順に20件＋「ほかはoshinavi.jpで」
+   ・主役のフォロワーは明日発売の出演者を全部調べる（17時着手でエージェント2人に最初に投げる）
+   ・遅い夜は5分おきでよい／チェキ・グッズ通販も推し活なので載せる／動画は毎日1本（残高 約$8.75）
+```
+
 # ▶▶ 9/24(木) 朝の便（05:43〜・途中経過）
 
 ```
