@@ -1,3 +1,35 @@
+# ▶▶ 9/25(金) 朝 /clear 後にやること（08:40ごろ書いた）
+
+```
+🚨【アラームは /clear で消える＝入れ直す】CronCreate（one-shot・9/25）で5本：
+   ①15:06 昼の便 ②17:02 X準備 ③19:41 X予約の締め ④22:07 夜のヒール ⑤23:12 夜のpush
+   （今日発売の最終＝15:00が1枠・夜は18:00〜23:30。中身は下と day スキルの手順どおり）
+
+⚠️ 未push＝b85f5468（ゴスペラーズe+版に【e+】・jpop）＋plan.mdの記録2本 → 昼の便のpushで一緒に出す
+   push前は必ず reconcile_pia --new → build_ai_page → compact_events --apply → check_order/check_badges/CRLF
+
+☀️15:06 昼の便
+   heal_stale_deadlines --build → --apply → 止まった分は tmp/x0924/blocked_ids.py → tmp/x0924/heal_union.py --apply
+   → tmp/heal_head_compare_1805.py で消えた枠0（券種名が変わっただけ・枠数同じは消えていない）
+   → e+ tools/heal_eplus_started.py → --apply
+   → TIGETは当日の隠れ枠のエントリだけ gate_tiget_slots --ids → heal_tiget --apply（🚨全件は5,254件で約70分＝回さない）
+   → reconcile_pia --new → build_ai_page → compact_events --apply → 検査 → commit → push → origin/main..HEAD 空
+🐦17:02 X準備（X_SCRIPT.md が正）＝トレンド8位×在庫／明日9/26発売の出演者フォロワーをエージェント2人で
+   → 7.5 ぴあ発売前一覧（明日〜3日後）突き合わせ → 8 投稿に出す公演の総ざらい → Fableで本文 → 検品
+   → 全本を全文でユーザーに見せる（予約は確認後）／動画は毎日1本（台帳 tmp/x_media_log.json）
+   📊9/26に9/24の動画あり/なしをX側の数字で比べる（ユーザー報告＝9/24はサイトに20人以上）
+
+📋 明朝の宿題
+   ・ぴあ新着153件（id23545〜23728）の独立再照合 → 振り分け（ぴあは自走OK）
+   ・ぴあ発売前でskip(売切)の6件（23583〜23585・23596・23606・23675）＝公演がこれからなら印付きで載せるか確認
+   ・新着プール912件（FANY532・TIGET164・ZAIKO63・ぴあ153）＝ぴあ以外の振り分けはユーザー確認後
+   ・FANY保留61件／ZAIKO保留6件＝名前×公演日×会場が既存と一致（二重の疑い）
+
+⏳ 返事待ち なし（①表示1秒＝据え置き ②ゴスペラーズ両方残す＝済み）
+🗂 今日決まったこと（memory反映済み）＝🎉Amazonアソシエイト承認／挨拶・話しかけにはまず一言返す（feedback_greet_back_first）
+   ／index.htmlの重さ＝20.84MBで約1秒・据え置き（内訳 EVENTS14.77MB＋本体SSR5.89MB）
+```
+
 # ▶▶ 9/25(金) 朝の便（05:46〜・途中経過）
 
 ```
