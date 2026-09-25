@@ -983,6 +983,28 @@
    "assigned": false,
    "rechecked": false,
    "note": "番人 一致164。ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-09-26",
+   "slot": "morning",
+   "id_from": 23916,
+   "id_to": 23933,
+   "count": 18,
+   "source": "ZAIKO新着（番人は全件で実行中）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "保留6＝名前×公演日×会場一致"
+  },
+  {
+   "date": "2026-09-26",
+   "slot": "morning",
+   "id_from": 23934,
+   "id_to": 24044,
+   "count": 111,
+   "source": "TIGET新着（--stop-known 1・全カテゴリ）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "番人 一致111／保留21＝名前×公演日一致など"
   }
  ]
 }
