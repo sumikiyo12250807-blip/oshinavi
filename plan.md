@@ -6,6 +6,8 @@
    （今日発売の最終＝15:00が1枠・夜は18:00〜23:30。中身は下と day スキルの手順どおり）
 
 ⚠️ 未push＝b85f5468（ゴスペラーズe+版に【e+】・jpop）＋plan.mdの記録2本 → 昼の便のpushで一緒に出す
+   ＋fa565127（古いバックアップ1,209個をgitから外す・手元は C:\Users\user\oshinavi_bak へ移動済み）＝13:50 ユーザー「うん、それでお願い」
+   ✅ 13:45 アラーム5本 入れ直し済み（このセッション）
    push前は必ず reconcile_pia --new → build_ai_page → compact_events --apply → check_order/check_badges/CRLF
 
 ☀️15:06 昼の便
