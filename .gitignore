@@ -2,3 +2,7 @@
 .minimax_key
 *.key
 .env
+
+# 手元バックアップ（公開しない）
+/index.html.bak*
+/events.html.bak*
