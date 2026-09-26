@@ -52,7 +52,7 @@
       min-height: 100vh;
     }
     html, body { overflow-x: hidden; }
-    /* ── ページの頭（OSHINAVIへ戻る）＝ 1ページ版・pickup/2026-08-20.html と同じ形 ── */
+    /* ── ページの頭（チケット・イベント一覧へ戻る）＝ 1ページ版・pickup/2026-08-20.html と同じ形 ── */
     header {
       background: var(--bg2); border-bottom: 1px solid var(--border);
       padding: 0 20px; display: flex; align-items: center; justify-content: space-between;
@@ -64,10 +64,10 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .nav-back {
-      color: var(--text-muted); text-decoration: none; font-size: 13px; white-space: nowrap;
-      border: 1px solid var(--border); padding: 7px 14px; border-radius: 4px; transition: .2s;
+      color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 700; white-space: nowrap;
+      border: 1px solid var(--accent2); background: rgba(0,229,255,.12); padding: 7px 14px; border-radius: 4px; transition: .2s;
     }
-    .nav-back:hover, .nav-back:focus-visible { color: var(--accent2); border-color: var(--accent2); }
+    .nav-back:hover, .nav-back:focus-visible { color: #0a0a0a; background: var(--accent2); }
     .wrap { max-width: 820px; margin: 0 auto; padding: 0 0 60px; }
     @media (max-width: 400px) { header { padding: 0 14px; } .logo { font-size: 17px; letter-spacing: 2px; } }
 
@@ -205,7 +205,7 @@
     .pickup .pk-text { margin-top: 8px; }
     .pickup .pk-text p { font-size: 15px; line-height: 1.95; margin-bottom: 14px; color: var(--text); }
     .pickup .pk-shows { margin-top: 6px; }
-    /* 前の組／次の組 */
+    /* 前の記事／次の記事 */
     .pickup .pk-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
     .pickup .pk-pager a, .pickup .pk-pager .pk-pager-none {
       display: block; min-width: 0; padding: 11px 13px; border-radius: 5px;
@@ -215,6 +215,10 @@
     .pickup .pk-pager a:hover, .pickup .pk-pager a:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }
     .pickup .pk-pager .pk-prev { text-align: left; }
     .pickup .pk-pager .pk-next { text-align: right; }
+    /* Amazonのグッズボタン（深掘りのジブリなど）＝アソシエイトタグ oshinavi0a-22 */
+    .pickup .pk-amazon { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 14px 16px; border: 1px solid var(--orange); border-radius: 12px; color: var(--text); text-decoration: none; background: rgba(255,171,64,.08); font-weight: 700; }
+    .pickup .pk-amazon:hover, .pickup .pk-amazon:focus-visible { background: rgba(255,171,64,.16); }
+    .pickup .pk-amazon .pk-amazon-go { color: var(--orange); white-space: nowrap; font-size: 13px; }
     .pickup .pk-pager-label { display: block; font-size: 11.5px; color: var(--accent2); font-weight: 700; }
     .pickup .pk-pager-name { display: block; font-size: 14px; font-weight: 800; color: var(--text); margin-top: 2px; }
     .pickup a.pk-toc {
@@ -228,8 +232,8 @@
 <body>
 
 <header>
-  <a href="../../" class="logo">OSHINAVI</a>
-  <a href="../../" class="nav-back">← OSHINAVIへ戻る</a>
+  <a href="../../index.html" class="logo">OSHINAVI</a>
+  <a href="../../index.html" class="nav-back">← チケット・イベント一覧へ</a>
 </header>
 
 <nav class="pk-crumb"><a href="./index.html">← 今週のピックアップ（目次）</a></nav>
@@ -274,16 +278,16 @@
 今週は、10/30(金) 宮城・仙台サンプラザホールと10/31(土) 岩手・盛岡市民文化ホール 大ホールの一般発売（先着）が10/3(土) 10:00からで、売り場はぴあ・ローチケ・e+よ。<br>
 10/24(土) 千葉・松戸・森のホール21 大ホールも同じ10/3(土) 10:00からで、こちらはぴあ・ローチケだわ。</p>
   </div>
-  <a class="pk-shows" href="../../?q=%E4%B8%89%E6%B5%A6%E5%A4%A7%E7%9F%A5">
+  <a class="pk-shows" href="../../index.html?q=%E4%B8%89%E6%B5%A6%E5%A4%A7%E7%9F%A5">
     <b>発売になる公演<span class="pk-go">タップで探す →</span></b>
     10/30 宮城／10/31 岩手
   </a>
-  <nav class="pk-pager" aria-label="前の組・次の組">
-    <a class="pk-prev" href="./yuming.html"><span class="pk-pager-label">← 前の組</span><span class="pk-pager-name">松任谷由実</span></a>
-    <a class="pk-next" href="./hata.html"><span class="pk-pager-label">次の組 →</span><span class="pk-pager-name">秦基博</span></a>
+  <nav class="pk-pager" aria-label="前の記事・次の記事">
+    <a class="pk-prev" href="./yuming.html"><span class="pk-pager-label">← 前の記事</span><span class="pk-pager-name">松任谷由実</span></a>
+    <a class="pk-next" href="./hata.html"><span class="pk-pager-label">次の記事 →</span><span class="pk-pager-name">秦基博</span></a>
   </nav>
   <a class="pk-toc" href="./index.html">今週のピックアップの目次へ戻る</a>
-  <a class="pk-tail" href="../../?status=urgent">他にも気になるアーティストがチケット発売しているわよ。<span class="pk-go">今週発売を見る →</span></a>
+  <a class="pk-tail" href="../../index.html?status=urgent">他にも気になるアーティストがチケット発売しているわよ。<span class="pk-go">今週発売を見る →</span></a>
 </article>
 </main>
 
