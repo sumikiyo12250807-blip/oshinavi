@@ -991,7 +991,7 @@
    "id_to": 23933,
    "count": 18,
    "source": "ZAIKO新着（番人は全件で実行中）",
-   "assigned": false,
+   "assigned": true,
    "rechecked": false,
    "note": "保留6＝名前×公演日×会場一致"
   },
@@ -1002,7 +1002,7 @@
    "id_to": 24044,
    "count": 111,
    "source": "TIGET新着（--stop-known 1・全カテゴリ）",
-   "assigned": false,
+   "assigned": true,
    "rechecked": true,
    "note": "番人 一致111／保留21＝名前×公演日一致など"
   },
@@ -1013,7 +1013,7 @@
    "id_to": 24081,
    "count": 37,
    "source": "FANY新着",
-   "assigned": false,
+   "assigned": true,
    "rechecked": true,
    "note": "番人 一致1762／保留60（名前×公演日×会場一致）"
   },
@@ -1024,7 +1024,7 @@
    "id_to": 24221,
    "count": 134,
    "source": "ぴあ発売前 0102+0202 全7ジャンル（eventCdで仕分け）",
-   "assigned": false,
+   "assigned": true,
    "rechecked": false,
    "note": "発売前率100%／同名の登録がある52件＝tmp/x0926/pia_new_samename.txt（ツアーに畳むか要確認）／既存41件に足し込み"
   }
