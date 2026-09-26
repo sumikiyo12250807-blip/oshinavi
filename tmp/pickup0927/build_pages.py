@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """9/27号「今週のピックアップ」＝1組1ページ版（2026-09-26 ユーザー決定）。
   draft_main_long.md ＋ draft_zen.md →
-    tmp/pickup0927/pages/index.html   … 目次（号の見出し・導入3行・秋のリード・カード6枚・名前タイル・締め）
+    tmp/pickup0927/pages/index.html   … 目次（号の見出し・カード6枚＝名前・イベント名・公演日時・発売日時・名前タイル・締め）
+                                         ※導入3行と秋のリードは目次に置かない（9/26 ユーザー指示）
     tmp/pickup0927/pages/<slug>.html  … 組ごとのページ（本文は折りたたまずに全部）
     tmp/pickup0927/section_top.html   … ボタンのリンク先だけ pickup/2026-09-27/ に替える
   🚨公開フォルダ（pickup/）には書かない。公開時は pages/ の中身を pickup/2026-09-27/ へそのまま移す
@@ -47,6 +48,21 @@ TILES = [("yama", [4521]),
          ("福田こうへい", [734, 21151]),
          ("中村雅俊", [1634, 21235])]
 TAIL = "他にも気になるアーティストがチケット発売しているわよ。"
+# 目次のカード＝アーティスト名・イベント名・公演日時・チケット販売日時だけ（2026-09-26 ユーザー指示「導入文は無くしてシンプルに」）
+# イベント名は公式の正式名称、開演は公式の START（facts_main.md／SCANDAL 静岡 11/28 は 9/26 に公式 finaltour47 で確認）
+EVENT_NAME = {"scandal": "SCANDAL FINAL TOUR 2026-2027「SCANDALの47都道府県ツアー」",
+              "yuming": "FORUM8 presents 松任谷由実 THE WORMHOLE TOUR 2025-2026",
+              "miura": "DAICHI MIURA LIVE TOUR 2026 Raw / Bare",
+              "hata": "HATA MOTOHIRO 20th Anniversary LIVE",
+              "toto": "TOTO 50TH ANNIVERSARY TOUR",
+              "zen": "京都市京セラ美術館 新館 東山キューブ"}
+START = {"10/22 東京": "19:00", "10/24 青森": "17:30", "10/25 秋田": "17:30", "10/27 岩手": "19:00",
+         "10/28 宮城": "19:00", "11/1 山形": "17:30", "11/2 福島": "19:00", "11/28 静岡": "17:30",
+         "R9年 1/29 三重": "19:00", "R9年 1/31 岐阜": "17:30",
+         "11/24 栃木": "18:30", "10/30 宮城": "18:30", "10/31 岩手": "17:30",
+         "11/3 大阪": "17:00", "R9年 3/22 大阪": "17:00"}
+# 深掘りは会期と開館時間（公式 zen-ghibli.jp/kyoto/）
+ZEN_SHOW = "10/3(土)〜12/6(日) 10:00〜18:00 京都"
 
 html = io.open("index.html", encoding="utf-8", newline="").read()
 events = json.loads(re.search(r"const EVENTS = (\[.*?\]);\r?\n", html, re.S).group(1))
@@ -236,7 +252,10 @@ PAGE_CSS = [
     '    }',
     '    .pickup a.pk-card:hover, .pickup a.pk-card:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }',
     '    .pickup .pk-card .pk-sale { margin-bottom: 8px; }',
-    '    .pickup .pk-card-lead { font-size: 14px; line-height: 1.85; color: #d6d6d6; }',
+    '    .pickup .pk-ev { display: block; font-size: 13.5px; font-weight: 700; line-height: 1.6; color: #d6d6d6; margin-bottom: 8px; }',
+    '    .pickup .pk-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 14px; line-height: 1.7; }',
+    '    .pickup .pk-info dt { color: var(--accent2); font-weight: 800; font-size: 12.5px; padding-top: 1px; }',
+    '    .pickup .pk-info dd { color: var(--text); }',
     '    .pickup .pk-card-go { display: block; text-align: right; margin-top: 6px; font-size: 12.5px; font-weight: 800; color: var(--accent); }',
     '    /* 組のページ＝見出しの下に発売バッジ、本文は折りたたまずに全部 */',
     '    .pickup .pk-page-name { font-size: clamp(20px, 4.6vw, 26px); font-weight: 900; line-height: 1.45; color: var(--accent); margin-bottom: 8px; }',
@@ -324,15 +343,34 @@ P += ['<main class="wrap">',
       '  <span class="pk-label">📖 今週のピックアップ</span>',
       '  <h1 class="pk-title">%s</h1>' % esc(title),
       '  <p class="pk-sub">%s</p>' % esc(SUB)]
-P += lede_block("  ")
-P += ['  <div class="pk-lede">', br_p(lead, "    "), '  </div>']
+
+
+def show_lines(a):
+    if a["slug"] == "zen":
+        return [ZEN_SHOW]
+    out = []
+    for lab in a["boxes"][0][2].split("／"):
+        m = re.fullmatch(r"(R9年 )?(\d+)/(\d+) (\S+)", lab)
+        d = "%d-%02d-%02d" % (2027 if m.group(1) else 2026, int(m.group(2)), int(m.group(3)))
+        out.append("%s%s %s %s" % (m.group(1) or "", jp(d), START[lab], m.group(4)))
+    return out
+
+
+def card_sale(a):
+    if a["slug"] == "zen":
+        t = week_slots(by_id[DEEP[3][0]])[0]
+        return "%s %s 当日券" % (jp(t["startDate"]), re.search(r"(\d{1,2}:\d{2})発売", t["type"]).group(1))
+    return a["badge"]
 
 
 def card(a, top=False):
     return ['    <a class="pk-card%s" href="./%s.html">' % (" pk-top" if top else "", a["slug"]),
             '      <span class="pk-name">%s</span>' % esc(a["name"]),
-            '      <span class="pk-sale">%s</span>' % esc(a["badge"]),
-            '      <p class="pk-card-lead">%s</p>' % "<br>\n".join(esc(l) for l in a["card"]),
+            '      <span class="pk-ev">%s</span>' % esc(EVENT_NAME[a["slug"]]),
+            '      <dl class="pk-info">',
+            '        <dt>公演</dt><dd>%s</dd>' % "<br>\n".join(esc(l) for l in show_lines(a)),
+            '        <dt>発売</dt><dd>%s</dd>' % esc(card_sale(a)),
+            '      </dl>',
             '      <span class="pk-card-go">読む →</span>',
             '    </a>']
 
@@ -462,13 +500,12 @@ for fn, s in list(OUT.items()) + [("section_top.html", top)]:
 
 # 本文照合
 tl = text_lines(body_of(OUT["index.html"]))
-need = [title, SUB] + lede + [l for p in lead for l in p]
+need = [title, SUB]
 got = tl[tl.index(title):tl.index(title) + len(need)] if title in tl else []
-print("  本文照合 目次（見出し・導入3行・秋のリード）: %s" % ("一致" if got == need else "★ずれ"))
+print("  本文照合 目次（見出し・副題）: %s" % ("一致" if got == need else "★ずれ"))
 ok &= got == need
 for a in ACTS:
-    for l in a["card"]:
-        assert l in tl, l
+    assert a["name"] in tl and EVENT_NAME[a["slug"]] in tl, a["name"]
     fn = a["slug"] + ".html"
     want = [l for p in a["body"] for l in p]
     have = section_text(OUT[fn], "pk-text")
@@ -480,7 +517,8 @@ for a in ACTS:
 # draft 全体（締めの一文とタイトル類を除く）が各ページに漏れなく1回ずつ入っているか
 all_draft = [l.strip() for l in lines if l.strip() and not l.startswith("## ")
              and not re.match(r"^\*\*.+\*\*$", l.strip()) and l.strip() != TAIL]
-placed = [x for x in need if x != SUB] + [l for a in ACTS for p in a["body"] for l in p]
+# 導入3行と秋のリードは目次から外した（9/26）＝トップの短い版にだけある
+placed = [x for x in need if x != SUB] + lede + [l for p in lead for l in p] + [l for a in ACTS for p in a["body"] for l in p]
 print("  draft の行 %d ／ ページに置いた行 %d ／ 抜け %d" % (len(all_draft), len(placed),
       len([x for x in all_draft if x not in placed])))
 ok &= all_draft == placed
