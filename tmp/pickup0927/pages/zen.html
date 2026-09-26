@@ -197,16 +197,13 @@
     }
     .pickup a.pk-card:hover, .pickup a.pk-card:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }
     .pickup .pk-card .pk-sale { margin-bottom: 8px; }
-    /* 目次＝公式『禅とジブリ』京都展の開催概要の形（項目名・細線に短い色の線・中身） */
-    .pickup .pk-outline { margin-top: 18px; }
-    .pickup .pk-outline dt { position: relative; font-size: 13px; font-weight: 800; color: var(--accent); padding-bottom: 6px; border-bottom: 1px solid var(--border); letter-spacing: .04em; }
-    .pickup .pk-outline dt::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 56px; height: 2px; background: var(--accent); }
-    .pickup .pk-outline dd { font-size: 15px; line-height: 1.8; color: var(--text); margin: 8px 0 18px; }
-    .pickup .pk-outline dd:last-child { margin-bottom: 8px; }
-    .pickup a.pk-read { display: inline-block; font-size: 13px; font-weight: 800; color: var(--accent2); text-decoration: none; margin-bottom: 18px; }
-    .pickup a.pk-read:hover, .pickup a.pk-read:focus-visible { text-decoration: underline; }
-    .pickup .pk-read + .pk-outline { border-top: 1px dashed var(--border); padding-top: 22px; }
-    .pickup .pk-card-go { display: block; text-align: right; margin-top: 6px; font-size: 12.5px; font-weight: 800; color: var(--accent); }
+    /* 目次＝1組1リンク（文字ぜんぶが記事へのリンク） */
+    .pickup a.pk-item { display: block; padding: 14px 2px; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: .2s; }
+    .pickup .pk-h2 + a.pk-item { border-top: 1px solid var(--border); margin-top: 10px; }
+    .pickup a.pk-item:hover, .pickup a.pk-item:focus-visible { background: rgba(224,64,251,.08); }
+    .pickup .pk-i-name { display: block; font-size: 17px; font-weight: 900; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; margin-bottom: 4px; }
+    .pickup .pk-i-line { display: block; font-size: 14.5px; line-height: 1.75; text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 4px; }
+    .pickup .pk-i-line b { color: var(--accent2); font-weight: 800; font-size: 13px; }
     /* 組のページ＝見出しの下に発売バッジ、本文は折りたたまずに全部 */
     .pickup .pk-page-name { font-size: clamp(20px, 4.6vw, 26px); font-weight: 900; line-height: 1.45; color: var(--accent); margin-bottom: 8px; }
     .pickup .pk-page-name.pk-long { font-size: clamp(17px, 3.6vw, 21px); }
