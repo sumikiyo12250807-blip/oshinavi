@@ -1,3 +1,18 @@
+# ▶▶ 9/26(土) 23:0x 夜のヒール後（引き継ぎ）
+
+```
+✅ 目次（pickup/2026-09-27/index.html）＝導入なし・1組4行ぜんぶリンク（ユーザーOK）9178540e
+✅ ボタン＝ジャズ＋音楽系6棚にうちわ／劇団四季アナ雪に最新CD／SPY×FAMILY2にSPY×FAMILYグッズ（画像 img/btn2_spyfamily.png）
+✅ 夜のヒール＝TIGET46（番人48一致）・ZAIKO38（番人12一致・残り1＝売り切れ印の券種2つ id23012）・FANY59（番人1765一致・食い違い1 id20428）
+   ぴあ＝heal_stale 適用＋安全弁58件を足し算・HEAD突合で消えた枠0（28d27ae3）
+⏳ スイープ138件（夜に振り分けたぴあ）を reconcile_pia --ids で照合中 → tmp/reconcile_sweep_0926.txt（ids＝tmp/sweep_ids_0926.txt）
+   終わったら ①MISSING/STALE/DROPを直す（24098 島袋寛子の予定枚数終了4枠・24100 締切）②夜push（reconcile --new → build_ai_page → compact → 点検 → push）
+   🚨ぴあは同時2本禁止＝照合が終わるまで reconcile --new を回さない
+📋 明朝 ①今日発売で締切が入っていない枠 49件88枠（tmp/hidden_left_0926.txt・convert37/ぴあURL無し11/削除候補1）＝朝のheal_staleで拾う。ぴあURL無し11件は売り場を見る
+   ②削除候補115件（heal_stale の「買える枠ゼロ」）＝DELETE_GATE を通してから
+   ③FANY id20428・ZAIKO id23012 の残り1件ずつ ④🚨「振り分けて」＝ゲートを通してから（memory更新済み）
+```
+
 # ▶▶ 9/26(土) 21時ごろ /clear 後にやること（引き継ぎ）
 
 ```
