@@ -1,0 +1,235 @@
+{
+ "lg": "02",
+ "total": 24,
+ "pages": 3,
+ "fetched_pages": 4,
+ "parsed": 20,
+ "new_name_in_db": 3,
+ "new": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671281",
+   "artist": "いぬやま寄席",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "perfdate": "2027/1/24(日)",
+   "venue": "犬山市民文化会館(愛知県)",
+   "pref": "愛知県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671261",
+   "artist": "宰務翔太単独ライブ「Opener」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "perfdate": "2026/11/23(月・祝) ・ 2026/12/3(木)",
+   "venue": "草月ホール(東京都)／神戸朝日ホール(兵庫県)",
+   "pref": "東京都／兵庫県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636260",
+   "artist": "春風亭小朝独演会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "perfdate": "2027/2/6(土)",
+   "venue": "横浜市青葉公会堂 講堂(神奈川県)",
+   "pref": "神奈川県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637343",
+   "artist": "マセキ芸人コレクション～２０２６秋冬～",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/29",
+   "perfdate": "2026/11/26(木)",
+   "venue": "銀座ブロッサム（中央会館）(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670963",
+   "artist": "ミュージカル『イザボー』",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "perfdate": "2027/1/24(日)",
+   "venue": "東京建物ブリリアホール(東京都)",
+   "pref": "東京都",
+   "in_db": false,
+   "name_in_db": false
+  }
+ ],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636852",
+   "artist": "あおば寄席その１５０ 新春爆笑落語会 三遊亭小遊三・林家たい平 二人会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "電力ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671281",
+   "artist": "いぬやま寄席",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "犬山市民文化会館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637024",
+   "artist": "岡野陽一の肉の塊 番組イベント 「赤坂生肉まつり」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "草月ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625633",
+   "artist": "桂二葉 独演会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "トークネットホール仙台 小ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671184",
+   "artist": "ケーシーハシモト スタンダップコメディーLIVE",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "浜離宮朝日ホール 小ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671261",
+   "artist": "宰務翔太単独ライブ「Opener」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "草月ホール(東京都)／神戸朝日ホール(兵庫県)",
+   "pref": "東京都／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629230",
+   "artist": "Ｔｈａｎｋ ｙｏｕ ｖｅｒｙ マッチ ｄｅ ＳＨＯＷ",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/27",
+   "venue": "新歌舞伎座(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636260",
+   "artist": "春風亭小朝独演会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "横浜市青葉公会堂 講堂(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631810",
+   "artist": "新春！特撰落語会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "水戸市民会館 グロービスホール(茨城県)／坂戸市文化会館(埼玉県)",
+   "pref": "茨城県／埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625628",
+   "artist": "新春 柳家三三 独演会",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/1",
+   "venue": "トークネットホール仙台 小ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618631",
+   "artist": "宝塚歌劇宙組全国ツアー 福岡公演",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/28",
+   "venue": "福岡サンパレス(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668505",
+   "artist": "日本列島大捜査網 THE柳沢慎吾劇場 ★ ROCK45TOUR",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/9",
+   "venue": "広島ＪＭＳアステールプラザ 大ホール(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637029",
+   "artist": "「【パンキッシュガーデン】ネモフィラブルー」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/28",
+   "venue": "新宿バティオス(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637343",
+   "artist": "マセキ芸人コレクション～２０２６秋冬～",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/29",
+   "venue": "銀座ブロッサム（中央会館）(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624710",
+   "artist": "マセキ芸人コレクション ｉｎ 新座",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/10/13",
+   "venue": "新座市民会館 ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670963",
+   "artist": "ミュージカル『イザボー』",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "東京建物ブリリアホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670259",
+   "artist": "ミュージカル『ファインディング・ネバーランド』",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "梅田芸術劇場メインホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670259",
+   "artist": "ミュージカル『ファインディング・ネバーランド』",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/29",
+   "venue": "久留米シティプラザ ザ・グランドホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634895",
+   "artist": "めいとう名人会ｖｏｌ．４６「桃月庵白酒・春風亭一之輔 二人会」",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/11/5",
+   "venue": "名古屋市名東文化小劇場(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634631",
+   "artist": "山里亮太の１４０ 石川公演～四十代最後乃石川夢物語～",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "白山市松任文化会館ピーノ(石川県)",
+   "pref": "石川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633966",
+   "artist": "夢の三競演2026～三枚看板・大看板・金看板～",
+   "saletype": "先行抽選",
+   "rlsdate": "2026/9/26",
+   "venue": "ＳｋｙシアターＭＢＳ(大阪府)",
+   "pref": "大阪府"
+  }
+ ]
+}
