@@ -5,9 +5,11 @@
 ✅ ボタン＝ジャズ＋音楽系6棚にうちわ／劇団四季アナ雪に最新CD／SPY×FAMILY2にSPY×FAMILYグッズ（画像 img/btn2_spyfamily.png）
 ✅ 夜のヒール＝TIGET46（番人48一致）・ZAIKO38（番人12一致・残り1＝売り切れ印の券種2つ id23012）・FANY59（番人1765一致・食い違い1 id20428）
    ぴあ＝heal_stale 適用＋安全弁58件を足し算・HEAD突合で消えた枠0（28d27ae3）
-⏳ スイープ138件（夜に振り分けたぴあ）を reconcile_pia --ids で照合中 → tmp/reconcile_sweep_0926.txt（ids＝tmp/sweep_ids_0926.txt）
-   終わったら ①MISSING/STALE/DROPを直す（24098 島袋寛子の予定枚数終了4枠・24100 締切）②夜push（reconcile --new → build_ai_page → compact → 点検 → push）
-   🚨ぴあは同時2本禁止＝照合が終わるまで reconcile --new を回さない
+✅ スイープ138件 reconcile_pia --ids＝一致137＋24103（今日で切れる発売前2枠が残るだけ）／混雑2件（24117・24146）は単独で一致
+✅ 23:0x 夜push 05e17765（reconcile --new 対象0・エラー0／SSR 333ページ／compact 20.82MB／バッジ・並び順・CRLF・gtag OK）＝origin/main..HEAD 空
+   今日のpushは朝・昼・夜の3回で締め。ai.html の2行（SSRの更新分）と plan.md はcommitだけ＝明朝のpushに乗せる
+   🎧Amazon最新CDの実測は裏で続行（tmp/x0926/amazon_fill.log）→ 明朝 --apply
+⓪ 明朝いちばん＝24098 島袋寛子の予定枚数終了4枠を足す（reconcileは買える枠だけ比べるので出ない）
 📋 明朝 ①今日発売で締切が入っていない枠 49件88枠（tmp/hidden_left_0926.txt・convert37/ぴあURL無し11/削除候補1）＝朝のheal_staleで拾う。ぴあURL無し11件は売り場を見る
    ②削除候補115件（heal_stale の「買える枠ゼロ」）＝DELETE_GATE を通してから
    ③FANY id20428・ZAIKO id23012 の残り1件ずつ ④🚨「振り分けて」＝ゲートを通してから（memory更新済み）
