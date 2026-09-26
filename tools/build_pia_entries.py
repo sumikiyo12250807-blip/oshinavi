@@ -31,7 +31,7 @@ def norm_fw(s):
 
 # 「最新CD」リンク(links.amazon)を自動付与する音楽系ジャンル。フェス/sports/engeki/owarai/
 # dento/kids/musical等は付けない(汎用グッズボタンに任せる)。memory: reference_amazon_affiliate
-MUSIC_GENRES = {'jpop', 'rock', 'idol', 'kpop', 'hiphop', 'classic', 'anime', 'seiyuu', 'vtuber', 'youtuber', 'enka', 'jazz'}
+MUSIC_GENRES = {'jpop', 'rock', 'idol', 'kpop', 'hiphop', 'classic', 'anime', 'seiyuu', 'vtuber', 'youtuber', 'enka', 'jazz', 'yougaku'}  # 2026-09-26 洋楽を足す（ユーザー「洋楽ももちろん」）
 def amazon_cd(name):
     """アーティスト名からAmazon音楽カテゴリ検索リンクを作る。イベント名の尻尾は落とす。"""
     kw = re.sub(r'＜.*?＞', '', name); kw = re.sub(r'（.*?）', '', kw)

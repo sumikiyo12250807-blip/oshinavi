@@ -17,9 +17,9 @@ DRAFT_MAIN = "tmp/pickup0927/draft_main_long.md"
 DRAFT_ZEN = "tmp/pickup0927/draft_zen.md"
 OUT_DIR = "tmp/pickup0927/pages"
 TOP_FILE = "tmp/pickup0927/section_top.html"
-TOP_HREF_OLD, TOP_HREF_NEW = 'href="pickup/2026-09-27.html"', 'href="pickup/2026-09-27/"'
+TOP_HREF_OLD, TOP_HREF_NEW = 'href="pickup/2026-09-27.html"', 'href="pickup/2026-09-27/index.html"'
 BASE = "https://oshinavi.jp/pickup/2026-09-27/"
-HOME = "../../"
+HOME = "../../index.html"
 FROM, TO = "2026-09-28", "2026-10-04"
 SUB = "9/28(月)〜10/4(日)にチケットの発売が始まるアーティスト紹介"
 WD = "月火水木金土日"
@@ -197,7 +197,7 @@ PAGE_CSS = [
     m_root.group(0).strip("\n"),
     m_body.group(0).strip("\n"),
     '    html, body { overflow-x: hidden; }',
-    '    /* ── ページの頭（OSHINAVIへ戻る）＝ 1ページ版・pickup/2026-08-20.html と同じ形 ── */',
+    '    /* ── ページの頭（チケット・イベント一覧へ戻る）＝ 1ページ版・pickup/2026-08-20.html と同じ形 ── */',
     '    header {',
     '      background: var(--bg2); border-bottom: 1px solid var(--border);',
     '      padding: 0 20px; display: flex; align-items: center; justify-content: space-between;',
@@ -209,10 +209,10 @@ PAGE_CSS = [
     '      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;',
     '    }',
     '    .nav-back {',
-    '      color: var(--text-muted); text-decoration: none; font-size: 13px; white-space: nowrap;',
-    '      border: 1px solid var(--border); padding: 7px 14px; border-radius: 4px; transition: .2s;',
+    '      color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 700; white-space: nowrap;',
+    '      border: 1px solid var(--accent2); background: rgba(0,229,255,.12); padding: 7px 14px; border-radius: 4px; transition: .2s;',
     '    }',
-    '    .nav-back:hover, .nav-back:focus-visible { color: var(--accent2); border-color: var(--accent2); }',
+    '    .nav-back:hover, .nav-back:focus-visible { color: #0a0a0a; background: var(--accent2); }',
     '    .wrap { max-width: 820px; margin: 0 auto; padding: 0 0 60px; }',
     '    @media (max-width: 400px) { header { padding: 0 14px; } .logo { font-size: 17px; letter-spacing: 2px; } }',
     '',
@@ -244,7 +244,7 @@ PAGE_CSS = [
     '    .pickup .pk-text { margin-top: 8px; }',
     '    .pickup .pk-text p { font-size: 15px; line-height: 1.95; margin-bottom: 14px; color: var(--text); }',
     '    .pickup .pk-shows { margin-top: 6px; }',
-    '    /* 前の組／次の組 */',
+    '    /* 前の記事／次の記事 */',
     '    .pickup .pk-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }',
     '    .pickup .pk-pager a, .pickup .pk-pager .pk-pager-none {',
     '      display: block; min-width: 0; padding: 11px 13px; border-radius: 5px;',
@@ -254,6 +254,10 @@ PAGE_CSS = [
     '    .pickup .pk-pager a:hover, .pickup .pk-pager a:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }',
     '    .pickup .pk-pager .pk-prev { text-align: left; }',
     '    .pickup .pk-pager .pk-next { text-align: right; }',
+    '    /* Amazonのグッズボタン（深掘りのジブリなど）＝アソシエイトタグ oshinavi0a-22 */',
+    '    .pickup .pk-amazon { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 14px 16px; border: 1px solid var(--orange); border-radius: 12px; color: var(--text); text-decoration: none; background: rgba(255,171,64,.08); font-weight: 700; }',
+    '    .pickup .pk-amazon:hover, .pickup .pk-amazon:focus-visible { background: rgba(255,171,64,.16); }',
+    '    .pickup .pk-amazon .pk-amazon-go { color: var(--orange); white-space: nowrap; font-size: 13px; }',
     '    .pickup .pk-pager-label { display: block; font-size: 11.5px; color: var(--accent2); font-weight: 700; }',
     '    .pickup .pk-pager-name { display: block; font-size: 14px; font-weight: 800; color: var(--text); margin-top: 2px; }',
     '    .pickup a.pk-toc {',
@@ -285,7 +289,7 @@ def head(ptitle, desc, canon, ogt):
             '  <style>'] + PAGE_CSS + ['  </style>', '</head>', '<body>', '',
             '<header>',
             '  <a href="%s" class="logo">OSHINAVI</a>' % HOME,
-            '  <a href="%s" class="nav-back">← OSHINAVIへ戻る</a>' % HOME,
+            '  <a href="%s" class="nav-back">← チケット・イベント一覧へ</a>' % HOME,
             '</header>', '']
 
 
@@ -374,10 +378,10 @@ for k, a in enumerate(ACTS):
         print("  %s | %s | %s | %s" % (fn, a["badge"], href, lst))
     prv = ACTS[k - 1] if k > 0 else None
     nxt = ACTS[k + 1] if k + 1 < len(ACTS) else None
-    P.append('  <nav class="pk-pager" aria-label="前の組・次の組">')
-    P.append('    <a class="pk-prev" href="./%s.html"><span class="pk-pager-label">← 前の組</span><span class="pk-pager-name">%s</span></a>'
+    P.append('  <nav class="pk-pager" aria-label="前の記事・次の記事">')
+    P.append('    <a class="pk-prev" href="./%s.html"><span class="pk-pager-label">← 前の記事</span><span class="pk-pager-name">%s</span></a>'
              % (prv["slug"], esc(prv["name"])) if prv else '    <span class="pk-pager-none"></span>')
-    P.append('    <a class="pk-next" href="./%s.html"><span class="pk-pager-label">次の組 →</span><span class="pk-pager-name">%s</span></a>'
+    P.append('    <a class="pk-next" href="./%s.html"><span class="pk-pager-label">次の記事 →</span><span class="pk-pager-name">%s</span></a>'
              % (nxt["slug"], esc(nxt["name"])) if nxt else '    <span class="pk-pager-none"></span>')
     P += ['  </nav>',
           '  <a class="pk-toc" href="./index.html">今週のピックアップの目次へ戻る</a>']
@@ -437,7 +441,7 @@ for fn, s in list(OUT.items()) + [("section_top.html", top)]:
         if h.startswith(("http", "/")):
             continue
         if fn == "section_top.html":
-            if h != "pickup/2026-09-27/":
+            if h != "pickup/2026-09-27/index.html":
                 broken.append(h)
             continue
         if h.startswith(HOME):

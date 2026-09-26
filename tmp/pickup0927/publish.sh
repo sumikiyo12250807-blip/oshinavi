@@ -10,4 +10,4 @@ PYTHONIOENCODING=utf-8 python tools/build_ai_page.py
 PYTHONIOENCODING=utf-8 python tools/compact_events.py --apply
 node tools/check_order.js | grep '並び順違反'
 PYTHONIOENCODING=utf-8 python tools/check_badges.py | grep -E '^(OK|NG)'
-grep -c 'pickup/2026-09-27/' index.html
+grep -c 'pickup/2026-09-27/index.html' index.html

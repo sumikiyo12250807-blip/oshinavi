@@ -52,7 +52,7 @@
       min-height: 100vh;
     }
     html, body { overflow-x: hidden; }
-    /* ── ページの頭（OSHINAVIへ戻る）＝ 1ページ版・pickup/2026-08-20.html と同じ形 ── */
+    /* ── ページの頭（チケット・イベント一覧へ戻る）＝ 1ページ版・pickup/2026-08-20.html と同じ形 ── */
     header {
       background: var(--bg2); border-bottom: 1px solid var(--border);
       padding: 0 20px; display: flex; align-items: center; justify-content: space-between;
@@ -64,10 +64,10 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .nav-back {
-      color: var(--text-muted); text-decoration: none; font-size: 13px; white-space: nowrap;
-      border: 1px solid var(--border); padding: 7px 14px; border-radius: 4px; transition: .2s;
+      color: var(--accent2); text-decoration: none; font-size: 13px; font-weight: 700; white-space: nowrap;
+      border: 1px solid var(--accent2); background: rgba(0,229,255,.12); padding: 7px 14px; border-radius: 4px; transition: .2s;
     }
-    .nav-back:hover, .nav-back:focus-visible { color: var(--accent2); border-color: var(--accent2); }
+    .nav-back:hover, .nav-back:focus-visible { color: #0a0a0a; background: var(--accent2); }
     .wrap { max-width: 820px; margin: 0 auto; padding: 0 0 60px; }
     @media (max-width: 400px) { header { padding: 0 14px; } .logo { font-size: 17px; letter-spacing: 2px; } }
 
@@ -205,7 +205,7 @@
     .pickup .pk-text { margin-top: 8px; }
     .pickup .pk-text p { font-size: 15px; line-height: 1.95; margin-bottom: 14px; color: var(--text); }
     .pickup .pk-shows { margin-top: 6px; }
-    /* 前の組／次の組 */
+    /* 前の記事／次の記事 */
     .pickup .pk-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
     .pickup .pk-pager a, .pickup .pk-pager .pk-pager-none {
       display: block; min-width: 0; padding: 11px 13px; border-radius: 5px;
@@ -215,6 +215,10 @@
     .pickup .pk-pager a:hover, .pickup .pk-pager a:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }
     .pickup .pk-pager .pk-prev { text-align: left; }
     .pickup .pk-pager .pk-next { text-align: right; }
+    /* Amazonのグッズボタン（深掘りのジブリなど）＝アソシエイトタグ oshinavi0a-22 */
+    .pickup .pk-amazon { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 14px 16px; border: 1px solid var(--orange); border-radius: 12px; color: var(--text); text-decoration: none; background: rgba(255,171,64,.08); font-weight: 700; }
+    .pickup .pk-amazon:hover, .pickup .pk-amazon:focus-visible { background: rgba(255,171,64,.16); }
+    .pickup .pk-amazon .pk-amazon-go { color: var(--orange); white-space: nowrap; font-size: 13px; }
     .pickup .pk-pager-label { display: block; font-size: 11.5px; color: var(--accent2); font-weight: 700; }
     .pickup .pk-pager-name { display: block; font-size: 14px; font-weight: 800; color: var(--text); margin-top: 2px; }
     .pickup a.pk-toc {
@@ -228,8 +232,8 @@
 <body>
 
 <header>
-  <a href="../../" class="logo">OSHINAVI</a>
-  <a href="../../" class="nav-back">← OSHINAVIへ戻る</a>
+  <a href="../../index.html" class="logo">OSHINAVI</a>
+  <a href="../../index.html" class="nav-back">← チケット・イベント一覧へ</a>
 </header>
 
 <nav class="pk-crumb"><a href="./index.html">← 今週のピックアップ（目次）</a></nav>
@@ -288,16 +292,16 @@ JR恵比寿駅西口と日比谷線恵比寿駅2番出口から徒歩3分で、�
 2回目の一般発売は2027年1/9(土) 10:00、3回目は2027年2/27(土) 10:00だから、こちらはまだ先ね。<br>
 行きたい街の公演は、OSHINAVIでチェックしておいて頂戴。</p>
   </div>
-  <a class="pk-shows" href="../../?q=SCANDAL">
+  <a class="pk-shows" href="../../index.html?q=SCANDAL">
     <b>発売になる公演<span class="pk-go">タップで探す →</span></b>
     10/22 東京／10/24 青森／10/25 秋田／10/27 岩手／10/28 宮城／11/1 山形／11/2 福島／R9年 1/29 三重／R9年 1/31 岐阜／11/28 静岡
   </a>
-  <nav class="pk-pager" aria-label="前の組・次の組">
+  <nav class="pk-pager" aria-label="前の記事・次の記事">
     <span class="pk-pager-none"></span>
-    <a class="pk-next" href="./yuming.html"><span class="pk-pager-label">次の組 →</span><span class="pk-pager-name">松任谷由実</span></a>
+    <a class="pk-next" href="./yuming.html"><span class="pk-pager-label">次の記事 →</span><span class="pk-pager-name">松任谷由実</span></a>
   </nav>
   <a class="pk-toc" href="./index.html">今週のピックアップの目次へ戻る</a>
-  <a class="pk-tail" href="../../?status=urgent">他にも気になるアーティストがチケット発売しているわよ。<span class="pk-go">今週発売を見る →</span></a>
+  <a class="pk-tail" href="../../index.html?status=urgent">他にも気になるアーティストがチケット発売しているわよ。<span class="pk-go">今週発売を見る →</span></a>
 </article>
 </main>
 
