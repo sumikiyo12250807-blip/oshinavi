@@ -8,8 +8,9 @@
    TIGET＝今日発売の夜の枠だけ gate_tiget_slots --ids → heal_tiget --apply／FANY・ZAIKOの今日の隠れ枠
    🚨スイープ分 24100 Gentle Forest Jazz Band（プリセール締切9/29）・24152 ガクテンソク×例えば炎（今日20:00発売）が締切を持ったか reconcile_pia --ids で確かめる
 
-② 記事の最終ファクトチェック＝エージェントに投げ済み → 結果は tmp/pickup0927/factcheck_final.md（書き換えた文だけ：秦基博の書き出し・禅とジブリ「10/1発売予定」・導入/リード/見出し）
-   🔴誤りがあれば直す（原稿 tmp/pickup0927/draft_main_long.md → python tmp/pickup0927/build_pages.py → cp tmp/pickup0927/pages/*.html pickup/2026-09-27/）
+② ✅記事の最終ファクトチェック済み（誤り0・要注意1）＝導入の引用を「答えを急がない余白」に直してcommit済み（653f472c）
+   ⚠️【ユーザーに1問・返事待ち】禅とジブリの本文20行目「本展覧会に、“答え”はありません。」も公式ページで非表示部分の引用＝差し替えるか？（返事が無ければ現状のまま公開）
+   （旧メモ）🔴誤りがあれば直す（原稿 tmp/pickup0927/draft_main_long.md → python tmp/pickup0927/build_pages.py → cp tmp/pickup0927/pages/*.html pickup/2026-09-27/）
    直しきれなければ記事を外してpush（index.html の pickup セクションは git show HEAD~? で戻す・pickup/2026-09-27 は git rm）
    ✅ユーザーOK済み「いいと思う　今夜のうちに載せてもいいわね」＝記事は 5b8f94c8 でコミット済み（未push）
 
