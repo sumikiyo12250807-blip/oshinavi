@@ -1,0 +1,28 @@
+const T=__T__;
+const H=__H__, M=__M__, MARK=__MARK__;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const norm=s=>s.replace(/\s+/g,'');
+let box; for(let i=0;i<25&&!(box=document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]'));i++) await sleep(300);
+if(!box) throw 'NO_BOX';
+if(box.innerText.trim().length>0 && norm(box.innerText)!==norm(T)) throw 'BOX_NOT_EMPTY:'+box.innerText.slice(0,40);
+if(norm(box.innerText)!==norm(T)){ box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T);
+box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true}));
+await sleep(1800);}
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_MISMATCH len='+box.innerText.length;
+if(!box.innerText.includes(MARK)) throw 'MARK_FAIL';
+const so=document.querySelector('[data-testid="scheduleOption"]'); if(!so) throw 'NO_SCHEDULE_OPT'; so.click();
+let sels=[]; for(let i=0;i<20&&(sels=[...document.querySelectorAll('select')]).length<5;i++) await sleep(300);
+const setter=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value').set;
+const setv=(s,v)=>{setter.call(s,String(v));s.dispatchEvent(new Event('change',{bubbles:true}));};
+setv(sels[0],'9'); setv(sels[1],'25'); setv(sels[3],H); setv(sels[4],M); await sleep(800);
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+const want='Fri, Sep 25, 2026 at '+(H-12)+':'+String(M).padStart(2,'0')+' PM';
+if(!will.includes(want)) throw 'WILL_MISMATCH '+will;
+[...document.querySelectorAll('[role="button"],button')].find(b=>b.innerText.trim()==='Confirm').click();
+await sleep(1500);
+box=document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]')||box;
+const btn=document.querySelector('[data-testid="tweetButtonInline"],[data-testid="tweetButton"]');
+if(!btn||btn.innerText.trim()!=='Schedule') throw 'BTN '+(btn&&btn.innerText);
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_CHANGED';
+btn.click(); await sleep(2500);
+[...document.querySelectorAll('[data-testid="toast"],[role="alert"]')].map(t=>t.innerText).join(' | ');
