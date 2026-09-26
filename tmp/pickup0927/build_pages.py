@@ -252,10 +252,15 @@ PAGE_CSS = [
     '    }',
     '    .pickup a.pk-card:hover, .pickup a.pk-card:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }',
     '    .pickup .pk-card .pk-sale { margin-bottom: 8px; }',
-    '    .pickup .pk-ev { display: block; font-size: 13.5px; font-weight: 700; line-height: 1.6; color: #d6d6d6; margin-bottom: 8px; }',
-    '    .pickup .pk-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 14px; line-height: 1.7; }',
-    '    .pickup .pk-info dt { color: var(--accent2); font-weight: 800; font-size: 12.5px; padding-top: 1px; }',
-    '    .pickup .pk-info dd { color: var(--text); }',
+    '    /* 目次＝公式『禅とジブリ』京都展の開催概要の形（項目名・細線に短い色の線・中身） */',
+    '    .pickup .pk-outline { margin-top: 18px; }',
+    '    .pickup .pk-outline dt { position: relative; font-size: 13px; font-weight: 800; color: var(--accent); padding-bottom: 6px; border-bottom: 1px solid var(--border); letter-spacing: .04em; }',
+    '    .pickup .pk-outline dt::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 56px; height: 2px; background: var(--accent); }',
+    '    .pickup .pk-outline dd { font-size: 15px; line-height: 1.8; color: var(--text); margin: 8px 0 18px; }',
+    '    .pickup .pk-outline dd:last-child { margin-bottom: 8px; }',
+    '    .pickup a.pk-read { display: inline-block; font-size: 13px; font-weight: 800; color: var(--accent2); text-decoration: none; margin-bottom: 18px; }',
+    '    .pickup a.pk-read:hover, .pickup a.pk-read:focus-visible { text-decoration: underline; }',
+    '    .pickup .pk-read + .pk-outline { border-top: 1px dashed var(--border); padding-top: 22px; }',
     '    .pickup .pk-card-go { display: block; text-align: right; margin-top: 6px; font-size: 12.5px; font-weight: 800; color: var(--accent); }',
     '    /* 組のページ＝見出しの下に発売バッジ、本文は折りたたまずに全部 */',
     '    .pickup .pk-page-name { font-size: clamp(20px, 4.6vw, 26px); font-weight: 900; line-height: 1.45; color: var(--accent); margin-bottom: 8px; }',
@@ -348,6 +353,9 @@ P += ['<main class="wrap">',
 def show_lines(a):
     if a["slug"] == "zen":
         return [ZEN_SHOW]
+    # SCANDAL は全部並べない（9/26 ユーザー指示）＝初日＋10/3に一般発売になる前期の範囲（公式 finaltour47：前期 10/22〜R9年 2/23 の39公演）
+    if a["slug"] == "scandal":
+        return ["10/22(木) 19:00 東京ほか、R9年 2/23(火)までの39公演"]
     out = []
     for lab in a["boxes"][0][2].split("／"):
         m = re.fullmatch(r"(R9年 )?(\d+)/(\d+) (\S+)", lab)
@@ -364,23 +372,26 @@ def card_sale(a):
 
 
 def card(a, top=False):
-    return ['    <a class="pk-card%s" href="./%s.html">' % (" pk-top" if top else "", a["slug"]),
-            '      <span class="pk-name">%s</span>' % esc(a["name"]),
-            '      <span class="pk-ev">%s</span>' % esc(EVENT_NAME[a["slug"]]),
-            '      <dl class="pk-info">',
-            '        <dt>公演</dt><dd>%s</dd>' % "<br>\n".join(esc(l) for l in show_lines(a)),
-            '        <dt>発売</dt><dd>%s</dd>' % esc(card_sale(a)),
-            '      </dl>',
-            '      <span class="pk-card-go">読む →</span>',
-            '    </a>']
+    # 公式『禅とジブリ』京都展の「開催概要」の並び（項目名＋下線→中身）＝カードの枠は付けない（9/26 ユーザー指示）
+    zen = a["slug"] == "zen"
+    rows = [("展覧会名" if zen else "アーティスト名", [a["name"]]),
+            ("会場" if zen else "イベント名", [EVENT_NAME[a["slug"]]]),
+            ("会期・開館時間" if zen else "公演日時", show_lines(a)),
+            ("チケット販売日時", [card_sale(a)])]
+    P = ['    <dl class="pk-outline">']
+    for k, v in rows:
+        P.append('      <dt>%s</dt><dd>%s</dd>' % (k, "<br>\n".join(esc(l) for l in v)))
+    P += ['    </dl>',
+          '    <a class="pk-read" href="./%s.html">記事を読む →</a>' % a["slug"]]
+    return P
 
 
-P += ['  <h2 class="pk-h2">今週の主役</h2>', '  <div class="pk-cards">']
+P += ['  <h2 class="pk-h2">今週の主役</h2>']
 for n, a in enumerate(ACTS[:-1]):
     P += card(a, n == 0)
-P += ['  </div>', '  <h2 class="pk-h2">今週の深掘り</h2>', '  <div class="pk-cards">']
+P += ['  <h2 class="pk-h2">今週の深掘り</h2>']
 P += card(ACTS[-1])
-P += ['  </div>',
+P += [
       '  <p class="pk-others-note">今週はほかにも、こんな名前が出るのよ。</p>',
       '  <div class="pk-others">']
 print("── タイル")
@@ -449,7 +460,7 @@ def body_of(s):
 
 def text_lines(s):
     s = re.sub(r"<br>\s*", "\n", s)
-    s = re.sub(r"</(p|span|b|h1|h2|button|a|div|nav)>", "\n", s)
+    s = re.sub(r"</(p|span|b|h1|h2|button|a|div|nav|dt|dd)>", "\n", s)
     s = re.sub(r"<[^>]+>", "", s)
     return [H.unescape(x).strip() for x in s.split("\n") if x.strip()]
 
