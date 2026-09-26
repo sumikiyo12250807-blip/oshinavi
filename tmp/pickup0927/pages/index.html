@@ -197,7 +197,10 @@
     }
     .pickup a.pk-card:hover, .pickup a.pk-card:focus-visible { border-color: var(--accent); background: rgba(224,64,251,.10); }
     .pickup .pk-card .pk-sale { margin-bottom: 8px; }
-    .pickup .pk-card-lead { font-size: 14px; line-height: 1.85; color: #d6d6d6; }
+    .pickup .pk-ev { display: block; font-size: 13.5px; font-weight: 700; line-height: 1.6; color: #d6d6d6; margin-bottom: 8px; }
+    .pickup .pk-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 14px; line-height: 1.7; }
+    .pickup .pk-info dt { color: var(--accent2); font-weight: 800; font-size: 12.5px; padding-top: 1px; }
+    .pickup .pk-info dd { color: var(--text); }
     .pickup .pk-card-go { display: block; text-align: right; margin-top: 6px; font-size: 12.5px; font-weight: 800; color: var(--accent); }
     /* 組のページ＝見出しの下に発売バッジ、本文は折りたたまずに全部 */
     .pickup .pk-page-name { font-size: clamp(20px, 4.6vw, 26px); font-weight: 900; line-height: 1.45; color: var(--accent); margin-bottom: 8px; }
@@ -241,53 +244,61 @@
   <span class="pk-label">📖 今週のピックアップ</span>
   <h1 class="pk-title">秋の夜長に、先の楽しみを</h1>
   <p class="pk-sub">9/28(月)〜10/4(日)にチケットの発売が始まるアーティスト紹介</p>
-  <div class="pk-lede">
-    <p>来年の春まで、推しに会える日をOSHINAVIでチェックしていく季節よ。<br>
-SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発売になるの。</p>
-    <p class="pk-tease">深掘りは、公式が「答えを急がない余白」と書く『禅とジブリ』展よ。</p>
-  </div>
-  <div class="pk-lede">
-    <p>10月に入ると、夕方の風がすっかり秋になるわね。<br>
-ライブの帰り道に、外の空気が気持ちいい季節でもあるの。<br>
-今週の顔ぶれは、ライブハウスからホール、アリーナまで、会場の大きさもいろいろよ。<br>
-行き先は年内の公演もあれば、来年の春の公演もあるわ。<br>
-気になる名前をチケットイベントの検索窓でチェックしてみて頂戴。<br>
-土曜の朝10時の前に、チケットイベントのところで発売の時刻をチェックしておくと安心ね。</p>
-  </div>
   <h2 class="pk-h2">今週の主役</h2>
   <div class="pk-cards">
     <a class="pk-card pk-top" href="./scandal.html">
       <span class="pk-name">SCANDAL</span>
-      <span class="pk-sale">10/3(土) 10:00 一般発売</span>
-      <p class="pk-card-lead">ライブハウスのフロアで、最初の一音を待つあの時間。<br>
-SCANDALがその時間を47都道府県の街で用意してくれるツアーのうち、1回目の39公演が今週一般発売になるの。</p>
+      <span class="pk-ev">SCANDAL FINAL TOUR 2026-2027「SCANDALの47都道府県ツアー」</span>
+      <dl class="pk-info">
+        <dt>公演</dt><dd>10/22(木) 19:00 東京<br>
+10/24(土) 17:30 青森<br>
+10/25(日) 17:30 秋田<br>
+10/27(火) 19:00 岩手<br>
+10/28(水) 19:00 宮城<br>
+11/1(日) 17:30 山形<br>
+11/2(月) 19:00 福島<br>
+R9年 1/29(金) 19:00 三重<br>
+R9年 1/31(日) 17:30 岐阜<br>
+11/28(土) 17:30 静岡</dd>
+        <dt>発売</dt><dd>10/3(土) 10:00 一般発売</dd>
+      </dl>
       <span class="pk-card-go">読む →</span>
     </a>
     <a class="pk-card" href="./yuming.html">
       <span class="pk-name">松任谷由実</span>
-      <span class="pk-sale">10/3(土) 10:00 一般発売</span>
-      <p class="pk-card-lead">秋の夜のホールで、ひとつの声が時間を越えて届く。<br>
-松任谷由実の今のツアーは、荒井由実の名前をあえて掲げたアルバムを携えて、1年以上かけて全国のホールを回る旅なの。</p>
+      <span class="pk-ev">FORUM8 presents 松任谷由実 THE WORMHOLE TOUR 2025-2026</span>
+      <dl class="pk-info">
+        <dt>公演</dt><dd>11/24(火) 18:30 栃木</dd>
+        <dt>発売</dt><dd>10/3(土) 10:00 一般発売</dd>
+      </dl>
       <span class="pk-card-go">読む →</span>
     </a>
     <a class="pk-card" href="./miura.html">
       <span class="pk-name">三浦大知</span>
-      <span class="pk-sale">10/3(土) 10:00 一般発売</span>
-      <p class="pk-card-lead">歌って踊る人の息づかいまで届く、ホールの距離。<br>
-三浦大知の今のツアーは、タイトルどおり「生の」「剥き出し」の姿を見せる旅で、今週は東北の2公演と千葉の1公演が一般発売になるの。</p>
+      <span class="pk-ev">DAICHI MIURA LIVE TOUR 2026 Raw / Bare</span>
+      <dl class="pk-info">
+        <dt>公演</dt><dd>10/30(金) 18:30 宮城<br>
+10/31(土) 17:30 岩手</dd>
+        <dt>発売</dt><dd>10/3(土) 10:00 一般発売</dd>
+      </dl>
       <span class="pk-card-go">読む →</span>
     </a>
     <a class="pk-card" href="./hata.html">
       <span class="pk-name">秦基博</span>
-      <span class="pk-sale">10/3(土) 10:00 一般発売</span>
-      <p class="pk-card-lead">秦基博のデビュー20周年を記念するライブは、弾き語り・アコースティック編成・バンドスタイルの3つのスタイルを、一晩に詰め込んだ2公演なの。</p>
+      <span class="pk-ev">HATA MOTOHIRO 20th Anniversary LIVE</span>
+      <dl class="pk-info">
+        <dt>公演</dt><dd>11/3(火) 17:00 大阪</dd>
+        <dt>発売</dt><dd>10/3(土) 10:00 一般発売</dd>
+      </dl>
       <span class="pk-card-go">読む →</span>
     </a>
     <a class="pk-card" href="./toto.html">
       <span class="pk-name">TOTO</span>
-      <span class="pk-sale">10/3(土) 10:00 一般発売</span>
-      <p class="pk-card-lead">アリーナいっぱいに「アフリカ」のコーラスが響く夜を、想像してみて頂戴。<br>
-TOTOの結成50周年を記念する来日公演が、来年3月に大阪と東京で開かれるの。</p>
+      <span class="pk-ev">TOTO 50TH ANNIVERSARY TOUR</span>
+      <dl class="pk-info">
+        <dt>公演</dt><dd>R9年 3/22(月) 17:00 大阪</dd>
+        <dt>発売</dt><dd>10/3(土) 10:00 一般発売</dd>
+      </dl>
       <span class="pk-card-go">読む →</span>
     </a>
   </div>
@@ -295,8 +306,11 @@ TOTOの結成50周年を記念する来日公演が、来年3月に大阪と東�
   <div class="pk-cards">
     <a class="pk-card" href="./zen.html">
       <span class="pk-name">『禅とジブリ』京都展</span>
-      <span class="pk-sale">会期 10/3(土)〜12/6(日)</span>
-      <p class="pk-card-lead">今度の京都展は、ジブリの作品を「禅」の目で見る展覧会なの。</p>
+      <span class="pk-ev">京都市京セラ美術館 新館 東山キューブ</span>
+      <dl class="pk-info">
+        <dt>公演</dt><dd>10/3(土)〜12/6(日) 10:00〜18:00 京都</dd>
+        <dt>発売</dt><dd>10/3(土) 0:00 当日券</dd>
+      </dl>
       <span class="pk-card-go">読む →</span>
     </a>
   </div>
