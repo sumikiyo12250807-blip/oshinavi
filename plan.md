@@ -1,3 +1,30 @@
+# ▶▶ 9/26(土) 21時ごろ /clear 後にやること（引き継ぎ）
+
+```
+🚨【アラームは /clear で消える＝入れ直す】CronCreate（one-shot・9/26）で2本：①22:07 夜のヒール ②23:12 夜のpush
+
+① 22:07 夜のヒール（dayスキル第4便・前倒しで回した分は止めた＝ユーザー「夜のヒールの時でいい」）
+   ぴあ heal_stale_deadlines --build → --apply → tmp/x0924/blocked_ids.py → heal_union.py --apply → heal_head_compare_1805.py で消えた枠0
+   TIGET＝今日発売の夜の枠だけ gate_tiget_slots --ids → heal_tiget --apply／FANY・ZAIKOの今日の隠れ枠
+   🚨スイープ分 24100 Gentle Forest Jazz Band（プリセール締切9/29）・24152 ガクテンソク×例えば炎（今日20:00発売）が締切を持ったか reconcile_pia --ids で確かめる
+
+② 記事の最終ファクトチェック＝エージェントに投げ済み → 結果は tmp/pickup0927/factcheck_final.md（書き換えた文だけ：秦基博の書き出し・禅とジブリ「10/1発売予定」・導入/リード/見出し）
+   🔴誤りがあれば直す（原稿 tmp/pickup0927/draft_main_long.md → python tmp/pickup0927/build_pages.py → cp tmp/pickup0927/pages/*.html pickup/2026-09-27/）
+   直しきれなければ記事を外してpush（index.html の pickup セクションは git show HEAD~? で戻す・pickup/2026-09-27 は git rm）
+   ✅ユーザーOK済み「いいと思う　今夜のうちに載せてもいいわね」＝記事は 5b8f94c8 でコミット済み（未push）
+
+③ 23:12 夜のpush＝reconcile_pia --new → build_ai_page → compact_events --apply → check_order/check_badges/CRLF → commit → push → origin/main..HEAD 空
+   （今日のpushは朝・昼の2回済み＝これが3回目・最後）
+
+④ 🎧最新CDボタン＝単独名義1632組をAmazonで実測中（裏で走っている・tmp/x0926/amazon_fill.log／結果 tmp/x0926/amazon_fill.json）
+   止まっていたら python tmp/x0926/amazon_fill.py で続きから再開できる
+   終わったら python tmp/x0926/amazon_fill.py --apply（ヒットだけ付ける）→ 検査 → 次のpush（明朝）
+   合同名義2380件は未着手（決まり＝合同は自動付与しない）→ ユーザーに聞く
+
+📋 明朝＝①スイープ138件の全件で予定枚数終了の枠が落ちていないか（24098 島袋寛子は4枠足す）②同名52件 ③e+ id6007 404
+   ④X 9/27発売の10本は予約済み（20:01〜22:16）⑤記事は毎週・上のバーのリンクも号ごとに差し替え（memory）
+```
+
 # ▶▶ 9/26(土) 夕方（18:3x）
 
 ```
