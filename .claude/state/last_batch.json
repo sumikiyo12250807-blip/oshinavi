@@ -1027,6 +1027,17 @@
    "assigned": true,
    "rechecked": false,
    "note": "発売前率100%／同名の登録がある52件＝tmp/x0926/pia_new_samename.txt（ツアーに畳むか要確認）／既存41件に足し込み"
+  },
+  {
+   "date": "2026-09-27",
+   "slot": "morning",
+   "id_from": 24377,
+   "id_to": 24403,
+   "count": 23,
+   "source": "ぴあ 発売前スイープ rlsStatus=0102+0202（7ジャンル）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --new 23/23 一致。足し込み5件（21720・4838・5719・5926・5212）"
   }
  ]
 }
