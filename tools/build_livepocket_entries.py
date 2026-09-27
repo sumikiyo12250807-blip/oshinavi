@@ -132,7 +132,8 @@ SELLER_SIDE = re.compile(
     r'案内登録|先行案内'
 )
 # 「配信なし」「配信無し」は配信ではない（会場だけの券）
-STREAM = re.compile(r'配信(?!なし|無し)|視聴|アーカイブ')
+STREAM = re.compile(r'配信(?!なし|無し)|視聴(?!覚)|アーカイブ')
+ONLINE_VENUE = re.compile(r'^\s*(オンライン|配信|Zoom|ツイキャス|YouTube|ONLINE|Online)', re.I)
 
 LIVE_CARD = ('販売中', '売切間近')
 SOLD_CARD = ('予定販売数終了', '予定販売枚数終了')
@@ -257,9 +258,12 @@ def build(ev, today, unknown=None):
         if SELLER_SIDE.search(raw) or (cards and all(SELLER_SIDE.search(c.get('name') or '') for c in cards)):
             skipped_slots.append((raw, '出す側の受付'))
             continue
-        # 券種が全部配信なら（配信）を添える＝締切を公演日で締めない例外に乗せる
-        all_stream = bool(cards) and all(STREAM.search(c.get('name') or '') for c in cards)
-        nm = ticket_name(raw, '（配信）' if (all_stream and not STREAM.search(raw)) else '')
+        # 券種に配信があれば（配信）を添える＝締切を公演日で締めない例外に乗せる
+        # 🆕2026-09-28 「全部配信」だけだと、会場券＋視聴券の受付や会場「オンライン」の公演で配信と出なかった
+        #   （生データ突合で3件＝せんのさん in Zoom・East Mouth Meeting ×2）＝1枚でも配信か、会場がオンラインなら添える
+        any_stream = (any(STREAM.search(c.get('name') or '') for c in cards)
+                      or bool(ONLINE_VENUE.search(ev.get('venue') or '')))
+        nm = ticket_name(raw, '（配信）' if (any_stream and not STREAM.search(raw)) else '')
         is_stream = bool(STREAM.search(nm))
         head = '%s（%s %s）' % (nm, pref, when) if pref else '%s（%s）' % (nm, when)
         per = rec.get('period') or {}
