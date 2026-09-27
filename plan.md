@@ -1,3 +1,21 @@
+# ▶▶ 9/27(日) 10時ごろ /clear 後にやること（引き継ぎ）
+
+```
+🚨【アラームは /clear で消える＝入れ直す】CronCreate（one-shot・9/27）で5本：
+   ①12:37 昼の便 ②17:02 X準備（9/28発売） ③19:41 X予約の締め ④22:07 夜のヒール ⑤23:12 夜のpush
+   中身は dayスキルの各便どおり（昼＝ぴあheal_stale→blocked_ids→heal_union→head_compare／e+ heal_eplus_started／TIGET・FANY・ZAIKOの今日発売分）
+
+✅ 朝push済み（402f9e28）。そのあとの未pushコミットは昼pushに乗せる：
+   ・🛍プロレス14団体のグッズボタン（WRESTLING_AMAZON・画像 img/btn2_wr01〜14）＝観戦グッズの代わり（memory reference_amazon_affiliate に追記済み）
+   ・🗂ぴあ以外226件を振り分け（TIGET159・ZAIKO35・FANY32）＝番人一致＋独立ジャンル抜き取り40/40（ユーザー「振り分け前にゲート通してね」）→新着プール0
+   ・🩹5926 ネズミ狩り 一般発売〜9/27（ぴあ実ページで確認・9/28から当日引換券）
+   ・📋plan.md
+🎧 Amazon最新CDの実測が裏で続行中（tmp/x0926/amazon_fill.log・/clearしても動き続ける）→ 当たりが増えたら python tmp/x0926/amazon_fill.py --apply → 次のpush
+   止まっていたら（STOP: 0件が12回）時間を置いて python -u tmp/x0926/amazon_fill.py >> tmp/x0926/amazon_fill.log で再開
+📋 残り宿題：削除候補116件（heal_stale の買える枠ゼロ）＝DELETE_GATE を通してから／ZAIKO食い違い8件（既存）／FANY id20428
+   枠0の31日超29件＝ぴあも0で一致（他社を見ていない）／楽天 features_sweep は今日まだ／OZ・ガンバレ・GLEAT・FREEDOMS・BASARAは観戦グッズのまま
+```
+
 # ▶▶ 9/27(日) 朝の便（06:52〜・途中経過）
 
 ```
