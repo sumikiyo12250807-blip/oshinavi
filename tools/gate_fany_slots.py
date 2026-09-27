@@ -60,6 +60,26 @@ def load_registered(ids=None):
     return out
 
 
+def raw_stream_check(fany_slots, perfs):
+    """🆕2026-09-28 **ビルダーを通さない**突合（ZAIKOのスタリオンで、番人がビルダーと同じ間違いをして一致した）。
+    売り場の元の券種名に「配信・視聴・アーカイブ」があり、受付中／発売前で締切があるなら、
+    登録に「配信/視聴/アーカイブ」を含み date＝その締切の枠があるか。返り値＝食い違いの説明のリスト。"""
+    out = []
+    for p in perfs:
+        for s in p.get('performance_sales') or []:
+            nm = s.get('sales_name') or ''
+            st = (s.get('display_sales_status') or '').strip()
+            if not re.search(BF.STREAM_RE, nm) or st not in BF.PRE_ST + BF.LIVE_ST:
+                continue
+            ed = BF.raw_dt(s.get('sales_end_datetime_raw'))[0]
+            if not ed:
+                continue
+            if not any(t.get('date') == ed and re.search(BF.STREAM_RE, t.get('type') or '')
+                       for t in fany_slots):
+                out.append('配信の券種「%s」（〜%s）が、登録に「配信」付き・締切%sで無い' % (nm[:20], ed, ed))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--src', default=None, help='引いてある一覧JSON（無ければ引き直す）')
@@ -96,12 +116,14 @@ def main():
             same[(p.get('event_id'), iso, p.get('venue_id'))] += 1
     gmap['_same_day'] = same
     page = collections.defaultdict(list)
+    perfs = collections.defaultdict(list)
     for p in data['performances']:
+        perfs[str(p.get('event_id'))].append(p)
         e, _ = BF.build_one(p, today, gmap, collections.Counter())
         if e:
             page[str(p.get('event_id'))] += e['tickets']
 
-    ng, ok, gone, linkonly = [], 0, [], []
+    ng, ok, gone, linkonly, rawng = [], 0, [], [], []
     for fid, entries in sorted(reg.items()):
         # 🚨「links.fany を足しただけ」のエントリ（枠はぴあ等で持っている）は突合対象外。
         #    ここを外さないと、売り場が違って当然の締切の差を全部「食い違い」として鳴らす
@@ -112,6 +134,9 @@ def main():
         if not fany_slots:
             linkonly.append((fid, entries, len(page.get(fid, []))))
             continue
+        rc = raw_stream_check(fany_slots, perfs.get(fid, []))
+        if rc:
+            rawng.append((fid, entries, rc))
         rk = {key(t) for t in fany_slots}
         gk = {key(t) for t in page.get(fid, [])}
         if fid not in page:
@@ -135,6 +160,12 @@ def main():
             rep.write('    只登録側: %s | %s | soldout=%s saleEnded=%s presaleEnded=%s\n' % k)
         for k in only_page:
             rep.write('    只ページ側: %s | %s | soldout=%s saleEnded=%s presaleEnded=%s\n' % k)
+    rep.write('\n=== 🚨生データ突合（ビルダーを通さない・配信の券種）の食い違い %d件 ===\n' % len(rawng))
+    for fid, entries, rc in rawng:
+        rep.write('--- event/detail/%s  id%s %s\n' % (fid, ','.join(str(x['id']) for x in entries),
+                                                     (entries[0].get('name') or '')[:40]))
+        for m in rc:
+            rep.write('    %s\n' % m)
     rep.write('\n=== 一覧から落ちたイベント（公演日が過ぎた分は正常）===\n')
     for fid, entries in gone:
         for e in entries:
@@ -146,9 +177,9 @@ def main():
                   % (e['id'], n, e.get('date'), (e.get('name') or '')[:34],
                      (e.get('venue') or '')[:18]))
     rep.close()
-    print('gate_fany_slots: 一致%d / 食い違い%d / 一覧落ち%d / リンクだけ%d → %s'
-          % (ok, len(ng), len(gone), len(linkonly), REPORT))
-    return 1 if ng else 0
+    print('gate_fany_slots: 一致%d / 食い違い%d / 🚨生データ突合%d / 一覧落ち%d / リンクだけ%d → %s'
+          % (ok, len(ng), len(rawng), len(gone), len(linkonly), REPORT))
+    return 1 if (ng or rawng) else 0
 
 
 def _selftest():

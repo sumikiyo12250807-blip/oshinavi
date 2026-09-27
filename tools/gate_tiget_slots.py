@@ -53,6 +53,25 @@ BT = _load('tools/build_tiget_entries.py', 'bt')
 REPORT = 'tmp/gate_tiget_report.txt'
 
 
+def raw_stream_check(reg, d, today):
+    """🆕2026-09-28 **ビルダーを通さない**突合（ZAIKOのスタリオンで、番人がビルダーと同じ間違いをして一致した）。
+    実ページの元の券種名に「配信・視聴・アーカイブ」があり、受付中／発売前で締切が読めるなら、
+    登録に「配信/視聴/アーカイブ」を含み date＝その締切の枠があるか。返り値＝食い違いの説明のリスト。"""
+    out = []
+    for p in d.get('programs') or []:
+        for t in p.get('tickets') or []:
+            nm = t.get('name') or ''
+            if not re.search(BT.STREAM_RE, nm) or BT.state_of(t.get('class')) not in ('live', 'unopened'):
+                continue
+            per = BT.last_period(t)
+            ed = per[2] if per else ((t.get('end_at') or [None])[0])
+            if not ed or ed < today:
+                continue
+            if not any(r.get('date') == ed and re.search(BT.STREAM_RE, r.get('type') or '') for r in reg):
+                out.append('配信の券種「%s」（〜%s）が、登録に「配信」付き・締切%sで無い' % (nm[:20], ed, ed))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--ids', default='')
@@ -75,12 +94,12 @@ def main():
             continue
         targets.append((e, urls))
 
-    ng, ok, fetcherr = [], 0, []
+    ng, ok, fetcherr, rawng = [], 0, [], []
     rep = io.open(REPORT, 'w', encoding='utf-8')
     rep.write('=== gate_tiget_slots (today=%s) 対象%d件 ===\n' % (a.today, len(targets)))
     for e, urls in targets:
         # 実ページからゼロから作り直す（登録値は見ない）
-        rebuilt = []
+        rebuilt, raws = [], []
         bad = False
         for eid in urls:
             try:
@@ -89,6 +108,7 @@ def main():
                 fetcherr.append((e['id'], eid, str(ex)[:60]))
                 bad = True
                 continue
+            raws.append(d)
             d['cats'] = ['81']
             d['list'] = {}
             built, why = BT.build(d, a.today)
@@ -98,6 +118,9 @@ def main():
             continue
         time.sleep(a.sleep)
         reg = [t for t in (e.get('tickets') or []) if 'tiget.net' in (t.get('url') or '')]
+        rc = [m for d in raws for m in raw_stream_check(reg, d, a.today)]
+        if rc:
+            rawng.append((e, rc))
 
         def key(t):
             return (t.get('type'), t.get('date'), bool(t.get('soldout')),
@@ -117,15 +140,19 @@ def main():
             rep.write('    登録にだけある: %s\n' % (k,))
         for k in only_page:
             rep.write('    実ページにだけある: %s\n' % (k,))
+    for e, rc in rawng:
+        rep.write('\n🚨生データ突合（ビルダーを通さない） id=%s %s\n' % (e['id'], (e.get('name') or '')[:40]))
+        for m in rc:
+            rep.write('    %s\n' % m)
     for i, eid, why in fetcherr:
         rep.write('❌ id=%s events/%s 読めなかった: %s\n' % (i, eid, why))
-    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / ❌読めなかった %d ===\n'
-              % (ok, len(ng), len(fetcherr)))
+    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d ===\n'
+              % (ok, len(ng), len(rawng), len(fetcherr)))
     rep.close()
     # コンソールは文字化けするのでASCIIの要約だけ。中身は REPORT を読む
-    sys.stderr.write('gate_tiget_slots: match=%d ng=%d fetcherr=%d -> %s\n'
-                     % (ok, len(ng), len(fetcherr), REPORT))
-    sys.exit(2 if (ng or fetcherr) else 0)
+    sys.stderr.write('gate_tiget_slots: match=%d ng=%d rawng=%d fetcherr=%d -> %s\n'
+                     % (ok, len(ng), len(rawng), len(fetcherr), REPORT))
+    sys.exit(2 if (ng or fetcherr or rawng) else 0)
 
 
 if __name__ == '__main__':

@@ -110,6 +110,7 @@ SELLER_SIDE = re.compile(
 )
 
 _PAIRS = ('（）', '「」', '『』', '【】', '＜＞', '〔〕', '［］', '〈〉')
+STREAM_RE = r'配信|視聴|アーカイブ'   # 公演の後も買える券種＝締切を公演日で締めない
 
 
 def era(y):
@@ -181,12 +182,18 @@ def ticket_name(raw, is_lottery, is_stream):
             .replace('[', '［').replace(']', '］'))
     # 🆕2026-09-28 「（配信）」は切った後に足す＝先に足すと28字で切り落とされ、配信の例外が効かず
     #   締切が公演日に丸められていた（スタリオンセカンド＆サード＝10/5まで見逃し配信が〜9/28に）
-    suffix = '（配信）' if (is_stream and '配信' not in nm) else ''
-    cut = nm[:28 - len(suffix)]
+    #   元の名前に「配信・視聴・アーカイブ」がある時も、切って消えたら（配信）を足す（TIGET・FANYと同じ）
+    stream = is_stream or re.search(STREAM_RE, nm)
+    cut = nm[:28]
     while cut and not _balanced(cut):
         cut = cut[:-1]
     cut = cut.rstrip('・、 /')
-    return (cut or 'チケット') + suffix
+    if stream and not re.search(STREAM_RE, cut):
+        cut = cut[:24]
+        while cut and not _balanced(cut):
+            cut = cut[:-1]
+        return (cut.rstrip('・、 /') or 'チケット') + '（配信）'
+    return cut if cut else 'チケット'
 
 
 def artist_of(det, listrow):
@@ -322,7 +329,7 @@ def build_one(listrow, det, today, unknown):
             #   ⚠️**抽選だけ**に当てる＝先着で「開始が過去なのに未開始」は販売を止めた形もあるので従来どおり載せない
             if t.get('is_lottery') and sd and sd < today and ed and ed >= today:
                 end, endt = ed, edt
-                if end > t_d and not re.search(r'配信|視聴|アーカイブ', nm):
+                if end > t_d and not (t.get('is_stream') or re.search(STREAM_RE, nm)):
                     end, endt = t_d, ''
                 tickets.append({'type': ('%s〜%s %s' % (head, mdp(end), endt or '')).rstrip(),
                                 'date': end, 'url': url})
@@ -336,7 +343,7 @@ def build_one(listrow, det, today, unknown):
             #   （独立チェックで id22878 ChumToto・22708 銀河鉄道ナイトライン・22710 マッスルゲート北陸）
             if ed and ed >= sd:
                 end, endt = ed, edt
-                if end > t_d and not re.search(r'配信|視聴|アーカイブ', nm):
+                if end > t_d and not (t.get('is_stream') or re.search(STREAM_RE, nm)):
                     end, endt = t_d, ''
                 tk['type'] = ('%s%s %s発売〜%s %s' % (head, md(sd), sdt or '', mdp(end), endt or '')).replace('  ', ' ').rstrip()
                 tk['date'] = end
@@ -346,7 +353,7 @@ def build_one(listrow, det, today, unknown):
             if ed:
                 end, endt = ed, edt
                 # 締切が公演日より後なら公演日で締める（配信・視聴は例外）
-                if end > t_d and not re.search(r'配信|視聴|アーカイブ', nm):
+                if end > t_d and not (t.get('is_stream') or re.search(STREAM_RE, nm)):
                     end, endt = t_d, ''
                 tickets.append({'type': ('%s〜%s %s' % (head, mdp(end), endt or '')).rstrip(),
                                 'date': end, 'url': url})
@@ -488,6 +495,12 @@ def _selftest():
     e4b, _ = build_one(lr, mk([tk(is_stream=True, end_date='2026-10-05')]), today, unk)
     assert e4b['tickets'][0]['date'] == '2026-10-05', e4b['tickets'][0]
     assert '配信' in e4b['tickets'][0]['type'], e4b['tickets'][0]
+    # ④-2 🆕2026-09-28 長い券種名でも（配信）が切り落とされない＝締切は公演日に丸めない（スタリオン）
+    e4c, _ = build_one(lr, mk([tk(name='スタリオンセカンド＆サード（2026/9/26開催）', is_stream=True,
+                                  end_date='2026-10-05', end_time='23:59')]), today, unk)
+    assert e4c['tickets'][0]['date'] == '2026-10-05', e4c['tickets'][0]
+    assert '配信' in e4c['tickets'][0]['type'], e4c['tickets'][0]
+    assert '（配信）' in ticket_name('あ' * 40 + 'アーカイブ配信', False, False)
 
     # ⑤ 締切がどこにも無い＝締切を作らず「販売中」＋saleEndUnknown（公演日を置き場に）
     e5, _ = build_one(lr, mk([tk(end_date=None, end_time=None)]), today, unk)

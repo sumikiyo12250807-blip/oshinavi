@@ -167,6 +167,7 @@ def is_seller_side(name):
 
 
 _PAIRS = ('（）', '「」', '『』', '【】', '＜＞', '〔〕', '［］', '〈〉')
+STREAM_RE = r'配信|視聴|アーカイブ'   # 公演の後も買える券種＝締切を公演日で締めない
 
 
 def _balanced(s):
@@ -195,13 +196,23 @@ def ticket_name(raw):
     # 🚨カッコの途中で切らない（【対象者様限定】…【特定クラ で不均衡になった＝id11384）。
     #    28字より短くても、元からカッコが閉じていない名前（TIGETの主催者が書きかけた形）があるので
     #    **長さに関係なく**そろうところまで戻す。
+    # 🆕2026-09-28 元の名前に「配信・視聴・アーカイブ」があるのに28字で切り落とされると、
+    #   配信の例外（締切を公演日で締めない）が効かず、画面にも配信と出ない（ZAIKOのスタリオンで発生）。
+    #   ＝切った後に配信の文字が残っていなければ（配信）を足す。
+    stream = re.search(STREAM_RE, nm)
     cut = nm[:28]
     while cut and not _balanced(cut):
         cut = cut[:-1]
     # 🚨そろえた結果が空になる＝頭から開きカッコで始まって28字で閉じない名前
     #    （2026-09-18＝「［ナチュスク10周年記念！祝い＆応援して欲しいTシャツ&…」）。
     #    そのまま28字を返すとカッコ不均衡のまま出てしまうので「チケット」に倒す。
-    return cut.rstrip('・、 /') if cut else 'チケット'
+    cut = cut.rstrip('・、 /')
+    if stream and not re.search(STREAM_RE, cut):
+        cut = cut[:24]
+        while cut and not _balanced(cut):
+            cut = cut[:-1]
+        return (cut.rstrip('・、 /') or 'チケット') + '（配信）'
+    return cut if cut else 'チケット'
 
 
 def sale_start(ev):
@@ -285,14 +296,14 @@ def build(ev, today):
             head = f'{nm}（{pref} {when}）' if pref else f'{nm}（{when}）'
             # 🆕2026-09-24 券種の下の注記（受付：… 〜／受付終了日時：…）＝受付期間の欄が無い券種の発売と締切
             sa, ea = t.get('start_at'), t.get('end_at')
-            if ea and ea[0] > d and not re.search(r'配信|視聴|アーカイブ', nm):
+            if ea and ea[0] > d and not re.search(STREAM_RE, nm):
                 ea = (d, '')                       # 締切が公演日より後なら公演日で締める
             if st == 'unopened':
                 if per:
                     # 🚨2026-09-24 発売前でも締切（受付期間の終わり）を持つ＝date=発売日だと発売日の翌0時に消える
                     #   （FANYで24枠が消えたのと同じ型）。
                     end, endt = per[2], per[3]
-                    if end > d and not re.search(r'配信|視聴|アーカイブ', nm):
+                    if end > d and not re.search(STREAM_RE, nm):
                         end, endt = d, ''
                     tickets.append({'type': f'{head}{md(per[0])} {per[1]}発売〜{md(end)} {endt}'.replace('  ', ' ').rstrip(),
                                     'date': end, 'startDate': per[0], 'url': ev['url']})
@@ -321,7 +332,7 @@ def build(ev, today):
                     # 🚨締切が公演日より後なら公演日で締める（[[feedback_sale_end_cap_show_date]]）。
                     #    ⚠️配信・視聴チケットは公演の後も買えるので例外（巻き添えで嘘にしない）。
                     end, endt = per[2], per[3]
-                    if end > d and not re.search(r'配信|視聴|アーカイブ', nm):
+                    if end > d and not re.search(STREAM_RE, nm):
                         end, endt = d, ''
                     tickets.append({'type': f'{head}〜{md(end)} {endt}'.rstrip(),
                                     'date': end, 'url': ev['url']})
@@ -658,6 +669,9 @@ def _selftest():
     # 名前が同じでも会場の札が無いものは畳まない
     assert len(consolidate([mk('てらコワ6', 'a', '東京', '2026-11-21', 'u1'),
                             mk('別イベント', 'b', '東京', '2026-11-22', 'u2')])) == 2
+    # 🆕2026-09-28 長い券種名でも配信の文字が切り落とされない（ZAIKOのスタリオンと同じ穴）
+    assert '（配信）' in ticket_name('あ' * 40 + 'アーカイブ配信'), ticket_name('あ' * 40 + 'アーカイブ配信')
+    assert ticket_name('【配信】視聴チケット') == '【配信】視聴チケット'
     print('selftest OK: state_of/md/jp/last_period/sale_start/build/ticket_name/consolidate')
 
 
