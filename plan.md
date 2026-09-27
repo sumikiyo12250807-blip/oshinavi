@@ -1,3 +1,19 @@
+# ▶▶ 9/28(月) 朝の便（07:00〜・途中経過）
+
+```
+⏰ アラーム5本（CronCreate）＝12:10 昼の便／17:02 X準備（9/29発売）／19:41 予約の締め／22:07 夜のヒール／23:12 夜のpush
+✅ 削除586件（check_expired 589 × 独立再導出547一致＋型保留39は最終日9/27以前で一致）→ logs/removed_2026-09-28.md（9de707a5）
+   残した3件＝20515 御月民・20525 FFKT（キャンプ型で最終日不明）・24311 カナメストーン（10/11までの特典付き券）
+✅ 楽天 reconcile FAIL5＝全部ノイズ（過去枠・売切枠がページから消えただけ・2808はぴあ側の本日発売）／売り切れ点検 変化なし
+✅ e+ heal_eplus_started 直す枠0
+✅ 新着＝ZAIKO8（24618〜24625・番人一致）・FANY6（24626〜24631）＋FANYヒール89件（番人1698一致・既知20428のみ）→ commit済み
+🔧 ZAIKOビルダー：長い券種名で（配信）が28字で切り落とされ締切が公演日に丸まる穴（ユーザー指摘＝24618スタリオン）→ 切ってから足す形に修正・24618は〜10/5 23:59配信
+⏳ 裏＝ぴあ heal_stale --build（tmp/heal_0928_build.txt）／TIGET全件番人（tmp/gate_tiget_0928.txt）／ZAIKO全件番人（同じ穴の既存を探す）
+📋 残り＝ぴあheal --apply→blocked→union→head_compare／check_zero_badge 31日超60件をreconcile／ぴあ・TIGET・楽天の収集／build_ai_page・reconcile --new・compact→朝push
+📋 返事待ち＝livePocketを取り込むか（ユーザーが理由を質問→「取り込めないのではなく未決・いちばん取りやすい」と説明済み）
+🚨 朝に小窓を出した（cd・heredoc・$()・&）＝memory feedback_no_expansion_commands に再発を追記
+```
+
 # ▶▶ 9/28(月) 朝の便へ（9/27 22:3x 夜のヒール後の引き継ぎ）
 
 ```
