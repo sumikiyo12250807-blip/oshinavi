@@ -81,6 +81,7 @@ END_LOT = '抽選受付終了'
 KNOWN_ST = set(LIVE_ST) | set(PRE_ST) | {END_SALE, END_LOT}
 
 _PAIRS = ('（）', '「」', '『』', '【】', '＜＞', '〔〕', '［］', '〈〉')
+STREAM_RE = r'配信|視聴|アーカイブ'   # 公演の後も買える券種＝締切を公演日で締めない
 
 
 def strip_tags(s):
@@ -173,10 +174,20 @@ def ticket_name(raw):
         return 'チケット'
     nm = (nm.replace('／', '・').replace('(', '（').replace(')', '）')
             .replace('[', '［').replace(']', '］'))
+    # 🆕2026-09-28 元の名前に「配信・視聴・アーカイブ」があるのに28字で切り落とされると、
+    #   配信の例外（締切を公演日で締めない）が効かず、画面にも配信と出ない（ZAIKOのスタリオンで発生）。
+    #   ＝切った後に配信の文字が残っていなければ（配信）を足す。
+    stream = re.search(STREAM_RE, nm)
     cut = nm[:28]
     while cut and not _balanced(cut):
         cut = cut[:-1]
-    return cut.rstrip('・、 /') if cut else 'チケット'
+    cut = cut.rstrip('・、 /')
+    if stream and not re.search(STREAM_RE, cut):
+        cut = cut[:24]
+        while cut and not _balanced(cut):
+            cut = cut[:-1]
+        return (cut.rstrip('・、 /') or 'チケット') + '（配信）'
+    return cut if cut else 'チケット'
 
 
 def artist_of(p):
@@ -247,7 +258,7 @@ def build_one(p, today, genre_map, unknown):
             #   ＝締切があれば「M/D HH:MM発売〜M/D HH:MM」で作る。締切が無い時だけ従来の形
             if ed and ed >= sd:
                 end, endt = ed, edt
-                if end > (dend or d) and not re.search(r'配信|視聴|アーカイブ', nm):
+                if end > (dend or d) and not re.search(STREAM_RE, nm):
                     end, endt = (dend or d), ''
                 tickets.append({'type': ('%s%s %s発売〜%s %s'
                                          % (head, md(sd), sdt or '', md(end), endt or ''))
@@ -262,7 +273,7 @@ def build_one(p, today, genre_map, unknown):
                 continue
             end, endt = ed, edt
             # 締切が公演日より後なら公演日で締める（配信・視聴は例外）
-            if end > (dend or d) and not re.search(r'配信|視聴|アーカイブ', nm):
+            if end > (dend or d) and not re.search(STREAM_RE, nm):
                 end, endt = (dend or d), ''
             tk = {'type': ('%s〜%s %s' % (head, md(end), endt or '')).rstrip(),
                   'date': end, 'url': url}
@@ -466,6 +477,9 @@ def _selftest():
                           valid_period_finish_date='2026/10/03(<span>土</span>)',
                           performance_sales=[sale('先着発売中')]), today, gm, collections.Counter())
     assert '10/1〜10/3公演' in e11['tickets'][0]['type'], e11['tickets'][0]
+    # 🆕2026-09-28 長い券種名でも配信の文字が切り落とされない（ZAIKOのスタリオンと同じ穴）
+    assert '（配信）' in ticket_name('あ' * 40 + 'アーカイブ配信'), ticket_name('あ' * 40 + 'アーカイブ配信')
+    assert ticket_name('一般（配信）') == '一般（配信）'
 
     print('selftest OK')
     return 0
