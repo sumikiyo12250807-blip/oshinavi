@@ -1379,6 +1379,9 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     <span class="filter-label">GENRE</span>
     <button class="filter-btn active" data-genre="all">すべて</button>
     <button class="filter-btn" data-genre="new">✨ 新着</button>
+    <!-- 2026-09-28 ユーザー「配信はエンタメの中じゃなく独立させて　配信と出してほしい」
+         ＝配信の券を持つイベントを自動で拾う（isStreamEvent）。元のジャンルはそのまま -->
+    <button class="filter-btn" data-genre="haishin">配信</button>
   </div>
   <div class="genre-groups">
     <div class="genre-group" data-group="music">
@@ -1432,8 +1435,6 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
         <button class="filter-btn" data-genre="fanevent">ファンイベント</button>
         <button class="filter-btn" data-genre="magic">マジック</button>
         <button class="filter-btn" data-genre="talkshow">トークショー</button>
-        <!-- 2026-09-28 ユーザー「ジャンルに配信も作って」＝配信の券を持つイベントを自動で拾う（isStreamEvent） -->
-        <button class="filter-btn" data-genre="haishin">配信</button>
       </div>
     </div>
     <div class="genre-group" data-group="odekake">
@@ -34922,7 +34923,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
   const GENRE_GROUPS = {
     music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","utaite","vocaloid","kpop","hiphop","club","chanson","hougaku","musicetc"],
     stage:   ["engeki","musical","dento","seiyuu","2.5ji","circus"],
-    ento:    ["owarai","kaidan","dinnershow","movie","aisatsu","youtuber","vtuber","tiktoker","fanevent","magic","talkshow","haishin"],
+    ento:    ["owarai","kaidan","dinnershow","movie","aisatsu","youtuber","vtuber","tiktoker","fanevent","magic","talkshow"],
     odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event"]
   };
 
