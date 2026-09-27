@@ -179,12 +179,14 @@ def ticket_name(raw, is_lottery, is_stream):
         nm = '抽選チケット' if is_lottery else 'チケット'
     nm = (nm.replace('／', '・').replace('(', '（').replace(')', '）')
             .replace('[', '［').replace(']', '］'))
-    if is_stream and '配信' not in nm:
-        nm = nm + '（配信）'
-    cut = nm[:28]
+    # 🆕2026-09-28 「（配信）」は切った後に足す＝先に足すと28字で切り落とされ、配信の例外が効かず
+    #   締切が公演日に丸められていた（スタリオンセカンド＆サード＝10/5まで見逃し配信が〜9/28に）
+    suffix = '（配信）' if (is_stream and '配信' not in nm) else ''
+    cut = nm[:28 - len(suffix)]
     while cut and not _balanced(cut):
         cut = cut[:-1]
-    return cut.rstrip('・、 /') if cut else 'チケット'
+    cut = cut.rstrip('・、 /')
+    return (cut or 'チケット') + suffix
 
 
 def artist_of(det, listrow):
