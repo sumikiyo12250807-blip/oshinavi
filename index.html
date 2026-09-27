@@ -34899,6 +34899,20 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       "ベイビーシャークグッズ": "img/btn2_kg24.png",
       "ニルスのふしぎな旅グッズ": "img/btn2_kg25.png",
       "SPY×FAMILYグッズ": "img/btn2_spyfamily.png",   // 9/26 夜 ユーザー「ボタンそろえて作ってね」＝同じ型（tmp/btn/btn_from_cd_0915.py spyfamily）
+      "新日本プロレスグッズ": "img/btn2_wr01.png",   // 9/27 プロレス団体のグッズ（同じ型・tmp/btn/btn_from_cd_0915.py wr01〜）
+      "全日本プロレスグッズ": "img/btn2_wr02.png",
+      "スターダムグッズ": "img/btn2_wr03.png",
+      "プロレスリング・ノアグッズ": "img/btn2_wr04.png",
+      "東京女子プロレスグッズ": "img/btn2_wr05.png",
+      "大日本プロレスグッズ": "img/btn2_wr06.png",
+      "マリーゴールドグッズ": "img/btn2_wr07.png",
+      "センダイガールズグッズ": "img/btn2_wr08.png",
+      "みちのくプロレスグッズ": "img/btn2_wr09.png",
+      "大阪プロレスグッズ": "img/btn2_wr10.png",
+      "アイスリボングッズ": "img/btn2_wr11.png",
+      "アクトレスガールズグッズ": "img/btn2_wr12.png",
+      "プロレスリングWAVEグッズ": "img/btn2_wr13.png",
+      "初代タイガーマスクグッズ": "img/btn2_wr14.png",
     };
     const btnInner = (icon, label) => BTN_IMG[label]
       ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
@@ -35005,6 +35019,32 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     // 9/15 夜 ユーザー「ぬりえいらないよ　けして」＝作品のグッズボタンがあるキッズのカードでは「ぬりえ」を出さない
     //   （専用の amazonGoods がある 309 しまじろう・43 シナモロールも同じ）。作品（キャラクター）の無いキッズのカードは「ぬりえ」を出す（ユーザー決定「うんこミュージアムのようにキャラがないところにはぬりえボタン付けてもいいことにする」）。
     if (ev.genre === 'kids' && (kidsWork || (ev.links && ev.links.amazonGoods))) genreAmazonBtn = '';
+    // 2026-09-27 ユーザー「プロレスの観戦グッズはこれではないな／そのプロレスラーか、プロレスの団体のグッズとかAmazonにないかな？」
+    //   ＝団体名でAmazonを引いて商品名に団体名が入る商品が3件以上出た14団体だけ（実測 tmp/btn/wrestling_goods_probe_0927.py）。
+    //   当たったカードは「観戦グッズ」の代わりに団体のグッズボタンを出す。出なかった団体（OZ・ガンバレ・GLEAT・FREEDOMS・BASARA）は観戦グッズのまま
+    const WRESTLING_AMAZON = [
+      { re: /新日本プロレス/, url: "https://www.amazon.co.jp/s?k=%E6%96%B0%E6%97%A5%E6%9C%AC%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "新日本プロレスグッズ" },
+      { re: /全日本プロレス/, url: "https://www.amazon.co.jp/s?k=%E5%85%A8%E6%97%A5%E6%9C%AC%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "全日本プロレスグッズ" },
+      { re: /スターダム|STARDOM/, url: "https://www.amazon.co.jp/s?k=%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%80%E3%83%A0%20%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "スターダムグッズ" },
+      { re: /プロレスリング・ノア|ＮＯＡＨ|NOAH/, url: "https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%BB%E3%83%8E%E3%82%A2&tag=oshinavi0a-22", label: "プロレスリング・ノアグッズ" },
+      { re: /東京女子プロレス/, url: "https://www.amazon.co.jp/s?k=%E6%9D%B1%E4%BA%AC%E5%A5%B3%E5%AD%90%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "東京女子プロレスグッズ" },
+      { re: /大日本プロレス/, url: "https://www.amazon.co.jp/s?k=%E5%A4%A7%E6%97%A5%E6%9C%AC%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "大日本プロレスグッズ" },
+      { re: /マリーゴールド/, url: "https://www.amazon.co.jp/s?k=%E3%83%9E%E3%83%AA%E3%83%BC%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89%20%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "マリーゴールドグッズ" },
+      { re: /センダイガールズ/, url: "https://www.amazon.co.jp/s?k=%E3%82%BB%E3%83%B3%E3%83%80%E3%82%A4%E3%82%AC%E3%83%BC%E3%83%AB%E3%82%BA&tag=oshinavi0a-22", label: "センダイガールズグッズ" },
+      { re: /みちのくプロレス/, url: "https://www.amazon.co.jp/s?k=%E3%81%BF%E3%81%A1%E3%81%AE%E3%81%8F%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "みちのくプロレスグッズ" },
+      { re: /大阪プロレス/, url: "https://www.amazon.co.jp/s?k=%E5%A4%A7%E9%98%AA%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "大阪プロレスグッズ" },
+      { re: /アイスリボン/, url: "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%82%A4%E3%82%B9%E3%83%AA%E3%83%9C%E3%83%B3%20%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9&tag=oshinavi0a-22", label: "アイスリボングッズ" },
+      { re: /アクトレスガールズ/, url: "https://www.amazon.co.jp/s?k=%E3%82%A2%E3%82%AF%E3%83%88%E3%83%AC%E3%82%B9%E3%82%AC%E3%83%BC%E3%83%AB%E3%82%BA&tag=oshinavi0a-22", label: "アクトレスガールズグッズ" },
+      { re: /プロレスリングWAVE/, url: "https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%B3%E3%82%B0WAVE&tag=oshinavi0a-22", label: "プロレスリングWAVEグッズ" },
+      { re: /初代タイガーマスク/, url: "https://www.amazon.co.jp/s?k=%E5%88%9D%E4%BB%A3%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%83%9E%E3%82%B9%E3%82%AF&tag=oshinavi0a-22", label: "初代タイガーマスクグッズ" }
+    ];
+    const wrestling = (ev.genre === 'sports' && !(ev.links && ev.links.amazonGoods))
+      ? WRESTLING_AMAZON.find(w => w.re.test((ev.name || '') + (ev.artist || '')))
+      : null;
+    const wrestlingBtn = wrestling
+      ? `<a class="ticket-link-btn btn-amazon${btnImgCls(wrestling.label)}" href="${wrestling.url}" target="_blank" rel="noopener">${btnInner("🛍", wrestling.label)}</a>`
+      : '';
+    if (wrestling) genreAmazonBtn = '';
     // 楽天 or ぴあが登録されていれば e+/ローチケは非表示（アフィリ優先）
     const hasPrimaryVendor = ev.links && (ev.links.rakuten || ev.links.pia);
     // 各バッジ(ticket)が別URLに飛ぶ統合エントリ(公演ごとにURLが違う)は、
@@ -35028,7 +35068,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       .filter(d => !(hasPrimaryVendor && (d.key === "eplus" || d.key === "lawson")))
       .filter(d => !(multiTicketUrl && VENDOR_TICKET_KEYS.includes(d.key)))
       .map(btnHTML)
-      .join("") + hotelBtn + kidsWorkBtn + genreAmazonBtn + piaBtn;
+      .join("") + hotelBtn + kidsWorkBtn + wrestlingBtn + genreAmazonBtn + piaBtn;
 
     return `
       <div class="event-card"
