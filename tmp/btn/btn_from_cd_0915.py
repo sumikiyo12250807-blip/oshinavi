@@ -55,6 +55,20 @@ JOBS = [
     ("goodsmiru", "グッズを見る", None, None, None),
     ("miki_chosho", "三木大雲の著書", None, None, None),   # 9/22 夜 ユーザー「著書はぼやぼやしてる／三木大雲の著書にして」（2文字だと光でにじんで見える）
     ("spyfamily", "SPY×FAMILYグッズ", None, None, None),   # 9/26 夜 ユーザー「ボタンそろえて作ってね」（ミュージカル『SPY×FAMILY 2』）
+    ("wr01", "新日本プロレスグッズ", None, None, None),   # 9/27 プロレス団体のグッズ（tmp/btn_tpl/wrestling_goods.json）
+    ("wr02", "全日本プロレスグッズ", None, None, None),
+    ("wr03", "スターダムグッズ", None, None, None),
+    ("wr04", "プロレスリング・ノアグッズ", None, None, None),
+    ("wr05", "東京女子プロレスグッズ", None, None, None),
+    ("wr06", "大日本プロレスグッズ", None, None, None),
+    ("wr07", "マリーゴールドグッズ", None, None, None),
+    ("wr08", "センダイガールズグッズ", None, None, None),
+    ("wr09", "みちのくプロレスグッズ", None, None, None),
+    ("wr10", "大阪プロレスグッズ", None, None, None),
+    ("wr11", "アイスリボングッズ", None, None, None),
+    ("wr12", "アクトレスガールズグッズ", None, None, None),
+    ("wr13", "プロレスリングWAVEグッズ", None, None, None),
+    ("wr14", "初代タイガーマスクグッズ", None, None, None),
 ]
 
 # 9/15 夜 ユーザー「グッズで作って」＝子ども向けの作品ごとの「〇〇グッズ」。--kids-goods で tmp/btn_tpl/kids_goods.json の使える分だけ作る
