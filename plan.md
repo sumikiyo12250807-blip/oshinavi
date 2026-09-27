@@ -5,7 +5,8 @@
 📰 所さんのフェス（id6289）を9/27号の主役6組目に追加＝ユーザー指示「載せる前に見せてね」
    素材 tmp/pickup0927/facts_tokoro.md → Fable本文 draft_tokoro.md → 独立FC（NG3＝〜の字2・会場の1文がWebFetchの言い換え）→ 直して引用20中18を機械照合一致（駅名2はFCで一致）
    build_pages.py に tokoro を足した（控え build_pages_before_tokoro.py）→ tmp/pickup0927/pages/ に組み直し済み
-   試し見 https://claude.ai/artifact/1LegTwqQi3Qafha5MP8AQR ⏳ユーザーOK待ち → OK後に pages/ を pickup/2026-09-27/ へ移して push
+   試し見 https://claude.ai/artifact/1LegTwqQi3Qafha5MP8AQR → ✅ユーザー「OK載せて」→ pickup/2026-09-27/ へ移して push（d39adc91）・公開サイトで目次と tokoro.html を確認済み
+   🏷 買える枠ゼロ115件＝102件は印あり／11件にぴあ実ページどおり予定枚数終了（5枠）／削除0 → push済み
 ☀️ 昼の便（12:40〜）
    ✅ e+ heal_eplus_started 19枠に締切・1枠売切（id6007は404＝触らず）
    ✅ TIGET 今日発売49件→番人ng17→16件heal→番人0／⏳24533 森本ケンタ（販売中・終わり不明）＝締切なしで載せるかユーザーに質問中
