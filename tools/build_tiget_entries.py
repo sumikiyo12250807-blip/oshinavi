@@ -326,7 +326,9 @@ def build(ev, today):
                     has_live = True
                 elif ea:
                     # 🆕2026-09-24 「当日支払い」でも注記に受付終了日時があれば、それが締切
-                    s0 = sa or ((ss_date, ss_time) if ss_date else None)
+                    # 🚨2026-09-27 開始は**ページに見える「受付：…〜」だけ**を使う。JSON-LD の validFrom（画面に出ない
+                    #    売り出し時刻＝13:34 など）は出さない（ユーザー「当日支払10/3しか見えないけど、ほんとに9/27 17:00なの？」）
+                    s0 = sa
                     tk = {'type': f'{head}〜{md(ea[0])} {ea[1]}'.rstrip(), 'date': ea[0], 'url': ev['url']}
                     if s0 and s0[0] >= today:
                         tk['startDate'] = s0[0]
