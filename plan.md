@@ -10,7 +10,12 @@
 🔧 ZAIKOビルダー：長い券種名で（配信）が28字で切り落とされ締切が公演日に丸まる穴（ユーザー指摘＝24618スタリオン）→ 切ってから足す形に修正・24618は〜10/5 23:59配信
 ⏳ 裏＝ぴあ heal_stale --build（tmp/heal_0928_build.txt）／TIGET全件番人（tmp/gate_tiget_0928.txt）／ZAIKO全件番人（同じ穴の既存を探す）
 📋 残り＝ぴあheal --apply→blocked→union→head_compare／check_zero_badge 31日超60件をreconcile／ぴあ・TIGET・楽天の収集／build_ai_page・reconcile --new・compact→朝push
-📋 返事待ち＝livePocketを取り込むか（ユーザーが理由を質問→「取り込めないのではなく未決・いちばん取りやすい」と説明済み）
+✅ livePocket＝ユーザー「作って」→道具5本＋購入ボタン＋番人に生データ突合→初回366件を新着へ（24632〜24997・ガチャ/カード抽選も載せる＝ユーザー「載せていいわ」）
+✅ 配信の番人を作り直し（ユーザー指示）＝ZAIKO・TIGET・FANY・livePocketに生データ突合／ZAIKO既存13件の丸めを直した／🆕ジャンル「配信」175件
+✅ 08:40 朝push dd7da8b0（今日1回目）＝origin/main..HEAD 空
+🚨 朝pushを質問の返事待ちで遅らせた（ユーザー「プッシュまで自動だよ　聞きたいことは夜まとめて」）＝memory feedback_push・feedback_ask_questions_at_otsukaresama に9/28項
+⏳ 裏＝ぴあ発売前スイープ（エージェント）・楽天発売前・TIGET全件番人 → 結果は昼の便のpushに乗せる
+📝 夜（お疲れ様）にまとめて聞く＝①20883 TOMIHAMA FESに駐車券2枠を足した（9/27は「足さない」、9/22決定は「駐車券も載せる」）これでいいか
 🚨 朝に小窓を出した（cd・heredoc・$()・&）＝memory feedback_no_expansion_commands に再発を追記
 ```
 
