@@ -16,6 +16,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 DRAFT_MAIN = "tmp/pickup0927/draft_main_long.md"
 DRAFT_ZEN = "tmp/pickup0927/draft_zen.md"
+# 9/27 昼 ユーザー指示＝所さんのフェスを主役に追加（本文は別ファイル）
+DRAFT_TOKORO = "tmp/pickup0927/draft_tokoro.md"
 OUT_DIR = "tmp/pickup0927/pages"
 TOP_FILE = "tmp/pickup0927/section_top.html"
 TOP_HREF_OLD, TOP_HREF_NEW = 'href="pickup/2026-09-27.html"', 'href="pickup/2026-09-27/index.html"'
@@ -30,7 +32,8 @@ MAIN = [("SCANDAL", "scandal", "SCANDAL", [6284, 7031, 11068, 24300], 2),
         ("三浦大知", "miura", "三浦大知", [4042, 7118], 2),
         # 秦基博は1行目だけで長い（2行目は公演名）ので1行
         ("秦基博", "hata", "秦基博", [3051], 1),
-        ("TOTO", "toto", "TOTO", [5656, 24301], 2)]
+        ("TOTO", "toto", "TOTO", [5656, 24301], 2),
+        ("所さんのフェス", "tokoro", "所ジョージ", [6289], 2)]
 DEEP = ("深掘り", "zen", "『禅とジブリ』京都展", [2949], 1)
 # 深掘りのバッジ＝1ページ版の箱の見出しと同じ会期（index.html の枠は「当日券 10/3 0:00発売」で、バッジにすると読み違える）
 DEEP_BADGE = "会期 10/3(土)〜12/6(日)"
@@ -55,12 +58,14 @@ EVENT_NAME = {"scandal": "SCANDAL FINAL TOUR 2026-2027「SCANDALの47都道府�
               "miura": "DAICHI MIURA LIVE TOUR 2026 Raw / Bare",
               "hata": "HATA MOTOHIRO 20th Anniversary LIVE",
               "toto": "TOTO 50TH ANNIVERSARY TOUR",
+              "tokoro": "所さんのフェス～用事ないなら、みんな来てよLIVE～",
               "zen": "京都市京セラ美術館 新館 東山キューブ"}
 START = {"10/22 東京": "19:00", "10/24 青森": "17:30", "10/25 秋田": "17:30", "10/27 岩手": "19:00",
          "10/28 宮城": "19:00", "11/1 山形": "17:30", "11/2 福島": "19:00", "11/28 静岡": "17:30",
          "R9年 1/29 三重": "19:00", "R9年 1/31 岐阜": "17:30",
          "11/24 栃木": "18:30", "10/30 宮城": "18:30", "10/31 岩手": "17:30",
-         "11/3 大阪": "17:00", "R9年 3/22 大阪": "17:00"}
+         "11/3 大阪": "17:00", "R9年 3/22 大阪": "17:00",
+         "11/14 東京": "16:00"}
 # 深掘りは会期と開館時間（公式 zen-ghibli.jp/kyoto/）
 ZEN_SHOW = "10/3(土)〜12/6(日) 10:00〜18:00 京都"
 
@@ -149,6 +154,8 @@ def search_n(q):
 # ── draft を分ける
 main_raw = io.open(DRAFT_MAIN, encoding="utf-8").read().replace("\r", "").rstrip("\n")
 zen_raw = io.open(DRAFT_ZEN, encoding="utf-8").read().replace("\r", "").rstrip("\n")
+tokoro_raw = io.open(DRAFT_TOKORO, encoding="utf-8").read().replace("\r", "").rstrip("\n")
+main_raw = main_raw + "\n\n" + tokoro_raw
 lines = (main_raw + "\n" + zen_raw).split("\n")
 title = lines[0].strip()
 secs, cur = {}, "（導入）"
