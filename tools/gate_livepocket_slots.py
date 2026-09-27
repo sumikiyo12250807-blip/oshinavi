@@ -48,10 +48,37 @@ def key(t):
             bool(t.get('saleEndUnknown')))
 
 
+STREAM_RE = r'配信(?!なし|無し)|視聴(?!覚)|アーカイブ'
+
+
+def raw_check(reg, d, today):
+    """🆕2026-09-28 **ビルダーを通さない**突合（ZAIKOのスタリオンで、番人がビルダーと同じ間違いをして一致した）。
+    実ページの受付（receptions）を登録の文字に直接当てる。
+      ①配信の語がある受付（受付名か券種名）が販売中／販売前で締切があるなら、登録に「配信/視聴/アーカイブ」を含み date＝締切の枠がある
+      ②販売中／販売前の受付に締切があるなら、登録に date＝締切 か date＝公演日（公演日で締めた形）の枠がある
+    返り値＝食い違いの説明のリスト。"""
+    out = []
+    shows = set((d or {}).get('dates') or [])
+    for r in (d or {}).get('receptions') or []:
+        if not re.search(r'販売中|販売前|受付中|受付前', r.get('status') or ''):
+            continue
+        end = ((r.get('period') or {}).get('end') or [None])[0]
+        if not end or end < today:
+            continue
+        names = [r.get('title') or ''] + [c.get('name') or '' for c in r.get('cards') or []]
+        nm = (r.get('title') or '')[:20]
+        if any(re.search(STREAM_RE, x) for x in names) or re.match(r'\s*(オンライン|配信)', (d or {}).get('venue') or ''):
+            if not any(t.get('date') == end and re.search(STREAM_RE, t.get('type') or '') for t in reg):
+                out.append('配信の受付「%s」（〜%s）が、登録に「配信」付き・締切%sで無い' % (nm, end, end))
+        elif not any(t.get('date') in ({end} | shows) for t in reg):
+            out.append('受付「%s」の締切%sが登録のどの枠とも合わない' % (nm, end))
+    return out
+
+
 def rebuild(eid, today):
     d = LH.parse_event(LH.fetch(f'{LH.BASE}/e/{eid}'), eid)
     built, why = BL.build(d, today)
-    return (built['tickets'] if built else []), why
+    return (built['tickets'] if built else []), why, d
 
 
 def main():
@@ -83,13 +110,14 @@ def main():
             continue
         targets.append((e, urls))
 
-    ng, ok, fetcherr = [], 0, []
+    ng, ok, fetcherr, rawng = [], 0, [], []
     for e, urls in targets:
-        rebuilt, bad = [], False
+        rebuilt, bad, raws = [], False, []
         for eid in urls:
             try:
-                tks, why = rebuild(eid, a.today)
+                tks, why, d = rebuild(eid, a.today)
                 rebuilt += tks
+                raws.append(d)
             except Exception as ex:
                 fetcherr.append((e['id'], eid, str(ex)[:80]))
                 bad = True
@@ -97,6 +125,9 @@ def main():
         if bad:
             continue
         reg = [t for t in (e.get('tickets') or []) if 'livepocket.jp' in (t.get('url') or '')]
+        rc = [m for d in raws for m in raw_check(reg, d, a.today)]
+        if rc:
+            rawng.append((e, rc))
         rk, gk = {key(t) for t in reg}, {key(t) for t in rebuilt}
         if rk == gk:
             ok += 1
@@ -112,13 +143,18 @@ def main():
             rep.write('    登録にだけある: %s\n' % (k,))
         for k in only_page:
             rep.write('    実ページにだけある: %s\n' % (k,))
+    for e, rc in rawng:
+        rep.write('\n🚨生データ突合（ビルダーを通さない） id=%s %s\n' % (e['id'], (e.get('name') or '')[:40]))
+        for m in rc:
+            rep.write('    %s\n' % m)
     for i, eid, why in fetcherr:
         rep.write('❌ id=%s e/%s 読めなかった: %s\n' % (i, eid, why))
-    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / ❌読めなかった %d ===\n' % (ok, len(ng), len(fetcherr)))
+    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d ===\n'
+              % (ok, len(ng), len(rawng), len(fetcherr)))
     rep.close()
-    sys.stderr.write('gate_livepocket_slots: match=%d ng=%d fetcherr=%d -> %s\n'
-                     % (ok, len(ng), len(fetcherr), a.report))
-    sys.exit(1 if (ng or fetcherr) else 0)
+    sys.stderr.write('gate_livepocket_slots: match=%d ng=%d rawng=%d fetcherr=%d -> %s\n'
+                     % (ok, len(ng), len(rawng), len(fetcherr), a.report))
+    sys.exit(1 if (ng or fetcherr or rawng) else 0)
 
 
 if __name__ == '__main__':
