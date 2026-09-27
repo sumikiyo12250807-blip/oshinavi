@@ -632,6 +632,9 @@
     .genre-group.open .gg-arrow { transform: rotate(180deg); color: var(--accent); text-shadow: 0 0 8px rgba(224,64,251,0.7); }
     .gg-count { color: var(--text-muted); font-size: 11px; margin-left: 2px; }
     .genre-group-body { display: none; }
+    /* 2026-09-28 中に細かいボタンが無いグループ（配信）＝開いても行いっぱいに広げず、空の欄を出さない */
+    .genre-group.gg-single.open { flex: 0 0 auto; }
+    .genre-group.gg-single .genre-group-body { display: none !important; }
     /* 開いたグループの中身は行いっぱいに広げる（グループの箱の外に出す） */
     .genre-group.open { flex: 1 1 100%; }
     .genre-group.open .genre-group-body {
@@ -1379,9 +1382,6 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     <span class="filter-label">GENRE</span>
     <button class="filter-btn active" data-genre="all">すべて</button>
     <button class="filter-btn" data-genre="new">✨ 新着</button>
-    <!-- 2026-09-28 ユーザー「配信はエンタメの中じゃなく独立させて　配信と出してほしい」
-         ＝配信の券を持つイベントを自動で拾う（isStreamEvent）。元のジャンルはそのまま -->
-    <button class="filter-btn" data-genre="haishin">配信</button>
   </div>
   <div class="genre-groups">
     <div class="genre-group" data-group="music">
@@ -1448,6 +1448,15 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
         <button class="filter-btn" data-genre="hanabi">花火大会</button>
         <button class="filter-btn" data-genre="gourmet">グルメ</button>
         <button class="filter-btn" data-genre="gakusai">学園祭</button><button class="filter-btn" data-genre="event">イベント</button>
+      </div>
+    </div>
+    <!-- 2026-09-28 ユーザー「配信はエンタメの中じゃなく独立させて」「音楽とかエンタメも同一に並べてほしい」「配信は最後に」
+         ＝5つ目のグループとして最後に置く。中に細かいボタンは無い＝見出しを押すとそのまま「配信」で絞る（▼なし・開いても空欄を出さない）。
+         中身は isStreamEvent（配信の券を持つイベント）。元のジャンルはそのまま -->
+    <div class="genre-group gg-single" data-group="haishin">
+      <button type="button" class="genre-group-toggle">📺 配信 <span class="gg-count"></span></button>
+      <div class="genre-group-body">
+        <button class="filter-btn gg-all" data-genre="g:haishin">配信すべて</button>
       </div>
     </div>
   </div>
@@ -34924,7 +34933,8 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","utaite","vocaloid","kpop","hiphop","club","chanson","hougaku","musicetc"],
     stage:   ["engeki","musical","dento","seiyuu","2.5ji","circus"],
     ento:    ["owarai","kaidan","dinnershow","movie","aisatsu","youtuber","vtuber","tiktoker","fanevent","magic","talkshow"],
-    odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event"]
+    odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event"],
+    haishin: ["haishin"]   // 2026-09-28 ユーザー「配信は最後に」＝5つ目のグループ（isStreamEvent が eventGenres に足す）
   };
 
   // 🆕2026-09-28 ユーザー「ジャンルに配信も作って」＝配信の券（配信・視聴・アーカイブ・LIVE STREAM）を
