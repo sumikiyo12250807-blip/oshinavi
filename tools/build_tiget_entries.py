@@ -338,9 +338,11 @@ def build(ev, today):
                     #    公演日を締切に流用するのは嘘（2026-09-09 ラフ×ラフで同じ型の事故）。
                     #    決まり（feedback_sale_end_unknown_display）＝発売日に「〜」を後ろ付けして
                     #    「販売中」で出し、date は画面から消えないための下限＝公演日にする。
-                    tickets.append({'type': f'{head}{md(ss_date)} {ss_time}発売〜'.replace('  ', ' ').rstrip(),
-                                    'date': d, 'startDate': ss_date,
-                                    'saleEndUnknown': True, 'url': ev['url']})
+                    # 🆕2026-09-27 ユーザー決定「書いてないときはそのイベントの日を書いて受付中にすればいい」
+                    #    （たいてい当日券が出るので）＝開始の日時（JSON-LDのvalidFrom＝ページに見えない）は出さず、
+                    #    「受付中〜公演日」で持つ。date＝公演日・startDate なし＝画面は販売中で「〜公演日」。
+                    tickets.append({'type': f'{head}受付中〜{md(d)}'.replace('  ', ' ').rstrip(),
+                                    'date': d, 'url': ev['url']})
                     has_live = True
             elif st in ('soldout', 'closed'):
                 # 🚨受付期間が無い売切れ・受付終了もある（当日会場払いの券種など）。
@@ -510,13 +512,13 @@ def _selftest():
     e5, _ = build(ev5, '2026-09-18')
     assert e5['tickets'][0]['type'] == '当日会場払い（大阪 10/18公演）', e5['tickets'][0]
     assert e5['tickets'][0]['date'] == '2026-10-18' and e5['tickets'][0]['soldout'] is True
-    # 受付期間が無い（当日支払い）＝発売日に〜を後ろ付けして販売中・締切は作らない
+    # 受付期間が無い（当日支払い）＝「受付中〜公演日」（2026-09-27 ユーザー決定）
     ev3 = json.loads(json.dumps(ev))
     ev3['programs'][0]['tickets'] = [{'name': '自由席', 'class': 'is-available', 'periods': []}]
     e3, _ = build(ev3, '2026-09-18')
     t3 = e3['tickets'][0]
-    assert t3['type'] == '自由席（大阪 10/18公演）8/20 11:40発売〜', t3['type']
-    assert t3['saleEndUnknown'] is True and t3['date'] == '2026-10-18' and t3['startDate'] == '2026-08-20', t3
+    assert t3['type'] == '自由席（大阪 10/18公演）受付中〜10/18', t3['type']
+    assert 'saleEndUnknown' not in t3 and t3['date'] == '2026-10-18' and 'startDate' not in t3, t3
     # 🆕2026-09-24 当日支払いでも注記に「受付終了日時」があれば締切にする（締切不明にしない）
     ev3b = json.loads(json.dumps(ev))
     ev3b['programs'][0]['tickets'] = [{'name': '自由席', 'class': 'is-available', 'periods': [],
