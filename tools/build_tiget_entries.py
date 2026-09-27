@@ -340,8 +340,8 @@ def build(ev, today):
                     #    「販売中」で出し、date は画面から消えないための下限＝公演日にする。
                     # 🆕2026-09-27 ユーザー決定「書いてないときはそのイベントの日を書いて受付中にすればいい」
                     #    （たいてい当日券が出るので）＝開始の日時（JSON-LDのvalidFrom＝ページに見えない）は出さず、
-                    #    「受付中〜公演日」で持つ。date＝公演日・startDate なし＝画面は販売中で「〜公演日」。
-                    tickets.append({'type': f'{head}受付中〜{md(d)}'.replace('  ', ' ').rstrip(),
+                    #    「〜公演日」で持つ（画面は「販売中」。同日ユーザー「販売中でいいよ」＝受付中の文字は付けない）。date＝公演日・startDate なし＝画面は販売中で「〜公演日」。
+                    tickets.append({'type': f'{head}〜{md(d)}'.replace('  ', ' ').rstrip(),
                                     'date': d, 'url': ev['url']})
                     has_live = True
             elif st in ('soldout', 'closed'):
@@ -512,12 +512,12 @@ def _selftest():
     e5, _ = build(ev5, '2026-09-18')
     assert e5['tickets'][0]['type'] == '当日会場払い（大阪 10/18公演）', e5['tickets'][0]
     assert e5['tickets'][0]['date'] == '2026-10-18' and e5['tickets'][0]['soldout'] is True
-    # 受付期間が無い（当日支払い）＝「受付中〜公演日」（2026-09-27 ユーザー決定）
+    # 受付期間が無い（当日支払い）＝「〜公演日」の販売中（2026-09-27 ユーザー決定）
     ev3 = json.loads(json.dumps(ev))
     ev3['programs'][0]['tickets'] = [{'name': '自由席', 'class': 'is-available', 'periods': []}]
     e3, _ = build(ev3, '2026-09-18')
     t3 = e3['tickets'][0]
-    assert t3['type'] == '自由席（大阪 10/18公演）受付中〜10/18', t3['type']
+    assert t3['type'] == '自由席（大阪 10/18公演）〜10/18', t3['type']
     assert 'saleEndUnknown' not in t3 and t3['date'] == '2026-10-18' and 'startDate' not in t3, t3
     # 🆕2026-09-24 当日支払いでも注記に「受付終了日時」があれば締切にする（締切不明にしない）
     ev3b = json.loads(json.dumps(ev))
