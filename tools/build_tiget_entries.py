@@ -298,7 +298,9 @@ def build(ev, today):
                                     'date': end, 'startDate': per[0], 'url': ev['url']})
                     has_live = True
                 elif sa and sa[0] >= today:
-                    tk = {'type': f'{head}{md(sa[0])} {sa[1]}発売'.rstrip(), 'date': sa[0],
+                    # 🚨2026-09-27 締切が書いていない発売前も date＝公演日（発売日だと翌0時に消える・独立チェックが指摘）
+                    #    ＝ユーザー決定「書いてないときはそのイベントの日」＝「M/D HH:MM発売〜公演日」
+                    tk = {'type': f'{head}{md(sa[0])} {sa[1]}発売〜{md(d)}'.replace('  ', ' ').rstrip(), 'date': d,
                           'startDate': sa[0], 'url': ev['url']}
                     if ea and ea[0] >= sa[0]:
                         tk['type'] = f'{head}{md(sa[0])} {sa[1]}発売〜{md(ea[0])} {ea[1]}'.replace('  ', ' ').rstrip()
@@ -310,8 +312,8 @@ def build(ev, today):
                     #    ただし**今日以降のときだけ**使う（2026-09-18＝「当日券」の validFrom は
                     #    そのイベントが売り出された日で**過去**＝流用すると過ぎた日を発売日にしてしまう）。
                     #    これで63イベントの発売前が拾えるようになった。
-                    tickets.append({'type': f'{head}{md(ss_date)} {ss_time}発売'.replace('  ', ' ').rstrip(),
-                                    'date': ss_date, 'startDate': ss_date, 'url': ev['url']})
+                    tickets.append({'type': f'{head}{md(ss_date)} {ss_time}発売〜{md(d)}'.replace('  ', ' ').rstrip(),
+                                    'date': d, 'startDate': ss_date, 'url': ev['url']})
                     has_live = True
                 # validFrom が過去・取れない＝推測で日付を作らないので載せない
             elif st == 'live':
@@ -540,14 +542,14 @@ def _selftest():
     ev3d['programs'][0]['tickets'] = [{'name': '一般予約', 'class': 'is-unable is-unopened', 'periods': [],
                                        'start_at': ['2026-10-03', '10:00']}]
     t3d = build(ev3d, '2026-09-18')[0]['tickets'][0]
-    assert t3d['type'] == '一般予約（大阪 10/18公演）10/3 10:00発売' and t3d['startDate'] == '2026-10-03', t3d
+    assert t3d['type'] == '一般予約（大阪 10/18公演）10/3 10:00発売〜10/18' and t3d['startDate'] == '2026-10-03' and t3d['date'] == '2026-10-18', t3d
     # 🚨受付前で受付期間の欄が無い＝validFrom が今日以降なら発売日として使う／過去なら載せない
     evU = json.loads(json.dumps(ev))
     evU['programs'][0]['tickets'] = [{'name': '一般チケット', 'class': 'is-unable is-unopened',
                                       'price': 2500, 'periods': []}]
     evU['ld_offers'] = [{'valid_from': '2026-09-27', 'valid_from_time': '20:00'}]
     eU, _ = build(evU, '2026-09-18')
-    assert eU['tickets'][0]['type'] == '一般チケット（大阪 10/18公演）9/27 20:00発売', eU['tickets'][0]
+    assert eU['tickets'][0]['type'] == '一般チケット（大阪 10/18公演）9/27 20:00発売〜10/18' and eU['tickets'][0]['date'] == '2026-10-18', eU['tickets'][0]
     assert eU['tickets'][0]['startDate'] == '2026-09-27'
     evU2 = json.loads(json.dumps(evU))
     evU2['ld_offers'] = [{'valid_from': '2026-07-16', 'valid_from_time': '19:00'}]   # 過去＝使わない
