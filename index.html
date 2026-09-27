@@ -1152,6 +1152,13 @@
       border: 1px solid rgba(60, 200, 190, 0.35);
     }
 
+    /* 2026-09-28 livePocket＝アイドル・お笑い・ライブハウス・コラボカフェの売り場 */
+    .btn-livepocket {
+      background: rgba(255, 110, 150, 0.15);
+      color: #ff8fb0;
+      border: 1px solid rgba(255, 110, 150, 0.35);
+    }
+
     .btn-yoshimoto {
       background: rgba(255, 150, 30, 0.15);
       color: #ffb347;
@@ -34352,6 +34359,8 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       /* 2026-09-21 ユーザー「Zaikoを見て」＝AKB48劇場・hololive・声優公演・ライブハウス／クラブ。
          ぴあに出ない小箱がここにしか無いことが多い（TIGETと同じ性格） */
       { key: "zaiko",    label: "ZAIKO",            cls: "btn-zaiko",    icon: "🎫" },
+      /* 2026-09-28 ユーザー「livePocket作って」＝アイドル・お笑い・ライブハウス・コラボカフェ（TIGET・ZAIKOと同じ性格） */
+      { key: "livepocket", label: "livePocket",     cls: "btn-livepocket", icon: "🎫" },
       { key: "yoshimoto",label: "吉本オンライン",   cls: "btn-yoshimoto",icon: "📺" },
       { key: "tvasahi",  label: "テレ朝チケット",   cls: "btn-tvasahi",  icon: "📺" },
       { key: "shochiku", label: "松竹チケット",     cls: "btn-shochiku", icon: "🎭" },
@@ -34590,7 +34599,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     // 下部の単一チケット販売ボタンが誤誘導になるので非表示にする（CD/グッズ/ホテルは残す）
     const uniqTicketUrls = [...new Set((ev.tickets || []).map(t => t.url).filter(Boolean))];
     const multiTicketUrl = uniqTicketUrls.length > 1;
-    const VENDOR_TICKET_KEYS = ["rakuten", "pia", "eplus", "lawson", "tiget", "fany", "zaiko", "yoshimoto", "tvasahi", "shochiku", "official"];
+    const VENDOR_TICKET_KEYS = ["rakuten", "pia", "eplus", "lawson", "tiget", "fany", "zaiko", "livepocket", "yoshimoto", "tvasahi", "shochiku", "official"];
     // ボタンの文字はエントリごとに差し替えられる（links に "<キー>Label" を足す）。
     // 🚨Amazonリンクの中身はCDとは限らない＝三木大雲は本しか出ないのに「最新CD」と
     // 出ていた（2026-09-06 ユーザー指摘）。中身に合う言葉を links.amazonLabel で指定する。
