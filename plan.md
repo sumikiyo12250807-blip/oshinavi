@@ -10,7 +10,9 @@
    ✅ e+ heal_eplus_started 19枠に締切・1枠売切（id6007は404＝触らず）
    ✅ TIGET 今日発売49件→番人ng17→16件heal→番人0／⏳24533 森本ケンタ（販売中・終わり不明）＝締切なしで載せるかユーザーに質問中
    ✅ FANY 今日発売66件 食い違い0／ZAIKO 2件 一致1・一覧落ち1（20543＝9/26公演済み＝正常）
-   ⏳ ぴあ heal_stale --build 読み込み中（263件417枠・tmp/noon0927_build.log）→ --apply → blocked_ids → heal_union → head_compare → reconcile --new → build_ai_page → compact → 点検 → push
+   ✅ ぴあ heal_stale 55件＋heal_union 49件→消えた枠0／reconcile --new 0件／build_ai_page・compact（20.50MB）／並び順違反0・CRLF崩れ0
+   ✅ push済み（78c7b52c・未push0）※--applyを2回回した＝2回目は締切済み枠の startDate を消しただけ（枠・締切は同じ）
+   📋 削除候補115件（買える枠ゼロ）＝DELETE_GATE未／31日超の枠0＝28件
 ```
 
 # ▶▶ 9/27(日) 10時ごろ /clear 後にやること（引き継ぎ）
