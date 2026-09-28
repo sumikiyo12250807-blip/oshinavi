@@ -6,6 +6,12 @@
 ✅ 楽天 reconcile FAIL5＝全部ノイズ（2808・4023・17243は既知／7344・7494は締切の過ぎた枠がページから消えただけ）／売り切れ点検 変化なし（調べられず18件）
 ✅ e+ heal_eplus_started＝21174 パンダドラゴン撮影会 12枠に予定枚数終了
 ⏳ 裏＝ぴあ heal_stale --build（tmp/heal_0929_build.txt）／TIGET・ZAIKO・FANY・livePocket の収集
+✅ ZAIKO新着4（25747〜25750）＋ヒール14（番人14一致）／TIGET新着96（25751〜25846）／FANY新着84＋ヒール70（番人1738一致・既知20428）
+✅ ぴあヒール35件（安全弁80件＝今日10時発売の枠＝昼に拾う）／前夜ぴあ35件 照合35/35→振り分け23（独立ジャンル23/23）logs/assigned_2026-09-29.md・保留12（⑦）
+✅ 枠0の番人69件→ぴあに枠のあった10件を取り直し（YOASOBI・レミオロメン・呪術廻戦ほか・照合12/12）
+✅ 08:0x 画面の番人 gate_badge_render 今日/明日 違反0
+⏳ 08:0x ユーザー「新着を振り分けて」＝ゲート中（livePocket745 鉄壁ゲート／TIGET283 全件番人／TIGET・FANY・ZAIKO 55件抜き取りの独立検査）。ZAIKO17一致・24618/24619は確かめられず残す・ぴあ保留12は残す
+⏳ livePocket 今日の収集（tmp/livepocket_0929.json）は pool のゲートが終わってから build→gate→inject（同時アクセス禁止）
 📋 残り＝ぴあheal --apply→足し算→HEAD突合／前夜ぴあ35件(25250〜25284) reconcile→振り分け（⑦の12件は保留）／枠0の31日超69件を照合／gate_badge_render→reconcile --new→build_ai_page→compact→朝push
 📝 夜にまとめて聞く＝9/28引き継ぎの①〜⑨をそのまま持ち越し
 ```
