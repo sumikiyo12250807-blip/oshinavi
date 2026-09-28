@@ -255,8 +255,26 @@ def build(ev, today, unknown=None):
     # 🆕2026-09-28 夜 独立ゲートが発見＝同じ名前の受付が日付ごとに並ぶ型（ClueMetic Popup＝「先着販売受付」×4）を
     #   同じ札の枠として1つに畳み、受付3つと売切の印が落ちていた。同名の受付が2つ以上ある時は、券種名の頭の日付
     #   （「10/22(木) 14ː00〜」）を受付名に添えて別の枠にする。日付が無ければ「その2」…で分ける。
+    #   🆕同じ夜 サイドチェックが追加で発見＝日付の無い型（AETHER CROSS＝VIP/一般/U-25・MERA撮影会＝2部/4部/5部…）
+    #   ＝同名の受付どうしで共通の頭を落とした券種名（「VIP」「5部・6部」）を添える。
     title_n = collections.Counter((r.get('title') or '') for r in (ev.get('receptions') or []))
     title_seen = collections.Counter()
+    title_tails = collections.defaultdict(set)
+    same_cards = collections.defaultdict(list)
+    for r in ev.get('receptions') or []:
+        same_cards[r.get('title') or ''] += [re.sub(r'\s+', ' ', c.get('name') or '').strip() for c in r.get('cards') or []]
+
+    def card_tail(raw, cards):
+        names = [re.sub(r'\s+', ' ', c.get('name') or '').strip() for c in cards]
+        pool = [n for n in same_cards[raw] if n]
+        pre = ''
+        if len(pool) > 1:
+            pre = pool[0]
+            for n in pool[1:]:
+                while pre and not n.startswith(pre):
+                    pre = pre[:-1]
+        tails = [n[len(pre):].strip() for n in names if n[len(pre):].strip()]
+        return '・'.join(dict.fromkeys(tails))
     for rec in ev.get('receptions') or []:
         cards = rec.get('cards') or []
         raw = rec.get('title') or ''
@@ -264,7 +282,12 @@ def build(ev, today, unknown=None):
             title_seen[raw] += 1
             dm = [re.match(r'\s*(\d{1,2}/\d{1,2})\s*[(（]\s*([月火水木金土日祝・]+)\s*[)）]', c.get('name') or '') for c in cards]
             ds = sorted({'%s（%s）' % (x.group(1), x.group(2)) for x in dm if x})
-            raw = '%s %s' % (raw, ds[0] if len(ds) == 1 else 'その%d' % title_seen[raw])
+            tail = ds[0] if len(ds) == 1 else card_tail(raw, cards)
+            # 長い（券種がずらっと並ぶ型＝YOKOHAMA SONIC）・空・前と同じ なら「その2」…＝28字で切れて同じ枠に潰れるのを防ぐ
+            if not tail or len(tail) > 12 or tail in title_tails[raw]:
+                tail = 'その%d' % title_seen[raw]
+            title_tails[raw].add(tail)
+            raw = '%s %s' % (raw, tail)
         if SELLER_SIDE.search(raw) or (cards and all(SELLER_SIDE.search(c.get('name') or '') for c in cards)):
             skipped_slots.append((raw, '出す側の受付'))
             continue
@@ -485,6 +508,15 @@ def _selftest():
     ts = e['tickets']
     assert len(ts) == 2 and '10/22（木）' in ts[0]['type'] and ts[0]['soldout'] and '10/23（金）' in ts[1]['type'] \
         and not ts[1].get('soldout'), ts
+    # ⑳ 日付の無い同名受付（VIP/一般・5部6部/4部）＝券種名の違う所を添える
+    e, _ = build(ev([rec('販売前', cards=[{'name': 'VIP', 'status': '販売前'}]),
+                     rec('販売前', cards=[{'name': '一般', 'status': '販売前'}])]), today)
+    assert [t['type'].split('（')[0] for t in e['tickets']] == ['先着販売受付 VIP', '先着販売受付 一般'], e['tickets']
+    e, _ = build(ev([rec(cards=[{'name': 'MERA撮影会 吉瀬結(団体) 5部', 'status': '予定販売数終了'},
+                                {'name': 'MERA撮影会 吉瀬結(団体) 6部', 'status': '予定販売数終了'}]),
+                     rec(cards=[{'name': 'MERA撮影会 吉瀬結(団体) 2部', 'status': '売切間近'}])]), today)
+    assert e['tickets'][0]['type'].startswith('先着販売受付 5部・6部') and e['tickets'][0]['soldout'], e['tickets']
+    assert e['tickets'][1]['type'].startswith('先着販売受付 2部') and not e['tickets'][1].get('soldout'), e['tickets']
     print('selftest OK: slot_state/build/ticket_name/販売前の締切/〜公演日/売切/販売終了/出す側/配信の札')
 
 
