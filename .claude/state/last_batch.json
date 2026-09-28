@@ -1049,6 +1049,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "reconcile --new 36/36 一致（QC 37/39枠照合）。足し込み15件（1622・2047・4807・4838・5392・5400・5732・7031・7712・8405・8592・9729・9946・22532・23554）＝うち同名ツアー/長期公演に畳んだ3件（4807石橋凌・1622 MICHAEL LIVES FOREVER・8592ライオンキング2027年1〜6月12ページ）。HEAD突合で消えた枠0"
+  },
+  {
+   "date": "2026-09-28",
+   "slot": "night",
+   "id_from": 25121,
+   "id_to": 25138,
+   "count": 18,
+   "source": "ぴあ 新規公演（指定eventCd 16本＋bundle 2本：b2671034・b2671042）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "eventCd重複0。build 18/18（skip0）・全件が発売前の枠を持つ（31枠）。check_badges OK・reconcile --new OK18/MISSING0/DROP0/STALE0/FETCH0（QC 19/31枠照合・skip12はCS応援席の同締切）・compact済・CRLF LFだけ0・NEW_ORDERずれ0"
   }
  ]
 }
