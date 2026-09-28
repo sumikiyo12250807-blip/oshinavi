@@ -303,6 +303,8 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      🚨ぴあ以外なので**振り分けはユーザーの確認後**。詳しくは [[reference_fany_ticket]]
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
+   - 🆕🚨**push前に必ず** `python tools/gate_badge_render.py --today <今日>,<明日>`＝**画面に出るバッジの日付・時刻**の番人（ページのプログラムをそのまま動かして全枠を描く・exit 0 以外はpushしない）。
+     Why＝2026-09-28 夜 グレープカンパニー（ZAIKO）の「9/28 21:00発売〜10/25 12:00」が画面で「〜10/25 21:00」＝データの番人は全部通っていたのに表示で間違えた（ユーザー「同じ間違いが起きないようにゲートを直して」）
    - FETCHが出たら**ぴあの混雑ページ**を疑って該当だけ再照合（巻き添えのSTALEも消える）
 4. `.claude/state/last_batch.json` に**投入したid範囲を必ず記録**（翌朝の再チェックで使う）
 5. 🚨🚨**ぴあ以外（e+／楽天／ローチケ）が混ざっていたら、そこだけユーザーの確認を待つ＝⛔ゲート**
