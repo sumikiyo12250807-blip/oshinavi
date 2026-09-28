@@ -20,6 +20,11 @@
    ✅24790・24635 作り直し（独立ゲート2/2一致）bd727cff
    ⛔ tmp/x0928e/livepocket_far.json はWAFで止められた状態の可能性＝使わない
 ✅ livePocket日付別 10組58件→10件（d4ea6c01）tools/fold_livepocket_daily.py
+🐛 グレープカンパニー24621（ユーザー指摘）＝画面のバッジが発売時刻を締切の日付に付けていた（〜10/25 21:00）→ renderCard の時刻を直した 25d4bfab
+🛡 画面バッジの番人 tools/gate_badge_render.py（3b1af804）＝直す前の版でグレープ3枠を検出・今は3日分0件 → push前の手順・dayスキル・PLAYBOOKに追加
+🐦 X_SCRIPT：たまにOSHINAVIの使い方／多すぎる日は書き出しに「今日は書ききれないわ／載ってない〇〇件はOSHINAVIで／売り場もホテルも」／人間味・変な言い回しなし／売り場をまたいで集めている言い方
+🩹 夜のヒール（22:00〜）＝TIGET 39（番人39一致）・ZAIKO 3（6一致）・livePocket 9（独立ゲート9/9）・FANY 2（1701一致・既知20428）／ぴあ＝組み立て中
+😴 22:3x ユーザー就寝（このまま付けておく）＝23:12の夜のpushは自走・質問は朝にまとめて
 ⏳ livePocket 470件組み上がり（tmp/x0928e/built_livepocket.json・put460）＝発売前117・本日26・売切/終了だけ23
    ユーザー「これおわったのだらけ　まだ売ってないのはないの？」→ 開催日が遠い順（--sort 1 を足した）30頁を裏で収集中 tmp/x0928e/livepocket_far.json
 ⏳ 楽天 発売前（tmp/x0928e/rakuten.log）まだ走っている
