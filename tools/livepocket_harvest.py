@@ -304,6 +304,7 @@ def main():
     ap.add_argument('--pages', type=int, default=0, help='一覧を先頭から何ページまで見るか（0＝最後まで／打ち切りまで）')
     ap.add_argument('--start-page', type=int, default=1)
     ap.add_argument('--limit', type=int, default=0, help='個別ページを引く上限（試すとき）')
+    ap.add_argument('--sort', type=int, default=3, help='一覧の並び 3＝公開日が新しい順（毎朝用）／1＝開催日が新しい順（遠い先の公演から＝発売前が多い・9/28夜）')
     ap.add_argument('--stop-known', type=int, default=0,
                     help='登録済みだけのページがこの回数続いたら一覧を打ち切る（毎朝用は 1）。個別も未登録だけ引く')
     ap.add_argument('--ids', default='', help='個別idを直接指定（一覧を回さない）')
@@ -325,7 +326,7 @@ def main():
     else:
         page, last, allknown = a.start_page, a.start_page, 0
         while page <= last:
-            u = f'{BASE}/event/search?sort=3&page={page}'
+            u = f'{BASE}/event/search?sort={a.sort}&page={page}'
             try:
                 h = fetch(u)
             except Exception as e:
