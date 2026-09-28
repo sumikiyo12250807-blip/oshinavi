@@ -14,6 +14,11 @@
 ⏳ livePocket 今日の収集（tmp/livepocket_0929.json）は pool のゲートが終わってから build→gate→inject（同時アクセス禁止）
 ✅ 抜き取り独立検査55件（TIGET30・FANY15・ZAIKO10）＝公演日・会場・券種55/55一致／ジャンル4件割れ→振り分けず保留（tmp/x0929/pool_sample_audit.json）
 📝 夜に聞く⑩＝TIGETは複数カテゴリ（アイドル＋トークショー等）を持つのにビルダーが1つしか写さない型（25171 ふくろうFM・25163 アニソン＆ボカロFEVER・25175 アクエンチャントナイト）＝両方写すか／ZAIKO「Dance」→club の写し方（25144 SELLOUT・カテゴリは大会）
+✅ 08:3x 新着1095件を振り分け（livePocket706・TIGET280・FANY93・ZAIKO16）logs/assigned_2026-09-29.md／プール残57＝ぴあ保留12・livePocket食い違い39（tmp/x0929/gate_lp_pool.txt＝heal_livepocketで直す）・ジャンル割れ4・ZAIKO2
+✅ TIGET全件番人5136一致→ヒール65（番人65一致・残り5は作り直し空）
+✅ 08:39 朝push cdd7b26e（今日1回目）＝origin/main..HEAD 空
+✅ 朝push後 livePocket新着24件（鉄壁ゲート28/29・r10abは入れず・日別1件畳み）45f46e61＝昼のpushに乗る
+📋 残り（昼の便へ）＝livePocket食い違い39件のヒール／12:10 昼の便
 📋 残り＝ぴあheal --apply→足し算→HEAD突合／前夜ぴあ35件(25250〜25284) reconcile→振り分け（⑦の12件は保留）／枠0の31日超69件を照合／gate_badge_render→reconcile --new→build_ai_page→compact→朝push
 📝 夜にまとめて聞く＝9/28引き継ぎの①〜⑨をそのまま持ち越し
 ```
