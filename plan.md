@@ -12,6 +12,8 @@
 ✅ 08:0x 画面の番人 gate_badge_render 今日/明日 違反0
 ⏳ 08:0x ユーザー「新着を振り分けて」＝ゲート中（livePocket745 鉄壁ゲート／TIGET283 全件番人／TIGET・FANY・ZAIKO 55件抜き取りの独立検査）。ZAIKO17一致・24618/24619は確かめられず残す・ぴあ保留12は残す
 ⏳ livePocket 今日の収集（tmp/livepocket_0929.json）は pool のゲートが終わってから build→gate→inject（同時アクセス禁止）
+✅ 抜き取り独立検査55件（TIGET30・FANY15・ZAIKO10）＝公演日・会場・券種55/55一致／ジャンル4件割れ→振り分けず保留（tmp/x0929/pool_sample_audit.json）
+📝 夜に聞く⑩＝TIGETは複数カテゴリ（アイドル＋トークショー等）を持つのにビルダーが1つしか写さない型（25171 ふくろうFM・25163 アニソン＆ボカロFEVER・25175 アクエンチャントナイト）＝両方写すか／ZAIKO「Dance」→club の写し方（25144 SELLOUT・カテゴリは大会）
 📋 残り＝ぴあheal --apply→足し算→HEAD突合／前夜ぴあ35件(25250〜25284) reconcile→振り分け（⑦の12件は保留）／枠0の31日超69件を照合／gate_badge_render→reconcile --new→build_ai_page→compact→朝push
 📝 夜にまとめて聞く＝9/28引き継ぎの①〜⑨をそのまま持ち越し
 ```
