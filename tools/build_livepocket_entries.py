@@ -252,9 +252,19 @@ def build(ev, today, unknown=None):
     url = ev['url']
 
     tickets, skipped_slots, has_live = [], [], False
+    # 🆕2026-09-28 夜 独立ゲートが発見＝同じ名前の受付が日付ごとに並ぶ型（ClueMetic Popup＝「先着販売受付」×4）を
+    #   同じ札の枠として1つに畳み、受付3つと売切の印が落ちていた。同名の受付が2つ以上ある時は、券種名の頭の日付
+    #   （「10/22(木) 14ː00〜」）を受付名に添えて別の枠にする。日付が無ければ「その2」…で分ける。
+    title_n = collections.Counter((r.get('title') or '') for r in (ev.get('receptions') or []))
+    title_seen = collections.Counter()
     for rec in ev.get('receptions') or []:
         cards = rec.get('cards') or []
         raw = rec.get('title') or ''
+        if title_n[raw] > 1:
+            title_seen[raw] += 1
+            dm = [re.match(r'\s*(\d{1,2}/\d{1,2})\s*[(（]\s*([月火水木金土日祝・]+)\s*[)）]', c.get('name') or '') for c in cards]
+            ds = sorted({'%s（%s）' % (x.group(1), x.group(2)) for x in dm if x})
+            raw = '%s %s' % (raw, ds[0] if len(ds) == 1 else 'その%d' % title_seen[raw])
         if SELLER_SIDE.search(raw) or (cards and all(SELLER_SIDE.search(c.get('name') or '') for c in cards)):
             skipped_slots.append((raw, '出す側の受付'))
             continue
@@ -467,7 +477,14 @@ def _selftest():
     assert e['tickets'][0]['type'].startswith('抽選販売受付 大阪（'), e['tickets']
     # ⑱ 同じ受付名・同じ期間・同じ状態は1つに畳む
     e, _ = build(ev([rec(), rec()]), today)
-    assert len(e['tickets']) == 1
+    assert len(e['tickets']) == 2 and e['tickets'][0]['type'] != e['tickets'][1]['type'], e['tickets']
+    # ⑲ 同じ名前・同じ締切の受付が日付ごとに並ぶ型（ClueMetic Popup・9/28夜）＝券種名の頭の日付で分ける・売切の印を落とさない
+    e, _ = build(ev([rec(cards=[{'name': '10/22(木) 14ː00～14ː30', 'status': '予定販売数終了'}]),
+                     rec(cards=[{'name': '10/23(金)11:00 ～ 11:30', 'status': '販売中'}])],
+                    dates=['2026-10-22', '2026-10-25']), today)
+    ts = e['tickets']
+    assert len(ts) == 2 and '10/22（木）' in ts[0]['type'] and ts[0]['soldout'] and '10/23（金）' in ts[1]['type'] \
+        and not ts[1].get('soldout'), ts
     print('selftest OK: slot_state/build/ticket_name/販売前の締切/〜公演日/売切/販売終了/出す側/配信の札')
 
 
