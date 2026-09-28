@@ -10,8 +10,16 @@
    🚨途中で EVENTS を1行に潰した（fold_daily の json.dumps に indent 無し）→ indent=2・CRLFで書き直して差分は畳みだけに戻した・道具も直した
 ✅ FANY 新着3（25285〜25287）＋ヒール22・番人1701一致（食い違いは既知20428）f399a2ef
 ✅ 楽天 発売前9件＝全部登録済み（新規0）
-🛡 livePocket鉄壁ゲート（ユーザー指示）＝仕様 tmp/x0928e/lp_gate_spec.md／エージェントAが tools/gate_livepocket_indep.py を作成中 → 次にエージェントBのサイドチェック（正解30件＋変異10種）
-   ⛔今夜の livePocket 470件はゲートが通るまで投入しない
+🛡 livePocket鉄壁ゲート（ユーザー指示）＝仕様 tmp/x0928e/lp_gate_spec.md
+   ✅A：tools/gate_livepocket_indep.py（81381a69）selftest 19/19・試運転40件＝一致39＋ビルダーの本物の誤り1（ClueMetic 同名受付4→1枠）
+   ✅ビルダー修正 f6aa78e7（同名受付は券種名の頭の日付を添える）＝今夜分 552→560枠 → tmp/x0928e/built_livepocket_v2.json を使う
+   ✅B：サイドチェック abccc34e＝登録の誤り5/5・誤検知0・変異24/24（ゲート修正3点）
+   ✅ビルダーの穴3つを直した（同名受付×日付／×券種・部／サークル参加＝出す側）
+   ✅livePocket新着459件（25288〜25746）＝独立ゲート469件一致→投入・日付別8組をまとめ・別ページ10件は既存に枠 ce41b385
+      入れない＝r10ab 広島アリナズ祭（判定不能＝添え札「シリアルコードチケット」）・q4qho MERA撮影会 白瀬結香（足す先が決まらない）
+   ✅24790・24635 作り直し（独立ゲート2/2一致）bd727cff
+   ⛔ tmp/x0928e/livepocket_far.json はWAFで止められた状態の可能性＝使わない
+✅ livePocket日付別 10組58件→10件（d4ea6c01）tools/fold_livepocket_daily.py
 ⏳ livePocket 470件組み上がり（tmp/x0928e/built_livepocket.json・put460）＝発売前117・本日26・売切/終了だけ23
    ユーザー「これおわったのだらけ　まだ売ってないのはないの？」→ 開催日が遠い順（--sort 1 を足した）30頁を裏で収集中 tmp/x0928e/livepocket_far.json
 ⏳ 楽天 発売前（tmp/x0928e/rakuten.log）まだ走っている
