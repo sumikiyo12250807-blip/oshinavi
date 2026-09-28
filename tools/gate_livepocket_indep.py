@@ -41,6 +41,8 @@ UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/128.0 Safari/537.36')
 
 KNOWN_STATUS = ('販売前', '販売中', '予定販売枚数終了', '販売終了')
+# 状態の札の横に並ぶ副札（状態ではない）。ここに無い副札は⑦＝判定不能のまま
+EXTRA_TAGS = ('ファンクラブチケット',)
 # 出す側（出店・出展する人／出演する人／案内を受け取るだけ）の受付
 DASU_RE = re.compile(r'出店|出展|出演エントリー|出演者エントリー|出演申込|出演者募集|出演者申込|'
                      r'案内登録|エントリー受付|サークル参加|ブース申込|ブース出')
@@ -263,6 +265,13 @@ def parse_page(raw):
             pg['err'] = '受付の見出しが読めない'
             return pg
         status = strip_tags(it[:k3])
+        # 札の横に付く副札（例「販売中 ファンクラブチケット」）＝状態の札が1つだけ・副札が既知なら状態として読む
+        toks = status.split()
+        known = [x for x in toks if x in KNOWN_STATUS]
+        extra = [x for x in toks if x not in KNOWN_STATUS]
+        subtags = []
+        if len(known) == 1 and extra and all(x in EXTRA_TAGS for x in extra):
+            status, subtags = known[0], extra
         h3 = it[k3: it.find('</h3>', k3)]
         lab = re.search(r'<span[^>]*>(.*?)</span>', h3, re.S)
         label = strip_tags(lab.group(1)) if lab else ''
@@ -280,7 +289,7 @@ def parse_page(raw):
             if rs:
                 end = dt.datetime(*map(int, rs.groups()))
         cards = [strip_tags(c) for c in re.findall(r'<h4[^>]*>(.*?)</h4>', it, re.S)]
-        recs.append({'status': status, 'label': label, 'title': title, 'period': period,
+        recs.append({'status': status, 'subtags': subtags, 'label': label, 'title': title, 'period': period,
                      'start': start, 'end': end, 'cards': cards, 'n_dt': len(dts),
                      'text': strip_tags(it)})
     pg['recs'] = recs
@@ -380,6 +389,40 @@ def check_entry(e, pages, today):
                         iss.append(('①開演時刻', lab, '・'.join(pmain['times']) or '（時刻なし）', link))
             elif pmain['kaien'] and not multi:
                 iss.append(('①開演時刻の欠落', lab, '開演 ' + '・'.join(pmain['kaien']), link))
+        # ③' 日付別ページを畳んだエントリの「ページ丸ごと落ち」
+        #   どのページも同じ会期（複数日）を名乗り、受付名に「10/25（日）」の形で自分の日を持つ型だけ見る。
+        #   会期のうちどのページの日でもない日＝そのページが登録に無い（定休日なら人が確かめる）
+        if len(good) >= 2 and all(p['first'] == first and p['last'] == last for p in good.values()) and first != last:
+            days = set()
+            ok_type = True
+            for p in good.values():
+                dd = None
+                for r in p['recs']:
+                    mm = re.search(r'(\d{1,2})/(\d{1,2})\s*[（(]', nfkc(r['title']))
+                    if mm:
+                        for y in (first.year, last.year):
+                            try:
+                                c = dt.date(y, int(mm.group(1)), int(mm.group(2)))
+                            except ValueError:
+                                continue
+                            if first <= c <= last:
+                                dd = c
+                                break
+                        break
+                if dd is None:
+                    ok_type = False
+                    break
+                days.add(dd)
+            if ok_type:
+                miss = []
+                d = first
+                while d <= last:
+                    if d not in days:
+                        miss.append('%d/%d' % (d.month, d.day))
+                    d += dt.timedelta(days=1)
+                if miss:
+                    iss.append(('③畳んだ会期にページの無い日（日付別ページの落ち）', '%dページ' % len(good),
+                                '会期 %s〜%s のうち %s のページが登録に無い' % (first, last, '・'.join(miss)), link))
         # ⑤ 過去
         if last < today:
             iss.append(('⑤公演が終わっている', e.get('date'), '最終開催日 %s < 今日 %s' % (last, today), link))
@@ -515,7 +558,8 @@ def check_entry(e, pages, today):
             if sm:
                 if (int(sm.group(1)), int(sm.group(2))) != (pg['first'].month, pg['first'].day) or pg['first'] != pg['last']:
                     iss.append(('①枠の公演日', typ, '%s〜%s' % (pg['first'], pg['last']), u))
-                if sm.group(3) and sm.group(3) not in pg['times']:
+                shm = sm.group(3) and '%d:%s' % (int(sm.group(3).split(':')[0]), sm.group(3).split(':')[1])
+                if shm and shm not in pg['times']:   # 「09:20」と「9:20」を同じに
                     iss.append(('①枠の開演時刻', typ, '・'.join(pg['times']) or '（時刻なし）', u))
             else:
                 a, b = pt['show'].split('〜')
@@ -710,6 +754,39 @@ def selftest():
     run1('配信・複数日の正しい登録は鳴らない', e2, p=parse_page(page2), want=False)
     m = copy.deepcopy(e2); m['dateLabel'] = '2026年10月4日(日)'
     run1('会期の型（初日欠落）', m, p=parse_page(page2), key='①')
+    # 副札（ファンクラブチケット）は状態として読む・知らない副札は判定不能
+    fc = page.replace('<span class="tag">販売中</span>', '<span class="tag">販売中</span><span class="tag">ファンクラブチケット</span>', 1)
+    run1('副札ファンクラブチケットは鳴らない', good, p=parse_page(fc), want=False)
+    fx = page.replace('<span class="tag">販売中</span>', '<span class="tag">販売中</span><span class="tag">謎の札</span>', 1)
+    run1('知らない副札は判定不能', good, p=parse_page(fx), key='判定不能')
+    # 枠の開演時刻「09:20」と「9:20」は同じ
+    p9 = _mk_page(dt.date(2026, 10, 24), dt.date(2026, 10, 24), '開演時間', '09:20', '会議室', '東京都',
+                  [('販売中', '先着販売受付', D(2026, 9, 20, 10, 0), D(2026, 10, 24, 9, 20), '一般')])
+    e9 = {'name': 'x', 'date': '2026-10-24', 'dateLabel': '2026年10月24日(土) 09:20開演', 'venue': '会議室',
+          'prefecture': '東京', 'links': {'livepocket': url},
+          'tickets': [{'type': '先着販売受付（東京 10/24 09:20公演）〜10/24 9:20', 'date': '2026-10-24', 'url': url}]}
+    run1('開演09:20は9:20と同じ', e9, p=parse_page(p9), want=False)
+    # 日付別ページを畳んだエントリ：1ページ落ちを鳴らす
+    pages3 = {}
+    ents3 = []
+    for k, dd in enumerate((1, 2, 3)):
+        u = 'https://livepocket.jp/e/day%d' % dd
+        d0 = D(2026, 11, dd, 10, 0)
+        pages3[u] = parse_page(_mk_page(dt.date(2026, 11, 1), dt.date(2026, 11, 3), None, None, 'カフェ', '東京都',
+                                        [('販売中', '【11/%d（%s）】来店予約' % (dd, '日月火'[k]), D(2026, 9, 20, 10, 0), d0, '一般')]))
+        ents3.append({'type': '【11/%d（%s）】来店予約（東京 11/1〜11/3）〜11/%d 10:00' % (dd, '日月火'[k], dd),
+                      'date': '2026-11-%02d' % dd, 'url': u})
+    e3 = {'name': 'x', 'date': '2026-11-03', 'dateLabel': '2026年11月1日(日)〜11月3日(火)', 'venue': 'カフェ',
+          'prefecture': '東京', 'links': {'livepocket': ents3[0]['url']}, 'tickets': ents3}
+    iss, und, _, _ = check_entry(e3, pages3, today)
+    ok = not (iss or und)
+    print('  %s 畳んだ3日分そろい → %s' % ('OK ' if ok else 'NG ', '; '.join(x[0] for x in iss + und) or '一致'))
+    fails += 0 if ok else 1
+    m3 = copy.deepcopy(e3); m3['tickets'] = [ents3[0], ents3[2]]
+    iss, und, _, _ = check_entry(m3, {u: pages3[u] for u in (ents3[0]['url'], ents3[2]['url'])}, today)
+    ok = any('ページの無い日' in x[0] for x in iss)
+    print('  %s 畳んだエントリから1ページ落ち → %s' % ('OK ' if ok else 'NG ', '; '.join(x[0] for x in iss + und) or '一致'))
+    fails += 0 if ok else 1
     print('selftest: %s（NG %d）' % ('全部OK' if not fails else 'NGあり', fails))
     return 0 if not fails else 1
 
