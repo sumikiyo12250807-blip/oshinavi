@@ -47,6 +47,7 @@ const REPORT = opt('--report', path.join('tmp', 'gate_badge_render_report.txt'))
 const APPEND = args.includes('--append');
 const LABEL = opt('--label', '');
 const MAX_SHOW = +opt('--max-show', '200');
+const SHOW = new Set(opt('--show-ids', '').split(',').filter(Boolean));  // 指定idの画面の文字をそのまま出す（ユーザーが『画面が変』と言った時の確認用）
 
 // ── 本体 script を取り出す ──
 const src = fs.readFileSync(HTML, 'utf8');
@@ -238,6 +239,7 @@ function runOnce(todayStr, timeStr) {
       if (!items.length) continue;               // 期限切れ等で出ない枠
       res.items++;
       const r = checkItem(ev, t, items[0], todayStr);
+      if (SHOW.has(String(ev.id))) console.log(`[画面] ${todayStr} ${timeStr} id${ev.id} ${r.screen}`);
       if (r.soldout) res.soldItems++;
       for (const [k, msg] of r.v) {
         res[k]++;
