@@ -610854,7 +610854,13 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
         .trim()) || rawType;
       // 発売/締切の時刻だけを拾う（（…公演）内の開演時刻を発売時刻と誤読しないよう、最後の閉じ括弧より後ろで探す）
       const _tm = rawType.replace(/^.*[）)]/, '').match(/\d{1,2}:\d{2}/);
-      const dispTime = _tm ? _tm[0] : null;
+      const dispTimeAny = _tm ? _tm[0] : null;
+      // 🆕2026-09-28 夜 ユーザー指摘（グレープカンパニー 10/25）＝「9/28 21:00発売〜10/25 12:00」の本日発売で、
+      //   締切の日付(10/25)に発売時刻(21:00)を付けて「〜10/25 21:00」と出していた。
+      //   締切の日付を出す時は「〜」の後ろの時刻、発売日を出す時は「発売」の前の時刻を使う。
+      const _tail = rawType.replace(/^.*[）)]/, '');
+      const _endTm = _tail.match(/〜\s*(?:R\d+年\s*)?\d{1,2}\/\d{1,2}\s*(\d{1,2}:\d{2})/);
+      const _saleTm = _tail.match(/(\d{1,2}:\d{2})\s*(?:発売開始|発売予定|発売|販売開始|受付開始|受付)/);
       // 【予定枚数終了は消さずに残す】（ユーザー方針 2026-08-09）
       //   ぴあ等が「予定枚数終了」と出している間は OSHINAVI にも出しておく。URLも生かしたまま。
       //   Why: 売り切れた瞬間に消すと「売り切れた」のか「最初から載っていなかった」のかが
@@ -610954,6 +610960,9 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       // 締切が分かっている枠は「〜M/D」。締切が書かれていない枠は「M/D発売〜」と後ろに付ける
       const datePrefix = endUnknown ? "" : ((status === "selling" || (label === "本日発売" && displayDate === t.date)) ? "〜" : "");
       const dateSuffix = endUnknown ? "〜発売中" : "";
+      const dispTime = (displayDate && displayDate === t.date && t.startDate && t.startDate !== t.date)
+        ? (_endTm ? _endTm[1] : null)
+        : (displayDate && displayDate === t.startDate && _saleTm) ? _saleTm[1] : dispTimeAny;
       const timeHTML = dispTime ? ` <span class="ticket-date-time">${dispTime}</span>` : "";
       const dateLine = t.saleUntilSoldOut
         ? `<div class="ticket-date ticket-date-soldout-note">予定枚数に達し次第終了</div>`
