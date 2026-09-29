@@ -386,7 +386,9 @@ def check_entry(e, pages, today):
         first, last = min(firsts), max(lasts)
         if e.get('date') != last.isoformat():
             iss.append(('①date（最終開催日）', e.get('date'), last.isoformat(), link))
-        lab = e.get('dateLabel') or ''
+        # 🆕2026-09-30 見出しの後ろの「（配信は M月D日(曜) HH:MMまで）」は視聴の終わり＝会期でも開演でもない
+        #   （build_livepocket_entries の stream_label）。会期・開演時刻の突き合わせからは外す。
+        lab = re.sub(r'（配信は[^（）]*まで）$', '', e.get('dateLabel') or '')
         ld = parse_dates_text(lab) or []
         if not ld:
             und.append(('判定不能（dateLabelが読めない）', lab, '', link))
@@ -778,6 +780,13 @@ def selftest():
     run1('配信・複数日の正しい登録は鳴らない', e2, p=parse_page(page2), want=False)
     m = copy.deepcopy(e2); m['dateLabel'] = '2026年10月4日(日)'
     run1('会期の型（初日欠落）', m, p=parse_page(page2), key='①')
+    # 🆕2026-09-30 見出しの後ろの「（配信は…まで）」は視聴の終わり＝会期・開演時刻と食い違いにしない
+    m = copy.deepcopy(e2); m['dateLabel'] = '2026年10月3日(土)〜2026年10月4日(日)（配信は10月18日(日) 23:59まで）'
+    run1('配信の見出し（会期の型）は鳴らない', m, p=parse_page(page2), want=False)
+    m = copy.deepcopy(good); m['dateLabel'] = '2026年10月25日(日) 19:00開演（配信は11月1日(日) 23:59まで）'
+    run1('配信の見出し（開演の型）は鳴らない', m, want=False)
+    m = copy.deepcopy(good); m['dateLabel'] = '2026年10月25日(日) 18:00開演（配信は11月1日(日) 23:59まで）'
+    run1('配信の見出しでも開演時刻違いは鳴らす', m, key='①開演時刻')
     # 🆕2026-09-30 スタリオン型＝公演日は過去・配信の受付は締切が未来＝「終わっている」と言わない
     pageS = _mk_page(dt.date(2026, 9, 28), dt.date(2026, 9, 28), '開演時間', '22:00', '渋谷ホール', '東京都',
                      [('販売中', '配信チケット受付', D(2026, 9, 20, 10, 0), D(2026, 10, 5, 23, 59), '視聴チケット'),
