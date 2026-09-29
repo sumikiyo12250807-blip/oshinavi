@@ -227,6 +227,20 @@ def sale_start(ev):
     return offs[0]['valid_from'], offs[0].get('valid_from_time') or ''
 
 
+def live_stream_ticket(t, today):
+    """🆕2026-09-30 買える配信の券種か（公演日が過ぎても載せ続ける判定に使う＝ZAIKOのスタリオンと同じ穴）。
+    配信・視聴・アーカイブの券種で、受付中／受付前、締切（受付期間の終わり or 注記の受付終了日時）が今日以降。
+    締切が読めない券種は「買える」と言わない（推測しない）。"""
+    raw = t.get('name') or ''
+    if not (re.search(STREAM_RE, raw) or re.search(STREAM_RE, ticket_name(raw))):
+        return False
+    if is_seller_side(raw) or state_of(t.get('class')) not in ('live', 'unopened'):
+        return False
+    per = last_period(t)
+    ed = per[2] if per else ((t.get('end_at') or [None])[0])
+    return bool(ed) and ed >= today
+
+
 def build(ev, today):
     if is_seller_side(ev.get('name')):
         return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
@@ -241,13 +255,19 @@ def build(ev, today):
     genres = [CAT_GENRE[c] for c in cats if c in CAT_GENRE]
     dates = sorted({p['date'] for p in ev['programs'] if p.get('date')})
     future = [d for d in dates if d >= today]
-    if not future:
+    # 🚨2026-09-30 配信は公演日（配信開始）が過ぎても視聴券が売られている（ZAIKO 24618 スタリオン＝
+    #   9/28 22:00開始・10/5 23:59まで）。「公演日が過去＝終わった」で捨てると番人も「正常」と読んでしまった
+    #   （ユーザー「ゲートが間違えてる　同じ間違いが二度とないようにして」）。
+    #   ＝公演日が過ぎた公演の塊でも、**買える配信の券種**があれば捨てない（その塊からは締切が今日以降の枠だけ出す）。
+    stream_past = sorted({p['date'] for p in ev['programs'] if p.get('date') and p['date'] < today
+                          and any(live_stream_ticket(t, today) for t in p.get('tickets') or [])})
+    if not future and not stream_past:
         return None, '公演が終わっている'
     # 🚨主催者が作った試し書き・雛形が混ざる（2026-09-18＝公演名が「当日払い」で増上寺・2030/12/31、
     #    「コリコリ(対バン用)」で大和ハウス プレミストドーム・2032/9/20）。
     #    本物のチケットが2年以上先に売り出されることは無いので、そこで切る（載せると嘘になる）。
     limit = (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat()
-    if future[0] > limit:
+    if future and future[0] > limit:
         return None, '公演日が2年より先＝主催者の試し書き・雛形の疑い'
 
     pref = ev.get('prefecture')
@@ -264,8 +284,9 @@ def build(ev, today):
     tickets, has_live = [], False
     for p in ev['programs']:
         d = p.get('date')
-        if not d or d < today:
+        if not d or (d < today and d not in stream_past):
             continue
+        n0 = len(tickets)                  # 公演日が過ぎた塊は、後で締切が今日以降の枠（＝配信）だけ残す
         ptime = prog_time(p) if percount.get(d, 0) > 1 else None
         # 🚨同じ公演の中で券種名がぶつかると、**画面に同じバッジが並んで区別がつかない**
         #    （2026-09-18＝98エントリでこれが起きた。「チケット（岐阜 3/7公演）〜3/7 14:00」が3つ）。
@@ -370,6 +391,11 @@ def build(ev, today):
                     tk['saleEnded'] = True
                     tk['saleEndedSince'] = today
                 tickets.append(tk)
+        if d < today:
+            # 公演日が過ぎた塊＝締切が今日以降の枠（配信は公演日で締めないので残る）だけ残す。
+            #   配信でない券・締切が過ぎた配信は、公演日か過去の締切を持つので落ちる（従来どおり）
+            tickets[n0:] = [x for x in tickets[n0:]
+                            if (x.get('date') or '') >= today and re.search(STREAM_RE, x.get('type') or '')]
     # 🚨まったく同じ枠（券種名・締切・飛び先・印がぜんぶ同じ）は1つに畳む。
     #    画面では見分けられないので、並べても利用者の役に立たない。
     #    ⚠️飛び先が違うなら畳まない（[[feedback_dedup_badges_keeps_urls]]）＝キーにurlを入れている。
@@ -396,6 +422,8 @@ def build(ev, today):
     perf = [x for x in (ev.get('performers') or []) if x]
     name = ev.get('name') or ''
     artist = '／'.join(perf[:3]) if perf else name
+    # 公演日がぜんぶ過ぎて配信だけ買える形は、公演日（配信開始日）をそのまま書く（ZAIKOと同じ＝公演日は事実の会期）
+    future = future or stream_past
     if len(future) == 1:
         label = f'{jp(future[0])} {pref or ""}'.strip()
     else:
@@ -672,7 +700,50 @@ def _selftest():
     # 🆕2026-09-28 長い券種名でも配信の文字が切り落とされない（ZAIKOのスタリオンと同じ穴）
     assert '（配信）' in ticket_name('あ' * 40 + 'アーカイブ配信'), ticket_name('あ' * 40 + 'アーカイブ配信')
     assert ticket_name('【配信】視聴チケット') == '【配信】視聴チケット'
-    print('selftest OK: state_of/md/jp/last_period/sale_start/build/ticket_name/consolidate')
+    # 🆕2026-09-30 スタリオン型＝公演日（配信開始）は過去・配信券の締切は未来 → 捨てない（ZAIKOと同じ穴）
+    evL = json.loads(json.dumps(ev))
+    evL['programs'] = [{'date': '2026-09-28', 'tickets': [
+        {'name': '【配信】視聴チケット', 'class': 'is-available', 'price': 2000,
+         'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-05', '23:59']}]},
+        {'name': '会場チケット', 'class': 'is-available', 'price': 3000,
+         'periods': [{'parsed': ['2026-09-20', '10:00', '2026-09-28', '18:00']}]}]}]
+    eL, whyL = build(evL, '2026-09-30')
+    assert eL, whyL
+    assert [(t['type'], t['date']) for t in eL['tickets']] == \
+        [('【配信】視聴チケット（大阪 9/28公演）〜10/5 23:59', '2026-10-05')], eL['tickets']   # 会場券は落ちる
+    evL1 = json.loads(json.dumps(evL))                       # 締切が未来の売切れ会場券も、過ぎた公演からは出さない
+    evL1['programs'][0]['tickets'].append({'name': 'VIP', 'class': 'is-unable is-unavailable',
+                                           'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-05', '23:59']}]})
+    assert len(build(evL1, '2026-09-30')[0]['tickets']) == 1
+    assert eL['date'] == '2026-09-28' and eL['dateLabel'].startswith('2026年9月28日'), eL
+    # 注記の受付終了日時（end_at）しか無い配信券も同じ
+    evL2 = json.loads(json.dumps(evL))
+    evL2['programs'][0]['tickets'] = [{'name': 'アーカイブ視聴', 'class': 'is-available', 'periods': [],
+                                       'end_at': ['2026-10-05', '23:59']}]
+    assert build(evL2, '2026-09-30')[0]['tickets'][0]['date'] == '2026-10-05'
+    # 未来の公演と過去の配信が混ざる形＝過去の塊の配信券も落とさない
+    evL3 = json.loads(json.dumps(evL))
+    evL3['programs'].append({'date': '2026-10-18', 'tickets': [
+        {'name': '一般', 'class': 'is-available', 'periods': [{'parsed': ['2026-09-01', '10:00', '2026-10-17', '23:59']}]}]})
+    tyL3 = sorted(t['type'] for t in build(evL3, '2026-09-30')[0]['tickets'])
+    assert tyL3 == sorted(['一般（大阪 10/18公演）〜10/17 23:59', '【配信】視聴チケット（大阪 9/28公演）〜10/5 23:59']), tyL3
+    # 配信でない券・売り切れの配信・受付終了の配信・締切が過ぎた配信は、従来どおり捨てる
+    for tk in ({'name': '会場チケット', 'class': 'is-available',
+                'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-05', '23:59']}]},
+               {'name': '【配信】視聴チケット', 'class': 'is-unable is-unavailable',
+                'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-05', '23:59']}]},
+               {'name': '【配信】視聴チケット', 'class': 'is-unable is-closed',
+                'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-05', '23:59']}]},
+               {'name': '【配信】視聴チケット', 'class': 'is-available',
+                'periods': [{'parsed': ['2026-09-20', '10:00', '2026-09-29', '23:59']}]},
+               {'name': '【配信】視聴チケット', 'class': 'is-available', 'periods': []}):   # 締切が読めない
+        evN = json.loads(json.dumps(evL))
+        evN['programs'][0]['tickets'] = [tk]
+        rN = build(evN, '2026-09-30')
+        assert rN[0] is None and rN[1] == '公演が終わっている', (tk, rN)
+    assert live_stream_ticket(evL['programs'][0]['tickets'][0], '2026-09-30')
+    assert not live_stream_ticket(evL['programs'][0]['tickets'][1], '2026-09-30')
+    print('selftest OK: state_of/md/jp/last_period/sale_start/build/ticket_name/consolidate/配信の公演後')
 
 
 def main():
