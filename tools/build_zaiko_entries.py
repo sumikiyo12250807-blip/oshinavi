@@ -232,6 +232,41 @@ def genres_of(det, unknown, cat=None):
     return list(dict.fromkeys(got))
 
 
+def stream_until(det):
+    """🆕2026-09-30 配信の見られる終わり（ユーザー「配信はいつまで配信かを書かなきゃないよ」）。
+    配信の券種の perf_dt「10月15日 (木) 18:00 – 11月15日 (日) 23:59」の後ろ側を読む。
+    券種に無ければ、配信だけのイベントに限り display_date_period.end を使う。取れなければ None。
+    返り値＝(YYYY-MM-DD, HH:MM)"""
+    tks = (det or {}).get('tickets') or []
+    st = [t for t in tks if t.get('is_stream') or re.search(STREAM_RE, t.get('name') or '')]
+    if not st:
+        return None
+    dp = (det or {}).get('display_date_period') or {}
+    y0 = int(((dp.get('start') or {}).get('date_string') or '2026')[:4])
+    best = None
+    for t in st:
+        m = re.search(r'[–-]\s*(\d{1,2})月(\d{1,2})日[^\d]*(\d{1,2}):(\d{2})', t.get('perf_dt') or '')
+        if not m:
+            continue
+        mo, dd = int(m.group(1)), int(m.group(2))
+        s0 = (dp.get('start') or {}).get('date_string') or ''
+        y = y0 + (1 if s0 and '%04d-%02d-%02d' % (y0, mo, dd) < s0 else 0)
+        c = ('%04d-%02d-%02d' % (y, mo, dd), '%s:%s' % (m.group(3), m.group(4)))
+        best = max(best, c) if best else c
+    if not best and len(st) == len(tks):
+        e = dp.get('end') or {}
+        if e.get('date_string'):
+            best = (e['date_string'], e.get('time_string') or '')
+    return best
+
+
+def stream_label(base, d, until):
+    """見出しに「（配信は M月D日(曜) HH:MMまで）」を添える。配信の終わりが公演日より後の時だけ。"""
+    if not until or until[0] <= d:
+        return base
+    return '%s（配信は%sまで）' % (base, jp(until[0], until[1])[5:])
+
+
 def live_stream_ticket(det, today):
     """買える配信の券種があるか（公演日が過ぎても載せ続ける判定に使う）。"""
     for t in (det or {}).get('tickets') or []:
@@ -397,7 +432,7 @@ def build_one(listrow, det, today, unknown):
         'artist': artist_of(det, listrow),
         'name': name,
         'date': d,
-        'dateLabel': jp(d, ('%s開演' % stime) if stime else ''),
+        'dateLabel': stream_label(jp(d, ('%s開演' % stime) if stime else ''), d, stream_until(det)),
         'venue': venue,
         'prefecture': pref,
         'genre': 'new',
@@ -527,6 +562,12 @@ def _selftest():
     assert build_one(lr_s, mk([tk()]), '2026-09-30', unk)[0] is None
     assert build_one(lr_s, mk([dict(st, is_sold_out=True, is_sale_ended=True)]), '2026-09-30', unk)[0] is None
     assert build_one(lr_s, mk([dict(st, end_date='2026-09-29')]), '2026-09-30', unk)[0] is None
+    # ④-4 🆕2026-09-30 配信は見出しに「いつまで見られるか」を書く（SELLOUT 2026#6＝10/15 18:00〜11/15 23:59）
+    sv = tk(name='SELLOUT 2026#6', is_stream=True, is_sale_started=False, start_date='2026-10-15',
+            start_time='18:00', end_date='2026-11-15', perf_dt='10月15日 (木) 18:00 – 11月15日 (日) 23:59')
+    e4e, _ = build_one(dict(lr, date='2026-10-15', time='18:00'), mk([sv]), today, unk)
+    assert e4e['dateLabel'] == '2026年10月15日(木) 18:00開演（配信は11月15日(日) 23:59まで）', e4e['dateLabel']
+    assert '配信は' not in e['dateLabel'], '会場だけの公演には添えない'
 
     # ⑤ 締切がどこにも無い＝締切を作らず「販売中」＋saleEndUnknown（公演日を置き場に）
     e5, _ = build_one(lr, mk([tk(end_date=None, end_time=None)]), today, unk)
