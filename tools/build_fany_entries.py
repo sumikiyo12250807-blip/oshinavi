@@ -206,6 +206,28 @@ def artist_of(p):
     return '／'.join(parts[:3])
 
 
+def is_stream_sale(s):
+    """配信・視聴・アーカイブの販売枠か（元の券種名と整えた券種名の両方で見る）。"""
+    raw = s.get('sales_name') or ''
+    return bool(re.search(STREAM_RE, raw) or re.search(STREAM_RE, ticket_name(raw)))
+
+
+def live_stream_sale(p, today):
+    """🆕2026-09-30 買える配信の販売枠があるか（公演日が過ぎても載せ続ける判定＝ZAIKOのスタリオンと同じ穴）。
+    配信の券種で、先着発売中・抽選受付中・発売前、締切が今日以降（発売前で締切が無い時は発売日が今日以降）。"""
+    for s in p.get('performance_sales') or []:
+        st = (s.get('display_sales_status') or '').strip()
+        if st not in LIVE_ST + PRE_ST or not is_stream_sale(s) or not s.get('destination_url'):
+            continue
+        if SELLER_SIDE.search(s.get('sales_name') or ''):
+            continue
+        ed = raw_dt(s.get('sales_end_datetime_raw'))[0]
+        sd = raw_dt(s.get('sales_start_datetime_raw'))[0]
+        if (ed and ed >= today) or (st in PRE_ST and not ed and sd and sd >= today):
+            return True
+    return False
+
+
 def build_one(p, today, genre_map, unknown):
     """1公演＝1エントリ。載せられないときは (None, 理由)。"""
     name = strip_tags(p.get('name'))
@@ -216,7 +238,11 @@ def build_one(p, today, genre_map, unknown):
         return None, '公演日が読めない'
     dend = perf_end_iso(p) or d
     # 期間もの（通し券）は最終日が今日以降なら載せる
-    if max(d, dend) < today:
+    # 🚨2026-09-30 配信は公演日（配信開始）が過ぎても視聴券が売られている（ZAIKO 24618 スタリオン＝
+    #   9/28 22:00開始・10/5 23:59まで）。ここで捨てると番人も「公演が終わった＝正常」と読んでしまう
+    #   （ユーザー「ゲートが間違えてる」）。買える配信の販売枠があれば捨てず、締切が今日以降の枠だけ出す。
+    past = max(d, dend) < today
+    if past and not live_stream_sale(p, today):
         return None, '公演が終わっている'
     limit = (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat()
     if d > limit:
@@ -295,6 +321,11 @@ def build_one(p, today, genre_map, unknown):
                 tk['presaleEnded'] = True
             tickets.append(tk)
 
+    if past:
+        # 公演日が過ぎた公演＝締切が今日以降の枠（配信は公演日で締めないので残る）だけ残す。
+        #   配信でない券・締切が過ぎた配信は、公演日か過去の締切を持つので落ちる（従来どおり）
+        tickets = [t for t in tickets
+                   if (t.get('date') or '') >= today and re.search(STREAM_RE, t.get('type') or '')]
     if not tickets:
         return None, '載せられる枠が無い'
     # 🚨🚨2026-09-18 ユーザー決定＝**全部載せる**（[[feedback_oshinavi_concept]]）。
@@ -480,6 +511,33 @@ def _selftest():
     # 🆕2026-09-28 長い券種名でも配信の文字が切り落とされない（ZAIKOのスタリオンと同じ穴）
     assert '（配信）' in ticket_name('あ' * 40 + 'アーカイブ配信'), ticket_name('あ' * 40 + 'アーカイブ配信')
     assert ticket_name('一般（配信）') == '一般（配信）'
+
+    # ⑫ 🆕2026-09-30 スタリオン型＝公演日（配信開始）は過去・配信券の締切は未来 → 捨てない（ZAIKOと同じ穴）
+    t30 = '2026-09-30'
+    past = dict(performance_date='2026/09/28(<span>月</span>)')
+    st_ok = sale('先着発売中', s1='20261005235900', nm='配信視聴チケット', url='https://x/reception/5/2')
+    e12, why12 = build_one(mk(performance_sales=[st_ok, sale('先着発売中', s1='20260928180000')], **past),
+                           t30, gm, collections.Counter())
+    assert e12, why12
+    assert [(x['type'], x['date']) for x in e12['tickets']] == \
+        [('配信視聴チケット（大阪 9/28公演）〜10/5 23:59', '2026-10-05')], e12['tickets']   # 会場券は落ちる
+    assert e12['date'] == '2026-09-28', e12['date']
+    # 発売前の配信（締切未来）も同じ
+    e12b, _ = build_one(mk(performance_sales=[sale('先着発売前', s0='20261001100000', s1='20261005235900',
+                                                   nm='アーカイブ配信')], **past), t30, gm, collections.Counter())
+    assert e12b and e12b['tickets'][0]['date'] == '2026-10-05', e12b
+    # 配信でない券・売り終わった配信・締切が過ぎた配信は、従来どおり捨てる
+    for s in (sale('先着発売中', s1='20261005235900', nm='一般発売'),
+              sale('先着発売終了', s1='20261005235900', nm='配信視聴チケット'),
+              sale('抽選受付終了', s1='20261005235900', nm='配信視聴チケット'),
+              sale('先着発売中', s1='20260929235900', nm='配信視聴チケット')):
+        r12 = build_one(mk(performance_sales=[s], **past), t30, gm, collections.Counter())
+        assert r12[0] is None and r12[1] == '公演が終わっている', (s, r12)
+    # 過ぎた公演に締切が未来の売り終わった会場券が混ざっても出さない
+    e12c, _ = build_one(mk(performance_sales=[st_ok, sale('先着発売終了', s1='20261005235900', nm='早割',
+                                                          url='https://x/reception/8/2')], **past),
+                        t30, gm, collections.Counter())
+    assert len(e12c['tickets']) == 1, e12c['tickets']
 
     print('selftest OK')
     return 0

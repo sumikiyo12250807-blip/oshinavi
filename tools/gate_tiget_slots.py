@@ -19,6 +19,9 @@ e+ で「抽選プレオーダーが丸ごと落ちていたのをユーザー�
 3. 売り切れ・販売終了の印が実ページの文言と合っているか
 4. 🚨**締切が書かれていない枠**（当日支払い）は `saleEndUnknown` が付いているか
    ＝公演日を締切に流用していないか（2026-09-09 ラフ×ラフと同じ嘘の型）
+5. 🆕2026-09-30 ビルダーが**組めなかった**ページを「公演が終わった＝正常」と決めつけない。
+   実ページの生データに受付中・受付前で締切が今日以降の券種があれば、生データ突合の食い違いとして鳴らす
+   （ZAIKOのスタリオン＝配信中なのに捨てて番人も見逃した）。`--selftest` で確かめられる。
 """
 import argparse
 import datetime
@@ -72,13 +75,72 @@ def raw_stream_check(reg, d, today):
     return out
 
 
+def live_raw_tickets(d, today):
+    """🆕2026-09-30 実ページの生データで「いま買える／これから買える」券種（ビルダーを通さない）。
+    受付中・受付前で、締切（受付期間の終わり or 注記の受付終了日時）が今日以降。
+    締切が書いていない券種は、その公演日が今日以降なら買える側に数える（当日支払いの形）。"""
+    out = []
+    for p in d.get('programs') or []:
+        for t in p.get('tickets') or []:
+            nm = t.get('name') or ''
+            if BT.is_seller_side(nm) or BT.state_of(t.get('class')) not in ('live', 'unopened'):
+                continue
+            per = BT.last_period(t)
+            ed = per[2] if per else ((t.get('end_at') or [None])[0])
+            if (ed and ed >= today) or (not ed and (p.get('date') or '') >= today):
+                out.append('%s（公演%s〜%s）' % ((nm or 'チケット')[:20], p.get('date'), ed or '締切の記載なし'))
+    return out
+
+
+def dropped_but_alive(built, d, today):
+    """ビルダーが組めなかった（公演が終わった等で捨てた）のに、売り場ではまだ買える券種があるか。
+    🚨2026-09-30 ZAIKOのスタリオン＝配信中なのに「組めない＝終わった＝正常」と読んで見逃した。
+    返り値＝食い違いの説明のリスト（空なら問題なし）。"""
+    if built:
+        return []
+    alive = live_raw_tickets(d, today)
+    if not alive:
+        return []
+    return ['組み立てで捨てられたが、売り場ではまだ買える券種がある：%s' % ' / '.join(alive)]
+
+
+def _selftest():
+    today = '2026-09-30'
+    stream = {'name': '【配信】視聴チケット', 'class': 'is-available',
+              'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-05', '23:59']}]}
+    d = {'url': 'u', 'name': 'スタリオン型', 'venue': 'v', 'prefecture': '東京', 'cats': ['81'], 'list': {},
+         'programs': [{'date': '2026-09-28', 'tickets': [stream]}]}
+    assert live_raw_tickets(d, today), '配信中の券種を買えると読む'
+    # 組めなかった（ビルダーの穴）のに売り場で買える＝鳴らす
+    assert dropped_but_alive(None, d, today), 'ビルダーが捨てた配信中のイベントを鳴らす'
+    # 直ったビルダーはこの形を組める＝鳴らない
+    built, why = BT.build(json.loads(json.dumps(d)), today)
+    assert built and built['tickets'][0]['date'] == '2026-10-05', (built, why)
+    assert not dropped_but_alive(built, d, today)
+    # 登録が「配信なし・〜9/28」なら生データ突合で鳴る／正しい登録は鳴らない
+    assert raw_stream_check([{'type': 'チケット（東京 9/28公演）〜9/28', 'date': '2026-09-28'}], d, today)
+    assert not raw_stream_check(built['tickets'], d, today)
+    # 本当に終わったもの（売り切れ・受付終了・締切が過ぎた配信・会場券だけ）は鳴らさない
+    for t in (dict(stream, **{'class': 'is-unable is-unavailable'}), dict(stream, **{'class': 'is-unable is-closed'}),
+              dict(stream, periods=[{'parsed': ['2026-09-20', '10:00', '2026-09-29', '23:59']}]),
+              {'name': '会場チケット', 'class': 'is-available', 'periods': []}):
+        dd = dict(d, programs=[{'date': '2026-09-28', 'tickets': [t]}])
+        assert BT.build(json.loads(json.dumps(dd)), today)[0] is None, t
+        assert not dropped_but_alive(None, dd, today), t
+    print('selftest OK（組めない＝終わった と決めつけない／生データで買える券種を見る）')
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--ids', default='')
     ap.add_argument('--today', default=datetime.date.today().isoformat())
     # 🚨TIGETを叩きすぎないための間。全件（1,900件超）回す時は必ず入れる
     ap.add_argument('--sleep', type=float, default=0.4)
+    ap.add_argument('--selftest', action='store_true')
     a = ap.parse_args()
+    if a.selftest:
+        sys.exit(_selftest())
 
     h = open('index.html', encoding='utf-8', newline='').read()
     ev = json.loads(re.search(r'  const EVENTS = (\[.*?\]);', h, re.S).group(1))
@@ -99,7 +161,7 @@ def main():
     rep.write('=== gate_tiget_slots (today=%s) 対象%d件 ===\n' % (a.today, len(targets)))
     for e, urls in targets:
         # 実ページからゼロから作り直す（登録値は見ない）
-        rebuilt, raws = [], []
+        rebuilt, raws, dropped = [], [], []
         bad = False
         for eid in urls:
             try:
@@ -114,11 +176,13 @@ def main():
             built, why = BT.build(d, a.today)
             if built:
                 rebuilt += built['tickets']
+            # 🚨2026-09-30 組めなかった（公演が終わった等）を「正常」と決めつけない＝生データで買える券種を見る
+            dropped += ['events/%s（%s）%s' % (eid, why, m) for m in dropped_but_alive(built, d, a.today)]
         if bad:
             continue
         time.sleep(a.sleep)
         reg = [t for t in (e.get('tickets') or []) if 'tiget.net' in (t.get('url') or '')]
-        rc = [m for d in raws for m in raw_stream_check(reg, d, a.today)]
+        rc = dropped + [m for d in raws for m in raw_stream_check(reg, d, a.today)]
         if rc:
             rawng.append((e, rc))
 

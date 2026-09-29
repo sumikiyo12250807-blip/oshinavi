@@ -216,6 +216,27 @@ def cats_of(ev):
     return [c for c in cs if c[1]] + [c for c in cs if not c[1]]
 
 
+def is_stream_reception(ev, rec):
+    """配信の受付か＝受付名か券種名に配信・視聴・アーカイブ、または会場がオンライン（build の（配信）の札と同じ線）。"""
+    return bool(STREAM.search(rec.get('title') or '')
+                or any(STREAM.search(c.get('name') or '') for c in rec.get('cards') or [])
+                or ONLINE_VENUE.search(ev.get('venue') or ''))
+
+
+def live_stream_reception(ev, today):
+    """🆕2026-09-30 買える配信の受付があるか（公演日が過ぎても載せ続ける判定＝ZAIKOのスタリオンと同じ穴）。
+    配信の受付で、販売中（買える券種あり）／販売前、締切が今日以降。締切が読めない受付は「買える」と言わない。"""
+    for r in ev.get('receptions') or []:
+        if slot_state(r) not in ('live', 'unopened') or not is_stream_reception(ev, r):
+            continue
+        if SELLER_SIDE.search(r.get('title') or ''):
+            continue
+        en = (r.get('period') or {}).get('end')
+        if en and en[0] >= today:
+            return True
+    return False
+
+
 def build(ev, today, unknown=None):
     """1ページ＝1エントリ。載せられないときは (None, 理由)。"""
     unknown = unknown if unknown is not None else collections.Counter()
@@ -232,7 +253,11 @@ def build(ev, today, unknown=None):
     if not dates:
         return None, '開催日が読めない'
     first, last = dates[0], dates[-1]
-    if last < today:
+    # 🚨2026-09-30 配信は公演日（配信開始）が過ぎても視聴券が売られている（ZAIKO 24618 スタリオン＝
+    #   9/28 22:00開始・10/5 23:59まで）。ここで捨てると番人も「公演が終わった＝正常」と読んでしまう
+    #   （ユーザー「ゲートが間違えてる」）。買える配信の受付があれば捨てず、締切が今日以降の配信の枠だけ出す。
+    past = last < today
+    if past and not live_stream_reception(ev, today):
         return None, '公演が終わっている'
     if first > (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat():
         return None, '公演日が2年より先＝主催者の試し書きの疑い'
@@ -338,6 +363,9 @@ def build(ev, today, unknown=None):
             unknown[(rec.get('status'), tuple(sorted({c.get('status') for c in cards})))] += 1
             skipped_slots.append((raw, '読めない札 受付=%s 券種=%s' % (rec.get('status'),
                                                                    '/'.join(sorted({c.get('status') or '' for c in cards})))))
+    if past:
+        # 公演日が過ぎた＝締切が今日以降の配信の枠だけ残す（配信でない受付・締切が過ぎた配信は従来どおり出さない）
+        tickets = [t for t in tickets if (t.get('date') or '') >= today and STREAM.search(t.get('type') or '')]
     seen, uniq = set(), []
     for t in tickets:
         k = (t.get('type'), t.get('date'), t.get('startDate'), t.get('url'),
@@ -517,7 +545,35 @@ def _selftest():
                      rec(cards=[{'name': 'MERA撮影会 吉瀬結(団体) 2部', 'status': '売切間近'}])]), today)
     assert e['tickets'][0]['type'].startswith('先着販売受付 5部・6部') and e['tickets'][0]['soldout'], e['tickets']
     assert e['tickets'][1]['type'].startswith('先着販売受付 2部') and not e['tickets'][1].get('soldout'), e['tickets']
-    print('selftest OK: slot_state/build/ticket_name/販売前の締切/〜公演日/売切/販売終了/出す側/配信の札')
+    # ㉑ 🆕2026-09-30 スタリオン型＝公演日（配信開始）は過去・配信の受付の締切は未来 → 捨てない（ZAIKOと同じ穴）
+    t30 = '2026-09-30'
+    st_rec = rec(title='配信チケット受付', end=('2026-10-05', '23:59'), cards=[{'name': '視聴チケット', 'status': '販売中'}])
+    venue_rec = rec(title='会場チケット受付', end=('2026-09-28', '18:00'))
+    e, why = build(ev([st_rec, venue_rec], dates=['2026-09-28']), t30)
+    assert e, why
+    assert [(t['type'], t['date']) for t in e['tickets']] == \
+        [('配信チケット受付（東京 9/28 19:30公演）〜10/5 23:59', '2026-10-05')], e['tickets']   # 会場券は落ちる
+    assert e['date'] == '2026-09-28' and e['dateLabel'].startswith('2026年9月28日'), e
+    # 券種名だけが配信（受付名は普通）の形・販売前の配信も同じ
+    e, _ = build(ev([rec(end=('2026-10-05', '23:59'), cards=[{'name': 'アーカイブ視聴', 'status': '販売中'}])],
+                    dates=['2026-09-28']), t30)
+    assert e and '（配信）' in e['tickets'][0]['type'] and e['tickets'][0]['date'] == '2026-10-05', e
+    e, _ = build(ev([rec('販売前', title='見逃し配信', start=('2026-10-01', '10:00'), end=('2026-10-05', '23:59'),
+                         cards=[{'name': '視聴', 'status': '販売前'}])], dates=['2026-09-28']), t30)
+    assert e and e['tickets'][0]['startDate'] == '2026-10-01' and e['tickets'][0]['date'] == '2026-10-05', e
+    # 配信でない受付・売り切れの配信・販売終了の配信・締切が過ぎた配信・締切の無い配信は、従来どおり捨てる
+    for r0 in (rec(end=('2026-10-05', '23:59')),
+               dict(st_rec, cards=[{'name': '視聴チケット', 'status': '予定販売数終了'}]),
+               dict(st_rec, status='販売終了', cards=[{'name': '視聴チケット', 'status': '受付終了'}]),
+               dict(st_rec, period={'start': ('2026-09-20', '20:00'), 'end': ('2026-09-29', '23:59'), 'text': ''}),
+               dict(st_rec, period={'start': ('2026-09-20', '20:00'), 'end': None, 'text': ''})):
+        r, why = build(ev([r0], dates=['2026-09-28']), t30)
+        assert r is None and why == '公演が終わっている', (r0, r, why)
+    # 過ぎた公演に締切が未来の売切れ会場券が混ざっても出さない
+    e, _ = build(ev([st_rec, rec(title='VIP', end=('2026-10-05', '23:59'), cards=[{'name': 'VIP', 'status': '予定販売数終了'}])],
+                    dates=['2026-09-28']), t30)
+    assert len(e['tickets']) == 1, e['tickets']
+    print('selftest OK: slot_state/build/ticket_name/販売前の締切/〜公演日/売切/販売終了/出す側/配信の札/配信の公演後')
 
 
 def main():
