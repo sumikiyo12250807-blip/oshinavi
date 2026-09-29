@@ -337,6 +337,25 @@ def is_haishin_rec(rec):
     return '配信' in rec['title'] or any('配信' in c for c in rec['cards'])
 
 
+STREAM_ANY = re.compile(r'配信(?!なし|無し)|視聴(?!覚)|アーカイブ')
+ONLINE_V = re.compile(r'^\s*(オンライン|配信|Zoom|ツイキャス|YouTube|ONLINE|Online)', re.I)
+
+
+def after_show_stream_rec(pg, r, today):
+    """🆕2026-09-30 公演日が過ぎても載せ続ける受付か（ZAIKOのスタリオン＝配信は公演日の後も売っている）。
+    配信の受付（受付名・券種名に配信/視聴/アーカイブ、または会場がオンライン）で、締切が今日以降。
+    ビルダー（build_livepocket_entries）は、公演日が過ぎたページからこの受付だけを出す。"""
+    if r.get('end') is None or r['end'].date() < today:
+        return False
+    return bool(STREAM_ANY.search(nfkc(r['title'])) or any(STREAM_ANY.search(nfkc(c)) for c in r['cards'])
+                or ONLINE_V.search(pg.get('venue') or ''))
+
+
+def live_after_show(pg, today):
+    """公演日が過ぎたページに、まだ買える配信の受付（販売中・販売前）があるか。"""
+    return any(r['status'] in ('販売中', '販売前') and after_show_stream_rec(pg, r, today) for r in pg.get('recs') or [])
+
+
 # ---------------------------------------------------------------- 突き合わせ
 def check_entry(e, pages, today):
     """pages: {url: parse_page結果 or {'err':...}}。戻り値 (issues, undecidable, n_slots, n_ok_slots)
@@ -424,9 +443,12 @@ def check_entry(e, pages, today):
                     iss.append(('③畳んだ会期にページの無い日（日付別ページの落ち）', '%dページ' % len(good),
                                 '会期 %s〜%s のうち %s のページが登録に無い' % (first, last, '・'.join(miss)), link))
         # ⑤ 過去
-        if last < today:
+        # 🆕2026-09-30 公演日が過ぎても、まだ買える配信の受付があるページは「終わっている」と言わない
+        #   （ZAIKOのスタリオン＝配信中なのに「公演が終わった」扱いで捨てた）
+        stream_alive = last < today and any(live_after_show(p, today) for p in good.values())
+        if last < today and not stream_alive:
             iss.append(('⑤公演が終わっている', e.get('date'), '最終開催日 %s < 今日 %s' % (last, today), link))
-        if e.get('date') and e['date'] < today.isoformat():
+        if e.get('date') and e['date'] < today.isoformat() and not stream_alive:
             iss.append(('⑤登録の公演日が過去', e.get('date'), '今日 %s' % today, link))
 
     # ② 会場・県（主ページ）
@@ -456,6 +478,8 @@ def check_entry(e, pages, today):
             if r['status'] == '販売前' and r['start'] is None:
                 und.append(('判定不能（販売前なのに開始日時が無い）', '', r['period'], u))
                 continue
+            if last < today and not after_show_stream_rec(pg, r, today):
+                continue   # 🆕2026-09-30 公演日が過ぎたページは、締切が今日以降の配信の受付だけを載せる（ビルダーと同じ線）
             r = dict(r)
             r['dasu'] = is_dasu(r['title'], r['cards'])
             recs.append(r)
@@ -754,6 +778,16 @@ def selftest():
     run1('配信・複数日の正しい登録は鳴らない', e2, p=parse_page(page2), want=False)
     m = copy.deepcopy(e2); m['dateLabel'] = '2026年10月4日(日)'
     run1('会期の型（初日欠落）', m, p=parse_page(page2), key='①')
+    # 🆕2026-09-30 スタリオン型＝公演日は過去・配信の受付は締切が未来＝「終わっている」と言わない
+    pageS = _mk_page(dt.date(2026, 9, 28), dt.date(2026, 9, 28), '開演時間', '22:00', '渋谷ホール', '東京都',
+                     [('販売中', '配信チケット受付', D(2026, 9, 20, 10, 0), D(2026, 10, 5, 23, 59), '視聴チケット'),
+                      ('販売中', '会場チケット受付', D(2026, 9, 20, 10, 0), D(2026, 9, 28, 18, 0), '一般')])
+    eS = {'name': 'x', 'artist': 'x', 'date': '2026-09-28', 'dateLabel': '2026年9月28日(月) 22:00開演',
+          'venue': '渋谷ホール', 'prefecture': '東京', 'links': {'livepocket': url},
+          'tickets': [{'type': '配信チケット受付（東京 9/28 22:00公演）〜10/5 23:59', 'date': '2026-10-05', 'url': url}]}
+    run1('公演後も買える配信だけの正しい登録は鳴らない', eS, p=parse_page(pageS), td=dt.date(2026, 9, 30), want=False)
+    pageS2 = pageS.replace('2026年10月5日(月) 23:59', '2026年9月29日(火) 23:59')
+    run1('締切が過ぎた配信なら⑤を鳴らす', eS, p=parse_page(pageS2), td=dt.date(2026, 9, 30), key='⑤')
     # 副札（ファンクラブチケット）は状態として読む・知らない副札は判定不能
     fc = page.replace('<span class="tag">販売中</span>', '<span class="tag">販売中</span><span class="tag">ファンクラブチケット</span>', 1)
     run1('副札ファンクラブチケットは鳴らない', good, p=parse_page(fc), want=False)
