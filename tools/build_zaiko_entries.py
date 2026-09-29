@@ -232,6 +232,18 @@ def genres_of(det, unknown, cat=None):
     return list(dict.fromkeys(got))
 
 
+def live_stream_ticket(det, today):
+    """買える配信の券種があるか（公演日が過ぎても載せ続ける判定に使う）。"""
+    for t in (det or {}).get('tickets') or []:
+        if t.get('is_sold_out') or t.get('is_sale_ended'):
+            continue
+        if not (t.get('is_stream') or re.search(STREAM_RE, t.get('name') or '')):
+            continue
+        if (t.get('end_date') or '') >= today:
+            return True
+    return False
+
+
 def build_one(listrow, det, today, unknown):
     """1イベント＝1エントリ。載せられないときは (None, 理由)。"""
     name = re.sub(r'\s+', ' ', (det or {}).get('name') or listrow.get('title') or '').strip()
@@ -244,7 +256,11 @@ def build_one(listrow, det, today, unknown):
     d = dp.get('date_string') or listrow.get('date')
     if not d:
         return None, '公演日が取れない'
-    if d < today:
+    # 🚨2026-09-30 配信は公演日（配信開始）が過ぎても視聴券が売られている
+    #   （24618/24619 スタリオン＝9/28 22:00開始・10/5 23:59まで）。ここで捨てると番人も
+    #   「公演が終わった＝正常」と読んでしまう（ユーザー「ゲートが間違えてる」）。
+    #   買える配信の券種（売り切れ・販売終了でない・締切が今日以降）がある時は捨てない。
+    if d < today and not live_stream_ticket(det, today):
         return None, '公演が終わっている'
     limit = (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat()
     if d > limit:
@@ -501,6 +517,16 @@ def _selftest():
     assert e4c['tickets'][0]['date'] == '2026-10-05', e4c['tickets'][0]
     assert '配信' in e4c['tickets'][0]['type'], e4c['tickets'][0]
     assert '（配信）' in ticket_name('あ' * 40 + 'アーカイブ配信', False, False)
+    # ④-3 🆕2026-09-30 配信が始まった後（公演日が過ぎた）でも、視聴券が買えるなら捨てない（スタリオン 9/30）
+    lr_s = dict(lr, date='2026-09-28', time='22:00')
+    st = tk(name='スタリオンセカンド＆サード（2026/9/26開催）', is_stream=True,
+            end_date='2026-10-05', end_time='23:59')
+    e4d, why4d = build_one(lr_s, mk([st]), '2026-09-30', unk)
+    assert e4d and e4d['tickets'][0]['date'] == '2026-10-05', (why4d, e4d)
+    # 配信でない・売り終わった配信は、公演日が過ぎたら従来どおり捨てる
+    assert build_one(lr_s, mk([tk()]), '2026-09-30', unk)[0] is None
+    assert build_one(lr_s, mk([dict(st, is_sold_out=True, is_sale_ended=True)]), '2026-09-30', unk)[0] is None
+    assert build_one(lr_s, mk([dict(st, end_date='2026-09-29')]), '2026-09-30', unk)[0] is None
 
     # ⑤ 締切がどこにも無い＝締切を作らず「販売中」＋saleEndUnknown（公演日を置き場に）
     e5, _ = build_one(lr, mk([tk(end_date=None, end_time=None)]), today, unk)

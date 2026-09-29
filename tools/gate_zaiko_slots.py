@@ -73,6 +73,19 @@ def load_registered(ids=None):
 STREAM_RE = r'配信|視聴|アーカイブ'
 
 
+def live_raw_tickets(det, today):
+    """🆕2026-09-30 売り場の生データで「いま買える／これから買える」券種の名前（ビルダーを通さない）。"""
+    out = []
+    for t in (det or {}).get('tickets') or []:
+        if t.get('is_sold_out') or t.get('is_sale_ended'):
+            continue
+        if BZ.SELLER_SIDE.search(t.get('name') or ''):
+            continue
+        if (t.get('end_date') or '') >= today:
+            out.append('%s（〜%s）' % ((t.get('name') or 'チケット')[:20], t.get('end_date')))
+    return out
+
+
 def raw_check(entries, det, today):
     """🆕2026-09-28 **ビルダーを通さない**突合（ユーザー「二度と起こらないようにゲートを作りなおして」）。
     上の突合はページ側もビルダーで組み直すので、**ビルダーが間違えると両側が同じ間違いをして一致してしまう**
@@ -169,6 +182,13 @@ def main():
         if rc:
             rawng.append((u, entries, rc))
         if u not in page:
+            # 🚨2026-09-30 「組めない＝終わった＝正常」と決めつけない（スタリオン＝配信中なのに正常扱いだった）。
+            #   売り場の生データに**まだ買える券種**があるなら、組めないのはビルダーの穴＝食い違いとして鳴らす。
+            alive = live_raw_tickets(det.get(u), today)
+            if alive:
+                rawng.append((u, entries, ['組み立てで捨てられたが、売り場ではまだ買える券種がある：%s'
+                                           % ' / '.join(alive)]))
+                continue
             gone.append((u, entries))           # 引けたが組めない＝公演が終わった等
             continue
         gk = {key(t) for t in page[u]}
@@ -196,7 +216,7 @@ def main():
                                          (entries[0].get('name') or '')[:40], u))
         for m in rc:
             rep.write('    %s\n' % m)
-    rep.write('\n=== 一覧から落ちたイベント（公演日が過ぎた分は正常）===\n')
+    rep.write('\n=== 組めなかったイベント（売り場にも買える券種が無い＝公演終了）===\n')
     for u, entries in gone:
         for e in entries:
             rep.write('  id%-6s 公演%s %s\n' % (e['id'], e.get('date'), (e.get('name') or '')[:40]))
