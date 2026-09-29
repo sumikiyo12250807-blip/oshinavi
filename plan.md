@@ -7,6 +7,10 @@
 🎬 動画の割り当て（ユーザー決定・どれもJ-POPまとめ）＝9/30 tmp/video/mamma/clip2.mp4／10/1 clip3.mp4／10/2 tmp/video/oshimade/oshimade_full.mp4
    ⚠️Xに上げるファイルは10MB未満に縮める（clip1_x.mp4 の作り方＝ffmpeg crf24 1080x1920）。clip2 は17MB・clip3 は11MB＝そのままでは上がらない
    次にMiniMaxで作る時は「前の1本の最後のコマを次の参照画像に」（つなぎ目をそろえる）・残高 約$4.20
+✅ 9/29 済んだこと＝削除177（logs/removed_2026-09-29.md）／振り分け 朝23＋全件1095（logs/assigned_2026-09-29.md）／新着 ZAIKO4・TIGET96・FANY84・livePocket24・ぴあ取りこぼし新規6（25955〜25960）／枠0救済10件（YOASOBI・レミオロメンほか）／ヒール 朝・昼・午後・夜
+   🎬『推しまで教えて』MV（コードで描く・1曲まるごと）ユーザー採用＝tools/oshimade_mv.py／Mamma Mia Midnight MiniMax 3本（$3.90）
+📂 場所＝X文面 tmp/x0929/x/post01〜10.txt／動画 tmp/video/oshimade/・tmp/video/mamma/／試し見 https://claude.ai/artifact/MhZRKxro2vkxhHGqoSErTg（MV）・https://claude.ai/artifact/7F42Qy7iofyExTLqCfkj6k（Mamma Mia）
+▶ 再開の合図＝「おはよう」（朝の便）
 📋 朝にやる宿題
   ・第一生命ホール25周年 室内楽ガラ・コンサート（eventCd=2619282）＝ぴあでは予定枚数終了だけ＝売り切れの印付きで新規に足す（売り切れでも公演がこれからなら載せる）
   ・id1273 マリーゴールド（登録17/ぴあ16）・id5356 OKAMOTO'S（登録7/ぴあ8）の枠数ずれを見る
