@@ -16,10 +16,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 sys.stdout.reconfigure(encoding='utf-8')
 W, H, FPS = 1080, 1920, 30
-DUR = 58.0
+DUR = 68.76                       # 1曲まるごと（ユーザー 2026-09-29「曲を１曲全部使ってほしい」）
 BEAT = 0.65                       # 実測 92BPM
 OUT = 'tmp/video/oshimade'
-SONG = os.path.join(OUT, 'song_0_58.mp3')
+SONG = os.path.join(OUT, 'song_full.mp3')
 CHAR = 'tmp/video/flash_0924/char_cut.png'
 FONT_B = r'C:\Windows\Fonts\YuGothB.ttc'
 FONT_R = r'C:\Windows\Fonts\YuGothM.ttc'
@@ -29,6 +29,11 @@ DEEP = (22, 6, 44)
 ACCENT = (224, 64, 251)
 GOLD = (255, 214, 102)
 WHITE = (255, 255, 255)
+CYAN = (34, 230, 245)
+PINK = (255, 80, 200)
+LIME = (120, 255, 140)
+NEON = [CYAN, PINK, GOLD, LIME, (170, 120, 255)]
+CUT = lambda k: os.path.join(OUT, 'cut_%s.png' % k)     # 実際の OSHINAVI の画面から切った部品
 
 # (開始秒, 歌詞, 場面) ＝ 文字起こしで合わせる。場面は下の SCENES の名前
 LINES = [                          # 2026-09-29 faster-whisper(small) の単語時刻から
@@ -43,7 +48,9 @@ LINES = [                          # 2026-09-29 faster-whisper(small) の単語�
     (40.7, '気になるイベントをまとめてチェックして', 'cards'),
     (44.3, '次の現場へのワクワクをいつでもキープ', 'confetti'),
     (48.3, '推し活をもっと楽しく、もっと快適に', 'dance'),
-    (53.3, 'チケット探しは Oshinavi.jp', 'end'),
+    (53.3, 'チケット探しは Oshinavi.jp', 'tagline'),
+    (56.0, 'おしなび！', 'chant'),                  # 56.0/57.0/58.9/60.8 の4回
+    (63.4, 'Oshinavi.jp', 'end'),
 ]
 
 
@@ -66,6 +73,34 @@ def line_at(t):
     return cur, t - cur[0], end - cur[0]
 
 
+POSEDIR = os.path.join(OUT, 'poses')             # ユーザーのキャラシート（2026-09-29）を19枚に切ったもの
+CLOSE = {'smile', 'wink', 'sexy', 'kiss', 'laugh', 'cool'}   # 顔のアップ＝下端が切れているので画面下に置く
+CHOREO = {                                         # 場面ごとのポーズの順番（2拍ごとに次へ）
+    'logo': ['front', 'wave', 'diag_f', 'hands_up'],
+    'hearts': ['kiss', 'wink', 'smile', 'sexy', 'kiss'],
+    'genres': ['diag_f', 'side_r', 'front', 'side_l'],
+    'search': ['side_l', 'diag_f', 'front', 'wave', 'diag_f'],
+    'button': ['wave', 'front', 'jump', 'diag_f'],
+    'windows': ['back', 'diag_b', 'side_r', 'hands_up'],
+    'countdown': ['sit_cross', 'sit_lean', 'sit_cross'],
+    'check': ['cool', 'wink', 'smile'],
+    'cards': ['crouch', 'kneel', 'crouch'],
+    'confetti': ['laugh', 'wink', 'laugh', 'smile'],
+    'dance': ['hands_up', 'jump', 'side_r', 'side_l', 'jump', 'wave', 'hands_up'],
+    'tagline': ['diag_f', 'wave'],
+    'chant': ['jump', 'hands_up', 'jump', 'wave', 'jump', 'hands_up', 'wink'],
+    'end': ['front', 'kiss', 'wave'],
+}
+_pose = {}
+CUR = {'pose': 'front', 'pop': 0.0}
+
+
+def pose_img(name):
+    if name not in _pose:
+        _pose[name] = Image.open(os.path.join(POSEDIR, name + '.png')).convert('RGBA')
+    return _pose[name]
+
+
 _char = None
 
 
@@ -83,35 +118,76 @@ def background(t):
         k = y / H
         c = tuple(int(DEEP[i] * (1 - k) + PURPLE[i] * k) for i in range(3))
         d.rectangle([0, y, W, y + 8], fill=c)
-    rnd = random.Random(7)                          # きらきら（拍で明滅）
+    rnd = random.Random(7)                          # きらきら（ネオン色・拍で明滅）
     pulse = 0.5 + 0.5 * math.cos(2 * math.pi * t / BEAT)
-    for _ in range(70):
+    for _ in range(90):
         x, y = rnd.randrange(W), rnd.randrange(H)
         ph = rnd.random()
-        a = 0.3 + 0.7 * (0.5 + 0.5 * math.sin(2 * math.pi * (t / (BEAT * 2) + ph)))
-        r = 2 + 3 * a * pulse
-        col = tuple(int(v * a) for v in (GOLD if rnd.random() < 0.4 else WHITE))
-        d.ellipse([x - r, y - r, x + r, y + r], fill=col)
+        col = rnd.choice(NEON + [WHITE])
+        a = 0.35 + 0.65 * (0.5 + 0.5 * math.sin(2 * math.pi * (t / (BEAT * 2) + ph)))
+        r = (3 + 5 * a * pulse) * rnd.uniform(0.7, 1.6)
+        c = tuple(int(v * a) for v in col)
+        d.ellipse([x - r, y - r, x + r, y + r], fill=c)
+        if rnd.random() < 0.35:                    # 十字の光
+            L = r * 4
+            d.line([x - L, y, x + L, y], fill=c, width=3)
+            d.line([x, y - L, x, y + L], fill=c, width=3)
     return im
 
 
 def paste_char(im, t, cx, bottom, h, tilt=True):
-    """拍に合わせて弾む。大きさは場面ごとに固定（寄らない）"""
+    """いまのポーズを拍に合わせて弾ませる。切り替わった瞬間はポンと大きく。大きさは場面で固定（寄らない）"""
+    name = CUR['pose']
+    c = pose_img(name)
     ph = (t % BEAT) / BEAT
     bounce = abs(math.sin(math.pi * ph)) * 28
-    ang = math.sin(2 * math.pi * t / (BEAT * 2)) * (5 if tilt else 0)
-    c = char_img()
-    r = h / c.height
-    c = c.resize((int(c.width * r), h), Image.LANCZOS).rotate(ang, resample=Image.BICUBIC, expand=True)
+    if name == 'jump':
+        bounce = abs(math.sin(math.pi * ((t % (BEAT * 2)) / (BEAT * 2)))) * 160
+    pop = 1 + 0.12 * max(0.0, 1 - CUR['pop'] / 0.18)
+    if name in CLOSE:                               # 顔のアップ＝下端を画面の下（テロップの裏）へ
+        h, bottom, cx, bounce = 900, H - 120, W / 2, bounce * 0.4
+    ang = math.sin(2 * math.pi * t / (BEAT * 2)) * (4 if tilt else 0)
+    hh = int(h * pop)
+    r = hh / c.height
+    c = c.resize((max(1, int(c.width * r)), hh), Image.LANCZOS).rotate(ang, resample=Image.BICUBIC, expand=True)
     im.paste(c, (int(cx - c.width / 2), int(bottom - c.height - bounce)), c)
 
 
-def glow_text(im, xy, text, sz, fill=WHITE, glow=ACCENT, anchor='mm', stroke=0):
+def glow_text(im, xy, text, sz, fill=None, glow=CYAN, anchor='mm', stroke=0, grad=(CYAN, PINK)):
+    """サイトの見出しと同じ＝水色→ピンクのグラデ文字＋ネオンの光。fill を渡すと単色"""
+    f = font(sz)
     lay = Image.new('RGBA', im.size, (0, 0, 0, 0))
-    ImageDraw.Draw(lay).text(xy, text, font=font(sz), fill=glow + (255,), anchor=anchor, stroke_width=stroke + 6, stroke_fill=glow + (255,))
-    lay = lay.filter(ImageFilter.GaussianBlur(14))
+    ImageDraw.Draw(lay).text(xy, text, font=f, fill=glow + (255,), anchor=anchor, stroke_width=10, stroke_fill=glow + (255,))
+    lay = lay.filter(ImageFilter.GaussianBlur(18))
     im.paste(lay, (0, 0), lay)
-    ImageDraw.Draw(im).text(xy, text, font=font(sz), fill=fill, anchor=anchor, stroke_width=stroke, stroke_fill=PURPLE)
+    im.paste(lay, (0, 0), lay)
+    mask = Image.new('L', im.size, 0)
+    ImageDraw.Draw(mask).text(xy, text, font=f, fill=255, anchor=anchor, stroke_width=4)
+    ImageDraw.Draw(im).text(xy, text, font=f, fill=DEEP, anchor=anchor, stroke_width=6, stroke_fill=DEEP)
+    if fill:
+        im.paste(Image.new('RGB', im.size, fill), (0, 0), mask)
+        return
+    x0, y0, x1, y1 = mask.getbbox() or (0, 0, W, H)
+    g = Image.new('RGB', (max(1, x1 - x0), 1))
+    for i in range(g.width):
+        k = i / max(1, g.width - 1)
+        g.putpixel((i, 0), tuple(int(grad[0][c] * (1 - k) + grad[1][c] * k) for c in range(3)))
+    g = g.resize((x1 - x0, y1 - y0))
+    im.paste(g, (x0, y0), mask.crop((x0, y0, x1, y1)))
+
+
+def place(im, key, cx, top, w, u=9, slide=0.0):
+    """OSHINAVI の画面の部品を貼る。slide＞0 なら右から滑り込む"""
+    c = Image.open(CUT(key)).convert('RGB')
+    r = w / c.width
+    c = c.resize((int(w), int(c.height * r)), Image.LANCZOS)
+    x = int(cx - w / 2 + (1 - ease(u / slide)) * W if slide else cx - w / 2)
+    glow = Image.new('RGBA', (c.width + 60, c.height + 60), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).rounded_rectangle([20, 20, c.width + 40, c.height + 40], 24, outline=CYAN + (255,), width=10)
+    glow = glow.filter(ImageFilter.GaussianBlur(12))
+    im.paste(glow, (x - 30, int(top) - 30), glow)
+    im.paste(c, (x, int(top)))
+    return int(top + c.height)
 
 
 def telop(im, text, u):
@@ -135,10 +211,10 @@ def telop(im, text, u):
     box = Image.new('RGBA', im.size, (0, 0, 0, 0))
     bd = ImageDraw.Draw(box)
     y0 = H - 150 - 80 * (len(parts) - 1)
-    bd.rounded_rectangle([40, y0 - 60, W - 40, H - 90], 36, fill=(20, 0, 40, int(a * 0.7)))
+    bd.rounded_rectangle([40, y0 - 60, W - 40, H - 90], 36, fill=(10, 4, 24, int(a * 0.85)), outline=CYAN + (a,), width=6)
     im.paste(box, (0, 0), box)
     for k, p in enumerate(parts):
-        d.text((W / 2, y0 + 80 * k), p, font=f, fill=WHITE + (a,), anchor='mm', stroke_width=4, stroke_fill=PURPLE)
+        d.text((W / 2, y0 + 80 * k), p, font=f, fill=WHITE + (a,), anchor='mm', stroke_width=5, stroke_fill=(120, 0, 160))
 
 
 # ---------- 場面ごとの小道具（u＝場面内の経過秒 / L＝場面の長さ）----------
@@ -151,10 +227,11 @@ def s_intro(im, t, u, L):
 
 
 def s_logo(im, t, u, L):
-    glow_text(im, (W / 2, 380), '推し活なら', 90)
-    s = 1 + 0.06 * math.sin(2 * math.pi * t / BEAT)
-    glow_text(im, (W / 2, 560), 'Oshinavi.jp', int(130 * s), glow=GOLD)
-    paste_char(im, t, W / 2, 1640, 880)
+    place(im, 'hdr', W / 2, 150, 1000, u, slide=0.6)          # 本物のヘッダー
+    glow_text(im, (W / 2, 620), '推し活なら', 96)
+    s_ = 1 + 0.06 * math.sin(2 * math.pi * t / BEAT)
+    glow_text(im, (W / 2, 780), 'Oshinavi.jp', int(140 * s_), fill=WHITE, glow=PINK)
+    paste_char(im, t, W / 2, 1640, 760)
 
 
 def heart(d, x, y, r, col):
@@ -184,32 +261,25 @@ def card(im, x, y, w, h, title, sub, col):
 
 
 def s_genres(im, t, u, L):
-    names = [('ライブ', (224, 64, 251)), ('フェス', (255, 140, 0)), ('舞台', (0, 150, 200))]
-    for i, (n, c) in enumerate(names):
-        k = ease((u - i * BEAT) / 0.5)
-        x = int(-400 + (80 + i * 320 + 400) * k)
-        card(im, x, 260 + i * 40, 300, 220, n, '', c)
-    paste_char(im, t, W / 2, 1650, 860)
+    glow_text(im, (W / 2, 250), 'ライブ・フェス・舞台', 92)
+    place(im, 'pills', W / 2, 360, 1000, u, slide=0.5)       # 本物のジャンルのボタン
+    paste_char(im, t, W / 2, 1650, 760)
 
 
 def s_search(im, t, u, L):
+    glow_text(im, (W / 2, 260), 'アーティスト名で検索', 90)
+    top = 380
+    bottom = place(im, 'search', W / 2, top, 1000)            # 本物の検索窓
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle([90, 300, W - 90, 440], 70, fill=WHITE, outline=ACCENT, width=8)
-    q = 'アーティスト名'
-    n = min(len(q), int(u / 0.25))
+    h = bottom - top
+    d.rectangle([150, top + h * 0.25, 990, top + h * 0.75], fill=(14, 14, 18))   # 置き文字を隠して打ち込む
+    q = '推しの名前'
+    n = min(len(q), int(u / 0.3))
     cur = '|' if int(u * 3) % 2 == 0 else ''
-    d.text((170, 370), '🔍' if False else '', font=font(60), fill=PURPLE, anchor='lm')
-    d.ellipse([140, 340, 200, 400], outline=PURPLE, width=8)
-    d.line([192, 392, 222, 422], fill=PURPLE, width=10)
-    d.text((250, 370), q[:n] + cur, font=font(64), fill=PURPLE, anchor='lm')
-    if u > 2.2:
-        for i in range(3):
-            k = ease((u - 2.2 - i * 0.2) / 0.4)
-            y = 480 + i * 120
-            d.rounded_rectangle([110, y, int(110 + (W - 220) * k), y + 100], 20, fill=(255, 255, 255, 230))
-            if k > 0.9:
-                d.text((150, y + 50), ['東京 11/15 〜発売まであと3日', '大阪 11/22 〜発売中', '福岡 12/6 〜発売まであと10日'][i], font=font(40, False), fill=PURPLE, anchor='lm')
-    paste_char(im, t, W / 2 + 180, 1650, 820)
+    d.text((165, top + h / 2), q[:n] + cur, font=font(64), fill=WHITE, anchor='lm')
+    if u > 2.0:
+        place(im, 'card2badges', W / 2, 600, 820, u - 2.0, slide=0.5)
+    paste_char(im, t, W / 2 + 250, 1650, 640)
 
 
 def s_button(im, t, u, L):
@@ -241,33 +311,31 @@ def s_windows(im, t, u, L):
 
 
 def s_countdown(im, t, u, L):
-    d = ImageDraw.Draw(im)
+    glow_text(im, (W / 2, 250), '発売まで カウントダウン', 84)
+    place(im, 'card2badges', W / 2, 360, 900, u, slide=0.4)   # 本日発売＝赤／販売中＝緑（本物の色）
     n = max(1, 5 - int(u / (BEAT * 2)))
-    d.rounded_rectangle([200, 250, W - 200, 700], 50, fill=WHITE, outline=GOLD, width=12)
-    d.text((W / 2, 340), '発売まで あと', font=font(60), fill=PURPLE, anchor='mm')
-    s = 1 + 0.15 * (1 - ((u % (BEAT * 2)) / (BEAT * 2)))
-    d.text((W / 2, 540), '%d日' % n, font=font(int(170 * s)), fill=ACCENT, anchor='mm')
-    paste_char(im, t, W / 2, 1650, 820)
+    s_ = 1 + 0.15 * (1 - ((u % (BEAT * 2)) / (BEAT * 2)))
+    glow_text(im, (W / 2 - 160, 1260), 'あと%d日' % n, int(130 * s_), grad=(GOLD, PINK), glow=PINK)
+    paste_char(im, t, W / 2 + 300, 1650, 600)
 
 
 def s_check(im, t, u, L):
+    glow_text(im, (W / 2, 250), '買い逃し防止！', 110, grad=(LIME, CYAN), glow=LIME)
+    bottom = place(im, 'card1', W / 2, 360, 780, u, slide=0.4)
     d = ImageDraw.Draw(im)
-    for i, s in enumerate(['発売日', '締切', '会場']):
-        y = 300 + i * 150
-        d.rounded_rectangle([160, y, W - 160, y + 120], 30, fill=WHITE)
-        d.text((260, y + 60), s, font=font(60), fill=PURPLE, anchor='lm')
-        k = ease((u - 0.5 - i * BEAT) / 0.3)
-        if k > 0:
-            d.line([(W - 330, y + 60), (W - 290, y + 100 - (1 - k) * 40), (W - 290 + 80 * k, y + 20 + (1 - k) * 80)], fill=(40, 190, 90), width=16)
-    paste_char(im, t, W / 2, 1650, 820)
+    k = ease((u - 0.8) / 0.4)                                 # 大きなチェック
+    if k > 0:
+        x, y = W / 2 + 220, 700
+        d.line([(x - 90, y), (x - 20, y + 80 * k), (x - 20 + 150 * k, y + 80 - 170 * k)], fill=LIME, width=30)
+    paste_char(im, t, W / 2 - 280, 1650, 620)
 
 
 def s_cards(im, t, u, L):
-    for i in range(4):
-        k = ease((u - i * 0.4) / 0.5)
-        y = int(-300 + (260 + i * 70 + 300) * k)
-        card(im, 150 + i * 20, y, W - 300, 200, ['11/15 東京', '11/22 大阪', '12/6 福岡', '12/20 名古屋'][i], '発売前', [ACCENT, (255, 140, 0), (0, 150, 200), (40, 190, 90)][i])
-    paste_char(im, t, W / 2, 1650, 800)
+    glow_text(im, (W / 2, 240), 'まとめてチェック', 104)
+    for i, k in enumerate(['card1', 'card3', 'card2badges']):
+        if u > i * 0.6:
+            place(im, k, W / 2 + (i - 1) * 40, 340 + i * 110, 760, u - i * 0.6, slide=0.4)
+    paste_char(im, t, W / 2 + 280, 1650, 600)
 
 
 def s_confetti(im, t, u, L):
@@ -297,7 +365,35 @@ def s_end(im, t, u, L):
     paste_char(im, t, W / 2, 1650, 900)
 
 
-SCENES = {'intro': s_intro, 'logo': s_logo, 'hearts': s_hearts, 'genres': s_genres, 'search': s_search,
+def s_tagline(im, t, u, L):
+    glow_text(im, (W / 2, 330), 'チケット探しは', 96)
+    glow_text(im, (W / 2, 500), 'Oshinavi.jp', 150, fill=WHITE, glow=PINK)
+    paste_char(im, t, W / 2, 1650, 800)
+
+
+def s_chant(im, t, u, L):
+    hits = [0.0, 1.0, 2.9, 4.8]                         # 「おしなび！」の4回（曲の56.0/57.0/58.9/60.8）
+    last = max([h for h in hits if u >= h] or [0])
+    k = u - last
+    s_ = 1 + 0.35 * max(0.0, 1 - k / 0.35)
+    cols = [(CYAN, PINK), (GOLD, PINK), (LIME, CYAN), (PINK, GOLD)]
+    glow_text(im, (W / 2, 420), 'おしなび！', int(150 * s_), grad=cols[hits.index(last)], glow=cols[hits.index(last)][1])
+    s_confetti_only(im, u)
+    paste_char(im, t, W / 2, 1650, 820)
+
+
+def s_confetti_only(im, u):
+    d = ImageDraw.Draw(im)
+    rnd = random.Random(9)
+    for i in range(80):
+        x = rnd.randrange(W)
+        y = (rnd.random() * H + u * rnd.uniform(200, 500)) % H
+        c = rnd.choice(NEON)
+        a = u * 5 + i
+        d.polygon([(x + 14 * math.cos(a), y + 14 * math.sin(a)), (x - 14 * math.cos(a), y - 14 * math.sin(a)), (x + 8, y + 8)], fill=c)
+
+
+SCENES = {'tagline': s_tagline, 'chant': s_chant, 'intro': s_intro, 'logo': s_logo, 'hearts': s_hearts, 'genres': s_genres, 'search': s_search,
           'button': s_button, 'windows': s_windows, 'countdown': s_countdown, 'check': s_check,
           'cards': s_cards, 'confetti': s_confetti, 'dance': s_dance, 'end': s_end}
 
@@ -305,8 +401,15 @@ SCENES = {'intro': s_intro, 'logo': s_logo, 'hearts': s_hearts, 'genres': s_genr
 def render(t):
     im = background(t)
     (start, text, scene), u, L = line_at(t)
+    seq = CHOREO.get(scene, ['front'])
+    step = BEAT * 2
+    CUR['pose'] = seq[int(u / step) % len(seq)]
+    CUR['pop'] = u % step
     SCENES[scene](im, t, u, L)
     telop(im, text, u)
+    if t > DUR - 1.8:                               # 曲の終わり（67秒〜）に合わせて暗転
+        k = (t - (DUR - 1.8)) / 1.8
+        im = Image.blend(im, Image.new('RGB', im.size, DEEP), min(1.0, k * 0.85))
     return im
 
 
@@ -353,4 +456,4 @@ if __name__ == '__main__':
     if a.frame is not None:
         render(a.frame).save(os.path.join(OUT, 'frame_%05.1f.png' % a.frame))
     if a.render:
-        render_all(os.path.join(OUT, 'oshimade_0_58.mp4'))
+        render_all(os.path.join(OUT, 'oshimade_full.mp4'))
