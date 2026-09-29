@@ -228,6 +228,38 @@ def live_stream_sale(p, today):
     return False
 
 
+def stream_until(p):
+    """🆕2026-09-30 配信の見られる終わり（ユーザー「配信はいつまで配信かを書かなきゃないよ」）。
+    FANYの公演には配信の欄 `performance_streaming[].streaming_end_datetime`（配信終了日時）がある＝そこだけを読む。
+    🚨2026-09-30 実測＝過去の一覧 52,543公演すべてで空（streaming_method_code も全部 '00'）＝今は1件も添わない。
+      入った時に効くように読む。書式はまだ見ていないので「年月日＋時分」の数字の並びだけ受ける（読めなければ添えない）。
+    ⛔販売の締切（sales_end_datetime）を視聴の終わりにしない。配信の販売枠も配信の方式も無い公演（会場だけ）には添えない。
+    返り値＝(YYYY-MM-DD, 'H:MM' or '')。取れなければ None。"""
+    code = str(p.get('streaming_method_code') or '').strip()
+    if not (any(is_stream_sale(s) for s in p.get('performance_sales') or []) or code not in ('', '0', '00')):
+        return None
+    best = None
+    for ps in p.get('performance_streaming') or []:
+        m = re.match(r'\s*(\d{4})\D?(\d{1,2})\D?(\d{1,2})(?:\D{0,3}(\d{1,2})\D?(\d{2}))?',
+                     str(ps.get('streaming_end_datetime') or ''))
+        if not m:
+            continue
+        try:
+            iso = datetime.date(int(m.group(1)), int(m.group(2)), int(m.group(3))).isoformat()
+        except ValueError:
+            continue
+        c = (iso, '%d:%s' % (int(m.group(4)), m.group(5)) if m.group(4) else '')
+        best = max(best, c) if best else c
+    return best
+
+
+def stream_label(base, last, until):
+    """見出しに「（配信は M月D日(曜) HH:MMまで）」を添える。配信の終わりが公演日（最終日）より後の時だけ。"""
+    if not until or until[0] <= last:
+        return base
+    return '%s（配信は%sまで）' % (base, jp(until[0], until[1])[5:])
+
+
 def build_one(p, today, genre_map, unknown):
     """1公演＝1エントリ。載せられないときは (None, 理由)。"""
     name = strip_tags(p.get('name'))
@@ -349,6 +381,7 @@ def build_one(p, today, genre_map, unknown):
     label = jp(d, ('%s開演' % stime) if stime else '')
     if dend and dend != d:
         label = '%s〜%s' % (jp(d), jp(dend))
+    label = stream_label(label, max(d, dend or d), stream_until(p))
     return {
         'id': None,
         'artist': artist_of(p),
@@ -538,6 +571,31 @@ def _selftest():
                                                           url='https://x/reception/8/2')], **past),
                         t30, gm, collections.Counter())
     assert len(e12c['tickets']) == 1, e12c['tickets']
+
+    # ⑬ 🆕2026-09-30 配信は見出しに「いつまで見られるか」を書く（performance_streaming の配信終了日時だけ読む）
+    def strm(end):
+        return [{'streaming_start_datetime': '', 'streaming_end_datetime': end, 'viewing_type': '01'}]
+    st_s = sale('先着発売中', s1='20261010235900', nm='配信視聴チケット', url='https://x/reception/5/2')
+    e13, _ = build_one(mk(performance_sales=[st_s], performance_streaming=strm('2026/10/15 23:59:00')),
+                       today, gm, collections.Counter())
+    assert e13['dateLabel'] == '2026年10月1日(木) 10:00開演（配信は10月15日(木) 23:59まで）', e13['dateLabel']
+    assert stream_until(mk(performance_sales=[st_s], performance_streaming=strm('20261015235900'))) == ('2026-10-15', '23:59')
+    # 会場だけの公演（配信の販売枠も配信の方式も無い）には、欄に何か入っていても添えない
+    e13b, _ = build_one(mk(performance_sales=[sale('先着発売中')], performance_streaming=strm('2026/10/15 23:59')),
+                        today, gm, collections.Counter())
+    assert e13b['dateLabel'] == '2026年10月1日(木) 10:00開演', e13b['dateLabel']
+    # 配信終了日時が空（今の実データは全部これ）＝添えない。販売の締切 10/10 を視聴の終わりにしない
+    e13c, _ = build_one(mk(performance_sales=[st_s], performance_streaming=strm('')), today, gm, collections.Counter())
+    assert e13c['dateLabel'] == '2026年10月1日(木) 10:00開演', e13c['dateLabel']
+    # 終わりが公演日と同じ日なら添えない／期間もの（通し券）は最終日より後の時だけ
+    e13d, _ = build_one(mk(performance_sales=[st_s], performance_streaming=strm('2026/10/01 23:59')),
+                        today, gm, collections.Counter())
+    assert '配信は' not in e13d['dateLabel'], e13d['dateLabel']
+    e13e, _ = build_one(mk(valid_period_start_date='2026/10/01(<span>木</span>)',
+                           valid_period_finish_date='2026/10/03(<span>土</span>)',
+                           performance_sales=[st_s], performance_streaming=strm('2026/10/10 12:00')),
+                        today, gm, collections.Counter())
+    assert e13e['dateLabel'] == '2026年10月1日(木)〜2026年10月3日(土)（配信は10月10日(土) 12:00まで）', e13e['dateLabel']
 
     print('selftest OK')
     return 0

@@ -241,6 +241,78 @@ def live_stream_ticket(t, today):
     return bool(ed) and ed >= today
 
 
+# 🆕2026-09-30 配信は見出しに「いつまで見られるか」を書く（ユーザー「配信はいつまで配信かを書かなきゃないよ」）。
+#   🚨TIGETのページには**視聴期間の欄が無い**（取っているのは販売の受付期間・注記の受付終了日時だけ＝どれも売る期限）。
+#   ＝主催者が**券種名に自分で書いた視聴の終わり**だけを読む（実例 id512049「【LIVE】配信チケット ※アーカイブあり
+#   (9/14 17:00～10/12まで)」＝過去データ241の配信券種のうち、書いてあったのはこの1件）。
+#   ⛔販売の締切を視聴の終わりとして書かない／「1週間」のような相対の書き方から日付を作らない（推測しない）。
+VIEW_UNTIL_RE = re.compile(
+    r'(アーカイブ|見逃し|視聴)([^。]{0,24}?)(?:(\d{1,2})/(\d{1,2})|(\d{1,2})月(\d{1,2})日)\s*'
+    r'(?:[（(][^）)]{1,3}[）)])?\s*(?:(\d{1,2})[:：](\d{2}))?\s*(?:まで|迄)(?!に|販売|受付|購入|発売|申込)')
+NOT_VIEW = re.compile(r'販売|受付|購入|発売|申込')
+
+
+def view_until_in_text(txt, show_date):
+    """文字列に書かれた視聴の終わり（「アーカイブ…10/12 23:59まで」）→ (YYYY-MM-DD, 'H:MM' or '')。無ければ None。
+    年は書いていないので公演日の年（公演日より前の月日なら翌年）。"""
+    best = None
+    for m in VIEW_UNTIL_RE.finditer(txt or ''):
+        if NOT_VIEW.search(m.group(2)):
+            continue                      # 「視聴チケットの販売は10/5まで」＝売る期限なので読まない
+        mo, dd = int(m.group(3) or m.group(5)), int(m.group(4) or m.group(6))
+        y = int(show_date[:4])
+        try:
+            c = datetime.date(y, mo, dd)
+            if c.isoformat() < show_date:
+                c = datetime.date(y + 1, mo, dd)
+        except ValueError:
+            continue
+        hm = '%d:%s' % (int(m.group(7)), m.group(8)) if m.group(7) else ''
+        cand = (c.isoformat(), hm)
+        best = max(best, cand) if best else cand
+    return best
+
+
+def stream_until(ev):
+    """配信の券種の名前に書かれた視聴の終わり（いちばん遅いもの）。取れなければ None。"""
+    best = None
+    for p in ev.get('programs') or []:
+        d = p.get('date')
+        if not d:
+            continue
+        for t in p.get('tickets') or []:
+            raw = t.get('name') or ''
+            if not re.search(STREAM_RE, raw) or is_seller_side(raw):
+                continue
+            c = view_until_in_text(raw, d)
+            if c:
+                best = max(best, c) if best else c
+    return best
+
+
+def jp_md(iso, hm=''):
+    y, m, d = [int(x) for x in iso.split('-')]
+    return ('%d月%d日(%s) %s' % (m, d, WD[datetime.date(y, m, d).weekday()], hm)).strip()
+
+
+def stream_label(base, last, until):
+    """見出しに「（配信は M月D日(曜) HH:MMまで）」を添える。配信の終わりが公演日（最終日）より後の時だけ。"""
+    if not until or until[0] <= last:
+        return base
+    return '%s（配信は%sまで）' % (base, jp_md(*until))
+
+
+LABEL_UNTIL_RE = re.compile(r'（配信は(\d{1,2})月(\d{1,2})日\([^)]*\)(?: (\d{1,2}:\d{2}))?まで）$')
+
+
+def label_until(e):
+    """組んだエントリの見出しから配信の終わりを読み戻す（ツアーを畳む時に付け直す用）。"""
+    m = LABEL_UNTIL_RE.search(e.get('dateLabel') or '')
+    if not m:
+        return None
+    return view_until_in_text('視聴%s/%s %sまで' % (m.group(1), m.group(2), m.group(3) or ''), e['date'])
+
+
 def build(ev, today):
     if is_seller_side(ev.get('name')):
         return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
@@ -428,6 +500,7 @@ def build(ev, today):
         label = f'{jp(future[0])} {pref or ""}'.strip()
     else:
         label = f'{jp(future[0])}〜{jp(future[-1])} {pref or ""}'.strip()
+    label = stream_label(label, future[-1], stream_until(ev))
     e = {
         'artist': artist,
         'name': name,
@@ -508,7 +581,9 @@ def consolidate(entries):
         days = sorted({t['type'] for t in tickets})   # 参考（未使用）
         first, last = g[0]['date'], g[-1]['date']
         base['date'] = last
-        base['dateLabel'] = (f'{jp(first)}〜{jp(last)} ' + '・'.join(prefs)).strip()
+        us = [u for u in (label_until(e) for e in g) if u]
+        base['dateLabel'] = stream_label((f'{jp(first)}〜{jp(last)} ' + '・'.join(prefs)).strip(), last,
+                                         max(us) if us else None)
         base['tickets'] = tickets
         base['_merged_from'] = [e['links']['tiget'] for e in g]
         out.append(base)
@@ -743,7 +818,36 @@ def _selftest():
         assert rN[0] is None and rN[1] == '公演が終わっている', (tk, rN)
     assert live_stream_ticket(evL['programs'][0]['tickets'][0], '2026-09-30')
     assert not live_stream_ticket(evL['programs'][0]['tickets'][1], '2026-09-30')
-    print('selftest OK: state_of/md/jp/last_period/sale_start/build/ticket_name/consolidate/配信の公演後')
+    # 🆕2026-09-30 配信は見出しに「いつまで見られるか」を書く（券種名に主催者が書いた視聴の終わりだけ読む）
+    evV = json.loads(json.dumps(ev))
+    evV['programs'] = [{'date': '2026-10-12', 'tickets': [
+        {'name': '【LIVE】配信チケット ※アーカイブあり(10/14 17:00～11/12まで) ※前半はご覧いただけません。',
+         'class': 'is-available', 'periods': [{'parsed': ['2026-09-20', '10:00', '2026-11-12', '23:59']}]},
+        {'name': '会場チケット', 'class': 'is-available',
+         'periods': [{'parsed': ['2026-09-20', '10:00', '2026-10-11', '23:59']}]}]}]
+    eV, _ = build(evV, '2026-09-30')
+    assert eV['dateLabel'] == '2026年10月12日(月) 大阪（配信は11月12日(木)まで）', eV['dateLabel']
+    assert view_until_in_text('アーカイブ視聴 10/20(火) 23:59まで', '2026-10-12') == ('2026-10-20', '23:59')
+    assert view_until_in_text('見逃し配信は1月5日まで', '2026-12-20') == ('2027-01-05', '')    # 年をまたぐ
+    # 会場だけの公演には添えない（既存の見出しの形のまま）
+    assert '配信は' not in e['dateLabel'] and e['dateLabel'] == '2026年10月18日(日) 大阪', e['dateLabel']
+    # 視聴の終わりが書いていない配信券は添えない（販売の締切 10/25 を視聴の終わりにしない）
+    assert '配信は' not in eC['dateLabel'], eC['dateLabel']
+    assert '配信は' not in eL['dateLabel'], eL['dateLabel']
+    # 売る期限（「視聴チケットの販売は10/25まで」「10/25まで販売」）・相対の書き方（1週間）は読まない
+    for s in ('視聴チケットの販売は10/25まで', 'アーカイブ視聴券 10/25まで販売', 'アーカイブ配信URLは10/25までにお送りします',
+              '配信視聴付（1週間）', '【配信】視聴チケット'):
+        assert view_until_in_text(s, '2026-10-12') is None, s
+    # 終わりが公演日より前・同じ日なら添えない
+    evV2 = json.loads(json.dumps(evV))
+    evV2['programs'][0]['tickets'][0]['name'] = '配信チケット（アーカイブ 10/12 23:59まで）'
+    assert '配信は' not in build(evV2, '2026-09-30')[0]['dateLabel']
+    # ツアーを畳んでも付け直す
+    gV = consolidate([dict(eV, name='Aライブ in 大阪', links={'tiget': 'u1'}),
+                      dict(eV, name='Aライブ in 東京', date='2026-10-10', prefecture='東京', venue='v2',
+                           dateLabel='2026年10月10日(土) 東京', links={'tiget': 'u2'})])
+    assert len(gV) == 1 and gV[0]['dateLabel'] == '2026年10月10日(土)〜2026年10月12日(月) 東京・大阪（配信は11月12日(木)まで）', gV
+    print('selftest OK: state_of/md/jp/last_period/sale_start/build/ticket_name/consolidate/配信の公演後/配信の見出し')
 
 
 def main():

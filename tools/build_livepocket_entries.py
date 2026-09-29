@@ -237,6 +237,62 @@ def live_stream_reception(ev, today):
     return False
 
 
+# 🆕2026-09-30 配信は見出しに「いつまで見られるか」を書く（ユーザー「配信はいつまで配信かを書かなきゃないよ」）。
+#   🚨livePocket のページには**視聴期間の欄が無い**（受付の期間＝売る期限しか無い）。
+#   ＝配信の受付の中で、主催者が**受付名・注記・券種名・券種の説明に自分で書いた視聴の終わり**だけを読む
+#   （2026-09-30 実測＝取得済み1,184ページの配信の受付で、日付つきで書いてあったのは0件。
+#    「配信視聴付（1週間）」のような相対の書き方はあった＝日付を作らないので読まない）。
+#   ⛔受付の締切（period.end）を視聴の終わりにしない。
+VIEW_UNTIL_RE = re.compile(
+    r'(アーカイブ|見逃し|視聴)([^。]{0,24}?)(?:(\d{1,2})/(\d{1,2})|(\d{1,2})月(\d{1,2})日)\s*'
+    r'(?:[（(][^）)]{1,3}[）)])?\s*(?:(\d{1,2})[:：](\d{2}))?\s*(?:まで|迄)(?!に|販売|受付|購入|発売|申込)')
+NOT_VIEW = re.compile(r'販売|受付|購入|発売|申込')
+
+
+def view_until_in_text(txt, show_date):
+    """文字列に書かれた視聴の終わり（「アーカイブ…10/12 23:59まで」）→ (YYYY-MM-DD, 'H:MM' or '')。無ければ None。
+    年は書いていないので公演日の年（公演日より前の月日なら翌年）。"""
+    best = None
+    for m in VIEW_UNTIL_RE.finditer(re.sub(r'\s+', ' ', txt or '')):
+        if NOT_VIEW.search(m.group(2)):
+            continue                      # 「視聴チケットの販売は10/5まで」＝売る期限なので読まない
+        mo, dd = int(m.group(3) or m.group(5)), int(m.group(4) or m.group(6))
+        y = int(show_date[:4])
+        try:
+            c = datetime.date(y, mo, dd)
+            if c.isoformat() < show_date:
+                c = datetime.date(y + 1, mo, dd)
+        except ValueError:
+            continue
+        hm = '%d:%s' % (int(m.group(7)), m.group(8)) if m.group(7) else ''
+        cand = (c.isoformat(), hm)
+        best = max(best, cand) if best else cand
+    return best
+
+
+def stream_until(ev, last):
+    """配信の受付に書かれた視聴の終わり（いちばん遅いもの）。取れなければ None。"""
+    best = None
+    for r in ev.get('receptions') or []:
+        if not is_stream_reception(ev, r) or SELLER_SIDE.search(r.get('title') or ''):
+            continue
+        txts = [r.get('title') or '', r.get('note') or '']
+        for c in r.get('cards') or []:
+            txts += [c.get('name') or '', c.get('text') or '']
+        for t in txts:
+            u = view_until_in_text(t if isinstance(t, str) else json.dumps(t, ensure_ascii=False), last)
+            if u:
+                best = max(best, u) if best else u
+    return best
+
+
+def stream_label(base, last, until):
+    """見出しに「（配信は M月D日(曜) HH:MMまで）」を添える。配信の終わりが公演日（最終日）より後の時だけ。"""
+    if not until or until[0] <= last:
+        return base
+    return '%s（配信は%sまで）' % (base, (jp(until[0])[5:] + ' ' + until[1]).strip())
+
+
 def build(ev, today, unknown=None):
     """1ページ＝1エントリ。載せられないときは (None, 理由)。"""
     unknown = unknown if unknown is not None else collections.Counter()
@@ -400,7 +456,7 @@ def build(ev, today, unknown=None):
         'artist': '／'.join(perf[:3]) if perf else name,
         'name': name,
         'date': last,
-        'dateLabel': label,
+        'dateLabel': stream_label(label, last, stream_until(ev, last)),
         'venue': ev.get('venue') or '（会場未定）',
         'prefecture': pref,
         'genre': 'new',
@@ -573,7 +629,30 @@ def _selftest():
     e, _ = build(ev([st_rec, rec(title='VIP', end=('2026-10-05', '23:59'), cards=[{'name': 'VIP', 'status': '予定販売数終了'}])],
                     dates=['2026-09-28']), t30)
     assert len(e['tickets']) == 1, e['tickets']
-    print('selftest OK: slot_state/build/ticket_name/販売前の締切/〜公演日/売切/販売終了/出す側/配信の札/配信の公演後')
+    # ㉒ 🆕2026-09-30 配信は見出しに「いつまで見られるか」を書く（配信の受付に主催者が書いた視聴の終わりだけ読む）
+    sv = rec(title='配信チケット受付', end=('2026-11-24', '23:59'),
+             cards=[{'name': '配信視聴チケット', 'status': '販売中', 'text': 'アーカイブ視聴は12/2(水) 23:59までご覧いただけます。'}])
+    e, _ = build(ev([sv]), today)
+    assert e['dateLabel'] == '2026年11月25日(水) 19:30開演（配信は12月2日(水) 23:59まで）', e['dateLabel']
+    sv2 = dict(sv, note='見逃し配信は12月9日まで')                      # 受付の注記・時刻なし・遅いほう
+    assert build(ev([sv2]), today)[0]['dateLabel'] == '2026年11月25日(水) 19:30開演（配信は12月9日(水)まで）'
+    # 会場だけの受付には、説明に日付があっても添えない
+    e, _ = build(ev([rec(cards=[{'name': '前売', 'status': '販売中', 'text': 'アーカイブ視聴は12/2(水) 23:59まで'}])]), today)
+    assert e['dateLabel'] == '2026年11月25日(水) 19:30開演', e['dateLabel']
+    # 視聴の終わりが書いていない配信（受付の締切 11/24 や「1週間」から作らない）・売る期限の書き方は添えない
+    for c in ({'name': '配信視聴チケット', 'status': '販売中', 'text': '配信視聴付（1週間）'},
+              {'name': '配信視聴チケット', 'status': '販売中', 'text': '視聴チケットの販売は12/2まで'},
+              {'name': '配信視聴チケット', 'status': '販売中', 'text': 'アーカイブ配信URLは12/2までにお送りします'}):
+        e, _ = build(ev([dict(sv, cards=[c])]), today)
+        assert '配信は' not in e['dateLabel'], (c, e['dateLabel'])
+    # 終わりが公演日より前・同じ日なら添えない／会期の型は最終日より後の時だけ
+    e, _ = build(ev([dict(sv, note='アーカイブ 11/25 23:59まで')]), today)
+    assert e['dateLabel'] == '2026年11月25日(水) 19:30開演（配信は12月2日(水) 23:59まで）', e['dateLabel']
+    e, _ = build(ev([dict(sv, cards=[dict(sv['cards'][0], text='アーカイブ 11/25 23:59まで')])]), today)
+    assert '配信は' not in e['dateLabel'], e['dateLabel']
+    e, _ = build(ev([sv], dates=['2026-11-20', '2026-11-25']), today)
+    assert e['dateLabel'] == '2026年11月20日(金)〜2026年11月25日(水)（配信は12月2日(水) 23:59まで）', e['dateLabel']
+    print('selftest OK: slot_state/build/ticket_name/販売前の締切/〜公演日/売切/販売終了/出す側/配信の札/配信の公演後/配信の見出し')
 
 
 def main():
