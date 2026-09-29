@@ -180,7 +180,8 @@ def main():
         if e:
             page[str(p.get('event_id'))] += e['tickets']
 
-    ng, ok, gone, linkonly, rawng, nodetail = [], 0, [], [], [], []
+    ng, ok, gone, linkonly, rawng, nodetail, outrange = [], 0, [], [], [], [], []
+    rng_to = (data.get('range') or {}).get('to')
     for fid, entries in sorted(reg.items()):
         # 🚨「links.fany を足しただけ」のエントリ（枠はぴあ等で持っている）は突合対象外。
         #    ここを外さないと、売り場が違って当然の締切の差を全部「食い違い」として鳴らす
@@ -196,6 +197,12 @@ def main():
             rawng.append((fid, entries, rc))
         rk = {key(t) for t in fany_slots}
         gk = {key(t) for t in page.get(fid, [])}
+        if fid not in page and rng_to and not perfs.get(fid) and all(
+                (e.get('date') or '') > rng_to for e in entries):
+            # 🆕2026-09-30 一覧を取った期間（--to）より先の公演は、一覧に無くて当たり前＝「落ちた」ではない
+            #   （20925 佐久間一行 岡山 R9年4/4＝--to 3/31 の外で鳴った）。照合していないことは数で出す。
+            outrange.append((fid, entries))
+            continue
         if fid not in page:
             # 🚨2026-09-30 「組めない＝一覧から落ちた＝公演日が過ぎて正常」と決めつけない
             #   （ZAIKOのスタリオン＝配信中なのに正常扱いで見逃した）。一覧は公演日が今日以降しか返さない
@@ -246,6 +253,10 @@ def main():
     rep.write('\n=== 一覧から落ちて詳細ページも読めず判定できなかった（「終わった」とは言えない）===\n')
     for fid, entries in nodetail:
         rep.write('  event/detail/%s  id%s\n' % (fid, ','.join(str(x['id']) for x in entries)))
+    rep.write('\n=== 一覧を取った期間（〜%s）より先の公演＝今回は照合していない %d件 ===\n' % (rng_to, len(outrange)))
+    for fid, entries in outrange:
+        rep.write('  event/detail/%s  id%s 公演%s\n' % (fid, ','.join(str(x['id']) for x in entries),
+                                                     entries[0].get('date')))
     rep.write('\n=== リンクだけ足した分（FANYの枠を足し込めば買える枠が増える候補）===\n')
     for fid, entries, n in linkonly:
         e = entries[0]
@@ -253,8 +264,8 @@ def main():
                   % (e['id'], n, e.get('date'), (e.get('name') or '')[:34],
                      (e.get('venue') or '')[:18]))
     rep.close()
-    print('gate_fany_slots: 一致%d / 食い違い%d / 🚨生データ突合%d / 一覧落ち%d / 判定不能%d / リンクだけ%d → %s'
-          % (ok, len(ng), len(rawng), len(gone), len(nodetail), len(linkonly), REPORT))
+    print('gate_fany_slots: 一致%d / 食い違い%d / 🚨生データ突合%d / 一覧落ち%d / 判定不能%d / リンクだけ%d / 期間外(未照合)%d → %s'
+          % (ok, len(ng), len(rawng), len(gone), len(nodetail), len(linkonly), len(outrange), REPORT))
     return 1 if (ng or rawng) else 0
 
 
