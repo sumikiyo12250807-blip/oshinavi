@@ -18,6 +18,9 @@
 ✅ TIGET全件番人5136一致→ヒール65（番人65一致・残り5は作り直し空）
 ✅ 08:39 朝push cdd7b26e（今日1回目）＝origin/main..HEAD 空
 ✅ 朝push後 livePocket新着24件（鉄壁ゲート28/29・r10abは入れず・日別1件畳み）45f46e61＝昼のpushに乗る
+🎬 動画＝①『推しまで教えて』MV（コードで描く・1曲まるごと68.7秒）ユーザー採用 tmp/video/oshimade/oshimade_full.mp4（使う日は未定）
+   ②Mamma Mia Midnight（MiniMax 10秒×3本・$3.90・残高約$4.20）＝ユーザー「今夜のX投稿に1本目をつけて」→ 9/29夜 clip1／9/30 clip2／10/1 clip3（tmp/video/mamma/）
+   次からは前の1本の最後のコマを次の参照画像に（つなぎ目をそろえる）＝memory済み
 📋 残り（昼の便へ）＝livePocket食い違い39件のヒール／12:10 昼の便
 📋 残り＝ぴあheal --apply→足し算→HEAD突合／前夜ぴあ35件(25250〜25284) reconcile→振り分け（⑦の12件は保留）／枠0の31日超69件を照合／gate_badge_render→reconcile --new→build_ai_page→compact→朝push
 📝 夜にまとめて聞く＝9/28引き継ぎの①〜⑨をそのまま持ち越し
