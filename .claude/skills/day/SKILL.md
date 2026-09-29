@@ -301,6 +301,19 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      売り切れ・先行終了の印付き枠は残す。🚨本日発売の枠は放っておくと「9/21 HH:MM発売」のまま締切が付かない。
      🚨**完売を一覧で判定しない**（「予定枚数終了」の文言が無い）／**1公演＝1エントリ**（出演者が日替わり）。
      🚨ぴあ以外なので**振り分けはユーザーの確認後**。詳しくは [[reference_fany_ticket]]
+   - 🆕🎫**livePocket も毎朝回す＝新着だけでなく登録済みの見直しも**（2026-09-30 ユーザー指摘「TOPANGA POKÉCA LEAGUE 取りこぼし」）
+     ```
+     python tools/livepocket_harvest.py --pages 40 --out tmp/livepocket_MMDD.json
+     python tools/build_livepocket_entries.py tmp/livepocket_MMDD.json --out tmp/built_livepocket_MMDD.json
+     #  未登録分だけ抜き出して → python tools/gate_livepocket_indep.py --built <未登録分> --sleep 3 → 一致した件だけ
+     python tools/inject_livepocket.py <一致した件> --apply
+     python tools/fold_livepocket_daily.py --apply
+     python tools/gate_livepocket_slots.py --sleep 3     # 🔒登録済み全件（約900件・1時間弱・裏で）
+     python tools/heal_livepocket.py --ids <鳴った id> → --apply → gate_livepocket_indep.py --ids <同じ id>
+     ```
+     🚨**登録した後で売り場に足された受付（先着・二次・当日券）は、登録済みを見直さない限り入らない**
+       ＝24809 TOPANGA は9/28に抽選だけで登録→先着（10/2 12:00〜）が後から出たのに、9/30朝は新着のゲートしか回さず落ちていた。
+       TIGET の「毎朝 番人→heal」と同じ形にする。livePocket は2本同時に叩くと WAF で止まる＝番人と収集を重ねない
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
    - 🆕🚨**push前に必ず** `python tools/gate_badge_render.py --today <今日>,<明日>`＝**画面に出るバッジの日付・時刻**の番人（ページのプログラムをそのまま動かして全枠を描く・exit 0 以外はpushしない）。
