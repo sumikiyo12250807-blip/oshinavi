@@ -192,6 +192,19 @@ def main():
             gone.append((u, entries))           # 引けたが組めない＝公演が終わった等
             continue
         gk = {key(t) for t in page[u]}
+        # 🆕2026-09-30 比べるのは ZAIKO の枠だけ（7217 平松愛理＝同じカードのぴあの枠まで「只登録側」で鳴っていた）。
+        #   売り場から消えた「印つき・締切が過ぎた」枠は残す決まり（DELETE_GATE）＝画面にも出ない＝数えない。
+        #   毎朝同じ10件が鳴ると本物のずれが埋もれる。
+        #   飛び先の無い枠は、エントリにほかの売り場のリンクが無い時だけ ZAIKO の枠と見る。
+        #   売り場から消えた「印つき」枠は残す決まり（売り切れ・販売終了の表示）＝数えない。
+        def is_zaiko_slot(e, t):
+            u2 = t.get('url') or ''
+            if u2:
+                return 'zaiko.io' in u2
+            return not any(v for k2, v in (e.get('links') or {}).items() if k2 not in ('zaiko', 'amazon'))
+        rk = {key(t) for e in entries for t in (e.get('tickets') or [])
+              if is_zaiko_slot(e, t)
+              and not ((t.get('soldout') or t.get('saleEnded') or t.get('presaleEnded')) and key(t) not in gk)}
         if rk == gk:
             ok += 1
             continue
