@@ -23,7 +23,8 @@
    🗓 ユーザー決定＝**4日分・どれも「J-POPまとめ」投稿につける**：9/29 clip1／9/30 clip2／10/1 clip3（tmp/video/mamma/）／10/2 推しまで教えてMV（oshimade_full.mp4）
    次からは前の1本の最後のコマを次の参照画像に（つなぎ目をそろえる）＝memory済み
 🐦 X素材（9/30発売）＝216件（お笑い104・J-POP26・アイドル17・クラシック12…）tmp/x0929/x_0930_ids.json／主役候補＝7329 YOASOBI 4次プレリザーブ 9/30 11:00（今朝の枠0救済で入れた分）
-📋 残り（昼の便へ）＝livePocket食い違い39件のヒール／12:10 昼の便
+✅ 13:04 昼push 06555969（今日2回目）＝ぴあヒール25＋足し算45（消えた枠0）・TIGET3・ZAIKO1・livePocket30・FANY34・e+締切6・livePocket食い違い39件ヒール（38/39一致）
+📋 残り＝夜ヒール22:07（隠れ枠91＝夕方以降の発売分＋買える枠ゼロ115件はDELETE_GATEで）／17:02 X準備（J-POPまとめにMamma Mia 1本目）／23:21 夜push
 📋 残り＝ぴあheal --apply→足し算→HEAD突合／前夜ぴあ35件(25250〜25284) reconcile→振り分け（⑦の12件は保留）／枠0の31日超69件を照合／gate_badge_render→reconcile --new→build_ai_page→compact→朝push
 📝 夜にまとめて聞く＝9/28引き継ぎの①〜⑨をそのまま持ち越し
 ```
