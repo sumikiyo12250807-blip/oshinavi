@@ -388,3 +388,7 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
    - 欠けていたら追加・統合してから `reconcile_pia.py --ids` で再照合。
      統合したら🚨`tmp/check_lost_urls_0826.py` で **ticket.url が落ちていないか**点検（[[feedback_build_pia_multiurl_loses_ticket_url]]）
 9. **push（夜の1回＝いちばん最後）**。8で直した分も一緒に乗せる。SSR再生成と `reconcile_pia --new` を押す直前に
+   🆕（2026-09-30 ユーザー「一晩パソコン電源つけてないとないのよ」→「23時すぎのは明日の朝でいいよ　22時もわたしが眠くなったら明日の朝でいい」）
+   ＝**夜のヒールと push は22時すぎ（ユーザーが寝る前）で締める**。23時台の発売は翌朝のヒールへ。
+   夜のヒールは今日発売のぴあだけに絞る＝`python tmp/x0930/today_pia_ids.py` → `heal_stale_deadlines --ids …`（全件1時間→数分）。
+   取り込めなかった枠は0時〜翌朝のヒールまで画面から消える（締切＝発売日のままなので「終わった枠」扱い）＝朝のヒールで戻る
