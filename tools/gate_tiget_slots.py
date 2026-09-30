@@ -187,7 +187,8 @@ def main():
             rawng.append((e, rc))
 
         def key(t):
-            return (t.get('type'), t.get('date'), bool(t.get('soldout')),
+            import fold_parts as FP   # 🆕9/30 畳んだ1部・2部の印を外して比べる
+            return (FP.bare_type(t.get('type')), t.get('date'), bool(t.get('soldout')),
                     bool(t.get('saleEnded')), bool(t.get('saleEndUnknown')))
         rk, gk = {key(t) for t in reg}, {key(t) for t in rebuilt}
         # 券種名は県を含む＝ゲートは県抜きの骨格でも比べる（一覧の場所が取れない時のため）

@@ -100,6 +100,8 @@ def main():
             rep.write('    新: %s | %s%s%s\n' % (t.get('type'), t.get('date'), ' 売切' if t.get('soldout') else '',
                                               ' 販売終了' if t.get('saleEnded') else ''))
         e['tickets'] = others + rebuilt
+        import fold_parts as FP   # 🆕9/30 1部・2部を畳んだカードは部の印を付け直す
+        FP.relabel(e)
         done += 1
 
     rep.write('\n--- 作り直しが空（触らなかった）---\n')
