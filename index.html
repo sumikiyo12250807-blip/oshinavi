@@ -1447,7 +1447,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
         <button class="filter-btn" data-genre="fes">フェス</button>
         <button class="filter-btn" data-genre="hanabi">花火大会</button>
         <button class="filter-btn" data-genre="gourmet">グルメ</button>
-        <button class="filter-btn" data-genre="gakusai">学園祭</button><button class="filter-btn" data-genre="event">イベント</button>
+        <button class="filter-btn" data-genre="gakusai">学園祭</button><button class="filter-btn" data-genre="event">イベント</button><button class="filter-btn" data-genre="parking">駐車場</button>
       </div>
     </div>
     <!-- 2026-09-28 ユーザー「配信はエンタメの中じゃなく独立させて」「音楽とかエンタメも同一に並べてほしい」「配信は最後に」
@@ -35897,6 +35897,8 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     /* 2026-09-03 ユーザー「トークショー作って」＝ぴあの「講演会・トークショー」の行き先を
        engeki から独立させた。演劇タブに混ざっていたトーク主体の公演をここへ集める。 */
     talkshow: "トークショー",
+    /* 2026-09-30 ユーザー「ジャンル　駐車場作って」＝駐車券の枠を持つイベントを「駐車場」ボタンでも出す */
+    parking: "駐車場",
     /* 2026-09-04 ユーザー「お出かけにイベントのジャンル作ってそれに入れて」
        ＝複数組が出るイベント型の催しを、音楽の棚でなく おでかけ で探せるようにした。 */
     event: "イベント",
@@ -36530,7 +36532,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     music:   ["jpop","classic","rock","jazz","enka","yougaku","anime","idol","utaite","vocaloid","kpop","hiphop","club","chanson","hougaku","musicetc"],
     stage:   ["engeki","musical","dento","seiyuu","2.5ji","circus"],
     ento:    ["owarai","kaidan","dinnershow","movie","aisatsu","youtuber","vtuber","tiktoker","fanevent","magic","talkshow"],
-    odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event"],
+    odekake: ["sports","art","kids","fes","hanabi","gourmet","gakusai","event","parking"],
     haishin: ["haishin"]   // 2026-09-28 ユーザー「配信は最後に」＝5つ目のグループ（isStreamEvent が eventGenres に足す）
   };
 
@@ -36551,9 +36553,24 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     return ev._isStream;
   }
 
+  // 🆕2026-09-30 ユーザー「ジャンル　駐車場作って」＝駐車券・駐車場チケットの枠を持つイベントは
+  //   元のジャンルはそのままに「駐車場」ボタンでも出す（配信と同じくデータは書き換えない）。
+  //   ⚠️公演名の英語 parking は拾わない（TIGET「Monthly Parking Space」は公演名）・「スパーキング」も拾わない
+  //   ⚠️シャトルバスの行き先「〜駐車場」・「駐車場1台につき別途」は拾わない
+  const PARKING_RE = /駐車券|駐車場(チケット|予約|利用|券)|会場内駐車場|駐車場付|駐車料/;
+  const PARKING_TICKET_RE = /駐車券|駐車場(チケット|予約|利用|券)|会場内駐車場|駐車場付|駐車料|parking/i;
+  function isParkingEvent(ev) {
+    if (ev._isParking === undefined) {
+      ev._isParking = ev.genre !== "new" && (PARKING_RE.test(ev.name || "")
+        || (ev.tickets || []).some(t => PARKING_TICKET_RE.test(t.type || "")));
+    }
+    return ev._isParking;
+  }
+
   function eventGenres(ev) {
     const g = [ev.genre].concat(ev.extraGenres || []).filter(Boolean);
     if (isStreamEvent(ev)) g.push("haishin");
+    if (isParkingEvent(ev)) g.push("parking");
     return g;
   }
 
@@ -36565,6 +36582,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       || (!grp && ev.genre === activeGenre)
       || (!grp && (ev.extraGenres || []).includes(activeGenre))
       || (activeGenre === "haishin" && isStreamEvent(ev))
+      || (activeGenre === "parking" && isParkingEvent(ev))
       || (activeGenre === "engeki" && (ev.genre === "2.5ji" || ev.genre === "seiyuu" || ev.genre === "musical"))
       || (activeGenre === "anime"  && ev.genre === "seiyuu");
     const rel = eventReleaseStatus(ev);   // 発売フィルタは発売前(発売開始日が未来)のチケットだけで判定
