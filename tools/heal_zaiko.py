@@ -87,7 +87,10 @@ def main():
             continue
         if ids and e['id'] not in ids:
             continue
-        target.append((e, u))
+        # 🆕2026-09-30 1部・2部を畳んだカードは ZAIKO のページを2つ持つ＝ページごとに作り直す
+        for u2 in sorted({u} | {t.get('url') for t in (e.get('tickets') or [])
+                                if 'zaiko.io' in (t.get('url') or '')}):
+            target.append((e, u2))
     if not target:
         print('対象が無い')
         return 0
@@ -112,13 +115,19 @@ def main():
         # 🚨2026-09-24 ぴあのエントリに links.zaiko を足した形（id7217 平松愛理）で、**ぴあの枠まで消した**
         #   （飛び先URLが空のぴあ枠を自分の枠と見なした）。作り直すのは**飛び先がZAIKOの枠だけ**、
         #   それ以外の売り場の枠はそのまま前に残す。
-        others = [t for t in old if 'zaiko.io' not in (t.get('url') or '')]
-        mine = [t for t in old if 'zaiko.io' in (t.get('url') or '')]
+        #   🆕2026-09-30 畳んだカード（ZAIKOのページが2つ）では、**このページの枠だけ**作り直す＝別ページの枠は残す
+        multi = len({t.get('url') for t in old if 'zaiko.io' in (t.get('url') or '')}) > 1
+        def is_mine(t):
+            u2 = t.get('url') or ''
+            return (u2 == u) if multi else ('zaiko.io' in u2)
+        others = [t for t in old if not is_mine(t)]
+        mine = [t for t in old if is_mine(t)]
         merged = others + (new if a.replace else merge_slots(mine, new))
         if {GZ.key(t) for t in merged} == {GZ.key(t) for t in old}:
             same += 1
         else:
             healed.append((e, old, merged))
+            e['tickets'] = merged   # 🆕9/30 同じカードの次のページは、このページを当てた後の枠から作る（書き込みは --apply の時だけ）
             rep.write('id%-6s %s @ %s\n    %s\n'
                       % (e['id'], (e.get('name') or '')[:40], (e.get('venue') or '')[:20], u))
             for t in old:

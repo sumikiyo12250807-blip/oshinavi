@@ -47,7 +47,8 @@ URL_RE = r'livepocket\.jp/e/([A-Za-z0-9_\-]+)'
 
 
 def key(t):
-    return (t.get('type'), t.get('date'), bool(t.get('soldout')), bool(t.get('saleEnded')),
+    import fold_parts as FP   # 🆕9/30 畳んだ1部・2部の印を外して比べる
+    return (FP.bare_type(t.get('type')), t.get('date'), bool(t.get('soldout')), bool(t.get('saleEnded')),
             bool(t.get('saleEndUnknown')))
 
 
