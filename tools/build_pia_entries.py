@@ -744,6 +744,12 @@ def genre_from_subcat(cat, sub, name=''):
     # 🚨2026-09-15＝「華火」表記（東京湾大華火祭・道新・秋華火）が fes に落ちていた＝花火の当て字も拾う。
     if sub and '花火' in sub:
         return ('hanabi', None) if re.search(r'花火|華火', name or '') else ('fes', None)
+    # 🆕2026-09-30 ユーザー「ダンス作って」＝「バレエ・ダンス」はダンスへ。
+    #   バレエはクラシックのまま＋舞台・ダンスにも出す（両方方式）／バレエ以外は dance。
+    if sub and 'バレエ・ダンス' in sub:
+        if re.search(r'バレエ|バレヱ|ballet', name or '', re.I):
+            return ('classic', ['engeki', 'dance'])
+        return ('dance', None)
     if sub and sub in PIA_GENRE_MAP: return PIA_GENRE_MAP[sub]
     if sub:
         for k, v in PIA_GENRE_MAP.items():
@@ -1028,7 +1034,7 @@ def build(cand):
         t['type'] = norm_fw(t['type'])
     return {'id': cand['newid'], 'artist': norm_fw(cand['artist']), 'name': norm_fw(cand['artist']), 'date': ends[-1],
             'dateLabel': norm_fw(dl), 'venue': norm_fw(venue), 'prefecture': pref, 'genre': 'new',
-            '_genre': main_genre, '_extraGenres': [extra] if extra else [], '_piaSub': sub_used,
+            '_genre': main_genre, '_extraGenres': (list(extra) if isinstance(extra, (list, tuple)) else [extra]) if extra else [], '_piaSub': sub_used,
             'price': None, 'links': links,
             'tickets': tickets, 'verified': True, 'verifiedAt': datetime.date.today().isoformat()}
 
@@ -1275,6 +1281,9 @@ def _selftest():
                if nm not in PIA_GENRE_MAP and PIA_LG_LABEL[cd[:2]] not in PIA_CAT_FALLBACK ]
     assert not _holes, '行き先の無いぴあサブカテゴリが残っている: %s' % (_holes,)
     assert genre_from_subcat('音楽', '演歌・邦楽', '坂本雅幸 和太鼓') == ('hougaku', None)  # 和太鼓＝演奏を聴く側
+    # 🆕2026-09-30 ダンス新設＝バレエはクラシック＋舞台・ダンス／バレエ以外のダンスは dance
+    assert genre_from_subcat('演劇', 'バレエ・ダンス', '牧阿佐美バレヱ団「眠れる森の美女」') == ('classic', ['engeki', 'dance'])
+    assert genre_from_subcat('演劇', 'バレエ・ダンス', 'Dance Exhibition 2026 in Iwate') == ('dance', None)
     # ⑪ Amazonリンクは半角化してから作る（全角クエリは検索0件＝リンクが死ぬ）
     assert 'CiON' in urllib.parse.unquote(amazon_cd(norm_fw('ＣｉＯＮ')))
     # ⑫ 会期は「これから行われる全公演」から作る（9855 反田恭平＝買える枠だけで 10/24〜11/13 に縮んでいた・2026-09-14）
