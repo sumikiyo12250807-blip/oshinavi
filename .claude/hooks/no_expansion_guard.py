@@ -38,6 +38,10 @@ def main():
     # 引用符の中身（コミットメッセージ等）は見ない＝文字として ; や | が入るのは正当
     bare = re.sub(r'"(?:\\.|[^"\\])*"|\'[^\']*\'', '""', cmd)
     hit = [why for pat, why in RULES if re.search(pat, bare, re.M)]
+    # 🆕ただしダブルクォートの中の $( ) とバッククォートは本物の展開＝小窓が出る（9/30 コミット文の「$()」で出した）
+    sq = re.sub(r'\'[^\']*\'', "''", cmd)
+    if not any('$(' in h for h in hit) and re.search(r'\$\(|`', sq):
+        hit.append('ダブルクォートの中に $( ) かバッククォート')
     if not hit:
         return 0
     sys.stderr.buffer.write((
