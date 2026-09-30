@@ -47,8 +47,11 @@ ZAIKO_GENRE = {
     'Techno': 'club', 'House': 'club', 'Electronic': 'club', 'Trance': 'club',
     'Psychedelic': 'club', 'Electro': 'club', 'Bass Music': 'club', 'Drum & Bass': 'club',
     'Disco': 'club', 'EDM': 'club', 'Dubstep': 'club', 'Ambient': 'club',
-    'Tech House': 'club', 'Dance': 'club', 'HardStyle': 'club', 'Breaks': 'club',
+    'Tech House': 'club', 'HardStyle': 'club', 'Breaks': 'club',
     'Chill out': 'club', 'Dub': 'club', 'Lounge': 'club', 'Allmix': 'club',
+    # 🆕2026-09-30 ユーザー「イベントにして」→同夜「ダンス作って」＝Dance はクラブ／DJでなくダンス
+    #   （来ていたのは eggman のライブ・ダンス選手権の配信＝クラブ系ではなかった）
+    'Dance': 'dance',
     # ── 音楽 ──
     'Hip hop': 'hiphop', 'Trap': 'hiphop', 'Reggae': 'hiphop',
     'Idol': 'idol',
