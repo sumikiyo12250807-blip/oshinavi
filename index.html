@@ -617619,7 +617619,9 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
           : `<div class="ticket-item soldout">${soldInner}</div>`;
       }
       // 販売終了したチケットは表示しない（発売前は date>=today なので残る／終わった公演から自然に消える）
-      if ((!t.startDate || parseDateStr(t.startDate) <= today) && parseDateStr(t.date) < today) {
+      //  🆕2026-09-30 ただし「発売日＝締切」のまま締切を取り込めていない枠（夜遅くの発売で翌朝のヒール待ち）は
+      //  発売日から2日間は消さずに「M/D HH:MM〜発売中」で出す（ユーザー「見えなくしないで　選択したらURLにとべるようにすればいいよ」）
+      if ((!t.startDate || parseDateStr(t.startDate) <= today) && parseDateStr(t.date) < today && !(t.startDate && t.startDate === t.date && (today - parseDateStr(t.date)) <= 2 * 86400000)) {
         return "";
       }
       // 表示ルール:
@@ -617636,6 +617638,11 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
         // 売り場に「いつまで」が書かれていない枠。発売日は分かっているので
         // 「M/D発売〜」とだけ出して販売中にする（嘘の締切を作らない）。
         // 売り場が消えたらヒール／削除ゲートで落ちる。ユーザー決定 2026-09-09。
+        status = "selling";
+        label  = "販売中";
+        displayDate = t.startDate;
+      } else if (t.startDate && t.startDate === t.date && parseDateStr(t.date) < today) {
+        // 🆕2026-09-30 発売日を過ぎたが締切をまだ取り込めていない枠（翌朝のヒール待ち）＝上の「いつまで不明」と同じ出し方
         status = "selling";
         label  = "販売中";
         displayDate = t.startDate;
@@ -617691,7 +617698,8 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
           }</div>`
         : "";
       // 締切日を見せる枠には「〜」を付ける（本日発売でも締切を出す時は付ける＝発売日と誤読させない）
-      const endUnknown = !!(t.saleEndUnknown && t.startDate && parseDateStr(t.startDate) <= today && !t.saleUntilSoldOut);
+      const endUnknown = !!(((t.saleEndUnknown && t.startDate && parseDateStr(t.startDate) <= today)
+        || (t.startDate && t.startDate === t.date && parseDateStr(t.date) < today)) && !t.saleUntilSoldOut);
       // 締切が分かっている枠は「〜M/D」。締切が書かれていない枠は「M/D発売〜」と後ろに付ける
       const datePrefix = endUnknown ? "" : ((status === "selling" || (label === "本日発売" && displayDate === t.date)) ? "〜" : "");
       const dateSuffix = endUnknown ? "〜発売中" : "";
