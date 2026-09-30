@@ -316,6 +316,10 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
        TIGET の「毎朝 番人→heal」と同じ形にする。livePocket は2本同時に叩くと WAF で止まる＝番人と収集を重ねない
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
+   - 🆕🧩**1部・2部は畳む**（2026-09-30 ユーザー「これもゲートに組み込んでよ」「少ないならまとめたほうが親切」）＝
+     投入・ヒールのあとに `python tools/fold_parts.py --apply`、push前に `python tools/fold_parts.py --check`（exit 0 以外はpushしない）。
+     同じ日・同じ会場で部の印だけ違うカードを最小idへ畳む（**3部まで**・4部以上は分けたまま／⛔FANYは畳まない／新着と振り分け済みが混ざる組は報告だけ）。
+     畳んだカードは `_parts`（飛び先→部）を持ち、ヒールで【1部】の印が外れても `--apply` が付け直す。番人は印を外して比べる
    - 🆕🚨**push前に必ず** `python tools/gate_badge_render.py --today <今日>,<明日>`＝**画面に出るバッジの日付・時刻**の番人（ページのプログラムをそのまま動かして全枠を描く・exit 0 以外はpushしない）。
      Why＝2026-09-28 夜 グレープカンパニー（ZAIKO）の「9/28 21:00発売〜10/25 12:00」が画面で「〜10/25 21:00」＝データの番人は全部通っていたのに表示で間違えた（ユーザー「同じ間違いが起きないようにゲートを直して」）
    - FETCHが出たら**ぴあの混雑ページ**を疑って該当だけ再照合（巻き添えのSTALEも消える）

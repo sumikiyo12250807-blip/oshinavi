@@ -484,10 +484,13 @@ def check_entry(e, pages, today):
                 continue   # 🆕2026-09-30 公演日が過ぎたページは、締切が今日以降の配信の受付だけを載せる（ビルダーと同じ線）
             r = dict(r)
             r['dasu'] = is_dasu(r['title'], r['cards'])
+            import fold_parts as FP   # 🆕9/30 登録側と同じく部の印を外して比べる（売り場が自分で【夜の部】を付けるページ＝25689）
+            r['title'] = FP.bare_type(r['title'])
             recs.append(r)
         parsed = []
         for t in ts:
-            pt = parse_type(t.get('type'))
+            import fold_parts as FP   # 🆕9/30 畳んだ1部・2部の印を外して読む
+            pt = parse_type(FP.bare_type(t.get('type')))
             if pt is None:
                 und.append(('判定不能（枠の表記が読めない）', t.get('type'), '', u))
                 continue

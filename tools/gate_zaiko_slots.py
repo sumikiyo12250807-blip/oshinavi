@@ -42,7 +42,8 @@ REPORT = 'tmp/gate_zaiko_report.txt'
 
 def key(t):
     """比べる骨格＝バッジの文字・締切・印。url は比べない（同じイベントURLなので意味がない）。"""
-    return (t.get('type'), t.get('date'), bool(t.get('soldout')),
+    import fold_parts as FP   # 🆕9/30 畳んだ1部・2部の印を外して比べる
+    return (FP.bare_type(t.get('type')), t.get('date'), bool(t.get('soldout')),
             bool(t.get('saleEnded')), bool(t.get('saleEndUnknown')))
 
 
@@ -66,7 +67,10 @@ def load_registered(ids=None):
             continue
         if ids and e['id'] not in ids:
             continue
-        out.setdefault(u, []).append(e)
+        # 🆕2026-09-30 1部・2部を畳んだカードは ZAIKO のページを2つ持つ＝枠の飛び先ごとに照合する
+        us = {u} | {t.get('url') for t in (e.get('tickets') or []) if 'zaiko.io' in (t.get('url') or '')}
+        for u2 in sorted(us):
+            out.setdefault(u2, []).append(e)
     return out
 
 
@@ -200,7 +204,7 @@ def main():
         def is_zaiko_slot(e, t):
             u2 = t.get('url') or ''
             if u2:
-                return 'zaiko.io' in u2
+                return u2 == u   # 🆕9/30 このページの枠だけ（畳んだカードの別ページの枠は、そのページの番で比べる）
             return not any(v for k2, v in (e.get('links') or {}).items() if k2 not in ('zaiko', 'amazon'))
         rk = {key(t) for e in entries for t in (e.get('tickets') or [])
               if is_zaiko_slot(e, t)
