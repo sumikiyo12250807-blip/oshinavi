@@ -35,6 +35,7 @@ import argparse
 import gzip
 import io
 import json
+import os
 import re
 import sys
 import time
@@ -585,6 +586,31 @@ def main():
                 if allknown >= a.stop_known:
                     print(f'  → 登録済みだけのページが{allknown}枚続いたので cat={cat} は打ち切り')
                     break
+
+    # 🆕2026-10-01 見張りリスト（tools/tiget_watch.json）＝「チケット公開前で券種が押せない」ので載せずに外した公演。
+    #   ユーザー「載せなくていい　直ったら拾ってきて」（寺尾聰 Cover Live 1st/2nd）。
+    #   一覧の新着順では後ろに沈んで --stop-known で届かないので、毎朝ここから個別ページを直接引く。
+    #   登録された（index.html に URL が入った）ものはリストから外す。
+    wpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tiget_watch.json')
+    try:
+        watch = json.load(io.open(wpath, encoding='utf-8'))
+    except Exception:
+        watch = []
+    if watch:
+        try:
+            reg = set(re.findall(r'tiget\.net/events/(\d+)', io.open(a.index, encoding='utf-8', newline='').read()))
+        except Exception:
+            reg = set()
+        left = [w for w in watch if str(w['id']) not in reg]
+        if len(left) != len(watch):
+            json.dump(left, io.open(wpath, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+            print(f'  見張りリスト：登録された {len(watch) - len(left)}件を外した')
+        for w in left:
+            i = str(w['id'])
+            if i not in events:
+                events[i] = {'cats': list(w.get('cats') or []), 'list': {}}
+                order.append(i)
+        print(f'  見張りリスト {len(left)}件も個別ページを引く')
 
     rows, errs = [], []
     # 打ち切りモードでは、個別ページを引くのも**未登録の分だけ**（毎朝の負荷を軽くする）
