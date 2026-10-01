@@ -1,0 +1,35 @@
+const T="OSHINAVIの\"10/2チケット発売\"ピックアップ🎫\n\n明日10/2(金)発売のミュージカル・演劇・トークショーのまとめよ。\nきかんしゃトーマスのファミリーミュージカルに『マリア・シュトゥアルト』、舞台『魔法使いの約束』のディレイビューイングよ。\nOSHINAVIはこういう舞台のチケット発売日も、ほかのイベントと一緒に並べてある無料サイトなの。\noshinavi.jp で売り場まで行けるようにしてあるわ。\n\n【10/2(金)発売】\n10:00 「ナイボー！」／東京\n10:00 きかんしゃトーマス ファミリーミュージカル ソドー島の1ばんはだれだ／静岡\n10:00 丸美屋食品ミュージカル「アニークリスマスコンサート」／東京\n10:00 『マリア・シュトゥアルト』／東京\n12:00 舞台『魔法使いの約束』第1章～第3章 ディレイビューイング／北海道・宮城・埼玉・千葉・東京・愛知・京都・大阪・兵庫・広島・福岡・熊本\n21:00 いりぽん／えとう／りりり／東京\n\n舞台『魔法使いの約束』第1章～第3章のディレイビューイングは北海道から熊本まで、明日10/2(金)の12時に発売よ。\n昼休みに間に合う時刻ね。\n\n【10/3(土)発売】\n10:00 甲斐翔真／チェ・ウヒョク／エリアンナ ほか／福岡\n10:00 『いきなり本読み!in梅田芸術劇場シアター・ドラマシティ』／大阪\n10:00 ミュージカル『ラ・カージュ・オ・フォール』／大阪\n10:00 劇団四季『ライオンキング』／東京\n10:00 『星の教室』完成披露舞台挨拶／東京\n他にも30件近くあるわ。\n\n【10/4(日)発売】\n10:00 Bunkamura Production 2026 ミュージカル『獅子 THE LION-BEAT』／大阪\n10:00 ミュージカル『ミー&マイガール』／大阪\n10:00 Thank you very マッチ de SHOW／大阪\n10:00 「ロックンロール」／兵庫・東京\n10:00 PARCO PRODUCE 2026 髪結いの亭主／大阪\n他にも10件近くあるわ。\n\n土曜は劇団四季『ライオンキング』にミュージカル『ラ・カージュ・オ・フォール』、日曜はミュージカル『ミー&マイガール』と、週末も名前がそろうわ。\n\nこのあとの投稿では、キッズやファンイベントの発売を並べるから、あたしのXをフォローしておいて。\n\nOSHINAVIは発売日が近い公演から上に並んでいるから、明日の受付は上のほうですぐ見つかるわ。\n\n▼チケット情報はこちら\noshinavi.jp\n\n観たい舞台の席は、明日の受付でゲットしてね。\n客席で過ごす日が、ひとつ決まるわね。\n\n#OSHINAVI #明日発売 #チケット\n";
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const norm=s=>s.replace(/\s+/g,'');
+let box; for(let i=0;i<25&&!(box=document.querySelector('[role="dialog"] [data-testid="tweetTextarea_0"][contenteditable="true"]')||document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]'));i++) await sleep(300);
+if(!box) throw 'NO_BOX';
+if(box.innerText.trim().length>0 && norm(box.innerText)!==norm(T)) throw 'BOX_NOT_EMPTY:'+box.innerText.slice(0,40);
+if(norm(box.innerText)!==norm(T)){ box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T);
+box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true})); await sleep(1800);}
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_MISMATCH len='+box.innerText.length;
+let root=box; while(root&&!root.querySelector('[data-testid="scheduleOption"]')) root=root.parentElement;
+if(!root) throw 'NO_ROOT'; root.querySelector('[data-testid="scheduleOption"]').click(); 'A_OK '+box.innerText.length;
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let sels=[]; for(let i=0;i<30;i++){const dd=[...document.querySelectorAll('[role="dialog"]')].find(x=>x.innerText.includes('Will send on')); sels=dd?[...dd.querySelectorAll('select')]:[]; if(sels.length>=5) break; await sleep(300);}
+if(sels.length<5) throw 'NO_SELECTS';
+const setv=(s,v)=>{Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),'value').set.call(s,String(v));s.dispatchEvent(new Event('change',{bubbles:true}));};
+setv(sels[0],'10'); setv(sels[1],'1'); setv(sels[3],22); setv(sels[4],1); await sleep(800);
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 10:01 PM")) throw 'WILL_MISMATCH '+will;
+[...document.querySelectorAll('[role="button"],button')].find(b=>b.innerText.trim()==='Confirm').click(); await sleep(3000); 'B_OK';
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const MARK="明日10/2(金)発売のミュ", TAILMARK="観たい舞台の席は、明日の";
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 10:01 PM")) throw 'WILL '+will;
+const box=[...document.querySelectorAll('[data-testid="tweetTextarea_0"]')].find(b=>b.innerText.includes(MARK));
+if(!box) throw 'NO_BOX';
+if(!box.innerText.includes(TAILMARK)) throw 'NO_TAILMARK';
+if((box.innerText.match(/ピックアップ🎫/g)||[]).length!==1) throw 'HEAD_COUNT';
+if(!box.innerText.trim().endsWith('#チケット')) throw 'TAIL';
+let r2=box; while(r2&&!r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) r2=r2.parentElement;
+const btn=r2&&r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]');
+if(!btn||btn.innerText.trim()!=='Schedule') throw 'BTN '+(btn&&btn.innerText);
+btn.click(); await sleep(3000);
+'DONE | '+[...document.querySelectorAll('[data-testid="toast"],[role="alert"]')].map(t=>t.innerText).join(' | ')+' | url='+location.href;
