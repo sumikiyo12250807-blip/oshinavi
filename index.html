@@ -36882,12 +36882,31 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     const _isFanyT = (x) => /fany\.lol/.test(x.url || "");
     const _perfKey = (x) => { const m = (x.type || "").match(/（([^（）]*公演)）/); return m ? m[1] : ""; };
     const _pairKey = (x) => /^一般発売/.test(x.type || "") && !x.soldout ? [_perfKey(x), x.date || "", x.startDate || ""].join("|") : null;
+    // 🆕同日 ユーザー「ぴあが一つにまとまっていてFANYが割れてるなら、それぞれにぴあの同じURL貼ればいいじゃん」＝
+    //   ぴあの一般発売が複数会場をまとめた1枠（例「（北海道・島根・福岡・沖縄 10/16〜12/8公演）」）で、
+    //   そのまとめにFANYの公演（県と公演日）が入っていれば、FANYの会場ごとのバッジそれぞれにぴあの同じURLを付ける。
+    //   この時バッジの日付・残り日数はFANYの会場ごとのもの（発売日が同じ時だけ）。
+    const _md = (s) => { const m = (s || "").match(/(\d{1,2})\/(\d{1,2})/); return m ? (+m[1]) * 100 + (+m[2]) : null; };
+    const _covers = (p, f) => {
+      const pk = _perfKey(p), fk = _perfKey(f);
+      if (!pk || !fk || !/^一般発売/.test(p.type || "") || !/^一般発売/.test(f.type || "") || p.soldout || f.soldout) return false;
+      if ((p.startDate || "") !== (f.startDate || "")) return false;
+      const fPref = (fk.match(/^[^\s\d]+/) || [""])[0];
+      if (!fPref || !pk.split(/[\s・／]/).some(x => x === fPref)) return false;
+      const fd = _md(fk.replace(/^[^\s]*\s/, ""));
+      const rng = pk.match(/(\d{1,2}\/\d{1,2})\s*〜\s*(\d{1,2}\/\d{1,2})/);
+      if (fd == null) return false;
+      if (!rng) return _md(pk.replace(/^[^\d]*/, "")) === fd;
+      const a = _md(rng[1]), b = _md(rng[2]);
+      return a <= b ? (fd >= a && fd <= b) : (fd >= a || fd <= b);   // 年をまたぐ会期
+    };
     const _piaPartner = new Map(), _skipT = new Set();
     shownTickets.forEach(f => {
       if (!_isFanyT(f)) return;
       const k = _pairKey(f);
       if (!k || !_perfKey(f)) return;
-      const p = shownTickets.find(x => _isPiaT(x) && !_skipT.has(x) && _pairKey(x) === k);
+      let p = shownTickets.find(x => _isPiaT(x) && !_skipT.has(x) && _pairKey(x) === k);
+      if (!p) p = shownTickets.find(x => _isPiaT(x) && _covers(x, f));
       if (p) { _piaPartner.set(f, p); _skipT.add(p); }
     });
     const ticketsHTML = shownTickets.map(t => {
