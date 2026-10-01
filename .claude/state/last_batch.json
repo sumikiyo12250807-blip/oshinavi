@@ -1181,6 +1181,50 @@
    "assigned": false,
    "rechecked": true,
    "note": "独立ゲート 275一致（19件は食い違いで入れない＝tmp/x1001/eve/lp_ng.txt）・13件は名前×日付が既存と一致で入れない・日別11組＋部違い8組を畳んだ"
+  },
+  {
+   "date": "2026-10-02",
+   "slot": "morning",
+   "id_from": 27597,
+   "id_to": 27603,
+   "count": 7,
+   "source": "FANY tmp/fany_1002.json",
+   "assigned": false,
+   "rechecked": true,
+   "note": "番人 一致1673・食い違い0（heal_fany 115件のあと）"
+  },
+  {
+   "date": "2026-10-02",
+   "slot": "morning",
+   "id_from": 27604,
+   "id_to": 27605,
+   "count": 2,
+   "source": "ZAIKO tmp/zaiko_1002.json",
+   "assigned": false,
+   "rechecked": true,
+   "note": "番人 2/2一致"
+  },
+  {
+   "date": "2026-10-02",
+   "slot": "morning",
+   "id_from": 27606,
+   "id_to": 27680,
+   "count": 75,
+   "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1002/presale_*・全ページ到達）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --new OK75・82/82枠。既存38件に150枠足し込み（消える枠0）。同名の既存あり多数（SCANDAL・THEイナズマ戦隊ほか）＝翌朝ツアー判定"
+  },
+  {
+   "date": "2026-10-02",
+   "slot": "morning",
+   "id_from": 27681,
+   "id_to": 27792,
+   "count": 112,
+   "source": "TIGET tmp/tiget_1002.json（--stop-known 1）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "番人 112/112一致"
   }
  ]
 }
