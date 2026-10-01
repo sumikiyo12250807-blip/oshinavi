@@ -164,6 +164,31 @@ def main():
             linkonly += 1               # リンクだけ足した登録＝対象外
             continue
         perfs = {p for t in old_fany for p in RE_PERF.findall(t.get('url') or '')}
+        if len(perfs) > 1:
+            # 🆕2026-10-01 同じタイトルで会場だけ違う公演を1エントリに畳んだもの（ユーザー「怪談を浴びる会は同じタイトルで
+            #   県名が違うだけだからひとつにまとめて」）＝公演idごとに作り直して足し合わせる。
+            #   一覧に無い・作り直しが空の公演は、その公演の枠をそのまま残す（触らない）。どこかで印なしの枠が消えるなら当てない。
+            groups = collections.OrderedDict()
+            for t in old_fany:
+                ps = RE_PERF.findall(t.get('url') or '')
+                groups.setdefault(ps[0] if ps else '', []).append(t)
+            merged_all, lost_all = [], []
+            for pid, grp in groups.items():
+                if pid in page:
+                    mg, ls = heal_one(grp, page[pid])
+                    merged_all += mg
+                    lost_all += ls
+                else:
+                    merged_all += grp
+            if lost_all:
+                stopped.append((e, lost_all))
+                continue
+            if {GF.key(t) for t in merged_all} == {GF.key(t) for t in old_fany}:
+                same += 1
+                continue
+            healed.append((e, old_fany, [t for t in tickets if not is_fany(t)] + merged_all))
+            multi.append((e, sorted(perfs)))   # 報告には残す（畳んだエントリ）
+            continue
         if len(perfs) != 1:
             multi.append((e, sorted(perfs)))
             continue
