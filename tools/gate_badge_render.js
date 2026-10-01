@@ -229,7 +229,33 @@ function runOnce(todayStr, timeStr) {
   for (const ev of g.EVENTS) {
     res.cards++;
     // D. カード丸ごとの描画
-    try { g.renderCard(ev); } catch (e) { res.D++; res.dErr.push({ id: ev.id, name: ev.name, err: String(e && e.message || e) }); continue; }
+    let fullHtml;
+    try { fullHtml = g.renderCard(ev); } catch (e) { res.D++; res.dErr.push({ id: ev.id, name: ev.name, err: String(e && e.message || e) }); continue; }
+    // 🆕2026-10-01 行き先が同じで日付だけ違う枠を画面で1枚にまとめた（「（…公演・N回）」）＝1枠ずつの描画では見えない。
+    //   カード丸ごとの描画から、まとめたバッジを拾って同じ判定にかける（照らし合わせる枠＝飛び先と締切が同じ枠）。
+    {
+      const parts = String(fullHtml || '').split('class="ticket-item').slice(1).map(s => 'class="ticket-item' + s);
+      for (const item of parts) {
+        const tt = pickSpan(item, 'ticket-type-text') || '';
+        if (!/・\d+回）/.test(tt)) continue;
+        const href = ((item.match(/href="([^"]*)"/) || [])[1] || '').replace(/&amp;/g, '&');
+        const dt = pickDiv(item, 'ticket-date') || '';
+        const dd = (dt.match(/(\d{1,2}\/\d{1,2})/) || [])[1];
+        const dtm = (dt.match(/(\d{1,2}\/\d{1,2}\s*\d{1,2}:\d{2})/) || [])[1];
+        const same = (ev.tickets || []).filter(x => (x.url || '') === href && !x.soldout);
+        // 元の枠＝飛び先が同じ枠のうち、画面の「M/D HH:MM」が type にある枠 → 締切か発売日が画面の日付の枠
+        const t = (dtm && same.find(x => (x.type || '').replace(/\s+/g, '').includes(dtm.replace(/\s+/g, '')))) ||
+                  same.find(x => (x.date && md(x.date) === dd) || (x.startDate && md(x.startDate) === dd));
+        if (!t) { res.D++; res.dErr.push({ id: ev.id, name: ev.name, err: `まとめたバッジ「${tt}」の元の枠が見つからない` }); continue; }
+        res.merged = (res.merged || 0) + 1;
+        const r = checkItem(ev, t, item, todayStr);
+        if (SHOW.has(String(ev.id))) console.log(`[画面・まとめ] ${todayStr} ${timeStr} id${ev.id} ${r.screen}`);
+        for (const [k, msg] of r.v) {
+          res[k]++;
+          res.viol.push({ k, id: ev.id, name: ev.name, type: t.type, date: t.date, startDate: t.startDate || '', screen: r.screen, msg: 'まとめ: ' + msg });
+        }
+      }
+    }
     // 枠と画面の対応を取るため、1枠ずつのカードで描く（地域は「すべて」＝枠は並べ替え以外変わらない）
     for (const t of (ev.tickets || [])) {
       let html;
