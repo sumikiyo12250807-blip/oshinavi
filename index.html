@@ -895,6 +895,16 @@
 
     a.ticket-item-link { text-decoration: none; color: inherit; cursor: pointer; }
     a.ticket-item-link:hover { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    /* 🆕2026-10-01 同じ公演の一般発売がぴあとFANYの両方にある時＝バッジは1つ・下半分を「チケットぴあ｜FANY」に割る（ユーザー決定・案B） */
+    .ticket-item.ticket-split { padding-bottom: 0; overflow: hidden; }
+    .ticket-halves { display: grid; grid-template-columns: 1fr 1fr; margin: 4px -14px 0; border-top: 1px solid var(--border); }
+    .ticket-half { display: flex; align-items: baseline; justify-content: center; gap: 1px; padding: 10px 4px; font-size: 17px; font-weight: 900; letter-spacing: 0.5px; text-decoration: none; border: 1px solid transparent; }
+    .ticket-half + .ticket-half { border-left: 1px solid var(--border); }
+    .ticket-half:hover { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .ticket-half.pia { color: #ff2f6e; }
+    .ticket-half.fany { color: #ffd400; }
+    .ticket-half .pia-t { font-size: 0.72em; font-weight: 700; letter-spacing: 0.3px; }
+    .ticket-half .pia-p { font-size: 1.15em; font-weight: 900; }
 
     .ticket-dot {
       width: 6px; height: 6px;
@@ -36869,7 +36879,24 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       if (ka[1] !== kb[1]) return ka[1] < kb[1] ? -1 : 1;      // 日付が早い順（発売日/締切の時間軸）
       return ka[2] - kb[2];                                     // 同日は 発売前 → 販売中
     });
+    // 🆕2026-10-01 ユーザー決定（好井まさお）＝同じ公演の一般発売をぴあとFANYの両方が売っている時は
+    //   バッジを1つにして下半分を「チケットぴあ｜FANY」の2つのボタンに割る（バッジの数は増やさない）。
+    //   組にするのは「一般発売」どうしで、公演日（（…公演）の中）・発売日・締切が全部同じ時だけ＝確かめていない締切は出さない。
+    //   売り切れ・販売終了の印付きは組にしない。データ（tickets）は触らず、画面の描き方だけ変える。
+    const _isPiaT = (x) => /pia\.jp/.test(x.url || "");
+    const _isFanyT = (x) => /fany\.lol/.test(x.url || "");
+    const _perfKey = (x) => { const m = (x.type || "").match(/（([^（）]*公演)）/); return m ? m[1] : ""; };
+    const _pairKey = (x) => /^一般発売/.test(x.type || "") && !x.soldout ? [_perfKey(x), x.date || "", x.startDate || ""].join("|") : null;
+    const _piaPartner = new Map(), _skipT = new Set();
+    shownTickets.forEach(f => {
+      if (!_isFanyT(f)) return;
+      const k = _pairKey(f);
+      if (!k || !_perfKey(f)) return;
+      const p = shownTickets.find(x => _isPiaT(x) && !_skipT.has(x) && _pairKey(x) === k);
+      if (p) { _piaPartner.set(f, p); _skipT.add(p); }
+    });
     const ticketsHTML = shownTickets.map(t => {
+      if (_skipT.has(t)) return "";   // ぴあ側はFANYのバッジの左半分に入る
       // バッジからは末尾の締切/発売日時を外す（公演日や（）内の日付・範囲は残す）。
       // 日付＋時刻は下の色付き日付にまとめて表示する（時刻は dispTime）。
       const rawType = t.type || '';
@@ -37007,6 +37034,11 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
           ${countdown}`;
       // 緑/オレンジの枠(ticket-item)全体をクリック→売り場へ。会場別リンク t.url があれば優先、無ければカード共通リンク
       const itemLinkUrl = t.url || ticketLinkUrl;
+      const _pp = _piaPartner.get(t);
+      if (_pp) {
+        return `<div class="ticket-item status-${status} ticket-split">${inner}
+          <div class="ticket-halves"><a class="ticket-half pia" href="${_pp.url}" target="_blank" rel="noopener"><span class="pia-t">チケット</span><span class="pia-p">ぴあ</span></a><a class="ticket-half fany" href="${t.url}" target="_blank" rel="noopener">FANY</a></div></div>`;
+      }
       return itemLinkUrl
         ? `<a class="ticket-item status-${status} ticket-item-link" href="${itemLinkUrl}" target="_blank" rel="noopener">${inner}</a>`
         : `<div class="ticket-item status-${status}">${inner}</div>`;
