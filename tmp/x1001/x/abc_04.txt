@@ -1,0 +1,35 @@
+const T="OSHINAVIの\"10/2チケット発売\"ピックアップ🎫\n\n明日10/2(金)発売のお笑いと落語のまとめよ。\n柳家喬太郎に桃月庵白酒、空気階段、すゑひろがりずと、ほかにも大物ぞろいだわ。\nOSHINAVIはこういうチケットの発売日をまとめて並べてある無料サイトなの。\noshinavi.jp から売り場まで直行できるようにしてあるわ。\n\n【10/2(金)発売】\n10:00 桃月庵白酒 独演会 ｖｏｌ．１０／京都\n10:00 柳家喬太郎 独演会／京都・岡山\n10:00 桃月庵白酒 独演会／京都\n10:00 第10回Muでらくご／大阪\n10:00 浅草で春待つ笑顔～たいとう芸楽寄席～／東京\n10:00 COWCOW／東京・大阪\n10:00 ZAZY／ななまがり／ロジャー沖縄／埼玉\n10:00 すゑひろがりず／ゲスト：シシガシラ／埼玉\n10:00 ななまがり／埼玉\n10:00 GAG／タモンズ／ジェラードン／埼玉\n10:00 ジェラードン／GAG／タモンズ／埼玉\n10:00 オズワルド／プリズンクイズチャンネル／ヨネダ2000／埼玉\n10:00 カゲヤマ／オズワルド／めぞん／埼玉\n10:00 GAG／埼玉\n10:00 佐久間一行／はいじぃ／埼玉\n10:00 ジェラードン／埼玉\n10:00 CITY／アイロンヘッド／からし蓮根／埼玉\n10:00 うるとらブギーズ／埼玉\n10:00 天満天神繁昌亭／大阪\n10:00 MC：麒麟田村／ヘッドライト／ザ・プラン9お～い！久馬／大阪\n10:00 落語立川流まつり2026@表参道GROUND／東京\n11:00 柳家三三独演会／愛知（先行）\n11:00 (株)はつだ／大阪（先行）\n11:00 空気階段／東京（先行）\n11:00 爆笑!お笑いエンタメライブ in 四日市／三重（先行）\n12:00 NMB48／大阪（先行）\n19:00 太田プロJr.ライブvol.142／東京\n20:00 ゾルゲ／ロベスピエール／愛知\n22:30 豆鉄砲／イチゴ／和田祐／東京\n23:00 ストレッチーズ／さすらいラビ―／ひつじねいり／東京\n23:00 谷口つばさ／東京\n23:10 ストレッチーズ／さすらいラビ―／ひつじねいり／東京\n23:10 谷口つばさ／めっちゃ最高ズ おばた／鈴木ジェロニモ／東京\n\n柳家喬太郎の独演会は京都と岡山、明日10/2(金)の10時に発売よ。\n空気階段の東京と柳家三三の愛知は先行の受付だから、申し込める条件を売り場で確かめてね。\n\n【10/3(土)発売】\n10:00 吉例 桂 文珍 新春独演会2027／新潟\n10:00 『立川志の輔・立川生志 兄弟会』／福岡\n10:00 特撰落語会 春風亭昇太・林家たい平 二人会／長野\n10:00 兵動大樹（矢野・兵動）／小籔千豊／東京・新潟・大阪\n10:00 ロザンの26ベスト＋ 大阪公演／大阪\n他にも40件近くあるわ。\n\n【10/4(日)発売】\n10:00 バリカタ友情飯　松下遼太郎／東京\n10:00 NMB48／大阪\n10:00 まつした秋のファン感謝祭～キャラ・お悩み相談・LINEスクショてんこ盛り～／東京\n11:00 吉本新喜劇inよしもと幕張劇場／千葉（先行）\n18:00 DJ KOO／ミルクボーイ／トム・ブラウン／大阪\n他にも10件以上あるわ。\n\nこのあとの投稿では、J-POPやロックなどの音楽の発売を並べるから、あたしのXをフォローして待っていて。\n\n発売までの残り日数はoshinavi.jpで数えてあるから、気になる芸人さんや噺家さんの受付日をいまのうちに見ておくといいわ。\n\n▼チケット情報はこちら\noshinavi.jp\n\nお笑い好きも落語好きも、明日発売の名前をOSHINAVIでチェックして。\n笑いに行く日のチケットを、明日手に入れて。\n\n#OSHINAVI #明日発売 #チケット\n";
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const norm=s=>s.replace(/\s+/g,'');
+let box; for(let i=0;i<25&&!(box=document.querySelector('[role="dialog"] [data-testid="tweetTextarea_0"][contenteditable="true"]')||document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]'));i++) await sleep(300);
+if(!box) throw 'NO_BOX';
+if(box.innerText.trim().length>0 && norm(box.innerText)!==norm(T)) throw 'BOX_NOT_EMPTY:'+box.innerText.slice(0,40);
+if(norm(box.innerText)!==norm(T)){ box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T);
+box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true})); await sleep(1800);}
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_MISMATCH len='+box.innerText.length;
+let root=box; while(root&&!root.querySelector('[data-testid="scheduleOption"]')) root=root.parentElement;
+if(!root) throw 'NO_ROOT'; root.querySelector('[data-testid="scheduleOption"]').click(); 'A_OK '+box.innerText.length;
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let sels=[]; for(let i=0;i<30;i++){const dd=[...document.querySelectorAll('[role="dialog"]')].find(x=>x.innerText.includes('Will send on')); sels=dd?[...dd.querySelectorAll('select')]:[]; if(sels.length>=5) break; await sleep(300);}
+if(sels.length<5) throw 'NO_SELECTS';
+const setv=(s,v)=>{Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),'value').set.call(s,String(v));s.dispatchEvent(new Event('change',{bubbles:true}));};
+setv(sels[0],'10'); setv(sels[1],'1'); setv(sels[3],20); setv(sels[4],46); await sleep(800);
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 8:46 PM")) throw 'WILL_MISMATCH '+will;
+[...document.querySelectorAll('[role="button"],button')].find(b=>b.innerText.trim()==='Confirm').click(); await sleep(3000); 'B_OK';
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const MARK="明日10/2(金)発売のお笑", TAILMARK="お笑い好きも落語好きも、";
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 8:46 PM")) throw 'WILL '+will;
+const box=[...document.querySelectorAll('[data-testid="tweetTextarea_0"]')].find(b=>b.innerText.includes(MARK));
+if(!box) throw 'NO_BOX';
+if(!box.innerText.includes(TAILMARK)) throw 'NO_TAILMARK';
+if((box.innerText.match(/ピックアップ🎫/g)||[]).length!==1) throw 'HEAD_COUNT';
+if(!box.innerText.trim().endsWith('#チケット')) throw 'TAIL';
+let r2=box; while(r2&&!r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) r2=r2.parentElement;
+const btn=r2&&r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]');
+if(!btn||btn.innerText.trim()!=='Schedule') throw 'BTN '+(btn&&btn.innerText);
+btn.click(); await sleep(3000);
+'DONE | '+[...document.querySelectorAll('[data-testid="toast"],[role="alert"]')].map(t=>t.innerText).join(' | ')+' | url='+location.href;

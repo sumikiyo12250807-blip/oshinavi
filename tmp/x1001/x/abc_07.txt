@@ -1,0 +1,35 @@
+const T="OSHINAVIの\"10/2チケット発売\"ピックアップ🎫\n\n明日10/2(金)発売のクラシック・演歌・ジャズ・ディナーショーのまとめよ。\n五木ひろしと由紀さおりに天童よしみ、辻井伸行、小曽根真と、ほかにも大物ぞろいだわ。\nOSHINAVIはチケットの発売日を集めて、分かりやすく並べてある無料サイトよ。\n情報が多いから、きっとあなたの推しもいるはずだわ。\noshinavi.jp から売り場まで直行できるの。\n\n【10/2(金)発売】\n00:00 仙台クラシックフェスティバル2026／宮城\n10:00 NDRエルプフィルハーモニー管弦楽団／アラン・ギルバート（指揮）／角野隼斗（p）／福岡\n10:00 2026 HTB ジルベスターコンサート／北海道\n10:00 香月麗（vc）／東京\n10:00 音楽の絵本 ブラス・バトル／東京\n10:00 五木ひろし／由紀さおり／栃木・埼玉・千葉・東京・静岡\n10:00 子どもと大人が楽しめる冬休み本格的オペラ「ラ・ボエーム」／東京\n10:00 笠原純子（p）／東京\n10:00 JA山形市特別協賛 山形テルサの第九／山形\n10:00 角川博／木村徹二／栃木\n10:00 ベートーヴェン ピアノ協奏曲全曲演奏会／東京（先行）\n10:00 天童よしみ／大阪\n10:00 高橋里奈ピアノリサイタル<アニバーサリー2027>／東京\n10:00 広島プロミシングコンサート2026／広島\n10:30 住友生命いずみホール ニューイヤー・コンサート2027 ウィーン・リング・アンサンブル／大阪\n10:30 走りだす、ベートーヴェン（ソン・ミンス／プロフェッション・シリーズVol.1／ゲヴァントハウス弦楽四重奏団）／大阪\n10:30 IZUMI JAZZ NIGHT 2027 小曽根真 Solo&Duo／大阪\n11:00 山内惠介／北海道（先行）\n11:00 大和証券グループ presents 辻井伸行 日本ツアー 2027・《展覧会の絵》／愛知（先行）\n11:00 廣津留すみれ／宮城（先行）\n21:30 COUNTER CULTURE ~ 沖縄へ修学旅行 SESSION編 ~／沖縄\n21:45 COUNTER CULTURE ~ 沖縄へ修学旅行 TALK編 ~／沖縄\n\n五木ひろしと由紀さおりは栃木から静岡まで、明日10/2(金)の10時に発売よ。\n辻井伸行の愛知、山内惠介の北海道、廣津留すみれの宮城は先行の受付だから、申し込める条件を売り場で確かめてね。\n\n【10/3(土)発売】\n10:00 上原ひろみ×熊谷和徳／静岡・愛知\n10:00 清塚信也 with NHK交響楽団メンバー ～カラフル・ミュージック・ツアー～2026／愛知\n10:00 映像の世紀コンサート／東京\n10:00 ベートーヴェン ピアノ協奏曲全曲演奏会／東京\n11:00 反田恭平&ザルツブルク・モーツァルテウム管弦楽団 日本ツアー2027／宮城（先行）\n他にも30件以上あるわ。\n\n【10/4(日)発売】\n10:00 第34回岡崎市民クラシックコンサート「第42回 岡崎第九演奏会」／愛知\n10:00 河村尚子プロデュース「1・3・5」 ～ソロ、トリオ、クインテット～／東京\n10:00 牛田智大ピアノ・リサイタル／福岡\n10:00 ウィーン・リング・アンサンブル ニューイヤー・コンサート2027／東京\n12:00 反田恭平&ジャパン・ナショナル・オーケストラ コンサートツアー2027 冬ツアー／東京・岐阜・奈良（先行）\n他にも10件近くあるわ。\n\n土曜は上原ひろみに清塚信也、日曜は牛田智大に反田恭平と、週末も受付が並ぶわ。\n\nこのあとの投稿では、スポーツの発売を並べるから、あたしのXをフォローしておいてね。\n\noshinavi.jpは発売日をカウントダウンしてあるから、年明けの公演もいまのうちに確かめておけるわ。\n\n▼チケット情報はこちら\noshinavi.jp\n\nニューイヤー・コンサートも第九も、明日の受付からよ。\n聴きに行く日のチケットは、明日の受付で確かめてね。\n\n#OSHINAVI #明日発売 #チケット\n";
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const norm=s=>s.replace(/\s+/g,'');
+let box; for(let i=0;i<25&&!(box=document.querySelector('[role="dialog"] [data-testid="tweetTextarea_0"][contenteditable="true"]')||document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]'));i++) await sleep(300);
+if(!box) throw 'NO_BOX';
+if(box.innerText.trim().length>0 && norm(box.innerText)!==norm(T)) throw 'BOX_NOT_EMPTY:'+box.innerText.slice(0,40);
+if(norm(box.innerText)!==norm(T)){ box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T);
+box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true})); await sleep(1800);}
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_MISMATCH len='+box.innerText.length;
+let root=box; while(root&&!root.querySelector('[data-testid="scheduleOption"]')) root=root.parentElement;
+if(!root) throw 'NO_ROOT'; root.querySelector('[data-testid="scheduleOption"]').click(); 'A_OK '+box.innerText.length;
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let sels=[]; for(let i=0;i<30;i++){const dd=[...document.querySelectorAll('[role="dialog"]')].find(x=>x.innerText.includes('Will send on')); sels=dd?[...dd.querySelectorAll('select')]:[]; if(sels.length>=5) break; await sleep(300);}
+if(sels.length<5) throw 'NO_SELECTS';
+const setv=(s,v)=>{Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),'value').set.call(s,String(v));s.dispatchEvent(new Event('change',{bubbles:true}));};
+setv(sels[0],'10'); setv(sels[1],'1'); setv(sels[3],21); setv(sels[4],31); await sleep(800);
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 9:31 PM")) throw 'WILL_MISMATCH '+will;
+[...document.querySelectorAll('[role="button"],button')].find(b=>b.innerText.trim()==='Confirm').click(); await sleep(3000); 'B_OK';
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const MARK="明日10/2(金)発売のクラ", TAILMARK="ニューイヤー・コンサート";
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 9:31 PM")) throw 'WILL '+will;
+const box=[...document.querySelectorAll('[data-testid="tweetTextarea_0"]')].find(b=>b.innerText.includes(MARK));
+if(!box) throw 'NO_BOX';
+if(!box.innerText.includes(TAILMARK)) throw 'NO_TAILMARK';
+if((box.innerText.match(/ピックアップ🎫/g)||[]).length!==1) throw 'HEAD_COUNT';
+if(!box.innerText.trim().endsWith('#チケット')) throw 'TAIL';
+let r2=box; while(r2&&!r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) r2=r2.parentElement;
+const btn=r2&&r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]');
+if(!btn||btn.innerText.trim()!=='Schedule') throw 'BTN '+(btn&&btn.innerText);
+btn.click(); await sleep(3000);
+'DONE | '+[...document.querySelectorAll('[data-testid="toast"],[role="alert"]')].map(t=>t.innerText).join(' | ')+' | url='+location.href;

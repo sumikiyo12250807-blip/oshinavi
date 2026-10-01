@@ -1,0 +1,35 @@
+const T="OSHINAVIの\"10/2チケット発売\"ピックアップ🎫\n\n明日10/2(金)発売のスポーツのまとめよ。\n千代丸の引退断髪式に、ラグビー女子日本代表のウェールズ戦、ONE ASIA WORLDのメダリストセレブレーションよ。\nOSHINAVIはスポーツも音楽もお笑いも、チケットの発売日をまとめて並べてある無料サイトなの。\noshinavi.jp から売り場までそのまま行けるわ。\n\n【10/2(金)発売】\n10:00 千代丸引退断髪式／東京\n12:00 ONE ASIA WORLD メダリストセレブレーション／愛知\n12:00 コズエン Maid Cafe ～戦う天使たち、今日はメイドです～／東京\n18:00 太陽生命 JAPAN RUGBY CHALLENGE MATCH 2026 女子日本代表 vs 女子ウェールズ代表／埼玉\n\nラグビー女子日本代表 vs 女子ウェールズ代表の埼玉は、明日10/2(金)の18時に発売よ。\n仕事を終えてからでも間に合う時刻だわ。\n\n【10/3(土)発売】\n10:00 天皇杯 JFA 第106回全日本サッカー選手権大会 3回戦／NACK／埼玉\n10:00 ガンバ大阪対セレッソ大阪 VIPルーム【ホスピタリティチケット】／大阪\n10:00 日米対抗ソフトボール 2026／愛知\n12:00 【WEリーグ】アルビレックス新潟レディース対AC長野パルセイロ・レディース WEリーグ リーグ戦／新潟\n13:00 大分トリニータ対ヴァンフォーレ甲府 明治安田J2リーグ／大分\n他にも30件近くあるわ。\n\n【10/4(日)発売】\n00:00 Fenix Open(NATURAL)／広島\n10:00 みちのくプロレス／宮城\n10:00 新日本プロレス／福島\n10:00 GOLD20周年 記念大会／宮城\n10:00 FCティアモ枚方対いわてグルージャ盛岡 JFLリーグ戦／大阪\n10:00 全日本プロレス<後楽園大会>／東京\n\n土曜は天皇杯にガンバ対セレッソ、日曜はみちのくプロレスに新日本プロレス、全日本プロレスと、週末も受付がそろうわ。\n\nこのあとの投稿では、ミュージカルや演劇の発売を並べるから、あたしのXをフォローして待っていてね。\n\n発売まであと何日かもoshinavi.jpで数えてあるから、気になる試合の受付を見逃さないわ。\n\n▼チケット情報はこちら\noshinavi.jp\n\n観戦の席も断髪式の席も、明日の受付からよ。\noshinavi.jpで時刻を確かめて、あなたの手でチケットをゲットして。\n\n#OSHINAVI #明日発売 #チケット\n";
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const norm=s=>s.replace(/\s+/g,'');
+let box; for(let i=0;i<25&&!(box=document.querySelector('[role="dialog"] [data-testid="tweetTextarea_0"][contenteditable="true"]')||document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]'));i++) await sleep(300);
+if(!box) throw 'NO_BOX';
+if(box.innerText.trim().length>0 && norm(box.innerText)!==norm(T)) throw 'BOX_NOT_EMPTY:'+box.innerText.slice(0,40);
+if(norm(box.innerText)!==norm(T)){ box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T);
+box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true})); await sleep(1800);}
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_MISMATCH len='+box.innerText.length;
+let root=box; while(root&&!root.querySelector('[data-testid="scheduleOption"]')) root=root.parentElement;
+if(!root) throw 'NO_ROOT'; root.querySelector('[data-testid="scheduleOption"]').click(); 'A_OK '+box.innerText.length;
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let sels=[]; for(let i=0;i<30;i++){const dd=[...document.querySelectorAll('[role="dialog"]')].find(x=>x.innerText.includes('Will send on')); sels=dd?[...dd.querySelectorAll('select')]:[]; if(sels.length>=5) break; await sleep(300);}
+if(sels.length<5) throw 'NO_SELECTS';
+const setv=(s,v)=>{Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),'value').set.call(s,String(v));s.dispatchEvent(new Event('change',{bubbles:true}));};
+setv(sels[0],'10'); setv(sels[1],'1'); setv(sels[3],21); setv(sels[4],46); await sleep(800);
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 9:46 PM")) throw 'WILL_MISMATCH '+will;
+[...document.querySelectorAll('[role="button"],button')].find(b=>b.innerText.trim()==='Confirm').click(); await sleep(3000); 'B_OK';
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const MARK="明日10/2(金)発売のスポ", TAILMARK="観戦の席も断髪式の席も、";
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 9:46 PM")) throw 'WILL '+will;
+const box=[...document.querySelectorAll('[data-testid="tweetTextarea_0"]')].find(b=>b.innerText.includes(MARK));
+if(!box) throw 'NO_BOX';
+if(!box.innerText.includes(TAILMARK)) throw 'NO_TAILMARK';
+if((box.innerText.match(/ピックアップ🎫/g)||[]).length!==1) throw 'HEAD_COUNT';
+if(!box.innerText.trim().endsWith('#チケット')) throw 'TAIL';
+let r2=box; while(r2&&!r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) r2=r2.parentElement;
+const btn=r2&&r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]');
+if(!btn||btn.innerText.trim()!=='Schedule') throw 'BTN '+(btn&&btn.innerText);
+btn.click(); await sleep(3000);
+'DONE | '+[...document.querySelectorAll('[data-testid="toast"],[role="alert"]')].map(t=>t.innerText).join(' | ')+' | url='+location.href;

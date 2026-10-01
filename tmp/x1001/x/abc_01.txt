@@ -1,0 +1,35 @@
+const T="OSHINAVIの\"10/2チケット発売\"ピックアップ🎫\n\n神戸薬科大学の学園祭「ききょう祭」に、花江夏樹が出るのよ。\n10/11(日)、会場は兵庫の神戸薬科大学 ききょう記念ホール、12時開場の12時30分開演よ。\nぴあで売るのは「学外チケット」で、席は指定席なの。\nネットだけの販売で、1人2枚までよ。\n未就学児は入れないから、そこだけ気をつけてね。\n\n＼ 明日10/2(金) 10:00 一般発売 ／\n\n明日10/2(金)の10時、金曜の仕事がひと段落して休憩に入るころに受付が始まるわ。\n予定の枚数がなくなりしだい終わりよ。\n\nOSHINAVIは、チケットの発売日をわかりやすく並べてある無料のサイトなの。\n売り場まで直行できるようにしてあるから、明日の10時はここから行って。\n\nこのあとの投稿では、ドゥダメルとシモン・ボリバル交響楽団の発売を書くから、あたしのXをフォローして待っていて。\n\n下のリンクは、花江夏樹で絞り込んだ画面が開くようにしてあるわ。\n▼チケット情報はこちら\noshinavi.jp/?q=%E8%8A%B1%E6%B1%9F%E5%A4%8F%E6%A8%B9\n\n10/11の神戸で花江夏樹に会いたいなら、明日の10時よ。\nあなたの手でチケットをゲットして。\n\n#OSHINAVI #明日発売 #チケット\n";
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const norm=s=>s.replace(/\s+/g,'');
+let box; for(let i=0;i<25&&!(box=document.querySelector('[role="dialog"] [data-testid="tweetTextarea_0"][contenteditable="true"]')||document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]'));i++) await sleep(300);
+if(!box) throw 'NO_BOX';
+if(box.innerText.trim().length>0 && norm(box.innerText)!==norm(T)) throw 'BOX_NOT_EMPTY:'+box.innerText.slice(0,40);
+if(norm(box.innerText)!==norm(T)){ box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T);
+box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true})); await sleep(1800);}
+if(norm(box.innerText)!==norm(T)) throw 'TEXT_MISMATCH len='+box.innerText.length;
+let root=box; while(root&&!root.querySelector('[data-testid="scheduleOption"]')) root=root.parentElement;
+if(!root) throw 'NO_ROOT'; root.querySelector('[data-testid="scheduleOption"]').click(); 'A_OK '+box.innerText.length;
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let sels=[]; for(let i=0;i<30;i++){const dd=[...document.querySelectorAll('[role="dialog"]')].find(x=>x.innerText.includes('Will send on')); sels=dd?[...dd.querySelectorAll('select')]:[]; if(sels.length>=5) break; await sleep(300);}
+if(sels.length<5) throw 'NO_SELECTS';
+const setv=(s,v)=>{Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),'value').set.call(s,String(v));s.dispatchEvent(new Event('change',{bubbles:true}));};
+setv(sels[0],'10'); setv(sels[1],'1'); setv(sels[3],20); setv(sels[4],1); await sleep(800);
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 8:01 PM")) throw 'WILL_MISMATCH '+will;
+[...document.querySelectorAll('[role="button"],button')].find(b=>b.innerText.trim()==='Confirm').click(); await sleep(3000); 'B_OK';
+====
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const MARK="神戸薬科大学の学園祭「ききょ", TAILMARK="10/11の神戸で花江夏";
+const will=(document.body.innerText.match(/Will send on[^\n]*/)||[''])[0];
+if(!will.includes("Thu, Oct 1, 2026 at 8:01 PM")) throw 'WILL '+will;
+const box=[...document.querySelectorAll('[data-testid="tweetTextarea_0"]')].find(b=>b.innerText.includes(MARK));
+if(!box) throw 'NO_BOX';
+if(!box.innerText.includes(TAILMARK)) throw 'NO_TAILMARK';
+if((box.innerText.match(/ピックアップ🎫/g)||[]).length!==1) throw 'HEAD_COUNT';
+if(!box.innerText.trim().endsWith('#チケット')) throw 'TAIL';
+let r2=box; while(r2&&!r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) r2=r2.parentElement;
+const btn=r2&&r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]');
+if(!btn||btn.innerText.trim()!=='Schedule') throw 'BTN '+(btn&&btn.innerText);
+btn.click(); await sleep(3000);
+'DONE | '+[...document.querySelectorAll('[data-testid="toast"],[role="alert"]')].map(t=>t.innerText).join(' | ')+' | url='+location.href;
