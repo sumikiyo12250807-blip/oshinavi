@@ -11,7 +11,7 @@ const ctx = vm.createContext({ console: { log() {}, warn() {}, error() {} }, Dat
 ctx.window = ctx; ctx.self = ctx; ctx.globalThis = ctx;
 try { new vm.Script(js).runInContext(ctx, { timeout: 600000 }); } catch (e) { }
 const out = [];
-for (const q of ['10/12', '10月12日', '2026/12/24', '１０／１２', '10/1', 'GLAY']) {
+for (const q of ['10/12', '10/12発売', '10/12公演', '10月12日発売', '10/5発売', 'GLAY']) {
   const r = vm.runInContext(`activeGenre='all';activeStatus='all';activeRegion='all';searchQuery=${JSON.stringify(q)};(function(){const _r=EVENTS.filter(matchEvent);return [_r.length,_r.slice(0,6).map(e=>e.id+' '+(e.name||'').slice(0,24)+' | '+(e.dateLabel||'').slice(0,26))];})()`, ctx);
   out.push(`「${q}」→ ${r[0]}件\n   ` + r[1].join('\n   '));
 }
