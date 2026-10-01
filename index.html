@@ -36315,6 +36315,34 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       if (ka[1] !== kb[1]) return ka[1] < kb[1] ? -1 : 1;      // 日付が早い順（発売日/締切の時間軸）
       return ka[2] - kb[2];                                     // 同日は 発売前 → 販売中
     });
+    // 🆕2026-10-01 ユーザー「行き先が同じバッジをまとめたほうがいいよ」→「Aだけまとめて」＝
+    //   飛び先（url）と発売日が同じで、券種名の日付だけが違う枠（天満天神繁昌亭の毎日の公演・タワレコカフェの開催期間ごと）は1枚にする。
+    //   券種名が違う枠（席種・メンバー・時間帯）はまとめない＝何を買うかが見えなくなるから（Bはしない）。
+    //   まとめるのはいま買える／発売前の枠だけ（売り切れ・締切なし・終わった枠は今までどおり）。データは触らない。
+    //   1枚のバッジは「いちばん近い締切」を出し、（…公演）の中は残っている公演の最初〜最後と回数にする＝日が進むと自然に縮む。
+    {
+      const _mLive = (t) => t.url && !t.soldout && !t.saleUntilSoldOut && !t.saleEndUnknown && parseDateStr(t.date) >= today;
+      const _mHead = (t) => (t.type || "").replace(/[）)][^（）()]*$/, "）");
+      const _mKey = (t) => [t.url, t.startDate || "", _mHead(t).replace(/(?:R\d+年\s*)?\d{1,2}\/\d{1,2}/g, "D")].join("|");
+      const _mGroups = new Map();
+      shownTickets.forEach(t => { if (_mLive(t)) { const k = _mKey(t); if (!_mGroups.has(k)) _mGroups.set(k, []); _mGroups.get(k).push(t); } });
+      const _mDrop = new Set(), _mRep = new Map();
+      _mGroups.forEach(g => {
+        if (g.length < 2) return;
+        const inner = (t) => { const m = _mHead(t).match(/（([^（）]*)）$/); return m ? m[1] : ""; };
+        const ds = (t) => inner(t).match(/(?:R\d+年\s*)?\d{1,2}\/\d{1,2}/g) || [];
+        const first = ds(g[0])[0], lastArr = ds(g[g.length - 1]), last = lastArr[lastArr.length - 1];
+        if (!first || !last) return;
+        const head = _mHead(g[0]).replace(/（[^（）]*）$/, "").replace(/【[^】]*\d{1,2}\/\d{1,2}[^】]*】/g, "");
+        const tail = (g[0].type || "").slice(_mHead(g[0]).length);
+        const span = first === last ? first : `${first}〜${last}`;
+        // （…）の中は元の枠の書き方のまま（「10:30開場」「公演」など）、日付の部分だけを最初〜最後に置き換える
+        const in2 = inner(g[0]).replace(/(?:R\d+年\s*)?\d{1,2}\/\d{1,2}(?:\s*[〜～]\s*(?:R\d+年\s*)?\d{1,2}\/\d{1,2})?/, span);
+        _mRep.set(g[0], Object.assign({}, g[0], { type: `${head}（${in2}・${g.length}回）${tail}` }));
+        g.slice(1).forEach(t => _mDrop.add(t));
+      });
+      if (_mDrop.size) shownTickets = shownTickets.filter(t => !_mDrop.has(t)).map(t => _mRep.get(t) || t);
+    }
     // 🆕2026-10-01 ユーザー決定（好井まさお）＝同じ公演の一般発売をぴあとFANYの両方が売っている時は
     //   バッジを1つにして下半分を「チケットぴあ｜FANY」の2つのボタンに割る（バッジの数は増やさない）。
     //   組にするのは「一般発売」どうしで、公演日（（…公演）の中）・発売日・締切が全部同じ時だけ＝確かめていない締切は出さない。
