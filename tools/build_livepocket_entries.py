@@ -365,7 +365,9 @@ def build(ev, today, unknown=None):
             ds = sorted({'%s（%s）' % (x.group(1), x.group(2)) for x in dm if x})
             tail = ds[0] if len(ds) == 1 else card_tail(raw, cards)
             # 長い（券種がずらっと並ぶ型＝YOKOHAMA SONIC）・空・前と同じ なら「その2」…＝28字で切れて同じ枠に潰れるのを防ぐ
-            if not tail or len(tail) > 12 or tail in title_tails[raw]:
+            # 🆕2026-10-01 券種が1枚だけなら 24字まで名前をそのまま使う（ユーザー指摘＝上野deソロソロ lr3mh で
+            #   「カメラ撮影可能席(前方１列目)」16字が「その2」になり、どの席が16:15までか分からなかった）
+            if not tail or len(tail) > (24 if len(cards) == 1 else 12) or tail in title_tails[raw]:
                 tail = 'その%d' % title_seen[raw]
             title_tails[raw].add(tail)
             raw = '%s %s' % (raw, tail)
