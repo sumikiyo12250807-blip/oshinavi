@@ -1383,7 +1383,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
   <!-- 検索 -->
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名・日付（例 10/12発売・10/12公演）で検索…">
+    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名で検索…">
     <button type="button" id="searchClear" aria-label="検索の文字を消す" title="検索の文字を消す">✕</button>
     <div id="searchSuggest"></div>
   </div>
@@ -37830,10 +37830,11 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     if (q === _dqKey) return _dq;
     _dqKey = q; _dq = null;
     const s = (q || "").normalize("NFKC").trim();
-    // 🆕同日 ユーザー「わたしがピックアップに使いたいから日付別がひつようなのよ」＝末尾に「発売」「公演」を付けたら片方だけ
-    const m = s.match(/^(?:(\d{4})\s*[\/\-年.]\s*)?(\d{1,2})\s*[\/\-月.]\s*(\d{1,2})\s*日?\s*(発売|公演)?$/);
+    // 🆕同日 ユーザー「わたしがピックアップに使いたいから日付別がひつようなのよ」→「発売日のみでいいわ　みんなには必要ないかもね」
+    //   ＝日付を入れたら「その日に発売・受付が始まるもの」だけ（公演日では探さない）。検索窓の案内には書かない（運営用）。末尾の「発売」は付けても付けなくてもよい
+    const m = s.match(/^(?:(\d{4})\s*[\/\-年.]\s*)?(\d{1,2})\s*[\/\-月.]\s*(\d{1,2})\s*日?\s*(発売)?$/);
     if (!m) return null;
-    const kind = m[4] === "発売" ? "sale" : m[4] === "公演" ? "show" : "both";
+    const kind = "sale";
     const mo = +m[2], d = +m[3];
     if (mo < 1 || mo > 12 || d < 1 || d > 31) return null;
     let y = m[1] ? +m[1] : today.getFullYear();
