@@ -1225,6 +1225,17 @@
    "assigned": false,
    "rechecked": true,
    "note": "番人 112/112一致"
+  },
+  {
+   "date": "2026-10-02",
+   "slot": "morning",
+   "id_from": 27793,
+   "id_to": 27829,
+   "count": 37,
+   "source": "livePocket tmp/livepocket_1002.json（--pages 40）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "独立ゲート51/51一致・名前×日付が既存と同じ14件は入れない・日別1組を畳んだ（欠番あり）"
   }
  ]
 }
