@@ -1383,7 +1383,7 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
   <!-- 検索 -->
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名で検索…">
+    <input type="text" id="searchInput" placeholder="アーティスト名・イベント名・日付（例 10/12）で検索…">
     <button type="button" id="searchClear" aria-label="検索の文字を消す" title="検索の文字を消す">✕</button>
     <div id="searchSuggest"></div>
   </div>
@@ -37875,6 +37875,52 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
     return g;
   }
 
+  // 🆕2026-10-01 ユーザー「検索窓で日付も検索できるようにしてほしい」＝「10/12」「10月12日」「2026/10/12」を入れたら、
+  //   その日に公演があるイベントと、その日に発売・受付が始まるイベントの両方を出す（名前の検索はそのまま）。
+  //   年を書かなければ、今日以降でいちばん近いその日（今日より前の月日なら来年）。
+  let _dqKey = null, _dq = null;
+  function parseDateQuery(q) {
+    if (q === _dqKey) return _dq;
+    _dqKey = q; _dq = null;
+    const s = (q || "").normalize("NFKC").trim();
+    const m = s.match(/^(?:(\d{4})\s*[\/\-年.]\s*)?(\d{1,2})\s*[\/\-月.]\s*(\d{1,2})\s*日?$/);
+    if (!m) return null;
+    const mo = +m[2], d = +m[3];
+    if (mo < 1 || mo > 12 || d < 1 || d > 31) return null;
+    let y = m[1] ? +m[1] : today.getFullYear();
+    if (!m[1] && new Date(y, mo - 1, d) < today) y += 1;
+    const iso = `${y}-${String(mo).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+    _dq = { iso, md: mo * 100 + d, mdText: `${mo}/${d}` };
+    return _dq;
+  }
+  function eventOnDate(ev, dq) {
+    const ts = ev.tickets || [];
+    if (ts.some(t => t.startDate === dq.iso)) return true;          // その日に発売・受付が始まる
+    if (ev.date === dq.iso) return true;                             // 最終公演日
+    const mdOf = (x) => { const m = x.match(/(\d{1,2})\/(\d{1,2})/); return m ? (+m[1]) * 100 + (+m[2]) : null; };
+    const isTour = /^全国ツアー/.test(ev.venue || "");
+    const covers = (txt) => {                                        // 「10/16〜10/26」の範囲か「10/12」そのもの
+      // 全国ツアーのまとめ枠（「8/16〜3/20公演」）は範囲の中でも公演の無い日が多い＝範囲では当てない
+      const rngs = isTour ? [] : txt.match(/\d{1,2}\/\d{1,2}\s*[〜～~]\s*(?:R\d+年\s*)?\d{1,2}\/\d{1,2}/g) || [];
+      for (const r of rngs) {
+        const p = r.split(/[〜～~]/), a = mdOf(p[0]), b = mdOf(p[1]);
+        if (a != null && b != null && (a <= b ? (dq.md >= a && dq.md <= b) : (dq.md >= a || dq.md <= b))) return true;
+      }
+      return new RegExp("(?<![\\d/])" + dq.mdText.replace("/", "\\/") + "(?!\\d)").test(txt);
+    };
+    for (const t of ts) {                                            // 券種の（…公演）の中の公演日
+      const pm = (t.type || "").match(/（([^（）]*公演)）/);
+      if (pm && covers(pm[1])) return true;
+    }
+    // 見出しの会期（全国ツアーは会期の中でも公演の無い日があるので、券種の公演日だけで見る）
+    if (!isTour) {
+      const ds = [...(ev.dateLabel || "").matchAll(/(\d{4})年(\d{1,2})月(\d{1,2})日/g)]
+        .map(m => `${m[1]}-${String(m[2]).padStart(2, "0")}-${String(m[3]).padStart(2, "0")}`);
+      if (ds.length === 1 && ds[0] === dq.iso) return true;
+      if (ds.length >= 2 && ds[0] <= dq.iso && dq.iso <= ds[ds.length - 1]) return true;
+    }
+    return false;
+  }
   function matchEvent(ev) {
     if (ev.verified !== true) return false;
     const grp = activeGenre.startsWith("g:") ? GENRE_GROUPS[activeGenre.slice(2)] : null;
@@ -37892,7 +37938,8 @@ SCANDALが「最後の旅」と呼ぶツアーの39公演が、今週一般発�
       || (activeStatus === "soon"     && (rel === "urgent" || rel === "soon"))
       || (activeStatus === "upcoming" && rel === "normal");
     const haystack = (ev.artist + " " + ev.name).toLowerCase();
-    const matchSearch = searchQuery === "" || haystack.includes(searchQuery.toLowerCase());
+    const _dqv = searchQuery === "" ? null : parseDateQuery(searchQuery);
+    const matchSearch = searchQuery === "" || haystack.includes(searchQuery.toLowerCase()) || (!!_dqv && eventOnDate(ev, _dqv));
     const matchRegion = activeRegion === "all"
       || (activeRegion === "zenkoku"
             ? ev.prefecture === "全国"
