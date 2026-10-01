@@ -404,6 +404,10 @@ def check_entry(e, pages, today):
                 iss.append(('①会期の型（1日なのに期間表記）', lab, first.isoformat(), link))
             lt = ['%d:%s' % (int(a), b) for a, b in re.findall(r'(\d{1,2}):(\d{2})', nfkc(lab))]
             pmain = good.get(link) or next(iter(good.values()))
+            # 🆕2026-10-01 部・時間帯違いを畳んだエントリ（_parts）は見出しに全部の部の時刻が並ぶ＝全ページの時刻を合わせて見る
+            #   （キャッツホール・怪獣酒場・へドニアが1ページ目の時刻とだけ比べられて鳴った）
+            if e.get('_parts') or len(good) > 1:   # 時刻で畳んだ組は _parts が空のことがある（怪獣酒場・へドニア）
+                pmain = dict(pmain, times=sorted({x for p in good.values() for x in p['times']}))
             if lt:
                 for x in lt:
                     if x not in pmain['times']:
@@ -490,7 +494,12 @@ def check_entry(e, pages, today):
         parsed = []
         for t in ts:
             import fold_parts as FP   # 🆕9/30 畳んだ1部・2部の印を外して読む
-            pt = parse_type(FP.bare_type(t.get('type')))
+            tp = FP.bare_type(t.get('type'))
+            # 🆕2026-10-01 畳んだ時間帯の印（【11:30～12:00】＝_parts の値）も外して読む（FUJITAKA）
+            for lb in set((e.get('_parts') or {}).values()):
+                if tp.startswith('【%s】' % lb):
+                    tp = tp[len(lb) + 2:]
+            pt = parse_type(tp)
             if pt is None:
                 und.append(('判定不能（枠の表記が読めない）', t.get('type'), '', u))
                 continue
