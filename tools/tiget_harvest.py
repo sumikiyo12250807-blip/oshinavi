@@ -451,6 +451,18 @@ def parse_event(html, eid):
                     'date': dd, 'tickets': ts})
         else:
             out['programs'].append(prog)
+    # 🆕2026-10-01 ユーザー決定（B）＝バッジの「HH:MM公演」は**開演**の時刻にする。
+    #   公演の塊の見出しは「11:30開場」＝開場の時刻しか無い。開演は券種一覧の欄
+    #   <dt class="pg-event__detail__title">開場 11:30 / 開演 12:00</dt> にある（ミネのラジオ 525866）。
+    #   開場→開演の対応表を作る。同じ開場に違う開演が並ぶ時は決められない＝入れない（推測しない）。
+    o2s, amb = {}, set()
+    for om in re.finditer(r'pg-event__detail__title">\s*開場\s*(\d{1,2}):(\d{2})\s*/\s*開演\s*(\d{1,2}):(\d{2})', html):
+        o = '%d:%s' % (int(om.group(1)), om.group(2))
+        s = '%d:%s' % (int(om.group(3)), om.group(4))
+        if o2s.get(o, s) != s:
+            amb.add(o)
+        o2s[o] = s
+    out['open2start'] = {o: s for o, s in o2s.items() if o not in amb}
     return out
 
 
@@ -458,6 +470,11 @@ def _selftest():
     assert parse_jp_date('2026年10月18日(日)') == '2026-10-18'
     assert parse_period(':2026.09.13 21:00 ~ 2026.10.17 23:59') == ('2026-09-13', '21:00', '2026-10-17', '23:59')
     assert parse_period('なし') is None
+    # 🆕2026-10-01 開場→開演の対応表（ミネのラジオ 525866）・同じ開場に違う開演は入れない
+    _h = ('<dt class="pg-event__detail__title">開場 11:30 / 開演 12:00</dt>'
+          '<dt class="pg-event__detail__title">開場 13:30 / 開演 14:00</dt>'
+          '<dt class="pg-event__detail__title">開場 18:00 / 開演 18:30</dt><dt class="pg-event__detail__title">開場 18:00 / 開演 19:00</dt>')
+    assert parse_event(_h, '1')['open2start'] == {'11:30': '12:00', '13:30': '14:00'}, parse_event(_h, '1')['open2start']
     assert pref_of('J．Bridgeビル(大阪府)') == '大阪'
     assert pref_of('札幌の店(北海道)') == '北海道'
     assert pref_of('どこかの箱') is None
