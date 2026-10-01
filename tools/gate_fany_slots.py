@@ -51,6 +51,11 @@ def key(t):
             bool(t.get('saleEnded')), bool(t.get('presaleEnded')))
 
 
+def _perf_of(t):
+    m = re.search(r'ticket\.fany\.lol/reception/\d+/(\d+)', t.get('url') or '')
+    return m.group(1) if m else None
+
+
 def load_registered(ids=None):
     h = open('index.html', encoding='utf-8', newline='').read()
     ev = json.loads(re.search(r'  const EVENTS = (\[.*?\]);', h, re.S).group(1))
@@ -61,7 +66,9 @@ def load_registered(ids=None):
             continue
         if ids and e['id'] not in ids:
             continue
-        out.setdefault(fid.group(1), []).append(e)
+        # 🆕2026-10-01 同じタイトルで会場だけ違うFANYの公演を1エントリに畳んだもの＝_fanyEvents の全イベントで突合する
+        for f in (e.get('_fanyEvents') or [fid.group(1)]):
+            out.setdefault(str(f), []).append(e)
     return out
 
 
@@ -174,6 +181,7 @@ def main():
     gmap['_same_day'] = same
     page = collections.defaultdict(list)
     perfs = collections.defaultdict(list)
+    perf2fid = {str(p.get('id')): str(p.get('event_id')) for p in data['performances']}
     for p in data['performances']:
         perfs[str(p.get('event_id'))].append(p)
         e, _ = BF.build_one(p, today, gmap, collections.Counter())
@@ -188,7 +196,8 @@ def main():
         #    （2026-09-21＝51件にリンクを足したら58件が鳴った）。
         #    ただし数は出す＝**FANYの枠を足し込めば買える枠が増える候補**なので見失わない。
         fany_slots = [t for e in entries for t in (e.get('tickets') or [])
-                      if 'ticket.fany.lol' in (t.get('url') or '')]
+                      if 'ticket.fany.lol' in (t.get('url') or '')
+                      and (not e.get('_fanyEvents') or perf2fid.get(_perf_of(t)) == fid)]  # 畳んだエントリはこのイベントの公演の枠だけ
         if not fany_slots:
             linkonly.append((fid, entries, len(page.get(fid, []))))
             continue
