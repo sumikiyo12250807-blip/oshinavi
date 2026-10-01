@@ -495,6 +495,10 @@ def check_entry(e, pages, today):
                 und.append(('判定不能（枠の表記が読めない）', t.get('type'), '', u))
                 continue
             parsed.append((t, pt))
+            # 🆕2026-10-01 ユーザー「同じ間違いが二度と起きないゲートを作った？」＝上野deソロソロで「その2」が
+            #   カメラ撮影可能席（16:15まで）のことだと画面から分からなかった＝枠の名前に「その◯」が残っていたら鳴らす
+            if re.search(r'(^|\s)その\d+$', pt['name'] or ''):
+                iss.append(('④枠の名前（「その◯」＝どの席か分からない）', t.get('type'), '', u))
         # 対応づけ：締切(M/D H:MM)＋名前（前方一致）
         def reg_state(t):
             return ('販売終了' if t.get('saleEnded') else '予定販売枚数終了' if t.get('soldout')
@@ -803,6 +807,9 @@ def selftest():
     # 副札（ファンクラブチケット）は状態として読む・知らない副札は判定不能
     fc = page.replace('<span class="tag">販売中</span>', '<span class="tag">販売中</span><span class="tag">ファンクラブチケット</span>', 1)
     run1('副札ファンクラブチケットは鳴らない', good, p=parse_page(fc), want=False)
+    # 🆕2026-10-01 枠の名前が「その2」＝どの席か分からない（上野deソロソロ lr3mh）
+    s2 = copy.deepcopy(good); s2['tickets'][1]['type'] = '先着販売受付 その2（東京 10/25 19:00公演）〜10/25 19:00'
+    run1('枠の名前「その2」は鳴らす', s2, key='その◯')
     fx = page.replace('<span class="tag">販売中</span>', '<span class="tag">販売中</span><span class="tag">謎の札</span>', 1)
     run1('知らない副札は判定不能', good, p=parse_page(fx), key='判定不能')
     # 枠の開演時刻「09:20」と「9:20」は同じ
