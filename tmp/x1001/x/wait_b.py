@@ -1,3 +1,3 @@
 import time
-time.sleep(150)
+time.sleep(25)
 print("ok")
