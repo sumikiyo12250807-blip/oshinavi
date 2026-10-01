@@ -35,6 +35,12 @@ PART = re.compile(
 
 
 MAX_PARTS = 3   # 🆕2026-09-30 ユーザー「少ないならまとめたほうが親切」＝4部以上は分けたまま
+TIMESLOT = re.compile(r'\s*\d{1,2}[:：]\d{2}\s*[～〜~\-－]\s*\d{1,2}[:：]\d{2}\s*')   # 名前の末尾などの時間帯「11:30～12:00」
+
+
+def timeslot_of(name):
+    m = TIMESLOT.search(name or '')
+    return re.sub(r'[\s　]+', '', m.group(0)).replace('：', ':').replace('〜', '～') if m else ''
 
 
 def part_of(name):
@@ -113,9 +119,21 @@ def groups(E):
             for e in v:
                 g.pop((base_of(e.get('name')), e.get('date'), (e.get('venue') or '').strip()), None)
             g[('出演順違い',) + k] = v
+    # 🆕2026-10-01 ユーザー「＜FUJITAKA＞フラワーチャームワークショップ これもまとめられるよね」＝名前の違いが
+    #   時間帯（11:30～12:00）だけの回＝同じ日・同じ会場なら畳む（「部」ではないので MAX_PARTS の上限はかけない）
+    g3 = defaultdict(list)
+    for e in E:
+        if is_fany(e) or part_of(e.get('name')):
+            continue
+        nm = e.get('name') or ''
+        if TIMESLOT.search(nm):
+            g3[(re.sub(r'[\s　]+', '', TIMESLOT.sub('', nm)), e.get('date'), (e.get('venue') or '').strip())].append(e)
+    for k, v in g3.items():
+        if len(v) >= 2:
+            g[('時間帯違い',) + k] = v
     out, mixed = [], []
     for k, v in g.items():
-        if len(v) < 2 or len(v) > MAX_PARTS:
+        if len(v) < 2 or (len(v) > MAX_PARTS and k[0] != '時間帯違い'):
             continue
         v = sorted(v, key=lambda e: e['id'])
         if len({e.get('genre') == 'new' for e in v}) > 1:
@@ -130,7 +148,7 @@ def fold(v):
     head = v[0]
     tks, parts = [], dict(head.get('_parts') or {})
     for e in v:
-        p = clean_label(part_of(e.get('name')))
+        p = clean_label(part_of(e.get('name'))) or timeslot_of(e.get('name'))
         for t in e.get('tickets') or []:
             tks.append(dict(t))
             if p and t.get('url'):
@@ -139,7 +157,11 @@ def fold(v):
             if p and u and isinstance(u, str) and u not in parts and 'amazon' not in u:
                 parts[u] = p
     head['_parts'] = parts
-    if len({base_of(e.get('name')) for e in v}) > 1:
+    if all(timeslot_of(e.get('name')) for e in v) and not part_of(head.get('name')):
+        head['name'] = TIMESLOT.sub(' ', head.get('name') or '').strip()
+        if head.get('artist') and TIMESLOT.search(head['artist']):
+            head['artist'] = TIMESLOT.sub(' ', head['artist']).strip()
+    elif len({base_of(e.get('name')) for e in v}) > 1:
         # 🆕2026-10-01 部ごとに副題・出演順が違う組（キャッツホール LH AT TA／AT LH TA・Shimotsuki見聞録 会議編／傍観編）
         #   ＝1部の副題を全体の名前にしない。部の印より前だけを名前にする
         nm = head.get('name') or ''
