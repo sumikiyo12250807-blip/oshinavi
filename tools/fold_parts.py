@@ -97,6 +97,22 @@ def groups(E):
         if not part_of(e.get('name')) or is_fany(e):
             continue
         g[(base_of(e.get('name')), e.get('date'), (e.get('venue') or '').strip())].append(e)
+    # 🆕2026-10-01 ユーザー「10/7 キャッツホール 1部 LH AT TA／2部 AT LH TA まとめて」＝部の印の後ろに出演順の略号が付き、
+    #   印を外しても名前が揃わない型。1つ目の組に入らなかったものを「部の印より前の名前＋出演者（artist）＋日＋会場」でもう一度組む
+    single = [v[0] for v in g.values() if len(v) == 1]
+    g2 = defaultdict(list)
+    for e in single:
+        nm = e.get('name') or ''
+        m = PART.search(nm)
+        head = re.sub(r'[\s　]+', '', nm[:m.start()]) if m else ''
+        art = (e.get('artist') or '').strip()
+        if len(head) >= 2 and art:
+            g2[(head, art, e.get('date'), (e.get('venue') or '').strip())].append(e)
+    for k, v in g2.items():
+        if len(v) >= 2:
+            for e in v:
+                g.pop((base_of(e.get('name')), e.get('date'), (e.get('venue') or '').strip()), None)
+            g[('出演順違い',) + k] = v
     out, mixed = [], []
     for k, v in g.items():
         if len(v) < 2 or len(v) > MAX_PARTS:
@@ -123,10 +139,30 @@ def fold(v):
             if p and u and isinstance(u, str) and u not in parts and 'amazon' not in u:
                 parts[u] = p
     head['_parts'] = parts
-    head['name'] = PART.sub('', head.get('name') or '').strip().rstrip(' 　〜～~-－・') or head.get('name')
+    if len({base_of(e.get('name')) for e in v}) > 1:
+        # 🆕2026-10-01 部ごとに副題・出演順が違う組（キャッツホール LH AT TA／AT LH TA・Shimotsuki見聞録 会議編／傍観編）
+        #   ＝1部の副題を全体の名前にしない。部の印より前だけを名前にする
+        nm = head.get('name') or ''
+        mm = PART.search(nm)
+        head['name'] = nm[:mm.start()].strip().rstrip(' 　〜～~-－・【(（[:：') if mm else nm
+        if re.fullmatch(r'[\d/／.()（）月火水木金土日祝\s　]*', head['name'] or '') and head.get('artist'):
+            # 部の印より前が日付だけ（「10/16(金)1部Pixy Sirius …」）＝出演者名を足す
+            head['name'] = ('%s %s' % (head['name'], head['artist'])).strip()
+    else:
+        head['name'] = PART.sub('', head.get('name') or '').strip().rstrip(' 　〜～~-－・') or head.get('name')
     if (head.get('artist') or '') and part_of(head.get('artist')):
         head['artist'] = PART.sub('', head['artist']).strip() or head['artist']
     head['tickets'] = tks
+    # 🆕2026-10-01 見出しの時刻が1部だけ（「10/7(水) 14:00」）にならないよう、部ごとの時刻を並べる（「14:00／18:00開演」）
+    tms = []
+    for e in v:
+        for tm in re.findall(r'(\d{1,2}:\d{2})', e.get('dateLabel') or ''):
+            if tm not in tms:
+                tms.append(tm)
+    if len(tms) > 1 and re.search(r'\d{1,2}:\d{2}', head.get('dateLabel') or ''):
+        dl = head['dateLabel']
+        i = re.search(r'\d{1,2}:\d{2}', dl).start()
+        head['dateLabel'] = dl[:i] + '／'.join(sorted(tms, key=lambda s: tuple(map(int, s.split(':'))))) + '開演'
     relabel(head)
     for e in v[1:]:
         for k2, u in (e.get('links') or {}).items():
