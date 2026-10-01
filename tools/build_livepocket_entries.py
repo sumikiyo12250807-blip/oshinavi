@@ -368,7 +368,21 @@ def build(ev, today, unknown=None):
             # 🆕2026-10-01 券種が1枚だけなら 24字まで名前をそのまま使う（ユーザー指摘＝上野deソロソロ lr3mh で
             #   「カメラ撮影可能席(前方１列目)」16字が「その2」になり、どの席が16:15までか分からなかった）
             if not tail or len(tail) > (24 if len(cards) == 1 else 12) or tail in title_tails[raw]:
-                tail = 'その%d' % title_seen[raw]
+                # 🆕2026-10-01 ユーザー「同じ間違いが二度と起きないゲートを作った？」＝「その2」はどの席か分からない＝出さない。
+                #   券種が多い時は「最初の券種名ほか」（18字まで）。それでも区別がつかない時だけ「その◯」＝番人が止める
+                first = card_tail(raw, cards[:1])
+                if '｜' in first or '|' in first:
+                    # 「【10/10締切】YOKOHAMA SONIC｜SSS｜SAM*RAIJAM」型＝頭が全部同じなので、最後の｜の後ろ（出演者名）で見分ける
+                    first = re.split(r'[｜|]', first)[-1].strip() or first
+                first = first[:18]
+                alt = (first + 'ほか') if first and len(cards) > 1 else first
+                if alt and alt in title_tails[raw] and cards and cards[0].get('price') is not None:
+                    # 🆕同日 ユーザー「受付・チケット情報の後の情報をいれればいいよ」＝券種名まで同じなら値段で見分ける
+                    #   （山田祥子が実る秋 mzafp＝「来場チケット」が2つ・¥3,000 と別の値段）
+                    alt = '%s ¥%s' % (alt, format(cards[0]['price'], ','))
+                if not alt and cards and cards[0].get('price') is not None:
+                    alt = '¥%s' % format(cards[0]['price'], ',')
+                tail = alt if alt and alt not in title_tails[raw] else 'その%d' % title_seen[raw]
             title_tails[raw].add(tail)
             raw = '%s %s' % (raw, tail)
         if SELLER_SIDE.search(raw) or (cards and all(SELLER_SIDE.search(c.get('name') or '') for c in cards)):
