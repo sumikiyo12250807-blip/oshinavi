@@ -378,6 +378,9 @@ def build_one(p, today, genre_map, unknown):
 
     gs = [FANY_GENRE[g] for g in genre_map.get(str(p.get('id')), []) if g in FANY_GENRE]
     gs = list(dict.fromkeys(gs)) or [GENRE_FALLBACK]
+    # 🆕2026-10-01 ユーザー「NMB48はアイドルも足して」＝FANYの区分にアイドルが無いので、NMB48劇場の公演・NMB48の名前には idol を足す
+    if 'NMB48' in (name or '') + (venue or '') + (artist_of(p) or '') and 'idol' not in gs:
+        gs.append('idol')
     label = jp(d, ('%s開演' % stime) if stime else '')
     if dend and dend != d:
         label = '%s〜%s' % (jp(d), jp(dend))
