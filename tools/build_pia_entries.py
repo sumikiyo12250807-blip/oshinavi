@@ -715,6 +715,9 @@ HOGAKU_RE = re.compile(r'和太鼓|太鼓|三味線|津軽|琴|箏|筝|尺八|�
                        # 2026-09-13 追加：「和洋楽器ユニット」は「和楽器」の3文字が並ばないので
                        # 素通りし、id8281「和洋楽器ユニット『蒼ノトキ』ライブ」が enka(演歌) に落ちていた。
                        r'|和洋楽器|和楽|箏曲|三曲|尺八本曲'
+                       # 2026-10-01 追加：「吉田兄弟」(津軽三味線) は公演名に楽器名が出ず enka(演歌) に落ちた
+                       # （id26887・検証エージェントの指摘／ユーザー「吉田兄弟は三味線だよね？伝統」）
+                       r'|吉田兄弟'
                        r'|taiko|shamisen|shakuhachi|gagaku|wagakki|biwa')
 def _hogaku(name):
     return bool(HOGAKU_RE.search(unicodedata.normalize('NFKC', name or '').lower()))
