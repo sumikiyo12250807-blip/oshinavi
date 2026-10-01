@@ -385,7 +385,10 @@ def build(ev, today):
             # 🚨県が分からないイベントがある（主催者が住所を登録していない＝会場名にも一覧にも
             #    JSON-LDにも県が無い。2026-09-18 に7件）。会場名の市名から県を当てるのは推測なので
             #    **バッジから県を落とす**。カードには📍会場名が出るので場所は読める。
-            when = f'{md(d)} {ptime}公演' if ptime else f'{md(d)}公演'
+            # 🆕2026-10-01 ユーザー決定（B）＝ptime は開場の時刻。開演が取れればそれを「公演」に、
+            #   取れなければ開場と正直に書く（「11:30公演」と書くと開演が11:30に見える＝ミネのラジオ 開場11:30・開演12:00）
+            stime = (ev.get('open2start') or {}).get(ptime) if ptime else None
+            when = (f'{md(d)} {stime}公演' if stime else f'{md(d)} {ptime}開場' if ptime else f'{md(d)}公演')
             head = f'{nm}（{pref} {when}）' if pref else f'{nm}（{when}）'
             # 🆕2026-09-24 券種の下の注記（受付：… 〜／受付終了日時：…）＝受付期間の欄が無い券種の発売と締切
             sa, ea = t.get('start_at'), t.get('end_at')
@@ -680,8 +683,14 @@ def _selftest():
     ]
     eT, _ = build(evT, '2026-09-18')
     tyT = sorted(t['type'] for t in eT['tickets'])
-    assert tyT == ['BBQ予約（大阪 10/18 11:00公演）〜10/17 23:59',
-                   'BBQ予約（大阪 10/18 11:30公演）〜10/17 23:59'], tyT
+    # 🆕2026-10-01 開演が取れない時は開場と正直に書く
+    assert tyT == ['BBQ予約（大阪 10/18 11:00開場）〜10/17 23:59',
+                   'BBQ予約（大阪 10/18 11:30開場）〜10/17 23:59'], tyT
+    # 開演が取れれば開演を「公演」に（ミネのラジオ＝開場11:30・開演12:00）
+    evT['open2start'] = {'11:00': '11:30', '11:30': '12:00'}
+    tyT2 = sorted(t['type'] for t in build(evT, '2026-09-18')[0]['tickets'])
+    assert tyT2 == ['BBQ予約（大阪 10/18 11:30公演）〜10/17 23:59',
+                    'BBQ予約（大阪 10/18 12:00公演）〜10/17 23:59'], tyT2
     # 🚨締切が公演日より後なら公演日で締める（配信は例外）
     evC = json.loads(json.dumps(ev))
     evC['programs'][0]['tickets'] = [
