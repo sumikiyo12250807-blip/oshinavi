@@ -4,6 +4,19 @@
 ⏰ アラーム5本（CronCreate）＝14:05 昼の便（昼の最遅発売14:00）／15:33 ピックアップ10/4号の仕上げ／17:02 X準備（10/4発売）／19:41 予約の締め／22:07 夜のヒールとpush
 ⏳ 裏＝ぴあヒール --build／TIGET番人（全件）／livePocket番人（全件）／ZAIKO番人／FANY一覧／楽天 再照合＋売り切れ下見／e+ heal_eplus_started 下見
 ⏳ エージェント＝削除候補の独立再導出（check_expired 251件と突き合わせ）／新着234件のジャンル独立判定
+✅ 削除236件（check_expired 251 × 独立再導出 236 一致・割れた15件は残す）→ logs/removed_2026-10-03.md（commit済み）
+✅ e+ heal_eplus_started 締切11枠＋予定枚数終了1枠（6007は404・6259/21419は窓が合わず触らない）
+✅ 楽天 reconcile OK52・FAIL3（2808・7344・17243＝既知）／売り切れ点検は当てない（693高中正義の「印を外す」は昨日と同じく保留・4293は締切9/14の枠）
+✅ 新着234件のジャンル独立判定＝一致167・違い67（和集合で両方）→ tmp/x1003/genre_union.json
+📊 X：10/1・10/2の投稿は2日経っていない＝判定しない（変化なし）
+✅ ユーザー指摘＝ウイコス17 27261・27262 は TIGET が「主催者によって非公開設定」→ 新着から外して tools/tiget_watch.json へ／gate_tiget_slots に🔒非公開の判定を足した（commit済み）
+✅ ユーザー「新着全部ゲート通してから振り分けて」（07:2x）
+✅ FANY 番人 食い違い124 → heal_fany 140件 → 番人 一致1641・残り1（18334 沼津4×4 10/2公演）＝新着7件（27597〜27603）は全部一致
+✅ ZAIKO 番人 食い違い101 → heal_zaiko 101件当てた → 番人をもう一度（裏）
+✅ TIGET 全件番人は30分で時間切れ（宿題＝昼に timeout 長めで全件）／新着112件だけ番人 → 食い違い20（発売時刻を過ぎた・主催者が発売日時を動かした＝レインズ10/3→10/6・熱唱12:00→13:00）→ heal_tiget 20件 → 112/112一致
+✅ 振り分け119件（TIGET112・FANY7）→ logs/assigned_2026-10-03.md／寺尾聰 Cover Live 1st 27708・2nd 27712 を 27708 に1つ（10/1「まとめていい」）
+✅ 朝のpush前の番人＝gate_badge_render 違反0／fold_parts --check 0／reconcile_pia --new OK71・MISSING/DROP/STALE/FETCH/QC 0
+⏳ ぴあ新着75件のうち同名の既存35件＝ツアー判定をエージェントに（tmp/x1003/merge_research/plan.json）
 📋 番人 check_zero_badge＝31日より先で枠0が55件 → ヒール後に reconcile --ids
 📋 新着プール234＝ぴあ75（10/2朝・再チェック前）・TIGET114・livePocket36・ZAIKO2・FANY7
 ```
