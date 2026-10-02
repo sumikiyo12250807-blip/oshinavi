@@ -46,16 +46,17 @@ try {
     $txt = [System.IO.File]::ReadAllText($idx, [System.Text.Encoding]::UTF8)
     $pat = [regex]::Escape($md) + ' (\d{1,2}):(\d{2})発売'
     $best = $null
+    # 🚨15時より後の発売は「昼便」の仕事ではなく夜便の仕事＝**15時までの発売のうち最遅**を取る。
+    #   旧＝全部の最遅を取ってから15:00で頭打ち → 23:10発売がある日は昼便が「15:30以降」になり、
+    #   13時台に済ませた昼のヒール・pushを「まだ」と言って4回目のpushを促した（2026-10-02 16:27）。
+    $cap = $today.AddHours(15)
     foreach ($m in [regex]::Matches($txt, $pat)) {
       $t = $today.AddHours([int]$m.Groups[1].Value).AddMinutes([int]$m.Groups[2].Value)
+      if ($t -gt $cap) { continue }
       if ($null -eq $best -or $t -gt $best) { $best = $t }
     }
     if ($best) {
       $latestSale = $best.ToString('HH:mm')
-      # 🚨15時より後の発売は「昼便」の仕事ではなく夜便の仕事。ここで頭を打つ。
-      #   （実データで最遅20:00の日があり、上限を入れないと昼便の開始が20:30になって意味が崩れた）
-      $cap = $today.AddHours(15)
-      if ($best -gt $cap) { $best = $cap }
       $cand = $best.AddMinutes(30)
       if ($cand -gt $noonStart) { $noonStart = $cand }
     }
