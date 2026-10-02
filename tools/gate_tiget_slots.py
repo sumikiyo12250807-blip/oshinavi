@@ -156,7 +156,7 @@ def main():
             continue
         targets.append((e, urls))
 
-    ng, ok, fetcherr, rawng = [], 0, [], []
+    ng, ok, fetcherr, rawng, private = [], 0, [], [], []
     rep = io.open(REPORT, 'w', encoding='utf-8')
     rep.write('=== gate_tiget_slots (today=%s) 対象%d件 ===\n' % (a.today, len(targets)))
     for e, urls in targets:
@@ -167,7 +167,21 @@ def main():
             try:
                 d = TH.parse_event(TH.fetch(f'https://tiget.net/events/{eid}'), eid)
             except Exception as ex:
-                fetcherr.append((e['id'], eid, str(ex)[:60]))
+                # 🆕2026-10-03 主催者が非公開にしたページは403＋「非公開設定」の本文＝「読めない」でなく外す候補
+                #   （ウイコス17 27261/27262 を「読めなかった」のまま新着に残し、ユーザーが画面で見つけた）
+                body = ''
+                try:
+                    raw = ex.read()
+                    if ex.headers.get('Content-Encoding') == 'gzip':
+                        import gzip
+                        raw = gzip.decompress(raw)
+                    body = raw.decode('utf-8', 'replace')
+                except Exception:
+                    pass
+                if getattr(ex, 'code', None) == 403 and '非公開設定' in body:
+                    private.append((e['id'], eid))
+                else:
+                    fetcherr.append((e['id'], eid, str(ex)[:60]))
                 bad = True
                 continue
             raws.append(d)
@@ -211,13 +225,15 @@ def main():
             rep.write('    %s\n' % m)
     for i, eid, why in fetcherr:
         rep.write('❌ id=%s events/%s 読めなかった: %s\n' % (i, eid, why))
-    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d ===\n'
-              % (ok, len(ng), len(rawng), len(fetcherr)))
+    for i, eid in private:
+        rep.write('🔒 id=%s events/%s 主催者が非公開設定＝載せない（新着なら外して tools/tiget_watch.json へ）\n' % (i, eid))
+    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d / 🔒非公開 %d ===\n'
+              % (ok, len(ng), len(rawng), len(fetcherr), len(private)))
     rep.close()
     # コンソールは文字化けするのでASCIIの要約だけ。中身は REPORT を読む
-    sys.stderr.write('gate_tiget_slots: match=%d ng=%d rawng=%d fetcherr=%d -> %s\n'
-                     % (ok, len(ng), len(rawng), len(fetcherr), REPORT))
-    sys.exit(2 if (ng or fetcherr or rawng) else 0)
+    sys.stderr.write('gate_tiget_slots: match=%d ng=%d rawng=%d fetcherr=%d private=%d -> %s\n'
+                     % (ok, len(ng), len(rawng), len(fetcherr), len(private), REPORT))
+    sys.exit(2 if (ng or fetcherr or rawng or private) else 0)
 
 
 if __name__ == '__main__':
