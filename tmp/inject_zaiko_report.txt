@@ -1,34 +1,29 @@
-=== inject_zaiko (2026-09-23) tmp/built_zaiko_0923pm.json ===
-組み上がり 12件 → 投入 5 / URL重複 0 / ⚠️要確認 7 / 今回は入れない 0
-  投入する id 22706〜22710
+=== inject_zaiko (2026-10-02) tmp/built_zaiko_1002.json ===
+組み上がり 8件 → 投入 2 / URL重複 0 / ⚠️要確認 6 / 今回は入れない 0
+  投入する id 27604〜27605
 
 --- ⚠️要確認（入れない＝名前×公演日×会場が既存と一致）---
-  DIV PRE-RECHARGE ONEMAN TOUR / SAITAMA / 西川口Live House Hearts / 公演2026-09-25
-    https://div-official.zaiko.io/ja/item/381246
-  DIV PRE-RECHARGE ONEMAN TOUR / TOKYO FIN / WWW X / 公演2026-10-04
-    https://div-official.zaiko.io/ja/item/381254
   ONE SAMURAI ４ / 有明アリーナ / 公演2026-10-17
     https://onechampionship.zaiko.io/ja/e/one-samurai-4
   ChouCho Presents GIRLS und PANZER Specia / duo MUSIC EXCHANGE / 公演2026-10-25
     https://highwaystar-inc.zaiko.io/ja/e/choucho-gup-live
-  DIV PRE-RECHARGE ONEMAN TOUR / KANAGAWA / Serbian Night / 公演2026-11-02
+  DIV PRE-RECHARGE ONEMAN TOUR / KANAGAWA / 川崎セルビアンナイト / 公演2026-11-02
     https://div-official.zaiko.io/ja/item/381252
   【福岡】平松愛理 Autumn Live 弾き語りツアー2026 ～ SLOW  / ROOMS / 公演2026-11-17
     https://airihiramatsu-autumnlive-tokyo.zaiko.io/ja/e/airi-autumn-live-2026fukuoka
+  DIV PRE-RECHARGE ONEMAN TOUR / TOKYO FIN / WWW X / 公演2026-11-22
+    https://div-official.zaiko.io/ja/item/381254
   ONE SAMURAI 6 / 横浜BUNTAI / 公演2026-12-02
     https://onechampionship.zaiko.io/ja/e/one-samurai-6
 
 --- URLが既にある（入れない）---
 
 --- 投入する ---
-id22706	idol	airattic LAST ONEMAN 「SynchroniCities」	2026年9月26日(土) 12:00開演	Zaiko Live	枠1
-id22707	musicetc	MY歌謡アーカイブス in 十話音 Vol.2	2026年10月7日(水) 19:30開演	Zaiko Live	枠1
-id22708	vtuber	銀河鉄道ナイトラインスペシャルライブVol.2	2026年10月31日(土) 12:30開演	KuRaGe 心斎橋ライブハウス	枠4
-id22709	club	Marcellus Pittman Japan Tour	2026年11月7日(土) 22:00開演	club JOULE	枠1
-id22710	sports	11/23 マッスルゲート北陸大会	2026年11月23日(月) 11:30開演	石川県文教会館 ホール	枠4
+id27604	musicetc	椎名かいね 1stワンマンライブ「観測編集点」	2026年10月11日(日) 11:45開演（配	Zaiko Live	枠2
+id27605	idol	AMASAKU アニメ語り部 第4回 ~グルメアニメはいいぞ~	2026年10月21日(水) 19:00開演	A Talk Club WOOFER	枠1
 
-EVENTS 16303件 / 新着プール 170件 / NEW_ORDER 170件
+EVENTS 17593件 / 新着プール 414件 / NEW_ORDER 414件
 ズレ []
 CRCRLF 0 / 素のLF 0 （どちらも0が正）
-index.html 23.56MB
-backup: index.html.bak_0923_zaiko
+index.html 25.53MB
+backup: index.html.bak_1002_zaiko
