@@ -1,22 +1,112 @@
-=== gate_fany_slots (today=2026-10-01) 対象1740イベント ===
-一致 1691 / 食い違い 1 / 一覧から落ちた 1 / 詳細が読めず判定不能 0 / リンクだけ足した分 46
+=== gate_fany_slots (today=2026-10-03) 対象1728イベント ===
+一致 1662 / 食い違い 17 / 一覧から落ちた 1 / 詳細が読めず判定不能 0 / リンクだけ足した分 44
 
---- event/detail/20349  id20428 どくさいスイッチ企画 presents「スイッチ」vol.3 @ ユーロライブ
-    只登録側: 一般発売（東京 10/1公演）〜9/20 23:59 | 2026-09-20 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/19673  id18415,18416,18417,18496,18497,18498,18778,18779,18780,18850,18851,18852,18933,18934,18935,19485,19486,19549,19550,19551,19800,19801,19802 福岡よしもとお笑いライブ @ よしもと福岡 大和証券劇場
+    只登録側: 一般発売（福岡 10/3 11:30公演）〜10/3 9:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（福岡 10/3 13:40公演）〜10/3 11:40 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（福岡 10/3 15:50公演）〜10/3 13:50 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（福岡 10/3 11:30公演）〜10/3 9:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（福岡 10/3 13:40公演）〜10/3 11:40 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（福岡 10/3 15:50公演）〜10/3 13:50 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/19908  id18383,18384,18470,18471,18821,18822,18823 六本木お笑いコントライブ！週末SP @ YOSHIMOTO ROPPONGI T
+    只登録側: 一般発売（東京 10/3 12:00公演）〜10/3 10:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 14:30公演）〜10/3 12:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 12:00公演）〜10/3 10:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 14:30公演）〜10/3 12:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20023  id18374,18375,18460,18737,18738,18739,18812,18813,18814,18891,18892,18893,19127,19128,19129,19208,19209,19210,19446,19447,19448,19521,19522,19523,19764,19765,19766 マンゲキお笑いライブSP @ よしもと漫才劇場
+    只登録側: 一般発売（大阪 10/3 10:00公演）〜10/3 8:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（大阪 10/3 12:40公演）〜10/3 10:40 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 10:00公演）〜10/3 8:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 12:40公演）〜10/3 10:40 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20026  id18348,18349 Kakeru翔グランプリWEST 第一部 @ よしもと漫才劇場
+    只登録側: 一般発売（大阪 10/3 15:45公演）〜10/3 13:45 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 15:45公演）〜10/3 13:45 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20200  id18403,18404,18487,18488,19155,19156,19230,19231,19475,19476,19539,19540 沼津週末寄席～太鼓判ライブ～ @ 沼津ラクーンよしもと劇場
+    只登録側: 一般発売（静岡 10/3 12:30公演）〜10/3 10:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（静岡 10/3 15:00公演）〜10/3 13:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（静岡 10/3 12:30公演）〜10/3 10:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（静岡 10/3 15:00公演）〜10/3 13:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20201  id18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412,18412 神保町マンゲキお笑いライブ（10月公演） @ 神保町よしもと漫才劇場
+    只登録側: 一般発売（東京 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 13:00公演）〜10/3 11:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 15:00公演）〜10/3 13:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 13:00公演）〜10/3 11:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 15:00公演）〜10/3 13:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20211  id18400,18401,18402,18484,18485,18486,18766,18767,18768,18838,18839,18840,18918,18919,18920,19151,19152,19153,19227,19228,19229,19472,19473,19474,19536,19537,19538 森ノ宮マンゲキお笑いライブSP @ 森ノ宮よしもと漫才劇場
+    只登録側: 一般発売（大阪 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（大阪 10/3 13:30公演）〜10/3 11:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（大阪 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 13:30公演）〜10/3 11:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20214  id18405,18406,18407,18489,18490,18491,18769,18770,18771,18843,18844,18845,18924,18925,18926,19157,19158,19159,19232,19233,19234,19477,19478,19479,19541,19542,19543,19794,19795,19796 渋谷マンゲキお笑いライブ @ 渋谷よしもと漫才劇場
+    只登録側: 一般発売（東京 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 12:45公演）〜10/3 10:45 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 14:30公演）〜10/3 12:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 12:45公演）〜10/3 10:45 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 14:30公演）〜10/3 12:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20401  id18423 雨宿りの階段 @ よしもと道頓堀シアター
+    只登録側: 一般発売（大阪 10/3公演）〜10/3 13:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3公演）〜10/3 13:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20467  id18359,18437,18721,18794,18880,19502 よしもとお笑いレストラン @ よしもと道頓堀シアター
+    只登録側: 一般発売（大阪 10/3公演）〜10/3 10:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3公演）〜10/3 10:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20494  id18391,18392,18393,18831,18832,18833,18909,18910,18911,19220,19221,19222,19463,19464,19777,19778 幕張土日祝ネタＳＰ１２時 @ よしもと幕張イオンモール劇場
+    只登録側: 一般発売（千葉 10/3 12:00公演）〜10/3 10:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（千葉 10/3 14:00公演）〜10/3 12:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（千葉 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（千葉 10/3 12:00公演）〜10/3 10:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（千葉 10/3 14:00公演）〜10/3 12:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（千葉 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20886  id18420 自分がすきなネタをやるライブ～2026年秋～ @ 大宮ラクーンよしもと劇場
+    只登録側: 一般発売（埼玉 10/3公演）〜10/3 10:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（埼玉 10/3公演）〜10/3 10:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20887  id18390 大宮占いの館～ケビンスの2027年を占おう～ @ 大宮ラクーンよしもと劇場
+    只登録側: 一般発売（埼玉 10/3公演）〜10/3 12:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（埼玉 10/3公演）〜10/3 12:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/20907  id18334,19418 沼津4×4 ～配信ありトークと配信なしネタ～ @ 沼津ラクーンよしもと劇場
+    只登録側: FANY IDプレミアムメンバー抽選先行（静岡 10/2公演）〜9/14 11:00 | 2026-09-14 | soldout=True saleEnded=False presaleEnded=True
+    只登録側: FANY IDメンバー抽選先行（静岡 10/2公演）〜9/14 11:00 | 2026-09-14 | soldout=True saleEnded=False presaleEnded=True
+    只登録側: 一般発売（静岡 10/2公演）〜10/2 18:00 | 2026-10-02 | soldout=False saleEnded=False presaleEnded=False
+--- event/detail/21090  id18352 「情熱！めっちゃ楽舞友」公演 遠方のお客様歓迎 @ NMB48劇場
+    只登録側: 一般発売（大阪 10/3公演）〜10/3 11:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3公演）〜10/3 11:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/7208  id18377,18378,18379,18463,18464,18465,18741,18742,18743,18897,18898,18899,19132,19767,19768,19769 ルミネtheよしもと 土日祝１１時の部 @ ルミネtheよしもと
+    只登録側: 一般発売（東京 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 13:30公演）〜10/3 11:30 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（東京 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 11:00公演）〜10/3 9:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 13:30公演）〜10/3 11:30 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（東京 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+--- event/detail/8031  id18396,18397,18398,18399,18481,18482,18483,18536,18537,18582,18583,18620,18621,18667,18668,18708,18709,18761,18762,18763,18764,18834,18835,18836,18837,18914,18915,18916,18966,18967,19012,19013,19048,19049,19090,19091,19147,19148,19149,19150,19223,19224,19225,19271,19272,19303,19304,19345,19346,19379,19380,19415,19416,19467,19468,19469,19470,19532,19533,19534,19574,19575,19623,19624,19661,19662,19695,19696,19730,19731,19783,19784,19785,19786 本公演 １回目 @ なんばグランド花月
+    只登録側: 一般発売（大阪 10/3 10:00公演）〜10/3 8:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（大阪 10/3 13:00公演）〜10/3 11:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只登録側: 一般発売（大阪 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=False saleEnded=False presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 10:00公演）〜10/3 8:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 13:00公演）〜10/3 11:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
+    只ページ側: 一般発売（大阪 10/3 16:00公演）〜10/3 14:00 | 2026-10-03 | soldout=True saleEnded=True presaleEnded=False
 
-=== 🚨生データ突合（ビルダーを通さない・配信の券種）の食い違い 0件 ===
+=== 🚨生データ突合（ビルダーを通さない・配信の券種）の食い違い 3件 ===
+--- event/detail/20002  id18254 【2026年10月】「Kakeru翔パス」
+    組み立てで捨てられた（一覧から落ちた）が、売り場ではまだ買える受付がある：一般発売（受付中・2026/08/25(火) 11:00～2026/10/26(月) 23:59）
+--- event/detail/20096  id18256 【2026年10月】コントパス
+    組み立てで捨てられた（一覧から落ちた）が、売り場ではまだ買える受付がある：一般発売（受付中・2026/08/25(火) 11:00～2026/10/20(火) 23:59）
+--- event/detail/20206  id18255 【2026年10月】「Kiwami極パス」
+    組み立てで捨てられた（一覧から落ちた）が、売り場ではまだ買える受付がある：一般発売（受付中・2026/08/25(火) 11:00～2026/10/23(金) 23:59）
 
 === 一覧から落ちたイベント（詳細ページの受付も全部 受付終了＝公演終了）===
   id23014  公演2026-10-16 (株)はつだ爆誕祭2026大阪
 
 === 一覧から落ちて詳細ページも読めず判定できなかった（「終わった」とは言えない）===
 
-=== 一覧を取った期間（〜2027-04-01）より先の公演＝今回は照合していない 1件 ===
+=== 一覧を取った期間（〜2027-04-03）より先の公演＝今回は照合していない 1件 ===
   event/detail/19428  id20925 公演2027-04-04
 
 === リンクだけ足した分（FANYの枠を足し込めば買える枠が増える候補）===
   id8761   FANYに 1枠 / 公演2026-10-06 令和8年秋巡業 大相撲つくば場所 @ つくばカピオアリーナ
-  id9250   FANYに 4枠 / 公演2026-10-02 正解の無いクイズLIVE3 @ 北とぴあ さくらホール
+  id9250   FANYに 0枠 / 公演2026-10-02 正解の無いクイズLIVE3 @ 北とぴあ さくらホール
   id5954   FANYに 8枠 / 公演2026-10-04 寛平GMプロデュース公演 新喜劇出前ツアー2026 福井公演 @ フェニックス・プラザ エルピス 大ホ
   id1083   FANYに 6枠 / 公演2026-10-10 ノンタンのハッピーコンサート『ノンタンのわくわくピクニック』 @ 新潟テルサ
   id952    FANYに 4枠 / 公演2026-10-10 寛平ＧＭプロデュース公演　新喜劇出前ツアー２０２６　栃木公演 @ 栃木県総合文化センター メインホール
@@ -31,14 +121,13 @@
   id3813   FANYに12枠 / 公演2026-10-29 よしもと IMM THEATER 寄席 @ IMM THEATER
   id3939   FANYに 3枠 / 公演2026-10-30 よしもとお笑いライブin戸田2026 @ 戸田市文化会館
   id3938   FANYに 3枠 / 公演2026-10-21 よしもとお笑いライブin立川2026～たましい奮わす笑いをお届け～ @ たましんRISURUホール 大ホール
-  id3941   FANYに 3枠 / 公演2026-10-02 よしもとお笑いライブin八千代2026 ～秋の夜長を笑い飛ばせ!～ @ 八千代市市民会館 大ホール
   id6126   FANYに 5枠 / 公演2026-10-10 昼・『タケトのオトナ道徳TOWN初ライブ～クラスメイト集まれ～』 @ 沼津ラクーンよしもと劇場
   id6133   FANYに 5枠 / 公演2026-10-10 夜・『ゾゾッとTOWN大ライブ2026ツアー ～30周年50歳～』 @ 沼津ラクーンよしもと劇場
   id3907   FANYに 1枠 / 公演2026-10-07 桂三度日本公演～桂三度入門十五周年記念祭～ @ なんばグランド花月
   id5540   FANYに 6枠 / 公演2026-10-25 熊本漫才選集 @ 熊本城ホール メインホール
   id3986   FANYに 3枠 / 公演2026-10-18 宮川大輔×ケンドーコバヤシ トークライブ あんぎゃー 長崎公演 @ ベネックス長崎ブリックホール 大ホー
   id3977   FANYに 8枠 / 公演2026-12-12 寛平GMプロデュース公演 新喜劇出前ツアー2026 みやこ公演 @ 宮古市民文化会館 大ホール
-  id4881   FANYに 1枠 / 公演2026-10-24 Chillin’ Vibes 2026 @ 万博記念公園もみじ川芝生広場
+  id4881   FANYに 2枠 / 公演2026-10-24 Chillin’ Vibes 2026 @ 万博記念公園もみじ川芝生広場
   id6108   FANYに 3枠 / 公演2026-12-06 ゴリオキナワお疲れ様会 supported by ぴあ @ ライブ居酒屋 島唄
   id4961   FANYに 3枠 / 公演2026-10-27 第2回きっと君はくるさカルビの独演会「無駄に長く話す」 @ 草月ホール
   id4963   FANYに 3枠 / 公演2026-11-09 よしもとお笑いライブin荒川2026～秋の大笑い収穫祭～ @ サンパール荒川 大ホール
@@ -56,7 +145,6 @@
   id8640   FANYに 1枠 / 公演2026-11-28 三代目林家菊丸独演会2026～上方人情噺の世界～ @ 大須演芸場
   id8286   FANYに 5枠 / 公演2026-11-23 Joy!Joy!エンタメ新喜劇 @ なんばグランド花月
   id7752   FANYに 3枠 / 公演2026-10-12 よしもとお笑いライブin調布～スポーツの日もたくさん笑おう～ @ 調布市グリーンホール 大ホール
-  id7730   FANYに 3枠 / 公演2026-10-02 OTSUKA DREAM THEATER前で待ち合わせね! @ 大塚ドリームシアター
   id7240   FANYに 1枠 / 公演2026-11-14 京都特選落語会～林家菊丸落語会～ @ ヒューリックホール京都
   id8155   FANYに 1枠 / 公演2026-10-03 田津原理音 PHOTO COMEDY [closest] #4 @ 新宿シアターモリエール
   id10451  FANYに 1枠 / 公演2026-10-04 ナイチンゲールダンス中野なかるてぃんpresents日本一大きい寄席 @ リッチダイヤモンド総合市民会館 芸術

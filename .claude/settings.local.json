@@ -32,6 +32,7 @@
       "Bash(git commit:*)",
       "WebFetch(domain:l-tike.com)",
       "WebSearch",
+      "WebFetch",
       "WebFetch(domain:eplus.jp)",
       "Bash(node:*)",
       "Bash(curl -s -L --max-time 15 \"https://eplus.jp/sf/info/affiliate\" -A \"Mozilla/5.0\")",
@@ -1017,11 +1018,37 @@
       "WebFetch(domain:singliketalking.jp)",
       "WebFetch(domain:avexnet.jp)",
       "WebFetch(domain:www.billboard-japan.com)",
-      "WebFetch(domain:news.yahoo.co.jp)"
+      "WebFetch(domain:news.yahoo.co.jp)",
+      "WebFetch(domain:livepocket.jp)",
+      "WebFetch(domain:sakumaryusei.zaiko.io)",
+      "WebFetch(domain:jangueo.zaiko.io)",
+      "WebFetch(domain:valqua-streaming.zaiko.io)",
+      "WebFetch(domain:zerotokyo.zaiko.io)",
+      "WebFetch(domain:saloon-tokyo.zaiko.io)"
     ]
   },
   "hooks": {
     "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/user/oshinavi/.claude/hooks/push_count_guard.py\"",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/user/oshinavi/.claude/hooks/no_expansion_guard.py\"",
+            "timeout": 15
+          }
+        ]
+      },
       {
         "matcher": "Bash",
         "hooks": [
