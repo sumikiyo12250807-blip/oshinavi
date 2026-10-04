@@ -1321,9 +1321,9 @@
    "id_to": 29001,
    "count": 138,
    "source": "TIGET tmp/x1005/tiget.json（--stop-known 1）",
-   "assigned": false,
+   "assigned": true,
    "rechecked": true,
-   "note": "番人138/138一致。ジャンル独立判定→振り分けは昼"
+   "note": "番人138/138一致。ジャンル独立判定→振り分けは昼／振り分け済み136（2件は1部2部で畳んだ）"
   },
   {
    "date": "2026-10-05",
@@ -1335,6 +1335,39 @@
    "assigned": false,
    "rechecked": false,
    "note": "reconcile --new OK37。保留13＝登録済みらしい（tmp/x1005/show_dup.txt）。足し込み14件43枠。翌朝に独立再照合→振り分け"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "morning",
+   "id_from": 29038,
+   "id_to": 29057,
+   "count": 20,
+   "source": "FANY tmp/x1005/fany.json",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人 新着側の食い違い0・振り分け済み"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "morning",
+   "id_from": 29058,
+   "id_to": 29062,
+   "count": 5,
+   "source": "ZAIKO tmp/x1005/zaiko.json",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人2回目 0・振り分け済み"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "morning",
+   "id_from": 29063,
+   "id_to": 29082,
+   "count": 23,
+   "source": "livePocket tmp/x1005/livepocket.json（--pages 40）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "独立ゲート一致32ページ→23件（日別4件を1つに畳んで20件）・振り分け済み"
   }
  ]
 }
