@@ -55,12 +55,22 @@ def render(t, S):
     im = M.background(t)
     name, u, L = scene_at(t)
     if S.get('poses'):                                # 🆕2026-10-04 歌詞の1行ごとに1ポーズ（ユーザー「動かしすぎ・歌詞に合わせて」）
-        pt, pn = S['poses'][0]
-        for tt, nm in S['poses']:
-            if t >= tt:
-                pt, pn = tt, nm
+        pt, pn, mv, nt = S['poses'][0][0], S['poses'][0][1], None, DUR
+        for i, p in enumerate(S['poses']):
+            if t >= p[0]:
+                pt, pn = p[0], p[1]
+                mv = p[2] if len(p) > 2 else None
+                nt = S['poses'][i + 1][0] if i + 1 < len(S['poses']) else DUR
         M.CUR['pose'] = pn
         M.CUR['pop'] = t - pt
+        # 🆕2026-10-04 ポーズごとの入り方（ユーザー「揺らすだけじゃなく、ゆっくり大きくしたり、縮めたり、横からスライドさせたり」）
+        #   [時刻, ポーズ, 'zin'＝ゆっくり大きく / 'zout'＝ゆっくり小さく / 'sl'＝左から滑り込む / 'sr'＝右から]
+        k = min(1.0, max(0.0, (t - pt) / max(0.1, nt - pt)))
+        M.CUR['zoom'] = {'zin': 0.82 + 0.26 * k, 'zout': 1.14 - 0.24 * k}.get(mv, 1.0)
+        e = M.ease((t - pt) / 0.6)
+        M.CUR['dx'] = {'sl': -(1 - e) * W, 'sr': (1 - e) * W}.get(mv, 0.0)
+        if mv in ('sl', 'sr'):
+            M.CUR['pop'] = 9.0                        # 滑り込む時はポンと膨らませない
     else:
         seq = CHOREO[name]
         M.CUR['pose'] = seq[int(u / (BEAT * 2)) % len(seq)]
@@ -198,6 +208,10 @@ if __name__ == '__main__':
         SCENES = [tuple(x) for x in S['scenes']]
     if S.get('dur'):
         DUR = float(S['dur'])
+    if S.get('site_bg'):                              # 背景を本物のOSHINAVIの画面に（キラキラはその上に重ねる）
+        M.SITE_BG = S['site_bg']
+    if S.get('beat'):                                 # 曲のテンポ（1拍の秒数）＝弾みを曲に合わせる
+        M.BEAT = BEAT = float(S['beat'])
     if S.get('calm'):                                 # 揺れを小さく（ユーザー「動かしすぎかも」2026-10-04）
         M.BOUNCE, M.TILT, M.CLOSE_H = 6, 1.0, 640
     if a.board:
