@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import oshimade_mv as M                       # noqa: E402
 
 W, H, FPS, DUR, BEAT = M.W, M.H, M.FPS, 10.0, M.BEAT
+SONG_START = 0.0                          # 曲のどこから使うか（spec の song_start で変える）
 SCENES = [(0.0, 'when'), (2.6, 'who'), (6.4, 'search'), (8.4, 'url')]
 CHOREO = {'when': ['jump', 'hands_up', 'jump'], 'who': ['diag_f', 'wave', 'front'],
           'search': ['side_l', 'diag_f'], 'url': ['wave', 'kiss']}
@@ -53,9 +54,17 @@ def scene_at(t):
 def render(t, S):
     im = M.background(t)
     name, u, L = scene_at(t)
-    seq = CHOREO[name]
-    M.CUR['pose'] = seq[int(u / (BEAT * 2)) % len(seq)]
-    M.CUR['pop'] = u % (BEAT * 2)
+    if S.get('poses'):                                # 🆕2026-10-04 歌詞の1行ごとに1ポーズ（ユーザー「動かしすぎ・歌詞に合わせて」）
+        pt, pn = S['poses'][0]
+        for tt, nm in S['poses']:
+            if t >= tt:
+                pt, pn = tt, nm
+        M.CUR['pose'] = pn
+        M.CUR['pop'] = t - pt
+    else:
+        seq = CHOREO[name]
+        M.CUR['pose'] = seq[int(u / (BEAT * 2)) % len(seq)]
+        M.CUR['pop'] = u % (BEAT * 2)
     d = ImageDraw.Draw(im)
     if name == 'when':
         k = M.ease(u / 0.8)
@@ -100,13 +109,54 @@ def render(t, S):
         M.glow_text(im, (W / 2, 420), 'oshinavi.jp', int(80 + 50 * M.ease(u / 0.5)), fill=M.WHITE, glow=M.WHITE)   # URLは光る白（memory）
         d.text((W / 2, 600), '推しのチケット発売日、見逃さない', font=M.font(56), fill=M.WHITE, anchor='mm', stroke_width=5, stroke_fill=(90, 0, 140))
         M.paste_char(im, t, W / 2, 1750, 950)
+    if S.get('karaoke'):
+        karaoke(im, t, S['karaoke'])
+    lyr = None if S.get('karaoke') else lyric_at(t, S)
+    if lyr:                                         # 🆕2026-10-04 1曲まるごとの版は歌詞を画面に出す（綴りは曲のタグの歌詞）
+        d = ImageDraw.Draw(im)
+        for j, ln in enumerate(lyr.split('\n')[:2]):
+            sz = fit(ln, 60, 980)
+            d.text((W / 2, 1110 + j * 84), ln, font=M.font(sz), fill=M.WHITE, anchor='mm', stroke_width=7, stroke_fill=(70, 0, 110))
     if t > DUR - 0.6:
         im = Image.blend(im, Image.new('RGB', im.size, M.DEEP), min(1.0, (t - (DUR - 0.6)) / 0.6 * 0.85))
     return im
 
 
+def karaoke(im, t, segs):
+    """歌詞を曲に合わせて1文字ずつ色でなぞる。segs = [{start, end, lines:[行,…], times:[文字ごとの時刻]}]（改行・空白を除いた文字順）"""
+    seg = None
+    for s in segs:
+        if s['start'] - 0.3 <= t < s['end']:
+            seg = s
+    if not seg:
+        return
+    d = ImageDraw.Draw(im)
+    k = 0
+    for j, ln in enumerate(seg['lines'][:2]):
+        sz = fit(ln, 64, 980)
+        f = M.font(sz)
+        y = 1110 + j * 90
+        x = W / 2 - d.textlength(ln, font=f) / 2
+        for ch in ln:
+            w = d.textlength(ch, font=f)
+            if ch.strip():
+                done = t >= seg['times'][k]
+                k += 1
+                col = M.GOLD if done else M.WHITE
+                d.text((x, y), ch, font=f, fill=col, anchor='lm', stroke_width=7, stroke_fill=(150, 0, 110) if done else (70, 0, 110))
+            x += w
+
+
+def lyric_at(t, S):
+    cur = None
+    for tt, txt in S.get('lyrics') or []:
+        if t >= tt:
+            cur = txt
+    return cur
+
+
 def board(S, path):
-    shots = [1.6, 4.8, 7.8, 9.2]
+    shots = S.get('board_shots') or [1.6, 4.8, 7.8, 9.2]
     sw = 270; sh = int(sw * H / W)
     b = Image.new('RGB', (len(shots) * (sw + 12) + 12, sh + 24), (30, 30, 30))
     for i, tt in enumerate(shots):
@@ -121,7 +171,7 @@ def render_all(S):
     out = S['out']
     os.makedirs(os.path.dirname(out), exist_ok=True)
     p = subprocess.Popen([ff, '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', '%dx%d' % (W, H), '-r', str(FPS), '-i', '-',
-                          '-i', M.SONG, '-t', str(DUR), '-af', 'afade=t=out:st=%.1f:d=0.8' % (DUR - 0.8),
+                          '-ss', str(SONG_START), '-i', M.SONG, '-t', str(DUR), '-af', 'afade=t=out:st=%.1f:d=0.8' % (DUR - 0.8),
                           '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '23', '-c:a', 'aac', '-b:a', '128k',
                           '-movflags', '+faststart', '-shortest', out], stdin=subprocess.PIPE, stderr=subprocess.DEVNULL)
     for i in range(int(DUR * FPS)):
@@ -137,6 +187,19 @@ if __name__ == '__main__':
     ap.add_argument('--render', action='store_true')
     a = ap.parse_args()
     S = json.load(io.open(a.spec, encoding='utf-8'))
+    # 🆕2026-10-04 曲とキャラを spec で差し替える（無ければ『推しまで教えて』＋2026-09-29のキャラ）
+    if S.get('song'):
+        M.SONG = S['song']
+    if S.get('posedir'):
+        M.POSEDIR = S['posedir']; M._pose.clear()
+    if S.get('song_start'):
+        SONG_START = float(S['song_start'])
+    if S.get('scenes'):                               # 🆕1曲まるごと（ユーザー「１曲全部作って」2026-10-04）＝場面の割りと長さを spec で
+        SCENES = [tuple(x) for x in S['scenes']]
+    if S.get('dur'):
+        DUR = float(S['dur'])
+    if S.get('calm'):                                 # 揺れを小さく（ユーザー「動かしすぎかも」2026-10-04）
+        M.BOUNCE, M.TILT, M.CLOSE_H = 6, 1.0, 640
     if a.board:
         board(S, os.path.splitext(a.spec)[0] + '_board.png')
     if a.render:

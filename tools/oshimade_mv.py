@@ -93,6 +93,8 @@ CHOREO = {                                         # 場面ごとのポーズの
 }
 _pose = {}
 CUR = {'pose': 'front', 'pop': 0.0}
+CLOSE_H = 900                      # 顔のアップの高さ
+BOUNCE, TILT = 28, 4              # 拍ごとの弾み（px）と首振り（度）＝主役動画の落ち着いた版は shuyaku_video が小さくする
 
 
 def pose_img(name):
@@ -140,13 +142,13 @@ def paste_char(im, t, cx, bottom, h, tilt=True):
     name = CUR['pose']
     c = pose_img(name)
     ph = (t % BEAT) / BEAT
-    bounce = abs(math.sin(math.pi * ph)) * 28
+    bounce = abs(math.sin(math.pi * ph)) * BOUNCE
     if name == 'jump':
-        bounce = abs(math.sin(math.pi * ((t % (BEAT * 2)) / (BEAT * 2)))) * 160
+        bounce = abs(math.sin(math.pi * ((t % (BEAT * 2)) / (BEAT * 2)))) * BOUNCE * 5.7
     pop = 1 + 0.12 * max(0.0, 1 - CUR['pop'] / 0.18)
     if name in CLOSE:                               # 顔のアップ＝下端を画面の下（テロップの裏）へ
-        h, bottom, cx, bounce = 900, H - 120, W / 2, bounce * 0.4
-    ang = math.sin(2 * math.pi * t / (BEAT * 2)) * (4 if tilt else 0)
+        h, bottom, cx, bounce = CLOSE_H, H - 120, W / 2, bounce * 0.4
+    ang = math.sin(2 * math.pi * t / (BEAT * 2)) * (TILT if tilt else 0)
     hh = int(h * pop)
     r = hh / c.height
     c = c.resize((max(1, int(c.width * r)), hh), Image.LANCZOS).rotate(ang, resample=Image.BICUBIC, expand=True)
