@@ -1,3 +1,17 @@
+# ▶▶ 10/4(日) 夜（〜21時台）→ /clear 後の引き継ぎ
+
+```
+⏰ まだやっていない＝22:07 夜の便＝`python tmp/x1004/night.py`（今日発売ぴあのヒール＋TIGET/livePocket今日分の番人→heal＋fold→gate_badge_render→reconcile --new→build_ai_page→compact・結果 tmp/x1004/night.txt）→ 番人が全部0なら git add -u → commit → push（今日3回目）→ plan.md に夜の締め
+   🚨CronCreate のアラームは /clear で消えるかもしれない＝CronList で確かめ、無ければ 22:07 を入れ直す
+✅ X 10/5発売10本は予約済み（20:01〜22:16・主役3本に『カウントダウン未来』の動画）
+📝 10/6発売の主役3本＝できている（明日10/5夕方に予約）＝tmp/x1004/x/posts1006/post01（矢吹奈子・学園祭トーク）・post02（FRUITS ZIPPER ANN X 横アリ・2次先行抽選0:00）・post03（金属バット「六畳駄弁り」＝山口達也は犯罪歴でユーザーが外した→4位繰り上げ）＝独立FC済み（❌0）
+   ・Suno歌詞 tmp/x1004/x/posts1006/suno_lyrics.txt（1曲3番＋サビ・FC済み）＝ユーザーがSunoで作成中（2曲セットで出る＝良いほうを1曲ダウンロード）→ mp3の場所を聞く → transcribe_song.py で時刻 → 番の境で3つに切る → shuyaku_video の karaoke/poses/song を番ごとに（見本 tmp/video/karaoke/make_full_specs.py）→ 試し見 Artifact
+   ・明日のまとめ7本は 17:02 から（10/6発売・素材は pick_1006.json）
+🆕 動画の宿題＝キャラにズームイン・ズームアウト・横スライドの入り方を足す（ユーザー 10/4）
+💳 Suno Pro 契約済み（月払い¥1,500・ダウンロード月20曲＝同じ曲の再ダウンロードは数えない・作るだけなら減らない・支払日にリセット）
+❓ 夜に聞く＝SCANDALまとめ／ZOMBIE FES の畳み（plan 下の朝の欄）
+```
+
 # ▶▶ 10/4(日) 夕方〜夜の X（10/5発売）
 
 ```
