@@ -4,6 +4,14 @@
 ⏰ アラーム4本（CronCreate）＝12:06 昼の便（昼の最遅発売12:00）／17:02 X準備（10/6発売）／19:41 予約の締め／22:07 夜の便
 ✅ 朝のpush（今日1回目・06:2x）＝下の削除・ヒール＋ぴあ発売前 新規36（29002〜29037・保留13＝登録済みらしい tmp/x1005/show_dup.txt）＋足し込み14件43枠／TIGET新着138（28864〜29001・番人138/138）／1部2部2組／番人＝画面0・fold 0・reconcile --new OK37
 ⏳ 裏＝FANY・ZAIKO（tmp/x1005/vendors2.py＝朝のpushを待たせないため一度止めて回し直し）／livePocket（lp_chain.py・投入はまだ）／TIGET138のジャンル独立判定（tmp/x1005/indep_genre）→ 昼に genre_union→assign
+🆕 ユーザー「女川のフェス大きいのに気が付かなかったんだね／e+最近取りに行ってなかったからね」「満遍なく新しいの獲りにいってちょうだい」（07時台）
+   ⏳ e+（9/22以来）＝tmp/x1005/eplus_sweep.py（12ジャンル×受付前・受付中）→ eplus_sweep2.py（festival＝一覧はリンク形なので個別ページから拾う＋未スイープ15ジャンル）
+      途中経過＝受付前 j-pop72・rock92・idol6・visual153…／受付中は j-pop895・rock1264（ぴあ登録済みも e+ の番号では未収録に数わる）＝受付前を先に組み立てる・受付中は分けて
+   ⏳ ぴあ受付中＝pia_open_sweep.py は1本1,000件の壁で音楽・演劇・クラシックが頭打ち → pia_onsale_split_run.py（sg×pf で割って取り直し・tmp/x1005/onsale_<lg>/）
+      仕分け＝split_open.py（受付中の行は発売日が無い＝同じ県の今売っている枠で登録済み判定に直した）→ いま新規467公演・足し込み152 → run_build_open → filter_open → pick_open（open_hold.json＝登録済みらしいを保留）→ merge_open
+   ⏳ 楽天 発売前＝rakuten_sweep.py（sitemap 28,27,26＋特設ページ）
+   ✅ day 手順書に「e+ とぴあ受付中も毎朝」を足した
+✅ livePocket 登録済み1490件の番人→200件ヒール（独立ゲート一致167・残り32は終演）／バッジ0の4件を取り直し（吉井和哉ほか8枠）／FANY・ZAIKO・livePocket 新着45件とTIGET136件を振り分け
 ✅ 削除560（check_expired 672 × 独立再導出560一致・割れた112は残す）→ logs/removed_2026-10-05.md／ぴあヒール7＋安全弁6足し算（消える枠0）／楽天 売り切れ印2・外し1（693高中正義）
 ✅ e+ 発売済み掃除＝直す枠0
 🔧 朝の台本の穴＝morning_local の楽天照合が rakuten_state の「id: …」を拾えず飛んでいた（10/4も）→ tmp/x1005/morning_local.py を直した（明日はこれを写す）
