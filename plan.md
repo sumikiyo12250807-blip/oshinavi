@@ -1,3 +1,12 @@
+# ▶▶ 10/4(日) 夜の締め（22時台）
+
+```
+✅ 夜のpush（今日3回目）＝ぴあ今日発売ヒール49（安全弁10据え置き・枠ゼロ5件は明朝のルーチンで）／TIGET40・livePocket18 番人→heal 全一致／画面の番人0
+🎬 10/6主役3本の動画＝『おしなびで』（Suno・3:06・歌詞 suno_lyrics_v3）を番ごとに3つに切った＝tmp/video/oshinabide/（yabuki・fruitszipper・kinzokubat _1006.mp4）
+   ・背景＝今日のOSHINAVIの画面（site_bg.png・暗く・ゆっくり流れる）＋キラキラ（ユーザー指示）／キャラ＝紺ドレス22ポーズ（poses/）／入り方 zin/zout/sl/sr を shuyaku_video に足した
+   ・試し見 https://claude.ai/artifact/4yHiGW6hNqVaSZyF6hyANZ ＝✅ユーザー採用「これで行きましょう」＝10/5夕方の予約で post01〜03 に付ける（本番は tmp/video/oshinabide/*_1006.mp4）
+```
+
 # ▶▶ 10/4(日) 夜（〜21時台）→ /clear 後の引き継ぎ
 
 ```
