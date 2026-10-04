@@ -1247,6 +1247,72 @@
    "assigned": false,
    "rechecked": true,
    "note": "番人 一致1678・新着側の食い違い0（残りは18334 沼津4×4 10/2公演と月間パス3件の生データ突合＝既存）"
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "morning",
+   "id_from": 28110,
+   "id_to": 28290,
+   "count": 181,
+   "source": "TIGET tmp/x1004/tiget.json（--stop-known 1）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人 181/181一致・ジャンル独立判定→振り分け済み"
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "morning",
+   "id_from": 28291,
+   "id_to": 28338,
+   "count": 48,
+   "source": "FANY tmp/x1004/fany.json",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人 新着側の食い違い0・振り分け済み"
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "morning",
+   "id_from": 28339,
+   "id_to": 28357,
+   "count": 19,
+   "source": "ZAIKO tmp/x1004/zaiko.json",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人2回目 食い違い0・振り分け済み"
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "morning",
+   "id_from": 28358,
+   "id_to": 28452,
+   "count": 95,
+   "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1004/presale_*）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "reconcile --new OK95＋独立ゼロ再導出95/95一致。75件振り分け済み・同名の既存あり20件はツアー判定中（tmp/x1004/merge_research）。保留13件＝登録済みらしい tmp/x1004/pia_hold.json（未投入）。既存12件に55枠足し込み"
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "morning",
+   "id_from": 28453,
+   "id_to": 28454,
+   "count": 2,
+   "source": "e+ 女川町町制施行100周年記念祭（ユーザーの質問から）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "gate_eplus_slots PASS・振り分けはユーザーの確認後"
+  },
+  {
+   "date": "2026-10-04",
+   "slot": "morning",
+   "id_from": 28455,
+   "id_to": 28863,
+   "count": 365,
+   "source": "livePocket tmp/x1004/livepocket.json（--pages 40）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "独立ゲート 一致418のみ投入（409件→日別12組を畳んで365）・振り分け済み"
   }
  ]
 }
