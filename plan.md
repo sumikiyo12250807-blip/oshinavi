@@ -2,14 +2,16 @@
 
 ```
 ⏰ アラーム4本（CronCreate）＝12:06 昼の便（昼の最遅発売12:00）／17:02 X準備（10/6発売）／19:41 予約の締め／22:07 夜の便
-✅ commit（未push）＝削除560（check_expired 672 × 独立再導出560一致・割れた112は残す）→ logs/removed_2026-10-05.md／ぴあヒール7＋安全弁6足し算（消える枠0）／楽天 売り切れ印2・外し1（693高中正義）
+✅ 朝のpush（今日1回目・06:2x）＝下の削除・ヒール＋ぴあ発売前 新規36（29002〜29037・保留13＝登録済みらしい tmp/x1005/show_dup.txt）＋足し込み14件43枠／TIGET新着138（28864〜29001・番人138/138）／1部2部2組／番人＝画面0・fold 0・reconcile --new OK37
+⏳ 裏＝FANY・ZAIKO（tmp/x1005/vendors2.py＝朝のpushを待たせないため一度止めて回し直し）／livePocket（lp_chain.py・投入はまだ）／TIGET138のジャンル独立判定（tmp/x1005/indep_genre）→ 昼に genre_union→assign
+✅ 削除560（check_expired 672 × 独立再導出560一致・割れた112は残す）→ logs/removed_2026-10-05.md／ぴあヒール7＋安全弁6足し算（消える枠0）／楽天 売り切れ印2・外し1（693高中正義）
 ✅ e+ 発売済み掃除＝直す枠0
 🔧 朝の台本の穴＝morning_local の楽天照合が rakuten_state の「id: …」を拾えず飛んでいた（10/4も）→ tmp/x1005/morning_local.py を直した（明日はこれを写す）
 ⏳ 裏＝ぴあ発売前スイープ（tmp/x1005/morning_pia.py）／TIGET・FANY・ZAIKO（morning_vendors.py）／livePocket（lp_chain.py）→ ぴあ新着は split→run_build→filter_built→pick_new→merge_add（tmp/x1005/ に写し済み）
 📝 昼にやること
   ・楽天 FAIL 3＝2808 Baycurrent Classic（通し券の締切）・7344 n.SSign（10/9大阪・10/10福岡の枠がページから消えた＝売り切れか）・17243 関東大学バスケ（シーズン券）＝実ページで確かめる
   ・ぴあヒールの買える枠ゼロ5件＝4373 椎名林檎・5400「ロックンロール」・6525 THE RE:BORN・8394 日食なつこ・27851 巨人CSファースト（10/3〜5開催・終われば翌朝削除）＝mark_soldout で売り切れか見る
-  ・バッジ0（31日より先）67件（昨日41）＝ぴあの照合はスイープ後に reconcile_pia --ids
+  ・バッジ0（31日より先）67件（昨日41）＝reconcile_pia --ids は朝のpushのため途中で止めた＝昼にやり直す（ids は tmp/x1005/zero_badge_ids.txt）
   ・独立チェックの指摘＝「パス」の語がキャンパス・オーパス等の一部で引っかかる（18372〜18459 JARUJARU・14867）＝明日の削除チェックで語の境目を見る
 ```
 

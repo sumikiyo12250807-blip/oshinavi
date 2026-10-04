@@ -1313,6 +1313,28 @@
    "assigned": true,
    "rechecked": true,
    "note": "独立ゲート 一致418のみ投入（409件→日別12組を畳んで365）・振り分け済み"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "morning",
+   "id_from": 28864,
+   "id_to": 29001,
+   "count": 138,
+   "source": "TIGET tmp/x1005/tiget.json（--stop-known 1）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "番人138/138一致。ジャンル独立判定→振り分けは昼"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "morning",
+   "id_from": 29002,
+   "id_to": 29037,
+   "count": 36,
+   "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1005/presale_*）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --new OK37。保留13＝登録済みらしい（tmp/x1005/show_dup.txt）。足し込み14件43枠。翌朝に独立再照合→振り分け"
   }
  ]
 }
