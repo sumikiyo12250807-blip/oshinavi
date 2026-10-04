@@ -113,13 +113,30 @@ def char_img():
     return _char
 
 
+SITE_BG = None                    # 🆕2026-10-04 背景を本物のOSHINAVIの画面に（ユーザー「背景をちゃんとOSHINAVIに」「キラキラはさせて」）＝shuyaku_video が spec の site_bg で入れる
+SITE_DIM, SITE_SPEED = 0.5, 22    # 画面を暗くする割合（前の文字を読ませる）・上へ流れる速さ（px/秒）
+_site = {}
+
+
 def background(t):
-    im = Image.new('RGB', (W, H), DEEP)
-    d = ImageDraw.Draw(im)
-    for y in range(0, H, 8):                       # 縦のグラデーション
-        k = y / H
-        c = tuple(int(DEEP[i] * (1 - k) + PURPLE[i] * k) for i in range(3))
-        d.rectangle([0, y, W, y + 8], fill=c)
+    if SITE_BG:
+        if 'im' not in _site:
+            s = Image.open(SITE_BG).convert('RGB')
+            s = s.resize((W, int(s.height * W / s.width)), Image.LANCZOS)
+            _site['im'] = Image.blend(s, Image.new('RGB', s.size, DEEP), SITE_DIM)
+        s = _site['im']
+        span = max(1, s.height - H)
+        y = int(t * SITE_SPEED) % (2 * span)
+        y = y if y <= span else 2 * span - y        # 下まで行ったら戻る
+        im = s.crop((0, y, W, y + H))
+        d = ImageDraw.Draw(im)
+    else:
+        im = Image.new('RGB', (W, H), DEEP)
+        d = ImageDraw.Draw(im)
+        for y in range(0, H, 8):                   # 縦のグラデーション
+            k = y / H
+            c = tuple(int(DEEP[i] * (1 - k) + PURPLE[i] * k) for i in range(3))
+            d.rectangle([0, y, W, y + 8], fill=c)
     rnd = random.Random(7)                          # きらきら（ネオン色・拍で明滅）
     pulse = 0.5 + 0.5 * math.cos(2 * math.pi * t / BEAT)
     for _ in range(90):
@@ -149,10 +166,10 @@ def paste_char(im, t, cx, bottom, h, tilt=True):
     if name in CLOSE:                               # 顔のアップ＝下端を画面の下（テロップの裏）へ
         h, bottom, cx, bounce = CLOSE_H, H - 120, W / 2, bounce * 0.4
     ang = math.sin(2 * math.pi * t / (BEAT * 2)) * (TILT if tilt else 0)
-    hh = int(h * pop)
+    hh = int(h * pop * CUR.get('zoom', 1.0))        # 🆕2026-10-04 入り方（ズームイン・アウト）＝shuyaku_video が CUR['zoom'] / CUR['dx'] を入れる
     r = hh / c.height
     c = c.resize((max(1, int(c.width * r)), hh), Image.LANCZOS).rotate(ang, resample=Image.BICUBIC, expand=True)
-    im.paste(c, (int(cx - c.width / 2), int(bottom - c.height - bounce)), c)
+    im.paste(c, (int(cx - c.width / 2 + CUR.get('dx', 0.0)), int(bottom - c.height - bounce)), c)
 
 
 def glow_text(im, xy, text, sz, fill=None, glow=CYAN, anchor='mm', stroke=0, grad=(CYAN, PINK)):
