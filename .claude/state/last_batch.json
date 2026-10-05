@@ -1332,9 +1332,9 @@
    "id_to": 29037,
    "count": 36,
    "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1005/presale_*）",
-   "assigned": false,
-   "rechecked": false,
-   "note": "reconcile --new OK37。保留13＝登録済みらしい（tmp/x1005/show_dup.txt）。足し込み14件43枠。翌朝に独立再照合→振り分け"
+   "assigned": true,
+   "rechecked": true,
+   "note": "reconcile --new OK37。保留13＝登録済みらしい（tmp/x1005/show_dup.txt）。足し込み14件43枠。翌朝に独立再照合→振り分け ／10/6朝＝独立ジャンル判定412件＋抜き取り40件の独立再導出（締切40/40一致）→411件振り分け（29253 Da-iCE は抽選結果待ちで保留）。logs/assigned_2026-10-06.md"
   },
   {
    "date": "2026-10-05",
@@ -1387,9 +1387,31 @@
    "id_to": 29466,
    "count": 375,
    "source": "ぴあ受付中スイープ（0201全ジャンル＋0101をsg×pfで割って1,000件の壁を越えた・tmp/x1005/pia_open・onsale_*）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "保留244（登録済みらしい242＋リレーマラソンのエントリー・コスプレ参加券）tmp/x1005/open_hold.json。足し込み313件836枠。照合 open_rec_new/open_rec_merge.txt。翌朝に独立再照合→振り分け ／10/6朝＝独立ジャンル判定412件＋抜き取り40件の独立再導出（締切40/40一致）→411件振り分け（29253 Da-iCE は抽選結果待ちで保留）。logs/assigned_2026-10-06.md"
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "morning",
+   "id_from": 29697,
+   "id_to": 29830,
+   "count": 134,
+   "source": "TIGET tmp/x1006/tiget.json（--stop-known 1）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人134/134一致（29727は売り切れ印を heal で当てて一致）・ジャンル独立判定→振り分け済み"
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "morning",
+   "id_from": 29831,
+   "id_to": 29895,
+   "count": 65,
+   "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1006/presale_*）",
    "assigned": false,
    "rechecked": false,
-   "note": "保留244（登録済みらしい242＋リレーマラソンのエントリー・コスプレ参加券）tmp/x1005/open_hold.json。足し込み313件836枠。照合 open_rec_new/open_rec_merge.txt。翌朝に独立再照合→振り分け"
+   "note": "reconcile --ids OK84（足し込み24件と合わせて）。登録済みらしい17＝足し込み4・同じ中身6・保留7（tmp/x1006/pick_new.py の注記）。翌朝に独立再照合→振り分け"
   }
  ]
 }
