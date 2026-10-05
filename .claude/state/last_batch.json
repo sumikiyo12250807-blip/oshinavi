@@ -1368,6 +1368,28 @@
    "assigned": true,
    "rechecked": true,
    "note": "独立ゲート一致32ページ→23件（日別4件を1つに畳んで20件）・振り分け済み"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "afternoon",
+   "id_from": 29083,
+   "id_to": 29091,
+   "count": 9,
+   "source": "楽天 発売前スイープ（sitemap28,27,26＋特設ページ）",
+   "assigned": false,
+   "rechecked": true,
+   "note": "reconcile_rakuten OK9。ぴあ以外＝振り分けはユーザー確認後"
+  },
+  {
+   "date": "2026-10-05",
+   "slot": "afternoon",
+   "id_from": 29092,
+   "id_to": 29466,
+   "count": 375,
+   "source": "ぴあ受付中スイープ（0201全ジャンル＋0101をsg×pfで割って1,000件の壁を越えた・tmp/x1005/pia_open・onsale_*）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "保留244（登録済みらしい242＋リレーマラソンのエントリー・コスプレ参加券）tmp/x1005/open_hold.json。足し込み313件836枠。照合 open_rec_new/open_rec_merge.txt。翌朝に独立再照合→振り分け"
   }
  ]
 }
