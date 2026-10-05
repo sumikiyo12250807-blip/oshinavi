@@ -1,3 +1,12 @@
+# ▶▶ 10/5(月) 昼の便（12:06〜・途中経過）
+
+```
+⏳ tmp/x1005/noon.py＝ぴあ今日発売ヒール（走査→取り直し）＋TIGET/ZAIKO/livePocket/FANY の今日分 heal → e+ heal_eplus_started（e+組み立ての後）
+⏳ e+ 発売前 305候補 → build（29092〜）→ gate_eplus_slots 中 → 投入 → reconcile_eplus --ids（ぴあ以外＝振り分けはユーザー確認後）
+⏸ ぴあ受付中の分割取り直し（pia_onsale_split_run.py）＝音楽は終了・演劇/クラシック途中で止めた（昼ヒールと重ならないよう）＝ファイルがある分は飛ばすので再実行で続きから
+✅ 楽天 新着9件（29083〜29091・reconcile_rakuten OK9・ユーザー確認待ち）
+```
+
 # ▶▶ 10/5(月) 朝の便（05:5x〜・途中経過）
 
 ```
