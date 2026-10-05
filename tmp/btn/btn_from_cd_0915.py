@@ -53,7 +53,8 @@ JOBS = [
     ("aladdin", "アラジングッズ", None, None, None),
     ("denjiro", "でんじろう先生", None, None, None),
     ("goodsmiru", "グッズを見る", None, None, None),
-    ("miki_chosho", "三木大雲の著書", None, None, None),   # 9/22 夜 ユーザー「著書はぼやぼやしてる／三木大雲の著書にして」（2文字だと光でにじんで見える）
+    ("miki_chosho", "三木大雲の著書", None, None, None),   # 9/22 夜 ユーザー「著書はぼやぼやしてる／三木大雲の著書にして」（2文字だと光でにじんで見える）
+    ("lovemedo_chosho", "Love Me Doの著書", None, None, None),   # 10/6 ユーザー「Love Me Do は著書が出てるからそれを出してほしい」
     ("spyfamily", "SPY×FAMILYグッズ", None, None, None),   # 9/26 夜 ユーザー「ボタンそろえて作ってね」（ミュージカル『SPY×FAMILY 2』）
     ("wr01", "新日本プロレスグッズ", None, None, None),   # 9/27 プロレス団体のグッズ（tmp/btn_tpl/wrestling_goods.json）
     ("wr02", "全日本プロレスグッズ", None, None, None),
