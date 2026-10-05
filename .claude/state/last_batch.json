@@ -1412,6 +1412,28 @@
    "assigned": false,
    "rechecked": false,
    "note": "reconcile --ids OK84（足し込み24件と合わせて）。登録済みらしい17＝足し込み4・同じ中身6・保留7（tmp/x1006/pick_new.py の注記）。翌朝に独立再照合→振り分け"
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "morning",
+   "id_from": 29896,
+   "id_to": 29914,
+   "count": 19,
+   "source": "FANY 11（tmp/x1006/fany.json）・ZAIKO 8（tmp/x1006/zaiko.json）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "FANY番人→heal652→残りは終演・締切済み／ZAIKO番人→heal17→食い違い0。ジャンル独立判定→振り分け済み"
+  },
+  {
+   "date": "2026-10-06",
+   "slot": "morning",
+   "id_from": 29915,
+   "id_to": 30527,
+   "count": 558,
+   "source": "livePocket tmp/x1006/livepocket.json（--pages 40）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "未登録623→独立ゲート一致620→投入613→日別28組を畳んで558。ジャンル独立判定（unsure24）→振り分け済み"
   }
  ]
 }
