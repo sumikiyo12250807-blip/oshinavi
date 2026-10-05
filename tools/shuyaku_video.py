@@ -115,6 +115,9 @@ def render(t, S):
             d.text((x0 + 40, 880), '%s %s' % (S['when'].replace('明日 ', ''), S['kind']), font=M.font(fit(S['when'] + S['kind'], 44, 780)), fill=(255, 140, 90), anchor='lm')
             d.text((x0 + 40, 950), (S.get('lines') or [''])[0], font=M.font(fit((S.get('lines') or [''])[0], 40, 780)), fill=(200, 200, 210), anchor='lm')
         M.paste_char(im, t, W / 2 + 260, 1820, 640)
+    elif name in HOWTO:
+        howto(im, d, name, u, S)
+        M.paste_char(im, t, W / 2 + 270, 1840, 620)
     else:
         M.glow_text(im, (W / 2, 420), 'oshinavi.jp', int(80 + 50 * M.ease(u / 0.5)), fill=M.WHITE, glow=M.WHITE)   # URLは光る白（memory）
         d.text((W / 2, 600), '推しのチケット発売日、見逃さない', font=M.font(56), fill=M.WHITE, anchor='mm', stroke_width=5, stroke_fill=(90, 0, 140))
@@ -130,6 +133,61 @@ def render(t, S):
     if t > DUR - 0.6:
         im = Image.blend(im, Image.new('RGB', im.size, M.DEEP), min(1.0, (t - (DUR - 0.6)) / 0.6 * 0.85))
     return im
+
+
+# 🆕2026-10-05 使い方の場面（ユーザー「歌詞の中にオシナビの使い方とかもいれて、動画の画像にも使い方の説明とか入れてみて」
+#   ／「みんなすぐいなくなっちゃうみたいだから」）＝本物の画面の切り抜きを大きく出し、押す所を点滅させて説明を出す。
+#   切り抜きは tmp/video/howto/cut_*.png（tmp/x1005/x/shoot_howto.py・cut_howto.py）。枠は切り抜きの中の割合
+HOWTO_DIR = 'tmp/video/howto'
+HOWTO = {
+    'how_search': ('search', (0.02, 0.08, 0.98, 0.92), 'STEP1 推しの名前を入れる', '検索窓に アーティスト名・イベント名'),
+    'how_status': ('status', (0.283, 0.18, 0.49, 0.95), 'STEP2 今週発売を押す', '今週発売のチケットだけが並ぶ'),
+    'how_area': ('area', (0.12, 0.04, 0.95, 0.97), 'STEP3 地方を選ぶ', 'あなたの街の公演だけにしぼれる'),
+    'how_today': ('card_today', (0.045, 0.64, 0.21, 0.90), '本日発売は赤', '今日から買えるチケット'),
+    'how_count': ('card_count', (0.045, 0.72, 0.34, 0.94), 'あと何日かひと目で', '発売開始まで あと◯日'),
+}
+
+
+def howto(im, d, name, u, S):
+    key, box, title, cap = HOWTO[name]
+    c = Image.open(os.path.join(HOWTO_DIR, 'cut_%s.png' % key)).convert('RGB')
+    w = 1000
+    r = w / c.width
+    c = c.resize((w, int(c.height * r)), Image.LANCZOS)
+    a = M.ease(u / 0.45)
+    x0 = int((W - w) / 2 + (1 - a) * W)
+    top = 470
+    # 背景もOSHINAVIの画面なので、切り抜きが溶けないように上半分を暗く落とす
+    reg = (0, 180, W, top + c.height + 150)
+    im.paste(Image.blend(im.crop(reg), Image.new('RGB', (reg[2] - reg[0], reg[3] - reg[1]), (8, 4, 20)), 0.82), reg[:2])
+    M.glow_text(im, (W / 2, 300), title, fit(title, 78, 1000), grad=(M.GOLD, M.PINK), glow=M.PINK)
+    glow = Image.new('RGBA', (c.width + 60, c.height + 60), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).rounded_rectangle([20, 20, c.width + 40, c.height + 40], 24, outline=M.CYAN + (255,), width=10)
+    from PIL import ImageFilter
+    im.paste(glow.filter(ImageFilter.GaussianBlur(12)), (x0 - 30, top - 30), glow.filter(ImageFilter.GaussianBlur(12)))
+    im.paste(c, (x0, top))
+    d = ImageDraw.Draw(im)
+    if name == 'how_search' and u > 0.5:                # 検索窓に主役の名前を打つ
+        q = S.get('name', '')
+        n = min(len(q), int((u - 0.5) / 0.12))
+        h = c.height
+        d.rectangle([x0 + 90, top + h * 0.28, x0 + w - 60, top + h * 0.72], fill=(14, 14, 18))
+        d.text((x0 + 100, top + h / 2), q[:n] + ('|' if int(u * 3) % 2 == 0 else ''), font=M.font(fit(q, 54, 780)), fill=M.WHITE, anchor='lm')
+    if u > 0.45:                                       # 押す所を点滅＋指の丸
+        p = 0.5 + 0.5 * math.sin((u - 0.45) * 2 * math.pi * 1.6)
+        bx0, by0, bx1, by1 = x0 + box[0] * w, top + box[1] * c.height, x0 + box[2] * w, top + box[3] * c.height
+        col = tuple(int(M.GOLD[i] * p + M.PINK[i] * (1 - p)) for i in range(3))
+        d.rounded_rectangle([bx0 - 8, by0 - 8, bx1 + 8, by1 + 8], 18, outline=col, width=9)
+        cx, cy = (bx0 + bx1) / 2, by1 + 10
+        rr = 26 + 12 * p
+        d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], outline=M.WHITE, width=6)
+        d.ellipse([cx - 12, cy - 12, cx + 12, cy + 12], fill=M.WHITE)
+    yb = top + c.height + 70
+    k = M.ease((u - 0.7) / 0.4)
+    if k > 0:
+        tw = d.textlength(cap, font=M.font(fit(cap, 56, 920)))
+        d.rounded_rectangle([W / 2 - tw / 2 - 40, yb - 50, W / 2 + tw / 2 + 40, yb + 50], 30, fill=(14, 6, 34), outline=M.CYAN, width=5)
+        d.text((W / 2, yb), cap, font=M.font(fit(cap, 56, 920)), fill=M.WHITE, anchor='mm')
 
 
 def karaoke(im, t, segs):
@@ -181,7 +239,7 @@ def render_all(S):
     out = S['out']
     os.makedirs(os.path.dirname(out), exist_ok=True)
     p = subprocess.Popen([ff, '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', '%dx%d' % (W, H), '-r', str(FPS), '-i', '-',
-                          '-ss', str(SONG_START), '-i', M.SONG, '-t', str(DUR), '-af', 'afade=t=out:st=%.1f:d=0.8' % (DUR - 0.8),
+                          '-ss', str(SONG_START), '-i', M.SONG, '-t', str(DUR), '-af', AFADE,
                           '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '23', '-c:a', 'aac', '-b:a', '128k',
                           '-movflags', '+faststart', '-shortest', out], stdin=subprocess.PIPE, stderr=subprocess.DEVNULL)
     for i in range(int(DUR * FPS)):
@@ -214,6 +272,10 @@ if __name__ == '__main__':
         M.BEAT = BEAT = float(S['beat'])
     if S.get('calm'):                                 # 揺れを小さく（ユーザー「動かしすぎかも」2026-10-04）
         M.BOUNCE, M.TILT, M.CLOSE_H = 6, 1.0, 640
+    # 🆕2026-10-05 音の入りと終わり（ユーザー「2曲目が中途半端で始まって、半端に終わる感じ　フェイドアウトうまく入れると聞きやすい」）
+    #   spec の fade_in（秒・既定0）と fade_out（秒・既定0.8）。切る位置は曲の静かな所（loudness.py で測る）
+    fi, fo = float(S.get('fade_in', 0)), float(S.get('fade_out', 0.8))
+    AFADE = ('afade=t=in:st=0:d=%.2f,' % fi if fi > 0 else '') + 'afade=t=out:st=%.2f:d=%.2f' % (DUR - fo, fo)
     if a.board:
         board(S, os.path.splitext(a.spec)[0] + '_board.png')
     if a.render:
