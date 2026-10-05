@@ -5,7 +5,8 @@
 📋 ぴあヒールの買える枠ゼロ135件＝消していない（発売時刻前・売り切れ混在）＝明朝のルーチンで
 ⏳ FANY 今日発売618件が一覧の古さで当たっていない＝tmp/x1005/fany_noon.json を取り直し中 → 夜に heal_fany --src fany_noon.json --apply
 ⏳ e+ 発売前230件＝gate_eplus_slots のログが末尾しか残らず外す件を取り切れていない → --json 付きで番人をやり直してから投入（e+ sweep2 の後・夜のpushへ）
-⏳ ぴあ受付中の分割取り直しを再開（演劇・クラシック）→ split_open → run_build_open …
+✅ ぴあ受付中＝新着375件（29092〜29466・reconcile --new OK412）＋既存313件へ836枠（足し込み側 STALE90のうち87は元から登録にあった枠＝今回のせいではない・3は今日のうちに消えた枠）／取りこぼし5を直した（1477・2158・4041・4086）／7098 AKIHIDE の千秋楽を11/15に
+📝 明朝に見る＝4086 ハラミちゃん 福井 AnyPASS（〜10/25）がぴあの取り直しに出ない＝pia_statustext で売り切れか受付終了か／足し込み側の STALE 87件（元から）＝売り切れの印を付けるか mark_soldout で
 ⏳ tmp/x1005/noon.py＝ぴあ今日発売ヒール（走査→取り直し）＋TIGET/ZAIKO/livePocket/FANY の今日分 heal → e+ heal_eplus_started（e+組み立ての後）
 ⏳ e+ 発売前 305候補 → build（29092〜）→ gate_eplus_slots 中 → 投入 → reconcile_eplus --ids（ぴあ以外＝振り分けはユーザー確認後）
 ⏸ ぴあ受付中の分割取り直し（pia_onsale_split_run.py）＝音楽は終了・演劇/クラシック途中で止めた（昼ヒールと重ならないよう）＝ファイルがある分は飛ばすので再実行で続きから
