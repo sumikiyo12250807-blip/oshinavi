@@ -1,6 +1,11 @@
-# ▶▶ 10/5(月) 昼の便（12:06〜・途中経過）
+# ▶▶ 10/5(月) 昼の便（12:06〜）
 
 ```
+✅ 昼のpush（今日2回目・13時台）＝ぴあヒール25＋安全弁51足し算（消える枠0）／TIGET56・livePocket63・e+締切3／大江裕29005の2枠（reconcile --new のMISSING）／楽天新着9・FANY/ZAIKO/livePocket新着・振り分け181件・livePocketヒール169・バッジ0の4件も同乗
+📋 ぴあヒールの買える枠ゼロ135件＝消していない（発売時刻前・売り切れ混在）＝明朝のルーチンで
+⏳ FANY 今日発売618件が一覧の古さで当たっていない＝tmp/x1005/fany_noon.json を取り直し中 → 夜に heal_fany --src fany_noon.json --apply
+⏳ e+ 発売前230件＝gate_eplus_slots のログが末尾しか残らず外す件を取り切れていない → --json 付きで番人をやり直してから投入（e+ sweep2 の後・夜のpushへ）
+⏳ ぴあ受付中の分割取り直しを再開（演劇・クラシック）→ split_open → run_build_open …
 ⏳ tmp/x1005/noon.py＝ぴあ今日発売ヒール（走査→取り直し）＋TIGET/ZAIKO/livePocket/FANY の今日分 heal → e+ heal_eplus_started（e+組み立ての後）
 ⏳ e+ 発売前 305候補 → build（29092〜）→ gate_eplus_slots 中 → 投入 → reconcile_eplus --ids（ぴあ以外＝振り分けはユーザー確認後）
 ⏸ ぴあ受付中の分割取り直し（pia_onsale_split_run.py）＝音楽は終了・演劇/クラシック途中で止めた（昼ヒールと重ならないよう）＝ファイルがある分は飛ばすので再実行で続きから
