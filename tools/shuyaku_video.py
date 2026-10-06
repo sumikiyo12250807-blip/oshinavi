@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import oshimade_mv as M                       # noqa: E402
 
 W, H, FPS, DUR, BEAT = M.W, M.H, M.FPS, 10.0, M.BEAT
+KARA_SIZE, KARA_Y = 64, 1110              # 歌詞の文字の大きさと位置（spec の kara_size / kara_y で変える）
 SONG_START = 0.0                          # 曲のどこから使うか（spec の song_start で変える）
 SCENES = [(0.0, 'when'), (2.6, 'who'), (6.4, 'search'), (8.4, 'url')]
 CHOREO = {'when': ['jump', 'hands_up', 'jump'], 'who': ['diag_f', 'wave', 'front'],
@@ -118,6 +119,13 @@ def render(t, S):
     elif name in HOWTO:
         howto(im, d, name, u, S)
         M.paste_char(im, t, W / 2 + 270, 1840, 620)
+    elif name.startswith('list:'):                    # 🆕2026-10-06 まとめ動画＝発売時刻ごとの一覧（ユーザー「発売時間ごとに」）
+        list_scene(im, name[5:], t, u, S)
+        M.paste_char(im, t, W / 2, 1750, 900)
+    elif name == 'title':                             # 🆕まとめ動画の頭＝「明日 10/8(木) 発売 J-POP」
+        M.glow_text(im, (W / 2, 330), S['when'], fit(S['when'], int(40 + 60 * M.ease(u / 0.8)), 1000))
+        M.glow_text(im, (W / 2, 520), S['kind'], int(60 + 80 * M.ease((u - 0.4) / 0.8)), grad=(M.GOLD, M.PINK), glow=M.PINK)
+        M.paste_char(im, t, W / 2, 1700, 950)
     else:
         M.glow_text(im, (W / 2, 420), 'oshinavi.jp', int(80 + 50 * M.ease(u / 0.5)), fill=M.WHITE, glow=M.WHITE)   # URLは光る白（memory）
         d.text((W / 2, 600), '推しのチケット発売日、見逃さない', font=M.font(56), fill=M.WHITE, anchor='mm', stroke_width=5, stroke_fill=(90, 0, 140))
@@ -190,6 +198,32 @@ def howto(im, d, name, u, S):
         d.text((W / 2, yb), cap, font=M.font(fit(cap, 56, 920)), fill=M.WHITE, anchor='mm')
 
 
+def list_scene(im, key, t, u, S):
+    """発売時刻ごとの一覧。S['blocks'][key] = {'title': '朝 10:00 発売', 'rows': [[名前, 県, 先行なら'先行', 読み始めの時刻], …]}
+    歌っている行を金の枠で光らせる（読み上げと画面を合わせる）。"""
+    B = S['blocks'][key]
+    d = ImageDraw.Draw(im)
+    reg = (0, 170, W, 1080)                           # 背景の画面と文字が混ざらないように暗く落とす
+    im.paste(Image.blend(im.crop(reg), Image.new('RGB', (reg[2], reg[3] - reg[1]), (8, 4, 20)), 0.78), reg[:2])
+    M.glow_text(im, (W / 2, 260), B['title'], fit(B['title'], 92, 1000), grad=(M.GOLD, M.PINK), glow=M.PINK)
+    rows = B['rows']
+    rh = min(130, int(700 / max(1, len(rows))))
+    y = 400
+    for i, r in enumerate(rows):
+        name, pref, tag, rt = r[0], r[1], r[2], r[3]
+        a = M.ease((u - 0.15 * i) / 0.35)
+        if a <= 0:
+            continue
+        x = W / 2 + (1 - a) * 500
+        on = rt <= t < (rows[i + 1][3] if i + 1 < len(rows) else 1e9)
+        d.rounded_rectangle([x - 490, y, x + 490, y + rh - 14], 22, fill=(40, 20, 60) if on else (14, 6, 34), outline=M.GOLD if on else M.CYAN, width=7 if on else 4)
+        nsz = fit(name, min(54, int(rh * 0.42)), 600)
+        d.text((x - 460, y + (rh - 14) / 2), name, font=M.font(nsz), fill=M.GOLD if on else M.WHITE, anchor='lm')
+        right = pref + ('  先行' if tag else '')
+        d.text((x + 460, y + (rh - 14) / 2), right, font=M.font(fit(right, min(44, int(rh * 0.34)), 330)), fill=(255, 140, 90) if tag else (210, 210, 225), anchor='rm')
+        y += rh
+
+
 def karaoke(im, t, segs):
     """歌詞を曲に合わせて1文字ずつ色でなぞる。segs = [{start, end, lines:[行,…], times:[文字ごとの時刻]}]（改行・空白を除いた文字順）"""
     seg = None
@@ -201,9 +235,9 @@ def karaoke(im, t, segs):
     d = ImageDraw.Draw(im)
     k = 0
     for j, ln in enumerate(seg['lines'][:2]):
-        sz = fit(ln, 64, 980)
+        sz = fit(ln, KARA_SIZE, 1000)
         f = M.font(sz)
-        y = 1110 + j * 90
+        y = KARA_Y + j * int(KARA_SIZE * 1.4)
         x = W / 2 - d.textlength(ln, font=f) / 2
         for ch in ln:
             w = d.textlength(ch, font=f)
@@ -211,7 +245,7 @@ def karaoke(im, t, segs):
                 done = t >= seg['times'][k]
                 k += 1
                 col = M.GOLD if done else M.WHITE
-                d.text((x, y), ch, font=f, fill=col, anchor='lm', stroke_width=7, stroke_fill=(150, 0, 110) if done else (70, 0, 110))
+                d.text((x, y), ch, font=f, fill=col, anchor='lm', stroke_width=max(7, sz // 9), stroke_fill=(150, 0, 110) if done else (70, 0, 110))
             x += w
 
 
@@ -231,6 +265,8 @@ def board(S, path):
         b.paste(render(tt, S).resize((sw, sh), Image.LANCZOS), (12 + i * (sw + 12), 12))
     b.save(path)
     print('絵コンテ', path)
+    for i, tt in enumerate(shots):                    # 🆕1コマずつ（幅540）も残す＝試し見のページで携帯でも読める
+        render(tt, S).resize((540, int(540 * H / W)), Image.LANCZOS).save(os.path.splitext(path)[0] + '_%02d.png' % i)
 
 
 def render_all(S):
@@ -274,6 +310,15 @@ if __name__ == '__main__':
         M.BOUNCE, M.TILT, M.CLOSE_H = 6, 1.0, 640
     # 🆕2026-10-05 音の入りと終わり（ユーザー「2曲目が中途半端で始まって、半端に終わる感じ　フェイドアウトうまく入れると聞きやすい」）
     #   spec の fade_in（秒・既定0）と fade_out（秒・既定0.8）。切る位置は曲の静かな所（loudness.py で測る）
+    # 🆕2026-10-06 まとめ動画（ユーザー「歌詞の文字を大きめでカラオケみたいに」「キャラは小さめにね」）
+    KARA_SIZE, KARA_Y = int(S.get('kara_size', KARA_SIZE)), int(S.get('kara_y', KARA_Y))
+    if S.get('char_scale'):                           # キャラの高さを何倍にするか＋置く場所（右下の隅）
+        _pc, _cs, _cp = M.paste_char, float(S['char_scale']), S.get('char_pos')
+        def _small(im, t, cx, bottom, h, tilt=True):
+            if _cp:
+                cx, bottom = _cp
+            return _pc(im, t, cx, bottom, h * _cs, tilt)
+        M.paste_char = _small
     fi, fo = float(S.get('fade_in', 0)), float(S.get('fade_out', 0.8))
     AFADE = ('afade=t=in:st=0:d=%.2f,' % fi if fi > 0 else '') + 'afade=t=out:st=%.2f:d=%.2f' % (DUR - fo, fo)
     if a.board:
