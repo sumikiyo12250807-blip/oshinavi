@@ -20,7 +20,8 @@
 📝 今夜のX（10/7発売）のまとめ素材＝tmp/x1006/x/material.md（主役3本 26570 VIVANT・26339 見取り図・4898 コーラスラインは外してある）／動画はユーザーOK（「動画はいい感じよ」）
 ✅ livePocket 新着558（29915〜30527）＝未登録623→独立ゲート一致620→投入613→日別28組を畳む→ジャンル独立判定→振り分け済み
 ✅ 🆕Love Me Do の9件に「Love Me Doの著書」ボタン（ユーザー指示・Amazon 本『守護龍占術』検索・img/btn2_lovemedo_chosho.png）
-⏳ livePocket 登録済み全件の番人（tmp/x1006/lp_gate_all.txt・約1時間）→ 鳴った分を heal_livepocket
+⏳ livePocket 登録済み全件の番人＝一致1947・食い違い86・生データ13・取れず2 → heal_livepocket → 独立ゲート（tmp/x1006/lp_heal.py）
+📝 昼の便の台本 tmp/x1006/noon.py・夜 tmp/x1006/night.py（写し済み）
 ✅ e+ 受付前 全26ジャンル＋festival → 候補135→ビルド113→gate_eplus_slots で外す6→107
    ・同じ名前の登録あり29（DEZERT・さだまさし・ツアーの別会場など）＝投入せず tmp/x1006/eplus/same_hold.json（既存への足し込みは後で）
    ・新着に69件（30528〜30605・reconcile_eplus FAIL9件は外して tmp/x1006/eplus/fail_hold.json）＝ぴあ以外＝振り分けはユーザー確認後／ジャンル札 eplus_genre 中
