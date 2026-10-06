@@ -18,7 +18,9 @@
    ② e+ の「同じ名前の登録あり」38件（tmp/x1006/eplus/same_hold.json 29＋rock_same_hold.json 9）を既存へ足し込むか
    ③ 2808 Baycurrent Classic＝楽天の単日券4枚を「〜10/10」1枚にまとめている＝分けるか
    ④ 動画をどのまとめに付けるか（上）
-🎬 J-POPまとめ動画 10/8＝曲 tmp/video/matome1008/song.mp3（2:09）・spec make_spec.py → 絵コンテ https://claude.ai/artifact/323H3ntu2KVqH7ucvgGtfo ＝ユーザーの採否待ち（OKなら shuyaku_video.py --render → 10MB未満に縮める）
+🎬 J-POPまとめ動画 10/8＝曲 tmp/video/matome1008/song.mp3（2:09）・spec make_spec.py → 絵コンテ https://claude.ai/artifact/323H3ntu2KVqH7ucvgGtfo（✅ユーザー「いいわね」）
+   ✅ 書き出し済み tmp/video/matome1008/jpop_1008_x.mp4（8.77MB）＝試し見 https://claude.ai/artifact/K2Roc92j1RTzrWkG9HKStq ＝✅ユーザー採用「いい感じ　ここまでできるのね」→ 10/7夕方の X で J-POPまとめに付ける
+   ・名前の場面は本物のOSHINAVIのカード15枚（cards/・shoot_cards.py）＋10/8の日付を光らせる
    ・道具に足した＝shuyaku_video.py の kara_size/kara_y（歌詞を大きく）・char_scale/char_pos（キャラ小さく右下）・list:◯ 場面（発売時刻ごとの一覧・歌っている行を金枠）・title 場面・絵コンテの1コマ書き出し
 🎬🆕 ユーザー決定（19時台）「明日からまとめに動画・J-POPだけ・20件まで読み上げ・発売時間ごと・その他何件あるわ」
    ＝10/8分の歌詞 tmp/x1006/x/suno_matome_jpop_1008.txt（17行＝20件以内なので全部読む・同じ組の2行は1回）→ 独立FC ❌0・⚠️6（読みの出典なし＝野口亮・松永拓也・OMOCHI組・D.O.L・SHO/KAKERU/TOMOKI・中村花音はほぼ確実）→ ユーザーに見せた
