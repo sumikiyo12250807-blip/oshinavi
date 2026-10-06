@@ -25,7 +25,9 @@
 ✅ e+ 受付前 全26ジャンル＋festival → 候補135→ビルド113→gate_eplus_slots で外す6→107
    ・同じ名前の登録あり29（DEZERT・さだまさし・ツアーの別会場など）＝投入せず tmp/x1006/eplus/same_hold.json（既存への足し込みは後で）
    ・新着に69件（30528〜30605・reconcile_eplus FAIL9件は外して tmp/x1006/eplus/fail_hold.json）＝ぴあ以外＝振り分けはユーザー確認後／ジャンル札 eplus_genre 中
-   ・rock-indies が rc=1 で0件（昨日92）＝取り直す
+   ・rock-indies 取り直し＝ビルド21→番人で外す2→19＝同名9は保留（rock_same_hold.json）・投入10→reconcile_eplus FAIL5を外して新着5件（30606〜30608・30610・30613）
+   ❓夜に聞く＝e+ の「同じ名前の登録あり」38件（same_hold.json 29＋rock_same_hold.json 9）を既存エントリへ足し込むか（DEZERT・さだまさし・ORANGE RANGE の別会場など）
+🐦 X 10/7発売 主役3本＝posts1007/post01〜03（独立FC ❌0・⚠️3を直した）＝ユーザーに全文を見せた（11時台）・OK待ち／まとめは17:02から
 ⏳ e+ 受付前（rock-indies が rc=1 で0件＝e+混雑？取り直す）
 ⏳ e+ 受付前 全26ジャンル＋festival（tmp/x1006/eplus_chain.py）→ pre_go.json → 投入は昼（受付中は今日は回していない）
 ⏳ TIGET 144件組み上がり／FANY・ZAIKO 集め中（投入は index.html の書き込みが空いてから）
