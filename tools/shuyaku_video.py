@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import oshimade_mv as M                       # noqa: E402
 
 W, H, FPS, DUR, BEAT = M.W, M.H, M.FPS, 10.0, M.BEAT
-KARA_SIZE, KARA_Y = 64, 1110              # 歌詞の文字の大きさと位置（spec の kara_size / kara_y で変える）
+KARA_SIZE, KARA_Y, KARA_W = 64, 1110, 1000   # 歌詞の文字の大きさ・位置・最大の幅（spec の kara_size / kara_y / kara_w で変える）
 SONG_START = 0.0                          # 曲のどこから使うか（spec の song_start で変える）
 SCENES = [(0.0, 'when'), (2.6, 'who'), (6.4, 'search'), (8.4, 'url')]
 CHOREO = {'when': ['jump', 'hands_up', 'jump'], 'who': ['diag_f', 'wave', 'front'],
@@ -122,6 +122,8 @@ def render(t, S):
     elif name.startswith('list:'):                    # 🆕2026-10-06 まとめ動画＝発売時刻ごとの一覧（ユーザー「発売時間ごとに」）
         list_scene(im, name[5:], t, u, S)
         M.paste_char(im, t, W / 2, 1750, 900)
+    elif name.startswith('shot:'):                    # 🆕2026-10-06 ユーザーのスクショで操作して見せる（押す所を光らせる・キャラが押す）
+        shot_scene(im, name[5:], t, u, L, S)
     elif name == 'title':                             # 🆕まとめ動画の頭＝「明日 10/8(木) 発売 J-POP」
         M.glow_text(im, (W / 2, 330), S['when'], fit(S['when'], int(40 + 60 * M.ease(u / 0.8)), 1000))
         M.glow_text(im, (W / 2, 520), S['kind'], int(60 + 80 * M.ease((u - 0.4) / 0.8)), grad=(M.GOLD, M.PINK), glow=M.PINK)
@@ -198,6 +200,70 @@ def howto(im, d, name, u, S):
         d.text((W / 2, yb), cap, font=M.font(fit(cap, 56, 920)), fill=M.WHITE, anchor='mm')
 
 
+ORIG_PASTE = None                                    # キャラを小さく右下に寄せる前の paste_char（押す場面ではバッジの横に立たせる）
+
+
+def shot_scene(im, key, t, u, L, S):
+    """S['shots'][key] = {'img': スクショ, 'crop': [x0,y0,x1,y1], 'boxes': [[x0,y0,x1,y1], …]（元画像の座標）, 'title': 上の見出し, 'tap': True}
+    スクショを幅900で大きく出し、boxes を金とピンクで点滅させる。tap なら boxes を順にキャラが押す（指の丸が広がる）。"""
+    from PIL import ImageFilter
+    Q = S['shots'][key]
+    src = Image.open(Q['img']).convert('RGB')
+    cx0, cy0, cx1, cy1 = Q.get('crop') or (0, 0, src.width, src.height)
+    c = src.crop((cx0, cy0, cx1, cy1))
+    w = 900
+    r = w / c.width
+    c = c.resize((w, int(c.height * r)), Image.LANCZOS)
+    a = M.ease(u / 0.45)
+    x0, top = int((W - w) / 2 + (1 - a) * W), 330
+    reg = (0, 180, W, top + c.height + 60)
+    im.paste(Image.blend(im.crop(reg), Image.new('RGB', (reg[2], reg[3] - reg[1]), (8, 4, 20)), 0.82), reg[:2])
+    if Q.get('title'):
+        M.glow_text(im, (W / 2, 255), Q['title'], fit(Q['title'], 80, 1000), grad=(M.GOLD, M.PINK), glow=M.PINK)
+    glow = Image.new('RGBA', (c.width + 60, c.height + 60), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).rounded_rectangle([20, 20, c.width + 40, c.height + 40], 24, outline=M.CYAN + (255,), width=10)
+    g = glow.filter(ImageFilter.GaussianBlur(12))
+    im.paste(g, (x0 - 30, top - 30), g)
+    im.paste(c, (x0, top))
+    boxes = [((bx0 - cx0) * r + x0, (by0 - cy0) * r + top, (bx1 - cx0) * r + x0, (by1 - cy0) * r + top) for bx0, by0, bx1, by1 in Q.get('boxes', [])]
+    if not boxes or u < 0.45:
+        M.paste_char(im, t, W / 2 + 270, 1840, 620)
+        return
+    d = ImageDraw.Draw(im)
+    p = 0.5 + 0.5 * math.sin((u - 0.45) * 2 * math.pi * 1.6)
+    col = tuple(int(M.GOLD[i] * p + M.PINK[i] * (1 - p)) for i in range(3))
+    span = max(1.0, L)
+    clean = [im.crop((int(b[0]), int(b[1]), int(b[2]), int(b[3]))) for b in boxes]   # 光を重ねる前の中身（文字が白く飛ばないように後で戻す）
+    cur = min(len(boxes) - 1, int(u / (span / len(boxes)))) if Q.get('tap') else -1
+    for i, (bx0, by0, bx1, by1) in enumerate(boxes):
+        hot = (cur == i) or not Q.get('tap')
+        lay = Image.new('RGBA', im.size, (0, 0, 0, 0))
+        ImageDraw.Draw(lay).rounded_rectangle([bx0 - 18, by0 - 18, bx1 + 18, by1 + 18], 22, outline=col + (255,), width=26 if hot else 6)
+        lg = lay.filter(ImageFilter.GaussianBlur(16 if hot else 8))
+        im.paste(lg, (0, 0), lg)
+        im.paste(lg, (0, 0), lg)                        # 2回重ねて強く光らせる（ユーザー「目立たせて」）
+        reg = clean[i]
+        s = 1.0 + 0.06 * p if hot else 1.0             # 光らせる所は中身を少し大きくして浮かせる（脈打つ）
+        rw, rh2 = int(reg.width * s), int(reg.height * s)
+        im.paste(reg.resize((rw, rh2), Image.LANCZOS), (int((bx0 + bx1 - rw) / 2), int((by0 + by1 - rh2) / 2)))
+        d = ImageDraw.Draw(im)
+        d.rounded_rectangle([bx0 - 10, by0 - 10, bx1 + 10, by1 + 10], 16, outline=col if hot else (120, 110, 150), width=8 if hot else 3)
+    if Q.get('tap') and cur >= 0:
+        bx0, by0, bx1, by1 = boxes[cur]
+        k = (u % (span / len(boxes))) / (span / len(boxes))
+        tx, ty = bx1 - 6, by1 + 4                     # 指はバッジの右下の角＝日付の文字を隠さない
+        for j in range(2):                            # 押した所から丸が広がる
+            rr = 14 + 46 * ((k * 2 + j * 0.5) % 1.0)
+            al = 1 - ((k * 2 + j * 0.5) % 1.0)
+            d.ellipse([tx - rr, ty - rr, tx + rr, ty + rr], outline=tuple(int(v * al) for v in M.WHITE), width=6)
+        d.ellipse([tx - 12, ty - 12, tx + 12, ty + 12], fill=M.WHITE)
+        M.CUR['pose'] = 'side_l'                      # 左を向いてバッジに手をのばす
+        M.CUR['zoom'], M.CUR['dx'] = 1.0, 0.0
+        (ORIG_PASTE or M.paste_char)(im, t, bx1 + 185, by1 + 250, 400)   # 小さめに・バッジの右に立って手をのばす（歌詞にかからない高さ）
+    else:
+        M.paste_char(im, t, W / 2 + 270, 1840, 620)
+
+
 def list_scene(im, key, t, u, S):
     """発売時刻ごとの一覧。S['blocks'][key] = {'title': '朝 10:00 発売', 'rows': [[名前, 県, 先行なら'先行', 読み始めの時刻], …]}
     歌っている行を金の枠で光らせる（読み上げと画面を合わせる）。"""
@@ -235,7 +301,7 @@ def karaoke(im, t, segs):
     d = ImageDraw.Draw(im)
     k = 0
     for j, ln in enumerate(seg['lines'][:2]):
-        sz = fit(ln, KARA_SIZE, 1000)
+        sz = fit(ln, KARA_SIZE, KARA_W)
         f = M.font(sz)
         y = KARA_Y + j * int(KARA_SIZE * 1.4)
         x = W / 2 - d.textlength(ln, font=f) / 2
@@ -311,7 +377,7 @@ if __name__ == '__main__':
     # 🆕2026-10-05 音の入りと終わり（ユーザー「2曲目が中途半端で始まって、半端に終わる感じ　フェイドアウトうまく入れると聞きやすい」）
     #   spec の fade_in（秒・既定0）と fade_out（秒・既定0.8）。切る位置は曲の静かな所（loudness.py で測る）
     # 🆕2026-10-06 まとめ動画（ユーザー「歌詞の文字を大きめでカラオケみたいに」「キャラは小さめにね」）
-    KARA_SIZE, KARA_Y = int(S.get('kara_size', KARA_SIZE)), int(S.get('kara_y', KARA_Y))
+    KARA_SIZE, KARA_Y, KARA_W = int(S.get('kara_size', KARA_SIZE)), int(S.get('kara_y', KARA_Y)), int(S.get('kara_w', KARA_W))
     if S.get('char_scale'):                           # キャラの高さを何倍にするか＋置く場所（右下の隅）
         _pc, _cs, _cp = M.paste_char, float(S['char_scale']), S.get('char_pos')
         def _small(im, t, cx, bottom, h, tilt=True):
@@ -319,6 +385,7 @@ if __name__ == '__main__':
                 cx, bottom = _cp
             return _pc(im, t, cx, bottom, h * _cs, tilt)
         M.paste_char = _small
+        ORIG_PASTE = _pc
     fi, fo = float(S.get('fade_in', 0)), float(S.get('fade_out', 0.8))
     AFADE = ('afade=t=in:st=0:d=%.2f,' % fi if fi > 0 else '') + 'afade=t=out:st=%.2f:d=%.2f' % (DUR - fo, fo)
     if a.board:
