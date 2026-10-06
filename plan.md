@@ -1,3 +1,26 @@
+# ▶▶ 10/6(火) 夕方 → /clear 後の引き継ぎ
+
+```
+⏰ まだやっていない＝22:07 夜の便＝`python tmp/x1006/night.py`（今日発売ぴあのヒール＋TIGET/livePocket 今日分の番人→heal＋fold→gate_badge_render→reconcile --new→build_ai_page→compact・結果 tmp/x1006/night.txt）→ 番人0なら git add -u → commit → push（今日3回目）→ plan.md に夜の締め
+   🚨CronCreate のアラーム（22:07）は /clear で消えるかもしれない＝CronList で確かめ、無ければ入れ直す
+   🚨night.py は昨日の写し＝走らせる前に中身の日付（2026-10-06）とフォルダ（tmp/x1006）を確かめる
+✅ X 10/7発売11本は予約済み（20:01〜22:31・主役3本に動画）／手順7.5・8の抜けも足した（commit 済み・未push）
+🆕🚨 ユーザー決定（夕方）「動画を入れた主役の表示回数があまりにも少なくて、アナリティクスも一桁代／やっぱりまとめに動画をつけるべき」
+   ＝X_SCRIPT と memory に書いた。主役は文章だけ・動画はまとめに付ける
+🎬 10/8発売（あす10/7夕方のX）＝主役 ①Mrs. GREEN APPLE with GELATO PIQUE（28634・livePocket）②梶裕貴（29692・e+）③土岐隼一（30603・e+）
+   ・事実 tmp/x1006/x/facts_1008.md／Suno歌詞 suno_lyrics_1008.txt（独立FC ❌0・⚠️2直し済み）＝ユーザーが Suno で作成中
+   ・ユーザー「プロンプトが途中で途切れる」→ 短い版（170字・110字）を渡した
+   ・曲が届いたら＝mp3の場所を聞く → transcribe_song.py → 番の境（[Instrumental Break]）で3つに切る（loudness.py で静かな所・歌い終わりの後）→ shuyaku_video の spec（見本 tmp/video/oshinavidot/make_specs.py）
+   ❓夜に聞く＝この動画を**どのまとめに付けるか**（主役の歌詞のままか、まとめ向けに作り直すか）
+   ・まとめ素材は tmp/x1006/x/material_1008.md（主役を外すときは stars_1008.json に id を入れて material_1008.py を回し直す）
+❓ 夜に聞く（まとめて・1問ずつ）
+   ① e+ 217件（10/5の193・10/6の24）が確認前に新着から外れて振り分け済みになっていた＝新着に戻すか、このままでよいか（tmp/x1006/eplus_pool_check.txt・道具は直した）
+   ② e+ の「同じ名前の登録あり」38件（tmp/x1006/eplus/same_hold.json 29＋rock_same_hold.json 9）を既存へ足し込むか
+   ③ 2808 Baycurrent Classic＝楽天の単日券4枚を「〜10/10」1枚にまとめている＝分けるか
+   ④ 動画をどのまとめに付けるか（上）
+📝 明朝＝523 小野リサ「一般発売（東京 12/5公演）」がぴあで買えない→mark_soldout／ぴあ新着65（29831〜29895）の独立再照合→振り分け／e+ FAIL保留（fail_hold.json・fail_hold_rock.json）
+```
+
 # ▶▶ 10/6(火) 昼の便（12:06〜）
 
 ```
@@ -44,6 +67,8 @@
    📝 明朝＝523 の「一般発売（東京 12/5公演）」がぴあで買えない＝mark_soldout
 🚨 e+ の新着が確認前に振り分け済みになっていた＝tools/eplus_genre.py --apply が genre を書いて新着プールから外す作りだった（10/5の201件中193件・10/6の74件中24件＝217件）。道具は直した（_genre に入れるだけ）
    ❓夜に聞く＝この217件を新着タブに戻すか（ジャンル札は下書きに残す）／このまま振り分け済みでよいか（id一覧 tmp/x1006/eplus_pool_check.txt）
+🎬 10/8主役＝①Mrs. GREEN APPLE with GELATO PIQUE（140万・28634）②梶裕貴（130万・29692）③土岐隼一（34.4万・30603）＝出演者80名を全部調べた上位
+   ・事実 tmp/x1006/x/facts_1008.md／歌詞 suno_lyrics_1008.txt（独立FC ❌0・⚠️2を直した）＝ユーザーに見せた・Sunoで作ってもらう
 🎬 ユーザー「明日の動画の準備しておく」＝10/8発売（あす10/7夕方のX）の主役3本を前倒しで決める
    ・出演者80名（tmp/x1006/x/follower_names_1008a/b.txt）のフォロワー調べ＝エージェント2人（followers_1008a/b.md）→ 上位3組 → 公式の事実（facts_1008.md）→ Suno歌詞（番の間に[Instrumental Break]・1ブロック完結）→ ユーザーへ
    ・手順7.5で足した＝Jリーグ3件（30616〜30618→sports）・2239 ALICE宮城・17305・7876 好二郎の別ページ
