@@ -1409,9 +1409,9 @@
    "id_to": 29895,
    "count": 65,
    "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1006/presale_*）",
-   "assigned": false,
-   "rechecked": false,
-   "note": "reconcile --ids OK84（足し込み24件と合わせて）。登録済みらしい17＝足し込み4・同じ中身6・保留7（tmp/x1006/pick_new.py の注記）。翌朝に独立再照合→振り分け"
+   "assigned": true,
+   "rechecked": true,
+   "note": "reconcile --ids OK84（足し込み24件と合わせて）。登録済みらしい17＝足し込み4・同じ中身6・保留7（tmp/x1006/pick_new.py の注記）。翌朝に独立再照合→振り分け ／10/7朝＝別エージェントがぴあ実ページから65件をゼロで再導出→登録と突き合わせ62/65一致・先行の抜け3件（29831・29887・29888）を足し算で取り直して65/65。独立ジャンル判定の和集合で65件振り分け。logs/assigned_2026-10-07.md"
   },
   {
    "date": "2026-10-06",
@@ -1434,6 +1434,50 @@
    "assigned": true,
    "rechecked": true,
    "note": "未登録623→独立ゲート一致620→投入613→日別28組を畳んで558。ジャンル独立判定（unsure24）→振り分け済み"
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "morning",
+   "id_from": 30619,
+   "id_to": 30822,
+   "count": 204,
+   "source": "TIGET tmp/x1007/tiget.json（--stop-known 1）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "番人204/204一致・ジャンル独立判定→振り分け済み（名前×公演日一致の12件は入れない）"
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "morning",
+   "id_from": 30823,
+   "id_to": 30859,
+   "count": 37,
+   "source": "FANY 24・ZAIKO 13",
+   "assigned": true,
+   "rechecked": true,
+   "note": "FANY 番人→heal109→番人（新着に食い違いなし）／ZAIKO 番人→heal14→番人 食い違い0。ジャンル独立判定→振り分け済み"
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "morning",
+   "id_from": 30860,
+   "id_to": 30933,
+   "count": 74,
+   "source": "ぴあ発売前スイープ 7ジャンル×0102/0202（tmp/x1007/presale_*）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --ids OK92・MISSING0（足し込み23件と合わせて・STALE3は既存側の古い枠）。登録済みらしい25＝足し込み8・同じ中身8・保留9（tmp/x1007/pick_new.py の注記）。翌朝に独立再照合→振り分け"
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "morning",
+   "id_from": 30934,
+   "id_to": 31110,
+   "count": 156,
+   "source": "livePocket（未登録210→独立ゲート一致203→投入176→日別7組を畳む）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "ジャンル独立判定→振り分け済み"
   }
  ]
 }
