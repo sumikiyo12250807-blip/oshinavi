@@ -18,7 +18,14 @@
 ✅ バッジ0（31日より先）99件のうち、ぴあに買える枠があった5件を取り直し（2168 This is LAST・5751 サラ・オレイン・7115 Tani Yuuki・13822 Osaka Shion・17236 mementoa／消える枠0）
 ✅ 楽天の売り切れ点検＝付け外し0（調べられない19件）
 📝 今夜のX（10/7発売）のまとめ素材＝tmp/x1006/x/material.md（主役3本 26570 VIVANT・26339 見取り図・4898 コーラスラインは外してある）／動画はユーザーOK（「動画はいい感じよ」）
-⏳ livePocket（tmp/x1006/lp_chain.py）／e+ 受付前（rock-indies が rc=1 で0件＝e+混雑？取り直す）
+✅ livePocket 新着558（29915〜30527）＝未登録623→独立ゲート一致620→投入613→日別28組を畳む→ジャンル独立判定→振り分け済み
+✅ 🆕Love Me Do の9件に「Love Me Doの著書」ボタン（ユーザー指示・Amazon 本『守護龍占術』検索・img/btn2_lovemedo_chosho.png）
+⏳ livePocket 登録済み全件の番人（tmp/x1006/lp_gate_all.txt・約1時間）→ 鳴った分を heal_livepocket
+✅ e+ 受付前 全26ジャンル＋festival → 候補135→ビルド113→gate_eplus_slots で外す6→107
+   ・同じ名前の登録あり29（DEZERT・さだまさし・ツアーの別会場など）＝投入せず tmp/x1006/eplus/same_hold.json（既存への足し込みは後で）
+   ・新着に69件（30528〜30605・reconcile_eplus FAIL9件は外して tmp/x1006/eplus/fail_hold.json）＝ぴあ以外＝振り分けはユーザー確認後／ジャンル札 eplus_genre 中
+   ・rock-indies が rc=1 で0件（昨日92）＝取り直す
+⏳ e+ 受付前（rock-indies が rc=1 で0件＝e+混雑？取り直す）
 ⏳ e+ 受付前 全26ジャンル＋festival（tmp/x1006/eplus_chain.py）→ pre_go.json → 投入は昼（受付中は今日は回していない）
 ⏳ TIGET 144件組み上がり／FANY・ZAIKO 集め中（投入は index.html の書き込みが空いてから）
 ✅ 買える枠ゼロ4件（24198 ナジャ・25135・28098・29009 LEGACY）＝4件とも公演はこれから・ぴあ全券種「予定枚数終了」＝消さない
