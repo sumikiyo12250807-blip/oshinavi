@@ -36,7 +36,13 @@
    ・新着に69件（30528〜30605・reconcile_eplus FAIL9件は外して tmp/x1006/eplus/fail_hold.json）＝ぴあ以外＝振り分けはユーザー確認後／ジャンル札 eplus_genre 中
    ・rock-indies 取り直し＝ビルド21→番人で外す2→19＝同名9は保留（rock_same_hold.json）・投入10→reconcile_eplus FAIL5を外して新着5件（30606〜30608・30610・30613）
    ❓夜に聞く＝e+ の「同じ名前の登録あり」38件（same_hold.json 29＋rock_same_hold.json 9）を既存エントリへ足し込むか（DEZERT・さだまさし・ORANGE RANGE の別会場など）
-🐦 X 10/7発売 主役3本＝posts1007/post01〜03（独立FC ❌0・⚠️3を直した）＝ユーザーに全文を見せた（11時台）・OK待ち／まとめは17:02から
+🐦 X 10/7発売 主役3本＝posts1007/post01〜03（独立FC ❌0・⚠️3を直した）＝✅ユーザーOK（「主役3本はOK」）
+🐦 まとめ8本＝posts1007/post04〜11（独立チェック ❌2・⚠️10 → 直した・行で数える2点は据え置き）＝✅ユーザーOK
+✅ X予約11本 20:01〜22:31（予約一覧で11本・時刻を照合）／主役3本に動画（tmp/video/oshinavidot/*_1007_x.mp4）／台帳 tmp/x_media_log.json に記録／タブ閉じ・クリップボード空
+   ・型＝tmp/x1006/x/mkabc_all.py（A/B/C）＋動画は x_tab_front.ps1 でタブを表に出してから file_upload
+✅ 手順8（投稿の名前でぴあ総ざらい）＝523 小野リサに2027年の7枠（千秋楽を2027/4/17へ）・13091 ちかっぱ祭2026にぴあ VIP指定席
+   📝 明朝＝523 の「一般発売（東京 12/5公演）」がぴあで買えない＝mark_soldout
+   ・手順7.5で足した＝Jリーグ3件（30616〜30618→sports）・2239 ALICE宮城・17305・7876 好二郎の別ページ
 ⏳ e+ 受付前（rock-indies が rc=1 で0件＝e+混雑？取り直す）
 ⏳ e+ 受付前 全26ジャンル＋festival（tmp/x1006/eplus_chain.py）→ pre_go.json → 投入は昼（受付中は今日は回していない）
 ⏳ TIGET 144件組み上がり／FANY・ZAIKO 集め中（投入は index.html の書き込みが空いてから）
