@@ -156,9 +156,10 @@ def main():
         if bad:                        # 知らないカテゴリが混ざる件は触らず報告（表に足してから入れる）
             skipped.append((e['id'], e.get('name') or e.get('artist') or '', cats))
             continue
-        e['genre'] = gs[0]
-        if len(gs) > 1:
-            e['extraGenres'] = gs[1:]
+        # 🚨2026-10-06 直し＝ここで genre を書くと新着プールから外れる＝ぴあ以外なのにユーザー確認前に振り分けてしまう
+        #   （10/5・10/6 で e+ 217件がそうなっていた）。札は下書き（_genre/_extraGenres）に入れるだけ＝他の売り場のビルダーと同じ形
+        e['_genre'] = gs[0]
+        e['_extraGenres'] = gs[1:]
         n += 1
         cnt[gs[0]] += 1
         log.append('%s\t%s\t%s\t%s\t%s' % (e['id'], gs[0], ','.join(cats),
