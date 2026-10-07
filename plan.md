@@ -1,3 +1,18 @@
+# ▶▶ 10/8(木) 朝の便 → /clear 後の引き継ぎ
+
+```
+🔁 再開の合図＝「昼の便やって」（13:05）／「X準備やって」（17:02）
+🚨 CronCreate のアラーム4本は /clear で消えるかもしれない＝CronList で確かめ、無ければ入れ直す（13:05 昼／17:02 X準備／19:41 予約／22:07 夜）
+⏳ 裏でまだ動いている（/clear 後も python は走り続ける・結果はファイルで見る）
+   ・e+＝tmp/x1008/eplus_morning.py → 受付前 eplus/pre_go.json → 受付中 eplus/open_go.json（終わると eplus/morning.done）
+     → 投入は tmp/x1007/eplus_inject.py / eplus_drop_fail.py の形（reconcile_eplus FAIL は外して fail_hold.json）＝ぴあ以外＝新着まで・振り分けはユーザー確認後
+     → そのあと heal_eplus_started.py --apply（FIX40・e+を叩くのでスイープと重ねない）
+   ・TIGET 登録済み全件の番人＝tmp/x1008/gate_tiget_all.txt → 鳴った分は heal_tiget.py --apply → regate_tiget.py
+   ・X 10/9発売のフォロワー調べ（エージェント）＝tmp/x1008/x/followers_1009.md（/clear で消えたら出演者名 follower_names_1009.txt から取り直し）
+📝 昼の便でやる＝31198 神山智洋 mark_soldout --apply（全部 予定枚数終了）／バッジ0（31日より先）128件のぴあ分 reconcile（tmp/x1008/rec_zero.py・朝は重いので止めた）
+📝 明朝＝ぴあ新規72（31777〜31848）の独立再照合→振り分け（last_batch.json に記録する）
+```
+
 # ▶▶ 10/8(木) 朝の便（途中経過）
 
 ```
@@ -12,7 +27,16 @@
 ✅ TIGET新着173（31235〜31407）＝番人173/173・独立ジャンル判定→振り分け
 📝 宿題＝昨日の TIGET 判定道具（tmp/x1007/indep_tiget/judge.py）はカテゴリ59〜61（マジック・演劇祭ほか）が対応表から抜けていた＝10/7振り分けの TIGET 204件の札の足し漏れを点検
 ⏳ ぴあ発売前スイープ＝新規候補100・足し込み30（tmp/x1008/split.txt）＝再照合エージェントが終わってから build
-⏳ livePocket 未登録365＝独立ゲート中／TIGET 登録済み全件の番人／FANY・ZAIKO／e+
+✅ FANY 新着28・ヒール49（再番人 食い違い3＝残り）／ZAIKO 新着10・ヒール12（再番人 食い違い0）
+✅ livePocket 新着331（未登録365→独立ゲート一致358→投入331→日別23組を畳む）
+✅ ぴあ新着148を振り分け（独立再導出148/156一致）／食い違い8のうち7件を取り直し・31198 神山智洋は全部 予定枚数終了（昼に mark_soldout）
+✅ ぴあ発売前スイープ＝既存25件へ82枠足し込み（消える枠0）・新規72（31777〜31848・新着）
+   保留＝31240 岡村靖幸（5360東京・5366宮城に割れている＋埼玉・千葉）・31241 ORANCHE・31242 Calmera（e+29536）・31243 可憐なアイボリー（e+29478）・31255 スペーズ・31269 VOW WOW（26914に東京が無い）・31277 月亭方正・31285〜31291 よしもと（FANY既存）＝tmp/x1008/pia_built_new.json の旧id
+✅ FANY28・ZAIKO10・livePocket238 新着276を振り分け（独立ジャンル判定・logs/assigned_2026-10-08.md）
+❓ 夜に聞く＝livePocket の音楽系の札（ポップス・邦楽・ロック・K-POP）に extra で musicetc（その他）を添える型が続いている＝このままでよいか（判定エージェントの指摘・「その他は最後の砦」）
+⏳ バッジ0のぴあ分を reconcile_pia --ids（rec_zero.txt）→ 終わり次第 push前の番人一式（morning_push_gates.py）→ 朝のpush
+⏳ X 10/9発売の出演者153名のフォロワー調べ（エージェント・followers_1009.md）
+📝 昼へ＝e+ 受付前・受付中（eplus_morning.py）→ heal_eplus_started --apply（FIX40）／TIGET 登録済み全件の番人→heal_tiget
 ```
 
 # ▶▶ 10/7(水) 夜の締め（22時台）→ 10/8朝への引き継ぎ
