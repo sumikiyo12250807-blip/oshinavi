@@ -1,566 +1,3676 @@
 {
  "lg": "01",
- "total": 71,
- "pages": 8,
- "fetched_pages": 9,
- "parsed": 66,
- "new_name_in_db": 10,
+ "total": 702,
+ "pages": 71,
+ "fetched_pages": 72,
+ "parsed": 578,
+ "new_name_in_db": 21,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668403",
-   "artist": "イルカ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671408",
+   "artist": "UP-T FESTIVAL WEST Vol.2",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/4(日)",
-   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2026/10/15(木)",
+   "venue": "心斎橋ｓｏｍａ(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671054",
-   "artist": "コドモパーティーIII",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629901",
+   "artist": "ウルフルズ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/27(日)",
-   "venue": "正和工業にじいろホール 大ホール(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2026/12/31(木)",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622062",
-   "artist": "斉藤和義",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633366",
+   "artist": "神山智洋",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/15(日)",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619123",
-   "artist": "ＳＩＮＯＮ 奇跡の歌声 ～カーペンターズコンサート ｉｎ 栗橋～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/27(日)",
-   "venue": "栗橋文化会館（イリス）(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2026/10/14(水) ・ 2026/10/15(木)",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626828",
-   "artist": "島袋寛子",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671174",
+   "artist": "9mm Parabellum Bullet",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/23(水・祝)",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2027/1/31(日)",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
-   "artist": "杉山清貴",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638892",
+   "artist": "倉木麻衣",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/14(土)",
-   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2026/11/29(日)",
+   "venue": "グランキューブ大阪 メインホール(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625297",
-   "artist": "スターダスト☆レビュー",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670987",
+   "artist": "saccharin",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2027/1/10(日) ・ 2027/1/30(土)",
+   "venue": "Ｓｈｉｂｕｙａ ＷＷＷ(東京都)／ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "東京都／大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669155",
+   "artist": "Chevon 平安神宮 奉納 Special Live",
    "saletype": "一般発売",
    "rlsdate": "",
    "perfdate": "2026/10/10(土)",
-   "venue": "熊谷スポーツ文化公園 彩の国くまがやドーム(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635790",
-   "artist": "零［Ｈｚ］",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/24(土)",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626958",
-   "artist": "タブレット純 魅惑の世界",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/23(金)",
-   "venue": "所沢市民文化センターミューズ キューブホール(埼玉県)",
-   "pref": "埼玉県",
+   "venue": "平安神宮 大極殿前特設ステージ(京都府)",
+   "pref": "京都府",
    "in_db": false,
    "name_in_db": false
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671055",
-   "artist": "DXTEEN × ぴあ presents K-Monday ON STAGE #01",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671482",
+   "artist": "私立恵比寿中学",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/21(月・祝)",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669294",
-   "artist": "Northern19／39degrees",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "ｌａｄｄｅｒｌａｄｄｅｒ(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620720",
-   "artist": "南こうせつ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/3(土) ・ 2026/10/24(土) ・ 2026/10/25(日)",
-   "venue": "渋川市民会館 大ホール(群馬県)／グローバルソフトウェア本庄文化ホール(埼玉県)／パストラルかぞ 大ホール(埼玉県)",
-   "pref": "群馬県／埼玉県",
+   "perfdate": "2026/11/8(日)",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
-   "artist": "山本リンダ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671171",
+   "artist": "神聖かまってちゃん",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/6(火)",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2026/11/20(金)",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628186",
-   "artist": "リアクション ザ ブッタ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633463",
+   "artist": "Ｊ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2027/3/14(日)",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県",
+   "perfdate": "2026/11/26(木)",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671273",
+   "artist": "タブレット純 魅惑の歌謡ショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/14(水)",
+   "venue": "近鉄アート館(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628599",
+   "artist": "月詠み",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/18(水)",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671503",
+   "artist": "手嶌葵",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/19(土)",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670809",
+   "artist": "西村ケント(g)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/25(金)",
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 小ホール(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671167",
+   "artist": "バンドじゃないもん！MAXX NAKAYOSHI",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/9(月)",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671382",
+   "artist": "HOME",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/4(水) ・ 2026/11/19(木)",
+   "venue": "京都メトロ(京都府)／Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "京都府／大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670601",
+   "artist": "Homecomings",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/20(金)",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671240",
+   "artist": "名誉伝説",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/16(水)",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671448",
+   "artist": "ヤバイＴシャツ屋さん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/8(木)",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610082",
+   "artist": "山崎ハコ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/10/17(土)",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614665",
+   "artist": "ルサンチマン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/20(金)",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671539",
+   "artist": "レトロリロン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/3(火・祝)",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": true
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671162",
+   "artist": "ROAD TO 武道館 MISSION！ 2大都市 大決起集会 フリーライブ！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/11/5(木)",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府",
+   "in_db": false,
+   "name_in_db": false
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671101",
+   "artist": "wacci",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "perfdate": "2026/12/26(土)",
+   "venue": "なら１００年会館 大ホール(奈良県)",
+   "pref": "奈良県",
    "in_db": false,
    "name_in_db": true
   }
  ],
  "rows": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615172",
-   "artist": "杏里",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633362",
+   "artist": "ＩＣＥ ＣＲＥＡＭ ＯＳＡＫＡ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "Ｃｒｅａｔｉｖｅ Ｃｅｎｔｅｒ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668403",
-   "artist": "イルカ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621236",
+   "artist": "Ｉ Ｄｏｎ’ｔ Ｌｉｋｅ Ｍｏｎｄａｙｓ．",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613366",
-   "artist": "イルカ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669963",
+   "artist": "IRIS MONDO",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "仙台ＲＯＣＫＡＴＥＲＩＡ(宮城県)／ｃｌｕｂａｓｉａ(東京都)／ＧＲＩＴ ａｔ Ｓｈｉｂｕｙａ(東京都)／池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)／アメリカ村 ＢＥＹＯＮＤ(大阪府)／神戸 太陽と虎(兵庫県)／ＡＬＭＩＧＨＴＹ(広島県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "宮城県／東京都／愛知県／大阪府／兵庫県／広島県／福岡県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618405",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669627",
+   "artist": "藍井エイル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617877",
+   "artist": "Ａｏｎｏｗａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636471",
+   "artist": "ＡＫＩＨＩＤＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｕ★ＳＴＯＮＥ(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669964",
+   "artist": "秋山黄色",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669972",
+   "artist": "access",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳｋｙシアターＭＢＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632241",
+   "artist": "ＡＳＫＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621597",
+   "artist": "ＡＳＣＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＥＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635883",
+   "artist": "新しい学校のリーダーズ ａ．ｋ．ａ． ＡＴＡＲＡＳＨＩＩ ＧＡＫＫＯ！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637193",
+   "artist": "Ａｄｕｌｔ ｆａｍｉｌｙ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669442",
+   "artist": "圧巻！歌まね 歌謡ショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸文化ホール 中ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671408",
+   "artist": "UP-T FESTIVAL WEST Vol.2",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ｓｏｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671021",
+   "artist": "あつこ＆タニケン ハッピードレミ ハウス Atsuko 10th Anniversary Concert",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "クレオ大阪東(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622365",
+   "artist": "あなたの街でピアノ弾きます番外編 ふみダーツの旅 ピアノコンサートツアー ＳＥＡＳＯＮ４",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "キオクシア アイーナ アイーナホール(岩手県)／北コミュニティセンターＩＳＴＡはばたき(奈良県)／メルカつきまち 長崎市市民生活プラザホール(長崎県)",
+   "pref": "岩手県／奈良県／長崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626363",
+   "artist": "ＡＮＩＭＥＴＡＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633700",
+   "artist": "Ａ Ｈｕｎｄｒｅｄ Ｂｉｒｄｓ Ｏｒｃｈｅｓｔｒａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667868",
+   "artist": "a flood of circle",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)／神戸 太陽と虎(兵庫県)／ＮＥＶＥＲＬＡＮＤ(奈良県)",
+   "pref": "京都府／兵庫県／奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668352",
+   "artist": "絢香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629372",
+   "artist": "Ａｒａｋｅｚｕｒｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631539",
+   "artist": "Ａｒａｋｅｚｕｒｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620201",
+   "artist": "荒谷翔大",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631943",
+   "artist": "アンジュルム",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622667",
+   "artist": "アンダーグラフ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＲＯＣＫＴＯＷＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629258",
+   "artist": "ａｎｄｒｏｐ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612507",
+   "artist": "ＵＮＦＡＩＲ ＲＵＬＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628173",
+   "artist": "ＡＲＴ－ＳＣＨＯＯＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665661",
+   "artist": "家入レオ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "文化パルク城陽 プラムホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669302",
+   "artist": "yeti let you notice",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564372",
+   "artist": "いきものがかり",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671140",
+   "artist": "石崎ひゅーい",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 サウスホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626048",
+   "artist": "ＩＫＫＯ ＤＲＡＭＡＴＩＣ ～ＢＥＡＵＴＹ ＭＵＳＩＣ ＳＨＯＷ～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新歌舞伎座(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628148",
+   "artist": "弌誠",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629855",
+   "artist": "伊藤蘭 クリスマスディナー＆コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸ポートピアホテル・大輪田の間(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633360",
+   "artist": "１７１／ＰＯＬＹＳＩＣＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｂ－ＦＬＡＴ(滋賀県)／ＦＡＮＤＡＮＧＯ(大阪府)",
+   "pref": "滋賀県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623038",
+   "artist": "稲垣潤一",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621745",
+   "artist": "ＴＨＥイナズマ戦隊",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
+   "artist": "稲葉浩志",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622412",
+   "artist": "ＥＶＥ ＯＦ ＴＨＥ ＬＡＩＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632792",
+   "artist": "今井翼",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "森ノ宮ピロティホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623040",
+   "artist": "岩崎宏美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666010",
+   "artist": "indigo la End",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638175",
+   "artist": "インナージャーニー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
+   "artist": "eastern youth",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668252",
+   "artist": "Wienners",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670490",
+   "artist": "上原ひろみ×熊谷和徳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619533",
+   "artist": "宇崎竜童",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 サウスホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631414",
+   "artist": "歌声は消えなかった",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクリエひめじ 小ホール(兵庫県)／岡山県天神山文化プラザ(岡山県)／ペスタロッチ館(岡山県)／福山市神辺文化会館 小ホール(広島県)",
+   "pref": "兵庫県／岡山県／広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624473",
    "artist": "歌心りえ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ウェスタ川越 ヤオコー大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＤＭＧ ＭＯＲＩ やまと郡山城ホール 大ホール(奈良県)",
+   "pref": "奈良県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633094",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631211",
+   "artist": "打首獄門同好会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637363",
+   "artist": "宇徳敬子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸布引ハーブ園 森のホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635038",
    "artist": "ウルトラ寿司ふぁいやー",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＰＩＣＣＡＤＩＬＬＹ ＰＲＥＭＩＵＭ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667277",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620082",
+   "artist": "ＷＯＬＦ ＨＯＷＬ ＨＡＲＭＯＮＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629901",
    "artist": "ウルフルズ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "さいたま市文化センター 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617158",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670457",
+   "artist": "UVERworld",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631029",
+   "artist": "Ｈ ＺＥＴＴ Ｍ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＰＡＲＣＯ １４Ｆ ＳＰＡＣＥ１４(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607837",
+   "artist": "ＨＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633541",
+   "artist": "８０２ Ｊｕｎｇｌｅ Ａｔｔａｃｋ Ｖｏｌ．１１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623235",
    "artist": "ＥＸＩＬＥ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ベルーナドーム(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "京セラドーム大阪(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670559",
-   "artist": "奥華子",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625139",
+   "artist": "ｅｓｑ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "彩の国さいたま芸術劇場 音楽ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "Ｌｉｖｅ ｓｐｏｔ ＲＡＧ(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631867",
-   "artist": "加藤登紀子 ほろ酔いコンサート２０２６",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632160",
+   "artist": "ｅｓｑ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)／ヒューリックホール東京(東京都)／関内ホール 大ホール(神奈川県)",
-   "pref": "埼玉県／東京都／神奈川県"
+   "venue": "ｈｉｌｌｓパン工場(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631867",
-   "artist": "加藤登紀子 ほろ酔いコンサート２０２６",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671126",
+   "artist": "NMB48",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621687",
-   "artist": "角松敏生",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670918",
+   "artist": "EverBrighteller",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "さいたま市文化センター 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＶｙＰａｓｓ．(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／ｓｈｉｍｏｋｉｔａｚａｗａ ＴＨＲＥＥ(東京都)／Ｆ．Ａ．Ｄ ＹＯＫＯＨＡＭＡ(神奈川県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＨＯＫＡＧＥ－火影－(大阪府)",
+   "pref": "北海道／宮城県／東京都／神奈川県／京都府／大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625260",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630354",
+   "artist": "ＥＶＥＲＬＯＮＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＯＫＡＧＥ－火影－(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669668",
+   "artist": "FM802 MINAMI WHEEL 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋 ライブハウス２１ヶ所(大阪府)／心斎橋 ライブハウス２０ヶ所(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670905",
+   "artist": "FCO.",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632441",
+   "artist": "ＥＬＥＫＴＲＩＣ ＭＯＴＨ ｆｅａｔ． Ｃａｒｍｅｎ Ｍａｋｉ ｗｉｔｈ 近藤房之助",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669950",
+   "artist": "AK-69",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621690",
+   "artist": "ＡＣＥ ＣＯＬＬＥＣＴＩＯＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田 ＢＡＮＧＢＯＯ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636155",
+   "artist": "ＡＴＭＣコーリング２０２６ －ＭＩＮＡＭＩ ＷＨＥＥＬ ＥＤＩＴＩＯＮ－",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670994",
+   "artist": "A.B.C-Z",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620562",
+   "artist": "おいしくるメロンパン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631341",
+   "artist": "ＯＧＲＥ ＹＯＵ ＡＳＳＨＯＬＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670658",
+   "artist": "大江千里トリオ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都コンサートホール 小ホール(京都府)／兵庫県立芸術文化センター 阪急 中ホール(兵庫県)",
+   "pref": "京都府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666508",
+   "artist": "大橋ちっぽけ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＯＢＥ ＱＵＩＬＴ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625009",
+   "artist": "大原櫻子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624215",
+   "artist": "大山太徳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・シンフォニーホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637223",
+   "artist": "オカモトショウ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＯＬＥ ＣＡＦＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669356",
+   "artist": "岡本真夜",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618884",
+   "artist": "小片リサ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629351",
+   "artist": "～沖縄の夜に迷い込む～ シマウタメイロ（大阪）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ジャングルゴリラ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615295",
+   "artist": "尾崎亜美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 サウスホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613744",
+   "artist": "尾崎亜美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "すばるホール２Ｆホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615195",
+   "artist": "尾崎亜美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615298",
+   "artist": "尾崎亜美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田芸術劇場シアター・ドラマシティ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603286",
+   "artist": "尾崎裕哉",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626743",
+   "artist": "小田純平",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＰＡＲＣＯ １４Ｆ ＳＰＡＣＥ１４(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627100",
+   "artist": "織田哲郎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670483",
+   "artist": "OCHA NORMA",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＯＯＬ ＪＡＰＡＮ ＰＡＲＫ ＯＳＡＫＡ ＷＷホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
+   "artist": "Ochunism",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669943",
+   "artist": "Ochunism",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631772",
+   "artist": "８ｏｔｔｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634887",
+   "artist": "おとぎ話",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＡＮＤＡＮＧＯ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667786",
+   "artist": "音田雅則",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629296",
+   "artist": "ＯｄｄＲｅ：",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666571",
+   "artist": "Omoinotake",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669099",
+   "artist": "折坂悠太",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669794",
+   "artist": "オレンジスパイニクラブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666269",
+   "artist": "ORANGE RANGE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665597",
+   "artist": "Organic Call",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668439",
+   "artist": "Ovall",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638611",
+   "artist": "Ａｌｌ Ｉ Ｃｌａｃｋｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632582",
+   "artist": "海援隊",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "八幡市文化センター 大ホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630690",
+   "artist": "ｋｅｉｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635842",
+   "artist": "限りなき限界ｊｕｓｔ Ｃｈｒｉｓｔｍａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668066",
+   "artist": "かつしかトリオ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "森ノ宮ピロティホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668501",
+   "artist": "加藤和樹&THE DRASTICS/JOKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623800",
+   "artist": "加藤登紀子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都劇場(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631131",
+   "artist": "加藤ミリヤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "南海浪切ホール 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636863",
+   "artist": "カネヨリマサル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都薬科大学１３０周年記念館(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668425",
+   "artist": "華原朋美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なら１００年会館 大ホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671310",
+   "artist": "KAMIGATA EXPO PARK FES 2026 シャトルバス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "万博記念公園(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625954",
+   "artist": "上沼恵美子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633366",
+   "artist": "神山智洋",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627931",
+   "artist": "辛島美登里 クリスマスディナー＆ライブ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸ポートピアホテル 偕楽の間(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668441",
+   "artist": "カラフルピーチ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＬＩＯＮ ＡＲＥＮＡ ＫＯＢＥ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668434",
+   "artist": "colormal",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "寺田町Ｆｉｒｅｌｏｏｐ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624835",
+   "artist": "假屋崎省吾×三木康子－花とピアノのコンチェルト－",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "たけまるホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619090",
+   "artist": "かりゆし５８",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670613",
+   "artist": "KALMA",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＲＯＮＺＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625118",
+   "artist": "川崎鷹也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631001",
+   "artist": "かわにしなつき＜優先スタンディング＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631005",
+   "artist": "かわにしなつき",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671003",
+   "artist": "関西音酒場at大槻能楽堂「Re:ロックTHE魂」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大槻能楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637386",
+   "artist": "カーネーション",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629791",
+   "artist": "語りのバンドマン ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "服部緑地野外音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619337",
+   "artist": "Ｇａｌｉｌｅｏ Ｇａｌｉｌｅｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632164",
+   "artist": "Ｇｉｒｌｓ２",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620195",
    "artist": "岸谷香",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "幸手市民文化体育館（アスカル幸手） さくらホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "丹鶴ホール(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626963",
+   "artist": "岸谷香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "かしはら万葉ホール ロマントピアホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669937",
+   "artist": "来生たかお",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669256",
+   "artist": "キズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2602830",
+   "artist": "城 南海",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｒｅｔｒｏ Ｂａｃｋ Ｐａｇｅ(宮城県)／ｄｕｏ ＭＵＳＩＣ ＥＸＣＨＡＮＧＥ(東京都)／ボトムライン(愛知県)／心斎橋ＪＡＮＵＳ(大阪府)／岡山・城下公会堂 ｉｎ ＫＯＴＹＡＥ(岡山県)／ｂｏｒｄｅｒ －ｌｉｖｅ ｍｕｓｉｃ ＆ ｄｒｉｎｋｓ－(福岡県)",
+   "pref": "宮城県／東京都／愛知県／大阪府／岡山県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669624",
+   "artist": "奇妙礼太郎BAND",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612586",
+   "artist": "キュウソネコカミ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612586",
+   "artist": "キュウソネコカミ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671174",
+   "artist": "9mm Parabellum Bullet",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629520",
+   "artist": "ＫＹＯＴＯ ＤＡＲＵＭＡ ＭＡＴＳＵＲＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＢＳホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637269",
+   "artist": "祇園ＪＴＮ ＯＮＥ ＭＡＮ ＬＩＶＥ 元１９ 岩瀬敬吾",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "祇園ＪＴＮ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627728",
+   "artist": "Ｑ．Ｉ．Ｓ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667745",
+   "artist": "Cloudy",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638892",
+   "artist": "倉木麻衣",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "グランキューブ大阪 メインホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669787",
+   "artist": "kurage",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623338",
+   "artist": "栗林みな実",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637083",
+   "artist": "クレイジーウォウウォ！！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "龍谷大学 瀬田キャンパス 瀬田ドーム(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670654",
+   "artist": "クレイジーケンバンド",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669647",
+   "artist": "KREVA CLASS 2026 - 新しいラップの教室 -",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636452",
+   "artist": "Ｋｕ：ｕｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671249",
+   "artist": "KOOL",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アメリカ村ＤＲＯＰ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624560",
+   "artist": "Ｇｕｉａｎｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616966",
+   "artist": "グソクムズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 小ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615596",
+   "artist": "グットクルー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸新聞松方ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637843",
+   "artist": "ＧＬＩＣＯ ＬＩＶＥ “ＮＥＸＴ” ＳＰＥＣＩＡＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671102",
+   "artist": "GLIM SPANKY",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630275",
+   "artist": "研ナオコ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "西脇市市民交流施設 オリナスホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629672",
+   "artist": "ゲシュタルト乙女",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624774",
+   "artist": "ｇｏｅｔｈｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630745",
    "artist": "ＫＯＴＯＫＯ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "京都ＦＡＮＪ(京都府)",
+   "pref": "京都府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666678",
    "artist": "KOTORI pre.“12” Tour",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／越谷ＥＡＳＹＧＯＩＮＧＳ(埼玉県)／Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)",
-   "pref": "栃木県／埼玉県／東京都"
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671054",
-   "artist": "コドモパーティーIII",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638254",
+   "artist": "小林私",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "正和工業にじいろホール 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622062",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633001",
+   "artist": "古墳シスターズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＲＯＮＺＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626612",
+   "artist": "ｋｏｂｏｒｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624072",
+   "artist": "ＫＯＹＵＫＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631545",
+   "artist": "こんがりおんがく祭２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633559",
+   "artist": "Ｃｔｒｌ ＋ Ｕｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618751",
+   "artist": "近藤真彦",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ひこね市文化プラザ グランドホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669281",
+   "artist": "COPES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670117",
+   "artist": "ゴスペラーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "グランキューブ大阪 メインホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623812",
+   "artist": "Ｇｏｄｉｅｇｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクリエひめじ 大ホール(兵庫県)／福岡市民ホール 大ホール(福岡県)",
+   "pref": "兵庫県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614124",
+   "artist": "Ｇｏｄｉｅｇｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610151",
+   "artist": "ゴホウビ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田Ｚｅｅｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636607",
+   "artist": "ＧＯＩＮＧ ＵＮＤＥＲ ＧＲＯＵＮＤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669448",
+   "artist": "サイダーガール",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627156",
    "artist": "斉藤和義",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667141",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636329",
+   "artist": "斉藤和義",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637238",
+   "artist": "ＳＯＵＴＨ ＹＡＡＤ ＭＵＺＩＫ 大忘年会 ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＵＮＨＡＬＬ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638835",
+   "artist": "ＳＯＵＮＤ ＣＯＮＮＥＣＴＩＯＮ －Ｉｎｆｉｎｉｔｙ Ｅｃｈｏｅｓ－",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633634",
+   "artist": "さかいゆう",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627311",
+   "artist": "サカグチアミ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "扇町ミュージアムキューブ ＣＵＢＥ０１(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667573",
+   "artist": "サグラダ・ファミリア シンフォニックコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635415",
+   "artist": "佐々木亮介",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日本キリスト教団 島之内教会(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621212",
+   "artist": "Ｓｕｓｐｅｎｄｅｄ ４ｔｈ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630800",
+   "artist": "さだ工務店",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631142",
    "artist": "さだまさし",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633093",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635643",
+   "artist": "さだまさし クリスマスディナー＆コンサート２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホテルニューオータニ大阪 「鳳凰」(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670987",
+   "artist": "saccharin",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈｉｂｕｙａ ＷＷＷ(東京都)／ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670082",
+   "artist": "さとう。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈａｌｌ クラブ月世界(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634646",
+   "artist": "佐藤栞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ａｍＨＡＬＬ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628717",
+   "artist": "佐藤竹善",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜座(山梨県)／長野市芸術館 アクトスペース(長野県)／ＡｉｉＡ ２．５ Ｔｈｅａｔｅｒ Ｋｏｂｅ(兵庫県)",
+   "pref": "山梨県／長野県／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670419",
+   "artist": "さとうもか",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671244",
+   "artist": "佐野元春&THE COYOTE BAND",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 メインホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625531",
+   "artist": "Ｓｏｍｅ Ｌｉｆｅ ６ｔｈ Ｍｉｎｉ Ａｌｂｕｍ “ＲＵＰＡ” ＲＥＬＥＡＳＥ ＴＯＵＲ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669922",
+   "artist": "さらさ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671271",
+   "artist": "SARI LIVE TOUR 2026 SOUNDS GOOD",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "南堀江ｋｎａｖｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624031",
    "artist": "沢田研二",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "なら１００年会館 大ホール(奈良県)",
+   "pref": "奈良県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667117",
-   "artist": "The 51st anniversary 俺たちの旅 スペシャルコンサート ～まだまだ旅は終わらない～",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624041",
+   "artist": "沢田研二",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619123",
-   "artist": "ＳＩＮＯＮ 奇跡の歌声 ～カーペンターズコンサート ｉｎ 栗橋～",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629210",
+   "artist": "澤田知可子 うたぐすりコンサート",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "栗橋文化会館（イリス）(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "扶桑電通なぎさホール 大ホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669601",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615213",
+   "artist": "ＳａｗａｎｏＨｉｒｏｙｕｋｉ［ｎＺｋ］ ＬＩＶＥ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670650",
+   "artist": "35.7",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634687",
+   "artist": "サンタラ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628777",
+   "artist": "Ｓｕｎｄａｅ Ｍａｙ Ｃｌｕｂ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629192",
+   "artist": "サンプラザ中野くん／パッパラー河合",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "すばるホール２Ｆホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669877",
+   "artist": "THE YELLOW MONKEY",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629291",
+   "artist": "財津和夫／姫野達也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669985",
+   "artist": "ザ・シスターズハイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌近松(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／静岡ＵＭＢＥＲ(静岡県)／池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)／神戸 太陽と虎(兵庫県)／ＡＬＭＩＧＨＴＹ(広島県)／ＴＯＯＮＩＣＥ(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／栃木県／群馬県／東京都／新潟県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631684",
+   "artist": "ＴＨＥ 南無ズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＬＹＩＮＧ ＳＯＮ(宮城県)／ＲＡＤ ＳＥＶＥＮ(愛知県)／三国ヶ丘ＦＵＺＺ(大阪府)",
+   "pref": "宮城県／愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668937",
+   "artist": "The Novembers",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669905",
+   "artist": "the band apart",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666557",
+   "artist": "the band apart SMOOTH LIKE GREENSPIA 2026 -10th Special-",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "服部緑地野外音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670081",
+   "artist": "THE BAWDIES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625001",
+   "artist": "ＴＨＥ ＭＡＣＫＳＨＯＷ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629617",
+   "artist": "ざらばんし",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628776",
+   "artist": "シアーミュージック",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670162",
+   "artist": "椎名林檎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670162",
+   "artist": "椎名林檎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669155",
+   "artist": "Chevon 平安神宮 奉納 Special Live",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "平安神宮 大極殿前特設ステージ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669296",
+   "artist": "塩谷哲(p)/沖仁(g)",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 小ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634827",
+   "artist": "ＳＩＯＮ’Ｓ ＳＱＵＡＤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)／梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635520",
+   "artist": "ＳＨＩＧＡ ＩＤＯＬ ＣＯＬＬＥＣＴＩＯＮ “ＰＲＥＭＩＵＭ”",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "野洲文化小劇場(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619745",
    "artist": "柴咲コウ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "三郷市文化会館 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628364",
+   "artist": "柴田聡子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669623",
    "artist": "柴田淳",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626828",
-   "artist": "島袋寛子",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671144",
+   "artist": "渋谷慶一郎 ピアノソロ・コンサート 2026",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "浜離宮朝日ホール(東京都)／あいおいニッセイ同和損保 ザ・フェニックスホール(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630138",
+   "artist": "島津亜矢",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669341",
+   "artist": "清水翔太",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669297",
+   "artist": "清水ミチコ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670245",
+   "artist": "シャッポ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624035",
+   "artist": "ｓｈａｌｌｍ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633573",
+   "artist": "ＳＨＥＲＢＥＴＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631738",
+   "artist": "終活クラブ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633395",
+   "artist": "終活クラブ／セックスマシーン！！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637458",
+   "artist": "ＳＨＵＵＢＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ ｓｐｏｔ ＲＡＧ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670968",
+   "artist": "Spileben 1st Album Release Tour",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＥＳＰエンタテインメント大阪(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623550",
+   "artist": "白井貴子 ＆ ＴＨＥ ＣＲＡＺＹ ＢＯＹＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "松下ＩＭＰホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671482",
+   "artist": "私立恵比寿中学",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631881",
+   "artist": "城田優",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631304",
+   "artist": "ｓｙｒｕｐ１６ｇ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637535",
+   "artist": "ＳＨＩＮＧＯ★西成",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新歌舞伎座(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671171",
+   "artist": "神聖かまってちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669781",
+   "artist": "新東京",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634967",
+   "artist": "真・世が世なら！！！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670544",
    "artist": "C&K",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "三郷市文化会館 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸文化ホール 大ホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633693",
-   "artist": "時代を彩る歌姫たち",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
+   "artist": "CiON",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ウェスタ川越 ヤオコー大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "アメリカ村ＤＲＯＰ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667017",
-   "artist": "JUJU",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618336",
+   "artist": "ＳＨＥ’Ｓ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸ＶＡＲＩＴ．(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670303",
-   "artist": "杉山清貴",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665889",
+   "artist": "the shes gone",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625297",
-   "artist": "スターダスト☆レビュー",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667117",
+   "artist": "The 51st anniversary 俺たちの旅 スペシャルコンサート ～まだまだ旅は終わらない～",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "熊谷スポーツ文化公園 彩の国くまがやドーム(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635433",
-   "artist": "スターダスト☆レビュー〈駐車券〉",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633463",
+   "artist": "Ｊ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "熊谷スポーツ文化公園 彩の国くまがやドーム(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637209",
+   "artist": "ＧＥＮＥＲＡＴＩＯＮＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623936",
+   "artist": "ｔｈｅ ｅｎｇｙ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669104",
+   "artist": "JIJIM",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635003",
+   "artist": "自爆",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632216",
+   "artist": "ｊｕｒｉｓｔｉｃａｃｔ ｐｒｅｍｉｕｍ ｌｉｖｅ ｖｏｌ．１",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＡＲ ＯＮＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627575",
+   "artist": "樹里フェス ２０２６ ｉｎ Ｋａｋｏｇａｗａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＳＨＯＷＡグループ市民会館 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628511",
+   "artist": "ＪＵＮＩＣＨＩ ＩＮＡＧＡＫＩ Ｃｈｒｉｓｔｍａｓ Ｄｉｎｎｅｒ Ｓｈｏｗ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シェラトン都ホテル大阪 浪速の間(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631403",
+   "artist": "純名里沙",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 小ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619637",
+   "artist": "純烈",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635686",
+   "artist": "純烈",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628513",
+   "artist": "純烈 Ｃｈｒｉｓｔｍａｓ Ｄｉｎｎｅｒ Ｓｈｏｗ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シェラトン都ホテル大阪 浪速の間(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671079",
+   "artist": "Juice=Juice",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637201",
+   "artist": "ＪＵＢＥＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＬＵＢ ＳＨＡＦＴ(宮城県)／Ｃｌｕｂ ＮＥＯ(福島県)／下北沢ＳＨＥＬＴＥＲ(東京都)／金沢ｖａｎｖａｎＶ４(石川県)／Ｒ．Ａ．Ｄ(愛知県)／ＨＯＫＡＧＥ－火影－(大阪府)／生駒ＲＨＥＢ ＧＡＴＥ(奈良県)／岡山ペパーランド(岡山県)／Ｋｉｅｔｈ Ｆｌａｃｋ(福岡県)",
+   "pref": "宮城県／福島県／東京都／石川県／愛知県／大阪府／奈良県／岡山県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635211",
+   "artist": "女王蜂",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670553",
+   "artist": "jo0ji",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638097",
+   "artist": "Ｇ．Ｂ．Ｃ ＣＡＭＰ ＪＡＰＡＮ ＬＩＶＥ ＴＯＵＲ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＥＶＥＲＬＡＮＤ(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621137",
+   "artist": "Ｇ－ＦＲＥＡＫ ＦＡＣＴＯＲＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564626",
+   "artist": "スキマスイッチ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635044",
+   "artist": "ＳＣＡＮＤＡＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635044",
+   "artist": "ＳＣＡＮＤＡＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和歌山 ＧＡＴＥ(和歌山県)",
+   "pref": "和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630060",
+   "artist": "ＳＵＧＩＺＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都ＦＡＮＪ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616622",
+   "artist": "杉田二郎・きたやまおさむ ８０歳バースデーコンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都劇場(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632789",
+   "artist": "ＳＣＯＯＢＩＥ ＤＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629849",
+   "artist": "鈴木雅之 ２０２６ Ｘ’ｍａｓ Ｐｒｉｖａｔｅ Ｈｏｔｅｌ Ｔｏｕｒ “７０／４０ｔｈ ａｎｎｉｖｅｒｓａｒｙ” Ｃｏ－ｓｔａｒｒｉｎｇ 鈴木聖美",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸ポートピアホテル・大輪田の間(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619144",
+   "artist": "鈴木康博",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618263",
+   "artist": "鈴木康博",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "都雅都雅(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638447",
+   "artist": "SPIN NIGHT 2026 -MINAMI WHEEL EDITION-",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669282",
    "artist": "SPECIAL OTHERS",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／ＬＩＱＵＩＤＲＯＯＭ",
-   "pref": "埼玉県"
+   "venue": "金沢ＥＩＧＨＴ ＨＡＬＬ(石川県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)／ＮＥＶＥＲＬＡＮＤ(奈良県)",
+   "pref": "石川県／長野県／奈良県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624316",
-   "artist": "青春のアイドルヒットステージ 松本伊代・早見優・森口博子",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627344",
+   "artist": "すりぃ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ウェスタ川越 ヤオコー大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607858",
-   "artist": "世良公則",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670292",
+   "artist": "ずっと真夜中でいいのに。",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "深谷市民文化会館 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "平城宮跡歴史公園 中央区朝堂院 特設野外会場(奈良県)",
+   "pref": "奈良県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629774",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619131",
+   "artist": "ズーカラデル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668417",
+   "artist": "セカンドバッカー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629177",
+   "artist": "関取花",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634831",
+   "artist": "セックスマシーン！！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670038",
+   "artist": "7ORDER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632348",
+   "artist": "７ｍ！ｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都ＦＡＮＪ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668541",
+   "artist": "芹澤優",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636149",
    "artist": "零［Ｈｚ］",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "姫路ＬＩＶＥ ＨＯＵＳＥ Ｂｅｔａ(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635790",
-   "artist": "零［Ｈｚ］",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634500",
+   "artist": "Ｓｏａｌａ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668737",
+   "artist": "Soulflex",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＷＷＷ Ｘ(東京都)／心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625780",
+   "artist": "曾我泰久",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629903",
+   "artist": "曾我泰久",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635254",
+   "artist": "粗品",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621637",
+   "artist": "ＳＯ×ＤＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)／ＢＥＲＯＮＩＣＡ(大阪府)",
+   "pref": "京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669180",
+   "artist": "象眠舎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628014",
+   "artist": "高瀬統也",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)",
+   "pref": "奈良県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668510",
    "artist": "高中正義",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "サンシティ越谷市民ホール 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "大阪城音楽堂(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626958",
-   "artist": "タブレット純 魅惑の世界",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633280",
+   "artist": "田口淳之介ＡｕｔｕｍｎＬｉｖｅ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "所沢市民文化センターミューズ キューブホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "祇園ＪＴＮ(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612073",
-   "artist": "ツチヤカレン",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623995",
+   "artist": "竹内アンナ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671055",
-   "artist": "DXTEEN × ぴあ presents K-Monday ON STAGE #01",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638277",
+   "artist": "たとえばボクが踊ったら presents ＃長堀界隈 ver1031",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670528",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638346",
+   "artist": "たとえばボクが踊ったら presents ＃長堀界隈 ver1103",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634048",
+   "artist": "谷山浩子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あいおいニッセイ同和損保 ザ・フェニックスホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671273",
+   "artist": "タブレット純 魅惑の歌謡ショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "近鉄アート館(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667402",
+   "artist": "DA PUMP",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671064",
+   "artist": "Damian Hamada’s Creatures",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627478",
+   "artist": "チキン ガーリック ステーキ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸新聞松方ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621058",
+   "artist": "ちゃくら",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627449",
+   "artist": "ＣＨＡＢＯ ＢＡＮＤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668945",
+   "artist": "チャラン・ポ・ランタン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "エル・おおさか エル・シアター(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670801",
+   "artist": "超ときめき宣伝部",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622016",
+   "artist": "超能力戦士ドリアン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "オリックス劇場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626208",
+   "artist": "Ｃｈｉｌｌｉ Ｂｅａｎｓ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670574",
+   "artist": "Chillin’ Vibes 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "万博記念公園もみじ川芝生広場(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638994",
+   "artist": "ｃｈｉｌｌｄｓｐｏｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630636",
+   "artist": "千綿偉功",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＲＯＣＫＴＯＷＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667142",
+   "artist": "つきみ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＬＵＢ ＣＯＵＮＴＥＲ ＡＣＴＩＯＮ(北海道)／仙台 ｄａｒｗｉｎ(宮城県)／水戸ライトハウス(茨城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／千葉ＬＯＯＫ(千葉県)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／金沢ＧＯＬＤ ＣＲＥＥＫ(石川県)／静岡ＵＭＢＥＲ(静岡県)／ＲＡＤ ＨＡＬＬ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／Ｓｈａｎｇｒｉ－Ｌａ(大阪府)／神戸 太陽と虎(兵庫県)／広島・４．１４(広島県)／ＤＩＭＥ(香川県)／高知Ｘ－ｐｔ．(高知県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
+   "pref": "北海道／宮城県／茨城県／栃木県／千葉県／新潟県／石川県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／高知県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628599",
+   "artist": "月詠み",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626865",
+   "artist": "ＴＳＵＫＥＭＥＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "兵庫県立芸術文化センター 阪急 中ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625087",
+   "artist": "つしまみれ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＡＮＤＡＮＧＯ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635136",
+   "artist": "鶴",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630569",
+   "artist": "Ｔｙｒｋｏｕａｚ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671503",
+   "artist": "手嶌葵",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671503",
+   "artist": "手嶌葵",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・シンフォニーホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621543",
+   "artist": "第１５回 「徹子の部屋」コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670952",
+   "artist": "テレビ大陸音頭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633121",
+   "artist": "ＴＥＮＤＯＵＪＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634376",
+   "artist": "ＴＥＮＤＯＵＪＩ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630900",
+   "artist": "ＤＭＢＱ と ＬＡＵＳＢＵＢ／ＹＰＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635858",
+   "artist": "ＤＹＧＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633565",
+   "artist": "ＤＹＧＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669562",
+   "artist": "DeNeel",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621907",
+   "artist": "デラックス×デラックス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｕ★ＳＴＯＮＥ(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628175",
    "artist": "東京スカパラダイスオーケストラ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "宇治市文化センター 大ホール(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625543",
-   "artist": "ｔｏｃｏｎｏｍａ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629277",
+   "artist": "東京大衆歌謡楽団 昭和の流行歌コンサート",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "水戸ライトハウス(茨城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)",
-   "pref": "茨城県／栃木県／埼玉県／千葉県"
+   "venue": "近鉄アート館(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634728",
+   "artist": "ＴＯＯＢＯＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627259",
+   "artist": "戸川純",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670510",
+   "artist": "toconoma",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635847",
+   "artist": "灯火日和／Ｇｕｍ Ｇｉｒｌ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "南堀江ｋｎａｖｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616005",
+   "artist": "ＴＯＭＯＶＳＫＹ トモフ出航６０周年記念ツアー 『３度目のハタチ』“大阪編”",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632168",
+   "artist": "ＴｒｙＳａｉｌ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667158",
+   "artist": "TRUST RECORDS presents.TRUST NIGHT 2026 / TRUST TOUR 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637407",
+   "artist": "ＴＲＡＣＫ１５",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633954",
+   "artist": "とりとうわばみ 放し魚遍",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田Ｚｅｅｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625641",
+   "artist": "トリプルファイヤー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630896",
+   "artist": "トンボコープ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668725",
+   "artist": "トータス松本",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617549",
+   "artist": "Ｄｏｏｎａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629699",
+   "artist": "堂島孝平",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612588",
+   "artist": "怒髪天",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸ＶＡＲＩＴ．(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669091",
+   "artist": "ドリアン・ロロブリジーダ The Entertainment!! 20th Anniversary Special",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615616",
+   "artist": "Ｎａｏ Ｙｏｓｈｉｏｋａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670134",
    "artist": "中島卓偉",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666369",
-   "artist": "中村耕一+JAYWALK",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633109",
+   "artist": "中島愛",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "鴻巣市文化センター（クレアこうのす） 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸朝日ホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620159",
-   "artist": "名渡山遼",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625579",
+   "artist": "中嶋ユキノ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "川口リリア・山伸サステインホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)／神戸煉瓦倉庫Ｋ－ｗａｖｅ(兵庫県)",
+   "pref": "大阪府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670507",
+   "artist": "NakamuraEmi",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都ＦＡＮＪ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628974",
+   "artist": "中村雅俊",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都劇場(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622748",
+   "artist": "中村ゆりか",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＹＥＳ ＴＨＥＡＴＥＲ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627978",
+   "artist": "Ｎｏｔｈｉｎｇ’ｓ Ｃａｒｖｅｄ Ｉｎ Ｓｔｏｎｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669946",
    "artist": "ナナヲアカリ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669485",
-   "artist": "ネクライトーキー",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629275",
+   "artist": "ＮＩＫＯ ＮＩＫＯ ＴＡＮ ＴＡＮ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669294",
-   "artist": "Northern19／39degrees",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670809",
+   "artist": "西村ケント(g)",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ｌａｄｄｅｒｌａｄｄｅｒ(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 小ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635730",
+   "artist": "西村由紀江",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あいおいニッセイ同和損保 ザ・フェニックスホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612447",
+   "artist": "２０２６昭和１０１年音街巡旅",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＦＯＲＥＳＴ ＢＬＵＥ(青森県)／ＳＨＩＢＵＹＡ ＰＬＥＡＳＵＲＥ ＰＬＥＡＳＵＲＥ(東京都)／横浜ＹＴＪホール(神奈川県)／Ｌｉｖｅ Ｈｏｕｓｅ 浜松 窓枠(静岡県)／ボトムライン(愛知県)／四日市ＣＬＵＢ ＲＯＯＴＳ(三重県)／宇治市文化センター 小ホール(京都府)／心斎橋ＪＡＮＵＳ(大阪府)／高知キャラバンサライ(高知県)／Ｇａｔｅ’ｓ７(福岡県)／大分音楽館(大分県)／Ｄｕｃｋｂｉｌｌ(鹿児島県)／ＣＬＵＢ Ｌｏｕｎｇｅ ＣＲＯＷＮ(沖縄県)",
+   "pref": "青森県／東京都／神奈川県／静岡県／愛知県／三重県／京都府／大阪府／高知県／福岡県／大分県／鹿児島県／沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634726",
+   "artist": "日食なつこ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626031",
+   "artist": "日本アカデミー賞 最優秀主演女優賞 受賞記念 倍賞千恵子コンサート２０２６ ｗｉｔｈ小六禮次郎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都劇場(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670986",
+   "artist": "若旦那／新羅慎二",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｄａｉｋａｎｙａｍａ 晴れたら空に豆まいて(東京都)／ＴＯＫＵＺＯ(愛知県)／拾得(京都府)／岡山ペパーランド(岡山県)／ＳＩＸ ＯＮＥ Ｌｉｖｅ ＭＯＯＮ(広島県)／ＦＯＯＬＳ ＧＯＬＤ(福岡県)",
+   "pref": "東京都／愛知県／京都府／岡山県／広島県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669720",
+   "artist": "NEE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633840",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631913",
+   "artist": "ねぐせ。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "兵庫県立大学姫路工学キャンパス 体育館(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636846",
+   "artist": "ＮＥＬＫＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620610",
+   "artist": "ＮＥＬＫＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607254",
+   "artist": "Ｎａｍｅ ｔｈｅ Ｎｉｇｈｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／Ｋ・Ｄ Ｊａｐｏｎ(愛知県)／ＣＯＮＰＡＳＳ(大阪府)",
+   "pref": "東京都／愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669607",
+   "artist": "NOISEMAKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)／Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)／神戸 太陽と虎(兵庫県)",
+   "pref": "京都府／大阪府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624254",
+   "artist": "野島樺乃",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＲＩＴ ａｔ Ｓｈｉｂｕｙａ(東京都)／Ｌｉｏｎ Ｃａｆｅ(愛知県)／ＰＬＵＳＷＩＮ ＨＡＬＬ ビレボア(大阪府)／ＲＯＯＭＳ(福岡県)",
+   "pref": "東京都／愛知県／大阪府／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619149",
+   "artist": "野田愛実",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＨＥＰ ＨＡＬＬ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669925",
+   "artist": "のん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 Ｈａｒｂｏｒ Ｓｔｕｄｉｏ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626355",
+   "artist": "ＨＯＵＮＤ ＤＯＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "和歌山城ホール 大ホール(和歌山県)",
+   "pref": "和歌山県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
    "artist": "葉加瀬太郎 コンサートツアー 2026",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "堺市民芸術文化ホール（フェニーチェ堺） 大ホール(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627433",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
+   "artist": "葉加瀬太郎 コンサートツアー 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639137",
+   "artist": "ハク。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670609",
+   "artist": "Hakubi",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＯＳＡＫＡ ＭＵＳＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632490",
+   "artist": "橋本絵莉子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670462",
+   "artist": "長谷川白紙",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670351",
+   "artist": "秦 基博",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631542",
+   "artist": "８２６ａｓｋａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619575",
+   "artist": "花冷え。",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666350",
+   "artist": "浜崎あゆみ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633543",
+   "artist": "浜崎貴司",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ｃａｆｅ Ｒｏｏｍ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625050",
    "artist": "林部智史",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)／東京国際フォーラム ホールＣ(東京都)",
-   "pref": "埼玉県／東京都"
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
+   "artist": "ハラミちゃん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大津市民会館 大ホール(滋賀県)／和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "滋賀県／和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637765",
+   "artist": "ＨＡＬＬＯＷＥＥＮ ＰＵＲＧＥ ＮＩＧＨＴ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＥＶＥＲＬＡＮＤ(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615378",
+   "artist": "半崎美子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "守山市民ホール 大ホール(滋賀県)／奈良県橿原文化会館 大ホール(奈良県)／和歌山県民文化会館 大ホール(和歌山県)",
+   "pref": "滋賀県／奈良県／和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670807",
+   "artist": "半崎美子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "森ノ宮ピロティホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634642",
+   "artist": "反転する六音",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625890",
+   "artist": "ハンブレッダーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635523",
+   "artist": "Ｈｕｍｐ Ｂａｃｋ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619130",
+   "artist": "バチカン市国に愛されたい",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617466",
+   "artist": "馬場俊英",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633139",
+   "artist": "ＢＡＬＬＩＳＴＩＫ ＢＯＹＺ ｆｒｏｍ ＥＸＩＬＥ ＴＲＩＢＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ワールド記念ホール（神戸ポートアイランドホール）(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633139",
+   "artist": "ＢＡＬＬＩＳＴＩＫ ＢＯＹＺ ｆｒｏｍ ＥＸＩＬＥ ＴＲＩＢＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ワールド記念ホール（神戸ポートアイランドホール）(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636596",
+   "artist": "ＢＡＮＱＵＥＴ！！ －ＭＩＮＡＭＩ ＷＨＥＥＬ ＥＤＩＴＩＯＮ－",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671167",
+   "artist": "バンドじゃないもん！MAXX NAKAYOSHI",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634053",
+   "artist": "ＰＡＩＬ ＯＵＴ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＲＯＮＺＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624372",
+   "artist": "ＰａｓｓＣｏｄｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624377",
+   "artist": "ＰａｓｓＣｏｄｅ＜ＶＩＰ ＵＰＧＲＡＤＥ ＰＡＣＫＡＧＥ＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625210",
+   "artist": "Ｐａｓｔｅｌ Ｔａｎｇ Ｃｌｕｂ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＦＥＶＥＲ(東京都)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633215",
+   "artist": "ＰＵＦＦＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ウェスティン都ホテル京都 瑞穂の間(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624079",
+   "artist": "ｐａｒａｎｏｉｄ ｖｏｉｄ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631206",
+   "artist": "パーカーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＥＳＰエンタテインメント大阪 Ｃｌｕｂ ＧＡＲＤＥＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664691",
+   "artist": "PERSONZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 サウスホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670763",
+   "artist": "PURPLE BUBBLE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627425",
+   "artist": "氷川きよし",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635642",
+   "artist": "氷川きよし クリスマスディナー＆コンサート２０２６ ｉｎ 大阪",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホテルニューオータニ大阪 「鳳凰」(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669907",
+   "artist": "ヒグチアイ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626464",
+   "artist": "髭",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636093",
+   "artist": "日乃まそら",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ａｒｃ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636093",
+   "artist": "日乃まそら",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ａｒｃ(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666668",
    "artist": "平原綾香",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "所沢市民文化センターミューズ アークホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666668",
-   "artist": "平原綾香",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626249",
+   "artist": "ヒルクライム",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "所沢市民文化センターミューズ アークホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627101",
+   "artist": "Ｂｉｇｆｕｍｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626505",
+   "artist": "ＢＩＧＭＡＭＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629478",
+   "artist": "ビッケブランカ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631406",
+   "artist": "Ｂｅｙｏｎｄ Ｍｕｓｉｃ Ｆｅｓｔｉｖａｌ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "服部緑地野外音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671050",
+   "artist": "Billyrrom",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸ＶＡＲＩＴ．(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671050",
+   "artist": "Billyrrom",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636749",
+   "artist": "Ｂｅ ｍｙ Ｇｉｒｌ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629003",
+   "artist": "ピアニカの魔術師FES 2026 ～夢ある音楽会～10th Anniversary",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "服部緑地野外音楽堂(大阪府)",
+   "pref": "大阪府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623150",
@@ -571,140 +3681,1308 @@
    "pref": "北海道／岩手県／宮城県／埼玉県／東京都／愛知県／大阪府／兵庫県／福岡県／熊本県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617703",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669195",
+   "artist": "fav me",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670705",
+   "artist": "First Love is Never Returned",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627049",
+   "artist": "Ｆｅａｒ，ａｎｄ Ｌｏａｔｈｉｎｇ ｉｎ Ｌａｓ Ｖｅｇａｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623166",
+   "artist": "ＦＩＮＬＡＮＤＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624807",
+   "artist": "ｆｏｘ ｃａｐｔｕｒｅ ｐｌａｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625015",
    "artist": "フォレスタ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ロームシアター京都 メインホール(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622129",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635070",
+   "artist": "藤澤ノリマサ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＰＡＲＣＯ １４Ｆ ＳＰＡＣＥ１４(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628279",
+   "artist": "藤巻亮太",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634811",
+   "artist": "藤原大祐",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622315",
    "artist": "布施明",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ロームシアター京都 メインホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634780",
+   "artist": "ふみ いろんなところでライブやります２０２７",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市教育文化会館 小ホール(北海道)／仙台市シルバーセンター 交流ホール(宮城県)／日経ホール(東京都)／クレオ大阪東(大阪府)／サンポートホール高松 第１小ホール(香川県)／北九州市立男女共同参画センター ムーブ(福岡県)",
+   "pref": "北海道／宮城県／東京都／大阪府／香川県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617316",
+   "artist": "フラワーカンパニーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623923",
+   "artist": "フラワーカンパニーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
    "artist": "THE FRANK VOX",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ２／３（ＶＪ－４）(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)／Ｓｈｉｂｕｙａ ＷＷＷ(東京都)／ＳＵＰＥＲＮＯＶＡ ＫＡＷＡＳＡＫＩ(神奈川県)",
-   "pref": "栃木県／群馬県／埼玉県／千葉県／東京都／神奈川県"
+   "venue": "大阪城音楽堂(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666817",
-   "artist": "flumpool",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622223",
+   "artist": "ｆｒｉｐＳｉｄｅ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "狭山市市民会館 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 大ホール(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668345",
-   "artist": "BREAKERZ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633537",
+   "artist": "フリージアン",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625756",
+   "artist": "古内東子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ザ・シンフォニーホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670707",
+   "artist": "fulusu",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "寺田町Ｆｉｒｅｌｏｏｐ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668565",
+   "artist": "古舘伊知郎×南野陽子 presents 昭和101年スーパーソングブックショウ！ ～昭和のベストヒット・グラフィティー～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667965",
+   "artist": "BRADIO",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671182",
+   "artist": "ブランデー戦記",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668893",
+   "artist": "BLUE ENCOUNT",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624976",
+   "artist": "Ｐｌａｓｔｉｃ Ｔｒｅｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台Ｒｅｎｓａ(宮城県)／Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)／豊洲ＰＩＴ(東京都)／ボトムライン(愛知県)／京都ＦＡＮＪ(京都府)／松下ＩＭＰホール(大阪府)／神戸 Ｈａｒｂｏｒ Ｓｔｕｄｉｏ(兵庫県)",
+   "pref": "宮城県／東京都／愛知県／京都府／大阪府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623042",
+   "artist": "Ｈｅａｖｙ Ｍｅｔａｌ Ｐｒｉｎｃｅｓｓ Ａｃａｄｅｍｙ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪ＲＵＩＤＯ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627261",
+   "artist": "ベランダ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633733",
+   "artist": "ベリーグッドマン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669189",
+   "artist": "ベリーグッドマン メジャーデビュー10周年記念 × 平安神宮 奉納 Special Live",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "平安神宮 大極殿前特設ステージ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630517",
+   "artist": "ベルマインツ ｐｒｅｓｅｎｔｓ 『ここで息を待つ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "吉祥寺Ｓｔａｒ Ｐｉｎｅ’ｓ Ｃａｆｅ(東京都)／神戸ＶＡＲＩＴ．(兵庫県)",
+   "pref": "東京都／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632508",
+   "artist": "ＰＥＤＲＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635577",
+   "artist": "星屑スキャット クリスマスディナーショー２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホテルニューオータニ大阪 「鳳凰」(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668851",
+   "artist": "HOSHIKUMA MINAMI",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635542",
+   "artist": "細坪基佳",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都府立文化芸術会館(京都府)",
+   "pref": "京都府"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670338",
    "artist": "布袋寅泰",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ロームシアター京都 メインホール(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628268",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633218",
+   "artist": "堀内孝雄",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ウェスティン都ホテル京都 瑞穂の間(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630965",
+   "artist": "堀込泰行",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670250",
+   "artist": "WHITE ASH",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671382",
+   "artist": "HOME",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都メトロ(京都府)／Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670601",
+   "artist": "Homecomings",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632850",
+   "artist": "Ｂｏｉｌｅｒ Ｒｏｏｍ Ｏｓａｋａ ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "堂島リバーフォーラム(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626699",
+   "artist": "ｂｏｋｕｌａ．",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631034",
+   "artist": "ｂｏｈｅｍｉａｎｖｏｏｄｏｏ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ＆Ｌｏｕｎｇｅ Ｖｉｏ(愛知県)／ＲＯＣＫＴＯＷＮ(大阪府)",
+   "pref": "愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616191",
+   "artist": "ＰＯＰ ＡＲＴ ＴＯＷＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪ＲＵＩＤＯ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634828",
+   "artist": "ポップしなないで",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ Ｈａｌｌ クラブ月世界(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636684",
+   "artist": "ＰＯＹＡＣＯＲＯ １ｓｔ Ｌｉｖｅ “Ｗｅ ａｒｅ ＰＯＹＡＣＯＲＯ” Ｓｕｐｐｏｒｔｅｄ ｂｙライブナタリー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ ＧＡＴＴＡＣＡ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620366",
+   "artist": "ポンツクピーヤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "下北沢ＤａｉｓｙＢａｒ(東京都)／Ｒ．Ａ．Ｄ(愛知県)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "東京都／愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632486",
+   "artist": "ＰｏｍｐａｄｏｌｌＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564276",
+   "artist": "THE MICRO HEAD 4N'S",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪ＲＵＩＤＯ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624298",
+   "artist": "Ｍｙ Ｌｉｔｔｌｅ Ｌｏｖｅｒ ☆ Ａｋｋｏ Ｂａｎｄ Ｑｕｉｎｔｅｔ ２０２６ ＃３",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "コスモスシアター（貝塚市民文化会館）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621354",
+   "artist": "マカロニえんぴつ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＬＩＯＮ ＡＲＥＮＡ ＫＯＢＥ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628125",
    "artist": "真心ブラザーズ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670573",
-   "artist": "三浦大知",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633852",
+   "artist": "マザリ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "川口リリア・フカガワみらいホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622919",
-   "artist": "美川憲一／コロッケ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633212",
+   "artist": "増田惠子",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "水戸市民会館 グロービスホール(茨城県)／ウェスタ川越 ヤオコー大ホール(埼玉県)／サンシティ越谷市民ホール 大ホール(埼玉県)／ぎふしんフォーラム 大ホール(岐阜県)／三重県文化会館 大ホール(三重県)",
-   "pref": "茨城県／埼玉県／岐阜県／三重県"
+   "venue": "ウェスティン都ホテル京都 瑞穂の間(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625366",
-   "artist": "ＭＹＴＨ ＆ ＲＯＩＤ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670324",
+   "artist": "MAX",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｋｕｍａｇａｙａ ＶＪ－１(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620720",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636053",
+   "artist": "ＭＡＴＣＨ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "旧グッゲンハイム邸(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629337",
+   "artist": "ＭＡＤＫＩＤ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619692",
+   "artist": "松尾優",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 サウスホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628038",
+   "artist": "松平健 マツケンサンバ コンサート",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "文化パルク城陽 プラムホール(京都府)／フェスティバルホール(大阪府)／神戸国際会館こくさいホール(兵庫県)",
+   "pref": "京都府／大阪府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2561802",
+   "artist": "松任谷由実",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",
+   "artist": "maya ongaku",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670329",
+   "artist": "まらしぃ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 サウスホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634100",
+   "artist": "丸山純奈",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2615170",
+   "artist": "三浦和人",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623061",
+   "artist": "三浦祐太朗",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ライクスホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2603905",
+   "artist": "Ｍｓ．ＯＯＪＡ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627257",
+   "artist": "【３日間通し券】リクオ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671178",
    "artist": "南こうせつ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "渋川市民会館 大ホール(群馬県)／グローバルソフトウェア本庄文化ホール(埼玉県)／パストラルかぞ 大ホール(埼玉県)",
-   "pref": "群馬県／埼玉県"
+   "venue": "ひこね市文化プラザ グランドホール(滋賀県)",
+   "pref": "滋賀県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664749",
-   "artist": "めいちゃん",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635644",
+   "artist": "南野陽子 クリスマスディナー＆コンサート２０２６",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ベルーナドーム(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ホテルニューオータニ大阪 「鳳凰」(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632229",
+   "artist": "宮川大聖",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｔａｋａｒａ Ｏｓａｋａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670638",
+   "artist": "宮沢和史",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "犬山市南部公民館(愛知県)／御浜町中央公民館 アメニティーホール(三重県)／アクリエひめじ 中ホール(兵庫県)",
+   "pref": "愛知県／三重県／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632691",
+   "artist": "みゆな",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "２４６ ＬＩＶＥＨＯＵＳＥ ＧＡＢＵ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609655",
+   "artist": "ｍｉｌｅｔ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623944",
+   "artist": "Ｍｉｉａｋｉｉｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)／ＲＯＣＫＴＯＷＮ(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631167",
+   "artist": "ミーマイナー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628081",
+   "artist": "向井太一",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635134",
+   "artist": "ｍｅｉ ｅｈａｒａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627547",
+   "artist": "ＭＡＹＳＯＮ’ｓ ＰＡＲＴＹ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627974",
+   "artist": "Ｍａｙ Ｆｏｒｔｈ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628465",
+   "artist": "Ｍａｖｅｒｉｃｋ Ｍｏｍ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671240",
+   "artist": "名誉伝説",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630468",
+   "artist": "Ｍａｙ’ｎ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626198",
+   "artist": "Ｍｅｇ Ｂｏｎｕｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667939",
+   "artist": "メリクレット",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＬＩＶＥ ＳＱＵＡＲＥ ２ｎｄ ＬＩＮＥ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670034",
+   "artist": "meli melo osaka in toyonaka",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "服部緑地野外音楽堂(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670334",
+   "artist": "mogari 1st Full Album「Bypass Pop」Release Party",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "下北沢ＳＨＥＬＴＥＲ(東京都)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)",
+   "pref": "東京都／京都府／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624208",
+   "artist": "ＴＨＥ ＭＯＤＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639935",
+   "artist": "元ｃｌａｓｓ 日浦孝則 秋のプチツアー２０２６ 祇園公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "祗園Ｃａｐｏｔａｓｔｏ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639934",
+   "artist": "元ｃｌａｓｓ 日浦孝則 秋のプチツアー２０２６ 甲子園口公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｌｉｖｅ＆Ｂａｒ Ｕｎｃｌｅ Ｊａｍ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639936",
+   "artist": "元ｃｌａｓｓ 日浦孝則 秋のプチツアー２０２６ 神戸公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "インテリアショップＷＩＳＨ(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639928",
+   "artist": "元ｃｌａｓｓ 日浦孝則 秋のプチツアー２０２６ 滋賀公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｔｅｒｒａｃｅ Ｋｉｔｃｈｅｎ Ａｎｊｕ(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639938",
+   "artist": "元ｃｌａｓｓ 日浦孝則 秋のプチツアー２０２６ 高島公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｐ．ＨａｒｂｏｕＲ(滋賀県)",
+   "pref": "滋賀県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
    "artist": "MONO NO AWARE",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "Ｌｉｖｅ Ｈｏｕｓｅ Ａｎｉｍａ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
-   "artist": "山本リンダ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
+   "artist": "MONO NO AWARE",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "大宮ソニックシティ 大ホール(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "神戸ＶＡＲＩＴ．(兵庫県)",
+   "pref": "兵庫県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633077",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626182",
+   "artist": "モノブライト",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622612",
+   "artist": "ＭＯＭＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都テルサ テルサホール(京都府)／八尾市文化会館（プリズムホール） 大ホール(大阪府)／ラブリーホール ｓｕｐｐｏｒｔｅｄ ｂｙ ｏｓａｋａｊｕｋｅｎ 大ホール(大阪府)／淡路市立しづかホール(兵庫県)／アワーズホール・明石市民会館 大ホール(兵庫県)",
+   "pref": "京都府／大阪府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671011",
+   "artist": "ももいろクローバーZ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634561",
+   "artist": "森口博子 クリスマスディナー＆ライブ２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸ポートピアホテル・大輪田の間(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670758",
+   "artist": "森高千里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "守山市民ホール 大ホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623342",
+   "artist": "森 大翔",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614593",
+   "artist": "森山良子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614593",
+   "artist": "森山良子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621104",
+   "artist": "森山良子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "滋賀県立文化産業交流会館 イベントホール(滋賀県)",
+   "pref": "滋賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622021",
+   "artist": "森山良子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクリエひめじ 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631027",
+   "artist": "ＭＯＮＫＥＹ ＭＡＪＩＫ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671008",
+   "artist": "モーニング娘。’26",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636709",
+   "artist": "八神純子／塩谷哲",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京建物 Ｂｒｉｌｌｉａ ＨＡＬＬ 箕面 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668840",
+   "artist": "薬師丸ひろ子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628367",
+   "artist": "矢野顕子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "サンケイホールブリーゼ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671448",
+   "artist": "ヤバイＴシャツ屋さん",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｏｓａｋａ Ｂａｙｓｉｄｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630059",
+   "artist": "ｙａｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪商業大学 総合体育館アリーナ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563877",
+   "artist": "山嵐",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610082",
+   "artist": "山崎ハコ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608432",
+   "artist": "やましたりな",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635475",
+   "artist": "山中さわお＆ＥＬＰＩＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670915",
+   "artist": "山本耕史",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622772",
+   "artist": "ゆいゆいシスターズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "世界館(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637552",
+   "artist": "遊佐未森",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "日本基督教団 平安教会(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631310",
+   "artist": "ユナイト",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＥＶＥＲＬＡＮＤ(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618271",
+   "artist": "ユナイト",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610887",
+   "artist": "優利香",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634658",
+   "artist": "ＹＵ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田Ｚｅｅｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632965",
+   "artist": "吉澤嘉代子",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625698",
    "artist": "ｙｏｓｕｇａｌａ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628186",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625273",
+   "artist": "ＹＯＮＡ ＹＯＮＡ ＷＥＥＫＥＮＤＥＲＳ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632247",
+   "artist": "米倉利紀",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＥＲＯＮＩＣＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669055",
+   "artist": "夜の本気ダンス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669047",
+   "artist": "夜の本気ダンス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669323",
+   "artist": "LOUDNESS",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621627",
+   "artist": "ラックライフ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628775",
+   "artist": "ラックライフ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田ＢａｎａｎａＨａｌｌ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669479",
+   "artist": "Laughing Hick",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629244",
    "artist": "リアクション ザ ブッタ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬＩＶＥ ＨＯＵＳＥ Ｈｅａｒｔｓ(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669912",
-   "artist": "渡辺美里",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627256",
+   "artist": "リクオ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ベルーナドーム(埼玉県)",
-   "pref": "埼玉県"
+   "venue": "磔磔(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667696",
+   "artist": "reGretGirl",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635703",
+   "artist": "Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なら１００年会館 大ホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635877",
+   "artist": "竜徹日記",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "２４６ ＬＩＶＥＨＯＵＳＥ ＧＡＢＵ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667589",
+   "artist": "緑黄色社会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大阪城ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623846",
+   "artist": "ＬＩＮＤＢＥＲＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623815",
+   "artist": "ＬＩＮＤＢＥＲＧ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都ＦＡＮＪ(京都府)／神戸ＶＡＲＩＴ．(兵庫県)",
+   "pref": "京都府／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668255",
+   "artist": "リーガルリリー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なんばＨａｔｃｈ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614665",
+   "artist": "ルサンチマン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "心斎橋ＪＡＮＵＳ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629171",
+   "artist": "Ｌｕｃｉｅｌａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＭＥＴＡ ＶＡＬＬＥＹ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628647",
+   "artist": "ｒｏｏｍｉｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671486",
+   "artist": "RAZORS EDGE presents STORMY DUDES FESTA 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ／ＳＵＮＨＡＬＬ／ＡＮＩＭＡ／Ｐａｎｇｅａ／ＢＲＯＮＺＥ／ＨＯＫＡＧＥ／ＳＩＮＫＡＧＵＲＡ／ｉｉｉｅ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665615",
+   "artist": "Rayflower",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＹＯＴＯ ＭＵＳＥ(京都府)／神戸ＶＡＲＩＴ．(兵庫県)／ＥＶＡＮＳ ＣＡＳＴＬＥ ＨＡＬＬ(奈良県)／和歌山 ＧＡＴＥ(和歌山県)",
+   "pref": "京都府／兵庫県／奈良県／和歌山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670283",
+   "artist": "ReoNa",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628778",
+   "artist": "レキシ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632867",
+   "artist": "ＬＥＴ ＭＥ ＫＮＯＷ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633958",
+   "artist": "Ｒｅｔｒｏ Ｐａｇｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "梅田クラブクアトロ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671539",
+   "artist": "レトロリロン",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610005",
+   "artist": "ＬＡ－ＰＰＩＳＣＨ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｓｈｉｎｊｕｋｕ（ＴＯＫＹＯ）(東京都)／エレクトリック・レディ・ランド(愛知県)／ＢＩＧＣＡＴ(大阪府)",
+   "pref": "東京都／愛知県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667859",
+   "artist": "Rol3ert",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669171",
+   "artist": "浪漫派マシュマロ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＧＯＲＩＬＬＡ ＨＡＬＬ ＯＳＡＫＡ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637626",
+   "artist": "ＬＯＬＯＥＴ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｙｏｇｉｂｏ ＨＯＬＹ ＭＯＵＮＴＡＩＮ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669719",
+   "artist": "PSYCHIC FES 2026",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｒ．Ａ．Ｄ(愛知県)／神戸 太陽と虎(兵庫県)",
+   "pref": "愛知県／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671162",
+   "artist": "ROAD TO 武道館 MISSION！ 2大都市 大決起集会 フリーライブ！",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＩＧＣＡＴ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670468",
+   "artist": "忘れらんねえよ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸 太陽と虎(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623395",
+   "artist": "渡辺真知子、サーカス、三浦祐太朗 ～時代を彩る名曲コンサート～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸国際会館こくさいホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626012",
+   "artist": "渡會将士",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｓｈａｎｇｒｉ－Ｌａ(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635440",
+   "artist": "ｗａｃｃｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "甲南大学 講堂兼体育館(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671101",
+   "artist": "wacci",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "なら１００年会館 大ホール(奈良県)",
+   "pref": "奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639201",
+   "artist": "ｗａｃｃｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＮＨＫ大阪ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667350",
+   "artist": "WATWING",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624769",
+   "artist": "＠ｏｎｅｆｉｖｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｚｅｐｐ Ｎａｍｂａ（ＯＳＡＫＡ）(大阪府)",
+   "pref": "大阪府"
   }
  ]
 }

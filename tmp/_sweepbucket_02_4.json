@@ -1,43 +1,123 @@
 {
  "lg": "02",
- "total": 20,
+ "total": 19,
  "pages": 2,
  "fetched_pages": 3,
- "parsed": 11,
- "new_name_in_db": 1,
- "new": [
+ "parsed": 14,
+ "new_name_in_db": 0,
+ "new": [],
+ "rows": [
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632726",
+   "artist": "劇団飛行船マスクプレイミュージカル「シンドバッドの大冒険」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "吹田市文化会館（メイシアター） 大ホール(大阪府)／松山市民会館 大ホール(愛媛県)",
+   "pref": "大阪府／愛媛県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631642",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 札幌市こどもの劇場やまびこ座",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市こどもの劇場やまびこ座(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631660",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ 札幌市こどもの劇場やまびこ座",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市こどもの劇場やまびこ座(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631675",
+   "artist": "札幌劇場祭ＴＧＲ２０２６ ピトシャンピトショ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "札幌市こども人形劇場 こぐま座(北海道)",
+   "pref": "北海道"
+  },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667656",
    "artist": "シナモロールワンダートリップ ～消えた魔法の秘密～",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/10(土) ・ 2026/10/11(日)",
    "venue": "久留米シティプラザ ザ・グランドホール(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": true
+   "pref": "福岡県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631077",
-   "artist": "人形劇場とらまる座特別公演ＫＲＡＢＡＴ～クラバート～",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607436",
+   "artist": "人形劇団クラルテ「パンどろぼう」",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/19(土) ・ 2026/9/20(日) ・ 2026/9/21(月・祝)",
-   "venue": "人形劇場とらまる座(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
+   "venue": "山口市民会館 大ホール(山口県)",
+   "pref": "山口県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618001",
-   "artist": "人形劇「パンどろぼう」（人形劇団クラルテ）",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614807",
+   "artist": "人形劇団むすび座「ニルスのふしぎな旅」",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/5(土)",
-   "venue": "響の森 桶川市民ホール 大ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
+   "venue": "津山文化センター 大ホール(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629141",
+   "artist": "人形劇団むすび座「ニルスのふしぎな旅」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "山口市民会館 大ホール(山口県)",
+   "pref": "山口県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628352",
+   "artist": "人形劇団ひとみ座公演「シュレミールと小さな潜水艦」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "パトリア日田 小ホール(大分県)",
+   "pref": "大分県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621908",
+   "artist": "ノンタンのハッピーコンサート『ノンタンのわくわくピクニック』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟テルサ(新潟県)",
+   "pref": "新潟県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630361",
+   "artist": "はらぺこあおむしショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "青葉の森公園芸術文化ホール(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629212",
+   "artist": "ミュージカルシアター ぐりむ・りむりぐ・むりぐ・りむ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "グリムの館(栃木県)",
+   "pref": "栃木県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668023",
+   "artist": "名探偵プリキュア！ ドリームステージ♪",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "豊田市民文化会館 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625928",
+   "artist": "妖怪影絵劇「ゲゲゲの鬼太郎」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "岡垣サンリーアイ ハミングホール(福岡県)",
+   "pref": "福岡県"
   }
  ]
 }

@@ -1,175 +1,21 @@
 {
  "lg": "02",
- "total": 119,
- "pages": 12,
- "fetched_pages": 13,
- "parsed": 92,
- "new_name_in_db": 7,
+ "total": 126,
+ "pages": 13,
+ "fetched_pages": 14,
+ "parsed": 84,
+ "new_name_in_db": 5,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625032",
-   "artist": "アラジン Ｔｈｅ Ｂａｌｌｅｔ Ｓｈｏｗ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670970",
+   "artist": "『Close Up －クローズ・アップ－』",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/10(土) ・ 2026/11/19(木) ・ 2026/11/20(金)",
-   "venue": "めぐろパーシモンホール 大ホール(東京都)／吹田市文化会館（メイシアター） 大ホール(大阪府)",
-   "pref": "東京都／大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629043",
-   "artist": "アリス・リポル／Ｃｉａ．ＲＥＣ 「Ａｄｏｒｎｏ （装飾）」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/17(土) ・ 2026/10/18(日)",
-   "venue": "京都府立府民ホール（アルティ）(京都府)",
-   "pref": "京都府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625405",
-   "artist": "第三回 市川團子 新翔 春秋会",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/16(金) ・ 2026/10/17(土) ・ 2026/10/18(日)",
-   "venue": "京都芸術劇場 春秋座（京都芸術大学内）(京都府)",
-   "pref": "京都府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2601920",
-   "artist": "イーゴリ・モイセーエフ生誕１２０周年記念モイセーエフバレエ団日本公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/27(火) ～ 2026/10/30(金)",
-   "venue": "新宿文化センター 大ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625307",
-   "artist": "エンターテインメントフェスティバル２０２６ ｉｎ Ｋｕｒｕｍｅ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/17(土)",
-   "venue": "久留米シティプラザ 久留米座(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620380",
-   "artist": "キーウ・クラシック・バレエ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/30(金)",
-   "venue": "関内ホール 大ホール(神奈川県)",
+   "perfdate": "2026/11/28(土) ・ 2026/11/29(日)",
+   "venue": "ＫＡＡＴ 神奈川芸術劇場 ホール(神奈川県)",
    "pref": "神奈川県",
    "in_db": false,
    "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2613007",
-   "artist": "キーウ・クラシック・バレエ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/21(土) ・ 2026/11/22(日) ・ 2026/11/24(火)",
-   "venue": "ロームシアター京都 メインホール(京都府)／梅田芸術劇場メインホール(大阪府)／なら１００年会館 大ホール(奈良県)",
-   "pref": "京都府／大阪府／奈良県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620262",
-   "artist": "キーウ・クラシック・バレエ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/23(水)",
-   "venue": "カルッツかわさき（川崎市スポーツ・文化総合センター）ホール(神奈川県)",
-   "pref": "神奈川県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622244",
-   "artist": "キーウ・クラシック・バレエ くるみ割り人形 ～全幕～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/29(日)",
-   "venue": "ミズ ウェルビー ホール 大ホール(佐賀県)",
-   "pref": "佐賀県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623441",
-   "artist": "キーウ・クラシック・バレエ「白鳥の湖」（全２幕）",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/15(日)",
-   "venue": "市川市文化会館 大ホール(千葉県)",
-   "pref": "千葉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633034",
-   "artist": "キーウ・クラシック・バレエ ロミオとジュリエット－全幕－",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/26(土)",
-   "venue": "レクザムホール 大ホール(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626562",
-   "artist": "熊川哲也 Ｋ－ＢＡＬＬＥＴ ＴＯＫＹＯ Ａｕｔｕｍｎ Ｔｏｕｒ ２０２６ 『白鳥の湖』",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/9(金) ・ 2026/10/10(土)",
-   "venue": "フェスティバルホール(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628819",
-   "artist": "【当日引換券】熊川哲也 Ｋ－ＢＡＬＬＥＴ ＴＯＫＹＯ Ａｕｔｕｍｎ Ｔｏｕｒ ２０２６ 『白鳥の湖』",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/9(金)",
-   "venue": "フェスティバルホール(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620305",
-   "artist": "コンカリーニョ２０周年記念提携企画 昭和レディの「コンカリーニョでお祭り騒ぎ！！」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/17(土)",
-   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
-   "pref": "北海道",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2612311",
-   "artist": "Ｇｏｌｐｅ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/23(水・祝)",
-   "venue": "北國新聞赤羽ホール(石川県)",
-   "pref": "石川県",
-   "in_db": false,
-   "name_in_db": false
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670288",
@@ -183,248 +29,6 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669772",
-   "artist": "新国立劇場バレエ団 ロンドン公演凱旋企画 「ジゼル」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/14(土) ・ 2026/11/15(日)",
-   "venue": "福岡市民ホール 大ホール(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625052",
-   "artist": "１０／１６新作『天ノ鳥船』 １０／２０『ふた花』",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/16(金) ・ 2026/10/20(火)",
-   "venue": "Ｊ：ＣＯＭ北九州芸術劇場 中劇場(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618676",
-   "artist": "須山仁美クラシックバレエ定期公演２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/11(日)",
-   "venue": "名古屋文理大学文化フォーラム 大ホール(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621187",
-   "artist": "Ｓｕｐｅｒ Ｔａｐ Ｐｅｒｆｏｒｍａｎｃｅ ＳＰＡＲＫＬＥ－Ｇｏｌｄ１０",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/3(土) ・ 2026/10/4(日)",
-   "venue": "名古屋市千種文化小劇場(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632545",
-   "artist": "仙臺舞篝【ＳＥＮＤＡＩ ＭＡＩ ＫＡＧＡＲＩ】",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/31(土)",
-   "venue": "能－ＢＯＸ（せんだい演劇工房１０－ＢＯＸ別館）(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614395",
-   "artist": "第１０回全国バレエコンクール プリ・ド・カナザワ２０２６",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/20(日) ・ 2026/9/21(月・祝)",
-   "venue": "金沢歌劇座(石川県)",
-   "pref": "石川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2544022",
-   "artist": "第４回平和の舞＜神楽の学校２０２６ｉｎアステールプラザ＞",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/15(日)",
-   "venue": "広島ＪＭＳアステールプラザ 中ホール(広島県)",
-   "pref": "広島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626653",
-   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ ｉｎ Ｓａｉｔａｍａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/25(日)",
-   "venue": "蕨市民会館コンクレレホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620938",
-   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ ｉｎ 広島",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "広島市南区民文化センター(広島県)",
-   "pref": "広島県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625877",
-   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ Ｎａｇａｓａｋｉ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/18(日)",
-   "venue": "諫早文化会館 大ホール(長崎県)",
-   "pref": "長崎県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629196",
-   "artist": "Ｄａｎｃｅ Ｅｘｐｏ ２０２６ ｉｎ Ｋａｇａｗａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/23(月・祝)",
-   "venue": "三木町文化交流プラザ メタホール(香川県)",
-   "pref": "香川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623332",
-   "artist": "Ｄａｎｃｅ Ｅｘｐｏ ２０２６ ｉｎ Ｓｅｎｄａｉ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/6(日)",
-   "venue": "仙台市若林区文化センター(宮城県)",
-   "pref": "宮城県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619543",
-   "artist": "Ｄａｎｃｅ Ｅｘｐｏ ２０２６ ｉｎ Ｈｙｏｇｏ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土)",
-   "venue": "アワーズホール・明石市民会館 大ホール(兵庫県)",
-   "pref": "兵庫県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623336",
-   "artist": "Ｄａｎｃｅ Ｓｈｏｗｃａｓｅ ２０２６ ｉｎ Ｋａｎａｇａｗａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/21(月・祝)",
-   "venue": "やまと芸術文化ホール メインホール(神奈川県)",
-   "pref": "神奈川県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630409",
-   "artist": "ＤａｎｃｅＳｈｏｗｃａｓｅ ２０２６ ｉｎ Ｋｉｔａｋｙｕｓｈｕ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/29(日)",
-   "venue": "黒崎ひびしんホール 大ホール(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623971",
-   "artist": "Ｄａｎｃｅ Ｓｈｏｗｃａｓｅ ２０２６ ｉｎ Ｃｈｉｂａ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土)",
-   "venue": "流山市民会館(千葉県)",
-   "pref": "千葉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617761",
-   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/11(金)",
-   "venue": "ミズ ウェルビー ホール 大ホール(佐賀県)",
-   "pref": "佐賀県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616680",
-   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」（全２幕）",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/12(土) ・ 2026/12/13(日)",
-   "venue": "市民会館シアーズホーム夢ホール（熊本市民会館）(熊本県)／ｉｉｃｈｉｋｏ グランシアタ(大分県)",
-   "pref": "熊本県／大分県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616505",
-   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」（全２幕）",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/15(火)",
-   "venue": "アクロス福岡 福岡シンフォニーホール(福岡県)",
-   "pref": "福岡県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617944",
-   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」（全２幕）",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/22(火)",
-   "venue": "愛知県芸術劇場 大ホール(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614267",
-   "artist": "チャイコフスキー・バレエ劇場 「白鳥の湖」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/10(日)",
-   "venue": "ロームシアター京都 メインホール(京都府)",
-   "pref": "京都府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620441",
-   "artist": "東京シティ・バレエ団 現代バレエII「交差する感性／Ｃｒｏｓｓｉｎｇ Ｖｉｓｉｏｎｓ」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/26(土) ・ 2026/9/27(日)",
-   "venue": "彩の国さいたま芸術劇場 大ホール(埼玉県)",
-   "pref": "埼玉県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669290",
    "artist": "東京バレエ団 オネーギン 全3幕",
    "saletype": "一般発売",
@@ -436,81 +40,15 @@
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627102",
-   "artist": "東京バレエ団 くるみ割り人形",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670708",
+   "artist": "東京バレエ団 ベジャールの「くるみ割り人形」 全2幕",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/12/24(木)",
-   "venue": "枚方市総合文化芸術センター 関西医大 大ホール(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2608611",
-   "artist": "東京バレエ団「白鳥の湖」",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/17(木)",
-   "venue": "ロームシアター京都 メインホール(京都府)",
-   "pref": "京都府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667577",
-   "artist": "東京バレエ団 ブルメイステル版 白鳥の湖 全4幕",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/9(水) ～ 2026/9/13(日)",
+   "perfdate": "2027/1/10(日) ・ 2027/1/11(月・祝)",
    "venue": "新国立劇場 オペラパレス(東京都)",
    "pref": "東京都",
    "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668557",
-   "artist": "TOKYO MET SaLaD MUSIC FESTIVAL 2026",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/12(土) ・ 2026/9/13(日)",
-   "venue": "東京芸術劇場 プレイハウス(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616760",
-   "artist": "ｎｉｃｏｎｏｍｉｅｌ ｐｒｅｓｅｎｔｓ 『ＩＳＭＡＮＩＥＮ』 Ａ Ｃｏｎｔｅｍｐｏｒａｒｙ Ｂａｌｌｅｔ（世界初演） ～失った“自分”に、もう一度 出逢う物語～",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土) ・ 2026/9/20(日)",
-   "venue": "ドーンセンターホール(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630876",
-   "artist": "ＶＩＳＵＡＬ ＳＯＵＮＤ ＭＯＶＥＭＥＮＴ 水 火 光",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/19(土)",
-   "venue": "アマノ芸術創造センター名古屋(愛知県)",
-   "pref": "愛知県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666624",
-   "artist": "BDC SHOWCASE 2026-JOURNEY-",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/5(土) ・ 2026/9/6(日)",
-   "venue": "渋谷区文化総合センター大和田 さくらホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
+   "name_in_db": true
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670051",
@@ -522,72 +60,704 @@
    "pref": "東京都",
    "in_db": false,
    "name_in_db": true
-  },
+  }
+ ],
+ "rows": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670293",
-   "artist": "牧阿佐美バレヱ団",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625032",
+   "artist": "アラジン Ｔｈｅ Ｂａｌｌｅｔ Ｓｈｏｗ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
+   "venue": "めぐろパーシモンホール 大ホール(東京都)／吹田市文化会館（メイシアター） 大ホール(大阪府)",
+   "pref": "東京都／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629043",
+   "artist": "アリス・リポル／Ｃｉａ．ＲＥＣ 「Ａｄｏｒｎｏ （装飾）」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都府立府民ホール（アルティ）(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2639122",
+   "artist": "いしかわ秋の芸術祭 文化絢爛 第１３回 紀祥会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "北國新聞赤羽ホール(石川県)",
+   "pref": "石川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625405",
+   "artist": "第三回 市川團子 新翔 春秋会",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "京都芸術劇場 春秋座（京都芸術大学内）(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624469",
+   "artist": "ＮＢＡバレエ団『くるみ割り人形』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ミューズ（所沢市民文化センター） マーキーホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625307",
+   "artist": "エンターテインメントフェスティバル２０２６ ｉｎ Ｋｕｒｕｍｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "久留米シティプラザ 久留米座(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616398",
+   "artist": "尾上右近 舞踊＆トークショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "扶桑文化会館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625505",
+   "artist": "尾上右近 舞踊＆トークショー",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "鯖江市文化センター(福井県)",
+   "pref": "福井県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635396",
+   "artist": "川口節子バレエ団創作公演「舞浪漫 ２０２６」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アマノ芸術創造センター名古屋(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631123",
+   "artist": "饗宴 徳島の洋舞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "あわぎんホール(徳島県)",
+   "pref": "徳島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667971",
+   "artist": "キーウ・クラシック・バレエ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ノバホール 大ホール(茨城県)",
+   "pref": "茨城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667971",
+   "artist": "キーウ・クラシック・バレエ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 メインホール(京都府)／梅田芸術劇場メインホール(大阪府)／なら１００年会館 大ホール(奈良県)",
+   "pref": "京都府／大阪府／奈良県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667971",
+   "artist": "キーウ・クラシック・バレエ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東リ いたみホール（伊丹市立文化会館） 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623441",
+   "artist": "キーウ・クラシック・バレエ「白鳥の湖」（全２幕）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "市川市文化会館 大ホール(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2604979",
+   "artist": "キーウ・クラシック・バレエ 「ロミオとジュリエット 全幕」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東海市芸術劇場 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620920",
+   "artist": "キーウ・クラシック・バレエ 「ロミオとジュリエット－全幕－」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "春日井市民会館(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633034",
+   "artist": "キーウ・クラシック・バレエ ロミオとジュリエット－全幕－",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レクザムホール 大ホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634571",
+   "artist": "岐阜新聞創刊１４５年記念事業 秋麗（ＳＹＵＲＥＩ） ～歌舞伎舞踊と映画の出会い～",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ぎふしんフォーラム 大ホール(岐阜県)／高山市民文化会館 大ホール(岐阜県)",
+   "pref": "岐阜県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670713",
+   "artist": "Daiwa House PRESENTS 熊川哲也 K-BALLET TOKYO Winter Tour 2026 『くるみ割り人形』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "オーチャードホール(東京都)／東京建物ブリリアホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671247",
+   "artist": "Daiwa House PRESENTS 熊川哲也 K-BALLET TOKYO Autumn Tour 2026 『白鳥の湖』",
+   "saletype": "一般発売",
+   "rlsdate": "",
    "venue": "フェスティバルホール(大阪府)",
-   "pref": "大阪府",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629286",
+   "artist": "第５回クロエパフォ－マンス",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｎｉｔｅｒｒａ日本特殊陶業市民会館 フォレストホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670970",
+   "artist": "『Close Up －クローズ・アップ－』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＡＡＴ 神奈川芸術劇場 ホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634624",
+   "artist": "芸術監督／指揮 西本智実 × 法村友井バレエ団 カール・オルフ作曲《カルミナ・ブラーナ》 ～楽器群と魔術的な場面を伴って歌われる 独唱と合唱のための世俗的カンタータ～（日本語字幕付）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡市民ホール 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633424",
+   "artist": "国際バレエアカデミアバレエ団公演『ペトルウシュカ』『ジゼル二幕』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新国立劇場 中劇場(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634181",
+   "artist": "国立劇場おきなわ 普及公演 沖縄芝居鑑賞教室「執心鐘入」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "国立劇場おきなわ 大劇場(沖縄県)",
+   "pref": "沖縄県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632899",
+   "artist": "小林紀子バレエ・シアター",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京建物ブリリアホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620305",
+   "artist": "コンカリーニョ２０周年記念提携企画 昭和レディの「コンカリーニョでお祭り騒ぎ！！」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "生活支援型文化施設コンカリーニョ(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629425",
+   "artist": "コンドルズ３０周年記念 超特別大感謝公演 兵庫スペシャル",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "兵庫県立芸術文化センター 阪急 中ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633811",
+   "artist": "コンドルズ福岡スペシャル公演２０２６ 『ノー・ウーマン，ノー・クライ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "西鉄ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631853",
+   "artist": "貞松・浜田バレエ団 クリスマス特別公演『くるみ割り人形と秘密の花園』全幕",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "神戸文化ホール 大ホール(兵庫県)",
+   "pref": "兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670805",
+   "artist": "神韻日本公演2027",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
+   "pref": "山梨県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670805",
+   "artist": "神韻日本公演2027",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623293",
+   "artist": "新国立劇場ダンス 新国立劇場バレエ団 「ＤＡＮＣＥ ｔｏ ｔｈｅ Ｆｕｔｕｒｅ ２０２６」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新国立劇場 中劇場(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632301",
+   "artist": "新国立劇場バレエ研修所公演 「バレエ・コンサート２０２６」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新国立劇場 中劇場(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670288",
+   "artist": "新国立劇場バレエ団「街の灯」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新国立劇場 オペラパレス(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669772",
+   "artist": "新国立劇場バレエ団 ロンドン公演凱旋企画 「ジゼル」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "福岡市民ホール 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622463",
+   "artist": "ＣＫＫ主催公演「ＴＲＩＰＬＥ ＢＩＬＬ ｒｅＩＭＡＧＩＮＥＤ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "大野城まどかぴあ 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625052",
+   "artist": "１０／１６新作『天ノ鳥船』 １０／２０『ふた花』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "Ｊ：ＣＯＭ北九州芸術劇場 中劇場(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633150",
+   "artist": "スターダンサーズ・バレエ団公演「くるみ割り人形」全２幕（神奈川公演）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "昭和音楽大学 テアトロ・ジーリオ・ショウワ(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633179",
+   "artist": "スターダンサーズ・バレエ団公演「くるみ割り人形」全２幕（埼玉公演）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "彩の国さいたま芸術劇場 大ホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626130",
+   "artist": "スターダンサーズ・バレエ団公演 「ＴＨＲＥＥ ＶＩＳＩＯＮＳ」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 プレイハウス(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618676",
+   "artist": "須山仁美クラシックバレエ定期公演２０２６",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "名古屋文理大学文化フォーラム 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632545",
+   "artist": "仙臺舞篝【ＳＥＮＤＡＩ ＭＡＩ ＫＡＧＡＲＩ】",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "能－ＢＯＸ（せんだい演劇工房１０－ＢＯＸ別館）(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623570",
+   "artist": "宝くじ文化公演 キーウ・クラシック・バレエ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ラブリーホール ｓｕｐｐｏｒｔｅｄ ｂｙ ｏｓａｋａｊｕｋｅｎ 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2544022",
+   "artist": "第４回平和の舞＜神楽の学校２０２６ｉｎアステールプラザ＞",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "広島ＪＭＳアステールプラザ 中ホール(広島県)",
+   "pref": "広島県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2637417",
+   "artist": "ＤａｎｃｅＥｘｈｉｂｉｔｉｏｎ ２０２７ ｉｎ Ｋａｎａｇａｗａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "やまと芸術文化ホール メインホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620613",
+   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ ｉｎ Ｉｗａｔｅ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "トーサイクラシックホール岩手 中ホール(岩手県)",
+   "pref": "岩手県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626653",
+   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ ｉｎ Ｓａｉｔａｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "蕨市民会館コンクレレホール(埼玉県)",
+   "pref": "埼玉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625877",
+   "artist": "Ｄａｎｃｅ Ｅｘｈｉｂｉｔｉｏｎ ２０２６ Ｎａｇａｓａｋｉ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "諫早文化会館 大ホール(長崎県)",
+   "pref": "長崎県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629196",
+   "artist": "Ｄａｎｃｅ Ｅｘｐｏ ２０２６ ｉｎ Ｋａｇａｗａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "三木町文化交流プラザ メタホール(香川県)",
+   "pref": "香川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669507",
+   "artist": "ダンスエンターテイメント演劇『PASSION - 北斎の描く夢 -』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "横浜赤レンガ倉庫１号館３Ｆホール(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633560",
+   "artist": "Ｄａｎｃｅ Ｓｈｏｗｃａｓｅ ２０２６ ｉｎ Ｏｋａｙａｍａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "倉敷市芸文館ホール(岡山県)",
+   "pref": "岡山県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630409",
+   "artist": "ＤａｎｃｅＳｈｏｗｃａｓｅ ２０２６ ｉｎ Ｋｉｔａｋｙｕｓｈｕ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "黒崎ひびしんホール 大ホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633561",
+   "artist": "Ｄａｎｃｅ Ｓｈｏｗｃａｓｅ ２０２６ ｉｎ Ｓｈｉｚｕｏｋａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "静岡市清水文化会館マリナート 大ホール(静岡県)",
+   "pref": "静岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623971",
+   "artist": "Ｄａｎｃｅ Ｓｈｏｗｃａｓｅ ２０２６ ｉｎ Ｃｈｉｂａ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "流山市民会館(千葉県)",
+   "pref": "千葉県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617761",
+   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ミズ ウェルビー ホール 大ホール(佐賀県)",
+   "pref": "佐賀県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616680",
+   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」（全２幕）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "市民会館シアーズホーム夢ホール（熊本市民会館）(熊本県)／ｉｉｃｈｉｋｏ グランシアタ(大分県)",
+   "pref": "熊本県／大分県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2616505",
+   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」（全２幕）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクロス福岡 福岡シンフォニーホール(福岡県)",
+   "pref": "福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617944",
+   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」（全２幕）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知県芸術劇場 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617288",
+   "artist": "チャイコフスキー・バレエ劇場「くるみ割り人形」「白鳥の湖」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アクトシティ浜松 大ホール(静岡県)／高槻城公園芸術文化劇場 南館 トリシマホール(大阪府)",
+   "pref": "静岡県／大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614267",
+   "artist": "チャイコフスキー・バレエ劇場 「白鳥の湖」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ロームシアター京都 メインホール(京都府)",
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669290",
+   "artist": "東京バレエ団 オネーギン 全3幕",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新国立劇場 オペラパレス(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627102",
+   "artist": "東京バレエ団 くるみ割り人形",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "枚方市総合文化芸術センター 関西医大 大ホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621604",
+   "artist": "東京バレエ団「くるみ割り人形」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "仙台銀行ホール イズミティ２１ 大ホール(宮城県)",
+   "pref": "宮城県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670708",
+   "artist": "東京バレエ団 ベジャールの「くるみ割り人形」 全2幕",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新国立劇場 オペラパレス(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634575",
+   "artist": "鳥取・高知・石川 共同制作バレエ バレエ「赤毛のアン」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "石川県立音楽堂 コンサートホール(石川県)",
+   "pref": "石川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627398",
+   "artist": "Ｎｏｉｓｍ０＋Ｎｏｉｓｍ１『Ｍｏｒｉｍｕｒ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 プレイハウス(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634857",
+   "artist": "白鳥の湖",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "函館市民会館 大ホール(北海道)",
+   "pref": "北海道"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668430",
+   "artist": "BURN THE FLOOR LUMINOUS",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京国際フォーラム ホールＣ(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630876",
+   "artist": "ＶＩＳＵＡＬ ＳＯＵＮＤ ＭＯＶＥＭＥＮＴ 水 火 光",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "アマノ芸術創造センター名古屋(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631785",
+   "artist": "『ＢＤＣ ＤＡＮＣＥ ＬＡＢ ２０２６』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＢＲＯＡＤＷＡＹ ＤＡＮＣＥ ＣＥＮＴＥＲ Ｓｔｕｄｉｏ ２(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670051",
+   "artist": "舞台芸術祭「秋の隕石2026東京」 ナディア・ブグレ『バーニング・ガールズ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "東京芸術劇場 シアターイースト(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629503",
+   "artist": "法村友井バレエ団",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2617688",
+   "artist": "ホフェッシュ・シェクター・カンパニー『Ｔｈａｔｒｅ ｏｆ Ｄｒｅａｍｓ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "愛知県芸術劇場 大ホール(愛知県)",
+   "pref": "愛知県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622996",
+   "artist": "ホフェッシュ・シェクター・カンパニー『Ｔｈｅａｔｒｅ ｏｆ Ｄｒｅａｍｓ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "彩の国さいたま芸術劇場 大ホール(埼玉県)",
+   "pref": "埼玉県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2618883",
    "artist": "牧阿佐美バレヱ団 受け継がれる美しき遺産 創立７０周年記念ガラ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/31(土) ・ 2026/11/1(日)",
    "venue": "文京シビックホール 大ホール(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630382",
+   "artist": "牧阿佐美バレヱ団「くるみ割り人形」（全幕）",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "文京シビックホール 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626369",
+   "artist": "松山バレエ団 ２０２６Ｘｍａｓ 公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新宿文化センター 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626761",
+   "artist": "松山バレエ団 ２０２６Ｘｍａｓ 公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "府中の森芸術劇場 どりーむホール(東京都)／鎌倉芸術館 大ホール(神奈川県)",
+   "pref": "東京都／神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626399",
+   "artist": "松山バレエ団 ２０２６Ｘｍａｓ 公演",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新宿文化センター 大ホール(東京都)",
+   "pref": "東京都"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626136",
+   "artist": "松山バレエ団「くるみ割り人形」全幕",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "フェスティバルホール(大阪府)",
+   "pref": "大阪府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622296",
+   "artist": "麿赤兒×エリック＝マリア・クテュリエ『Ａｌｔｅｒ Ｅｇｏ』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "シアタートラム(東京都)",
+   "pref": "東京都"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630268",
    "artist": "緑間玲貴 東京公演 バレエ「御佩劍」",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/12/18(金)",
    "venue": "日本橋公会堂（日本橋劇場）(東京都)",
-   "pref": "東京都",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "東京都"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630285",
    "artist": "山下 残＆ニャー・トゥイェン ｗｉｔｈ プロジェクト・デイ・サン 「ｇｉｏｔ－ｇｉｏｔ | しずくたち」",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/22(木) ～ 2026/10/25(日)",
    "venue": "京都芸術センター 講堂(京都府)",
-   "pref": "京都府",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "京都府"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636631",
+   "artist": "山本卓卓×北尾亘『となり街の知らない踊り子』",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＫＡＡＴ 神奈川芸術劇場 大スタジオ(神奈川県)",
+   "pref": "神奈川県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629026",
+   "artist": "横須賀芸術劇場リニューアル記念 東京バレエ団「くるみ割り人形」全２幕",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "よこすか芸術劇場(神奈川県)",
+   "pref": "神奈川県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventCd=2609019",
    "artist": "四日市市民バレエ「くるみ割り人形」全二幕",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/11/3(火・祝)",
    "venue": "四日市市文化会館 第１ホール(三重県)",
-   "pref": "三重県",
-   "in_db": false,
-   "name_in_db": false
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621105",
-   "artist": "琉球舞踊「蓬莱～ほうらい～」特別公演",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/21(月・祝)",
-   "venue": "国立劇場おきなわ 大劇場(沖縄県)",
-   "pref": "沖縄県",
-   "in_db": false,
-   "name_in_db": false
+   "pref": "三重県"
   }
  ]
 }
