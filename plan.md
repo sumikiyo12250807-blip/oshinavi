@@ -22,7 +22,7 @@
 ✅ 本文12本（Fable）→ 機械検品 → 独立FC ❌0・⚠️5直し → ユーザーOK（「ok」）→ 予約12本 20:01〜22:46（予約一覧で12本・時刻一致）／④J-POPに動画（jpop_1008_x.mp4・台帳に記録）／タブ閉じ・クリップボード空
 🎬 10/9発売 J-POPまとめ動画（あす10/8夕方のX）＝歌詞 tmp/x1007/x/suno_matome_jpop_1009.txt（読みFC ❌0・⚠️出典なし8）→ ユーザーがSuno（早口ラップ・男性）で作成 → 曲 tmp/video/matome1009/song.mp3（2:31）
    ・キャラ＝ピンクのディーバ（ユーザー提供のポーズ集）を全身6枚に切った tmp/video/matome1009/poses（side_l は front の左右反転）
-   ・カード17組 cards/・spec make_spec.py・絵コンテ https://claude.ai/artifact/3KbT83k2AFe4LNhuy9XrZg✅ユーザー「これでお願い」・書き出し render.py → ✅ jpop_1009_x.mp4（8.80MB・2:31）試し見 https://claude.ai/artifact/BnkWMFYUveJRCvY1hbWubA（ユーザーの採否待ち）→ あす夕方のX ④J-POPまとめに付ける
+   ・カード17組 cards/・spec make_spec.py・絵コンテ https://claude.ai/artifact/3KbT83k2AFe4LNhuy9XrZg✅ユーザー「これでお願い」・書き出し render.py → ✅ jpop_1009_x.mp4（8.80MB・2:31）試し見 https://claude.ai/artifact/BnkWMFYUveJRCvY1hbWubA✅ユーザー採用「いいわね　明日これお願いします」→ 🚨あす10/8夕方のX＝J-POPまとめに tmp/video/matome1009/jpop_1009_x.mp4 を付ける
    ・⚠️カードの「発売開始まで あと2日」は10/7に撮った表示（10/8夜の投稿時は実際「あと1日」）＝ユーザーに伝えた
    ・🚨主役（10/9発売）が J-POP の17組から出たら、まとめから外す＝歌詞と動画も直す
    ・予約の罠＝Xのタブが裏（hidden）だと Confirm 後の本文欄が描かれず NO_BOX → tmp/x1005/x/x_tab_front.ps1 で前に出したら全部1回で通った（スクショも裏だと30秒タイムアウト）
