@@ -11,6 +11,9 @@
      → そのあと heal_eplus_started.py --apply（FIX40・e+を叩くのでスイープと重ねない）
    ・TIGET 登録済み全件の番人＝tmp/x1008/gate_tiget_all.txt → 鳴った分は heal_tiget.py --apply → regate_tiget.py
    ・X 10/9発売のフォロワー調べ（エージェント）＝tmp/x1008/x/followers_1009.md（/clear で消えたら出演者名 follower_names_1009.txt から取り直し）
+✅ X 10/9発売のフォロワー調べ済み＝tmp/x1008/x/followers_1009.md（上位＝波多野結衣61万〔サブ垢〕・村瀬歩49万・間寛平38万・八木奈々33万・ぐるたみん25万／作品公式＝鬼滅339万・JUMP SHOP69万は出演者でない）
+   ⚠️ 1位・4位はセクシー女優＝主役にしてよいかの決まりは memory に無い→ 17:02 に X_SCRIPT と主役の memory を読んでから決める（迷えば外して次点・文面と一緒にユーザーへ一言）
+   ⚠️ さだまさし・小椋佳・春風亭昇太ほかは公式が取れず／森麻季ほか5名は検索制限で未調査
 📝 昼の便でやる＝31198 神山智洋 mark_soldout --apply（全部 予定枚数終了）／バッジ0（31日より先）128件のぴあ分 reconcile（tmp/x1008/rec_zero.py・朝は重いので止めた）
 📝 明朝＝ぴあ新規72（31777〜31848）の独立再照合→振り分け（last_batch.json に記録する）
 ```
