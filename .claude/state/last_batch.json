@@ -1478,6 +1478,17 @@
    "assigned": true,
    "rechecked": true,
    "note": "ジャンル独立判定→振り分け済み"
+  },
+  {
+   "date": "2026-10-07",
+   "slot": "morning-uketsuke",
+   "id_from": 31110,
+   "id_to": 31150,
+   "count": 41,
+   "source": "ぴあ受付中スイープ（0201全ジャンル・0101＝tmp/x1007/pia_open/）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "候補222→組み立て165（skip57）→登録済みらしい122のうち100は中身が全部登録済み・部分一致5と印だけ17は保留（tmp/x1007/open_dup_class.txt）・参加型2（31236リレーマラソン・31271コスプレ参加券＝旧id）保留→印なし41件を投入。reconcile --ids OK41。翌朝に独立再照合→振り分け"
   }
  ]
 }

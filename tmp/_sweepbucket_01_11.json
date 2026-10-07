@@ -1,381 +1,439 @@
 {
  "lg": "01",
- "total": 32,
- "pages": 4,
- "fetched_pages": 5,
- "parsed": 31,
- "new_name_in_db": 11,
+ "total": 55,
+ "pages": 6,
+ "fetched_pages": 7,
+ "parsed": 52,
+ "new_name_in_db": 1,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668403",
-   "artist": "イルカ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671174",
+   "artist": "9mm Parabellum Bullet",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/9/27(日)",
-   "venue": "太田市民会館(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627599",
-   "artist": "Ｇ－ＦＲＥＡＫ ＦＡＣＴＯＲＹ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/11(金)",
-   "venue": "高崎芸術劇場 スタジオシアター(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627598",
-   "artist": "Ｇ－ＦＲＥＡＫ ＦＡＣＴＯＲＹ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/12/12(土)",
-   "venue": "高崎芸術劇場 スタジオシアター(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619777",
-   "artist": "高中正義",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/1(日)",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607899",
-   "artist": "田原俊彦",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/7(土)",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635032",
-   "artist": "浜崎あゆみ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/13(金) ・ 2026/11/14(土)",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
-   "artist": "ハラミちゃん",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2027/1/11(月・祝)",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620720",
-   "artist": "南こうせつ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/3(土) ・ 2026/10/24(土) ・ 2026/10/25(日)",
-   "venue": "渋川市民会館 大ホール(群馬県)／グローバルソフトウェア本庄文化ホール(埼玉県)／パストラルかぞ 大ホール(埼玉県)",
-   "pref": "群馬県／埼玉県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622484",
-   "artist": "八神純子",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/11/29(日)",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665133",
-   "artist": "山中さわお＆ELPIS",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/10(土)",
-   "venue": "前橋 ＤＹＶＥＲ(群馬県)",
-   "pref": "群馬県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
-   "artist": "山本リンダ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/30(金)",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県",
+   "perfdate": "2026/11/8(日)",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県",
    "in_db": false,
    "name_in_db": true
   }
  ],
  "rows": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632547",
-   "artist": "ＡＫＩＨＩＤＥ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632481",
+   "artist": "ＡＳＫＡ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "前橋 ＤＹＶＥＲ(群馬県)",
-   "pref": "群馬県"
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623681",
-   "artist": "稲垣潤一",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667868",
+   "artist": "a flood of circle",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＲＥＤ ＳＴＡＧＥ(新潟県)／長野ライブハウスＪ(長野県)",
+   "pref": "新潟県／長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
-   "artist": "稲葉浩志",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668352",
+   "artist": "絢香",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "美喜仁桐生文化会館 シルクホール(群馬県)",
-   "pref": "群馬県"
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668403",
-   "artist": "イルカ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670340",
+   "artist": "アンジュルム",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "太田市民会館(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野市芸術館 メインホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666010",
-   "artist": "indigo la End",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564372",
+   "artist": "いきものがかり",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野市芸術館 メインホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665597",
-   "artist": "Organic Call",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671140",
+   "artist": "石崎ひゅーい",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＧＵＮＭＡ ＳＵＮＢＵＲＳＴ(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ライブハウスＪ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668425",
-   "artist": "華原朋美",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2624009",
+   "artist": "伊勢正三",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)／三島市民文化会館 大ホール(静岡県)",
-   "pref": "群馬県／静岡県"
+   "venue": "とうほう・みんなの文化センター 大ホール(福島県)／ホクト文化ホール 大ホール(長野県)",
+   "pref": "福島県／長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630745",
-   "artist": "ＫＯＴＯＫＯ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669056",
+   "artist": "eastern youth",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "前橋 ＤＹＶＥＲ(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669985",
-   "artist": "ザ・シスターズハイ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623319",
+   "artist": "江崎文武",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "札幌近松(北海道)／ＦＬＹＩＮＧ ＳＯＮ(宮城県)／宇都宮ＨＥＬＬＯ ＤＯＬＬＹ(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／渋谷ＣＬＵＢ ＱＵＡＴＴＲＯ(東京都)／新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／静岡ＵＭＢＥＲ(静岡県)／池下ＣＬＵＢ ＵＰＳＥＴ(愛知県)／Ｌｉｖｅ Ｈｏｕｓｅ ｎａｎｏ(京都府)／ＬＩＶＥ ＨＯＵＳＥ Ｐａｎｇｅａ(大阪府)／神戸 太陽と虎(兵庫県)／ＡＬＭＩＧＨＴＹ(広島県)／ＴＯＯＮＩＣＥ(香川県)／福岡Ｑｕｅｂｌｉｃｋ(福岡県)",
-   "pref": "北海道／宮城県／栃木県／群馬県／東京都／新潟県／静岡県／愛知県／京都府／大阪府／兵庫県／広島県／香川県／福岡県"
+   "venue": "アルモニービアン(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669913",
-   "artist": "CiON",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669950",
+   "artist": "AK-69",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "Ｃｌｕｂ ＪＡＭＭＥＲ’Ｓ ＴＡＫＡＳＡＫＩ(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665889",
-   "artist": "the shes gone",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627957",
+   "artist": "海援隊",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "前橋 ＤＹＶＥＲ(群馬県)",
-   "pref": "群馬県"
+   "venue": "レザンホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627599",
-   "artist": "Ｇ－ＦＲＥＡＫ ＦＡＣＴＯＲＹ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628530",
+   "artist": "海援隊 トーク＆ライブ ～今、手渡したい言葉～",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 スタジオシアター(群馬県)",
-   "pref": "群馬県"
+   "venue": "八ヶ岳高原音楽堂(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627598",
-   "artist": "Ｇ－ＦＲＥＡＫ ＦＡＣＴＯＲＹ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623621",
+   "artist": "角松敏生",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 スタジオシアター(群馬県)",
-   "pref": "群馬県"
+   "venue": "レザンホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665442",
-   "artist": "鈴木雅之",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627260",
+   "artist": "河口恭吾",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
+   "venue": "ｃａｆｅ ＳＴＡＮＤ(千葉県)／４４０（ｆｏｕｒ ｆｏｒｔｙ）(東京都)／酒蔵 櫂(山梨県)／Ｓｔｏｒｙｈｏｕｓｅ Ｃａｆｅ ＆ Ｂａｒ(長野県)／ＬｅｄｒｕＲｏｌｌｉｎ３７８(愛媛県)／北九州・黒崎ＳＥＣ(福岡県)",
+   "pref": "千葉県／東京都／山梨県／長野県／愛媛県／福岡県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671174",
+   "artist": "9mm Parabellum Bullet",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670117",
+   "artist": "ゴスペラーズ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628717",
+   "artist": "佐藤竹善",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "桜座(山梨県)／長野市芸術館 アクトスペース(長野県)／ＡｉｉＡ ２．５ Ｔｈｅａｔｅｒ Ｋｏｂｅ(兵庫県)",
+   "pref": "山梨県／長野県／兵庫県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2671244",
+   "artist": "佐野元春&THE COYOTE BAND",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670081",
+   "artist": "THE BAWDIES",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625879",
+   "artist": "椎名慶治",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ライブハウスＪ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669601",
+   "artist": "柴咲コウ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635725",
+   "artist": "ｓｙｒｕｐ１６ｇ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634674",
+   "artist": "ＳＨＥ’Ｓ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2638601",
+   "artist": "ＳＣＡＮＤＡＬ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632271",
+   "artist": "ＳＣＯＯＢＩＥ ＤＯ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ライブハウスＪ(長野県)",
+   "pref": "長野県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669282",
    "artist": "SPECIAL OTHERS",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "水戸ライトハウス(茨城県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ＶＪ－２(栃木県)／Ｃｌｕｂ ＪＡＭＭＥＲ’Ｓ ＴＡＫＡＳＡＫＩ(群馬県)",
-   "pref": "茨城県／栃木県／群馬県"
+   "venue": "金沢ＥＩＧＨＴ ＨＡＬＬ(石川県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)／ＮＥＶＥＲＬＡＮＤ(奈良県)",
+   "pref": "石川県／長野県／奈良県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619777",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635755",
+   "artist": "零［Ｈｚ］",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631648",
    "artist": "高中正義",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県"
+   "venue": "金沢市文化ホール(石川県)／長野市芸術館 メインホール(長野県)",
+   "pref": "石川県／長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2607899",
-   "artist": "田原俊彦",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621206",
+   "artist": "竹原ピストル",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2614684",
-   "artist": "怒髪天",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625383",
+   "artist": "ちゃくら",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "Ｃｌｕｂ ＪＡＭＭＥＲ’Ｓ ＴＡＫＡＳＡＫＩ(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ライブハウスＪ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2625814",
+   "artist": "ＴＳＵＫＥＭＥＮ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "軽井沢大賀ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634409",
+   "artist": "ＴＯＯＢＯＥ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2610621",
+   "artist": "富澤一誠 音楽評論家生活５５周年記念「一誠まつり～音楽を熱く語るたびに夢が生まれた」",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野市芸術館 メインホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669607",
+   "artist": "NOISEMAKER",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "新潟ＣＬＵＢ ＲＩＶＥＲＳＴ(新潟県)／長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "新潟県／長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623675",
+   "artist": "野口五郎",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "レザンホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
    "artist": "葉加瀬太郎 コンサートツアー 2026",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2635032",
-   "artist": "浜崎あゆみ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627615",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2626728",
    "artist": "林部智史",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "栃木県総合文化センター メインホール(栃木県)／美喜仁桐生文化会館 シルクホール(群馬県)",
-   "pref": "栃木県／群馬県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564225",
-   "artist": "ハラミちゃん",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野市芸術館 メインホール(長野県)",
+   "pref": "長野県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2664691",
    "artist": "PERSONZ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎市文化会館(群馬県)",
-   "pref": "群馬県"
+   "venue": "ホクト文化ホール 中ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2619530",
-   "artist": "ＦＯＭＡＲＥ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621006",
+   "artist": "ｂｉｌｌｂｏａｒｄ ｃｌａｓｓｉｃｓ Ｐｒｅｍｉｕｍ Ｓｙｍｐｈｏｎｉｃ Ｃｏｎｃｅｒｔ ｉｎ Ｎａｇａｎｏ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "Ｇメッセ群馬(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野市芸術館 メインホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665966",
-   "artist": "THE FRANK VOX",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628742",
+   "artist": "フラワーカンパニーズ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ Ｕｔｓｕｎｏｍｉｙａ ２／３（ＶＪ－４）(栃木県)／前橋 ＤＹＶＥＲ(群馬県)／ＨＥＡＶＥＮ’Ｓ ＲＯＣＫ さいたま新都心 ＶＪ－３(埼玉県)／柏ＰＡＬＯＯＺＡ(千葉県)／Ｓｈｉｂｕｙａ ＷＷＷ(東京都)／ＳＵＰＥＲＮＯＶＡ ＫＡＷＡＳＡＫＩ(神奈川県)",
-   "pref": "栃木県／群馬県／埼玉県／千葉県／東京都／神奈川県"
+   "venue": "松本ＡＬＥＣＸ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2620720",
-   "artist": "南こうせつ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629632",
+   "artist": "Ｈｅｌｓｉｎｋｉ Ｌａｍｂｄａ Ｃｌｕｂ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "渋川市民会館 大ホール(群馬県)／グローバルソフトウェア本庄文化ホール(埼玉県)／パストラルかぞ 大ホール(埼玉県)",
-   "pref": "群馬県／埼玉県"
+   "venue": "松本ＡＬＥＣＸ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629272",
-   "artist": "南佳孝",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2632961",
+   "artist": "ＰＥＤＲＯ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "美喜仁桐生文化会館 小ホール(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622484",
-   "artist": "八神純子",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621692",
+   "artist": "ペルシカリア",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "メガネのイタガキ文化ホール伊勢崎 大ホール(群馬県)",
-   "pref": "群馬県"
+   "venue": "ＧＯＬＤＥＮ ＰＩＧＳ ＢＬＡＣＫ ＳＴＡＧＥ(新潟県)／松本ＡＬＥＣＸ(長野県)",
+   "pref": "新潟県／長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2665133",
-   "artist": "山中さわお＆ELPIS",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2634289",
+   "artist": "真心ブラザーズ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "前橋 ＤＹＶＥＲ(群馬県)",
-   "pref": "群馬県"
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",
+   "artist": "maya ongaku",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ＭＡＮＧＯＳＴＥＥＮ ＨＯＫＵＴＯ(山梨県)／上田映劇(長野県)／Ｌｉｖｅ＆Ｌｏｕｎｇｅ Ｖｉｏ(愛知県)／ＫＯＢＥ ＱＵＩＬＴ(兵庫県)／蔭凉寺(岡山県)／ＲＯＯＭＳ(福岡県)／ＮＡＶＡＲＯ(熊本県)／金沢アートグミ",
+   "pref": "山梨県／長野県／愛知県／兵庫県／岡山県／福岡県／熊本県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669954",
+   "artist": "MONO NO AWARE",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "松本ＡＬＥＣＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636256",
+   "artist": "森口博子 ニューイヤーコンサート２０２７",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "軽井沢大賀ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670758",
+   "artist": "森高千里",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
    "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666897",
    "artist": "山本リンダ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎芸術劇場 大劇場(群馬県)",
-   "pref": "群馬県"
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629472",
-   "artist": "ゆあさみちるライブコンサート",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2631897",
+   "artist": "Ｕ－ｚｈａａｎ／原田郁子",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "高崎市文化会館(群馬県)",
-   "pref": "群馬県"
+   "venue": "上田市交流文化芸術センター 小ホール(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667696",
+   "artist": "reGretGirl",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "長野ＣＬＵＢ ＪＵＮＫ ＢＯＸ(長野県)",
+   "pref": "長野県"
+  },
+  {
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629908",
+   "artist": "Ｌｉｔｔｌｅ Ｇｌｅｅ Ｍｏｎｓｔｅｒ",
+   "saletype": "一般発売",
+   "rlsdate": "",
+   "venue": "ホクト文化ホール 大ホール(長野県)",
+   "pref": "長野県"
   }
  ]
 }
