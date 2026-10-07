@@ -1,259 +1,146 @@
 {
  "lg": "01",
- "total": 25,
- "pages": 3,
- "fetched_pages": 4,
- "parsed": 24,
- "new_name_in_db": 5,
+ "total": 18,
+ "pages": 2,
+ "fetched_pages": 3,
+ "parsed": 14,
+ "new_name_in_db": 2,
  "new": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623354",
-   "artist": "石川さゆりコンサート ～極上のアンサンブル～",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670741",
+   "artist": "ANISON PREMIUM LIVE ささきいさお×堀江美都子×影山ヒロノブ×遠藤正明",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/4(日)",
-   "venue": "東京エレクトロン韮崎文化ホール 大ホール(山梨県)",
-   "pref": "山梨県",
+   "perfdate": "2026/12/13(日)",
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県",
    "in_db": false,
    "name_in_db": true
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622062",
-   "artist": "斉藤和義",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669714",
+   "artist": "林ゆうき",
    "saletype": "一般発売",
    "rlsdate": "",
-   "perfdate": "2026/10/25(日)",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600552",
-   "artist": "－真天地開闢集団－ジグザグ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/9/19(土)",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633668",
-   "artist": "藤巻亮太",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/25(日)",
-   "venue": "東京エレクトロン韮崎文化ホール 大ホール(山梨県)",
-   "pref": "山梨県",
-   "in_db": false,
-   "name_in_db": true
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",
-   "artist": "maya ongaku",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "perfdate": "2026/10/16(金) ～ 2026/11/28(土)",
-   "venue": "ＭＡＮＧＯＳＴＥＥＮ ＨＯＫＵＴＯ(山梨県)／上田映劇(長野県)／Ｌｉｖｅ＆Ｌｏｕｎｇｅ Ｖｉｏ(愛知県)／ＫＯＢＥ ＱＵＩＬＴ(兵庫県)／蔭凉寺(岡山県)／ＲＯＯＭＳ(福岡県)／ＮＡＶＡＲＯ(熊本県)／金沢アートグミ",
-   "pref": "山梨県／長野県／愛知県／兵庫県／岡山県／福岡県／熊本県",
+   "perfdate": "2026/12/27(日)",
+   "venue": "東京国際フォーラム ホールＣ(東京都)",
+   "pref": "東京都",
    "in_db": false,
    "name_in_db": true
   }
  ],
  "rows": [
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623354",
-   "artist": "石川さゆりコンサート ～極上のアンサンブル～",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621858",
+   "artist": "ＡｎｉｓｏｎＣｌａｓｓｉｃＪａｐａｎコンサート Ｅｐｉｓｏｄ１０",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "東京エレクトロン韮崎文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "さいたま市プラザノース(埼玉県)",
+   "pref": "埼玉県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669355",
-   "artist": "稲葉浩志",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670741",
+   "artist": "ANISON PREMIUM LIVE ささきいさお×堀江美都子×影山ヒロノブ×遠藤正明",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "東京エレクトロンホール宮城(宮城県)",
+   "pref": "宮城県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2623711",
-   "artist": "ウルフルズ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667821",
+   "artist": "ANI-ROCK FES.2026「僕のヒーローアカデミア PLUS ULTRA LIVE」",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "東京エレクトロン韮崎文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "国立代々木競技場 第一体育館(東京都)",
+   "pref": "東京都"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2668425",
-   "artist": "華原朋美",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629922",
+   "artist": "影山ヒロノブ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "クラフトシビックホール土浦 大ホール(茨城県)／宇都宮市文化会館 大ホール(栃木県)／浦安市文化会館 大ホール(千葉県)／厚木市文化会館 大ホール(神奈川県)／ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "茨城県／栃木県／千葉県／神奈川県／山梨県"
+   "venue": "ＯＹＥ ＣＯＭＯ ＶＡ(広島県)／Ｍｏｎｋ(愛媛県)",
+   "pref": "広島県／愛媛県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627260",
-   "artist": "河口恭吾",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2636701",
+   "artist": "影山ヒロノブ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ｃａｆｅ ＳＴＡＮＤ(千葉県)／４４０（ｆｏｕｒ ｆｏｒｔｙ）(東京都)／酒蔵 櫂(山梨県)／Ｓｔｏｒｙｈｏｕｓｅ Ｃａｆｅ ＆ Ｂａｒ(長野県)／ＬｅｄｒｕＲｏｌｌｉｎ３７８(愛媛県)／北九州・黒崎ＳＥＣ(福岡県)",
-   "pref": "千葉県／東京都／山梨県／長野県／愛媛県／福岡県"
+   "venue": "４４０（ｆｏｕｒ ｆｏｒｔｙ）(東京都)／宮古島Ｓｕｐｅｒ Ｓｔａｒ(沖縄県)",
+   "pref": "東京都／沖縄県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669787",
-   "artist": "kurage",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2627772",
+   "artist": "きたまえ↑２０２６",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬｉｖｅＨｏｕｓｅ鹿(山梨県)",
-   "pref": "山梨県"
+   "venue": "札幌市民交流プラザ クリエイティブスタジオ(北海道)",
+   "pref": "北海道"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2622062",
-   "artist": "斉藤和義",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670108",
+   "artist": "澤野弘之 × THE SOUND OF GUNDAM - 機動戦士ガンダムUC・NT・HATHAWAY Concert -",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "東京ガーデンシアター(東京都)",
+   "pref": "東京都"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666143",
-   "artist": "SILENT SIREN",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633942",
+   "artist": "スーパー戦隊魂 ＸＸ ２０２６ ～ＦＯＲＥＶＥＲ～",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "甲府ＣＯＮＶＩＣＴＩＯＮ(山梨県)",
-   "pref": "山梨県"
+   "venue": "Ｚｅｐｐ ＤｉｖｅｒＣｉｔｙ（ＴＯＫＹＯ）(東京都)／なんばＨａｔｃｈ(大阪府)",
+   "pref": "東京都／大阪府"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2628717",
-   "artist": "佐藤竹善",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2630760",
+   "artist": "ＣｈｏｕＣｈｏ",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "桜座(山梨県)／長野市芸術館 アクトスペース(長野県)／ＡｉｉＡ ２．５ Ｔｈｅａｔｅｒ Ｋｏｂｅ(兵庫県)",
-   "pref": "山梨県／長野県／兵庫県"
+   "venue": "ｄｕｏ ＭＵＳＩＣ ＥＸＣＨＡＮＧＥ(東京都)",
+   "pref": "東京都"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669601",
-   "artist": "柴咲コウ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667305",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "東京芸術劇場 コンサートホール(東京都)",
+   "pref": "東京都"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2600552",
-   "artist": "－真天地開闢集団－ジグザグ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669435",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "栃木県総合文化センター メインホール(栃木県)",
+   "pref": "栃木県"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669104",
-   "artist": "JIJIM",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669890",
+   "artist": "「ドラゴンクエスト」ウインドオーケストラコンサート",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "ＬｉｖｅＨｏｕｓｅ鹿(山梨県)",
-   "pref": "山梨県"
+   "venue": "東京国際フォーラム ホールＣ(東京都)",
+   "pref": "東京都"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2564626",
-   "artist": "スキマスイッチ",
+   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2669714",
+   "artist": "林ゆうき",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "河口湖ステラシアター(山梨県)",
-   "pref": "山梨県"
+   "venue": "東京国際フォーラム ホールＣ(東京都)",
+   "pref": "東京都"
   },
   {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633725",
-   "artist": "鈴村健一",
+   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2606390",
+   "artist": "春奈るな",
    "saletype": "一般発売",
    "rlsdate": "",
-   "venue": "河口湖ステラシアター(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670478",
-   "artist": "徳光和夫 人生の名曲に喝采を！コンサート2026 山梨",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2667158",
-   "artist": "TRUST RECORDS presents.TRUST NIGHT 2026 / TRUST TOUR 2026",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＫＡＺＯＯ ＨＡＬＬ(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629556",
-   "artist": "中嶋ユキノ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "甲府ＣＯＮＶＩＣＴＩＯＮ(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2629149",
-   "artist": "西村由紀江",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "河口湖円形ホール(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2666742",
-   "artist": "葉加瀬太郎 コンサートツアー 2026",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2633668",
-   "artist": "藤巻亮太",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "東京エレクトロン韮崎文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670201",
-   "artist": "maya ongaku",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＭＡＮＧＯＳＴＥＥＮ ＨＯＫＵＴＯ(山梨県)／上田映劇(長野県)／Ｌｉｖｅ＆Ｌｏｕｎｇｅ Ｖｉｏ(愛知県)／ＫＯＢＥ ＱＵＩＬＴ(兵庫県)／蔭凉寺(岡山県)／ＲＯＯＭＳ(福岡県)／ＮＡＶＡＲＯ(熊本県)／金沢アートグミ",
-   "pref": "山梨県／長野県／愛知県／兵庫県／岡山県／福岡県／熊本県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventCd=2621476",
-   "artist": "“みんなのヒットパレード”ファンタジーコンサート",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2670758",
-   "artist": "森高千里",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
-  },
-  {
-   "url": "https://ticket.pia.jp/pia/event.do?eventBundleCd=b2563724",
-   "artist": "横山だいすけ",
-   "saletype": "一般発売",
-   "rlsdate": "",
-   "venue": "ＹＣＣ県民文化ホール 大ホール(山梨県)",
-   "pref": "山梨県"
+   "venue": "原宿ＲＵＩＤＯ(東京都)",
+   "pref": "東京都"
   }
  ]
 }
