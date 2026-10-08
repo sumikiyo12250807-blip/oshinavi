@@ -1,4 +1,6 @@
-# ▶▶ 10/9(金) 朝の便（途中経過）
+# ✅ 10/9 朝push（今日1回目）＝aa15b4354・番人＝画面0・fold 0・reconcile --new OK101・check_badges OK（32905 ヒビキpiano の〔 化けを直した）
+
+# ▶▶ 10/9(金) 朝の便
 
 ```
 ⏰ アラーム5本（CronCreate）＝14:05 昼（昼前の最遅13:58）／15:33 週末の記事の候補／17:02 X準備（10/10発売）／19:41 予約／22:07 夜
@@ -19,7 +21,8 @@
 ✅ バッジ0のMISSING25件を取り直し（25適用・止まり0）
 ✅ ぴあ発売前＝既存40件へ113枠足し込み・新規91（32815〜32905）reconcile OK91 → last_batch.json に記録（明朝の再照合）
 ✅ 売り場新着420＋ぴあ2を振り分け（独立ジャンル判定・unsure4は和集合で＝32579 白餅だんご・32588 もしぬこ・32670 九月八日・32812 V Lovers）
-📝 昼へ＝TIGET登録済み全件の番人（gate_tiget_all.py が走り中）→ heal_tiget／livePocket 登録済み全件の番人／e+新着426に eplus_genre.py --apply（e+スイープのあと）／e+受付前スイープの結果（tmp/x1009/eplus/pre_go.json）
+✅ TIGET登録済み全件の番人 ng148 → heal103（空45は触らない）→ 再番人99/103（残り4は昼）＝commit済み・昼のpushで出る
+📝 昼へ＝livePocket 登録済み全件の番人／e+新着426に eplus_genre.py --apply（e+スイープのあと）／e+受付前スイープの結果（tmp/x1009/eplus/pre_go.json）
 ⏳ 列の続き（済）＝writes_queue（FANY→ZAIKO→livePocket252）→ zero_heal（バッジ0のMISSING39）→ pia_new_writes（足し込み35＋5・新規約90）
 ⏳ 書き込みの列＝eplus_open_inject（FAIL外し）→ tiget_chain → pia_writes（76振り分け＋2取り直し）→ writes_queue（FANY→ZAIKO→livePocket）
 ✅ X 10/10発売のフォロワー調べ済み＝tmp/x1009/x/followers_1010.md（92組）
