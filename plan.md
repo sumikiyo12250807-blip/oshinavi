@@ -2,8 +2,9 @@
 
 ```
 ✅ 売り場の昼ヒール＝TIGET53・livePocket42・FANY19（一覧を取り直してから）・ZAIKO1
-⏳ e+＝受付中の組み立て（3,178件）は止めた（昼の締切取り込みと受付前投入を先に出すため）→ eplus_noon.py＝heal_eplus_started --apply → 受付前 pre_go 60件を投入 → reconcile_eplus → FAIL外し
-⏳ ぴあ昼ヒール convert104 / 枠ゼロ139（消していない・発売時刻前と売り切れ混在）→ noon_pia_apply.py＝--apply → 安全弁は足し算 → 31198 売り切れ印 → push前の番人一式
+✅ 昼のpush（今日2回目）＝ぴあ昼ヒール48＋安全弁56を足し算（消える枠0）／e+締切61／e+受付前 新着43（31849〜・同じ名前の登録あり15は eplus/same_hold.json・FAIL2は fail_hold.json）／番人＝画面0・fold 0・reconcile --new OK72
+📝 夜＝reconcile --new の MISSING3・FETCH6（新着プール内・ぴあ混雑）を取り直し／31198 神山智洋はぴあ混雑で読めず＝売り切れ印は夜に再度／ぴあ枠ゼロ139（消していない）／e+新着43に eplus_genre.py --apply（3秒間隔）
+❓ 夜に聞く＝e+「同じ名前の登録あり」が今日も15件（累計 38＋39＋15）＝既存へ足し込むか
 📝 e+ 受付中は夜（ユーザーの帰宅待ちの間）に eplus_morning.py の受付中部分だけ回し直す
 ```
 
