@@ -1,3 +1,12 @@
+# ▶▶ 10/8(木) 昼の便（13:05〜）
+
+```
+✅ 売り場の昼ヒール＝TIGET53・livePocket42・FANY19（一覧を取り直してから）・ZAIKO1
+⏳ e+＝受付中の組み立て（3,178件）は止めた（昼の締切取り込みと受付前投入を先に出すため）→ eplus_noon.py＝heal_eplus_started --apply → 受付前 pre_go 60件を投入 → reconcile_eplus → FAIL外し
+⏳ ぴあ昼ヒール convert104 / 枠ゼロ139（消していない・発売時刻前と売り切れ混在）→ noon_pia_apply.py＝--apply → 安全弁は足し算 → 31198 売り切れ印 → push前の番人一式
+📝 e+ 受付中は夜（ユーザーの帰宅待ちの間）に eplus_morning.py の受付中部分だけ回し直す
+```
+
 # ▶▶ 10/8(木) 朝の便 → /clear 後の引き継ぎ
 
 ```
@@ -9,7 +18,7 @@
    ・e+＝tmp/x1008/eplus_morning.py → 受付前 eplus/pre_go.json → 受付中 eplus/open_go.json（終わると eplus/morning.done）
      → 投入は tmp/x1007/eplus_inject.py / eplus_drop_fail.py の形（reconcile_eplus FAIL は外して fail_hold.json）＝ぴあ以外＝新着まで・振り分けはユーザー確認後
      → そのあと heal_eplus_started.py --apply（FIX40・e+を叩くのでスイープと重ねない）
-   ・TIGET 登録済み全件の番人＝tmp/x1008/gate_tiget_all.txt → 鳴った分は heal_tiget.py --apply → regate_tiget.py
+   ・✅ TIGET 登録済み全件の番人 ng129 → heal89（空40は触らない）→ 再番人85/89（残り4は昼）＝commit済み・昼のpushで出る
    ・X 10/9発売のフォロワー調べ（エージェント）＝tmp/x1008/x/followers_1009.md（/clear で消えたら出演者名 follower_names_1009.txt から取り直し）
 ✅ X 10/9発売のフォロワー調べ済み＝tmp/x1008/x/followers_1009.md（上位＝波多野結衣61万〔サブ垢〕・村瀬歩49万・間寛平38万・八木奈々33万・ぐるたみん25万／作品公式＝鬼滅339万・JUMP SHOP69万は出演者でない）
    ⚠️ 1位・4位はセクシー女優＝主役にしてよいかの決まりは memory に無い→ 17:02 に X_SCRIPT と主役の memory を読んでから決める（迷えば外して次点・文面と一緒にユーザーへ一言）
@@ -30,7 +39,7 @@
 📝 バッジ0（31日より先）128件＝ぴあスイープのあと reconcile_pia --ids
 ✅ ぴあヒール5＋安全弁12を足し算（消える枠0）／買える枠ゼロ9件（阪神CSボックス・車椅子ほか）＝全部 予定枚数終了→印を付けて残す
 ✅ TIGET新着173（31235〜31407）＝番人173/173・独立ジャンル判定→振り分け
-📝 宿題＝昨日の TIGET 判定道具（tmp/x1007/indep_tiget/judge.py）はカテゴリ59〜61（マジック・演劇祭ほか）が対応表から抜けていた＝10/7振り分けの TIGET 204件の札の足し漏れを点検
+✅ 点検済み＝昨日の TIGET 判定道具はカテゴリ59〜61が対応表から抜けていたが、該当4件とも下書きとの和集合で行き先（fes/magic/engeki）が付いていた＝足し漏れ0（tmp/x1008/tiget_cat_audit.py）
 ⏳ ぴあ発売前スイープ＝新規候補100・足し込み30（tmp/x1008/split.txt）＝再照合エージェントが終わってから build
 ✅ FANY 新着28・ヒール49（再番人 食い違い3＝残り）／ZAIKO 新着10・ヒール12（再番人 食い違い0）
 ✅ livePocket 新着331（未登録365→独立ゲート一致358→投入331→日別23組を畳む）
