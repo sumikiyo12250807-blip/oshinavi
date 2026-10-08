@@ -1,3 +1,27 @@
+# ▶▶ 10/8(木) 夜 → /clear 後の引き継ぎ（これが最新）
+
+```
+🔁 再開の合図＝「夜の便やって」
+🚨 /clear で CronCreate のアラーム（22:07 夜の便）は消える＝再開したらすぐやる／CronList で確かめる
+📊 今日の push＝2回（朝・昼）。夜が3回目。未push＝手順7.5の足し込み・X予約メモ（commit済み）
+🌙 夜の便でやること（手順書 day 第4便の9）
+   1. python tmp/x1008/night.py（日付10/8・フォルダ確認済み）＝今日発売ぴあのヒール＋TIGET/livePocket 今日分の番人→heal＋fold→gate_badge_render→reconcile --new→build_ai_page→compact → 結果 tmp/x1008/night.txt
+   2. 安全弁で止まった分は tmp/x1008/heal_blocked_union.py --src tmp/heal_ids.json --log tmp/x1008/night.txt で足し算（消える枠0を確かめてから --apply）
+   3. 番人0なら git add -u → commit → push（commitとpushは別コマンド）
+   4. plan.md に夜の締め＋明朝の引き継ぎ
+⏳ 裏で動いている＝e+ 受付中の1本目（tmp/x1008/eplus_open.py）＝組み立て734件→番人中 → 終わると tmp/x1008/eplus/open_go.json と open.done
+   → 投入は eplus_inject.py の形（同じ名前の登録ありは保留・reconcile_eplus FAIL は外す）＝ぴあ以外＝新着まで（振り分けはユーザー確認後）。夜に間に合わなければ明朝
+✅ X 10/9発売12本は予約済み（20:01〜22:46・④J-POPに動画）
+📝 明朝＝ぴあ新規72（31777〜31848）＋手順7.5の6（31894〜31899）の独立再照合→振り分け／e+受付前新着43（31849〜）とe+受付中はユーザー確認待ち／31198 神山智洋の売り切れ印（昼はぴあ混雑で読めず）／reconcile --new の MISSING3・FETCH6 取り直し／ぴあ枠ゼロ139（消していない）
+❓ 夜に聞く（ユーザーが起きていれば1問ずつ・寝ていれば明日の夜へ）
+   ① e+「同じ名前の登録あり」＝累計 38＋39＋15 件を既存へ足し込むか
+   ② 2808 Baycurrent Classic の楽天単日券4枚を分けるか
+   ③ e+ 受付前 FAIL の扱い（fail_hold.json）
+   ④ livePocket の音楽系の札に extra で musicetc を添える型でよいか
+   ⑤ 主役から外したセクシー女優（波多野結衣・八木奈々）＝今後も外すか（決まりにするか）
+🗣 今日は返事が英語に崩れた（3回）＝memory feedback_language 追記済み。/clear 後は日本語・おねえ言葉で
+```
+
 # ▶▶ 10/8(木) 夕方 X準備（10/9発売）
 
 ```
