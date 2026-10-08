@@ -344,7 +344,7 @@ def build(today):
         out.append("<h1>OSHINAVI チケット発売日情報</h1>")
         out.append(
             f'<p class="note">AI・検索エンジン向けの静的データ一覧（50件ずつ分割）。'
-            f'人間向けのトップは <a href="/">OSHINAVI トップ</a>。<br>'
+            f'人間向けのトップは <a href="/">OSHINAVI トップ</a>。アーティスト別は <a href="/artists.html">/artists.html</a>。<br>'
             f"最終更新: {update_stamp} ／ 全 <strong>{total}</strong>件中 "
             f"<strong>{lo}〜{hi}件目</strong>を表示（発売日が近い順）。</p>"
         )
@@ -443,6 +443,10 @@ def build(today):
     # （行楽events.htmlは2026-06-25に廃止。旧noscript除去処理も削除済み）
 
     print(f"wrote {npages} pages + sitemap.xml + index.html本体SSR埋込 ({total} tickets, today={today})")
+
+    # アーティストごとの軽いページ（2026-10-09 ユーザー決定）＝sitemap.xml を作り直した後に足す
+    import build_artist_pages
+    build_artist_pages.build(today)
 
 
 def main():
