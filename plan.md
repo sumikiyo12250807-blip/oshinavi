@@ -22,6 +22,8 @@
 ✅ ぴあ発売前＝既存40件へ113枠足し込み・新規91（32815〜32905）reconcile OK91 → last_batch.json に記録（明朝の再照合）
 ✅ 売り場新着420＋ぴあ2を振り分け（独立ジャンル判定・unsure4は和集合で＝32579 白餅だんご・32588 もしぬこ・32670 九月八日・32812 V Lovers）
 ✅ TIGET登録済み全件の番人 ng148 → heal103（空45は触らない）→ 再番人99/103（残り4は昼）＝commit済み・昼のpushで出る
+✅ 宿題4＝アーティストごとの軽いページ 500組（artist/<番号>.html・artists.html・sitemap）＝commit済み・昼のpushで公開（memory project_artist_pages）
+📝 宿題3（index.html の重さ）は未着手＝今は24.94MB（compact後）
 📝 昼へ＝livePocket 登録済み全件の番人／e+新着426に eplus_genre.py --apply（e+スイープのあと）／e+受付前スイープの結果（tmp/x1009/eplus/pre_go.json）
 ⏳ 列の続き（済）＝writes_queue（FANY→ZAIKO→livePocket252）→ zero_heal（バッジ0のMISSING39）→ pia_new_writes（足し込み35＋5・新規約90）
 ⏳ 書き込みの列＝eplus_open_inject（FAIL外し）→ tiget_chain → pia_writes（76振り分け＋2取り直し）→ writes_queue（FANY→ZAIKO→livePocket）
