@@ -1497,9 +1497,20 @@
    "id_to": 31848,
    "count": 72,
    "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル）＝新規候補100→組み立て96→同じ中身9・保留15・足し込み1を外して72",
+   "assigned": true,
+   "rechecked": true,
+   "note": "既存25件へ82枠足し込み（消える枠0）。保留＝岡村靖幸・ORANCHE・Calmera・可憐なアイボリー・スペーズ・VOW WOW・月亭方正・よしもと7件（tmp/x1008/pick_new.py の SKIP）。reconcile は朝のpush前の --new で通す。翌朝(10/9)に①独立再照合②ジャンル独立判定→振り分け。 ／10/9朝＝独立再導出78件中76一致・31805/31811は取り直してから振り分け（logs/assigned_2026-10-09.md）"
+  },
+  {
+   "date": "2026-10-09",
+   "slot": "morning",
+   "id_from": 32815,
+   "id_to": 32905,
+   "count": 91,
+   "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル）＝新規候補123→組み立て120→同じ中身8・足し込み5・保留17を外して91",
    "assigned": false,
    "rechecked": false,
-   "note": "既存25件へ82枠足し込み（消える枠0）。保留＝岡村靖幸・ORANCHE・Calmera・可憐なアイボリー・スペーズ・VOW WOW・月亭方正・よしもと7件（tmp/x1008/pick_new.py の SKIP）。reconcile は朝のpush前の --new で通す。翌朝(10/9)に①独立再照合②ジャンル独立判定→振り分け。"
+   "note": "既存40件へ113枠足し込み。保留＝岡村靖幸・大橋・ORANCHE・Calmera・可憐なアイボリー・中澤卓也・Siangyoo・スペーズ・lynch.・よしもと7件（tmp/x1009/pick_new.py の SKIP）。reconcile --ids OK91。翌朝(10/10)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }

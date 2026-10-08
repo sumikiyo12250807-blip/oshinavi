@@ -9,6 +9,23 @@
 ✅ ぴあ新着78（31777〜31848・31894〜31899）のジャンル独立判定＝unsure 0（indep_genre/result.json）
 ✅ Xの表示回数2週間＝tmp/x1009/x_overview_1009.md（同曜日比で日〜水 +15〜46%・木 -7%＝まだ落ちたとは言えない）
 ⏳ 裏＝morning_pia（発売前スイープ）→ recheck（78件再導出）→ rec_zero（バッジ0 126件）／vendors_harvest（TIGET・FANY・ZAIKO）／lp_chain／eplus_morning（reconcile_eplus 483 → 受付前スイープ）
+✅ ぴあ新着78の独立再導出＝一致76・食い違い2（31805 春風亭小朝・31811 みんおん＝プリセール窓が無い→取り直し）／ジャンルは足すものだけの違い16
+✅ ぴあ発売前スイープ＝新規123・足し込み35（tmp/x1009/split.txt）→ build_chain（rec_zero のあと）
+✅ TIGET 組み立て160・FANY 2959・ZAIKO 組み立て済み
+✅ e+受付中＝reconcile FAIL57を外して新着426（open_fail_hold.json）／TIGET新着148（32383〜32530・番人148/148）
+✅ ぴあ新着76を振り分け（logs/assigned_2026-10-09.md）・31805/31811 取り直し済み（まだ新着＝売り場の振り分けと一緒に）
+✅ ぴあ発売前の新規120（組み立て）＝同じ中身8は外す・足し込み5（サニーデイ・鞘師・VOW WOW・カウントダウン・CUBE）・保留17（岡村靖幸／e+・livePocket・FANY と重なる組）＝pick_new.py の SKIP
+✅ FANY新着48（heal49・番人の残り2）／ZAIKO新着10（heal18・番人0）／livePocket新着226（日別6組を畳む）
+✅ バッジ0のMISSING25件を取り直し（25適用・止まり0）
+✅ ぴあ発売前＝既存40件へ113枠足し込み・新規91（32815〜32905）reconcile OK91 → last_batch.json に記録（明朝の再照合）
+✅ 売り場新着420＋ぴあ2を振り分け（独立ジャンル判定・unsure4は和集合で＝32579 白餅だんご・32588 もしぬこ・32670 九月八日・32812 V Lovers）
+📝 昼へ＝TIGET登録済み全件の番人（gate_tiget_all.py が走り中）→ heal_tiget／livePocket 登録済み全件の番人／e+新着426に eplus_genre.py --apply（e+スイープのあと）／e+受付前スイープの結果（tmp/x1009/eplus/pre_go.json）
+⏳ 列の続き（済）＝writes_queue（FANY→ZAIKO→livePocket252）→ zero_heal（バッジ0のMISSING39）→ pia_new_writes（足し込み35＋5・新規約90）
+⏳ 書き込みの列＝eplus_open_inject（FAIL外し）→ tiget_chain → pia_writes（76振り分け＋2取り直し）→ writes_queue（FANY→ZAIKO→livePocket）
+✅ X 10/10発売のフォロワー調べ済み＝tmp/x1009/x/followers_1010.md（92組）
+   上位＝涼森れむ147万⚠️・YOASOBI 144万（id7329）・梶裕貴132万（id21424 学祭トーク・#梶裕貴）・陣内智則118万（id25285）・八掛うみ⚠️・aiko 88万（id30572）・宮下玲奈⚠️・新日本プロレス48万（#njpw）・MINAMO⚠️・グランパス41万（#grampus）
+   ⚠️＝セクシー女優4人（カレンダー発売イベント）＝昨日と同じく外す想定（夜に聞く⑤が未回答）→ 主役案＝YOASOBI・梶裕貴・陣内智則
+   ⚠️ 公式タグは直近3件ほどしか読めていない＝17:02に主役3組のタグを公式で確かめ直す
 ❓ 夜に聞く＝e+「同じ名前の登録あり」が今朝234件増（累計 38＋39＋15＋234）
 ```
 
