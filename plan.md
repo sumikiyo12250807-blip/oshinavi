@@ -23,6 +23,12 @@
 ✅ 売り場新着420＋ぴあ2を振り分け（独立ジャンル判定・unsure4は和集合で＝32579 白餅だんご・32588 もしぬこ・32670 九月八日・32812 V Lovers）
 ✅ TIGET登録済み全件の番人 ng148 → heal103（空45は触らない）→ 再番人99/103（残り4は昼）＝commit済み・昼のpushで出る
 ✅ 宿題4＝アーティストごとの軽いページ 500組（artist/<番号>.html・artists.html・sitemap）＝commit済み・昼のpushで公開（memory project_artist_pages）
+⏳ 宿題2＝10/11号＝深掘り『ファインディング・ネバーランド』（ユーザー「深掘りは３」）・主役＝劇団四季リトルマーメイド／モー娘。'26／松任谷由実（苗場 SURF&SNOW Vol.47）／ベリーグッドマン（ぴあ照合待ち・ダメなら OCHA NORMA）／DA PUMP（川口追加公演）＝tmp/pickup1011/brief.md・facts_main.md・facts_deep.md
+📝 素材集めで見つけた登録の直し＝4092 松任谷由実に苗場の枠が混ざっていた（切り出し＝pickup1011/pia_queue.py）／7223 ベリーグッドマンに超好感祭（10/31大阪城野音）が混ざっている・ツアー7公演中1公演だけ登録／4634・4635 リトルマーメイドのセット券の dateLabel が古い／6800 venue が「全国ツアー」／20354 モー娘。10/17の枠にURLなし／7329 YOASOBI 北海道10/10一般が抜け（fix_yoasobi.py）
+✅ 宿題2＝10/11号 本文 tmp/pickup1011/draft.md（独立FC2回・取りこぼしチェック済み）＝ユーザーに全文と出典を見せた・返事待ち（1 OK／2 バリーの段落を短く）→ OK後に build_pages（先週の型）
+✅ 宿題1（の1日目）＝X 10/10発売 12本 tmp/x1009/x/posts1010（独立FC→直し済み・機械検品OK）＝ユーザーに全文・返事待ち（予約OK？／⑨のセクシー女優4行を残す？）／⓪トレンド枠は 17:02
+✅ 取りこぼし＝YOASOBI 北海道を取り直し（7329 OK）／苗場を 4092 から切り出し＝id32906／岩崎宏美 28358 に2枠／新規 32907 sumika CINEMA&LIVE・32908 毎日がクリスマス2026／32804 SplashGo! の名前と選手チケットを直した
+📝 登録の直し（未）＝23610 華優希 Fan Meeting の県が「全国」（正しくは東京・都市センターホテル）／7223 ベリーグッドマンに超好感祭が混ざる／6800 リトルマーメイド 10月の枠が STALE（昼ヒール）／4634・4635 dateLabel 古い
 📝 宿題3（index.html の重さ）は未着手＝今は24.94MB（compact後）
 📝 昼へ＝livePocket 登録済み全件の番人／e+新着426に eplus_genre.py --apply（e+スイープのあと）／e+受付前スイープの結果（tmp/x1009/eplus/pre_go.json）
 ⏳ 列の続き（済）＝writes_queue（FANY→ZAIKO→livePocket252）→ zero_heal（バッジ0のMISSING39）→ pia_new_writes（足し込み35＋5・新規約90）
