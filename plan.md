@@ -25,7 +25,8 @@
 ✅ 宿題4＝アーティストごとの軽いページ 500組（artist/<番号>.html・artists.html・sitemap）＝commit済み・昼のpushで公開（memory project_artist_pages）
 ⏳ 宿題2＝10/11号＝深掘り『ファインディング・ネバーランド』（ユーザー「深掘りは３」）・主役＝劇団四季リトルマーメイド／モー娘。'26／松任谷由実（苗場 SURF&SNOW Vol.47）／ベリーグッドマン（ぴあ照合待ち・ダメなら OCHA NORMA）／DA PUMP（川口追加公演）＝tmp/pickup1011/brief.md・facts_main.md・facts_deep.md
 📝 素材集めで見つけた登録の直し＝4092 松任谷由実に苗場の枠が混ざっていた（切り出し＝pickup1011/pia_queue.py）／7223 ベリーグッドマンに超好感祭（10/31大阪城野音）が混ざっている・ツアー7公演中1公演だけ登録／4634・4635 リトルマーメイドのセット券の dateLabel が古い／6800 venue が「全国ツアー」／20354 モー娘。10/17の枠にURLなし／7329 YOASOBI 北海道10/10一般が抜け（fix_yoasobi.py）
-✅ 宿題2＝10/11号 本文 tmp/pickup1011/draft.md（独立FC2回・取りこぼしチェック済み）＝ユーザーに全文と出典を見せた・返事待ち（1 OK／2 バリーの段落を短く）→ OK後に build_pages（先週の型）
+✅ 宿題2＝10/11号＝✅ユーザーOK（10/9「日曜日の記事はOK」・「になるわ」→「よ」2か所を直した）＝本文 tmp/pickup1011/draft.md・ページ tmp/pickup1011/pages/（build_pages.py 点検OK）・トップの欄 section_top.html・試し見 https://claude.ai/artifact/Td5DKkDTCVZ8DekDn23VZm
+   🗓 10/11(日)朝の便で公開＝先週の publish.py / swap_for_push.py を写して pages/ → pickup/2026-10-11/・index.html の pickup 欄を section_top.html に差し替え・ヘッダーの「今週のピックアップ」リンクを新しい号へ・先週号（pickup/2026-10-04/）は消す（アーカイブしない）→ 番人 → push
 ✅ 宿題1（の1日目）＝X 10/10発売 12本 tmp/x1009/x/posts1010（独立FC→直し済み・機械検品OK）＝✅ユーザーOK（10/9昼「１ OK」）・⑨のセクシー女優4行は残す（ユーザー「残しといていい」）・タグ＝主役は #YOASOBI 等の名前・まとめは入れたジャンル全部（X_SCRIPT 10/9の節）／⓪トレンド枠は 17:02 に決めて文面だけ追加で見せる／予約は 19:41〜（20:01から15分おき・④に jpop_1010_x.mp4）
 ✅ 取りこぼし＝YOASOBI 北海道を取り直し（7329 OK）／苗場を 4092 から切り出し＝id32906／岩崎宏美 28358 に2枠／新規 32907 sumika CINEMA&LIVE・32908 毎日がクリスマス2026／32804 SplashGo! の名前と選手チケットを直した
 📝 登録の直し（未）＝23610 華優希 Fan Meeting の県が「全国」（正しくは東京・都市センターホテル）／7223 ベリーグッドマンに超好感祭が混ざる／6800 リトルマーメイド 10月の枠が STALE（昼ヒール）／4634・4635 dateLabel 古い
