@@ -260,9 +260,21 @@ def stream_label(base, last, until):
     return '%s（配信は%sまで）' % (base, jp(until[0], until[1])[5:])
 
 
+def full_name(p):
+    """公演名。🆕2026-10-09 抜き打ちで発覚＝公演の name は長いと「・・・」で切られている（2,963件中139件）。
+    切れていたら event の name＋sub_name（切れていない正式名）を使う（19789「森ノ宮Kakeru翔LIVE特別編～九ノ段presents・・・」）。"""
+    name = strip_tags(p.get('name'))
+    ev = p.get('event') or {}
+    if re.search(r'(・・・|…)\s*$', name or ''):
+        full = (strip_tags(ev.get('name')) + strip_tags(ev.get('sub_name') or '')).strip()
+        if full and not re.search(r'(・・・|…)\s*$', full):
+            return full
+    return name
+
+
 def build_one(p, today, genre_map, unknown):
     """1公演＝1エントリ。載せられないときは (None, 理由)。"""
-    name = strip_tags(p.get('name'))
+    name = full_name(p)
     if SELLER_SIDE.search(name):
         return None, '出す側の申込（出店・参加エントリー・駐車・案内登録）'
     d = perf_date_iso(p)
