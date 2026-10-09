@@ -1522,6 +1522,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "ぴあ以外＝振り分けはユーザー確認後（新着タブ）。livePocket 保留11＝tmp/x1010/lp_hold11.json（組み立ての穴）。gate_livepocket_indep を券種ごとに直した。id_to は概数（範囲内は売り場のものだけ）"
+  },
+  {
+   "date": "2026-10-10",
+   "slot": "morning",
+   "id_from": 33363,
+   "id_to": 33468,
+   "count": 106,
+   "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル・全ページ到達）＝新規候補186→組み立て183→別の係の仕分けで足し込み10・同じ中身15・保留52を外して106",
+   "assigned": false,
+   "rechecked": false,
+   "note": "既存61件へ197枠足し込み（eventCd登録済み51＋名前一致10）。保留52＝tmp/x1010/pick_class.json の hold。reconcile --ids OK106。翌朝(10/11)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }
