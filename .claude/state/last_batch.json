@@ -1508,9 +1508,20 @@
    "id_to": 32905,
    "count": 91,
    "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル）＝新規候補123→組み立て120→同じ中身8・足し込み5・保留17を外して91",
+   "assigned": true,
+   "rechecked": true,
+   "note": "既存40件へ113枠足し込み。保留＝岡村靖幸・大橋・ORANCHE・Calmera・可憐なアイボリー・中澤卓也・Siangyoo・スペーズ・lynch.・よしもと7件（tmp/x1009/pick_new.py の SKIP）。reconcile --ids OK91。翌朝(10/10)に①独立再照合②ジャンル独立判定→振り分け。 ／10/10朝＝独立再導出91件中90一致・32862 三婆11/11（ぴあ貸切公演）は予定枚数終了→印を付けて振り分け（logs/assigned_2026-10-10.md）"
+  },
+  {
+   "date": "2026-10-10",
+   "slot": "morning-vendors",
+   "id_from": 32940,
+   "id_to": 33300,
+   "count": 438,
+   "source": "TIGET 137（32940〜33076・番人137/137）／FANY 49・ZAIKO 15（番人→heal→番人）／livePocket 237（未登録248→独立ゲート＋券種ごとの番人→保留11・日別5組を畳む）",
    "assigned": false,
    "rechecked": false,
-   "note": "既存40件へ113枠足し込み。保留＝岡村靖幸・大橋・ORANCHE・Calmera・可憐なアイボリー・中澤卓也・Siangyoo・スペーズ・lynch.・よしもと7件（tmp/x1009/pick_new.py の SKIP）。reconcile --ids OK91。翌朝(10/10)に①独立再照合②ジャンル独立判定→振り分け。"
+   "note": "ぴあ以外＝振り分けはユーザー確認後（新着タブ）。livePocket 保留11＝tmp/x1010/lp_hold11.json（組み立ての穴）。gate_livepocket_indep を券種ごとに直した。id_to は概数（範囲内は売り場のものだけ）"
   }
  ]
 }
