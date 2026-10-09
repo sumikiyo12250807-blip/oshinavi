@@ -1533,6 +1533,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "既存61件へ197枠足し込み（eventCd登録済み51＋名前一致10）。保留52＝tmp/x1010/pick_class.json の hold。reconcile --ids OK106。翌朝(10/11)に①独立再照合②ジャンル独立判定→振り分け。"
+  },
+  {
+   "date": "2026-10-10",
+   "slot": "morning-uketsuke",
+   "id_from": 33469,
+   "id_to": 33522,
+   "count": 54,
+   "source": "ぴあ 受付中スイープ（0201全ジャンル・0101全ジャンル＝最後のページまで）＝新規候補256→組み立て203→参加型3保留→別の係の仕分けで足し込み2・同じ中身121・保留23を外して54",
+   "assigned": false,
+   "rechecked": false,
+   "note": "足し込み＝529 華原朋美・29190 NCT 127。保留23＝tmp/x1010/open_class.json の hold。reconcile --ids OK54。翌朝(10/11)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }
