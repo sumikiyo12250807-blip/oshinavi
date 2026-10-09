@@ -1,4 +1,5 @@
-# 🌙 10/9 夜の便（ぴあ抜き）＝commit済み・未push（今日は4回使った＝5回目は聞く）
+# 🌙 10/9 夜の便（ぴあ抜き）＝5回目push（ユーザー「押して　プッシュ」・push_extra_ok＝5）＝e3c4f9ec4
+⚠️ ぴあの見直しの売り切れの印は push のあとで index.html に入る＝明朝のpushで出る
 ```
 ✅ TIGET 今日分61件 heal→番人61/61／livePocket 今日分21件 heal→番人21/22（32748 カグラツキ＝受付が無くなった）
 ✅ 番人＝画面0・fold 0・check_badges OK／gate_fields 残り12（明朝の残り一覧どおり）
