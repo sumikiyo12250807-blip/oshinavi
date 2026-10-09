@@ -333,16 +333,34 @@ def build(ev, today, unknown=None):
     url = ev['url']
 
     tickets, skipped_slots, has_live = [], [], False
+    # 🆕2026-10-09 抜き打ちで発覚（ユーザー「これは重大な問題よ」）＝1受付に券種が複数ある時、1枠に畳んでいたので
+    #   ・入場券が予定販売数終了でも、付帯品（シャンパン等）が売切間近なら「買える」と出た（27486 VTuberスナック街）
+    #   ・1部15:00／2部18:00 の2券種が「先着販売受付（15:00公演）」1枠になり 2部が消えた（31526）
+    #   ＝券種が2つ以上の受付は**券種ごとに1枠**にする（名前＝券種名・状態＝券種の札・期間＝受付の期間）。
+    #     公演の時刻は券種ごとに違いうるので、券種ごとの枠には開演時刻を書かない（券種名に時刻があればそれが見える）。
+    units = []
+    for r in ev.get('receptions') or []:
+        cs = r.get('cards') or []
+        if len(cs) > 1 and (r.get('status') or '').strip() in ('販売中', '販売前'):
+            for c in cs:
+                cn = re.sub(r'\s+', ' ', c.get('name') or '').strip()
+                if '抽選' in (r.get('title') or '') and '抽選' not in cn:
+                    cn += '（抽選）'
+                units.append(dict(r, title=cn or (r.get('title') or ''), cards=[c], _per_card=True,
+                                  status=('販売前' if (c.get('status') or '').strip() == '販売前' else r.get('status'))))
+        else:
+            units.append(r)
+    when_notime = '%s公演' % md(first, ty) if (len(dates) == 1 or first == last) else when
     # 🆕2026-09-28 夜 独立ゲートが発見＝同じ名前の受付が日付ごとに並ぶ型（ClueMetic Popup＝「先着販売受付」×4）を
     #   同じ札の枠として1つに畳み、受付3つと売切の印が落ちていた。同名の受付が2つ以上ある時は、券種名の頭の日付
     #   （「10/22(木) 14ː00〜」）を受付名に添えて別の枠にする。日付が無ければ「その2」…で分ける。
     #   🆕同じ夜 サイドチェックが追加で発見＝日付の無い型（AETHER CROSS＝VIP/一般/U-25・MERA撮影会＝2部/4部/5部…）
     #   ＝同名の受付どうしで共通の頭を落とした券種名（「VIP」「5部・6部」）を添える。
-    title_n = collections.Counter((r.get('title') or '') for r in (ev.get('receptions') or []))
+    title_n = collections.Counter((r.get('title') or '') for r in units)
     title_seen = collections.Counter()
     title_tails = collections.defaultdict(set)
     same_cards = collections.defaultdict(list)
-    for r in ev.get('receptions') or []:
+    for r in units:
         same_cards[r.get('title') or ''] += [re.sub(r'\s+', ' ', c.get('name') or '').strip() for c in r.get('cards') or []]
 
     def card_tail(raw, cards):
@@ -356,7 +374,7 @@ def build(ev, today, unknown=None):
                     pre = pre[:-1]
         tails = [n[len(pre):].strip() for n in names if n[len(pre):].strip()]
         return '・'.join(dict.fromkeys(tails))
-    for rec in ev.get('receptions') or []:
+    for rec in units:
         cards = rec.get('cards') or []
         raw = rec.get('title') or ''
         if title_n[raw] > 1:
@@ -395,7 +413,8 @@ def build(ev, today, unknown=None):
                       or bool(ONLINE_VENUE.search(ev.get('venue') or '')))
         nm = ticket_name(raw, '（配信）' if (any_stream and not STREAM.search(raw)) else '')
         is_stream = bool(STREAM.search(nm))
-        head = '%s（%s %s）' % (nm, pref, when) if pref else '%s（%s）' % (nm, when)
+        w = when_notime if rec.get('_per_card') else when
+        head = '%s（%s %s）' % (nm, pref, w) if pref else '%s（%s）' % (nm, w)
         per = rec.get('period') or {}
         st, en = per.get('start'), per.get('end')
 
@@ -545,9 +564,23 @@ def _selftest():
     e, _ = build(ev([rec('販売終了', end=('2026-09-20', '23:59'), cards=[{'name': 'A', 'status': '受付終了'}])]), today)
     t = e['tickets'][0]
     assert t['soldout'] and t['saleEnded'] and t['date'] == '2026-09-20', t
-    # ⑥ 一部が売切間近・一部が予定販売数終了＝買える
+    # ⑥ 🆕2026-10-09 券種が複数＝券種ごとに1枠（売切間近のAは買える・予定販売数終了のBは売り切れの印）
     e, _ = build(ev([rec(cards=[{'name': 'A', 'status': '売切間近'}, {'name': 'B', 'status': '予定販売数終了'}])]), today)
-    assert not e['tickets'][0].get('soldout'), e['tickets']
+    ts = e['tickets']
+    assert len(ts) == 2 and ts[0]['type'].startswith('A（') and not ts[0].get('soldout') \
+        and ts[1]['type'].startswith('B（') and ts[1]['soldout'], ts
+    # ⑥-2 27486 型＝入場券が予定販売数終了・付帯品だけ売切間近＝入場券に売り切れの印（付帯品が買えても入場券は買えると言わない）
+    e, _ = build(ev([rec(cards=[{'name': '【12:50入場】基本セット', 'status': '予定販売数終了'},
+                                {'name': '【12:50入場】シャンパン', 'status': '売切間近'}])]), today)
+    ts = e['tickets']
+    assert ts[0]['type'].startswith('【12:50入場】基本セット（') and ts[0]['soldout'], ts
+    # ⑥-3 31526 型＝1部15:00／2部18:00 の2券種＝2枠・開演時刻はバッジに書かない（券種名の時刻が見える）
+    e, _ = build(ev([rec('販売前', start=('2026-10-09', '21:00'), end=('2026-10-17', '21:00'),
+                         cards=[{'name': '1部15:00〜参加券', 'status': '販売前'}, {'name': '2部18:00〜参加券', 'status': '販売前'}])],
+                    start_time='15:00'), today)
+    ts = e['tickets']
+    assert [t['type'].split('（東京')[0] for t in ts] == ['1部15:00〜参加券', '2部18:00〜参加券'] \
+        and all('11/25公演）10/9 21:00発売〜10/17 21:00' in t['type'] for t in ts), ts
     # ⑦ 読めない札＝枠を作らない（推測しない）
     r, why = build(ev([rec('謎の札', cards=[{'name': 'A', 'status': '謎'}])]), today)
     assert r is None and '読めない札' in why, why
@@ -615,8 +648,10 @@ def _selftest():
     e, _ = build(ev([rec(cards=[{'name': 'MERA撮影会 吉瀬結(団体) 5部', 'status': '予定販売数終了'},
                                 {'name': 'MERA撮影会 吉瀬結(団体) 6部', 'status': '予定販売数終了'}]),
                      rec(cards=[{'name': 'MERA撮影会 吉瀬結(団体) 2部', 'status': '売切間近'}])]), today)
-    assert e['tickets'][0]['type'].startswith('先着販売受付 5部・6部') and e['tickets'][0]['soldout'], e['tickets']
-    assert e['tickets'][1]['type'].startswith('先着販売受付 2部') and not e['tickets'][1].get('soldout'), e['tickets']
+    # 🆕2026-10-09 券種が複数の受付は券種ごとに1枠（5部・6部を1枠に畳まない）
+    assert [t['type'].split('（東京')[0] for t in e['tickets']] == \
+        ['MERA撮影会 吉瀬結（団体） 5部', 'MERA撮影会 吉瀬結（団体） 6部', '先着販売受付'], e['tickets']
+    assert e['tickets'][0]['soldout'] and e['tickets'][1]['soldout'] and not e['tickets'][2].get('soldout'), e['tickets']
     # ㉑ 🆕2026-09-30 スタリオン型＝公演日（配信開始）は過去・配信の受付の締切は未来 → 捨てない（ZAIKOと同じ穴）
     t30 = '2026-09-30'
     st_rec = rec(title='配信チケット受付', end=('2026-10-05', '23:59'), cards=[{'name': '視聴チケット', 'status': '販売中'}])
