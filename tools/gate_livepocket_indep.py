@@ -289,8 +289,13 @@ def parse_page(raw):
             if rs:
                 end = dt.datetime(*map(int, rs.groups()))
         cards = [strip_tags(c) for c in re.findall(r'<h4[^>]*>(.*?)</h4>', it, re.S)]
+        # 🆕2026-10-10 券種ごとの札（「予定販売数終了」「売切間近」「販売前」…）＝券種ごとに1枠のときの状態に使う
+        card_st = []
+        for blk in re.split(r'<h4[^>]*>', it)[1:]:
+            ms = re.search(r'event-detail-ticket-card__status[^>]*>(.*?)</div>', blk, re.S)
+            card_st.append(strip_tags(ms.group(1)) if ms else '')
         recs.append({'status': status, 'subtags': subtags, 'label': label, 'title': title, 'period': period,
-                     'start': start, 'end': end, 'cards': cards, 'n_dt': len(dts),
+                     'start': start, 'end': end, 'cards': cards, 'card_st': card_st, 'n_dt': len(dts),
                      'text': strip_tags(it)})
     pg['recs'] = recs
     return pg
@@ -490,6 +495,21 @@ def check_entry(e, pages, today):
             r['dasu'] = is_dasu(r['title'], r['cards'])
             import fold_parts as FP   # 🆕9/30 登録側と同じく部の印を外して比べる（売り場が自分で【夜の部】を付けるページ＝25689）
             r['title'] = FP.bare_type(r['title'])
+            # 🆕2026-10-10 ビルダーは 10/9 から「販売中・販売前の受付で券種が2つ以上＝券種ごとに1枠（名前＝券種名）」。
+            #   こちらが受付ごとに数えたままだったので、未登録248件中99件を「増えている」と誤って外した
+            #   （gate_livepocket_slots --built では99件とも一致）＝同じ線で受付を券種に分けてから突き合わせる
+            if len(r['cards']) > 1 and r['status'] in ('販売中', '販売前'):
+                cst = r.get('card_st') or []
+                for k, c in enumerate(r['cards']):
+                    cn = re.sub(r'\s+', ' ', c).strip()
+                    if '抽選' in r['title'] and '抽選' not in cn:
+                        cn += '（抽選）'
+                    cs = cst[k] if k < len(cst) else ''
+                    st_k = ('予定販売枚数終了' if re.search(r'予定販売(枚)?数終了|売り?切れ', cs) else
+                            '販売終了' if re.search(r'販売終了|受付終了', cs) else
+                            '販売前' if '販売前' in cs else r['status'])
+                    recs.append(dict(r, title=FP.bare_type(cn) or r['title'], cards=[c], status=st_k, dasu=is_dasu(cn, [c])))
+                continue
             recs.append(r)
         parsed = []
         for t in ts:
