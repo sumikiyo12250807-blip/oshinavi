@@ -5,7 +5,7 @@
 ✅ e+受付前 pre_go 51 → 新着28（32910〜32938・FAIL1 32935 は外した＝pre_fail_hold.json）・同じ名前の登録あり21＝pre_same_hold.json
 ✅ 登録の直し＝7223から超好感祭（10/31 大阪城音楽堂）を切り出し＝id32909・7223は札幌cube garden 1/16だけ／23610 県＝東京／6800 10月枠・31203 愛知注釈付き＝ぴあ「予定枚数終了」→売り切れ印／4634 千秋楽12/13・dateLabel 直し／32852 プリセール足し込み／32908 全角／
 ✅ TIGET再番人の残り4（12604・13093・15562・16238）＝昼夜の部を畳んだカードを番人が別枠と数えただけ＝直すもの無し
-⏳ 裏＝e+新着プールの eplus_genre --apply（tmp/x1009/eplus_genre_run.done・夜のpushで出る）＝終わるまで index.html を書かない
+✅ e+新着プール582件に eplus_genre --apply＝付けた388・取れず194（触らない）・対応表に無いカテゴリ12（tmp/eplus_genre_report.txt）＝commit済み・夜のpushで出る
 📝 4635 dateLabel は reconcile OK だったので触っていない
 ```
 
