@@ -1544,6 +1544,28 @@
    "assigned": true,
    "rechecked": true,
    "note": "足し込み＝529 華原朋美・29190 NCT 127。保留23＝tmp/x1010/open_class.json の hold。reconcile --ids OK54。翌朝(10/11)に①独立再照合②ジャンル独立判定→振り分け。 ／10/11朝＝独立再導出160件中159一致・33447 高石超花火（一般=予定枚数終了・先行は駐車券）を直して160件を振り分け（logs/assigned_2026-10-11.md）"
+  },
+  {
+   "date": "2026-10-11",
+   "slot": "morning",
+   "id_from": 33819,
+   "id_to": 33828,
+   "count": 10,
+   "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル）＝新規候補65→組み立て62→別の係の仕分けで足し込み9・同じ中身14・保留29を外して10",
+   "assigned": false,
+   "rechecked": false,
+   "note": "既存13件へ38枠足し込み（split の足し込み8＋仕分けのadd9）。保留29＝tmp/x1011/pick_class.json の hold（e+・FANY・livePocket の既存と同じ公演らしい13／同じ名前が割れている14／同じ興行か不明3）。reconcile --ids OK10。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。"
+  },
+  {
+   "date": "2026-10-11",
+   "slot": "morning-vendors",
+   "id_from": 33600,
+   "id_to": 33818,
+   "count": 0,
+   "source": "TIGET 137（33600〜33736・番人137/137）／FANY・ZAIKO（番人→heal→番人）／livePocket 23（独立ゲート一致38→投入23・既存らしい15）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "ぴあ以外＝振り分けはユーザー確認後（新着タブ）。count は概数を数えていない（範囲内は売り場のものだけ）"
   }
  ]
 }
