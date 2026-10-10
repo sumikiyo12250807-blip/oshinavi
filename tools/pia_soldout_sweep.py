@@ -19,7 +19,9 @@
    「予定枚数終了・完売・売切」なら **soldout の印**を付ける（消さない＝[[feedback_soldout_keep_visible]]）。
    それ以外（受付終了・抽選受付終了・読めない）は触らずに報告
 4. MISSING は id を報告に出す（取り直しは heal_stale_deadlines --ids → 足し算で当てる）
-🚨ぴあは1本ずつ（429）。ほかのぴあの道具と同時に回さない。夜の便のあと（22:30〜）に回す。
+🚨ぴあは1本ずつ（429）。ほかのぴあの道具と同時に回さない。
+🆕2026-10-11 ユーザー「うん、昼間に回して」＝**昼のpushの直後〜17時**に回す（夜22:30〜は、夜のpushのあとPCが落ちて2晩とも空振り）。
+  python tools/pia_soldout_sweep.py --apply --resume  # 途中経過は150件ごとにログへ・止まったら同じコマンドで続きから（tmp/pia_sweep_state_<日>.json）
 """
 import datetime, io, json, os, re, subprocess, sys
 
@@ -78,10 +80,24 @@ def main():
     else:
         grp = int(sys.argv[sys.argv.index('--group') + 1]) if '--group' in sys.argv else datetime.date.today().toordinal() % 3
         ids = [e['id'] for e in E if e.get('genre') != 'new' and e['id'] % 3 == grp and live_pia(e, today)]
+    # 🆕2026-10-11：途中経過を逐次書く・--resume で続きから（夜に回して2晩とも最後まで届かず、ログが空のまま何も残らなかった）
+    stp = f'tmp/pia_sweep_state_{today}.json'
+    S = {'grp': str(grp), 'done': [], 'stale': [], 'missing': [], 'fetch_ng': []}
+    if '--resume' in sys.argv and os.path.exists(stp):
+        S0 = json.load(io.open(stp, encoding='utf-8'))
+        if S0.get('grp') == str(grp):
+            S = S0
+    stale = [tuple(x) for x in S['stale']]
+    missing = [tuple(x) for x in S['missing']]
+    fetch_ng = list(S['fetch_ng'])
     rep = io.open(f'logs/pia_sweep_{today}.md', 'w', encoding='utf-8')
-    rep.write(f'# ぴあの見直し {today}（組 {grp}・{len(ids)}件）\n\n')
-    stale, missing, fetch_ng = [], [], []
+    rep.write(f'# ぴあの見直し {today}（組 {grp}・{len(ids)}件）\n\n## 途中経過\n')
+    if S['done']:
+        rep.write(f'- 続きから（済み {len(S["done"])}束）\n')
+    rep.flush()
     for k in range(0, len(ids), 150):
+        if k in S['done']:
+            continue
         chunk = ids[k:k + 150]
         r = subprocess.run([sys.executable, 'tools/reconcile_pia.py', '--ids', ','.join(map(str, chunk))], capture_output=True,
                            text=True, encoding='utf-8', errors='replace', env=ENV)
@@ -101,6 +117,11 @@ def main():
             elif re.search(r'❌FETCH ぴあ', line):
                 fetch_ng.append(cur)
         print(f'照合 {min(k + 150, len(ids))}/{len(ids)}  STALE {len(stale)} MISSING {len(missing)}', flush=True)
+        S.update(done=S['done'] + [k], stale=stale, missing=missing, fetch_ng=fetch_ng)
+        json.dump(S, io.open(stp, 'w', encoding='utf-8'), ensure_ascii=False)
+        rep.write(f'- {datetime.datetime.now():%H:%M} 照合 {min(k + 150, len(ids))}/{len(ids)}  STALE {len(stale)} MISSING {len(missing)} 混雑 {len(fetch_ng)}\n')
+        rep.flush()
+    rep.write('\n')
     marked, ended, unread = [], [], []
     cache = {}
     for i, pre, d in stale:
