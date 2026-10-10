@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-"""ぴあの「売っている枠」を2日に1回見直す番人（2026-10-09 新設・ユーザー「発売から２日おきに見に行って確認すればいいかも」）。
+"""ぴあの「売っている枠」を3日に1回見直す番人（2026-10-09 新設・ユーザー「発売から２日おきに見に行って確認すればいいかも」
+🆕2026-10-10 ユーザー「３日に１回でいいよ」＝2日で一周だとぴあに当てる量が多い（429で開けなくなる）ので3組・3日で一周に変えた）。
 
   python tools/pia_soldout_sweep.py                 # 今日の組を照合して下見（書かない）→ logs/pia_sweep_YYYY-MM-DD.md
   python tools/pia_soldout_sweep.py --apply         # 売り切れの印を付ける
-  python tools/pia_soldout_sweep.py --group 0|1     # 組を指定（既定＝今日の日付で自動・2日で一周）
+  python tools/pia_soldout_sweep.py --group 0|1|2   # 組を指定（既定＝今日の日付で自動・3日で一周）
   python tools/pia_soldout_sweep.py --ids 1,2       # id を指定
 
 ## なぜ要るか
@@ -12,7 +13,7 @@
 29835 AGESTOCK の木村柾哉／都の回）が見つかった＝誰かが見に行くまでずっと残る。
 
 ## やること
-1. 振り分け済み・ぴあの枠が売っている（発売済み・印なし・締切が今日以降）エントリを id で2組に分け、今日の組だけ
+1. 振り分け済み・ぴあの枠が売っている（発売済み・印なし・締切が今日以降）エントリを id で3組に分け、今日の組だけ
 2. `reconcile_pia.py --ids` で照合 → STALE（登録の枠がぴあの買える枠に無い）と MISSING（ぴあにあって登録に無い）を拾う
 3. STALE の枠は、ぴあのページを全券種で読み（pia_tickets.py --all --json）、同じ県・同じ公演日の券種が
    「予定枚数終了・完売・売切」なら **soldout の印**を付ける（消さない＝[[feedback_soldout_keep_visible]]）。
@@ -75,8 +76,8 @@ def main():
         ids = [int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')]
         grp = 'ids'
     else:
-        grp = int(sys.argv[sys.argv.index('--group') + 1]) if '--group' in sys.argv else datetime.date.today().toordinal() % 2
-        ids = [e['id'] for e in E if e.get('genre') != 'new' and e['id'] % 2 == grp and live_pia(e, today)]
+        grp = int(sys.argv[sys.argv.index('--group') + 1]) if '--group' in sys.argv else datetime.date.today().toordinal() % 3
+        ids = [e['id'] for e in E if e.get('genre') != 'new' and e['id'] % 3 == grp and live_pia(e, today)]
     rep = io.open(f'logs/pia_sweep_{today}.md', 'w', encoding='utf-8')
     rep.write(f'# ぴあの見直し {today}（組 {grp}・{len(ids)}件）\n\n')
     stale, missing, fetch_ng = [], [], []
