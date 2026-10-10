@@ -84,7 +84,9 @@ def badge_deadline(ty):
 
 def parse_type(ty):
     """type '…（県 M/D [HH:MM]公演）…' → (pref, (M,D), 'HH:MM' or None)"""
-    m = re.search(r'[（(]\s*([^\s0-9（()]+?)\s+(\d{1,2})/(\d{1,2})(?:\s+(\d{1,2}:\d{2}))?', ty)
+    # 🚨2026-10-10修正：来年の公演は「（大阪府 R9年 2/13 12:00公演）」＝「R9年 」を挟めず読めていなかった
+    #   （県・日付・時刻の照合が来年分だけ素通り／時刻ありでも h-時刻欠と誤報＝CHRONO TRIGGER・マツケンサンバ）
+    m = re.search(r'[（(]\s*([^\s0-9（()]+?)\s+(?:R\d+年\s*)?(\d{1,2})/(\d{1,2})(?:\s+(\d{1,2}:\d{2}))?', ty)
     if not m:
         return (None, None, None)
     return (m.group(1), (int(m.group(2)), int(m.group(3))), m.group(4))
@@ -215,9 +217,14 @@ def main():
         #     分かれている型（id5994 マキナ＝どちらも 10/11 18:00）まで「時刻を入れろ」と鳴った。
         #     時刻を入れるのは【同じ会場・同じ日に開演時刻が2種類以上ある】時だけ
         #     （feedback_same_day_show_time_badge「こういう場合だけ」）。
+        #     🚨2026-10-10修正：時刻の無いLD（フェスの2日通し券など＝初日の日付だけ持つ）を
+        #     「別の開演時刻」に数えていた。鯖江JAM・BLAZE UP NAGASAKI・CONTI-NeW・響都超特急で
+        #     「10:30」と「空」の2種類＝同日複数公演と誤報（実際は1日1公演・組み立ては正しい）。
+        #     数えるのは時刻のあるLDだけ（組み立て側 eplus_harvest.multi_time_dates と同じ線）。
         date_urls = {}
         for d, uu, vn, tm in ld_dates:
-            date_urls.setdefault((d, vn), set()).add(tm)
+            if tm:
+                date_urls.setdefault((d, vn), set()).add(tm)
         for ti, t, u in rows:
             if not cache.get(u):
                 continue
