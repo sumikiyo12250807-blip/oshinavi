@@ -72,7 +72,7 @@ miss = [s for s in imgs if not s.startswith(('http', 'data:')) and not os.path.e
 KEEP_OK = ('モーニング娘。', 'わよ。')       # 名前の中の。と 文末＋ボタン は割らない
 # 「…並ぶ。」」のように引用の閉じかっこが続く「。」は、」のあとで改行する（。と」の間で割ると 」 が次の行の頭に落ちる
 # ＝2026-09-11 ユーザー指摘）。だから 。」 はここでは咎めない。代わりに「行頭の 」」を別に数える。
-kuten = [m.start() for m in re.finditer(r'。(?!<br>)(?!</p>)(?!」)', sec)
+kuten = [m.start() for m in re.finditer(r'。(?!<br>)(?!</p>)(?!</h2>)(?!」)', sec)  # 見出しの末尾（</h2>の直前）も行末＝2026-10-11
          if not any(k in sec[max(0, m.start() - 12):m.start() + 1] for k in KEEP_OK)]
 kuten += [m.start() for m in re.finditer(r'<br>\s*」', sec)]
 
