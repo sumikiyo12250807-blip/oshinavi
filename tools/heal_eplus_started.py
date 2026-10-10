@@ -105,6 +105,7 @@ def main():
         time.sleep(1.0)
 
     res = {'FIX': [], 'SAME': [], 'SOLD': [], 'ENDED': [], 'NOMATCH': [], 'AMBIG': [], 'ERR': []}
+    changes = []  # (id, 元の type, 当てる中身)＝書く直前に読み直した index.html に当てる
     for e, t, sd, st in targets:
         ws = cache[t['url']]
         row = [e['id'], (e.get('name') or '')[:30], t['type'], t['url']]
@@ -134,22 +135,15 @@ def main():
         if any(d in w['stxt'] for d in eh._DEAD):
             if '予定枚数終了' in w['stxt']:
                 res['SOLD'].append(row + [w['stxt']])
-                if APPLY:
-                    t['soldout'] = True
-                    t['soldoutSince'] = T_ISO
+                changes.append((e['id'], t['type'], {'soldout': True, 'soldoutSince': T_ISO}))
             else:
                 res['ENDED'].append(row + [w['stxt']])
-                if APPLY:
-                    t['soldout'] = True
-                    t['saleEnded'] = True
-                    t['saleEndedSince'] = T_ISO
+                changes.append((e['id'], t['type'], {'soldout': True, 'saleEnded': True, 'saleEndedSince': T_ISO}))
             continue
         new_type = re.sub(r'\d{1,2}/\d{1,2} \d{1,2}:\d{2}発売$', '〜%d/%d %s' % (w['ed'].month, w['ed'].day, w['et']), t['type'])
         new_date = w['ed'].isoformat()
         res['FIX' if new_date == t['date'] else 'SAME'].append(row + ['%s → %s ｜date %s → %s' % (t['type'], new_type, t['date'], new_date)])
-        if APPLY:
-            t['type'] = new_type
-            t['date'] = new_date
+        changes.append((e['id'], t['type'], {'type': new_type, 'date': new_date}))
 
     out = io.open(REPORT, 'w', encoding='utf-8')
     W = out.write
@@ -169,10 +163,27 @@ def main():
     if not APPLY:
         print('(--apply で書き込み)')
         return
+    # 🆕2026-10-10 ページを読む間（数十分）にほかの道具が index.html を書くので、最初に読んだ events を書き戻すと
+    #   その分を上書きで消す（10/10 昼に発覚）＝書く直前に読み直して、変更だけを当てる
+    src = io.open('index.html', encoding='utf-8', newline='').read()
+    m = re.search(r'(  const EVENTS = )(\[.*?\])(;)', src, re.S)
+    events = json.loads(m.group(2))
+    by = {e['id']: e for e in events}
+    hit = 0
+    for i, old_type, patch in changes:
+        for t in (by.get(i) or {}).get('tickets') or []:
+            if t.get('type') == old_type and not t.get('soldout'):
+                t.update(patch)
+                hit += 1
+                break
     nl = '\r\n' if '\r\n' in src else '\n'
-    body = json.dumps(events, ensure_ascii=False, indent=2).replace('\n', nl)
+    compact = m.group(2)[:3] in ('[\r\n{', '[\n{')
+    if compact:  # compact_events の1件1行の形を保つ
+        body = ('[\n' + ',\n'.join(json.dumps(e, ensure_ascii=False, separators=(',', ':')) for e in events) + '\n]').replace('\n', nl)
+    else:
+        body = json.dumps(events, ensure_ascii=False, indent=2).replace('\n', nl)
     io.open('index.html', 'w', encoding='utf-8', newline='').write(src[:m.start()] + m.group(1) + body + m.group(3) + src[m.end():])
-    print('書き込み完了')
+    print('書き込み完了（読み直して当てた %d / %d）' % (hit, len(changes)))
 
 
 if __name__ == '__main__':
