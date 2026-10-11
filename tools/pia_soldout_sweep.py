@@ -13,7 +13,8 @@
 29835 AGESTOCK の木村柾哉／都の回）が見つかった＝誰かが見に行くまでずっと残る。
 
 ## やること
-1. 振り分け済み・ぴあの枠が売っている（発売済み・印なし・締切が今日以降）エントリを id で3組に分け、今日の組だけ
+1. 振り分け済み・ぴあの枠が売っている（発売済み・印なし・締切が今日以降）エントリのうち、🆕枠の発売日から3日目・6日目・9日目…に
+   当たるものだけ（毎日回す）。発売日が残っていない枠しか無いエントリは id で3組に分けて今日の組だけ（＝due_today）
 2. `reconcile_pia.py --ids` で照合 → STALE（登録の枠がぴあの買える枠に無い）と MISSING（ぴあにあって登録に無い）を拾う
 3. STALE の枠は、ぴあのページを全券種で読み（pia_tickets.py --all --json）、同じ県・同じ公演日の券種が
    「予定枚数終了・完売・売切」なら **soldout の印**を付ける（消さない＝[[feedback_soldout_keep_visible]]）。
@@ -60,6 +61,19 @@ def live_pia(e, today):
     return out
 
 
+def due_today(e, live, grp):
+    """🆕2026-10-11 ユーザー「3日前に発売のものをチェックするんだよ／そして、さらに3日後にまだチェックする」
+    ＝枠の発売日から3日目・6日目・9日目…に見る（毎日回す）。発売日（startDate）が残っていない枠しか無い
+    エントリ（受付中で登録した・ヒールで発売日が消えた）は、発売日が分からないので id で3組に分けて3日に1回。"""
+    if not live:
+        return False
+    sds = [t['startDate'] for t in live if t.get('startDate')]
+    if not sds:
+        return e['id'] % 3 == grp
+    td = datetime.date.today()
+    return any((td - datetime.date.fromisoformat(sd)).days > 0 and (td - datetime.date.fromisoformat(sd)).days % 3 == 0 for sd in sds)
+
+
 def page_rows(url):
     r = subprocess.run([sys.executable, 'tools/pia_tickets.py', url, '--all', '--json'], capture_output=True, text=True,
                        encoding='utf-8', errors='replace', env=ENV)
@@ -79,7 +93,7 @@ def main():
         grp = 'ids'
     else:
         grp = int(sys.argv[sys.argv.index('--group') + 1]) if '--group' in sys.argv else datetime.date.today().toordinal() % 3
-        ids = [e['id'] for e in E if e.get('genre') != 'new' and e['id'] % 3 == grp and live_pia(e, today)]
+        ids = [e['id'] for e in E if e.get('genre') != 'new' and due_today(e, live_pia(e, today), grp)]
     # 🆕2026-10-11：途中経過を逐次書く・--resume で続きから（夜に回して2晩とも最後まで届かず、ログが空のまま何も残らなかった）
     stp = f'tmp/pia_sweep_state_{today}.json'
     S = {'grp': str(grp), 'done': [], 'stale': [], 'missing': [], 'fetch_ng': []}
