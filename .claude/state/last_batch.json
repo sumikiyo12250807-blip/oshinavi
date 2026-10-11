@@ -1566,6 +1566,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "ぴあ以外＝振り分けはユーザー確認後（新着タブ）。count は概数を数えていない（範囲内は売り場のものだけ）"
+  },
+  {
+   "date": "2026-10-11",
+   "slot": "morning-uketsuke",
+   "id_from": 33829,
+   "id_to": 33855,
+   "count": 27,
+   "source": "ぴあ 受付中スイープ（0201全ジャンル・0101全ジャンル＝最後のページまで）＝新規候補257→組み立て200→別の係の仕分けで足し込み8・同じ中身124・保留41を外して27",
+   "assigned": false,
+   "rechecked": false,
+   "note": "足し込み8件8枠（SPECIAL OTHERS・つきみ・風男塾・新春浅草歌舞伎 ほか）。保留41＝tmp/x1011/open_class.json の hold（割れている23・他社既存10・不明6・参加型3）。reconcile --ids OK27。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }
