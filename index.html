@@ -42084,6 +42084,11 @@
       { key: "amazon",   label: "予習する（最新CD）", cls: "btn-amazon",   icon: "🎧" },
       { key: "amazonGoods", label: "グッズを見る",   cls: "btn-amazon",   icon: "🛍" },
       { key: "amazon2",  label: "予習する（最新CD②）", cls: "btn-amazon", icon: "🎧" },
+      /* 2026-10-11 夜 ユーザー「オペラグラスと別に書籍　とか絵本とかDVDとかのボタンも作って貼り付けて」
+         ＝ミュージカルなどの作品ごと。Amazonで商品名に作品名が入る商品があるのを実測してから links に足す（tmp/x1011/musical_amz.py） */
+      { key: "amazonBook", label: "書籍", cls: "btn-amazon", icon: "📚" },
+      { key: "amazonEhon", label: "絵本", cls: "btn-amazon", icon: "📖" },
+      { key: "amazonDvd",  label: "DVD",  cls: "btn-amazon", icon: "📀" },
       { key: "official", label: "公式チケット",        cls: "btn-official", icon: "🎟" }
     ];
     // ホテル予約: Expedia（バリューコマース sid=3769972 / pid=892633446・報酬4.4%）。2026-06-13 楽天トラベル・trivagoから差し替え
@@ -42166,6 +42171,9 @@
       "進撃の巨人グッズ": "img/btn2_kg23.png",
       "ベイビーシャークグッズ": "img/btn2_kg24.png",
       "ニルスのふしぎな旅グッズ": "img/btn2_kg25.png",
+      "書籍": "img/btn2_shoseki.png",   // 10/11 夜 ユーザー「書籍　とか絵本とかDVDとかのボタンも作って」（同じ型・tmp/btn/btn_from_cd_0915.py shoseki ehon dvd）
+      "絵本": "img/btn2_ehon.png",
+      "DVD": "img/btn2_dvd.png",
       "SPY×FAMILYグッズ": "img/btn2_spyfamily.png",   // 9/26 夜 ユーザー「ボタンそろえて作ってね」＝同じ型（tmp/btn/btn_from_cd_0915.py spyfamily）
       "新日本プロレスグッズ": "img/btn2_wr01.png",   // 9/27 プロレス団体のグッズ（同じ型・tmp/btn/btn_from_cd_0915.py wr01〜）
       "全日本プロレスグッズ": "img/btn2_wr02.png",
@@ -42211,6 +42219,7 @@
       fes:      { url: "https://amzn.to/4uprRe4", label: "フェスの必需品" },
       hanabi:   HANABI_AMAZON,
       engeki:   OPERAGLASS_AMAZON,
+      musical:  OPERAGLASS_AMAZON,   // 2026-10-11 夜 ユーザー「オペラグラスと別に書籍…」＝ミュージカルにもオペラグラス（それまでAmazonのボタンが1つも出ていなかった）
       jpop:     UCHIWA_AMAZON,
       kpop:     UCHIWA_AMAZON,
       rock:     ROCK_AMAZON,
