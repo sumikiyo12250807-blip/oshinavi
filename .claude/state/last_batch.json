@@ -1577,6 +1577,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "足し込み8件8枠（SPECIAL OTHERS・つきみ・風男塾・新春浅草歌舞伎 ほか）。保留41＝tmp/x1011/open_class.json の hold（割れている23・他社既存10・不明6・参加型3）。reconcile --ids OK27。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。"
+  },
+  {
+   "date": "2026-10-11",
+   "slot": "evening-x-audit",
+   "id_from": 33878,
+   "id_to": 33878,
+   "count": 1,
+   "source": "X準備の手順7.5（ぴあ発売前一覧 10/12〜10/14 × OSHINAVI）で見つけた未登録1件",
+   "assigned": false,
+   "rechecked": false,
+   "note": "甘い暴力 GORILLA HALL OSAKA 11/7（10/13 10:00一般）。既存5335・21383は12/16 LINE CUBE SHIBUYA＝別公演。reconcile --ids OK1。翌朝(10/12)に再照合→振り分け。"
   }
  ]
 }
