@@ -61,13 +61,43 @@ def live_pia(e, today):
     return out
 
 
-def due_today(e, live, grp):
+LEDGER = '.claude/state/pia_start_ledger.json'
+
+
+def update_ledger(E, today):
+    """🆕2026-10-11夜 ユーザー「これからは残しておいた方が良くない？」＝発売日の控え帳。
+    ヒールで枠を取り直すと startDate が消える（売っている枠の約7割に発売日が無かった）ので、見えているうちに id ごとに写しておく。
+    sd＝見たことのある発売日／first＝初めて控えた日（legacy＝控え帳を作った日にもう居た＝発売日は分からない）。
+    発売前に登録した枠は前日までに必ず startDate を持っているので、毎日1回ここを通せば取りこぼさない。"""
+    L = json.load(io.open(LEDGER, encoding='utf-8')) if os.path.exists(LEDGER) else {}
+    seed = not L
+    for e in E:
+        if e.get('genre') == 'new':
+            continue
+        sds = {t['startDate'] for t in e.get('tickets') or []
+               if t.get('startDate') and 'pia.jp' in (t.get('url') or (e.get('links') or {}).get('pia') or '')}
+        has_pia = any('pia.jp' in (t.get('url') or (e.get('links') or {}).get('pia') or '') for t in e.get('tickets') or [])
+        if not has_pia:
+            continue
+        r = L.setdefault(str(e['id']), {'sd': [], 'first': today, 'legacy': seed})
+        r['sd'] = sorted(set(r['sd']) | sds)
+    io.open(LEDGER, 'w', encoding='utf-8').write(json.dumps(L, ensure_ascii=False))
+    return L
+
+
+def due_today(e, live, grp, L=None):
     """🆕2026-10-11 ユーザー「3日前に発売のものをチェックするんだよ／そして、さらに3日後にまだチェックする」
-    ＝枠の発売日から3日目・6日目・9日目…に見る（毎日回す）。発売日（startDate）が残っていない枠しか無い
-    エントリ（受付中で登録した・ヒールで発売日が消えた）は、発売日が分からないので id で3組に分けて3日に1回。"""
+    ＝枠の発売日から3日目・6日目・9日目…に見る（毎日回す）。発売日は今の startDate と控え帳（update_ledger）の両方から取る。
+    控え帳を作る前から売っていて発売日が分からないエントリだけ、id で3組に分けて3日に1回。
+    控え帳を作ったあとに受付中で登録したもの（発売日が見えなかった）は、控えた日を発売日の代わりにする。"""
     if not live:
         return False
-    sds = [t['startDate'] for t in live if t.get('startDate')]
+    sds = {t['startDate'] for t in live if t.get('startDate')}
+    r = (L or {}).get(str(e['id']))
+    if r:
+        sds |= set(r['sd'])
+        if not sds and not r.get('legacy'):
+            sds = {r['first']}
     if not sds:
         return e['id'] % 3 == grp
     td = datetime.date.today()
@@ -88,12 +118,16 @@ def main():
     apply = '--apply' in sys.argv
     text, st, end, E = load()
     by = {e['id']: e for e in E}
+    L = update_ledger(E, today)
+    if '--ledger-only' in sys.argv:
+        print(f'ledger {len(L)}')
+        return
     if '--ids' in sys.argv:
         ids = [int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')]
         grp = 'ids'
     else:
         grp = int(sys.argv[sys.argv.index('--group') + 1]) if '--group' in sys.argv else datetime.date.today().toordinal() % 3
-        ids = [e['id'] for e in E if e.get('genre') != 'new' and due_today(e, live_pia(e, today), grp)]
+        ids = [e['id'] for e in E if e.get('genre') != 'new' and due_today(e, live_pia(e, today), grp, L)]
     # 🆕2026-10-11：途中経過を逐次書く・--resume で続きから（夜に回して2晩とも最後まで届かず、ログが空のまま何も残らなかった）
     stp = f'tmp/pia_sweep_state_{today}.json'
     S = {'grp': str(grp), 'done': [], 'stale': [], 'missing': [], 'fetch_ng': []}
