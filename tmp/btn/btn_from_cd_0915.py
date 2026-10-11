@@ -55,7 +55,11 @@ JOBS = [
     ("goodsmiru", "グッズを見る", None, None, None),
     ("miki_chosho", "三木大雲の著書", None, None, None),   # 9/22 夜 ユーザー「著書はぼやぼやしてる／三木大雲の著書にして」（2文字だと光でにじんで見える）
     ("lovemedo_chosho", "Love Me Doの著書", None, None, None),   # 10/6 ユーザー「Love Me Do は著書が出てるからそれを出してほしい」
-    ("spyfamily", "SPY×FAMILYグッズ", None, None, None),   # 9/26 夜 ユーザー「ボタンそろえて作ってね」（ミュージカル『SPY×FAMILY 2』）
+    ("spyfamily", "SPY×FAMILYグッズ", None, None, None),
+    # 10/11 夜 ユーザー「オペラグラスと別に書籍　とか絵本とかDVDとかのボタンも作って貼り付けて」（ミュージカルの作品ごと）
+    ("shoseki", "書籍", None, None, None),
+    ("ehon", "絵本", None, None, None),
+    ("dvd", "DVD", None, None, None),   # 9/26 夜 ユーザー「ボタンそろえて作ってね」（ミュージカル『SPY×FAMILY 2』）
     ("wr01", "新日本プロレスグッズ", None, None, None),   # 9/27 プロレス団体のグッズ（tmp/btn_tpl/wrestling_goods.json）
     ("wr02", "全日本プロレスグッズ", None, None, None),
     ("wr03", "スターダムグッズ", None, None, None),
