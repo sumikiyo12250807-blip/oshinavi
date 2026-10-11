@@ -1552,9 +1552,9 @@
    "id_to": 33828,
    "count": 10,
    "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル）＝新規候補65→組み立て62→別の係の仕分けで足し込み9・同じ中身14・保留29を外して10",
-   "assigned": false,
-   "rechecked": false,
-   "note": "既存13件へ38枠足し込み（split の足し込み8＋仕分けのadd9）。保留29＝tmp/x1011/pick_class.json の hold（e+・FANY・livePocket の既存と同じ公演らしい13／同じ名前が割れている14／同じ興行か不明3）。reconcile --ids OK10。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。"
+   "assigned": true,
+   "rechecked": true,
+   "note": "既存13件へ38枠足し込み（split の足し込み8＋仕分けのadd9）。保留29＝tmp/x1011/pick_class.json の hold（e+・FANY・livePocket の既存と同じ公演らしい13／同じ名前が割れている14／同じ興行か不明3）。reconcile --ids OK10。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。 ／10/12朝＝独立再導出38件中38一致・ジャンル独立判定（違い4は和集合）→38件を振り分け（logs/assigned_2026-10-12.md）"
   },
   {
    "date": "2026-10-11",
@@ -1574,9 +1574,9 @@
    "id_to": 33855,
    "count": 27,
    "source": "ぴあ 受付中スイープ（0201全ジャンル・0101全ジャンル＝最後のページまで）＝新規候補257→組み立て200→別の係の仕分けで足し込み8・同じ中身124・保留41を外して27",
-   "assigned": false,
-   "rechecked": false,
-   "note": "足し込み8件8枠（SPECIAL OTHERS・つきみ・風男塾・新春浅草歌舞伎 ほか）。保留41＝tmp/x1011/open_class.json の hold（割れている23・他社既存10・不明6・参加型3）。reconcile --ids OK27。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。"
+   "assigned": true,
+   "rechecked": true,
+   "note": "足し込み8件8枠（SPECIAL OTHERS・つきみ・風男塾・新春浅草歌舞伎 ほか）。保留41＝tmp/x1011/open_class.json の hold（割れている23・他社既存10・不明6・参加型3）。reconcile --ids OK27。翌朝(10/12)に①独立再照合②ジャンル独立判定→振り分け。 ／10/12朝＝独立再導出38件中38一致・ジャンル独立判定（違い4は和集合）→38件を振り分け（logs/assigned_2026-10-12.md）"
   },
   {
    "date": "2026-10-11",
@@ -1585,9 +1585,9 @@
    "id_to": 33878,
    "count": 1,
    "source": "X準備の手順7.5（ぴあ発売前一覧 10/12〜10/14 × OSHINAVI）で見つけた未登録1件",
-   "assigned": false,
-   "rechecked": false,
-   "note": "甘い暴力 GORILLA HALL OSAKA 11/7（10/13 10:00一般）。既存5335・21383は12/16 LINE CUBE SHIBUYA＝別公演。reconcile --ids OK1。翌朝(10/12)に再照合→振り分け。"
+   "assigned": true,
+   "rechecked": true,
+   "note": "甘い暴力 GORILLA HALL OSAKA 11/7（10/13 10:00一般）。既存5335・21383は12/16 LINE CUBE SHIBUYA＝別公演。reconcile --ids OK1。翌朝(10/12)に再照合→振り分け。 ／10/12朝＝独立再導出38件中38一致・ジャンル独立判定（違い4は和集合）→38件を振り分け（logs/assigned_2026-10-12.md）"
   }
  ]
 }
