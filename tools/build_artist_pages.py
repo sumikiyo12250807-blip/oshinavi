@@ -27,13 +27,15 @@ import build_ai_page as A
 
 REG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_pages.json")
 OUT_DIR = "artist"
-MAX_PAGES = 500          # 人気の組から（これから買える・発売前の枠が多い順）
+MAX_PAGES = 5000         # 人気の組から（これから買える・発売前の枠が多い順）。10/13 500→5000（検索の入口を増やす・ユーザー「90日で月3万円」）
 MIN_ROWS = 1
 POP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_popularity.json")  # collect_followers.py
 # 名前として使わない（出演者の総称・告知文・催しや会場の名前が artist 欄に入っているもの）
 SKIP_NAME = re.compile(r"出演者多数|芸人多数|多数|ほか$|他$|^未定$|^TBA$|^ゲスト|^各|^\s*$|ご確認|公式HP|お知らせ"
                        r"|TOUR|ツアー|公演|ライブ|LIVE|イベント|発売記念|展$|展覧|ミュージアム|CAFE|カフェ|寄席|繁昌亭|館$"
-                       r"|劇場|巡業|フェス|FES|祭|コンサート|CONCERT|ミュージカル|『|「|〜|~|in |IN |\d{4}")
+                       r"|劇場|巡業|フェス|FES|祭|コンサート|CONCERT|ミュージカル|『|「|〜|~|in |IN |\d{4}"
+                       # 10/13 5000組に広げたら切れ端が名前になった（「16(Fri)】 …」「【…】…」「ADAM at」）
+                       r"|【|】|\[|\]|\(|\)|（|）|^[\d\W_]|\s(?:at|and|with|feat\.?|vs\.?|x|×)$|^(?:at|with|feat)\s")
 
 
 def norm(s):
@@ -123,7 +125,42 @@ CSS = ("body{font-family:sans-serif;max-width:860px;margin:0 auto;padding:16px;l
        "@media (prefers-color-scheme: dark){body{background:#111;color:#eee}.ev{border-color:#444}.ev .v,.note{color:#bbb}a{color:#6af}}")
 
 
-def page_html(name, items, today, stamp, total_rows):
+GTAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1EQ5M4HT"></script>'
+        "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
+        "gtag('js',new Date());gtag('config','G-RM1EQ5M4HT');</script>")
+
+
+def event_jsonld(ev, rows):
+    """Google の「イベント」枠に出すための構造化データ（schema.org Event）。2026-10-13 追加。
+    🚨嘘を書かない＝公演日が1日・会場が1つと読めるエントリだけ出す（ツアー・会期・複数会場は出さない）。"""
+    held = ev.get("dateLabel") or ""
+    venue = (ev.get("venue") or "").strip()
+    pref = (ev.get("prefecture") or "").strip()
+    d = ev.get("date") or ""
+    if not (re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and venue and pref):
+        return None
+    if re.search(r"〜|～|~|全国|ツアー|TOUR|／|・|複数|未定|設定中|オンライン|配信", held + venue + pref):
+        return None
+    m = re.search(r"(\d{1,2}):(\d{2})\s*開演", held)
+    start = f"{d}T{int(m.group(1)):02d}:{m.group(2)}:00+09:00" if m else d
+    url = next((t.get("url") for _, _, t in rows if t.get("url")), None) or A.buy_url(ev)[0]
+    j = {"@context": "https://schema.org", "@type": "Event", "name": ev.get("name") or "",
+         "startDate": start, "eventStatus": "https://schema.org/EventScheduled",
+         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+         "location": {"@type": "Place", "name": venue,
+                      "address": {"@type": "PostalAddress", "addressRegion": pref, "addressCountry": "JP"}}}
+    if ev.get("artist"):
+        j["performer"] = {"@type": "PerformingGroup", "name": ev["artist"]}
+    if url:
+        sd = min((t.get("startDate") for _, _, t in rows if t.get("startDate")), default=None)
+        off = {"@type": "Offer", "url": url, "availability": "https://schema.org/InStock"}
+        if sd:
+            off["validFrom"] = sd
+        j["offers"] = off
+    return json.dumps(j, ensure_ascii=False).replace("</", "<\\/")
+
+
+def page_html(name, items, today, stamp, total_rows, num=None):
     title = f"{name} チケット発売日・先行・一般発売まとめ | OSHINAVI"
     first = items[0][0] if items else None
     desc = (f"{name}のチケット情報（{today.month}/{today.day}更新）。これから発売・販売中の受付{total_rows}件を発売日順に。"
@@ -132,8 +169,17 @@ def page_html(name, items, today, stamp, total_rows):
     o = ["<!DOCTYPE html>", '<html lang="ja"><head>', '<meta charset="UTF-8">',
          '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
          '<meta name="robots" content="index,follow">',
-         f"<title>{esc(title)}</title>", f'<meta name="description" content="{esc(desc)}">',
-         f"<style>{CSS}</style></head><body>",
+         f"<title>{esc(title)}</title>", f'<meta name="description" content="{esc(desc)}">']
+    if num is not None:
+        can = f"https://oshinavi.jp/{OUT_DIR}/{num}.html"
+        o += [f'<link rel="canonical" href="{can}">', '<meta property="og:type" content="website">',
+              f'<meta property="og:title" content="{esc(title)}">', f'<meta property="og:description" content="{esc(desc)}">',
+              f'<meta property="og:url" content="{can}">', '<meta property="og:image" content="https://oshinavi.jp/og-image.png">']
+    for _, ev, rows in items:
+        j = event_jsonld(ev, rows)
+        if j:
+            o.append(f'<script type="application/ld+json">{j}</script>')
+    o += [GTAG, f"<style>{CSS}</style></head><body>",
          '<p class="note"><a href="/">OSHINAVI</a> ＞ <a href="/artists.html">アーティスト一覧</a></p>',
          f"<h1>{esc(name)} のチケット発売日</h1>",
          f'<p class="note">最終更新：{esc(stamp)}／これから発売・販売中の受付 {total_rows}件（発売日・締切が近い順）。'
@@ -202,7 +248,7 @@ def build(today):
         items = sorted(g["items"], key=lambda x: (x[0], x[1].get("id", 0)))
         total_rows = sum(len(r) for _, _, r in items)
         with open(os.path.join(OUT_DIR, f"{reg[k]}.html"), "w", encoding="utf-8") as f:
-            f.write(page_html(g["name"], items, today, stamp, total_rows))
+            f.write(page_html(g["name"], items, today, stamp, total_rows, reg[k]))
         made.append((g["name"], reg[k], total_rows))
     json.dump(reg, open(REG, "w", encoding="utf-8"), ensure_ascii=False, indent=0, sort_keys=True)
 
@@ -219,6 +265,7 @@ def build(today):
          '<meta name="viewport" content="width=device-width, initial-scale=1.0">', '<meta name="robots" content="index,follow">',
          "<title>アーティスト別 チケット発売日一覧 | OSHINAVI</title>",
          f'<meta name="description" content="OSHINAVIに載っているアーティスト{len(made)}組の、これから発売・販売中のチケット発売日ページの一覧。">',
+         '<link rel="canonical" href="https://oshinavi.jp/artists.html">', GTAG,
          f"<style>{CSS}</style></head><body>",
          '<p class="note"><a href="/">OSHINAVI</a></p>', "<h1>アーティスト別 チケット発売日</h1>",
          f'<p class="note">最終更新：{esc(stamp)}／{len(made)}組（これから発売・販売中の受付がある組）。</p><ul>']
