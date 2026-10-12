@@ -1610,6 +1610,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "足し込み＝29862 ルパン三世 プレイガイド最速先行。保留44＝tmp/x1012/open_class.json の hold（割れている27・ぴあ以外の既存8・参加型3・よしもと2・不明4）。reconcile --ids OK7。翌朝(10/13)に①独立再照合②ジャンル独立判定→振り分け。"
+  },
+  {
+   "date": "2026-10-12",
+   "slot": "morning-eplus",
+   "id_from": 34053,
+   "id_to": 34063,
+   "count": 10,
+   "source": "e+受付前26ジャンル＋フェス（tmp/x1012/eplus/pre_go.json 13件）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "34058 四星球はreconcile_eplus FAIL（死枠）で外した＝pre_fail_hold.json／登録済み1・同じ名前1は pre_same_hold.json。ぴあ以外＝振り分けはユーザー確認後"
   }
  ]
 }
