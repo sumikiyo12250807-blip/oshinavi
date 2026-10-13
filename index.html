@@ -154,6 +154,8 @@
       text-align: center;
     }
     nav a:hover { color: var(--accent); }
+    .artists-link { display: block; max-width: 640px; margin: 8px auto 0; font-size: 13px; color: var(--accent2); text-decoration: none; text-align: right; }
+    .artists-link:hover { text-decoration: underline; }
 
     /* ── ヒーロー ── */
     .hero {
@@ -1391,6 +1393,8 @@
     <button type="button" id="searchClear" aria-label="検索の文字を消す" title="検索の文字を消す">✕</button>
     <div id="searchSuggest"></div>
   </div>
+  <!-- 10/13 アーティストごとのページへの入口（検索から来る人・Google向け） -->
+  <a class="artists-link" href="artists.html">🎤 アーティスト一覧から探す →</a>
 
   <!-- ジャンルフィルター（4グループに折りたたみ・2026-08-13 ユーザー指示） -->
   <div class="filter-row">
@@ -20056,6 +20060,7 @@
 </main>
 
 <footer>
+  <p class="footer-links"><a href="artists.html">アーティスト一覧</a>｜<a href="ai.html">全件の一覧</a></p>
   &copy; <span id="footerYear">2026</span> OSHINAVI — 推しのチケット発売日情報
   <script>document.getElementById('footerYear').textContent=new Date().getFullYear();</script>
 </footer>
