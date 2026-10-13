@@ -27,7 +27,7 @@ import build_ai_page as A
 
 REG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_pages.json")
 OUT_DIR = "artist"
-MAX_PAGES = 5000         # 人気の組から（これから買える・発売前の枠が多い順）。10/13 500→5000（検索の入口を増やす・ユーザー「90日で月3万円」）
+MAX_PAGES = 20000        # 人気の組から（これから買える・発売前の枠が多い順）。10/13 500→5000→20000（買える枠のある名前は全部＝13,188組・ユーザー「とにかく早く目標を達成して」。sitemap の上限5万URLの内）
 MIN_ROWS = 1
 POP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_popularity.json")  # collect_followers.py
 # 名前として使わない（出演者の総称・告知文・催しや会場の名前が artist 欄に入っているもの）
