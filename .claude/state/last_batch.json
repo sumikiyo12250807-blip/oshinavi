@@ -1665,6 +1665,50 @@
    "assigned": false,
    "rechecked": false,
    "note": "reconcile_eplus --ids の結果は tmp/x1013/eplus/pre_reconcile.txt（FAIL は外して pre_fail_hold.json）。ぴあ以外＝翌朝(10/14)に番人を通してから振り分け／照合 FAIL 4件（b2・a1・c1）を外した＝tmp/x1013/eplus/pre_fail_hold.json。id は飛び番"
+  },
+  {
+   "date": "2026-10-13",
+   "slot": "evening-xprep",
+   "id_from": 34335,
+   "id_to": 34346,
+   "count": 12,
+   "source": "X準備 手順7.5（ぴあ発売前一覧 10/14〜10/16）・手順8（10/14発売の名前でぴあ総ざらい）で見つけた未登録＝build_pia_entries→inject_built",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --ids で MISSING0・QC0。34336 ナイトレター は混雑ページで読めず＝翌朝再照合"
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "morning-shimizu",
+   "id_from": 34347,
+   "id_to": 34347,
+   "count": 1,
+   "source": "ぴあ（削除判定で見つけた 4409 清水翔太の別ツアー・未登録 2635887 Zepp Namba 2027 オフィシャル先行〜10/14 23:59）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile --ids OK1。翌朝(10/15)に①独立再照合②ジャンル独立判定→振り分け（締切が今日なので翌朝には販売終了の可能性）"
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "morning-vendors",
+   "id_from": 34348,
+   "id_to": 35286,
+   "count": 0,
+   "source": "TIGET133（34348〜34480・番人133一致）／FANY137・ZAIKO21（番人→heal→番人）／livePocket648（独立ゲート一致・日別を22組85件畳んだ）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "ぴあ以外＝振り分けはユーザー確認後。livePocket は一覧（800件）が昨日と46件しか重ならず未登録677＝売り場の一覧の並びが変わった疑い（未確認）。count は数えていない"
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "morning",
+   "id_from": 35287,
+   "id_to": 35342,
+   "count": 56,
+   "source": "ぴあ 発売前スイープ rlsStatus=0102/0202（7ジャンル）＝新規候補125→組み立て119→別の係の仕分けで足し込み9・同じ中身16・保留38を外して56",
+   "assigned": false,
+   "rechecked": false,
+   "note": "既存36件へ93枠足し込み（消える枠0・照合OK34・STALE2＝591 小椋佳 宮城山形・2194 LINDBERG 香川＝昼のヒールへ）。保留38＝tmp/x1014/pick_class.json の hold。reconcile --ids OK56。翌朝(10/15)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }
