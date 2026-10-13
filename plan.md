@@ -18,7 +18,9 @@
 ✅ トップを軽く（commit済み・昼pushで公開）＝netlify.toml のビルドで tools/publish_split.py が EVENTS を ev/*.js 5本に切り出す（29.5→6.68MB・手元で元と件数・中身ハッシュ一致・エラー0）／検索欄の下と足元に artists.html へのリンク（ナビ4つ目は携帯で3行に折れたのでやめた）
    🚨昼push後＝Netlify のビルドが通ったか・本番に ev/ が出ているかを確かめる → Search Console でサイトマップ再送・登録リクエスト
 ✅ e+ 受付前・フェス 新規38（34297〜34334・新着・last_batch 記録）／同じ名前の登録あり7は保留（tmp/x1013/eplus/pre_same_hold.json）
-⏳ e+ 新着602＝reconcile_eplus FAIL 11件（14枠）以外を eplus_genre --apply → assign_np（tmp/x1013/eplus_assign_chain.py が裏で順に回す）
+✅ e+ 新着622＝reconcile_eplus FAIL 11件＋抜き取り🔴31977 を外して609通過 → 売り場のジャンルが写せた404を振り分け（gate_fields 前後とも全0）
+   残り185＝e+ のスラッグが対応表とずれていた（punk-ska・metal-core・edm-club・english-song・worldmusic・chanson）→ 表を直して取り直し中（eplus_assign2.py）
+   ❓夜に聞く：e+ の札 festival・folk・game-music・blues・healing・movie-soundtrack の行き先（festival は「複数組＋屋外」の定義があるので札だけでは fes にしない）
 ✅ MEMORY.md 161→131行（行をつないだだけ）
 ```
 

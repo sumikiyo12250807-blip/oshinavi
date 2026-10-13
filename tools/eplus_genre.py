@@ -67,6 +67,16 @@ EPLUS_GENRE = {
     'asian-pops': 'yougaku',
     'western-music': 'yougaku',
     'soul-rb': 'yougaku',
+    # 2026-10-13 e+ の実際のスラッグ（上の 'punk'・'metal'・'club-dj'・'western-music'・'world-music' は
+    # 実ページに出てこない名前だった＝185件が「対応表に無い」で新着に溜まっていた）。行き先は上と同じ
+    'punk-ska': 'rock',
+    'metal-core': 'rock',
+    'edm-club': 'club',
+    'english-song': 'yougaku',
+    'worldmusic': 'yougaku',
+    'chanson': 'chanson',        # GENRE_LABEL に「シャンソン」がある
+    # ⏸ festival・folk・game-music・blues・healing・movie-soundtrack は行き先を決めていない（ユーザーに聞く）
+    #   festival＝フェスは「複数組＋屋外」の一般の定義（feedback_fes_definition）＝札だけでは決まらない
 }
 
 
