@@ -19,9 +19,16 @@
    🚨昼push後＝Netlify のビルドが通ったか・本番に ev/ が出ているかを確かめる → Search Console でサイトマップ再送・登録リクエスト
 ✅ e+ 受付前・フェス 新規38（34297〜34334・新着・last_batch 記録）／同じ名前の登録あり7は保留（tmp/x1013/eplus/pre_same_hold.json）
 ✅ e+ 新着622＝reconcile_eplus FAIL 11件＋抜き取り🔴31977 を外して609通過 → 売り場のジャンルが写せた404を振り分け（gate_fields 前後とも全0）
-   残り185＝e+ のスラッグが対応表とずれていた（punk-ska・metal-core・edm-club・english-song・worldmusic・chanson）→ 表を直して取り直し中（eplus_assign2.py）
+   残り185＝e+ のスラッグが対応表とずれていた（punk-ska・metal-core・edm-club・english-song・worldmusic・chanson）→ 表を直して取り直し＝128振り分け（計532・commit済み）／残り57は行き先未定の札
    ❓夜に聞く：e+ の札 festival・folk・game-music・blues・healing・movie-soundtrack の行き先（festival は「複数組＋屋外」の定義があるので札だけでは fes にしない）
 ✅ MEMORY.md 161→131行（行をつないだだけ）
+🔴 昼：20630 KALMA（ZAIKO）＝一般発売 札幌・名古屋・大阪が売り場は受付中（〜公演前日 23:59）なのに「〜10/9」で死んでいた → 売り場どおりに直す（fix_kalma2.py）
+   🚨原因＝道具ではなくあたし：朝の gate_zaiko は「🚨生データ突合2（KALMA）・一覧落ち6・判定不能1」を出していたのに、朝の流れは「食い違い」だけ heal して残りを読んでいなかった → 昼に全件の番人を回し直して一覧落ち6・判定不能1も片付ける。🚨今後は gate_zaiko の要約行の4つ（食い違い・生データ突合・一覧落ち・判定不能）を全部読む
+✅ 昼ヒール＝ぴあ27適用＋安全弁51足し算（消える枠0・25264 ふみ は出る枠1→0なので当てず）／TIGET65・livePocket25・FANY82・ZAIKO 当日1＋食い違い4・e+締切11
+📝 ぴあ昼の削除候補145（tmp/heal_stale.json）＝明朝の check_expired で／ぴあURL無効化2＝25960 母心・27280 東京楽所（push後に pia_kw_search）
+📝 KALMA は登録側は直った。番人の残り「組み立てで捨てられた」＝build_zaiko_entries が1ページ複数公演の一般発売を捨てる（宿題）
+📝 明朝の削除ゲートへ：ZAIKO 一覧落ち6＝20757 Optimo（10/31）・25749 Hakos Baelz（12/1）は売り場に買える券なし（売り切れか確かめる）／20668・22956・20516・31436 は公演日が過ぎている（配信なら期限を見る）／判定不能 20749 happyslap（引き直す）＝明細 tmp/x1013/gate_zaiko_noon_report.txt
+✅ 昼 いつまで不明4枠＝3430 森の響き（売り場に掲載・受付中）・楽天 3674/24302（朝の reconcile_rakuten で OK）＝どれも残す
 ```
 
 # ▶▶ 10/12(月) 朝の便
