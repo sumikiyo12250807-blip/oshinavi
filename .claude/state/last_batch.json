@@ -1654,6 +1654,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "ぴあ以外＝振り分けは番人を通した分（10/12夜ユーザー「振り分けて」）。count は数えていない"
+  },
+  {
+   "date": "2026-10-13",
+   "slot": "morning-eplus",
+   "id_from": 34297,
+   "id_to": 34334,
+   "count": 34,
+   "source": "e+ 受付前26ジャンル＋festival＝候補65→ビルド51→gate_eplus_slots で5外す→46→登録済み1・同じ名前の登録あり7（tmp/x1013/eplus/pre_same_hold.json）を外して38",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile_eplus --ids の結果は tmp/x1013/eplus/pre_reconcile.txt（FAIL は外して pre_fail_hold.json）。ぴあ以外＝翌朝(10/14)に番人を通してから振り分け／照合 FAIL 4件（b2・a1・c1）を外した＝tmp/x1013/eplus/pre_fail_hold.json。id は飛び番"
   }
  ]
 }
