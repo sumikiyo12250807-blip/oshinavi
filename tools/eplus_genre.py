@@ -75,8 +75,14 @@ EPLUS_GENRE = {
     'english-song': 'yougaku',
     'worldmusic': 'yougaku',
     'chanson': 'chanson',        # GENRE_LABEL に「シャンソン」がある
-    # ⏸ festival・folk・game-music・blues・healing・movie-soundtrack は行き先を決めていない（ユーザーに聞く）
-    #   festival＝フェスは「複数組＋屋外」の一般の定義（feedback_fes_definition）＝札だけでは決まらない
+    # 2026-10-13夜 ユーザーの答え＝folk→jpop・game-music/blues/healing/movie-soundtrack→その他（musicetc）
+    #   festival＝売り場がフェスと言っていればフェス（feedback_fes_definition）
+    'folk': 'jpop',
+    'game-music': 'musicetc',
+    'blues': 'musicetc',
+    'healing': 'musicetc',
+    'movie-soundtrack': 'musicetc',
+    'festival': 'fes',
 }
 
 
