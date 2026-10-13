@@ -1,3 +1,15 @@
+# ▶▶ 10/14(水) 朝の便
+```
+⏰ アラーム4本（CronCreate）＝12:20 昼（午前の最遅12:15・15:00が2件は夜のヒールへ）／17:02 X準備（10/15発売）／19:41 予約の締め／22:07 夜
+✅ Search Console（ユーザー「Googleに何か頼むやつ　先にやって」）＝トップの登録リクエスト3回目も失敗・「公開URLをテスト」自体もエラー（Googlebot名乗りの取得は 200・6.77MB・3秒＝配信は正常）＝トップは登録済みなので急がない
+   ▶ 朝push（a608ba9f6 artist 13,188・sitemap 13,569URL を公開）のあとサイトマップを送り直す
+🌙 昨夜の night.py は画面の番人のあと止まっていた（PCが落ちた）＝ヒールは当たっている・番人と build_ai_page・compact は朝pushの前に通す
+▶ 裏で：morning_pia（昨日発売の締切・発売前スイープ）／vendors_harvest（TIGET・FANY・ZAIKO）／削除の独立判定（別の係）
+✅ 朝の手元点検＝期限切れ 削除候補219・要再確認981・配信34／バッジ0 31日より先221／楽天照合 OK48・FAIL5（昨日と同じ数）・売り切れ点検 印0／e+ 発売済み枠 FIX3
+▶ e+ 札の行き先（昨夜の答え）＝tools/eplus_genre.py に folk→jpop・game-music/blues/healing/movie-soundtrack→musicetc・festival→fes を足した → 残り57件に当てて番人→振り分け
+📝 朝：33265 コスプレ参加券（昨夜「載せる」）を振り分け
+```
+
 # ▶▶ 10/13(火) 朝の便
 ```
 ⏰ アラーム4本（CronCreate）＝13:05 昼（午前の最遅13:00・15:00が1件）／17:02 X準備（10/14発売）／19:41 予約の締め／22:07 夜
@@ -40,7 +52,13 @@
 ✅ 削除＝33410 西武・33425 巨人（CSファーストSで敗退・NPB公式・別の係2人一致）
 ✅ 日本シリーズ＝33423/33424 をぴあどおり第1・2・6・7戦に取り直し／e+ 3球場（PayPayドームは404）／ローチケ4球場（会員先行〜10/15 23:00・先行抽選10/14〜10/17・実ブラウザで確認）
 📝 明朝：新着 34335〜34346（X準備で足した12件）の再チェック→振り分け／34336 ナイトレター 混雑で読めず＝再照合／PayPayドームの e+ を引き直す
-▶ 夜push（今日3回目・ユーザー「出して」）＝番人 push_gates_eve.py の結果を見てから
+✅ 夜push（今日3回目・ユーザー「出して」）d88d60a6d＝番人 照合OK53・画面0・畳み0・gate_fields 全0／本番 20:33 版 6.77MB 確認
+✅ Search Console（ユーザー「オッケー」）＝sitemap.xml 初送信（それまで0件）・artists.html 登録リクエスト済み／🚨トップの再リクエストは2回「送信中に問題」＝明日もう一度
+✅ ユーザー「あなたがやるべきと思うことをやって」（memory feedback_growth_selfdrive）→ アーティストページ 5000→13,188組（commit a608ba9f6・未push）
+✅ 夜の答え＝①費用 Anthropic＋Netlify 月2万円くらい（目標＝売上月3万・目印 月2万で赤字解消）／② e+ 札 folk→jpop・game-music/blues/healing/movie-soundtrack→その他（musicetc）・festival＝✅ユーザー「名前にフェス・売り場がフェスならフェス」（memory feedback_fes_definition 更新・旧6/23は失効）＝e+ festival の札は fes／③ 33265 コスプレ参加券 載せる／④ 主催・会場だけの販売も載せる（memory feedback_organizer_only_sales_ok）
+▶ 夜の便（22時台）＝今日発売のぴあヒール＋番人＋build_ai_page＋compact を裏で（tmp/x1013/night.py）＝push は今日3回使い切り（20:33）＝commit だけ・朝pushで出す／X投稿の公演の取りこぼしは手順7.5・8で済み（抜け18）
+📝 明朝：② と ③ を番人を通して振り分け
+📝 明朝：朝pushで artist 13,188 を公開 → Search Console でサイトマップを送り直し・トップの登録リクエスト再挑戦
 ```
 
 # ▶▶ 10/12(月) 朝の便
