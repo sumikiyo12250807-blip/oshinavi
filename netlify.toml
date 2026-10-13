@@ -1,0 +1,6 @@
+# 2026-10-13 公開の直前に index.html の EVENTS を ev/*.js へ切り出す（tools/publish_split.py）
+# Googlebot は1ファイル15MBまで＝29MBのトップは途中で切られて「空のページ」に見えていた。
+# リポジトリの index.html（道具が読み書きする方）は変えない。ビルド用の複製の中だけを書き換える。
+[build]
+  publish = "."
+  command = "python3 tools/publish_split.py --inplace"
