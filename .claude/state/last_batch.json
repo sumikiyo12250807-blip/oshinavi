@@ -1709,6 +1709,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "既存36件へ93枠足し込み（消える枠0・照合OK34・STALE2＝591 小椋佳 宮城山形・2194 LINDBERG 香川＝昼のヒールへ）。保留38＝tmp/x1014/pick_class.json の hold。reconcile --ids OK56。翌朝(10/15)に①独立再照合②ジャンル独立判定→振り分け。"
+  },
+  {
+   "date": "2026-10-14",
+   "slot": "morning-uketsuke",
+   "id_from": 35343,
+   "id_to": 35356,
+   "count": 14,
+   "source": "ぴあ受付中スイープ（0201・0101 全ジャンル）＝新規候補246→組み立て186→別の係の仕分けで足し込み5・同じ中身118・保留49を外して14",
+   "assigned": false,
+   "rechecked": false,
+   "note": "既存5件へ7枠足し込み（消える枠0）。保留49＝tmp/x1014/open_class.json の hold。reconcile --ids OK14。翌朝(10/15)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }
