@@ -131,24 +131,6 @@ if ($now -ge $noonStart.AddMinutes(30) -and -not (Already 'push')) {
   }
 }
 
-# ---------- C e+ の全件照合（2026-10-15 新設） ----------
-# 30547 宮ロック2026後夜祭の締切が登録から9日間ズレたまま＝e+ だけ登録後の見直しが無かった。
-# ユーザー「こんな初歩的な間違いはだめよ　二度と同じ間違いがないようにちゃんと設定して」。
-# reconcile_eplus.py --all が終わると .claude/state/rec_eplus_all_YYYYMMDD.txt を書く。11時を過ぎて無ければ鳴る。
-if ($now -ge $today.AddHours(11) -and $now -lt $today.AddHours(23).AddMinutes(30) -and -not (Already 'eplusall')) {
-  $recE = Join-Path $state ('rec_eplus_all_' + $stamp + '.txt')
-  if (-not (Test-Path $recE)) {
-    $c = @()
-    $c += '🚨 今日はまだ e+ の登録済みの枠を全部照合していません（今 ' + $nowStr + '）。'
-    $c += '   e+ は登録後に締切・売り切れが変わっても、ほかの道具は気づきません（2026-10-15 宮ロック後夜祭）。'
-    $c += ''
-    $c += '   やること（ほかの e+ の道具と同時に流さない＝503）:'
-    $c += '     python tools/reconcile_eplus.py --all   # FAIL は実ページどおりに直して --ids で 0 を確かめる'
-    $msgs += ($c -join "`n")
-    Mark 'eplusall'
-  }
-}
-
 if ($msgs.Count -gt 0) {
   [Console]::Error.WriteLine(($msgs -join "`n`n"))
   [Console]::Error.WriteLine('')
