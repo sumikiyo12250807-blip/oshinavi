@@ -326,6 +326,9 @@ description: OSHINAVIの1日の運転表。ユーザーの「おはよう」で�
      ＝9/22を最後に e+ を回しておらず、e+ にしか出ていないフェス（女川町100周年記念祭）を落とした。
      e+＝`tmp/x1005/eplus_sweep.py`（12ジャンル×受付前・受付中・`eplus_harvest.py presale`）→ build → `gate_eplus_slots` → 投入 → `reconcile_eplus --ids`（ゲートは2枚とも）。
      ぴあ受付中＝`tmp/x1005/pia_open_sweep.py`（0201全ジャンル→0101音楽以外→0101音楽を120ページずつ）。発売前（0102/0202）だけで朝を閉じない
+   - 🆕🚨🚨**e+ は登録済みの枠も毎朝ぜんぶ実ページと照合する**＝`python tools/reconcile_eplus.py --all` → FAIL の枠は実ページどおりに直す（締切・売り切れ）→ `--ids` で FAIL 0 を確かめる
+     （2026-10-15 ユーザー「こんな初歩的な間違いはだめよ　二度と同じ間違いがないようにちゃんと設定して」＝30547 宮ロック2026後夜祭の 10/18 公演が「〜10/16 18:00」のまま、売り場は「〜10/17 23:59」。10/6 の投入から9日間、誰も見直していなかった）。
+     TIGET・livePocket・FANY は毎朝「番人→heal」があるのに、**e+ だけ登録後の見直しが heal_eplus_started（発売が始まった枠）しか無かった**。ほかの e+ の道具と同時に流さない（503）
 2. `build_pia_entries.py` → `inject_built.py`（genre:"new" で止める）
 3. **二段構えゼロエラー**＝check_badges OK ＋ `reconcile_pia --new`（MISSING/DROP/STALE/FETCH 全0）
    - 🆕🧩**1部・2部は畳む**（2026-09-30 ユーザー「これもゲートに組み込んでよ」「少ないならまとめたほうが親切」）＝
