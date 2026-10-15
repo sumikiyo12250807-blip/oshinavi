@@ -1775,6 +1775,17 @@
    "assigned": false,
    "rechecked": true,
    "note": "ぴあ以外＝振り分けはユーザー確認後。id_to は目安"
+  },
+  {
+   "date": "2026-10-15",
+   "slot": "morning-uketsuke",
+   "id_from": 36102,
+   "id_to": 36141,
+   "count": 40,
+   "source": "ぴあ受付中スイープ（0201・0101 全ジャンル）＝新規候補232→組み立て173→別の係の仕分け new40・add11・same118・hold4",
+   "assigned": false,
+   "rechecked": false,
+   "note": "既存11件へ21枠足し込み（消える枠0）。hold4＝tmp/x1015/open_class.json。reconcile --ids OK40。翌朝(10/16)に①独立再照合②ジャンル独立判定→振り分け。"
   }
  ]
 }
