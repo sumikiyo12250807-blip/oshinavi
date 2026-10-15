@@ -241,6 +241,16 @@ def main():
                     fails.append((e['id'], ti, 'h-時刻欠', f'同日複数公演だがバッジに時刻なし(LD={L["time"]})', u))
 
     # レポート（ASCII/日付のみ・日本語は出さない＝化けない）
+    # 🆕2026-10-15 --all を回した印（朝の番人 shift_guard が見る＝宮ロック後夜祭の締切ズレが9日間放置された再発防止）
+    if '--all' in args:
+        try:
+            import os as _os
+            _sp = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', '.claude', 'state',
+                                f"rec_eplus_all_{TODAY.strftime('%Y%m%d')}.txt")
+            with open(_sp, 'w', encoding='utf-8') as _f:
+                _f.write(f"entries={len(targ)} tickets={n_tk} fail={len(fails)}\n")
+        except Exception:
+            pass
     print(f"=== reconcile_eplus (today={TODAY}) 対象{len(targ)}エントリ / e+チケット{n_tk}枠 ===")
     if not fails:
         print("✅ FAIL 0 — 全チケットが実ページのLDと一致（機械検証済み）")
