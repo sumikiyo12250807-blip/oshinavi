@@ -1,3 +1,14 @@
+# ▶▶ 10/16(金) 朝の便
+⏰ アラーム5本（CronCreate）＝15:07 昼／16:03 金曜の記事候補／17:02 X準備（10/17発売）／19:41 予約の締め／22:07 夜
+✅ 削除211（check_expired 306 × 独立再導出211＝全一致）→ logs/removed_2026-10-16.md
+✅ ぴあ昨日発売14件（安全弁8は足し算）・35658 大村雪乃展・2239 ALICE 福島＋千秋楽R9/2/27／2342 長野先行の札／e+ 発売済み7・FANY 190・TIGET 82・ZAIKO 2・楽天 印2/外す1
+✅ 新着をもう一度ゲートに通して926件を振り分け（ぴあ124+1・e+ FAIL0・楽天OK5・ZAIKO・FANY 152一致・TIGET 440一致）→ logs/assigned_2026-10-16.md
+   ジャンル＝下書き∪独立判定（tmp/x1016/indep_*／違い647は両方）
+   📝 プールに残した＝livePocket 889件（番人 gate_livepocket_indep が裏で走行中→終わったら通った分を振り分け）／ZAIKO 33127・34249／TIGET 33055（404）・33631・34406・34460（主催者が非公開＝外して tiget_watch.json へ）
+✅ 朝push（今日1回目）
+▶ 走行中：livePocket 番人／ぴあ新着の組み立て（係・pia_new_entries.json・pia_add_patch.json）／TIGET・FANY・ZAIKO 収集（tmp/x1016/vendors_harvest.py）
+▶ 未着手：抜き打ち30件／e+ 受付前スイープ／livePocket 収集／楽天 FAIL7（693 大阪10/17・4436 GLAY・5308・7344・32939・7839 テニス・17243）
+
 # ▶▶ 10/16(金) 朝の便へ（10/15 夜に書いた）
 🚨 ユーザー（10/15 21:30）「明日の朝、新着をもう一度ゲートを通してから振り分けて」
    ＝新着プールを朝のゲート（独立の再照合・reconcile_pia --new／e+ は振り分ける直前に reconcile_eplus --ids／TIGET・ZAIKO・FANY・livePocket は各番人・gate_fields）にもう一度通し、通った分を振り分ける
