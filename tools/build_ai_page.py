@@ -391,6 +391,8 @@ def build(today):
         sm.append(f'  <url><loc>https://oshinavi.jp/{u}</loc><lastmod>{today.isoformat()}</lastmod><changefreq>daily</changefreq></url>')
     for i in range(npages):
         sm.append(f'  <url><loc>https://oshinavi.jp/{page_name(i)}</loc><lastmod>{today.isoformat()}</lastmod><changefreq>daily</changefreq></url>')
+    # 2026-10-17 プライバシーポリシー（AdSense の準備・ユーザー「OK やってみて」）＝中身はほぼ変わらないので monthly
+    sm.append('  <url><loc>https://oshinavi.jp/privacy.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq></url>')
     sm.append("</urlset>")
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write("\n".join(sm))
