@@ -9,6 +9,7 @@
   python tools/reconcile_eplus.py --new         # genre:"new" だけ
   python tools/reconcile_eplus.py --ids 3047,3052
   python tools/reconcile_eplus.py --all         # e+ URLを持つ全エントリ(重い)
+  python tools/reconcile_eplus.py --third       # 🆕登録済みを id で3組・今日の組だけ（毎日回して3日で一周）
 
 チェック: (a)締切<=公演日 (b)窓一致 (c)死枠(予定枚数終了/受付終了) (d)県一致
           (e)発売前なのに将来窓なし (f)公演日一致 (g)LD粒度==1 (h)同日複数公演の時刻一致
@@ -107,8 +108,12 @@ def main():
         targ = [e for e in evs if e.get('genre') == 'new']
     elif '--all' in args:
         targ = [e for e in evs if any(True for _ in eplus_tickets(e))]
+    elif '--third' in args:
+        # 🆕2026-10-16 ユーザー「全部にして」＝e+ も登録済みを3日で一周（id を3組・今日の組だけ）
+        grp = TODAY.toordinal() % 3
+        targ = [e for e in evs if any(True for _ in eplus_tickets(e)) and (e.get('id') or 0) % 3 == grp]
     else:
-        print('対象を指定して: --new / --ids a,b / --all'); return 2
+        print('対象を指定して: --new / --ids a,b / --all / --third'); return 2
 
     fails = []          # (id, ti, code, detail, url)
     cache = {}
@@ -242,11 +247,12 @@ def main():
 
     # レポート（ASCII/日付のみ・日本語は出さない＝化けない）
     # 🆕2026-10-15 --all を回した印（朝の番人 shift_guard が見る＝宮ロック後夜祭の締切ズレが9日間放置された再発防止）
-    if '--all' in args:
+    if '--all' in args or '--third' in args:
         try:
             import os as _os
+            _kind = 'all' if '--all' in args else 'third'
             _sp = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', '.claude', 'state',
-                                f"rec_eplus_all_{TODAY.strftime('%Y%m%d')}.txt")
+                                f"rec_eplus_{_kind}_{TODAY.strftime('%Y%m%d')}.txt")
             with open(_sp, 'w', encoding='utf-8') as _f:
                 _f.write(f"entries={len(targ)} tickets={n_tk} fail={len(fails)}\n")
         except Exception:
