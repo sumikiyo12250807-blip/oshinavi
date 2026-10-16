@@ -1,29 +1,57 @@
 [
  {
-  "id": 7684,
+  "id": 4898,
   "status": "convert",
-  "artist": "ゴホウビ",
+  "artist": "劇団四季ミュージカル『コーラスライン』／全国ツアー",
   "tickets": [
    {
-    "type": "一般発売（愛知 11/3公演）〜10/18 23:59",
-    "date": "2026-10-18",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2617532"
+    "type": "一般発売（石川 10/22〜10/23公演）〜10/17 23:59",
+    "date": "2026-10-17",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630788"
    },
    {
-    "type": "一般発売（東京 11/13公演）〜10/28 23:59",
-    "date": "2026-10-28",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2616840"
+    "type": "一般発売（福井 10/27公演）〜10/21 23:59",
+    "date": "2026-10-21",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2630789"
    },
    {
-    "type": "一般発売（大阪 11/1公演）〜10/29 23:59",
-    "date": "2026-10-29",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2610151"
+    "type": "一般発売（滋賀 11/12公演）〜11/5 23:59",
+    "date": "2026-11-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2623432"
    },
    {
-    "type": "一般発売（広島 10/31公演）〜10/30 23:59",
-    "date": "2026-10-30",
-    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2610025"
+    "type": "一般発売（静岡 11/14公演）〜11/7 23:59",
+    "date": "2026-11-07",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2614892"
+   },
+   {
+    "type": "一般発売（愛知 12/8〜12/11公演）〜12/5 23:59",
+    "date": "2026-12-05",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624016"
+   },
+   {
+    "type": "一般発売（京都 12/23〜12/28公演）〜12/24 23:59",
+    "date": "2026-12-24",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624706"
+   },
+   {
+    "type": "一般発売（大阪 12/30〜R9年 1/5公演）〜12/30 23:59",
+    "date": "2026-12-30",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624698"
+   },
+   {
+    "type": "一般発売（大阪 R9年 1/4〜1/5公演）〜1/1 23:59",
+    "date": "2027-01-01",
+    "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624708"
    }
+  ]
+ },
+ {
+  "id": 4835,
+  "status": "delete",
+  "artist": "劇団四季ミュージカル「コーラスライン」／岡山",
+  "urls": [
+   "https://t.pia.jp/pia/event/event.do?eventCd=2620981"
   ]
  }
 ]
