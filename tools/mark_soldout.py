@@ -140,7 +140,19 @@ def main():
         tickets = ev.get("tickets") or []
         if r["status"] == "soldout":
             hit = 0
+            # 🚨2026-10-17 2405 純烈＝判定は pia_urls の1本目（links.pia＝東京11/20 の eventCd）しか見ていないのに、
+            #   エントリの7枠（会場ごとに別の eventCd）全部に印を付けた。
+            #   枠ごとに飛び先がぴあの別ページを指しているなら、判定したページと同じ番号の枠だけに付ける。
+            judged = (pia_urls(ev) or [""])[0]
+            jcd = set(re.findall(r"event(?:Bundle)?Cd=(\w+)", judged))
+            tcds = {c for t in tickets if is_pia_ticket(t)
+                    for c in re.findall(r"event(?:Bundle)?Cd=(\w+)", t.get("url") or "")}
+            only_judged = len(tcds) > 1 and bool(jcd)
             for t in tickets:
+                if only_judged and is_pia_ticket(t):
+                    cds = set(re.findall(r"event(?:Bundle)?Cd=(\w+)", t.get("url") or ""))
+                    if cds and not (cds & jcd):
+                        continue
                 # 「販売期間が満了して終わった枠」は売り切れではないので触らない。
                 # ただし startDate==date の隠れ枠は"発売日しか分かっていない"だけで
                 # 満了ではない（ぴあが予定枚数終了にすると締切を出さないため締切が取れない）。
