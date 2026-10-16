@@ -1840,6 +1840,17 @@
    "assigned": false,
    "rechecked": false,
    "note": "gate_eplus_slots 通過・reconcile_eplus --ids で FAIL の9件（36449・36451・36452・36454・36455・36459・36464・36466・36469）は外して tmp/x1016/eplus/fail_hold.json。前のバッチの「36445・36446 は欠番」は岡村靖幸の畳みの話で、この番号はこのバッチで使い直した。ぴあ以外＝翌朝 reconcile_eplus --ids と gate_fields を通してから振り分け。"
+  },
+  {
+   "date": "2026-10-16",
+   "slot": "noon",
+   "id_from": 36473,
+   "id_to": 36479,
+   "count": 7,
+   "source": "e+ 受付前 総ざらいのうち名前が登録と重なる55件→別の係の仕分けで new の7件（gate_eplus_slots 通過・reconcile_eplus FAIL0）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "ぴあ以外＝明朝に reconcile_eplus --ids で再照合してから振り分け"
   }
  ]
 }
