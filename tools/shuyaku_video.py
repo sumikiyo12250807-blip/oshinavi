@@ -18,6 +18,8 @@ import oshimade_mv as M                       # noqa: E402
 
 W, H, FPS, DUR, BEAT = M.W, M.H, M.FPS, 10.0, M.BEAT
 KARA_SIZE, KARA_Y, KARA_W = 64, 1110, 1000   # 歌詞の文字の大きさ・位置・最大の幅（spec の kara_size / kara_y / kara_w で変える）
+KARA_MAXL = 2
+KARA_COL = None   # 🆕2026-10-16 ユーザー「字を読みやすい色で」＝spec の kara_col {'done':[r,g,b], 'todo':[r,g,b], 'stroke':[r,g,b]}（無ければ金と白・紫の縁）
 SONG_START = 0.0                          # 曲のどこから使うか（spec の song_start で変える）
 SCENES = [(0.0, 'when'), (2.6, 'who'), (6.4, 'search'), (8.4, 'url')]
 CHOREO = {'when': ['jump', 'hands_up', 'jump'], 'who': ['diag_f', 'wave', 'front'],
@@ -211,15 +213,15 @@ def shot_scene(im, key, t, u, L, S):
     src = Image.open(Q['img']).convert('RGB')
     cx0, cy0, cx1, cy1 = Q.get('crop') or (0, 0, src.width, src.height)
     c = src.crop((cx0, cy0, cx1, cy1))
-    w = 900
+    w = int(S.get('shot_w', 900))                     # 🆕2026-10-16 ユーザー「実際の画像は上の方に小さく」＝spec の shot_w / shot_top
     r = w / c.width
     c = c.resize((w, int(c.height * r)), Image.LANCZOS)
     a = M.ease(u / 0.45)
-    x0, top = int((W - w) / 2 + (1 - a) * W), 330
-    reg = (0, 180, W, top + c.height + 60)
+    x0, top = int((W - w) / 2 + (1 - a) * W), int(S.get('shot_top', 330))
+    reg = (0, top - 150, W, top + c.height + 60)
     im.paste(Image.blend(im.crop(reg), Image.new('RGB', (reg[2], reg[3] - reg[1]), (8, 4, 20)), 0.82), reg[:2])
     if Q.get('title'):
-        M.glow_text(im, (W / 2, 255), Q['title'], fit(Q['title'], 80, 1000), grad=(M.GOLD, M.PINK), glow=M.PINK)
+        M.glow_text(im, (W / 2, top - 75), Q['title'], fit(Q['title'], 80, 1000), grad=(M.GOLD, M.PINK), glow=M.PINK)
     glow = Image.new('RGBA', (c.width + 60, c.height + 60), (0, 0, 0, 0))
     ImageDraw.Draw(glow).rounded_rectangle([20, 20, c.width + 40, c.height + 40], 24, outline=M.CYAN + (255,), width=10)
     g = glow.filter(ImageFilter.GaussianBlur(12))
@@ -300,7 +302,7 @@ def karaoke(im, t, segs):
         return
     d = ImageDraw.Draw(im)
     k = 0
-    for j, ln in enumerate(seg['lines'][:2]):
+    for j, ln in enumerate(seg['lines'][:KARA_MAXL]):   # 🆕2026-10-16 ユーザー「5行ぐらい・落ち着きある感じ」＝spec の kara_maxl で行数
         sz = fit(ln, KARA_SIZE, KARA_W)
         f = M.font(sz)
         y = KARA_Y + j * int(KARA_SIZE * 1.4)
@@ -310,8 +312,12 @@ def karaoke(im, t, segs):
             if ch.strip():
                 done = t >= seg['times'][k]
                 k += 1
-                col = M.GOLD if done else M.WHITE
-                d.text((x, y), ch, font=f, fill=col, anchor='lm', stroke_width=max(7, sz // 9), stroke_fill=(150, 0, 110) if done else (70, 0, 110))
+                if KARA_COL:
+                    col = tuple(KARA_COL['done'] if done else KARA_COL['todo'])
+                    d.text((x, y), ch, font=f, fill=col, anchor='lm', stroke_width=max(8, sz // 8), stroke_fill=tuple(KARA_COL['stroke']))
+                else:
+                    col = M.GOLD if done else M.WHITE
+                    d.text((x, y), ch, font=f, fill=col, anchor='lm', stroke_width=max(7, sz // 9), stroke_fill=(150, 0, 110) if done else (70, 0, 110))
             x += w
 
 
@@ -378,6 +384,8 @@ if __name__ == '__main__':
     #   spec の fade_in（秒・既定0）と fade_out（秒・既定0.8）。切る位置は曲の静かな所（loudness.py で測る）
     # 🆕2026-10-06 まとめ動画（ユーザー「歌詞の文字を大きめでカラオケみたいに」「キャラは小さめにね」）
     KARA_SIZE, KARA_Y, KARA_W = int(S.get('kara_size', KARA_SIZE)), int(S.get('kara_y', KARA_Y)), int(S.get('kara_w', KARA_W))
+    KARA_COL = S.get('kara_col')
+    KARA_MAXL = int(S.get('kara_maxl', 2))
     if S.get('char_scale'):                           # キャラの高さを何倍にするか＋置く場所（右下の隅）
         _pc, _cs, _cp = M.paste_char, float(S['char_scale']), S.get('char_pos')
         def _small(im, t, cx, bottom, h, tilt=True):
