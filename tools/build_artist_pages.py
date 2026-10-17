@@ -161,10 +161,16 @@ def event_jsonld(ev, rows):
 
 
 def page_html(name, items, today, stamp, total_rows, num=None):
-    title = f"{name} チケット発売日・先行・一般発売まとめ | OSHINAVI"
+    # 検索結果で押されるように、次の発売日をタイトルと説明文に出す（2026-10-17 90日計画 A-3）
+    nxt = min(((t.get("startDate"), t.get("type") or "") for _, _, rows in items for _, st, t in rows
+               if st == "発売前" and t.get("startDate")), default=None)
+    nxt_md = fmt_md(nxt[0]) if nxt else ""
+    title = (f"{name} チケット発売日・先行・一般発売まとめ（次は{nxt_md}発売）| OSHINAVI" if nxt_md
+             else f"{name} チケット発売日・先行・一般発売まとめ | OSHINAVI")
     first = items[0][0] if items else None
-    desc = (f"{name}のチケット情報（{today.month}/{today.day}更新）。これから発売・販売中の受付{total_rows}件を発売日順に。"
-            f"先行・一般発売の日付と売り場へのリンクをまとめています。")
+    desc = (f"{name}のチケット情報（{today.month}/{today.day}更新）。"
+            + (f"次の発売は{nxt_md}「{nxt[1][:40]}」。" if nxt_md else "")
+            + f"これから発売・販売中の受付{total_rows}件を発売日順に。先行・一般発売の日付と売り場へのリンクをまとめています。")
     q = html.escape(f"https://oshinavi.jp/?q={name}", quote=True)
     o = ["<!DOCTYPE html>", '<html lang="ja"><head>', '<meta charset="UTF-8">',
          '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
@@ -182,6 +188,7 @@ def page_html(name, items, today, stamp, total_rows, num=None):
     o += [GTAG, f"<style>{CSS}</style></head><body>",
          '<p class="note"><a href="/">OSHINAVI</a> ＞ <a href="/artists.html">アーティスト一覧</a></p>',
          f"<h1>{esc(name)} のチケット発売日</h1>",
+         *([f'<p class="pre"><b>次の発売：{esc(nxt_md)}</b> {esc(nxt[1])}</p>'] if nxt_md else []),
          f'<p class="note">最終更新：{esc(stamp)}／これから発売・販売中の受付 {total_rows}件（発売日・締切が近い順）。'
          f'日付は各売り場の掲載にもとづきます。買う前に売り場のページで必ず確かめてください。</p>',
          f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>']
