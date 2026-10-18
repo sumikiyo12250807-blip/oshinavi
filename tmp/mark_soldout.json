@@ -1,6 +1,766 @@
 [
  {
-  "id": 4835,
+  "id": 130,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／本サイト取扱なし／販売終了）"
+ },
+ {
+  "id": 1236,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売終了）"
+ },
+ {
+  "id": 2281,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 2401,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 2626,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3053,
+  "status": "soldout",
+  "note": "ぴあ3券種が予定枚数終了"
+ },
+ {
+  "id": 3118,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売終了）"
+ },
+ {
+  "id": 3119,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3287,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／販売終了）"
+ },
+ {
+  "id": 3493,
+  "status": "soldout",
+  "note": "ぴあ10券種が予定枚数終了"
+ },
+ {
+  "id": 3572,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3587,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3592,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3594,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売終了）"
+ },
+ {
+  "id": 3739,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3872,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3967,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3980,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3981,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 3994,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4058,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4080,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4092,
+  "status": "soldout",
+  "note": "ぴあ4券種が予定枚数終了"
+ },
+ {
+  "id": 4104,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 4108,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4144,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／販売終了）"
+ },
+ {
+  "id": 4164,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／販売終了）"
+ },
+ {
+  "id": 4197,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4278,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4373,
+  "status": "soldout",
+  "note": "ぴあ13券種が予定枚数終了"
+ },
+ {
+  "id": 4611,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4619,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4620,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4809,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4810,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 4912,
+  "status": "soldout",
+  "note": "ぴあ4券種が予定枚数終了"
+ },
+ {
+  "id": 4985,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5053,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／販売終了）"
+ },
+ {
+  "id": 5203,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5226,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5352,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了）"
+ },
+ {
+  "id": 5377,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5378,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5379,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5389,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5390,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5394,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5400,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5417,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 5421,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5474,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5503,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5510,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5607,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5665,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5669,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売を終了致しました）"
+ },
+ {
+  "id": 5670,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5691,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 5719,
+  "status": "unreadable",
+  "note": "ぴあが読めない（混雑ページ疑い）"
+ },
+ {
+  "id": 5721,
+  "status": "soldout",
+  "note": "ぴあ5券種が予定枚数終了"
+ },
+ {
+  "id": 6026,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6082,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6124,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6284,
+  "status": "soldout",
+  "note": "ぴあ4券種が予定枚数終了"
+ },
+ {
+  "id": 6302,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6306,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6420,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6464,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6502,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6521,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6525,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 6922,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売終了）"
+ },
+ {
+  "id": 7010,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7031,
+  "status": "soldout",
+  "note": "ぴあ6券種が予定枚数終了"
+ },
+ {
+  "id": 7158,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7195,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7296,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（この公演は現在販売を見合わせています）"
+ },
+ {
+  "id": 7529,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7544,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売終了）"
+ },
+ {
+  "id": 7711,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7731,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7751,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7766,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7863,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 7887,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 8298,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 8385,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 8394,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 10779,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 11074,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売終了）"
+ },
+ {
+  "id": 11146,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 11068,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 11085,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 11175,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 17341,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 21915,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 22532,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 22535,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 22537,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了）"
+ },
+ {
+  "id": 22542,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／販売終了）"
+ },
+ {
+  "id": 22915,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 23547,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 23694,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 23570,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 24083,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 24084,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（抽選受付終了／販売終了）"
+ },
+ {
+  "id": 24135,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 24136,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 24137,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 24138,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 24198,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 24202,
+  "status": "nosold",
+  "note": "予定枚数終了の表示なし（販売を終了致しました）"
+ },
+ {
+  "id": 24387,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 25128,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 25140,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 26825,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 26835,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 26842,
+  "status": "unreadable",
+  "note": "ぴあが読めない（混雑ページ疑い）"
+ },
+ {
+  "id": 26937,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 27094,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 27638,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 27640,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 27835,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 27839,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 28420,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29289,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29302,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29841,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29846,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29847,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29854,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29868,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29873,
+  "status": "soldout",
+  "note": "ぴあ4券種が予定枚数終了"
+ },
+ {
+  "id": 29874,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29876,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29881,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 29891,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 30896,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 30916,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 31784,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 31821,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 32821,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 32855,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 33366,
+  "status": "soldout",
+  "note": "ぴあ2券種が予定枚数終了"
+ },
+ {
+  "id": 33380,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 33398,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 33494,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 33878,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 34044,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 35378,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 36209,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 36210,
+  "status": "soldout",
+  "note": "ぴあ1券種が予定枚数終了"
+ },
+ {
+  "id": 36484,
   "status": "soldout",
   "note": "ぴあ1券種が予定枚数終了"
  }
