@@ -149,6 +149,20 @@ def sesslab(r, multi_dates, same_day_deadline=False):
     return '公演'
 
 
+def short_pref(p):
+    """県名を短い形に（「東京都」→「東京」「大阪府」→「大阪」「神奈川県」→「神奈川」「京都府」→「京都」・北海道はそのまま）。
+    🆕2026-10-18 すちこ「A」＝e+ の JSON-LD は都府県付きで来ることがあり、ほかの売り場（短い形）とそろっていなかった（約1,200件）。"""
+    p = (p or '').strip()
+    return _PREF_LONG.get(p, p)
+
+
+_PREF_SHORT = ('青森 岩手 宮城 秋田 山形 福島 茨城 栃木 群馬 埼玉 千葉 東京 神奈川 新潟 富山 石川 福井 山梨 長野 岐阜 静岡 愛知 '
+               '三重 滋賀 京都 大阪 兵庫 奈良 和歌山 鳥取 島根 岡山 広島 山口 徳島 香川 愛媛 高知 福岡 佐賀 長崎 熊本 大分 宮崎 '
+               '鹿児島 沖縄').split()
+# 「東京都」「京都府」「大阪府」…→短い形（「京都」はそのまま＝末尾の「都」を落とさない）
+_PREF_LONG = {s + ('都' if s == '東京' else '府' if s in ('京都', '大阪') else '県'): s for s in _PREF_SHORT}
+
+
 def parse_ld(html):
     """JSON-LD Event blob群 → [{name,date(YYYY-MM-DD),venue,pref}]（公演日/会場ごと）"""
     evs = []
@@ -167,6 +181,7 @@ def parse_ld(html):
             pref = ''
             if isinstance(loc, dict):
                 pref = ((loc.get('address') or {}).get('addressRegion') or '') if isinstance(loc.get('address'), dict) else ''
+                pref = short_pref(pref)
             full = (it.get('startDate') or '')
             tm = full[11:16] if 'T' in full else ''
             evs.append({'name': H.unescape(it.get('name') or '').strip(),
