@@ -464,6 +464,23 @@ def parse_event(html, eid):
             amb.add(o)
         o2s[o] = s
     out['open2start'] = {o: s for o, s in o2s.items() if o not in amb}
+    # 🆕2026-10-18 すちこ「B」＝売り場どおりの券種名に。申し込みボタンに名前が無い（日付と値段だけ）券種は、
+    #   券種一覧の見出し <h6 class="pg-event__detail__ticket__title">●予約</h6> の名前を使う
+    #   （空のままだと組み立てで「チケット」に倒れていた＝12952・35457）。
+    #   見出しの数と券種の数が同じ時は順番で、見出しが1つだけの時はそれを当てる。それ以外は当てない（推測しない）。
+    h6 = [unesc(strip_tags(x)).strip() for x in re.findall(r'detail__ticket__title">(.*?)</h6>', html, re.S)]
+    tks = [t for p in out['programs'] for t in p['tickets']]
+    if h6 and any(not (t.get('name') or '').strip() for t in tks):
+        if len(h6) == len(tks):
+            pick = h6
+        elif len(h6) == 1:
+            pick = h6 * len(tks)
+        else:
+            pick = None
+        if pick:
+            for t, nm in zip(tks, pick):
+                if not (t.get('name') or '').strip() and nm:
+                    t['name'] = nm
     return out
 
 
