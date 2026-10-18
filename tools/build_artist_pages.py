@@ -64,6 +64,26 @@ def artist_names(ev):
     return [p for p in parts if len(p) >= 2 and not SKIP_NAME.search(p) and not re.search(r"(?i)live|tour", p) and len(p) <= 40]
 
 
+# 🆕2026-10-18 すちこ「ファインディング ネバーランドで検索かけた時、oshinavi が出てくるってこと？」＝出なかった。
+#   SKIP_NAME が「ミュージカル」「『」を名前から外すので、作品名で探される公演（ミュージカル・バレエ・第九…）に
+#   ページが無かった（買える枠のあるエントリ 5,106件が漏れ）。名前ページが作れないエントリだけ、『』「」の作品名でページを作る。
+WORK_BR = re.compile(r"[『「]([^』」]{2,40})[』」]")
+# 作品名として弱い言葉（季節・一般語）＝1つのページに別々の催しが混ざるだけ
+WORK_SKIP = re.compile(r"^(?:クリスマス|冬祭り\d*|夏祭り\d*|オフ会|color|RUSH|ONE|LIVE|SHOW|Xmas)$|多数|ほか$|他$|公式|お知らせ|ご確認", re.I)
+
+
+def work_names(ev):
+    """名前ページが作れないエントリの作品名（「ミュージカル『◯◯』」「『◯◯』」）。"""
+    src = unicodedata.normalize("NFKC", (ev.get("artist") or "") + " " + (ev.get("name") or ""))
+    m = WORK_BR.search(src)
+    if not m:
+        return []
+    t = m.group(1).strip()
+    if len(t) < 2 or WORK_SKIP.search(t):
+        return []
+    return [("ミュージカル" if "ミュージカル" in src else "") + f"『{t}』"]
+
+
 def ticket_rows(ev, today):
     """これから発売・販売中の枠（売り切れ・終わった枠は出さない）。"""
     out = []
@@ -171,7 +191,9 @@ def page_html(name, items, today, stamp, total_rows, num=None):
     desc = (f"{name}のチケット情報（{today.month}/{today.day}更新）。"
             + (f"次の発売は{nxt_md}「{nxt[1][:40]}」。" if nxt_md else "")
             + f"これから発売・販売中の受付{total_rows}件を発売日順に。先行・一般発売の日付と売り場へのリンクをまとめています。")
-    q = html.escape(f"https://oshinavi.jp/?q={name}", quote=True)
+    # 作品ページ（「ミュージカル『◯◯』」）は作品名だけで探す＝「第九」「『第九』」どちらの書き方の公演も出る
+    qname = re.sub(r"^ミュージカル|[『』]", "", name) if "『" in name else name
+    q = html.escape(f"https://oshinavi.jp/?q={qname}", quote=True)
     o = ["<!DOCTYPE html>", '<html lang="ja"><head>', '<meta charset="UTF-8">',
          '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
          '<meta name="robots" content="index,follow">',
@@ -222,7 +244,7 @@ def build(today):
         if not rows:
             continue
         rows.sort(key=lambda r: r[0])
-        for nm in artist_names(ev):
+        for nm in artist_names(ev) or work_names(ev):
             k = norm(nm)
             if not k:
                 continue
