@@ -768616,8 +768616,13 @@
   //   売切・終了だけのカードは末尾。
   //   ※2026-07-03 の「販売中を先頭」ルールを上書き。カウントダウン(発売までの日数)を主役にするため、
   //     締切が先の販売中カードより発売日が近い発売前カードが上に来る（旧「にじクラ問題」は許容）。
+  // 🆕2026-10-19 後で読んだ分が届いたら、下の並べ方（EVENTS.sort の比べ方）をそのままもう一度かける。
+  //   比べ方の中身には触らない＝ここで受け取っておくだけ（並び順の番人 sort_guard が見ている下のブロックは元のまま）。
+  const __evSort = EVENTS.sort;
+  let __evCmp = null;
+  EVENTS.sort = function (f) { __evCmp = f; return __evSort.call(this, f); };
+  function sortEvents() { if (__evCmp) __evSort.call(EVENTS, __evCmp); }
   const SORT_PRESALE = 0, SORT_SELLING = 1;   // 同日内の優先度
-  function sortEvents() {
   EVENTS.sort((a, b) => {
     const classify = (ev) => {
       const cands = [];                                // [日付, 種別]
@@ -768656,7 +768661,6 @@
     if (xa !== xb) return xa < xb ? 1 : -1;
     return (a.id || 0) - (b.id || 0);
   });
-  }
 
   // 【先に出して、残りは後で読む】（2026-10-19 ユーザー「iPhoneで他のアプリを開いてると30秒以上かかる」→「うん　お願いします」）
   //   公開版（tools/publish_split.py）は、画面の上に並ぶ分（発売・締切が14日以内）だけを先に読み、
@@ -768677,10 +768681,10 @@
     };
     next();
   }
-  if (!(window.__OSHI_REST || []).length) { sortEvents(); init(); }
+  if (!(window.__OSHI_REST || []).length) { init(); }
   else if (/[?&](q|genre|status|area)=/.test(location.search)) { loadRest(() => { sortEvents(); init(); }); }
   else {
-    sortEvents(); init();
+    init();
     setTimeout(() => loadRest(() => { sortEvents(); if (window.__oshiRefresh) window.__oshiRefresh(); }), 300);
   }
 
