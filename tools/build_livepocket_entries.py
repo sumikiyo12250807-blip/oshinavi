@@ -339,6 +339,18 @@ def build(ev, today, unknown=None):
     #   ＝券種が2つ以上の受付は**券種ごとに1枠**にする（名前＝券種名・状態＝券種の札・期間＝受付の期間）。
     #     公演の時刻は券種ごとに違いうるので、券種ごとの枠には開演時刻を書かない（券種名に時刻があればそれが見える）。
     units = []
+    # 🆕2026-10-19 すちこ「全く同じならまとめてよ」＝受付名・状態・期間・券種（名前・値段・状態）まで全く同じ受付は1つに
+    #   （31543 COzMIC・27528 マッスルキャンプ・28767 after bake・35192＝見分けがつかず「その2」の2枠になっていた）
+    _seen_rec = set()
+    _recs = []
+    for r in ev.get('receptions') or []:
+        k = json.dumps([r.get('title'), r.get('status'), r.get('period'),
+                        [(c.get('name'), c.get('price'), c.get('status')) for c in r.get('cards') or []]],
+                       ensure_ascii=False, sort_keys=True, default=str)
+        if k not in _seen_rec:
+            _seen_rec.add(k)
+            _recs.append(r)
+    ev = dict(ev, receptions=_recs)
     # 🆕2026-10-19 部ごとに受付が分かれる型（26275 マシュマロ撮影会＝受付「第2部」の券種が全部「…個人撮影会 第02部(11:00-11:50) 秋元るい」）は
     #   受付の中だけで共通の頭を落とすと部と時間まで落ちる（「秋元るい 第2部」＝売り場の名前と合わない）。
     #   全受付に共通の頭だけで見分けがつくなら、そちらだけ落とす
@@ -386,7 +398,19 @@ def build(ev, today, unknown=None):
                                   status=('販売前' if (c.get('status') or '').strip() == '販売前' else r.get('status'))))
         else:
             units.append(r)
-    when_notime = '%s公演' % md(first, ty) if (len(dates) == 1 or first == last) else when
+    # 🆕2026-10-19 券種ごとに分けた枠も、受付名・期間・券種（名前・値段・状態）まで全く同じなら1枠に
+    #   （27528 マッスルキャンプ＝2つの受付に同じ券種が3つずつ並び「マッスルキャンプ その2」が出ていた）
+    _seen_u = set()
+    _u = []
+    for r in units:
+        k = json.dumps([r.get('_rtitle') if r.get('_per_card') else None, r.get('title'), r.get('status'), r.get('period'),
+                        [(c.get('name'), c.get('price'), c.get('status')) for c in r.get('cards') or []]],
+                       ensure_ascii=False, sort_keys=True, default=str)
+        if k not in _seen_u:
+            _seen_u.add(k)
+            _u.append(r)
+    units = _u
+    when_notime ='%s公演' % md(first, ty) if (len(dates) == 1 or first == last) else when
     # 🆕2026-09-28 夜 独立ゲートが発見＝同じ名前の受付が日付ごとに並ぶ型（ClueMetic Popup＝「先着販売受付」×4）を
     #   同じ札の枠として1つに畳み、受付3つと売切の印が落ちていた。同名の受付が2つ以上ある時は、券種名の頭の日付
     #   （「10/22(木) 14ː00〜」）を受付名に添えて別の枠にする。日付が無ければ「その2」…で分ける。
@@ -679,8 +703,9 @@ def _selftest():
     e, _ = build(ev([rec(title='抽選販売受付 大阪', order='抽選')]), today)
     assert e['tickets'][0]['type'].startswith('抽選販売受付 大阪（'), e['tickets']
     # ⑱ 同じ受付名・同じ期間・同じ状態は1つに畳む
+    #   🆕2026-10-19 すちこ「全く同じならまとめてよ」＝券種まで全く同じ受付は1枠（前は「その2」で2枠）
     e, _ = build(ev([rec(), rec()]), today)
-    assert len(e['tickets']) == 2 and e['tickets'][0]['type'] != e['tickets'][1]['type'], e['tickets']
+    assert len(e['tickets']) == 1, e['tickets']
     # ⑲ 同じ名前・同じ締切の受付が日付ごとに並ぶ型（ClueMetic Popup・9/28夜）＝券種名の頭の日付で分ける・売切の印を落とさない
     e, _ = build(ev([rec(cards=[{'name': '10/22(木) 14ː00～14ː30', 'status': '予定販売数終了'}]),
                      rec(cards=[{'name': '10/23(金)11:00 ～ 11:30', 'status': '販売中'}])],

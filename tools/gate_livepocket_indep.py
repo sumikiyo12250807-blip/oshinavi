@@ -489,7 +489,14 @@ def check_entry(e, pages, today):
             continue
         last = pg['last']
         recs = []
+        _seen_rec = set()
         for r in pg['recs']:
+            # 🆕2026-10-19 すちこ「全く同じならまとめてよ」＝全く同じ受付（名前・状態・期間・券種）は1つに数える（ビルダーと同じ線）
+            _k = json.dumps([r.get('title'), r.get('status'), r.get('period'), r.get('cards'), r.get('card_st')],
+                            ensure_ascii=False, default=str)
+            if _k in _seen_rec:
+                continue
+            _seen_rec.add(_k)
             if r['status'] not in KNOWN_STATUS:
                 und.append(('判定不能（知らない札）', '', '%s「%s」' % (r['status'] or '（札なし）', r['title']), u))
                 continue
@@ -518,6 +525,10 @@ def check_entry(e, pages, today):
                     st_k = ('予定販売枚数終了' if re.search(r'予定販売(枚)?数終了|売り?切れ', cs) else
                             '販売終了' if re.search(r'販売終了|受付終了', cs) else
                             '販売前' if '販売前' in cs else r['status'])
+                    _k2 = json.dumps(['card', r['title'], cn, cs, r.get('period')], ensure_ascii=False, default=str)
+                    if _k2 in _seen_rec:
+                        continue   # 🆕2026-10-19 別の受付に全く同じ券種（名前・状態・期間）＝1つに数える（27528）
+                    _seen_rec.add(_k2)
                     recs.append(dict(r, title=FP.bare_type(cn) or r['title'], cards=[c], status=st_k, dasu=is_dasu(cn, [c])))
                 continue
             recs.append(r)
