@@ -423,7 +423,13 @@ def build(ev, today, unknown=None):
                     alt = '%s ¥%s' % (alt, format(cards[0]['price'], ','))
                 if not alt and cards and cards[0].get('price') is not None:
                     alt = '¥%s' % format(cards[0]['price'], ',')
-                tail = alt if alt and alt not in title_tails[raw] else 'その%d' % title_seen[raw]
+                # 🆕2026-10-19 それでも同じなら受付の始まる日で見分ける（cc_urge_ep1＝STUDENTS が前売と当日 11/16〜 の2受付）
+                ps = (rec.get('period') or {}).get('start') or []
+                mp = re.match(r'\d{4}-0?(\d+)-0?(\d+)$', ps[0]) if ps else None
+                same_st = {str(((u.get('period') or {}).get('start') or [''])[0]) for u in units if (u.get('title') or '') == (rec.get('title') or '')}
+                sd = '%s/%s〜' % mp.groups() if mp and len(same_st) > 1 else ''
+                tail = (alt if alt and alt not in title_tails[raw]
+                        else sd if sd and sd not in title_tails[raw] else 'その%d' % title_seen[raw])
             title_tails[raw].add(tail)
             raw = '%s %s' % (raw, tail)
         if SELLER_SIDE.search(raw) or (cards and all(SELLER_SIDE.search(c.get('name') or '') for c in cards)):
