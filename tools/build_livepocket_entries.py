@@ -339,6 +339,21 @@ def build(ev, today, unknown=None):
     #   ＝券種が2つ以上の受付は**券種ごとに1枠**にする（名前＝券種名・状態＝券種の札・期間＝受付の期間）。
     #     公演の時刻は券種ごとに違いうるので、券種ごとの枠には開演時刻を書かない（券種名に時刻があればそれが見える）。
     units = []
+    # 🆕2026-10-19 部ごとに受付が分かれる型（26275 マシュマロ撮影会＝受付「第2部」の券種が全部「…個人撮影会 第02部(11:00-11:50) 秋元るい」）は
+    #   受付の中だけで共通の頭を落とすと部と時間まで落ちる（「秋元るい 第2部」＝売り場の名前と合わない）。
+    #   全受付に共通の頭だけで見分けがつくなら、そちらだけ落とす
+    #   （頭を落とす受付＝券種が2枚以上・切ると名前がぶつかる受付だけで比べる＝「当日チェキ」だけの受付は混ぜない）
+    allns = []
+    for r in ev.get('receptions') or []:
+        rn = [re.sub(r'\s+', ' ', c.get('name') or '').strip() for c in r.get('cards') or []]
+        if len(rn) > 1 and len({ticket_name(n) for n in rn}) < len(set(rn)):
+            allns += rn
+    evpre = allns[0] if allns else ''
+    for n in allns[1:]:
+        while evpre and not n.startswith(evpre):
+            evpre = evpre[:-1]
+    mb = re.search(r'^.*[\s｜|】]', evpre)
+    evpre = mb.group(0) if mb else ''
     for r in ev.get('receptions') or []:
         cs = r.get('cards') or []
         if len(cs) > 1 and (r.get('status') or '').strip() in ('販売中', '販売前'):
@@ -355,6 +370,9 @@ def build(ev, today, unknown=None):
                 # 語の途中（「第0」＋「2部」）で切らない＝空白・｜・】の後ろまで戻す
                 mb = re.search(r'^.*[\s｜|】]', pre)
                 pre = mb.group(0) if mb else ''
+                if evpre and len(evpre) < len(pre) and pre.startswith(evpre) and all(n[len(evpre):].strip() for n in ns) \
+                        and len({ticket_name(n[len(evpre):].strip()) for n in ns}) == len(set(ns)):
+                    pre = evpre
             for c, cn in zip(cs, ns):
                 if pre and cn[len(pre):].strip():
                     segs = [x for x in re.split(r'[｜|]', pre) if x.strip()]
