@@ -6777,3 +6777,6 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - ▶ 昼の便（12:07）＝今日発売のヒール→番人→build_ai_page→compact→push（2回目）→ reconcile_eplus --all 裏→fix_eplus_fails／pia_soldout_sweep --resume
 - ⏳ 保留＝7370 つきみ（1/24いわき・Zepp 2/2）・KALMA 20630（一般3枠が落ちる）・ZAIKO 20757/20731/20777・TIGET ng 10+1・FANY ng 1・ぴあ0枠159（mark_soldout が先）
 - 📦 今日の新着（明朝 再照合）＝ぴあ21・TIGET121・FANY15・ZAIKO7・livePocket17・e+67
+- ✅ livePocket 食い違い70件の型（別の係が実ページ25本で確認・tmp/x1019/lp_resid/）＝手で直した3件（24815 今日の開演19:30・25707・27565 県/会場・1f8e3f2808）
+- ▶ 午後（昼push後）livePocket ビルダー直し＝①券種名を28字で切った後の重複除去でメンバー別・部別の券種が1枠に潰れる（17件285行・25531 YOKOHAMASONIC ほか）②分けた時に受付名（日付・部）を捨てて「その◯」になる（15件86行）→ 名前に後ろの部分／受付名を残す → 該当 id に heal --apply → indep で確認／③heal が会場・県・見出しを更新しない（25593 会場変更は未当て）
+- ▶ livePocket 売り場で「非公開」＝b6nwa・whatawon1025 → DELETE_GATE を通して削除判断／判定不能の残り6件＋畳んだ会期のページ落ち2件は未確認
