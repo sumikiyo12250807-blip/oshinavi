@@ -342,11 +342,29 @@ def build(ev, today, unknown=None):
     for r in ev.get('receptions') or []:
         cs = r.get('cards') or []
         if len(cs) > 1 and (r.get('status') or '').strip() in ('販売中', '販売前'):
-            for c in cs:
-                cn = re.sub(r'\s+', ' ', c.get('name') or '').strip()
+            # 🆕2026-10-19 独立番人が発見＝券種名の頭が長く同じ型（「【10/10締切】YOKOHAMA SONIC｜SSS｜Dia Story」×19）は
+            #   28字で切ると全部同じ名前になり、最後の重複除去で1枠に潰れていた（25531 ほか17件285行）。
+            #   切ると同じになる時だけ、共通の頭を落として見分けのつく後ろ（最後の｜の区切り＋出演者名・時間帯）を名前にする
+            ns = [re.sub(r'\s+', ' ', c.get('name') or '').strip() for c in cs]
+            pre = ''
+            if len({ticket_name(n) for n in ns}) < len(set(ns)):
+                pre = ns[0]
+                for n in ns[1:]:
+                    while pre and not n.startswith(pre):
+                        pre = pre[:-1]
+                # 語の途中（「第0」＋「2部」）で切らない＝空白・｜・】の後ろまで戻す
+                mb = re.search(r'^.*[\s｜|】]', pre)
+                pre = mb.group(0) if mb else ''
+            for c, cn in zip(cs, ns):
+                if pre and cn[len(pre):].strip():
+                    segs = [x for x in re.split(r'[｜|]', pre) if x.strip()]
+                    lead = segs[-1].strip() if segs and re.search(r'[｜|]\s*$', pre) else ''
+                    tail = cn[len(pre):].strip()
+                    cn = ('%s｜%s' % (lead, tail)) if lead and len(lead) <= 10 else tail
                 if '抽選' in (r.get('title') or '') and '抽選' not in cn:
                     cn += '（抽選）'
                 units.append(dict(r, title=cn or (r.get('title') or ''), cards=[c], _per_card=True,
+                                  _rtitle=re.sub(r'\s+', ' ', r.get('title') or '').strip(),
                                   status=('販売前' if (c.get('status') or '').strip() == '販売前' else r.get('status'))))
         else:
             units.append(r)
@@ -382,6 +400,11 @@ def build(ev, today, unknown=None):
             dm = [re.match(r'\s*(\d{1,2}/\d{1,2})\s*[(（]\s*([月火水木金土日祝・]+)\s*[)）]', c.get('name') or '') for c in cards]
             ds = sorted({'%s（%s）' % (x.group(1), x.group(2)) for x in dm if x})
             tail = ds[0] if len(ds) == 1 else card_tail(raw, cards)
+            # 🆕2026-10-19 券種ごとに分けた枠で、同じ券種名が受付（「10月24日（土）」「７部」）ごとに並ぶ型は
+            #   受付名で見分ける（捨てていたので「その2」…になり、どの日・どの部か画面で分からなかった＝57xm5・qobk0 ほか15件）
+            rt = rec.get('_rtitle') or ''
+            if rec.get('_per_card') and rt and len({u.get('_rtitle') for u in units if (u.get('title') or '') == raw}) > 1:
+                tail = ticket_name(rt)[:16]
             # 長い（券種がずらっと並ぶ型＝YOKOHAMA SONIC）・空・前と同じ なら「その2」…＝28字で切れて同じ枠に潰れるのを防ぐ
             # 🆕2026-10-01 券種が1枚だけなら 24字まで名前をそのまま使う（ユーザー指摘＝上野deソロソロ lr3mh で
             #   「カメラ撮影可能席(前方１列目)」16字が「その2」になり、どの席が16:15までか分からなかった）
