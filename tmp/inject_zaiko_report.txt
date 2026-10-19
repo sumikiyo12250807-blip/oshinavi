@@ -1,6 +1,6 @@
-=== inject_zaiko (2026-10-18) tmp/x1018/built_zaiko.json ===
-組み上がり 10件 → 投入 3 / URL重複 0 / ⚠️要確認 7 / 今回は入れない 0
-  投入する id 36783〜36785
+=== inject_zaiko (2026-10-20) tmp/x1020/built_zaiko.json ===
+組み上がり 16件 → 投入 9 / URL重複 0 / ⚠️要確認 7 / 今回は入れない 0
+  投入する id 37747〜37755
 
 --- ⚠️要確認（入れない＝名前×公演日×会場が既存と一致）---
   ChouCho Presents GIRLS und PANZER Specia / duo MUSIC EXCHANGE / 公演2026-10-25
@@ -21,12 +21,18 @@
 --- URLが既にある（入れない）---
 
 --- 投入する ---
-id36783	musicetc	帆波かのん「Kanon's Step～First Voyage～」	2026年11月1日(日) 16:45開演（配信	Zaiko Live	枠2
-id36784	jpop	YOKA-ROOM vol.36	2026年11月22日(日)	表参道GROUND	枠4
-id36785	vtuber	蒼星すい 1st one-man Live “Eternal Glow”	2026年11月28日(土) 14:30開演（配	Zaiko Live	枠2
+id37747	owarai	『ウエストランドのぶちラジ！公開収録』～公開収録11振り返りin 新宿ロフトプラ	2026年10月27日(火) 19:30開演（配	Zaiko Live	枠2
+id37748	musicetc	TOKYOVITAMIN HALLOWEEN 2026	2026年10月30日(金) 23:00開演	Robin Club 表参道	枠2
+id37749	owarai	不成立クイズマスター惹女香花 2026	2026年11月1日(日) 19:30開演（配信	Zaiko Live	枠1
+id37750	idol	Smoothie seeds vol.1	2026年11月15日(日) 11:00開演（配	Zaiko Live	枠2
+id37751	club	MAD MAGIC ORCHESTRA	2026年11月20日(金) 23:00開演	clubasia	枠1
+id37752	event	Exotixicity 2026	2026年11月21日(土) 15:00開演	Secret Location in L	枠1
+id37753	sports	12/19 ゴールドジムジャパンカップ（１日目）	2026年12月19日(土) 11:00開演	カルッツかわさき（川崎市スポーツ・文化総	枠6
+id37754	sports	12/20 ゴールドジムジャパンカップ（２日目）	2026年12月20日(日) 11:00開演	カルッツかわさき（川崎市スポーツ・文化総	枠6
+id37755	club	ORBIT ft. DIGITALBLOCK @ club (O)Utopos	2026年12月26日(土) 21:00開演	club (O)Utopos	枠1
 
-EVENTS 20708件 / 新着プール 553件 / NEW_ORDER 553件
+EVENTS 19813件 / 新着プール 289件 / NEW_ORDER 289件
 ズレ []
 CRCRLF 0 / 素のLF 0 （どちらも0が正）
-index.html 30.41MB
-backup: index.html.bak_1018_zaiko
+index.html 29.86MB
+backup: index.html.bak_1020_zaiko
