@@ -772679,7 +772679,8 @@
       || (activeStatus === "urgent"   && rel === "urgent")
       || (activeStatus === "soon"     && (rel === "urgent" || rel === "soon"))
       || (activeStatus === "upcoming" && rel === "normal");
-    const haystack = (ev.artist + " " + ev.name).toLowerCase();
+    // 🆕2026-10-19 ユーザー「怪談で検索でも出てくるように」＝名前に「怪談」が無い怪談ジャンル（びびの怖語・てらコワ等）も拾う
+    const haystack = (ev.artist + " " + ev.name + (eventGenres(ev).includes("kaidan") ? " 怪談" : "")).toLowerCase();
     const _dqv = searchQuery === "" ? null : parseDateQuery(searchQuery);
     const matchSearch = searchQuery === "" || haystack.includes(searchQuery.toLowerCase()) || (!!_dqv && eventOnDate(ev, _dqv));
     const matchRegion = activeRegion === "all"
