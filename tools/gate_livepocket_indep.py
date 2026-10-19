@@ -70,7 +70,17 @@ def norm_name(s):
     s = nfkc(s).lower()
     s = re.sub(r'[\s　]+', '', s)
     s = s.replace('〜', '~').replace('～', '~')
+    # 🆕2026-10-19 ビルダーは「／」を「・」に直して名前にする（ticket_name）＝同じ字として比べる（25740・30249 の誤報）
+    s = s.replace('・', '/')
     return s
+
+
+def name_hit(nm, title):
+    """登録の枠の名前 nm が売り場の受付名 title と対応するか。前方一致に加えて、
+    🆕2026-10-19 ビルダーが頭の長い券種名（「【10/10締切】YOKOHAMA SONIC｜SSS｜Dia Story」）の共通の頭を落として
+    「SSS｜Dia Story」と名乗る型＝売り場の名前の後ろ側に含まれていれば同じ枠（4字以上だけ・短い名前の取り違えを避ける）"""
+    tn = norm_name(title)
+    return tn.startswith(nm) or nm.startswith(tn) or (len(nm) >= 4 and nm in tn)
 
 
 def strip_tags(s):
@@ -539,7 +549,7 @@ def check_entry(e, pages, today):
         for t, pt in parsed:
             cand = [i for i, r in enumerate(recs) if i not in used and dkey(r['end']) == md_key(pt['end'])]
             nm = norm_name(pt['name'])
-            best = [i for i in cand if norm_name(recs[i]['title']).startswith(nm) or nm.startswith(norm_name(recs[i]['title']))
+            best = [i for i in cand if name_hit(nm, recs[i]['title'])
                     or any(norm_name(c).startswith(nm) for c in recs[i]['cards'])]
             # 同名・同締切が複数あるときは、状態の合うものを先に（取り違えで余計に鳴らさない）
             best.sort(key=lambda i: recs[i]['status'] != reg_state(t))
@@ -556,7 +566,7 @@ def check_entry(e, pages, today):
         for t, pt in rest:
             nm = norm_name(pt['name'])
             cand = [i for i, r in enumerate(recs) if i not in used and not r['dasu'] and
-                    (norm_name(r['title']).startswith(nm) or nm.startswith(norm_name(r['title'])))]
+                    name_hit(nm, r['title'])]
             if cand:
                 i = cand[0]
                 used.add(i)
