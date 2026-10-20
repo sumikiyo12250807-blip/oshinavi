@@ -1174,13 +1174,25 @@
  ],
  "artists": {
   "_readme": "Xフォロワー実数。WebSearchで取得（x.com直アクセスは404/402/403）。取り方は memory: reference_x_follower_lookup。一度取ったら再調査不要。",
-  "measured": "2026-09-23",
+  "measured": "2026-10-20",
   "data": [
+   {
+    "name": "Stray Kids Japan Official",
+    "handle": "@Stray_Kids_JP",
+    "followers": 2700000,
+    "note": "日本公式。韓国/国際本体@Stray_Kidsは未取得(さらに大きいはず)。2026-08-05取得"
+   },
    {
     "name": "SEVENTEEN Japan",
     "handle": "@pledis_17jp",
     "followers": 2500000,
     "note": "VISION FESTA出演5組の1つ"
+   },
+   {
+    "name": "LiSA",
+    "handle": "@LiSA_OLiVE",
+    "followers": 1595000,
+    "note": "本人垢。2026-08-11取得"
    },
    {
     "name": "山里亮太",
@@ -1189,86 +1201,94 @@
     "note": "achikochi-data お笑い12位"
    },
    {
-    "name": "カラフルピーチ【公式】",
-    "handle": "@official_clpc",
-    "followers": 309000
+    "name": "北海道日本ハムファイターズ",
+    "handle": "@FightersPR",
+    "followers": 1100000,
+    "note": "2026-09-15 ブラウザ実測「1.1M」。球団公式"
    },
    {
-    "name": "円谷プロダクション",
-    "handle": "@tsuburayaprod",
-    "followers": 236000
+    "name": "莉犬くん＠すとぷり",
+    "handle": "@rinu_nico",
+    "followers": 900000,
+    "note": "本人垢。すとぷり公式@StPri_infoは未取得。2026-08-05取得"
    },
    {
-    "name": "アインシュタイン 稲田直樹",
-    "handle": "@tosakomainada",
-    "followers": 218000,
-    "note": "2ソースで221,755/215,077=概数"
+    "name": "千葉ロッテマリーンズ",
+    "handle": "@chibalotte",
+    "followers": 878800,
+    "note": "2026-09-15 ブラウザ実測「878.8K」。球団公式"
    },
    {
-    "name": "アインシュタイン 河井ゆずる",
-    "handle": "@yuzuru1",
-    "followers": 196000
+    "name": "水瀬いのり",
+    "handle": "@inoriminase",
+    "followers": 863000,
+    "note": "2026-09-11 ブラウザ実測。水瀬いのりinfo（本人とスタッフの公式）"
    },
    {
-    "name": "18TRIP(エイトリ)",
-    "handle": "@18trip_official",
-    "followers": 150000,
-    "note": "2025-02公式リリース『フォロワー15万人達成』時点。検索要約の1.5Mは誤り"
+    "name": "水瀬いのりinfo",
+    "handle": "@inoriminase",
+    "followers": 800230,
+    "note": "オフィシャル情報垢。2026-08-05取得"
    },
    {
-    "name": "綾小路翔(氣志團)",
-    "handle": "@ShowAyanocozey",
-    "followers": 131000,
-    "note": "⚠️ポスト数との取り違えの可能性あり・要再確認"
+    "name": "Vaundy",
+    "handle": "@vaundy_engawa",
+    "followers": 776500,
+    "note": "本人垢。2026年5月時点の数値として検索で取得(2026-08-11)。Instagram @vaundy_engawa は100万"
    },
    {
-    "name": "キュウソネコカミ ヨコタ",
-    "handle": "@shinnosukeykt",
-    "followers": 115000
+    "name": "山寺宏一",
+    "handle": "@yamachanoha",
+    "followers": 583895,
+    "note": "x-ranker 男性声優ランキング。ボイスシネマ声優口演ライブ2026の出演者。2026-08-12取得"
    },
    {
-    "name": "ヨネダ2000 愛",
-    "handle": "@yonedaai2000",
-    "followers": 79200
+    "name": "横浜DeNAベイスターズ",
+    "handle": "@ydb_yokohama",
+    "followers": 551000,
+    "note": "2026-09-12 ブラウザ実測。球団公式"
    },
    {
-    "name": "大黒摩季_公式",
-    "handle": null,
-    "followers": 49319
+    "name": "UVERworld",
+    "handle": "@UVERworld_dR2",
+    "followers": 527500,
+    "note": "2026-09-11 ブラウザ実測。UVERworld_Staff_（スタッフ公式）"
    },
    {
-    "name": "天才ピアニスト 竹内知咲",
-    "handle": "@tensai_pianist",
-    "followers": 31300
+    "name": "新日本プロレス",
+    "handle": "@njpw1972",
+    "followers": 482300,
+    "note": "2026-09-12 ブラウザ実測。表示名「新日本プロレスリング株式会社」"
    },
    {
-    "name": "ナナヲアカリSTAFF",
-    "handle": "@NANAO_STAFF",
-    "followers": 27200,
-    "note": "本人@77oakrは取得できず"
+    "name": "サガン鳥栖対川崎フロンターレ ルヴァンカップ 1stラウンド 4回戦",
+    "handle": "@frontale_staff",
+    "followers": 447967,
+    "note": "2026-10-20 ブラウザ実測・公式・川崎フロンターレ。サガン鳥栖 @saganofficial17 126,819"
    },
    {
-    "name": "WONK",
-    "handle": "@WONK_TOKYO",
-    "followers": 25700
+    "name": "日本相撲協会",
+    "handle": "@sumokyokai",
+    "followers": 446300,
+    "note": "2026-09-12 ブラウザ実測。日本相撲協会公式"
    },
    {
-    "name": "かわにしなつき",
-    "handle": "@06_k_natsuki",
-    "followers": 5515,
-    "note": "Xは弱いがInstagram133K/TikTok179.6K=SNS全体35万超"
+    "name": "Richie Hawtin",
+    "handle": "@richiehawtin",
+    "followers": 446041,
+    "note": "2026-10-20 ブラウザ実測・本人・MUTEK.JP 11/23・ライブ用@rhawtin_live 69,973は別"
    },
    {
-    "name": "大阪桐蔭高等学校吹奏楽部",
-    "handle": null,
-    "followers": null,
-    "note": "X不明。YouTube登録者29〜30万人(2026年6月時点)"
+    "name": "EXILE THE SECOND",
+    "handle": "@EXILETHESECOND_",
+    "followers": 349000,
+    "note": "2026-08-22 WebSearch実測"
    },
    {
-    "name": "宝塚歌劇",
-    "handle": null,
-    "followers": null,
-    "note": "X公式のフォロワー数は取得できず。公式Instagram 321K"
+    "name": "劇団四季",
+    "handle": "@shiki_jp",
+    "followers": 342100,
+    "note": "2026-09-12 ブラウザ実測（2026-08-22 WebSearchでは341,300）"
    },
    {
     "name": "マカロニえんぴつ 公式",
@@ -1276,9 +1296,61 @@
     "followers": 328000
    },
    {
+    "name": "羽多野渉",
+    "handle": "@hatano_official",
+    "followers": 314700,
+    "note": "2026-09-11 ブラウザ実測。羽多野渉 公式"
+   },
+   {
+    "name": "カラフルピーチ【公式】",
+    "handle": "@official_clpc",
+    "followers": 309000
+   },
+   {
+    "name": "柴咲コウ",
+    "handle": "@ko_shibasaki",
+    "followers": 306696,
+    "note": "本人垢。別に1,221,681の数字が出る垢があるがハンドル未特定。2026-08-20取得"
+   },
+   {
+    "name": "SiM_Official",
+    "handle": "@SiM_Official",
+    "followers": 289000,
+    "note": "ranking.netのバンド100位内には未掲載＝同サイトは網羅でない。2026-08-05取得"
+   },
+   {
+    "name": "キュウソネコカミ",
+    "handle": "@KYUSO_NEKOKAMI",
+    "followers": 280900,
+    "note": "280.9K。8/11に『換算が食い違う』として不採用にしたが、再検索でも280.9Kで一致したので採用。2026-08-12取得"
+   },
+   {
+    "name": "田中聖",
+    "handle": "@koki1105t",
+    "followers": 256246,
+    "note": "2026-10-20 ブラウザ実測・本人・⚠️主役の決まり（犯罪歴の報じられた人物は外す）に当たる可能性＝要判断"
+   },
+   {
     "name": "Little Glee Monster/リトグリ公式",
     "handle": "@LittleGleeMonst",
     "followers": 243000
+   },
+   {
+    "name": "モーニング娘。",
+    "handle": "@MorningMusumeMg",
+    "followers": 237300,
+    "note": "2026-09-11 ブラウザ実測。モーニング娘。'26 公式"
+   },
+   {
+    "name": "円谷プロダクション",
+    "handle": "@tsuburayaprod",
+    "followers": 236000
+   },
+   {
+    "name": "ヨーヨー・マ",
+    "handle": "@YoYo_Ma",
+    "followers": 233200,
+    "note": "2026-09-15 ブラウザ実測「233.2K」。表示名 Yo-Yo Ma"
    },
    {
     "name": "のん official",
@@ -1291,55 +1363,194 @@
     "followers": 222487
    },
    {
-    "name": "KNOCK OUT(ノックアウト)公式",
-    "handle": "@kb_knockout",
-    "followers": 31300
+    "name": "アインシュタイン 稲田直樹",
+    "handle": "@tosakomainada",
+    "followers": 218000,
+    "note": "2ソースで221,755/215,077=概数"
    },
    {
-    "name": "栗林みな実",
-    "handle": "@minamiracle6_6",
-    "followers": 24300
+    "name": "レイザーラモン RG／ミサイルマン 岩部彰／ザ・プラン9 浅越ゴエ",
+    "handle": "@rgizubuchi",
+    "followers": 214826,
+    "note": "2026-10-20 ブラウザ実測・本人・レイザーラモンRG。浅越ゴエ 49,858／岩部彰 30,663"
    },
    {
-    "name": "日本体操協会",
-    "handle": "@GymnasticsJapan",
-    "followers": 17200
+    "name": "映画名探偵プリキュア",
+    "handle": "@precure_movie",
+    "followers": 206400,
+    "note": "2026-09-14 ブラウザ実測。映画『映画名探偵プリキュア!不思議な庭と2人の秘密』の公式"
    },
    {
-    "name": "フルカワユタカ",
-    "handle": "@rckstr_furukawa",
-    "followers": 9590,
-    "note": "スタッフ垢@furukawa_yutakaは5,687"
+    "name": "ジャルジャル／うるとらブギーズ",
+    "handle": "@jarujaru12th",
+    "followers": 204733,
+    "note": "2026-10-20 ブラウザ実測・公式・ジャルジャル公式（スタッフ更新）。うるとらブギーズ佐々木 10,504"
    },
    {
-    "name": "酒まつり【公式】",
-    "handle": "@sakematsuri_",
-    "followers": 1290,
-    "note": "Instagram @sakematsuri.japan は4,191"
+    "name": "CANDY TUNE【Official】",
+    "handle": "@CANDY_TUNE_",
+    "followers": 200000,
+    "note": "2026-07に20万人達成を公式報告(RBB TODAY)。2026-08-12取得"
    },
    {
-    "name": "Stray Kids Japan Official",
-    "handle": "@Stray_Kids_JP",
-    "followers": 2700000,
-    "note": "日本公式。韓国/国際本体@Stray_Kidsは未取得(さらに大きいはず)。2026-08-05取得"
+    "name": "アインシュタイン 河井ゆずる",
+    "handle": "@yuzuru1",
+    "followers": 196000
    },
    {
-    "name": "莉犬くん＠すとぷり",
-    "handle": "@rinu_nico",
-    "followers": 900000,
-    "note": "本人垢。すとぷり公式@StPri_infoは未取得。2026-08-05取得"
+    "name": "Juice=Juice",
+    "handle": "@JuiceJuice_uf",
+    "followers": 185600,
+    "note": "2026-09-11 ブラウザ実測。"
    },
    {
-    "name": "水瀬いのりinfo",
-    "handle": "@inoriminase",
-    "followers": 800230,
-    "note": "オフィシャル情報垢。2026-08-05取得"
+    "name": "DIGIMON CONCERT ～2026 Anniversary & BEATBREAK～",
+    "handle": "@Digimon_Anime",
+    "followers": 177389,
+    "note": "2026-10-20 ブラウザ実測・公式・デジモンアニメシリーズ公式。デジモンウェブ @digimonweb_net 153,738"
    },
    {
-    "name": "SiM_Official",
-    "handle": "@SiM_Official",
-    "followers": 289000,
-    "note": "ranking.netのバンド100位内には未掲載＝同サイトは網羅でない。2026-08-05取得"
+    "name": "indigo la End",
+    "handle": "@indigo_la_End",
+    "followers": 174900,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "ジェラードン／空気階段",
+    "handle": "@kkkatmari",
+    "followers": 173482,
+    "note": "2026-10-20 ブラウザ実測・本人・空気階段 水川かたまり。鈴木もぐら 165,903／ジェラードン かみちぃ 119,929"
+   },
+   {
+    "name": "坂田光／空気階段／そいつどいつ",
+    "handle": "@kkkatmari",
+    "followers": 173482,
+    "note": "2026-10-20 ブラウザ実測・本人・空気階段 水川かたまり。坂田光 11,654／そいつどいつ 市川刺身 24,207"
+   },
+   {
+    "name": "二階堂／もののけ",
+    "handle": "@mononoke_2525",
+    "followers": 165709,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝もののけ。にかもの公式@nikamono_event（1,189）がもののけグッズも扱う＝同一人物と判断"
+   },
+   {
+    "name": "高橋健介",
+    "handle": "@kensuke_mr6",
+    "followers": 159600,
+    "note": "2026-09-14 ブラウザ実測。俳優本人"
+   },
+   {
+    "name": "アンジュルム",
+    "handle": "@angerme_upfront",
+    "followers": 157800,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "18TRIP(エイトリ)",
+    "handle": "@18trip_official",
+    "followers": 150000,
+    "note": "2025-02公式リリース『フォロワー15万人達成』時点。検索要約の1.5Mは誤り"
+   },
+   {
+    "name": "KiiiKiii",
+    "handle": "@We_KiiiKiii",
+    "followers": 149400,
+    "note": "グローバル公式（2026-09-23 ブラウザ実測）。日本公式 @We_KiiiKiii_JP は11,300"
+   },
+   {
+    "name": "二松学舎大学創縁祭 声優ライブ 田丸篤志 山下誠一郎 トークショー",
+    "handle": "@atsushi_tamaru",
+    "followers": 148232,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝田丸篤志（山下誠一郎 @seichiro0521 122,088）"
+   },
+   {
+    "name": "ツートライブ／しずる",
+    "handle": "@shizzlemurakami",
+    "followers": 138999,
+    "note": "2026-10-20 ブラウザ実測・本人・しずる 純。ツートライブ 周平魂 27,938"
+   },
+   {
+    "name": "ミュージカル『テニスの王子様』シリーズ公式",
+    "handle": "@TennimuNews",
+    "followers": 138800,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "アキナ／囲碁将棋",
+    "handle": "@sausageakiyama",
+    "followers": 136749,
+    "note": "2026-10-20 ブラウザ実測・本人・アキナ 秋山。囲碁将棋 文田 51,277"
+   },
+   {
+    "name": "NMB48",
+    "handle": "@nmb48_official",
+    "followers": 134142,
+    "note": "2026-10-20 ブラウザ実測・公式・NMB48 Official（2017年開設・毎日投稿）"
+   },
+   {
+    "name": "綾小路翔(氣志團)",
+    "handle": "@ShowAyanocozey",
+    "followers": 131000,
+    "note": "⚠️ポスト数との取り違えの可能性あり・要再確認"
+   },
+   {
+    "name": "ニッポンの社長／バッテリィズ",
+    "handle": "@tsujiclassic",
+    "followers": 122131,
+    "note": "2026-10-20 ブラウザ実測・本人・ニッポンの社長 辻。ケツ 87,979／バッテリィズ エース 100,556"
+   },
+   {
+    "name": "ゲスト：ニッポンの社長／リングリンデ／華花クラッツ",
+    "handle": "@tsujiclassic",
+    "followers": 122131,
+    "note": "2026-10-20 ブラウザ実測・本人・ニッポンの社長 辻。リングリンデまひろ 1,563"
+   },
+   {
+    "name": "ナイツ 塙宣之",
+    "handle": "@hanawa_nobuyuki",
+    "followers": 121500,
+    "note": "2026-08-22 WebSearch実測。本人アカウント"
+   },
+   {
+    "name": "東京スカパラダイスオーケストラ",
+    "handle": "@tokyoskaj",
+    "followers": 116500,
+    "note": "2026-09-11 ブラウザ実測。TOKYO SKA PARADISE ORCHESTRA"
+   },
+   {
+    "name": "すっちー／ほか新喜劇座員",
+    "handle": "@suchigunsou",
+    "followers": 116121,
+    "note": "2026-10-20 ブラウザ実測・本人・よしもと新喜劇すっちー"
+   },
+   {
+    "name": "キュウソネコカミ ヨコタ",
+    "handle": "@shinnosukeykt",
+    "followers": 115000
+   },
+   {
+    "name": "ねぐせ。",
+    "handle": "@neguseofficial_",
+    "followers": 113100,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "大河ドラマ「豊臣兄弟!」",
+    "handle": "@nhk_toyotomi",
+    "followers": 107600,
+    "note": "2026-09-14 ブラウザ実測。NHK大河の公式（江戸東京博物館の特別展は展示なので主役にしない）"
+   },
+   {
+    "name": "THE SECOND〜漫才トーナメント〜公式",
+    "handle": "@thesecond_cx",
+    "followers": 107300,
+    "note": "2026-08-22 WebSearch実測。番組公式"
+   },
+   {
+    "name": "ヤングスキニー",
+    "handle": "@yang_skinny",
+    "followers": 106400,
+    "note": "2026-09-11 ブラウザ実測。"
    },
    {
     "name": "スキマスイッチ公式",
@@ -1348,10 +1559,70 @@
     "note": "ranking.net バンド61位。2026-08-05取得"
    },
    {
+    "name": "松本山雅FC対ツエーゲン金沢 明治安田J3リーグ",
+    "handle": "@yamagafc",
+    "followers": 98056,
+    "note": "2026-10-20 ブラウザ実測・公式・松本山雅FC。ツエーゲン金沢 @zweigen_staff 44,099"
+   },
+   {
+    "name": "松本山雅FC",
+    "handle": "@yamagafc",
+    "followers": 97800,
+    "note": "2026-09-15 ブラウザ実測「97.8K」。表示名「松本山雅FCオフィシャル」"
+   },
+   {
+    "name": "囲碁将棋／藤崎マーケット／守谷日和",
+    "handle": "@fujisakitoki",
+    "followers": 97209,
+    "note": "2026-10-20 ブラウザ実測・本人・藤崎マーケット トキ。囲碁将棋 文田 51,277"
+   },
+   {
+    "name": "カゲヤマ 益田康平／ドンデコルテ 渡辺銀次／相席スタート 山添寛",
+    "handle": "@10000nabe",
+    "followers": 97123,
+    "note": "2026-10-20 ブラウザ実測・本人・ドンデコルテ渡辺銀次。カゲヤマ益田 16,017／相席スタート公式 6,396（山添本人垢は見つからず）"
+   },
+   {
+    "name": "加藤登紀子",
+    "handle": "@TokikoKato",
+    "followers": 96300,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "反田恭平",
+    "handle": "@kyohei0901",
+    "followers": 95200,
+    "note": "2026-09-14 ブラウザ実測。本人"
+   },
+   {
+    "name": "9番街レトロ／大王",
+    "handle": "@24shunta",
+    "followers": 91041,
+    "note": "2026-10-20 ブラウザ実測・本人・9番街レトロ なかむらしゅん。大王 山内 @jinpel_ 16,234"
+   },
+   {
+    "name": "9番街レトロ なかむらしゅん／大王 山内",
+    "handle": "@24shunta",
+    "followers": 91041,
+    "note": "2026-10-20 ブラウザ実測・本人・なかむらしゅん。山内仁平 @jinpel_ 16,234"
+   },
+   {
     "name": "つばきファクトリー",
     "handle": "@tsubakifac_uf",
     "followers": 90000,
     "note": "ハロプロ。2026-08-05取得"
+   },
+   {
+    "name": "川崎鷹也",
+    "handle": "@kawasaki_takaya",
+    "followers": 86500,
+    "note": "2026-09-11 ブラウザ実測。"
+   },
+   {
+    "name": "吉本新喜劇",
+    "handle": "@shinkigeki1",
+    "followers": 84700,
+    "note": "2026-09-14 ブラウザ実測（8/11は84.2K）"
    },
    {
     "name": "Cornelius",
@@ -1360,10 +1631,128 @@
     "note": "2026-08-05取得"
    },
    {
+    "name": "ヨネダ2000 愛",
+    "handle": "@yonedaai2000",
+    "followers": 79200
+   },
+   {
+    "name": "相川七瀬",
+    "handle": "@nanase_aikawa",
+    "followers": 73100,
+    "note": "2026-09-12 ブラウザ実測。表示名 NANASE AIKAWA"
+   },
+   {
+    "name": "OWV",
+    "handle": "@OWV_official",
+    "followers": 59600,
+    "note": "2026-09-23 ブラウザ実測"
+   },
+   {
+    "name": "舞台『組曲虐殺』",
+    "handle": "@horipro_stage",
+    "followers": 59452,
+    "note": "2026-10-20 ブラウザ実測・主催・2027年2月公演の主催はこまつ座/ホリプロ＝大きいホリプロステージ（こまつ座@komatsuza 9,862）。主演は"
+   },
+   {
+    "name": "RISE OFFICIAL",
+    "handle": "@RISE_2003",
+    "followers": 58000,
+    "note": "キックボクシング興行。Instagram 54K。2026-08-12取得"
+   },
+   {
+    "name": "ディズニー・オン・クラシック",
+    "handle": "@onClassicDisney",
+    "followers": 57200,
+    "note": "2026-09-14 ブラウザ実測。公演の公式"
+   },
+   {
+    "name": "STARCHILD 45th ANNIVERSARY ”ROBOT ANIME SYMPHONIC CONCERT”",
+    "handle": "@_king_records",
+    "followers": 56816,
+    "note": "2026-10-20 ブラウザ実測・主催・主催キングレコード公式（スターチャイルドはその社内レーベル）。出演は森口博子ほか"
+   },
+   {
+    "name": "TOWA TEI",
+    "handle": "@towatei",
+    "followers": 53300,
+    "note": "2026-09-15 ブラウザ実測「53.3K」。本人"
+   },
+   {
+    "name": "駒田京伽／冨吉明日香／坂口理子",
+    "handle": "@ricopi_726",
+    "followers": 52219,
+    "note": "2026-10-20 ブラウザ実測・本人・坂口理子。冨吉明日香 25,602／駒田京伽 9,055"
+   },
+   {
+    "name": "Daito Manabe／Patrick Watson",
+    "handle": "@daitomanabe",
+    "followers": 50068,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝真鍋大度（Patrick Watson @patrickwatson 19,407）"
+   },
+   {
     "name": "GANG PARADE official",
     "handle": "@GANG_PARADE",
     "followers": 49600,
     "note": "2026年に解散を発表。2026-08-05取得"
+   },
+   {
+    "name": "ゴスペラーズ公式",
+    "handle": "@the_gospellers",
+    "followers": 49600,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "大黒摩季_公式",
+    "handle": null,
+    "followers": 49319
+   },
+   {
+    "name": "大樹生命 Wリーグ 2026-27 レギュラーシーズン 第4週[秋田]",
+    "handle": "@wjbl_official",
+    "followers": 49107,
+    "note": "2026-10-20 ブラウザ実測・主催・W LEAGUE 公式"
+   },
+   {
+    "name": "Girls2",
+    "handle": "@Girls2_official",
+    "followers": 49100,
+    "note": "2026-09-11 ブラウザ実測。Girls²"
+   },
+   {
+    "name": "ミュージカル『SPY×FAMILY』",
+    "handle": "@spyfamily_stage",
+    "followers": 48900,
+    "note": "2026-09-12 ブラウザ実測。舞台の公式（原作アニメの公式ではない）"
+   },
+   {
+    "name": "アキ／吉田裕",
+    "handle": "@mizutamareppu",
+    "followers": 46805,
+    "note": "2026-10-20 ブラウザ実測・本人・吉本新喜劇アキ。吉田裕 @yoshida_is_here 43,981 より大きい"
+   },
+   {
+    "name": "守谷日和／ななまがり／カゲヤマ",
+    "handle": "@morishitanaoto",
+    "followers": 44658,
+    "note": "2026-10-20 ブラウザ実測・本人・ななまがり森下。守谷日和 23,448／カゲヤマ益田 16,017"
+   },
+   {
+    "name": "cinema staff",
+    "handle": "@cinemastaff_",
+    "followers": 44100,
+    "note": "2026-08-12取得"
+   },
+   {
+    "name": "【開催】「エレガンス」ラ プードル オートニュアンス抽選販売",
+    "handle": "@Elegance_jp",
+    "followers": 40574,
+    "note": "2026-10-20 ブラウザ実測・主催・エレガンス コスメティックス公式（商品の抽選販売）"
+   },
+   {
+    "name": "田口淳之介／yoshi／牧田弘志郎",
+    "handle": "@junnosuke_tag",
+    "followers": 37694,
+    "note": "2026-10-20 ブラウザ実測・スタッフ・田口淳之介 official info（staffによる投稿・販売ページ記載）"
    },
    {
     "name": "オレンジスパイニクラブ",
@@ -1372,10 +1761,593 @@
     "note": "ranking.net バンド93位。2026-08-05取得"
    },
    {
+    "name": "三菱重工浦和レッズレディース",
+    "handle": "@REDSLADIES",
+    "followers": 34600,
+    "note": "2026-09-14 ブラウザ実測。クラブ公式"
+   },
+   {
+    "name": "CNBLUE JAPAN OFFICIAL",
+    "handle": "@cnblue_japan",
+    "followers": 34500,
+    "note": "日本公式。Instagram @cnblue_official_jp は127K。本体@official_CNBLUEは未取得。2026-08-12取得"
+   },
+   {
+    "name": "横山だいすけ",
+    "handle": "@daisuke_minna",
+    "followers": 34500,
+    "note": "2026-09-15 ブラウザ実測「34.5K」。本人でなくスタッフ（公式）"
+   },
+   {
+    "name": "ズーカラデル",
+    "handle": "@gooutzoo",
+    "followers": 34000,
+    "note": "34K。2026-09-10 ブラウザで実測"
+   },
+   {
+    "name": "押尾コータロー",
+    "handle": "@kotaro_oshio",
+    "followers": 33938,
+    "note": "2026-10-20 ブラウザ実測・本人・スタッフ垢@kotaro_staff 5,492"
+   },
+   {
+    "name": "WHITE JAM",
+    "handle": "@WHITEJAM_STAFF",
+    "followers": 33100,
+    "note": "2026-09-15 ブラウザ実測「33.1K」。表示名 WHITE JAM Official"
+   },
+   {
+    "name": "天才ピアニスト 竹内知咲",
+    "handle": "@tensai_pianist",
+    "followers": 31300
+   },
+   {
+    "name": "KNOCK OUT(ノックアウト)公式",
+    "handle": "@kb_knockout",
+    "followers": 31300
+   },
+   {
+    "name": "O-MENZ／100STARS／NO X OVER",
+    "handle": "@o_menz_official",
+    "followers": 30323,
+    "note": "2026-10-20 ブラウザ実測・公式・対バン最大＝O-MENZ（100STARS 7,274／NO X OVER 708）"
+   },
+   {
+    "name": "『COWBOY BEBOP天国の扉』4K REMASTER 舞台挨拶",
+    "handle": "@Cowboybebop_PR",
+    "followers": 28320,
+    "note": "2026-10-20 ブラウザ実測・公式・カウボーイビバップ公式（劇場版 天国の扉）"
+   },
+   {
+    "name": "HAWAIIAN6 presents SUNNYMAN VS RAINMAN",
+    "handle": "@Hatanoikki",
+    "followers": 27525,
+    "note": "2026-10-20 ブラウザ実測・本人・バンド公式垢は見つからず＝メンバー最大のHATANO個人（YUTA 24,329／GURE 11,549）。レーベル@I"
+   },
+   {
+    "name": "ナナヲアカリSTAFF",
+    "handle": "@NANAO_STAFF",
+    "followers": 27200,
+    "note": "本人@77oakrは取得できず"
+   },
+   {
+    "name": "奈良クラブ",
+    "handle": "@naraclub_info",
+    "followers": 25823,
+    "note": "2026-10-20 ブラウザ実測・公式・奈良クラブ"
+   },
+   {
+    "name": "WONK",
+    "handle": "@WONK_TOKYO",
+    "followers": 25700
+   },
+   {
+    "name": "仙台フィルハーモニー管弦楽団",
+    "handle": "@sendaiphil",
+    "followers": 25503,
+    "note": "2026-10-20 ブラウザ実測・公式・仙台フィル公式"
+   },
+   {
+    "name": "佐野元春",
+    "handle": "@DaisyMusicInfo",
+    "followers": 24600,
+    "note": "2026-09-15 ブラウザ実測「24.6K」。本人でなくレーベル DaisyMusic の公式（本人のXは無い）"
+   },
+   {
+    "name": "栗林みな実",
+    "handle": "@minamiracle6_6",
+    "followers": 24300
+   },
+   {
+    "name": "稲垣潤一",
+    "handle": "@InagakiJunichi",
+    "followers": 24200,
+    "note": "公式が『公式は@InagakiJunichiのみ』と注意喚起。2026-08-20取得"
+   },
+   {
+    "name": "木村拓哉",
+    "handle": "@nexdes_victor",
+    "followers": 24100,
+    "note": "2026-09-12 ブラウザ実測。本人のXは無い＝ビクターの音楽公式「SEE YOU THERE / 木村拓哉 (Victor Official X)」の数。ほかにラジオ番組の @flowsaaaan"
+   },
+   {
     "name": "あたらよ - Atarayo",
     "handle": "@Atarayo_band",
     "followers": 24000,
     "note": "2026-08-05取得"
+   },
+   {
+    "name": "DEZERT",
+    "handle": "@DEZERT_OFFICIAL",
+    "followers": 23200,
+    "note": "2026-08-12取得"
+   },
+   {
+    "name": "鳥肌実",
+    "handle": "@Kotori_Co",
+    "followers": 23000,
+    "note": "23K。**ことり事務所が運営する公式**（本人垢ではない）。2026-09-10 ブラウザで実測"
+   },
+   {
+    "name": "マンボウやしろ／ピクニック／グランジ 五明",
+    "handle": "@gomeill",
+    "followers": 22827,
+    "note": "2026-10-20 ブラウザ実測・本人・グランジ 五明。ピクニック 12,465。マンボウやしろ本人垢は見つからず"
+   },
+   {
+    "name": "浅井健一",
+    "handle": "@SSRstaff",
+    "followers": 21200,
+    "note": "2026-09-14 ブラウザ実測。本人でなくレーベル SexyStones Records のスタッフ。ファンクラブ公式 @AsaiKenichi_FC は12.8K"
+   },
+   {
+    "name": "ISAO Birthday LIVE",
+    "handle": "@Isao1229",
+    "followers": 21134,
+    "note": "2026-10-20 ブラウザ実測・本人・ギタリストISAO。誕生日12/29＝公演日と一致"
+   },
+   {
+    "name": "レミオロメン",
+    "handle": "@remioromen_oa",
+    "followers": 21000,
+    "note": "2026-09-11 ブラウザ実測。レミオロメン オフィシャルアカウント"
+   },
+   {
+    "name": "真心ブラザーズ",
+    "handle": "@magokoro_bros",
+    "followers": 20800,
+    "note": "公式。プロフィール画面で実数を確認（20.8K）。2026-08-20取得"
+   },
+   {
+    "name": "不成立クイズマスター惹女香花 2026",
+    "handle": "@hikime_kagibana",
+    "followers": 20711,
+    "note": "2026-10-20 ブラウザ実測・本人・告知用の別垢 @hikime_tandoku 3,284"
+   },
+   {
+    "name": "ミュージカル『ミス・サイゴン』",
+    "handle": "@Miss_Saigon_JPN",
+    "followers": 20600,
+    "note": "2026-09-15 ブラウザ実測「20.6K」。日本公演の公式"
+   },
+   {
+    "name": "#Luvless",
+    "handle": "@luvless_info",
+    "followers": 19322,
+    "note": "2026-10-20 ブラウザ実測・公式・2025/10デビュー（staff垢 5,598）"
+   },
+   {
+    "name": "野村萬斎",
+    "handle": "@mansai_gozaru",
+    "followers": 19300,
+    "note": "19.3K。**本人でなく主宰する狂言会「狂言ござる乃座」の公式**。2026-09-10 実測"
+   },
+   {
+    "name": "Max Cooper",
+    "handle": "@maxcoopermax",
+    "followers": 18846,
+    "note": "2026-10-20 ブラウザ実測・本人・MUTEK.JP 11/20"
+   },
+   {
+    "name": "Max Cooper／Hania Rani／mouse on the keys",
+    "handle": "@maxcoopermax",
+    "followers": 18846,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝Max Cooper（mouse on the keys 9,321／Hania Rani 7,426）"
+   },
+   {
+    "name": "chilldspot",
+    "handle": "@chilldspot",
+    "followers": 18100,
+    "note": "2026-09-15 ブラウザ実測「18.1K」。バンド公式"
+   },
+   {
+    "name": "日本体操協会",
+    "handle": "@GymnasticsJapan",
+    "followers": 17200
+   },
+   {
+    "name": "あわぎんホール×京響 徳島スペシャルコンサート vol.2",
+    "handle": "@kyotosymphony",
+    "followers": 16273,
+    "note": "2026-10-20 ブラウザ実測・公式・京都市交響楽団（京響）。あわぎんホールは未確認"
+   },
+   {
+    "name": "syrup16g",
+    "handle": "@syrup16g_staff",
+    "followers": 15800,
+    "note": "2026-09-14 WebSearch（15.8K・2023年1月開設）。スタッフ公式"
+   },
+   {
+    "name": "PompadollS",
+    "handle": "@PompadollS",
+    "followers": 15000,
+    "note": "⚠️別ソースで10.9Kの表示あり=概数。2026-08-12取得"
+   },
+   {
+    "name": "#エロティック大島／大島はるな／ハセガワダイスケ",
+    "handle": "@hasenano",
+    "followers": 13893,
+    "note": "2026-10-20 ブラウザ実測・本人・ハセガワダイスケ。大島はるな 13,415／#エロティック大島 610"
+   },
+   {
+    "name": "三山ひろし",
+    "handle": "@hiroshiouentai",
+    "followers": 13200,
+    "note": "2026-09-15 ブラウザ実測「13.2K」。本人"
+   },
+   {
+    "name": "前内孝文",
+    "handle": "@maeuchitakafumi",
+    "followers": 11976,
+    "note": "2026-10-20 ブラウザ実測・本人・2012開設・8,237ポスト"
+   },
+   {
+    "name": "ヨーロッパ企画【公式】",
+    "handle": "@europe_kikaku",
+    "followers": 11400,
+    "note": "2026-08-22 WebSearch実測"
+   },
+   {
+    "name": "PURE-J女子プロレス",
+    "handle": "@purejpro",
+    "followers": 10570,
+    "note": "2026-10-20 ブラウザ実測・公式・PURE-J女子プロレス公式"
+   },
+   {
+    "name": "MC：シゲカズです／出演：石山千尋／泉綾乃",
+    "handle": "@_chihiro48_",
+    "followers": 10373,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝石山千尋（NMB48）（シゲカズです 8,785）"
+   },
+   {
+    "name": "阪田知樹（p）",
+    "handle": "@TomokiSakata",
+    "followers": 10344,
+    "note": "2026-10-20 ブラウザ実測・本人・The official account"
+   },
+   {
+    "name": "阪田知樹 ピアノ・リサイタル 超絶技巧練習曲",
+    "handle": "@TomokiSakata",
+    "followers": 10344,
+    "note": "2026-10-20 ブラウザ実測・本人・阪田知樹公式（同名 @JamesMark364430 は17フォロワー・0ポストで不採用）"
+   },
+   {
+    "name": "ザ・シスターズハイ",
+    "handle": "@TheSistersHigh",
+    "followers": 10200,
+    "note": "Instagram 8,252。2026-08-12取得"
+   },
+   {
+    "name": "朱椿粋 東京個展 2026",
+    "handle": "@Aketsubaki",
+    "followers": 9959,
+    "note": "2026-10-20 ブラウザ実測・本人・匠衆・朱椿粋"
+   },
+   {
+    "name": "フルカワユタカ",
+    "handle": "@rckstr_furukawa",
+    "followers": 9590,
+    "note": "スタッフ垢@furukawa_yutakaは5,687"
+   },
+   {
+    "name": "Hania Rani／mouse on the keys",
+    "handle": "@mouseonthekeys",
+    "followers": 9321,
+    "note": "2026-10-20 ブラウザ実測・公式・最大＝mouse on the keys（Hania Rani @haniaranimusic 7,426）"
+   },
+   {
+    "name": "桂米團治",
+    "handle": "@yonedanji_k",
+    "followers": 9185,
+    "note": "2026-09-10 ブラウザで実測"
+   },
+   {
+    "name": "映画『八つ墓村』",
+    "handle": "@yatsuhaka_movie",
+    "followers": 8896,
+    "note": "2026-09-15 ブラウザ実測。映画の公式"
+   },
+   {
+    "name": "10/31(土)12:55 無料ライブ パワーオブフリー(Ｓ) vol.千59 (配信無し)",
+    "handle": "@UandC_Enta",
+    "followers": 8331,
+    "note": "2026-10-20 ブラウザ実測・主催・主催U&Cエンタプライズ（お笑いライブ）公式"
+   },
+   {
+    "name": "ワハハ本舗",
+    "handle": "@wahahahompo",
+    "followers": 7993,
+    "note": "2026-09-15 ブラウザ実測。劇団公式"
+   },
+   {
+    "name": "林家正蔵・林家たけ平・林家たま平親子会",
+    "handle": "@tamahei_h",
+    "followers": 7167,
+    "note": "2026-10-20 ブラウザ実測・本人・林家たま平。たけ平 @takehei 3,835。正蔵は同名の量産垢ばかりで本人垢を確認できず"
+   },
+   {
+    "name": "栃木県読売会presents コーラスグループ・ベイビーブー コンサート ～時代を彩った昭和名曲をあなたに～",
+    "handle": "@BabyBoo20020214",
+    "followers": 6911,
+    "note": "2026-10-20 ブラウザ実測・公式・ベイビーブー公式アカウント"
+   },
+   {
+    "name": "春風亭一蔵 独演会 ～蔵がたつまで・・・～",
+    "handle": "@ichizoshunputei",
+    "followers": 6454,
+    "note": "2026-10-20 ブラウザ実測・本人・落語協会所属・6433ポスト"
+   },
+   {
+    "name": "玉山ミイ／小津和 涼／野村礼輝",
+    "handle": "@tamayamamie",
+    "followers": 6181,
+    "note": "2026-10-20 ブラウザ実測・スタッフ・玉山ミイ information（スタッフ）。本人 @Singer_Mie 2,323／小津和涼 1,468"
+   },
+   {
+    "name": "jo0ji_crew兄",
+    "handle": "@jo0ji_info",
+    "followers": 5833,
+    "note": "情報垢。本人@jo0ji3は未取得。2026-08-12取得"
+   },
+   {
+    "name": "前川清",
+    "handle": "@maekawa_kikaku",
+    "followers": 5622,
+    "note": "2026-09-15 ブラウザ実測。事務所の公式"
+   },
+   {
+    "name": "ロザン",
+    "handle": "@ROZANnoMANAGER",
+    "followers": 5544,
+    "note": "2026-10-20 ブラウザ実測・スタッフ・【公式】ロザンのマネージャー・本公演を告知。宇治原名義@surpriseuzihara 12,355は9ポストで本人と確"
+   },
+   {
+    "name": "かわにしなつき",
+    "handle": "@06_k_natsuki",
+    "followers": 5515,
+    "note": "Xは弱いがInstagram133K/TikTok179.6K=SNS全体35万超"
+   },
+   {
+    "name": "ナナクロニクル",
+    "handle": "@info_7chronicle",
+    "followers": 5456,
+    "note": "公式。2026-09-10 ブラウザで実測"
+   },
+   {
+    "name": "神戸新開地・喜楽館 12月【朝席・夜席】",
+    "handle": "@kobekirakukan",
+    "followers": 4818,
+    "note": "2026-10-20 ブラウザ実測・公式・劇場 神戸新開地・喜楽館 公式"
+   },
+   {
+    "name": "神戸新開地・喜楽館 1月【朝席・夜席】",
+    "handle": "@kobekirakukan",
+    "followers": 4818,
+    "note": "2026-10-20 ブラウザ実測・公式・劇場 神戸新開地・喜楽館 公式"
+   },
+   {
+    "name": "神韻芸術団",
+    "handle": "@ShenYunJA",
+    "followers": 3832,
+    "note": "2026-09-15 ブラウザ実測。日本語版の公式"
+   },
+   {
+    "name": "太田克樹",
+    "handle": "@katsukiota",
+    "followers": 3739,
+    "note": "2026-10-20 ブラウザ実測・本人・太田克樹"
+   },
+   {
+    "name": "LOCAL SOUND STYLE HOPE Vol.01",
+    "handle": "@LOCALSOUNDSTYLE",
+    "followers": 3707,
+    "note": "2026-10-20 ブラウザ実測・公式・青森出身ロックバンド公式"
+   },
+   {
+    "name": "Milky Monster",
+    "handle": "@info_milmon",
+    "followers": 3495,
+    "note": "2026-10-20 ブラウザ実測・公式・Milky Monster公式・2025開設"
+   },
+   {
+    "name": "一青窈",
+    "handle": "@hitotoofficial",
+    "followers": 3332,
+    "note": "2026-09-15 ブラウザ実測。スタッフの公式。@hitotoyohitoto（1,474・ポスト31）は本人か確証なし＝採用しない"
+   },
+   {
+    "name": "illiomote ONEMAN LIVE 2026 BAND",
+    "handle": "@illiomote5",
+    "followers": 3300,
+    "note": "2026-10-20 ブラウザ実測・公式・illiomote公式"
+   },
+   {
+    "name": "THE HEROES from SUPER FANTASY",
+    "handle": "@superfantasy_fv",
+    "followers": 3260,
+    "note": "2026-10-20 ブラウザ実測・公式・SUPER FANTASY公式（販売ページ記載）"
+   },
+   {
+    "name": "菊池颯人／Daisy745／菊池大雅",
+    "handle": "@kkchyt_official",
+    "followers": 2785,
+    "note": "2026-10-20 ブラウザ実測・本人・菊池颯人。Daisy745 804"
+   },
+   {
+    "name": "Salicus Kammerchor／櫻井元希／小林恵",
+    "handle": "@g_sakurai1031",
+    "followers": 2563,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝櫻井元希（合唱団@Salicus_kc 2,409）"
+   },
+   {
+    "name": "青春CYBER",
+    "handle": "@s_cyber_info",
+    "followers": 2458,
+    "note": "2026-10-20 ブラウザ実測・公式・6人組ボーイズグループ公式"
+   },
+   {
+    "name": "守道小粋",
+    "handle": "@cradle_koiki",
+    "followers": 2447,
+    "note": "2026-10-20 ブラウザ実測・本人・守道小粋（Teamくれれっ娘!/I☆Cicle）"
+   },
+   {
+    "name": "流石にフィーバー／シンバルモンキー／＆ゴンザレス",
+    "handle": "@haneuma_ysmt",
+    "followers": 2388,
+    "note": "2026-10-20 ブラウザ実測・本人・流石にフィーバー 良元カルビ。シンバルモンキー 1,740／&ゴンザレス ラモン 464"
+   },
+   {
+    "name": "西田颯梓",
+    "handle": "@soshi_20061127",
+    "followers": 2222,
+    "note": "2026-10-20 ブラウザ実測・本人・25ポスト"
+   },
+   {
+    "name": "ON FLEEK",
+    "handle": "@ON_FLEEK_staff",
+    "followers": 2012,
+    "note": "2026-10-20 ブラウザ実測・公式・ON FLEEK official（メンバーRAIYA 1,658）"
+   },
+   {
+    "name": "妄想slave／指田りさ／あまりりす",
+    "handle": "@risa_0305__",
+    "followers": 1908,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝指田りさ（妄想slave公式 1,574・あまりりすは見つからず）"
+   },
+   {
+    "name": "ラムネ商店街 早瀬颯馬聖誕祭 2026",
+    "handle": "@soma_ramuket",
+    "followers": 1898,
+    "note": "2026-10-20 ブラウザ実測・本人・早瀬颯馬本人（グループ公式@info_ramuket 3,562）"
+   },
+   {
+    "name": "酒まつり【公式】",
+    "handle": "@sakematsuri_",
+    "followers": 1290,
+    "note": "Instagram @sakematsuri.japan は4,191"
+   },
+   {
+    "name": "SAWAGE",
+    "handle": "@SAWAGE_1203",
+    "followers": 1212,
+    "note": "2026-10-20 ブラウザ実測・公式・【公式】SAWAGE"
+   },
+   {
+    "name": "日本モーツァルト協会 第685回例会 親愛なるハイドンに捧ぐ",
+    "handle": "@mozartsocietyjp",
+    "followers": 1138,
+    "note": "2026-10-20 ブラウザ実測・公式・日本モーツァルト協会"
+   },
+   {
+    "name": "フォレスタ",
+    "handle": "@foresta_e",
+    "followers": 1037,
+    "note": "2026-10-20 ブラウザ実測・公式・フォレスタエンターテインメント（公式）・2020開設"
+   },
+   {
+    "name": "MC：齋藤のようなもの／出演：秘蔵／電人バンド",
+    "handle": "@ur_uratani",
+    "followers": 1009,
+    "note": "2026-10-20 ブラウザ実測・本人・電人バンド 浦谷くじら。齋藤のようなもの・秘蔵は見つからず"
+   },
+   {
+    "name": "DAIJU／REBUILD-ONE／ROMAN",
+    "handle": "@RB1_official_",
+    "followers": 680,
+    "note": "2026-10-20 ブラウザ実測・公式・REBUILD-ONE。DAIJU・ROMAN は特定できず"
+   },
+   {
+    "name": "INGRY'S",
+    "handle": "@ingryinfo",
+    "followers": 512,
+    "note": "2026-10-20 ブラウザ実測・スタッフ・「イングリーズインフォの倉庫番」＝グッズ情報用の運営垢・8ポスト。会場主催BAYSIS @BAYSISYOKOHAMA "
+   },
+   {
+    "name": "第61回マーチングバンド関東大会",
+    "handle": "@JMBA_Kanto_PR",
+    "followers": 439,
+    "note": "2026-10-20 ブラウザ実測・主催・日本マーチングバンド協会関東支部公式"
+   },
+   {
+    "name": "Aristocratie",
+    "handle": "@aris__official",
+    "followers": 391,
+    "note": "2026-10-20 ブラウザ実測・公式・2025/5デビュー"
+   },
+   {
+    "name": "らぶとら",
+    "handle": "@Lvtr_official",
+    "followers": 377,
+    "note": "2026-10-20 ブラウザ実測・公式・仙台拠点メンズアイドル・2026開設"
+   },
+   {
+    "name": "過去河諦／春日紗矢子／鈴木菜々",
+    "handle": "@kakogawa_akira",
+    "followers": 351,
+    "note": "2026-10-20 ブラウザ実測・本人・最大＝過去河諦（春日紗矢子・鈴木菜々は本人垢見つからず）"
+   },
+   {
+    "name": "江上怜那クリスマスコンサート2026（瑞江12月公演）",
+    "handle": "@reinaegami",
+    "followers": 327,
+    "note": "2026-10-20 ブラウザ実測・本人・江上怜那"
+   },
+   {
+    "name": "第43回アルスくらしき寄席",
+    "handle": "@ars_kurashiki",
+    "followers": 256,
+    "note": "2026-10-20 ブラウザ実測・主催・アルスくらしき（倉敷市文化振興財団）公式"
+   },
+   {
+    "name": "ミュージカル 「ALICE ～不思議の国のアリスより～」",
+    "handle": "@ALICE_tour_2627",
+    "followers": 211,
+    "note": "2026-10-20 ブラウザ実測・公式・2026-27全国ツアー公式（プレスリリース記載）・佐賀公演用@saganewsp_art 710は別"
+   },
+   {
+    "name": "MC：樺山ガイス／4期：先入観､ どんまい！植田くん／5期：俵雄人",
+    "handle": "@ggaaiissuu",
+    "followers": 167,
+    "note": "2026-10-20 ブラウザ実測・本人・樺山ガイス。俵雄人 166／どんまい！植田くん 67。先入観は見つからず"
+   },
+   {
+    "name": "ウィークデーコンサート Vol.17",
+    "handle": "@mizkie_hall",
+    "followers": 58,
+    "note": "2026-10-20 ブラウザ実測・公式・会場ミズキーホール公式（2026開設）。主催のシリーズと見て劇場の数"
+   },
+   {
+    "name": "大阪桐蔭高等学校吹奏楽部",
+    "handle": null,
+    "followers": null,
+    "note": "X不明。YouTube登録者29〜30万人(2026年6月時点)"
+   },
+   {
+    "name": "宝塚歌劇",
+    "handle": null,
+    "followers": null,
+    "note": "X公式のフォロワー数は取得できず。公式Instagram 321K"
    },
    {
     "name": "菊池桃子",
@@ -1402,88 +2374,10 @@
     "note": "🚨フォロワー数を取得できず(2026-08-05・1回)。ranking.netバンド100位内に無し"
    },
    {
-    "name": "Vaundy",
-    "handle": "@vaundy_engawa",
-    "followers": 776500,
-    "note": "本人垢。2026年5月時点の数値として検索で取得(2026-08-11)。Instagram @vaundy_engawa は100万"
-   },
-   {
-    "name": "LiSA",
-    "handle": "@LiSA_OLiVE",
-    "followers": 1595000,
-    "note": "本人垢。2026-08-11取得"
-   },
-   {
-    "name": "吉本新喜劇",
-    "handle": "@shinkigeki1",
-    "followers": 84700,
-    "note": "2026-09-14 ブラウザ実測（8/11は84.2K）"
-   },
-   {
-    "name": "キュウソネコカミ",
-    "handle": "@KYUSO_NEKOKAMI",
-    "followers": 280900,
-    "note": "280.9K。8/11に『換算が食い違う』として不採用にしたが、再検索でも280.9Kで一致したので採用。2026-08-12取得"
-   },
-   {
     "name": "SEKIRO / フロム・ソフトウェア",
     "handle": null,
     "followers": null,
     "note": "🚨公式Xのフォロワー数を取得できず(2026-08-11・1回)"
-   },
-   {
-    "name": "CANDY TUNE【Official】",
-    "handle": "@CANDY_TUNE_",
-    "followers": 200000,
-    "note": "2026-07に20万人達成を公式報告(RBB TODAY)。2026-08-12取得"
-   },
-   {
-    "name": "山寺宏一",
-    "handle": "@yamachanoha",
-    "followers": 583895,
-    "note": "x-ranker 男性声優ランキング。ボイスシネマ声優口演ライブ2026の出演者。2026-08-12取得"
-   },
-   {
-    "name": "RISE OFFICIAL",
-    "handle": "@RISE_2003",
-    "followers": 58000,
-    "note": "キックボクシング興行。Instagram 54K。2026-08-12取得"
-   },
-   {
-    "name": "cinema staff",
-    "handle": "@cinemastaff_",
-    "followers": 44100,
-    "note": "2026-08-12取得"
-   },
-   {
-    "name": "CNBLUE JAPAN OFFICIAL",
-    "handle": "@cnblue_japan",
-    "followers": 34500,
-    "note": "日本公式。Instagram @cnblue_official_jp は127K。本体@official_CNBLUEは未取得。2026-08-12取得"
-   },
-   {
-    "name": "DEZERT",
-    "handle": "@DEZERT_OFFICIAL",
-    "followers": 23200,
-    "note": "2026-08-12取得"
-   },
-   {
-    "name": "PompadollS",
-    "handle": "@PompadollS",
-    "followers": 15000,
-    "note": "⚠️別ソースで10.9Kの表示あり=概数。2026-08-12取得"
-   },
-   {
-    "name": "ザ・シスターズハイ",
-    "handle": "@TheSistersHigh",
-    "followers": 10200,
-    "note": "Instagram 8,252。2026-08-12取得"
-   },
-   {
-    "name": "jo0ji_crew兄",
-    "handle": "@jo0ji_info",
-    "followers": 5833,
-    "note": "情報垢。本人@jo0ji3は未取得。2026-08-12取得"
    },
    {
     "name": "秘密の小梅ちゃんクラブ",
@@ -1496,18 +2390,6 @@
     "handle": "@MHayashibara_PR",
     "followers": null,
     "note": "🚨フォロワー数を取得できず(2026-08-12・1回)"
-   },
-   {
-    "name": "柴咲コウ",
-    "handle": "@ko_shibasaki",
-    "followers": 306696,
-    "note": "本人垢。別に1,221,681の数字が出る垢があるがハンドル未特定。2026-08-20取得"
-   },
-   {
-    "name": "稲垣潤一",
-    "handle": "@InagakiJunichi",
-    "followers": 24200,
-    "note": "公式が『公式は@InagakiJunichiのみ』と注意喚起。2026-08-20取得"
    },
    {
     "name": "林家たい平",
@@ -1540,66 +2422,6 @@
     "note": "🚨X公式アカウントを特定できず(2026-08-20)"
    },
    {
-    "name": "真心ブラザーズ",
-    "handle": "@magokoro_bros",
-    "followers": 20800,
-    "note": "公式。プロフィール画面で実数を確認（20.8K）。2026-08-20取得"
-   },
-   {
-    "name": "EXILE THE SECOND",
-    "handle": "@EXILETHESECOND_",
-    "followers": 349000,
-    "note": "2026-08-22 WebSearch実測"
-   },
-   {
-    "name": "劇団四季",
-    "handle": "@shiki_jp",
-    "followers": 342100,
-    "note": "2026-09-12 ブラウザ実測（2026-08-22 WebSearchでは341,300）"
-   },
-   {
-    "name": "indigo la End",
-    "handle": "@indigo_la_End",
-    "followers": 174900,
-    "note": "2026-08-22 WebSearch実測"
-   },
-   {
-    "name": "ミュージカル『テニスの王子様』シリーズ公式",
-    "handle": "@TennimuNews",
-    "followers": 138800,
-    "note": "2026-08-22 WebSearch実測"
-   },
-   {
-    "name": "ナイツ 塙宣之",
-    "handle": "@hanawa_nobuyuki",
-    "followers": 121500,
-    "note": "2026-08-22 WebSearch実測。本人アカウント"
-   },
-   {
-    "name": "THE SECOND〜漫才トーナメント〜公式",
-    "handle": "@thesecond_cx",
-    "followers": 107300,
-    "note": "2026-08-22 WebSearch実測。番組公式"
-   },
-   {
-    "name": "加藤登紀子",
-    "handle": "@TokikoKato",
-    "followers": 96300,
-    "note": "2026-08-22 WebSearch実測"
-   },
-   {
-    "name": "ゴスペラーズ公式",
-    "handle": "@the_gospellers",
-    "followers": 49600,
-    "note": "2026-08-22 WebSearch実測"
-   },
-   {
-    "name": "ヨーロッパ企画【公式】",
-    "handle": "@europe_kikaku",
-    "followers": 11400,
-    "note": "2026-08-22 WebSearch実測"
-   },
-   {
     "name": "野村義男",
     "handle": null,
     "followers": null,
@@ -1618,40 +2440,10 @@
     "note": "🚨Xのフォロワー数は取得できず(2026-09-10・2回検索)。Instagram 325K／TikTok 437.9K＝大物と判断してよい"
    },
    {
-    "name": "野村萬斎",
-    "handle": "@mansai_gozaru",
-    "followers": 19300,
-    "note": "19.3K。**本人でなく主宰する狂言会「狂言ござる乃座」の公式**。2026-09-10 実測"
-   },
-   {
     "name": "春風亭昇太",
     "handle": null,
     "followers": null,
     "note": "🚨本人アカウント無し。@syoten1erai は203フォロワー・104ポストで2019年止まり＝本人ではない。2026-09-10 ブラウザで確認"
-   },
-   {
-    "name": "ズーカラデル",
-    "handle": "@gooutzoo",
-    "followers": 34000,
-    "note": "34K。2026-09-10 ブラウザで実測"
-   },
-   {
-    "name": "鳥肌実",
-    "handle": "@Kotori_Co",
-    "followers": 23000,
-    "note": "23K。**ことり事務所が運営する公式**（本人垢ではない）。2026-09-10 ブラウザで実測"
-   },
-   {
-    "name": "桂米團治",
-    "handle": "@yonedanji_k",
-    "followers": 9185,
-    "note": "2026-09-10 ブラウザで実測"
-   },
-   {
-    "name": "ナナクロニクル",
-    "handle": "@info_7chronicle",
-    "followers": 5456,
-    "note": "公式。2026-09-10 ブラウザで実測"
    },
    {
     "name": "柳家喬太郎",
@@ -1678,274 +2470,10 @@
     "note": "🚨Xに김창완 밴드のアカウントが無い。2026-09-10 確認"
    },
    {
-    "name": "水瀬いのり",
-    "handle": "@inoriminase",
-    "followers": 863000,
-    "note": "2026-09-11 ブラウザ実測。水瀬いのりinfo（本人とスタッフの公式）"
-   },
-   {
-    "name": "UVERworld",
-    "handle": "@UVERworld_dR2",
-    "followers": 527500,
-    "note": "2026-09-11 ブラウザ実測。UVERworld_Staff_（スタッフ公式）"
-   },
-   {
-    "name": "羽多野渉",
-    "handle": "@hatano_official",
-    "followers": 314700,
-    "note": "2026-09-11 ブラウザ実測。羽多野渉 公式"
-   },
-   {
-    "name": "モーニング娘。",
-    "handle": "@MorningMusumeMg",
-    "followers": 237300,
-    "note": "2026-09-11 ブラウザ実測。モーニング娘。'26 公式"
-   },
-   {
-    "name": "Juice=Juice",
-    "handle": "@JuiceJuice_uf",
-    "followers": 185600,
-    "note": "2026-09-11 ブラウザ実測。"
-   },
-   {
-    "name": "アンジュルム",
-    "handle": "@angerme_upfront",
-    "followers": 157800,
-    "note": "2026-09-11 ブラウザ実測。"
-   },
-   {
-    "name": "東京スカパラダイスオーケストラ",
-    "handle": "@tokyoskaj",
-    "followers": 116500,
-    "note": "2026-09-11 ブラウザ実測。TOKYO SKA PARADISE ORCHESTRA"
-   },
-   {
-    "name": "ねぐせ。",
-    "handle": "@neguseofficial_",
-    "followers": 113100,
-    "note": "2026-09-11 ブラウザ実測。"
-   },
-   {
-    "name": "ヤングスキニー",
-    "handle": "@yang_skinny",
-    "followers": 106400,
-    "note": "2026-09-11 ブラウザ実測。"
-   },
-   {
-    "name": "川崎鷹也",
-    "handle": "@kawasaki_takaya",
-    "followers": 86500,
-    "note": "2026-09-11 ブラウザ実測。"
-   },
-   {
-    "name": "Girls2",
-    "handle": "@Girls2_official",
-    "followers": 49100,
-    "note": "2026-09-11 ブラウザ実測。Girls²"
-   },
-   {
-    "name": "レミオロメン",
-    "handle": "@remioromen_oa",
-    "followers": 21000,
-    "note": "2026-09-11 ブラウザ実測。レミオロメン オフィシャルアカウント"
-   },
-   {
-    "name": "横浜DeNAベイスターズ",
-    "handle": "@ydb_yokohama",
-    "followers": 551000,
-    "note": "2026-09-12 ブラウザ実測。球団公式"
-   },
-   {
-    "name": "新日本プロレス",
-    "handle": "@njpw1972",
-    "followers": 482300,
-    "note": "2026-09-12 ブラウザ実測。表示名「新日本プロレスリング株式会社」"
-   },
-   {
-    "name": "北海道日本ハムファイターズ",
-    "handle": "@FightersPR",
-    "followers": 1100000,
-    "note": "2026-09-15 ブラウザ実測「1.1M」。球団公式"
-   },
-   {
-    "name": "千葉ロッテマリーンズ",
-    "handle": "@chibalotte",
-    "followers": 878800,
-    "note": "2026-09-15 ブラウザ実測「878.8K」。球団公式"
-   },
-   {
-    "name": "ヨーヨー・マ",
-    "handle": "@YoYo_Ma",
-    "followers": 233200,
-    "note": "2026-09-15 ブラウザ実測「233.2K」。表示名 Yo-Yo Ma"
-   },
-   {
-    "name": "松本山雅FC",
-    "handle": "@yamagafc",
-    "followers": 97800,
-    "note": "2026-09-15 ブラウザ実測「97.8K」。表示名「松本山雅FCオフィシャル」"
-   },
-   {
-    "name": "横山だいすけ",
-    "handle": "@daisuke_minna",
-    "followers": 34500,
-    "note": "2026-09-15 ブラウザ実測「34.5K」。本人でなくスタッフ（公式）"
-   },
-   {
-    "name": "映画『八つ墓村』",
-    "handle": "@yatsuhaka_movie",
-    "followers": 8896,
-    "note": "2026-09-15 ブラウザ実測。映画の公式"
-   },
-   {
-    "name": "一青窈",
-    "handle": "@hitotoofficial",
-    "followers": 3332,
-    "note": "2026-09-15 ブラウザ実測。スタッフの公式。@hitotoyohitoto（1,474・ポスト31）は本人か確証なし＝採用しない"
-   },
-   {
     "name": "綾小路きみまろ",
     "handle": null,
     "followers": null,
     "note": "2026-09-15 ブラウザで検索＝名言bot・情報botだけで本人・事務所の公式は見当たらない"
-   },
-   {
-    "name": "日本相撲協会",
-    "handle": "@sumokyokai",
-    "followers": 446300,
-    "note": "2026-09-12 ブラウザ実測。日本相撲協会公式"
-   },
-   {
-    "name": "相川七瀬",
-    "handle": "@nanase_aikawa",
-    "followers": 73100,
-    "note": "2026-09-12 ブラウザ実測。表示名 NANASE AIKAWA"
-   },
-   {
-    "name": "ミュージカル『SPY×FAMILY』",
-    "handle": "@spyfamily_stage",
-    "followers": 48900,
-    "note": "2026-09-12 ブラウザ実測。舞台の公式（原作アニメの公式ではない）"
-   },
-   {
-    "name": "木村拓哉",
-    "handle": "@nexdes_victor",
-    "followers": 24100,
-    "note": "2026-09-12 ブラウザ実測。本人のXは無い＝ビクターの音楽公式「SEE YOU THERE / 木村拓哉 (Victor Official X)」の数。ほかにラジオ番組の @flowsaaaan"
-   },
-   {
-    "name": "映画名探偵プリキュア",
-    "handle": "@precure_movie",
-    "followers": 206400,
-    "note": "2026-09-14 ブラウザ実測。映画『映画名探偵プリキュア!不思議な庭と2人の秘密』の公式"
-   },
-   {
-    "name": "高橋健介",
-    "handle": "@kensuke_mr6",
-    "followers": 159600,
-    "note": "2026-09-14 ブラウザ実測。俳優本人"
-   },
-   {
-    "name": "大河ドラマ「豊臣兄弟!」",
-    "handle": "@nhk_toyotomi",
-    "followers": 107600,
-    "note": "2026-09-14 ブラウザ実測。NHK大河の公式（江戸東京博物館の特別展は展示なので主役にしない）"
-   },
-   {
-    "name": "反田恭平",
-    "handle": "@kyohei0901",
-    "followers": 95200,
-    "note": "2026-09-14 ブラウザ実測。本人"
-   },
-   {
-    "name": "ディズニー・オン・クラシック",
-    "handle": "@onClassicDisney",
-    "followers": 57200,
-    "note": "2026-09-14 ブラウザ実測。公演の公式"
-   },
-   {
-    "name": "三菱重工浦和レッズレディース",
-    "handle": "@REDSLADIES",
-    "followers": 34600,
-    "note": "2026-09-14 ブラウザ実測。クラブ公式"
-   },
-   {
-    "name": "浅井健一",
-    "handle": "@SSRstaff",
-    "followers": 21200,
-    "note": "2026-09-14 ブラウザ実測。本人でなくレーベル SexyStones Records のスタッフ。ファンクラブ公式 @AsaiKenichi_FC は12.8K"
-   },
-   {
-    "name": "syrup16g",
-    "handle": "@syrup16g_staff",
-    "followers": 15800,
-    "note": "2026-09-14 WebSearch（15.8K・2023年1月開設）。スタッフ公式"
-   },
-   {
-    "name": "TOWA TEI",
-    "handle": "@towatei",
-    "followers": 53300,
-    "note": "2026-09-15 ブラウザ実測「53.3K」。本人"
-   },
-   {
-    "name": "WHITE JAM",
-    "handle": "@WHITEJAM_STAFF",
-    "followers": 33100,
-    "note": "2026-09-15 ブラウザ実測「33.1K」。表示名 WHITE JAM Official"
-   },
-   {
-    "name": "佐野元春",
-    "handle": "@DaisyMusicInfo",
-    "followers": 24600,
-    "note": "2026-09-15 ブラウザ実測「24.6K」。本人でなくレーベル DaisyMusic の公式（本人のXは無い）"
-   },
-   {
-    "name": "ミュージカル『ミス・サイゴン』",
-    "handle": "@Miss_Saigon_JPN",
-    "followers": 20600,
-    "note": "2026-09-15 ブラウザ実測「20.6K」。日本公演の公式"
-   },
-   {
-    "name": "chilldspot",
-    "handle": "@chilldspot",
-    "followers": 18100,
-    "note": "2026-09-15 ブラウザ実測「18.1K」。バンド公式"
-   },
-   {
-    "name": "三山ひろし",
-    "handle": "@hiroshiouentai",
-    "followers": 13200,
-    "note": "2026-09-15 ブラウザ実測「13.2K」。本人"
-   },
-   {
-    "name": "ワハハ本舗",
-    "handle": "@wahahahompo",
-    "followers": 7993,
-    "note": "2026-09-15 ブラウザ実測。劇団公式"
-   },
-   {
-    "name": "前川清",
-    "handle": "@maekawa_kikaku",
-    "followers": 5622,
-    "note": "2026-09-15 ブラウザ実測。事務所の公式"
-   },
-   {
-    "name": "神韻芸術団",
-    "handle": "@ShenYunJA",
-    "followers": 3832,
-    "note": "2026-09-15 ブラウザ実測。日本語版の公式"
-   },
-   {
-    "name": "KiiiKiii",
-    "handle": "@We_KiiiKiii",
-    "followers": 149400,
-    "note": "グローバル公式（2026-09-23 ブラウザ実測）。日本公式 @We_KiiiKiii_JP は11,300"
-   },
-   {
-    "name": "OWV",
-    "handle": "@OWV_official",
-    "followers": 59600,
-    "note": "2026-09-23 ブラウザ実測"
    },
    {
     "name": "高嶺のなでしこ",
