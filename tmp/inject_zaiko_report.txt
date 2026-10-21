@@ -1,6 +1,6 @@
-=== inject_zaiko (2026-10-21) tmp/x1021/built_zaiko.json ===
-組み上がり 20件 → 投入 13 / URL重複 0 / ⚠️要確認 7 / 今回は入れない 0
-  投入する id 38703〜38715
+=== inject_zaiko (2026-10-22) tmp/x1022/built_zaiko.json ===
+組み上がり 29件 → 投入 22 / URL重複 0 / ⚠️要確認 7 / 今回は入れない 0
+  投入する id 39202〜39223
 
 --- ⚠️要確認（入れない＝名前×公演日×会場が既存と一致）---
   ChouCho Presents GIRLS und PANZER Specia / duo MUSIC EXCHANGE / 公演2026-10-25
@@ -21,22 +21,31 @@
 --- URLが既にある（入れない）---
 
 --- 投入する ---
-id38703	yougaku	NOSTALGIC THURSDAYS	2026年10月22日(木) 23:00開演	BAIA	枠2
-id38704	yougaku	Don’t Tell Fridays - LINE SKIP	2026年10月23日(金) 23:00開演	BAIA	枠4
-id38705	hiphop	Cirque Saturdays - LINE SKIP	2026年10月24日(土) 23:00開演	BAIA	枠4
-id38706	yougaku	Tokyo social 4th place	2026年10月24日(土) 18:00開演	BAIA	枠1
-id38707	hiphop	LINK UP SUNDAYS	2026年10月25日(日) 23:00開演	BAIA	枠2
-id38708	musicetc	DIWALI IN TOKYO 2026 - BOLLYWOOD PARTY |	2026年11月7日(土) 22:30開演	S NIGHTCLUB	枠5
-id38709	club	KULU	2026年11月14日(土) 23:00開演	WOMB	枠1
-id38710	musicetc	Twilight Pulse	2026年11月21日(土) 17:00開演（配	Zaiko Live	枠1
-id38711	club	Shingo Nakamura X’mas BALL	2026年12月12日(土) 16:00開演	ヨドバシHD池袋ビル9階屋上	枠1
-id38712	musicetc	第63回九大混声合唱団定期演奏会	2026年12月20日(日) 13:50開演（配	Zaiko Live	枠1
-id38713	anime	Palette Project 6th One Man Live -Make i	2026年12月26日(土) 17:00開演	品川インターシティホール	枠2
-id38714	vtuber	hololive RECORDS MUSIC STAGE 2027	2027年1月9日(土) 18:30開演	Kアリーナ横浜	枠8
-id38715	musicetc	hololive RECORDS MUSIC STAGE 2027	2027年1月9日(土) 18:30開演（配信は	Zaiko Live	枠3
+id39202	hiphop	POP THE LID × 4TH PLACE	2026年10月24日(土) 18:00開演	BAIA	枠2
+id39203	idol	音羽みずか生誕祭〜水色のお伽話〜	2026年10月24日(土) 10:30開演（配	新宿HEAD POWER	枠1
+id39204	engeki	バラ園の小さなあき祭'26	2026年10月27日(火)（配信は11月3日(	Zaiko Live	枠1
+id39205	idol	11月1日 13:00開演「ＲＥＳＥＴ」公演	2026年11月1日(日) 13:00開演	AKB48劇場	枠7
+id39206	idol	11月1日 17:30開演「ＲＥＳＥＴ」公演	2026年11月1日(日) 17:30開演	AKB48劇場	枠7
+id39207	idol	11月2日 18:30開演 「ここからだ」公演 長友彩海 生誕祭	2026年11月2日(月) 18:30開演	AKB48劇場	枠7
+id39208	idol	11月3日 13:00開演 「ここからだ」公演	2026年11月3日(火) 13:00開演	AKB48劇場	枠7
+id39209	idol	11月3日 17:30開演 「ここからだ」公演	2026年11月3日(火) 17:30開演	AKB48劇場	枠7
+id39210	idol	11月4日 19:00開演 「夢のポップスター」公演	2026年11月4日(水) 19:00開演	AKB48劇場	枠7
+id39211	idol	11月5日 18:30開演 「ここからだ」公演	2026年11月5日(木) 18:30開演	AKB48劇場	枠7
+id39212	idol	11月6日 18:30開演 「手をつなぎながら」公演	2026年11月6日(金) 18:30開演	AKB48劇場	枠7
+id39213	idol	11月7日 12:30開演「ＲＥＳＥＴ」公演	2026年11月7日(土) 12:30開演	AKB48劇場	枠7
+id39214	idol	11月8日 13:00開演 「ここからだ」公演	2026年11月8日(日) 13:00開演	AKB48劇場	枠7
+id39215	idol	11月8日 17:30開演 「ここからだ」公演 女性限定公演	2026年11月8日(日) 17:30開演	AKB48劇場	枠5
+id39216	idol	11月9日 18:30開演 「ここからだ」公演	2026年11月9日(月) 18:30開演	AKB48劇場	枠7
+id39217	idol	11月10日 18:30開演 「夢のポップスター」公演 倉野尾成美 生誕祭	2026年11月10日(火) 18:30開演	AKB48劇場	枠7
+id39218	classic	二十億光年のまつり〜谷川俊太郎作品を巡る〜 vol.2	2026年11月13日(金) 19:00開演（配	Zaiko Live	枠1
+id39219	hiphop	BOTH WINGS 25周年 -RAGGA RISE AGAIN in TOK	2026年11月14日(土) 23:00開演	clubasia	枠1
+id39220	anime	Minato Miya fan meeting in Hong Kong	2026年11月22日(日) 12:00開演	P'artiste	枠4
+id39221	idol	FUN-FARE Vol.3	2026年12月18日(金) 17:30開演	角落文創展演中心	枠1
+id39222	idol	TIF ASIA TOUR 2026 in Taipei	2026年12月19日(土) 11:30開演	時芸劇場	枠2
+id39223	jpop	NEW YEAR スマイル伝説	2027年1月17日(日) 16:30開演	fudan café	枠1
 
-EVENTS 20389件 / 新着プール 660件 / NEW_ORDER 660件
+EVENTS 20637件 / 新着プール 350件 / NEW_ORDER 350件
 ズレ []
 CRCRLF 0 / 素のLF 0 （どちらも0が正）
-index.html 31.31MB
-backup: index.html.bak_1021_zaiko
+index.html 31.68MB
+backup: index.html.bak_1022_zaiko
