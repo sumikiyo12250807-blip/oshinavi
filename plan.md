@@ -6879,3 +6879,8 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - ✅ TIGET 登録済み104件 作り直し（番人 --ids 一致102・食い違い2＝13093・16238 は【昼】【夜】の印の分で中身一致）／31148 牛田 北海道 Kitara を足す
 - ✅ 🚀 朝のpush（10/21 1回目・7本）＝gate_fields 0・fold_parts 0・gate_badge_render 0・reconcile_pia --new OK40 全0・build_ai_page・compact
 - ⏳ 昼の便へ：TIGET 新着の投入（inject_tiget --same-name-ok → 番人 --ids）／e+ 発売前の組み立て（裏）→ eplus_chain／livePocket（裏）→ lp_chain → 昨日の livePocket プールを pool_pass で振り分け／21377 ザアザア 売り切れ公演4つ・パンダドラゴン 大阪11/14・札幌11/21 を足す
+- ✅ e+ 発売前 新着68（38924〜38991）＝候補80→撮影会など外す8→番人で枠ズレ・取りこぼし（森高千里・ORANGE RANGE・D.A.N. など）を外す
+   ⚠️ reconcile_eplus --ids で FAIL のあるエントリ約25件＝発売日ズレ61枠・窓の決まらない枠36・締切>公演日16（fix_eplus_fails は自動で直せるのが 38951 の売り切れ1枠だけ）→ このまま新着プールに置き、振り分けない。昼の便で実ページを見て直す
+- ⏳ livePocket lp_chain（作り直し→未登録の独立ゲート→投入→畳む→昨日のプール596件の番人）を裏で
+- 🔍 e+ FAIL 25件を別の係が実ページ153URLから読み直し（全215枠）＝正しい109・直す19（売り切れ10＝soldout付きで残す・配信9＝「（配信 M/D公演）」に）・消す87・判断不能0・枠0になるエントリなし → tmp/x1021/eplus/fail_review.md・fail_fix.json。livePocket の書き込みが終わったら eplus_failfix_apply.py で当てて reconcile --ids
+   📝 道具の宿題：eplus_harvest build が「隣の公演の M/D発売・締切」を一般発売の無い公演に写す（THE COLLECTORS 10枠・171 15枠・離婚伝説 9枠ほか）／reconcile_eplus が同日に終わる窓を取り違えて誤報（38925 舟木 当日引換）
