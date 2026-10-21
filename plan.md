@@ -6876,3 +6876,6 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
    💤 保留 tmp/x1021/pia_hold.md＝島津亜矢 福岡・大分（21153 と 38643 に割れている）／Base Ball Bear 横浜1/11／森山良子 日進2/20／寛平 岐阜・山形（FANY は昼夕2回・ぴあは1枠）
 - ⚠️ 失敗：37586 の名前直しを ZAIKO の heal --apply（裏で走っていた）が古い写しで上書き → 当て直した。📝 裏で index.html を書く道具が走っている間は手で書かない
 - ⏳ TIGET（作り直し・番人・新着）を裏で／livePocket・e+ 収集が続いている
+- ✅ TIGET 登録済み104件 作り直し（番人 --ids 一致102・食い違い2＝13093・16238 は【昼】【夜】の印の分で中身一致）／31148 牛田 北海道 Kitara を足す
+- ✅ 🚀 朝のpush（10/21 1回目・7本）＝gate_fields 0・fold_parts 0・gate_badge_render 0・reconcile_pia --new OK40 全0・build_ai_page・compact
+- ⏳ 昼の便へ：TIGET 新着の投入（inject_tiget --same-name-ok → 番人 --ids）／e+ 発売前の組み立て（裏）→ eplus_chain／livePocket（裏）→ lp_chain → 昨日の livePocket プールを pool_pass で振り分け／21377 ザアザア 売り切れ公演4つ・パンダドラゴン 大阪11/14・札幌11/21 を足す
