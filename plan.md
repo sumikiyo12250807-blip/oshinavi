@@ -6894,5 +6894,6 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
    ・小さなズレ（開演時刻・会場の書き方）＝30488・31579・33236・33253・37970・37983
 - ✅ 🚀 昼のpush（10/21 2回目）＝ぴあ今日発売 heal 39＋足し算13・ロザン/ふみ/一蔵を手で直す・APF 予定枚数終了・TIGET 76/livePocket 46/ZAIKO 1/FANY 16/e+ 27枠・1部2部 11組／番人ぜんぶ0（reconcile --new は 38734 の先行2枠 MISSING＝新着プールに置いたまま）
    📝 道具の宿題（2回目）：union_stale が FANY の一般をぴあの締切で上書きする（ロザン 19973・20221＝朝も昼も）・ふみ 25264 の 11/7 一般を落とす
-- ⏳ 裏：reconcile_eplus --all（→ fix_eplus_fails）・pia_soldout_sweep --apply --resume（index.html を書く＝終わるまで手で書かない）
+- ✅ ぴあの見直し（組2・1715件）＝売り切れの印18・取りこぼし40枠（23件）を足し算で取り込み（消えた枠0・MISSING 0）・3944 カードの日付を12/6へ／commit済み（夜のpushで出る）。読めず9（混雑7・id353 2枠）は次の組で
+- ⏳ 裏：reconcile_eplus --all（→ fix_eplus_fails）
 - ⏳ 夜：38734 小籠包 アルファエージェンシー先行（東京・大阪）を足す
