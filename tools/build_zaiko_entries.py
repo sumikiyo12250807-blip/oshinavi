@@ -151,10 +151,13 @@ def perf_dt_of(t, base_date):
         return None, None
     y = int(base_date[:4])
     mo, dy = int(m.group(1)), int(m.group(2))
-    if (mo, dy) < (int(base_date[5:7]), int(base_date[8:10])):
-        y += 1
     try:
-        d = datetime.date(y, mo, dy).isoformat()
+        dd = datetime.date(y, mo, dy)
+        # 翌年と見るのは半年以上前の時だけ（2026-10-23：深夜公演「12/4 24:00」はイベント日 12/5 の前日＝
+        # 1日前を年またぎと読んで R9年 にしていた＝20851・24625・36444）
+        if dd < datetime.date.fromisoformat(base_date) - datetime.timedelta(days=180):
+            dd = datetime.date(y + 1, mo, dy)
+        d = dd.isoformat()
     except ValueError:
         return None, None
     hm = '%d:%s' % (int(m.group(3)), m.group(4)) if m.group(3) else None
