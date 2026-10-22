@@ -1,10 +1,14 @@
-=== inject_tiget (2026-10-21) tmp/x1021/built_tiget.json ===
-組み上がり 192件 → 投入 170 / URL重複 0 / ⚠️要確認 22
-  投入する id 38754〜38923
+=== inject_tiget (2026-10-22) tmp/x1022/built_tiget.json ===
+組み上がり 143件 → 投入 121 / URL重複 0 / ⚠️要確認 22
+  投入する id 39224〜39344
 
 --- ⚠️要確認（入れない）---
+  mod presents. "HATCH 46" 公演2026-10-22 … 名前×公演日が登録と一致
+    https://tiget.net/events/532828
   おにあいさうんど vol.3 (取置きチケット) 公演2026-10-24 … 名前×公演日が登録と一致
     https://tiget.net/events/482119
+  婚かふぇ?! EDENで秘密のお茶会 〜貴方と私でトリックオアトリート編〜 公演2026-10-25 … 名前×公演日が登録と一致
+    https://tiget.net/events/532730
   【松山あおい誕生日感謝企画】デジタル写真集+10/26 CLUB CITTA'単独公演チ 公演2026-10-26 … 名前×公演日が登録と一致
     https://tiget.net/events/529520
   【松山あおい誕生日感謝企画】デジタル写真集無料プレゼント🎁※10/18(日)15時まで 公演2026-10-26 … 名前×公演日が登録と一致
@@ -13,6 +17,8 @@
     https://tiget.net/events/531292
   BLOW OVER 公演2026-10-29 … 名前×公演日が登録と一致
     https://tiget.net/events/531653
+  HALLOWEEN LIVE 公演2026-10-30 … 名前×公演日が登録と一致
+    https://tiget.net/events/532854
   CIRQUE ÉTOILE -シルク・エトワール- 公演2026-11-03 … 名前×公演日が登録と一致
     https://tiget.net/events/530811
   CIRQUE ÉTOILE -シルク・エトワール- 公演2026-11-03 … 名前×公演日が登録と一致
@@ -29,16 +35,10 @@
     https://tiget.net/events/532574
   11/9(月)17時〜【池田航クッキングライブ‼】第二部 ※御心付あり 公演2026-11-09 … 名前×公演日が登録と一致
     https://tiget.net/events/528716
-  橘〜タチバナ〜 公演2026-11-11 … 名前×公演日が登録と一致
-    https://tiget.net/events/532133
   【IBA 2nd Anniversary】IBA SPECIAL DAY「IMAGINA 公演2026-11-14 … 名前×公演日が登録と一致
     https://tiget.net/events/528234
-  【再販】Mellow Art 公演2026-11-14 … 名前×公演日が登録と一致
-    https://tiget.net/events/528422
-  再販 EPISODE vol.4 1部 公演2026-11-15 … 名前×公演日が登録と一致
-    https://tiget.net/events/527955
-  再販 EPISODE vol.4 2部 公演2026-11-15 … 名前×公演日が登録と一致
-    https://tiget.net/events/527956
+  東京で吉田vol.17 公演2026-11-15 … 名前×公演日が登録と一致
+    https://tiget.net/events/532857
   【11月18日19:00公演】東京ハイビームVol.19 ＳＨＯＲＴ ＧＵＮ 8thSH 公演2026-11-18 … 名前×公演日が登録と一致
     https://tiget.net/events/525598
   【IBA 2nd Anniversary】SPECIAL TALK EVENT「BIRT 公演2026-11-22 … 名前×公演日が登録と一致
@@ -51,179 +51,130 @@
 --- URLが既にある（入れない）---
 
 --- 投入する ---
-id38754	event	天龍源一郎&和田京平 スペシャルトークショー 2026年10月21日	2026年10月21日(水)	北沢タウンホール 12階 スカイサロン	枠1
-id38755	idol	平日水曜定期ライブ	2026年10月21日(水) 福岡	The Voodoo Lounge	枠1
-id38756	idol	YUGUREMI NIGHT PROTOCOL // BOOT SEQUENCE 「EN	2026年10月22日(木) 東京	AOHARIUM TOKYO	枠1
-id38757	idol	【10/22】Preccy Pumpkin	2026年10月22日(木) 愛知	Dt.BLD	枠2
-id38758	talkshow	ダックツアーズの売れる前に喋っとく！	2026年10月22日(木)	（会場未定）	枠1
-id38759	idol	プランクリーンスターズ定期単独「SAVE THE ピンチケ」	2026年10月22日(木) 広島	PEACE CAFE	枠1
-id38760	owarai	燃やされた村を眺める	2026年10月22日(木) 東京	新宿Fu-+801	枠1
-id38761	idol	10/23（金）親不孝Dolls【1部】無銭ライブ&【2部】単独40分ライブ	2026年10月23日(金)	SUNHALO THEATER	枠4
-id38762	idol	ANiMA IDOL LIVE(一般)	2026年10月24日(土) 北海道	CLUB ANiMA	枠1
-id38763	idol	ANiMA IDOL LIVE(優先)	2026年10月24日(土) 北海道	CLUB ANiMA	枠1
-id38764	idol	DRESTA プチ撮影会vol.0	2026年10月24日(土) 福岡	福岡市中央区	枠30
-id38765	idol	TD MUSIC PARTY vol20、くさのね劇場	2026年10月24日(土) 大阪	くさのね劇場梅田本店	枠2
-id38766	jpop	みんなのせぼね《Tsuyu No Hertz and tamaji・Ichizo Yos	2026年10月24日(土)	（会場未定）	枠5
-id38767	idol	🍻強にゅー仙台 大盤振る舞い🍻 チェキ券10枚当たるオフ会!!!😲	2026年10月24日(土) 宮城	仙台某所	枠1
-id38768	idol	Box of Chocolate Free Live	2026年10月25日(日) 東京	Viblue EBISU	枠1
-id38769	idol	GRFest.32	2026年10月25日(日) 東京	上野AL-TEMA｜LIVE HALL UE	枠2
-id38770	gourmet	『MISSIW☆徳島ファンミ』②	2026年10月25日(日) 徳島	徳島駅クレメントプラザ	枠1
-id38771	idol	レスミー朝の健康第一!!オフ会in仙台	2026年10月25日(日) 宮城	榴岡公園	枠1
-id38772	idol	婚かふぇ?! EDENで秘密のお茶会 〜貴方と私でトリックオアトリート編〜	2026年10月25日(日) 東京	新宿某所	枠5
-id38773	idol	「LmG2:ReG Live Vol.15 Halloween SP」	2026年10月26日(月) 東京	GOTANDA G2	枠1
-id38774	owarai	M-1 ３回戦対策ライブ	2026年10月27日(火) 大阪	Live&Bar PRiMO	枠1
-id38775	idol	行くぜzepp！気合いの2マンLIVE	2026年10月27日(火)	SUNHALO THEATER	枠2
-id38776	idol	SAKURA Carnival ～Halloween night～	2026年10月28日(水) 東京	duo MUSIC EXCHANGE	枠2
-id38777	idol	SAKURA Carnival ～Halloween night～	2026年10月28日(水) 東京	duo MUSIC EXCHANGE	枠2
-id38778	idol	『水曜のライブ その45』	2026年10月28日(水) 東京	浅草橋マンホール	枠1
-id38779	jpop	【10/28券】IRabBits大開放宣言 〜IRabBits再始動カウントダウン四夜〜	2026年10月28日(水) 神奈川	季ららYokohama	枠1
-id38780	jpop	【四夜通し券】IRabBits大開放宣言 〜IRabBits再始動カウントダウン四夜〜	2026年10月28日(水) 神奈川	季ららYokohama	枠1
-id38781	owarai	幸福の漫才	2026年10月28日(水) 東京	シアターミネルヴァ	枠1
-id38782	talkshow	KAEDE LIVE	2026年10月29日(木) 東京	学芸大学メイプルハウス	枠1
-id38783	idol	わんだふる×ぱにっくpresents「せんぱに！Vol.1」	2026年10月29日(木) 大阪	フェアリーテイルズ大阪	枠1
-id38784	idol	Voice to Voice vol.6	2026年10月30日(金) 東京	秋葉原Galaxy	枠1
-id38785	idol	公開授業：ハロウィンパーティー 武井ドンゲバビー先生	2026年10月30日(金) 東京	秋葉原ハンドレッドスクエア倶楽部7	枠1
-id38786	idol	2026 Halloweenパーティー🎃	2026年10月31日(土) 福島	MBL(MUSIC BASE LIVE)	枠1
-id38787	idol	【Bunny La Crew オンラインチェキ通販】	2026年10月31日(土) 東京	アップダンスエンターテインメント	枠6
-id38788	fanevent	おおぐろ海賊船ハロウィンナイト『中野が一番怖い夜』	2026年10月31日(土)	中野BAR SECOND FLOOR	枠5
-id38789	idol	ポンバシ解放区	2026年10月31日(土) 大阪	サウンドノート大阪	枠4
-id38790	idol	第62回東洋大学白山祭 「TOYO IDOL FESTIVAL」 1日目 一般チケット	2026年10月31日(土)	東洋大学 白山キャンパス 2号館16階スカイ	枠1
-id38791	idol	第62回東洋大学白山祭 「TOYO IDOL FESTIVAL」 1日目 学内生チケット	2026年10月31日(土)	東洋大学 白山キャンパス 2号館16階スカイ	枠1
-id38792	fanevent	11/1(日)瀬戸万莉愛 onedrop個人撮影会	2026年11月1日(日)	onedrop studio	枠8
-id38793	owarai	あざっすライブ vol.秋	2026年11月1日(日) 東京	GINZA ART BOX 7	枠1
-id38794	owarai	フランス代表	2026年11月1日(日) 東京	中野Vスタジオ	枠1
-id38795	owarai	ロイヤルペイダート 21回目	2026年11月1日(日)	練馬ココネリ3F	枠2
-id38796	idol	再会アクトリア ～ のの💗めぐ合同生誕祭2026 ～	2026年11月1日(日) 東京	SOUNDNOTE AKIHABARA（サウ	枠3
-id38797	owarai	野試合	2026年11月1日(日) 東京	新宿永谷ホール	枠1
-id38798	owarai	Conte Conte	2026年11月2日(月) 東京	新宿バッシュ!!	枠1
-id38799	owarai	STAR	2026年11月2日(月) 東京	新宿バッシュ!!	枠1
-id38800	owarai	パねぇロック	2026年11月2日(月) 東京	下北ZAWAZAWA	枠1
-id38801	idol	おりそん★ぱらだいす Vol.1	2026年11月3日(火) 東京	あさがやドラム	枠1
-id38802	owarai	欲しいツッコミを引き出せ！ツッコミビンゴライブ！	2026年11月3日(火) 東京	GINZA ART BOX 7	枠1
-id38803	owarai	ひねくれ者 vol.35	2026年11月5日(木) 東京	中野シアターかざあな	枠1
-id38804	owarai	TonTonカーニバル	2026年11月6日(金) 東京	新高円寺 STUDIO TontoTonTo	枠1
-id38805	idol	『二葉ねる生誕(にこにこねるちといっしょにあそぼ)』	2026年11月6日(金) 大阪	DROP	枠2
-id38806	jazz	【来場予約】岸本亮Solo Piano	2026年11月6日(金) 東京	Tokyo Guesthouse Oji m	枠1
-id38807	idol	みーむちゅ勉強CHU！vol.3	2026年11月6日(金)	SUNHALO THEATER	枠2
-id38808	jpop	レインズ	2026年11月6日(金) 東京	駒沢Camited	枠1
-id38809	jpop	under the elevated... #10	2026年11月7日(土) 大阪	ELEVATY	枠2
-id38810	owarai	おばんざい vol.2	2026年11月7日(土) 東京	新宿永谷ホール(新宿Fu-)801	枠1
-id38811	event	ぜろよる打ち上げin福岡	2026年11月7日(土) 福岡	The Voodoo Loungeより徒歩1	枠1
-id38812	idol	GLIM9定期公演 -Faint Light-vol.73	2026年11月8日(日) 愛媛	キティホール	枠1
-id38813	jpop	kiki-wa OPENING LIVE "2"	2026年11月8日(日)	kiki-wa	枠1
-id38814	idol	《 Cute Robin ぷち撮影会 in 岐阜 》	2026年11月8日(日) 岐阜	金公園	枠12
-id38815	owarai	ヒルネサイダー単独ライブ『果汁の決断』	2026年11月8日(日) 愛知	納屋橋劇場	枠1
-id38816	owarai	サンミュージック プレGETシアターＡ	2026年11月9日(月) 東京	新宿ブリーカー	枠1
-id38817	owarai	サンミュージック プレGETシアターＢ	2026年11月9日(月) 東京	新宿ブリーカー	枠1
-id38818	idol	Rock With Me! vol.8	2026年11月10日(火) 東京	Livespace池袋Lavis	枠2
-id38819	owarai	しなやかな竹	2026年11月10日(火) 東京	池袋西口GEKIBA	枠1
-id38820	owarai	サンミュージック GETライブ1日目【G3クラス】	2026年11月10日(火) 東京	新宿バッシュ!!	枠1
-id38821	owarai	一頭地を抜くvol.1〜芸人がその場で一番面白い芸人を決める寄席〜	2026年11月10日(火) 大阪	お笑いLIVE BAR 楽屋A	枠1
-id38822	owarai	TonTonフェス	2026年11月11日(水) 東京	新高円寺 STUDIO TontoTonTo	枠1
-id38823	idol	『メンラボ Vol.40-ポッキーの日SP🍫-』	2026年11月11日(水) 東京	赤羽ReNY alpha	枠3
-id38824	owarai	サンミュージック GETライブ2日目【G1・G2クラス】	2026年11月11日(水) 東京	新宿バティオス	枠1
-id38825	owarai	一頭地を抜くvol.2〜芸人がその場で一番面白い芸人を決める寄席〜	2026年11月11日(水) 大阪	お笑いLIVE BAR 楽屋A	枠1
-id38826	owarai	R	2026年11月12日(木) 東京	新宿ブリーカー	枠1
-id38827	owarai	SKY	2026年11月12日(木) 東京	新宿ブリーカー	枠1
-id38828	idol	うたっ子どうぶつえん 2匹目	2026年11月12日(木) 東京	waiwaihall神保町	枠1
-id38829	idol	Drone Japan Fes. 2026	2026年11月14日(土) 愛知	ＣＬＵＢ−ＳＡＲＵ	枠2
-id38830	idol	【 S☆UTHERN CROSS CDデビュー15周年記念 定期公演 vol.26 Da	2026年11月14日(土) 鹿児島	Speed King -STUDIO-	枠5
-id38831	owarai	ネタ&トークライブ「切磋琢磨リ」	2026年11月14日(土) 東京	永谷フリースタジオ新宿Fu-+	枠1
-id38832	owarai	名古屋大学落語研究会VS明治大学お笑いサークル木曜会Z対決ライブ「異邦人3」	2026年11月14日(土) 東京	方南会館	枠1
-id38833	talkshow	都道府県カードバトル	2026年11月14日(土) 東京	新宿Fu-+803	枠1
-id38834	idol	💓相良朱音 バースデーオフ会💓	2026年11月14日(土) 東京	都内某所	枠1
-id38835	idol	Paradigm Shift 定期公演 第6回	2026年11月15日(日) 栃木	足利ライブハウス大使館	枠1
-id38836	idol	【 S☆UTHERN CROSS CDデビュー15周年記念 定期公演 vol.27 Da	2026年11月15日(日) 鹿児島	Speed King -STUDIO-	枠5
-id38837	idol	にゃんこタウンスペシャル in OSAKA🐾	2026年11月15日(日) 大阪	FairyTalesOsaka	枠2
-id38838	jpop	情BREAKER	2026年11月15日(日) 東京	CLUB CRAWL	枠1
-id38839	jpop	東京で吉田vol.17	2026年11月15日(日) 東京	ひまわりスター	枠1
-id38840	talkshow	「住倉カオスの“北沢K&Y談”！」	2026年11月16日(月) 東京	下北沢440(four forty)	枠1
-id38841	owarai	【19時開演】11/16(月)開催！「マセキジュニアユースライブ」	2026年11月16日(月) 東京	高円寺ジュンジョー	枠1
-id38842	idol	大阪個人撮影会🐙📸	2026年11月16日(月) 大阪	大阪道頓堀エリア	枠8
-id38843	jpop	3rd TUESDAY vol.51	2026年11月17日(火) 群馬	キングピンカフェ	枠1
-id38844	jpop	『SOUND WITCH』	2026年11月17日(火) 東京	navey floor	枠2
-id38845	anime	おかえり！わいわいほーむ vol.43	2026年11月17日(火) 東京	waiwaihall神保町	枠1
-id38846	event	HOME充電企画 〜この湯けむりの向こうでまた〜	2026年11月18日(水) 大阪	soap opera classics Um	枠1
-id38847	owarai	ゴツ寄席	2026年11月18日(水) 大阪	お笑いLIVE BAR 楽屋A	枠1
-id38848	owarai	SUN	2026年11月19日(木) 東京	新宿バッシュ!!	枠1
-id38849	idol	Teamくれれっ娘！定期公演「Teamくれれっ娘！フェスタ Vol.1397」	2026年11月19日(木) 北海道	Sapporo-Link'sHALL	枠1
-id38850	owarai	モリヤマレッスンvol.57	2026年11月19日(木) 東京	練馬区立 桜台地区区民館	枠1
-id38851	owarai	七夕カリー新ネタライブ 『天の川』	2026年11月19日(木) 東京	シアターミネルヴァ	枠1
-id38852	owarai	漫談家の雄	2026年11月19日(木) 東京	新宿バッシュ!!	枠1
-id38853	talkshow	話ありがとう	2026年11月19日(木) 東京	セシオン杉並	枠1
-id38854	jpop	Goody Woody Time 柿島伸次 with タカバタケ俊	2026年11月20日(金) 東京	Strum akasaka	枠1
-id38855	owarai	カシュウ’s LIVE！ 第三回「魅」	2026年11月20日(金) 東京	下北ZAWAZAWA	枠1
-id38856	jpop	漫才とバンドのライブ 漫ド	2026年11月20日(金) 東京	学芸大学メイプルハウス	枠1
-id38857	jpop	大橋裕之ライブ x タカ吉田のフォー	2026年11月21日(土) 東京	funny meal	枠2
-id38858	jpop	OUR PLACE Vol.17	2026年11月22日(日) 愛知	今池3STAR	枠1
-id38859	idol	UP-T FESTIVAL mini Vol.45	2026年11月22日(日) 東京	SHIBUYA VIDENT	枠2
-id38860	idol	しろもんオールナイトライブ 白夜	2026年11月22日(日) 東京	SHIBUYA VIDENT	枠2
-id38861	idol	ローワンベリーファン感謝祭！	2026年11月22日(日) 北海道	WORLD HALL	枠1
-id38862	jpop	下北沢近松×三毛とアネモネ共催企画 「満たされないまま」2nd.EP リード曲リリース&	2026年11月22日(日) 東京	下北沢 近松	枠2
-id38863	idol	札幌の禁断の多数決	2026年11月22日(日) 北海道	Bar オープン 札幌大通り	枠1
-id38864	owarai	きりん座	2026年11月23日(月) 東京	新宿ブリーカー	枠1
-id38865	talkshow	ひびきのオフ会へ集合★!!	2026年11月23日(月) 福岡	グランスター博多駅前 レンタルスペース	枠1
-id38866	sports	プロレスリングBASARA＊高島平＊	2026年11月23日(月) 東京	板橋区立 高島平区民館	枠3
-id38867	owarai	今夜は踊れそう #7	2026年11月23日(月) 東京	中野シアターかざあな	枠1
-id38868	owarai	MAN MAN ZAI	2026年11月24日(火) 東京	新宿ブリーカー	枠1
-id38869	owarai	nakayoshiyose‼	2026年11月24日(火) 大阪	Live&Bar PRiMO	枠1
-id38870	idol	you-show 単独公演「現衣装 × 旧衣装LIVE」	2026年11月24日(火) 東京	新宿SAMURAI	枠1
-id38871	jpop	【来場予約】11/24「つきあかりのうた」	2026年11月24日(火) 京都	someno kyoto	枠1
-id38872	jpop	どうせお土産買いますから	2026年11月24日(火) 広島	AM.hiroshima	枠1
-id38873	idol	24曲ニュースタ ノンストップライブ（一般先行チケット）	2026年11月25日(水) 宮城	Rensa（レンサ）	枠1
-id38874	idol	24曲ニュースタ ノンストップライブ（後方チケット）	2026年11月25日(水) 宮城	Rensa（レンサ）	枠1
-id38875	jpop	【11/25券】IRabBits大開放宣言 〜IRabBits再始動カウントダウン四夜〜	2026年11月25日(水) 神奈川	季ららYokohama	枠1
-id38876	owarai	たいようさんさんライブ Vol.10	2026年11月25日(水) 東京	せたがやがやがや館	枠1
-id38877	talkshow	VIKANT TALK LIVE 2026.11.26	2026年11月26日(木) 東京	杉並区立コミュニティふらっと阿佐谷	枠1
-id38878	owarai	ヒロ・オクムラ ピンネタライブ「7本」	2026年11月28日(土) 東京	びーちぶ	枠1
-id38879	sports	大人の青春リベンジ 大運動会	2026年11月28日(土) 福岡	三萩野体育館	枠4
-id38880	owarai	忠犬立もめ教〜トークライブ〜	2026年11月28日(土) 東京	中野シアターかざあな	枠1
-id38881	owarai	忠犬立もめ教〜ネタと企画のスリーマンライブ〜	2026年11月28日(土) 東京	中野シアターかざあな	枠1
-id38882	engeki	（11/28公演） 2026年度冬公演「エレベーターガール」	2026年11月28日(土) 東京	遊空間がざびぃ	枠1
-id38883	owarai	ARK BOXネタライブ「ニューロンをシナプす。」	2026年11月29日(日) 東京	アークボックス	枠1
-id38884	dance	おどチャンLiveVol.9_1部	2026年11月29日(日) 東京	MANHOLE	枠1
-id38885	dance	おどチャンLiveVol.9_2部	2026年11月29日(日) 東京	MANHOLE	枠1
-id38886	owarai	ヤギファミリー	2026年11月29日(日) 東京	シアターミネルヴァ	枠1
-id38887	idol	福島彩菜バースデーイベント「27」	2026年11月29日(日) 愛知	真宗大谷派名古屋別院（東別院）お茶所	枠2
-id38888	engeki	（11/29公演） 2026年度冬公演「エレベーターガール」	2026年11月29日(日) 東京	遊空間がざびぃ	枠1
-id38889	owarai	ノガワタカアキ	2026年12月1日(火) 東京	新宿コムロビル704	枠1
-id38890	jpop	DooDooDooMiuMiuMiu × コバラヘル SPLIT TOUR "Candy	2026年12月5日(土) 東京	原宿RUIDO	枠1
-id38891	jpop	mod presents “ほんとうのさいわい”	2026年12月5日(土)	柴崎mod	枠2
-id38892	jpop	『3essy』Organized by 3s.Fit's	2026年12月5日(土) 東京	錦糸町で1番音が良すぎるカラオケバー ワクワ	枠1
-id38893	musicetc	ショータXIII SOLO ALBUM RELEASE PARTY	2026年12月6日(日) 大阪	BRAND NEW	枠2
-id38894	musicetc	清花／Megumi／クマガイリョー ＠人形町サロンゴカフェ ※チケット代金は会場払い	2026年12月6日(日) 東京	365 サロンゴカフェ	枠1
-id38895	jpop	「よあゆの共同作業vol.3」〜京都府〜	2026年12月7日(月) 京都	Live&Bar 音まかす	枠1
-id38896	idol	りた生誕祭2026 〜Soul×Resonance〜	2026年12月8日(火) 東京	MANHOLE	枠3
-id38897	idol	ディアブルボア3ヶ月連続Digital Single Release Event 1部	2026年12月9日(水) 東京	新宿ヘッドパワー	枠1
-id38898	idol	ディアブルボア3ヶ月連続Digital Single Release Event 2部	2026年12月9日(水) 東京	新宿ヘッドパワー	枠1
-id38899	jpop	The Konsent JAPAN TOUR 2026	2026年12月12日(土) 東京	BABEL THE ROCK TOWER	枠1
-id38900	jpop	哲誠×祐汰×Kaz-Key 3MAN LIVE in 福岡	2026年12月12日(土) 福岡	Music hall Fragile	枠2
-id38901	jpop	大高崎 大谷 大まつり	2026年12月12日(土) 群馬	ＣＡＮＯＥＳ	枠1
-id38902	jpop	大高崎 大谷 大まつり DJ PARTY feat.C&K	2026年12月12日(土) 群馬	ＣＡＮＯＥＳ	枠1
-id38903	idol	大高崎 大谷 大まつり DJ PARTY ジャイアンナイト SHOHEI 昭和と平成を浴	2026年12月12日(土) 群馬	ＣＡＮＯＥＳ	枠1
-id38904	jpop	大高崎 大谷 大まつり TALK LIVE ダイノジ・大谷 独演会	2026年12月12日(土) 群馬	ＣＡＮＯＥＳ	枠1
-id38905	jpop	音楽のすべてvol.3	2026年12月12日(土) 東京	御茶ノ水KAKADO	枠1
-id38906	idol	【魁専用予約】「KISHIN BOOKING LIVE」	2026年12月15日(火) 群馬	音処きしん	枠1
-id38907	jpop	【12/17(Thu)】 昇るならどこか	2026年12月17日(木) 千葉	Sound Stream sakura / 	枠2
-id38908	idol	残響のリフレイン 冴草あかね生誕祭 『超-chou-』	2026年12月18日(金) 東京	初台DOORS	枠2
-id38909	jpop	フルバンドワンマンライブ Yellow Glow	2026年12月19日(土) 大阪	ESAKA MUSE	枠1
-id38910	dance	NEXA DANCE CUP ISHIKAWA2026	2026年12月20日(日) 石川	白山市松任文化会館 ピーノ	枠1
-id38911	jazz	試號 -Proto- from 飛円	2026年12月20日(日)	club buddha	枠1
-id38912	jpop	安藤弘司(ANCHANG)の『おじさんひとり』 acoustic LIVE	2026年12月22日(火) 大阪	東梅田POTATO KID	枠1
-id38913	owarai	江戸川ジャンクジャンクコントライブ 『拝啓、愛』	2026年12月23日(水) 東京	ブルースクエア四谷	枠1
-id38914	jpop	Lida presents 「忘年2026」	2026年12月27日(日) 東京	アプロ赤坂-LIVE COMMUNICATI	枠2
-id38915	idol	「ALLiCA ONE MAN TOUR2026〜出雲〜」	2026年12月27日(日) 島根	ライブハウス＆スタジオアポロ	枠1
-id38916	owarai	ヤング嶋仲presents『TSS~ツッコんだら即終演~』	2026年12月29日(火) 大阪	ライヴ喫茶 亀	枠1
-id38917	jpop	Rui GRADUATION~IN ﾈﾝﾏﾂﾘ	2026年12月30日(水) 愛知	ミュージックファーム	枠3
-id38918	jpop	【12/30券】IRabBits大開放宣言 〜IRabBits再始動カウントダウン四夜〜	2026年12月30日(水) 神奈川	季ららYokohama	枠1
-id38919	musicetc	ネンマツリ🧀chee’s🧀予約用	2026年12月30日(水) 愛知	ミュージックファーム	枠1
-id38920	jpop	【12/31券】IRabBits大開放宣言 〜IRabBits再始動カウントダウン四夜〜	2026年12月31日(木) 神奈川	季ららYokohama	枠1
-id38921	event	おもてなしぃ〜SPECIAL Vol.6.5	2026年12月31日(木)	参加者に告知	枠1
-id38922	jpop	ReG presents 歌声が届くまで～新春 全組バンドセットSP～	2027年1月7日(木) 東京	下北沢ReG	枠1
-id38923	jazz	サクソフォンとピアノのウィンターコンサート	2027年1月28日(木) 大阪	La Paz	枠1
+id39224	jpop	有料限定配信チケット 岩船ひろきインディーズデビュー記念日ツーマン「唄いたい方へ、奏でた	2026年10月22日(木)	（会場未定）	枠1
+id39225	fanevent	10/23(金)堀梨恵オンライン特典会	2026年10月23日(金)	Instagram	枠1
+id39226	idol	idol FES@Zephyr Hall 〜フライングハロウィン祭〜	2026年10月23日(金) 愛知	Zephyr Hall	枠2
+id39227	gourmet	トラットリア ティアパレ	2026年10月23日(金) 東京	カフェ・トリオンプ	枠1
+id39228	idol	上月せれなオールナイトパーティー	2026年10月23日(金) 東京	池袋リヴォイス	枠1
+id39229	idol	PATI PATI CANDY...☆ 『飴FES Vol.10』2部 〜Tool to	2026年10月24日(土) 東京	秋葉原Venus	枠3
+id39230	idol	PATI PATI CANDY...☆ 定期公演『飴FES Vol.10』1部 〜パチキ	2026年10月24日(土) 東京	秋葉原Venus	枠2
+id39231	event	麻雀オフ会	2026年10月24日(土) 東京	上野駅公園口前ロータリー	枠1
+id39232	fanevent	10/25（日）おでかけ撮影会@原宿	2026年10月25日(日) 東京	@cosme TOKYO	枠5
+id39233	idol	LOVE NECTER vol.50	2026年10月25日(日) 北海道	KLANG RAYZ(exラビステ)	枠1
+id39234	owarai	【当日券】10/25(日)開催！ルシファー吉岡ネタライブ2026＠カタリナスタジオ（札幌	2026年10月25日(日) 北海道	カタリナスタジオ	枠2
+id39235	idol	プエラの絶対値 ＋＋＋着物撮影会in京都＋＋＋	2026年10月25日(日) 京都	花見小路通と四条通の交差点	枠30
+id39236	idol	LuvHz 定期公演前 個別撮影会	2026年10月26日(月)	SuMiKa	枠17
+id39237	idol	緊急KINKYU-KAISAI怪祭	2026年10月26日(月) 東京	新高円寺LOFT X	枠1
+id39238	idol	『FULL MAX』	2026年10月27日(火) 大阪	梅田BANGBOO	枠3
+id39239	owarai	コント製作所・10月27日(火)	2026年10月27日(火) 東京	阿佐ヶ谷アートスペースプロット	枠1
+id39240	talkshow	伊達の大喜利 ガン魂侍 #９３ 有料公開収録	2026年10月27日(火) 宮城	北目町ティーライズスペース	枠1
+id39241	owarai	『ちっさいカバン vol.16』	2026年10月28日(水) 東京	池袋ムーブメントスタジオ	枠1
+id39242	owarai	正論パンチ	2026年10月28日(水) 東京	中野Vスタジオ	枠1
+id39243	idol	皇デビューライブ	2026年10月28日(水) 大阪	BEYOND	枠1
+id39244	idol	I’s Merry Go Round 定期公演 Twinkle Promise VOL.	2026年10月29日(木) 埼玉	西川口Lavis	枠2
+id39245	fanevent	10/30(金)堀梨恵オンライン特典会	2026年10月30日(金)	Instagram	枠1
+id39246	idol	kids halloween party	2026年10月30日(金) 愛知	Dt.BLD	枠1
+id39247	idol	「JPI 10.30 ―アキバハロウィン2026 ―」	2026年10月30日(金) 東京	TwinBox AKIBAHARA/GARA	枠5
+id39248	owarai	マイケルジェニー×ラクジャ 新ネタツーマンライブ「べもん」	2026年10月30日(金) 東京	西新宿カルネイア/地下ナルチカ	枠1
+id39249	idol	Halloween BANQUET Day1	2026年10月31日(土) 愛知	名古屋インターナショナルレジェンドホール	枠2
+id39250	idol	YABAGiG HALLOWEEN 2026	2026年10月31日(土)	PEACE CAFE	枠2
+id39251	idol	こゆきちゃんにからまれ隊 平常運転	2026年10月31日(土) 東京	s'more studio(スモア スタジオ	枠6
+id39252	idol	ぱぺぴぷぺぽぱぽ -ハロウィンNight-	2026年10月31日(土) 大阪	サウンドノート大阪	枠2
+id39253	idol	ハロウィン公演	2026年10月31日(土) 愛知	フェアリーテイルズ 名古屋	枠1
+id39254	idol	AdFicTioN Pre. 屋根裏 vol.62-DAY-	2026年11月1日(日) 東京	新高円寺LOFTX	枠1
+id39255	idol	AdFicTioN Pre. 屋根裏 vol.62-NIGHT-	2026年11月1日(日) 東京	新高円寺LOFTX	枠1
+id39256	idol	Halloween BANQUET Day2	2026年11月1日(日) 愛知	Lion Cafe (ライオンカフェ)	枠2
+id39257	owarai	『漫才キングスマン』	2026年11月1日(日) 東京	下北沢シアターミネルヴァ	枠2
+id39258	idol	こゆきちゃんにからまれ隊 なんと宝箱はミミックだった！(世代)	2026年11月1日(日) 東京	レンタルスタジオ BIANCO四谷	枠6
+id39259	idol	愛Dream 生バンドライブ〜Rock’n’Roll Gigs〜	2026年11月1日(日) 福岡	北九州小倉ライブハウス＆スタジオ Cleve	枠1
+id39260	fanevent	Buzzer01&. presents 【ぶざわん⇔スポッチャ倶楽部 at ラウンドワン	2026年11月3日(火) 愛知	ラウンドワンスタジアム 中川1号線店	枠1
+id39261	idol	【LIVE with YOU!!】#149 ～ あいどる文化祭 ・ 昼 ～	2026年11月3日(火) 東京	秋葉原Galaxy	枠2
+id39262	idol	ザベスのみなさんのおかげです25-アイ・カルボナーラBD & ザ・ベストザベスⅡ メラガ	2026年11月3日(火) 愛知	大須TOYS	枠1
+id39263	idol	Crystal Lagoon	2026年11月4日(水) 大阪	LIVE SQUARE 2nd LINE	枠2
+id39264	idol	うらら生誕祭2026応援企画	2026年11月5日(木) 愛知	NAGOYA JAMMIN'	枠4
+id39265	owarai	メロい王最強決定戦	2026年11月6日(金) 東京	中野シアターかざあな	枠1
+id39266	idol	GMU制服撮影会	2026年11月7日(土) 青森	青森中央学院大学	枠1
+id39267	idol	はじめての♡宮古島バーベキュー祭り！	2026年11月7日(土) 沖縄	宮古空港	枠2
+id39268	idol	利根さやな不定期公演 なちょパレvol.9	2026年11月7日(土) 東京	GOOD TIME ROLL	枠2
+id39269	jpop	台風クラブ 映画「ひまつぶし、のようなもの」上映 & コンサート	2026年11月7日(土) 広島	横川シネマ	枠1
+id39270	idol	🎃ハロウィンライブ&お菓子パーティー🎃	2026年11月7日(土) 青森	まごスタ	枠3
+id39271	idol	GIRLS INFINITY vol.119	2026年11月8日(日) 鳥取	米子laughs	枠2
+id39272	event	天皇賞・秋オフ会	2026年11月8日(日) 東京	ウインズ後楽園	枠1
+id39273	owarai	立冬の候、 漫才を浴びる	2026年11月8日(日) 東京	ばぐちか	枠2
+id39274	idol	【歌っていいとも！vol.616】	2026年11月10日(火) 福岡	キャバーンビート	枠1
+id39275	owarai	持てる水 vol.15	2026年11月10日(火) 東京	ハイジアV-1	枠1
+id39276	owarai	アホロートルのトーク	2026年11月12日(木) 東京	新宿Fu-+803	枠1
+id39277	event	Niimo東京オフ会	2026年11月13日(金) 東京	東京タワー	枠1
+id39278	owarai	テキサスニャンコアタック vol.7	2026年11月13日(金)	セシオン杉並第1和室	枠1
+id39279	idol	2026/11/15(日) 西九条BRAND-NEW Buzzer01&. presen	2026年11月15日(日) 大阪	BRAND NEW	枠1
+id39280	owarai	MANZAI MANZAI MANZAI	2026年11月15日(日) 東京	GINZA ART BOX 7	枠1
+id39281	jpop	SNAZZY TUNES×FOWS pre.『Co-Ed Rock Frequency 	2026年11月15日(日) 東京	SHIBUYA FOWS	枠1
+id39282	idol	てんしろっ！澤田なな生誕単独公演 『 なな色ときめきレシピ大作戦！！』	2026年11月15日(日) 東京	BUZZ music LABO Shinju	枠3
+id39283	anime	バラどく！	2026年11月15日(日)	ASTRO LAB. / ASTRO LOU	枠2
+id39284	idol	大川里菜撮影会 2026 AUTUMN	2026年11月15日(日) 東京	代々木公園	枠7
+id39285	owarai	奈良へ！	2026年11月15日(日) 東京	旧邸稽古場	枠1
+id39286	owarai	TonTonネタの陣	2026年11月16日(月) 東京	新高円寺 STUDIO TontoTonTo	枠1
+id39287	owarai	【19時開演】11/17(火)開催！「マセキ芸人アカデミーライブ」	2026年11月17日(火) 東京	高円寺ジュンジョー	枠1
+id39288	owarai	春とヒコーキの凸凹フレンズ寄席	2026年11月17日(火) 東京	新宿バティオス	枠1
+id39289	owarai	本気(ガチ)	2026年11月17日(火) 東京	中野シアターかざあな	枠1
+id39290	jpop	【来場予約】11/18「星空キャンドルナイト」	2026年11月18日(水) 京都	someno kyoto	枠1
+id39291	dance	踊物語vol.35	2026年11月18日(水) 大阪	クラブ マーキュリー	枠1
+id39292	idol	MEMORI定期イベント『三千年の記憶vol.29』	2026年11月19日(木) 東京	代々木ミューズホール	枠1
+id39293	idol	レッスントゥミー兎丸あゆみ生誕祭「うまるちゃんえらい2026」	2026年11月19日(木) 東京	四谷LOTUS	枠2
+id39294	idol	LUNARIUM to（ルナリウムと）12	2026年11月20日(金) 福岡	Buddy up!	枠3
+id39295	idol	寿司桶シャングリラガーデンvol.37 3周年ありがとうSP	2026年11月20日(金)	（会場未定）	枠2
+id39296	utaite	@LTER EGO ~finale~ S@kuya生誕祭	2026年11月21日(土) 東京	Livespace池袋Lavis	枠2
+id39297	event	あらしBIRTH DAY NIGHT EVENT！- 最初で最後かも！-	2026年11月21日(土) 東京	マルアイ	枠3
+id39298	owarai	仙台のオンラインお笑いライブ「タケニスズメTV生配信版40」	2026年11月21日(土) 宮城	北目町ティーライズスペース	枠1
+id39299	idol	真宵るか 生誕祭	2026年11月21日(土) 東京	Shibuya Milkyway LIVE&	枠3
+id39300	jazz	kazuki presents 【ミュージックランドスケイプ】	2026年11月22日(日) 東京	神楽坂天窓	枠4
+id39301	owarai	リーチお笑いライブ	2026年11月22日(日) 大阪	舞台袖	枠1
+id39302	engeki	劇団バッカス「終末のオリオン」（2026年度栃木県芸術祭演劇祭参加）	2026年11月22日(日) 栃木	アトリエほんまる	枠1
+id39303	idol	私と乾杯しませんか？♡ライブとお酒とライブとお酒♡	2026年11月22日(日) 東京	綾瀬Esmeralda	枠2
+id39304	jpop	松藤量平&ダイナマイトしゃかりきサ～カスツーマンライブ 「しゃかっていいとも！」	2026年11月23日(月) 東京	Electric Cafe - エレクトリッ	枠2
+id39305	owarai	ソルトレイク新ネタライブ ネタ笑vol.1	2026年11月24日(火) 東京	ふらっとすぎはち（コミュニティふらっと高円寺	枠1
+id39306	owarai	銀座六双	2026年11月24日(火) 東京	GINZA ART BOX 7	枠1
+id39307	jpop	【11/25(Wed)】サンストにふらっと〜ちょっと早めの忘年会編〜	2026年11月25日(水) 千葉	Sound Stream sakura / 	枠1
+id39308	jpop	【11/26(Thu)】 ON MY OWN / 大石裕太郎 / iroha	2026年11月26日(木) 千葉	Sound Stream sakura / 	枠2
+id39309	talkshow	Channel恐怖presents サイコロジカル怪談会 -心理分析型ホラーライブ- ３	2026年11月27日(金) 東京	ミコノス新宿	枠2
+id39310	jpop	88Oh! WEST 2026	2026年11月28日(土) 兵庫	神戸煉瓦倉庫 K-wave	枠1
+id39311	jazz	ゆうやとしゅうへいとはなこ	2026年11月28日(土)	KOGUMA COFFEE	枠1
+id39312	owarai	オニキス ~旅行計画トークライブ~	2026年11月28日(土)	セシオン杉並 3階 第10集会室	枠1
+id39313	owarai	大喜利スーパーキッズ	2026年11月28日(土) 東京	荻窪地域区民センター 第2集会室	枠1
+id39314	jpop	「言えなかったサヨナラをキミに」	2026年11月29日(日) 東京	CAFE ホシノテレカ	枠3
+id39315	jpop	POPPY NIGHT	2026年11月30日(月) 東京	ROCK JOINT GB	枠2
+id39316	owarai	メガネロック大屋がR-1グランプリで優勝する為のライブ〜霜月〜	2026年11月30日(月) 東京	ライブハウス代々木Barbara(バーバラ)	枠1
+id39317	idol	12/2(水)「G-ROCK PARTY vol.29｣	2026年12月2日(水) 東京	渋谷チェルシーホテル	枠1
+id39318	jpop	mod presents. "HATCH 56"	2026年12月2日(水)	柴崎mod	枠2
+id39319	jpop	シュガーズ✖️SMELLMAN 2MAN LlVE	2026年12月6日(日) 東京	新宿ROTT	枠1
+id39320	idol	朝練ガールズ炎の遠征試合〜オリオン高校vs泡盛高校〜	2026年12月6日(日)	アルテ赤田ホール	枠1
+id39321	idol	12/9(水)「G-ROCK PARTY vol.30｣	2026年12月9日(水) 東京	下北沢ReG	枠1
+id39322	jpop	2026にさよならは早くない	2026年12月9日(水) 大阪	studio246 JUSO Lst	枠2
+id39323	owarai	青空	2026年12月11日(金) 東京	池袋東口ゲキパ	枠1
+id39324	jpop	大橋タカシ×うたまろ ツーマンライブ企画 "三三楽 SAZANGAKU"	2026年12月12日(土) 三重	Bar EAST	枠1
+id39325	jazz	RHYTHM NATION Vol.15	2026年12月14日(月) 東京	Electric Cafe - エレクトリッ	枠1
+id39326	owarai	K•O•C	2026年12月15日(火) 東京	下北ZAWAZAWA	枠1
+id39327	jazz	山本達久 Solo acoustic & electric drums 2026 Win	2026年12月15日(火) 三重	ラジカフェ アパートメント	枠1
+id39328	owarai	第九十回「安藤道場一門会ラザニア」	2026年12月15日(火) 東京	阿佐ヶ谷アートスペースプロット	枠1
+id39329	jpop	mod presents. "HATCH 57"	2026年12月17日(木)	柴崎mod	枠2
+id39330	yougaku	QUEEN vs 10㏄ ロックオペラ対決	2026年12月20日(日) 東京	Bauhaus Roppongi	枠3
+id39331	jazz	Xmas Masquerade Live Party 2026	2026年12月20日(日) 東京	NB CLUB （エヌビー クラブ）	枠2
+id39332	jpop	Zuttoiru presents 「GOLDEN Christmas 2026」	2026年12月21日(月) 東京	ブルームード	枠4
+id39333	jpop	「HEREのクリスマス忘年会 アコースティックワンマン!!」	2026年12月25日(金) 東京	leaf room 豪徳寺	枠1
+id39334	owarai	エリオット波動3波	2026年12月25日(金) 東京	中野Vスタジオ	枠1
+id39335	jpop	初田悦子×わたなべゆう 『毎年恒例⭐︎年忘れLIVE 2026』	2026年12月29日(火) 大阪	コグマコーヒー	枠1
+id39336	owarai	楽屋A大晦日年越し合戦2026〜龍が飛び鳳凰が舞う、暁のカウントダウン〜	2026年12月31日(木) 大阪	お笑いLIVE BAR 楽屋A	枠1
+id39337	idol	DOGE ROCK FES -NEW YEAR LIVE-	2027年1月9日(土) 福岡	BEAT STATION	枠3
+id39338	musicetc	【ちゃび予約用】MUSICLIFE mayu Birthday Special ～	2027年1月9日(土) 東京	秋葉原ドットドット秋田犬	枠1
+id39339	jpop	maybe, happy 20th birthday	2027年1月13日(水) 愛知	ブラジルコーヒー	枠1
+id39340	idol	山本乃愛Birthday主催LiVE〜Queen〜	2027年1月15日(金) 東京	レフカダ	枠6
+id39341	jpop	ハシグチカナデリヤ毎月ワンマンライブ大作戦 【Experience points】vol	2027年1月16日(土) 神奈川	新横浜BeLL's	枠1
+id39342	jpop	MACH PUNCH	2027年1月19日(火) 東京	新宿 レッドクロス 【 紅布 】	枠1
+id39343	classic	ドイツリートの領域 #3 ブラームスとトロヤーン	2027年1月23日(土) 東京	やなか音楽ホール	枠3
+id39344	jpop	第6回 愛eye逢コンサート	2027年2月13日(土)	豊田市福祉センター	枠2
 
-EVENTS 20596件 / 新着プール 808件 / NEW_ORDER 808件
+EVENTS 20751件 / 新着プール 428件 / NEW_ORDER 428件
 配列にあるがプールに無い []
 プールにあるが配列に無い []
 CRCRLF 0 / 素のLF 0 （どちらも0が正）
-backup: index.html.bak_1021_tiget
+backup: index.html.bak_1022_tiget
