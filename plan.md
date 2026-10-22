@@ -6950,3 +6950,12 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - 主役＝29879 三代目JSB 映画ムビチケ（2.4M・11:00）／36408・36409 fromis_9 東京（50.7万・FANY 10:00）／3組目は令和ロマンほかのフォロワー待ち（次点 36511 りんたろー。×山添 33.1万）＝事実 tmp/x1022/x/stars_facts_1023.md
 - J-POP 動画の歌詞を枠の県で直した（加藤登紀子・半崎美子・TSUKEMEN）＝tmp/x1022/x/suno_matome_jpop_1023.txt
 - 夜に直す：加藤登紀子 大阪12/27 が 660 と 6359 の両方に入っている＝tmp/x1022/x/note_kato.md
+
+### 🌙 10/22 夜の結果
+- ✅ X 10本を予約（20:01〜22:16・15分おき）＝予約一覧で10本の時刻を照合・④J-POPまとめに動画（tmp/video/matome1023j/jpop_1023_x.mp4・Suno『おしなびどっと』・ロックバンド8コマ・背景動画 174084）＝試し見 https://claude.ai/artifact/XZpqp6yew8pNWjxEcW5rKc ・すちこ「いいわね」／メディア台帳に1行／Xの予約画面が日本語表示になった（JSを合わせた＝memory feedback_x_paste_powershell_only）
+- ✅ 夜のヒール（今日発売のぴあ31件）隠れ枠0／番人 gate_badge_render 0・gate_fields 0・fold_parts 0・reconcile_pia --new OK／夜の push 済み（77e0a36964・今日3回目）
+- ✅ 加藤登紀子＝大阪12/27・京都12/20 はほろ酔い（b2671715）＝660 から3枠外し 6359 の飛び先を公演ごとのページへ
+- ✅ お疲れ様の答え：Base Ball Bear 新春ベースボールベアーちゃん祭りツアー2027（6927＋39177 を1枚）／優里 YURIN LIVE vol.4・vol.5 を e+ から新規（39683・39684）／25264 ふみは中止でなく売り直し（旧ページの枠を外した）／38706 BAIA を後継「POP THE LID × 4TH PLACE」へ差し替え・振り分け／NÄO 20731・20777・LUDO 16473 は消さずに「販売終了」の印（soldout+saleEnded）
+- 📤 未push 4本（31cbaf88fa ほか）＝明日の朝の push に乗せる
+- ▶ 明日以降：優里 12/13 Kアリーナ追加公演＝まだどの売り場にもページ無し→10/26 夜に e+ ほかを見る／森山良子 日進 2/20（39178）のツアー名を公式で（分かるまで別カード）／買える枠0（31日より先）194件＝朝の点検／手順7.5・8の未登録28件ほかを朝の新着へ／3594 真一文字の会 削除・livePocket 公演済み25件
+- 📝 すちこ：URL は1行に単独で置く（memory feedback_url_own_line）
