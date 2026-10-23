@@ -199,6 +199,9 @@ def artist_of(p):
     # 🚨≪9／21 出演アーティスト≫ のような**日付入りの見出し**も札なので落とす
     #   （落とさないと artist が「≪9／21 出演アーティスト≫／新しい学校のリーダーズ」になる）
     s = re.sub(r'[≪《〈【][^≫》〉】]*[≫》〉】]', ' ', s)
+    # 🆕2026-10-24 「※最新の出演者情報は…公式ホームページ（http:／…）でご確認ください。」の注意書きの行も落とす
+    #   （M-1 3回戦の6件で artist が注意書きになり gate_fields A が鳴った）
+    s = '\n'.join(x for x in s.split('\n') if not re.match(r'\s*[※＊*]', x) and not re.search(r'https?:|ご確認ください', x))
     parts = [x.strip() for x in re.split(r'[／/\n、]+', s) if x.strip()]
     parts = [x for x in parts if not re.fullmatch(r'ほか|他|など|MC|ゲスト', x)]
     if not parts:
