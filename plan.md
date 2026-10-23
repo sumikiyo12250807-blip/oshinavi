@@ -6965,3 +6965,16 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - ⏳ 裏＝ぴあ（昨日発売の取り直し → reconcile --new → 発売前スイープ）／e+（朝点検 → 昨日の新着 reconcile_eplus → 収集）／TIGET・ZAIKO・FANY・livePocket（昨日の新着の番人 → 収集 → 登録済みの番人）
 - 📦 振り分け待ちのプール 427件（livePocket243・TIGET125・ZAIKO22・FANY21・e+15・ぴあ1）
 - 📤 昨夜の未push 4本＝今朝の push に乗せる
+- ✅ 削除221（check_expired 269 × 独立判定221＝全一致）→ logs/removed_2026-10-23.md
+- ✅ 抜き打ち30件＝ズレ8（🔴3・🟠1・🟡4）→ 全部直した（2819・3159 売り切れ印／7519 プレリザーブ足す／16679 会期／32833・21552 artist）＝🗓 🔴が出たので明日も毎日
+- ✅ 番人の穴：gate_fields C が時刻つき券種名を読めず素通り→直して7件のカードの日付を千秋楽へ／build_zaiko_entries が深夜公演に R9年→直した（20851・24625・36444）
+- ✅ FANY 新着11・作り直し38／ZAIKO 新着9・作り直し19（番人 一致476・食い違い0）
+- ✅ 朝 push ae6825eca9（今日1回目）
+- ✅ 振り分け：ZAIKO 31・FANY 32・livePocket 143（独立ゲート一致分）→ logs/assigned_2026-10-23.md
+- ✅ ぴあ隠れ枠ヒール 適用53・足し算54（HEAD比べで減ったのは 23560 の二重枠1つだけ）
+- ✅ ZAIKO から消えた 22400 Aoide・20757 Optimo＝どちらも今の印のまま（e+ も受付終了／予定枚数終了）
+- ✅ 10/24発売 364組のフォロワー（tmp/x1023/x/followers_a.json・b.json）＝上位 ハイキュー POP UP 190.8万・SHUTA. 97.7万・フリーレン 89.0万・JUNG DAE HYUN 72.0万・HiGH&LOW 66.2万
+- ✅ すちこ「お笑いのまとめ動画の方がよく見られている？」→ tmp/x_analysis_1023_video.md＝再生/インプはどれも約20%・お笑いはまとめ自体が J-POP の約2倍表示されるジャンル・動画で表示が増えたかは向きがそろわず判定しない
+- ❓ 聞いた：リンクのクリックまで比べるため X の CSV を書き出してよいか
+- 📝 楽天 FAIL3（4436・5308・17243）は昨日と同じ型（複数日の券を1日ずつ照らす）
+- ▶ 昼：e+ heal_eplus_started --apply（FIX12）・e+ プール（照合 FAIL の13件ほか）→ fix_eplus_fails／TIGET 全件番人 → heal_tiget → 新着投入 → 振り分け／livePocket 食い違い47／H 28枠（昨日発売の締切）
