@@ -208,7 +208,8 @@ def page_html(name, items, today, stamp, total_rows, num=None):
         if j:
             o.append(f'<script type="application/ld+json">{j}</script>')
     o += [GTAG, f"<style>{CSS}</style></head><body>",
-         '<p class="note"><a href="/">OSHINAVI</a> ＞ <a href="/artists.html">アーティスト一覧</a></p>',
+         # 🆕10/24 リンクは相対に（すちこ「ファイルが出てこないわよ」＝file:// で開くと /artists.html が C:\ を探す）
+         '<p class="note"><a href="../index.html">OSHINAVI</a> ＞ <a href="../artists.html">アーティスト一覧</a></p>',
          f"<h1>{esc(name)} のチケット発売日</h1>",
          *([f'<p class="pre"><b>次の発売：{esc(nxt_md)}</b> {esc(nxt[1])}</p>'] if nxt_md else []),
          f'<p class="note">最終更新：{esc(stamp)}／これから発売・販売中の受付 {total_rows}件（発売日・締切が近い順）。'
@@ -228,7 +229,7 @@ def page_html(name, items, today, stamp, total_rows, num=None):
             o.append(f'<li><span class="{cls}">{esc(state_text(state, t, today))}</span> {esc(t.get("type") or "")}{link}</li>')
         o.append("</ul></div>")
     o.append(f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>')
-    o.append('<p class="note"><a href="/artists.html">ほかのアーティストを見る</a>｜<a href="/">OSHINAVI トップ</a></p>')
+    o.append('<p class="note"><a href="../artists.html">ほかのアーティストを見る</a>｜<a href="../index.html">OSHINAVI トップ</a></p>')
     o.append("</body></html>")
     return "\n".join(o)
 
@@ -296,11 +297,25 @@ def build(today):
          f'<meta name="description" content="OSHINAVIに載っているアーティスト{len(made)}組の、これから発売・販売中のチケット発売日ページの一覧。">',
          '<link rel="canonical" href="https://oshinavi.jp/artists.html">', GTAG,
          f"<style>{CSS}</style></head><body>",
-         '<p class="note"><a href="/">OSHINAVI</a></p>', "<h1>アーティスト別 チケット発売日</h1>",
-         f'<p class="note">最終更新：{esc(stamp)}／{len(made)}組（これから発売・販売中の受付がある組）。</p><ul>']
+         '<p class="note"><a href="index.html">OSHINAVI</a></p>', "<h1>アーティスト別 チケット発売日</h1>",
+         f'<p class="note">最終更新：{esc(stamp)}／{len(made)}組（これから発売・販売中の受付がある組）。</p>',
+         # 🆕2026-10-24 すちこ「検索窓あってもいいかもよ」＝1万組以上を探せるように名前の絞り込み（大文字小文字・全角半角・カタカナひらがなを区別しない）
+         '<input id="q" type="search" placeholder="アーティスト名で探す" autocomplete="off" '
+         'style="width:100%;max-width:420px;box-sizing:border-box;font-size:16px;padding:10px 12px;margin:4px 0 4px;'
+         'border:1px solid #888;border-radius:8px">',
+         '<p class="note" id="hit" aria-live="polite"></p><ul id="list">']
     for nm, n, cnt in made_sorted:
-        o.append(f'<li><a href="/{OUT_DIR}/{n}.html">{esc(nm)}</a>（{cnt}件）</li>')
-    o.append("</ul></body></html>")
+        o.append(f'<li><a href="{OUT_DIR}/{n}.html">{esc(nm)}</a>（{cnt}件）</li>')
+    o.append("</ul>")
+    o.append("<script>(function(){var q=document.getElementById('q'),hit=document.getElementById('hit'),"
+             "li=[].slice.call(document.querySelectorAll('#list li'));"
+             "function n(s){return s.normalize('NFKC').toLowerCase().replace(/[\\u30a1-\\u30f6]/g,function(c){"
+             "return String.fromCharCode(c.charCodeAt(0)-96)}).replace(/[\\s・･]/g,'')}"
+             "var key=li.map(function(x){return n(x.firstChild.textContent)});"
+             "q.addEventListener('input',function(){var v=n(q.value),c=0;li.forEach(function(x,i){"
+             "var ok=!v||key[i].indexOf(v)>=0;x.hidden=!ok;if(ok)c++});"
+             "hit.textContent=v?(c?c+'組が見つかったわ':'見つからなかったわ。トップの検索も試してね'):''});})();</script>")
+    o.append("</body></html>")
     with open("artists.html", "w", encoding="utf-8") as f:
         f.write("\n".join(o))
 
