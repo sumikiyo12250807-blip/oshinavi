@@ -192,8 +192,8 @@ def ticket_name(raw):
 
 def artist_of(p):
     """出演者。'[漫才・落語]中川家／海原やすよ ともこ／…' → '中川家／海原やすよ ともこ／タカアンドトシ'
-    🚨FANYは出演者を[区分]ごとに改行で並べる。区分の札を落として先頭3組だけ出す
-      （カードの見出しに出るので長いと読めない）。空なら公演名で代える。"""
+    🚨FANYは出演者を[区分]ごとに改行で並べる。区分の札を落として全員出す
+      （🆕2026-10-24 すちこ「1」＝先頭3組で切らない）。空なら公演名で代える。"""
     s = (p.get('performer_detail') or '').replace('\r', '\n')
     s = re.sub(r'[［\[][^］\]]*[］\]]', ' ', s)          # [漫才・落語] を落とす
     # 🚨≪9／21 出演アーティスト≫ のような**日付入りの見出し**も札なので落とす
@@ -203,10 +203,17 @@ def artist_of(p):
     #   （M-1 3回戦の6件で artist が注意書きになり gate_fields A が鳴った）
     s = '\n'.join(x for x in s.split('\n') if not re.match(r'\s*[※＊*]', x) and not re.search(r'https?:|ご確認ください', x))
     parts = [x.strip() for x in re.split(r'[／/\n、]+', s) if x.strip()]
-    parts = [x for x in parts if not re.fullmatch(r'ほか|他|など|MC|ゲスト', x)]
+    parts = [x for x in parts if not re.fullmatch(r'ほか|他|など|MC|ゲスト|[＜<][^＞>]*[＞>]', x)]
+    # 🆕2026-10-24 全員入れるので、出演者の後ろに続く案内文（「。」を含む行）が来たらそこから先は落とす
+    #   （19427 徳井デイキャンプ＝「本チケットは参加券となります。」以下の注意書きが100行続いていた）
+    for k, x in enumerate(parts):
+        if '。' in x or len(x) > 40:
+            parts = parts[:k]
+            break
     if not parts:
         return strip_tags(p.get('name')) or 'FANYチケット'
-    return '／'.join(parts[:3])
+    # 🆕2026-10-24 すちこ「1」＝出演者は全員入れる（先頭3組で切ると抜き打ちで毎回ずれた）
+    return '／'.join(parts)
 
 
 def is_stream_sale(s):
@@ -477,7 +484,7 @@ def _selftest():
     # ① 先着発売中＝買える枠。締切はそのまま、県と公演日が入る
     e, _ = build_one(mk(performance_sales=[sale('先着発売中')]), today, gm, collections.Counter())
     assert e and e['tickets'][0]['type'] == '一般発売（大阪 10/1公演）〜9/30 8:00', e['tickets'][0]
-    assert e['artist'] == '中川家／タカアンドトシ／トミーズ', e['artist']
+    assert e['artist'] == '中川家／タカアンドトシ／トミーズ／レイザーラモン', e['artist']  # 10/24 全員
     assert e['venue'] == 'よしもと漫才劇場' and e['prefecture'] == '大阪'
     assert e['links']['fany'].endswith('/event/detail/99')
     assert e['dateLabel'] == '2026年10月1日(木) 10:00開演', e['dateLabel']
