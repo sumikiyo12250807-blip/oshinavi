@@ -94,6 +94,38 @@ def judge(ev):
     return "soldout", sold, "ぴあ%d券種が予定枚数終了" % len(sold)
 
 
+def judge_multi(ev):
+    """🆕2026-10-24 591 小椋佳＝枠ごとに別の eventCd（会場ごとのページ）を持つエントリは、judge が1本目のページ
+    （links.pia＝群馬9/12）しか読まず、愛媛12/4 のページの「予定枚数終了」を「表示なし」と読んでいた（10/22 の5件も同じ型）。
+    枠の飛び先の eventCd が2つ以上ある時は、ページを1本ずつ読み、予定枚数終了が出たページの番号を返す。
+    返り値: ("soldout_part", {売り切れの eventCd}, メモ) か None（1ページ型・売り切れページ無し＝従来の judge に任せる）。"""
+    if (ev.get("date") or "") < TODAY:
+        return None
+    cd2u = {}
+    for t in ev.get("tickets") or []:
+        u = t.get("url") or ""
+        if not is_pia_ticket(t):
+            continue
+        for c in re.findall(r"[?&]eventCd=(\w+)", u):
+            cd2u.setdefault(c, "https://t.pia.jp/pia/event/event.do?eventCd=" + c)
+    if len(cd2u) < 2:
+        return None
+    sold, alive, unread = set(), 0, 0
+    for c, u in cd2u.items():
+        rows = pia_rows(u)
+        if rows is None:
+            unread += 1
+            continue
+        if any(r.get("state") in ("受付中", "発売前") and not NOT_ON_PIA.search(r.get("statustext") or "") for r in rows):
+            alive += 1
+            continue
+        if any(SOLDOUT_WORDS.search(r.get("statustext") or "") for r in rows):
+            sold.add(c)
+    if not sold:
+        return None
+    return "soldout_part", sold, "ぴあ%dページが予定枚数終了（買えるページ%d・読めず%d／全%d）" % (len(sold), alive, unread, len(cd2u))
+
+
 def targets_for_review(EVENTS):
     return [e for e in EVENTS
             if any(t.get("soldout") for t in (e.get("tickets") or []))]
@@ -120,8 +152,13 @@ def main():
     review = "--review" in argv
     results = []
     for i, ev in enumerate(targets, 1):
-        st, sold, note = judge(ev)
-        results.append({"id": ev["id"], "status": st, "note": note})
+        mj = None if review else judge_multi(ev)
+        if mj:
+            st, soldcd, note = mj
+            results.append({"id": ev["id"], "status": st, "note": note, "soldcd": sorted(soldcd)})
+        else:
+            st, sold, note = judge(ev)
+            results.append({"id": ev["id"], "status": st, "note": note})
         print("[%d/%d] id=%-5s %-24s %-10s %s"
               % (i, len(targets), ev["id"], (ev.get("artist") or "")[:24], st, note))
 
@@ -138,7 +175,21 @@ def main():
         if not r:
             continue
         tickets = ev.get("tickets") or []
-        if r["status"] == "soldout":
+        if r["status"] == "soldout_part":
+            # 予定枚数終了が出たページ（eventCd）を飛び先にしている、ぴあの・締切が来ていない枠だけに印
+            soldcd = set(r.get("soldcd") or [])
+            for t in tickets:
+                if t.get("soldout") or not is_pia_ticket(t):
+                    continue
+                if not (set(re.findall(r"[?&]eventCd=(\w+)", t.get("url") or "")) & soldcd):
+                    continue
+                d, sd = t.get("date") or "", t.get("startDate")
+                if d < TODAY and not (sd and sd == d):
+                    continue
+                t["soldout"] = True
+                t["soldoutSince"] = TODAY
+                marked += 1
+        elif r["status"] == "soldout":
             hit = 0
             # 🚨2026-10-17 2405 純烈＝判定は pia_urls の1本目（links.pia＝東京11/20 の eventCd）しか見ていないのに、
             #   エントリの7枠（会場ごとに別の eventCd）全部に印を付けた。
