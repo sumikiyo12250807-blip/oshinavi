@@ -129,7 +129,8 @@ REVIEW_NAME = re.compile(r'POP ?UP|ポップアップ|来店予約|抽選販売|
 SELLER_SIDE = re.compile(
     r'委託販売|即売会|出店|出展|ブース(?:出展|出店|申込)|サークル参加|'
     r'エントリーフォーム|参加エントリ|出場エントリ|出演エントリ|出演者募集|出演申込|'
-    r'案内登録|先行案内'
+    r'案内登録|先行案内|'
+    r'出演者[】\]]?\s*参加受付'  # 🆕2026-10-24 すちこ「1」＝30472【出演者】参加受付（ショーに出る人の参加費）も出す側
 )
 # 「配信なし」「配信無し」は配信ではない（会場だけの券）
 STREAM = re.compile(r'配信(?!なし|無し)|視聴(?!覚)|アーカイブ')
@@ -559,7 +560,7 @@ def build(ev, today, unknown=None):
         review.append(mm.group(0))
     perf = [p for p in (ev.get('performers') or []) if p]
     e = {
-        'artist': '／'.join(perf[:3]) if perf else name,
+        'artist': '／'.join(perf) if perf else name,  # 🆕2026-10-24 すちこ「1」＝出演者は全員
         'name': name,
         'date': last,
         'dateLabel': stream_label(label, last, stream_until(ev, last)),
@@ -669,6 +670,8 @@ def _selftest():
     assert build(ev([rec()], name='対バン 出演エントリー'), today)[0] is None
     assert build(ev([rec()], name='ZOMBIE FES 2026特殊メイクブース・事前予約チケット'), today)[0] is not None
     e, _ = build(ev([rec(title='出店ブース申込'), rec(title='一般入場')]), today)
+    assert [x['type'].split('（')[0] for x in e['tickets']] == ['一般入場'], e['tickets']
+    e, _ = build(ev([rec(title='【ダンス出演者】参加受付（先着）'), rec(title='一般入場')]), today)
     assert [x['type'].split('（')[0] for x in e['tickets']] == ['一般入場'], e['tickets']
     # ⑩ セミナー・ジムは載せない（TIGETと同じ線）
     r, why = build(ev([rec()], cats=[['展覧会・イベント', ''], ['展覧会・イベント', 'セミナー']]), today)

@@ -496,7 +496,7 @@ def build(ev, today):
 
     perf = [x for x in (ev.get('performers') or []) if x]
     name = ev.get('name') or ''
-    artist = '／'.join(perf[:3]) if perf else name
+    artist = '／'.join(perf) if perf else name  # 🆕2026-10-24 すちこ「1」＝出演者は全員
     # 公演日がぜんぶ過ぎて配信だけ買える形は、公演日（配信開始日）をそのまま書く（ZAIKOと同じ＝公演日は事実の会期）
     future = future or stream_past
     if len(future) == 1:

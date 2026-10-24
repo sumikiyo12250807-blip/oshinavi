@@ -204,11 +204,11 @@ def ticket_name(raw, is_lottery, is_stream):
 
 
 def artist_of(det, listrow):
-    """出演者の先頭3組。取れなければイベント名。"""
+    """出演者の全員（🆕2026-10-24 すちこ「1」＝先頭3組で切らない）。取れなければイベント名。"""
     names = [(p.get('name') or '').strip() for p in ((det or {}).get('performers') or [])]
     names = [n for n in names if n and not re.fullmatch(r'ほか|他|など|MC|ゲスト', n)]
     if names:
-        return '／'.join(names[:3])
+        return '／'.join(names)
     return ((det or {}).get('name') or (listrow or {}).get('title') or 'ZAIKO').strip()
 
 
