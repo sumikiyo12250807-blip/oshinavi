@@ -7097,5 +7097,5 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - 📝 深掘りの取り違え＝すちこが10/23に選んだのは特別展「生きものたちの性」（id2694・tmp/pickup1101）。10/25号は歌舞伎のまま（すちこ「まあいいわ」）→ memory に記録
 - ✅ artists.html に名前の検索欄＋リンクを相対に（すちこ「検索窓あってもいいかも」「ファイルが出てこない」→「みれた」）
 - ✅ 番人 gate_fields 0・gate_badge_render 0・fold_parts 0・reconcile_pia --new MISSING 0（check_order 4・check_zero_badge は既知）→ push 4662f1c923（今日3回目）→ 10/25号の記事を入れ直した（pickup_hold --in）
-- ⏳ ぴあの見直し pia_soldout_sweep --apply --resume を裏で再開（22:4x〜）
+- ✅ ぴあの見直し（--resume）1660/1660 で終わった＝売り切れの印 19・STALE 128・取りこぼし 45・読めず 7（logs/pia_sweep_2026-10-24.md）→ commit だけ（未push 1＝明朝の push で出す・記事は10/18号のまま commit した）
 - ▶ 明朝：登録済みの TIGET・livePocket・ZAIKO の出演者を朝の収集の生データから全員に／STALE 19／40001 e+／新着3件（40923〜40925）／明日の昼に 10/25号を本番へ（pickup/2026-10-25/ を commit）
