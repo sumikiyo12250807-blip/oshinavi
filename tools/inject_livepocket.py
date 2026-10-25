@@ -48,6 +48,9 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--limit', type=int, default=0, help='先頭N件だけ入れる（試すとき）')
     ap.add_argument('--report', default='tmp/inject_livepocket_report.txt')
+    # 🆕10/25 要確認（名前×公演日×会場が一致・URLは違う）を別カードで入れる＝足し先に迷う枠は売り場の形のまま載せる
+    #   （[[feedback_unsure_merge_list_as_vendor]]）。URLが同じものは今までどおり外す
+    ap.add_argument('--allow-trio', action='store_true')
     a = ap.parse_args()
 
     src = json.load(io.open(a.src, encoding='utf-8'))
@@ -81,14 +84,14 @@ def main():
             dup.append((e, '同じバッチの中で同じURLが2回'))
             continue
         na, nn, nv = norm(e.get('artist')), norm(e.get('name')), norm(e.get('venue'))
-        if (na, e['date'], nv) in trio or (nn, e['date'], nv) in trio:
+        if not a.allow_trio and ((na, e['date'], nv) in trio or (nn, e['date'], nv) in trio):
             maybe.append((e, '名前×公演日×会場が登録と一致'))
             continue
         # 🚨同じバッチの中で名前×公演日×会場が同じ別ページ（2026-09-28 実例＝POP UP の入場時間違いが8ページ）。
         #   URLが違うので畳まない（[[feedback_dedup_badges_keeps_urls]]）が、画面で見分けがつかない
         #   ことがある＝最初の1件だけ入れて、残りは要確認に回す（人が畳むか別で入れるか決める）
         bk = (nn, e['date'], nv)
-        if bk in seen_trio:
+        if bk in seen_trio and not a.allow_trio:
             maybe.append((e, '同じバッチに名前×公演日×会場が同じ別ページあり（%s）' % seen_trio[bk]))
             continue
         seen_trio[bk] = (e.get('links') or {}).get('livepocket')
