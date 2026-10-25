@@ -27,12 +27,51 @@ reconcile_pia・gate_*_slots は「枠が売り場と合っているか」しか
 - C は「最後の公演日が今日以降」だけ数える（もう終わった組は画面に関係しない）
 - 直し方の雛形＝tmp/x1009/fix_fields.py（A/B）・fix_c.py（C）・fix_tiget_dates.py（TIGET）
 """
-import datetime, io, json, re, sys
+import datetime, io, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import fill_slot_pref as FSP  # noqa: E402
 
 ROOT = 'C:/Users/user/oshinavi/'
 B_OK = {9271, 9272, 9273}  # TBC＝全国の店舗で使える券
 # 2026-10-23 時刻つき（「11/21 10:30開場）」「9/24 18:30公演）」）も読む＝16679 ジョナス・メカス（TIGET）を素通りしていた
 PAT = re.compile(r'（[^（）]*?(R9年\s*)?(\d{1,2})/(\d{1,2})(?:[〜・](R9年\s*)?(\d{1,2})/(\d{1,2}))?(?:\s*\d{1,2}:\d{2})?(?:公演|開場|開演)）')
+
+
+# M 🆕2026-10-26 出演者の欄が公演名のまま（抜き打ち 30件中7件＝藤井風「藤井風 ピアノリサイタル」・VAMPIRE ROSE「…定期公演ワンマン」
+#   ・不忠臣蔵・ズーラシアン ほか。ぴあ・e+ の組み立てが一覧の見出しを出演者にしていた＝10/26 に組み立ては直した）
+#   ＝出演者の欄（1組だけの時）に公演の言葉がある。本物の名前（ツートライブ・ゴリラ祭ーズ）は tools/artist_ok.txt に1行ずつ
+ARTIST_TITLE = re.compile(r'公演|ライブ|LIVE|Live|リサイタル|独演会|定期|ツアー|TOUR|Tour|コンサート|生誕|記念|presents|'
+                          r'[Vv]ol\.|VOL\.|第\d+回|「|『|【|〜|～|ワンマン|ONEMAN|オンライン|配信')
+
+
+def _artist_ok():
+    try:
+        return {l.strip() for l in io.open(ROOT + 'tools/artist_ok.txt', encoding='utf-8') if l.strip() and not l.startswith('#')}
+    except FileNotFoundError:
+        return set()
+
+
+def _artist_nocast():
+    """売り場を見たが出演者の記載が無かった id（tools/refetch_artist.py --apply が書く）＝公演名のままで正しい"""
+    try:
+        return json.load(io.open(ROOT + 'tools/artist_nocast.json', encoding='utf-8'))
+    except FileNotFoundError:
+        return {}
+
+
+_NOCAST = None
+
+
+def artist_looks_like_title(e, ok=None):
+    global _NOCAST
+    if _NOCAST is None:
+        _NOCAST = _artist_nocast()
+    a = (e.get('artist') or '').strip()
+    if not a or '／' in a or str(e['id']) in _NOCAST:
+        return False
+    if a in (ok if ok is not None else _artist_ok()):
+        return False
+    return bool(ARTIST_TITLE.search(a))
 
 
 def main():
@@ -44,8 +83,15 @@ def main():
     if '--ids' in sys.argv:
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')}
         E = [e for e in E if e['id'] in ids]
-    A, B, C, D, F, G, H, I, K = [], [], [], [], [], [], [], [], []
+    A, B, C, D, F, G, H, I, K, L, M, M_old = [], [], [], [], [], [], [], [], [], [], [], 0
+    OK = _artist_ok()
     for e in E:
+        # M は新着プール（genre:new）だけ止める＝これから振り分ける分。既存は件数だけ（10/27〜10/28 に取り直す計画）
+        if (e.get('date') or '') >= today and artist_looks_like_title(e, OK):
+            if e.get('genre') == 'new':
+                M.append(e)
+            else:
+                M_old += 1
         # D 公演名・出演者が途中で切れている（FANY の一覧は長い名前を「・・・」で切る＝19789）
         for k in ('name', 'artist'):
             if re.search(r'(・・・|…)\s*$', e.get(k) or '') and (e.get('links') or {}).get('fany'):
@@ -68,6 +114,10 @@ def main():
                 H.append((e, ty))
         # I 🆕2026-10-26 名前の頭に出演者名が2回続く（33528「ONSENSE ONSENSE 1st…」・5993 ヤミテラ＝e+ の組み立てが
         #   出演者名と公演名をつないだ）。「YONA YONA」「MANZAI MANZAI」のような元々の名前は出演者名と一致しないので鳴らない
+        # L 🆕2026-10-26 枠の括弧に県が無いのに、エントリの県は1つに分かっている（16678 crotchet・648枠）
+        #   ＝ヒールで作り直すと消える型。直す道具＝tools/fill_slot_pref.py --apply（ヒールのあと・push 前）
+        if (e.get('date') or '') >= today and FSP.missing(e):
+            L.append(e)
         a0 = (e.get('artist') or '').split('／')[0].strip()
         if len(a0) >= 2 and (e.get('name') or '').startswith(a0 + ' ' + a0):
             I.append(e)
@@ -111,8 +161,14 @@ def main():
         print(f'  I id{e["id"]} 名前の頭が出演者名の二重: {(e.get("name") or "")[:50]}')
     for e, ty in K:
         print(f'  K id{e["id"]} 部の時刻と括弧の時刻が違う: {ty[:60]}')
-    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} ===')
-    sys.exit(1 if (A or B or C or D or F or H or I or K) else 0)
+    for e in L[:30]:
+        print(f'  L id{e["id"]} 枠の括弧に県が無い（県={e.get("prefecture")}）＝fill_slot_pref --apply: {(e.get("name") or "")[:30]}')
+    for e in M:
+        print(f'  M id{e["id"]} 出演者の欄が公演名のまま（新着）: {(e.get("artist") or "")[:50]}')
+    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / M {len(M)}（既存 {M_old}・止めない） ===')
+    # M は振り分けの番人（--assign の時だけ止める）＝新着タブには載ったまま、振り分けでその件だけプールに残す
+    #   （push を止めると既存の 4,914 件と釣り合わない。振り分けの道具は artist_looks_like_title で1件ずつ残す）
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or (M and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':
