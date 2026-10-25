@@ -6216,6 +6216,25 @@
     40732,
     40733
    ]
+  },
+  {
+   "date": "2026-10-26",
+   "slot": "morning",
+   "id_from": 41586,
+   "id_to": 41601,
+   "count": 16,
+   "source": "ぴあ 発売前スイープ 7ジャンル×0102/0202（新規16＋既存7件に8枠）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "41600・41602（ダヴィット・フリクリ／マルティン・ガルシア・ガルシア）は 24400・36780 と同じ公演＝外した。add? 9件は足し先に迷う型＝売り場の形のまま別カード。reconcile_pia --ids OK22（31866 しなこの2次2枠を足し算で戻して OK）"
+  },
+  {
+   "date": "2026-10-26",
+   "slot": "morning",
+   "source": "FANY 新着12・ZAIKO 新着6（振り分け済み）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "logs/assigned_2026-10-26.md"
   }
  ]
 }
