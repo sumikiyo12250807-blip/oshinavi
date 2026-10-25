@@ -194,6 +194,19 @@ def parse_ld(html):
     return list(uniq.values())
 
 
+def eplus_artists(html):
+    """個別ページのアーティストへのリンク（/sf/word/<id>「VAMPIRE ROSE チケット」）から出演者を読む（2026-10-26 抜き打ち
+    ＝ 38981「VAMPIRE ROSE定期公演ワンマン」・33528「ONSENSE ONSENSE …」＝一覧の見出しを出演者にしていた）。
+    「男性ダンスボーカルグループ」のような分類のリンクは「チケット」が付かないので拾わない。"""
+    out = []
+    for m in re.finditer(r'<a[^>]+href="/sf/word/\d+"[^>]*>(.*?)</a>', html or '', re.S):
+        t = H.unescape(re.sub(r'<[^>]+>|\s+', ' ', m.group(1))).strip()
+        mm = re.fullmatch(r'(.+?)\s*チケット', t)
+        if mm and mm.group(1) not in out:
+            out.append(mm.group(1).strip())
+    return out
+
+
 def count_options(html):
     return len(re.findall(r'<option[^>]*>[^<]*20\d\d[^<]*</option>', html))
 
@@ -532,8 +545,14 @@ def main():
                 tickets.append(tk)
             for _t in tickets:  # 表示テキストは出口で半角カナを全角化
                 _t['type'] = fix_half_kana(_t['type'])
+            # 🆕2026-10-26 出演者の欄＝ページのアーティストのリンク（全員）。読めない時だけ一覧の見出し（今までどおり）
+            _arts = []
+            for _eid in dict.fromkeys(c['eid'] for c in members):
+                for _a in eplus_artists(page_cache.get(_eid) or ''):
+                    if _a not in _arts:
+                        _arts.append(_a)
             entries.append({
-                'id': nid, 'artist': fix_half_kana(akey), 'name': fix_half_kana(name), 'date': edate,
+                'id': nid, 'artist': fix_half_kana('／'.join(_arts) if _arts else akey), 'name': fix_half_kana(name), 'date': edate,
                 'dateLabel': fix_half_kana(dlabel), 'venue': fix_half_kana(venue), 'prefecture': pref,
                 'genre': 'new', 'price': None,
                 'links': {'rakuten': None, 'lawson': None, 'pia': None,
