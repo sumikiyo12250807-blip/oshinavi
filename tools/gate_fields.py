@@ -44,7 +44,7 @@ def main():
     if '--ids' in sys.argv:
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')}
         E = [e for e in E if e['id'] in ids]
-    A, B, C, D, F, G, H = [], [], [], [], [], [], []
+    A, B, C, D, F, G, H, I = [], [], [], [], [], [], [], []
     for e in E:
         # D 公演名・出演者が途中で切れている（FANY の一覧は長い名前を「・・・」で切る＝19789）
         for k in ('name', 'artist'):
@@ -61,6 +61,11 @@ def main():
             if (re.search(r'\d{1,2}/\d{1,2}\s*\d{1,2}:\d{2}発売$', ty) and not t.get('soldout')
                     and t.get('startDate') and t['startDate'] < today and (t.get('date') or '') >= today):
                 H.append((e, ty))
+        # I 🆕2026-10-26 名前の頭に出演者名が2回続く（33528「ONSENSE ONSENSE 1st…」・5993 ヤミテラ＝e+ の組み立てが
+        #   出演者名と公演名をつないだ）。「YONA YONA」「MANZAI MANZAI」のような元々の名前は出演者名と一致しないので鳴らない
+        a0 = (e.get('artist') or '').split('／')[0].strip()
+        if len(a0) >= 2 and (e.get('name') or '').startswith(a0 + ' ' + a0):
+            I.append(e)
         nm = (e.get('artist') or '') + ' ' + (e.get('name') or '')
         if re.search(r'https?://|www\.|\.(jp|com|net)/', nm):
             A.append(e)
@@ -97,8 +102,10 @@ def main():
         print(f'  G id{e["id"]} 全角数字: {(e.get("name") or "")[:40]}')
     for e, ty in H:
         print(f'  H id{e["id"]} 発売日を過ぎたのに締切なし: {ty[:60]} ｜{(e.get("name") or "")[:24]}')
-    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} ===')
-    sys.exit(1 if (A or B or C or D or F or H) else 0)
+    for e in I:
+        print(f'  I id{e["id"]} 名前の頭が出演者名の二重: {(e.get("name") or "")[:50]}')
+    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} ===')
+    sys.exit(1 if (A or B or C or D or F or H or I) else 0)
 
 
 if __name__ == '__main__':
