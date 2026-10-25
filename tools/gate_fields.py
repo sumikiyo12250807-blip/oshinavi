@@ -44,7 +44,7 @@ def main():
     if '--ids' in sys.argv:
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')}
         E = [e for e in E if e['id'] in ids]
-    A, B, C, D, F, G, H, I = [], [], [], [], [], [], [], []
+    A, B, C, D, F, G, H, I, K = [], [], [], [], [], [], [], [], []
     for e in E:
         # D 公演名・出演者が途中で切れている（FANY の一覧は長い名前を「・・・」で切る＝19789）
         for k in ('name', 'artist'):
@@ -58,6 +58,11 @@ def main():
         # H 発売日を過ぎたのに締切が無い枠（「M/D HH:MM発売」で止まっている＝ヒール漏れ・29203）
         for t in e.get('tickets') or []:
             ty = t.get('type') or ''
+            # K 🆕2026-10-26 券種名の頭に部の時刻（「2部/16:00-」）があるのに、括弧に別の時刻（1部の開演）＝39500 ペルピンズ
+            mk = re.search(r'^\s*第?\s*[0-9０-９①-⑨]+\s*部\s*[/／｜|《(（\s]*(\d{1,2}:\d{2})', ty)
+            mp = mk and re.search(r'（[^（）]*?\d{1,2}/\d{1,2}\s+(\d{1,2}:\d{2})(?:公演|開演)）', ty)
+            if mp and mp.group(1).lstrip('0') != mk.group(1).lstrip('0') and (t.get('date') or '') >= today:
+                K.append((e, ty))
             if (re.search(r'\d{1,2}/\d{1,2}\s*\d{1,2}:\d{2}発売$', ty) and not t.get('soldout')
                     and t.get('startDate') and t['startDate'] < today and (t.get('date') or '') >= today):
                 H.append((e, ty))
@@ -104,8 +109,10 @@ def main():
         print(f'  H id{e["id"]} 発売日を過ぎたのに締切なし: {ty[:60]} ｜{(e.get("name") or "")[:24]}')
     for e in I:
         print(f'  I id{e["id"]} 名前の頭が出演者名の二重: {(e.get("name") or "")[:50]}')
-    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} ===')
-    sys.exit(1 if (A or B or C or D or F or H or I) else 0)
+    for e, ty in K:
+        print(f'  K id{e["id"]} 部の時刻と括弧の時刻が違う: {ty[:60]}')
+    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} ===')
+    sys.exit(1 if (A or B or C or D or F or H or I or K) else 0)
 
 
 if __name__ == '__main__':
