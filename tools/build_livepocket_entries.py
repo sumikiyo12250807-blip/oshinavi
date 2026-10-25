@@ -134,6 +134,8 @@ SELLER_SIDE = re.compile(
 )
 # 「配信なし」「配信無し」は配信ではない（会場だけの券）
 STREAM = re.compile(r'配信(?!なし|無し)|視聴(?!覚)|アーカイブ')
+# 券種名の頭に部とその時刻（「2部/15:30-」「第２部｜20:55〜」「２部 14:00〜」）＝その枠の公演時刻は券種名が持つ
+PART_TIME = re.compile(r'^\s*第?\s*[0-9０-９①-⑨]+\s*部\s*[/／｜|《(（\s]*\d{1,2}:\d{2}')
 ONLINE_VENUE = re.compile(r'^\s*(オンライン|配信|Zoom|ツイキャス|YouTube|ONLINE|Online)', re.I)
 
 LIVE_CARD = ('販売中', '売切間近')
@@ -485,7 +487,9 @@ def build(ev, today, unknown=None):
                       or bool(ONLINE_VENUE.search(ev.get('venue') or '')))
         nm = ticket_name(raw, '（配信）' if (any_stream and not STREAM.search(raw)) else '')
         is_stream = bool(STREAM.search(nm))
-        w = when_notime if rec.get('_per_card') else when
+        # 🆕2026-10-26 抜き打ち（39500 ペルピンズ）＝受付ごとに部が分かれ、券種名が「2部/15:30-」なのに
+        #   括弧にイベントの開演（1部の 11:00）を書いていた＝券種名に部の時刻がある時は括弧に時刻を書かない
+        w = when_notime if (rec.get('_per_card') or PART_TIME.search(nm)) else when
         head = '%s（%s %s）' % (nm, pref, w) if pref else '%s（%s）' % (nm, w)
         per = rec.get('period') or {}
         st, en = per.get('start'), per.get('end')
