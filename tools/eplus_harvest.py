@@ -483,7 +483,13 @@ def main():
 
             def clean_name(n):
                 n = re.sub(r'\s*[<（(]\s*(昼|夜)公演\s*[>）)]', '', n)
-                return re.sub(r'\s+', ' ', n).strip()
+                n = re.sub(r'\s+', ' ', n).strip()
+                # 🆕2026-10-26 e+ の JSON-LD の name は「出演者名＋公演名」で、公演名の頭にも出演者名があると
+                #   「ONSENSE ONSENSE 1st Anniversary LIVE」と二重になる（33528・抜き打ち）＝1つ外す
+                a = (akey or '').strip()
+                if len(a) >= 2 and n.startswith(a + ' ' + a):
+                    n = n[len(a) + 1:]
+                return n
             name = clean_name(min((r['name'] for r in rows if r['name']), key=len, default=akey))
             uniq_venues = list(dict.fromkeys(r['venue'] for r in rows if r['venue']))
             prefs = list(dict.fromkeys(r['pref'] for r in rows if r['pref']))
