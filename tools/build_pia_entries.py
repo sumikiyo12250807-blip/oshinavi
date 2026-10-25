@@ -854,6 +854,28 @@ def span_rows(allrows, buy_rows, today=None):
     return out
 
 
+def pia_cast(h):
+    """公演ページの「出演者など」欄の［出演］だけを読む（2026-10-26 抜き打ち＝出演者の欄が公演名のまま）。
+    「［作］井上ひさし ［演出］ふじたあさや ［出演］中西和久」→ ['中西和久']／「柳亭小痴楽 / 瀧川鯉八」→ 2人。
+    ［出演］が無い・「ほか」だけ・長すぎる（説明文）時は [] ＝呼び出し側は今までどおり公演名を使う。"""
+    m = re.search(r'出演者など\s*</dt>\s*<dd[^>]*>(.*?)</dd>', h or '', re.S)
+    if not m:
+        return []
+    t = txt(m.group(1))
+    mm = re.search(r'［出演］(.*?)(?=［|$)', t)
+    if not mm:
+        return []
+    body = re.sub(r'\s*(ほか|他)\s*$', '', mm.group(1).strip())
+    if not body or len(body) > 200:
+        return []
+    out = []
+    for x in re.split(r'\s+/\s+|／|、|，', body):
+        x = norm_fw(x.strip(' 　'))
+        if x and x not in out and not re.fullmatch(r'(ほか|他|ゲスト|未定)', x):
+            out.append(x)
+    return out
+
+
 def build(cand):
     allrows, htmls = [], []
     gone = []
@@ -1035,7 +1057,10 @@ def build(cand):
     # 出口で全角ローマ字/数字を半角化（表示フィールドのみ。URL/日付/_piaSubは触らない）。
     for t in tickets:
         t['type'] = norm_fw(t['type'])
-    return {'id': cand['newid'], 'artist': norm_fw(cand['artist']), 'name': norm_fw(cand['artist']), 'date': ends[-1],
+    # 🆕2026-10-26 出演者の欄＝ページの［出演］（全員・10/24 すちこ「全員入れる」）。無い時だけ公演名（今までどおり）
+    cast = next((c for c in (pia_cast(h) for h in htmls) if c), [])
+    artist = '／'.join(cast) if cast else norm_fw(cand['artist'])
+    return {'id': cand['newid'], 'artist': artist, 'name': norm_fw(cand['artist']), 'date': ends[-1],
             'dateLabel': norm_fw(dl), 'venue': norm_fw(venue), 'prefecture': pref, 'genre': 'new',
             '_genre': main_genre, '_extraGenres': (list(extra) if isinstance(extra, (list, tuple)) else [extra]) if extra else [], '_piaSub': sub_used,
             'price': None, 'links': links,
@@ -1043,6 +1068,12 @@ def build(cand):
 
 def _selftest():
     """過去の取りこぼし/化けバグの回帰防止テスト(2026-06-23)。`python tools/build_pia_entries.py --selftest`"""
+    # ⓪ 2026-10-26 出演者の欄＝［出演］だけ（作・演出は入れない）・「 / 」で区切って全員
+    _dd = lambda s: f'<dt class="x">  出演者など  </dt>  <dd class="y"> {s} </dd>'
+    assert pia_cast(_dd('［出演］柳亭小痴楽 / 瀧川鯉八')) == ['柳亭小痴楽', '瀧川鯉八']
+    assert pia_cast(_dd('［作］井上ひさし&nbsp;［演出］ふじたあさや&nbsp;［出演］中西和久')) == ['中西和久']
+    assert pia_cast(_dd('［出演］ズーラシアンウィンドオーケストラ')) == ['ズーラシアンウィンドオーケストラ']
+    assert pia_cast(_dd('［出演］未定')) == [] and pia_cast(_dd('詳細は公式サイト')) == [] and pia_cast('') == []
     # ① 時刻プレフィックスは列挙せず「数字/コロン以外は何でも飛ばす」robust方式。
     #    昼/夜/朝/午前/午後/正午/未知語/プレフィックス無し すべてで脱落しない。
     # (state, when, exp_date, exp_startDate, exp_suffix)
