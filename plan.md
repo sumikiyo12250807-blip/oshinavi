@@ -7099,3 +7099,20 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - ✅ 番人 gate_fields 0・gate_badge_render 0・fold_parts 0・reconcile_pia --new MISSING 0（check_order 4・check_zero_badge は既知）→ push 4662f1c923（今日3回目）→ 10/25号の記事を入れ直した（pickup_hold --in）
 - ✅ ぴあの見直し（--resume）1660/1660 で終わった＝売り切れの印 19・STALE 128・取りこぼし 45・読めず 7（logs/pia_sweep_2026-10-24.md）→ commit だけ（未push 1＝明朝の push で出す・記事は10/18号のまま commit した）
 - ▶ 明朝：登録済みの TIGET・livePocket・ZAIKO の出演者を朝の収集の生データから全員に／STALE 19／40001 e+／新着3件（40923〜40925）／明日の昼に 10/25号を本番へ（pickup/2026-10-25/ を commit）
+
+## 🌅 10/25(日) 朝の便（tmp/x1025/）
+- ⏰ アラーム4本＝15:07 昼／17:02 X準備（10/26発売）／19:41 予約の締め／22:07 夜
+- ✅ 削除709（check_expired 871 × 独立再導出709＝全一致・残した162）→ logs/removed_2026-10-25.md
+- ✅ ぴあ隠れ枠ヒール 適用63＋安全弁64は足し算（消えた枠0）／昨夜の見直しの取りこぼし36＋夜の STALE 14 を --ids で取り直し → MISSING 0（STALE 10 は見直しで「触らない」にした枠）／2408 のカード日付を千秋楽に
+- ✅ 楽天 FAIL2（いつもの 4436・5308）・売り切れ印1（693）／木村拓哉 32821 のぴあ無効化は一時的（同じ bundle が生きていた・売り切れ印のまま）
+- ✅ FANY 新着447（12月の劇場公演）・作り直し111・番人一致1735／ZAIKO 新着8（同名8は保留）・作り直し12・番人一致455／TIGET 作り直し177・新着112（番人 一致110・ng2）
+- ✅ 欄の番人 C5・D1 を直した（28370 シド 11/29・36431 UNIDOTS 11/29 21:00・FANY 12月パス3件 12/31・41016 名前の全文）
+- ✅ 朝push 935a92cd65（今日1回目）→ 10/25号の記事を入れ直した（pickup_hold --in）
+- ✅ TikTok 下調べ tmp/x1025/tiktok_notes.md（ビジネスアカウントならリンクを初日から置ける・Suno の Pro の曲は商用OK）
+- ✅ 明日10/26発売の出演者80組のフォロワー tmp/x1025/x/followers_a.json・followers_b.json（上位＝ポケモン公式308万（キデイランドの店頭抽選）・遊戯王56.3万・デュエマ21.5万・スターダム17.7万・Kradness16.9万・コンサドーレ14.7万）
+- ▶ 昼：e+ 収集（job_eplus）の続き → heal_eplus_started --apply（H21）→ e+ の新着を番人 → 投入
+- ▶ 昼：ぴあ発売前 新規19＋足し込み1（tmp/x1025/pia_merge_plan.json・pia/pia_new_entries.json）→ pia_apply.py --apply → pia_post.py
+- ▶ 昼：livePocket（job_livepocket）→ lp_chain.py／振り分け（プールのぴあ77件ほか・独立の読み直し → gate_fields）／抜き打ち30件
+- ▶ 昼：40599 mod presents「FIGHT CLUB」カード12/19・受付12/27 の食い違い（TIGET 533330 を見る）
+- ▶ 昼：出演者を全員に＝登録済み TIGET 2,564・livePocket 1,167・ZAIKO 79件（artist がちょうど3組）を個別ページから作り直す道具が要る（番人と重ねない）
+- ▶🚨 昼：10/25号の記事を本番へ（pickup/2026-10-25/ を commit・ヘッダーのリンク）
