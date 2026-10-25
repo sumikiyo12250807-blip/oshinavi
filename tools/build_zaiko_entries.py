@@ -146,6 +146,16 @@ def perf_dt_of(t, base_date):
     月日が base より前なら翌年と見る（年末年始のまたぎ）。取れなければ (None, None)。
     🚨これを読まないと、1ページに複数公演あるページで全部イベントの初日になる（2026-09-21）。"""
     s = t.get('perf_dt') or ''
+    # 🚨2026-10-26 ツアーを1ページに詰めた形（KALMA 20630）は、どの券種の perf_dt も
+    #   「10月09日 (金) 19:00 – 11月03日 (火) 21:00」＝ツアー全体の期間で、券種の公演日ではない。
+    #   初日を読むと全部 10/9 公演になり、イベントごと「終わった公演」で捨てていた。
+    #   日付が2つ以上並ぶ時は券種名の「10月30日（金）」を使う（時刻は書いていない＝付けない）。
+    if len(set(re.findall(r'(\d{1,2})月(\d{1,2})日', s))) > 1:
+        # 「10月31日まで」（配信の視聴期限）は公演日ではない＝拾わない（40463）
+        mn = re.search(r'(\d{1,2})月(\d{1,2})日(?!\s*(?:まで|迄|締切|〆))', t.get('name') or '')
+        if not mn:
+            return None, None
+        s = '%s月%s日' % (mn.group(1), mn.group(2))
     m = re.search(r'(\d{1,2})月(\d{1,2})日[^\d]*(?:(\d{1,2}):(\d{2}))?', s)
     if not m:
         return None, None
@@ -302,7 +312,10 @@ def build_one(listrow, det, today, unknown):
     #   （24618/24619 スタリオン＝9/28 22:00開始・10/5 23:59まで）。ここで捨てると番人も
     #   「公演が終わった＝正常」と読んでしまう（ユーザー「ゲートが間違えてる」）。
     #   買える配信の券種（売り切れ・販売終了でない・締切が今日以降）がある時は捨てない。
-    if d < today and not live_stream_ticket(det, today):
+    # 🚨2026-10-26 1ページにツアーを詰めた形は、画面の「開演」がツアーの初日＝券種ごとの公演日の最後で見る（KALMA 20630）
+    #   ⚠️d そのものは動かさない（動かすと公演日の書いていない券種が最後の日の公演になる＝hololive DAY1 が 1/10 になった）
+    last = max([d] + [x for x in (perf_dt_of(t, d)[0] for t in (det or {}).get('tickets') or []) if x])
+    if last < today and not live_stream_ticket(det, today):
         return None, '公演が終わっている'
     limit = (datetime.date.fromisoformat(today) + datetime.timedelta(days=730)).isoformat()
     if d > limit:
