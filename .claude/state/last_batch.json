@@ -6235,6 +6235,25 @@
    "assigned": true,
    "rechecked": true,
    "note": "logs/assigned_2026-10-26.md"
+  },
+  {
+   "date": "2026-10-27",
+   "slot": "morning",
+   "id_from": 41827,
+   "id_to": 41878,
+   "count": 52,
+   "source": "ぴあ 発売前スイープ 7ジャンル×0102/0202（新規52＋既存14件に24枠）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "add? 27件＋係が保留した3件（ウルフムーン・ナビレラ・ズーラシアン＝既存28396・39933・39978 と枠の一部が重なる）は売り場の形のまま別カード。34296 は沖縄の3次受付だけ足した（東京2枠は 41778 にある）。reconcile_pia --ids OK64・MISSING2（34296 のまとめページ＝東京2枠・正常）・STALE1（309 しまじろう 2609071＝予定枚数終了の印）"
+  },
+  {
+   "date": "2026-10-27",
+   "slot": "morning",
+   "source": "ZAIKO 新着12（振り分け11）・FANY 新着35（振り分け34）",
+   "assigned": true,
+   "rechecked": true,
+   "note": "logs/assigned_2026-10-27.md／41787・41811 は出演者の欄 M でプール"
   }
  ]
 }
