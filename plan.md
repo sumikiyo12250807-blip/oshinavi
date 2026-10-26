@@ -3,6 +3,7 @@
 - ✅10/26 名前の二重（gate_fields I・e+ clean_name）／部の時刻（gate_fields K・livePocket PART_TIME・既存10枠）／TIGET 404 23件（削除15・付け替え7・残す1 34124）
 - ▶10/26 夜：出演者の欄に公演の言葉が入った223件（e+160・ぴあ15・TIGET15・ZAIKO16・FANY8・livePocket9）を売り場の出演者で取り直す（e+ は reconcile_eplus --all と重ねない）
 - ▶10/26 昼：TIGET 非公開40件を 404 と同じ確かめ方で片付ける
+- ▶10/26 夜：県が空で会場名だけの国内イベント（To-tA・柴崎mod・LEFKADA新宿・セシオン杉並ほか・TIGET中心）に売り場の住所から県を入れる。会場未定・購入者のみ通知・オンライン・海外は空のまま＝tmp/x1026/count_nopref.txt
 - ▶10/27 ぴあの出演者の欄（artist＝name 6,667件）を「出演」欄から取り直す道具 → 3分の1
 - ▶10/28 ぴあの残り＋TIGET899・livePocket879・ZAIKO185・FANY119 の artist＝name
 - ▶10/29 e+ の後から足された会場の総ざらい（/sf/word/ と登録の公演数）＝29573 LOCAL CONNECT の型（大阪2/19・東京2/26・愛知2/28・京都3/6 は先に足す）
