@@ -30,6 +30,7 @@ reconcile_pia・gate_*_slots は「枠が売り場と合っているか」しか
 import datetime, io, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fill_slot_pref as FSP  # noqa: E402
+import fill_entry_pref as FEP  # noqa: E402
 
 ROOT = 'C:/Users/user/oshinavi/'
 B_OK = {9271, 9272, 9273}  # TBC＝全国の店舗で使える券
@@ -83,7 +84,7 @@ def main():
     if '--ids' in sys.argv:
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')}
         E = [e for e in E if e['id'] in ids]
-    A, B, C, D, F, G, H, I, K, L, M, M_old = [], [], [], [], [], [], [], [], [], [], [], 0
+    A, B, C, D, F, G, H, I, K, L, M, N, M_old = [], [], [], [], [], [], [], [], [], [], [], [], 0
     OK = _artist_ok()
     for e in E:
         # M は新着プール（genre:new）だけ止める＝これから振り分ける分。既存は件数だけ（10/27〜10/28 に取り直す計画）
@@ -118,6 +119,10 @@ def main():
         #   ＝ヒールで作り直すと消える型。直す道具＝tools/fill_slot_pref.py --apply（ヒールのあと・push 前）
         if (e.get('date') or '') >= today and FSP.missing(e):
             L.append(e)
+        # N 🆕2026-10-26 まだ買える枠の括弧の県がエントリの県に入っていない（41475 SALSATION 県=福岡・大阪・枠は東京・広島・埼玉にも
+        #   ＝ヒールで後から足された会場・142件）。直す道具＝tools/fill_entry_pref.py --apply（ヒールのあと・push 前）
+        if (e.get('date') or '') >= today and FEP.need(e, today):
+            N.append(e)
         a0 = (e.get('artist') or '').split('／')[0].strip()
         if len(a0) >= 2 and (e.get('name') or '').startswith(a0 + ' ' + a0):
             I.append(e)
@@ -163,12 +168,14 @@ def main():
         print(f'  K id{e["id"]} 部の時刻と括弧の時刻が違う: {ty[:60]}')
     for e in L[:30]:
         print(f'  L id{e["id"]} 枠の括弧に県が無い（県={e.get("prefecture")}）＝fill_slot_pref --apply: {(e.get("name") or "")[:30]}')
+    for e in N[:30]:
+        print(f'  N id{e["id"]} 枠の県がエントリの県に無い（県={e.get("prefecture")}・足す={"・".join(FEP.need(e, today))}）＝fill_entry_pref --apply: {(e.get("name") or "")[:30]}')
     for e in M:
         print(f'  M id{e["id"]} 出演者の欄が公演名のまま（新着）: {(e.get("artist") or "")[:50]}')
-    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / M {len(M)}（既存 {M_old}・止めない） ===')
+    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / N {len(N)} / M {len(M)}（既存 {M_old}・止めない） ===')
     # M は振り分けの番人（--assign の時だけ止める）＝新着タブには載ったまま、振り分けでその件だけプールに残す
     #   （push を止めると既存の 4,914 件と釣り合わない。振り分けの道具は artist_looks_like_title で1件ずつ残す）
-    sys.exit(1 if (A or B or C or D or F or H or I or K or L or (M and '--assign' in sys.argv)) else 0)
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or (M and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':
