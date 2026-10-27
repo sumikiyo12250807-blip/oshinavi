@@ -175,6 +175,31 @@ def title_like_name(nm, ev):
             and nm not in _GF_OK[0])
 
 
+CASTCHECK = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_castcheck.json")   # refetch_artist が書く
+_CC = None
+
+
+def only_title_source(nm, evs):
+    """元のエントリが全部「公演名＝名前」で、どれも売り場の出演者の欄で確かめていない（artist_castcheck に無い）＝確実ではない。
+    作品名のページ（『』）と人が書いた名前（artist_ok.txt）は対象外"""
+    global _CC
+    if nm.startswith("『") or nm.startswith("ミュージカル『"):
+        return False
+    if _GF_OK is None and evs:
+        cast_ok(evs[0])
+    if nm in _GF_OK[0]:
+        return False
+    if _CC is None:
+        try:
+            _CC = json.load(open(CASTCHECK, encoding="utf-8"))
+        except FileNotFoundError:
+            _CC = {}
+    t = unicodedata.normalize("NFKC", nm).strip()
+    if not evs or not all(unicodedata.normalize("NFKC", ev.get("name") or "").strip() == t for ev in evs):
+        return False
+    return not any(t in unicodedata.normalize("NFKC", (_CC.get(str(ev.get("id"))) or {}).get("cast", "")) for ev in evs)
+
+
 def work_names(ev):
     """名前ページが作れないエントリの作品名（「ミュージカル『◯◯』」「『◯◯』」）。"""
     src = unicodedata.normalize("NFKC", (ev.get("artist") or "") + " " + (ev.get("name") or ""))
@@ -454,6 +479,11 @@ def build(today):
             g = by[k]
             g["name"] = g["name"] or nm
             g["items"].append((rows[0][0], ev, rows))
+
+    # 🆕🚨10/27 「公演名＝名前」しか元が無い組（ほかの公演に出演者として出てこない）は、売り場の出演者の欄で確かめた分だけ
+    #   （抜き打ちで「SONIC BOOM」＝クラブの催しの名前か出演者か確かめられなかった／「大阪個人撮影会」「風間杜夫ひとり芝居」が混ざる）
+    for k in [k for k, g in by.items() if only_title_source(g["name"], [ev for _, ev, _ in g["items"]])]:
+        del by[k]
 
     # 人気の組から＝X投稿の準備で調べたフォロワー数（エントリ単位）の最大値 → 受付の数
     try:

@@ -8,7 +8,7 @@
   Q 元のエントリの出演者の欄が公演名のまま（gate_fields M）か、売り場に出演者の記載が無い（artist_nocast）
   R ジャンルの名前（お笑い・J-POP…）・総称・告知文（SKIP_NAME）が名前になっている
   S 名前が公演名そのもの（元のエントリの name と同じ）で、しかもその名前の出演者がほかのどのエントリにも無い
-     （例外＝tools/artist_ok.txt に人が書いた名前・グループ名と公演名が同じもの「サーカス」）
+     （例外＝tools/artist_ok.txt に人が書いた名前・売り場の出演者の欄で確かめた印 tools/artist_castcheck.json）
 """
 import html
 import io
@@ -59,9 +59,8 @@ def main():
             R.append(nm)
         # 元のエントリが全部「公演名＝名前」＝ほかに出演者として出てくる公演が1つも無い時だけ鳴らす
         #   （YONA YONA WEEKENDERS のように別の公演でも出演者の名前として出ていれば本当の名前）
-        t = unicodedata.normalize('NFKC', nm).strip()
-        if (good and all(unicodedata.normalize('NFKC', (e.get('name') or '')).strip() == t for e in good)
-                and len(t) >= 12 and nm not in ok and ' ' in t):
+        #   🆕10/27 長さ・空白の条件を外した＝売り場の出演者の欄で確かめた印（tools/artist_castcheck.json）が無ければ鳴らす
+        if good and B.only_title_source(nm, good):
             S.append((nm, good[0]['id']))
     print(f'=== gate_artist_pages (today={today}) 一覧 {len(listed)}組 ===')
     for tag, xs in (('P 元のエントリが無い', P), ('Q 出演者の欄が公演名のまま／記載なし', Q), ('R ジャンル名・総称・告知文', R),
