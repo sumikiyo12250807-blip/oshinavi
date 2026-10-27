@@ -21,9 +21,11 @@ import os
 import re
 import unicodedata
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
+from urllib.parse import quote
 
 import build_ai_page as A
+import click_track
 
 REG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_pages.json")
 OUT_DIR = "artist"
@@ -142,12 +144,94 @@ CSS = ("body{font-family:sans-serif;max-width:860px;margin:0 auto;padding:16px;l
        "border-radius:8px;text-decoration:none;font-weight:bold}.ev{border:1px solid #ddd;border-radius:8px;padding:10px 12px;margin:10px 0}"
        ".ev .n{font-weight:bold}.ev .v{color:#444;font-size:14px}ul{padding-left:18px;margin:6px 0}li{margin:4px 0;font-size:14px}"
        ".st{font-weight:bold;color:#c00}.pre{color:#0a58ca}a{color:#06c;word-break:break-all}"
+       ".btns{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.ab{display:inline-block;text-decoration:none;font-size:13px;font-weight:bold}"
+       ".ab:not(.ai){padding:7px 14px;border-radius:8px;background:#ff9900;color:#111}.ab.ai img{height:36px;display:block}"
        "@media (prefers-color-scheme: dark){body{background:#111;color:#eee}.ev{border-color:#444}.ev .v,.note{color:#bbb}a{color:#6af}}")
 
 
 GTAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM1EQ5M4HT"></script>'
         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
         "gtag('js',new Date());gtag('config','G-RM1EQ5M4HT');</script>")
+CLICK = click_track.snippet("artist")   # 🆕10/27 ボタンのクリックを GA4 へ（tools/click_track.py）
+
+# 🆕2026-10-27 すちこ「①と②からお願い」＝検索から来る人が最初に着くアーティストのページに、トップのカードと同じ
+#   アフィリのボタン（楽天チケット・最新CD/ジャンルのグッズ・会場近くのホテル）を付ける。それまで1つも無かった。
+#   文言と画像は index.html の BTN_IMG・GENRE_AMAZON_LINKS・hotelHref と同じもの（画面の決まりを変えない）。
+AMZ_TAG = "oshinavi0a-22"
+HOTEL_VC = "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446"
+BTN_IMG = {"楽天チケット": "img/btn2_rakuten.png", "予習する（最新CD）": "img/btn_cd_0915.png",
+           "会場近くのホテルを探す": "img/btn2_hotel.png", "推しうちわを作る": "img/btn2_uchiwa.png",
+           "推し活グッズ": "img/btn2_goods.png", "ライブ用耳栓": "img/btn2_earplug.png", "オペラグラス": "img/btn2_operaglass.png",
+           "観戦グッズ": "img/btn2_kansen.png", "フェスの必需品": "img/btn2_fes.png", "花火の必需品": "img/btn2_hanabi.png",
+           "ぬりえ": "img/btn2_nurie.png"}
+_CONCERT = ("https://amzn.to/3OnUo4K", "推し活グッズ")
+_UCHIWA = ("https://www.amazon.co.jp/s?k=%E5%BF%9C%E6%8F%B4%E3%81%86%E3%81%A1%E3%82%8F%20%E6%89%8B%E4%BD%9C%E3%82%8A%20%E3%82%BB%E3%83%83%E3%83%88&tag=oshinavi0a-22", "推しうちわを作る")
+_OPERA = ("https://amzn.to/47ZHLUm", "オペラグラス")
+GENRE_AMAZON = {"fes": ("https://amzn.to/4uprRe4", "フェスの必需品"),
+                "hanabi": ("https://www.amazon.co.jp/s?k=%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%20%E6%8C%81%E3%81%A1%E7%89%A9&tag=oshinavi0a-22", "花火の必需品"),
+                "engeki": _OPERA, "musical": _OPERA, "classic": _OPERA, "rock": ("https://amzn.to/48LOZM1", "ライブ用耳栓"),
+                "hiphop": _CONCERT, "anime": _CONCERT, "chanson": _CONCERT, "musicetc": _CONCERT,
+                "kids": ("https://amzn.to/4qTnpV0", "ぬりえ")}
+for _g in ("jpop", "kpop", "jazz", "yougaku", "enka", "utaite", "vocaloid", "club", "hougaku", "idol", "youtuber", "vtuber",
+           "tiktoker", "owarai", "seiyuu", "2.5ji", "fanevent"):
+    GENRE_AMAZON[_g] = _UCHIWA
+BASEBALL_RE = re.compile(r"タイガース|ドラゴンズ|スワローズ|ファイターズ|バファローズ|マリーンズ|ジャイアンツ|カープ|ホークス|ライオンズ|イーグルス|ベイスターズ|NPB|プロ野球|野球")
+# 最新CDを名前の検索で作ってよいジャンル（reference_amazon_affiliate の付与対象・クラシックは名前だけで探す）
+CD_GENRES = {"jpop", "rock", "idol", "kpop", "hiphop", "classic", "anime", "seiyuu", "vtuber", "youtuber", "enka", "jazz"}
+
+
+def rakuten_deep(url):
+    """楽天チケットの素URLは LinkShare の Deep Link に（feedback_rakuten_deeplink）。"""
+    if url and url.startswith("https://ticket.rakuten.co.jp/") and "linksynergy" not in url:
+        return f"https://click.linksynergy.com/deeplink?id=z9x6HLNpWco&mid=53531&murl={quote(url, safe='')}"
+    return url
+
+
+def btn(url, label, icon, nofollow=False):
+    img = BTN_IMG.get(label)
+    inner = (f'<img src="../{img}" alt="{esc(label)}" loading="lazy" decoding="async">' if img else f"{icon} {esc(label)}")
+    rel = "nofollow noopener" if nofollow else "noopener"
+    return f'<a class="ab{" ai" if img else ""}" href="{esc(url)}" target="_blank" rel="{rel}">{inner}</a>'
+
+
+def genre_amazon(ev):
+    g = ev.get("genre")
+    if g == "sports":
+        return (("https://amzn.to/4cjW1IR" if BASEBALL_RE.search((ev.get("name") or "") + (ev.get("artist") or ""))
+                 else "https://amzn.to/4vqJXOw"), "観戦グッズ")
+    return GENRE_AMAZON.get(g)
+
+
+def cd_url(name, items):
+    """そのアーティストの最新CD。エントリに付いている links.amazon（人が選んだリンク）を先に、無ければ名前の検索。"""
+    for _, ev, _ in items:
+        u = (ev.get("links") or {}).get("amazon")
+        if u and not (ev.get("links") or {}).get("amazonLabel"):
+            return u
+    if "『" in name or not any(ev.get("genre") in CD_GENRES for _, ev, _ in items):
+        return None
+    cls = all(ev.get("genre") == "classic" for _, ev, _ in items)
+    k = name if cls else f"{name} CD"
+    return f"https://www.amazon.co.jp/s?k={quote(k)}&i=specialty-aps&srs=26200021051&tag={AMZ_TAG}"
+
+
+def hotel_url(ev, today):
+    """index.html の hotelHref と同じ＝会場が1つのカードだけ会場名＋県（1日だけの公演は日付も）で Expedia の宿の検索へ。"""
+    v = (ev.get("venue") or "").strip()
+    if not v or re.search(r"全国ツアー|／|/|、|配信|オンライン|Zaiko Live|Streaming|未定|各地", v, re.I):
+        return HOTEL_VC
+    dest = re.sub(r"[（(][^）)]*[）)]\s*$", "", v).strip()
+    if not dest:
+        return HOTEL_VC
+    pref = (ev.get("prefecture") or "").strip()
+    if pref and not re.search(r"・|全国|海外|、", pref) and pref not in dest:
+        dest += " " + pref
+    q = "destination=" + quote(dest)
+    days = set(re.findall(r"\d{1,2}月\d{1,2}日", ev.get("dateLabel") or ""))
+    d = ev.get("date") or ""
+    if len(days) == 1 and re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and d >= today.isoformat():
+        q += f"&startDate={d}&endDate={(date.fromisoformat(d) + timedelta(days=1)).isoformat()}"
+    return HOTEL_VC + "&vc_url=" + quote("https://www.expedia.co.jp/Hotel-Search?" + q + "&adults=2", safe="")
 
 
 def event_jsonld(ev, rows):
@@ -207,14 +291,22 @@ def page_html(name, items, today, stamp, total_rows, num=None):
         j = event_jsonld(ev, rows)
         if j:
             o.append(f'<script type="application/ld+json">{j}</script>')
-    o += [GTAG, f"<style>{CSS}</style></head><body>",
+    top_btns = []
+    cu = cd_url(name, items)
+    if cu:
+        top_btns.append(btn(cu, "予習する（最新CD）", "🎧"))
+    ga = next((genre_amazon(ev) for _, ev, _ in items if genre_amazon(ev)), None)
+    if ga:
+        top_btns.append(btn(ga[0], ga[1], "🛍"))
+    o += [GTAG, CLICK, f"<style>{CSS}</style></head><body>",
          # 🆕10/24 リンクは相対に（すちこ「ファイルが出てこないわよ」＝file:// で開くと /artists.html が C:\ を探す）
          '<p class="note"><a href="../index.html">OSHINAVI</a> ＞ <a href="../artists.html">アーティスト一覧</a></p>',
          f"<h1>{esc(name)} のチケット発売日</h1>",
          *([f'<p class="pre"><b>次の発売：{esc(nxt_md)}</b> {esc(nxt[1])}</p>'] if nxt_md else []),
          f'<p class="note">最終更新：{esc(stamp)}／これから発売・販売中の受付 {total_rows}件（発売日・締切が近い順）。'
          f'日付は各売り場の掲載にもとづきます。買う前に売り場のページで必ず確かめてください。</p>',
-         f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>']
+         f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>',
+         *([f'<div class="btns">{"".join(top_btns)}</div>'] if top_btns else [])]
     for _, ev, rows in items:
         o.append('<div class="ev">')
         o.append(f'<div class="n">{esc(ev.get("name") or "")}</div>')
@@ -224,10 +316,16 @@ def page_html(name, items, today, stamp, total_rows, num=None):
         o.append(f'<div class="v">{esc(venue)}{("（" + esc(pref) + "）") if pref else ""}／公演 {esc(held)}</div><ul>')
         for key, state, t in rows:
             cls = "pre" if state == "発売前" else "st"
-            url = t.get("url") or A.buy_url(ev)[0]
+            url = rakuten_deep(t.get("url") or A.buy_url(ev)[0])
             link = f' <a href="{esc(url)}" target="_blank" rel="noopener">{esc(vendor_of(url))}</a>' if url else ""
             o.append(f'<li><span class="{cls}">{esc(state_text(state, t, today))}</span> {esc(t.get("type") or "")}{link}</li>')
-        o.append("</ul></div>")
+        o.append("</ul>")
+        eb = []
+        rk = rakuten_deep((ev.get("links") or {}).get("rakuten"))
+        if rk:
+            eb.append(btn(rk, "楽天チケット", "🎫"))
+        eb.append(btn(hotel_url(ev, today), "会場近くのホテルを探す", "🏨", nofollow=True))
+        o.append(f'<div class="btns">{"".join(eb)}</div></div>')
     o.append(f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>')
     o.append('<p class="note"><a href="../artists.html">ほかのアーティストを見る</a>｜<a href="../index.html">OSHINAVI トップ</a></p>')
     o.append("</body></html>")
