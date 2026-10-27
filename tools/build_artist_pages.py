@@ -44,6 +44,41 @@ def norm(s):
     return unicodedata.normalize("NFKC", s or "").replace(" ", "").replace("　", "").lower()
 
 
+# 一覧の行（10/27）＝かなの行 → A〜Z → 数字・記号 → 漢字（読みが付くまでは漢字で始まる名前をまとめる）
+KANA_ROWS = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"]
+_KANA_HEAD = {r: r for r in KANA_ROWS}
+for _r, _cs in (("あ", "あいうえおぁぃぅぇぉゔ"), ("か", "かきくけこ"), ("さ", "さしすせそ"), ("た", "たちつてとっ"), ("な", "なにぬねの"),
+                ("は", "はひふへほ"), ("ま", "まみむめも"), ("や", "やゆよゃゅょ"), ("ら", "らりるれろ"), ("わ", "わをんゎ")):
+    for _c in _cs:
+        _KANA_HEAD[_c] = _r
+ROWS = KANA_ROWS + [chr(c) for c in range(ord("a"), ord("z") + 1)] + ["0-9", "漢字"]
+ROW_LABEL = {chr(c): chr(c).upper() for c in range(ord("a"), ord("z") + 1)}
+ROW_LABEL.update({"0-9": "0-9・記号"})
+ROW_ID = {r: r for r in ROWS}
+ROW_ID.update({"あ": "a1", "か": "ka", "さ": "sa", "た": "ta", "な": "na", "は": "ha", "ま": "ma", "や": "ya", "ら": "ra", "わ": "wa",
+               "0-9": "num", "漢字": "kanji"})
+ROW_ID.update({chr(c): "e" + chr(c) for c in range(ord("a"), ord("z") + 1)})
+
+
+def kana_key(s):
+    """カタカナ→ひらがな・濁点を外した読みの並び（ガ→か・パ→は）"""
+    t = norm(s)
+    t = t.lstrip("「『【〔［[（(\"'・")   # 作品名の『』は外して並べる（『ハイキュー!!』→ は行）
+    t = "".join(chr(ord(c) - 96) if "ァ" <= c <= "ヶ" else c for c in t)
+    return unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", t) if c not in "゙゚"))
+
+
+def row_of(name):
+    c = kana_key(name)[:1]
+    if c in _KANA_HEAD:
+        return _KANA_HEAD[c]
+    if "a" <= c <= "z":
+        return c
+    if "一" <= c <= "鿿" or "㐀" <= c <= "䶿" or c in "々〆":
+        return "漢字"
+    return "0-9"
+
+
 def esc(s):
     return html.escape(str(s)) if s is not None else ""
 
@@ -387,8 +422,15 @@ def build(today):
         if m and m.group(1) not in live:
             os.remove(os.path.join(OUT_DIR, fn))
 
-    # 一覧ページ（五十音・アルファベット順）
-    made_sorted = sorted(made, key=lambda x: norm(x[0]))
+    # 一覧ページ（行ごと＝あ〜わ・A〜Z・数字記号・漢字）
+    # 🆕10/27 すちこ「ア行か行　Z行とかにすぐ飛べる仕組み考えて」＝上に貼りつく帯から行へ飛ぶ・JS が動けば選んだ行だけ出す
+    groups = defaultdict(list)
+    for x in made:
+        groups[row_of(x[0])].append(x)
+    for g in groups.values():
+        g.sort(key=lambda x: kana_key(x[0]))
+    order = [r for r in ROWS if r in groups]
+    made_sorted = [x for r in order for x in groups[r]]
     o = ["<!DOCTYPE html>", '<html lang="ja"><head>', '<meta charset="UTF-8">',
          '<meta name="viewport" content="width=device-width, initial-scale=1.0">', '<meta name="robots" content="index,follow">',
          "<title>アーティスト別 チケット発売日一覧 | OSHINAVI</title>",
@@ -401,18 +443,48 @@ def build(today):
          '<input id="q" type="search" placeholder="アーティスト名で探す" autocomplete="off" '
          'style="width:100%;max-width:420px;box-sizing:border-box;font-size:16px;padding:10px 12px;margin:4px 0 4px;'
          'border:1px solid #888;border-radius:8px">',
-         '<p class="note" id="hit" aria-live="polite"></p><ul id="list">']
-    for nm, n, cnt in made_sorted:
-        o.append(f'<li><a href="{OUT_DIR}/{n}.html">{esc(nm)}</a>（{cnt}件）</li>')
-    o.append("</ul>")
+         '<p class="note" id="hit" aria-live="polite"></p>']
+    # 行へ飛ぶ帯（上に貼りつく）＝かなの行は1段目、A〜Z は2段目
+    def tab(r):
+        return f'<a href="#r-{ROW_ID[r]}" data-r="{ROW_ID[r]}">{ROW_LABEL.get(r, r)}</a>'
+    kana = [r for r in order if r in KANA_ROWS]
+    rest = [r for r in order if r not in KANA_ROWS]
+    # 🆕10/27 すちこ「トップページにとべるボタンも作って」＝帯の頭に置く（下に流しても消えない）
+    o.append('<nav id="jump" style="position:sticky;top:0;z-index:5;background:#fff;padding:6px 0 4px;border-bottom:1px solid #ddd">'
+             '<a class="home" href="index.html">← OSHINAVI トップへ</a>'
+             '<div class="jr">' + "".join(tab(r) for r in kana) + "</div>"
+             '<div class="jr">' + "".join(tab(r) for r in rest) + "</div></nav>")
+    o.append("<style>.jr{display:flex;flex-wrap:wrap;gap:4px;margin:2px 0}.jr a{min-width:30px;text-align:center;padding:5px 6px;"
+             "border:1px solid #ccc;border-radius:6px;text-decoration:none;color:#1a1a1a;font-size:14px}"
+             ".jr a.on{background:#e4007f;color:#fff;border-color:#e4007f}"
+             ".home{display:inline-block;margin:0 0 4px;padding:6px 12px;background:#e4007f;color:#fff;border-radius:6px;"
+             "text-decoration:none;font-weight:bold;font-size:14px}#list h2{scroll-margin-top:96px}</style>")
+    o.append('<div id="list">')
+    for r in order:
+        o.append(f'<section data-r="{ROW_ID[r]}"><h2 id="r-{ROW_ID[r]}">{ROW_LABEL.get(r, r)}{"行" if r in KANA_ROWS else ""}'
+                 f'（{len(groups[r])}組）</h2><ul>')
+        for nm, n, cnt in groups[r]:
+            o.append(f'<li><a href="{OUT_DIR}/{n}.html">{esc(nm)}</a>（{cnt}件）</li>')
+        o.append("</ul></section>")
+    o.append("</div>")
+    # JS が動けば＝選んだ行だけ出す（1万5千組を一度に描かない）・探す欄に入れたら全部の行から探す。JS が無ければ全部出る
     o.append("<script>(function(){var q=document.getElementById('q'),hit=document.getElementById('hit'),"
+             "sec=[].slice.call(document.querySelectorAll('#list section')),tabs=[].slice.call(document.querySelectorAll('#jump .jr a')),"
              "li=[].slice.call(document.querySelectorAll('#list li'));"
              "function n(s){return s.normalize('NFKC').toLowerCase().replace(/[\\u30a1-\\u30f6]/g,function(c){"
              "return String.fromCharCode(c.charCodeAt(0)-96)}).replace(/[\\s・･]/g,'')}"
              "var key=li.map(function(x){return n(x.firstChild.textContent)});"
-             "q.addEventListener('input',function(){var v=n(q.value),c=0;li.forEach(function(x,i){"
-             "var ok=!v||key[i].indexOf(v)>=0;x.hidden=!ok;if(ok)c++});"
-             "hit.textContent=v?(c?c+'組が見つかったわ':'見つからなかったわ。トップの検索も試してね'):''});})();</script>")
+             "function show(r){sec.forEach(function(s){s.hidden=s.getAttribute('data-r')!==r});"
+             "tabs.forEach(function(t){t.classList.toggle('on',t.getAttribute('data-r')===r)})}"
+             "tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();q.value='';hit.textContent='';"
+             "li.forEach(function(x){x.hidden=false});show(t.getAttribute('data-r'));"
+             "try{history.replaceState(null,'','#r-'+t.getAttribute('data-r'))}catch(_){}window.scrollTo(0,0)})});"
+             "var h=(location.hash.match(/^#r-(.+)$/)||[])[1];show(h&&sec.some(function(s){return s.getAttribute('data-r')===h})?h:sec[0].getAttribute('data-r'));"
+             "q.addEventListener('input',function(){var v=n(q.value),c=0;if(!v){show((document.querySelector('#jump .jr a.on')||tabs[0]).getAttribute('data-r'));"
+             "li.forEach(function(x){x.hidden=false});hit.textContent='';return}"
+             "sec.forEach(function(s){s.hidden=false});li.forEach(function(x,i){var ok=key[i].indexOf(v)>=0;x.hidden=!ok;if(ok)c++});"
+             "sec.forEach(function(s){s.hidden=!s.querySelector('li:not([hidden])')});"
+             "hit.textContent=c?c+'組が見つかったわ':'見つからなかったわ。トップの検索も試してね'});})();</script>")
     o.append("</body></html>")
     with open("artists.html", "w", encoding="utf-8") as f:
         f.write("\n".join(o))
