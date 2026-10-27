@@ -44,6 +44,14 @@ def norm(s):
     return unicodedata.normalize("NFKC", s or "").replace(" ", "").replace("　", "").lower()
 
 
+# トップのジャンルの名前（index.html の GENRE_LABEL と同じ言葉）＋総称＝出演者の名前にしない
+GENRE_WORDS = {w.lower() for w in (
+    "2.5次元 HIP HOP J-POP K-POP TikToker VTuber YouTuber 新着 お笑い その他 アイドル アニソン イベント イベントアート キッズ "
+    "クラシック クラブ/DJ グルメ サーカス シャンソン ジャズ スポーツ ダンス ディナーショー トークショー ファンイベント フェス ボカロ "
+    "マジック ミュージカル ロック 伝統 声優 学園祭 怪談 映画 歌い手 洋楽 演劇 演歌 童謡・唱歌 舞台挨拶 花火大会 配信 駐車場 "
+    "落語 漫才 コント 講談 浪曲 寄席 音楽 芸人").split()} | {"hip hop"}
+
+
 # 一覧の行（10/27）＝かなの行 → A〜Z → 数字・記号 → 漢字（読みが付くまでは漢字で始まる名前をまとめる）
 KANA_ROWS = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"]
 _KANA_HEAD = {r: r for r in KANA_ROWS}
@@ -98,7 +106,11 @@ def artist_names(ev):
     # 「aiko Live Tour」のように名前のあとにツアー名が続く形は、前の名前だけを使う
     parts = [re.split(r"\s+(?:LIVE|Live|live|TOUR|Tour|tour|ツアー|CONCERT|Concert|コンサート|ONE ?MAN|ワンマン)\b", p)[0].strip()
              for p in parts]
-    return [p for p in parts if len(p) >= 2 and not SKIP_NAME.search(p) and not re.search(r"(?i)live|tour", p) and len(p) <= 40]
+    # 🆕10/27 すちこ「お笑いを選択…1件」＝「ガクヅケ／お笑い」の「お笑い」が名前ページになっていた＝ジャンルの名前は名前にしない
+    #   （公演名そのものが同じ名前＝グループの「サーカス」は残す）
+    nm = unicodedata.normalize("NFKC", ev.get("name") or "").strip()
+    return [p for p in parts if len(p) >= 2 and not SKIP_NAME.search(p) and not re.search(r"(?i)live|tour", p) and len(p) <= 40
+            and not (p.lower() in GENRE_WORDS and p != nm)]
 
 
 # 🆕2026-10-18 すちこ「ファインディング ネバーランドで検索かけた時、oshinavi が出てくるってこと？」＝出なかった。
