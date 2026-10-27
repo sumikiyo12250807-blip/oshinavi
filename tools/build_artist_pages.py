@@ -56,10 +56,10 @@ GENRE_WORDS = {w.lower() for w in (
 KANA_ROWS = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"]
 _KANA_HEAD = {r: r for r in KANA_ROWS}
 for _r, _cs in (("あ", "あいうえおぁぃぅぇぉゔ"), ("か", "かきくけこ"), ("さ", "さしすせそ"), ("た", "たちつてとっ"), ("な", "なにぬねの"),
-                ("は", "はひふへほ"), ("ま", "まみむめも"), ("や", "やゆよゃゅょ"), ("ら", "らりるれろ"), ("わ", "わをんゎ")):
+                ("は", "はひふへほ"), ("ま", "まみむめも"), ("や", "やゆよゃゅょ"), ("ら", "らりるれろ"), ("わ", "わをんゎゐゑ")):
     for _c in _cs:
         _KANA_HEAD[_c] = _r
-ROWS = KANA_ROWS + [chr(c) for c in range(ord("a"), ord("z") + 1)] + ["0-9", "漢字"]
+ROWS = KANA_ROWS + [chr(c) for c in range(ord("a"), ord("z") + 1)] + ["0-9"]   # 10/27 漢字の行は無し＝読みで あ〜わ へ
 ROW_LABEL = {chr(c): chr(c).upper() for c in range(ord("a"), ord("z") + 1)}
 ROW_LABEL.update({"0-9": "0-9・記号"})
 ROW_ID = {r: r for r in ROWS}
@@ -68,10 +68,35 @@ ROW_ID.update({"あ": "a1", "か": "ka", "さ": "sa", "た": "ta", "な": "na", 
 ROW_ID.update({chr(c): "e" + chr(c) for c in range(ord("a"), ord("z") + 1)})
 
 
+_KKS = None
+YOMI_FIX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_yomi.json")   # 読み違いの手直し {名前: よみ}
+try:
+    _YOMI = json.load(open(YOMI_FIX, encoding="utf-8"))
+except FileNotFoundError:
+    _YOMI = {}
+
+
+def yomi(t):
+    """漢字の入った名前に読み（ひらがな）を付ける（🆕10/27 すちこ「読みであかさたなに入れられる？　漢字は無し」＝pykakasi）。
+    芸名は読み違えることがある＝ tools/artist_yomi.json で手直し"""
+    global _KKS
+    if t in _YOMI:
+        return _YOMI[t]
+    t = t.replace("髙", "高").replace("﨑", "崎").replace("德", "徳")   # 辞書に無い異体字（髙田→たかだ）
+    if not re.search(r"[一-鿿㐀-䶿々〆]", t):
+        return t
+    if _KKS is None:
+        import pykakasi
+        _KKS = pykakasi.kakasi()
+    _YOMI[t] = "".join(x["hira"] for x in _KKS.convert(t))   # 同じ名前は1回だけ読む
+    return _YOMI[t]
+
+
 def kana_key(s):
-    """カタカナ→ひらがな・濁点を外した読みの並び（ガ→か・パ→は）"""
+    """カタカナ→ひらがな・濁点を外した読みの並び（ガ→か・パ→は）・漢字は読みに"""
     t = norm(s)
     t = t.lstrip("「『【〔［[（(\"'・")   # 作品名の『』は外して並べる（『ハイキュー!!』→ は行）
+    t = yomi(t)
     t = "".join(chr(ord(c) - 96) if "ァ" <= c <= "ヶ" else c for c in t)
     return unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", t) if c not in "゙゚"))
 
@@ -82,8 +107,6 @@ def row_of(name):
         return _KANA_HEAD[c]
     if "a" <= c <= "z":
         return c
-    if "一" <= c <= "鿿" or "㐀" <= c <= "䶿" or c in "々〆":
-        return "漢字"
     return "0-9"
 
 
