@@ -19,6 +19,11 @@ ROOT = 'C:/Users/user/oshinavi/'
 import datetime  # noqa: E402
 TODAY_S = datetime.date.today().isoformat()
 NOCAST = {}
+CHECKED_F = ROOT + 'tools/artist_castcheck.json'
+try:
+    CHECKED = json.load(io.open(CHECKED_F, encoding='utf-8'))
+except FileNotFoundError:
+    CHECKED = {}
 
 
 def main():
@@ -56,6 +61,8 @@ def main():
             src = f'読めず {str(ex)[:40]}'
         time.sleep(1.0)
         new = '／'.join(arts)
+        if arts:   # 🆕10/27 売り場の出演者の欄で確かめた印（アーティスト一覧の番人が「公演名＝名前」の組に求める）
+            CHECKED[str(e['id'])] = {'cast': new, 'src': src, 'at': TODAY_S}
         if not arts and src in ('ぴあ', 'e+'):
             NOCAST[str(e['id'])] = f'{src} に出演者の記載なし（{TODAY_S} 確認）'
         if new and new != e.get('artist'):
@@ -68,6 +75,7 @@ def main():
     print(f'refetch_artist: 直す {n} / 対象 {len(ids)} / 売り場に出演者の記載なし {len(NOCAST) - nocast0}' + (' → 書いた' if apply and n else ''))
     if apply:
         json.dump(NOCAST, io.open(ROOT + 'tools/artist_nocast.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        json.dump(CHECKED, io.open(CHECKED_F, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     if apply and n:
         body = '[\n' + ',\n'.join(json.dumps(x, ensure_ascii=False, separators=(',', ':')) for x in E) + '\n]'
         s = s[:st] + body.replace('\n', '\r\n') + s[end:]
