@@ -77,9 +77,30 @@ def main():
         json.dump(NOCAST, io.open(ROOT + 'tools/artist_nocast.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
         json.dump(CHECKED, io.open(CHECKED_F, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     if apply and n:
-        body = '[\n' + ',\n'.join(json.dumps(x, ensure_ascii=False, separators=(',', ':')) for x in E) + '\n]'
-        s = s[:st] + body.replace('\n', '\r\n') + s[end:]
-        io.open(ROOT + 'index.html', 'wb').write(s.encode('utf-8'))
+        # 🚨10/27 売り場を読んでいる間（数時間）にほかの道具が index.html に書く＝最初に読んだ写しを書き戻すとその分が消える
+        #   （livePocket の投入486件を上書きしかけた）→ 書く直前に読み直して、出演者の欄だけ id で差し替える
+        #   --lock <ファイル>＝その間だけほかの道具と順番を取る（無ければ作って、書いたら消す）
+        lock = sys.argv[sys.argv.index('--lock') + 1] if '--lock' in sys.argv else None
+        while lock:
+            try:
+                fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, b'refetch_artist'); os.close(fd); break
+            except FileExistsError:
+                time.sleep(5)
+        try:
+            new_art = {e['id']: e.get('artist') for e in E if e['id'] in ids}
+            s = io.open(ROOT + 'index.html', encoding='utf-8', newline='').read()
+            mm = re.search(r'const\s+EVENTS\s*=\s*(\[)', s)
+            st = mm.start(1)
+            E2, end = json.JSONDecoder().raw_decode(s, st)
+            for e in E2:
+                if e['id'] in new_art:
+                    e['artist'] = new_art[e['id']]
+            body = '[\n' + ',\n'.join(json.dumps(x, ensure_ascii=False, separators=(',', ':')) for x in E2) + '\n]'
+            s = s[:st] + body.replace('\n', '\r\n') + s[end:]
+            io.open(ROOT + 'index.html', 'wb').write(s.encode('utf-8'))
+        finally:
+            if lock:
+                os.remove(lock)
 
 
 if __name__ == '__main__':
