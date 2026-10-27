@@ -37,7 +37,10 @@ SKIP_NAME = re.compile(r"出演者多数|芸人多数|多数|ほか$|他$|^未�
                        r"|TOUR|ツアー|公演|ライブ|LIVE|イベント|発売記念|展$|展覧|ミュージアム|CAFE|カフェ|寄席|繁昌亭|館$"
                        r"|劇場|巡業|フェス|FES|祭|コンサート|CONCERT|ミュージカル|『|「|〜|~|in |IN |\d{4}"
                        # 10/13 5000組に広げたら切れ端が名前になった（「16(Fri)】 …」「【…】…」「ADAM at」）
-                       r"|【|】|\[|\]|\(|\)|（|）|^[\d\W_]|\s(?:at|and|with|feat\.?|vs\.?|x|×)$|^(?:at|with|feat)\s")
+                       r"|【|】|\[|\]|\(|\)|（|）|^[\d\W_]|\s(?:at|and|with|feat\.?|vs\.?|x|×)$|^(?:at|with|feat)\s"
+                       # 🆕10/27 抜き打ち（すちこ「A」のゲート）＝「愛はズボーンPresents」「第65回全日本女子剣道選手権大会」
+                       # （大文字小文字を区別しないのはこの「presents」だけ＝全体に re.I を付けると FES が Professor に当たる）
+                       r"|(?i:presents?)$|プレゼンツ$|^第\d+回|大会$|選手権|リーグ|杯$|定期演奏会|演奏会$|独演会|リサイタル|落語会|発表会")
 
 
 def norm(s):
@@ -142,6 +145,34 @@ def artist_names(ev):
 WORK_BR = re.compile(r"[『「]([^』」]{2,40})[』」]")
 # 作品名として弱い言葉（季節・一般語）＝1つのページに別々の催しが混ざるだけ
 WORK_SKIP = re.compile(r"^(?:クリスマス|冬祭り\d*|夏祭り\d*|オフ会|color|RUSH|ONE|LIVE|SHOW|Xmas)$|多数|ほか$|他$|公式|お知らせ|ご確認", re.I)
+
+
+_GF_OK = None
+
+
+def cast_ok(ev):
+    """出演者の欄が売り場の出演者から来ている（公演名のままではない）＝gate_fields M と同じ見方"""
+    global _GF_OK
+    import gate_fields as GF
+    if _GF_OK is None:
+        _GF_OK = (GF._artist_ok(), GF._artist_nocast())
+    ok, nocast = _GF_OK
+    # 売り場に出演者の記載が無かった（artist_nocast＝公演名のままで正しい）エントリも、名前ページにはしない
+    if str(ev.get("id")) in nocast:
+        return False
+    return not GF.artist_looks_like_title(ev, ok)
+
+
+def title_like_name(nm, ev):
+    """名前が公演名そのもの（長い・空白入り）＝「あばれる君 熱血授業in掛川」「◯◯対◯◯ 明治安田J2リーグ」。
+    出演者の欄に公演名が入ったまま番人（gate_fields M）の言葉に当たらなかった形＝確実ではないので名前ページにしない
+    （本当のグループ名なら tools/artist_ok.txt に書けば出る）"""
+    import gate_fields as GF
+    if _GF_OK is None:
+        cast_ok(ev)
+    t = unicodedata.normalize("NFKC", nm).strip()
+    return (t == unicodedata.normalize("NFKC", ev.get("name") or "").strip() and len(t) >= 12 and " " in t
+            and nm not in _GF_OK[0])
 
 
 def work_names(ev):
@@ -413,7 +444,10 @@ def build(today):
         if not rows:
             continue
         rows.sort(key=lambda r: r[0])
-        for nm in artist_names(ev) or work_names(ev):
+        # 🆕🚨10/27 すちこ「確実じゃなきゃ載せるべきじゃない　もし載せるなら、完璧なゲートをちゃんと作らなきゃ」→「A」
+        #   名前ページは「売り場の出演者の欄から取れた名前」だけ＝出演者の欄が公演名のまま（gate_fields M）のエントリからは作らない
+        #   （「怪談和尚・三木大雲の怪談説法」「柳家喬太郎 独演会」が名前になっていた）。作品名（『』）のページはそのまま
+        for nm in [n for n in (artist_names(ev) if cast_ok(ev) else []) if not title_like_name(n, ev)] or work_names(ev):
             k = norm(nm)
             if not k:
                 continue
@@ -474,6 +508,9 @@ def build(today):
          f"<style>{CSS}</style></head><body>",
          '<p class="note"><a href="index.html">OSHINAVI</a></p>', "<h1>アーティスト別 チケット発売日</h1>",
          f'<p class="note">最終更新：{esc(stamp)}／{len(made)}組（これから発売・販売中の受付がある組）。</p>',
+         # 🆕10/27 すちこ「A」＝全部の名簿とは言わない（売り場に出演者が書いてある公演だけ・フェスの出演者を全部は拾えない）
+         '<p class="note">売り場に出演者の名前が書いてある公演から作った一覧です。フェスの出演者や、主催の名前だけの公演は'
+         '入っていないことがあるので、見つからない時は <a href="index.html">OSHINAVI トップの検索</a> で探してね。</p>',
          # 🆕2026-10-24 すちこ「検索窓あってもいいかもよ」＝1万組以上を探せるように名前の絞り込み（大文字小文字・全角半角・カタカナひらがなを区別しない）
          '<input id="q" type="search" placeholder="アーティスト名で探す" autocomplete="off" '
          'style="width:100%;max-width:420px;box-sizing:border-box;font-size:16px;padding:10px 12px;margin:4px 0 4px;'
