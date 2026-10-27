@@ -117,6 +117,13 @@ def esc(s):
     return html.escape(str(s)) if s is not None else ""
 
 
+ROLE_PAREN = re.compile(
+    r"\s*\((?:[^()]*(?:ソプラノ|アルト|テノール|テナー|バリトン|バス|メゾ|ピアノ|オルガン|チェンバロ|ヴァイオリン|バイオリン|ヴィオラ|チェロ|コントラバス|"
+    r"フルート|クラリネット|オーボエ|ファゴット|サックス|トランペット|トロンボーン|ホルン|ハープ|ギター|ベース|ドラム|パーカッション|打楽器|三味線|尺八|箏|琴|太鼓|"
+    r"指揮|作曲|編曲|演出|司会|ナレーション|ナビゲーター|語り|お話|朗読|ゲスト|映像出演|声の出演|特別出演|公演|回|日)[^()]*"
+    r"|(?i:vn|vl|va|vc|cb|pf|p|fl|cl|ob|fg|sax|as|ts|bs|tp|tb|hr|hp|g|gt|b|ba|ds|dr|perc|key|kb|vo|cho|recd?|cmb|cemb|org|sop|ten|bar|mc|cond|vn\.|pf\.)\.?)\)\s*$")
+
+
 def artist_names(ev):
     """エントリの artist を名前に分ける（「A／B」は両方の組のページに載せる）。"""
     a = unicodedata.normalize("NFKC", ev.get("artist") or "").strip()
@@ -132,6 +139,8 @@ def artist_names(ev):
     # 「aiko Live Tour」のように名前のあとにツアー名が続く形は、前の名前だけを使う
     parts = [re.split(r"\s+(?:LIVE|Live|live|TOUR|Tour|tour|ツアー|CONCERT|Concert|コンサート|ONE ?MAN|ワンマン)\b", p)[0].strip()
              for p in parts]
+    # 🆕10/27 ぴあ［出演］の「岡村明美(ナレーション)」「大平倍大(テノール)」＝役・楽器の括弧は名前に入れない
+    parts = [ROLE_PAREN.sub("", p).strip() for p in parts]
     # 🆕10/27 すちこ「お笑いを選択…1件」＝「ガクヅケ／お笑い」の「お笑い」が名前ページになっていた＝ジャンルの名前は名前にしない
     #   （公演名そのものが同じ名前＝グループの「サーカス」は残す）
     nm = unicodedata.normalize("NFKC", ev.get("name") or "").strip()
