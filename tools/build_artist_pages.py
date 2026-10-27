@@ -273,10 +273,33 @@ def vendor_of(url):
     return "売り場"
 
 
+def cta(q, name, pic=False):
+    """OSHINAVI へ戻るボタン（文言はそのまま・形は 10/28 すちこの絵の真ん中）
+    pic=True＝10/28 すちこのキャラ入りボタンの絵（img/btn_oshinavi_matsuko.png・白い背景は抜いた）"""
+    if pic:
+        return (f'<a class="ctp" href="{q}"><img src="../img/btn_oshinavi_matsuko.png" width="360" height="183" '
+                f'alt="OSHINAVIで「{esc(name)}」を見る"></a>')
+    return (f'<a class="cta" href="{q}"><span class="o"><span class="i"><span class="t"><b>OSHINAVI</b>で「{esc(name)}」を見る</span>'
+            '<span class="c" aria-hidden="true">≫</span></span></span></a>')
+
+
 CSS = ("body{font-family:sans-serif;max-width:860px;margin:0 auto;padding:16px;line-height:1.6;color:#1a1a1a;background:#fff}"
        "h1{font-size:22px;margin:8px 0}h2{font-size:17px;margin:20px 0 6px;border-left:4px solid #e4007f;padding-left:8px}"
-       ".note{color:#555;font-size:13px}.cta{display:inline-block;margin:10px 0;padding:10px 16px;background:#e4007f;color:#fff;"
-       "border-radius:8px;text-decoration:none;font-weight:bold}.ev{border:1px solid #ddd;border-radius:8px;padding:10px 12px;margin:10px 0}"
+       ".note{color:#555;font-size:13px}"
+       # 🆕10/28 すちこ「色がピンクなのがいや」「この真ん中のボタンを使って」＝角を切った紺の枠・水色に光る縁と ≫（絵は CSS で描く）
+       ".cta{display:inline-block;max-width:100%;margin:12px 0;text-decoration:none;filter:drop-shadow(0 0 6px rgba(41,211,255,.6))}"
+       ".cta .o,.cta .i{clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px)}"
+       ".cta .o{display:block;padding:2px;background:linear-gradient(90deg,#29d3ff,#3a6bff 55%,#29d3ff)}"
+       ".cta .i{position:relative;display:flex;align-items:center;gap:14px;padding:12px 20px 14px;"
+       "background:linear-gradient(180deg,#0d2a78,#061650 60%,#0a2266);color:#fff;font-weight:bold;font-size:16px;line-height:1.4}"
+       ".cta .i:before{content:'';position:absolute;top:5px;left:16px;width:22px;height:4px;"
+       "background:repeating-linear-gradient(115deg,#29d3ff 0 3px,transparent 3px 7px)}"
+       ".cta .i:after{content:'';position:absolute;bottom:5px;left:18%;width:45%;height:2px;"
+       "background:linear-gradient(90deg,transparent,#29d3ff 30%,#29d3ff 75%,#d03cff 80%,#d03cff 92%,transparent)}"
+       ".ctp{display:inline-block;margin:6px 0;max-width:100%}.ctp img{display:block;width:360px;max-width:100%;height:auto}"
+       ".cta .t{min-width:0}.cta b{font-style:italic;font-weight:900;letter-spacing:.5px;text-shadow:0 0 6px rgba(127,230,255,.8)}"
+       ".cta .c{flex:none;margin-left:auto;color:#5fe0ff;font-size:28px;line-height:1;font-weight:900;"
+       "text-shadow:0 0 8px #29d3ff}.ev{border:1px solid #ddd;border-radius:8px;padding:10px 12px;margin:10px 0}"
        ".ev .n{font-weight:bold}.ev .v{color:#444;font-size:14px}ul{padding-left:18px;margin:6px 0}li{margin:4px 0;font-size:14px}"
        ".st{font-weight:bold;color:#c00}.pre{color:#0a58ca}a{color:#06c;word-break:break-all}"
        ".btns{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.ab{display:inline-block;text-decoration:none;font-size:13px;font-weight:bold}"
@@ -440,7 +463,7 @@ def page_html(name, items, today, stamp, total_rows, num=None):
          *([f'<p class="pre"><b>次の発売：{esc(nxt_md)}</b> {esc(nxt[1])}</p>'] if nxt_md else []),
          f'<p class="note">最終更新：{esc(stamp)}／これから発売・販売中の受付 {total_rows}件（発売日・締切が近い順）。'
          f'日付は各売り場の掲載にもとづきます。買う前に売り場のページで必ず確かめてください。</p>',
-         f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>',
+         cta(q, name, pic=True),
          *([f'<div class="btns">{"".join(top_btns)}</div>'] if top_btns else [])]
     for _, ev, rows in items:
         o.append('<div class="ev">')
@@ -461,7 +484,7 @@ def page_html(name, items, today, stamp, total_rows, num=None):
             eb.append(btn(rk, "楽天チケット", "🎫"))
         eb.append(btn(hotel_url(ev, today), "会場近くのホテルを探す", "🏨", nofollow=True))
         o.append(f'<div class="btns">{"".join(eb)}</div></div>')
-    o.append(f'<a class="cta" href="{q}">OSHINAVIで「{esc(name)}」を見る</a>')
+    o.append(cta(q, name))
     o.append('<p class="note"><a href="../artists.html">ほかのアーティストを見る</a>｜<a href="../index.html">OSHINAVI トップ</a></p>')
     o.append("</body></html>")
     return "\n".join(o)
