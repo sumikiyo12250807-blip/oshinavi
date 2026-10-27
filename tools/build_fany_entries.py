@@ -409,7 +409,8 @@ def build_one(p, today, genre_map, unknown):
     label = stream_label(label, max(d, dend or d), stream_until(p))
     return {
         'id': None,
-        'artist': artist_of(p),
+        # 🆕2026-10-28 出演者が無い時の代わりの p['name'] は一覧の「・・・」で切れていることがある（42539 神速ティッド寄席＝gate_fields D）→ 切れていない公演名で代える
+        'artist': (lambda a: name if re.search(r'(・・・|…)$', a or '') and name else a)(artist_of(p)),
         'name': name,
         'date': d,
         'dateLabel': label,
