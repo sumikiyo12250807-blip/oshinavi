@@ -34,7 +34,8 @@ OUT = "tmp/amazon_latest.json"
 TAG = "oshinavi0a-22"
 H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
      "Accept-Language": "ja,en;q=0.8"}
-SKIP_TITLE = re.compile(r"オムニバス|V\.?A\.?|ヴァリアス|Various|トリビュート|tribute|カラオケ|オルゴール", re.I)
+SKIP_TITLE = re.compile(r"オムニバス|V\.?A\.?|ヴァリアス|Various|トリビュート|tribute|カラオケ|オルゴール"
+                        r"|\[Analog\]|アナログ|レコード|\bLP\b|重量盤", re.I)   # 10/27 人間椅子でレコード盤を選んだ＝CDのボタンなので外す
 
 
 def norm(s):
@@ -78,9 +79,20 @@ def results(h):
     return out
 
 
+def cowork(kw, title):
+    """商品名の「 - 」のあと（名義）にほかの人が並ぶ＝共作・合同盤（10/27 ASKA→「音銀河 - 玉置浩二・ASKA」・dustbox→3組の合同盤）。
+    その人の最新作ではないので選ばない。"""
+    m = re.search(r"\s-\s([^-]+?)(?:\s*[\(（\[].*)?$", title)
+    if not m:
+        return False
+    parts = [p for p in re.split(r"\s*(?:・|/|／|&|＆|×|,|、| feat\.? | with )\s*", m.group(1)) if p.strip()]
+    # 名前そのものに「&」「/」が入る人（例：反田恭平&ジャパン・ナショナル・オーケストラ）は名義と同じなら共作ではない
+    return len(parts) >= 2 and norm(kw) != norm(m.group(1))
+
+
 def choose(kw, rs):
     n = norm(kw)
-    hit = [r for r in rs[:10] if r[2] and n and n in norm(r[1]) and not SKIP_TITLE.search(r[1])]
+    hit = [r for r in rs[:10] if r[2] and n and n in norm(r[1]) and not SKIP_TITLE.search(r[1]) and not cowork(kw, r[1])]
     if not hit:
         return None
     first = hit[0]
@@ -150,8 +162,9 @@ def apply():
     done = json.load(open(OUT, encoding="utf-8"))
     s, st, end, E = load()
     to = {}
-    for v in done.values():
-        if v.get("state") == "ok":
+    for k, v in done.items():
+        # 調べた時に共作の決まりが無かった分は、書く時にはじく（検索のまま）
+        if v.get("state") == "ok" and not cowork(k.split("|")[0], v.get("title", "")) and not SKIP_TITLE.search(v.get("title", "")):
             for i in v["ids"]:
                 to[i] = f"https://www.amazon.co.jp/dp/{v['asin']}?tag={TAG}"
     n = 0
