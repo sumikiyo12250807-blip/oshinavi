@@ -866,6 +866,8 @@ def pia_cast(h):
     if not mm:
         return []
     body = re.sub(r'\s*(ほか|他)\s*$', '', mm.group(1).strip())
+    # 🆕10/27「中村駿 / ほか」→ ほかを外すと「 /」が残って名前の欄の末尾に付いた
+    body = re.sub(r'[\s/／、，]+$', '', body)
     if not body or len(body) > 200:
         return []
     out = []
