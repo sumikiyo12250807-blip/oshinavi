@@ -13,7 +13,9 @@
 """
 import argparse
 import glob
+import html
 import io
+from datetime import date
 import json
 import os
 import re
@@ -21,6 +23,7 @@ import sys
 import unicodedata
 import urllib.parse
 
+import build_artist_pages as AP
 import click_track
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -38,6 +41,23 @@ def load_events():
     s = io.open("index.html", encoding="utf-8").read()
     m = re.search(r"const\s+EVENTS\s*=\s*(\[)", s)
     return json.JSONDecoder().raw_decode(s, m.start(1))[0]
+
+
+def mine_of(name, E):
+    n = norm(name)
+    mine = [e for e in E if e.get("genre") != "new" and n and (n == norm(e.get("artist")) or
+                                                               n in [norm(p) for p in re.split(r"[／/]", e.get("artist") or "")])]
+    if not mine and len(n) >= 3:
+        mine = [e for e in E if e.get("genre") != "new" and n in norm(e.get("artist"))]
+    return mine
+
+
+def hotel_for(name, E, today):
+    """🆕10/27 すちこ「近くの宿を探すってのもボタン置いておいて」＝その組のこれからの公演で会場が1つのものは会場名＋公演日で、
+    ツアー・会場が読めない組は Expedia のトップ（build_artist_pages.hotel_url と同じ決まり＝トップのカードと同じ）。"""
+    # 会場が2つ以上ある組（ツアー）は、記事の公演と違う会場に飛ばさないようトップへ
+    us = {AP.hotel_url(e, today) for e in mine_of(name, E) if (e.get("date") or "") >= today.isoformat()}
+    return us.pop() if len(us) == 1 else AP.HOTEL_VC
 
 
 def cd_for(name, E):
@@ -63,11 +83,14 @@ def cd_for(name, E):
     return None
 
 
-def box(url):
-    return ('\n  <div class="pk-amz" style="margin:12px 0 4px">'
-            f'<a href="{url}" target="_blank" rel="noopener" style="display:inline-block">'
-            '<img src="../../img/btn_cd_0915.png" alt="予習する（最新CD）" style="height:40px;display:block" loading="lazy" decoding="async">'
-            '</a></div>')
+def box(url, hotel):
+    a = ""
+    if url:
+        a += (f'<a href="{html.escape(url)}" target="_blank" rel="noopener" style="display:inline-block">'
+              '<img src="../../img/btn_cd_0915.png" alt="予習する（最新CD）" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
+    a += (f'<a href="{html.escape(hotel)}" target="_blank" rel="nofollow noopener" style="display:inline-block">'
+          '<img src="../../img/btn2_hotel.png" alt="会場近くのホテルを探す" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
+    return f'\n  <div class="pk-amz" style="margin:12px 0 4px;display:flex;flex-wrap:wrap;gap:8px">{a}</div>'
 
 
 def main():
@@ -76,6 +99,7 @@ def main():
     a = ap.parse_args()
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
     E = load_events()
+    today = date.today()
     got, none = [], []
     for f in sorted(glob.glob("pickup/*/*.html")):
         if os.path.basename(f) == "index.html":
@@ -87,22 +111,20 @@ def main():
             continue
         name = urllib.parse.unquote(m.group(1))
         url = cd_for(name, E)
+        hotel = hotel_for(name, E, today)
         s2 = BOX.sub("", s)
-        if url:
-            m2 = re.search(r'<a class="pk-shows" href="[^"]*\?q=[^"]+"[^>]*>.*?</a>', s2, re.S)
-            s2 = s2[:m2.end()] + box(url) + s2[m2.end():]
-            got.append((f, name, url))
-        else:
-            none.append((f, name))
+        m2 = re.search(r'<a class="pk-shows" href="[^"]*\?q=[^"]+"[^>]*>.*?</a>', s2, re.S)
+        s2 = s2[:m2.end()] + box(url, hotel) + s2[m2.end():]
+        (got.append((f, name, url, hotel)) if url else none.append((f, name, "CDなし・宿だけ", hotel)))
         if click_track.MARK not in s2:
             s2 = s2.replace("</body>", click_track.snippet("pickup") + "\n</body>", 1)
         if not a.dry and s2 != s:
             io.open(f, "w", encoding="utf-8", newline="").write(s2)
-    for f, n, u in got:
-        print("付けた", f, n, u[:90])
+    for f, n, u, h in got:
+        print("CD＋宿", f, n, "宿=" + ("会場" if h != AP.HOTEL_VC else "トップ"))
     for x in none:
-        print("付けない", *x)
-    print(f"付けた {len(got)} / 付けない {len(none)}")
+        print("宿だけ/なし", x[0], x[1], ("宿=" + ("会場" if x[3] != AP.HOTEL_VC else "トップ")) if len(x) > 3 else "")
+    print(f"CD＋宿 {len(got)} / 宿だけ・なし {len(none)}")
 
 
 if __name__ == "__main__":
