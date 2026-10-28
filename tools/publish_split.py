@@ -54,6 +54,28 @@ def is_head(e, today):
     return False
 
 
+def trim_ssr(src, today):
+    """🆕2026-10-28 すちこ「SSR絞っていいよ」（トップを開くのに5秒以上）。
+    <main> の検索・AI向け一覧（AI_SSR_START〜END）は全件 2万件・7.5MB あり、画面に出ないのにブラウザが組み立てていた。
+    状態の欄（最初の「｜」より前）に 今日−1〜HEAD_DAYS 日の日付があるか「本日」を含む行だけ残す。
+    残りは /ai.html（50件ずつ）と artist/ ページが受け持つ。作業用の index.html は変えない。"""
+    a = src.find('<!-- AI_SSR_START -->'); b = src.find('<!-- AI_SSR_END -->')
+    if a == -1 or b == -1:
+        return src, 0, 0
+    lo = (today - datetime.timedelta(days=1)).isoformat()
+    hi = (today + datetime.timedelta(days=HEAD_DAYS)).isoformat()
+    def near(li):
+        st = li.split('｜', 1)[0]
+        return '本日' in st or any(lo <= d <= hi for d in re.findall(r'20\d\d-\d\d-\d\d', st))
+    seg = src[a:b]
+    items = re.findall(r'<li>[\s\S]*?</li>\n?', seg)
+    keep = [x for x in items if near(x)]
+    body = re.sub(r'<li>[\s\S]*?</li>\n?', '', seg)
+    body = re.sub(r'全(\d+)件（', lambda m: f'全{m.group(1)}件のうち発売・締切が{HEAD_DAYS}日以内の{len(keep)}件（', body, 1)
+    body = body.replace('<ul>', '<ul>\n' + ''.join(keep), 1)
+    return src[:a] + body + src[b:], len(items), len(keep)
+
+
 def chunks(rows):
     parts, cur, size = [], [], 0
     for x in rows:
@@ -96,6 +118,9 @@ def split(src, today=None):
     tags = ''.join(f'<script src="{f}"></script>\n' for f in sync)
     tags += '<script>window.__OSHI_REST=' + json.dumps(lazy) + ';</script>\n'
     out = src[:t] + tags + src[t:i] + 'const EVENTS = window.__OSHI_EV || [];' + src[k:]
+    out, s0, s1 = trim_ssr(out, today)
+    if s0:
+        print(f'検索・AI向けの一覧を {s0}件 → {s1}件（発売・締切が{HEAD_DAYS}日以内）に絞った')
     assert len(head) + len(rest) == n0
     print(f'配る分を削った：使わない欄 {keys}個・締切が{DEAD_DAYS}日より前に過ぎた枠 {drop_t}枠／先に読む {len(head)}件・後で読む {len(rest)}件')
     return out, files, n0
