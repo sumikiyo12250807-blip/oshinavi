@@ -4,3 +4,10 @@
 [build]
   publish = "."
   command = "python3 tools/publish_split.py --inplace"
+
+# 2026-10-28 ev/*.js は名前に中身の指紋（sha1 10桁）が入る＝中身が変われば名前も変わる。
+# 既定の max-age=0 だと開くたびに Netlify へ確かめに行く → 2回目からは手元の控えをそのまま使わせる。
+[[headers]]
+  for = "/ev/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
