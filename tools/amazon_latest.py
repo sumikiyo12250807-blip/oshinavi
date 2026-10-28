@@ -79,6 +79,14 @@ def results(h):
     return out
 
 
+def real_zero(h, kw, with_cd):
+    """止められたページ（ロボット確認・エラー・中身の薄いページ）ではなく、ちゃんとした検索ページで結果が0件"""
+    t = re.search(r"<title>(.*?)</title>", h, re.S)
+    want = "Amazon.co.jp : " + kw + (" CD" if with_cd else "")
+    return (not h.startswith("ERR ") and len(h) > 100000 and "validateCaptcha" not in h
+            and bool(t) and _html.unescape(t.group(1)).strip() == want)
+
+
 def cowork(kw, title):
     """商品名の「 - 」のあと（名義）にほかの人が並ぶ＝共作・合同盤（10/27 ASKA→「音銀河 - 玉置浩二・ASKA」・dustbox→3組の合同盤）。
     その人の最新作ではないので選ばない。"""
@@ -138,7 +146,13 @@ def survey(top, wait):
             time.sleep(300)
             h = fetch(kw, with_cd)
             rs = results(h)
-        if not rs:
+        if not rs and real_zero(h, kw, with_cd):
+            # 10/28 「清塚信也 Piano Trio」「NHK交響楽団 in ICHIKAWA」＝普通の検索ページで0件だっただけなのに、
+            # 止められた時と同じ「空」と数えて毎回3組目で止まっていた
+            empty_run = 0
+            done[key] = {"state": "nomatch", "ids": d["ids"], "top": []}
+            print(f"[{i}/{len(order)}] {kw} 検索結果0件＝検索のまま", flush=True)
+        elif not rs:
             empty_run += 1
             done[key] = {"state": "empty", "ids": d["ids"]}
             print(f"[{i}/{len(order)}] {kw} 空のページ（{empty_run}回続けて）", flush=True)
