@@ -7,7 +7,14 @@
 ✅ 1008 夢芝居の CD ボタンを画像に（img/btn2_yumeshibai.png）
 📝 いつまで売るか分からない：38954 CNBLUE（e+ 404）・3674 楽天＝朝と同じ
 ✅ 昼push cf3c90613e（今日2回目）＝番人の残りは既知の H 38954・K 40496 だけ（42964 名前の二重は直した）
-▶ 隠れ枠ヒール全体（noon_full_heal.py）＝ぴあの見直しが終わってから自動で回る（ぴあを2本同時に叩かない）→ commit して夜push で出す
+✅ 隠れ枠ヒール全体（12:30以降）＝適用2・止まった58は足し算・消えた枠0 → commit 4b01b76e955（夜push で出す）
+🎬 お笑いまとめ動画＝すちこ「いいわね　これ使って」✅（X準備で付ける）
+🎬 主役の歌（3本に切る版・1本3着）＝tmp/video/matome1030b/part1〜3.mp4・絵コンテ https://claude.ai/artifact/HJgPxi3CvDXZUq9rikHLLU ▶「Back to the」字幕を直して書き出し直し中→ split3.py → OK 待ち
+🎬 アイドルまとめ（パステル9ポーズ・NMB48 のカード）＝tmp/video/matome1030c/out_x.mp4・絵コンテ https://claude.ai/artifact/NxfqdTBeUwZVAzDPgn3HWT ▶OK 待ち
+📰 11/1(日)号の候補＝tmp/pickup1101/brief.md（主役11組フォロワー順・✅深掘り決定＝E.T. in コンサート 28360）▶記事づくりは金〜土
+🎵 11/2ごろまで Suno は1日3曲（すちこ）＝10/30 の3曲目はアイドルまとめ（tmp/x1029/x/suno_1030.txt ③）
+🎬 10/30 お笑いまとめ動画（曲『おしナビドットジェーピー』1:01・アイドル衣装のマツコ9着・ペンライトの会場・拍はスネア97.06BPM）＝tmp/video/matome1030i/out_x.mp4／絵コンテ＋試し12秒 https://claude.ai/artifact/56vRKrAHG9YfmkGhWhebo4 ＝すちこ「これでどうがおねがい」→ 全編を書き出し（タップ場面はキャラが出ない＝レインボーを締めの前半へ移して9着とも出る形に直した）→ 同じリンクに全編。▶X予約に付けるのは文面 OK のあと
+▶ （済）隠れ枠ヒール全体（noon_full_heal.py）＝ぴあの見直しが終わってから自動で回る（ぴあを2本同時に叩かない）→ commit して夜push で出す
 ▶ 昼push後：reconcile_eplus --all・pia_soldout_sweep --apply --resume（after_push.py・裏）
 
 # ▶▶ 10/29(木) 朝の便
