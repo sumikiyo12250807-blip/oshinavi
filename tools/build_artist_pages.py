@@ -530,10 +530,11 @@ def rest_html(num, r, today, stamp):
          'このページをブックマークしておくか、OSHINAVI の検索で名前を探してね。</p>',
          cta(q, name, pic=True)]
     if r.get("evs"):
-        o.append('<p class="note">これまでに載せた公演（受付は終わっています）</p>')
+        # 売り切れ・受付終了・新着に戻った などページから外れた理由はいろいろ＝「受付終了」とは言い切らない
+        o.append('<p class="note">これまでに載せた公演（いま OSHINAVI で買える枠はありません）</p>')
         for e in r["evs"]:
             o.append(f'<div class="ev"><div class="n">{esc(e.get("n") or "")}</div>'
-                     f'<div class="v">{esc(e.get("v") or "")}</div><ul><li><span class="st">受付終了</span></li></ul></div>')
+                     f'<div class="v">{esc(e.get("v") or "")}</div><ul><li><span class="st">買える枠なし</span></li></ul></div>')
     links = ['<a href="../artists.html">ほかのアーティストを見る</a>']
     g = r.get("genre") or ""
     if g and g in A.GENRE_LABEL and re.fullmatch(r"[A-Za-z0-9._-]{1,32}", g):
