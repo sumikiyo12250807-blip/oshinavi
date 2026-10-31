@@ -1,3 +1,11 @@
+# 🌙 10/31 夜の便 → ▶▶ 11/1(日) 朝にやること
+- ✅ X 11/1発売 12本予約：🚨主役の動画OK待ちで 20:01・20:11 に間に合わず＝宮川・小籔 20:21／チュートリアル 20:31／NON STYLE 22:01（3本とも動画付き）・まとめ8本 20:41〜21:51／④お笑いまとめ＝全編 tmp/video/matome1101o/out_x.mp4 をすちこに送った（OK待ち・22:11 予定）
+  📝 次から：動画OK待ちの主役は、19:40 の時点で返事が無ければ その場で聞き直す（20:01 を落とさない）
+- ✅ 夜の便：今日発売ぴあ heal --ids → prepush → commit → push（今日3回目）＝night_chain.py
+- ▶ e+：eplus_after2（reconcile_eplus --all 18:13〜）が夜の便に終わらず＝heal_eplus_started と fix_eplus_fails --apply は朝に（結果 tmp/x1031/eplus/all_reconcile.txt・all_fix_dry.txt）
+- ▶ 朝：40227 アリオ八尾 heal_livepocket --ids → --apply → gate_livepocket_indep／🔴36203 中川翔子（11/1 10:00 の枠に url 無し・42962 と二重の疑い）／28392 リュックと添い寝ごはん ぴあ URL 無効→pia_kw_search／NGK 1月 434xx と 413xx の二重か／ぴあ見直しの売り切れ以外107・取りこぼし63 → heal／e+ プール M 206件 refetch_artist --pool --apply（e+ が空いてから）／tmp/x1031/night_todo.md
+- ❓夜に聞く（返事待ち）：artist ページを消さず「受付中なし」で残す（tmp/growth1031/proposal.md）／出演者の食い違い1〜4／38780 IRabBits／⑩〜⑮／10/29 の①〜⑨
+
 # ▶▶ 10/31(土) すちこ 朝「後よろしくね　仕事行ってくる　９０日計画も進めておいて　帰ったら報告お願い　１５時過ぎには帰れると思う」
 - ✅ 朝の push 9e5815d4da（未push 0）／⏰ 12:07 昼・15:07 報告・17:03 X準備・19:40 予約・22:07 夜
 - 🎯90日計画：数字 tmp/growth1031/notes.md（検索7日クリック144＝1日21・GA4 28日 1,046・検索が42%で1位・affiliate_click 28日9）
@@ -26,7 +34,9 @@
   ▶ 締切が入らないまま40件61枠 → noon_heal2（もう一度）→ noon_push_chain（prepush→commit）→ push
   ❓夜：MISSING 4＝2694 生きものたちの性 当日券〜11/22・佐野元春 プレリザーブ〜11/8／ファミマ先行〜11/12・桂二葉 独演会 一般〜11/27 ／ 🔁20354 モーニング娘。'26 神奈川11/30 ぴあ0枠（売り切れか）
   ✅型：2544 楽天 千葉11/14 を2回落としたのは足し算ではなく heal_stale_deadlines の「非ぴあ据置」＝券種名（県 公演日）がぴあと同じ非ぴあ枠を二重とみなして落としていた（ぴあ〜11/9・楽天〜11/13 と締切が違うのに）→ 締切が違えば残すように直した（tools/heal_stale_deadlines.py:210）
-  ▶ prepush で止まった：gate_fields K 40496 第2〜4部の括弧の時刻（fix_40496.py）／check_order＝「10/31 10:00発売」のまま（noon_sold2 の mark_soldout 待ち）→ 両方通してから push
+  ✅ 昼の push 6b7274e459（今日2回目）＝39件 mark_soldout 33枠・40496 直し・ヒールの道具の直し込み／check_order＝並び違反0・「今日発売」のまま残り123枠（ヒール2回後の残り＝ぴあの買える枠に無い）
+  ▶ 裏：pia_sweep_run（ぴあの見直し）／e+ reconcile_eplus --all は e+ の朝の収集と受付中の照合が終わってから（503）
+  （済）prepush で止まった：gate_fields K 40496 第2〜4部の括弧の時刻（fix_40496.py）／check_order＝「10/31 10:00発売」のまま（noon_sold2 の mark_soldout 待ち）→ 両方通してから push
 - ✅ 係：11/1 主役候補9人（宮川大輔・徳井・石田・中川翔子・Kizuna AI・小籔・間寛平・亜生・中村アン）＝1人ずつ検索して犯罪歴の報道なし（徳井は2019年の申告漏れ＝犯罪歴ではない不祥事）
 
 # 🌙 10/30 夜の便（すちこ 21時すぎ「今日疲れちゃって　明日見ることにする　明日見せて」）
