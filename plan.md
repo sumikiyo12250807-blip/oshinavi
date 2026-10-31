@@ -1,8 +1,17 @@
+# ▶▶ 11/1(日) 朝の便（道具は tmp/x1101）
+- 07:50 裏：morning_local／morning_pia／vendor_job zaiko・fany・tiget・livepocket ＝ e+ は morning_local のあと
+- ⏰ 12:07 昼／17:03 X準備（11/2 発売分）／19:40 予約の締め／22:07 夜
+- ✅ 削除830（check_expired 840 × 独立判定830＝全部一致・割れた10は残す＝272・23659・28712〜28714・29913・30005・37832・38044・38780）→ logs/removed_2026-11-01.md
+- 🟡 楽天：reconcile OK49・FAIL2（5308・35394）／rakuten_mark_soldout は新しい印0・「印を外す」11枠＝5308・35394＝昨日実ページで付けた印と食い違う＝--apply していない（外す前に生のページを見る＝DELETE_GATE）
+- 裏：eplus_am（heal_eplus_started --apply FIX152 → reconcile_eplus --ids → run_eplus）／いつまで不明 167枠（e+ 166）は e+ の heal のあとに読み直す
+- ❓すちこに聞いた：11/1号の記事を今朝出してよいか（試し見 EeSaEG7buD3TtmY7eA7emL・ページ tmp/pickup1101/pages/ は組み上がり済み）
+
 # 🌙 10/31 夜の便 → ▶▶ 11/1(日) 朝にやること
 - ✅ X 11/1発売 12本予約：🚨主役の動画OK待ちで 20:01・20:11 に間に合わず＝宮川・小籔 20:21／チュートリアル 20:31／NON STYLE 22:01（3本とも動画付き）・まとめ8本 20:41〜21:51／④お笑いまとめ＝全編 tmp/video/matome1101o/out_x.mp4 ＝すちこ「今すぐ」で23時ごろ動画付きで即投稿（予約でなく）＝今夜は12本とも出た
   📝 次から：動画OK待ちの主役は、19:40 の時点で返事が無ければ その場で聞き直す（20:01 を落とさない）
 - ✅ 夜の便：今日発売ぴあ heal --ids → prepush → commit → push（今日3回目）＝night_chain.py
 - ✅ e+ 全件照合（〜22:37）→ fix_eplus_fails --apply 39件 → commit ecf5c552294（未push・fix が EVENTS を展開形で書いた＝朝の compact で戻る）▶朝：直した id を reconcile_eplus --ids／heal_eplus_started --apply
+- ✅ 23時台 すちこOK：artist ページを消さず「いま受付中なし」で残す＋消えていた6,126組を戻した → push 4回目 26ee114cd06（すちこ「今月終わりだからプッシュしてもいい」）／文言の直し 3d56c16a5d6 は未push＝朝の push で出る／📊 11/14 に Search Console で登録数・404 を見る
 - ▶ 朝：40227 アリオ八尾 heal_livepocket --ids → --apply → gate_livepocket_indep／🔴36203 中川翔子（11/1 10:00 の枠に url 無し・42962 と二重の疑い）／28392 リュックと添い寝ごはん ぴあ URL 無効→pia_kw_search／NGK 1月 434xx と 413xx の二重か／ぴあ見直しの売り切れ以外107・取りこぼし63 → heal／e+ プール M 206件 refetch_artist --pool --apply（e+ が空いてから）／tmp/x1031/night_todo.md
 - ❓夜に聞く（返事待ち）：artist ページを消さず「受付中なし」で残す（tmp/growth1031/proposal.md）／出演者の食い違い1〜4／38780 IRabBits／⑩〜⑮／10/29 の①〜⑨
 
