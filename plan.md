@@ -1,8 +1,8 @@
 # 🌙 10/31 夜の便 → ▶▶ 11/1(日) 朝にやること
-- ✅ X 11/1発売 12本予約：🚨主役の動画OK待ちで 20:01・20:11 に間に合わず＝宮川・小籔 20:21／チュートリアル 20:31／NON STYLE 22:01（3本とも動画付き）・まとめ8本 20:41〜21:51／④お笑いまとめ＝全編 tmp/video/matome1101o/out_x.mp4 をすちこに送った（OK待ち・22:11 予定）
+- ✅ X 11/1発売 12本予約：🚨主役の動画OK待ちで 20:01・20:11 に間に合わず＝宮川・小籔 20:21／チュートリアル 20:31／NON STYLE 22:01（3本とも動画付き）・まとめ8本 20:41〜21:51／④お笑いまとめ＝全編 tmp/video/matome1101o/out_x.mp4 ＝すちこ「今すぐ」で23時ごろ動画付きで即投稿（予約でなく）＝今夜は12本とも出た
   📝 次から：動画OK待ちの主役は、19:40 の時点で返事が無ければ その場で聞き直す（20:01 を落とさない）
 - ✅ 夜の便：今日発売ぴあ heal --ids → prepush → commit → push（今日3回目）＝night_chain.py
-- ▶ e+：eplus_after2（reconcile_eplus --all 18:13〜）が夜の便に終わらず＝heal_eplus_started と fix_eplus_fails --apply は朝に（結果 tmp/x1031/eplus/all_reconcile.txt・all_fix_dry.txt）
+- ✅ e+ 全件照合（〜22:37）→ fix_eplus_fails --apply 39件 → commit ecf5c552294（未push・fix が EVENTS を展開形で書いた＝朝の compact で戻る）▶朝：直した id を reconcile_eplus --ids／heal_eplus_started --apply
 - ▶ 朝：40227 アリオ八尾 heal_livepocket --ids → --apply → gate_livepocket_indep／🔴36203 中川翔子（11/1 10:00 の枠に url 無し・42962 と二重の疑い）／28392 リュックと添い寝ごはん ぴあ URL 無効→pia_kw_search／NGK 1月 434xx と 413xx の二重か／ぴあ見直しの売り切れ以外107・取りこぼし63 → heal／e+ プール M 206件 refetch_artist --pool --apply（e+ が空いてから）／tmp/x1031/night_todo.md
 - ❓夜に聞く（返事待ち）：artist ページを消さず「受付中なし」で残す（tmp/growth1031/proposal.md）／出演者の食い違い1〜4／38780 IRabBits／⑩〜⑮／10/29 の①〜⑨
 

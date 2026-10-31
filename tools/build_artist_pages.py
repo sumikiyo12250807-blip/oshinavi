@@ -5,6 +5,8 @@ Why: OSHINAVI の中身は index.html の EVENTS（JS）にあり、検索エン
 「◯◯ チケット 発売日」で来る入口が無い。1組1ページの軽いHTMLを置いて検索の入口にする。
 ページは JS なし・その組の「これから買える／発売前の枠」だけを発売日順に並べ、
 売り場への直リンクと OSHINAVI の検索（/?q=名前）へのリンクを置く。
+🆕10/31 買える枠が無くなった組のページも消さず「いま受付中のチケットはありません」で残す（tools/artist_rest.json・すちこOK）。
+一覧 artists.html は今までどおり受付中の組だけ。
 
 判定は build_ai_page.py の関数（index.html の表示ルールと揃えたもの）をそのまま使う。
 URL の番号は tools/artist_pages.json に名前ごとに固定する（作り直しても同じ名前は同じURL）。
@@ -29,6 +31,9 @@ import click_track
 
 REG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_pages.json")
 OUT_DIR = "artist"
+# 🆕10/31 すちこ「artistページ残す形でお願い」＝買える枠が無くなった組のページも消さず「いま受付中のチケットはありません」で残す
+#   （消すと Google が来た時に 404＝ツアーのたびに検索の評価がやり直し）。番号→名前・最後に載せた公演を覚えておく台帳
+REST = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_rest.json")
 MAX_PAGES = 20000        # 人気の組から（これから買える・発売前の枠が多い順）。10/13 500→5000→20000（買える枠のある名前は全部＝13,188組・ユーザー「とにかく早く目標を達成して」。sitemap の上限5万URLの内）
 MIN_ROWS = 1
 POP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artist_popularity.json")  # collect_followers.py
@@ -490,6 +495,55 @@ def page_html(name, items, today, stamp, total_rows, num=None):
     return "\n".join(o)
 
 
+def rest_ok(r):
+    """受付中なしで残してよい名前か（名前の番人＝SKIP_NAME・ジャンル名・公演名そのもの は残さない）"""
+    nm = r.get("name") or ""
+    if not nm:
+        return False
+    if nm.startswith("『") or nm.startswith("ミュージカル『"):
+        return True
+    return not (SKIP_NAME.search(nm) or nm.lower() in GENRE_WORDS
+                or any(norm(nm) == norm(e.get("n")) for e in r.get("evs") or []))
+
+
+def rest_html(num, r, today, stamp):
+    """買える枠が無くなった組のページ（10/31）＝いま受付中なし＋最後に載せた公演（終わった印）＋トップ・一覧・同じジャンルへ"""
+    name = r["name"]
+    title = f"{name} チケット発売日・次の発売情報 | OSHINAVI"
+    desc = (f"{name}のチケット情報（{today.month}/{today.day}確認）。いま受付中のチケットはありません。"
+            "次の先行・一般発売が売り場に出たら、このページに発売日と売り場へのリンクを載せます。")
+    qname = re.sub(r"^ミュージカル|[『』]", "", name) if "『" in name else name
+    q = html.escape(f"https://oshinavi.jp/?q={qname}", quote=True)
+    can = f"https://oshinavi.jp/{OUT_DIR}/{num}.html"
+    o = ["<!DOCTYPE html>", '<html lang="ja"><head>', '<meta charset="UTF-8">',
+         '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+         '<meta name="robots" content="index,follow">',
+         f"<title>{esc(title)}</title>", f'<meta name="description" content="{esc(desc)}">',
+         f'<link rel="canonical" href="{can}">', '<meta property="og:type" content="website">',
+         f'<meta property="og:title" content="{esc(title)}">', f'<meta property="og:description" content="{esc(desc)}">',
+         f'<meta property="og:url" content="{can}">', '<meta property="og:image" content="https://oshinavi.jp/og-image.png">',
+         GTAG, CLICK, f"<style>{CSS}</style></head><body>",
+         '<p class="note"><a href="../index.html">OSHINAVI</a> ＞ <a href="../artists.html">アーティスト一覧</a></p>',
+         f"<h1>{esc(name)} のチケット発売日</h1>",
+         f'<p class="pre"><b>いま受付中のチケットはありません</b>（{esc(stamp)} 時点）</p>',
+         '<p class="note">次の先行・一般発売が売り場に出たら、このページに発売日と売り場へのリンクを載せます。'
+         'このページをブックマークしておくか、OSHINAVI の検索で名前を探してね。</p>',
+         cta(q, name, pic=True)]
+    if r.get("evs"):
+        o.append('<p class="note">これまでに載せた公演（受付は終わっています）</p>')
+        for e in r["evs"]:
+            o.append(f'<div class="ev"><div class="n">{esc(e.get("n") or "")}</div>'
+                     f'<div class="v">{esc(e.get("v") or "")}</div><ul><li><span class="st">受付終了</span></li></ul></div>')
+    links = ['<a href="../artists.html">ほかのアーティストを見る</a>']
+    g = r.get("genre") or ""
+    if g and g in A.GENRE_LABEL and re.fullmatch(r"[A-Za-z0-9._-]{1,32}", g):
+        links.append(f'<a href="../index.html?genre={g}">{esc(A.GENRE_LABEL[g])}の発売を見る</a>')
+    links.append('<a href="../index.html">OSHINAVI トップ</a>')
+    o.append(f'<p class="note">{"｜".join(links)}</p>')
+    o.append("</body></html>")
+    return "\n".join(o)
+
+
 def build(today):
     _n = datetime.now()
     stamp = f"{today.year}年{today.month}月{today.day}日 {_n:%H:%M}"
@@ -546,11 +600,34 @@ def build(today):
         made.append((g["name"], reg[k], total_rows))
     json.dump(reg, open(REG, "w", encoding="utf-8"), ensure_ascii=False, indent=0, sort_keys=True)
 
-    # 今回作らなかった（これから買える枠が無くなった）組の古いページは消す＝売り切れ・終わった情報を検索に残さない
+    # 🆕10/31 今回作らなかった（これから買える枠が無くなった）組のページは消さず「いま受付中なし」で残す（すちこOK）
+    #   台帳 artist_rest.json＝作った組の名前・公演を毎回覚える。名前の番人に当たる組・台帳に無い組のページは今までどおり消す
     live = {str(n) for _, n, _ in made}
+    try:
+        rest = json.load(open(REST, encoding="utf-8"))
+    except FileNotFoundError:
+        rest = {}
+    for k, g in ranked:
+        items = sorted(g["items"], key=lambda x: (x[0], x[1].get("id", 0)))
+        evs = []
+        for _, ev, _ in items[:5]:
+            pref = ev.get("prefecture") or ""
+            evs.append({"n": ev.get("name") or "", "v": f'{ev.get("venue") or ""}{("（" + pref + "）") if pref else ""}'
+                                                         f'／公演 {ev.get("dateLabel") or ev.get("date") or ""}'})
+        rest[str(reg[k])] = {"name": g["name"], "evs": evs, "genre": items[0][1].get("genre") or "", "since": today.isoformat()}
+    json.dump(rest, open(REST, "w", encoding="utf-8"), ensure_ascii=False, indent=0, sort_keys=True)
+    resting = []
+    for n, r in rest.items():
+        if n in live:
+            continue
+        if rest_ok(r):
+            with open(os.path.join(OUT_DIR, f"{n}.html"), "w", encoding="utf-8") as f:
+                f.write(rest_html(n, r, today, stamp))
+            resting.append((n, r.get("since") or today.isoformat()))
+    keep = live | {n for n, _ in resting}
     for fn in os.listdir(OUT_DIR):
         m = re.fullmatch(r"(\d+)\.html", fn)
-        if m and m.group(1) not in live:
+        if m and m.group(1) not in keep:
             os.remove(os.path.join(OUT_DIR, fn))
 
     # 一覧ページ（行ごと＝あ〜わ・A〜Z・数字記号・漢字）
@@ -629,9 +706,11 @@ def build(today):
     add = [f'  <url><loc>https://oshinavi.jp/artists.html</loc><lastmod>{today.isoformat()}</lastmod><changefreq>daily</changefreq></url>']
     for _, n, _ in made:
         add.append(f'  <url><loc>https://oshinavi.jp/{OUT_DIR}/{n}.html</loc><lastmod>{today.isoformat()}</lastmod><changefreq>daily</changefreq></url>')
+    for n, since in resting:   # 受付中なしのページ＝中身が変わったのは最後に買える枠があった日
+        add.append(f'  <url><loc>https://oshinavi.jp/{OUT_DIR}/{n}.html</loc><lastmod>{since}</lastmod><changefreq>weekly</changefreq></url>')
     sm = sm.replace("</urlset>", "\n".join(add) + "\n</urlset>")
     open("sitemap.xml", "w", encoding="utf-8").write(sm)
-    print(f"artist pages {len(made)} + artists.html + sitemap (today={today})")
+    print(f"artist pages {len(made)} + 受付中なし {len(resting)} + artists.html + sitemap (today={today})")
     return made
 
 
