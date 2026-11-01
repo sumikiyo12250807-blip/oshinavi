@@ -3,7 +3,9 @@
 - ⏰ 12:07 昼／17:03 X準備（11/2 発売分）／19:40 予約の締め／22:07 夜
 - 11:45 ぴあ振り分け115（直してから振り分ける5＝45469・45433・45436・45466・45464／締切時刻を直す4＝45442・45446・45459・45465）／e+ 新着19（45559〜45577）→ 振り分け12（残す7＝M 6・FAIL 45570）／e+ 売り切れの印 42751
 - 🚨e+ の見落とし：朝の収集の classic は /sf/live/classic が 404＝0件が続いている。入口は /sf/classic（子＝orchestra・piano・opera 等）だが一覧の形が違う（ticket-item--kouen 0）＝道具が要る。festival もリンク形（tmp/x1005/eplus_sweep2.py）で別に拾う決まりなのに vendor_job に入っていない。/sf/live の残り15スラッグも回していない
-- e+ FAIL 42件は生ページ読み（tmp/x1101/eplus_fail_read.md）→ 直して reconcile --ids FAIL 0
+- e+ FAIL 49枠は生ページ読み（tmp/x1101/eplus_fail_read.md）→ 47枠直して reconcile --ids FAIL 1（38971 公演済み・404）
+- 🚨livePocket ビルダーの穴：受付は販売中でも券種だけ発売前（30422・30423・30443 見切れ席 11/3 12:00）を「〜締切」で組む＝gate_slots は同じ物差しで素通り・独立番人だけ鳴った。12枠は手で発売前に直した／heal すると戻る＝build_livepocket_entries を直す（夜）
+- livePocket 独立番人の残り：27513 取り直し、40839（13:00 発売で販売中に）、34901・38255・38378・30260 状態、31625・25593 公演日、33280・40915 県、34903・35199 会場、42469 時刻（夜に heal／読む）
 - ✅ 削除830（check_expired 840 × 独立判定830＝全部一致・割れた10は残す＝272・23659・28712〜28714・29913・30005・37832・38044・38780）→ logs/removed_2026-11-01.md
 - 🟡 楽天：reconcile OK49・FAIL2（5308・35394）／rakuten_mark_soldout は新しい印0・「印を外す」11枠＝5308・35394＝昨日実ページで付けた印と食い違う＝--apply していない（外す前に生のページを見る＝DELETE_GATE）
 - 裏：eplus_am（heal_eplus_started --apply FIX152 → reconcile_eplus --ids → run_eplus）／いつまで不明 167枠（e+ 166）は e+ の heal のあとに読み直す
