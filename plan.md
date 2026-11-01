@@ -1,9 +1,17 @@
 # ▶▶ 11/1(日) 朝の便（道具は tmp/x1101）
 - 07:50 裏：morning_local／morning_pia／vendor_job zaiko・fany・tiget・livepocket ＝ e+ は morning_local のあと
 - ⏰ 12:07 昼／17:03 X準備（11/2 発売分）／19:40 予約の締め／22:07 夜
+- 11:45 ぴあ振り分け115（直してから振り分ける5＝45469・45433・45436・45466・45464／締切時刻を直す4＝45442・45446・45459・45465）／e+ 新着19（45559〜45577）→ 振り分け12（残す7＝M 6・FAIL 45570）／e+ 売り切れの印 42751
+- 🚨e+ の見落とし：朝の収集の classic は /sf/live/classic が 404＝0件が続いている。入口は /sf/classic（子＝orchestra・piano・opera 等）だが一覧の形が違う（ticket-item--kouen 0）＝道具が要る。festival もリンク形（tmp/x1005/eplus_sweep2.py）で別に拾う決まりなのに vendor_job に入っていない。/sf/live の残り15スラッグも回していない
+- e+ FAIL 42件は生ページ読み（tmp/x1101/eplus_fail_read.md）→ 直して reconcile --ids FAIL 0
 - ✅ 削除830（check_expired 840 × 独立判定830＝全部一致・割れた10は残す＝272・23659・28712〜28714・29913・30005・37832・38044・38780）→ logs/removed_2026-11-01.md
 - 🟡 楽天：reconcile OK49・FAIL2（5308・35394）／rakuten_mark_soldout は新しい印0・「印を外す」11枠＝5308・35394＝昨日実ページで付けた印と食い違う＝--apply していない（外す前に生のページを見る＝DELETE_GATE）
 - 裏：eplus_am（heal_eplus_started --apply FIX152 → reconcile_eplus --ids → run_eplus）／いつまで不明 167枠（e+ 166）は e+ の heal のあとに読み直す
+- ✅ 朝の push b8298ca7aa2（今日1回目・08:2x）＝ prepush は --no-rec
+- ✅ TIGET 作り直し217・新着111 → 振り分け101（🟡前日までのプールは今日の番人を通していない分が混ざる可能性＝昼に確かめる）／commit まだ
+- ✅ ぴあ隠れ枠ヒール 83件適用・止まった68は足し算待ち（tmp/heal_blocked_hold_1805.txt）・枠が消えた42件は heal_hc.txt を見る／裏：pia_am（発売前の新着）
+- 🔴▶昼までに：e+ 照合 FAIL 43（rec_eplus_am.txt・fix_eplus_fails）／抜き打ち 指摘25 🔴0（spot/result_1〜3.md）を直す／FANY 番人 食い違い7／40227・36203・28392
+- ✅ ぴあ発売前 新規145（45414〜45558）・足し込み17件37枠 → 裏：pia_go（投入→reconcile --ids）▶読み直し2人→振り分け／📝 pia_apply の穴を直した＝update の枠を replaced_old で消して戻さない（31866 しなこの生きた2枠が落ちかけた・下見で発見）＝tmp/x1101/pia_apply.py
 - ❓すちこに聞いた：11/1号の記事を今朝出してよいか（試し見 EeSaEG7buD3TtmY7eA7emL・ページ tmp/pickup1101/pages/ は組み上がり済み）
 
 # 🌙 10/31 夜の便 → ▶▶ 11/1(日) 朝にやること
