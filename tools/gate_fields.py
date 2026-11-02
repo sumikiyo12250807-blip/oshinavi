@@ -85,6 +85,7 @@ def main():
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')}
         E = [e for e in E if e['id'] in ids]
     A, B, C, D, F, G, H, I, K, L, M, N, M_old = [], [], [], [], [], [], [], [], [], [], [], [], 0
+    O, O_old = [], 0
     OK = _artist_ok()
     for e in E:
         # M は新着プール（genre:new）だけ止める＝これから振り分ける分。既存は件数だけ（10/27〜10/28 に取り直す計画）
@@ -123,6 +124,14 @@ def main():
         #   ＝ヒールで後から足された会場・142件）。直す道具＝tools/fill_entry_pref.py --apply（ヒールのあと・push 前）
         if (e.get('date') or '') >= today and FEP.need(e, today):
             N.append(e)
+        # O 🆕2026-11-02 抜き打ち 24203（tmp/x1102/spot/rootcause.md C）＝県が2つ以上なのに会場が1つ
+        #   ＝後から足された会場が venue に入らない（ヒールは tickets だけ）。新着は振り分けで止める・既存は件数だけ（141件・会場を足す道具を作る）
+        if ((e.get('date') or '') >= today and '・' in (e.get('prefecture') or '')
+                and '／' not in (e.get('venue') or '') and not (e.get('venue') or '').startswith('全国ツアー')):
+            if e.get('genre') == 'new':
+                O.append(e)
+            else:
+                O_old += 1
         a0 = (e.get('artist') or '').split('／')[0].strip()
         if len(a0) >= 2 and (e.get('name') or '').startswith(a0 + ' ' + a0):
             I.append(e)
@@ -172,10 +181,12 @@ def main():
         print(f'  N id{e["id"]} 枠の県がエントリの県に無い（県={e.get("prefecture")}・足す={"・".join(FEP.need(e, today))}）＝fill_entry_pref --apply: {(e.get("name") or "")[:30]}')
     for e in M:
         print(f'  M id{e["id"]} 出演者の欄が公演名のまま（新着）: {(e.get("artist") or "")[:50]}')
-    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / N {len(N)} / M {len(M)}（既存 {M_old}・止めない） ===')
+    for e in O:
+        print(f'  O id{e["id"]} 県が2つ以上なのに会場が1つ（新着・県={e.get("prefecture")}）: {(e.get("venue") or "")[:30]} ｜{(e.get("name") or "")[:30]}')
+    print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / N {len(N)} / M {len(M)}（既存 {M_old}・止めない） / O {len(O)}（既存 {O_old}・止めない） ===')
     # M は振り分けの番人（--assign の時だけ止める）＝新着タブには載ったまま、振り分けでその件だけプールに残す
     #   （push を止めると既存の 4,914 件と釣り合わない。振り分けの道具は artist_looks_like_title で1件ずつ残す）
-    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or (M and '--assign' in sys.argv)) else 0)
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or ((M or O) and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':
