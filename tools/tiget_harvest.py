@@ -349,7 +349,8 @@ def parse_event(html, eid):
         out['prefecture'] = pref_from_place(ven) or pref_from_place(out['name'] or '')
     # 出演者は <a href="/performers/…">名前</a> だけを取る（説明文を巻き込まないため）
     out['performers'] = [unesc(strip_tags(x)) for x in
-                         re.findall(r'<a href="/performers/\d+">(.*?)</a>', sec.get('出演者', ''), re.S)][:10]
+                         re.findall(r'<a href="/performers/\d+">(.*?)</a>', sec.get('出演者', ''), re.S)]
+    # 🆕2026-11-02 抜き打ち 39808（tmp/x1102/spot/rootcause.md D）＝[:10] で11組目からが落ちていた（ちょうど10組の登録 387件）＝上限を外した
     # 🚨JSON-LD の offers に **販売開始時刻（validFrom）** が入っている。
     #    「当日支払い」の券種はHTMLに受付期間の欄が出ないので、発売日はここからしか取れない
     #    （2026-09-18＝36件がこの形だった。推測で日付を作らないための命綱）。

@@ -24,7 +24,7 @@
 🆕2026-10-11 ユーザー「うん、昼間に回して」＝**昼のpushの直後〜17時**に回す（夜22:30〜は、夜のpushのあとPCが落ちて2晩とも空振り）。
   python tools/pia_soldout_sweep.py --apply --resume  # 途中経過は150件ごとにログへ・止まったら同じコマンドで続きから（tmp/pia_sweep_state_<日>.json）
 """
-import datetime, io, json, os, re, subprocess, sys
+import datetime, io, json, os, re, subprocess, sys, unicodedata
 
 ROOT = 'C:/Users/user/oshinavi/'
 os.chdir(ROOT)
@@ -196,6 +196,14 @@ def main():
         d0 = '%d-%02d-%02d' % (y, int(pm.group(3)), int(pm.group(4)))
         hit = [r for r in rows if (r.get('perfdate') or '') <= d0 <= (r.get('perf_end') or r.get('perfdate') or '')
                and (not prefs or any(p in (r.get('pref') or '') for p in prefs))]
+        # 🆕2026-11-02 抜き打ち 7728 ZION（tmp/x1102/spot/rootcause.md A）＝同じ回の別の券種（「オフィシャル抽選先行＝抽選受付終了」）が
+        #   混ざって「受付終了が全部 予定枚数」を満たさず、予定枚数終了の一般発売に印を付けていなかった（10/31〜11/2 で264枠）。
+        #   登録の枠と同じ券種（type の「（」より前＝ぴあのカードの title の「／」より前）の行だけで判定する。絞れない時だけ今までどおり。
+        _nk = lambda s: re.sub(r'\s+', '', unicodedata.normalize('NFKC', s or ''))
+        _kind = _nk(re.sub(r'（.*$', '', t['type']))
+        _same = [r for r in hit if _kind and _nk((r.get('title') or '').split('／')[0]) == _kind]
+        if _same:
+            hit = _same
         if hit and all(SOLD.search(r.get('statustext') or '') for r in hit if r.get('state') == '受付終了') \
                 and any(SOLD.search(r.get('statustext') or '') for r in hit) and not any(r.get('state') in ('受付中', '発売前') for r in hit):
             marked.append((i, t['type']))
