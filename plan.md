@@ -1,3 +1,11 @@
+# ▶▶ 11/4(水) 朝の便（道具は tmp/x1104）
+- 裏：local_then_eplus（morning_local → run_eplus）／morning_pia（昨日発売 heal --build → reconcile --new → 発売前・受付中）／vendor_job zaiko・fany・tiget・livepocket
+- ⏰ 12:07 昼（12:00発売462枠）／15:07／17:03 X準備（11/5発売分）／18:07／19:40 予約の締め／22:07 夜
+- 未push：bd1d6d95dd7（11/3夜）＝朝の push に乗せる
+- ✅ check_expired：削除候補616・要再確認1366・配信で生き57 → 独立判定は係（tmp/x1104/agent_del/result.json）→ del_apply.py（11/4用に直した）
+- ✅ check_zero_badge rc2：31日より先で枠0 351件／昨夜の買える枠ゼロ4件（3249 新テニミュ・26814 清春・41869 3ミリの恋・45813 菅叶和）は売り切れ・他社を見てから
+- ✅ 11/5発売：596件（お笑い531）・1組ずつ723組・調べ済み41 → 181組に絞った（tmp/x1104/x/q_a.txt・q_b.txt）→ 係A が調べ中・B は A の後（同時だと制限）
+
 # ▶▶ 11/4(水) 明日の分（11/3夜に書いた）
 - 🌅 朝：ルーチン → 振り分け → 収集 → push（朝1回目）
 - 🎵 朝の push の直後：11/5 発売の主役3組（フォロワー＋犯罪歴チェック）とまとめの歌詞 2本 → すちこが休みのうちに Suno（memory feedback_matome_video_calm_layout 11/3）
