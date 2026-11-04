@@ -263,7 +263,12 @@ def main():
     print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / N {len(N)} / M {len(M)}（既存 {M_old}・止めない） / O {len(O)}（既存 {O_old}・止めない） ===')
     # M は振り分けの番人（--assign の時だけ止める）＝新着タブには載ったまま、振り分けでその件だけプールに残す
     #   （push を止めると既存の 4,914 件と釣り合わない。振り分けの道具は artist_looks_like_title で1件ずつ残す）
-    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or ((M or O) and '--assign' in sys.argv)) else 0)
+    # 🆕2026-11-05 P（会期の外に枠）を止める側へ＝11/4 に足したが「件数だけ」で199件を放っていた
+    #   （抜き打ち 31897 海宝直人＝カードは 1/4〜1/5・一般発売は 12/19〜1/5／すちこ「こんな間違いがあるゲートは信用できない」）。
+    #   直す道具＝tools/fill_span_from_slots.py --apply（売り場を叩かず、枠に書いた公演日で会期を伸ばすだけ・prepush で毎回）
+    if P:
+        print(f'  🚨P {len(P)}件＝python tools/fill_span_from_slots.py --apply で会期を伸ばしてから')
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or ((M or O) and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':

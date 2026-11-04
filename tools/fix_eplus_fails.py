@@ -142,7 +142,7 @@ def main():
         if eid not in EV:
             log.append((eid, ti, code, '触らず', '登録に無い')); continue
         t0 = EV[eid]['tickets'][ti]
-        if code not in ('c-死枠', 's-売切表示ズレ', 'b-締切ズレ'):
+        if code not in ('c-死枠', 's-売切表示ズレ', 'b-締切ズレ', 'b-締切延長'):
             log.append((eid, ti, code, '報告だけ', f['detail'])); continue
         if u not in cache:
             try:
@@ -164,6 +164,13 @@ def main():
                 log.append((eid, ti, code, '触らず', how)); continue
             apply_window(tk, W, L)
             log.append((eid, ti, code, '印を外して合わせた', f"{before} → {tk['type']}")); continue
+        if code == 'b-締切延長':
+            # 🆕2026-11-05 43724 秋山黄色＝締切が過ぎて画面から消えたあとで売り場が受付を延ばした型。今開いている窓が1つなら締切を合わせる
+            op = [b for b in bl if b['status'] == 'open' and b['sd'] <= TODAY <= b['ed']]
+            if len(op) != 1:
+                log.append((eid, ti, code, '触らず', f'開いている窓{len(op)}')); continue
+            apply_window(tk, op[0], L)
+            log.append((eid, ti, code, '締切を延ばした', f"{before} → {tk['type']}")); continue
         if code == 'b-締切ズレ':
             cand = [b for b in bl if b['sd'].isoformat() == t0['startDate']] if t0.get('startDate') \
                 else [b for b in bl if b['status'] == 'open' and b['sd'] <= TODAY <= b['ed']]

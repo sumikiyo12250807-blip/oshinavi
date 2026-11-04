@@ -131,6 +131,31 @@ def main():
             _d = t.get('date') or ''
             if _d and _d < TODAY.isoformat() and not (t.get('soldout') or t.get('saleEnded')
                                           or t.get('saleUntilSoldOut')):
+                # 🆕2026-11-05 抜き打ち 43724 秋山黄色（すちこ「こんな間違いがあるゲートは信用できない」）＝
+                #   登録は「〜11/1 18:00」で 11/1 の --all は一致。そのあと e+ が受付を 11/5 18:00 まで延ばしたのに、
+                #   締切の過ぎた枠はここで飛ばすので、11/2 から4日間「画面に出ない・照合もされない」まま買える枠が隠れていた。
+                #   ＝公演がまだ先の枠は、実ページに今開いている窓があれば「締切延長」として鳴らす（同じページの別の枠が画面に出ていれば鳴らさない）
+                _tp, _tmd, _ = parse_type(t.get('type', ''))
+                _y = 2027 if re.search(r'R9年', t.get('type') or '') else TODAY.year
+                _show = None
+                if _tmd:
+                    try:
+                        _show = datetime.date(_y, _tmd[0], _tmd[1])
+                    except ValueError:
+                        _show = None
+                _covered = any(x is not t and (x.get('url') or '') == u and ((x.get('date') or '') >= TODAY.isoformat()
+                               or x.get('soldout') or x.get('saleEnded') or x.get('saleUntilSoldOut'))
+                               for x in e.get('tickets') or [])
+                if _show and _show >= TODAY and not _covered:
+                    if u not in cache:
+                        try:
+                            cache[u] = fetch(u)
+                        except Exception:
+                            cache[u] = None
+                    if cache.get(u):
+                        _ow = [b for b in parse_blocks(cache[u]) if b['status'] == 'open' and b['sd'] <= TODAY <= b['ed']]
+                        if _ow:
+                            fails.append((e['id'], ti, 'b-締切延長', f"締切 {_d} で画面から消えているが実頁は受付中（〜{_ow[0]['ed']} {_ow[0]['et']}）", u))
                 continue
             if u not in cache:
                 try:
