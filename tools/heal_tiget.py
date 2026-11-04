@@ -71,14 +71,14 @@ def main():
 
     rep = io.open(REPORT, 'w', encoding='utf-8')
     done, empty, err = 0, [], []
-    artist_fixed, name_changed = [], []
+    artist_fixed, name_changed, date_fixed = [], [], []
     for e in events:
         if e['id'] not in want:
             continue
         tickets = e.get('tickets') or []
         urls = sorted({x for t in tickets + [{'url': (e.get('links') or {}).get('tiget')}]
                        for x in re.findall(r'tiget\.net/events/(\d+)', t.get('url') or '')})
-        rebuilt, bad, arts, names = [], False, [], []
+        rebuilt, bad, arts, names, spans = [], False, [], [], []
         for eid in urls:
             try:
                 d = TH.parse_event(TH.fetch(f'https://tiget.net/events/{eid}'), eid)
@@ -96,6 +96,7 @@ def main():
                         if x not in arts:
                             arts.append(x)
                 names.append(built.get('name') or '')
+                spans.append((built.get('date'), built.get('dateLabel')))
             time.sleep(a.sleep)
         if bad:
             continue
@@ -111,6 +112,18 @@ def main():
             rep.write('    新: %s | %s%s%s\n' % (t.get('type'), t.get('date'), ' 売切' if t.get('soldout') else '',
                                               ' 販売終了' if t.get('saleEnded') else ''))
         e['tickets'] = others + rebuilt
+        # 🆕🚨2026-11-05 カードの日付も売り場に合わせる（すちこ「日付の間違いは一番やってはいけない間違い・ゲートがダメなんだよね」）
+        #   ＝主催者が公演日を変えると、受付だけ新しい日付・カードは古い日付のまま残っていた
+        #   （39810 11/24→11/28・45677 11/27→11/20・42719 12/19→12/12＝カードが公演の後まで残る／前に消える）。
+        #   1つの TIGET ページだけのカードで、作り直したカードの日付が今のカードと違えば、date と dateLabel を差し替える
+        if len(urls) == 1 and len(spans) == 1 and spans[0][0] and spans[0][1] and not others:
+            _dpart = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
+            nd, nl_ = spans[0]
+            if nd != e.get('date') or _dpart(nl_) != _dpart(e.get('dateLabel')):
+                rep.write('    カードの日付: %s ｜ %s → %s ｜ %s\n' % (e.get('date'), e.get('dateLabel'), nd, nl_))
+                e['date'] = nd
+                e['dateLabel'] = nl_
+                date_fixed.append(e['id'])
         import fold_parts as FP   # 🆕9/30 1部・2部を畳んだカードは部の印を付け直す
         FP.relabel(e)
         # 🆕2026-11-04 抜き打ち 28996 MCあんにゅ（tmp/x1104/spot/rootcause.md C）＝登録のあとで TIGET が出演者を足したのに、
@@ -133,8 +146,8 @@ def main():
     rep.write('\n--- 売り場の公演名が変わった（触っていない・手で見る）---\n')
     for i, old, new in name_changed:
         rep.write('  id=%s %s → %s\n' % (i, (old or '')[:40], (new or '')[:60]))
-    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d / 出演者を足した %d / 公演名が変わった %d ===\n'
-              % (done, len(empty), len(err), len(artist_fixed), len(name_changed)))
+    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d / 出演者を足した %d / 公演名が変わった %d / カードの日付を直した %d ===\n'
+              % (done, len(empty), len(err), len(artist_fixed), len(name_changed), len(date_fixed)))
     rep.close()
     sys.stderr.write('heal_tiget: healed=%d empty=%d fetcherr=%d apply=%s -> %s\n'
                      % (done, len(empty), len(err), a.apply, REPORT))
