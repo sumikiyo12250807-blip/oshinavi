@@ -47,6 +47,22 @@ ARTIST_TITLE = re.compile(r'公演|ライブ|LIVE|Live|リサイタル|独演会
                           r'[Vv]ol\.|VOL\.|第\d+回|「|『|【|〜|～|ワンマン|ONEMAN|オンライン|配信')
 
 
+def slot_span(t, lo=None, hi=None):
+    """枠の括弧の公演日 → (d1, d2)。読めなければ None。
+    🆕2026-11-05 年の書いていない括弧（TIGET「（大阪 12/30公演）」＝実は 2027年）は 2026年と読むと会期の前に出る。
+    会期（lo〜hi）が分かっている時は、1年後に読めば会期に入るならそちらで読む（45783・13228・28093 の誤検出）"""
+    mm = PAT.search(t.get('type') or '')
+    if not mm:
+        return None
+    d1 = '%d-%02d-%02d' % (2027 if mm.group(1) else 2026, int(mm.group(2)), int(mm.group(3)))
+    d2 = ('%d-%02d-%02d' % (2027 if (mm.group(4) or mm.group(1)) else 2026, int(mm.group(5)), int(mm.group(6)))) if mm.group(5) else d1
+    if lo and hi and not (mm.group(1) or mm.group(4)) and d1 < lo:
+        n1, n2 = str(int(d1[:4]) + 1) + d1[4:], str(int(d2[:4]) + 1) + d2[4:]
+        if lo <= n1 and n2 <= hi:
+            return n1, n2
+    return d1, d2
+
+
 def _artist_ok():
     try:
         return {l.strip() for l in io.open(ROOT + 'tools/artist_ok.txt', encoding='utf-8') if l.strip() and not l.startswith('#')}
@@ -103,11 +119,10 @@ def main():
                 for t in e.get('tickets') or []:
                     if not (t.get('soldout') or t.get('saleUntilSoldOut') or (t.get('date') or '') >= today):
                         continue
-                    mm = PAT.search(t.get('type') or '')
-                    if not mm:
+                    sp_ = slot_span(t, lo, hi)
+                    if not sp_:
                         continue
-                    d1 = '%d-%02d-%02d' % (2027 if mm.group(1) else 2026, int(mm.group(2)), int(mm.group(3)))
-                    d2 = ('%d-%02d-%02d' % (2027 if (mm.group(4) or mm.group(1)) else 2026, int(mm.group(5)), int(mm.group(6)))) if mm.group(5) else d1
+                    d1, d2 = sp_
                     if d2 < today:
                         continue   # もう終わった公演の枠（売り切れの印で残っているもの）は会期に関係しない
                     if d1 < lo or d2 > hi:
