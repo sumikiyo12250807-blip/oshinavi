@@ -24,8 +24,23 @@
 - ✅ 抜き打ち13件の根っこ10種・道具の直し（commit 済み）→ データの直しも当てた・HEAD比べ 消えた枠0／🚨あたしが heal の --apply --ids を「id で絞る」と取り違えて 5162 の売り切れ4枠を2回消した → 戻した＋heal の穴（売り切れ枠を安全弁が数えない・券種名だけで比べる）を直した・同じ件で再現して残ることを確かめた
   ▶ 残り：FANY 売り切れ全件（3,118枠）＝列で回す・heal_fany --artist 563件は見てから・出演者が公演名のまま（ぴあ3,975・TIGET/livePocket 1,789）とフェス札311件の取り直しは数日に分ける／SKILL.md の朝の手順に fany_mark_soldout を足した
   ⚠️ commit に tools/ を丸ごと入れたので、朝からあった tools/publish_split.py の変更と __pycache__ も一緒に入った（別セッションの作業かも＝夜に確認）
+- ✅ お笑いまとめ動画（曲 (13)・夕焼けのビル街 30729・レインボー原宿9着）絵コンテ https://claude.ai/artifact/B8U4J98ry6Nsm4qszjESEb → すちこ「OK これでつくって」→ 書き出し済み tmp/video/matome1105o/out_x.mp4（8.15MB）https://claude.ai/artifact/2L3SdYnFkA1RKu35RqPbKG ▶すちこの OK で予約に付ける
+- 🚨 13時台 メモリ不足でまた2つ止められた＝after_push（reconcile_eplus --all＋pia_soldout_sweep）と主役の書き出し（par_render 3本・raw1〜3 は途中まで）／原因＝まとめ動画の後に主役3本を自動で起こして重い道具5本／鍵 pia_sweep を外した・index.html は HEAD と一致 ▶再開はすちこの OK 後（1本ずつ）・memory に「動画も重い道具に数える」を足した
+- 🔄 すちこ「まとめ動画はいい感じ・最後の伴奏の真ん中が空いてる」＋主役「それで作って」＋再開 OK → 後奏にキャラが上から降りてくる（tmp/video/outro_parade.py）を両方に入れた → 裏 seq_1105（まとめ書き直し→主役1〜3本を1本ずつ→after_push）▶できたら Artifact で見せる→ OK で予約に付ける
+- 🚨 13時台に「鍵を外した」は誤り＝unlock.py が commit_locked の鍵しか外さない作りで pia_sweep の鍵が残っていた → 浦和の照合（reconcile --ids 45473）と2回目の after_push のぴあ見直しが鍵待ちで止まっていた。15:1x に外した・unlock.py は中身を問わず外す形に直した ▶e+ --all・ぴあ見直しは動画のあと seq_1105 が回す／浦和の照合はやり直し
+- 🔄 15:07 便：15時発売のぴあ 3件（7729 百鬼夜鏡・45815・45816）heal --ids（heal_1500.py）→ commit だけ
+- 🔄 主役3本 第2版（b6 の頭切れを直した・似たポーズ7組を別の本へ）書き出し中 seq_1105 --skip-matome
+- ✅ すちこ「文章はOKよ」＝11本の文面 OK（独立FC 🔴3🟠3🟡8 を直した後の版・tmp/x1104/x/all_posts.txt）▶19:40 予約：⑤お笑いにまとめ動画・⑨⑩⑪に主役動画1〜3（主役動画は見せて OK をもらってから）▶夜：E5396 清塚の枠名「先行」→ poco会員限定モアチャンス（データ直し）
+- （済）X 文面 11本（Fable・tmp/x1104/x/post01〜11.txt・x_check／cta_count 通過）→ 独立ファクトチェック中（fc/report.md）▶通ったらすちこに全文を見せる。予約の順＝post10→09→07→11→04（お笑い＋動画）→06→08→05→01→02→03（主役3本は最後・予告がこの順）／トレンドの1本は夕方のトレンドを見て足す
+- ✅ すちこ「いいわね　予約に付けて」＝お笑いまとめ動画 第2版（後奏で9人そろう・字幕とろサーモン）OK → C:\Users\user\Downloads\oshinavi_1105_owarai_matome.mp4 ▶19:40 の予約で「お笑いまとめ」の投稿に付ける（文面は17:03に作ってすちこに見せてから）
+- 🚨 すちこ「歌詞の裏撮り遅くない？書き出す前にしてほしい　月60回しかダウンロードできない」＝次からは歌詞を見せる前に1行ずつ登録と突き合わせる（memory feedback_suno_lyrics_rules 13項）
+- ✅ お笑いまとめの歌詞15組を登録と突き合わせ＝名前・県・ほか・10時 全部一致（tmp/x1104/x/check_owarai_lyrics.txt）／🚨字幕だけ「トロサーモン」→正しくは「とろサーモン」＝直して書き出しをやり直し（seq_1105 を止めて回し直した）
+- ✅ 主役の歌詞の裏取り（ミキ）：ルミネのプレミアムで 11/5 10:00 一般の公演＝1/10・1/16・1/30（各3回・40391〜40445）＝歌詞「1月 10日 16日 30日」と一致（1/21 は平日の部＝プレミアムではない・1/4 家でやりなはれ は 11/5 11:00 締めの先行）tmp/x1104/x/check_miki.txt
+- 🔄 主役3本の動画（曲 (14)・金の粒 38918・ポップ＋ドラァグ18着）絵コンテ https://claude.ai/artifact/LBvUP3mVFRqZu3uoBbjsEQ（OK 待ち）→ 書き出しは裏で先に（wait_then_par → par_render・part1〜3_x.mp4）
 - ✅ 主役の歌詞 v2（すちこ「主役いうわよ→ちけっと いうわよ・中身・いつ・たのしみだわ等」）tmp/x1104/x/suno_shuyaku_1105_v2.txt＋memory 12項
-- 🔄 12:07 昼の便＝裏 noon_chain（e+ heal_eplus_started FIX2・売り切れ印4〔45832 生田絵梨花〕→ ぴあ今日発売41件 heal → 足し算 → HEAD比べ → reconcile --ids → 朝の枠ゼロ mark_soldout → check_unknown_end）→ noon_push_chain（prepush→commit）→ push
+- ✅ 昼の push 721ddbb8688（今日2回目）：ぴあ今日発売41 heal（止まった2は足し算・消えた枠0）・reconcile OK・枠ゼロ148→予定枚数終了5枠・e+ FIX2/印4・47133 直し／prepush の check_order rc1 は隠れ枠95（並び違反0・朝と同じ型）
+  ▶ 裏：after_push（reconcile_eplus --all＋pia_soldout_sweep --apply --resume）＝重い道具2本＝これ以上足さない／▶夜：隠れ枠95の内訳（tmp/x1104/hidden95.txt）＝ぴあ 過去48・今日1／e+ 過去18（40687 milet 当日引換券9・43598 SHE'S 当日券7＝発売日のまま締切が入っていない型）／URL なし 過去26・今日2（10434 ストレイテナー・1308 清水ミチコ 一般 10/31 ほか＝links だけの枠）→ 掃除（9/5 森高・10/4 ナナヲアカリなど古い分）・楽天 3674 いつまで不明1枠
+- （済）12:07 昼の便＝裏 noon_chain（e+ heal_eplus_started FIX2・売り切れ印4〔45832 生田絵梨花〕→ ぴあ今日発売41件 heal → 足し算 → HEAD比べ → reconcile --ids → 朝の枠ゼロ mark_soldout → check_unknown_end）→ noon_push_chain（prepush→commit）→ push
 - ✅ 47133 森高千里（新着プール）：e+ に無い「抽選3次 11/3 12:00発売」6枠・香川/岡山の窓の無い先着/立見6枠を外した（27→15枠）→ reconcile_eplus --ids FAIL 0 ▶夜：e+ の組み立てが公演同士の枠を混ぜた根を調べる
 - 🛠 commit.py／commit_only.py に Claude-Session の新しい行（11/4 の session）
 - ▶ TIGET 番人 食い違い161 → tiget_full（heal→投入→番人→出演者→振り分け）裏／livePocket は lp_full（収集が終わったら続きを自動）
