@@ -61,6 +61,14 @@ def live_pia(e, today):
     return out
 
 
+def presale_only_pia(e, today):
+    """ぴあの枠が「発売前（startDate が明日以降）」だけで、売っている枠が無い（live_pia が空）"""
+    pre = [t for t in e.get('tickets') or []
+           if 'pia.jp' in (t.get('url') or (e.get('links') or {}).get('pia') or '') and not t.get('soldout')
+           and t.get('startDate') and t['startDate'] > today]
+    return bool(pre) and not live_pia(e, today)
+
+
 LEDGER = '.claude/state/pia_start_ledger.json'
 
 
@@ -128,6 +136,15 @@ def main():
     else:
         grp = int(sys.argv[sys.argv.index('--group') + 1]) if '--group' in sys.argv else datetime.date.today().toordinal() % 3
         ids = [e['id'] for e in E if e.get('genre') != 'new' and due_today(e, live_pia(e, today), grp, L)]
+        # 🆕2026-11-04 抜き打ち 43052 TOMOKI plays SAKATA（tmp/x1104/spot/rootcause.md）＝ぴあの枠が**発売前だけ**のエントリは
+        #   live_pia が空＝一度も照合されず、登録のあとでぴあが足した先行（poco 11/4・プリセール 11/6）が入らなかった（753件がこの形）。
+        #   発売前だけのエントリも id で3組に分けて3日に1回照合する＝MISSING（ぴあにあって登録に無い）を拾う。--no-presale で外せる
+        if '--no-presale' not in sys.argv:
+            seen = set(ids)
+            pre = [e['id'] for e in E if e.get('genre') != 'new' and e['id'] not in seen and e['id'] % 3 == grp
+                   and presale_only_pia(e, today)]
+            ids += pre
+            print(f'発売前だけのエントリ {len(pre)}件も照合に入れる（3日で一周）', flush=True)
     # 🆕2026-10-11：途中経過を逐次書く・--resume で続きから（夜に回して2晩とも最後まで届かず、ログが空のまま何も残らなかった）
     stp = f'tmp/pia_sweep_state_{today}.json'
     S = {'grp': str(grp), 'done': [], 'stale': [], 'missing': [], 'fetch_ng': []}

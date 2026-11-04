@@ -351,6 +351,10 @@ def parse_event(html, eid):
     out['performers'] = [unesc(strip_tags(x)) for x in
                          re.findall(r'<a href="/performers/\d+">(.*?)</a>', sec.get('出演者', ''), re.S)]
     # 🆕2026-11-02 抜き打ち 39808（tmp/x1102/spot/rootcause.md D）＝[:10] で11組目からが落ちていた（ちょうど10組の登録 387件）＝上限を外した
+    # 🆕2026-11-04 主催または登録者（<a class="eventer">ソラヒ</a>）も持つ＝出演者欄が無い時、公演名がその名前で始まる時だけ出演者に使う
+    #   （抜き打ち 17195「ソラヒ 2nd ONE MAN LIVE」＝主催ソラヒ。組み立て側 build_tiget_entries.artist_from で判定）
+    om = re.search(r'<a class="eventer"[^>]*>(.*?)</a>', sec.get('主催または登録者', ''), re.S)
+    out['organizer'] = unesc(strip_tags(om.group(1))).strip() if om else None
     # 🚨JSON-LD の offers に **販売開始時刻（validFrom）** が入っている。
     #    「当日支払い」の券種はHTMLに受付期間の欄が出ないので、発売日はここからしか取れない
     #    （2026-09-18＝36件がこの形だった。推測で日付を作らないための命綱）。
@@ -550,7 +554,15 @@ def _selftest():
     assert tB['name'] == 'AAA. 個人協賛' and tB['price'] == 110, tB
     assert dB['programs'][0]['date'] == '2027-03-07', dB['programs'][0]
     assert tB['periods'][0]['parsed'][2] == '2027-03-07', tB['periods']
-    print('selftest OK: parse_jp_date/parse_period/pref_of/parse_list_page/parse_list_meta/券種B形')
+    # 🆕2026-11-04 主催または登録者（17195 ソラヒ）・出演者リンク（28996 MCあんにゅ）を今日の生ページで
+    import os
+    for f, eid, org, perf in (('tmp/x1104/spot/raw1/tg_492326.html', '492326', 'ソラヒ', []),
+                              ('tmp/x1104/spot/raw2/tg_527209.html', '527209', None, ['MCあんにゅ', 'Watasino'])):
+        if os.path.exists(f):
+            d = parse_event(io.open(f, encoding='utf-8').read(), eid)
+            assert (org is None or d['organizer'] == org) and d['performers'][:len(perf)] == perf, (f, d['organizer'], d['performers'])
+            print('  実物', eid, d['organizer'], d['performers'])
+    print('selftest OK: parse_jp_date/parse_period/pref_of/parse_list_page/parse_list_meta/券種B形/主催')
 
 
 def main():

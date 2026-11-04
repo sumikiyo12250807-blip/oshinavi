@@ -22,6 +22,7 @@ TIGETにはこれが要る。
 - 🚨**作り直しが空（出す側の申込・公演が過去・読めない）なら触らない**＝消さない。件数を報告に出す
 - TIGET以外の売り場の枠（ぴあ・楽天等）は残す＝TIGETの枠だけ差し替える
 - id・ジャンル・名前・会場は触らない
+- 🆕2026-11-04 出演者の欄は「公演名のまま（手直ししていない）」時だけ、作り直しで読めた出演者に差し替える（28996）
 """
 import argparse
 import datetime
@@ -70,13 +71,14 @@ def main():
 
     rep = io.open(REPORT, 'w', encoding='utf-8')
     done, empty, err = 0, [], []
+    artist_fixed, name_changed = [], []
     for e in events:
         if e['id'] not in want:
             continue
         tickets = e.get('tickets') or []
         urls = sorted({x for t in tickets + [{'url': (e.get('links') or {}).get('tiget')}]
                        for x in re.findall(r'tiget\.net/events/(\d+)', t.get('url') or '')})
-        rebuilt, bad = [], False
+        rebuilt, bad, arts, names = [], False, [], []
         for eid in urls:
             try:
                 d = TH.parse_event(TH.fetch(f'https://tiget.net/events/{eid}'), eid)
@@ -89,6 +91,11 @@ def main():
             built, why = BT.build(d, a.today)
             if built:
                 rebuilt += built['tickets']
+                if built.get('artist') and built['artist'] != built.get('name'):
+                    for x in built['artist'].split('／'):
+                        if x not in arts:
+                            arts.append(x)
+                names.append(built.get('name') or '')
             time.sleep(a.sleep)
         if bad:
             continue
@@ -106,6 +113,16 @@ def main():
         e['tickets'] = others + rebuilt
         import fold_parts as FP   # 🆕9/30 1部・2部を畳んだカードは部の印を付け直す
         FP.relabel(e)
+        # 🆕2026-11-04 抜き打ち 28996 MCあんにゅ（tmp/x1104/spot/rootcause.md C）＝登録のあとで TIGET が出演者を足したのに、
+        #   ヒールは tickets だけ＝出演者は公演名のまま残った。**出演者の欄が公演名のまま（手で直していない）時だけ**、
+        #   作り直しで読めた出演者に差し替える（手直しした欄は巻き戻さない）。公演名が変わった時は報告だけ（名前は触らない決まり）
+        _n = lambda s: re.sub(r'[\s　]', '', s or '')
+        if arts and _n(e.get('artist')) == _n(e.get('name')):
+            rep.write('    出演者: %s → %s\n' % (e.get('artist'), '／'.join(arts)))
+            e['artist'] = '／'.join(arts)
+            artist_fixed.append(e['id'])
+        if names and len(urls) == 1 and _n(names[0]) != _n(e.get('name')):
+            name_changed.append((e['id'], e.get('name'), names[0]))
         done += 1
 
     rep.write('\n--- 作り直しが空（触らなかった）---\n')
@@ -113,7 +130,11 @@ def main():
         rep.write('  id=%s %s\n' % (e['id'], (e.get('name') or '')[:40]))
     for i, eid, why in err:
         rep.write('❌ id=%s events/%s 読めなかった: %s\n' % (i, eid, why))
-    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d ===\n' % (done, len(empty), len(err)))
+    rep.write('\n--- 売り場の公演名が変わった（触っていない・手で見る）---\n')
+    for i, old, new in name_changed:
+        rep.write('  id=%s %s → %s\n' % (i, (old or '')[:40], (new or '')[:60]))
+    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d / 出演者を足した %d / 公演名が変わった %d ===\n'
+              % (done, len(empty), len(err), len(artist_fixed), len(name_changed)))
     rep.close()
     sys.stderr.write('heal_tiget: healed=%d empty=%d fetcherr=%d apply=%s -> %s\n'
                      % (done, len(empty), len(err), a.apply, REPORT))
