@@ -31,32 +31,31 @@ def jp(d):
     return f'{y}年{m}月{dd}日({WD[datetime.date(y, m, dd).weekday()]})'
 
 
-def slot_span(t):
-    """枠の括弧の公演日 → (d1, d2)。読めなければ None（gate_fields P と同じ読み方）"""
-    mm = GF.PAT.search(t.get('type') or '')
-    if not mm:
-        return None
-    d1 = '%d-%02d-%02d' % (2027 if mm.group(1) else 2026, int(mm.group(2)), int(mm.group(3)))
-    d2 = ('%d-%02d-%02d' % (2027 if (mm.group(4) or mm.group(1)) else 2026, int(mm.group(5)), int(mm.group(6)))) if mm.group(5) else d1
-    return d1, d2
-
-
 def plan(e, today):
+    """伸ばす中身 {欄: (前, 後)}／伸ばさない時 None／🆕会期のどこにも枠が無い時 {'_report': ...}（会期の側が違う疑い＝手で見る）"""
     m = DL.match(e.get('dateLabel') or '')
     if not m:
         return None
     lo = '%s-%02d-%02d' % (m.group(1), int(m.group(2)), int(m.group(3)))
     hi = ('%s-%02d-%02d' % (m.group(4), int(m.group(5)), int(m.group(6)))) if m.group(4) else lo
     nlo, nhi = lo, hi
+    anchored = False
+    spans = []
     for t in e.get('tickets') or []:
         if not (t.get('soldout') or t.get('saleUntilSoldOut') or (t.get('date') or '') >= today):
             continue
-        sp = slot_span(t)
+        sp = GF.slot_span(t, lo, hi)   # 🆕11/5 年の書いていない括弧は 1年後で会期に入るならそちら（TIGET 45783 ほか）
         if not sp or sp[1] < today or sp[0] > sp[1]:
             continue
+        spans.append(sp)
+        if sp[0] <= hi and sp[1] >= lo:
+            anchored = True   # 会期と重なる枠がある＝今の会期は枠に裏付けがある
         nlo, nhi = min(nlo, sp[0]), max(nhi, sp[1])
     if (nlo, nhi) == (lo, hi):
         return None
+    if not anchored:
+        # 🆕2026-11-05 42719＝枠は 12/12・会期と date は 12/19＝会期の側が違う。伸ばすと嘘が増える＝触らず報告
+        return {'_report': (e.get('dateLabel'), f'会期 {lo}〜{hi} に重なる枠が無い（枠 {min(s[0] for s in spans)}〜{max(s[1] for s in spans)}）＝会期か枠の公演日が違う疑い・売り場で見る')}
     ndl = (jp(nlo) if nlo == nhi else f'{jp(nlo)}〜{jp(nhi)}') + (m.group(7) or '')
     out = {'dateLabel': (e.get('dateLabel'), ndl)}
     if nhi > (e.get('date') or ''):
@@ -90,15 +89,16 @@ def main():
         rep.write(f'id{i} {(e.get("name") or "")[:40]}\n')
         for f, (a, b) in p.items():
             rep.write(f'    {f}: {a}\n      → {b}\n')
-    rep.write(f'\n=== 伸ばす {len(fixes)}件 apply={"--apply" in sys.argv} ===\n')
+    nrep = sum(1 for _, p in fixes.values() if '_report' in p)
+    rep.write(f'\n=== 伸ばす {len(fixes) - nrep}件 / 手で見る（会期に重なる枠なし）{nrep}件 apply={"--apply" in sys.argv} ===\n')
     rep.close()
-    print(f'fill_span_from_slots: 伸ばす {len(fixes)}件 → {REPORT}')
+    print(f'fill_span_from_slots: 伸ばす {len(fixes) - nrep}件 / 手で見る {nrep}件 → {REPORT}')
     if '--apply' in sys.argv and fixes:
         n = 0
         for e in E:
             if e['id'] in fixes:
                 for f, (a, b) in fixes[e['id']][1].items():
-                    if e.get(f) == a:
+                    if not f.startswith('_') and e.get(f) == a:
                         e[f] = b
                         n += 1
         compact = text[mm.start(1):mm.start(1) + 3] in ('[\r\n', '[\n{') or text[mm.start(1):mm.start(1) + 4].startswith('[\r\n{')
@@ -119,7 +119,8 @@ def _selftest():
     p = plan(e, today)
     assert p == {'dateLabel': (e['dateLabel'], '2026年12月19日(土)〜2027年1月5日(火) 東京 シアタークリエ')}, p
     e2 = {'id': 1, 'date': '2027-02-10', 'dateLabel': '2027年2月6日(土) 福岡 DRUM Be-1',
-          'tickets': [{'type': '一般発売（埼玉 R9年 1/14公演）〜1/10 23:59', 'date': '2027-01-10'},
+          'tickets': [{'type': '一般発売（福岡 R9年 2/6公演）〜2/1 23:59', 'date': '2027-02-01'},
+                      {'type': '一般発売（埼玉 R9年 1/14公演）〜1/10 23:59', 'date': '2027-01-10'},
                       {'type': '一般発売（大阪 R9年 2/10公演）〜2/7 23:59', 'date': '2027-02-07'}]}
     p2 = plan(e2, today)
     assert p2['dateLabel'][1] == '2027年1月14日(木)〜2027年2月10日(水) 福岡 DRUM Be-1', p2
@@ -128,6 +129,15 @@ def _selftest():
     e3 = {'id': 2, 'date': '2026-12-01', 'dateLabel': '2026年12月1日(火) 東京 X',
           'tickets': [{'type': '先行（東京 11/1公演）〜10/20 23:59', 'date': '2026-10-20'}]}
     assert plan(e3, today) is None
+    # 🆕年の書いていない括弧（TIGET 45783＝2027-12-30 の公演）＝伸ばさない
+    e4 = {'id': 45783, 'date': '2027-12-30', 'dateLabel': '2027年12月30日(木) 大阪',
+          'tickets': [{'type': '●前売りチケット（3,000円）（大阪 12/30公演）〜12/15 23:59', 'date': '2026-12-15'}]}
+    assert plan(e4, today) is None, plan(e4, today)
+    # 🆕会期のどこにも枠が無い（42719＝枠 12/12・会期 12/19）＝伸ばさず報告
+    e5 = {'id': 42719, 'date': '2026-12-19', 'dateLabel': '2026年12月19日(土) 埼玉',
+          'tickets': [{'type': '自由席（埼玉 12/12公演）〜12/12', 'date': '2026-12-12'}]}
+    p5 = plan(e5, today)
+    assert p5 and list(p5) == ['_report'], p5
     print('selftest OK')
     return 0
 
