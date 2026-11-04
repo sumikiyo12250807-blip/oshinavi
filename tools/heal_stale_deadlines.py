@@ -166,7 +166,7 @@ def main():
             print(f'!! {OUT} は {age_h:.1f} 時間前の取り直し。--ids で build したなら --apply にも同じ --ids を付けて。'
                   f'（本当に古いのを当てるなら --force-old）'); return
         built ={o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
-        changed = carried = kept_n = sold_n = 0
+        changed = carried = kept_n = sold_n = datefix_n = 0
         blocked = []
         FORCE = '--force-shrink' in sys.argv
         today = f'{datetime.date.today():%Y-%m-%d}'
@@ -244,6 +244,16 @@ def main():
                     sold_keep.append(dict(t, soldout=True, soldoutSince=today))
             sold_n += len(sold_keep)
             e['tickets'] = list(o['tickets']) + keep + sold_keep
+            # 🆕🚨2026-11-05 カードの日付も売り場に合わせる（すちこ「日付の間違いは一番やってはいけない」）。
+            #   ぴあのページが1つだけ・ほかの売り場の枠が無いカードで、作り直したカードの日付（公演日）が今と違えば差し替える。
+            #   複数ページのツアーは tools/fill_span_from_slots.py（prepush）と gate_fields P で守る
+            if o.get('nurl') == 1 and o.get('date') and o.get('dateLabel') and not keep \
+                    and not [t for t in e['tickets'] if (t.get('url') or '') and 'pia.jp' not in (t.get('url') or '')]:
+                _dp = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
+                if o['date'] != e.get('date') or _dp(o['dateLabel']) != _dp(e.get('dateLabel')):
+                    print(f"  📅 id={e['id']} カードの日付: {e.get('date')} ｜ {e.get('dateLabel')} → {o['date']} ｜ {o['dateLabel']}")
+                    e['date'], e['dateLabel'] = o['date'], o['dateLabel']
+                    datefix_n += 1
             changed += 1
         left = sum(1 for _, s in scan(EVENTS) for _ in s)
         bak = f'index.html.bak_{datetime.date.today():%m%d}_{BAK_SUFFIX}'
@@ -252,7 +262,7 @@ def main():
         open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():])
         dels = [o for o in built.values() if o.get('status') == 'delete']
         wpia = [o for o in built.values() if o.get('status') == 'WPIA']
-        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 非ぴあ据置 {kept_n}枠 / 🆕売り切れの印で残した {sold_n}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
+        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 非ぴあ据置 {kept_n}枠 / 🆕売り切れの印で残した {sold_n}枠 / 🆕カードの日付を直した {datefix_n}件 / 残り隠れ枠 {left} (backup: {bak}) ===')
         if blocked:
             print(f'\n🛡️ 生きた枠が消えるので適用しなかった {len(blocked)}件'
                   f'（ぴあの混雑ページ疑い。実ページを単発で確認してから手で直すこと）:')
@@ -350,7 +360,9 @@ def main():
         else:
             import build_pia_entries as _BP
             out.append({'id': i, 'status': 'convert', 'artist': ev.get('artist', ''), 'tickets': ne['tickets'],
-                        'sold': (_BP._SOLD.get(i) or [])})
+                        'sold': (_BP._SOLD.get(i) or []),
+                        # 🆕2026-11-05 カードの日付も持っておく（27062＝ぴあが 1/15→1/14 に変えたのに受付だけ直ってカードは古いまま）
+                        'date': ne.get('date'), 'dateLabel': ne.get('dateLabel'), 'nurl': len(urls)})
             print(f"[{n}/{len(targets)}] {i} convert {len(ne['tickets'])}枠")
         time.sleep(1.2)
     json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
