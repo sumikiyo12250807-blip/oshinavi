@@ -27,8 +27,10 @@ reconcile_pia・gate_*_slots は「枠が売り場と合っているか」しか
 - C は「最後の公演日が今日以降」だけ数える（もう終わった組は画面に関係しない）
 - 直し方の雛形＝tmp/x1009/fix_fields.py（A/B）・fix_c.py（C）・fix_tiget_dates.py（TIGET）
 """
-import datetime, io, json, os, re, sys
+import datetime, io, json, os, re, sys, unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# 🆕2026-11-04 名前にフェス（[[feedback_fes_definition]]＝フェス／フェスティバル／FES／FESTIVAL）。英字は前後が英字でない時だけ（Professor に当てない）
+FES_NAME = re.compile(r'フェス|(?<![A-Za-z])(?:FES|FESTIVAL|Fes|Festival|fes|festival)(?![a-z])')
 import fill_slot_pref as FSP  # noqa: E402
 import fill_entry_pref as FEP  # noqa: E402
 
@@ -86,8 +88,70 @@ def main():
         E = [e for e in E if e['id'] in ids]
     A, B, C, D, F, G, H, I, K, L, M, N, M_old = [], [], [], [], [], [], [], [], [], [], [], [], 0
     O, O_old = [], 0
+    # 🆕2026-11-04 抜き打ち13件（tmp/x1104/spot/rootcause.md）から足した網＝**どれも件数を出すだけ・push を止めない**
+    NX, P, H2, R, R_old, S1, S2, S3, T = [], [], [], [], 0, [], [], [], []
     OK = _artist_ok()
     for e in E:
+        _fut = (e.get('date') or '') >= today
+        if _fut:
+            # P 会期（dateLabel）の期間の外に、まだ出ている枠の公演日がある（5162 山本彩＝枠は 1/14〜2/10 なのに会期は 2/6 福岡だけ）
+            #   ＝足し込み・ヒールで枠は増えたが会期・会場は誰も伸ばさない。組み立ての書き方（YYYY年M月D日(曜)〜…）の会期だけ見る
+            _dl = re.match(r'(\d{4})年(\d{1,2})月(\d{1,2})日\([^)]\)(?:〜(\d{4})年(\d{1,2})月(\d{1,2})日\([^)]\))?(?:\s|$)', e.get('dateLabel') or '')
+            if _dl:
+                lo = '%s-%02d-%02d' % (_dl.group(1), int(_dl.group(2)), int(_dl.group(3)))
+                hi = ('%s-%02d-%02d' % (_dl.group(4), int(_dl.group(5)), int(_dl.group(6)))) if _dl.group(4) else lo
+                for t in e.get('tickets') or []:
+                    if not (t.get('soldout') or t.get('saleUntilSoldOut') or (t.get('date') or '') >= today):
+                        continue
+                    mm = PAT.search(t.get('type') or '')
+                    if not mm:
+                        continue
+                    d1 = '%d-%02d-%02d' % (2027 if mm.group(1) else 2026, int(mm.group(2)), int(mm.group(3)))
+                    d2 = ('%d-%02d-%02d' % (2027 if (mm.group(4) or mm.group(1)) else 2026, int(mm.group(5)), int(mm.group(6)))) if mm.group(5) else d1
+                    if d2 < today:
+                        continue   # もう終わった公演の枠（売り切れの印で残っているもの）は会期に関係しない
+                    if d1 < lo or d2 > hi:
+                        P.append((e, lo, hi, d1, d2))
+                        break
+            # H2 ぴあの発売前の単日形（startDate＝date）が発売日を過ぎても締切が付かず隠れている（heal_stale_deadlines の取り残し）
+            #   H は date≧今日 の枠しか見ない＝この型は見ていなかった（43028 ガウディ展の 11/18 発売枠が、取り直しに失敗すると 11/19 にこうなる）
+            for t in e.get('tickets') or []:
+                u = t.get('url') or (e.get('links') or {}).get('pia') or ''
+                if ('pia.jp' in u and t.get('startDate') and t['startDate'] == t.get('date') and t['date'] < today
+                        and not t.get('soldout') and not t.get('saleUntilSoldOut')):
+                    H2.append((e, t.get('type') or ''))
+            # R 名前に「フェス」「FES」があるのに fes の札が無い（41873 変態植物倶楽部FES）＝[[feedback_fes_definition]] ①
+            if FES_NAME.search(unicodedata.normalize('NFKC', e.get('name') or '')):
+                g = {e.get('genre'), e.get('_genre')} | set(e.get('extraGenres') or []) | set(e.get('_extraGenres') or [])
+                if 'fes' not in g:
+                    if e.get('genre') == 'new':
+                        R.append(e)
+                    else:
+                        R_old += 1
+            # S e+ の links.eplus の公演番号がどの枠の url にも無い（21218＝配信のページを指していた）／同じ公演に別の公演番号の枠が2つ
+            #   （21218＝e+ が公演ページを作り直し、404 の古い枠と新しい枠が並んだ）
+            _ep = [(t, re.search(r'eplus\.jp/sf/detail/(\d+)', t.get('url') or '')) for t in e.get('tickets') or []]
+            _ep = [(t, m_.group(1)) for t, m_ in _ep if m_ and (t.get('soldout') or (t.get('date') or '') >= today)]
+            if _ep:
+                _le = re.search(r'eplus\.jp/sf/detail/(\d+)', (e.get('links') or {}).get('eplus') or '')
+                if _le and _le.group(1) not in {b for _, b in _ep}:
+                    S1.append(e)
+                _by = {}
+                for t, b in _ep:
+                    _pk = re.search(r'（([^（）]*公演)）', t.get('type') or '')
+                    if _pk:
+                        _by.setdefault(_pk.group(1), set()).add(b)
+                if any(len(v) >= 2 for v in _by.values()):
+                    S2.append(e)
+            # S3 ぴあ links.pia の公演番号（eventCd）に枠が1つも無い（売り切れの印の枠も無い）＝5162 山本彩の福岡 2/6（予定枚数終了なのに枠ごと消えていた）
+            #   組み立ては買える行しか枠にしない＝発売日に売り切れた回は印を付ける前にヒールで落ちる型。枠に url がある（複数ページの）件だけ見る
+            _lp = re.search(r'eventCd=(\w+)', (e.get('links') or {}).get('pia') or '')
+            _tc = {m_.group(1) for t in e.get('tickets') or [] for m_ in [re.search(r'pia\.jp/.*eventCd=(\w+)', t.get('url') or '')] if m_}
+            if _lp and _tc and _lp.group(1) not in _tc:
+                S3.append(e)
+            # T 出演者の欄に「ゲスト:」「MC:」の札が残っている（FANY 41060）
+            if re.search(r'(^|／)\s*(ゲスト|MC|ＭＣ|司会)\s*[:：]', e.get('artist') or ''):
+                T.append(e)
         # M は新着プール（genre:new）だけ止める＝これから振り分ける分。既存は件数だけ（10/27〜10/28 に取り直す計画）
         if (e.get('date') or '') >= today and artist_looks_like_title(e, OK):
             if e.get('genre') == 'new':
@@ -122,8 +186,12 @@ def main():
             L.append(e)
         # N 🆕2026-10-26 まだ買える枠の括弧の県がエントリの県に入っていない（41475 SALSATION 県=福岡・大阪・枠は東京・広島・埼玉にも
         #   ＝ヒールで後から足された会場・142件）。直す道具＝tools/fill_entry_pref.py --apply（ヒールのあと・push 前）
-        if (e.get('date') or '') >= today and FEP.need(e, today):
+        if (e.get('date') or '') >= today and FEP.need(e, today, first_only=True):
             N.append(e)
+        # N+ 🆕2026-11-04 抜き打ち 5162（tmp/x1104/spot/rootcause.md）＝括弧の2つ目以降の県（「埼玉・東京」の東京）を見ていなかった。
+        #   fill_entry_pref は 11/4 から全部足す。番人は件数だけ（既存 8件で push を止めない）
+        elif (e.get('date') or '') >= today and FEP.need(e, today):
+            NX.append(e)
         # O 🆕2026-11-02 抜き打ち 24203（tmp/x1102/spot/rootcause.md C）＝県が2つ以上なのに会場が1つ
         #   ＝後から足された会場が venue に入らない（ヒールは tickets だけ）。新着は振り分けで止める・既存は件数だけ（141件・会場を足す道具を作る）
         if ((e.get('date') or '') >= today and '・' in (e.get('prefecture') or '')
@@ -183,6 +251,15 @@ def main():
         print(f'  M id{e["id"]} 出演者の欄が公演名のまま（新着）: {(e.get("artist") or "")[:50]}')
     for e in O:
         print(f'  O id{e["id"]} 県が2つ以上なのに会場が1つ（新着・県={e.get("prefecture")}）: {(e.get("venue") or "")[:30]} ｜{(e.get("name") or "")[:30]}')
+    for e in R:
+        print(f'  R id{e["id"]} 名前にフェス/FES なのに fes の札が無い（新着・振り分けで fes を足す）: {(e.get("name") or "")[:40]}')
+    for e, lo, hi, d1, d2 in P[:10]:
+        print(f'  P id{e["id"]} 会期 {lo}〜{hi} の外に枠の公演日 {d1}〜{d2}＝tools/fill_entry_span.py --ids で会期・会場・県を足す: {(e.get("name") or "")[:24]}')
+    for e, ty in H2[:10]:
+        print(f'  H2 id{e["id"]} 発売日を過ぎて締切が付かず隠れている＝heal_stale_deadlines --ids: {ty[:50]}')
+    print(f'=== 🆕11/4 件数だけ（止めない）: N+ 括弧の2つ目以降の県 {len(NX)} / P 会期の外に枠 {len(P)} / H2 隠れたぴあ枠 {len(H2)} / '
+          f'R 名前にフェスで fes なし 新着 {len(R)}・既存 {R_old} / S1 links.eplus がどの枠にも無い {len(S1)} / '
+          f'S2 e+ 同じ公演に別番号の枠 {len(S2)} / S3 links.pia の公演に枠なし {len(S3)} / T 出演者に「ゲスト:」札 {len(T)} ===')
     print(f'=== 集計: A {len(A)} / B {len(B)} / C {len(C)} / D {len(D)} / F {len(F)} / G {len(G)} / H {len(H)} / I {len(I)} / K {len(K)} / L {len(L)} / N {len(N)} / M {len(M)}（既存 {M_old}・止めない） / O {len(O)}（既存 {O_old}・止めない） ===')
     # M は振り分けの番人（--assign の時だけ止める）＝新着タブには載ったまま、振り分けでその件だけプールに残す
     #   （push を止めると既存の 4,914 件と釣り合わない。振り分けの道具は artist_looks_like_title で1件ずつ残す）

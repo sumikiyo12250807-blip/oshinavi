@@ -28,6 +28,8 @@ FANYも毎日ずれる。9/21夜の番人で、**本日10:00/11:00/12:00に発�
 ## 守ること
 
 - **tickets だけ**差し替える。venue・dateLabel・artist・genre・名前は触らない（手直しが巻き戻る）
+  🆕2026-11-04 例外＝artist は「今の売り場の出演者が登録の名前を全部含んでもっと多い」時だけ差し替える（22821・41060＝後から足された出演者）
+  　＝`--apply --artist` の時だけ書く（初回 11/4 の下見で 564件＝10/24 より前の「先頭3組」登録が大半。--artist なしは報告だけ）
 - FANY以外の売り場の枠（url が ticket.fany.lol でない枠）は残す
 - 対象＝links.fany があり、FANYの申込URLを持つエントリ。**リンクだけ足したぴあ等の登録は対象外**
 - 🚨安全弁①＝**一覧に公演が無い（落ちた・今日の公演）エントリは触らない**
@@ -112,13 +114,38 @@ def build_page(data, today):
             same[(p.get('event_id'), iso, p.get('venue_id'))] += 1
     gmap['_same_day'] = same
     page, none = {}, {}
+    ARTISTS.clear()
     for p in data['performances']:
         e, why = BF.build_one(p, today, gmap, collections.Counter())
         if e:
             page[str(p.get('id'))] = e['tickets']
+            ARTISTS[str(p.get('id'))] = (e.get('artist') or '', e.get('name') or '')
         else:
             none[str(p.get('id'))] = why
     return page, none
+
+
+ARTISTS = {}   # 公演id → (作り直した出演者, 公演名)
+_LBL = re.compile(r'^(ゲスト|MC|ＭＣ|司会|出演)\s*[:：]\s*')
+
+
+def _names(a):
+    return [_LBL.sub('', x).strip() for x in (a or '').split('／') if _LBL.sub('', x).strip()]
+
+
+def artist_grow(old, new, name):
+    """🆕2026-11-04 抜き打ち 22821 ルミネ平日よる（5組抜け）・11/2 41060 Kiwami（滝音抜け）＝FANY は登録のあとで出演者を足す。
+    ヒールは tickets だけ＝出演者は登録の時のまま。**今の売り場の出演者が、登録の名前を全部含んでもっと多い時だけ**差し替える
+    （手で直した名前・並べ替えは巻き戻さない＝含まれない名前が1つでもあれば触らない）。公演名に倒れた出演者（＝old が公演名）も差し替える。"""
+    if not new or new == name:
+        return None
+    on, nn = _names(old), _names(new)
+    _k = lambda s: re.sub(r'[\s　]', '', s)
+    if old == name:
+        return new
+    if len(nn) > len(on) and {_k(x) for x in on} <= {_k(x) for x in nn}:
+        return new
+    return None
 
 
 def main():
@@ -126,6 +153,7 @@ def main():
     ap.add_argument('--src', default=None, help='引いてある一覧JSON（無ければ引き直す）')
     ap.add_argument('--ids', default='')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--artist', action='store_true', help='🆕11/4 出演者が増えた件の artist も書く（無ければ報告だけ）')
     ap.add_argument('--days', type=int, default=200)
     ap.add_argument('--selftest', action='store_true')
     a = ap.parse_args()
@@ -153,6 +181,7 @@ def main():
     rep = io.open(REPORT, 'w', encoding='utf-8')
     rep.write('=== heal_fany (today=%s) src=%s ===\n\n' % (today, a.src or 'refetch'))
     healed, same, gone, stopped, multi, empty, linkonly = [], 0, [], [], [], [], 0
+    artist_up = {}
     for e in EVENTS:
         if not (e.get('links') or {}).get('fany'):
             continue
@@ -193,6 +222,10 @@ def main():
             multi.append((e, sorted(perfs)))
             continue
         pid = perfs.pop()
+        if pid in ARTISTS:
+            na = artist_grow(e.get('artist') or '', ARTISTS[pid][0], e.get('name') or '')
+            if na and na != e.get('artist'):
+                artist_up[e['id']] = (e.get('artist'), na)
         if pid not in page:
             if pid in none:
                 empty.append((e, none[pid]))   # 作り直しが空＝触らない
@@ -234,17 +267,22 @@ def main():
     rep.write('\n--- 一覧に無い＝落ちた・今日の公演（触っていない）%d件 ---\n' % len(gone))
     for e in gone:
         rep.write('id%-6s 公演%s %s\n' % (e['id'], e.get('date'), (e.get('name') or '')[:40]))
+    rep.write('\n--- 🆕出演者が増えた（登録の名前を全部含んでもっと多い）＝差し替える %d件 ---\n' % len(artist_up))
+    for i, (o, n) in artist_up.items():
+        rep.write('id%-6s %s\n      → %s\n' % (i, (o or '')[:70], (n or '')[:120]))
     nslots = sum(len([t for t in new if is_fany(t)]) for _, _, new in healed)
     summary = ('当てる %d件（差し替え後のFANY枠 %d枠）/ 変化なし %d / 安全弁②で止めた %d / '
-               '一覧に無い %d / 作り直し空 %d / 公演id複数 %d / リンクだけ(対象外) %d'
-               % (len(healed), nslots, same, len(stopped), len(gone), len(empty), len(multi), linkonly))
+               '一覧に無い %d / 作り直し空 %d / 公演id複数 %d / リンクだけ(対象外) %d / 出演者を足す %d'
+               % (len(healed), nslots, same, len(stopped), len(gone), len(empty), len(multi), linkonly, len(artist_up)))
     rep.write('\n=== %s ===\n' % summary)
 
-    if a.apply and healed:
+    if a.apply and (healed or (a.artist and artist_up)):
         byid = {e['id']: new for e, _, new in healed}
         for e in EVENTS:
             if e['id'] in byid:
                 e['tickets'] = byid[e['id']]
+            if a.artist and e['id'] in artist_up and e.get('artist') == artist_up[e['id']][0]:
+                e['artist'] = artist_up[e['id']][1]
         bak = 'index.html.bak_%s_fanyheal' % datetime.date.today().strftime('%m%d')
         io.open(bak, 'w', encoding='utf-8', newline='').write(h)
         io.open(PATH, 'w', encoding='utf-8', newline='').write(
@@ -296,6 +334,14 @@ def _selftest():
     check('先行が終わって印が付いたら置き換える', mg == [p2] and not lost)
     # ⑥ 券種名の頭の取り方
     check('券種名の頭', bone(live) == '一般発売（大阪 10/16公演）')
+    # ⑦ 🆕11/4 出演者が増えた時だけ差し替える（22821・41060）／手直し（含まれない名前）は巻き戻さない
+    check('増えたら差し替え', artist_grow('桂かい枝／ギャロップ／セルライトスパ',
+                                    '桂かい枝／ギャロップ／５ＧＡＰ／セルライトスパ／空気階段', 'ルミネ') == '桂かい枝／ギャロップ／５ＧＡＰ／セルライトスパ／空気階段')
+    check('札付きの古い名前も含むと見る', artist_grow('ゲスト:カベポスター／超速バギー', '滝音／カベポスター／超速バギー', 'K') == '滝音／カベポスター／超速バギー')
+    check('含まれない名前があれば触らない', artist_grow('A／手で直したB', 'A／C／D', 'n') is None)
+    check('同じ数なら触らない', artist_grow('A／B', 'B／A', 'n') is None)
+    check('公演名に倒れていたら差し替え', artist_grow('ルミネ', 'A／B', 'ルミネ') == 'A／B')
+    check('作り直しも公演名なら触らない', artist_grow('A', 'ルミネ', 'ルミネ') is None)
     print('selftest %s' % ('OK' if ok else 'NG'))
     return 0 if ok else 1
 

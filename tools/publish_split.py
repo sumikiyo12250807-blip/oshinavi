@@ -16,7 +16,9 @@ Why: index.html が 29MB あり、Googlebot は1ファイル15MBまでしか読�
 import argparse, datetime, hashlib, io, json, os, re, sys
 
 CHUNK = 4_000_000  # 1ファイルの目安（バイト）
-HEAD_DAYS = 7      # 先に読む分＝今日から7日以内に発売・締切が来る枠を持つカード（画面の上に並ぶ分）
+HEAD_DAYS = 1      # 先に読む分＝昨日〜明日に発売・締切が来る枠を持つカード（画面の上に並ぶ分）
+                   # 🆕2026-10-28 7→1（すちこ「4〜5秒」）＝6.0MB→2.8MB。手元で最初の24枚が全件版と同じ並びなのを確かめた
+SSR_DAYS = 7       # 検索・AI向け一覧に残す日数（trim_ssr）
 DEAD_DAYS = 3      # 締切がこれより前に過ぎた枠は配らない（画面には出ない枠）
 
 
@@ -57,13 +59,13 @@ def is_head(e, today):
 def trim_ssr(src, today):
     """🆕2026-10-28 すちこ「SSR絞っていいよ」（トップを開くのに5秒以上）。
     <main> の検索・AI向け一覧（AI_SSR_START〜END）は全件 2万件・7.5MB あり、画面に出ないのにブラウザが組み立てていた。
-    状態の欄（最初の「｜」より前）に 今日−1〜HEAD_DAYS 日の日付があるか「本日」を含む行だけ残す。
+    状態の欄（最初の「｜」より前）に 今日−1〜SSR_DAYS 日の日付があるか「本日」を含む行だけ残す。
     残りは /ai.html（50件ずつ）と artist/ ページが受け持つ。作業用の index.html は変えない。"""
     a = src.find('<!-- AI_SSR_START -->'); b = src.find('<!-- AI_SSR_END -->')
     if a == -1 or b == -1:
         return src, 0, 0
     lo = (today - datetime.timedelta(days=1)).isoformat()
-    hi = (today + datetime.timedelta(days=HEAD_DAYS)).isoformat()
+    hi = (today + datetime.timedelta(days=SSR_DAYS)).isoformat()
     def near(li):
         st = li.split('｜', 1)[0]
         return '本日' in st or any(lo <= d <= hi for d in re.findall(r'20\d\d-\d\d-\d\d', st))
@@ -71,7 +73,7 @@ def trim_ssr(src, today):
     items = re.findall(r'<li>[\s\S]*?</li>\n?', seg)
     keep = [x for x in items if near(x)]
     body = re.sub(r'<li>[\s\S]*?</li>\n?', '', seg)
-    body = re.sub(r'全(\d+)件（', lambda m: f'全{m.group(1)}件のうち発売・締切が{HEAD_DAYS}日以内の{len(keep)}件（', body, 1)
+    body = re.sub(r'全(\d+)件（', lambda m: f'全{m.group(1)}件のうち発売・締切が{SSR_DAYS}日以内の{len(keep)}件（', body, 1)
     body = body.replace('<ul>', '<ul>\n' + ''.join(keep), 1)
     return src[:a] + body + src[b:], len(items), len(keep)
 
@@ -120,7 +122,7 @@ def split(src, today=None):
     out = src[:t] + tags + src[t:i] + 'const EVENTS = window.__OSHI_EV || [];' + src[k:]
     out, s0, s1 = trim_ssr(out, today)
     if s0:
-        print(f'検索・AI向けの一覧を {s0}件 → {s1}件（発売・締切が{HEAD_DAYS}日以内）に絞った')
+        print(f'検索・AI向けの一覧を {s0}件 → {s1}件（発売・締切が{SSR_DAYS}日以内）に絞った')
     assert len(head) + len(rest) == n0
     print(f'配る分を削った：使わない欄 {keys}個・締切が{DEAD_DAYS}日より前に過ぎた枠 {drop_t}枠／先に読む {len(head)}件・後で読む {len(rest)}件')
     return out, files, n0

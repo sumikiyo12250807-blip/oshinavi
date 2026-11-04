@@ -32,6 +32,7 @@ import gzip
 import html as _html
 import io
 import json
+import os
 import re
 import sys
 import time
@@ -149,6 +150,34 @@ def _info_block(h, label):
     return m.group(1) if m else ''
 
 
+_HEAD_WORD = r'(出演者?|出演アーティスト|ゲスト出演|LINE\s*UP|Line\s*up|ラインナップ)'
+# 見出しの形は2つだけ＝「【出演者】」（囲み・後ろに続けてもよい）か「出演：…」（囲み無しはコロン必須＝「出演者は当日発表」を読まない）
+_BODY_HEAD = re.compile(r'^\s*(?:[【\[［■◆●＜<]\s*' + _HEAD_WORD + r'\s*[】\]］＞>]?\s*[:：]?|' + _HEAD_WORD + r'\s*[:：])\s*(.*)$')
+
+
+def body_performers(h):
+    """詳細の本文（<div id="ev_01_txt">…<p>行</p>…）で「【出演者】」の見出しの次の行（同じ行に続けて書く形も）を「/」で割る。
+    ・見出しの次の空でない1行だけ（「※五十音順」「【Band】」以降は読まない）・1名40字まで・URL や「。」を含む行は捨てる・30名まで"""
+    m = re.search(r'id="ev_01_txt"[^>]*>(.*?)</div>', h or '', re.S)
+    if not m:
+        return []
+    lines = [txt(x) for x in re.findall(r'<p>(.*?)</p>', m.group(1), re.S)]
+    lines = [x for x in lines if x and x != '\xa0']
+    for k, ln in enumerate(lines):
+        hm = _BODY_HEAD.match(ln)
+        if not hm:
+            continue
+        rest = (hm.group(3) or '').strip()
+        cand = rest if rest else (lines[k + 1] if k + 1 < len(lines) else '')
+        if not cand or re.search(r'https?://|。|^[【\[［■◆●※]', cand):
+            return []
+        names = [x.strip(' 　') for x in re.split(r'\s*[/／、]\s*', cand) if x.strip(' 　')]
+        if not names or len(names) > 30 or any(len(x) > 40 for x in names):
+            return []
+        return names
+    return []
+
+
 def parse_event(h, eid):
     out = {'id': eid, 'url': f'{BASE}/e/{eid}', 'name': None, 'dates': [], 'date_text': '',
            'open_time': None, 'start_time': None, 'venue': None, 'venue_raw': '', 'prefecture': None,
@@ -188,6 +217,13 @@ def parse_event(h, eid):
     out['venue'] = (ven[:pm.start()] if pm else ven).strip() or None
     out['performers'] = [txt(x) for x in re.findall(r'<a class="event-detail-info-list__link"[^>]*>(.*?)</a>',
                                                     _info_block(h, '出演者'), re.S)]
+    # 🆕2026-11-04 抜き打ち 38128 UNREPLICA2（tmp/x1104/spot/rootcause.md）＝出演者の欄が無く（販売元だけ）、
+    #   詳細の本文に「【出演者】」の見出しと名前の行がある。見出しが「出演者／出演」と**書いてある時だけ**次の行を読む（推測しない）
+    out['performers_from'] = 'list' if out['performers'] else None
+    if not out['performers']:
+        bp = body_performers(h)
+        if bp:
+            out['performers'], out['performers_from'] = bp, 'body'
     org = txt(_info_block(h, '販売元'))
     out['organizer'] = org or None
     # カテゴリ（「同じカテゴリーのイベントを検索」の l_cat／s_cat）
@@ -294,7 +330,17 @@ def _selftest():
           '</li><!-- ### 受付・チケット情報 end ### -->')
     rl = parse_event(lt, 'y')['receptions'][0]
     assert rl['order'] == '抽選' and rl['title'] == '抽選販売受付 大阪', rl
-    print('selftest OK: parse_jp_dt/parse_period/pref_of/parse_list_page' + ('/parse_event(実ページ)' if h else ''))
+    # 🆕2026-11-04 本文の「【出演者】」の次の行（38128 UNREPLICA2）。見出しが無い本文・URL の行は読まない
+    bd = lambda *ps: '<div id="ev_01_txt" class="x">' + ''.join(f'<p>{p}</p>' for p in ps) + '</div>'
+    assert body_performers(bd('会場：吉祥寺Planet K', '<br>', '【出演者】', 'Ice. / あすり / Arma', '※五十音順')) == ['Ice.', 'あすり', 'Arma']
+    assert body_performers(bd('出演：山田 / 田中')) == ['山田', '田中']
+    assert body_performers(bd('【出演者】', 'https://x.com/a')) == []
+    assert body_performers(bd('コバラヘル', 'KING')) == []
+    _f = 'tmp/x1104/spot/raw2/lp_4evzs.html'
+    if os.path.exists(_f):
+        d4 = parse_event(io.open(_f, encoding='utf-8').read(), '4evzs')
+        assert d4['performers'] == ['Ice.', 'あすり', 'Arma', '人生', 'Mefy.', 'Rento'] and d4['performers_from'] == 'body', d4['performers']
+    print('selftest OK: parse_jp_dt/parse_period/pref_of/parse_list_page/本文の出演者' + ('/parse_event(実ページ)' if h else ''))
 
 
 def main():

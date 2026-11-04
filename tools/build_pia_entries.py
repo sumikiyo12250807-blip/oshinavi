@@ -47,6 +47,8 @@ _DROPPED = []
 # 無言で間違ったジャンルが下書きされるのを防ぐため、build 後に一覧で報告する。
 # 例＝「音楽/フェスティバル」が未収載で engeki に倒れていた（3521 JAZZ井）。
 _UNMAPPED_SUB = []
+# 🆕2026-11-04 id → 予定枚数終了・完売の行の「券種（県 公演日公演）」（heal_stale_deadlines が売り切れの印で枠を残すのに使う）
+_SOLD = {}
 # 🆕【2026-09-11】ページの**告知文にだけ**書いてある先行（「■プレイガイド先行 受付期間：…
 # お申込はこちら」→ pia.jp/v/… の専用申込ページ）。券種カードに出ないので parse_cards が拾えない。
 # 新着の独立再導出で108件中3件見つかった（星新一朗読劇・百鬼夜鏡・UVERworld）。
@@ -379,6 +381,12 @@ def _kenshu_base(title, labels):
         _bare = re.sub(r'[0-9０-９]{1,2}\s*[／/]\s*[0-9０-９]{1,2}', '', inner)
         _bare = re.sub(r'[（(][月火水木金土日祝・\s　]*[）)]', '', _bare)
         _bare = re.sub(r'[\s　・／/]', '', _bare).replace('公演', '')
+        # 🆕2026-11-04 抜き打ち 9241 ジミー大西展（tmp/x1104/spot/rootcause.md）＝「一般発売【当日券】」の【当日券】を
+        #   券種語の飾りとして落とし、今買えるのが当日券なのに「一般発売」と出ていた（前売は販売終了）。
+        #   当日券は買い方が違う（前売とは別の券）ので札として残す。heal_stale_deadlines の安全弁はこの札を見ない。
+        if re.fullmatch(r'\s*当日券\s*', inner):
+            labels.append('当日券')
+            return ''
         if not _bare or not _DECOR_RE.sub('', inner):
             return ''
         # 🚨「M／D 形を含む囲みは丸ごと落とす」は乱暴すぎた（2026-07-30 THE AWAODORI で発覚）。
@@ -856,18 +864,23 @@ def span_rows(allrows, buy_rows, today=None):
     return out
 
 
-def pia_cast(h):
-    """公演ページの「出演者など」欄の［出演］だけを読む（2026-10-26 抜き打ち＝出演者の欄が公演名のまま）。
-    「［作］井上ひさし ［演出］ふじたあさや ［出演］中西和久」→ ['中西和久']／「柳亭小痴楽 / 瀧川鯉八」→ 2人。
-    ［出演］が無い・「ほか」だけ・長すぎる（説明文）時は [] ＝呼び出し側は今までどおり公演名を使う。"""
-    m = re.search(r'出演者など\s*</dt>\s*<dd[^>]*>(.*?)</dd>', h or '', re.S)
-    if not m:
-        return []
-    t = txt(m.group(1))
-    mm = re.search(r'［出演］(.*?)(?=［|$)', t)
-    if not mm:
-        return []
-    body = re.sub(r'\s*(ほか|他)\s*$', '', mm.group(1).strip())
+# 🆕2026-11-04 抜き打ち 6344 大阪フィル枚方（tmp/x1104/spot/rootcause.md B）＝「［指揮］尾高忠明 ［出演］… ［演奏］大阪フィル」の
+#   ［出演］しか読まず、指揮者と楽団が抜けていた（11/2 の 23630 と同じ型・738件が恐れあり）。
+#   舞台に立つ人の札（指揮・演奏・独奏…）は全部読む。作る人の札（作・演出・脚本・振付・作曲…）は今までどおり入れない。
+#   見たことの無い札は入れない（推測で名前を増やさない）＝ _CAST_ROLE に足していく。
+_CAST_ROLE = re.compile(r'出演|指揮|独奏|独唱|演奏|管弦楽|合唱|伴奏|ピアノ|声楽|ソリスト|共演|ゲスト|司会|ナビゲーター|語り|朗読'
+                        r'|歌唱?|ボーカル|ヴォーカル|唄|三味線|囃子|舞踊?|パーソナリティ|MC|ＭＣ|オルガン|チェンバロ|ヴァイオリン|チェロ'
+                        r'|吹奏楽|打楽器|弦楽|室内楽|オーケストラ|コンサートマスター|案内|お話|トーク|講師|解説')
+_CAST_NOT = re.compile(r'作|演出|脚本|振付|原作|原案|曲|構成|美術|照明|音響|訳|企画|監修|主催|制作|台本|作詞|衣[裳装]|映像|プロデュース|監督')
+
+
+def _cast_role_ok(role):
+    """札（「指揮」「独奏・独唱」「作・演出」「出演・振付」）を「・」で割り、舞台に立つ側の言葉が1つでもあれば読む"""
+    return any(_CAST_ROLE.search(p) and not _CAST_NOT.search(p) for p in re.split(r'[・/／]', role) if p)
+
+
+def _cast_split(body):
+    body = re.sub(r'\s*(ほか|他)\s*$', '', body.strip())
     # 🆕10/27「中村駿 / ほか」→ ほかを外すと「 /」が残って名前の欄の末尾に付いた
     body = re.sub(r'[\s/／、，]+$', '', body)
     if not body or len(body) > 200:
@@ -877,6 +890,47 @@ def pia_cast(h):
         x = norm_fw(x.strip(' 　'))
         if x and x not in out and not re.fullmatch(r'(ほか|他|ゲスト|未定)', x):
             out.append(x)
+    return out
+
+
+def pia_fav_artists(h):
+    """ぴあのページの「お気に入り登録」欄（<ul id="Y15-artist-block">）のアーティスト名（ぴあが付けた札なし・全角は半角に）。"""
+    m = re.search(r'id="Y15-artist-block"[^>]*>(.*?)</ul>', h or '', re.S)
+    if not m:
+        return []
+    out = []
+    for a in re.findall(r'<a[^>]*class="artistList-2024__link"[^>]*>(.*?)</a>', m.group(1), re.S):
+        x = norm_fw(txt(a))
+        if x and x not in out:
+            out.append(x)
+    return out
+
+
+PIA_FAV_MAX = 3   # 🆕11/2夜 すちこ「いいわ　それで」＝お気に入り欄を使うのは3人くらいまで（サーキット・14人並ぶ会は全員出るか確かめられない）
+
+
+def pia_cast(h):
+    """公演ページの「出演者など」欄から舞台に立つ人を読む（2026-10-26 抜き打ち＝出演者の欄が公演名のまま）。
+    「［作］井上ひさし ［演出］ふじたあさや ［出演］中西和久」→ ['中西和久']（作る人の札は入れない）
+    「［指揮］尾高忠明 ［出演］田中玲奈(フルート) ［演奏］大阪フィル」→ 3人（🆕11/4 指揮・演奏も読む）
+    札が無い・「ほか」だけ・長すぎる（説明文）時は、ぴあの「お気に入り登録」欄が3人までならそれ（🆕11/2夜 すちこ「使って」）。
+    どちらも無ければ [] ＝呼び出し側は今までどおり公演名を使う。"""
+    m = re.search(r'出演者など\s*</dt>\s*<dd[^>]*>(.*?)</dd>', h or '', re.S)
+    out = []
+    if m:
+        t = txt(m.group(1))
+        for role, body in re.findall(r'［([^］]{1,16})］(.*?)(?=［|$)', t):
+            if not _cast_role_ok(role.strip()):
+                continue
+            for x in _cast_split(body):
+                if x not in out:
+                    out.append(x)
+    # お気に入り欄が3人までなら、欄に無い名前を前に足す（「［伴奏］小島さやか」だけの欄で主役の秋川雅史が落ちる型・45525）
+    fav = pia_fav_artists(h)
+    if 1 <= len(fav) <= PIA_FAV_MAX:
+        _k = lambda s: re.sub(r'[\s　]|\([^()]*\)|（[^（）]*）', '', s)
+        have = {_k(x) for x in out}
+        out = [x for x in fav if _k(x) not in have] + out
     return out
 
 
@@ -966,6 +1020,18 @@ def build(cand):
         tickets.append(t)
     tickets = disambiguate(tickets, cand.get('newid'))
     tickets.sort(key=lambda t: t['date'])
+    # 🆕2026-11-04 抜き打ち 5162 山本彩（福岡 2/6 の一般発売が「予定枚数終了」なのに枠ごと無い）＝枠は買える行だけ作るので、
+    #   発売日に売り切れた回はヒールの作り直しに出てこず、隠れ枠のまま落ちていた（DELETE_GATE 5章「売り切れなら消さずに soldout」）。
+    #   予定枚数終了・完売の行の「券種（県 公演日公演）」を控える＝heal_stale_deadlines が消えかけた枠に印を付けて残すのに使う。
+    #   出力のエントリには入れない（_SOLD に id ごとに置くだけ）
+    _sold = []
+    for r in allrows:
+        if r.get('state') == '受付終了' and r.get('perfdate') and re.search(r'予定枚数|完売|売り?切', r.get('stt') or ''):
+            _pf = '・'.join(r['prefs']) if r['prefs'] else '全国'
+            _k = norm_fw(f"{drop_labels_in_name(kenshu(r['title']), cand.get('artist'))}（{_pf} {mdbadge(r['perfdate'], r.get('perf_end') or r['perfdate'])}公演）")
+            if _k not in _sold:
+                _sold.append(_k)
+    _SOLD[cand.get('newid')] = _sold
     # 全会場を列挙する（[:4]で打切ると大規模ツアーの大半の会場が消える＝2026-07-01発覚
     # ディズニー・オン・クラシック18県中4会場しか出ず「アクトシティ浜松が抜けてる」）。
     venue = venues[0] if len(venues) == 1 else '全国ツアー（' + '／'.join(venues) + '）'
@@ -1046,6 +1112,13 @@ def build(cand):
             if genre_from_subcat(*sc, cand['artist']):
                 pg, sub_used = genre_from_subcat(*sc, cand['artist']), f"{sc[0]}/{sc[1]}"; break
     main_genre, extra = pg if pg else (genre_of(cand['artist']), None)
+    # 🆕2026-11-04 抜き打ち 41873「変態植物倶楽部FES」＝ぴあの札は博覧会（art）だけで fes が付かなかった。
+    #   [[feedback_fes_definition]] ①名前に「フェス／FES」があれば fes＝札のジャンルに fes を足す（札は消さない＝両方）
+    if main_genre != 'fes' and re.search(r'フェス|(?<![A-Za-z])(?:FES|FESTIVAL|Fes|Festival|fes|festival)(?![a-z])',
+                                         unicodedata.normalize('NFKC', cand.get('artist') or '')):
+        _ex = list(extra) if isinstance(extra, (list, tuple)) else ([extra] if extra else [])
+        if 'fes' not in _ex:
+            extra = _ex + ['fes']
     if not pg and sub_used:
         # ぴあはカテゴリを言っているのに対応表に無い＝名前fallbackの結果は信用しない方がいい
         _UNMAPPED_SUB.append((cand.get('newid'), cand['artist'], sub_used, main_genre))
@@ -1078,6 +1151,19 @@ def _selftest():
     assert pia_cast(_dd('［作］井上ひさし&nbsp;［演出］ふじたあさや&nbsp;［出演］中西和久')) == ['中西和久']
     assert pia_cast(_dd('［出演］ズーラシアンウィンドオーケストラ')) == ['ズーラシアンウィンドオーケストラ']
     assert pia_cast(_dd('［出演］未定')) == [] and pia_cast(_dd('詳細は公式サイト')) == [] and pia_cast('') == []
+    # 🆕11/4 指揮・演奏の札も読む（6344 大阪フィル枚方・23630 関西フィル）／作る人の札は入れない
+    assert pia_cast(_dd('［指揮］尾高忠明&nbsp;［出演］田中玲奈(フルート) / 平野花子(ハープ)&nbsp;［演奏］大阪フィルハーモニー交響楽団')) == \
+        ['尾高忠明', '田中玲奈(フルート)', '平野花子(ハープ)', '大阪フィルハーモニー交響楽団'], '指揮・演奏'
+    assert pia_cast(_dd('［指揮］板倉康明')) == ['板倉康明']
+    assert pia_cast(_dd('［作・演出］鴻上尚史&nbsp;［出演］中西和久&nbsp;［振付］誰か')) == ['中西和久']
+    assert pia_cast(_dd('［独奏・独唱］桑原志織(ｐ)')) == ['桑原志織(p)']
+    # 🆕11/4 札が無い時はお気に入り欄（3人まで）・4人以上は使わない
+    _fav = lambda *ns: '<ul id="Y15-artist-block" class="artistList-2024">' + ''.join(
+        f'<li><a title="{n}" class="artistList-2024__link" href="x">{n}</a></li>' for n in ns) + '</ul>'
+    assert pia_cast(_fav('五十嵐紅')) == ['五十嵐紅']
+    assert pia_cast(_dd('［伴奏］小島さやか(ｐ)') + _fav('秋川雅史', '小島さやか')) == ['秋川雅史', '小島さやか(p)']
+    assert pia_cast(_dd('詳細は公式サイト') + _fav('ＡＢ', 'C', 'D')) == ['AB', 'C', 'D']
+    assert pia_cast(_fav('a', 'b', 'c', 'd')) == []
     # ① 時刻プレフィックスは列挙せず「数字/コロン以外は何でも飛ばす」robust方式。
     #    昼/夜/朝/午前/午後/正午/未知語/プレフィックス無し すべてで脱落しない。
     # (state, when, exp_date, exp_startDate, exp_suffix)
@@ -1111,6 +1197,9 @@ def _selftest():
     assert iso == '2026-09-09', ('将来発売がm4誤爆', suf, iso)
     # ② 全角カッコ/角カッコ/山カッコの公演日「（９／２２公演）」「【６／２７公演】」でkenshuが化けない
     assert kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売（９／２２公演） ／ ＪＵＪＵ')
+    # 🆕11/4 9241 当日券の札は残す（「当日」「券」が飾りの言葉なので丸ごと落ちていた。前売券は前から残る）
+    assert kenshu('一般発売【当日券】 ／ ジミー大西「ホームタウン」愛媛展') == '一般発売【当日券】'
+    assert kenshu('一般発売【前売券】 ／ ジミー大西「ホームタウン」愛媛展') == '一般発売【前売券】'   # 前売は前から札が残る形
     assert kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ') == '一般発売', kenshu('一般発売＜６／２４公演＞ ／ ＪＵＪＵ')
     # 曜日の入れ子カッコ（2026-07-24 摩天楼オペラ＝「一般発売（１０」に化けた）
     assert kenshu('一般発売（１０／３０（金）公演） ／ 摩天楼オペラ') == '一般発売', \
