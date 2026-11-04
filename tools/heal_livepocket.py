@@ -64,14 +64,14 @@ def main():
 
     rep = io.open(REPORT, 'w', encoding='utf-8')
     rep.write('=== heal_livepocket (today=%s) 対象%d件 apply=%s ===\n' % (a.today, len(want), a.apply))
-    done, empty, err = 0, [], []
+    done, empty, err, datefix = 0, [], [], 0
     for e in events:
         if e['id'] not in want:
             continue
         tickets = e.get('tickets') or []
         urls = sorted({x for t in tickets + [{'url': (e.get('links') or {}).get('livepocket')}]
                        for x in re.findall(URL_RE, t.get('url') or '')})
-        rebuilt, bad, whys = [], False, []
+        rebuilt, bad, whys, spans = [], False, [], []
         for eid in urls:
             try:
                 d = LH.parse_event(LH.fetch(f'{LH.BASE}/e/{eid}'), eid)
@@ -82,6 +82,7 @@ def main():
             built, why = BL.build(d, a.today)
             if built:
                 rebuilt += built['tickets']
+                spans.append((built.get('date'), built.get('dateLabel')))
             else:
                 whys.append(why)
             time.sleep(a.sleep)
@@ -100,6 +101,15 @@ def main():
             rep.write('    新: %s | %s%s%s\n' % (t.get('type'), t.get('date'), ' 売切' if t.get('soldout') else '',
                                               ' 販売終了' if t.get('saleEnded') else ''))
         e['tickets'] = others + rebuilt
+        # 🆕🚨2026-11-05 カードの日付も売り場に合わせる（heal_tiget と同じ穴＝受付だけ差し替えてカードの日付は古いまま）。
+        #   livePocket のページが1つで、ほかの売り場の枠が無いカードだけ
+        if len(urls) == 1 and len(spans) == 1 and spans[0][0] and spans[0][1] and not others:
+            _dp = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
+            nd, ndl = spans[0]
+            if nd != e.get('date') or _dp(ndl) != _dp(e.get('dateLabel')):
+                rep.write('    カードの日付: %s ｜ %s → %s ｜ %s\n' % (e.get('date'), e.get('dateLabel'), nd, ndl))
+                e['date'], e['dateLabel'] = nd, ndl
+                datefix += 1
         import fold_parts as FP   # 🆕9/30 1部・2部を畳んだカードは部の印を付け直す
         FP.relabel(e)
         done += 1
@@ -109,7 +119,7 @@ def main():
         rep.write('  id=%s %s … %s\n' % (e['id'], (e.get('name') or '')[:40], ' / '.join(w or '' for w in whys)))
     for i, eid, why in err:
         rep.write('❌ id=%s e/%s 読めなかった: %s\n' % (i, eid, why))
-    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d ===\n' % (done, len(empty), len(err)))
+    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d / カードの日付を直した %d ===\n' % (done, len(empty), len(err), datefix))
     rep.close()
     sys.stderr.write('heal_livepocket: healed=%d empty=%d fetcherr=%d apply=%s -> %s\n'
                      % (done, len(empty), len(err), a.apply, REPORT))
