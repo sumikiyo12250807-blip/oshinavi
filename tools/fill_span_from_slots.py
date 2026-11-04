@@ -53,7 +53,8 @@ def plan(e, today):
         nlo, nhi = min(nlo, sp[0]), max(nhi, sp[1])
     if (nlo, nhi) == (lo, hi):
         return None
-    if not anchored:
+    if not anchored and hi >= today:
+        # （会期がもう終わっている＝元の公演が済んで、あとから足された公演だけ残っている型は伸ばしてよい＝650 木村至信 8/29 → 11/28）
         # 🆕2026-11-05 42719＝枠は 12/12・会期と date は 12/19＝会期の側が違う。伸ばすと嘘が増える＝触らず報告
         return {'_report': (e.get('dateLabel'), f'会期 {lo}〜{hi} に重なる枠が無い（枠 {min(s[0] for s in spans)}〜{max(s[1] for s in spans)}）＝会期か枠の公演日が違う疑い・売り場で見る')}
     ndl = (jp(nlo) if nlo == nhi else f'{jp(nlo)}〜{jp(nhi)}') + (m.group(7) or '')
