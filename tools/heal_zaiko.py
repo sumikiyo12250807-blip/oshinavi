@@ -97,7 +97,7 @@ def main():
 
     rep = io.open(REPORT, 'w', encoding='utf-8')
     rep.write('=== heal_zaiko (today=%s) 対象%d件 ===\n\n' % (today, len(target)))
-    healed, empty, ferr, same = [], [], [], 0
+    healed, empty, ferr, same, datefix = [], [], [], 0, []
     for i, (e, u) in enumerate(target, 1):
         d = ZH.parse_event(ZH.fetch(u), u)
         if d is None:
@@ -122,6 +122,15 @@ def main():
             return (u2 == u) if multi else ('zaiko.io' in u2)
         others = [t for t in old if not is_mine(t)]
         mine = [t for t in old if is_mine(t)]
+        # 🆕🚨2026-11-05 カードの日付も売り場に合わせる（heal_tiget と同じ穴＝受付だけ差し替えてカードの日付は古いまま）。
+        #   ZAIKO のページが1つで、ほかの売り場の枠が無いカードだけ
+        if not multi and not others and built.get('date') and built.get('dateLabel'):
+            _dp = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
+            if built['date'] != e.get('date') or _dp(built['dateLabel']) != _dp(e.get('dateLabel')):
+                rep.write('id%-6s カードの日付: %s ｜ %s → %s ｜ %s\n' % (e['id'], e.get('date'), e.get('dateLabel'),
+                                                                     built['date'], built['dateLabel']))
+                e['date'], e['dateLabel'] = built['date'], built['dateLabel']
+                datefix.append(e['id'])
         merged = others + (new if a.replace else merge_slots(mine, new))
         if {GZ.key(t) for t in merged} == {GZ.key(t) for t in old}:
             same += 1
@@ -141,14 +150,14 @@ def main():
             print('  見た %d/%d件' % (i, len(target)))
         time.sleep(a.sleep)
 
-    rep.write('\n=== %d件のうち 当てる %d / 変化なし %d / 取り直しが空 %d / 読めなかった %d ===\n'
-              % (len(target), len(healed), same, len(empty), len(ferr)))
+    rep.write('\n=== %d件のうち 当てる %d / 変化なし %d / 取り直しが空 %d / 読めなかった %d / カードの日付を直す %d ===\n'
+              % (len(target), len(healed), same, len(empty), len(ferr), len(datefix)))
     if empty:
         rep.write('取り直しが空（触っていない）: %s\n' % empty[:20])
     if ferr:
         rep.write('読めなかった（触っていない）: %s\n' % ferr[:20])
 
-    if a.apply and healed:
+    if a.apply and (healed or datefix):
         byid = {e['id']: mg for e, _, mg in healed}
         for e in EVENTS:
             if e['id'] in byid:

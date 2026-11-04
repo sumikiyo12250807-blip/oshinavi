@@ -120,12 +120,14 @@ def build_page(data, today):
         if e:
             page[str(p.get('id'))] = e['tickets']
             ARTISTS[str(p.get('id'))] = (e.get('artist') or '', e.get('name') or '')
+            DATES[str(p.get('id'))] = (e.get('date'), e.get('dateLabel'))
         else:
             none[str(p.get('id'))] = why
     return page, none
 
 
 ARTISTS = {}   # 公演id → (作り直した出演者, 公演名)
+DATES = {}     # 🆕11/5 公演id → (作り直したカードの date, dateLabel)
 _LBL = re.compile(r'^(ゲスト|MC|ＭＣ|司会|出演)\s*[:：]\s*')
 
 
@@ -182,6 +184,7 @@ def main():
     rep.write('=== heal_fany (today=%s) src=%s ===\n\n' % (today, a.src or 'refetch'))
     healed, same, gone, stopped, multi, empty, linkonly = [], 0, [], [], [], [], 0
     artist_up = {}
+    datefix = {}
     for e in EVENTS:
         if not (e.get('links') or {}).get('fany'):
             continue
@@ -236,6 +239,13 @@ def main():
         if lost:
             stopped.append((e, lost))          # ② 当てない
             continue
+        # 🆕🚨2026-11-05 カードの日付も売り場に合わせる（heal_tiget と同じ穴＝受付だけ差し替えてカードの日付は古いまま）。
+        #   FANY は1公演1カード＝ほかの売り場の枠が無いカードだけ
+        nd = DATES.get(pid)
+        if nd and nd[0] and nd[1] and not [t for t in tickets if not is_fany(t)]:
+            _dp = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
+            if nd[0] != e.get('date') or _dp(nd[1]) != _dp(e.get('dateLabel')):
+                datefix[e['id']] = ((e.get('date'), e.get('dateLabel')), nd)
         if {GF.key(t) for t in merged} == {GF.key(t) for t in old_fany}:
             same += 1
             continue
@@ -270,17 +280,22 @@ def main():
     rep.write('\n--- 🆕出演者が増えた（登録の名前を全部含んでもっと多い）＝差し替える %d件 ---\n' % len(artist_up))
     for i, (o, n) in artist_up.items():
         rep.write('id%-6s %s\n      → %s\n' % (i, (o or '')[:70], (n or '')[:120]))
+    rep.write('\n--- 🆕カードの日付を売り場に合わせる %d件 ---\n' % len(datefix))
+    for i, (o, n) in datefix.items():
+        rep.write('id%-6s %s ｜ %s → %s ｜ %s\n' % (i, o[0], o[1], n[0], n[1]))
     nslots = sum(len([t for t in new if is_fany(t)]) for _, _, new in healed)
     summary = ('当てる %d件（差し替え後のFANY枠 %d枠）/ 変化なし %d / 安全弁②で止めた %d / '
                '一覧に無い %d / 作り直し空 %d / 公演id複数 %d / リンクだけ(対象外) %d / 出演者を足す %d'
                % (len(healed), nslots, same, len(stopped), len(gone), len(empty), len(multi), linkonly, len(artist_up)))
     rep.write('\n=== %s ===\n' % summary)
 
-    if a.apply and (healed or (a.artist and artist_up)):
+    if a.apply and (healed or datefix or (a.artist and artist_up)):
         byid = {e['id']: new for e, _, new in healed}
         for e in EVENTS:
             if e['id'] in byid:
                 e['tickets'] = byid[e['id']]
+            if e['id'] in datefix and (e.get('date'), e.get('dateLabel')) == datefix[e['id']][0]:
+                e['date'], e['dateLabel'] = datefix[e['id']][1]
             if a.artist and e['id'] in artist_up and e.get('artist') == artist_up[e['id']][0]:
                 e['artist'] = artist_up[e['id']][1]
         bak = 'index.html.bak_%s_fanyheal' % datetime.date.today().strftime('%m%d')
