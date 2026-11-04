@@ -152,9 +152,11 @@ def main():
             #   （21218＝e+ が公演ページを作り直し、404 の古い枠と新しい枠が並んだ）
             _ep = [(t, re.search(r'eplus\.jp/sf/detail/(\d+)', t.get('url') or '')) for t in e.get('tickets') or []]
             _ep = [(t, m_.group(1)) for t, m_ in _ep if m_ and (t.get('soldout') or (t.get('date') or '') >= today)]
+            # 🆕2026-11-05 画面に売り場ボタンが出るのは受付の飛び先が1つのカードだけ（index.html multiTicketUrl）＝その型だけ数えて push を止める
+            _one = len({t.get('url') for t in e.get('tickets') or [] if t.get('url')}) == 1
             if _ep:
                 _le = re.search(r'eplus\.jp/sf/detail/(\d+)', (e.get('links') or {}).get('eplus') or '')
-                if _le and _le.group(1) not in {b for _, b in _ep}:
+                if _le and _le.group(1) not in {b for _, b in _ep} and _one:
                     S1.append(e)
                 _by = {}
                 for t, b in _ep:
@@ -166,8 +168,10 @@ def main():
             # S3 ぴあ links.pia の公演番号（eventCd）に枠が1つも無い（売り切れの印の枠も無い）＝5162 山本彩の福岡 2/6（予定枚数終了なのに枠ごと消えていた）
             #   組み立ては買える行しか枠にしない＝発売日に売り切れた回は印を付ける前にヒールで落ちる型。枠に url がある（複数ページの）件だけ見る
             _lp = re.search(r'eventCd=(\w+)', (e.get('links') or {}).get('pia') or '')
-            _tc = {m_.group(1) for t in e.get('tickets') or [] for m_ in [re.search(r'pia\.jp/.*eventCd=(\w+)', t.get('url') or '')] if m_}
-            if _lp and _tc and _lp.group(1) not in _tc:
+            # 🆕11/5 まだ出ている受付だけで比べる（tools/fix_links.py と同じ物差し・受付が全部終わったカードのボタンは今のままでよい）
+            _tc = {m_.group(1) for t in e.get('tickets') or [] for m_ in [re.search(r'pia\.jp/.*eventCd=(\w+)', t.get('url') or '')]
+                   if m_ and (t.get('soldout') or t.get('saleUntilSoldOut') or (t.get('date') or '') >= today)}
+            if _lp and _tc and _lp.group(1) not in _tc and _one:
                 S3.append(e)
             # T 出演者の欄に「ゲスト:」「MC:」の札が残っている（FANY 41060）
             if re.search(r'(^|／)\s*(ゲスト|MC|ＭＣ|司会)\s*[:：]', e.get('artist') or ''):
@@ -288,7 +292,10 @@ def main():
     #   直す道具＝tools/fill_span_from_slots.py --apply（売り場を叩かず、枠に書いた公演日で会期を伸ばすだけ・prepush で毎回）
     if P:
         print(f'  🚨P {len(P)}件＝python tools/fill_span_from_slots.py --apply で会期を伸ばしてから')
-    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or ((M or O) and '--assign' in sys.argv)) else 0)
+    # 🆕2026-11-05 S1・S3（ボタンが別の公演のページ）も止める側へ＝直す道具 tmp/x1105/fix_links.py（tools へ移す）
+    if S1 or S3:
+        print(f'  🚨S1 {len(S1)}・S3 {len(S3)}件＝カードの売り場ボタンが受付と別の公演のページ＝python tools/fix_links.py --apply')
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or S1 or S3 or ((M or O) and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':
