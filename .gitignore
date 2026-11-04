@@ -6,3 +6,6 @@
 # 手元バックアップ（公開しない）
 /index.html.bak*
 /events.html.bak*
+
+# Python が自動で作る一時ファイル（2026-11-04 tools をまるごと commit した時に混ざった）
+__pycache__/
