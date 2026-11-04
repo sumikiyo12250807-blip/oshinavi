@@ -46,6 +46,9 @@ def base_type(ty):
        「一般発売（熊本 9/5公演）〜9/4 23:59」  →「一般発売（熊本 9/5公演）」"""
     ty = re.sub(r'〜\s*\d{1,2}/\d{1,2}(?:\s*\d{1,2}:\d{2})?\s*$', '', ty or '')
     ty = re.sub(r'\d{1,2}/\d{1,2}(?:\s*\d{1,2}:\d{2})?\s*発売\s*$', '', ty)
+    # 🆕2026-11-04 組み立てが「一般発売【当日券】」の札を残すようにした（抜き打ち 9241）。
+    #   前の登録「一般発売（…）」と同じ枠として見る＝札が付いただけで安全弁が「消える」と止めないように
+    ty = ty.replace('【当日券】', '')
     return ty.strip()
 
 
@@ -163,7 +166,7 @@ def main():
             print(f'!! {OUT} は {age_h:.1f} 時間前の取り直し。--ids で build したなら --apply にも同じ --ids を付けて。'
                   f'（本当に古いのを当てるなら --force-old）'); return
         built ={o['id']: o for o in json.load(open(OUT, encoding='utf-8'))}
-        changed = carried = kept_n = 0
+        changed = carried = kept_n = sold_n = 0
         blocked = []
         FORCE = '--force-shrink' in sys.argv
         today = f'{datetime.date.today():%Y-%m-%d}'
@@ -177,11 +180,15 @@ def main():
             #    実害＝2735 THEカルテットが3会場→1枠／615 稲垣潤一の埼玉9/5枠が消滅。
             #    → 「生きている枠(締切が今日以降)が置換で失われる」なら適用しない。
             #    期限切れ枠が落ちるのは正常なので、生きている枠だけを比べる。
+            # 🆕2026-11-04 売り切れの印付きの枠は締切が過ぎても画面に「予定枚数終了」で出ている（公演がこれからなら）
+            #    ＝消えたら実害。5162 山本彩で宮城・広島・大阪の売り切れ3枠が黙って消えた → 生きている枠に数える
+            ent_live = (e.get('date') or '') >= today
             live_old = {perf_key(t.get('type')) for t in (e.get('tickets') or [])
-                        if (t.get('date') or '') >= today}
+                        if (t.get('date') or '') >= today or (t.get('soldout') and ent_live)}
             live_new = {perf_key(t.get('type')) for t in o['tickets']
-                        if (t.get('date') or '') >= today}
+                        if (t.get('date') or '') >= today or (t.get('soldout') and ent_live)}
             lost = live_old - live_new
+            lost = {p for p in lost if not any('（' + p + '）' in s for s in (o.get('sold') or []))}   # 🆕11/4 売り切れの回は印で残す
             if lost and not FORCE:
                 blocked.append((e['id'], e.get('artist', ''), sorted(lost)))
                 continue
@@ -194,6 +201,8 @@ def main():
                        and (not (t.get('url') or '') or 'pia.jp' in (t.get('url') or ''))}
             vis_new = {slot_key(t) for t in o['tickets'] if visible_slot(t, today)}
             lost_slots = vis_old - vis_new
+            # 🆕2026-11-04 ぴあで予定枚数終了の回は下で売り切れの印を付けて残す＝「消える」に数えない
+            lost_slots = {k for k in lost_slots if k[0] not in set(o.get('sold') or [])}
             if lost_slots and not FORCE:
                 blocked.append((e['id'], e.get('artist', ''),
                                 sorted(f'{k[0]}' for k in lost_slots)))
@@ -217,7 +226,24 @@ def main():
                     and (perf_key(t.get('type')) not in newk or base_type(t.get('type')) not in newbase
                          or (perf_key(t.get('type')), base_type(t.get('type')), t.get('date')) not in newkd)]
             kept_n += len(keep)
-            e['tickets'] = list(o['tickets']) + keep
+            # 🆕2026-11-04 抜き打ち 5162（福岡 2/6）＝作り直しに出てこない古いぴあの枠のうち、ぴあで「予定枚数終了・完売」の回は
+            #   消さずに売り切れの印で残す（DELETE_GATE 5章）。発売日に売り切れた隠れ枠（画面に出ていない＝安全弁が見ない）がここで落ちていた
+            soldk = set(o.get('sold') or [])
+            sold_keep = []
+            # 🆕2026-11-04 夕：券種名だけで「作り直しにある」と見ると、同じ「一般発売」の別の回（5162 山本彩の宮城・広島・大阪・福岡）の
+            #   売り切れ枠まで落ちた＝券種名＋公演（県・日付）の組で比べる。すでに売り切れの印が付いた枠は、公演がこれからなら印のまま残す
+            newslot = {(base_type(t.get('type')), perf_key(t.get('type'))) for t in o['tickets']}
+            for t in e.get('tickets') or []:
+                u = t.get('url') or ''
+                if (u and 'pia.jp' not in u) or (base_type(t.get('type')), perf_key(t.get('type'))) in newslot:
+                    continue
+                if t.get('soldout'):
+                    if ent_live:
+                        sold_keep.append(t)
+                elif base_type(t.get('type')) in soldk or any('（' + perf_key(t.get('type')) + '）' in s for s in soldk):
+                    sold_keep.append(dict(t, soldout=True, soldoutSince=today))
+            sold_n += len(sold_keep)
+            e['tickets'] = list(o['tickets']) + keep + sold_keep
             changed += 1
         left = sum(1 for _, s in scan(EVENTS) for _ in s)
         bak = f'index.html.bak_{datetime.date.today():%m%d}_{BAK_SUFFIX}'
@@ -226,7 +252,7 @@ def main():
         open('index.html', 'w', encoding='utf-8').write(h[:m.start()] + m.group(1) + new_arr + m.group(3) + h[m.end():])
         dels = [o for o in built.values() if o.get('status') == 'delete']
         wpia = [o for o in built.values() if o.get('status') == 'WPIA']
-        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 非ぴあ据置 {kept_n}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
+        print(f'=== {changed}件 適用 / 発売日引き継ぎ {carried}枠 / 非ぴあ据置 {kept_n}枠 / 🆕売り切れの印で残した {sold_n}枠 / 残り隠れ枠 {left} (backup: {bak}) ===')
         if blocked:
             print(f'\n🛡️ 生きた枠が消えるので適用しなかった {len(blocked)}件'
                   f'（ぴあの混雑ページ疑い。実ページを単発で確認してから手で直すこと）:')
@@ -322,7 +348,9 @@ def main():
             out.append({'id': i, 'status': 'delete', 'artist': ev.get('artist', ''), 'urls': urls})
             print(f'[{n}/{len(targets)}] {i} 買える枠ゼロ→削除候補（単独リトライ2回でも0枠）')
         else:
-            out.append({'id': i, 'status': 'convert', 'artist': ev.get('artist', ''), 'tickets': ne['tickets']})
+            import build_pia_entries as _BP
+            out.append({'id': i, 'status': 'convert', 'artist': ev.get('artist', ''), 'tickets': ne['tickets'],
+                        'sold': (_BP._SOLD.get(i) or [])})
             print(f"[{n}/{len(targets)}] {i} convert {len(ne['tickets'])}枠")
         time.sleep(1.2)
     json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

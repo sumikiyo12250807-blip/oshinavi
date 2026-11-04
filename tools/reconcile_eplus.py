@@ -117,6 +117,7 @@ def main():
 
     fails = []          # (id, ti, code, detail, url)
     cache = {}
+    gone404 = set()
     n_tk = 0
     for e in targ:
         # エントリ内の公演日ごとのチケット数（同日複数=昼夜検知）
@@ -136,8 +137,18 @@ def main():
                     cache[u] = fetch(u)
                 except Exception as ex:
                     cache[u] = None
+                    # 🆕2026-11-04 抜き打ち 21218 山本達彦（tmp/x1104/spot/rootcause.md）＝e+ が公演ページを作り直し、古い枠の URL が 404。
+                    #   503（混雑）と同じ「FETCH」に混ざってノイズ扱いされ、同じ回の新しい枠と二重のまま残った。404 は別の札で出す
+                    if getattr(ex, 'code', None) == 404:
+                        gone404.add(u)
             html = cache[u]
             if not html:
+                if u in gone404:
+                    _pk = re.search(r'（([^（）]*公演)）', t.get('type') or '')
+                    _twin = [x.get('url') for x in e.get('tickets') or [] if x is not t and _pk
+                             and _pk.group(0) in (x.get('type') or '') and 'eplus.jp' in (x.get('url') or '') and x.get('url') != u]
+                    fails.append((e['id'], ti, 'FETCH-404', 'ページが無い（e+ が作り直した疑い）'
+                                  + (f'・同じ回の別の枠あり＝二重 {_twin[0]}' if _twin else '・/sf/word/ で後継を探す'), u)); continue
                 fails.append((e['id'], ti, 'FETCH', 'ページ取得失敗', u)); continue
             ld = parse_ld(html)
             if len(ld) != 1:

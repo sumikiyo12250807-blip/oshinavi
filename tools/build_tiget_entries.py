@@ -30,6 +30,7 @@ import io
 import json
 import re
 import sys
+import unicodedata
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
@@ -494,9 +495,8 @@ def build(ev, today):
     #   （[[feedback_soldout_keep_visible]]／[[feedback_saleended_vs_soldout]]と同じ扱い）。
     #   ⛔旧＝買える枠が1つも無ければ新規で載せない（10件を落としていた）
 
-    perf = [x for x in (ev.get('performers') or []) if x]
     name = ev.get('name') or ''
-    artist = '／'.join(perf) if perf else name  # 🆕2026-10-24 すちこ「1」＝出演者は全員
+    artist = artist_from(ev, name)  # 🆕2026-10-24 すちこ「1」＝出演者は全員
     # 公演日がぜんぶ過ぎて配信だけ買える形は、公演日（配信開始日）をそのまま書く（ZAIKOと同じ＝公演日は事実の会期）
     future = future or stream_past
     if len(future) == 1:
@@ -525,6 +525,24 @@ def build(ev, today):
         'verifiedAt': today,
     }
     return e, None
+
+
+def _nkey(s):
+    return re.sub(r'[\s　]', '', unicodedata.normalize('NFKC', s or '')).lower()
+
+
+def artist_from(ev, name):
+    """出演者の欄。①出演者リンク（全員）②無ければ、主催または登録者の名前で**公演名が始まる**時だけその名前
+    （🆕2026-11-04 抜き打ち 17195「ソラヒ 2nd ONE MAN LIVE」＝主催ソラヒ・出演者欄なし）③どちらも無ければ公演名（今までどおり）。
+    主催の名前が公演名に無い時（37571 Flute Koto Harp＝主催3名／16527 CHOOSE FUN＝主催 kayo）は推測になるので使わない。"""
+    perf = [x for x in (ev.get('performers') or []) if x]
+    if perf:
+        return '／'.join(perf)
+    org = (ev.get('organizer') or '').strip()
+    ko, kn = _nkey(org), _nkey(name)
+    if len(ko) >= 2 and kn.startswith(ko) and len(kn) > len(ko):
+        return org
+    return name
 
 
 # 🚨ツアーの尻尾＝会場を表す札だけを剥がす。
@@ -627,6 +645,11 @@ def _selftest():
     assert all(t.get('saleEnded') for t in e2['tickets']), e2['tickets']
     # 公演が終わっているものは載せない（ここは変えない）
     assert build(ev2, '2026-10-19')[0] is None
+    # 🆕2026-11-04 出演者欄が無い時＝主催の名前で公演名が始まる時だけ主催（17195 ソラヒ）・それ以外は公演名（16527・37571）
+    assert artist_from({'performers': [], 'organizer': 'ソラヒ'}, 'ソラヒ 2nd ONE MAN LIVE 『新しい街』') == 'ソラヒ'
+    assert artist_from({'performers': [], 'organizer': '.*.꒰ঌ♡ kayo ♡໒꒱· ﾟ'}, '『 CHOOSE FUN 013 』') == '『 CHOOSE FUN 013 』'
+    assert artist_from({'performers': ['A', 'B'], 'organizer': 'A'}, 'A presents') == 'A／B'
+    assert artist_from({'performers': [], 'organizer': 'ソラヒ'}, 'ソラヒ') == 'ソラヒ'
     # 受付期間が無い売切れも載せる＝公演日を置き場にして「〜」は付けない
     ev5 = json.loads(json.dumps(ev))
     ev5['programs'][0]['tickets'] = [{'name': '当日会場払い', 'class': 'is-unable is-unavailable', 'periods': []}]

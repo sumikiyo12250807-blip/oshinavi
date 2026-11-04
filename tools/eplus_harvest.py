@@ -4,7 +4,7 @@
   python tools/eplus_harvest.py cards j-pop 1 3     # j-popジャンルのp1〜p3のカードを収集→tmp/eplus_cards.json
 既存DBのartist名と突合し in_db フラグを付ける。
 """
-import urllib.request, re, json, sys, time, datetime, unicodedata
+import urllib.request, re, json, sys, time, datetime, unicodedata, os
 import html as H
 
 # 出力をリダイレクトすると Windows では stdout が cp932 になり、進捗に混ぜている絵文字（⚠️等）で
@@ -205,6 +205,41 @@ def eplus_artists(html):
         if mm and mm.group(1) not in out:
             out.append(mm.group(1).strip())
     return out
+
+
+def eplus_cast(html):
+    """出演者の欄（🆕2026-11-04・11/2 抜き打ち 44749 Retro Page＝対バン5組が落ちた）。
+    ① アーティストのリンク（eplus_artists）② ページの <dt>出演</dt> 欄（eplus_fill_performers.performers）。
+    ②が①の名前を**全部含んで、もっと多い**時だけ②を使う＝リンクの名前を落とさない・演劇で別の欄を拾う型（9/12 に8件中3件）を避ける。
+    ①が空で②だけある時は②が5組までなら使う（それより多いと説明文を拾った恐れ）。"""
+    links = eplus_artists(html)
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from eplus_fill_performers import performers as _perf
+        dt = _perf(html or '')
+    except Exception:
+        dt = []
+    _k = lambda s: re.sub(r'[\s　]', '', s or '').lower()
+    # 楽器の札付きの並び（「キクチタケシ(vo,pf)／Arrow(cho)／植木栄(g)」＝バンドのメンバー表）は使わない＝リンクのまま
+    if dt and sum(1 for x in dt if re.search(r'[(（][A-Za-z.,/&\s]{1,12}[)）]\s*$', x)) * 2 >= len(dt):
+        return links
+    if links:
+        dk = [_k(x) for x in dt]
+        if len(dt) > len(links) and all(any(_k(a) in d or d in _k(a) for d in dk) for a in links):
+            return dt
+        return links
+    return dt if 1 <= len(dt) <= 5 else []
+
+
+def main_url(rows, tickets):
+    """links.eplus（下の「e+ で見る」ボタン）の飛び先。🆕2026-11-04 抜き打ち 21218 山本達彦＝いちばん早い行が**配信**のページで、
+    会場の公演ではないページを指していた。会場（県）のある行で、枠の url にもなっているものを先に選ぶ。無ければ今までどおり1行目"""
+    turls = {t.get('url') for t in tickets or []}
+    for cond in (lambda r: r.get('pref') and r['url'] in turls, lambda r: r.get('pref'), lambda r: r['url'] in turls):
+        for r in rows:
+            if cond(r):
+                return r['url']
+    return rows[0]['url']
 
 
 def count_options(html):
@@ -546,9 +581,10 @@ def main():
             for _t in tickets:  # 表示テキストは出口で半角カナを全角化
                 _t['type'] = fix_half_kana(_t['type'])
             # 🆕2026-10-26 出演者の欄＝ページのアーティストのリンク（全員）。読めない時だけ一覧の見出し（今までどおり）
+            # 🆕2026-11-04 リンクより「出演」欄が多く、リンクの名前を全部含む時は「出演」欄（eplus_cast・11/2 44749 の対バン落ち）
             _arts = []
             for _eid in dict.fromkeys(c['eid'] for c in members):
-                for _a in eplus_artists(page_cache.get(_eid) or ''):
+                for _a in eplus_cast(page_cache.get(_eid) or ''):
                     if _a not in _arts:
                         _arts.append(_a)
             entries.append({
@@ -556,7 +592,7 @@ def main():
                 'dateLabel': fix_half_kana(dlabel), 'venue': fix_half_kana(venue), 'prefecture': pref,
                 'genre': 'new', 'price': None,
                 'links': {'rakuten': None, 'lawson': None, 'pia': None,
-                          'eplus': rows[0]['url'], 'amazon': None},
+                          'eplus': main_url(rows, tickets), 'amazon': None},
                 'tickets': tickets, 'verified': True, 'verifiedAt': str(TODAY)})
             print(f'  ○ id{nid} {akey} | 公演{len(rows)}(会場{len(uniq_venues)}) 枠{len(tickets)} | {d0}〜{d1}')
             nid += 1
@@ -689,7 +725,7 @@ def main():
             e['prefecture'] = pref
             e['dateLabel'] = fix_half_kana(dlabel)
             e['date'] = d1
-            e['links']['eplus'] = rows[0]['url']
+            e['links']['eplus'] = main_url(rows, tickets)
         if 'apply' in sys.argv:
             # index.html は CRLF。json.dumps は \n を吐くので元の改行に戻してから書く。
             # newline='' 無し／replace漏れのどちらでも全行LF化し sort_guard が誤ブロックする

@@ -199,11 +199,17 @@ def artist_of(p):
     # 🚨≪9／21 出演アーティスト≫ のような**日付入りの見出し**も札なので落とす
     #   （落とさないと artist が「≪9／21 出演アーティスト≫／新しい学校のリーダーズ」になる）
     s = re.sub(r'[≪《〈【][^≫》〉】]*[≫》〉】]', ' ', s)
+    # 🆕2026-11-04 heal_fany の下見で見えた型＝「〔前説〕やまんば」の札・「11／7(土)」の日付・「■漫才万博」の見出しが名前に入っていた
+    s = re.sub(r'〔[^〕]*〕', ' ', s)
+    s = re.sub(r'\d{1,2}\s*[／/]\s*\d{1,2}\s*[（(][月火水木金土日祝・\s]+[)）]', '\n', s)
+    s = '\n'.join(x for x in s.split('\n') if not re.match(r'\s*[■□◆◇●○▼▲★☆]', x))
     # 🆕2026-10-24 「※最新の出演者情報は…公式ホームページ（http:／…）でご確認ください。」の注意書きの行も落とす
     #   （M-1 3回戦の6件で artist が注意書きになり gate_fields A が鳴った）
     s = '\n'.join(x for x in s.split('\n') if not re.match(r'\s*[※＊*]', x) and not re.search(r'https?:|ご確認ください', x))
     parts = [x.strip() for x in re.split(r'[／/\n、]+', s) if x.strip()]
-    parts = [x for x in parts if not re.fullmatch(r'ほか|他|など|MC|ゲスト|[＜<][^＞>]*[＞>]', x)]
+    # 🆕2026-11-04（11/2 rootcause G・41060 Kiwami極LIVE）＝「ゲスト:滝音」「MC:…」の札が名前にくっついたまま（これから 255件）。札だけ落とす
+    parts = [re.sub(r'^(ゲスト|MC|ＭＣ|司会|出演)\s*[:：]\s*', '', x).strip() for x in parts]
+    parts = [x for x in parts if x and not re.fullmatch(r'ほか|他|など|MC|ゲスト|[＜<][^＞>]*[＞>]', x)]
     # 🆕2026-10-24 全員入れるので、出演者の後ろに続く案内文（「。」を含む行）が来たらそこから先は落とす
     #   （19427 徳井デイキャンプ＝「本チケットは参加券となります。」以下の注意書きが100行続いていた）
     for k, x in enumerate(parts):
@@ -489,6 +495,11 @@ def _selftest():
     assert e['venue'] == 'よしもと漫才劇場' and e['prefecture'] == '大阪'
     assert e['links']['fany'].endswith('/event/detail/99')
     assert e['dateLabel'] == '2026年10月1日(木) 10:00開演', e['dateLabel']
+    # 🆕11/4 「ゲスト:」「MC:」の札は落とす（41060）
+    assert artist_of({'performer_detail': 'ゲスト:滝音／カベポスター\nMC：ジャルジャル'}) == '滝音／カベポスター／ジャルジャル', \
+        artist_of({'performer_detail': 'ゲスト:滝音／カベポスター\nMC：ジャルジャル'})
+    assert artist_of({'performer_detail': '11／7(土)\n■漫才万博\nたくろう／ミルクボーイ\n〔前説〕やまんば'}) == 'たくろう／ミルクボーイ／やまんば', \
+        artist_of({'performer_detail': '11／7(土)\n■漫才万博\nたくろう／ミルクボーイ\n〔前説〕やまんば'})
 
     # ② 締切が公演日より後なら公演日で締める
     e2, _ = build_one(mk(performance_sales=[sale('先着発売中', s1='20261010235900')]),
