@@ -77,8 +77,14 @@ def main():
     if '--ids' in sys.argv:
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',') if x}
     fixes = {}
+    try:
+        span_ok = set(json.load(io.open(ROOT + 'tools/span_ok.json', encoding='utf-8')))   # 売り場で確かめて「間違いではない」と決めた id
+    except FileNotFoundError:
+        span_ok = set()
     for e in E:
         if ids is not None and e['id'] not in ids:
+            continue
+        if str(e['id']) in span_ok:
             continue
         if (e.get('date') or '') < today:
             continue

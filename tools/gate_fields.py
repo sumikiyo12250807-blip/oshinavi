@@ -107,13 +107,18 @@ def main():
     # 🆕2026-11-04 抜き打ち13件（tmp/x1104/spot/rootcause.md）から足した網＝**どれも件数を出すだけ・push を止めない**
     NX, P, H2, R, R_old, S1, S2, S3, T = [], [], [], [], 0, [], [], [], []
     OK = _artist_ok()
+    # 🆕2026-11-05 会期と枠のずれを売り場で確かめて「間違いではない」と決めた id（深夜公演の日付の数え方など）＝P で鳴らさない
+    try:
+        SPAN_OK = set(json.load(io.open(ROOT + 'tools/span_ok.json', encoding='utf-8')))
+    except FileNotFoundError:
+        SPAN_OK = set()
     for e in E:
         _fut = (e.get('date') or '') >= today
         if _fut:
             # P 会期（dateLabel）の期間の外に、まだ出ている枠の公演日がある（5162 山本彩＝枠は 1/14〜2/10 なのに会期は 2/6 福岡だけ）
             #   ＝足し込み・ヒールで枠は増えたが会期・会場は誰も伸ばさない。組み立ての書き方（YYYY年M月D日(曜)〜…）の会期だけ見る
             _dl = re.match(r'(\d{4})年(\d{1,2})月(\d{1,2})日\([^)]\)(?:〜(\d{4})年(\d{1,2})月(\d{1,2})日\([^)]\))?(?:\s|$)', e.get('dateLabel') or '')
-            if _dl:
+            if _dl and str(e['id']) not in SPAN_OK:
                 lo = '%s-%02d-%02d' % (_dl.group(1), int(_dl.group(2)), int(_dl.group(3)))
                 hi = ('%s-%02d-%02d' % (_dl.group(4), int(_dl.group(5)), int(_dl.group(6)))) if _dl.group(4) else lo
                 for t in e.get('tickets') or []:
