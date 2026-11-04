@@ -21,7 +21,13 @@
 - 🚨 メモリ不足で Claude Code が裏のジョブを止めた（再開はすちこに聞いてから）：e+ の朝の収集（vendor_job eplus 途中）／ぴあ受付中（07 クラシック 0101 で止まり・発売前と heal --build と reconcile --new は済み）／livePocket（登録済みの番人の途中・lp_full 未着手）／TIGET の出演者取り直し→振り分け（tiget_assign_chain 未着手）／FANY 売り切れの全件下見（tools/fany_mark_soldout.py は完成・22821 の1枠だけ下見済み）。鍵は外した・index.html は HEAD と一致
   ▶ 再開の列＝tmp/x1104/queue.py（1本ずつ：TIGET振り分け→FANY売り切れ下見→e+→livePocket→lp_full）＝すちこの OK 待ち／memory feedback_bg_jobs_memory_limit（重い道具は同時2本・係は同時2人まで）
 - 🚨 見直しの仕組み：ぴあ pia_soldout_sweep は 10/25〜11/2 毎日回った・🚨11/3 が抜け／e+ reconcile_eplus --all も 11/3 が抜け／11/1 の見直しの MISSING 58 を足し込んだかは未確認（43052 TOMOKI の先行抜けと同じ型）
-- ▶ 抜き打ち13件の根っこ調べと道具の直し＝係が作業中（tmp/x1104/spot/rootcause.md）
+- ✅ 抜き打ち13件の根っこ10種・道具の直し（commit 済み）→ データの直しも当てた・HEAD比べ 消えた枠0／🚨あたしが heal の --apply --ids を「id で絞る」と取り違えて 5162 の売り切れ4枠を2回消した → 戻した＋heal の穴（売り切れ枠を安全弁が数えない・券種名だけで比べる）を直した・同じ件で再現して残ることを確かめた
+  ▶ 残り：FANY 売り切れ全件（3,118枠）＝列で回す・heal_fany --artist 563件は見てから・出演者が公演名のまま（ぴあ3,975・TIGET/livePocket 1,789）とフェス札311件の取り直しは数日に分ける／SKILL.md の朝の手順に fany_mark_soldout を足した
+  ⚠️ commit に tools/ を丸ごと入れたので、朝からあった tools/publish_split.py の変更と __pycache__ も一緒に入った（別セッションの作業かも＝夜に確認）
+- ✅ 主役の歌詞 v2（すちこ「主役いうわよ→ちけっと いうわよ・中身・いつ・たのしみだわ等」）tmp/x1104/x/suno_shuyaku_1105_v2.txt＋memory 12項
+- 🔄 12:07 昼の便＝裏 noon_chain（e+ heal_eplus_started FIX2・売り切れ印4〔45832 生田絵梨花〕→ ぴあ今日発売41件 heal → 足し算 → HEAD比べ → reconcile --ids → 朝の枠ゼロ mark_soldout → check_unknown_end）→ noon_push_chain（prepush→commit）→ push
+- ✅ 47133 森高千里（新着プール）：e+ に無い「抽選3次 11/3 12:00発売」6枠・香川/岡山の窓の無い先着/立見6枠を外した（27→15枠）→ reconcile_eplus --ids FAIL 0 ▶夜：e+ の組み立てが公演同士の枠を混ぜた根を調べる
+- 🛠 commit.py／commit_only.py に Claude-Session の新しい行（11/4 の session）
 - ▶ TIGET 番人 食い違い161 → tiget_full（heal→投入→番人→出演者→振り分け）裏／livePocket は lp_full（収集が終わったら続きを自動）
 - ▶ TIGET：収集で 403 が14件（読めなかった）・組み上がり161 → 番人中
 
