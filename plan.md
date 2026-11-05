@@ -5,6 +5,9 @@
 - ✅ 47123 カードに開演 14:00（新日本フィル公式）＝commit 前
 - ✅ ぴあ発売前：新規86（47906〜47991・枠109）＋足し込み30件48枠（置き換えで消えた古い形4＝4819・43034）→ HEAD比べ 消えた0 → reconcile --ids OK114・MISSING1（37713 Paledusk 2次プレリザーブ〜11/18 11:00＝今日発売の形）・3990 は FETCH 混雑 ▶昼の heal --ids に 37713 を足す・振り分け前に読み直し（係2人）と cd_dup/venue_dup の3件（47995・47999・48001）を見る
 - ✅ お笑いまとめは最初の版（バレエコアだけ）のまま＝すちこ「まぜないで」／パステルゴス d1〜d9 切り抜き済み（d7〜d9 未確認）❓主役の動画に使ってよいか
+- ✅ 昼の push 1cac55ca039（今日2回目）：ぴあ今日発売39 heal（止まった4は足し算・DEZERT 12/25〜11/10 23:00）・reconcile OK34／e+ FIX27・SOLD5／36748 萬橘・36754 田辺いちか 今日発売で予定枚数終了→印／FANY 売り切れ266枠／ぴあ新着86・番人の直し・Amazon Music ほか朝からの分／check_order rc1＝隠れ枠42（並び違反0・朝の18枠＋15時の7729＋37794 11/13の3館）
+  ▶ 裏 after_push：ぴあ見直し（下見→鍵→apply）／e+ は queue の e+ 収集が終わってから reconcile --all → fix_eplus_fails
+- ✅ 動画4本 書き出し・確かめ済み https://claude.ai/artifact/BYRmbRLfsR6sDUBymnWna7（Downloads/oshinavi_1106_owarai_matome.mp4・shuyaku1〜3.mp4）▶19:40 予約に付ける・20:47 TikTok
 - ✅ ぴあ新着86件 振り分け済み（commit ea6b7b39000）
 - 🎬 主役の曲 (16)（2:19・歌詞タグ＝渡した歌詞と同じ）＋背景 Downloads/42202_640x360.mp4＋新シート ゴシックロリータちびキャラシールシート.png（すちこ「これと昨日のも使って」＝新シート＋パステルゴス・バレエコアはまとめ用）→ 係が絵コンテ＋試し中（tmp/video/shuyaku1106）
 - 🔄 裏：FANY 売り切れ --apply（255枠・読み直し約1.5時間）／ぴあ発売前 pia_am（split→full_chain・index.html は書かない）／am_chain2＝queue の e+（08:25〜）
