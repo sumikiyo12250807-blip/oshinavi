@@ -21,6 +21,8 @@
 - 🔄 裏：zero149（買える枠ゼロ149件 mark_soldout --apply）→ pia_after_zero（発売前の新着 組み立て〜下見）／queue（e+ 収集中）
 - ✅ 朝の push c13607f3398（今日1回目）＝origin/main..HEAD 空／prepush に fill_span_from_slots を足した・S3 1件 fix_links／check_order 並び違反0（隠れ枠160＝今日発売の枠・昼に heal）／H2 20（足し算した41件の古い発売日の枠）▶昼の heal --ids
   ▶ 押すために zero149 を一度止めて流し直した（index.html は書く前に止まった）
+- ✅ zero149＝予定枚数終了の印 3枠（ほかは印済み）・commit（夜に push）／表示なし13件（4164・5352・5400・5669・7296・21198・24136・24202・25128・26972・27835・30896・38746＝販売終了）▶ 係が「消すのは誤り」の前提で他社まで確認中（tmp/x1106/agent_del2）→ 一致した分だけ消す
+- 🔄 裏：pia_after_zero（ぴあ発売前の新着 組み立て〜下見）／queue（e+ 収集中）
 - ✅ 昼・午後の道具の日付を 11/6 に直した（noon_chain・heal_1500・heal_1800・hidden95）▶ 夜の道具（night_*・mk_night）は夜に直す
 
 # ▶▶ 11/5(木) 朝の便（道具は tmp/x1105）
