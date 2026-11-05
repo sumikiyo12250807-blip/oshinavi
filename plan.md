@@ -7,7 +7,7 @@
 - ✅ お笑いまとめは最初の版（バレエコアだけ）のまま＝すちこ「まぜないで」／パステルゴス d1〜d9 切り抜き済み（d7〜d9 未確認）❓主役の動画に使ってよいか
 - ✅ 昼の push 1cac55ca039（今日2回目）：ぴあ今日発売39 heal（止まった4は足し算・DEZERT 12/25〜11/10 23:00）・reconcile OK34／e+ FIX27・SOLD5／36748 萬橘・36754 田辺いちか 今日発売で予定枚数終了→印／FANY 売り切れ266枠／ぴあ新着86・番人の直し・Amazon Music ほか朝からの分／check_order rc1＝隠れ枠42（並び違反0・朝の18枠＋15時の7729＋37794 11/13の3館）
   ▶ 裏 after_push：ぴあ見直し（下見→鍵→apply）／e+ は queue の e+ 収集が終わってから reconcile --all → fix_eplus_fails
-- ✅ 動画4本 書き出し・確かめ済み https://claude.ai/artifact/BYRmbRLfsR6sDUBymnWna7（Downloads/oshinavi_1106_owarai_matome.mp4・shuyaku1〜3.mp4）▶19:40 予約に付ける・20:47 TikTok
+- ✅ 動画4本 書き出し・確かめ済み https://claude.ai/artifact/BYRmbRLfsR6sDUBymnWna7（Downloads/oshinavi_1106_owarai_matome.mp4・shuyaku1〜3.mp4）✅15:4x すちこ「動画OK」（気になる2か所はこのままで）▶19:40 予約に付ける・20:47 TikTok
 - ✅ ぴあ新着86件 振り分け済み（commit ea6b7b39000）
 - 🎬 主役の曲 (16)（2:19・歌詞タグ＝渡した歌詞と同じ）＋背景 Downloads/42202_640x360.mp4＋新シート ゴシックロリータちびキャラシールシート.png（すちこ「これと昨日のも使って」＝新シート＋パステルゴス・バレエコアはまとめ用）→ 係が絵コンテ＋試し中（tmp/video/shuyaku1106）
 - 🔄 裏：FANY 売り切れ --apply（255枠・読み直し約1.5時間）／ぴあ発売前 pia_am（split→full_chain・index.html は書かない）／am_chain2＝queue の e+（08:25〜）
