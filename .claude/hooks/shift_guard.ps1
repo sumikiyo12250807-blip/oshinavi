@@ -99,7 +99,8 @@ if ($now -ge $noonStart -and $now -lt $today.AddHours(23).AddMinutes(30) -and -n
 }
 
 # ---------- B 昼のpush（昼ヒールの後・14時ごろ） ----------
-if ($now -ge $noonStart.AddMinutes(30) -and -not (Already 'push')) {
+# 2026-11-06〜 push は朝と夜の2回（すちこ 11/5夜）＝昼のpushの催促はしない
+if ((Get-Date) -lt [datetime]'2026-11-06' -and $now -ge $noonStart.AddMinutes(30) -and -not (Already 'push')) {
   $unpushed = @()
   $tip = ''
   try {
