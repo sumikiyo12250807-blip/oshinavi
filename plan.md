@@ -19,6 +19,8 @@
 - ✅ ぴあ昨日発売 heal：277件中 78適用＋止まった41を足し算（heal_union_stale --apply・下見で減る枠0）→ HEAD比べ＝7258・37774 は URL の書き方違いだけ（枠はそろっている）
 - ✅ reconcile_pia --new OK30・MISSING0（45483 大相撲トーナメント 登録6/ぴあ7＝プールの件・振り分け前に見る）
 - 🔄 裏：zero149（買える枠ゼロ149件 mark_soldout --apply）→ pia_after_zero（発売前の新着 組み立て〜下見）／queue（e+ 収集中）
+- ✅ 朝の push c13607f3398（今日1回目）＝origin/main..HEAD 空／prepush に fill_span_from_slots を足した・S3 1件 fix_links／check_order 並び違反0（隠れ枠160＝今日発売の枠・昼に heal）／H2 20（足し算した41件の古い発売日の枠）▶昼の heal --ids
+  ▶ 押すために zero149 を一度止めて流し直した（index.html は書く前に止まった）
 - ✅ 昼・午後の道具の日付を 11/6 に直した（noon_chain・heal_1500・heal_1800・hidden95）▶ 夜の道具（night_*・mk_night）は夜に直す
 
 # ▶▶ 11/5(木) 朝の便（道具は tmp/x1105）
