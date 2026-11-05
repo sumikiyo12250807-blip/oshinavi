@@ -13,7 +13,8 @@ import re
 import subprocess
 import sys
 
-LIMIT = 3
+# 🆕2026-11-05夜 すちこ「明日から一日２回にしてね」＝11/6 から2回（11/5 までは3回）
+LIMIT = 2 if datetime.date.today() >= datetime.date(2026, 11, 6) else 3
 ROOT = r'C:/Users/user/oshinavi'
 
 
@@ -43,7 +44,7 @@ def main():
             pass
     if n >= limit:
         sys.stderr.buffer.write((
-            'BLOCKED: 今日はもう %d 回 push しています（上限 %d 回＝朝・昼・夜の便の最後に1回ずつ／memory: feedback_push）。\n'
+            'BLOCKED: 今日はもう %d 回 push しています（上限 %d 回＝11/6 から1日2回・朝と夜＝昼は commit だけ／memory: feedback_push）。\n'
             '途中の直しは commit だけにして、次の便の締めでまとめて押すこと。\n'
             'どうしても今押す必要があるなら、理由をユーザーに伝えてOKをもらい、'
             '.claude/state/push_extra_ok_%s.txt に許可された回数を書いてから押す。\n'
