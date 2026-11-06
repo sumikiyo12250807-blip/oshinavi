@@ -280,6 +280,22 @@ def main():
                     fails.append((e['id'], ti, 'h-時刻', f'type時刻{ttime} != LD{L["time"]}', u))
                 elif L['time'] and not ttime:
                     fails.append((e['id'], ti, 'h-時刻欠', f'同日複数公演だがバッジに時刻なし(LD={L["time"]})', u))
+        # (m) 実頁にある受付中・受付前の窓が、登録のどの枠にも無い（取りこぼし）
+        #   🆕2026-11-07 抜き打ち 36183 NETH PRIERE CAIN（10/15 登録・e+ が 10/30 にプレオーダー〜11/8 を足した）・
+        #   30577 分島花音（京都の当日券価格 12/19 0:00〜）＝ここまでの照合は「登録した枠→実頁」の向きだけで、
+        #   後から足された受付は --all でも1度も鳴らなかった。同じ URL の枠の 発売日(startDate)＝窓の始まり、
+        #   または締切(date)＝窓の終わり で当たらない窓を鳴らす
+        for u in dict.fromkeys(uu for _, _, uu in rows):
+            if not cache.get(u):
+                continue
+            mine = [t for _, t, uu in rows if uu == u]
+            for b in parse_blocks(cache[u]):
+                live = (b['status'] == 'open' and b['sd'] <= TODAY <= b['ed']) or (b['status'] == 'before' and b['ed'] >= TODAY)
+                if not live:
+                    continue
+                hit = any((t.get('startDate') == b['sd'].isoformat()) or (t.get('date') == b['ed'].isoformat()) for t in mine)
+                if not hit:
+                    fails.append((e['id'], -1, 'm-未登録窓', f"実頁の{b['status']}窓 {b['sd']} {b['st']}〜{b['ed']} {b['et']} が登録に無い", u))
 
     # レポート（ASCII/日付のみ・日本語は出さない＝化けない）
     # 🆕2026-10-15 --all を回した印（朝の番人 shift_guard が見る＝宮ロック後夜祭の締切ズレが9日間放置された再発防止）
