@@ -74,6 +74,8 @@ JOBS = [
     ("wr12", "アクトレスガールズグッズ", None, None, None),
     ("wr13", "プロレスリングWAVEグッズ", None, None, None),
     ("wr14", "初代タイガーマスクグッズ", None, None, None),
+    ("yumeshibai", "CD「夢芝居」", None, None, None),   # 10/29 すちこ「CDのボタン変だよそろえてくれる」（1008 梅沢富美男＆研ナオコ）
+    ("amazonmusic", "Amazon Musicで聴く", None, None, None),   # 11/6 夜 すちこ「AmazonMusicで聞くのボタン　へんなまま　他のボタンと揃えて」（11/5 に足したボタン＝画像が無く字だけだった）
 ]
 
 # 9/15 夜 ユーザー「グッズで作って」＝子ども向けの作品ごとの「〇〇グッズ」。--kids-goods で tmp/btn_tpl/kids_goods.json の使える分だけ作る
