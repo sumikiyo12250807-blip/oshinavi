@@ -34,6 +34,14 @@
 - 🔄 裏：queue（e+ 収集中）
 - ✅ 昼・午後の道具の日付を 11/6 に直した（noon_chain・heal_1500・heal_1800・hidden95）▶ 夜の道具（night_*・mk_night）は夜に直す
 
+# ▶▶ 11/6(金) 昼の便（12:07〜・commit だけ）
+- ✅ queue：e+ 収集→2枚の番人 PASS→新着27（48669〜48695）投入・reconcile FAIL0（08:47）／TIGET 番人 rc2・ZAIKO 食い違い137・FANY 食い違い555（収集と番人だけ済み＝投入と heal はまだ）／livePocket 収集788→登録済みの番人の途中
+- 🔄 裏の列：①noon_chain（e+ heal_eplus_started 済み→今日発売ぴあ75 heal --ids→足し算→HEAD比べ→reconcile→朝の買える枠ゼロ mark_soldout→check_unknown_end）②ep_new_assign（e+ 27＝reconcile→fix→reconcile→札当て→出演者→振り分け）→ noon_vendor_queue（tiget_full→zf_full）→ noon2（H2＋2990・7329 heal --ids）
+- ✅ 8280 渡辺貞夫：e+ の福岡3次プレオーダー〜11/15・広島 先着〜2/8・滋賀 先着〜3/18 を足した＋🆕鹿児島2/14 カクイックス（先着 11/14 10:00〜2/11 18:00＝登録に公演ごと無かった・e+ 検索で P0030068P021001）→ reconcile_eplus FAIL0（7枠）
+- 📝 assign_nonpia を x1106 の鍵で写した（lp_full も同じ道具を使う）
+- ✅ 今日発売ぴあ75 heal --ids：58適用・止まった12は足し算・HEAD比べ 消えた枠0／買える枠ゼロ5（7258 柳沢慎吾・28367 沢田聖子・37810 読売日響・47096/47097 ファン感謝DAY）→ noon_zero5（mark_soldout）裏
+- 🗓 週末の記事（11/15号）：候補 tmp/pickup1115/cands.txt／フォロワー＝検索で10組（FRUITS ZIPPER 41.5万・yama 22.9万・スガシカオ 19.5万ほか）＋控え3組（NMB48 13.4万ほか）→ 残り22組は係1人がブラウザで順番に（memory：2人同時は制限・中堅は検索で出ない）
+
 # ▶▶ 11/5(木) 朝の便（道具は tmp/x1105）
 - ✅ 10時台：曲 (15) の歌詞タグ＝渡した歌詞と同じ＋すちこが足した「エックスフォローもよろしくね」1行／15組 再照合 15/15
 - ✅ お笑いまとめ 絵コンテ＋試し https://claude.ai/artifact/SeJqCWbQbP6oZM7vn3zaAG（バレエコア9着・100BPM・タップ＝41806 又吉）▶すちこ OK → python tmp/video/matome1106o/par_full.py（裏）→ Downloads/oshinavi_1106_owarai.mp4
