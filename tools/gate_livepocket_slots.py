@@ -106,10 +106,49 @@ def dropped_but_alive(built, d, today):
     return ['組み立てで捨てられたが、売り場ではまだ買える受付がある：%s' % ' / '.join(alive)] if alive else []
 
 
-def rebuild(eid, today):
-    d = LH.parse_event(LH.fetch(f'{LH.BASE}/e/{eid}'), eid)
+_CARD_RE = re.compile(r'<a class="event-card event-card--other"[^>]*href="(?:https://livepocket\.jp)?/e/([A-Za-z0-9_\-]+)"(.*?)</a>', re.S)
+
+
+def sibling_missing(html, name, known, today):
+    """🆕2026-11-07 抜き打ち 28825 REWRITE des familia [ MEET＆GREET ]＝12/10・12/18 の回だけ登録、
+    同じ名前の 11/20（e/ftcru）・11/27（e/o33vj）が売り場の「同じ販売元のイベント」に販売中で並んでいたのに、
+    番人は登録したページの中しか見ず、収集（新着順の一覧40ページ）にも出てこなかった。
+    同じ名前・販売中/販売前・日程が今日以降で、どの登録にも無い回を返す。"""
+    out = []
+    i = html.find('同じ販売元のイベント')
+    if i < 0:
+        return out
+    nm = re.sub(r'\s+', '', name or '')
+    for code, body in _CARD_RE.findall(html[i:]):
+        if code in known:
+            continue
+        tt = re.search(r'event-card__title">([^<]*)<', body)
+        if not tt or re.sub(r'\s+', '', LH_unescape(tt.group(1))) != nm:
+            continue
+        if not re.search(r'tag-primary[^>]*>\s*(販売中|販売前|受付中|受付前)', body):
+            continue
+        dm = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', body)
+        if dm:
+            ds = '%s-%02d-%02d' % (dm.group(1), int(dm.group(2)), int(dm.group(3)))
+            if ds < today:
+                continue
+        else:
+            ds = '?'
+        out.append('同じ名前の回 e/%s（%s）が売り場で販売中なのに、どの登録にも無い' % (code, ds))
+    return out
+
+
+def LH_unescape(s):
+    import html as _h
+    return _h.unescape(s)
+
+
+def rebuild(eid, today, known=None):
+    html = LH.fetch(f'{LH.BASE}/e/{eid}')
+    d = LH.parse_event(html, eid)
     built, why = BL.build(d, today)
-    return (built['tickets'] if built else []), why, d, built
+    sib = sibling_missing(html, (d or {}).get('name'), known, today) if known is not None else []
+    return (built['tickets'] if built else []), why, d, built, sib
 
 
 def _selftest():
@@ -171,14 +210,18 @@ def main():
             continue
         targets.append((e, urls))
 
+    # 🆕11/7 登録のどこかにある livePocket のコード（新着も含む）＝同じ名前の別の回の取りこぼしを見る物差し
+    _hh = io.open('index.html', encoding='utf-8', newline='').read()
+    known = set(re.findall(URL_RE, _hh))
     ng, ok, fetcherr, rawng = [], 0, [], []
     for e, urls in targets:
         rebuilt, bad, raws, dropped = [], False, [], []
         for eid in urls:
             try:
-                tks, why, d, built = rebuild(eid, a.today)
+                tks, why, d, built, sib = rebuild(eid, a.today, known)
                 rebuilt += tks
                 raws.append(d)
+                dropped += ['e/%s から見た %s' % (eid, m) for m in sib]
                 # 🚨2026-09-30 組めなかった（公演が終わった等）を「正常」と決めつけない＝生データで買える受付を見る
                 dropped += ['e/%s（%s）%s' % (eid, why, m) for m in dropped_but_alive(built, d, a.today)]
             except Exception as ex:
