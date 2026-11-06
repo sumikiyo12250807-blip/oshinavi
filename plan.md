@@ -69,6 +69,7 @@
 - ✅ add_apply_1107 済み（1回目は index.html が他に開かれていて PermissionError→再試行つきで流し直し）：足す4・新着13（49081〜49093）・heal 5 → reconcile OK21・QC 27/27 → gate_fields S3 4 → fix_links → 全0・commit 2本
   ▶ 新着13は独立の読み直し→振り分け（今夜）
 - ✅ 独立FC 🔴0・🟠6・🟡7 → 直した（00 POP UP の場所・03 舞台挨拶の日ごとの出演者・04 ウルトラ 11/14と11/15・05 紙と電子・07 11/8も15:00・10 静岡もHAWAIIAN6・11 5つの府県）→ x_check 12本とも指摘なし（fc/report.md）
+- ✅ queue 終わり（17:57）：livePocket heal 236・新着138（独立一致138/164）・振り分け191（event49・idol28・fanevent26ほか）・残す15（出演者が公演名のまま M）＝lp_assign.txt（assigned ログに livepocket.jp の文字が出ない書き方なだけ）→ commit b2e53ec4b5f ▶gate_fields 全体 C9・L94・N2・P8・H2 7 ＝夜の prepush（fill_span・fill_slot_pref）で
 - 🔄 手順8 総ざらい 95/219（18時すぎ）▶ 終わったら抜けを足す → 12本をすちこに全文で見せる
 - 🔄 手順8 総ざらい 219名（audit_posts → audit_posts2）裏
 
