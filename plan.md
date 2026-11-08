@@ -15,7 +15,9 @@
   ▶ 公開の「最終更新」は 07:4x 時点でまだ 11/7 08:28＝数分おいて live_stamp2.py で見直す
   ▶ 押したあとに入る分（ぴあ取り直し・新着・振り分け・e+/TIGET/ZAIKO/FANY/livePocket）は昼に commit・夜に push
 - ✅ morning_pia 済み：取り直し下見 285件（convert 107・買える枠ゼロ 164）／reconcile --new OK62・MISSING0・STALE1／発売前・受付中の収集済み
-  🔄 pia_chain_am（heal --apply → 足し算 → HEAD比べ → 枠ゼロ164 mark_soldout → 45483・47712・47717＋H の16件を照合）
+  ✅ pia_chain_am：heal 70適用・止まった37は足し算・HEAD比べ 消えた枠0・枠ゼロ164→予定枚数終了 3枠・照合18件 OK（commit 済み）
+  ⚠ H 16件（Wリーグ先行 45486〜45498・24168 綴結・48642 ものまねフェス）＝枠に URL が無く締切欄が仮の日付（11/11 など）＝heal の対象外だった
+    🔄 h16_after.py＝新着の組み立てのあと heal --ids --build（下見）▶ 見て当てる／e+ 4件（45222・49307・49310・49326）は e+ の収集のあと
   🔄 pia_new_chain（pia_chain_am のあと split → full_chain＝ぴあ発売前の新規・足し込みの組み立て〜下見）
 - ▶ e+ heal_eplus_started FIX4（45222・49307・49310・49326）＝e+ の収集が終わってから --apply
 - ✅ 🎬すちこ「主役の最後で一人しか下りてこない」→ 締めの後奏は最低3人・真ん中が埋まるまで（memory feedback_matome_video_calm_layout）／11/8 分はアップ済み＝作り直さない
