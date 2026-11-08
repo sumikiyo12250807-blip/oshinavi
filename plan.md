@@ -1,3 +1,11 @@
+# ▶▶ 11/8(日) 昼の便（12:37〜・commit だけ）
+- ✅ noon_chain：e+ heal_eplus_started 9枠／今日発売ぴあ51件 heal --ids（止まった3は足し算・HEAD比べ 消えた枠0）→ reconcile OK44・STALE5・QC1 → commit
+- ✅ 7729 当日引換券 12:00→15:00（11/6 と同じ型＝組み立てが12:00で作る）／STALE5→ mark_soldout＝予定枚数終了4（7893・26919・45818・47952）・47092 新日本プロレス TANAHASHI JAM はぴあに買える枠あり ▶ 15:07 に heal --ids 47092／commit（msg_noon2）
+- 🔄 e+ 404 の2件（45222 ClearVeil・49855 SIGNAL.）＝係が後継・他社を「消すのは誤り」の前提で確認中 → 無ければその便で枠を消す
+- 🔄 after_noon：ぴあの見直し（pia_soldout_sweep --resume）＋ e+ --all（朝の列＝FANY・livePocket が済んでから）
+- ▶ 朝の列が済んだら TIGET・ZAIKO・FANY・livePocket の投入・heal・振り分け（11/7 の noon_vendor_queue の形）
+- ⏳ 記事 11/8号 すちこの OK 待ち（試し見 https://claude.ai/artifact/FFMRNYtnD8BJ19MMQKo5Vf ）
+
 # ▶▶ 11/8(日) 朝の便（道具は tmp/x1108・push は朝と夜の2回）
 - ✅ 昨夜の push 済み（c6bf49766e2）・X 11本は全部出た・動画4本を返信で付けた（tmp/x1108/handover.md）
 - 📝 未push 1本＝e20d5614921（build_ai_page 最終更新の時刻）＝朝の push で出る → 押したら公開ページの「最終更新」を確かめる
