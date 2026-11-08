@@ -2,8 +2,20 @@
 - ✅ noon_chain：e+ heal_eplus_started 9枠／今日発売ぴあ51件 heal --ids（止まった3は足し算・HEAD比べ 消えた枠0）→ reconcile OK44・STALE5・QC1 → commit
 - ✅ 7729 当日引換券 12:00→15:00（11/6 と同じ型＝組み立てが12:00で作る）／STALE5→ mark_soldout＝予定枚数終了4（7893・26919・45818・47952）・47092 新日本プロレス TANAHASHI JAM はぴあに買える枠あり ▶ 15:07 に heal --ids 47092／commit（msg_noon2）
 - ✅ e+ 404 の2件：45222 ClearVeil＝先着一般は [一般] の別ページ 4622550001（〜3/12 18:00）＝飛び先・締切・公演名を直した／49855 SIGNAL.（新着）＝e+ 2ページ404・検索0件・会場予定表に無し → 外した（logs/removed）・NEW_ORDER 428＝プール 428／commit（msg_noon3）
-- 🔄 after_noon：ぴあの見直し（pia_soldout_sweep --resume）＋ e+ --all（朝の列＝FANY・livePocket が済んでから）
+- ✅ after_noon：ぴあの見直し 13:52 済み・commit／🔄 e+ --all は朝の列（livePocket）が済んでから
+- ✅ 15:07 便：e+ 直すところ0／15時までに発売のぴあ8件 heal --ids（止まった7729は足し算・HEAD比べ 消えた枠0）→ reconcile OK6・STALE3 → commit
+  ✅ 47092 新日本プロレス TANAHASHI JAM 2＝15時にぴあで予定枚数終了 → 印・commit 5c285fcf4fd
+  ▶ 7729 当日引換券（東京 11/9公演）15:00発売＝ぴあの買える枠に無い（即完か売り場の名前違い）＝夜の今日発売 heal で見る
 - ▶ 朝の列が済んだら TIGET・ZAIKO・FANY・livePocket の投入・heal・振り分け（11/7 の noon_vendor_queue の形）
+- 🔄 15:4x 全体の隠れ枠ヒール pm_full_heal（build→apply→足し算→HEAD比べ→compact→check_order→commit）
+- 🎬 15:5x すちこが素材＝曲 Downloads/わらいのちけっと.mp3（1:34）・背景 222382_640x360.mp4（25秒）・キャラ 雨に佇む紫髪の少女たち.png（9ポーズ・白地）→ 係が tmp/video/matome1109o で歌詞タグの突き合わせ → 絵コンテ（締めの1コマ入り・後奏は3人以上）→ 試し動画 ▶ すちこに見せて OK → 全編
+- ✅ お笑いまとめ動画：歌詞タグ24行とも一致・絵コンテ14コマ（締めは9人で真ん中が埋まる）＋試し（79.5〜90.5秒）https://claude.ai/artifact/Vq9a2h2J4KZDtxfnB5wvFR ▶ すちこの OK → render.py で全編（tmp/video/matome1109o）
+- ✅ 16:xx すちこ「（FNC・FZ の年齢・手数料・本人確認・電子チケットの行）これは書かなくていい」「こういった類のものはosinaviでわざわざ書かない」→ 全組から入場・購入の条件25か所を外した（料金・枚数は残す）・build OK・試し見 v2・memory／fable_brief に足した
+- ✅ お笑いまとめ全編 Downloads/oshinavi_1109_owarai_matome.mp4（1:34・8.33MB）→ すちこ「これでOK」＝今夜のお笑いまとめの投稿に付ける
+- 🔄 主役3本＝曲 Downloads/おしなびどっと (19).mp3・背景 41663_640x360.mp4 → すちこ「キャラはこれから作って送る」＝係は歌詞の突き合わせ・切る位置・タップの場面まで（tmp/video/shuyaku1109）▶ シートが届いたら絵コンテ＋試し
+- ▶ 11/9 昼：48637 のりおよしお主義＝ぴあの一般「11/9 10:00発売」に締切なし（すちこ「明日までしか使えないよね」＝締切なしは発売から2日で隠れる・公演は11/23）→ 発売後の heal --ids 48637 で締切／出なければ高浜町文化会館の案内で探す／それでも無ければすちこに聞く（記事・主役の投稿に載せている）
+- ✅ すちこ「終わったらさげてよ」＝のりおよしお主義の受付が終わったらその日のうちに記事から下げる（トップの名前の行・目次・組のページ）▶ 号を出している週は毎朝、主役11組＋深掘りの今週の発売の枠がまだ買えるか見る（memory project_weekly_pickup_article）
+- 🔄 すちこ「もっと寿命が長い記事かいたほうがいいよ」→ 記事の主役 のりおよしお主義（11/23・締切不明）をパンダドラゴン（41731・KT Zepp Yokohama 11/24・東京ガーデンシアター 1/4・先着〜1/4・X 4.8万）に差し替え・タイルのパンダドラゴン→石若 駿 ▶ 係が空いたら素材→Fable で1段→FC→build→試し見 v3（X の主役の投稿ののりおよしおは明日発売なのでそのまま）
 - ⏳ 記事 11/8号 すちこの OK 待ち（試し見 https://claude.ai/artifact/FFMRNYtnD8BJ19MMQKo5Vf ）
 
 # ▶▶ 11/8(日) 朝の便（道具は tmp/x1108・push は朝と夜の2回）
