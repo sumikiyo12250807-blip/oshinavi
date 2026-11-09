@@ -1,3 +1,15 @@
+# ▶▶ 11/9(月) 昼の便（12:37〜・commit だけ）
+- ✅ queue：e+ 11:44 済み（新規26件 49916〜49941・gate_eplus_slots PASS・reconcile_eplus FAIL3＝49921 尾崎裕哉・49924 八十八ヶ所巡礼・49928 Admさん）→ 🔄 TIGET 11:44〜
+- ✅ e+ 新着22件振り分け（rock15・jpop6・hiphop1）assign_eplus.py／プール＝FAIL3＋49933（出演者が公演名のまま M）／49917・49918 瞳みのる 1部2部＝push 前の fold_parts で畳む
+- ✅ noon_chain：e+ heal_eplus_started／今日発売ぴあ36件 heal --ids（止まった7は足し算・HEAD比べ 消えた枠0）→ reconcile OK30・STALE7・FETCH1・QC1 → commit fe8dcb1a368
+  ・今日発売のまま残り 9件14枠（49921×6＝e+ FAIL・7729・33568・37430・43233・45469・48675・48687・49905）▶ 15:07 便
+- ✅ 48637 のりおよしお主義＝一般「〜11/21 23:59」が入った
+- ✅ 24172 イザボー：ぴあ半館貸切の一般（予定枚数終了・期間の記載なし）を印付きで足す・会場欄→東京建物ブリリアホール・オリックス劇場
+- ✅ e+ 404 の2件（42764 DIVE TO THE 2ND・49867 Fusee）＝係が開き直し、どちらも受付中・締切一致＝そのまま
+- ✅ 照合❌の直し：49905 ユニコーン（取り直しの「先行 〜11/24 11:00」と朝の「セブン-イレブン先行 11:00発売」が二重→1枚）／40650 FREEDOM OF CHOICE（大阪 サンケイホールブリーゼ 2/19〜2/23 まで会期・会場・県）
+- 🔄 裏：after_noon（ぴあの見直し → commit／queue が済んだら e+ --all → fix_eplus_fails → commit）／noon_recheck（ぴあの見直しのあと 40650・49905・48625 を reconcile → commit）
+- ▶ 記事（クーザ＋新しい一覧）・お笑いまとめ歌詞・主役歌詞はすちこの OK 待ち
+
 # ▶▶ 11/9(月) 朝の便（道具は tmp/x1109・push は朝と夜の2回）
 - ✅ 昨夜の push 済み＝origin/main..HEAD 空・鍵なし
 - 🔄 06:xx 裏（同時2本）：①morning_pia（11/8発売 heal --build → reconcile --new → 発売前・受付中）②queue.py（morning_local → e+ → TIGET → ZAIKO → FANY → livePocket → lp_full）
