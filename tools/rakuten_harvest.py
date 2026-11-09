@@ -100,7 +100,10 @@ def iso(y, m, d):
 CARD = re.compile(
     r"<div class='performance(?P<state>[^']*)' data-date='(?P<dd>\{[^']*\})'>(?P<body>.*?)</div>\s*</div>",
     re.S)
-COL = re.compile(r"<div class='column-(?P<n>\d)'[^>]*>(?P<v>.*?)</div>", re.S)
+# 🚨2026-11-10 購入ボタンの無いカードは会場の列が `column-4-5`（4と5をつないだ列）になる
+#   （高中正義［追加公演］rtol410・しなこ rtyn221・八木沙季 rtyu120）。`column-4'` しか見ていなかったので
+#   会場が空→平文の予備が全公演に同じ会場（最後の会場）を入れていた。`-5` が付いても4として読む。
+COL = re.compile(r"<div class='column-(?P<n>\d)(?:-\d)?'[^>]*>(?P<v>.*?)</div>", re.S)
 
 
 def parse_perfs(body):
@@ -115,7 +118,9 @@ def parse_perfs(body):
     """
     out = []
     for m in CARD.finditer(body):
-        cols = {int(c.group('n')): strip_tags(c.group('v')) for c in COL.finditer(m.group('body'))}
+        # 🚨CARD は「</div></div>」で切る＝最後の列（ボタンの無いカードでは会場の column-4-5）の
+        #   閉じタグを CARD 側が食べる。閉じタグを1つ戻してから列を読む（2026-11-10）
+        cols = {int(c.group('n')): strip_tags(c.group('v')) for c in COL.finditer(m.group('body') + '</div>')}
         d = cols.get(6, '')
         dm = re.search(r'(20\d{2})年\s*(\d{1,2})月\s*(\d{1,2})日', d)
         if not dm:
@@ -549,7 +554,18 @@ def _selftest():
         assert len(w) == 1 and w[0]['type'] == want_type, w
         assert w[0]['timming'] == want_tim, w
 
-    print('selftest OK: og:title/パンくずジャンル/公演カード/販売枠JSON/deeplink/'
+    # 🆕2026-11-10 ボタンの無いカード（会場が column-4-5・カードの最後の列）＝実物の形をそのまま。
+    #   旧実装は会場が空→平文の予備で全公演が最後の会場になった（高中正義［追加公演］が全部「なはーと」）
+    c45 = ''.join(
+        "<div class='performance active' data-date='{\"min_start_on\":\"2026-10-28T18:00:00\",\"max_end_on\":\"2026-12-02T23:59:59\"}'>"
+        "<div class='column-1'>〔%s〕テスト</div><div class='column-6'>2027年 %s</div>"
+        "<div class='column-2'>開場 17:30 / 開演 18:00</div><div class='column-3'>%s</div>"
+        "<div class='column-4-5'>%s</div></div>" % a
+        for a in (('3/11', '03月 11日 (木)', '神奈川県', '鎌倉芸術館'), ('4/29', '04月 29日 (木)', '沖縄県', '那覇文化芸術劇場なはーと')))
+    p45 = parse_perfs(c45)
+    assert [(p['date'], p['venue']) for p in p45] == [('2027-03-11', '鎌倉芸術館'), ('2027-04-29', '那覇文化芸術劇場なはーと')], p45
+
+    print('selftest OK: og:title/パンくずジャンル/公演カード/販売枠JSON/deeplink/会場column-4-5/'
           '新型data-event-json/販売期間の券種名に数字 回帰なし')
 
 
