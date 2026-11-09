@@ -260,10 +260,19 @@ def build(recs, new_id):
                 continue
             if ed0 or len(by_perf) < 2:
                 ce = max((p.get('sale_end') or '') for p in rp)
+                # 🚨🆕2026-11-10 終わりの書いていない窓に、カードの締切が**窓の始まりより前**なら使わない
+                #   （カードの販売期間はこの窓を含んでいない＝前の受付の締切）。使うと「11/23 20:00発売 〜11/22 23:59」
+                #   という始まる前に締め切る枠になった（50717 @JAM PARTY vol.127）→ 締切不明（公演日＋saleEndUnknown）に倒す
+                if not ed0 and ce and ce[:16] < '%s %s' % (sd, st or '00:00'):
+                    ce = ''
                 chunks = [(rp, ed0, et0, False)] if ed0 else [(rp, (ce[:10] or None), ce[11:16], False)]
             else:
                 chunks = []
                 for ce in sorted(by_slot, key=lambda s: s or '9999'):
+                    # 🆕2026-11-10 上と同じ歯止め＝カードの締切が窓の始まりより前なら締切不明に倒す
+                    if ce and ce[:16] < '%s %s' % (sd, st or '00:00'):
+                        chunks.append((by_slot[ce], None, '', ambiguous[ce]))
+                        continue
                     chunks.append((by_slot[ce], (ce[:10] or None), ce[11:16], ambiguous[ce]))
             label = re.sub(r'\s+', ' ', w['type'] or '一般発売').strip()
             for gp, ed, et, need_time in chunks:
@@ -312,6 +321,16 @@ def build(recs, new_id):
                     continue
                 ss = sorted(p.get('sale_start') or '' for p in gp if p.get('sale_start'))
                 sd, st = (ss[0][:10], ss[0][11:16]) if ss else ('', '')
+                # 🚨🆕2026-11-10 販売枠(windows)はあるのに全部終わっている時、カードの min_start_on は
+                #   **終わった先行の始まり**＝まだ始まっていない次の受付が「いま販売中」に見えた
+                #   （50730 明透・琶舞＝1次先行 10/24〜11/1 は終了・次の受付は 11/12 18:00 から／50731 島崎友莉亜）。
+                #   カードの max_start_on（いちばん遅い受付の始まり）が、名前の出ている窓のどの始まりより後なら
+                #   それがこの名前の出ていない受付の始まり＝遅い側に倒す（早めに「買える」と言わない）
+                wst = [win_start_iso(w.get('timming') or '') for w in r.get('windows') or []]
+                wmax = max(('%s %s' % a for a in wst if a[0]), default='')
+                sm = sorted(p.get('sale_start_max') or '' for p in gp if p.get('sale_start_max'))
+                if sm and sm[-1] > wmax and sm[-1] > (ss[0] if ss else ''):
+                    sd, st = sm[-1][:10], sm[-1][11:16]
                 t = mk_ticket(nm or '一般発売', gp, (ce[:10] or None), ce[11:16],
                               ambiguous.get(ce, False), sd, st, r['url'], today)
                 if t:
