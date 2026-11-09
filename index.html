@@ -1349,7 +1349,7 @@
   <a href="index.html" class="logo" style="text-decoration:none;"><img src="logo.png?v=5" alt="OSHINAVI logo">OSHINAVI</a>
   <nav>
     <a href="index.html" class="active" style="color:var(--accent);">チケット<br>イベント</a>
-    <a href="pickup/2026-11-08/index.html" target="_blank" rel="noopener">今週の<br>ピックアップ</a>
+    <a href="pickup/index.html" target="_blank" rel="noopener">今週の<br>ピックアップ</a>
     <a href="contact.html">お問い合わせ</a>
   </nav>
 </header>
@@ -1367,23 +1367,37 @@
 <!-- 🚨公開予定 2026-08-24(日)の朝。出す時は下の hidden を消すだけ（ユーザー指示 2026-08-20） -->
 <section class="pickup" id="pickup">
   <style>
-    /* 9/27号から本文は別ページ（別タブ）／ボタンはリンクなので下向きの印を → に替える */
-    .pickup a.pk-more { text-align: center; text-decoration: none; }
+    /* 11/9〜 記事は1本ずつ足して、受付が終わったら下ろす（tools/pickup_list.py が書く） */
+    .pickup a.pk-more { text-align: center; text-decoration: none; margin-top: 14px; }
     .pickup a.pk-more::after { content: ' →'; }
-    /* 10/11号から＝導入3行の下に今週の主役の名前を1行（10/9 ユーザー決定） */
-    .pickup .pk-names { margin-top: 12px; font-size: 14px; font-weight: 800; line-height: 1.8; color: var(--text); }
-    /* 10/9 ユーザー「この文字も白でいいよ」＝深掘りの予告と主役の名前は本文と同じ白 */
-    .pickup .pk-lede .pk-tease { color: var(--text); }
+    .pickup a.pk-item { display: block; padding: 14px 2px; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: .2s; }
+    .pickup .pk-sub + a.pk-item { border-top: 1px solid var(--border); }
+    .pickup a.pk-item:hover, .pickup a.pk-item:focus-visible { background: rgba(224,64,251,.08); }
+    .pickup .pk-i-name { display: block; font-size: 17px; font-weight: 900; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; margin-bottom: 4px; }
+    .pickup .pk-i-line { display: block; font-size: 14.5px; line-height: 1.75; text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 4px; }
+    .pickup .pk-i-line b { color: var(--accent2); font-weight: 800; font-size: 13px; }
   </style>
-  <span class="pk-label">📖 今週のピックアップ</span>
-  <h2 class="pk-title">今週はCNBLUEからNMB48まで、推し活の発売が集中よ。</h2>
-  <p class="pk-sub">11/9(月)〜11/15(日)にチケットの発売が始まるアーティスト紹介</p>
-  <div class="pk-lede">
-    <p>お笑いはかが屋が11/14、J-POPはyamaが11/9からよ。</p>
-    <p class="pk-tease">皇妃の髪飾りが6,688,000円？答えは深掘りで。</p>
-  </div>
-  <p class="pk-names">yama／マルコポロリ！20周年記念LIVE／FRUITS ZIPPER／長岡亮介／パンダドラゴン／NMB48／2026 FNC KINGDOM／スガ シカオ／かが屋／清水ミチコ／ロングコートダディ</p>
-  <a class="pk-more" href="pickup/2026-11-08/index.html" target="_blank" rel="noopener">記事を読む</a>
+  <span class="pk-label">📖 ピックアップ記事</span>
+  <p class="pk-sub">チケットが買えるうちだけ載せている記事よ（新しい順）</p>
+  <a class="pk-item" href="pickup/a/kooza.html" target="_blank" rel="noopener">
+    <span class="pk-i-name">シルク・ドゥ・ソレイユ『クーザ』</span>
+    <span class="pk-i-line">アース製薬 クーザ 東京公演</span>
+    <span class="pk-i-line">R9年 2/24(水)〜6/20(日) 東京・お台場ビッグトップ 他</span>
+    <span class="pk-i-line"><b>チケット販売日時</b> 11/14(土) 10:00 東京追加公演・大阪公演 フジテレビダイレクト最速先行</span>
+  </a>
+  <a class="pk-item" href="pickup/2026-11-08/yama.html" target="_blank" rel="noopener">
+    <span class="pk-i-name">yama</span>
+    <span class="pk-i-line">the meaning of life TOUR 2027</span>
+    <span class="pk-i-line">R9年 3/27(土) 18:00 新潟 他</span>
+    <span class="pk-i-line"><b>チケット販売日時</b> 11/9(月) 11:00 プレリザーブ（抽選）</span>
+  </a>
+  <a class="pk-item" href="pickup/2026-11-08/marco.html" target="_blank" rel="noopener">
+    <span class="pk-i-name">マルコポロリ！20周年記念LIVE</span>
+    <span class="pk-i-line">お笑いワイドショー マルコポロリ！20周年記念LIVE</span>
+    <span class="pk-i-line">12/15(火) 18:30 大阪</span>
+    <span class="pk-i-line"><b>チケット販売日時</b> 11/9(月) 18:00 先着先行</span>
+  </a>
+  <a class="pk-more" href="pickup/index.html" target="_blank" rel="noopener">記事の一覧（13本）</a>
 </section>
 
 <!-- 引っ張って更新のお知らせ（位置は fixed＝どこに置いても画面の上に出る。中身はJSで差し替える） -->
