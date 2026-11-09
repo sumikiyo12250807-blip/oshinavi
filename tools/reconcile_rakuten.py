@@ -124,6 +124,8 @@ def main():
             continue
         page_end = {p['sale_end'][:10] for p in perfs if p.get('sale_end')}
         page_start = {p['sale_start'][:10] for p in perfs if p.get('sale_start')}
+        # 🆕2026-11-10 カードのいちばん遅い受付の始まり（名前の出ていない次の受付）＝build_rakuten_entries と同じ読み方
+        page_start |= {p['sale_start_max'][:10] for p in perfs if p.get('sale_start_max')}
         for w in wins:
             f, t = R.win_dates(w['timming'])
             if f:
@@ -183,6 +185,19 @@ def main():
                     pass             # 🚨終わった枠はページから消える＝照合できないだけ
                 else:
                     errs.append('締切 %s がページに無い | %s' % (t['date'], t['type'][:34]))
+            # ②' 🆕2026-11-10「まだ始まっていない受付を、いま販売中で載せていないか」
+            #   名前の出ている窓が全部終わっていて、カードの「いちばん遅い受付の始まり」が先にある＝
+            #   次の受付はまだ始まっていない。その締切の枠に発売日が無い（＝画面は「販売中」）なら FAIL。
+            #   （50730 明透・琶舞・50731 島崎友莉亜＝組み立てがカードの最初の始まりを使い、照合は「一致」にしていた）
+            nowd = R.TODAY.isoformat()
+            if not t.get('soldout') and (not t.get('startDate') or t['startDate'] <= nowd):
+                w_ends = [R.win_dates(w['timming'])[1] or '' for w in wins]
+                if wins and all(x and x[:10] < nowd for x in w_ends):
+                    fut = sorted(p['sale_start_max'][:10] for p in perfs
+                                 if p.get('sale_start_max') and p['sale_start_max'][:10] > nowd
+                                 and (p.get('sale_end') or '')[:10] == t['date'])
+                    if fut:
+                        errs.append('まだ始まっていない受付（%s〜）を販売中で載せている | %s' % (fut[0], t['type'][:34]))
             # ② 発売日
             if t.get('startDate'):
                 if t['startDate'] in page_start:

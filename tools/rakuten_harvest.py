@@ -139,6 +139,8 @@ def parse_perfs(body):
             'venue': cols.get(4, ''),
             'ticket_name': cols.get(1, ''),
             'sale_start': (dd.get('min_start_on') or '').replace('T', ' ')[:16],
+            # 🆕2026-11-10 いちばん遅い受付の始まり＝名前の出ていない次の受付の始まり（build の予備の道で使う）
+            'sale_start_max': (dd.get('max_start_on') or '').replace('T', ' ')[:16],
             'sale_end': (dd.get('max_end_on') or '').replace('T', ' ')[:16],
             'status': '受付中' if 'active' in (m.group('state') or '') else '販売終了',
         })
