@@ -14,7 +14,11 @@
   ・✅ pm1507b 当て直し（commit）＝ヒールは安全弁で0件・STALE 4 のまま → 1枚ずつ読んだ（slotstatus）→ fix_7729：キャンセル待ち受付 11/10 に締切 〜11/10 9:30・当日引換券 11/10 とぴあ一般は予定枚数終了の印 → commit（msg_pm_c）
   ・🔄 15:15 番人「昼の全体ヒール未」（id 絞りの build は heal_stale.json を書かない）→ pm_full_heal（全体 --build → --apply → 足し算 → HEAD比べ → check_order → commit）
   ・▶ 夜に聞く/ブラウザで：45469 ミュージカル JUMP ぴあ最速先行（w.pia.jp/v/m-jump27hp1/ 直販＝外から読むとエラー）＝登録「11/9 10:00発売」締切 11/15 のまま据え置き
-- 🔄 そのあと noon_vendor_queue（TIGET 作り直し→投入→番人→出演者→振り分け／ZAIKO・FANY 投入→heal→番人→振り分け→commit）／queue は livePocket 13:37〜
+- ✅ noon_vendor_queue commit 14a502a4205：
+  ・TIGET heal 232・新規 261（49942〜50202・番人 ng5）→ 振り分け 264（jpop77・idol69・owarai59 ほか）・残す15（番人11・M4）
+  ・ZAIKO 新規49・heal 109・番人 一致492 食い違い0 → 振り分け37（club25 ほか）・残す63（ほぼ M＝出演者の欄が公演名）
+  ・FANY 新規112・heal 143・番人 食い違い5・🚨生データ3 → 振り分け111（owarai107・art4）・残す8（M）
+  ・queue は livePocket 13:37〜
 
 # ▶▶ 11/9(月) 朝の便（道具は tmp/x1109・push は朝と夜の2回）
 - ✅ 昨夜の push 済み＝origin/main..HEAD 空・鍵なし
