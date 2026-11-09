@@ -1,3 +1,8 @@
+# ▶▶ 11/9(月) 21:52 朝の列（queue）が全部済んだ
+- ✅ livePocket 13:37〜18:35・lp_full 18:35〜21:52（作り直し→番人 一致330→振り分け）＝まだ commit していない分は夜の push に入る
+- 🔄 after_noon の e+ --all が始まる（約1.5時間）＝夜の push には間に合わない分は明朝 commit → 朝の push
+- 🔄 楽天の総ざらい（rakuten_sweep.py）裏
+
 # ▶▶ 11/9(月) 夜 TikTok と来た人の数（GA4・Search Console をブラウザで）
 - ✅ すちこ決定「三日後の発売と受付が長いイベントを出していきましょう　明日は休みだからTikTok用の動画を作ろう　それをXにも出せるしね」→ memory project_tiktok_3days_and_longrun
 - ✅ GA4 過去28日（〜11/8）の参照元＝google 522・t.co 423・yahoo 187・direct 163・chatgpt 14・bing 13・tiktok 0
@@ -6,6 +11,8 @@
 - ▶ すちこ「歌詞にうまく入れて頂戴」＝TikTok の歌に「oshinavi.jp で◯◯と検索して」の行き方を入れる（11/10 の動画から）
 - ✅ 90日計画 27日目の数字（GSC 7日 クリック197＝1日28・表示の出たページ1000以上）→ memory project_growth_90days に追記
 - ✅ すちこ「3,000円で試してみて」＝X の投稿の宣伝 1週間3,000円（memory project_ad_test_x_3000）
+- ✅ 夜 commit（45469 の直し・plan.md）／11/13 発売の素材 tmp/x1109/x/pick_1113.json＝88件（owarai20・sports10・musicetc9・classic9・jpop8 ほか）＝朝のフォロワー調べに 11/13 分も足す
+- 🚨 すちこ「楽天チケットから収集してた？　楽天チケットが唯一の収入源よ」＝新着の収集は 10/14 が最後（毎朝は登録済み47件・145枠の照合と売り切れ点検だけ）→ 🔄 今夜 tmp/x1109/rakuten_sweep.py（発売前 sitemap 29〜26＋特設ページ・読むだけ）→ 未登録を番人→新着・既存に楽天リンク ✅ 朝の列 queue.py に ('rakuten', rakuten_sweep.py) を local の次・e+ の前に入れた（明日の copy_all で x1110 に写る＝写したら D を確かめる）
 - ▶ 11/10（すちこ休み）：①TikTok 用の動画（3日後＝11/13発売のまとめ＋受付が長いイベント1本目）②X 宣伝の案（投稿・相手・期間・utm・見積もり）→ すちこが支払い ③Amazon・楽天の紹介料の画面で売上の洗い直し ④TikTok の宣伝がサイトへ飛ばせるか調べる
 
 # ▶▶ 11/9(月) 18:07 便（commit だけ）
