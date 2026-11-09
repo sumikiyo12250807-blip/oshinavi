@@ -1,3 +1,11 @@
+# ▶▶ 11/9(月) 朝の便（道具は tmp/x1109・push は朝と夜の2回）
+- ✅ 昨夜の push 済み＝origin/main..HEAD 空・鍵なし
+- 🔄 06:xx 裏（同時2本）：①morning_pia（11/8発売 heal --build → reconcile --new → 発売前・受付中）②queue.py（morning_local → e+ → TIGET → ZAIKO → FANY → livePocket → lp_full）
+- ⚠ 昨夜の e+ --all は 21:42 に途中で止まった（PC が落ちた型）＝今日の昼の push 後にもう一度
+- ⏰ 12:37 昼（commit だけ）／15:07／17:03 X準備（11/10発売）／18:07／19:40 予約の締め／20:47 TikTok／22:07 夜＝push 2回目（CronList 7本）
+- ▶ 昼までに：記事を「新しい順の一覧＋1本1ページ」に・1本目はクーザ（すちこ 11/8夜の決定）／48637 のりおよしお主義の締切（10:00発売のあと）
+- ▶ 未来祭（eventCd 2642956）をぴあで
+
 # ▶▶ 11/8(日) 昼の便（12:37〜・commit だけ）
 - ✅ noon_chain：e+ heal_eplus_started 9枠／今日発売ぴあ51件 heal --ids（止まった3は足し算・HEAD比べ 消えた枠0）→ reconcile OK44・STALE5・QC1 → commit
 - ✅ 7729 当日引換券 12:00→15:00（11/6 と同じ型＝組み立てが12:00で作る）／STALE5→ mark_soldout＝予定枚数終了4（7893・26919・45818・47952）・47092 新日本プロレス TANAHASHI JAM はぴあに買える枠あり ▶ 15:07 に heal --ids 47092／commit（msg_noon2）
@@ -26,7 +34,11 @@
 - ✅ X 12本 すちこ OK → 予約一覧で12本・20:01〜21:51（10分おき）一致・二重なし／⑥お笑い・⑩⑪⑫主役に動画（すちこ「動画OKよ」）／タブを閉じ・クリップボード空
   ・形＝ページに file input を足して file_upload → JS で指紋照合 → paste → 🕐 → 時分 → Confirm → 指紋 → "Schedule"（memory feedback_x_paste_powershell_only 11/7 の形）・🚨後ろのホームの投稿欄に貼ってしまった1回＝本文欄は aria-modal の中のものを選ぶ（予約前に消した）・③⑤は「問題が発生しました」や遅れで、押し直す前に予約一覧で確かめた
   ▶ 20:47 TikTok の声かけ（Downloads/oshinavi_1109_owarai_matome.mp4・shuyaku1〜3）
-- ⏳ 記事 11/8号 すちこの OK 待ち（試し見 https://claude.ai/artifact/FFMRNYtnD8BJ19MMQKo5Vf ）
+- ✅ 20:0x すちこ「記事アップして　プッシュはまだなの？」→ 取りこぼし点検 tmp/pickup1108/gap.txt（名前なし大きめ157＝南こうせつ・小野リサ・島津亜矢・Endless SHOCK・ミー&マイガール・ファクト・マツケンサンバほか＝1日3本の記事の候補）→ ①②記録 → local_apply（pickup/2026-11-08・ヘッダー 11/08）
+- ✅ 夜の push 84ecda5a48d（今日2回目）＝prepush（gate_badge_render 違反0・reconcile --new OK62 MISSING0・gate_fields S3 1件→fix_links）・origin/main..HEAD 空
+  ▶ 押したあとに入る分（e+ --all の結果・20時/22時発売の締切・check_order の SHE'S 過ぎた当日券・zero_badge 191件）は明朝 commit → 朝の push
+- ✅ TikTok 4本 すちこが投稿（説明文はチャットで渡した）
+- ✅ ぴあの取りこぼし：45536 川井郁子 先行・40650 FREEDOM OF CHOICE 2次プレリザーブ（commit 済み）／▶ 未来祭（eventCd 2642956）は朝に集めた分に無い＝明朝ぴあで
 
 # ▶▶ 11/8(日) 朝の便（道具は tmp/x1108・push は朝と夜の2回）
 - ✅ 昨夜の push 済み（c6bf49766e2）・X 11本は全部出た・動画4本を返信で付けた（tmp/x1108/handover.md）
