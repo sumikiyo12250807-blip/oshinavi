@@ -11,7 +11,9 @@
 - 🔄 裏：after_noon の e+ --all（queue が済んでから）→ fix_eplus_fails → commit
 - ▶ 記事（クーザ＋新しい一覧）・お笑いまとめ歌詞・主役歌詞はすちこの OK 待ち
 - ✅ 15:07 便 pm1507 commit 86ae651a69e＝e+ heal_eplus_started 1／ぴあ 7729・45469 の heal --apply が index.html を開けず OSError 22（ファイルは無事＝21835件・末尾あり・HEAD と同じ中身）→ 🔄 pm1507b で当て直し（鍵を待つ）
-  ・STALE：7729 キャンセル待ち受付 11/10・ぴあ一般 〜11/24・45469 ぴあ最速先行 〜11/15 がぴあの買える枠に無い ▶ 当て直しの後の reconcile で見る・残れば mark_soldout
+  ・✅ pm1507b 当て直し（commit）＝ヒールは安全弁で0件・STALE 4 のまま → 1枚ずつ読んだ（slotstatus）→ fix_7729：キャンセル待ち受付 11/10 に締切 〜11/10 9:30・当日引換券 11/10 とぴあ一般は予定枚数終了の印 → commit（msg_pm_c）
+  ・🔄 15:15 番人「昼の全体ヒール未」（id 絞りの build は heal_stale.json を書かない）→ pm_full_heal（全体 --build → --apply → 足し算 → HEAD比べ → check_order → commit）
+  ・▶ 夜に聞く/ブラウザで：45469 ミュージカル JUMP ぴあ最速先行（w.pia.jp/v/m-jump27hp1/ 直販＝外から読むとエラー）＝登録「11/9 10:00発売」締切 11/15 のまま据え置き
 - 🔄 そのあと noon_vendor_queue（TIGET 作り直し→投入→番人→出演者→振り分け／ZAIKO・FANY 投入→heal→番人→振り分け→commit）／queue は livePocket 13:37〜
 
 # ▶▶ 11/9(月) 朝の便（道具は tmp/x1109・push は朝と夜の2回）
