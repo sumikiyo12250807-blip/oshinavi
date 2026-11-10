@@ -1,3 +1,12 @@
+# ▶▶ 11/10(火) 17:30 夕方
+- ✅ 13:50 13:00発売までのぴあ8件 heal・41597 横浜2館＝売り切れの印・49908 二重の枠を外す・20880/47939/47971 予定枚数終了 → commit
+- ✅ 17:14 e+ --all → fix_eplus_fails 159件 → commit
+- 🔄 49921 尾崎裕哉：e+ 10ページの生HTMLどおりに枠を作り直す fix_49921.py（lp_apply の鍵待ち）→ reconcile_eplus --ids・gate_fields
+- 🔄 X 11/11発売 11本（tmp/x1110/x/all_posts.txt）独立FC 2人回し中 → 全文をすちこへ → 20:01〜10分おき（主役3本は21:21〜）
+- 🔄 お笑い 11/11 動画 絵コンテ https://claude.ai/artifact/ALtCGxoB76wSRtUxy6Larv → すちこのOK待ち（tmp/video/matome1111o）
+- 🗒 夜に聞く：FNC KINGDOM 48014(e+ kpop)と47910(ぴあ 洋楽)の重なり／41484【テスト】サンタカニヨシを載せ続けるか／きゃりー名義の HIROSHIMA CONTI-NeW FeS
+- 🗒 Suno：すちこ「騒がしくてうるさい」→ 楽器を絞る（memory 済み）
+
 # ▶▶ 11/10(火) 12:42 TikTok
 - ✅ すちこが TikTok に上げた＝お笑い 11/13発売（Downloads/oshinavi_1113_owarai_matome.mp4・1:47・歩く9人・説明文は独立FC済み tmp/x1110/x/tiktok_owarai_1113.txt）
 - ▶ 11/12 夜の X（11/13発売のお笑いまとめ）にこの動画を付ける（歌詞は 11/13 の中身＝そのまま使える）
