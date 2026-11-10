@@ -1,3 +1,9 @@
+# ▶▶ 11/10(火) 12:42 TikTok
+- ✅ すちこが TikTok に上げた＝お笑い 11/13発売（Downloads/oshinavi_1113_owarai_matome.mp4・1:47・歩く9人・説明文は独立FC済み tmp/x1110/x/tiktok_owarai_1113.txt）
+- ▶ 11/12 夜の X（11/13発売のお笑いまとめ）にこの動画を付ける（歌詞は 11/13 の中身＝そのまま使える）
+- 🔄 クーザ：ブランコの子だけ振り子に揺らす版を作り直し中（tmp/video/kooza1110）→ Downloads/oshinavi_kooza_tokyo.mp4 を差し替え → すちこが 11/13 までに上げる（説明文 tmp/x1110/x/tiktok_kooza.txt・独立FC済み）
+- 🔄 昼のあと：e+ reconcile_eplus --all → fix_eplus_fails／ぴあ pia_soldout_sweep
+
 # ▶▶ 11/10(火) 9:50 朝の便のつづき（commit だけ・夜に push）
 - ✅ ぴあ 11/9発売の締切 heal（止まった35は足し算・消えた枠0）・買える枠ゼロ165＝変更0
 - ✅ ぴあ発売前：新規50（50733〜50782）＋足し込み12件20枠 → reconcile OK61（102/102）→ 独立読み直し2組 🔴0 → 名前・出演者を直して46件振り分け（プール4＝50751・50759・50773・50774 出演者がぴあに無い）
