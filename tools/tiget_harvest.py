@@ -486,6 +486,16 @@ def parse_event(html, eid):
             for t, nm in zip(tks, pick):
                 if not (t.get('name') or '').strip() and nm:
                     t['name'] = nm
+    # 🆕2026-11-11 抜き打ち 36670＝申し込みボタンには見出しのカッコの中（注意書き）だけが出る券種がある
+    #   （見出し「●予約(予約番号順でのご入場です。)」・ボタン「予約番号順でのご入場です。」）。
+    #   ボタンの名前が「見出しのカッコの中」とそっくり同じ見出しがちょうど1つある時だけ、見出しの名前に戻す。
+    for t in tks:
+        nm = (t.get('name') or '').strip()
+        if not nm:
+            continue
+        hit = [x for x in h6 if x != nm and (x.endswith('(' + nm + ')') or x.endswith('（' + nm + '）'))]
+        if len(hit) == 1:
+            t['name'] = hit[0]
     return out
 
 
