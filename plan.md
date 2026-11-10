@@ -1,7 +1,7 @@
 # ▶▶ 11/10(火) 12:42 TikTok
 - ✅ すちこが TikTok に上げた＝お笑い 11/13発売（Downloads/oshinavi_1113_owarai_matome.mp4・1:47・歩く9人・説明文は独立FC済み tmp/x1110/x/tiktok_owarai_1113.txt）
 - ▶ 11/12 夜の X（11/13発売のお笑いまとめ）にこの動画を付ける（歌詞は 11/13 の中身＝そのまま使える）
-- 🔄 クーザ：ブランコの子だけ振り子に揺らす版を作り直し中（tmp/video/kooza1110）→ Downloads/oshinavi_kooza_tokyo.mp4 を差し替え → すちこが 11/13 までに上げる（説明文 tmp/x1110/x/tiktok_kooza.txt・独立FC済み）
+- ✅ 13:49 すちこが TikTok に上げた＝クーザ東京（Downloads/oshinavi_kooza_tokyo.mp4・1:32・ブランコの子だけ揺れる版・説明文 tmp/x1110/x/tiktok_kooza.txt）→ X にも使える（受付が長い＝いつ出してもよい）
 - 🔄 昼のあと：e+ reconcile_eplus --all → fix_eplus_fails／ぴあ pia_soldout_sweep
 
 # ▶▶ 11/10(火) 9:50 朝の便のつづき（commit だけ・夜に push）
