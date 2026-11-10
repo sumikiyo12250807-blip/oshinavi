@@ -888,6 +888,9 @@ def _cast_split(body):
     out = []
     for x in re.split(r'\s+/\s+|／|、|，', body):
         x = norm_fw(x.strip(' 　'))
+        # 🆕11/10 落語会の［出演］は「桂文我(「除夜の雪」「餅犬」)」＝演目が名前に付く（50753・50758・50762）。
+        #   括弧の中が「」で始まる＝演目なので外す（楽器の (p)・(vl) は残す）
+        x = re.sub(r'\s*[\(（]\s*「[^）)]*[\)）]', '', x).strip()
         if x and x not in out and not re.fullmatch(r'(ほか|他|ゲスト|未定)', x):
             out.append(x)
     return out
