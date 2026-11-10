@@ -6254,6 +6254,28 @@
    "assigned": true,
    "rechecked": true,
    "note": "logs/assigned_2026-10-27.md／41787・41811 は出演者の欄 M でプール"
+  },
+  {
+   "date": "2026-11-10",
+   "slot": "morning",
+   "id_from": 50717,
+   "id_to": 50732,
+   "count": 16,
+   "source": "楽天 総ざらい（11/9夜）の未登録＋既存9件に楽天の枠",
+   "assigned": true,
+   "rechecked": true,
+   "note": "独立読み直し🔴3→組み立て・照合を直して作り直し→14件振り分け。50729 @JAM MEETS・50732 アンパンマンは出演者が決まらずプール。logs/assigned_2026-11-10.md"
+  },
+  {
+   "date": "2026-11-10",
+   "slot": "morning",
+   "id_from": 50733,
+   "id_to": 50782,
+   "count": 50,
+   "source": "ぴあ 発売前スイープ 7ジャンル×0102/0202（新規50＋既存12件に20枠）",
+   "assigned": false,
+   "rechecked": false,
+   "note": "reconcile_pia --ids OK61（102/102）。前半25件 独立読み直し🔴0→24件振り分け（50751 は出演者がぴあに無い）。後半25件は係が読み直し中"
   }
  ]
 }
