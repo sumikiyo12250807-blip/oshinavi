@@ -1,3 +1,10 @@
+# ▶▶ 11/10(火) 19:54 X
+- ✅ X 11/11発売 11本 予約済み 20:01〜21:41（⑤お笑いに動画 oshinavi_1111_owarai_matome.mp4・予約一覧で確認）
+- 🔄 主役3本の動画（Downloads/oshinavi_1111_shuyaku_1_kyary・_2_yoshimoto・_3_lions.mp4・https://claude.ai/artifact/R5EiVCs3KDWpTVKTSUai6J）→ すちこのOKで 21:21/21:31/21:41 の予約に付け足す
+- ✅ 18:08 便 commit／49921 尾崎裕哉 作り直し commit／取りこぼし5件振り分け commit（50812 はプール）
+- ▶ 22:07 夜の便：今日発売のぴあ heal（20:00・22:45 の分）→ prepush → build_ai_page → compact → commit → push
+- 🗒 index の小直し：5155 きゃりーの県に福岡が無い・dateLabel が3県だけ（夜の便で）
+
 # ▶▶ 11/10(火) 17:30 夕方
 - ✅ 13:50 13:00発売までのぴあ8件 heal・41597 横浜2館＝売り切れの印・49908 二重の枠を外す・20880/47939/47971 予定枚数終了 → commit
 - ✅ 17:14 e+ --all → fix_eplus_fails 159件 → commit
