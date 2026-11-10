@@ -13,7 +13,7 @@ FILES = [
     "File:Kooza in Sydney25.jpg",
 ]
 
-UA = "OSHINAVI/1.0 (https://oshinavi.jp; https://oshinavi.jp)"
+UA = "OSHINAVI/1.0 (https://oshinavi.jp)"
 titles = urllib.parse.quote("|".join(FILES))
 url = ("https://commons.wikimedia.org/w/api.php?action=query&titles=%s"
        "&prop=imageinfo&iiprop=url|extmetadata|size&format=json" % titles)
