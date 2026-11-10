@@ -13,7 +13,7 @@ import sys, json, time, re, io
 import urllib.parse, urllib.request
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-UA = "OSHINAVI/1.0 (https://oshinavi.jp; https://oshinavi.jp)"
+UA = "OSHINAVI/1.0 (https://oshinavi.jp)"
 
 TARGETS = [
     # (記事での呼び名, [検索語を複数ルート])

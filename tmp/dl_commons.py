@@ -6,7 +6,7 @@
 import sys, json, urllib.parse, urllib.request, re, io, os
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
-UA = "OSHINAVI/1.0 (https://oshinavi.jp; https://oshinavi.jp)"
+UA = "OSHINAVI/1.0 (https://oshinavi.jp)"
 WANT = [
     ("File:Tomoyasu Hotei Paaspop 2017.jpg",                    "hotei.jpg",  1000),
     ("File:Chisako Takashima on December 24, 2024 (cropped).jpg","takashima.jpg", 416),
