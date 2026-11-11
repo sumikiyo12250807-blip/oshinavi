@@ -12,7 +12,11 @@
 # ▶▶ 11/11→12 夜通しの収集（すちこ「24時間働いて・朝まで件数を集めて・間違いなく・クレジットに気をつけて」）
 - 🔄 tmp/x1111/overnight.py（裏・1本）：はじめ カード22,598・新着422 → ①朝のぴあ収集の未登録548件を build_pia_entries（50件ずつ）→ ②新着へ（eventCd で二重を外す）→ reconcile_pia --ids・gate_fields・HEAD比べ → commit ③TIGET・ZAIKO・FANY の未投入分 → 番人 → commit ／ 記録 tmp/x1111/night/overnight.txt
 - ✅ 00:20 overnight.py おわり：カード 22,598→23,670・新着 422→1,319／ぴあ 399件（51487〜51885）reconcile OK398・FETCH1・STALE1／TIGET・ZAIKO・FANY 投入 → 番人が鳴った（TIGET ng2900・ZAIKO 食い違い110・FANY 160）
-- 🔄 overnight_retry.py（ぴあの失敗した組 50〜99 をやり直し）・night_heal.py（TIGET・ZAIKO・FANY heal --apply → commit）＝鍵で順番待ち
+- ✅ 00:55 overnight_retry：組50 は ぴあが消したURL 2件（eventCd 2643078・2643125）で道具ごと落ちていた → その2件だけ外して 43件を新着へ（commit f6216d590be）▶ 朝 pia_kw_search で後継（tmp/x1111/night/pia_gone_urls.txt）
+- ✅ 01:10 night_heal：heal_tiget 2750・heal_zaiko 110・heal_fany 249 当てた（commit e04a91821a5）。本当に消えた枠は62（TIGET 60 ほか・枠0のカードなし）
+  ・その後の gate_fields：L 177・P 3 → fill_slot_pref・fill_span_from_slots で0／C 4（heal_zaiko・heal_fany がカードの date を最後の公演より前に下げた＝20802・40941〜40943）→ date だけ直す前に戻して0
+  ・✅ heal_zaiko / heal_fany がカードの date を下げる癖＝その場で道具を直した（枠の括弧の最後の公演日より前には下げない・今夜の4件で効くのを確かめた）
+  ・H 20（e+ 11/11 の昼〜夜に発売した枠・日付が変わって出た）▶ 朝の heal_eplus_started
 - ⏰ 04:33 見回り1回（CronCreate）・push しない・係を使わない
 - ▶ 朝：新着の振り分け（ゲートを通った分）→ push／新しい売り場の案（reference_new_vendors_survey_0927 の未決3つ）
 
