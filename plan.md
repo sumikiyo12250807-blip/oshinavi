@@ -1,7 +1,9 @@
 # ▶▶ 11/11(水) 昼 すちこ「消して／これからは私の確認なしにメールアドレスも個人情報のいっさいを公表しないこと」
 - ✅ これからの git の名札＝oshinavi ＋ GitHub の公開用アドレス（.git/config）／memory feedback_no_email_in_tools_public_repo を書き直した
 - ✅ 写しの確かめ：2,869 commit の名札・説明文・ファイルの中にアドレス0・本名0 → 本体の main を付け替えた（abfad3d4675・中身の差なし・元は refs/backup/pre_rewrite_main）
-- 🔄 GitHub へ force push（403c973f580＝朝の ec50f968ef8 の作り直し版・中身は朝と同じ）＝1回目 HTTP 500（2GB を一度に）→ postBuffer を広げてやり直し中
+- ✅ GitHub 置き換え済み（小分け11回の札→main を 403c973f580 に force・札は全部消した）。GitHub の公開の最新5件＝名札 oshinavi・gmail なし
+- ▶ 古い更新は番号を知っていれば GitHub でまだ開ける（ec50f968ef8 で確認）＝GitHub の窓口に「古い記録の消去」を頼むと消える（すちこのアカウントから頼む・頼むかはすちこ）
+- (済) GitHub へ force push（403c973f580＝朝の ec50f968ef8 の作り直し版・中身は朝と同じ）＝1回目 HTTP 500（2GB を一度に）→ postBuffer を広げてやり直し中
 - (済) GitHub の履歴の作り直し（名札のアドレスと本名 → oshinavi／ファイルと説明文の中のアドレス・本名）＝スクラッチの写しで git filter-repo → 本体の main を付け替え（作業中のファイルは触らない・元は refs/backup/pre_rewrite_main）→ 朝 push 済みの頭だけ force push（昼の分は夜の push で）
 - ▶ 残る所：Netlify の過去の公開（デプロイ一覧の古い版に tmp/commons_lic.py ほか）／GitHub が古い commit を番号で開ける間（GitHub の窓口に消去を頼める）／アカウント名 sumikiyo12250807-blip（すちこが設定で変える）
 
