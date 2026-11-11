@@ -2,7 +2,10 @@
 - 🚨 すちこ「CLAUDEさんがメールアドレスを勝手によそに明記していたって　私はどうなのか履歴を確認して」→ 調べた：tmp/commons_lic.py・dl_commons.py・hunt_commons.py の Wikimedia 用 User-Agent にアドレス全体（Wikimedia に送信・oshinavi.jp/tmp/ で誰でも開けた＝netlify publish="."）→ 外して commit ada88e9bf9f／GitHub は公開リポジトリ＝commit の作者欄にアドレス（git 設定）／Suno 曲5つの作った人欄に @ の前／過去の会話565本で外に送った操作はほかに無し。memory feedback_no_email_in_tools_public_repo
 - ✅ 削除235（check_expired 518 と独立235の一致・割れた283は残す）logs/removed_2026-11-11.md／e+ heal_eplus_started 12枠／楽天 照合 OK63 FAIL5（4件は前からの過ぎた枠・50727 は今日締切の先行）・売り切れの印 0／check_zero_badge 31日より先で枠0 374件
 - ✅ 記事3本（きゃりー・ライオンズ・尾崎）FC の直しを commit・本文をすちこに見せた → 朝の push で出す
-- 🔄 裏：morning_pia（ぴあ 11/10発売の heal → reconcile --new → 発売前 → 受付中）・queue（楽天収集 → e+ → TIGET → ZAIKO → FANY → livePocket）
+- ✅ ぴあ 11/10発売の締切 heal 64件・止まった36は足し算・消えた枠0／買える枠0の166件 mark_soldout（新しい印1・alive 35637 神田伯山・48619 モナキ・nosold 26972・27835・読めない 47952 ▶ 昼の heal で見直す）／48039 SPAMALOT 11/15発売を足した（2=2）
+- ✅ 楽天の総ざらい 発売前6・販売中61（未登録6→生きている4）：11139 白隠さんの禅・20212 ジミー大西 京都展に楽天の枠＋Deep Link／新着 51161 しなこ 福井・石川・51162 Asami Christmas Live ▶ reconcile_rakuten・独立読み直しのあと振り分け（昼）
+- ▶ ぴあ発売前スイープ（tmp/x1111/presale_*.json）と受付中（pia_open/）の組み立て・投入は昼へ（朝の push を先に）
+- 🔄 裏：queue（e+ 9:22〜 → TIGET → ZAIKO → FANY → livePocket）
 - 🔄 抜き打ち30件（seed 20261111・TIGET10/livePocket6/FANY6/ぴあ4/e+3/ZAIKO1）係2人
 - ▶ 昼：池袋de逢いましょう。43340(FANY)と49245(ぴあ 今日10:00発売)＝同じ公演 → ぴあの締切を取ってから1枚に（10/1 ぴあ｜FANY の割りボタン）
 - 🗒 夜に聞く：海宝直人 ever after が5枚（29017・31897・35363 e+・37643 e+・50812 ぴあまとめ）に分かれている＝まとめるか／GitHub の過去の記録からアドレスを消すか（記録の作り直しになる）・git の作者欄を noreply にするか
