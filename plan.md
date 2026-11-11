@@ -1,3 +1,9 @@
+# ▶▶ 11/12(木) 朝の便（道具は tmp/x1112＝copy_all で x1111 から写した）
+- 🔄 裏：morning_local（期限切れ・枠0・楽天・e+ 締切の下見・いつまで不明）／morning_pia（11/11発売のぴあ heal --build・reconcile --new・発売前と受付中の収集）
+- ▶ 朝：前夜の新着940件の独立読み直し（抜き取り）→ 番人を通った分を振り分け／e+ H20 heal_eplus_started --apply／ぴあが消したURL2件の後継（pia_kw_search）／抜き打ち30件 → prepush → push（朝の1回目）
+- ⏰ アラーム 12:07 昼／17:03 X準備／19:40 予約／20:47 TikTok／22:07 夜
+- 🗒 持ち越し：TikTok 11/15発売の分・上原浩治の分析・11/12 発売の歌詞・サカグチアミ 51212・356 ミス・サイゴン・7729 当日引換券の時刻
+
 # ▶▶ 11/11(水) 昼 すちこ「消して／これからは私の確認なしにメールアドレスも個人情報のいっさいを公表しないこと」
 - ✅ これからの git の名札＝oshinavi ＋ GitHub の公開用アドレス（.git/config）／memory feedback_no_email_in_tools_public_repo を書き直した
 - ✅ 写しの確かめ：2,869 commit の名札・説明文・ファイルの中にアドレス0・本名0 → 本体の main を付け替えた（abfad3d4675・中身の差なし・元は refs/backup/pre_rewrite_main）
@@ -17,7 +23,8 @@
   ・その後の gate_fields：L 177・P 3 → fill_slot_pref・fill_span_from_slots で0／C 4（heal_zaiko・heal_fany がカードの date を最後の公演より前に下げた＝20802・40941〜40943）→ date だけ直す前に戻して0
   ・✅ heal_zaiko / heal_fany がカードの date を下げる癖＝その場で道具を直した（枠の括弧の最後の公演日より前には下げない・今夜の4件で効くのを確かめた）
   ・H 20（e+ 11/11 の昼〜夜に発売した枠・日付が変わって出た）▶ 朝の heal_eplus_started
-- ⏰ 04:33 見回り1回（CronCreate）・push しない・係を使わない
+- ✅ 04:33 見回り：夜通しは全部おわり（overnight・やり直し・直し・livePocket の続きも止まっている道具なし／index.html は全部 commit 済み）＝**カード 22,598→23,713（+1,115）・新着 422→1,362（+940）**／ぴあ 442件（399＋43）reconcile OK398・読めず1・古い1／TIGET 2750・ZAIKO 110・FANY 249 を売り場どおりに直した（本当に消えた枠62・枠0のカードなし）／欄の番人＝止める行は H 20（e+ 11/11 発売の締切）だけ ▶ 朝 heal_eplus_started → prepush → push
+- (済) 04:33 見回り1回（CronCreate）・push しない・係を使わない
 - ▶ 朝：新着の振り分け（ゲートを通った分）→ push／新しい売り場の案（reference_new_vendors_survey_0927 の未決3つ）
 
 # ▶▶ 11/11(水) 夜の締め（22:07）
