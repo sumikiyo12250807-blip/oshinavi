@@ -1,5 +1,9 @@
 # ▶▶ 11/12(木) 朝の便（道具は tmp/x1112＝copy_all で x1111 から写した）
 - 🔄 裏：morning_local（期限切れ・枠0・楽天・e+ 締切の下見・いつまで不明）／morning_pia（11/11発売のぴあ heal --build・reconcile --new・発売前と受付中の収集）
+- ✅ 削除259（check_expired 570 と独立259の一致・割れた311は残す）logs/removed_2026-11-12.md（commit 6f1b3c5973f）
+- ✅ e+ heal_eplus_started 17枠／TIGET 193・ZAIKO 16・FANY 157 振り分け（commit b55c4b2c80d）／楽天 OK69 FAIL3（5308 デイリー・7583 発売前・35394 今日締切＝前からの型）・売り切れの印0
+- ⚠ gate_fields H 3（50369 ぴあ・51163 KREVA e+ 当日引換2枠）▶ ぴあ heal・e+ は昼／zero_badge 31日より先で枠0 391／いつまで不明 28 ▶ 昼
+- 🔄 夜のぴあ 442件から無作為40件＝係2人が読み直し済み → 突き合わせの係
 - ▶ 朝：前夜の新着940件の独立読み直し（抜き取り）→ 番人を通った分を振り分け／e+ H20 heal_eplus_started --apply／ぴあが消したURL2件の後継（pia_kw_search）／抜き打ち30件 → prepush → push（朝の1回目）
 - ⏰ アラーム 12:07 昼／17:03 X準備／19:40 予約／20:47 TikTok／22:07 夜
 - 🗒 持ち越し：TikTok 11/15発売の分・上原浩治の分析・11/12 発売の歌詞・サカグチアミ 51212・356 ミス・サイゴン・7729 当日引換券の時刻
