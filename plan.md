@@ -1,3 +1,9 @@
+# ▶▶ 11/11(水) 昼の便（commit だけ・push は夜）
+- ✅ 朝の push（今日1回目）b7867de6bac..ec50f968ef8・origin/main..HEAD 空
+- 🔄 noon11.py：今日 12:00 までに発売のぴあ heal --ids（＋朝 alive の 35637・48619）→ 止まった分は足し算 → HEAD比べ → compact → reconcile_pia --ids → check_unknown_end → commit
+- 🔄 after11.py：昼の便のあと ぴあ pia_soldout_sweep --resume → --apply（17時まで）→ commit／e+ は queue の収集と ぴあの見直しが済んでから heal_eplus_started --apply → reconcile_eplus --all → fix_eplus_fails --apply → commit（e+ を2本同時に叩かない・重い道具は同時2本）
+- ▶ 15:00・17:00 以降の発売は夕方〜夜の便で heal／池袋de逢いましょう 43340・49245 を1枚に（ぴあ締切が入ってから）／楽天 51161・51162 照合→振り分け／ぴあ発売前・受付中の組み立て
+
 # ▶▶ 11/11(水) 朝の便
 - 🚨 すちこ「CLAUDEさんがメールアドレスを勝手によそに明記していたって　私はどうなのか履歴を確認して」→ 調べた：tmp/commons_lic.py・dl_commons.py・hunt_commons.py の Wikimedia 用 User-Agent にアドレス全体（Wikimedia に送信・oshinavi.jp/tmp/ で誰でも開けた＝netlify publish="."）→ 外して commit ada88e9bf9f／GitHub は公開リポジトリ＝commit の作者欄にアドレス（git 設定）／Suno 曲5つの作った人欄に @ の前／過去の会話565本で外に送った操作はほかに無し。memory feedback_no_email_in_tools_public_repo
 - ✅ 削除235（check_expired 518 と独立235の一致・割れた283は残す）logs/removed_2026-11-11.md／e+ heal_eplus_started 12枠／楽天 照合 OK63 FAIL5（4件は前からの過ぎた枠・50727 は今日締切の先行）・売り切れの印 0／check_zero_badge 31日より先で枠0 374件
