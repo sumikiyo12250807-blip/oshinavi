@@ -495,7 +495,17 @@ def _kenshu_base(title, labels):
             m = re.search(KW, t)
             if m:
                 return m.group(1)
+            # 🆕2026-11-12 抜き打ち 51593＝題「阿川泰子／中井貴惠〔東京〕」は出演者の並びで券種の語が無い。
+            #   head（＝出演者名）を券種名にして「阿川泰子（東京 …）」と出ていた → 名前の分からない受付は「受付」
+            #   ただし「超早割チケット ／ 特別展…」のように券・席の名前（区切りは前後スペース付き）は券種名なので残す
+            if sep == '／' and not re.search(r'(チケット|券|席|シート|パス|セット|プラン|ツアー|入場|観覧|参加)', head):
+                return '受付'
         return head or '一般発売'
+    # 🆕2026-11-12 抜き打ち 51605「「KUZIRA presents …」最終先行」・51614「「時速36km」チケットぴあ先行」
+    #   ＝「／」の無い題で、公演名の」』の後ろに受付名がある形。KW だけ拾うと「最終」「チケットぴあ」が落ちて「先行」になっていた
+    mt = re.search(r'[」』]\s*([^「」『』]{1,30})$', t)
+    if mt and re.search(r'(発売|販売|先行|受付|プリセール|プレリザーブ|抽選)', mt.group(1)):
+        return mt.group(1).strip('　 .・●○◎◆◇■□★☆@＠※〇▼▲').strip()
     m = re.search(KW, t)
     return m.group(1) if m else '先行'
 
@@ -891,7 +901,8 @@ def _cast_split(body):
         # 🆕11/10 落語会の［出演］は「桂文我(「除夜の雪」「餅犬」)」＝演目が名前に付く（50753・50758・50762）。
         #   括弧の中が「」で始まる＝演目なので外す（楽器の (p)・(vl) は残す）
         x = re.sub(r'\s*[\(（]\s*「[^）)]*[\)）]', '', x).strip()
-        if x and x not in out and not re.fullmatch(r'(ほか|他|ゲスト|未定)', x):
+        # 🆕2026-11-12 抜き打ち 51614＝「［ゲスト］あり」の「あり」が出演者に入り「時速36km／あり」になっていた
+        if x and x not in out and not re.fullmatch(r'(ほか|他|ゲスト|未定|あり|有り|なし|無し|調整中|後日発表|近日発表|TBA|tba|後日告知)', x):
             out.append(x)
     return out
 
@@ -940,6 +951,7 @@ def pia_cast(h):
 def build(cand):
     allrows, htmls = [], []
     gone = []
+    notices = []   # 🆕11/12 (このページのURL, [(受付名, 受付期間)])＝告知文にだけ出ている先行を下で枠にする
     for u in cand['urls']:
         try:
             h = fetch(u); htmls.append(h)
@@ -950,6 +962,7 @@ def build(cand):
             _np, _nu = find_notice_presales(h)
             if _np:
                 _NOTICE_PRESALE.append((cand.get('newid'), cand.get('artist') or '', u, _np, _nu))
+                notices.append((src_event_url(u), _np))
             su = src_event_url(u)
             for c in cards:
                 c['_src'] = su          # このカードが載っていた公演ページ(eventCd/bundle)を記録
@@ -1021,6 +1034,35 @@ def build(cand):
             tu = ecd_url(r['url']) or r.get('_src')
             if tu: t['url'] = tu
         tickets.append(t)
+    # 🆕🚨2026-11-12 抜き打ち 51533 センシマン・52357 三銃士＝まとめページの告知文（■◯◯先行 受付期間：… お申込はこちら→w.pia.jp/v/）
+    #   にだけ出ている先行は券種カードに無いので枠にならず、📣 の控えに出るだけで誰も足していなかった（受付中の先行が抜けた）。
+    #   → 受付期間が読めて終わりが今より後なら枠にする。公演の県・日付はこのページの会期（span）全体。控え（📣）は今までどおり出す
+    _now = datetime.datetime.now()
+    for _su, _items in notices:
+        for _nm, _per in _items:
+            _m = re.search(r'(?:(\d{4})\s*/\s*)?(\d{1,2})/(\d{1,2})[^0-9]*?(\d{1,2}):(\d{2})\s*[～〜~\-－]\s*'
+                           r'(?:(\d{4})\s*/\s*)?(\d{1,2})/(\d{1,2})[^0-9]*?(\d{1,2}):(\d{2})', _per)
+            if not _m or not starts:
+                _DROPPED.append((cand.get('newid'), '告知の先行', _per, _nm[:40])); continue
+            def _dt(y, mo, d, hh, mi):
+                mo, d = int(mo), int(d)
+                yy = int(y) if y else (_now.year + 1 if mo < _now.month - 2 else _now.year)
+                return datetime.datetime(yy, mo, d, int(hh), int(mi))
+            _s = _dt(*_m.group(1, 2, 3, 4, 5)); _e = _dt(*_m.group(6, 7, 8, 9, 10))
+            if _e < _now:
+                continue
+            _name = norm_fw(re.sub(r'^[■□◆◇●○★☆\s]+', '', _nm)).strip()
+            if any(t['type'].startswith(_name + '（') for t in tickets):
+                continue
+            _pf = '・'.join(prefs) if 1 <= len(prefs) <= 4 else '全国'
+            _suf = (f"{_s.month}/{_s.day} {_s.hour}:{_s.minute:02d}発売" if _s > _now else f"〜{_e.month}/{_e.day} {_e.hour}:{_e.minute:02d}")
+            t = {'type': f"{_name}（{_pf} {mdbadge(starts[0], ends[-1])}公演）{_suf}", 'date': _e.date().isoformat(),
+                 '_venue': '', '_title': _name}
+            if _s > _now:
+                t['startDate'] = _s.date().isoformat()
+            if multi:
+                t['url'] = _su
+            tickets.append(t)
     tickets = disambiguate(tickets, cand.get('newid'))
     tickets.sort(key=lambda t: t['date'])
     # 🆕2026-11-04 抜き打ち 5162 山本彩（福岡 2/6 の一般発売が「予定枚数終了」なのに枠ごと無い）＝枠は買える行だけ作るので、
@@ -1056,6 +1098,12 @@ def build(cand):
         dl = f"{jp(starts[0])} {pref} {venues[0] if venues else ''}".strip()
     else:
         tail = '全国ツアー' if pref == '全国' else (pref + ' ' + (venues[0] if len(venues) == 1 else '')).strip()
+        # 🆕2026-11-12 抜き打ち 51710 プラチナトーク＝会場「PIA LIVE STREAM」の配信が「全国ツアー」と出ていた
+        _STREAM = r'LIVE STREAM|配信|オンライン|ONLINE|Online|ストリーミング'
+        #   ぴあの会場名は全角（ＰＩＡ　ＬＩＶＥ　ＳＴＲＥＡＭ）＝norm_fw してから見る
+        if pref == '全国' and ((venues and all(re.search(_STREAM, norm_fw(v)) for v in venues))
+                               or (not venues and rows and all(re.search(_STREAM, norm_fw(r.get('title') or '')) for r in rows))):
+            tail = '配信'
         dl = f"{jp(starts[0])}〜{jp(ends[-1])} {tail}".strip()
     # 🚨2026-08-27＝links.pia は「候補URLの1本目」固定だった。統合で古いURLを先に渡すと、
     #   買える枠が1つも無いページが購入ボタンの飛び先になる（上の multi と同じ事故の片割れ）。
@@ -1303,6 +1351,12 @@ def _selftest():
     assert kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」') == '超早割チケット【１１月平日限定】', \
         kenshu('【１１月平日限定】超早割チケット ／ 特別展「生きものたちの性」')
     assert kenshu('【一般発売】 ／ 工藤静香') == '一般発売', kenshu('【一般発売】 ／ 工藤静香')   # 装飾囲みは落とす
+    # ⑧-2 🆕11/12 抜き打ち：「」の後ろの受付名を落とさない（51605・51614）／券種の語が無い題は人の名前にしない（51593）
+    assert kenshu('「KUZIRA presents “Got Your Back TOUR 2026”」最終先行') == '最終先行', kenshu('「KUZIRA presents “Got Your Back TOUR 2026”」最終先行')
+    assert kenshu('「時速36km」チケットぴあ先行') == 'チケットぴあ先行', kenshu('「時速36km」チケットぴあ先行')
+    assert kenshu('阿川泰子／中井貴惠〔東京〕') == '受付', kenshu('阿川泰子／中井貴惠〔東京〕')
+    assert kenshu('プレリザーブ ／ 尾崎裕哉') == 'プレリザーブ' and kenshu('一般発売') == '一般発売'
+    assert _cast_split('時速36km ／ あり') == ['時速36km'] and _cast_split('あり') == []
     # ⑨ 「本サイト取扱なし」=ぴあでは買えない券(店頭のみ)は対象外にする
     #    発売日が書かれず when='' になるため、除外しないと取りこぼし警告でビルドが毎回止まる
     #    (2026-07-16 / 07-20 に同じ 風とロック芋煮会シャトルバス券 で2回停止した回帰テスト)
