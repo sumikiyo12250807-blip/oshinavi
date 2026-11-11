@@ -3,6 +3,11 @@
 - ✅ noon11.py 12:14：今日 12:00 までに発売のぴあ58件 heal --ids＝47件適用・止まった8は足し算・枠が消えたエントリ0 → reconcile OK50／MISSING1（7729 当日引換券 15:00発売）／STALE5／数ちがい3（26959 勘九郎・47959 ライオンズ台湾・50369）→ commit d4526560aef
 - 🔄 noon_left.py：ぴあの見直しが済んだら 今日発売のまま残った21件＋照合の7件に mark_soldout → 7729 heal --ids → reconcile → commit
 - 🔄 after11.py：昼の便のあと ぴあ pia_soldout_sweep --resume → --apply（17時まで）→ commit／e+ は queue の収集と ぴあの見直しが済んでから heal_eplus_started --apply → reconcile_eplus --all → fix_eplus_fails --apply → commit（e+ を2本同時に叩かない・重い道具は同時2本）
+- ✅ ぴあの見直し（組2・1937件）売り切れの印20枠・commit d4be89410d0／取りこぼし85枠（ぴあにあって登録に無い）・読めず11 → logs/pia_sweep_2026-11-11.md
+- ✅ noon_left 13:24：22件 mark_soldout＝新しい印1（41854 堀井美香）・ぴあURLなし10件は触らず／7729 heal は安全弁（過ぎた 11/6・7・10 公演の枠）→ commit 4c2dbe80299
+- 🔄 noon_left2：照合が合わない7件（7729・3493 当日引換券・25271・50814・47959・50369・26959）heal --ids → 足し算 → HEAD比べ → reconcile → commit
+- 🔄 sweep_heal：取りこぼし85枠のエントリを heal --ids → 足し算 → HEAD比べ → reconcile → commit（noon_left2 のあと）
+- 🔄 e+：queue の収集は済み → after11 が heal_eplus_started → reconcile_eplus --all を回し中
 - ▶ 15:00・17:00 以降の発売は夕方〜夜の便で heal／池袋de逢いましょう 43340・49245 を1枚に（ぴあ締切が入ってから）／楽天 51161・51162 照合→振り分け／ぴあ発売前・受付中の組み立て
 
 # ▶▶ 11/11(水) 朝の便
