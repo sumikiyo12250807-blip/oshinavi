@@ -11,6 +11,8 @@
 
 # ▶▶ 11/11→12 夜通しの収集（すちこ「24時間働いて・朝まで件数を集めて・間違いなく・クレジットに気をつけて」）
 - 🔄 tmp/x1111/overnight.py（裏・1本）：はじめ カード22,598・新着422 → ①朝のぴあ収集の未登録548件を build_pia_entries（50件ずつ）→ ②新着へ（eventCd で二重を外す）→ reconcile_pia --ids・gate_fields・HEAD比べ → commit ③TIGET・ZAIKO・FANY の未投入分 → 番人 → commit ／ 記録 tmp/x1111/night/overnight.txt
+- ✅ 00:20 overnight.py おわり：カード 22,598→23,670・新着 422→1,319／ぴあ 399件（51487〜51885）reconcile OK398・FETCH1・STALE1／TIGET・ZAIKO・FANY 投入 → 番人が鳴った（TIGET ng2900・ZAIKO 食い違い110・FANY 160）
+- 🔄 overnight_retry.py（ぴあの失敗した組 50〜99 をやり直し）・night_heal.py（TIGET・ZAIKO・FANY heal --apply → commit）＝鍵で順番待ち
 - ⏰ 04:33 見回り1回（CronCreate）・push しない・係を使わない
 - ▶ 朝：新着の振り分け（ゲートを通った分）→ push／新しい売り場の案（reference_new_vendors_survey_0927 の未決3つ）
 
