@@ -10,6 +10,10 @@
   ・✅ 材料 → Fable 本文 → 機械チェック0 → 独立FC 🔴0（🟠3 小野リサ 料金は標準価格・静岡が抜け／🟡 マツケン「2026年」・受付先の並び）→ 直した → pickup/a/chage・matsuken・onolisa.html・pickup_list --apply（載せる17）・CD/宿ボタン → commit ▶ 本文と出典をすちこに見せた・朝の push で公開
   ・✅ 523 静岡 2/6 はぴあで「販売期間中 〜2/3」＝11/9 からの売り切れの印が違っていた → 外した
   ・✅ 523 小野リサ 2026 に別ツアー『My Songs』大阪 3/22 が混ざっていた → 52380 に切り出した（記事は SUE ANN ツアー）／⚠ 静岡 2/6 は登録が売り切れ・ぴあのページは「販売期間中」と読めた ▶ ぴあが空いたら mark_soldout --ids 523 で確かめる
+- ✅ 朝の push（abcc113d8d4..821f9bd6ec4）＝prepush --no-rec（ぴあは morning_pia が heal --build 中）・gate_badge_render 違反0・fold --check 0・gate_fields H3 だけ（50369・51163 KREVA）
+- ✅ すちこ「今現在そうと言ってるものは ですって じゃなく だわよね」＝記事5か所を直した（commit・夜の push）・memory feedback_desutte_vs_wayone・X_SCRIPT に1行
+- ✅ すちこ「X投稿や歌詞の中にも記事のことを入れていって　みんなが見に来るように」＝X は毎晩どれか1本に記事の1行（URLは足さない・トップに新しい3本）・主役が記事の組なら「記事も書いたわ」／歌詞は締めの前に「きじも かいたわ よみにきてね」／TikTok 説明文の最後にも ▶ 17:03 の X 準備（11/13発売）から＝今日の記事 Chage（11/13発売＝主役候補）・松平健・小野リサ
+- ▶ morning_pia の heal --build が済んだら --apply（鍵）→ 足し算・HEAD比べ → commit（昼の便）
 - 🗒 MEMORY.md の目次が長い（読み込みの上限に近い）＝長い行を5本詰めた・残りは空いた時間に
 - ▶ 朝：前夜の新着940件の独立読み直し（抜き取り）→ 番人を通った分を振り分け／e+ H20 heal_eplus_started --apply／ぴあが消したURL2件の後継（pia_kw_search）／抜き打ち30件 → prepush → push（朝の1回目）
 - ⏰ アラーム 12:07 昼／17:03 X準備／19:40 予約／20:47 TikTok／22:07 夜
