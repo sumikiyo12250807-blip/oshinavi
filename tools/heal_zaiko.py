@@ -126,7 +126,11 @@ def main():
         #   ZAIKO のページが1つで、ほかの売り場の枠が無いカードだけ
         if not multi and not others and built.get('date') and built.get('dateLabel'):
             _dp = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
-            if built['date'] != e.get('date') or _dp(built['dateLabel']) != _dp(e.get('dateLabel')):
+            # 🆕🚨2026-11-12 枠の括弧の最後の公演日より前には下げない（20802 新しい学校のリーダーズ 11/27→11/9 に下げた）
+            import gate_fields as GFD
+            spans = [GFD.slot_span(t) for t in (built.get('tickets') or []) + mine]
+            last = max((s[1] for s in spans if s), default='')
+            if (built['date'] != e.get('date') or _dp(built['dateLabel']) != _dp(e.get('dateLabel'))) and not (last and built['date'] < last):
                 rep.write('id%-6s カードの日付: %s ｜ %s → %s ｜ %s\n' % (e['id'], e.get('date'), e.get('dateLabel'),
                                                                      built['date'], built['dateLabel']))
                 e['date'], e['dateLabel'] = built['date'], built['dateLabel']

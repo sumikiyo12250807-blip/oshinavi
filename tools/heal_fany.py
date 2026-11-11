@@ -244,7 +244,11 @@ def main():
         nd = DATES.get(pid)
         if nd and nd[0] and nd[1] and not [t for t in tickets if not is_fany(t)]:
             _dp = lambda s: re.match(r'^[^\s（]*', s or '').group(0)
-            if nd[0] != e.get('date') or _dp(nd[1]) != _dp(e.get('dateLabel')):
+            # 🆕🚨2026-11-12 枠の括弧の最後の公演日より前には下げない（40941〜40943 月のパス＝売り場の公演日は月初だが枠は月末まで）
+            import gate_fields as GFD
+            spans = [GFD.slot_span(t) for t in merged]
+            last = max((s[1] for s in spans if s), default='')
+            if (nd[0] != e.get('date') or _dp(nd[1]) != _dp(e.get('dateLabel'))) and not (last and nd[0] < last):
                 datefix[e['id']] = ((e.get('date'), e.get('dateLabel')), nd)
         if {GF.key(t) for t in merged} == {GF.key(t) for t in old_fany}:
             same += 1
