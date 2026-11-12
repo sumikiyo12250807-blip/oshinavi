@@ -2,6 +2,7 @@
 - 🔄 裏でまだ動いているもの：①売り場8つの規約の読み直し（係・結果は tmp/x1112/terms_review.md に出る → 「許可が要りそう」があれば すちこに知らせる・中身は変えない）②day_pia の段③（TIGET・ZAIKO・FANY を新着へ投入→番人→commit・queue は 21:03 に終わった）＝tmp/x1112/day/day.txt で確かめる
 - ✅ 21:55 規約の読み直し済み（tmp/x1112/terms_review.md）＝すちこに伝えた：ぴあ・楽天・FANY 大丈夫そう／e+・ローチケ・TIGET 読み方しだい／🚨ZAIKO・livePocket は「機械で見に行く」こと自体を禁止＝許可が要りそう ▶ ✅ すちこ「許可がいりそうなのは明日まとめてメール送りましょう」＝11/13 10:07 カンフェティ・Jリーグチケット・CNプレイガイド・ZAIKO・livePocket の5社分をまとめて渡す（ZAIKO・livePocket の問い合わせ先は朝に公式の画面下から探す・メモ＝同じフォルダの inquiry_zaiko_livepocket.txt）（文面＝C:/Users/user/AppData/Local/Temp/claude/ac08c5b2b244d5f8/3536ac19-4661-4ed4-a7d6-2b6b271a9808/scratchpad/inquiry_draft.txt）・返事までは今のまま（中身は変えない）
 - ✅ 22:07 夜の便：今日発売のぴあ 38件 heal（止まった10件は足し算・枠が消えた0）・prepush 済み・commit ／ 手直し＝43034 MAPPA 期間内有効券 2/1〜3/28（PR TIMES）・45827 MARQUEE祭を切り出し（53379 mini Vol.356・53380 MARQUEE Fes.・53381 mini Vol.357）・11316 ドラクエV に一般発売 予定枚数終了・中部フィル 2629020 は「貸切公演」で入れない ／ reconcile --new の取りこぼし 8件 heal（night_after2）
+- ✅ 22:31 push（今日2回目・603f64886f2）→ 公開ページの最終更新「2026年11月12日 22:27」を確かめた
 - ▶ 11/13 朝：新着 47714（バッテリィズほか）の ぴあ eventCd=2641600 が無効（消えたか差し替え）＝後継を探す／day_pia の TIGET・ZAIKO・FANY 投入の commit が夜中に入る＝朝の push に乗せる
 - 🔄 21:55 TIGET の番人（tools/gate_tiget_slots.py・21:04〜）は動いている＝終わったら day_pia が ZAIKO・FANY を投入→commit
 - ✅ 今夜の質問は全部済み（TicketDive 投入・県・問い合わせ・規約・海宝直人）＝下の行を見る
