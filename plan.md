@@ -1,8 +1,17 @@
+# ▶▶ 11/13(金) 朝の便（道具は tmp/x1113＝copy_all で x1112 から写した）
+- 🌙 夜通しの e+ 総ざらい：03:30 で集めるのを止めた＝ページ 1673/2895・出演者 2846・候補 372 ▶ 03:30〜 組み立て（eplus_harvest build 53403〜）が 05:44 時点でまだ動いている（e+ を読むだけ・止まっていない）→ 終わったら番人2枚→新着→commit を道具が自分でやる（tmp/x1112/night_word/overnight.txt）▶ 05:59 組み立て 358件（372候補・359組）→ 番人1枚目が動いている（6:47）
+- 🔄 05:50〜 裏：tmp/x1113/morning_chain.py＝morning_local（e+ の heal_eplus_started は外した＝夜通しと重ねない）→ morning_pia
+- ▶ 待ち：ぴあが空いたら 47714 三重っぱりフェス の後継（pia_kw_search）／e+ が空いたら heal_eplus_started／ZAIKO 84・FANY 54 の 番人→heal
+- ⏰ アラーム：9:33 push確認→係2人／9:47 ZAIKO・livePocket 問い合わせ先／10:07 5社の問い合わせ文／10:37 歌詞／12:07 昼／16:07 X下書き／17:03 X チェック／19:40 予約／20:47 TikTok／22:07 夜の便
+- 📰 金曜＝15〜17時に週末の記事の候補（pickup_cands）を出す
+
 # ▶▶ 11/12(木) 21:35 引き継ぎ（/clear の前・最新）＝次のあたしはここから
 - 🔄 裏でまだ動いているもの：①売り場8つの規約の読み直し（係・結果は tmp/x1112/terms_review.md に出る → 「許可が要りそう」があれば すちこに知らせる・中身は変えない）②day_pia の段③（TIGET・ZAIKO・FANY を新着へ投入→番人→commit・queue は 21:03 に終わった）＝tmp/x1112/day/day.txt で確かめる
 - ✅ 21:55 規約の読み直し済み（tmp/x1112/terms_review.md）＝すちこに伝えた：ぴあ・楽天・FANY 大丈夫そう／e+・ローチケ・TIGET 読み方しだい／🚨ZAIKO・livePocket は「機械で見に行く」こと自体を禁止＝許可が要りそう ▶ ✅ すちこ「許可がいりそうなのは明日まとめてメール送りましょう」＝11/13 10:07 カンフェティ・Jリーグチケット・CNプレイガイド・ZAIKO・livePocket の5社分をまとめて渡す（ZAIKO・livePocket の問い合わせ先は朝に公式の画面下から探す・メモ＝同じフォルダの inquiry_zaiko_livepocket.txt）（文面＝C:/Users/user/AppData/Local/Temp/claude/ac08c5b2b244d5f8/3536ac19-4661-4ed4-a7d6-2b6b271a9808/scratchpad/inquiry_draft.txt）・返事までは今のまま（中身は変えない）
 - ✅ 22:07 夜の便：今日発売のぴあ 38件 heal（止まった10件は足し算・枠が消えた0）・prepush 済み・commit ／ 手直し＝43034 MAPPA 期間内有効券 2/1〜3/28（PR TIMES）・45827 MARQUEE祭を切り出し（53379 mini Vol.356・53380 MARQUEE Fes.・53381 mini Vol.357）・11316 ドラクエV に一般発売 予定枚数終了・中部フィル 2629020 は「貸切公演」で入れない ／ reconcile --new の取りこぼし 8件 heal（night_after2）
 - ✅ 22:31 push（今日2回目・603f64886f2）→ 公開ページの最終更新「2026年11月12日 22:27」を確かめた
+- ✅ 22:45 day_pia おわり（TIGET・ZAIKO・FANY を新着へ・commit 済み・未push＝朝に）カード 24363・新着 1396 ▶ 11/13 朝：番人の食い違い ZAIKO 84（🚨4）・FANY 54（🚨3）＝朝の 番人→heal で直す（tmp/gate_zaiko_report.txt・tmp/gate_fany_report.txt）
+- 🌙 23:01〜 夜通し（すちこ「今夜も情報とってきて」）＝tmp/x1112/overnight_word.py：e+ のカード 2903 の出演者ページ（/sf/word/）を総ざらい→未登録で受付のある公演→組み立て→番人2枚→新着→reconcile_eplus --ids→commit（push しない）・はじめ カード 24363／新着 1396・記録 tmp/x1112/night_word/overnight.txt・止まったら同じコマンドで続きから ▶ 0:17 動いているか1回・6:47 結果を見る（アラーム）
 - ▶ 11/13 朝：新着 47714（バッテリィズほか）の ぴあ eventCd=2641600 が無効（消えたか差し替え）＝後継を探す／day_pia の TIGET・ZAIKO・FANY 投入の commit が夜中に入る＝朝の push に乗せる
 - 🔄 21:55 TIGET の番人（tools/gate_tiget_slots.py・21:04〜）は動いている＝終わったら day_pia が ZAIKO・FANY を投入→commit
 - ✅ 今夜の質問は全部済み（TicketDive 投入・県・問い合わせ・規約・海宝直人）＝下の行を見る
