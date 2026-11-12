@@ -1,7 +1,11 @@
 # ▶▶ 11/13(金) 朝の便（道具は tmp/x1113＝copy_all で x1112 から写した）
 - 🌙 夜通しの e+ 総ざらい：03:30 で集めるのを止めた＝ページ 1673/2895・出演者 2846・候補 372 ▶ 03:30〜 組み立て（eplus_harvest build 53403〜）が 05:44 時点でまだ動いている（e+ を読むだけ・止まっていない）→ 終わったら番人2枚→新着→commit を道具が自分でやる（tmp/x1112/night_word/overnight.txt）▶ 05:59 組み立て 358件（372候補・359組）→ 番人1枚目が動いている（6:47）
 - 🔄 05:50〜 裏：tmp/x1113/morning_chain.py＝morning_local（e+ の heal_eplus_started は外した＝夜通しと重ねない）→ morning_pia
-- ▶ 待ち：ぴあが空いたら 47714 三重っぱりフェス の後継（pia_kw_search）／e+ が空いたら heal_eplus_started／ZAIKO 84・FANY 54 の 番人→heal
+- ✅ 朝の push（603f64886f2..ce14af8caa4）＝11/12発売のぴあ heal 76件・止まった36件は足し算・消えた枠0／画面の番人 違反0
+- ✅ 削除 290（check_expired 630 と独立 290 が一致・割れた 340 は残す）logs/removed_2026-11-13.md・commit／ぴあの買える枠ゼロ162 の売り切れ判定＝変更0
+- ✅ 47714 三重っぱりフェス＝後継 eventCd 2644436（一般発売（再販売）11/14 10:00）に付け替え・足し算・commit
+- 🔄 裏：tmp/x1113/zf_fix.py（ZAIKO・FANY heal → 番人もう一度 → commit）
+- ▶ 待ち（済んだ分は上）：ぴあが空いたら 47714 三重っぱりフェス の後継（pia_kw_search）／e+ が空いたら heal_eplus_started／ZAIKO 84・FANY 54 の 番人→heal
 - ⏰ アラーム：9:33 push確認→係2人／9:47 ZAIKO・livePocket 問い合わせ先／10:07 5社の問い合わせ文／10:37 歌詞／12:07 昼／16:07 X下書き／17:03 X チェック／19:40 予約／20:47 TikTok／22:07 夜の便
 - 📰 金曜＝15〜17時に週末の記事の候補（pickup_cands）を出す
 
