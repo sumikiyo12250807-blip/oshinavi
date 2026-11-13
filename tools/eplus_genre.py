@@ -83,6 +83,18 @@ EPLUS_GENRE = {
     'healing': 'musicetc',
     'movie-soundtrack': 'musicetc',
     'festival': 'fes',
+    # 2026-11-13 e+ の実ページに出た名前（夜通しの /sf/word/ 収集分）＝ソウル・R&B は soul-rb と同じ行き先
+    'seoul-rnb': 'yougaku',
+}
+
+# 2026-11-13 /sf/live 以外の e+ の札（公演ページ「チケットの関連ジャンル」の /sf/<大>/<小>）→ OSHINAVI ジャンル。
+# 売り場の言う名前をそのまま写す（feedback_genre_pia_asis_and_other）。落語・寄席はぴあの「お笑い/落語」と同じ owarai。
+EPLUS_GENRE_PATH = {
+    'play/theater': 'engeki', 'play/musical': 'musical', 'play/rakugo-yose': 'owarai', 'play/comedy': 'owarai',
+    'play/dance': 'dance', 'play/no-kyogen': 'dento', 'play/bunraku': 'dento',
+    'event/talk-show': 'talkshow', 'event/anime': 'anime', 'event/family': 'kids', 'event/exhibition': 'art',
+    'event/school-festival': 'gakusai', 'event/circus': 'circus', 'event/dinner-show': 'dinnershow',
+    'sports/wrestling': 'sports', 'art': 'art',
 }
 
 
