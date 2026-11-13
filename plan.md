@@ -5,6 +5,10 @@
 - ✅ 抜き打ち30件（昨夜の振り分け367から）＝ズレ5（🔴0🟠1🟡4）→ 49090・52457 公演名・52903 出演者を直して commit ／ 51193 KENTA は今日10:00発売の締切待ち（e+ が空いたら heal_eplus_started）／52884 はやしべさとし は売り場にも公演名なし＝そのまま
 - 📊 新着プール 979（tmp/x1030/pool_why.txt）＝番人・照合で外した 371・出演者が公演名のまま 560（livePocket 207・ZAIKO 71 は見に行かない）・札なし 48
 - ✅ TIGET・FANY の出演者が公演名のまま 65件＝係2人の一致 28件に出演者を入れた・commit（記載なし約30・読めず4は触らない）▶ 夜通しの番人が終わったら tmp/x1114/night_assign.py で振り分け（e+ の照合が入る＝重ねない）
+- ✅ 07:2x 朝の push（f750613..9a5db60）＝ぴあ heal 196件・止まった48件は足し算・枠が消えた0／画面の番人 違反0
+- ✅ 動画の準備（すちこ「友達が遊びにくる週だから動画の準備よろしく」）：フォロワー tmp/x1114/x/followers_A.json（63組）・集計 agg_1115/1117 → 主役 11/15＝52910 BoA・33820 星の王子さま（梶裕貴）・41576 マルコポロリ（101JOURNEY は livePocket＝外した）／TikTok 11/17＝J-POP 6組 → 歌詞 suno_shuyaku_1115.txt・suno_jpop_1117.txt（下調べ facts_1115.md・機械の突き合わせ 8/8 OK）▶ すちこが Suno で曲 → 絵コンテ → 書き出し
+- 🔄 07:4x〜 裏2本：tmp/x1114/queue.py（楽天→TIGET→ZAIKO/livePocket は STOP→FANY）・tmp/x1114/day_pia.py（今朝のぴあ 発売前・受付中の未登録→組み立て→新着→reconcile --ids→commit、そのあと TIGET/FANY 投入→番人）記録 tmp/x1114/day/day.txt ▶ e+ の朝の収集は夜通しの e+ が終わってから（queue_eplus は飛ばした）
+- ⚠️ ChatGPT のチャット「キャラクター向き変更」は拡張機能が画面にかぶさってあたしから操作できない＝J-POP の姐さん9人の1行（tmp/x1114/x/ask_chatgpt_jpop.txt）をすちこに渡した
 - ⏰ アラーム：15:07 昼／16:07 X下書き／19:40 予約／20:47 TikTok／22:07 夜の便
 - ▶ e+ が空いたら：41739 LM.C・44406 YOUNG POP CLUB・49924 八十八ヶ所巡礼（tour_fix）／m-未登録窓135／heal_eplus_started
 - ❓ 夜に聞く：13228 TIGET「予約」（出演者も住所も無いページ）を載せ続けるか
