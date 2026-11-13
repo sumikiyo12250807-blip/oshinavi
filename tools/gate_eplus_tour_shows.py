@@ -158,7 +158,23 @@ def main():
                 continue
             if covered((d.month, d.day), types + ' ' + ALL_T.get(eid_of(u), '') + ' ' + ART.get(norm(e.get('artist')), '')):
                 continue
-            miss.append((d.isoformat(), r.get('pref') or '', r.get('venue') or '', r.get('status') or '', u))
+            # 🚨（試し3回目 11/13）受付が終わっただけの公演（パンダドラゴン 大阪11/14・GUMMY 12/12〜13）は載せない＝出さない。
+            #   出すのは 買える受付（受付中・受付前）がある公演 と 予定枚数終了（売り切れ＝公演がこれからなら載せる）の公演だけ
+            if u not in page_cache:
+                try:
+                    page_cache[u] = eh.fetch(u)
+                except Exception:
+                    page_cache[u] = ''
+                time.sleep(a.sleep)
+            sh = page_cache[u]
+            if not sh:
+                unread.append((e['id'], e.get('name'), '公演ページが読めない ' + u))
+                continue
+            live = [w for w in eh.parse_windows(sh) if w['status'] != 'ended' and w['ed'] >= TODAY]
+            sold = bool(re.search(r'ticket-status__item[^"]*">[^<]*予定枚数終了', sh))
+            if not live and not sold:
+                continue
+            miss.append((d.isoformat(), r.get('pref') or '', r.get('venue') or '', '受付あり' if live else '予定枚数終了', u))
         if miss:
             hits.append((e, miss))
     L = ['=== gate_eplus_tour_shows (today=%s) 対象%d件 ===' % (TODAY, len(targ)),
@@ -166,7 +182,7 @@ def main():
     for e, miss in hits:
         L.append('🚨 id=%s %s ＋%d公演' % (e['id'], (e.get('name') or '')[:40], len(miss)))
         for d, p, v, s, u in sorted(miss):
-            L.append('    %s %s %s  %s' % (d, p, v[:30], u))
+            L.append('    %s %s %s %s  %s' % (d, p, v[:30], s, u))
     for i, n, why in unread:
         L.append('⚠️ id=%s %s 読めない：%s' % (i, (n or '')[:40], why))
     io.open(REPORT, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
