@@ -1,8 +1,12 @@
 # ▶▶ 11/13(金) 20:5x すちこ「もう寝るからまた情報集めてね　新着振り分けお願いね」
 - ✅ 抜き打ちの残り：44172 きいやま商店に e+ の売り切れ3公演（名古屋・北海道・大阪）・17121 花＊花 の名前の』 → commit（fix_spot6.py）／13228 TIGET「予約」は明日すちこに聞く
-- 🔄 振り分け：tmp/x1113/night_assign.py（ぴあ・e+・TIGET・FANY の新着で札あり・出演者ありの分 → 番人 → 通った分 → logs/assigned_2026-11-13.md → commit）記録 tmp/x1113/nassign/log.txt
-- 🆕 番人を足した：tools/gate_eplus_tour_shows.py（e+ の登録済みカードに同じ催しの公演が全部入っているか・売り切れの公演も出す）＝きいやま商店の3公演抜けの穴（reconcile_eplus は登録済みのページしか開かない）▶ 試運転は e+ が空いてから（--ids 44172,4236 → --new）→ 明日の朝から --third で毎日
-- 🔄 夜の便を前倒し（すちこ「ぷっしゅはまだなの？」20:4x・今夜の X に記事3本の話が出ている）＝tmp/x1113/night_1113.py（振り分け待ち→heal→prepush→commit）→ push（今日2回目）・22:07 のアラームは消した → そのあと夜通し python tmp/x1113/overnight_word2.py（昨夜の e+ /sf/word/ の続き・02:00 で集めるのを止める・commit だけ）記録 tmp/x1113/night_word2/overnight.txt
+- （済）振り分け：tmp/x1113/night_assign.py（ぴあ・e+・TIGET・FANY の新着で札あり・出演者ありの分 → 番人 → 通った分 → logs/assigned_2026-11-13.md → commit）記録 tmp/x1113/nassign/log.txt
+- ✅ 振り分け 367（ぴあ158・TIGET107・e+93・FANY9）＝番人に出た分・gate_fields に出た分は新着に残した・logs/assigned_2026-11-13.md
+- ✅ 番人を足した tools/gate_eplus_tour_shows.py（e+ の同じ催しの公演がどのカードにも無い＝受付あり／予定枚数終了だけ出す・同じ出演者のぴあのカードも見る）＝試しで見間違いを3回直した（スカパラの分けたカード・ぴあの別カード・受付が終わっただけの公演）
+  - 見つけて足した：53722 スカパラ 広島クラブクアトロ 12/7（新着）／40722 Bray me +4公演／52899 FATHER OF PEACE +5公演／43610 アイリフドーパ 宮城11/15 売り切れ＋大阪12/19 の締切 12/18 18:00・売り切れ／53723 GUMMY 2026 FINAL 2DAYS（売り切れ・新着）＝reconcile_eplus FAIL 0・commit
+  - ▶ 朝：41739 LM.C 12/11・44406 YOUNG POP CLUB vol.20 1/10（比べる e+ のページがカードに無い）・49924 八十八ヶ所巡礼 4公演（売り場の公演名が「八十八ヶ所巡礼」と違う）＝人が見て足す／足す道具 tmp/x1113/tour_fix.py <報告> [--apply]／毎朝 --third
+- ✅ 夜の便を前倒し（すちこ「ぷっしゅはまだなの？」）→ ✅ push（ce14af8..f750613）・公開の最終更新「2026年11月13日 21:05」・記事3本 200・contact に Google フォーム
+- 🌙 21:4x〜 夜通し python tmp/x1113/overnight_word2.py（昨夜の e+ /sf/word/ の続き・02:00 で集めるのを止める・commit だけ）記録 tmp/x1113/night_word2/overnight.txt ／ アラーム 0:17 見回り・6:47 結果 python tmp/x1113/overnight_word2.py（昨夜の e+ /sf/word/ の続き・02:00 で集めるのを止める・commit だけ）記録 tmp/x1113/night_word2/overnight.txt
 - ▶ 朝「おはよう」で：夜通しの件数（はじめ→おわり）・振り分けた件数を報告
 
 # ▶▶ 11/13(金) 19:5x 引き継ぎ（/clear の前）
