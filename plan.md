@@ -11,6 +11,12 @@
 - ▶ 待ち（済んだ分は上）：ぴあが空いたら 47714 三重っぱりフェス の後継（pia_kw_search）／e+ が空いたら heal_eplus_started／ZAIKO 84・FANY 54 の 番人→heal
 - ⏰ アラーム：9:33 push確認→係2人／9:47 ZAIKO・livePocket 問い合わせ先／10:07 5社の問い合わせ文／10:37 歌詞／12:07 昼／16:07 X下書き／17:03 X チェック／19:40 予約／20:47 TikTok／22:07 夜の便
 - 📰 金曜＝15〜17時に週末の記事の候補（pickup_cands）を出す
+- ✅ 県が空：係の調べ（venue_pref_lookup.json）で 90会場 110件・commit／残り 23会場 33件（ツアー・海外・住所なし・同名が複数の県）は空のまま
+- ✅ フォロワー（tmp/x1113/x/followers_A・B.json・調べていない分 約70＝検索の回数の上限）→ 歌詞3曲 書いて登録と機械で突き合わせ 25/25（check_lyrics.txt）→ すちこに出した：お笑いまとめ 11/14（suno_owarai_1114）・主役 11/14（47754 好井まさお怪談・49276 遊☆戯☆王 舞台挨拶・49274 中村倫也 舞台挨拶）・TikTok スポーツ 11/16（suno_sports_1116）
+- ✅ 10:1x すちこに 5社の問い合わせ文と送り先を渡した（Jリーグ /contact・ZAIKO business.zaiko.io/contact・livePocket livepocket.co.jp/contact/・CN は /corp/ から・カンフェティは機械で開けない＝画面下から）▶ 返事待ち
+- ✅ 夜通し e+：候補372→組み立て358→番人1で外す39→新着 319（commit 3c99782）→ reconcile FAIL 13＝53639 の5枠 売り切れの印（commit d0b94a5）・7件は配信/アーカイブ（公演後まで買える＝そのまま）
+- 🔄 夜通しの 319件は売り場の札（_genre）が無い＝振り分け0 → e+ の公演ページの「チケットの関連ジャンル」欄から札を集めている（tmp/x1113/ep_genre_collect.py → ep_genre_tags.json）▶ 札の対応表を決めて _genre を当て → assign（gate_fields M 出演者が公演名の分は残す）
+- ✅ MEMORY.md 167→112行（空行を外し短い行をつないだ）
 
 # ▶▶ 11/12(木) 21:35 引き継ぎ（/clear の前・最新）＝次のあたしはここから
 - 🔄 裏でまだ動いているもの：①売り場8つの規約の読み直し（係・結果は tmp/x1112/terms_review.md に出る → 「許可が要りそう」があれば すちこに知らせる・中身は変えない）②day_pia の段③（TIGET・ZAIKO・FANY を新着へ投入→番人→commit・queue は 21:03 に終わった）＝tmp/x1112/day/day.txt で確かめる
