@@ -99,10 +99,17 @@
       padding: 40px;
     }
 
-    /* HubSpotフォームのスタイル上書き */
-    .hs-form-frame {
-      color-scheme: dark;
+    /* Google フォームの埋め込み（2026-11-13） */
+    .gform {
+      display: block;
+      width: 100%;
+      height: 1100px;
+      border: 0;
+      border-radius: 8px;
+      background: #fff;
     }
+    .gform-alt { margin-top: 14px; font-size: 13px; color: var(--text-muted); text-align: center; }
+    .gform-alt a { color: var(--accent2); }
 
     @media (max-width: 600px) {
       header { padding: 0 10px; height: 56px; }
@@ -111,7 +118,8 @@
       nav a { font-size: 10px; letter-spacing: 0; line-height: 1.2; white-space: nowrap; }
       .hero { padding: 36px 16px 28px; }
       .container { margin: 28px auto; padding: 0 16px 60px; }
-      .form-wrap { padding: 20px; }
+      .form-wrap { padding: 12px; }
+      .gform { height: 1250px; }
     }
   </style>
 </head>
@@ -132,8 +140,9 @@
 
 <div class="container">
   <div class="form-wrap">
-    <script src="https://js-na2.hsforms.net/forms/embed/245720396.js" defer></script>
-    <div class="hs-form-frame" data-region="na2" data-form-id="626a7b21-ff33-4dca-b3f8-a56672ea0a88" data-portal-id="245720396"></div>
+    <!-- 2026-11-13 すちこ「お問い合わせ内容の欄が狭い」＝HubSpot（1行の欄・管理画面に入れない）から Google フォーム（段落＝何行も書ける欄）へ替えた -->
+    <iframe class="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSf2ROKps8-riUatPb5KzjEgQ690YxTsIBLsb6n-hu8tolGfKg/viewform?embedded=true" title="OSHINAVI お問い合わせ" loading="lazy">読み込んでいます…</iframe>
+    <p class="gform-alt">うまく表示されない時は <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2ROKps8-riUatPb5KzjEgQ690YxTsIBLsb6n-hu8tolGfKg/viewform" target="_blank" rel="noopener">こちらのページ</a> から送れます。</p>
   </div>
 </div>
 
