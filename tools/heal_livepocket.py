@@ -22,6 +22,8 @@ import io
 import json
 import re
 import sys
+sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
+import vendor_stop; vendor_stop.check('livepocket')  # 11/13 掲載のお願いの返事待ち＝見に行かない
 import time
 
 _KEEP = []
