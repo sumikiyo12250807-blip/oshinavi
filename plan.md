@@ -1,4 +1,11 @@
-# ▶▶ 11/13(金) 19:5x 引き継ぎ（/clear の前・最新）＝次のあたしはここから
+# ▶▶ 11/13(金) 20:5x すちこ「もう寝るからまた情報集めてね　新着振り分けお願いね」
+- ✅ 抜き打ちの残り：44172 きいやま商店に e+ の売り切れ3公演（名古屋・北海道・大阪）・17121 花＊花 の名前の』 → commit（fix_spot6.py）／13228 TIGET「予約」は明日すちこに聞く
+- 🔄 振り分け：tmp/x1113/night_assign.py（ぴあ・e+・TIGET・FANY の新着で札あり・出演者ありの分 → 番人 → 通った分 → logs/assigned_2026-11-13.md → commit）記録 tmp/x1113/nassign/log.txt
+- 🆕 番人を足した：tools/gate_eplus_tour_shows.py（e+ の登録済みカードに同じ催しの公演が全部入っているか・売り切れの公演も出す）＝きいやま商店の3公演抜けの穴（reconcile_eplus は登録済みのページしか開かない）▶ 試運転は e+ が空いてから（--ids 44172,4236 → --new）→ 明日の朝から --third で毎日
+- 🔄 夜の便を前倒し（すちこ「ぷっしゅはまだなの？」20:4x・今夜の X に記事3本の話が出ている）＝tmp/x1113/night_1113.py（振り分け待ち→heal→prepush→commit）→ push（今日2回目）・22:07 のアラームは消した → そのあと夜通し python tmp/x1113/overnight_word2.py（昨夜の e+ /sf/word/ の続き・02:00 で集めるのを止める・commit だけ）記録 tmp/x1113/night_word2/overnight.txt
+- ▶ 朝「おはよう」で：夜通しの件数（はじめ→おわり）・振り分けた件数を報告
+
+# ▶▶ 11/13(金) 19:5x 引き継ぎ（/clear の前）
 - ✅ 抜き打ち3回目の前半15件（result_4.md）＝🔴0 → 出演者5件を直して commit（44172 きいやま商店の売り切れ3公演・17121 花＊花の名前の切れは残り）
 - ✅ 抜き打ち3回目の後半15件（result_5.md）＝🔴0 → 出演者4件を直して commit（13228 TIGET「予約」＝出演者も住所も無いページ＝載せ続けるか明日／29674 MAMA. の別ツアー 宇都宮・新宿LOFT が OSHINAVI にあるか明日）＝裏の係はもう無い
 - （済）裏で動いていた係：抜き打ち3回目の後半15件（sample_5.json → result_5.md）。**結果が出ていたら読んで直す**（🔴＝締切・売り切れ・受付の抜け→直す／🟠＝出演者・会場→売り場の表記に）。直し方の見本＝tmp/x1113/spot/fix_spot.py・fix_spot3.py（鍵 tmp/x1112/index.lock・compact_events で書く）→ commit だけ。すちこ「暇な時間は抜き打ちやって」（memory feedback_idle_time_spot_check）
