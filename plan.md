@@ -1,5 +1,6 @@
 # ▶▶ 11/13(金) 19:5x 引き継ぎ（/clear の前・最新）＝次のあたしはここから
-- 🔄 裏で動いている係：抜き打ち3回目30件（tmp/x1113/spot/sample_4.json・sample_5.json → 結果 result_4.md・result_5.md）＝係2人。**結果が出ていたら読んで直す**（🔴＝締切・売り切れ・受付の抜け→直す／🟠＝出演者・会場→売り場の表記に）。直し方の見本＝tmp/x1113/spot/fix_spot.py・fix_spot3.py（鍵 tmp/x1112/index.lock・compact_events で書く）→ commit だけ。すちこ「暇な時間は抜き打ちやって」（memory feedback_idle_time_spot_check）
+- ✅ 抜き打ち3回目の前半15件（result_4.md）＝🔴0 → 出演者5件を直して commit（44172 きいやま商店の売り切れ3公演・17121 花＊花の名前の切れは残り）
+- 🔄 裏で動いている係：抜き打ち3回目の後半15件（sample_5.json → result_5.md）＝係1人。**結果が出ていたら読んで直す**（🔴＝締切・売り切れ・受付の抜け→直す／🟠＝出演者・会場→売り場の表記に）。直し方の見本＝tmp/x1113/spot/fix_spot.py・fix_spot3.py（鍵 tmp/x1112/index.lock・compact_events で書く）→ commit だけ。すちこ「暇な時間は抜き打ちやって」（memory feedback_idle_time_spot_check）
 - ✅ X 11/14発売 11本 予約済み（20:01〜21:41・動画4本・予約一覧で照合済み）
 - ✅ TikTok 11/16 スポーツ：説明文（tmp/x1113/x/tiktok_sports_1116.txt・独立FC済み）と動画（**Downloads/oshinavi_1116_sports_matome.mp4＝大きい版**）はすちこに渡した＝すちこが上げる
 - ⏰ アラームは /clear で消える＝**22:07 夜の便を CronCreate で入れ直す**：heal（今日発売の締切）→ prepush（tmp/x1113/prepush.py --no-rec の形）→ build_ai_page → compact → commit → **push（今日2回目）** → 公開ページで最終更新の時刻・今日の記事3本（pickup/a/rizin6・honkikkies・sweeney）・お問い合わせ（Google フォーム）を確かめる
