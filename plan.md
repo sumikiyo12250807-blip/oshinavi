@@ -15,11 +15,17 @@
 - ✅ フォロワー（tmp/x1113/x/followers_A・B.json・調べていない分 約70＝検索の回数の上限）→ 歌詞3曲 書いて登録と機械で突き合わせ 25/25（check_lyrics.txt）→ すちこに出した：お笑いまとめ 11/14（suno_owarai_1114）・主役 11/14（47754 好井まさお怪談・49276 遊☆戯☆王 舞台挨拶・49274 中村倫也 舞台挨拶）・TikTok スポーツ 11/16（suno_sports_1116）
 - ✅ 10:1x すちこに 5社の問い合わせ文と送り先を渡した（Jリーグ /contact・ZAIKO business.zaiko.io/contact・livePocket livepocket.co.jp/contact/・CN は /corp/ から・カンフェティは機械で開けない＝画面下から）▶ 返事待ち
 - ✅ すちこ「収集だけ止めて、載ってる分はそのままでいいよ」＝ZAIKO（載450・新着87）・livePocket（載4,623・新着232）の見に行く道具7本を .claude/state/vendor_stop.json で止めた（STOP と出て終わる＝正常）・返事で OK なら行を消す／お願いの文は「9月より掲載しておりました」の形に直した／電話の下4桁は 0547（Jリーグの分はすちこが直した）
+- ✅ livePocket＝すちこが送った（11/13 昼前）
+- ✅ カンフェティ（と思われる・すちこが窓口を見つけた）＝すちこが送った（「これから載せたい」の形・電話 0547）／CNプレイガイド＝すちこ「CNは載せなくていいよ」＝作らない（掲載のお願いはこれで終わり・返事待ち4社）
 - ✅ ZAIKO＝すちこが Gmail から eventsupport@zaiko.io（主催者向け窓口・担当部署へ回してと添えた）に送った（11/13 昼）
 - ✅ 掲載許可のお願い：Jリーグチケット＝すちこが送った（11/13 昼前・ぴあの問い合わせ欄・「公演」→「試合」に替えた文）／livePocket＝あたしが入れたが「人かどうかの確認」で止まった＝すちこが送る／ZAIKO＝主催者向けの申込欄（開催予定日・販売枚数が必須）／CN＝求人の電話しか見つからず／カンフェティ＝問い合わせのリンクが見つからず（「主催者様へ」はある）▶ ほかの窓口を探す
 - ✅ 夜通し e+：候補372→組み立て358→番人1で外す39→新着 319（commit 3c99782）→ reconcile FAIL 13＝53639 の5枠 売り切れの印（commit d0b94a5）・7件は配信/アーカイブ（公演後まで買える＝そのまま）
+- 🔄 12:1x 昼の便 裏（tmp/x1113/noon_today.py＝heal build→apply→union→HEAD比べ→check_unknown_end→commit）＋ reconcile_eplus --all（裏・約1.5時間）
+- ✅ 歌詞：すちこ「記事も書いたわよはおかしい」→「こうえんと あーてぃすとの しょうかいも のせてるわ」に3曲とも差し替え／「プロンプトはいらないわ」＝スタイル欄は出さない（memory 直した）
+- ✅ X 11/14発売の素材 tmp/x1113/x/material_1114.md（jpop 85行・お笑い56・ロック64・クラシック34…）▶ 16:07 下書き（主役＝47754 好井まさお怪談・49276 遊☆戯☆王 舞台挨拶・49274 中村倫也 舞台挨拶）
 - ✅ 夜通しの 319件は売り場の札が無かった → e+ の公演ページ「チケットの関連ジャンル」から札を集め（新着の札なし e+ 411件）335件に _genre（ep_genre_apply.py）→ 230件 振り分け（commit 97b38f0）・残す89＝番人13・出演者が公演名27・札なし49
-- ▶ 残り：e+ の /sf/play・/sf/event の札（演劇8・ミュージカル6・落語9・トーク6・アニメ10 など約60件）は tools/eplus_genre.py の対応表に無い＝表に足す（play/theater→engeki・play/musical→musical・event/talk-show→talkshow 等）／出演者が公演名の27件＝refetch_artist --pool
+- ✅ e+ の /sf/play・/sf/event などの札を tools/eplus_genre.py の EPLUS_GENRE_PATH に足した → 49件 振り分け（commit 24d0421）／出演者が公演名の27件 refetch_artist＝1件だけ取れた（53524）・26件は e+ に出演の記載なし＝新着に残す（係2人で売り場のページを読む m165 の形は後で）
+- （済）残り：e+ の /sf/play・/sf/event の札（演劇8・ミュージカル6・落語9・トーク6・アニメ10 など約60件）は tools/eplus_genre.py の対応表に無い＝表に足す（play/theater→engeki・play/musical→musical・event/talk-show→talkshow 等）／出演者が公演名の27件＝refetch_artist --pool
 - ✅ MEMORY.md 167→112行（空行を外し短い行をつないだ）
 
 # ▶▶ 11/12(木) 21:35 引き継ぎ（/clear の前・最新）＝次のあたしはここから
