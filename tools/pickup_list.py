@@ -103,7 +103,8 @@ def list_page(live):
     head = re.sub(r'(<meta property="og:title" content=")[^"]*', r'\g<1>ピックアップ記事の一覧', head)
     head = head.replace('https://oshinavi.jp/pickup/2026-11-08/', 'https://oshinavi.jp/pickup/')
     head = head.replace('.pickup .pk-h2 + a.pk-item', '.pickup .pk-sub + a.pk-item')
-    items = '\n'.join(item(a, '../' + a['href'][len('pickup/'):] if a['href'].startswith('pickup/') else a['href'])
+    # 一覧は pickup/index.html にある＝記事 pickup/a/x.html へは「a/x.html」（「../a/」だと /a/x.html＝404・2026-11-15 すちこ「小野リサの記事が開かない」）
+    items = '\n'.join(item(a, a['href'][len('pickup/'):] if a['href'].startswith('pickup/') else a['href'])
                       for a in live)
     items = items.replace(' target="_blank" rel="noopener"', '')
     return head + f"""<body>
