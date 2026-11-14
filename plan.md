@@ -4,8 +4,10 @@
 - ✅ TIGET 330件組み立て→投入（10:19）・番人 ng 326（登録済みのズレ）▶ heal_tiget --apply／FANY 2732件・番人 食い違い68 ▶ heal_fany
 - ✅ 16:34 昼のぴあ heal 205件・止まった52は足し算・HEAD比べ（減ったのは今日発売に締切が付いた分と heal_tiget の作り直し）・commit／check_order 違反0・隠れ枠108（削除候補178・止まった分＝夜に見る）
 - ✅ TIGET 248・FANY 99 を新着へ commit／heal_tiget 240件作り直し → FANY 作り直し中（tmp/x1114/heal_tf.py）
-- ✅ X 11/15 発売 11本 下書き → 独立FC 🔴2🟠1 を直した → 確認ページ https://claude.ai/artifact/BZNYEjd6hPaMAHegBuW9mw ▶ すちこの OK 待ち → 20:01〜 予約（⑤お笑いに Downloads/oshinavi_1115_owarai_matome_x.mp4）
+- ✅ X 11/15 発売 11本 下書き → 独立FC 🔴2🟠1 を直した → 確認ページ https://claude.ai/artifact/BZNYEjd6hPaMAHegBuW9mw → すちこ OK → ✅ 18:0x〜 11本予約（20:01〜21:41 10分おき・⑤お笑いに動画・予約一覧で11本の時刻を照合・tmp/x1114/x/schedule_1115.txt）
+- ▶ 動画の素材（すちこ「画像の準備は済んでるの？」）：11/15 はお笑いの動画で済み・すちこ「主役はつくるよ」→ ✅ 主役の姐さん9種 Downloads/shuyaku_chibi_1115.png（BoA＝歌姫・お辞儀・ダンス／星の王子さま＝王子さま風・朗読・バイオリン・ピアノ／マルコポロリ＝ハリセンのツッコミ・大笑い・背景透明を確かめた）→ ✅ 曲が届いた＝おしなびどっと (32)＝主役 3:22・(31)＝J-POP 1:01（歌詞タグは渡した歌詞どおり）▶ 背景えらび https://claude.ai/artifact/N6BkxJVxgK4pAYhTD3az5i（手元12本・おすすめ 主役＝8 7680 金の光／J-POP＝3 7472 紫のきらめき）→ すちこ「あなたのお勧めで」＝主役 7680・J-POP 7472 → 🔄 係2人が tmp/video/shuyaku1115・tiktok1117 に写して絵コンテ＋試し動画（全編はすちこの OK のあと）・J-POP 11/17 は Suno の曲待ち／✅ すちこが Ginger を止めた → あたしが ChatGPT の姐さんのチャットで J-POP 9種を頼んで保存 Downloads/jpop_chibi_1117.png（1536×1024・背景透明を確かめた）／背景の候補はまだ
 - ✅ 取りこぼしの総ざらい（ぴあを名前で）→ 未登録4件を新着へ 54616〜54619・reconcile OK 4・commit
+- 📮 掲載のお願いの返事：カンフェティ（ロングランプランニング）だけ人から返事＝読み込みの間隔と負荷の質問 → 答え（3秒以上・同時1本・1日1回早朝・数百ページまで）を 11/14 夕方すちこが送った ▶ 返事待ち／ZAIKO・livePocket は自動返信だけ・Jリーグはまだ
 - ⚠️ 11/14 の記事3本がまだ（pickup_articles.json に 11/14 の組なし）
 - 🔄 15:1x〜 tmp/x1114/noon_1114.py：ぴあ今日発売の締切 → check_unknown_end → commit → heal_eplus_started → reconcile_eplus --all → fix_eplus_fails → --third → commit（記録 noon_1114.txt）
 
