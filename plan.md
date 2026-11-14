@@ -2,6 +2,11 @@
 - ✅ 夜通し e+ おわり（10:34）：組み立て 388 → 番人で外す 39 → 新着へ 349／カード 24394→24825・新着 1007→1772（間に削除362・ぴあ196）
 - ✅ 照合 FAIL 31 → fix_eplus_fails（売り切れの印5枠）・commit ▶ 残り25枠（締切が公演日より後 13・締切時刻 18:00≠20:00 の 53984 10枠・受付中なのに死枠と出た3）＝新着のまま＝振り分ける前に手で見る（tmp/x1114/fix_night_rec.txt）
 - ✅ TIGET 330件組み立て→投入（10:19）・番人 ng 326（登録済みのズレ）▶ heal_tiget --apply／FANY 2732件・番人 食い違い68 ▶ heal_fany
+- ✅ 16:34 昼のぴあ heal 205件・止まった52は足し算・HEAD比べ（減ったのは今日発売に締切が付いた分と heal_tiget の作り直し）・commit／check_order 違反0・隠れ枠108（削除候補178・止まった分＝夜に見る）
+- ✅ TIGET 248・FANY 99 を新着へ commit／heal_tiget 240件作り直し → FANY 作り直し中（tmp/x1114/heal_tf.py）
+- ✅ X 11/15 発売 11本 下書き → 独立FC 🔴2🟠1 を直した → 確認ページ https://claude.ai/artifact/BZNYEjd6hPaMAHegBuW9mw ▶ すちこの OK 待ち → 20:01〜 予約（⑤お笑いに Downloads/oshinavi_1115_owarai_matome_x.mp4）
+- ✅ 取りこぼしの総ざらい（ぴあを名前で）→ 未登録4件を新着へ 54616〜54619・reconcile OK 4・commit
+- ⚠️ 11/14 の記事3本がまだ（pickup_articles.json に 11/14 の組なし）
 - 🔄 15:1x〜 tmp/x1114/noon_1114.py：ぴあ今日発売の締切 → check_unknown_end → commit → heal_eplus_started → reconcile_eplus --all → fix_eplus_fails → --third → commit（記録 noon_1114.txt）
 
 # ▶▶ 11/14(土) 朝の便（道具は tmp/x1114＝copy_all で x1113 から写した）
