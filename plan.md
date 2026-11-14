@@ -8,6 +8,8 @@
 - ⚠️ 差し込みの公開は最終更新が変わらない（すちこ「どうして最近日時を変えずにプッシュするの？」）→ memory feedback_build_ai_page_before_push に追記・ファイルだけの公開はしない
 - 🔄 07:3x 朝の push（tmp/x1115/am_push.py＝prepush→commit→push→公開の最終更新を確かめる）▶ ぴあ heal --build と新着の振り分け（assign_1115.py）は裏で続く＝夜の push へ
 - ▶ 今日の公開は 差し込み2回＋朝＋夜＝4回（すちこ OK の分 .claude/state/push_extra_ok_20261115.txt）
+- ✅ 07:37 朝の push（12b8500..0e122b4）＝公開の最終更新「2026年11月15日 07:32」・記事の一覧20本とも開く（tmp/x1115/live_pk4.txt）＝今日3回目
+- 🌙 今夜の夜通しの道具 tmp/x1115/overnight_1115.py（e+ 出演者ページの総ざらい 11/13 の続き・02:00 で集め止め → 組み立て → 番人2枚 → 新着 → reconcile → commit ＋ 最後に TicketDive）▶ 夜の push のあと裏で回す
 
 # ▶▶ 11/14 夜の便
 - ⚠️ 夜のぴあ --build は1時間以上かかるので止めた（今日発売は昼に205件当て済み）／pm2 が鍵を持ったまま prepush を呼んで40分止まった（memory feedback_index_lock_no_nesting に追記）→ 23:2x prepush を鍵なしで：止める行 0（fold_parts --check・gate_badge_render 違反0）・gate_fields A2 H12・枠0 rc2（明日の公演 304件＝明朝の削除・照合）→ commit（git add が artist ページ 15744 枚で長い）→ ✅ push（9a5db60..4a95772・今日2回目）→ 公開ページの最終更新「2026年11月14日 23:24」＝手元と一致・トップの記事は 11/13 の3本（rizin6・honkikkies・sweeney）▶ 11/14 の記事3本は書けていない＝明日
