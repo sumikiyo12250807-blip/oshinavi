@@ -1,5 +1,5 @@
 # ▶▶ 11/14 夜の便
-- ⚠️ 夜のぴあ --build は1時間以上かかるので止めた（今日発売は昼に205件当て済み）／pm2 が鍵を持ったまま prepush を呼んで40分止まった（memory feedback_index_lock_no_nesting に追記）→ 23:2x prepush を鍵なしで：止める行 0（fold_parts --check・gate_badge_render 違反0）・gate_fields A2 H12・枠0 rc2（明日の公演 304件＝明朝の削除・照合）→ commit（git add が artist ページ 15744 枚で長い）→ push
+- ⚠️ 夜のぴあ --build は1時間以上かかるので止めた（今日発売は昼に205件当て済み）／pm2 が鍵を持ったまま prepush を呼んで40分止まった（memory feedback_index_lock_no_nesting に追記）→ 23:2x prepush を鍵なしで：止める行 0（fold_parts --check・gate_badge_render 違反0）・gate_fields A2 H12・枠0 rc2（明日の公演 304件＝明朝の削除・照合）→ commit（git add が artist ページ 15744 枚で長い）→ ✅ push（9a5db60..4a95772・今日2回目）→ 公開ページの最終更新「2026年11月14日 23:24」＝手元と一致・トップの記事は 11/13 の3本（rizin6・honkikkies・sweeney）▶ 11/14 の記事3本は書けていない＝明日
 - e+ 今日の組 照合 1157件 FAIL 304 → fix_eplus_fails 29件・ツアーの抜け --third は回っている（commit だけ・明朝の push へ）
 
 # ▶▶ 明日 11/15 から（すちこ 11/14 夜）
@@ -8304,4 +8304,6 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - トップの重さ：SSR を7日以内に絞った版が本番（HTML 7.66→2.15MB）＋ev/*.js に長いキャッシュ＝すちこ「早くなった　ストレスない」。⏳未commit＝tools/publish_split.py の HEAD_DAYS 7→1（先読み 6.0→2.8MB・すちこが途中で止めた）＝入れるか聞く
 - Suno：Pro のダウンロード上限（月20）に当たった → Premier 月払い 4,500円を勧めた（11/11 ごろ TikTok の数字で見直す）
 - 朝にやること（手順7.5 の残り10件＋きみまろ熊本・鹿児島／39382・41739 の作り直し／4056／e+ プール 41879〜41906／42753／34296／TIGET 13093・16238／6025・1640・523）は昼の引き継ぎのまま
-- 夜�
+- 夜に聞いた質問：①尾崎亜美 632・26894 ②ウルフムーン 41846 ③GA4 カスタムディメンション ④e+ 新カード候補 ⑤40496 部の時刻 ⑥先読み1日分にするか
+- 22:3x 動画できた＝tmp/video/matome1029o/out_x.mp4（1:36・7.86MB・点検済み）・試し見 https://claude.ai/artifact/WccNtsu2s3eGQUiR4gUYo9 ＝すちこの OK 待ち（OK 後に④へ返信で付ける・TikTok はすちこが手で）
+- 23:0x 第2版（すちこ「リズムがあってない」「9種類は1回ずつ」）＝拍は grid_beats2（キックの当たり 0.94→4.03）・9着1回ずつ8〜9秒ごと。同じ試し見リンクを差し替え＝OK 待ち
