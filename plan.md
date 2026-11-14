@@ -1,3 +1,11 @@
+# ▶▶ 11/14 夜の便
+- ⚠️ 夜のぴあ --build は1時間以上かかるので止めた（今日発売は昼に205件当て済み）／pm2 が鍵を持ったまま prepush を呼んで40分止まった（memory feedback_index_lock_no_nesting に追記）→ 23:2x prepush を鍵なしで：止める行 0（fold_parts --check・gate_badge_render 違反0）・gate_fields A2 H12・枠0 rc2（明日の公演 304件＝明朝の削除・照合）→ commit（git add が artist ページ 15744 枚で長い）→ push
+- e+ 今日の組 照合 1157件 FAIL 304 → fix_eplus_fails 29件・ツアーの抜け --third は回っている（commit だけ・明朝の push へ）
+
+# ▶▶ 明日 11/15 から（すちこ 11/14 夜）
+- 🎨 主役の姐さんは 9種×2枚＝18人を ChatGPT に頼む・「おしゃれな服と髪形で、髪形や髪の色は服に合わせて変えて」＋歌の中身の衣装も18人の中に＝3本で同じ子を使わない（memory project_video_asset_helpers）
+- 🎤 主役を選ぶ前に、先出しのまとめ動画の歌詞に同じ組が入っていないか確かめる（memory feedback_shuyaku_not_in_premade_video）
+
 # ▶▶ 11/14(土) 昼の便
 - ✅ 夜通し e+ おわり（10:34）：組み立て 388 → 番人で外す 39 → 新着へ 349／カード 24394→24825・新着 1007→1772（間に削除362・ぴあ196）
 - ✅ 照合 FAIL 31 → fix_eplus_fails（売り切れの印5枠）・commit ▶ 残り25枠（締切が公演日より後 13・締切時刻 18:00≠20:00 の 53984 10枠・受付中なのに死枠と出た3）＝新着のまま＝振り分ける前に手で見る（tmp/x1114/fix_night_rec.txt）
@@ -5,11 +13,12 @@
 - ✅ 16:34 昼のぴあ heal 205件・止まった52は足し算・HEAD比べ（減ったのは今日発売に締切が付いた分と heal_tiget の作り直し）・commit／check_order 違反0・隠れ枠108（削除候補178・止まった分＝夜に見る）
 - ✅ TIGET 248・FANY 99 を新着へ commit／heal_tiget 240件＋2回目118件・FANY 111件を作り直して commit（番人 TIGET ng 326→133・FANY 68→6）▶ TIGET の残り133は公演日が過ぎた分（11/5〜11/7）と今日の公演の受付終了＝明朝の期限切れの削除で消える分が中心・作り直しが空の99は触らない
 - ✅ X 11/15 発売 11本 下書き → 独立FC 🔴2🟠1 を直した → 確認ページ https://claude.ai/artifact/BZNYEjd6hPaMAHegBuW9mw → すちこ OK → ✅ 18:0x〜 11本予約（20:01〜21:41 10分おき・⑤お笑いに動画・予約一覧で11本の時刻を照合・tmp/x1114/x/schedule_1115.txt）
-- ▶ 動画の素材（すちこ「画像の準備は済んでるの？」）：11/15 はお笑いの動画で済み・すちこ「主役はつくるよ」→ ✅ 主役の姐さん9種 Downloads/shuyaku_chibi_1115.png（BoA＝歌姫・お辞儀・ダンス／星の王子さま＝王子さま風・朗読・バイオリン・ピアノ／マルコポロリ＝ハリセンのツッコミ・大笑い・背景透明を確かめた）→ ✅ 曲が届いた＝おしなびどっと (32)＝主役 3:22・(31)＝J-POP 1:01（歌詞タグは渡した歌詞どおり）▶ 背景えらび https://claude.ai/artifact/N6BkxJVxgK4pAYhTD3az5i（手元12本・おすすめ 主役＝8 7680 金の光／J-POP＝3 7472 紫のきらめき）→ すちこ「あなたのお勧めで」＝主役 7680・J-POP 7472 → 🔄 係2人が tmp/video/shuyaku1115・tiktok1117 に写して絵コンテ＋試し動画（全編はすちこの OK のあと）／✅ J-POP の絵コンテ https://claude.ai/artifact/TT9cvoAEDhoK1aEFgmwKVD（歌詞19行一致・OK なら tmp/video/tiktok1117/render.py で約20分）▶ TikTok の説明文で高橋優は「先行」と書く／✅ 主役の絵コンテ https://claude.ai/artifact/6aPMLxNxan5sDkY88M9cDd（歌詞30行一致）→ すちこ「オッケー」（締めはマイクの子のまま）→ 🔄 19:4x 主役 par14.py → そのあと J-POP render.py（after_shuyaku.py）▶ tmp/video/shuyaku1115/render_p.py で全編 → 主役の予約（21:21〜21:41）に付け替える・J-POP 11/17 は Suno の曲待ち／✅ すちこが Ginger を止めた → あたしが ChatGPT の姐さんのチャットで J-POP 9種を頼んで保存 Downloads/jpop_chibi_1117.png（1536×1024・背景透明を確かめた）／背景の候補はまだ
+- ▶ 動画の素材（すちこ「画像の準備は済んでるの？」）：11/15 はお笑いの動画で済み・すちこ「主役はつくるよ」→ ✅ 主役の姐さん9種 Downloads/shuyaku_chibi_1115.png（BoA＝歌姫・お辞儀・ダンス／星の王子さま＝王子さま風・朗読・バイオリン・ピアノ／マルコポロリ＝ハリセンのツッコミ・大笑い・背景透明を確かめた）→ ✅ 曲が届いた＝おしなびどっと (32)＝主役 3:22・(31)＝J-POP 1:01（歌詞タグは渡した歌詞どおり）▶ 背景えらび https://claude.ai/artifact/N6BkxJVxgK4pAYhTD3az5i（手元12本・おすすめ 主役＝8 7680 金の光／J-POP＝3 7472 紫のきらめき）→ すちこ「あなたのお勧めで」＝主役 7680・J-POP 7472 → 🔄 係2人が tmp/video/shuyaku1115・tiktok1117 に写して絵コンテ＋試し動画（全編はすちこの OK のあと）／✅ J-POP の絵コンテ https://claude.ai/artifact/TT9cvoAEDhoK1aEFgmwKVD（歌詞19行一致・OK なら tmp/video/tiktok1117/render.py で約20分）▶ TikTok の説明文で高橋優は「先行」と書く／✅ 主役の絵コンテ https://claude.ai/artifact/6aPMLxNxan5sDkY88M9cDd（歌詞30行一致）→ すちこ「オッケー」（締めはマイクの子のまま）→ ✅ 主役3本 書き出し（21:19・Downloads/oshinavi_1115_shuyaku_part1〜3_x.mp4・最初 1114 の名前で上書き→昨日の分は戻した）→ 間に合わず予約どおり文章だけ → すちこ「うん」＝返信で動画：BoA・星の王子さまに付けた／マルコポロリはすちこ「前にも作った動画」→「いいよ　せっかく作ったんだから」＝21:42 に付けた（3本とも返信・x_media_log に記録・memory feedback_shuyaku_not_in_premade_video）／✅ J-POP 全編 Downloads/oshinavi_1117_jpop_matome.mp4（1:00.9）＋説明文 tiktok_jpop_1117.txt（独立FC 🔴0）をすちこに渡した ▶ tmp/video/shuyaku1115/render_p.py で全編 → 主役の予約（21:21〜21:41）に付け替える・J-POP 11/17 は Suno の曲待ち／✅ すちこが Ginger を止めた → あたしが ChatGPT の姐さんのチャットで J-POP 9種を頼んで保存 Downloads/jpop_chibi_1117.png（1536×1024・背景透明を確かめた）／背景の候補はまだ
 - ✅ 取りこぼしの総ざらい（ぴあを名前で）→ 未登録4件を新着へ 54616〜54619・reconcile OK 4・commit
 - 📮 掲載のお願いの返事：カンフェティ（ロングランプランニング）だけ人から返事＝読み込みの間隔と負荷の質問 → 答え（3秒以上・同時1本・1日1回早朝・数百ページまで）を 11/14 夕方すちこが送った ▶ 返事待ち／ZAIKO・livePocket は自動返信だけ・Jリーグはまだ
 - ⚠️ 11/14 の記事3本がまだ（pickup_articles.json に 11/14 の組なし）
-- 🔄 15:1x〜 tmp/x1114/noon_1114.py：ぴあ今日発売の締切 → check_unknown_end → commit → heal_eplus_started → reconcile_eplus --all → fix_eplus_fails → --third → commit（記録 noon_1114.txt）
+- ⚠️ reconcile_eplus --all が4時間（timeout 14400）で終わらず止まった（夜通しで e+ の登録が増えた）→ heal_eplus_started 257枠は commit／🔄 19:5x〜 tmp/x1114/eplus_eve.py（--third → fix → tour --third → commit）▶ --all は時間が倍になっている＝明日から --third に寄せるか、夜通しに回すかを決める
+- （旧）15:1x〜 tmp/x1114/noon_1114.py：ぴあ今日発売の締切 → check_unknown_end → commit → heal_eplus_started → reconcile_eplus --all → fix_eplus_fails → --third → commit（記録 noon_1114.txt）
 
 # ▶▶ 11/14(土) 朝の便（道具は tmp/x1114＝copy_all で x1113 から写した）
 - 🌙 夜通し e+：01:42 集め終わり（ページ 3207・候補 396）→ 04:47 組み立て 388 → 番人 gate_eplus_slots が 05:50 も動いている（e+ を叩いている＝ほかの e+ の道具は重ねない）→ 新着へ→reconcile→commit は道具が自分でやる ▶ 終わったら件数（はじめ カード24394・新着1007）
@@ -8295,6 +8304,4 @@ EVENTS配列を丸ごと読み書きする道具（`merge_apply` / `mark_soldout
 - トップの重さ：SSR を7日以内に絞った版が本番（HTML 7.66→2.15MB）＋ev/*.js に長いキャッシュ＝すちこ「早くなった　ストレスない」。⏳未commit＝tools/publish_split.py の HEAD_DAYS 7→1（先読み 6.0→2.8MB・すちこが途中で止めた）＝入れるか聞く
 - Suno：Pro のダウンロード上限（月20）に当たった → Premier 月払い 4,500円を勧めた（11/11 ごろ TikTok の数字で見直す）
 - 朝にやること（手順7.5 の残り10件＋きみまろ熊本・鹿児島／39382・41739 の作り直し／4056／e+ プール 41879〜41906／42753／34296／TIGET 13093・16238／6025・1640・523）は昼の引き継ぎのまま
-- 夜に聞いた質問：①尾崎亜美 632・26894 ②ウルフムーン 41846 ③GA4 カスタムディメンション ④e+ 新カード候補 ⑤40496 部の時刻 ⑥先読み1日分にするか
-- 22:3x 動画できた＝tmp/video/matome1029o/out_x.mp4（1:36・7.86MB・点検済み）・試し見 https://claude.ai/artifact/WccNtsu2s3eGQUiR4gUYo9 ＝すちこの OK 待ち（OK 後に④へ返信で付ける・TikTok はすちこが手で）
-- 23:0x 第2版（すちこ「リズムがあってない」「9種類は1回ずつ」）＝拍は grid_beats2（キックの当たり 0.94→4.03）・9着1回ずつ8〜9秒ごと。同じ試し見リンクを差し替え＝OK 待ち
+- 夜�
