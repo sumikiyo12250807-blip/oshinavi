@@ -1,3 +1,9 @@
+# ▶▶ 11/14(土) 昼の便
+- ✅ 夜通し e+ おわり（10:34）：組み立て 388 → 番人で外す 39 → 新着へ 349／カード 24394→24825・新着 1007→1772（間に削除362・ぴあ196）
+- ✅ 照合 FAIL 31 → fix_eplus_fails（売り切れの印5枠）・commit ▶ 残り25枠（締切が公演日より後 13・締切時刻 18:00≠20:00 の 53984 10枠・受付中なのに死枠と出た3）＝新着のまま＝振り分ける前に手で見る（tmp/x1114/fix_night_rec.txt）
+- ✅ TIGET 330件組み立て→投入（10:19）・番人 ng 326（登録済みのズレ）▶ heal_tiget --apply／FANY 2732件・番人 食い違い68 ▶ heal_fany
+- 🔄 15:1x〜 tmp/x1114/noon_1114.py：ぴあ今日発売の締切 → check_unknown_end → commit → heal_eplus_started → reconcile_eplus --all → fix_eplus_fails → --third → commit（記録 noon_1114.txt）
+
 # ▶▶ 11/14(土) 朝の便（道具は tmp/x1114＝copy_all で x1113 から写した）
 - 🌙 夜通し e+：01:42 集め終わり（ページ 3207・候補 396）→ 04:47 組み立て 388 → 番人 gate_eplus_slots が 05:50 も動いている（e+ を叩いている＝ほかの e+ の道具は重ねない）→ 新着へ→reconcile→commit は道具が自分でやる ▶ 終わったら件数（はじめ カード24394・新着1007）
 - 🔄 裏：tmp/x1114/morning_chain.py（期限切れ・枠0・楽天・いつまで → ぴあ heal --build 11/13・reconcile --new・発売前/受付中スイープ）
