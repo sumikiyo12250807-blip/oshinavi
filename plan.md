@@ -2,6 +2,12 @@
 - ⚠️ 昨夜（11/14）は夜通しの収集を回し忘れた＝0件（すちこ「昨夜は収集何件できた？」→「今夜は忘れないでね」）▶ 🚨今夜は夜の push のあと必ず始める（アラーム 22:07 夜の便・23:43 番人）
 - 🔄 裏：tmp/x1115/morning_chain.py（期限切れ・枠0・楽天・e+ heal_eplus_started 下見・いつまで → ぴあ heal --build 11/14・reconcile --new・発売前/受付中スイープ）
 - ⏰ アラーム：15:07 昼（commit だけ）・16:07 X 準備（11/16 発売）・19:40 予約・20:47 TikTok・22:07 夜の便＋夜通し開始・23:43 夜通しの番人
+- ✅ 削除 735（check_expired と独立が一致・割れた450は残す）logs/removed_2026-11-15.md・commit／e+ heal_eplus_started 24枠・楽天 売り切れ印1・外した1・commit
+- ✅ TicketDive は 11/12 から集めていなかった（すちこ「TicketDiveのボタンつくったほうよくない？」＝ボタンは 11/12 に作り済み）→ 集め直し 84件を新着の先頭へ（54620〜54703・番人 0）▶ 毎日の列に入れる（memory project_more_vendor_buttons）
+- ✅ 記事の一覧 pickup/ のリンクが ../a/・../2026-11-08/ で全部 404（すちこ「小野リサの記事が開かない」）→ tools/pickup_list.py を直した・20本 → すちこ「すぐプッシュして」で一覧だけ差し込み公開（57852e2・1回目は週の記事10本が抜けた→12b8500 で戻した）
+- ⚠️ 差し込みの公開は最終更新が変わらない（すちこ「どうして最近日時を変えずにプッシュするの？」）→ memory feedback_build_ai_page_before_push に追記・ファイルだけの公開はしない
+- 🔄 07:3x 朝の push（tmp/x1115/am_push.py＝prepush→commit→push→公開の最終更新を確かめる）▶ ぴあ heal --build と新着の振り分け（assign_1115.py）は裏で続く＝夜の push へ
+- ▶ 今日の公開は 差し込み2回＋朝＋夜＝4回（すちこ OK の分 .claude/state/push_extra_ok_20261115.txt）
 
 # ▶▶ 11/14 夜の便
 - ⚠️ 夜のぴあ --build は1時間以上かかるので止めた（今日発売は昼に205件当て済み）／pm2 が鍵を持ったまま prepush を呼んで40分止まった（memory feedback_index_lock_no_nesting に追記）→ 23:2x prepush を鍵なしで：止める行 0（fold_parts --check・gate_badge_render 違反0）・gate_fields A2 H12・枠0 rc2（明日の公演 304件＝明朝の削除・照合）→ commit（git add が artist ページ 15744 枚で長い）→ ✅ push（9a5db60..4a95772・今日2回目）→ 公開ページの最終更新「2026年11月14日 23:24」＝手元と一致・トップの記事は 11/13 の3本（rizin6・honkikkies・sweeney）▶ 11/14 の記事3本は書けていない＝明日
