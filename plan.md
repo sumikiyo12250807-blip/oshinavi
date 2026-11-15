@@ -20,6 +20,8 @@
 - 🌙🚨 すちこ 19:50ごろ「早めなくていいわ その後新着振り分けと収集お願いね 昨夜はできなかったみたいだから 忘れずに夜通しお願い」＝夜の push（22:30〜22:45見込み）のあと ①新着の振り分け ②収集 ③夜通しの収集 overnight_1115.py を必ず始める（23:43 見張り）
 - 🌙 22:07 夜の便（cron 5c7e0520）＝ぴあの名前の総ざらい → prepush → commit → push（今日4回目・push_extra_ok_20261115）→ 最終更新を本番で確かめる → 🚨夜通しの収集 overnight_1115.py を裏で始める（23:43 見張り）
 - ✅ 22:2x 総ざらい（tmp/x1115/x/audit_1116.py・55名）＝本当の抜け1件：13091 ちかっぱ祭2026 にぴあ一般発売 b2671915（〜11/19）を足した／クインテ→ブラス・クインテットは別物 ▶ night_1115.py（今日発売のぴあ heal→prepush→commit→push→公開確認）を裏で
+- ✅ 22:28 夜の push（0e122b4eadd..56076c2d280）＝今日発売のぴあ 47件 heal・止まった5は足し算・枠が消えた0・番人 止める行0 → 公開の最終更新「2026年11月15日 22:24」一致
+- 🔄 22:34〜 裏2本：①night_collect15.py（振り分け assign_night15＝候補 e+25・FANY140・TIGET126・ぴあ55 → ぴあ発売前の引き直し→未登録を組み立て→新着・記録 tmp/x1115/night_pia/night_pia.txt）②wait_overnight15.py（振り分けの e+ 照合が済んだら overnight_1115.py＝記録 tmp/x1115/night_word3/overnight.txt）／はじめ カード 24,473・新着 1,696
 - 🌅 明朝：e+ 外した4件（tmp/x1115/eplus/hold_4.json）を作り直し／TIGET 作り直しが空 122件を見る／queue.py の copy で zaiko・livepocket・lp_full を外す
 - ⚠️ 昨夜（11/14）は夜通しの収集を回し忘れた＝0件（すちこ「昨夜は収集何件できた？」→「今夜は忘れないでね」）▶ 🚨今夜は夜の push のあと必ず始める（アラーム 22:07 夜の便・23:43 番人）
 - 🔄 裏：tmp/x1115/morning_chain.py（期限切れ・枠0・楽天・e+ heal_eplus_started 下見・いつまで → ぴあ heal --build 11/14・reconcile --new・発売前/受付中スイープ）
