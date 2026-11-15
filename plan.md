@@ -1,3 +1,12 @@
+# ▶▶ 11/16(月) 朝の便（道具は tmp/x1116＝x1115 から写した 716本）
+- 05:39 夜通し まだ途中（e+ 番人2枚目・295件）＝すちこに報告・「終わったら教えてね」▶ 終わったら件数を知らせる → after_overnight15（e+ 新着25件の直し）
+- 🔄 05:5x 裏：tmp/x1116/morning_chain16.py（e+ を叩かない morning_local_noep → morning_pia＝ぴあ heal --build 11/15・reconcile --new・発売前/受付中スイープ）▶ e+ heal_eplus_started 下見は夜通しの後
+- 🔄 裏：tmp/x1116/queue.py（夜通しが終わるのを待って 楽天→TIGET→FANY→e+（after_overnight15 の後））＝ZAIKO・livePocket・lp_full・local を列から外した（済み）
+- ⏰ アラーム（CronCreate）：15:07 昼／16:07 X 準備（11/17 発売・主役は近未来ファッション）／19:40 予約／20:47 TikTok／22:07 夜の便＋夜通し／23:43 番人
+- 🎵 朝に歌詞2本を渡した（すちこ「朝に曲作ってしまうことにしたい」）：11/19 クラシックまとめ tmp/x1116/x/suno_classic_1119.txt／11/17 主役＝大相撲すみだ場所・高橋優・FREEDOM OF CHOICE tmp/x1116/x/suno_shuyaku_1117.txt（青ブタ 11/10・新日本 11/8 は主役で歌い済み＝外した／鬼龍院翔は livePocket のみ＝外した）
+- 🔍 53678 FREEDOM OF CHOICE＝e+ の先行は「1/12〜1/21公演」だけ（係の下調べ）なのに 1/22〜1/31 の枠にも「先着座席選択先行」が付いている／東宝の公式は東京 2/14 まで ▶ e+ が空いたら reconcile_eplus --ids 53678 で確かめて直す（夜通しの e+ と重ねない）
+- 🌅 今朝やる：e+ 外した4件（tmp/x1115/eplus/hold_4.json）作り直し／TIGET 作り直しが空 122件／queue.py の copy で zaiko・livepocket・lp_full を外す／noon_fix_fails.txt／振り分け→収集→push
+
 # ▶▶ 11/15(日) 朝の便（道具は tmp/x1115＝x1114 から写した）
 
 ## 🔁 引き継ぎ（11/15 18:30 ごろ・会話が長くなったので新しくする）
@@ -22,6 +31,7 @@
 - ✅ 22:2x 総ざらい（tmp/x1115/x/audit_1116.py・55名）＝本当の抜け1件：13091 ちかっぱ祭2026 にぴあ一般発売 b2671915（〜11/19）を足した／クインテ→ブラス・クインテットは別物 ▶ night_1115.py（今日発売のぴあ heal→prepush→commit→push→公開確認）を裏で
 - ✅ 22:28 夜の push（0e122b4eadd..56076c2d280）＝今日発売のぴあ 47件 heal・止まった5は足し算・枠が消えた0・番人 止める行0 → 公開の最終更新「2026年11月15日 22:24」一致
 - 🔄 22:34〜 裏2本：①night_collect15.py（振り分け assign_night15＝候補 e+25・FANY140・TIGET126・ぴあ55 → ぴあ発売前の引き直し→未登録を組み立て→新着・記録 tmp/x1115/night_pia/night_pia.txt）②wait_overnight15.py（振り分けの e+ 照合が済んだら overnight_1115.py＝記録 tmp/x1115/night_word3/overnight.txt）／はじめ カード 24,473・新着 1,696
+- ✅ 22:44 振り分け 267件（お笑い169・J-POP44・アイドル22 ほか・logs/assigned_2026-11-15.md）＝FANY130・TIGET97・ぴあ40・e+0（e+ は25件中22件が照合に出た＝FAIL 151枠・締切ズレ/未登録窓/発売前化 → 🔄 after_overnight15.py が夜通しの後に fix_eplus_fails --apply → commit・記録 nassign_n/efix.txt・報告だけの型は🌅朝に見る）→ 新着 1,429 ／ 22:52 ぴあ発売前の引き直し＝未登録11 → 組めた6（54907〜54912）reconcile OK6 → commit ／ 22:43 夜通し開始（e+ ページ 3207 から続き・はじめ カード 24,473・新着 1,696）／ 23:43 番人＝動いている（23:40 ページ 3457・候補 237）／ 05:39 まだ途中＝候補 328 → 組み立て 318（02:31）→ 番人1枚目で 23 外す（04:41・2時間10分）→ 番人2枚目が実行中 → このあと新着へ・TicketDive ／ いま カード 24,479・新着 1,435（夜の e+ はまだ0件入っていない）
 - 🌅 明朝：e+ 外した4件（tmp/x1115/eplus/hold_4.json）を作り直し／TIGET 作り直しが空 122件を見る／queue.py の copy で zaiko・livepocket・lp_full を外す
 - ⚠️ 昨夜（11/14）は夜通しの収集を回し忘れた＝0件（すちこ「昨夜は収集何件できた？」→「今夜は忘れないでね」）▶ 🚨今夜は夜の push のあと必ず始める（アラーム 22:07 夜の便・23:43 番人）
 - 🔄 裏：tmp/x1115/morning_chain.py（期限切れ・枠0・楽天・e+ heal_eplus_started 下見・いつまで → ぴあ heal --build 11/14・reconcile --new・発売前/受付中スイープ）
