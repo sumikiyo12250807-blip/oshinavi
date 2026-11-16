@@ -1,3 +1,15 @@
+# ▶▶ 11/16(月) 夕方
+- ✅ 主役 11/17 の3本 書き出し（X用 7.7〜7.8MB・TikTok 21.7〜29.6MB）＝見せた https://claude.ai/artifact/KCTfwwMyR1Z2871yCpdeGJ
+- ✅ 朝の収集 e+ 26件を新着（55296 BENI・55305 杉山清貴・55317 MONO NO AWARE は照合で外れた＝新着のまま）／振り分け 16（ぴあ15・e+1・logs/assigned_2026-11-16.md）
+- ✅ 昼の便：ぴあ締切 46件・止まった37は足し算・枠が消えた0・check_order 違反0（隠れ枠80＝終わった公演の当日引換券＝明朝の削除）・commit ▶ 🔄 e+ heal_eplus_started → reconcile_eplus --third → fix_eplus_fails（noon_1116.py）
+- ✅ X 11/17 の11本 下書き・FC（まとめ🔴1🟠3・主役🔴0🟠3＝全部直した）＝確認ページ https://claude.ai/artifact/RBeDqV8Un8cGpuZ2VdE8ys → ✅ すちこ「x投稿文章オッケー 動画もオッケー」→ 🔄 係が予約中（記録 tmp/x1116/x/scheduled_1117.txt）＝19:31〜10分おき予約（主役 20:51/21:01/21:11 に shuyaku_part1〜3_x・⑦J-POP に jpop_matome）／取りこぼし ぴあ 7件を新着 55321〜55327（commit 42aab2ae7b9・02767ffee42）
+- ✅ 記事3本（11/14・11/15 は書いていなかった＝すちこ「昨日もなかった」）＝takahashiyu・freedomofchoice・sumidabasho commit 6add39914e2 → 確認ページ https://claude.ai/artifact/3LKteuW8iTrumJFQBQB2qH → ✅ すちこ「3本の記事ok」→ すちこ「もうちょい情報を足して欲しいかなー」→ 🔄 係が3本とも厚くしている（1,200〜1,600字・FC やり直し・tmp/x1116/art16/fc2.md）▶ 確認ページを作り直して見せてから夜の push／✅ X 11本 予約済み（19:31〜21:11・動画4本＝J-POP は _x 版 8.2MB・tmp/x1116/x/scheduled_1117.txt）▶ 明日から「長く買える組」を先に選ぶ（すみだ場所は締切 11/17 で数日で下がる）
+- 🔍 FREEDOM OF CHOICE の e+ 先行の対象回（1/21 までか 1/31 までか）＝e+ が 503 で未確認 ▶ e+ が空いたら reconcile_eplus --ids 53678
+- 🎬 すちこ「動画でひらがなで おしなび…推しNAVI にしてほしい 明日からでいいので」＝字幕だけ・Suno の歌詞はひらがなのまま（memory feedback_video_caption_oshinavi_name）
+- 📊 すちこ「13日が0だったの原因は？」＝携帯アプリの Reports snapshot だけ 0・Web のホームは 11/13＝87人・計測タグの変更なし（11/11〜14）＝アプリの表示の抜け
+- 📮 LivePocket の返事（11/16 11:00）＝表示は一律禁止でない・API なし・スクレイピングは非推奨（規約13条(25) ボット禁止）・多いと遮断 ▶ すちこ「メール返信して欲しい」→ 条件付きで聞き直す下書きを Gmail に作った（1日1回早朝・間隔・公開ページのみ・上限・識別名）→ ✅ すちこ「これで送ってみましょう」＝送った（返事待ち）／LivePocket のカード 4,305件（LP だけ 4,301）＝そのまま載せる・自動で見に行かない
+- ❓夜に聞く：LivePocket の見直し（自動を止めたまま締切で消えるのに任せるか）
+
 # ▶▶ 11/16(月) 朝の便（道具は tmp/x1116＝x1115 から写した 716本）
 - 05:39 夜通し まだ途中（e+ 番人2枚目・295件）＝すちこに報告・「終わったら教えてね」▶ 終わったら件数を知らせる → after_overnight15（e+ 新着25件の直し）
 - 🔄 05:5x 裏：tmp/x1116/morning_chain16.py（e+ を叩かない morning_local_noep → morning_pia＝ぴあ heal --build 11/15・reconcile --new・発売前/受付中スイープ）▶ e+ heal_eplus_started 下見は夜通しの後
