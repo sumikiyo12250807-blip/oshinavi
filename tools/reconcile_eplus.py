@@ -195,7 +195,7 @@ def main():
             # (a) 締切<=公演日。配信(視聴券)はアーカイブ期間まで売るので公演日を越えて正常。
             _ty = t.get('type', '') or ''
             if t.get('date') and L['date'] and t['date'] > L['date'] \
-                    and '配信' not in _ty and '視聴券' not in _ty:
+                    and '配信' not in _ty and '視聴券' not in _ty and 'Streaming' not in _ty:  # 11/17 「先着Streaming+受付」も配信
                 fails.append((e['id'], ti, 'a-締切>公演日', f"締切{t['date']} > 公演{L['date']}", u))
             # 窓＝実ページの窓を真値とし、storedを日付+時刻で比較する
             #   (Fable第4分析：一致窓を"探す"のでなく現在窓と"比較"＝表示ズレを必ず検出)
