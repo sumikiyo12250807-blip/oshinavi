@@ -103,7 +103,12 @@ def main():
         ids = {int(x) for x in sys.argv[sys.argv.index('--ids') + 1].split(',')}
         E = [e for e in E if e['id'] in ids]
     A, B, C, D, F, G, H, I, K, L, M, N, M_old = [], [], [], [], [], [], [], [], [], [], [], [], 0
-    O, O_old = [], 0
+    O, O_old, O_cannot = [], 0, []
+    import fill_venue_from_slots as FVS
+    try:
+        VENUE_OK = set(json.load(io.open(ROOT + 'tools/venue_ok.json', encoding='utf-8')))
+    except FileNotFoundError:
+        VENUE_OK = set()
     # 🆕2026-11-04 抜き打ち13件（tmp/x1104/spot/rootcause.md）から足した網＝**どれも件数を出すだけ・push を止めない**
     NX, P, H2, R, R_old, S1, S2, S3, T = [], [], [], [], 0, [], [], [], []
     OK = _artist_ok()
@@ -218,12 +223,18 @@ def main():
             NX.append(e)
         # O 🆕2026-11-02 抜き打ち 24203（tmp/x1102/spot/rootcause.md C）＝県が2つ以上なのに会場が1つ
         #   ＝後から足された会場が venue に入らない（ヒールは tickets だけ）。新着は振り分けで止める・既存は件数だけ（141件・会場を足す道具を作る）
+        #   🆕2026-11-17 抜き打ちの続き（TikTok 説明文の独立FC）27277 早見優ほか＝秋田の受付があるのに会場・会期は福岡だけ。
+        #   「既存は件数だけ」で 121件たまっていた＝止める側へ。直す道具＝tools/fill_venue_from_slots.py --apply（ぴあ・e+ の受付ページから会場を読む）。
+        #   会場が本当に1つ（終わった公演の県が残っているだけ）と確かめた id は tools/venue_ok.json＝鳴らさない。
+        #   ぴあ・e+ の受付が無いカード（FANY・TIGET など）は道具で読めない＝O- に id を全部出す（件数だけにしない）
         if ((e.get('date') or '') >= today and '・' in (e.get('prefecture') or '')
-                and '／' not in (e.get('venue') or '') and not (e.get('venue') or '').startswith('全国ツアー')):
-            if e.get('genre') == 'new':
+                and '／' not in (e.get('venue') or '') and not (e.get('venue') or '').startswith('全国ツアー')
+                and str(e['id']) not in VENUE_OK):
+            if e.get('genre') == 'new' or FVS.live_urls(e):
                 O.append(e)
             else:
                 O_old += 1
+                O_cannot.append(e['id'])
         a0 = (e.get('artist') or '').split('／')[0].strip()
         if len(a0) >= 2 and (e.get('name') or '').startswith(a0 + ' ' + a0):
             I.append(e)
@@ -273,8 +284,10 @@ def main():
         print(f'  N id{e["id"]} 枠の県がエントリの県に無い（県={e.get("prefecture")}・足す={"・".join(FEP.need(e, today))}）＝fill_entry_pref --apply: {(e.get("name") or "")[:30]}')
     for e in M:
         print(f'  M id{e["id"]} 出演者の欄が公演名のまま（新着）: {(e.get("artist") or "")[:50]}')
-    for e in O:
-        print(f'  O id{e["id"]} 県が2つ以上なのに会場が1つ（新着・県={e.get("prefecture")}）: {(e.get("venue") or "")[:30]} ｜{(e.get("name") or "")[:30]}')
+    for e in O[:40]:
+        print(f'  O id{e["id"]} 県が2つ以上なのに会場が1つ（県={e.get("prefecture")}）＝fill_venue_from_slots --ids で会場を足す: {(e.get("venue") or "")[:30]} ｜{(e.get("name") or "")[:30]}')
+    if O_cannot:
+        print(f'  O- 県が2つ以上なのに会場が1つ・ぴあ/e+ の受付が無く道具で読めない {len(O_cannot)}件（売り場を見て手で直すか venue_ok へ）: {",".join(map(str, O_cannot))}')
     for e in R:
         print(f'  R id{e["id"]} 名前にフェス/FES なのに fes の札が無い（新着・振り分けで fes を足す）: {(e.get("name") or "")[:40]}')
     for e, lo, hi, d1, d2 in P[:10]:
@@ -295,7 +308,11 @@ def main():
     # 🆕2026-11-05 S1・S3（ボタンが別の公演のページ）も止める側へ＝直す道具 tmp/x1105/fix_links.py（tools へ移す）
     if S1 or S3:
         print(f'  🚨S1 {len(S1)}・S3 {len(S3)}件＝カードの売り場ボタンが受付と別の公演のページ＝python tools/fix_links.py --apply')
-    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or S1 or S3 or ((M or O) and '--assign' in sys.argv)) else 0)
+    # 🆕2026-11-17 O（県が2つ以上なのに会場が1つ）も止める側へ＝新着は振り分けで・既存はぴあ/e+ の受付があれば push を止める
+    _O_stop = [e for e in O if e.get('genre') != 'new']
+    if _O_stop:
+        print(f'  🚨O {len(_O_stop)}件＝python tools/fill_venue_from_slots.py --apply --lock tmp/x1112/index.lock で会場を足してから')
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or S1 or S3 or _O_stop or ((M or O) and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':
