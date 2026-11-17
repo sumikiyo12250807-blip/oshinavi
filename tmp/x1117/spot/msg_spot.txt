@@ -1,0 +1,5 @@
+11/17（commit だけ）：抜き打ち30件（ぴあ15＝19/19枠・ぴあ以外15＝29/29枠）＝🔴1 46001 梅棒 ポスター付き当日引換券の抜けを足す／🟠 55335 オープニングアクト・41903 e+ 出演（refetch_artist）・50157 TIGET 出演15組／🟡 41863 公演名
+根っこ：①ぴあの見直し（pia_soldout_sweep）が 11/11 から止まっていた＝push の番人 .claude/hooks/pia_sweep_guard.py を足した ②pia_cast が［オープニングアクト］［出場］を読まなかった＝_CAST_ROLE に足した
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01FQDm48dAXPgAGoNjRP5MVi
