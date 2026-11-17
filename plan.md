@@ -24,7 +24,7 @@
 - 🔍 根っこ：①ぴあの見直し（pia_soldout_sweep）が 11/11 を最後に6日間止まっていた＝push の番人 .claude/hooks/pia_sweep_guard.py（今日/昨日の logs/pia_sweep が無ければ push を止める）②pia_cast が［オープニングアクト］［出場］を読まない＝_CAST_ROLE に足した ▶ 今日の組2（2006件）を裏で回し中（はじめ --apply を付け忘れ＝終わったら --apply --resume で反映）▶ 抜けた6日分＝組0・組1も回す（今夜〜夜通し）
 - ✅ X 11/18 の11本＝tmp/x1117/x/all_1118.txt・独立FC まとめ 🔴0🟠0🟡2／主役 🔴0🟠2🟡4 → 直した・確認ページ https://claude.ai/artifact/PQwVHus9x2hWcvJBsQ5mte（動画＝④舞台に stage_matome・主役に part1〜3_x）→ ✅ すちこ「おｋ」→ ✅ 11本 予約済み（19:31〜21:11・予約一覧で時刻・見出し・動画を照合・即時投稿なし・記録 tmp/x1117/x/scheduled_1118.txt）／18:47 の予約アラームは消した
 - ✅ 記事3本＝南こうせつ・男性ブランコ「くじら図書館」・氷川きよし 九州＝独立FC 🔴0🟠0（🟡5 直した）→ 確認ページ https://claude.ai/artifact/E7R18FVWJFBdRU3j5YvE5q → ✅ すちこ「記事OKよ」→ pickup/a/ に組んで commit（載せる25・下ろす3 yama・FRUITS ZIPPER・長岡亮介）▶ 夜の push で公開
-- ✅ 15:13 昼の便 noon17.py：e+ 発売で止まり直し・ぴあ今日発売＋朝の19件＝63件 heal（止まった16は足し算）・commit ff970194873 ▶ 裏で e+ --third → fix_eplus_fails → ぴあの見直し --apply --resume → 28413 出場者
+- ✅ 15:13 昼の便 noon17.py：e+ 発売で止まり直し・ぴあ今日発売＋朝の19件＝63件 heal（止まった16は足し算）・commit ff970194873 → ✅ e+ --third → fix_eplus_fails → commit／✅ 18:40 ぴあの見直し 組2 2006件＝売り切れの印 64枠・取りこぼし 108・読めず 7（logs/pia_sweep_2026-11-17.md）・28413 出場者 commit ▶ 🔄 sweep_heal17.py＝取りこぼし108件 heal --ids → 足し算 → HEAD比べ → reconcile → commit ▶ 抜けた日の組0・組1は夜の push のあと夜通しで（ぴあ1本ずつ）
 - 🎵 ルーチンのあと：Suno 歌詞2本（すちこ 07時台「歌詞もお願いね　ルーチン後でいいから」＝昨日の朝と同じ形＝11/20 発売のまとめ＋11/18 の主役・フォロワー調べ→ジャンル（前の日々と回す）→歌詞→登録と機械で突き合わせてから出す）／キュウソネコカミの型でまとめられるカードを全部調べて一覧
 
 # ▶▶ 11/16(月) 夜通し
