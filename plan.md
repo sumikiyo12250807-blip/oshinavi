@@ -5,6 +5,10 @@
 - ✅ e+ 新着の照合 FAIL 1＝55765 宮廷音楽は Streaming+ の配信＝誤報 → 会場・会期を直した＋reconcile_eplus が「アーカイブあり」のページも配信と見る・commit
 - 🔄 新着 2,097件のうち e+ 札なし約960件＝夜通しの /sf/word/ 分に eplus_genre を回していなかった → tools/eplus_genre.py を鍵つき・読み直しに直して --apply 裏で実行中（3秒おき・1時間弱・tmp/x1118/eplus_genre_report.txt）／今夜の道具 tmp/x1118/overnight_1117.py に足した ▶ 終わったら札の付いた分を番人に通して振り分け → prepush → 朝の push
 - 🗓 11/19 すちこがチケットペイ345件を見る（「どれがチケットペイかわからないわよ　言ってくれなきゃ　今日は仕事だから無理だわ　明日チェックする」）＝一覧 https://claude.ai/artifact/YWx7C7Fr8hE83cWyaqRCuh（tmp/x1118/mk_tp_page.py）▶ 11/19 朝に声をかける
+- ✅ 朝の振り分け 252件（ロック75・J-POP58…）＋チケットペイ2回目 67件（番人が括弧の県だけの違いを食い違いにしていた＝tools/gate_ticketpay_slots.py の key を直した）・commit
+- ✅ e+ 札写し2回目＝tools/eplus_genre.py が /sf/live しか読んでいなかった → クラシック・舞台も読むように直して 715件に札（classic 457・owarai 190・dento 24 …）→ 🔄 assign18b で振り分け中
+- 🗒 お疲れ様で聞く：e+ の札で表に無いもの（event/game 19・event/streaming 13・play/family-concert 9・play/kabuki 9・event/amusement 3・sports/figure 2）の行き先＝案 kabuki→dento（伝統）・figure→sports・family-concert→kids・game→anime？・streaming は配信の印で札ではない
+- 🔧 昼：TIGET 21件が売り場と食い違い（tmp/gate_tiget_report.txt）→ heal_tiget --apply
 - 📋 新着の内訳（tmp/x1118/pool_why.txt）：チケットペイ 345（すちこが見る売り場）・TicketDive 札なし 174・出演者が公演名のまま 約540（撮影会・整理券など）
 
 # ▶▶ 11/17(火) 夜の便と夜通し
