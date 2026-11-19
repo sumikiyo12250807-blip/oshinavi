@@ -4,7 +4,11 @@
 - ⏰ アラーム：15:07 昼／16:07 X 準備（11/20 発売）／18:47 予約／20:47 TikTok／22:07 夜の便＋夜通し／23:43 番人
 - 🎬 11/21 お笑いまとめ（曲 おしなびどっとで・背景 162370・カラフルなポップバンド風 pop_1121_1〜3）＝絵コンテ https://claude.ai/artifact/9ySoPo7emxEK8FoMVnPZ5o ▶ すちこの OK 待ち → 全編（tmp/video/matome1121o）
 - 🎬 11/22 舞台・ミュージカルまとめ（曲 おしなびどっとじぇーぴー (3)・背景 221717・ネオンのサイバーパンク cyber_1122_1b/2/3）＝絵コンテ作り中（tmp/video/matome1122s）
-- 🗓 J-POP 11/20 v2（背景を替える）＝背景をまだもらっていない／11/22 クラシックの曲もまだ
+- ✅ 動画6本できた（Downloads）：11/20 J-POP v2（花の静止画を動かしてキラキラ）・11/21 お笑い・11/22 舞台（サイバーパンク）・11/22 クラシック（ドレスと楽器・TikTok用は122MBに縮めた）・11/23 お笑い（デスメタル・ヘッドバン）・11/23 J-POP・ロック（ビジュアル系・同じ服で動く）
+- ✅ TikTok 説明文5本（FC🔴0・タグ2つ直した）https://claude.ai/artifact/WJ5neMfLfxoN9sg5XgEAGa ＝今夜 11/22舞台・11/22クラシック・11/21お笑い／明日の夜 11/23の2本
+- ✅ 11/23 歌詞2本（FC🔴0）https://claude.ai/artifact/Vt2RK43PTu97VS8gHQWgjt ／登録の直し 49314 tacica・43526 12/25（commit）
+- ✅ 背景動画52本を Downloads/背景動画 にまとめた（新しい背景は Downloads に落としてもらう）
+- 🔄 X 11/20 発売11本＝係が書いている（tmp/x1119/x/all_1120.txt）▶ 独立FC → 確認ページ → すちこ OK → 18:47 予約（J-POP に oshinavi_1120_jpop_matome_v2.mp4・check_x_video）
 - 🗓 チケットペイ 345件 すちこが見る https://claude.ai/artifact/YWx7C7Fr8hE83cWyaqRCuh
 
 # ▶▶ 11/18(水) 夜の便と夜通し
