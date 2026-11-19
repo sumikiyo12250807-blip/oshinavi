@@ -5,7 +5,12 @@
 - 🔎 すちこ「新着が減らないわけを教えて」＝1,128件の内訳（tmp/x1120/pool_why20.txt）：①出演者が公演名のまま 約650（livePocket 161・ぴあ 129・e+ 127・チケットペイ 100・ZAIKO 70・TIGET 54）＝取り直しの道具がぴあと e+ だけ ②札なし 約300（TicketDive 201・e+ 96＝表に無い札）③札も出演者もあるのに照合で止まる 194（e+ は登録後の延長・受付の追加を直す段が振り分けに無い＝毎晩同じ80件が止まる）④チケットペイ 105＝すちこ待ち
   - 🔄 ③ e+ を直す：tmp/x1120/e_pool_fix20.py（朝の e+ が終わってから reconcile_eplus --ids → fix_eplus_fails --apply → もう一度照合 → commit）▶ 合った分を朝の振り分けへ
   - 🔄 ① 根っこ＝手順書に「振り分けの前に refetch_artist --pool --apply」とあるのに、毎日の振り分けの道具（assign19 など）に入っていなかった＝649件とも一度も売り場で確かめていない（artist_nocast の記録0）→ tmp/x1120/refetch_pool20.py（朝の道具と e+ の直しのあと・鍵を持って）▶ 今日から振り分けの道具（assign20・assign_night20）の頭に refetch_artist --pool --apply を入れる（ZAIKO・チケットペイは読む道具が無い＝残る）
-  - 🗒 お疲れ様で聞く：TicketDive のタグ→ジャンルの表（201件）・e+ の表に無い札の行き先（前から）
+  - 🎯 すちこ「今日の目標は新着を空にすることよ」「②配信はあるよね　ゲームってジャンル作って　歌舞伎は伝統　①はすぐやって　③頼むからすぐやって　④見たわ　すぐ振り分けて」
+    - ✅ ゲームのジャンルを新設（index.html 色・ボタン・GENRE_LABEL・ento グループ／build_ai_page／eplus_genre の表 event/game→game・event/streaming→haishin・play/kabuki→dento）
+    - 🔄 ④ tmp/x1120/assign_tp20.py（チケットペイ 105＝番人＋gate_fields の M・R 以外）
+    - 🔄 ① tmp/x1120/refetch_now20.py（TIGET すぐ → e+ は e+ の直しのあと → ぴあは朝のぴあの道具のあと）＝livePocket・ZAIKO は掲載の返事待ちで見に行かない（livePocket の道具を読むと refetch ごと STOP する＝外した）
+    - 🔄 tmp/x1120/pool_chain20.py（e+ 札の写し直し → ぴあ以外の振り分け → ぴあの取り直しのあと全部の振り分け → 残りを数える）
+  - 🗒 聞いた（11/20 朝）：livePocket 169・ZAIKO 85 は見に行けない＝番人を通さず売り場の札で振り分けてよいか／TicketDive 201 は売り場にカテゴリが無い（ほぼライブアイドル）＝アイドルに入れてよいか
 
 # ▶▶ 11/19(木) 朝の便（すちこ休み・動画の日／道具は tmp/x1119）
 - ✅ 09:11 朝の push（公開の最終更新 09:06 を確かめた）＝期限切れの削除 497件（一致分・割れた627は残す・logs/removed_2026-11-19.md）・ぴあ締切ヒール 45件（止まった43 ▶ 昼に足し算 tmp/x1119/heal_union_for_noon.txt）・振り分け 90件（ぴあ78・TicketDive10・e+1・チケットペイ1）・prepush 止める行0
