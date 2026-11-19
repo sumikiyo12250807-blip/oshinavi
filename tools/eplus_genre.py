@@ -27,6 +27,7 @@ import argparse
 import collections
 import io
 import json
+import os
 import re
 import sys
 import time
@@ -95,18 +96,43 @@ EPLUS_GENRE_PATH = {
     'event/talk-show': 'talkshow', 'event/anime': 'anime', 'event/family': 'kids', 'event/exhibition': 'art',
     'event/school-festival': 'gakusai', 'event/circus': 'circus', 'event/dinner-show': 'dinnershow',
     'sports/wrestling': 'sports', 'art': 'art',
+    # 2026-11-20 すちこ「配信はあるよね　ゲームってジャンル作って　歌舞伎は伝統」
+    'event/game': 'game', 'event/streaming': 'haishin', 'play/kabuki': 'dento',
 }
 
 
+RX_PATH = re.compile(r'href="/sf/(play|event|sports|classic|art)/([a-z0-9_-]+)')
+
+
 def cats_of(html):
-    """本文に出てくる `/sf/live/<slug>` を出現順・重複除去で返す。"""
+    """本文に出てくる `/sf/live/<slug>` を出現順・重複除去で返す。
+    🆕2026-11-18 ライブ以外（`/sf/classic/<小>`・`/sf/play/<小>`・`/sf/event/<小>` など）も `大/小` の形で返す＝
+      11/13 に EPLUS_GENRE_PATH を足したのに、ここが /sf/live しか読んでいなかった（新着の e+ 764件が「申告なし」で残った）。"""
     seen, out = set(), []
     for m in RX_LIVE.finditer(html or ''):
         c = m.group(1)
         if c not in seen:
             seen.add(c)
             out.append(c)
+    for m in RX_PATH.finditer(html or ''):
+        c = m.group(1) + '/' + m.group(2)
+        if c not in seen:
+            seen.add(c)
+            out.append(c)
     return out
+
+
+def genre_of(c):
+    """e+ の札 → OSHINAVI のジャンル（無ければ None＝表に足すまで触らない）"""
+    if c in EPLUS_GENRE:
+        return EPLUS_GENRE[c]
+    if c in EPLUS_GENRE_PATH:
+        return EPLUS_GENRE_PATH[c]
+    if c.startswith('classic/'):
+        return 'classic'          # e+ のクラシックの小分類（orchestra・chamber など）はどれもクラシック
+    if c.startswith('art/'):
+        return 'art'
+    return None
 
 
 def fetch(url, tries=3, sleep=3.0):
@@ -124,6 +150,9 @@ def fetch(url, tries=3, sleep=3.0):
 
 def _selftest():
     assert cats_of('<a href="/sf/live/j-pop">x</a>') == ['j-pop']
+    # 🆕11/18 ライブ以外の札（新日本フィル「第九」＝/sf/classic/orchestra・RENT＝/sf/play/musical）
+    assert cats_of('<a href="/sf/classic/orchestra">x</a><a href="/sf/venue/1070151">v</a>') == ['classic/orchestra']
+    assert genre_of('classic/orchestra') == 'classic' and genre_of('play/musical') == 'musical' and genre_of('sports/soccer') is None
     assert cats_of('<a href="/sf/live/j-pop">x</a><a href="/sf/live/j-pop">y</a>') == ['j-pop']
     assert cats_of('a/sf/live/enka b/sf/live/popular-song') == ['enka', 'popular-song']
     assert cats_of('') == [] and cats_of(None) == []
@@ -133,7 +162,8 @@ def _selftest():
                        ('rock-indies', 'rock'), ('anime-song', 'anime')):
         assert EPLUS_GENRE[slug] == want, slug
     # 🚨行き先が無いカテゴリを黙って musicetc に倒していないこと
-    assert 'musicetc' not in EPLUS_GENRE.values()
+    #   （10/13夜 すちこが決めた4つだけは musicetc＝その他）
+    assert {k for k, v in EPLUS_GENRE.items() if v == 'musicetc'} == {'game-music', 'blues', 'healing', 'movie-soundtrack'}
     print('selftest OK')
     return 0
 
@@ -145,6 +175,7 @@ def main():
     ap.add_argument('--sleep', type=float, default=3.0)
     ap.add_argument('--report', default='tmp/eplus_genre_report.txt')
     ap.add_argument('--selftest', action='store_true')
+    ap.add_argument('--lock', default='')
     a = ap.parse_args()
     if a.selftest:
         return _selftest()
@@ -174,7 +205,7 @@ def main():
             continue
         gs, bad = [], []
         for c in cats:
-            g = EPLUS_GENRE.get(c)
+            g = genre_of(c)
             if g:
                 if g not in gs:
                     gs.append(g)
@@ -222,6 +253,34 @@ def main():
     if not a.apply:
         return 0
 
+    # 🆕2026-11-18 調べるのに e+ を3秒おきで1時間かかる＝その間にほかの道具が書いた分を消さないよう、
+    #   書く直前に鍵を取って読み直し、札（_genre/_extraGenres）だけ id で差し替える
+    got = {e['id']: (e['_genre'], e.get('_extraGenres') or []) for e in targets if e.get('_genre')}
+    lock = a.lock
+    while lock:
+        try:
+            fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, b'eplus_genre'); os.close(fd); break
+        except FileExistsError:
+            time.sleep(10)
+    try:
+        return _write(got)
+    finally:
+        if lock and os.path.exists(lock):
+            os.remove(lock)
+
+
+def _write(got):
+    text = io.open(PATH, encoding='utf-8', newline='').read()
+    m = re.search(r'const\s+EVENTS\s*=\s*(\[)', text)
+    start = m.start(1)
+    events, end = json.JSONDecoder().raw_decode(text, start)
+    for e in events:
+        if e['id'] in got and e.get('genre') == 'new':
+            e['_genre'], e['_extraGenres'] = got[e['id']]
+    pool = set(x['id'] for x in events if x.get('genre') == 'new')
+    mo = re.search(r'const NEW_ORDER = \[([^\]]*)\];', text)
+    arr = [int(x) for x in mo.group(1).split(',') if x.strip()]
+    kept = [x for x in arr if x in pool]
     body = json.dumps(events, ensure_ascii=False, indent=2).replace('\r\n', '\n').replace('\n', '\r\n')
     newtext = text[:start] + body + text[end:]
     newtext = re.sub(r'const NEW_ORDER = \[[^\]]*\];',
