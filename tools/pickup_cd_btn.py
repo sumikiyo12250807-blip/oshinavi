@@ -28,6 +28,7 @@ import click_track
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 TAG = "oshinavi0a-22"
+AMAZON_MUSIC_URL = f"https://www.amazon.co.jp/music/unlimited?tag={TAG}"   # index.html の AMAZON_MUSIC_URL と同じ
 CD_GENRES = {"jpop", "rock", "idol", "kpop", "hiphop", "classic", "anime", "seiyuu", "vtuber", "youtuber", "enka", "jazz",
              "yougaku"}
 BOX = re.compile(r'\n?[ \t]*<div class="pk-amz"[^>]*>.*?</div>', re.S)
@@ -88,6 +89,9 @@ def box(url, hotel):
     if url:
         a += (f'<a href="{html.escape(url)}" target="_blank" rel="noopener" style="display:inline-block">'
               '<img src="../../img/btn_cd_0915.png" alt="予習する（最新CD）" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
+        # 🆕2026-11-19 すちこ「記事の方にもAmazonで聞くのボタンを付けて」＝トップのカードと同じ決まり（CDのボタンが出る組にだけ・同じ画像・同じ行き先）
+        a += (f'<a href="{AMAZON_MUSIC_URL}" target="_blank" rel="noopener" style="display:inline-block">'
+              '<img src="../../img/btn2_amazonmusic.png" alt="Amazon Musicで聴く" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
     a += (f'<a href="{html.escape(hotel)}" target="_blank" rel="nofollow noopener" style="display:inline-block">'
           '<img src="../../img/btn2_hotel.png" alt="会場近くのホテルを探す" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
     return f'\n  <div class="pk-amz" style="margin:12px 0 4px;display:flex;flex-wrap:wrap;gap:8px">{a}</div>'
