@@ -13,7 +13,10 @@
 
 ## 🔁 /clear の引き継ぎ（11/19 16時台・すちこ「クリアするから引き継いで」）
 - 🔄 裏：昼の便 tmp/x1119/noon19.py（朝に止まった43件の足し算 → e+ 今日発売 → ぴあ今日発売 heal → HEAD比べ → check_unknown_end → TIGET → commit → e+ third → ぴあ見直し組 → commit）＝記録 tmp/x1119/noon19.txt・終わると noon19.done ▶ 件数を報告（commit だけ・push しない）
-- ⏰ アラームはセッションと一緒に消える＝新しいセッションで入れ直す：20:47 TikTok の声かけ（今夜3本＝11/22舞台・11/22クラシック・11/21お笑い／説明文 https://claude.ai/artifact/WJ5neMfLfxoN9sg5XgEAGa）／22:07 夜の便＋夜通し（tmp/x1118/mk_night18.py・mk_collect18.py の形で x1119 版・e+ の続きは tmp/x1118/night_word6/state.json）／23:43 番人
+  - 15:11 までの分は済み：朝に止まった43件の足し算（枠の消えたカード0）・今日発売のぴあ37件 heal（止まった7は足し算・残り4）・TIGET 3件（番人にまだ3件）・commit
+  - 🔄 そのあと tmp/x1119/noon19b.py が noon19.done を待って、全体の隠れ枠ヒール --build → --apply（足し算）→ HEAD比べ → check_order → commit（記録 noon19b.txt・noon19b.done）
+- ✅ TikTok 今夜の3本はすちこが予約済み（「TikTokは予約した」）＝20:47 の声かけは要らない
+- ⏰ アラームはセッションと一緒に消える＝新しいセッションで入れ直す：22:07 夜の便＋夜通し（tmp/x1118/mk_night18.py・mk_collect18.py の形で x1119 版・e+ の続きは tmp/x1118/night_word6/state.json）／23:43 番人
 - 🗓 明日 11/20 夜：TikTok 2本（11/23 お笑い デスメタル・11/23 J-POP・ロック ビジュアル系）／X 11/21 発売（ロックに oshinavi_1121_rock_matome_x.mp4・お笑いに oshinavi_1121_owarai_matome_x.mp4＝付ける前に check_x_video）
 - 🆕 memory：feedback_same_outfit_motion_pairs（姐さんは元の絵＋同じ服で動いた絵の組で頼み拍ごとに入れ替える）
 - 🗒 お疲れ様で聞く：e+ の札で表に無いもの（前日からの持ち越し）・TicketDive タグの写し・Audible の紹介の案
