@@ -151,7 +151,9 @@ def main():
         if not a['live'] and not arts[k].get('down'):
             arts[k]['down'] = today
     io.open(REG, 'w', encoding='utf-8').write(json.dumps(R, ensure_ascii=False, indent=1))
-    io.open('pickup/index.html', 'w', encoding='utf-8').write(list_page(live))
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from pickup_nav import add_nav  # 上の帯を常に上に・右下に「上に戻る」矢印（2026-11-19）
+    io.open('pickup/index.html', 'w', encoding='utf-8').write(add_nav(list_page(live)))
     os.makedirs('tmp/pickup_list', exist_ok=True)
     io.open('tmp/pickup_list/section.html', 'w', encoding='utf-8').write(top_section(live))
     r = subprocess.run([sys.executable, 'tools/apply_pickup.py', 'tmp/pickup_list/section.html'],

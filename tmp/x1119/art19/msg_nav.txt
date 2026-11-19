@@ -1,0 +1,4 @@
+11/19（commit だけ・夜の push で公開）：記事のページ（pickup/ の下 76ページ）に、上の帯（OSHINAVI・チケット・イベント一覧へ）を下に読み進めても常に上に出す＋右下に「↑ 上へ」矢印のボタン（tools/pickup_nav.py）／帯が消えていたわけ＝html と body の両方の overflow-x: hidden で sticky が効かなかった／pickup_article.py・pickup_list.py も書いたあとに通す・携帯の幅で確かめた／すちこ「記事のページにもトップに戻るボタン矢印を」「いつでもoshinaviに戻れるように上にバーを常に出しておいて」
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01FQDm48dAXPgAGoNjRP5MVi

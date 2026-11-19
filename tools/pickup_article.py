@@ -82,6 +82,9 @@ def main():
 </body>
 </html>
 """
+    sys.path.insert(0, 'tools')
+    from pickup_nav import add_nav  # 上の帯を常に上に・右下に「上に戻る」矢印（2026-11-19）
+    page = add_nav(page)
     os.makedirs('pickup/a', exist_ok=True)
     out = f'pickup/a/{a.slug}.html'
     io.open(out, 'w', encoding='utf-8').write(page)
