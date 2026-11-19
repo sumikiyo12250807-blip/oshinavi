@@ -194,7 +194,14 @@ def main():
                     fails.append((e['id'], ti, 'd-県', f'type_pref!=LD_pref (LD={L["pref"]})', u))
             # (a) 締切<=公演日。配信(視聴券)はアーカイブ期間まで売るので公演日を越えて正常。
             _ty = t.get('type', '') or ''
-            if t.get('date') and L['date'] and t['date'] > L['date'] \
+            # 🆕11/20 54257 Hello Kitty展・54258 Sanrio＝「期間中有効」の券は LD の公演日が会期の初日だけ＝ページの「初日～最終日 期間中有効」の最終日と比べる
+            _kend = None
+            if '期間中有効' in (html or ''):
+                _txt = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', html))
+                _km = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*～\s*(\d{4})/(\d{1,2})/(\d{1,2})\([^)]*\)\s*期間中有効', _txt)
+                if _km:
+                    _kend = '%s-%02d-%02d' % (_km.group(4), int(_km.group(5)), int(_km.group(6)))
+            if t.get('date') and L['date'] and t['date'] > L['date'] and not (_kend and t['date'] <= _kend) \
                     and '配信' not in _ty and '視聴券' not in _ty and 'Streaming' not in _ty \
                     and 'アーカイブあり' not in (html or '') and 'Streaming' not in (L.get('venue') or ''):
                 # 11/17 「先着Streaming+受付」も配信／🆕11/18 55765 宮廷音楽＝券種は「先着 一般発売」のまま Streaming+ のページ（アーカイブあり〜12/1）＝ページ側で配信を見る
