@@ -8,7 +8,15 @@
 - ✅ TikTok 説明文5本（FC🔴0・タグ2つ直した）https://claude.ai/artifact/WJ5neMfLfxoN9sg5XgEAGa ＝今夜 11/22舞台・11/22クラシック・11/21お笑い／明日の夜 11/23の2本
 - ✅ 11/23 歌詞2本（FC🔴0）https://claude.ai/artifact/Vt2RK43PTu97VS8gHQWgjt ／登録の直し 49314 tacica・43526 12/25（commit）
 - ✅ 背景動画52本を Downloads/背景動画 にまとめた（新しい背景は Downloads に落としてもらう）
-- 🔄 X 11/20 発売11本＝係が書いている（tmp/x1119/x/all_1120.txt）▶ 独立FC → 確認ページ → すちこ OK → 18:47 予約（J-POP に oshinavi_1120_jpop_matome_v2.mp4・check_x_video）
+- ✅ X 11/20 発売11本＝すちこ「x投稿文オッケー」→ 予約済み 19:31〜21:11（予約一覧で11本・二重なしを確かめた）。20:31 J-POP に oshinavi_1120_jpop_matome_v2.mp4（check_x_video ✅）。FC 🔴0🟡4（2つ直した）。確認ページ https://claude.ai/artifact/XDtKMwbio3nMEnJ6z3kMyo
+  - 予約の手順の直し：JS の時と分は String(+HH)/String(+MM)（tmp/x1119/x/fix_js_mm.py）。続けて入れるときは「ホームのポスト」のリンクを押して開く（compose/post を開き直すと前の予約の本文が画面に残って見える）
+
+## 🔁 /clear の引き継ぎ（11/19 16時台・すちこ「クリアするから引き継いで」）
+- 🔄 裏：昼の便 tmp/x1119/noon19.py（朝に止まった43件の足し算 → e+ 今日発売 → ぴあ今日発売 heal → HEAD比べ → check_unknown_end → TIGET → commit → e+ third → ぴあ見直し組 → commit）＝記録 tmp/x1119/noon19.txt・終わると noon19.done ▶ 件数を報告（commit だけ・push しない）
+- ⏰ アラームはセッションと一緒に消える＝新しいセッションで入れ直す：20:47 TikTok の声かけ（今夜3本＝11/22舞台・11/22クラシック・11/21お笑い／説明文 https://claude.ai/artifact/WJ5neMfLfxoN9sg5XgEAGa）／22:07 夜の便＋夜通し（tmp/x1118/mk_night18.py・mk_collect18.py の形で x1119 版・e+ の続きは tmp/x1118/night_word6/state.json）／23:43 番人
+- 🗓 明日 11/20 夜：TikTok 2本（11/23 お笑い デスメタル・11/23 J-POP・ロック ビジュアル系）／X 11/21 発売（ロックに oshinavi_1121_rock_matome_x.mp4・お笑いに oshinavi_1121_owarai_matome_x.mp4＝付ける前に check_x_video）
+- 🆕 memory：feedback_same_outfit_motion_pairs（姐さんは元の絵＋同じ服で動いた絵の組で頼み拍ごとに入れ替える）
+- 🗒 お疲れ様で聞く：e+ の札で表に無いもの（前日からの持ち越し）・TicketDive タグの写し・Audible の紹介の案
 - 🗓 チケットペイ 345件 すちこが見る https://claude.ai/artifact/YWx7C7Fr8hE83cWyaqRCuh
 
 # ▶▶ 11/18(水) 夜の便と夜通し
