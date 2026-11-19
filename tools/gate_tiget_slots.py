@@ -161,7 +161,7 @@ def main():
     rep.write('=== gate_tiget_slots (today=%s) 対象%d件 ===\n' % (a.today, len(targets)))
     for e, urls in targets:
         # 実ページからゼロから作り直す（登録値は見ない）
-        rebuilt, raws, dropped = [], [], []
+        rebuilt, raws, dropped, arts = [], [], [], []
         bad = False
         for eid in urls:
             try:
@@ -190,6 +190,8 @@ def main():
             built, why = BT.build(d, a.today)
             if built:
                 rebuilt += built['tickets']
+                if built.get('artist') and built['artist'] != built.get('name') and d.get('performers'):
+                    arts += [x for x in built['artist'].split('／') if x not in arts]
             # 🚨2026-09-30 組めなかった（公演が終わった等）を「正常」と決めつけない＝生データで買える券種を見る
             dropped += ['events/%s（%s）%s' % (eid, why, m) for m in dropped_but_alive(built, d, a.today)]
         if bad:
@@ -204,6 +206,13 @@ def main():
             import fold_parts as FP   # 🆕9/30 畳んだ1部・2部の印を外して比べる
             return (FP.bare_type(t.get('type')), t.get('date'), bool(t.get('soldout')),
                     bool(t.get('saleEnded')), bool(t.get('saleEndUnknown')))
+        # 🆕2026-11-19 抜き打ち 37905 UPstream・45660 TODOWARA（tmp/x1119/spot/rootcause.md B）＝登録のあとで売り場の出演者が
+        #   入れ替わった／足されたのに、出演者の欄は登録の時のまま（ヒールは tickets だけ）。売り場に出演者リンクがある時は
+        #   出演者の顔ぶれも比べる＝違えば 🚨（heal_tiget が売り場どおりに差し替える）
+        _na = lambda s: re.sub(r'[\s　]', '', s or '')
+        if arts and len(urls) == 1 and {_na(x) for x in arts} != {_na(x) for x in (e.get('artist') or '').split('／')}:
+            ng.append((e, [('出演者', e.get('artist'))], [('出演者', '／'.join(arts))]))
+            continue
         rk, gk = {key(t) for t in reg}, {key(t) for t in rebuilt}
         # 券種名は県を含む＝ゲートは県抜きの骨格でも比べる（一覧の場所が取れない時のため）
         def strip_pref(k):

@@ -1,0 +1,145 @@
+{
+ "id": 2440,
+ "artist": "ミュージカル『RENT』",
+ "name": "ミュージカル『RENT』",
+ "date": "2026-12-14",
+ "dateLabel": "2026年9月5日(土)〜2026年12月14日(月) 東京・広島・愛知・福岡",
+ "venue": "全国ツアー（シアタークリエ／呉信用金庫ホール／愛知県芸術劇場 大ホール／博多座／博多座 客席1F レストラン花幸）",
+ "prefecture": "東京・広島・愛知・福岡・大阪",
+ "genre": "musical",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": "https://t.pia.jp/pia/event/event.do?eventBundleCd=b2669263",
+  "eplus": null
+ },
+ "tickets": [
+  {
+   "type": "ファミリーマート限定発売（広島 11/20〜11/21公演）〜10/19 23:59",
+   "date": "2026-10-19",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624607"
+  },
+  {
+   "type": "一般発売（東京 11/11公演）〜11/6 23:59",
+   "date": "2026-11-06",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2625524"
+  },
+  {
+   "type": "一般発売（東京 10/15〜11/13公演）〜11/9 23:59",
+   "date": "2026-11-09",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624795",
+   "soldout": true,
+   "soldoutSince": "2026-11-04"
+  },
+  {
+   "type": "一般発売（広島 11/20〜11/21公演）〜11/18 23:59",
+   "date": "2026-11-18",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2624607"
+  },
+  {
+   "type": "一般発売（大阪 12/11〜12/14公演）〜11/25 23:59",
+   "date": "2026-11-25",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2621254"
+  },
+  {
+   "type": "一般発売（福岡 11/26〜11/29公演）〜11/27 23:59",
+   "date": "2026-11-27",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2626093"
+  },
+  {
+   "type": "一般発売（愛知 12/4〜12/6公演）〜12/3 23:59",
+   "date": "2026-12-03",
+   "url": "https://t.pia.jp/pia/event/event.do?eventCd=2622406"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-08-18"
+}
+
+{
+ "id": 28257,
+ "artist": "テラ／おばけ。／Vi-太",
+ "name": "Little Chaos vol.6",
+ "date": "2026-12-05",
+ "dateLabel": "2026年12月5日(土) 東京",
+ "venue": "新宿NINE SPICES",
+ "prefecture": "東京",
+ "genre": "jpop",
+ "_genre": "jpop",
+ "_extraGenres": [
+  "anime",
+  "utaite",
+  "vocaloid"
+ ],
+ "_srcgenre": "tiget:31,41,79,80",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": null,
+  "eplus": null,
+  "tiget": "https://tiget.net/events/527386"
+ },
+ "tickets": [
+  {
+   "type": "●前売りチケット（最速先行チケット）（東京 12/5公演）〜10/14 23:59",
+   "date": "2026-10-14",
+   "url": "https://tiget.net/events/527386",
+   "soldout": true,
+   "soldoutSince": "2026-11-12",
+   "saleEnded": true,
+   "saleEndedSince": "2026-11-12"
+  },
+  {
+   "type": "●予約（一般販売）（東京 12/5公演）〜12/4 23:59",
+   "date": "2026-12-04",
+   "url": "https://tiget.net/events/527386"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-10-04",
+ "extraGenres": [
+  "anime",
+  "utaite",
+  "vocaloid"
+ ]
+}
+
+{
+ "id": 40695,
+ "artist": "Rei",
+ "name": "Rei",
+ "date": "2027-03-12",
+ "dateLabel": "2026年11月29日(日)〜2027年3月12日(金) 全国ツアー",
+ "venue": "全国ツアー（PLUSWIN HALL OSAKA／LINE CUBE SHIBUYA）",
+ "prefecture": "大阪・東京",
+ "genre": "jpop",
+ "price": null,
+ "links": {
+  "rakuten": null,
+  "lawson": null,
+  "pia": null,
+  "eplus": "https://eplus.jp/sf/detail/1966620001-P0030162P021001",
+  "amazon": null
+ },
+ "tickets": [
+  {
+   "type": "先着一般発売（大阪 11/29公演）〜11/28 20:00",
+   "date": "2026-11-28",
+   "url": "https://eplus.jp/sf/detail/1966620001-P0030162P021001",
+   "startDate": "2026-10-24"
+  },
+  {
+   "type": "抽選ReinyRecords先行2次（東京 R9年 3/12公演）〜11/23 23:59",
+   "date": "2026-11-23",
+   "url": "https://eplus.jp/sf/detail/1966620001-P0030160P021001",
+   "startDate": "2026-11-11"
+  }
+ ],
+ "verified": true,
+ "verifiedAt": "2026-10-24",
+ "_genre": "jpop",
+ "_extraGenres": []
+}
+

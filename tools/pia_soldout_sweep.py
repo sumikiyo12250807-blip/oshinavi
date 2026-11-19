@@ -155,6 +155,7 @@ def main():
     stale = [tuple(x) for x in S['stale']]
     missing = [tuple(x) for x in S['missing']]
     fetch_ng = list(S['fetch_ng'])
+    qc = list(S.get('qc', []))
     rep = io.open(f'logs/pia_sweep_{today}.md', 'w', encoding='utf-8')
     rep.write(f'# ぴあの見直し {today}（組 {grp}・{len(ids)}件）\n\n## 途中経過\n')
     if S['done']:
@@ -181,8 +182,12 @@ def main():
                 missing.append((cur, line.strip()))
             elif re.search(r'❌FETCH ぴあ', line):
                 fetch_ng.append(cur)
+            elif '❌QC-' in line and cur not in qc:
+                # 🆕2026-11-19 抜き打ち 2440 RENT（tmp/x1119/spot/rootcause.md A）＝締切・県・公演日が実ページと違う ❌QC を
+                #   見直しが拾っていなかった（STALE と MISSING しか読まない）。取り直しの組に入れる
+                qc.append(cur)
         print(f'照合 {min(k + 150, len(ids))}/{len(ids)}  STALE {len(stale)} MISSING {len(missing)}', flush=True)
-        S.update(done=S['done'] + [k], stale=stale, missing=missing, fetch_ng=fetch_ng)
+        S.update(done=S['done'] + [k], stale=stale, missing=missing, fetch_ng=fetch_ng, qc=qc)
         json.dump(S, io.open(stp, 'w', encoding='utf-8'), ensure_ascii=False)
         rep.write(f'- {datetime.datetime.now():%H:%M} 照合 {min(k + 150, len(ids))}/{len(ids)}  STALE {len(stale)} MISSING {len(missing)} 混雑 {len(fetch_ng)}\n')
         rep.flush()
@@ -226,6 +231,14 @@ def main():
             marked.append((i, t['type']))
         else:
             ended.append((i, t['type'], '／'.join(sorted({r.get('statustext') or '' for r in hit})) or '同じ回の券種が見つからない'))
+            # 🆕2026-11-19 抜き打ち 2440 RENT＝登録の枠が「買える枠に無い」のに、ぴあの同じ回は受付中（販売期間中）
+            #   ＝締切か券種が登録とずれている（愛知「〜12/3 23:59」⇔ ぴあ「～ 2026/11/25(水) 9:59」・11/10 からずっと「触らない」で流れた）。
+            #   取り直しの組に入れる（heal_stale_deadlines --ids → 止まれば足し算）
+            if any(r.get('state') == '受付中' for r in hit) and not any(x[0] == i for x in missing):
+                missing.append((i, '💤STALE 登録「%s」だがぴあの同じ回は受付中＝締切・券種のずれ（取り直し）' % t['type']))
+    for i in qc:
+        if not any(x[0] == i for x in missing):
+            missing.append((i, '❌QC 表示（締切・県・公演日）が実ページと違う（取り直し）'))
     if apply and marked:
         # 🚨照合に何時間もかかる＝そのあいだに他の道具が index.html を書く。最初に読んだ E を書き戻すと上書きになるので、
         #   書く直前に読み直して、印だけを当てる

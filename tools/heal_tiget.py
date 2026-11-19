@@ -79,6 +79,7 @@ def main():
         urls = sorted({x for t in tickets + [{'url': (e.get('links') or {}).get('tiget')}]
                        for x in re.findall(r'tiget\.net/events/(\d+)', t.get('url') or '')})
         rebuilt, bad, arts, names, spans = [], False, [], [], []
+        has_perf = False
         for eid in urls:
             try:
                 d = TH.parse_event(TH.fetch(f'https://tiget.net/events/{eid}'), eid)
@@ -95,6 +96,8 @@ def main():
                     for x in built['artist'].split('／'):
                         if x not in arts:
                             arts.append(x)
+                    if d.get('performers'):
+                        has_perf = True
                 names.append(built.get('name') or '')
                 spans.append((built.get('date'), built.get('dateLabel')))
             time.sleep(a.sleep)
@@ -130,7 +133,10 @@ def main():
         #   ヒールは tickets だけ＝出演者は公演名のまま残った。**出演者の欄が公演名のまま（手で直していない）時だけ**、
         #   作り直しで読めた出演者に差し替える（手直しした欄は巻き戻さない）。公演名が変わった時は報告だけ（名前は触らない決まり）
         _n = lambda s: re.sub(r'[\s　]', '', s or '')
-        if arts and _n(e.get('artist')) == _n(e.get('name')):
+        # 🆕2026-11-19 抜き打ち 37905・45660（tmp/x1119/spot/rootcause.md B）＝売り場の出演者リンクが入れ替わった時も差し替える
+        #   （1ページだけのカードで、売り場に出演者リンクがある時だけ＝gate_tiget_slots の出演者の比べと同じ条件）
+        _perf = len(urls) == 1 and has_perf and arts and {_n(x) for x in arts} != {_n(x) for x in (e.get('artist') or '').split('／')}
+        if arts and (_n(e.get('artist')) == _n(e.get('name')) or _perf):
             rep.write('    出演者: %s → %s\n' % (e.get('artist'), '／'.join(arts)))
             e['artist'] = '／'.join(arts)
             artist_fixed.append(e['id'])
