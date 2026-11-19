@@ -10,6 +10,10 @@
     - 🔄 ④ tmp/x1120/assign_tp20.py（チケットペイ 105＝番人＋gate_fields の M・R 以外）
     - 🔄 ① tmp/x1120/refetch_now20.py（TIGET すぐ → e+ は e+ の直しのあと → ぴあは朝のぴあの道具のあと）＝livePocket・ZAIKO は掲載の返事待ちで見に行かない（livePocket の道具を読むと refetch ごと STOP する＝外した）
     - 🔄 tmp/x1120/pool_chain20.py（e+ 札の写し直し → ぴあ以外の振り分け → ぴあの取り直しのあと全部の振り分け → 残りを数える）
+    - ✅ 05:42 チケットペイ 100/105 振り分け（作り直し heal_ticketpay 31・県を戻す fill_slot_pref・3回に分けて）＝残り5は番人
+    - ✅ 05:41 e+ 60件：39件が売り場と合った（fix_eplus_fails）／残り21＝受付が作り変わった型 → tmp/x1120/e_rebuild20.py（今のページから build → 番人2枚 → tickets 差し替え・eplus_harvest に --include-registered を足した）
+    - ✅ 欄の番人 A3・I3 を手で直した（54205・54255・54919・54774・54935・55315）
+    - 新着 1,128 → 1,028（05:42）
   - 🗒 聞いた（11/20 朝）：livePocket 169・ZAIKO 85 は見に行けない＝番人を通さず売り場の札で振り分けてよいか／TicketDive 201 は売り場にカテゴリが無い（ほぼライブアイドル）＝アイドルに入れてよいか
 
 # ▶▶ 11/19(木) 朝の便（すちこ休み・動画の日／道具は tmp/x1119）
