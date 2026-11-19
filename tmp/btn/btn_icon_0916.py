@@ -226,6 +226,8 @@ JOBS = {
     'livepocket': ('livepocket_logo', 'livePocket', 'ticket'),
     # 9/22 夜 ユーザー「ボタン揃えて欲しいの」＝公式サイトの売り場ボタンも同じ型に
     'official': ('official_logo', '公式チケット', 'ticket'),
+    # 🆕2026-11-20 すちこ「TicketDiveのボタンを作って他のボタンと揃えて」＝11/12 に入れた売り場も同じ型でそろえる
+    'ticketdive': ('ticketdive_logo', 'TicketDive', 'ticket'),
 }
 
 
