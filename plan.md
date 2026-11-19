@@ -9,6 +9,9 @@
 - ✅ 11/23 歌詞2本（FC🔴0）https://claude.ai/artifact/Vt2RK43PTu97VS8gHQWgjt ／登録の直し 49314 tacica・43526 12/25（commit）
 - ✅ 背景動画52本を Downloads/背景動画 にまとめた（新しい背景は Downloads に落としてもらう）
 - ✅ X 11/20 発売11本＝すちこ「x投稿文オッケー」→ 予約済み 19:31〜21:11（予約一覧で11本・二重なしを確かめた）。20:31 J-POP に oshinavi_1120_jpop_matome_v2.mp4（check_x_video ✅）。FC 🔴0🟡4（2つ直した）。確認ページ https://claude.ai/artifact/XDtKMwbio3nMEnJ6z3kMyo
+  - ✅ 抜き打ち30件（すちこ「抜き打ち30件・不一致は原因を追究してゲート」）＝🔴1 🟠8 🟡4 ✅17 → 直して番人を2つ足した（tmp/x1119/spot/rootcause.md）：ぴあ見直しが ❌QC と「STALE だが受付中」を取り直しへ／TIGET 番人が出演者の顔ぶれを比べる
+  - 🗒 お疲れ様で聞く：FANY の出演者が増えた 571件を一括で書き換えるか（heal_fany --artist・札付きの名前が混ざる）／Plastic Tree 12/27 川崎が 3320 と 31191 の2枚に分かれている
+  - 🔄 記事3本（DAIBAKUSHOW 2026・阿佐ヶ谷姉妹 ミーツ オーケストラ・Plastic Tree 年末公演）＝係が材料集めと本文 → 独立FC → 確認ページ → すちこ OK → 夜の push
   - 予約の手順の直し：JS の時と分は String(+HH)/String(+MM)（tmp/x1119/x/fix_js_mm.py）。続けて入れるときは「ホームのポスト」のリンクを押して開く（compose/post を開き直すと前の予約の本文が画面に残って見える）
 
 ## 🔁 /clear の引き継ぎ（11/19 16時台・すちこ「クリアするから引き継いで」）
