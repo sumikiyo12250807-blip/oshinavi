@@ -228,6 +228,9 @@ JOBS = {
     'official': ('official_logo', '公式チケット', 'ticket'),
     # 🆕2026-11-20 すちこ「TicketDiveのボタンを作って他のボタンと揃えて」＝11/12 に入れた売り場も同じ型でそろえる
     'ticketdive': ('ticketdive_logo', 'TicketDive', 'ticket'),
+    # 🆕2026-11-20 すちこ「使えそうな６件のチケット売り場の番人を作って収集して」＝松竹・宝塚も同じ型（文字は linkDefs の label と同じ）
+    'shochiku': ('shochiku_logo', '松竹チケット', 'ticket'),
+    'takarazuka': ('takarazuka_logo', '宝塚歌劇', 'ticket'),
 }
 
 
