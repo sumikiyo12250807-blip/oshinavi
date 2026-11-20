@@ -228,7 +228,12 @@ def eplus_cast(html):
         if len(dt) > len(links) and all(any(_k(a) in d or d in _k(a) for d in dk) for a in links):
             return dt
         return links
-    return dt if 1 <= len(dt) <= 5 else []
+    if 1 <= len(dt) <= 5:
+        return dt
+    # 🆕2026-11-20 54987（新喜劇 16組）＝短い名前だけが並ぶ時は30組まで使う（説明文なら長い行や「。」が混ざる）
+    if len(dt) <= 30 and all(len(x) <= 16 and '。' not in x for x in dt):
+        return dt
+    return []
 
 
 def main_url(rows, tickets):
@@ -383,7 +388,8 @@ def main():
         name_dedup = '--name-dedup' in sys.argv
         groups, skipped_id, warn_name = {}, [], []
         for c in cands:
-            if c['eid'] in dbids:
+            # 🆕11/20 --include-registered＝載っている e+ の枠を今のページから作り直す時（tmp/x1120/e_rebuild20.py）は外さない
+            if c['eid'] in dbids and '--include-registered' not in sys.argv:
                 skipped_id.append(c)
                 continue  # DB重複（同じe+公演IDが既に載っている）
             ak = artist_key(c['title'])
