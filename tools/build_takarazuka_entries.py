@@ -269,7 +269,8 @@ def build(ev, today, now, seen=None):
         'venue': venue or '（会場未定）',
         'prefecture': pref,
         'genre': 'new',
-        '_genre': '',
+        '_genre': 'takarazuka',  # 2026-11-21 すちこ「舞台の中に宝塚というジャンルをつくって」
+        '_extraGenres': ['musical'],  # 同じ日の朝「宝塚は舞台　ミュージカルね」
         '_extraGenres': [],
         '_srcgenre': 'takarazuka:',
         'price': None,
@@ -329,7 +330,7 @@ def _selftest():
         {'type': '一般前売（兵庫 12/12〜R9年 1/24公演）11/21 10:00発売〜', 'date': '2027-01-24', 'startDate': '2026-11-21',
          'saleEndUnknown': True, 'url': ev['page']}], e['tickets']
     assert e['name'] == '宝塚歌劇 月組公演 『天穹のアルテミス』' and e['artist'] == '宝塚歌劇月組' and e['date'] == '2027-01-24'
-    assert e['dateLabel'] == '2026年12月12日(土)〜2027年1月24日(日) 兵庫' and e['_genre'] == '' and e['genre'] == 'new'
+    assert e['dateLabel'] == '2026年12月12日(土)〜2027年1月24日(日) 兵庫' and e['_genre'] == 'takarazuka' and e['genre'] == 'new'
     # Web の欄が無い一般前売＝h3 の日付だけ・時刻なし
     ev2 = dict(json.loads(json.dumps(ev)), venue='梅田芸術劇場メインホール', venue_pref='大阪府',
                period='公演期間：2026年12月24日（木） - 12月30日（水）',
