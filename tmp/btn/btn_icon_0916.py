@@ -231,6 +231,9 @@ JOBS = {
     # 🆕2026-11-20 すちこ「使えそうな６件のチケット売り場の番人を作って収集して」＝松竹・宝塚も同じ型（文字は linkDefs の label と同じ）
     'shochiku': ('shochiku_logo', '松竹チケット', 'ticket'),
     'takarazuka': ('takarazuka_logo', '宝塚歌劇', 'ticket'),
+    'ticketrugby': ('ticketrugby_logo', 'TicketRugby', 'ticket'),
+    'tickebo': ('tickebo_logo', 'チケットボード', 'ticket'),
+    'bleague': ('bleague_logo', 'B.LEAGUE', 'ticket'),
 }
 
 
