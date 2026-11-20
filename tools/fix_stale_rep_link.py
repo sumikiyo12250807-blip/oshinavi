@@ -34,9 +34,17 @@ def plan(e, today):
     if e.get('genre') == 'new' or (e.get('date') or '') < today:
         return []
     T = e.get('tickets') or []
-    if not T or any(not t.get('url') for t in T):
-        return []
     out = []
+    # 🆕2026-11-20 すちこ「e+のボタンないんだっけ？　すぐ作って」＝e+ の受付があるのに links.eplus が空（11件・ぴあで作ったカードに e+ の枠を足した分）
+    #   → これからの e+ の枠のうち締切がいちばん早いページをボタンにする。
+    #   URL の無い枠は 楽天→ぴあ→e+ の順でボタンへ飛ぶ（index.html soldLinkUrl）＝楽天かぴあのボタンがあれば足しても飛び先は変わらない
+    L = e.get('links') or {}
+    if 'links' in e and not L.get('eplus') and (L.get('rakuten') or L.get('pia') or all(t.get('url') for t in T)):
+        fe = sorted((t for t in T if 'eplus.jp' in (t.get('url') or '') and (t.get('date') or '') >= today), key=lambda t: (t['date'], t['url']))
+        if fe:
+            out.append(('eplus', None, fe[0]['url']))
+    if not T or any(not t.get('url') for t in T):
+        return out
     for k, u in (e.get('links') or {}).items():
         if not u or k == 'amazon' or not isinstance(u, str):
             continue
@@ -70,6 +78,10 @@ def _selftest():
           'tickets': [{'date': '2026-11-01', 'url': 'https://t.pia.jp/pia/event/event.do?eventBundleCd=b1'},
                       {'date': '2026-12-01', 'url': 'https://t.pia.jp/pia/event/event.do?eventCd=2'}]}
     assert plan(e6, td) == []                       # ぴあのまとめページは触らない
+    e7 = {'id': 3, 'date': '2027-01-17', 'links': {'pia': 'https://t.pia.jp/x', 'eplus': None},
+          'tickets': [{'date': '2026-12-01', 'url': 'https://t.pia.jp/x'}, {'date': '2026-12-20', 'url': 'https://eplus.jp/b'},
+                      {'date': '2026-12-10', 'url': 'https://eplus.jp/a'}]}
+    assert plan(e7, td) == [('eplus', None, 'https://eplus.jp/a')], plan(e7, td)   # e+ の受付があるのにボタンが無い
     print('selftest OK')
 
 
