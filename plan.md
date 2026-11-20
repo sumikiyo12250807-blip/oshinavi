@@ -2,6 +2,12 @@
 - ✅ おはようで夜通しの件数を報告（＋105・ぴあ65 e+7 TicketDive33）／e+ /sf/word/ は一周＝空いた夜を新しい売り場に回す案を出す
 - ⏰ アラーム：10:07 記事3本／13:07 抜き打ち30件／15:07 昼／16:07 X 準備（11/21 発売）／18:47 予約／20:47 TikTok／22:07 夜の便＋夜通し／23:43 番人
 - 🔄 裏：tmp/x1120/morning_chain.py（local → ぴあ）
+- 🌙 22:07 夜の便（道具 tmp/x1120/mk_night20.py で作った）：night_1120.py＝e+ の止まった25件 reconcile_eplus --ids → fix_eplus_fails → 今日発売のぴあ heal → prepush → commit → push（今日2回目）／night_chain20.py＝push のあと sweep20n（昼に止められた ぴあ見直し 組2）→ night_collect20（assign_night20＝頭に refetch_artist --pool → 振り分け → ぴあ発売前の収集）→ overnight_1120（e+ /sf/word/ の続き・STOP 11/21 02:00・e+ 札の段あり・TicketDive・最後に登録済み出演者の取り直し m_ids.json）
+  - 🆕 fix_stuck の結果：ぴあ 16件を作り直し（枠が消えたカード0）→ 14件振り分け＝新着 159／FANY は2件だけ当たり 10件とも番人で止まったまま（heal_fany は「変わりなし」・番人は「食い違い」＝2つの見方がずれている ▶ 朝に中身を見る）
+  - 🔎 すちこ「どうしても159件は残ってるんだね　どうするの？」→ 内訳（tmp/x1120/pool_why20.txt）：番人で止まる72（e+27・ぴあ11・FANY10・新しい売り場18 ほか）＝今夜の道具で直す／TicketDive 札なし41＝検索でも出なかった分 ▶ すちこに「音楽のライブなら その他（音楽）」でよいか聞いた／出演者が公演名のまま23（楽天6・FANY2・チケットペイ1 は取り直す道具なし ▶ 朝に手で）／表に無い札23（e+18・宝塚松竹5 ▶ 夜に聞くリスト）
+  - ✅ すちこ「その他にしよう　どうしてもわからないのは　音楽と舞台エンタメお出かけ配信その他　その他に入れて」→ 配信の後ろに6つ目の棚「その他」(other) を足した（add_other_genre.py・build_ai_page にも）→ 🔄 tmp/x1120/td_other20.py（音楽のライブ35＝音楽の「その他」・決まらない2＝新しい「その他」・出典つき4＝そのジャンル → heal_ticketdive → 番人 → 振り分け → 夜の push のあと commit）・memory project_pool_zero_1120
+  - 🌙 すちこ「おやすみなさい　振り分けと夜通し頼みます　新しい売り場からもお願いね」→ tmp/x1120/night_newv20.py（night_collect20 のあと・e+ 夜通しと並べて2本）＝宝塚・松竹・TicketRugby・チケットボード・B.LEAGUE を集め直し → 番人 --built → 新着へ／登録済みも番人 → heal → 新しい売り場の振り分け（assign_newv_n20）→ 記録 tmp/x1120/newv_n/log.txt ▶ 朝に件数を報告
+  - ✅ 朝に「空いた夜を新しい売り場・取りこぼし探しに回す案」は出し済み（上の 💡 の行）＝新しい売り場6つは今日昼に入れた
 - 🔎 すちこ「新着が減らないわけを教えて」＝1,128件の内訳（tmp/x1120/pool_why20.txt）：①出演者が公演名のまま 約650（livePocket 161・ぴあ 129・e+ 127・チケットペイ 100・ZAIKO 70・TIGET 54）＝取り直しの道具がぴあと e+ だけ ②札なし 約300（TicketDive 201・e+ 96＝表に無い札）③札も出演者もあるのに照合で止まる 194（e+ は登録後の延長・受付の追加を直す段が振り分けに無い＝毎晩同じ80件が止まる）④チケットペイ 105＝すちこ待ち
   - 🔄 ③ e+ を直す：tmp/x1120/e_pool_fix20.py（朝の e+ が終わってから reconcile_eplus --ids → fix_eplus_fails --apply → もう一度照合 → commit）▶ 合った分を朝の振り分けへ
   - 🔄 ① 根っこ＝手順書に「振り分けの前に refetch_artist --pool --apply」とあるのに、毎日の振り分けの道具（assign19 など）に入っていなかった＝649件とも一度も売り場で確かめていない（artist_nocast の記録0）→ tmp/x1120/refetch_pool20.py（朝の道具と e+ の直しのあと・鍵を持って）▶ 今日から振り分けの道具（assign20・assign_night20）の頭に refetch_artist --pool --apply を入れる（ZAIKO・チケットペイは読む道具が無い＝残る）
