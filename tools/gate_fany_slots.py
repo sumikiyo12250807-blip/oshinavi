@@ -60,15 +60,22 @@ def load_registered(ids=None):
     h = open('index.html', encoding='utf-8', newline='').read()
     ev = json.loads(re.search(r'  const EVENTS = (\[.*?\]);', h, re.S).group(1))
     out = {}
+    want = set()
     for e in ev:
         fid = re.search(r'/event/detail/(\d+)', (e.get('links') or {}).get('fany') or '')
         if not fid:
             continue
-        if ids and e['id'] not in ids:
-            continue
         # 🆕2026-10-01 同じタイトルで会場だけ違うFANYの公演を1エントリに畳んだもの＝_fanyEvents の全イベントで突合する
         for f in (e.get('_fanyEvents') or [fid.group(1)]):
             out.setdefault(str(f), []).append(e)
+            if ids and e['id'] in ids:
+                want.add(str(f))
+    # 🆕2026-11-21 --ids でも「そのイベントに載っている全カード」で比べる。
+    #   売り場はイベント1つ分の全公演を出す・うちは1公演1カード＝渡したidのカードだけで比べると、
+    #   同じイベントのほかの回のカードの枠が「只ページ側」に出て、正しいカードまで止まっていた
+    #   （11/20 FANY 新喜劇プラス ほか＝heal_fany は「変化なし」なのに番人は食い違い 7件・振り分けで 87件止まった）
+    if ids:
+        out = {f: es for f, es in out.items() if f in want}
     return out
 
 
