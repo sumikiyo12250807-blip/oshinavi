@@ -101,7 +101,8 @@ EPLUS_GENRE_PATH = {
 }
 
 
-RX_PATH = re.compile(r'href="/sf/(play|event|sports|classic|art)/([a-z0-9_-]+)')
+# 🆕2026-11-20 「/sf/play/2.5」（2.5次元）が「play/2」に切れていた＝小分類に「.」も入れる
+RX_PATH = re.compile(r'href="/sf/(play|event|sports|classic|art)/([a-z0-9_-]+(?:\.[a-z0-9_-]+)?)')
 
 
 def cats_of(html):
@@ -194,12 +195,25 @@ def main():
     cnt = collections.Counter()
     for i, e in enumerate(targets, 1):
         url = e['links']['eplus']
-        html = fetch(url)
+        # 🆕2026-11-20 大きいリンクのページが消えている（ツアーの最初の会場が終わって 404）と札が読めず、新着に37件残った
+        #   ＝読めない・札が無い時は、枠の e+ のページを3枚まで順に読む
+        others = [t.get('url') for t in e.get('tickets') or [] if 'eplus.jp/sf/detail/' in (t.get('url') or '')]
+        tried, html, cats = [], None, []
+        for u in [url] + [x for x in dict.fromkeys(others) if x != url][:3]:
+            tried.append(u)
+            h = fetch(u)
+            if h is None:
+                continue
+            html = h
+            cats = cats_of(h)
+            if cats:
+                url = u
+                break
+            time.sleep(a.sleep)
         if html is None:
             err += 1
-            log.append('%s\tFETCH_ERR\t\t\t%s' % (e['id'], url))
+            log.append('%s\tFETCH_ERR\t\t\t%s' % (e['id'], ' '.join(tried)))
             continue
-        cats = cats_of(html)
         if not cats:
             log.append('%s\t(申告なし)\t\t%s\t%s' % (e['id'], (e.get('name') or ''), url))
             continue
