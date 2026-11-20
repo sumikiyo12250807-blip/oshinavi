@@ -134,6 +134,9 @@ def build(ev, today, now, notes=None):
             return None, '試合名が読めない'
         artist = name
     name = re.sub(r'\s+', ' ', name).strip()
+    if '駐車' in name:
+        # 2026-11-20 クラブが駐車券を同じ売り場で売っている（29件）＝試合の券ではないので載せない
+        return None, '駐車券（試合の券ではない）'
 
     end = BH.utc_to_jst(d.get('saleEndAt'))
     scheds = d.get('salesSchedules') or []
