@@ -44,7 +44,15 @@ def performers(html):
         r'mc|o\.?a|オープニングアクト)\s*[->】）)]?[:：]?$)', re.I)
 
     out = []
+    # 🆕2026-11-20 抜き打ち 54987 寛平 新喜劇出前ツアー＝「間寛平/アキ/未知やすえ/…」（16組）・「間寛平、アキ、島田珠代 ほか」と
+    #   1行に並べる書き方がある＝改行だけで分けると長すぎて捨てる／3人が1つの名前になる → 「/」「／」「、」でも分け、末尾の「ほか」を外す
+    lines = []
     for ln in body.split('\n'):
+        if '：' not in ln and ':' not in ln and re.search(r'[/／、]', ln) and not re.search(r'[(（][^)）]*[/／、]', ln):
+            lines += [re.sub(r'\s*(?:ほか|他|ほか多数)\s*$', '', x) for x in re.split(r'\s*[/／、]\s*', ln)]
+        else:
+            lines.append(ln)
+    for ln in lines:
         ln = re.sub(r'\s+', ' ', ln).strip(' 　/／、,')
         ln = re.sub(r'^[■●▲★☆◆・･・\-–—=＝\s]+', '', ln).strip()
         # 「【司会】徳光和夫」「<Band Member>」「ゲスト:原田波人」の見出し部分を外す
