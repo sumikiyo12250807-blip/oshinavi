@@ -100,6 +100,8 @@ EPLUS_GENRE_PATH = {
     'event/game': 'game', 'event/streaming': 'haishin', 'play/kabuki': 'dento',
     # 2026-11-20 すちこ「ファミリーコンサートはキッズ、2.5次元はミュージカルで」
     'play/family-concert': 'kids', 'play/2.5': 'musical',
+    # 2026-11-21 すちこ「アイスショーは　舞台　アイスショーを作って」
+    'sports/figure': 'iceshow',
 }
 
 
