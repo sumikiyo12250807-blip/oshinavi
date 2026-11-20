@@ -98,6 +98,8 @@ EPLUS_GENRE_PATH = {
     'sports/wrestling': 'sports', 'art': 'art',
     # 2026-11-20 すちこ「配信はあるよね　ゲームってジャンル作って　歌舞伎は伝統」
     'event/game': 'game', 'event/streaming': 'haishin', 'play/kabuki': 'dento',
+    # 2026-11-20 すちこ「ファミリーコンサートはキッズ、2.5次元はミュージカルで」
+    'play/family-concert': 'kids', 'play/2.5': 'musical',
 }
 
 
