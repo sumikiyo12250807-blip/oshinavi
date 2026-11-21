@@ -1,0 +1,714 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        $(function(){
+            const d = new Date();
+            const now = getDate(d);
+            if (now <= 20270116235959) {
+                let performanceIds = document.cookie.split('performances=')[1];
+                if(performanceIds == undefined) {
+                    performanceIds = 58765 + '';
+                } else {
+                    performanceIds = performanceIds.split(';')[0].split(',');
+                    performanceIds.forEach((performanceId, index) => {
+                        if (performanceId == 58765) {
+                            performanceIds.splice(index, 1);
+                        }
+                    });
+                    performanceIds.unshift(58765 + '');
+                    performanceIds = performanceIds.toString();
+                }
+                const expireYear = d.getFullYear() + 1;
+                document.cookie = `performances=${performanceIds}; Expires=31 Dec ${expireYear} 23:59:59 GMT; Path=/`;
+            }
+        });
+
+        function getDate(dateObj) {
+            let year = dateObj.getFullYear();
+            let month = dateObj.getMonth()+1;
+            if (month < 10) {
+                month = `0${month}`;
+            }
+            let day = dateObj.getDate();
+            if (day < 10) {
+                day = `0${day}`;
+            }
+            let hour = dateObj.getHours();
+            if (hour < 10) {
+                hour = `0${hour}`;
+            }
+            let minute = dateObj.getMinutes();
+            if (minute < 10) {
+                minute = `0${minute}`;
+            }
+            let second = dateObj.getSeconds();
+            if (second < 10) {
+                second = `0${second}`;
+            }
+
+            return '' + year + month + day + hour + minute + second;
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- デザインタイプ3 -->
+  <!DOCTYPE html>
+  <html lang="ja">
+      <head>
+          <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+                  <title>受付公演詳細 | FANYチケット</title>
+        <style>
+      :root {
+        --bg-copyright-url: url("https://cdn.funity.live/assets/img/bg-copyright.png")
+      }
+    </style>
+    <script>
+      //cdn-init start
+      var cdn_domain = "https://cdn.funity.live";
+      //cdn-init end
+    </script>
+          <link rel="icon" href="https://cdn.funity.live/13/CLT-S02-06/13/3/20241122200415382633.ico">
+        
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/module.css?v=78dafb67a5b884de3548726b223aee9244b6ff4e">
+
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/editor_reset.css?v=78dafb67a5b884de3548726b223aee9244b6ff4e">
+    <link rel="stylesheet" type="text/css" href="https://cdn.funity.live/13/css/style.css?v=53">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="/assets/css/design_type2/jquery-ui.min.css">
+          <link rel="stylesheet" href="/assets/css/design_type2/reset.css">
+          <link rel="stylesheet" href="/assets/css/design_type3/fany.css?v=78dafb67a5b884de3548726b223aee9244b6ff4e">
+          <link rel="stylesheet" href="/assets/css/design_type2/font-awesome-4.5.0.min.css">
+          <link rel="stylesheet" href="/assets/css/design_type3/fany_datepicker.css">
+          <link rel="stylesheet" href="/assets/css/design_type3/style.css">
+
+          <script src="/assets/js/design_type2/jquery-3.6.0.slim.min.js"></script>
+          <script src="/assets/js/design_type2/jquery-ui.min.js" defer></script>
+          <script src="/assets/js/design_type3/fany_script.js?v=78dafb67a5b884de3548726b223aee9244b6ff4e" defer></script>
+          <script src="/assets/js/design_type3/datepicker-ja.js?v=78dafb67a5b884de3548726b223aee9244b6ff4e" defer></script>
+          <script src="/assets/js/design_type3/fany_datepicker.js?v=78dafb67a5b884de3548726b223aee9244b6ff4e" defer></script>
+          <script src="/assets/js/design_type3/1.8.1_slick_slick.min.js?v=78dafb67a5b884de3548726b223aee9244b6ff4e" defer></script>
+          <script src="/assets/js/main.js?v=78dafb67a5b884de3548726b223aee9244b6ff4e" defer></script>
+          <script src="/assets/js/ec.js?v=78dafb67a5b884de3548726b223aee9244b6ff4e" defer></script>
+          <script src="/assets/js/vendor.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.js"></script>
+          <script id="reception_cookie_js" src="/assets/js/reception/cookie.js" data-materials="eyJjb29raWVfbmFtZSI6ImFkbWlzc2lvbl90aWNrZXQiLCJyZWNlcHRpb25faWQiOiI3NDEzOSIsInBlcmZvcm1hbmNlX2lkIjoiNTg3NjUifQ=="></script>
+          
+                                  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NPWRFPDG');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) EVENTIFY-yoshimoto-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5M7SSSXZM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5M7SSSXZM');
+</script>
+<!-- End Google tag (gtag.js) EVENTIFY-yoshimoto-->
+
+<script>
+function is_smart_mobile(){
+    $useragents = array(
+        'iPhone', // iPhone
+        'iPod', // iPod touch
+        'Android.*Mobile', // 1.5+ Android *** Only mobile
+        'Windows.*Phone', // *** Windows Phone
+        'dream', // Pre 1.5 Android
+        'CUPCAKE', // 1.5+ Android
+        'blackberry9500', // Storm
+        'blackberry9530', // Storm
+        'blackberry9520', // Storm v2
+        'blackberry9550', // Storm v2
+        'blackberry9800', // Torch
+        'webOS', // Palm Pre Experimental
+        'incognito', // Other iPhone browser
+        'webmate' // Other iPhone browser
+
+    );
+    $pattern = '/'.implode('|', $useragents).'/i';
+    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+}
+</script>
+                </head>
+      <body id="design_type_3-body">
+                        <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPWRFPDG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <!--スマホページなら、ラフピーバナーを表示-->   <?php if(is_smart_mobile()):?>     <a href="https://yappli.plus/yoshimotolaughp_ticketyoshimoto" id="SmBnLink" style="display:none;">         <img src="https://cdn.funity.live/fany/img/header_fany.png" style="width:100%; height:auto; margin: 0 0 -5px 0;">     </a>     <script>if ((navigator.userAgent.indexOf('iPhone') != -1 || navigator.userAgent.indexOf('iPad') != -1 || navigator.userAgent.indexOf('iPod') != -1 || navigator.userAgent.indexOf('Android') != -1) && navigator.userAgent.indexOf('Yappli') == -1) { document.getElementById("SmBnLink").style.display="block"; }</script>   <?php endif;?>                    <div class="g-wrapper">
+              <section id="fany-main">
+      <div id="header">
+        <div id="header">
+          <div class="fany">
+            <div class="fany-header">
+              <div class="fany-header_logo">
+                <a href="https://fany.lol/" target="_blank" rel="noopener" style="background-image: url(https://cdn.funity.live/assets/img/design_type3/logo/FANY_logo_white.svg);" aria-describedby="a11y-new-window-external-message"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-fany-header">
+            <h1 class="fany-logo g-header_logo">
+                                <a style="background-repeat: no-repeat; height: 36px;" href="/" data-logo_url="https://cdn.funity.live/13/CLT-S02-06/13/1/20241122200414903859.png"></a>
+                            </h1>
+            <div class="fany-mypage">
+              <a href="/mypage"><i class="fa fa-user"></i><span class="icon-desc">マイページ</span></a>
+            </div>
+            <div class="hamburger fany-hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="hamburger_menu fany-hamburger_menu icon-desc">メニュー</span>
+
+            <nav class="globalMenuSp">
+              <ul>
+                <li><a href="/stc/user_guide">ご利用ガイド</a></li>
+                <li><a href="/mypage">マイページ</a></li>
+                <li><a href="https://id.yoshimoto.co.jp/signup_intro.html">新規会員登録</a></li>
+                <li><a href="/notice">お知らせ</a></li>
+                <li><a href="/event/refund">公演中止・延期のお知らせ</a></li>
+                <li><a href="/stc/other">本サイト以外のご購入方法</a></li>
+                <li><a href="/faq">FAQ・お問い合わせ</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="fany-search">
+        <div class="g-accordion-wrap">
+          <div class="g-accordion-item">
+            <span class="g-accordion-header">劇場<small>から探す</small><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+          <div class="g-accordion-body">
+            <ul>
+              <!-- 劇場 -->
+                            <li>
+                <a
+                  href="/ngk"
+                >なんばグランド花月<small
+                  >/ 大阪 なんば</small></a></li>
+                            <li>
+                <a
+                  href="/lumine"
+                >ルミネtheよしもと<small
+                  >/ 東京 新宿</small></a></li>
+                            <li>
+                <a
+                  href="/manzaigekijyo"
+                >よしもと漫才劇場<small
+                  >/ 大阪 なんば</small></a></li>
+                            <li>
+                <a
+                  href="/morinomiya_manzaigekijyo"
+                >森ノ宮よしもと漫才劇場<small
+                  >/ 大阪 森ノ宮</small></a></li>
+                            <li>
+                <a
+                  href="/shibuya_manzaigekijyo"
+                >渋谷よしもと漫才劇場<small
+                  >/ 東京 渋谷</small></a></li>
+                            <li>
+                <a
+                  href="/jimbocho_manzaigekijyo"
+                >神保町よしもと漫才劇場<small
+                  >/ 東京 神保町</small></a></li>
+                            <li>
+                <a
+                  href="/dotonbori"
+                >よしもと道頓堀シアター<small
+                  >/ 大阪 道頓堀</small></a></li>
+                            <li>
+                <a
+                  href="/roppongi"
+                >YOSHIMOTO ROPPONGI THEATER<small
+                  >/ 東京 六本木</small></a></li>
+                            <li>
+                <a
+                  href="/makuhari"
+                >よしもと幕張イオンモール劇場<small
+                  >/ 千葉 幕張</small></a></li>
+                            <li>
+                <a
+                  href="/omiya"
+                >大宮ラクーンよしもと劇場<small
+                  >/ 埼玉 大宮</small></a></li>
+                            <li>
+                <a
+                  href="/fukuokagekijyo"
+                >よしもと福岡 大和証券劇場<small
+                  >/ 福岡 福岡</small></a></li>
+                            <li>
+                <a
+                  href="/numazu"
+                >沼津ラクーンよしもと劇場<small
+                  >/ 静岡 沼津</small></a></li>
+                          </ul>
+          </div>
+        </div>
+      </div>
+      <form class="fany-search" name="fany-search" method="GET" action="/search/event" role="form">
+        <div class="g-search_container">
+          <div>
+            <div class="g-inputGroup">
+              <input class="g-input" type="text" name="keywords" value="" placeholder="出演者/公演名/会場名で検索">
+              <input type="hidden" name="search_type" value="search_string">
+              <input type="submit" value="&#xf002">
+            </div>
+          </div>
+        </div>
+      </form>
+      <form class="fany-search" name="fany-search" method="GET" action="/search/event" role="form">
+        <div class="g-accordion-wrap">
+          <div class="g-accordion-item">
+            <span class="g-accordion-header">詳細検索<i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+          <div class="g-accordion-body">
+            <table class="g-search-table">
+              <tr class="g-toggle online real both">
+                <th>出演者/公演名/会場名</th>
+                <td>
+                  <div class="g-inputGroup">
+                    <input class="g-input" type="text" name="keywords" value="" placeholder="出演者/公演名/会場名で検索">
+                  </div>
+                </td>
+              </tr>
+              <tr class="g-toggle online real both">
+                <th>公演日</th>
+                <td>
+                  <div class="g-inputGroup">
+                    <div class="g-inputGroup__inner datepicker_from">
+                      <input class="g-input fany-input g-input_s datepicker" type="text" name="from" value="" placeholder="日付を選択" readonly="readonly">
+                    </div>
+                    <span class="g-input__fromTo">〜</span>
+                    <div class="g-inputGroup__inner datepicker_to">
+                      <input class="g-input fany-input g-input_s datepicker" type="text" name="to" value="" placeholder="日付を選択" readonly="readonly">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="g-toggle online real both">
+
+                <th>先行（抽選）販売</th>
+                <td>
+                  <div class="g-checkbox">
+                    <input  class="visually-hidden" type="checkbox" name="ngk_beforeReception" id="ngk_beforeReception" >
+                    <label for="ngk_beforeReception">受付前</label>
+                    <input class="visually-hidden" type="checkbox" name="ngk_accepting" id="ngk_accepting" >
+                    <label for="ngk_accepting">受付中</label>
+                  </div>
+                </td>
+            </tr>
+          <tr class="g-toggle real both">
+            <th>都道府県</th>
+            <td>
+              <div class="g-inputGroup">
+                <select class="g-input" name="prefectures">
+                  <option value="0" selected>選択してください</option>
+
+                                    <optgroup label="北海道地方">
+                                            <option value="01" >北海道</option>
+                                        </optgroup>
+                                    <optgroup label="東北地方">
+                                            <option value="02" >青森</option>
+                                            <option value="03" >岩手</option>
+                                            <option value="04" >宮城</option>
+                                            <option value="05" >秋田</option>
+                                            <option value="06" >山形</option>
+                                            <option value="07" >福島</option>
+                                        </optgroup>
+                                    <optgroup label="関東地方">
+                                            <option value="08" >茨城</option>
+                                            <option value="09" >栃木</option>
+                                            <option value="10" >群馬</option>
+                                            <option value="11" >埼玉</option>
+                                            <option value="12" >千葉</option>
+                                            <option value="13" >東京</option>
+                                            <option value="14" >神奈川</option>
+                                        </optgroup>
+                                    <optgroup label="中部地方">
+                                            <option value="15" >新潟</option>
+                                            <option value="16" >富山</option>
+                                            <option value="17" >石川</option>
+                                            <option value="18" >福井</option>
+                                            <option value="19" >山梨</option>
+                                            <option value="20" >長野</option>
+                                            <option value="21" >岐阜</option>
+                                            <option value="22" >静岡</option>
+                                            <option value="23" >愛知</option>
+                                        </optgroup>
+                                    <optgroup label="近畿地方">
+                                            <option value="24" >三重</option>
+                                            <option value="25" >滋賀</option>
+                                            <option value="26" >京都</option>
+                                            <option value="27" >大阪</option>
+                                            <option value="28" >兵庫</option>
+                                            <option value="29" >奈良</option>
+                                            <option value="30" >和歌山</option>
+                                        </optgroup>
+                                    <optgroup label="中国地方">
+                                            <option value="31" >鳥取</option>
+                                            <option value="32" >島根</option>
+                                            <option value="33" >岡山</option>
+                                            <option value="34" >広島</option>
+                                            <option value="35" >山口</option>
+                                        </optgroup>
+                                    <optgroup label="四国地方">
+                                            <option value="36" >徳島</option>
+                                            <option value="37" >香川</option>
+                                            <option value="38" >愛媛</option>
+                                            <option value="39" >高知</option>
+                                        </optgroup>
+                                    <optgroup label="九州地方">
+                                            <option value="40" >福岡</option>
+                                            <option value="41" >佐賀</option>
+                                            <option value="42" >長崎</option>
+                                            <option value="43" >熊本</option>
+                                            <option value="44" >大分</option>
+                                            <option value="45" >宮崎</option>
+                                            <option value="46" >鹿児島</option>
+                                            <option value="47" >沖縄</option>
+                                        </optgroup>
+                  
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr class="g-toggle online real both">
+            <th>ジャンル</th>
+            <td>
+              <div class="g-inputGroup">
+                <select class="g-input" name="genre">
+                  <option value="0" selected>選択してください</option>
+
+                                    <option value="30" >お笑い</option>
+                                    <option value="31" >音楽</option>
+                                    <option value="32" >演劇／ステージ</option>
+                                    <option value="33" >スポーツ</option>
+                                    <option value="34" >アニメ</option>
+                                    <option value="35" >ゲーム</option>
+                                    <option value="36" >映画／ライブビューイング</option>
+                                    <option value="37" >アート／イベント</option>
+                                    <option value="38" >よしもとの劇場以外の公演</option>
+                  
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+            <div class="g-searchBtn">
+            <input type="hidden" name="search_type" value="form">
+              <button class="s-btn g-btn-reset" name="reset-btn" type="button">クリア</button>
+              <button class="s-btn g-btn-orange" type="submit">検索</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+          <!--main-->
+            <main class="g-main g-subcontent g-container-block g-contents">
+        <div class="g-main_inner">
+
+							<p class="g-tag g-mb-10">先着販売</p>
+						<div class="g-h g-h-1 g-mb-0">
+				<h2 class="g-h_h">リーディングアクト『一富士茄子牛焦げルギー』</h2>
+			</div>
+			<div class="g-h g-h-1">
+				<h2 class="g-h_h"></h1>
+        </div>
+                            
+        <!--discount-->
+        
+        <!--Info-->
+            <!--受付情報-->
+    <section class="g-section">
+        <div class="g-h g-h-2">
+            <h2 class="g-h_h">受付情報</h2>
+        </div>
+        <div class="g-column">
+            <h3 class="g-column_h">一般発売</h3>
+                            <br/>出演
+                        <div class="g-column_indent">
+                <div class="editor_text">
+                                            <p class="preview_block">藤本洸大、羽野晶紀、古田新太</p><br/>
+                                        ・受付開始から先着順でチケットが購入出来ます。予定枚数に達し次第受付終了となります。<br />
+・1回の先着申込で申込可能な公演数は『<strong><span style="color:#ff0000">1公演</span></strong>』、枚数は『<strong><span style="color:#ff0000">4枚まで</span></strong>』となります。（公演により一部例外がございます）<br />
+・座席番号や整理番号は、すべてコンピュータ制御により自動で決定します。
+<hr />【車いすでご来場のお客様へ】<br />
+※車いす席をご利用のお客様はチケットをご購入の上、事前にキョードーインフォメーション　0570-200-888（※土日・祝を除く）までご連絡ください。                </div>
+            </div>
+
+            <div class="g-column_foot">
+                <div class="g-stack-md--smo g-butterfly--md">
+                                    </div>
+            </div>
+        </div>
+    </section>
+    <!--/受付情報-->
+
+        <!--Contact-->
+            <!--注意事項-->
+    <section class="g-section">
+        <div class="g-h g-h-2">
+            <h2 class="g-h_h">注意事項</h2>
+        </div>
+        <div class="g-column">
+            <div class="g-column_indent">
+                <div class="editor_text">
+                    <p class="preview_block">※チケットの発券開始は、12/31（木）10:00～からとなります。お席につきましてはチケット券面にてご確認ください。
+
+※FANYチケット先行はクレジットカード決済のみとなります。
+※ファミリーマートでの店頭販売はございません。
+※お申込みは、お一人様4枚までとなります。
+※未就学児入場不可。ひざ上での鑑賞不可。
+※営利目的の転売禁止。
+※公演中止の場合を除き、チケットの払い戻しはいたしません。
+※やむを得ない事情により出演者が変更になる場合もございます。出演者の変更による払い戻しは致しません。
+※2枚以上でご購入されたお客様は、状況によっては連席でご案内できない場合がございます。予めご了承ください。
+※チケットご購入の際には、ご自身の体調や環境をふまえご判断くださいますようお願いいたします。
+※ご来場前に必ずオフィシャルサイトにて最新の情報をご確認ください。
+
+【公演に関するお問合せ】
+リコモーション 　TEL：06-6923-3535（平日10:00-18:00）
+
+【チケット申込に関するお問合せ】
+FANYチケット問合せダイヤル　TEL：0570-550-100（10:00～19:00／年中無休）</p> <!--公演の注意事項-->
+                    <p class="preview_block">※前売券が完売した際には、当日券がない場合がございます。</p> <!--公演のその他-->
+                    <p><hr />・出演者は変更になる場合がございます。予めご了承ください。<br />
+・出演者等の変更に伴う払戻しは行いません。<br />
+<strong><span style="color:#ff0000">・購入後の変更・キャンセル（取消し）はできません。</span></strong>
+
+<hr /></p> <!--販売スケジュールの注意事項-->
+                    <p>
+                        FANYチケット問合せダイヤル<br>
+                                                    0570-550-100 <br>
+                                                <a href= > </a><br>
+                                            </p> <!--公演の問い合わせ先-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/注意事項-->
+
+        <!--g-main_foot-->
+            
+        <!--live-ec-first-->
+            <!--公演-->
+    <section class="g-section">
+        <div class="g-h g-h-2">
+            <h2 class="g-h_h">公演</h2>
+        </div>
+        <ul class="g-itemSet g-itemSet-accordion g-itemSet-responsive g-itemSet-live">
+                        <li class="g-itemSet-list_item-wide">
+                <div class="g-itemSet_summary g-itemSet_summary_toggle">
+                    <div class="g-itemSet_head">
+                                                    <p>2027/01/16(土)</p>
+                                            </div>
+                                            <div class="g-itemSet_name">
+                            <p>リーディングアクト『一富士茄子牛焦げルギー』</p>
+                        </div>
+                                        <div class="g-itemSet_body">
+                        <p>開場 11:30 / 開演 12:00</p>
+                    </div>
+                    <div class="g-itemSet_body">
+                        <p>
+                                                            サンケイホールブリーゼ
+                                (大阪府)
+                                                    </p>
+                    </div>
+                    <div class="g-itemSet_foot">
+                                                    <p>先着発売前 2026/11/22(日) 10:00～2027/01/14(木) 23:59<p>
+                                            </div>
+                    <button class="g-itemSet_btn g-itemSet_btn_opened" name="btn-dropdown" type="button" aria-expanded="false" aria-controls="liveDetail"
+                        aria-label="詳細情報を開閉する"><i class="g-i g-i-arrow_drop_down" aria-hidden="true"></i><span class="g-i-text_drop_dow"></span></button>
+                </div>
+
+                <div class="g-itemSet_detail">
+                    <div class="g-itemSet_region" id="liveDetail" role="region" aria-hidden="true">
+                        <div class="g-sellItems">
+
+                                                                                                <dl class="g-sellItems_item">
+                                        <dt>全席指定</dt>
+                                        <dd>
+
+                                                                                                                                                <div class="g-sellItems_ticket">
+                                                        <p class="g-sellItems_type">
+                                                            前売
+                                                        </p>
+                                                        <p class="g-sellItems_state">
+                                                                                                                    </p>
+                                                        <p class="g-sellItems_price">
+                                                            ￥8,400</p>
+                                                    </div>
+                                                                                            
+                                        </dd>
+                                    </dl>
+                                                                                    </div>
+                                            </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!--/公演-->
+
+        <!--goods-ec-->
+            <!--グッズ-->
+    
+        <!--set-ec-->
+            <!--セット券-->
+    
+    </div>
+    </main>
+    <!--/main-->
+
+
+    </section>
+
+    <div class="fany-footer__content">
+      <div class="fany-footer__inner">
+        <div class="fany-footer__item">
+          <ul class="fany-footer__linklist">
+            <li class="fany-footer__linklist-item list-acd">
+              <label for="fanyService">FANY関連サービス</label>
+              <input type="checkbox" id="fanyService"><i class="fa fa-angle-down" aria-hidden="true"></i>
+              <ul>
+                <li><a href="https://ticket.fany.lol/" target="_blank">FANYチケット</a></li>
+                <li><a href="https://online-ticket.yoshimoto.co.jp/" target="_blank">FANYオンラインチケット</a></li>
+                <li><a href="https://osaka-channel.hikaritv.net/" target="_blank">FANYチャンネル</a></li>
+                <li><a href="https://commu.fany.lol" target="_blank">FANYコミュ</a></li>
+                <li><a href="https://mall.fany.lol" target="_blank">FANYモール</a></li>
+                <li><a href="https://action.fany.lol/" target="_blank">FANY Action</a></li>
+                <li><a href="https://x.fany.lol/" target="_blank">FANY X</a></li>
+                <li><a href="https://id.yoshimoto.co.jp/" target="_blank">FANY ID</a></li>
+                <li><a href="https://fany.lol/#fanyapp" target="_blank">FANYアプリ</a></li>
+                <li><a href="https://twitter.com/fany_news" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/X_w100.png')"></span>X</a></li>
+                <li><a href="https://www.youtube.com/channel/UCr_8SkzM9zCFV-vLvd9jgRw" target="_blank"><span class="link-icon" style="height: 18px; background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/YouTube_w100.png')"></span>YouTube</a></li>
+              </ul>
+            </li>
+            <li class="fany-footer__linklist-item list-acd">
+              <label for="theater">劇場公式HP</label>
+              <input type="checkbox" id="theater"><i class="fa fa-angle-down" aria-hidden="true"></i>
+              <ul>
+
+                <!-- 劇場 -->
+                                <li>
+                  <a
+                    href="https://ngk.yoshimoto.co.jp/"
+                  >なんばグランド花月<small
+                    >/ 大阪 なんば</small></a></li>
+                                <li>
+                  <a
+                    href="https://lumine.yoshimoto.co.jp/"
+                  >ルミネtheよしもと<small
+                    >/ 東京 新宿</small></a></li>
+                                <li>
+                  <a
+                    href="https://manzaigekijyo.yoshimoto.co.jp/"
+                  >よしもと漫才劇場<small
+                    >/ 大阪 なんば</small></a></li>
+                                <li>
+                  <a
+                    href="https://morinomiya-manzaigekijyo.yoshimoto.co.jp/"
+                  >森ノ宮よしもと漫才劇場<small
+                    >/ 大阪 森ノ宮</small></a></li>
+                                <li>
+                  <a
+                    href="https://shibuya-manzaigekijyo.yoshimoto.co.jp/"
+                  >渋谷よしもと漫才劇場<small
+                    >/ 東京 渋谷</small></a></li>
+                                <li>
+                  <a
+                    href="https://jimbocho-manzaigekijyo.yoshimoto.co.jp/"
+                  >神保町よしもと漫才劇場<small
+                    >/ 東京 神保町</small></a></li>
+                                <li>
+                  <a
+                    href="https://dotonbori.yoshimoto.co.jp/"
+                  >よしもと道頓堀シアター<small
+                    >/ 大阪 道頓堀</small></a></li>
+                                <li>
+                  <a
+                    href="https://roppongi.yoshimoto.co.jp/"
+                  >YOSHIMOTO ROPPONGI THEATER<small
+                    >/ 東京 六本木</small></a></li>
+                                <li>
+                  <a
+                    href="https://makuhari.yoshimoto.co.jp/"
+                  >よしもと幕張イオンモール劇場<small
+                    >/ 千葉 幕張</small></a></li>
+                                <li>
+                  <a
+                    href="https://omiya.yoshimoto.co.jp/"
+                  >大宮ラクーンよしもと劇場<small
+                    >/ 埼玉 大宮</small></a></li>
+                                <li>
+                  <a
+                    href="https://fukuokagekijyo.yoshimoto.co.jp/"
+                  >よしもと福岡 大和証券劇場<small
+                    >/ 福岡 福岡</small></a></li>
+                                <li>
+                  <a
+                    href="https://numazu.yoshimoto.co.jp/"
+                  >沼津ラクーンよしもと劇場<small
+                    >/ 静岡 沼津</small></a></li>
+                
+              </ul>
+            </li>
+            <li class="fany-footer__linklist-item list-acd">
+              <label for="yoshimoto">企業情報</label>
+              <input type="checkbox" id="yoshimoto"><i class="fa fa-angle-down" aria-hidden="true"></i>
+              <ul>
+                <li><a href="https://www.yoshimoto.co.jp/" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/logo/yoshimoto_logo.jpeg')"></span>吉本興業ホールディングス株式会社</a></li>
+                <li><a href="https://twitter.com/yoshimoto_cojp" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/X_w100.png')"></span>X</a></li>
+                <li><a href="https://www.instagram.com/yoshimoto.official/" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/Instagram_w100.png')"></span>Instagram</a></li>
+                <li><a href="https://www.youtube.com/user/yoshimotokogyo" target="_blank"><span class="link-icon" style="height: 18px; background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/YouTube_w100.png')"></span>YouTube</a></li>
+                <li><a href="https://lin.ee/xD33Ves" target="_blank"><span class="link-icon" style="background-image: url('https://cdn.funity.live/assets/img/design_type3/sns/LINE_w100.png')"></span>LINE</a></li>
+              </ul>
+            </li>
+            <li class="fany-footer__linklist-item"><a href="/rule/terms">利用規約</a></li>
+            <li class="fany-footer__linklist-item"><a href="https://id.yoshimoto.co.jp/s/privacy.html">プライバシーポリシー</a></li>
+            <li class="fany-footer__linklist-item"><a href="/rule/specific">特商法の表記</a></li>
+            <li class="fany-footer__linklist-item"><a href="https://www.yoshimoto.co.jp/policy/ticket_policy/">チケット販売及び観劇約款</a></li>
+            <li class="fany-footer__linklist-item"><a href="https://www.yoshimoto.co.jp/policy/declaration">反社会的勢力排除宣言</a></li>
+            <li class="fany-footer__linklist-item"><a href="/stc/requirement">推奨環境・セキュリティ</a></li>
+            <li class="fany-footer__linklist-item"><a href="/faq">FAQ・お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+                <p class="cmark">Copyright (c) YOSHIMOTO KOGYO. All Rights Reserved.</p>
+              </div>
+    </div>
+<!-- フッタ -->
+<!--back to top-->
+<p class="g-back-to-top"><a href="#" data-scroll>PAGE TOP</a></p>
+<!--/back to top-->
+<!--modal-->
+<div class="g-modal" aria-hidden="true">
+  <div class="g-modal_backdrop"></div>
+  <div class="g-modal_spacer"></div>
+  <div class="g-modal_content">
+    <button class="g-modal_close" type="button" aria-label="モーダルを閉じる"><i class="g-i g-i-close" aria-hidden="true"></i></button>
+  </div>
+  <div class="g-modal_spacer"></div>
+</div>
+<!--/modal-->          </div>
+      </body>
+  </html>
