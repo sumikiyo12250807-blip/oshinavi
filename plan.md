@@ -1,6 +1,6 @@
 # ▶▶ 11/21(土) 朝の便（道具は tmp/x1121）
-- 🎵📌 いまの歌詞（「歌詞出して」と言われたらこのリンクをすぐ出す）＝11/25(水)発売まとめ2本（お笑い・スポーツとおでかけ）
-https://claude.ai/artifact/AjxSdZn89Xptawg5tzD1Ks
+- 🎵📌 いまの歌詞（「歌詞出して」と言われたらこのリンクをすぐ出す）＝11/26(木)発売まとめ2本（演歌と舞台・ポップスとロック）
+https://claude.ai/artifact/LXV1e2ZES9KH3u1KX5tzW4
 - ✅ おはようで報告：新着は空にならなかった（いちばん少なくて 159・夜に新しく入った分＝FANY 206・ぴあ 97・TicketDive 39・e+ 17 が振り分け 210 より多い）→ 今 341
 - ⏰ アラーム：10:07 記事3本／13:07 抜き打ち30件／15:07 昼／16:07 X 準備（11/22 発売）／18:47 予約／20:47 TikTok／22:07 夜の便＋夜通し／23:43 番人
 - 🔄 裏：tmp/x1121/morning_chain.py（local → ぴあ）
@@ -31,6 +31,7 @@ https://claude.ai/artifact/AjxSdZn89Xptawg5tzD1Ks
 - ✅ 県が空のカード 228件に県（東京の街の名前・同じ会場の他カード・街の名前／ツアーは入れない）→ fill_slot_pref → gate_fields L 0 → commit 1ad8a90 → ✅ 係の検索で住所を確かめた 26 会場・32件にも県（公演名から当てた5会場は入れない）→ gate_fields L 0 → commit／残り＝ツアー10・場所未定3・海外1・同名や住所不明37 会場は空のまま
 - 🔄 すちこ「今夜もお願いね」→ 22:00 ごろ tmp/x1121/night_chain21.py（裏）＝①night_1121（昼に止まった e+ 24件 reconcile→fix・今日発売のぴあ heal・prepush・commit・push＝今日2回目・22:30〜22:45 ごろ）②night_collect21（振り分け＝refetch --pool→番人→その他の決まり・ぴあ発売前の収集）③overnight_1121（e+ /sf/word/・TicketDive・最後に M 2,491件 refetch_artist --ids）
   - 🛡 23:43 番人の確認：夜の便は 22:34 に押す前の点検で止まっていた（画面の番人 A 1件＝id55704 全同志社メサイア演奏会・昼のぴあの見直しで発売前の枠「11/30 10:00発売」が「〜12/15 23:59」に化け時刻が消えた）→ 13:20 の形に戻した → tmp/x1121/night_redo21.py（裏）で prepush → commit → push（今日2回目）／原因＝heal_stale_deadlines の carry_start_dates が発売前の枠にも発売日だけ足した → 発売前は元の形のまま置くよう直した（試し2つ OK）／振り分け 22:48 済み（11件・残り69）・e+ 総ざらい 4件・TicketDive 26件・いま M の取り直し中／カード 20,102・新着 113（NEW_ORDER 113）・gate_fields A1 C0 H40 I16 L0 N0 M28（既存2,491）O3（既存32）・H2 53・S3 1
+  - ✅ 23:52 夜の便 push（f5162f7・公開の最終更新 11/21 23:47 を確かめた）・道具の直し e8222933 は commit だけ／✅ 00:45 夜通しおわり＝出演者の欄の取り直しで M 既存 2,491→430・commit 済み・カード 20,102・新着 113（H 156 は日付が 11/22 に変わった分＝今日発売の枠・昼のヒールで入る）
 - ✅ 21:53 書き出し済み＝Downloads/oshinavi_1125_owarai_matome.mp4（1:42.8・77.9MB）・_x（8.32MB）／oshinavi_1125_sports_matome.mp4（1:43.6・71.2MB）・_x（8.20MB）＝映像と音の長さ一致・コマ確認 ／✅ すちこ「TikTok予約したわ」（11/22 の2本＝明日の 20:47 の声かけは不要）／X 11/24 夜（11/25 発売）のお笑い・スポーツに _x を付ける（check_x_video）
 - ✅ すちこ「いいわね」＝11/25 の2本とも全編の書き出し（tmp/video/matome1125s/final_1125.py・裏・お笑い→スポーツの順）→ Downloads/oshinavi_1125_owarai_matome.mp4・oshinavi_1125_sports_matome.mp4（＋_x）／TikTok 説明文 https://claude.ai/artifact/VR5mXncqZmeAmAhzmxcTXv ▶ 書き出しが終わったらコマを見て PushNotification／bg_used.md に 94377 の行
 - 🔄 11/25 お笑い 絵コンテ＋試し2本 https://claude.ai/artifact/H9BYreRseacfjyDQvwwSth （126.7BPM・2拍ごとに 元→2→3→2・タップ 53777 小朝と鶴瓶・締め s9＋下に s4 s2 s3 s5）▶ すちこの OK で全編（render.py）
