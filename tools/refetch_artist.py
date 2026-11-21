@@ -79,12 +79,15 @@ def main():
     global NOCAST
     NOCAST = GF._artist_nocast()
     nocast0 = len(NOCAST)
+    OK = GF._artist_ok()
     for e in E:
         if e['id'] not in ids:
             continue
         us = [t.get('url') for t in e.get('tickets') or [] if t.get('url')] + [v for k, v in (e.get('links') or {}).items() if v and k != 'amazon']
         pia = next((u for u in us if 't.pia.jp' in u), None)
         ep = next((u for u in us if 'eplus.jp/sf/detail/' in u), None)
+        # 🆕2026-11-21（抜き打ち 54987）＝e+ は回ごとに出演が違う（長崎の回にだけ島田珠代）＝最初の1ページでなく全部のページを読んで足し合わせる（6枚まで）
+        eps = list(dict.fromkeys(u.split('?')[0] for u in us if 'eplus.jp/sf/detail/' in u))[:6]
         tg = next((u for u in us if re.search(r'tiget\.net/events/\d+', u)), None)
         lp = next((u for u in us if re.search(r'livepocket\.jp/e/', u)), None)
         arts, src = [], ''
@@ -92,7 +95,13 @@ def main():
             if pia:
                 arts, src = BP.pia_cast(BP.fetch(pia)), 'ぴあ'
             elif ep:
-                arts, src = eplus_cast(fetch_ep(ep)), 'e+'
+                arts, src = [], 'e+'
+                for k, u in enumerate(eps):
+                    if k:
+                        time.sleep(2.0)
+                    for a in eplus_cast(fetch_ep(u)):
+                        if a not in arts:
+                            arts.append(a)
             elif tg:
                 # 🆕2026-11-04 TIGET（28996・17195＝登録のあとで出演者が足された／主催の名前で始まる公演名）
                 TH, BT = _tiget()
@@ -110,9 +119,18 @@ def main():
         except Exception as ex:
             src = f'読めず {str(ex)[:40]}'
         time.sleep(1.0)
+        # 🆕2026-11-21（抜き打ち 47047 沢田研二・29005 大江裕）＝ぴあの［出演］は共演・ゲストだけを並べて主役を書かないことがある
+        #   ＝取り直しで今の欄を置き換えると主役が消える → 今の欄が公演名のままでなければ「消さずに足す」だけにする
+        cur = e.get('artist') or ''
+        #   ぴあは公演名＝主役の名前（「沢田研二」）が多い＝公演名と同じでも、短くて空白・括弧の無い1語は名前として残す
+        _short = len(cur) <= 12 and not re.search(r'[\s「」『』【】()（）\[\]〜~!！?？:：・]', cur)
+        if arts and cur and ((cur != (e.get('name') or '') and not GF.artist_looks_like_title(e, OK)) or _short):
+            have = cur.split('／')
+            arts = have + [a for a in arts if a not in have and not any(a in h or h in a for h in have)]
         new = '／'.join(arts)
         if arts:   # 🆕10/27 売り場の出演者の欄で確かめた印（アーティスト一覧の番人が「公演名＝名前」の組に求める）
             CHECKED[str(e['id'])] = {'cast': new, 'src': src, 'at': TODAY_S}
+            NOCAST.pop(str(e['id']), None)   # 🆕11/21 前に「記載なし」でも今は載っている（49334）＝記録を外す
         if not arts and src in ('ぴあ', 'e+', 'TIGET', 'livePocket'):
             NOCAST[str(e['id'])] = f'{src} に出演者の記載なし（{TODAY_S} 確認）'
         if new and new != e.get('artist'):
