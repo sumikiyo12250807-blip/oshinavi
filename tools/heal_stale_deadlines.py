@@ -95,16 +95,25 @@ def carry_start_dates(old_tickets, new_tickets):
     「販売中」になり、いつ発売されたかも分からなくなる。事実として持っていた発売日は残す。
     （ユーザー指示 2026-07-14「本日発売をいつまでか表示して」）"""
     old_start = {}
+    old_type = {}
     for t in old_tickets or []:
         sd = t.get('startDate')
         if sd and sd == t.get('date'):          # 隠れ枠＝単日形（発売日のみ判明）
             old_start[base_type(t.get('type'))] = sd
+            old_type[base_type(t.get('type'))] = t.get('type')
+    today = datetime.date.today().isoformat()
     carried = 0
     for t in new_tickets or []:
         if t.get('startDate') or t.get('soldout'):
             continue
         sd = old_start.get(base_type(t.get('type')))
         if sd and t.get('date') and sd < t['date']:   # 発売日 < 締切 のときだけ
+            if sd > today:
+                # 🆕2026-11-21夜 id55704 全同志社メサイア演奏会＝ぴあの見直し（発売前だけのエントリ）で
+                #   「11/30 10:00発売」が「〜12/15 23:59」＋startDate 11/30 に化け、発売時刻が消えた（gate_badge_render A で夜の push が止まった）。
+                #   まだ発売前の枠は元の「M/D HH:MM発売」の形のまま置く（締切は発売日の昼のヒールで入る）
+                t['type'] = old_type[base_type(t.get('type'))]
+                t['date'] = sd
             t['startDate'] = sd
             carried += 1
     return carried
