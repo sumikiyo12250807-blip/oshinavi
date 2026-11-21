@@ -86,10 +86,20 @@ def artist_looks_like_title(e, ok=None):
     if _NOCAST is None:
         _NOCAST = _artist_nocast()
     a = (e.get('artist') or '').strip()
-    if not a or '／' in a or str(e['id']) in _NOCAST:
+    if not a or '／' in a:
         return False
+    # 🆕2026-11-21（抜き打ち 49334）＝「記載なし」の記録は永久の免除にしない＝売り場があとで出演者を足す（11/7 記載なし → 11/21 には3組）
+    #   ＝記録から14日を過ぎたら、もう一度 M に出して取り直させる
+    nc = _NOCAST.get(str(e['id']))
+    if nc:
+        m = re.search(r'(\d{4}-\d{2}-\d{2})', nc)
+        if not m or (datetime.date.today() - datetime.date.fromisoformat(m.group(1))).days <= 14:
+            return False
     if a in (ok if ok is not None else _artist_ok()):
         return False
+    # 🆕2026-11-21（抜き打ち 51168）＝言葉の網に掛からない題名（「新春 ジャニスの弾き語り新年会 1日目 石坪日菜/…」）＝出演者の欄が公演名と同じで、長くて空白か「/」がある
+    if a == (e.get('name') or '').strip() and len(a) >= 15 and re.search(r'[\s/]', a):
+        return True
     return bool(ARTIST_TITLE.search(a))
 
 
