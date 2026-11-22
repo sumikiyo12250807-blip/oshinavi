@@ -1,0 +1,13 @@
+add rc=0  y of 'tmp/x1122/x/trend.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tmp/x1122/x/trend2.py', LF will be replaced by CRLF the next time Git touches it
+
+commit rc=0 tmp/x1122/x/shu_1123.txt
+ create mode 100644 tmp/x1122/x/sources_1123.md
+ create mode 100644 tmp/x1122/x/trend.py
+ create mode 100644 tmp/x1122/x/trend2.py
+ create mode 100644 tmp/x1122/x/trend2_1123.txt
+ create mode 100644 tmp/x1122/x/trend_1123.txt
+ create mode 100644 tmp/x1122/x/xcheck_1123.html
+ 
+log rc=0 4b8a8b359b5 11/22 夕方（commit だけ）：X 11/23 発売を1晩5本の新しい形で予約（すちこ「主役は1本でいい」「5件にしよう」＝X_SCRIPT に書いた・トレンド 大相撲冬巡業・スポーツ/おでかけ/舞台・お笑い・音楽・主役 好井まさお／独立FC 2回）・X の数字の取り直し（3か月の週ごとの表示とフォロー・_followers 11/22 92人）・その日のアラームの番人 alarm_guard.py
+ 
