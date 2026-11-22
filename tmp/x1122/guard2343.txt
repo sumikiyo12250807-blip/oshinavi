@@ -1,0 +1,64 @@
+eve22_chain.done False
+night_1122.done True
+night_collect22.done False
+night_chain22.done False
+lock False
+==  tmp/x1122/night_1122.txt 22:25 3960
+E
+  … ほか341件
+=== tools/build_ai_page.py rc 0
+wrote 362 pages + sitemap.xml + index.html本体SSR埋込 (18064 tickets, today=2026-11-22)
+artist pages 13088 + 受付中なし 14560 + artists.html + sitemap (today=2026-11-22)
+=== tools/gate_artist_pages.py rc 0
+=== gate_artist_pages (today=2026-11-22) 一覧 13088組 ===
+=== 集計: P 0 / Q 0 / R 0 / S 0 ===
+=== tools/compact_events.py --apply rc 0
+index.html：19534件  25.15MB → 25.15MB（-0.00MB）
+
+22:17:33 止める行: []
+22:21:21 commit rc=0  
+22:21:22 手元の最終更新 最終更新：2026年11月22日 22:16
+22:22:06 push rc=0  To https://github.com/sumikiyo12250807-blip/oshinavi.git
+   f12f48887a5..8cd89b9c5c4  main -> main
+
+22:24:39 公開の最終更新 最終更新：2026年11月22日 17:49
+22:25:44 公開の最終更新 最終更新：2026年11月22日 22:16
+
+==  tmp/x1122/night_collect22.txt なし
+==  tmp/x1122/nassign22n/log.txt 23:42 529
+23:34 はじめ カード=19534 新着=110
+23:34 札の無い新着を その他 に 14 件 [57173, 57174, 57177, 57178, 57179, 57180, 57181, 57184, 57185, 57186, 57187, 57190, 57191, 57197]
+23:34 候補 {'eplus': 31, 'tiget': 3, 'pia': 18, 'ticketpay': 1, 'ticketdive': 29}
+23:35 tools/gate_ticketpay_slots.py --ids 52504 rc=2
+23:35 tools/gate_tiget_slots.py --ids 43440,43441,51894 rc=2
+23:36 tools/gate_ticketdive_slots.py --ids 53208,53251,54646,55234,57175,57176,57177,5 rc=2
+23:42 tools/reconcile_eplus.py --ids 38925,39349,39382,39993,40004,42960,43231,43598,4 rc=1
+
+==  tmp/x1122/eve22_chain.txt 23:34 133
+20:05:21 morning_local22.py 開始
+20:10:39 morning_local22.py rc=0
+20:10:39 eve22.py 開始
+23:34:37 eve22.py rc=0
+23:34:37 assign22n.py 開始
+
+==  tmp/x1122/overnight_1122.txt なし
+8eb93d38aa4 11/22 夕方（遅れた昼の分）（commit だけ）：ぴあの見直し 組1＝売り切れの印・取りこぼし 46件を heal --ids（止まった分は足し算・HEAD比べ・compact）→ reconcile_pia --ids（logs/pia_sweep_2026-11-22.md）
+453b8c39a93 11/22 夕方（遅れた昼の分）（commit だけ）：reconcile_eplus --third → fix_eplus_fails --apply（売り切れ・締切ずれを e+ の実ページどおりに）
+8cd89b9c5c4 11/22 夜の便（今日2回目）＝遅れた朝・昼の分（期限切れ 568件の削除・昼の隠れ枠ヒール 92件＋足し算 41件・e+ 今日発売・e+ 照合 3分の1・ぴあの見直し 今日の組・新着の振り分け）／X の独立FCで見つけた登録の崩れ（神田伯山・南佳孝）：今日発売のぴあ heal --ids・止まった分は足し算・HEAD比べ／prepush（畳み・会期・県・会場・欄・画面・並び・枠0・AI/artist ページ＝最終更新・compact）
+79795deaa6d 11/22 夕方（commit だけ・遅れた朝の分）：期限切れの削除 568件＝check_expired の候補 978 と独立再導出（削除は誤りという前提）568 が一致した分だけ・割れた 410 は残す（長期公演の語・年があいまい・締切不明 ほか）・logs/removed_2026-11-22.md・bak index.html.bak_1122_del
+0e37cd7a8a2 11/22 夕方（commit だけ）：e+ heal_eplus_started --apply（遅れた昼の分）
+9418f5b8c26 11/22 夜（commit だけ）：X の独立FCで見つけた登録の崩れ＝54916 神田伯山の出演者の欄の切れ端・37656 南佳孝の出演者と公演名の入れ替わり／11/26 演歌と舞台の動画（ミュージカル調の姐さん 3コマ・絵コンテ＋試し2本）
+d0684a71707 11/22 遅れた昼の便（commit だけ）：隠れ枠ヒール 92件・発売日引き継ぎ 91枠・売り切れの印で残した 62枠／止まった 41件は足し算（heal_union_stale）→ check_order
+4b8a8b359b5 11/22 夕方（commit だけ）：X 11/23 発売を1晩5本の新しい形で予約（すちこ「主役は1本でいい」「5件にしよう」＝X_SCRIPT に書いた・トレンド 大相撲冬巡業・スポーツ/おでかけ/舞台・お笑い・音楽・主役 好井まさお／独立FC 2回）・X の数字の取り直し（3か月の週ごとの表示とフォロー・_followers 11/22 92人）・その日のアラームの番人 alarm_guard.py
+
+unpushed 2
+cards 19534 pool 110
+NEW_ORDER 110
+gate_fields rc 1
+ids: キャンセル待ち受付（東京 11/22公演）11/21 15:00発売
+  H2 id7729 発売日を過ぎて締切が付かず隠れている＝heal_stale_deadlines --ids: 当日引換券（東京 11/21公演）11/20 12:00発売
+  H2 id7729 発売日を過ぎて締切が付かず隠れている＝heal_stale_deadlines --ids: 当日引換券（東京 11/20公演）11/19 12:00発売
+=== 🆕11/4 件数だけ（止めない）: N+ 括弧の2つ目以降の県 0 / P 会期の外に枠 0 / H2 隠れたぴあ枠 70 / R 名前にフェスで fes なし 新着 2・既存 191 / S1 links.eplus がどの枠にも無い 0 / S2 e+ 同じ公演に別番号の枠 4 / S3 links.pia の公演に枠なし 1 / T 出演者に「ゲスト:」札 3 ===
+=== 集計: A 1 / B 0 / C 0 / D 0 / F 0 / G 0 / H 78 / I 17 / K 0 / L 0 / N 1 / M 27（既存 429・止めない） / O 3（既存 32・止めない） ===
+  🚨S1 0・S3 1件＝カードの売り場ボタンが受付と別の公演のページ＝python tools/fix_links.py --apply
+
