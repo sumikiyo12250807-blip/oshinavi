@@ -1,0 +1,417 @@
+events 20102 delete 568 keep 435
+reasons(all) {"longrun_word": 305, "longrun_word_in_ticket": 89, "ticket_text_md_year_ambiguous": 39, "ticket_text_md_future": 29, "ticket_deadline_future": 25, "text_year_2027+": 17, "entry_flag_showSalePeriod": 3, "text_md_year_ambiguous": 3, "ticket_deadline_future_soldout": 3, "entry_flag_saleEndUnknown": 2, "text_reiwa9+": 2, "ticket_flag__alive": 1, "text_md_future": 1}
+reasons(primary) {"longrun_word": 305, "longrun_word_in_ticket": 52, "ticket_text_md_year_ambiguous": 33, "ticket_deadline_future": 20, "text_year_2027+": 12, "text_md_year_ambiguous": 3, "ticket_deadline_future_soldout": 3, "entry_flag_saleEndUnknown": 2, "entry_flag_showSalePeriod": 2, "text_reiwa9+": 2, "ticket_flag__alive": 1}
+
+----
+候補 978 / 独立 568 / 一致 568 / 候補だけ 410 / 独立だけ 0
+  候補だけ 44 longrun_word_in_ticket
+  候補だけ 93 entry_flag_saleEndUnknown
+  候補だけ 133 entry_flag_showSalePeriod
+  候補だけ 269 entry_flag_saleEndUnknown / entry_flag_showSalePeriod
+  候補だけ 483 entry_flag_showSalePeriod
+  候補だけ 1071 longrun_word_in_ticket
+  候補だけ 1124 longrun_word_in_ticket
+  候補だけ 1717 longrun_word
+  候補だけ 1844 longrun_word
+  候補だけ 1895 longrun_word
+  候補だけ 1964 longrun_word
+  候補だけ 1973 longrun_word
+  候補だけ 2015 longrun_word
+  候補だけ 2030 longrun_word
+  候補だけ 2146 longrun_word_in_ticket
+  候補だけ 2260 ticket_text_md_year_ambiguous
+  候補だけ 2401 ticket_text_md_year_ambiguous
+  候補だけ 2448 longrun_word
+  候補だけ 2479 longrun_word
+  候補だけ 2485 longrun_word / text_year_2027+
+  候補だけ 2488 longrun_word / text_year_2027+
+  候補だけ 2744 longrun_word_in_ticket
+  候補だけ 2897 longrun_word
+  候補だけ 2898 longrun_word
+  候補だけ 2899 longrun_word
+  候補だけ 3032 longrun_word_in_ticket
+  候補だけ 3404 longrun_word
+  候補だけ 3777 longrun_word
+  候補だけ 3780 longrun_word
+  候補だけ 3872 longrun_word
+  候補だけ 4275 longrun_word
+  候補だけ 4432 longrun_word
+  候補だけ 4985 longrun_word
+  候補だけ 5007 longrun_word
+  候補だけ 5049 longrun_word
+  候補だけ 5203 longrun_word
+  候補だけ 5235 longrun_word_in_ticket
+  候補だけ 5491 longrun_word
+  候補だけ 5557 longrun_word
+  候補だけ 5567 longrun_word_in_ticket
+  候補だけ 6159 longrun_word
+  候補だけ 6225 longrun_word
+  候補だけ 6331 longrun_word
+  候補だけ 6612 longrun_word
+  候補だけ 7133 text_year_2027+
+  候補だけ 7143 longrun_word
+  候補だけ 7390 text_md_year_ambiguous / ticket_text_md_year_ambiguous
+  候補だけ 7554 longrun_word
+  候補だけ 7580 longrun_word
+  候補だけ 7756 longrun_word
+  候補だけ 7815 longrun_word
+  候補だけ 7887 longrun_word_in_ticket
+  候補だけ 7909 longrun_word
+  候補だけ 8337 longrun_word
+  候補だけ 8356 longrun_word
+  候補だけ 8419 longrun_word
+  候補だけ 8420 longrun_word
+  候補だけ 8533 longrun_word
+  候補だけ 8538 ticket_text_md_year_ambiguous
+  候補だけ 8619 text_year_2027+
+  候補だけ 9076 longrun_word
+  候補だけ 9113 longrun_word_in_ticket / ticket_text_md_year_ambiguous
+  候補だけ 9114 ticket_text_md_year_ambiguous
+  候補だけ 9115 ticket_text_md_year_ambiguous
+  候補だけ 9116 longrun_word / ticket_text_md_year_ambiguous
+  候補だけ 9117 ticket_text_md_year_ambiguous
+  候補だけ 9129 longrun_word
+  候補だけ 9221 text_year_2027+
+  候補だけ 9229 longrun_word
+  候補だけ 9241 longrun_word
+  候補だけ 9349 longrun_word
+  候補だけ 9433 longrun_word
+  候補だけ 9462 longrun_word
+  候補だけ 9463 longrun_word
+  候補だけ 9464 longrun_word
+  候補だけ 9536 longrun_word
+  候補だけ 9551 longrun_word
+  候補だけ 10837 longrun_word
+  候補だけ 11264 longrun_word
+  候補だけ 11265 longrun_word
+  候補だけ 11266 longrun_word
+  候補だけ 11267 longrun_word
+  候補だけ 11268 longrun_word
+  候補だけ 11269 longrun_word
+  候補だけ 11270 longrun_word
+  候補だけ 11271 longrun_word
+  候補だけ 11272 longrun_word
+  候補だけ 11277 longrun_word
+  候補だけ 12916 longrun_word
+  候補だけ 12943 longrun_word_in_ticket
+  候補だけ 12970 text_md_year_ambiguous
+  候補だけ 13007 ticket_text_md_year_ambiguous
+  候補だけ 13039 longrun_word
+  候補だけ 13040 longrun_word
+  候補だけ 13044 ticket_text_md_year_ambiguous
+  候補だけ 13049 longrun_word
+  候補だけ 13050 longrun_word_in_ticket
+  候補だけ 13058 ticket_text_md_year_ambiguous
+  候補だけ 13064 longrun_word_in_ticket
+  候補だけ 13066 ticket_deadline_future_soldout / ticket_text_md_future
+  候補だけ 16328 longrun_word_in_ticket
+  候補だけ 16356 longrun_word
+  候補だけ 16374 longrun_word
+  候補だけ 16382 longrun_word
+  候補だけ 16403 longrun_word
+  候補だけ 16410 longrun_word_in_ticket
+  候補だけ 16420 longrun_word
+  候補だけ 16449 longrun_word
+  候補だけ 16450 longrun_word
+  候補だけ 16468 longrun_word
+  候補だけ 16513 ticket_text_md_year_ambiguous / longrun_word_in_ticket
+  候補だけ 16544 longrun_word
+  候補だけ 16556 longrun_word
+  候補だけ 16557 longrun_word
+  候補だけ 16597 longrun_word
+  候補だけ 16607 longrun_word_in_ticket
+  候補だけ 16617 longrun_word_in_ticket
+  候補だけ 16679 longrun_word
+  候補だけ 16684 longrun_word
+  候補だけ 16701 longrun_word
+  候補だけ 17343 longrun_word
+  候補だけ 17524 longrun_word
+  候補だけ 17542 ticket_deadline_future_soldout / ticket_text_md_future
+  候補だけ 19880 text_year_2027+
+  候補だけ 19890 longrun_word
+  候補だけ 19896 ticket_text_md_year_ambiguous
+  候補だけ 19897 ticket_text_md_year_ambiguous
+  候補だけ 19898 ticket_text_md_year_ambiguous
+  候補だけ 19904 ticket_text_md_year_ambiguous
+  候補だけ 19914 ticket_text_md_year_ambiguous
+  候補だけ 19923 longrun_word_in_ticket / ticket_text_md_year_ambiguous
+  候補だけ 19924 ticket_text_md_year_ambiguous
+  候補だけ 19929 ticket_text_md_year_ambiguous
+  候補だけ 19958 ticket_text_md_year_ambiguous
+  候補だけ 19962 ticket_text_md_year_ambiguous
+  候補だけ 19968 ticket_text_md_year_ambiguous
+  候補だけ 19969 longrun_word
+  候補だけ 19976 ticket_text_md_year_ambiguous
+  候補だけ 19984 ticket_text_md_year_ambiguous
+  候補だけ 19985 ticket_text_md_year_ambiguous
+  候補だけ 19986 longrun_word_in_ticket / ticket_text_md_year_ambiguous
+  候補だけ 19990 ticket_text_md_year_ambiguous
+  候補だけ 19995 ticket_text_md_year_ambiguous
+  候補だけ 20008 ticket_text_md_year_ambiguous
+  候補だけ 20028 ticket_text_md_year_ambiguous
+  候補だけ 20029 longrun_word / ticket_text_md_year_ambiguous
+  候補だけ 20031 longrun_word
+  候補だけ 20032 longrun_word
+  候補だけ 20045 ticket_text_md_year_ambiguous
+  候補だけ 20059 ticket_text_md_year_ambiguous
+  候補だけ 20078 ticket_text_md_year_ambiguous
+  候補だけ 20084 ticket_text_md_year_ambiguous
+  候補だけ 20085 ticket_text_md_year_ambiguous
+  候補だけ 21100 longrun_word
+  候補だけ 21252 text_year_2027+
+  候補だけ 21278 longrun_word
+  候補だけ 21280 longrun_word
+  候補だけ 21281 longrun_word
+  候補だけ 21423 longrun_word
+  候補だけ 21424 longrun_word
+  候補だけ 21534 longrun_word_in_ticket
+  候補だけ 21826 ticket_flag__alive
+  候補だけ 21843 longrun_word / longrun_word_in_ticket
+  候補だけ 21962 longrun_word
+  候補だけ 21963 longrun_word
+  候補だけ 21964 longrun_word
+  候補だけ 22068 longrun_word
+  候補だけ 22076 longrun_word
+  候補だけ 22240 longrun_word
+  候補だけ 22264 ticket_text_md_year_ambiguous
+  候補だけ 22313 longrun_word
+  候補だけ 22326 longrun_word
+  候補だけ 22383 longrun_word
+  候補だけ 22386 longrun_word
+  候補だけ 22494 longrun_word
+  候補だけ 22543 longrun_word
+  候補だけ 23116 longrun_word
+  候補だけ 23208 longrun_word
+  候補だけ 23219 longrun_word
+  候補だけ 23658 longrun_word
+  候補だけ 23931 longrun_word
+  候補だけ 24018 longrun_word_in_ticket
+  候補だけ 24179 longrun_word
+  候補だけ 24518 longrun_word
+  候補だけ 24524 longrun_word
+  候補だけ 24525 text_year_2027+
+  候補だけ 24583 longrun_word
+  候補だけ 25128 longrun_word
+  候補だけ 25130 longrun_word
+  候補だけ 25221 longrun_word
+  候補だけ 25282 longrun_word
+  候補だけ 25896 longrun_word
+  候補だけ 25903 longrun_word
+  候補だけ 26065 longrun_word
+  候補だけ 26737 longrun_word
+  候補だけ 27006 longrun_word
+  候補だけ 27089 longrun_word
+  候補だけ 27224 longrun_word_in_ticket
+  候補だけ 27745 text_year_2027+
+  候補だけ 27882 longrun_word
+  候補だけ 28956 longrun_word
+  候補だけ 29049 longrun_word
+  候補だけ 29363 longrun_word_in_ticket
+  候補だけ 29403 longrun_word
+  候補だけ 29439 longrun_word
+  候補だけ 29693 longrun_word
+  候補だけ 29786 longrun_word
+  候補だけ 30722 longrun_word
+  候補だけ 30764 longrun_word
+  候補だけ 31339 longrun_word
+  候補だけ 31977 longrun_word
+  候補だけ 31983 longrun_word
+  候補だけ 31991 longrun_word_in_ticket
+  候補だけ 32052 text_year_2027+
+  候補だけ 32170 longrun_word
+  候補だけ 32473 longrun_word
+  候補だけ 32477 longrun_word
+  候補だけ 32490 longrun_word
+  候補だけ 32491 longrun_word_in_ticket
+  候補だけ 32873 longrun_word
+  候補だけ 32902 longrun_word_in_ticket
+  候補だけ 32938 longrun_word
+  候補だけ 33011 longrun_word
+  候補だけ 33012 longrun_word
+  候補だけ 33430 longrun_word
+  候補だけ 33494 longrun_word_in_ticket
+  候補だけ 33579 longrun_word
+  候補だけ 33648 text_reiwa9+
+  候補だけ 33669 text_reiwa9+
+  候補だけ 33681 longrun_word / ticket_text_md_future
+  候補だけ 33772 text_year_2027+
+  候補だけ 33846 longrun_word_in_ticket
+  候補だけ 33981 longrun_word
+  候補だけ 34114 longrun_word_in_ticket
+  候補だけ 34330 longrun_word
+  候補だけ 34331 longrun_word
+  候補だけ 34332 longrun_word
+  候補だけ 34333 longrun_word
+  候補だけ 34403 longrun_word_in_ticket
+  候補だけ 34407 longrun_word / text_year_2027+
+  候補だけ 34428 longrun_word_in_ticket
+  候補だけ 34437 longrun_word / longrun_word_in_ticket
+  候補だけ 35485 longrun_word
+  候補だけ 35490 longrun_word
+  候補だけ 35609 longrun_word
+  候補だけ 36150 longrun_word / longrun_word_in_ticket
+  候補だけ 36177 longrun_word
+  候補だけ 36314 longrun_word
+  候補だけ 36611 longrun_word
+  候補だけ 36624 longrun_word_in_ticket
+  候補だけ 36635 longrun_word_in_ticket
+  候補だけ 36636 longrun_word_in_ticket
+  候補だけ 36654 longrun_word_in_ticket
+  候補だけ 36668 ticket_deadline_future_soldout / ticket_text_md_future
+  候補だけ 36767 longrun_word
+  候補だけ 36835 longrun_word / text_year_2027+
+  候補だけ 36843 longrun_word
+  候補だけ 36860 longrun_word
+  候補だけ 37488 longrun_word
+  候補だけ 37497 longrun_word
+  候補だけ 37502 longrun_word
+  候補だけ 37509 longrun_word
+  候補だけ 37512 longrun_word
+  候補だけ 37513 longrun_word / longrun_word_in_ticket
+  候補だけ 37519 longrun_word
+  候補だけ 37722 longrun_word
+  候補だけ 37723 longrun_word
+  候補だけ 37858 longrun_word
+  候補だけ 37863 longrun_word_in_ticket
+  候補だけ 37864 longrun_word_in_ticket
+  候補だけ 38717 text_year_2027+
+  候補だけ 38731 longrun_word
+  候補だけ 38810 longrun_word
+  候補だけ 38812 longrun_word
+  候補だけ 38830 longrun_word
+  候補だけ 38835 longrun_word
+  候補だけ 38836 longrun_word
+  候補だけ 38842 longrun_word_in_ticket
+  候補だけ 38849 longrun_word
+  候補だけ 38981 longrun_word
+  候補だけ 39194 longrun_word
+  候補だけ 39268 longrun_word
+  候補だけ 39269 longrun_word
+  候補だけ 39273 longrun_word
+  候補だけ 39292 longrun_word
+  候補だけ 39295 longrun_word
+  候補だけ 39298 longrun_word
+  候補だけ 39754 longrun_word
+  候補だけ 39755 longrun_word / longrun_word_in_ticket
+  候補だけ 39757 longrun_word_in_ticket
+  候補だけ 39765 longrun_word / longrun_word_in_ticket
+  候補だけ 39766 longrun_word / longrun_word_in_ticket
+  候補だけ 39767 longrun_word / longrun_word_in_ticket
+  候補だけ 39769 longrun_word
+  候補だけ 39774 longrun_word / longrun_word_in_ticket
+  候補だけ 39786 longrun_word / longrun_word_in_ticket
+  候補だけ 39787 longrun_word / longrun_word_in_ticket
+  候補だけ 39790 longrun_word / longrun_word_in_ticket
+  候補だけ 39796 longrun_word / longrun_word_in_ticket
+  候補だけ 40287 longrun_word
+  候補だけ 40513 longrun_word
+  候補だけ 40520 longrun_word
+  候補だけ 40535 longrun_word
+  候補だけ 40542 longrun_word
+  候補だけ 40924 longrun_word_in_ticket
+  候補だけ 41411 longrun_word / longrun_word_in_ticket
+  候補だけ 41419 longrun_word / longrun_word_in_ticket
+  候補だけ 41509 longrun_word
+  候補だけ 41630 longrun_word
+  候補だけ 41636 longrun_word
+  候補だけ 41639 longrun_word
+  候補だけ 41650 longrun_word
+  候補だけ 41652 longrun_word
+  候補だけ 41852 longrun_word / longrun_word_in_ticket
+  候補だけ 41945 longrun_word
+  候補だけ 41946 longrun_word
+  候補だけ 41961 longrun_word
+  候補だけ 42507 longrun_word
+  候補だけ 42513 longrun_word_in_ticket
+  候補だけ 42628 longrun_word
+  候補だけ 42633 longrun_word
+  候補だけ 42636 longrun_word_in_ticket
+  候補だけ 42637 longrun_word_in_ticket
+  候補だけ 42638 longrun_word_in_ticket
+  候補だけ 42669 longrun_word_in_ticket
+  候補だけ 42864 longrun_word
+  候補だけ 42865 longrun_word
+  候補だけ 42868 longrun_word
+  候補だけ 42869 longrun_word
+  候補だけ 42870 longrun_word
+  候補だけ 43096 longrun_word
+  候補だけ 43110 longrun_word
+  候補だけ 43123 longrun_word
+  候補だけ 43288 longrun_word
+  候補だけ 43440 longrun_word
+  候補だけ 43441 longrun_word
+  候補だけ 43451 longrun_word
+  候補だけ 43897 text_year_2027+
+  候補だけ 44519 longrun_word
+  候補だけ 44520 longrun_word
+  候補だけ 45141 text_year_2027+
+  候補だけ 45159 longrun_word
+  候補だけ 45311 longrun_word
+  候補だけ 45630 longrun_word / longrun_word_in_ticket
+  候補だけ 45642 longrun_word
+  候補だけ 45813 longrun_word_in_ticket
+  候補だけ 46107 longrun_word
+  候補だけ 46111 longrun_word_in_ticket
+  候補だけ 46893 longrun_word / longrun_word_in_ticket
+  候補だけ 46899 longrun_word
+  候補だけ 46906 longrun_word
+  候補だけ 46907 longrun_word
+  候補だけ 46925 longrun_word
+  候補だけ 46930 longrun_word
+  候補だけ 47774 longrun_word
+  候補だけ 47784 longrun_word / longrun_word_in_ticket
+  候補だけ 47785 longrun_word / longrun_word_in_ticket
+  候補だけ 47793 longrun_word
+  候補だけ 47965 longrun_word
+  候補だけ 48700 longrun_word
+  候補だけ 48708 longrun_word / longrun_word_in_ticket
+  候補だけ 48722 longrun_word_in_ticket
+  候補だけ 48732 longrun_word
+  候補だけ 48751 longrun_word_in_ticket
+  候補だけ 48759 longrun_word / longrun_word_in_ticket
+  候補だけ 48765 longrun_word / longrun_word_in_ticket
+  候補だけ 48768 longrun_word
+  候補だけ 48779 longrun_word
+  候補だけ 49232 longrun_word / longrun_word_in_ticket
+  候補だけ 49276 longrun_word
+  候補だけ 49341 longrun_word
+  候補だけ 49342 longrun_word
+  候補だけ 49344 longrun_word
+  候補だけ 49349 longrun_word
+  候補だけ 49352 longrun_word
+  候補だけ 49954 longrun_word
+  候補だけ 49968 longrun_word
+  候補だけ 49971 longrun_word_in_ticket
+  候補だけ 49972 longrun_word
+  候補だけ 51849 longrun_word / text_year_2027+
+  候補だけ 51862 longrun_word
+  候補だけ 51866 longrun_word
+  候補だけ 51888 longrun_word
+  候補だけ 51889 longrun_word
+  候補だけ 51894 longrun_word / longrun_word_in_ticket
+  候補だけ 51909 longrun_word
+  候補だけ 51910 longrun_word
+  候補だけ 51911 text_md_year_ambiguous
+  候補だけ 51917 longrun_word
+  候補だけ 52488 longrun_word
+  候補だけ 52489 longrun_word
+  候補だけ 53193 longrun_word
+  候補だけ 53194 longrun_word
+  候補だけ 53274 longrun_word
+  候補だけ 53275 longrun_word
+  候補だけ 53592 longrun_word
+  候補だけ 53594 longrun_word
+  候補だけ 53650 longrun_word_in_ticket
+  候補だけ 53833 longrun_word_in_ticket
+  候補だけ 53939 longrun_word
+  候補だけ 54155 longrun_word
+  候補だけ 54272 longrun_word / longrun_word_in_ticket
+  候補だけ 54273 longrun_word
+  候補だけ 54281 longrun_word
+  候補だけ 54638 longrun_word / longrun_word_in_ticket
+  候補だけ 54642 longrun_word
+  候補だけ 55232 longrun_word
+  候補だけ 56129 longrun_word
+  候補だけ 57049 longrun_word
+  候補だけ 57068 longrun_word
+  独立だけ []

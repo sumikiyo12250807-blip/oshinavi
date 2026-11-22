@@ -1,0 +1,11 @@
+add rc=0  y of 'tmp/x1122/fix_reg22.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tmp/x1122/noon22.py', LF will be replaced by CRLF the next time Git touches it
+
+commit rc=0 00644 tmp/x1122/fix_reg22.txt
+ create mode 100644 tmp/x1122/msg_fix22.txt
+ create mode 100644 tmp/x1122/msg_noon22.txt
+ create mode 100644 tmp/x1122/noon22.py
+ create mode 100644 tmp/x1122/noon22.txt
+ 
+log rc=0 9418f5b8c26 11/22 夜（commit だけ）：X の独立FCで見つけた登録の崩れ＝54916 神田伯山の出演者の欄の切れ端・37656 南佳孝の出演者と公演名の入れ替わり／11/26 演歌と舞台の動画（ミュージカル調の姐さん 3コマ・絵コンテ＋試し2本）
+ 
