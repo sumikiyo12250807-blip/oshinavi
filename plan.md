@@ -6,7 +6,8 @@ https://claude.ai/artifact/TVpEVPpVHr5s5ByLuwpoRv
 - ✅ すちこ「明日の夜公開に予約した」＝TikTok ポップスとロック（11/26 発売）は 11/24 夜に公開予約（今夜 20:47 の TikTok の声かけは消した＝今夜上げる分なし）
 - ⏰ アラーム：10:07 記事3本／13:07 抜き打ち30件／14:37 X の数字／15:07 昼／16:07 X 準備（11/24 発売）／18:47 予約の締め／20:47 TikTok／22:07 夜の便＋夜通し／23:43 番人
 - 🔄 06:35〜 裏：tmp/x1123/morning_chain.py（morning_local → morning_pia）▶ 終わったら新着114件の番人→振り分け → 期限切れの削除 → 朝の push
-- 🔄 07:0x 裏：tmp/x1123/am_chain23.py＝morning_chain の .done を待つ → 期限切れの削除（候補962・独立505・一致505だけ）→ commit → 新着の振り分け（assign23）→ 売り場ボタンの直し（fix_links・鍵つき）→ push_am23（prepush → commit → push → 公開の最終更新）
+- ✅ 08:52 今日1回目の push（3be4a95・公開の最終更新 11/23 08:47 を確かめた）＝期限切れ 505件の削除（logs/removed_2026-11-23.md）・振り分け 35件（アイドル12・その他11・J-POP6・クラシック3・スポーツ2・ロック1／新着 113→78・logs/assigned_2026-11-23.md）・売り場ボタンの直し・ヒール 92件・カード 19571→19066
+- （済）07:0x 裏：tmp/x1123/am_chain23.py＝morning_chain の .done を待つ → 期限切れの削除（候補962・独立505・一致505だけ）→ commit → 新着の振り分け（assign23）→ 売り場ボタンの直し（fix_links・鍵つき）→ push_am23（prepush → commit → push → 公開の最終更新）
 - ✅ 06:4x 歌詞2本（クラシック・J-POPとロック）＝登録と1行ずつ突き合わせ 食い違い0・Reol／金子三勇士の読みを確かめた・GOTCHAROCKA／0.1gの誤算は読みの出典なしで外した
 
 # ▶▶ 11/22(日)（道具は tmp/x1122）
