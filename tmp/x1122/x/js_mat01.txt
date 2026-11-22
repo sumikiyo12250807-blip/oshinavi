@@ -1,0 +1,36 @@
+const H='91a631b18b52d333309605f8c56964ec97035d59e98243b9429d1a1b797a6bbf'; const HH='19', MM='41', VIDEO=false;
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s.replace(/\s/g,''))))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const inp=document.getElementById('oshi_txt'); let R='';
+if(!inp||!inp.files[0]) { R='NO_FILE' } else {
+const T=await inp.files[0].text();
+if(await sha(T)!==H){ R='FILE_HASH_MISMATCH' } else {
+let box=document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]');
+if(box.innerText.trim().length>2){ R='BOX_NOT_EMPTY '+box.innerText.length } else {
+box.focus(); const dt=new DataTransfer(); dt.setData('text/plain',T); box.dispatchEvent(new ClipboardEvent('paste',{clipboardData:dt,bubbles:true,cancelable:true}));
+await sleep(1500);
+box=document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]');
+const bh=await sha(box.innerText);
+if(bh!==H){ R='BOX_HASH_MISMATCH len='+box.innerText.length+' file='+T.length } else {
+if(VIDEO){ for(let i=0;i<60;i++){ const v=document.querySelector('video'); const b=[...document.querySelectorAll('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')][0]; if(v&&b&&b.getAttribute('aria-disabled')!=='true') break; await sleep(2000);} if(!document.querySelector('video')) throw 'NO_VIDEO'; }
+let root=box; for(let i=0;i<30&&root;i++){ if(root.querySelector('[data-testid="scheduleOption"]')&&root.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) break; root=root.parentElement; }
+root.querySelector('[data-testid="scheduleOption"]').click();
+let sels=[]; for(let i=0;i<20;i++){ await sleep(500); sels=[...document.querySelectorAll('select')]; if(sels.length>=5) break; }
+if(sels.length<5){ R='NO_SELECTS' } else {
+const setv=(s,v)=>{ Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),'value').set.call(s,v); s.dispatchEvent(new Event('change',{bubbles:true})); };
+const now=new Date(); setv(sels[0],String(now.getMonth()+1)); setv(sels[1],String(now.getDate())); setv(sels[2],String(now.getFullYear()));
+setv(sels[3],HH); setv(sels[4],String(+MM)); await sleep(700);
+const t=document.body.innerText; const m=t.match(/Will send on[^\n]*/)||t.match(/[0-9]{4}年[^\n]*送信されます/);
+const conf=[...document.querySelectorAll('button,[role=button]')].find(b=>['Confirm','確認する'].includes(b.innerText.trim()));
+const h12=((+HH)%12)||12; const okT=m&&new RegExp('(^|[^0-9])'+h12+':'+MM.padStart(2,'0')+'([^0-9]|$)').test(m[0])&&(/PM|午後/.test(m[0]))&&new RegExp('(Nov|11月)\\s*'+now.getDate()+'([^0-9]|$)|'+now.getDate()+'日').test(m[0]);
+if(!m||!conf||!okT){ R='NO_CONFIRM_OR_TIME '+(m?m[0]:'') } else { const when=m[0]; conf.click(); await sleep(2500);
+box=document.querySelector('[data-testid="tweetTextarea_0"][contenteditable="true"]');
+const bh2=box?await sha(box.innerText):'none';
+let r2=box; for(let i=0;i<30&&r2;i++){ if(r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]')) break; r2=r2.parentElement; }
+const btn=r2&&r2.querySelector('[data-testid="tweetButton"],[data-testid="tweetButtonInline"]');
+const bt=btn?btn.innerText.trim():'';
+if(bh2!==H){ R='AFTER_CONFIRM_HASH '+when } else if(!['Schedule','予約設定'].includes(bt)){ R='BTN_TEXT '+bt+' '+when } else {
+if(VIDEO){ for(let i=0;i<60&&btn.getAttribute('aria-disabled')==='true';i++) await sleep(2000); }
+btn.click(); let toast=''; for(let i=0;i<20;i++){ await sleep(500); const tt=document.body.innerText.match(/Your post will be sent on[^\n]*|ポストの送信日時[^\n]*/); if(tt){toast=tt[0];break;} }
+R='DONE '+when+' | toast='+toast }}}}}}}
+R

@@ -1,0 +1,20 @@
+add rc=0  uno_enka_1126.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tmp/x1122/x/suno_pops_1126.txt', LF will be replaced by CRLF the next time Git touches it
+
+commit rc=0 te mode 100644 tmp/x1122/x/lyrics_lines_1126.json
+ create mode 100644 tmp/x1122/x/lyrics_matome_1126.html
+ create mode 100644 tmp/x1122/x/material_1126.md
+ create mode 100644 tmp/x1122/x/material_1126.py
+ create mode 100644 tmp/x1122/x/mk_lyrics_page1126.py
+ create mode 100644 tmp/x1122/x/mk_mat1126.py
+ create mode 100644 tmp/x1122/x/mk_mat1126.txt
+ create mode 100644 tmp/x1122/x/msg_lyrics.txt
+ create mode 100644 tmp/x1122/x/suno_enka_1126.txt
+ create mode 100644 tmp/x1122/x/suno_pops_1126.txt
+ 
+log rc=0 45e959fa265 11/22 朝（commit だけ）：11/26(木)発売のまとめ歌詞2本（演歌と舞台・ポップスとロック）＝material_1126 → 登録と機械で突き合わせ 0・独立FC 0・読みの出典なし2組（ラムネ商店街・Dazzling BAD）は外した → コピーのページ・plan.md 先頭の「いまの歌詞」を差し替え
+ 
+log rc=0 959fa265 11/22 朝（commit だけ）：11/26(木)発売のまとめ歌詞2本（演歌と舞台・ポップスとロック）＝material_1126 → 登録と機械で突き合わせ 0・独立FC 0・読みの出典なし2組（ラムネ商店街・Dazzling BAD）は外した → コピーのページ・plan.md 先頭の「いまの歌詞」を差し替え
+39026ca532a 11/21 夜通し（commit だけ）：登録済みで出演者の欄が公演名のまま（抜き打ちで広げた M） 2491件を refetch_artist --ids --apply（ぴあ［出演］・e+ の出演欄・TIGET から取り直し）
+e8222933bf3 11/21 夜（commit だけ）：heal_stale_deadlines の carry_start_dates を直した＝まだ発売前の枠は「M/D HH:MM発売」の形のまま置く（id55704 全同志社メサイア演奏会＝昼のぴあの見直しで「11/30 10:00発売」が「〜12/15 23:59」＋発売日に化けて時刻が消え、画面の番人 A で夜の push が止まった）
+ 

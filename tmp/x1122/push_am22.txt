@@ -1,0 +1,54 @@
+17:50:27 === tools/fold_parts.py --apply rc 0
+組 0（畳まない 0）
+印の付け直しが要る枠 0（ヒールで外れた分）
+=== tools/fill_span_from_slots.py --apply rc 0
+fill_span_from_slots: 伸ばす 0件 / 手で見る 0件 → C:/Users/user/oshinavi/tmp/fill_span_from_slots.txt
+=== tools/fill_slot_pref.py --apply rc 0
+fill_slot_pref: 県を入れる枠 0（0件）
+=== tools/fill_entry_pref.py --apply rc 0
+当てた 0 / 0件
+=== tools/fill_venue_from_slots.py --apply rc 1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:/Users/user/oshinavi/index.html'
+=== tools/fix_stale_rep_link.py --apply rc 0
+   https://eplus.jp/sf/detail/0723550001-P0030138P021001 → https://eplus.jp/sf/detail/0723550001-P0030139P021001
+fix_stale_rep_link: 付け替え 63 → 書いた
+=== tools/fix_stale_rep_link.py rc 0
+fix_stale_rep_link: 付け替え 0
+=== tools/fold_parts.py --check rc 0
+組 0（畳まない 0）
+印の付け直しが要る枠 0（ヒールで外れた分）
+=== tools/gate_fields.py rc 1
+=== 集計: A 1 / B 0 / C 0 / D 0 / F 0 / G 0 / H 156 / I 17 / K 0 / L 0 / N 0 / M 27（既存 430・止めない） / O 3（既存 32・止めない） ===
+  🚨S1 0・S3 1件＝カードの売り場ボタンが受付と別の公演のページ＝python tools/fix_links.py --apply
+=== tools/gate_badge_render.py --today 2026-11-22,2026-11-23 rc 0
+[現在の index.html] 今日=2026-11-22 00:00：カード20102件・枠33786（売切表示7778・時刻付き23690）・A違反0・B0・C0・描画失敗0（9.4秒）
+[現在の index.html] 今日=2026-11-22 23:59：カード20102件・枠33786（売切表示7778・時刻付き23617）・A違反0・B0・C0・描画失敗0（8.5秒）
+[現在の index.html] 今日=2026-11-23 00:00：カード20102件・枠32408（売切表示7326・時刻付き22844）・A違反0・B0・C0・描画失敗0（9.8秒）
+[現在の index.html] 今日=2026-11-23 23:59：カード20102件・枠32408（売切表示7326・時刻付き22823）・A違反0・B0・C0・描画失敗0（9.8秒）
+=== tools/check_order.js rc 1
+     - EX THEATER ARIAKE OPENING LINEUP『百鬼夜鏡』 | キャンセル待ち受付（東京 11/23公演）11/22 15:00発売
+     - EX THEATER ARIAKE OPENING LINEUP『百鬼夜鏡』 | 当日引換券（東京 11/22公演）11/21 12:00発売
+     - EX THEATER ARIAKE OPENING LINEUP『百鬼夜鏡』 | キャンセル待ち受付（東京 11/22公演）11/21 15:00発売
+     - EX THEATER ARIAKE OPENING LINEUP『百鬼夜鏡』 | 当日引換券（東京 11/21公演）11/20 12:00発売
+=== tools/check_zero_badge.js rc 2
+  あと  1日 id6504  公演2026-11-23  市川中車／中村壱太郎／市川團子／市川青虎／市川笑三郎／市川笑也／市川
+  あと  1日 id6530  公演2026-11-23  K-1 REVENGE
+  … ほか341件
+=== tools/build_ai_page.py rc 0
+wrote 362 pages + sitemap.xml + index.html本体SSR埋込 (18064 tickets, today=2026-11-22)
+artist pages 13089 + 受付中なし 14559 + artists.html + sitemap (today=2026-11-22)
+=== tools/gate_artist_pages.py rc 0
+=== gate_artist_pages (today=2026-11-22) 一覧 13089組 ===
+=== 集計: P 0 / Q 0 / R 0 / S 0 ===
+=== tools/compact_events.py --apply rc 0
+index.html：20102件  25.63MB → 25.63MB（-0.00MB）
+
+17:50:27 止める行: []
+17:53:23 commit rc=0  
+17:53:23 手元の最終更新 最終更新：2026年11月22日 17:49
+17:54:02 push rc=0  To https://github.com/sumikiyo12250807-blip/oshinavi.git
+   f5162f73596..f12f48887a5  main -> main
+
+17:56:33 公開の最終更新 最終更新：2026年11月21日 23:47
+17:57:35 公開の最終更新 最終更新：2026年11月22日 17:49

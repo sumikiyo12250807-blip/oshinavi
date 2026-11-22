@@ -47,6 +47,11 @@
    "date": "2026-10-20",
    "count": 70,
    "src": "ユーザー報告（朝）。同日 自己紹介を案Aに差し替え（毎晩20時から明日発売・アイドル・週末のピックアップ記事）＝変える前 10/7〜10/20 は 52→70（13日で+18・1日約1.4人）。元の文 tmp/x1020/x/bio_before_1020.txt"
+  },
+  {
+   "date": "2026-11-22",
+   "count": 92,
+   "src": "account_analytics 3M 18:1x（フォロワー 92・認証 6・24時間で動いた 73）。3か月＝インプ 2.2M・プロフ訪問 2.4K・エンゲージ率 0.1%。週ごとの表 tmp/x1122/x/follows_weekly_1122.md"
   }
  ],
  "_followers_note": "🚨CSVの『New follows』は実際の増分をほとんど拾えていない＝9/12(27人)→9/23(36人)で+9人なのに、投稿に紐づいた新規フォローは1人だけ。**フォロワーの増減を見るなら、毎晩プロフィールの数字をここに記録するしかない。**",
@@ -309,6 +314,245 @@
    "post": "post07 お笑い・落語まとめ（10/19発売）",
    "media": "tmp/video/matome1019o/owarai_1019_x.mp4",
    "note": "まとめ付き動画（お笑い・33秒・ペンライト会場の動画AC背景・紫髪ラッパー10コマ・拍に合わせて弾む・歌詞の後ろに半透明の帯・本物のOSHINAVIはサビのタップだけ）。予約一覧で13本の時刻を確認済み"
+  },
+  {
+   "date": "2026-10-22",
+   "time": "20:46",
+   "post": "post04 J-POP・K-POPまとめ（10/23発売）",
+   "media": "tmp/video/matome1023j/jpop_1023_x.mp4",
+   "note": "まとめ付き動画（J-POP・Suno『おしなびどっと』1:07・すちこ提供のステージの光の動画 174084 を背景・紫髪のロックバンド8コマ・142BPMの拍で揺れる・歌詞は2〜4行の塊で暗い字＋白縁・本物のOSHINAVIはサビのタップだけ＝三代目JSB 映画のムビチケ）。予約一覧で10本の時刻と動画を確認済み"
+  },
+  {
+   "date": "2026-10-23",
+   "time": "20:46",
+   "post": "post04 J-POPまとめ（10/24発売）",
+   "media": "tmp/video/matome1024j/jpop_1024_x.mp4",
+   "note": "まとめ付き動画（J-POP・Suno『おしなびどっと (1)』1:46・すちこ提供のペンライトの動画 134387 を背景・華やかコスプレ衣装14コマ・107.6BPMの拍で揺れる・歌詞は2〜3行の塊で暗い字＋白縁（長い3行は2行に割った）・本物のOSHINAVIはサビのタップだけ＝SHUTA. 大阪BIGCAT）。予約一覧で10本の時刻を確認済み"
+  },
+  {
+   "date": "2026-10-26",
+   "post": "post04 お笑い・落語まとめ（21:51）",
+   "media": "video",
+   "file": "tmp/video/matome1027o/out_x.mp4",
+   "len_sec": 93,
+   "note": "Suno おしなびどっと(3)・妖精9ポーズの6コマを切り抜き（cut_sheet2・高さ570）・背景 動画AC 37726・2回直し（上の空き→妖精を上半分／足の欠け→全身切り抜き・2/3）。⑨の後になったので CTA を「J-POP・ロックやアイドルのまとめも…のぞいてみて」に（すちこOK）"
+  },
+  {
+   "date": "2026-10-27",
+   "post": "post04 お笑い・落語まとめ（20:31）",
+   "media": "video",
+   "file": "tmp/video/matome1028o/out_x.mp4",
+   "len_sec": 65,
+   "note": "Suno Untitled（すちこ作・歌詞は名前の行が全部一致）・パステル学園アイドル9ポーズの立ち姿6コマを切り抜き（上半分）・背景 動画AC 16050 電球ドットを暗くぼかす・字は白/黄・タップ場面は 39688 囲碁将棋／ミキ。すちこOK"
+  },
+  {
+   "date": "2026-11-01",
+   "post": "post01 主役 又吉直樹（20:01）",
+   "media": "video",
+   "file": "tmp/video/matome1102s/part1.mp4",
+   "len_sec": 46.7,
+   "note": "主役の歌 3分割の1本目"
+  },
+  {
+   "date": "2026-11-01",
+   "post": "post02 主役 ギヴン（20:11）",
+   "media": "video",
+   "file": "tmp/video/matome1102s/part2.mp4",
+   "len_sec": 36.0,
+   "note": "主役の歌 3分割の2本目"
+  },
+  {
+   "date": "2026-11-01",
+   "post": "post03 主役 吉田正尚（20:21）",
+   "media": "video",
+   "file": "tmp/video/matome1102s/part3.mp4",
+   "len_sec": 44.3,
+   "note": "主役の歌 3分割の3本目"
+  },
+  {
+   "date": "2026-11-01",
+   "post": "post04 お笑い・落語まとめ（20:31）",
+   "media": "video",
+   "file": "tmp/video/matome1102o/out_x.mp4",
+   "len_sec": 67.5,
+   "note": "まとめの歌・70年代ディスコ8着（足が3本の p2 を外した第2版）"
+  },
+  {
+   "date": "2026-11-10",
+   "post": "post05 お笑い・落語まとめ（20:41）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1111_owarai_matome.mp4（tmp/video/matome1111o）",
+   "len_sec": 75.7,
+   "note": "まとめの歌・パリコレ風9人（すちこが作り直した曲 おしなびどっと (23)）"
+  },
+  {
+   "date": "2026-11-10",
+   "post": "post09 主役 きゃりーぱみゅぱみゅ（21:21）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1111_shuyaku_1_kyary.mp4（20:36 書き出し）",
+   "len_sec": 48,
+   "note": "主役の歌 3分割の1本目・予約し直し（動画なしの旧予約は削除）"
+  },
+  {
+   "date": "2026-11-10",
+   "post": "post10 主役 新春！よしもと大爆笑2027（21:31）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1111_shuyaku_2_yoshimoto.mp4（20:46:58 書き出し）",
+   "note": "主役の歌 3分割の2本目・予約し直し（動画なしの旧予約は削除）"
+  },
+  {
+   "date": "2026-11-10",
+   "post": "post11 主役 西武ライオンズ 台湾（21:41）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1111_shuyaku_3_lions.mp4（20:48:19 書き出し）",
+   "note": "主役の歌 3分割の3本目・予約し直し（動画なしの旧予約は削除）"
+  },
+  {
+   "date": "2026-11-12",
+   "post": "post09 主役 MAPPA EXPO 15th Anniversary（21:21）",
+   "media": "video",
+   "file": "tmp/video/shuyaku1113/part2_x.mp4",
+   "note": "主役の歌 3つに切った2本目・スポーツの子・ボールが飛ぶ"
+  },
+  {
+   "date": "2026-11-12",
+   "post": "post10 主役 読売ジャイアンツ×IMM THEATER コラボ企画（21:31）",
+   "media": "video",
+   "file": "tmp/video/shuyaku1113/part3_x.mp4",
+   "note": "主役の歌 3つに切った3本目・野球の子"
+  },
+  {
+   "date": "2026-11-12",
+   "post": "post11 主役 Chage（21:41）",
+   "media": "video",
+   "file": "tmp/video/shuyaku1113/part1_x.mp4",
+   "note": "主役の歌 3つに切った1本目"
+  },
+  {
+   "date": "2026-11-12",
+   "post": "post05 まとめ お笑い・落語（20:41）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1113_owarai_matome.mp4（11/10 書き出し・TikTok 済み）",
+   "note": "文面だけで予約していたのを、すちこの指摘で 20:05 に動画付きへ差し替え（文面だけの分は削除）"
+  },
+  {
+   "date": "2026-11-13",
+   "post": "mat05 まとめ お笑い・落語（20:41）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1114_owarai_matome_x.mp4",
+   "note": "すちこが全編を見て OK のあと、最初から動画付きで予約"
+  },
+  {
+   "date": "2026-11-13",
+   "post": "shu01 主役 好井まさお 怪談を浴びる会（21:21）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1114_shuyaku_part1_x.mp4",
+   "note": "すちこが全編を見て OK のあと、最初から動画付きで予約"
+  },
+  {
+   "date": "2026-11-13",
+   "post": "shu02 主役 遊☆戯☆王 舞台挨拶（21:31）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1114_shuyaku_part2_x.mp4",
+   "note": "すちこが全編を見て OK のあと、最初から動画付きで予約"
+  },
+  {
+   "date": "2026-11-13",
+   "post": "shu03 主役 中村倫也 舞台挨拶（21:41）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1114_shuyaku_part3_x.mp4",
+   "note": "すちこが全編を見て OK のあと、最初から動画付きで予約"
+  },
+  {
+   "date": "2026-11-14",
+   "post": "mat05 まとめ お笑い・落語（20:41）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1115_owarai_matome_x.mp4",
+   "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-14",
+   "post": "shu01 主役 BoA（21:21）の返信",
+   "media": "video",
+   "file": "Downloads/oshinavi_1115_shuyaku_part1_x.mp4",
+   "note": "書き出しが予約に間に合わず、本文は文章だけで出て、出たあとに返信で動画だけを付けた（すちこOK）"
+  },
+  {
+   "date": "2026-11-14",
+   "post": "shu02 主役 星の王子さま（21:31）の返信",
+   "media": "video",
+   "file": "Downloads/oshinavi_1115_shuyaku_part2_x.mp4",
+   "note": "書き出しが予約に間に合わず、本文は文章だけで出て、出たあとに返信で動画だけを付けた（すちこOK）"
+  },
+  {
+   "date": "2026-11-14",
+   "post": "shu03 主役 マルコポロリ（21:41）の返信",
+   "media": "video",
+   "file": "Downloads/oshinavi_1115_shuyaku_part3_x.mp4",
+   "note": "書き出しが予約に間に合わず、本文は文章だけで出て、出たあとに返信で動画だけを付けた（すちこOK）"
+  },
+  {
+   "date": "2026-11-15",
+   "post": "mat01 まとめ スポーツ（20:01）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1116_sports_matome_x.mp4",
+   "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-16",
+   "post": "mat07 まとめ J-POP（20:31）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1117_jpop_matome_x.mp4",
+   "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-16",
+   "post": "shu01 主役 大相撲すみだ場所（20:51）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1117_shuyaku_part1_x.mp4",
+   "note": "主役の歌の動画を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-16",
+   "post": "shu02 主役 高橋優（21:01）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1117_shuyaku_part2_x.mp4",
+   "note": "主役の歌の動画を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-16",
+   "post": "shu03 主役 FREEDOM OF CHOICE（21:11）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1117_shuyaku_part3_x.mp4",
+   "note": "主役の歌の動画を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-21",
+   "post": "mat02 まとめ クラシック・ジャズ（19:51）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1122_classic_matome_x.mp4",
+   "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-21",
+   "post": "mat03 まとめ 舞台・ミュージカル（20:01）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1122_stage_matome_x.mp4",
+   "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"
+  },
+  {
+   "date": "2026-11-22",
+   "post": "mat02 まとめ お笑い（19:51）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1123_owarai_matome_x.mp4",
+   "note": "前に作った動画（TikTok先出しの分）を最初から付けて予約・この日から1晩5本（トレンド・スポーツ/おでかけ/舞台・お笑い・音楽・主役1本）"
+  },
+  {
+   "date": "2026-11-22",
+   "post": "mat03 まとめ 音楽＝J-POP・クラシック・ロック・アイドル（20:01）",
+   "media": "video",
+   "file": "Downloads/oshinavi_1123_jpoprock_matome_x.mp4",
+   "note": "前に作った動画（TikTok先出しの分）を最初から付けて予約・この日から1晩5本（トレンド・スポーツ/おでかけ/舞台・お笑い・音楽・主役1本）"
   }
  ]
 }

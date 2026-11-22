@@ -1,0 +1,58 @@
+keys ['_comment', '_source', '_followers', '_followers_note', 'posts', '_measured_2026-09-23', 'rows']
+[
+{
+"date": "2026-08-18",
+"count": 4,
+"src": "memory feedback（account_analytics は50人からロック）"
+},
+{
+"date": "2026-09-09",
+"count": null,
+"delta": 5,
+"src": "ユーザー報告 11:40『フォロワーが5人増えた（動画のお陰かはわからないけど）』"
+},
+{
+"date": "2026-09-12",
+"count": 27,
+"src": "plan.md 9/12夜の締め"
+},
+{
+"date": "2026-09-23",
+"count": 36,
+"src": "プロフィール実測 10:40"
+},
+{
+"date": "2026-09-23",
+"count": 37,
+"src": "プロフィール実測 21:30（夜の9本を予約したあと・この日の投稿は9本ともメディアなし）"
+},
+{
+"date": "2026-10-03",
+"count": 50,
+"src": "ユーザー報告（50人到達）"
+},
+{
+"date": "2026-10-06",
+"count": 51,
+"src": "プロフィール実測 18:4x／Overview 7D＝インプ162.7K・プロフ訪問192・フォロー増減 9/30 +2-1・10/1 +2・10/2 +2・10/5 +2-2（棒の目盛り読み）"
+},
+{
+"date": "2026-10-07",
+"count": 52,
+"src": "プロフィール実測 19:4x（夜の12本を予約したあと・固定ポスト/自己紹介/ヘッダーを変えた翌日）"
+},
+{
+"date": "2026-10-20",
+"count": 70,
+"src": "ユーザー報告（朝）。同日 自己紹介を案Aに差し替え（毎晩20時から明日発売・アイドル・週末のピックアップ記事）＝変える前 10/7〜10/20 は 52→70（13日で+18・1日約1.4人）。元の文 tmp/x1020/x/bio_before_1020.txt"
+}
+]
+rows 52
+{"date": "2026-11-16", "post": "mat07 まとめ J-POP（20:31）", "media": "video", "file": "Downloads/oshinavi_1117_jpop_matome_x.mp4", "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"}
+{"date": "2026-11-16", "post": "shu01 主役 大相撲すみだ場所（20:51）", "media": "video", "file": "Downloads/oshinavi_1117_shuyaku_part1_x.mp4", "note": "主役の歌の動画を最初から付けて予約"}
+{"date": "2026-11-16", "post": "shu02 主役 高橋優（21:01）", "media": "video", "file": "Downloads/oshinavi_1117_shuyaku_part2_x.mp4", "note": "主役の歌の動画を最初から付けて予約"}
+{"date": "2026-11-16", "post": "shu03 主役 FREEDOM OF CHOICE（21:11）", "media": "video", "file": "Downloads/oshinavi_1117_shuyaku_part3_x.mp4", "note": "主役の歌の動画を最初から付けて予約"}
+{"date": "2026-11-21", "post": "mat02 まとめ クラシック・ジャズ（19:51）", "media": "video", "file": "Downloads/oshinavi_1122_classic_matome_x.mp4", "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"}
+{"date": "2026-11-21", "post": "mat03 まとめ 舞台・ミュージカル（20:01）", "media": "video", "file": "Downloads/oshinavi_1122_stage_matome_x.mp4", "note": "前の日に作った動画（TikTok先出しの分）を最初から付けて予約"}
+csv ['tmp\\x_content_0926.csv', 'tmp\\x_content_1001.csv', 'tmp\\x_content_1003.csv', 'tmp\\x_content_1023.csv', 'tmp\\x_content_3m_0820.csv']
+analysis ['tmp\\x_analysis_1023_click.md', 'tmp\\x_analysis_1023_video.md', 'tmp\\x_analysis_test.md']
