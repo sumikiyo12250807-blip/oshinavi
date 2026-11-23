@@ -1388,12 +1388,9 @@
 
   .vc-title{font-size:13px;margin-bottom:6px}.vc-prods{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.vc-prod1{display:flex;flex-direction:column;align-items:center;width:110px;text-decoration:none;color:inherit;font-size:11px;line-height:1.4}.vc-prod1 img{width:110px;border:1px solid var(--border,#ddd);border-radius:6px;margin-bottom:4px}
 .vc-noimg{display:flex;align-items:center;justify-content:center;width:110px;height:110px;box-sizing:border-box;padding:6px;border:1px solid var(--border,#ddd);border-radius:6px;margin-bottom:4px;font-size:12px;font-weight:bold;text-align:center;overflow-wrap:anywhere}
-.hotel-strip{display:flex;align-items:center;gap:10px;margin:6px 24px 8px;padding:12px 14px;border-radius:12px;background:#00c887;border:2px solid #6fffc4;box-shadow:0 0 16px rgba(0,200,135,.55);color:#0a0a0a;text-decoration:none;font-size:16px;font-weight:700;line-height:1.4}
-.hotel-strip b{font-weight:900}
-.hotel-strip .hs-ico{font-size:22px}
-.hotel-strip .hs-txt{flex:1;min-width:0}
-.hotel-strip .hs-go{font-size:26px;color:#0a0a0a;font-weight:900}
-.hotel-strip:hover{background:#19e09c}
+.hotel-wide{margin:4px 24px 8px}
+.hotel-wide .ticket-link-btn{display:block;width:100%;text-align:center}
+.hotel-wide .ticket-link-btn img{width:100%;max-width:560px;height:auto}
 .vc-banner{margin-top:12px;text-align:center}.vc-banner img{max-width:100%;height:auto;vertical-align:middle}.vc-banner small{display:block;font-size:11px;color:var(--text-muted)}.vc-prod{display:inline-flex;gap:12px;align-items:center;text-decoration:none;color:inherit;font-size:13px;text-align:left}.vc-prod img{width:120px;border:1px solid var(--border,#ddd);border-radius:6px}
 </style>
 </head>
@@ -38893,7 +38890,7 @@
     })();
     const _hotelLive = !!hotelHref && (ev.tickets || []).some(t => !t.soldout && parseDateStr(t.date) >= today) && !(parseDateStr(ev.date) < today);
     const hotelStrip = _hotelLive
-      ? `<a class="hotel-strip" href="${hotelHref}" target="_blank" rel="nofollow noopener"><span class="hs-ico">🏨</span><span class="hs-txt"><b>${hotelDest}</b>の近くの宿${hotelNight ? `（${hotelNight}泊）` : ""}を探す</span><span class="hs-go">›</span></a>`
+      ? `<div class="hotel-wide"><a class="ticket-link-btn btn-hotel${btnImgCls("会場近くのホテルを探す")}" href="${hotelHref}" target="_blank" rel="nofollow noopener" title="${hotelDest}の近くの宿${hotelNight ? `（${hotelNight}泊）` : ""}">${btnInner("🏨", "会場近くのホテルを探す")}</a></div>`
       : "";
     const hotelBtn = _hotelLive ? "" : hotelHref
       ? `<a class="ticket-link-btn btn-hotel${btnImgCls("会場近くのホテルを探す")}" href="${hotelHref}" target="_blank" rel="nofollow noopener">${btnInner("🏨", "会場近くのホテルを探す")}</a>`
