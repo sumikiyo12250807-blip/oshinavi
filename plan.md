@@ -14,7 +14,8 @@ https://claude.ai/artifact/TVpEVPpVHr5s5ByLuwpoRv
 - ❓ 11/21 の記事3本（Monte-Cristo・渡辺美里と京フィル・一富士茄子牛焦げルギー）は確認ページ https://claude.ai/artifact/Ud4539xduoPp88v14bEEAv のまま すちこの OK 待ち（まだ pickup に組んでいない）▶ 今日の3本と一緒に見てもらう
 - ✅ 13:07 抜き打ち30件（tmp/x1123/spot・seed 11232026・母数 16,240）＝🔴6🟠6🟡6✅12 → 直した・番人（tmp/x1123/spot/rootcause.md）：TIGET・FANY の登録済みを毎日見直していなかった（FANY の売り切れ点検は 11/5 から0回）＝tools/vendor_sweep_daily.py＋shift_guard C／heal_tiget＝公演日が過ぎた消す候補／fany_mark_soldout の鍵 x1112／refetch_artist 全角半角／commit.py の鍵 O_EXCL／37549 削除・40637 ぴあ先行2枠
 - 🔄 14:3x 裏：vendor_sweep_daily（TIGET 全件の番人＝一致 3,152・🚨1,012・生データ 4・読めず 14・非公開 23 → heal_tiget --apply → 番人 → FANY 売り切れ全件）▶ 終わったら heal_tiget の報告（日付・出演者の差し替え・消す候補・非公開23）を見る
-- 🔄 15:1x 裏：tmp/x1123/noon23_chain.py（11/21 の形・TIGET の段は外した）＝e+ 今日発売 → ぴあ今日発売 --ids → reconcile_eplus --third → fix → ぴあの見直し 今日の組 → 全体ヒール（止まった分は足し算・HEAD比べ・compact）→ check_order → 各段で commit
+- ⏸ 15:1x 裏：tmp/x1123/noon23_chain.py ＝e+ 今日発売・ぴあ今日発売 11件（止まった5件は足し算・HEAD比べ 枠が消えた0）→ commit 4a8a8e6 まで済み ▶ 🚨15:2x メモリ不足で Claude Code に止められた（vendor_sweep_daily も同時に）＝**残り：reconcile_eplus --third → fix・ぴあの見直し 今日の組・全体ヒールの2回目** は動かし直していない（決まり＝止められたものは勝手に再開しない）
+- ✅ vendor_sweep_daily は heal_tiget --apply まで済み（差し替え 805・残り🚨210）・FANY 売り切れ全件は未着手／消す候補 30822 削除・16922 公演名（メールアドレス入り）を直した・heal_tiget の判定を締め直した（rootcause.md F）
 - ✅ 昼の隠れ枠ヒール（14:5x）convert 92・削除候補 173（明朝の期限切れの道で）・ぴあ URL 無効化 3（35609・36227・53802＝後継を探す）
 - ✅ 14:5x X の数字（画面から）＝フォロワー 93（+1）・11/22 夜の5本はまだ1日目＝判定 11/24／tmp/x_analysis_1123.md
 - ✅ 12時台 すちこ（仕事場）「2026年の売上票」→ デスクトップの 売上表.xlsx の「令和8年」シートだけを数字で写してチャットに送った（元の表は触っていない）

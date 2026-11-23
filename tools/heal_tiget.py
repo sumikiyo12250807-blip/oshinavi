@@ -84,7 +84,11 @@ def main():
         page_dates = []   # 🆕11/23 売り場の公演日（作り直しが空の時に「日付が前にずれてもう終わった」を見分ける）
         for eid in urls:
             try:
-                d = TH.parse_event(TH.fetch(f'https://tiget.net/events/{eid}'), eid)
+                _h = TH.fetch(f'https://tiget.net/events/{eid}')
+                d = TH.parse_event(_h, eid)
+                # 🆕11/23 ツアーのページは programs の日付が初日だけ（17058 あれくん＝開催日「11/07〜12/17」）＝終了の文字も見る
+                if 'このイベントはすでに終了しています' not in _h:
+                    page_dates.append('9999-12-31')
             except Exception as ex:
                 err.append((e['id'], eid, str(ex)[:60]))
                 bad = True
@@ -167,6 +171,9 @@ def main():
     rep.write('\n=== 差し替え %d / 空で触らず %d（うち🚨公演日が過ぎた %d）/ 読めず %d / 出演者を足した %d / 公演名が変わった %d / カードの日付を直した %d ===\n'
               % (done, len(empty), len(gone_past), len(err), len(artist_fixed), len(name_changed), len(date_fixed)))
     rep.close()
+    # 🆕11/23 売り場の公演名にメールアドレスが入っていることがある（16922）＝tmp/ は公開されるので伏せる
+    _t = io.open(REPORT, encoding='utf-8').read()
+    io.open(REPORT, 'w', encoding='utf-8').write(re.sub(r'[\w.+-]+[@＠][\w-]+(?:\.[\w-]+)+', '（メールアドレスは伏せた）', _t))
     sys.stderr.write('heal_tiget: healed=%d empty=%d fetcherr=%d apply=%s -> %s\n'
                      % (done, len(empty), len(err), a.apply, REPORT))
     if not a.apply:

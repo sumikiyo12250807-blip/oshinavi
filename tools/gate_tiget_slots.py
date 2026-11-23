@@ -239,6 +239,9 @@ def main():
     rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d / 🔒非公開 %d ===\n'
               % (ok, len(ng), len(rawng), len(fetcherr), len(private)))
     rep.close()
+    # 🆕11/23 売り場の公演名にメールアドレスが入っていることがある（16922）＝tmp/ は公開されるので伏せる
+    _t = io.open(REPORT, encoding='utf-8').read()
+    io.open(REPORT, 'w', encoding='utf-8').write(re.sub(r'[\w.+-]+[@＠][\w-]+(?:\.[\w-]+)+', '（メールアドレスは伏せた）', _t))
     # コンソールは文字化けするのでASCIIの要約だけ。中身は REPORT を読む
     sys.stderr.write('gate_tiget_slots: match=%d ng=%d rawng=%d fetcherr=%d private=%d -> %s\n'
                      % (ok, len(ng), len(rawng), len(fetcherr), len(private), REPORT))
