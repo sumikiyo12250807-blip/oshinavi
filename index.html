@@ -708692,7 +708692,11 @@
       .filter(d => !(hasPrimaryVendor && (d.key === "eplus" || d.key === "lawson")))
       .filter(d => !(multiTicketUrl && VENDOR_TICKET_KEYS.includes(d.key)))
       .map(btnHTML)
-      .join("") + amazonMusicBtn + hotelBtn + kidsWorkBtn + wrestlingBtn + genreAmazonBtn + piaBtn;
+      .concat([amazonMusicBtn, hotelBtn, kidsWorkBtn, wrestlingBtn, genreAmazonBtn, piaBtn])
+      .filter(Boolean)
+      // 🆕2026-11-24 すちこ「チケット売り場の小さなボタンは下に　大きなボタンは上の方に」＝横長（btn-wide）を先に・小さいボタンを後に
+      .sort((x, y) => (y.includes(" btn-wide") ? 1 : 0) - (x.includes(" btn-wide") ? 1 : 0))
+      .join("");
 
     return `
       <div class="event-card"
