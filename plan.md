@@ -8,6 +8,9 @@ https://claude.ai/artifact/TVpEVPpVHr5s5ByLuwpoRv
 - 🔄 06:35〜 裏：tmp/x1123/morning_chain.py（morning_local → morning_pia）▶ 終わったら新着114件の番人→振り分け → 期限切れの削除 → 朝の push
 - ✅ 08:52 今日1回目の push（3be4a95・公開の最終更新 11/23 08:47 を確かめた）＝期限切れ 505件の削除（logs/removed_2026-11-23.md）・振り分け 35件（アイドル12・その他11・J-POP6・クラシック3・スポーツ2・ロック1／新着 113→78・logs/assigned_2026-11-23.md）・売り場ボタンの直し・ヒール 92件・カード 19571→19066
 - （済）07:0x 裏：tmp/x1123/am_chain23.py＝morning_chain の .done を待つ → 期限切れの削除（候補962・独立505・一致505だけ）→ commit → 新着の振り分け（assign23）→ 売り場ボタンの直し（fix_links・鍵つき）→ push_am23（prepush → commit → push → 公開の最終更新）
+- 🔄 10:07 記事3本（tmp/x1123/art23）：候補85（11/24〜27 発売・12/10 以降まで買える・書いた37組を外す）→ 海宝直人『ever after』（11/25）・小曽根真『Now and Beyond! Vol.1』東京オペラシティ（11/27）・大宮よしもと 年末寄席 12/26〜30（11/25 FANY）＝係（Fable）が材料と本文 ▶ 別の係で独立FC → 確認ページ → PushNotification
+  - ✅ 本文3本（1,239〜1,372字・禁止語0・引用一致）→ 🔄 独立FC（fc_brief.md）／登録の直し候補：大宮 12/27 の2回（56884・56885）の出演に 男性ブランコ・コットン が無い（FANY にはある）・小曽根 Now and Beyond! が2枚（29543 e+ jazz／6157 ぴあ classic）▶ FC の結果を見てから直す
+- ❓ 11/21 の記事3本（Monte-Cristo・渡辺美里と京フィル・一富士茄子牛焦げルギー）は確認ページ https://claude.ai/artifact/Ud4539xduoPp88v14bEEAv のまま すちこの OK 待ち（まだ pickup に組んでいない）▶ 今日の3本と一緒に見てもらう
 - ✅ 06:4x 歌詞2本（クラシック・J-POPとロック）＝登録と1行ずつ突き合わせ 食い違い0・Reol／金子三勇士の読みを確かめた・GOTCHAROCKA／0.1gの誤算は読みの出典なしで外した
 
 # ▶▶ 11/22(日)（道具は tmp/x1122）
