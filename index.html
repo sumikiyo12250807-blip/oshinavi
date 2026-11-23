@@ -1391,6 +1391,8 @@
 .hotel-wide{margin:4px 24px 10px}
 .hotel-wide-btn{display:block;max-width:560px;margin:0 auto;line-height:0;transition:transform .06s ease,filter .06s ease;filter:drop-shadow(0 5px 0 rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(80,140,255,.35));-webkit-tap-highlight-color:transparent}
 .hotel-wide-btn img{width:100%;height:auto;display:block}
+.article-btn{display:inline-block;margin:6px 0 2px;padding:5px 12px;border-radius:999px;background:#fff4d6;color:#7a4b00;border:1px solid #f0c060;font-size:13px;font-weight:700;text-decoration:none}
+.article-btn:active{transform:translateY(1px)}
 .hotel-wide-btn:active{transform:translateY(3px);filter:drop-shadow(0 2px 0 rgba(0,0,0,.55)) drop-shadow(0 0 6px rgba(80,140,255,.3))}
 .vc-banner{margin-top:12px;text-align:center}.vc-banner img{max-width:100%;height:auto;vertical-align:middle}.vc-banner small{display:block;font-size:11px;color:var(--text-muted)}.vc-prod{display:inline-flex;gap:12px;align-items:center;text-decoration:none;color:inherit;font-size:13px;text-align:left}.vc-prod img{width:120px;border:1px solid var(--border,#ddd);border-radius:6px}
 </style>
@@ -39929,6 +39931,7 @@
             ${ev.longrun ? '<span class="longrun-badge">🎭 ロングラン公演</span>' : ''}
             ${ev.artist && ev.artist.trim() !== (ev.name||'').trim() ? `<div class="event-artist">${ev.artist}</div>` : ''}
             <div class="event-name${ev.artist && ev.artist.trim() === (ev.name||'').trim() ? ' solo' : ''}">${ev.name}</div>
+            ${PICKUP_BY_ID[ev.id] ? `<a class="article-btn" href="${PICKUP_BY_ID[ev.id]}">📰 この公演の記事を読む</a>` : ''}
             <div class="event-concert-date">📅 ${ev.dateLabel || formatFullDate(ev.date)}</div>
             <div class="event-meta">
               <span class="event-meta-item">📍 ${ev.venue}</span>
@@ -39942,6 +39945,9 @@
         </div>
       </div>`;
   }
+
+  // 🆕2026-11-24 記事に載せたカード → 記事（tools/pickup_card_links.py が書く）
+  const PICKUP_BY_ID = {"4521":"pickup/2026-11-08/yama.html","41576":"pickup/2026-11-08/marco.html","21132":"pickup/2026-11-08/fz.html","35361":"pickup/2026-11-08/nagaoka.html","41731":"pickup/2026-11-08/panda.html","45278":"pickup/2026-11-08/nmb.html","45281":"pickup/2026-11-08/nmb.html","45282":"pickup/2026-11-08/nmb.html","45283":"pickup/2026-11-08/nmb.html","45284":"pickup/2026-11-08/nmb.html","49051":"pickup/2026-11-08/nmb.html","47910":"pickup/2026-11-08/fnc.html","48014":"pickup/2026-11-08/fnc.html","7719":"pickup/2026-11-08/suga.html","47655":"pickup/2026-11-08/kagaya.html","47665":"pickup/2026-11-08/kagaya.html","47666":"pickup/2026-11-08/kagaya.html","1308":"pickup/2026-11-08/michiko.html","21242":"pickup/2026-11-08/michiko.html","43388":"pickup/2026-11-08/lcd.html","43409":"pickup/2026-11-08/lcd.html","43423":"pickup/2026-11-08/lcd.html","43424":"pickup/2026-11-08/lcd.html","43426":"pickup/2026-11-08/lcd.html","33441":"pickup/2026-11-08/eliza.html","3674":"pickup/a/kooza.html","49898":"pickup/a/kooza.html","5155":"pickup/a/kyary.html","47959":"pickup/a/lions.html","49921":"pickup/a/ozaki.html","50788":"pickup/a/chage.html","33598":"pickup/a/matsuken.html","523":"pickup/a/onolisa.html","47961":"pickup/a/rizin6.html","41822":"pickup/a/honkikkies.html","41823":"pickup/a/honkikkies.html","41824":"pickup/a/honkikkies.html","30901":"pickup/a/sweeney.html","46036":"pickup/a/sweeney.html","50748":"pickup/a/takahashiyu.html","53678":"pickup/a/freedomofchoice.html","52442":"pickup/a/sumidabasho.html","30568":"pickup/a/minamikousetsu.html","49067":"pickup/a/danseiburanko.html","49068":"pickup/a/danseiburanko.html","49069":"pickup/a/danseiburanko.html","49070":"pickup/a/danseiburanko.html","49071":"pickup/a/danseiburanko.html","49072":"pickup/a/danseiburanko.html","49073":"pickup/a/danseiburanko.html","49074":"pickup/a/danseiburanko.html","49075":"pickup/a/danseiburanko.html","38644":"pickup/a/hikawakiyoshi.html","54893":"pickup/a/zennihon.html","54576":"pickup/a/elf.html","43595":"pickup/a/guiano.html","43373":"pickup/a/daibakushow.html","34053":"pickup/a/asagaya.html","31191":"pickup/a/plastictree.html","41733":"pickup/a/hirosekohmi.html","47748":"pickup/a/yoshii.html","27322":"pickup/a/tanakaayako.html"};
 
   // ────────────────────────────────────────────────
   //  フィルタリング + 遅延ロード
