@@ -126,7 +126,11 @@ def main():
         _short = len(cur) <= 12 and not re.search(r'[\s「」『』【】()（）\[\]〜~!！?？:：・]', cur)
         if arts and cur and ((cur != (e.get('name') or '') and not GF.artist_looks_like_title(e, OK)) or _short):
             have = cur.split('／')
-            arts = have + [a for a in arts if a not in have and not any(a in h or h in a for h in have)]
+            # 🆕2026-11-23 抜き打ち 54089 東京シティ・フィル＝e+ の「東京シティ･フィル」（半角の・）を別の名前と読んで2つ並べた
+            #   ＝全角半角・空白をそろえてから比べる
+            import unicodedata
+            _k = lambda s: re.sub(r'[\s　・･]', '', unicodedata.normalize('NFKC', s or ''))
+            arts = have + [a for a in arts if not any(_k(a) in _k(h) or _k(h) in _k(a) for h in have)]
         new = '／'.join(arts)
         if arts:   # 🆕10/27 売り場の出演者の欄で確かめた印（アーティスト一覧の番人が「公演名＝名前」の組に求める）
             CHECKED[str(e['id'])] = {'cast': new, 'src': src, 'at': TODAY_S}

@@ -72,6 +72,7 @@ def main():
     rep = io.open(REPORT, 'w', encoding='utf-8')
     done, empty, err = 0, [], []
     artist_fixed, name_changed, date_fixed = [], [], []
+    gone_past = []
     for e in events:
         if e['id'] not in want:
             continue
@@ -80,6 +81,7 @@ def main():
                        for x in re.findall(r'tiget\.net/events/(\d+)', t.get('url') or '')})
         rebuilt, bad, arts, names, spans = [], False, [], [], []
         has_perf = False
+        page_dates = []   # 🆕11/23 売り場の公演日（作り直しが空の時に「日付が前にずれてもう終わった」を見分ける）
         for eid in urls:
             try:
                 d = TH.parse_event(TH.fetch(f'https://tiget.net/events/{eid}'), eid)
@@ -89,6 +91,7 @@ def main():
                 continue
             d['cats'] = ['81']
             d['list'] = {}
+            page_dates += [p.get('date') for p in d.get('programs') or [] if p.get('date')]
             built, why = BT.build(d, a.today)
             if built:
                 rebuilt += built['tickets']
@@ -105,6 +108,12 @@ def main():
             continue
         if not rebuilt:
             empty.append(e)
+            # 🆕🚨2026-11-23 抜き打ち 37549 DJダイノジ（tmp/x1123/spot/rootcause.md B）＝売り場の公演日が 11/13 に前へずれて
+            #   もう終わったのに、カードは 12/5 のまま「買える」で出ていた。作り直しが空＝触らない、なので日付も直らなかった。
+            #   売り場の公演日が全部今日より前で、カードの日付は今日以降 → 「消す候補」として別に報告する（ここでは消さない）
+            if page_dates and max(page_dates) < a.today and (e.get('date') or '') >= a.today and not [
+                    t for t in tickets if 'tiget.net' not in (t.get('url') or '')]:
+                gone_past.append((e['id'], e.get('date'), max(page_dates), e.get('name')))
             continue
         others = [t for t in tickets if 'tiget.net' not in (t.get('url') or '')]
         old = [t for t in tickets if 'tiget.net' in (t.get('url') or '')]
@@ -149,11 +158,14 @@ def main():
         rep.write('  id=%s %s\n' % (e['id'], (e.get('name') or '')[:40]))
     for i, eid, why in err:
         rep.write('❌ id=%s events/%s 読めなかった: %s\n' % (i, eid, why))
+    rep.write('\n--- 🚨 売り場の公演日はもう過ぎた（カードは先の日付のまま）＝消す候補・売り場の生の文字を見てから消す ---\n')
+    for i, cd, pd, nm in gone_past:
+        rep.write('  id=%s %s ｜カード %s ⇔ 売り場 %s\n' % (i, (nm or '')[:40], cd, pd))
     rep.write('\n--- 売り場の公演名が変わった（触っていない・手で見る）---\n')
     for i, old, new in name_changed:
         rep.write('  id=%s %s → %s\n' % (i, (old or '')[:40], (new or '')[:60]))
-    rep.write('\n=== 差し替え %d / 空で触らず %d / 読めず %d / 出演者を足した %d / 公演名が変わった %d / カードの日付を直した %d ===\n'
-              % (done, len(empty), len(err), len(artist_fixed), len(name_changed), len(date_fixed)))
+    rep.write('\n=== 差し替え %d / 空で触らず %d（うち🚨公演日が過ぎた %d）/ 読めず %d / 出演者を足した %d / 公演名が変わった %d / カードの日付を直した %d ===\n'
+              % (done, len(empty), len(gone_past), len(err), len(artist_fixed), len(name_changed), len(date_fixed)))
     rep.close()
     sys.stderr.write('heal_tiget: healed=%d empty=%d fetcherr=%d apply=%s -> %s\n'
                      % (done, len(empty), len(err), a.apply, REPORT))

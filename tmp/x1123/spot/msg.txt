@@ -1,0 +1,9 @@
+11/23 抜き打ち30件（seed 11232026・🔴6🟠6🟡6✅12）の直しと番人／昼のヒール（convert 92）
+
+- 🔴 FANY 予定数終了に印なし（20204 2Cheat7・22817 ルミネ）→ fany_mark_soldout／TIGET 受付中に売り切れの印（49411）・受付終了（29800）→ heal_tiget／TIGET 開催日 11/13 で終わったのにカード 12/5（37549 DJダイノジ）→ 削除（logs/removed_2026-11-23.md）／ぴあのプリセール2枠なし（40637 LIVE DI:GA）→ 足した（reconcile_pia 4=4）
+- 🟠 出演者 2908・54089・4349・40637・23411・1934・29800
+- 番人：TIGET・FANY の登録済みを毎日＝tools/vendor_sweep_daily.py・shift_guard の C（16時に印が無ければ止める）・SKILL.md／heal_tiget＝売り場の公演日が過ぎたのにカードが先の日付を「消す候補」に／fany_mark_soldout の鍵を x1112 に／refetch_artist＝全角半角をそろえて比べる／commit.py の鍵を O_EXCL に
+- 原因と直しの記録 tmp/x1123/spot/rootcause.md
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01FQDm48dAXPgAGoNjRP5MVi

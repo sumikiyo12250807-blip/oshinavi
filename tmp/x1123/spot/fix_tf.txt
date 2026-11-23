@@ -1,0 +1,117 @@
+$ tools/gate_tiget_slots.py --ids 37549,49411,29800
+exit 2
+
+gate_tiget_slots: match=0 ng=3 rawng=0 fetcherr=0 private=0 -> tmp/gate_tiget_report.txt
+
+--- tmp/gate_tiget_report.txt ---
+=== gate_tiget_slots (today=2026-11-23) 対象3件 ===
+
+🚨 id=29800 ☆小平市中央公民館サークルフェア2026☆ BLUES CHAPLIN 〜Lat
+    登録にだけある: ('●予約（FREE LIVE）（東京 11/23公演）〜11/23', '2026-11-23', False, False, False)
+    実ページにだけある: ('●予約（FREE LIVE）（11/23公演）', '2026-11-23', True, True, False)
+
+🚨 id=37549 DJダイノジ・大谷 ONE MAN DJ PARTY
+    登録にだけある: ('●予約（福岡 12/5公演）〜12/5', '2026-12-05', False, False, False)
+
+🚨 id=49411 ♡DEMICK1st anniversaryLIVE -THE INFECTIO
+    登録にだけある: ('●予約（一般）（北海道 12/5公演）〜12/4 23:59', '2026-12-04', False, False, False)
+    登録にだけある: ('●前売りチケット（前方）（北海道 12/5公演）〜12/4 23:59', '2026-12-04', False, False, False)
+    登録にだけある: ('●前売りチケット（最前）（北海道 12/5公演）〜12/4 23:59', '2026-12-04', True, False, False)
+    実ページにだけある: ('●予約（一般）（12/5公演）〜12/4 23:59', '2026-12-04', False, False, False)
+    実ページにだけある: ('●前売りチケット（前方）（12/5公演）〜12/4 23:59', '2026-12-04', False, False, False)
+    実ページにだけある: ('●前売りチケット（最前）（12/5公演）〜12/4 23:59', '2026-12-04', False, False, False)
+
+=== 集計: 一致 0 / 🚨食い違い 3 / 🚨生データ突合 0 / ❌読めなかった 0 / 🔒非公開 0 ===
+
+$ tools/heal_tiget.py --ids 37549,49411,29800
+exit 0
+
+heal_tiget: healed=2 empty=1 fetcherr=0 apply=False -> tmp/heal_tiget_report.txt
+
+--- tmp/heal_tiget_report.txt ---
+
+■ id=29800 ☆小平市中央公民館サークルフェア2026☆ BLUES CHAPLIN 〜Lat  TIGET枠 1 → 1
+    旧: ●予約（FREE LIVE）（東京 11/23公演）〜11/23 | 2026-11-23
+    新: ●予約（FREE LIVE）（11/23公演） | 2026-11-23 売切 販売終了
+
+■ id=49411 ♡DEMICK1st anniversaryLIVE -THE INFECTIO  TIGET枠 3 → 3
+    旧: ●前売りチケット（最前）（北海道 12/5公演）〜12/4 23:59 | 2026-12-04 売切
+    旧: ●前売りチケット（前方）（北海道 12/5公演）〜12/4 23:59 | 2026-12-04
+    旧: ●予約（一般）（北海道 12/5公演）〜12/4 23:59 | 2026-12-04
+    新: ●前売りチケット（最前）（12/5公演）〜12/4 23:59 | 2026-12-04
+    新: ●前売りチケット（前方）（12/5公演）〜12/4 23:59 | 2026-12-04
+    新: ●予約（一般）（12/5公演）〜12/4 23:59 | 2026-12-04
+
+--- 作り直しが空（触らなかった）---
+  id=37549 DJダイノジ・大谷 ONE MAN DJ PARTY
+
+--- 売り場の公演名が変わった（触っていない・手で見る）---
+
+=== 差し替え 2 / 空で触らず 1 / 読めず 0 / 出演者を足した 0 / 公演名が変わった 0 / カードの日付を直した 0 ===
+
+$ tools/heal_tiget.py --ids 37549,49411,29800 --apply
+exit 0
+
+heal_tiget: healed=2 empty=1 fetcherr=0 apply=True -> tmp/heal_tiget_report.txt
+
+--- tmp/heal_tiget_report.txt ---
+
+■ id=29800 ☆小平市中央公民館サークルフェア2026☆ BLUES CHAPLIN 〜Lat  TIGET枠 1 → 1
+    旧: ●予約（FREE LIVE）（東京 11/23公演）〜11/23 | 2026-11-23
+    新: ●予約（FREE LIVE）（11/23公演） | 2026-11-23 売切 販売終了
+
+■ id=49411 ♡DEMICK1st anniversaryLIVE -THE INFECTIO  TIGET枠 3 → 3
+    旧: ●前売りチケット（最前）（北海道 12/5公演）〜12/4 23:59 | 2026-12-04 売切
+    旧: ●前売りチケット（前方）（北海道 12/5公演）〜12/4 23:59 | 2026-12-04
+    旧: ●予約（一般）（北海道 12/5公演）〜12/4 23:59 | 2026-12-04
+    新: ●前売りチケット（最前）（12/5公演）〜12/4 23:59 | 2026-12-04
+    新: ●前売りチケット（前方）（12/5公演）〜12/4 23:59 | 2026-12-04
+    新: ●予約（一般）（12/5公演）〜12/4 23:59 | 2026-12-04
+
+--- 作り直しが空（触らなかった）---
+  id=37549 DJダイノジ・大谷 ONE MAN DJ PARTY
+
+--- 売り場の公演名が変わった（触っていない・手で見る）---
+
+=== 差し替え 2 / 空で触らず 1 / 読めず 0 / 出演者を足した 0 / 公演名が変わった 0 / カードの日付を直した 0 ===
+
+$ tools/gate_tiget_slots.py --ids 37549,49411,29800
+exit 2
+
+gate_tiget_slots: match=2 ng=1 rawng=0 fetcherr=0 private=0 -> tmp/gate_tiget_report.txt
+
+--- tmp/gate_tiget_report.txt ---
+=== gate_tiget_slots (today=2026-11-23) 対象3件 ===
+
+🚨 id=37549 DJダイノジ・大谷 ONE MAN DJ PARTY
+    登録にだけある: ('●予約（福岡 12/5公演）〜12/5', '2026-12-05', False, False, False)
+
+=== 集計: 一致 2 / 🚨食い違い 1 / 🚨生データ突合 0 / ❌読めなかった 0 / 🔒非公開 0 ===
+
+$ tools/fany_mark_soldout.py --ids 20204,22817,23411 --apply
+exit 0
+fany_mark_soldout: 対象 3枠 / 受付ページ 3枚 を読む
+fany_mark_soldout: 全部予定数終了で付ける 2枠（2枚）/ 一部だけ 1枚 / 読めない 0枚 / 見たことの無い文字 1種 / apply=True → C:\Users\user\oshinavi\tmp\fany_soldout_report.txt
+
+
+--- tmp/fany_soldout_report.txt ---
+=== fany_mark_soldout (today=2026-11-23) apply=True 対象 3枠 / 3枚 ===
+
+--- 🔴 全部「予定数終了」＝soldout を付ける ---
+id20204  2Cheat7｜一般発売（東京 12/4公演）〜12/3 23:59
+    https://ticket.fany.lol/reception/67763/53885  一般=予定数終了 / U-25=予定数終了
+id22817  ルミネtheよしもと 土日祝１３時３０分の部プレミアム｜一般発売（東京 12/5 13:30公演）〜12/5 11:30
+    https://ticket.fany.lol/reception/68201/54153  前売　一般=予定数終了
+
+--- 🟡 一部だけ予定数終了（触らない）---
+id23411  神保町Kakeru翔SP｜一般発売（東京 11/25公演）〜11/25 15:30
+    https://ticket.fany.lol/reception/67759/53880  前売=販売中 / 前売=予定数終了
+
+--- ⏭️ 読めない（触らない＝確かめられていない）---
+
+--- ❓ 見たことの無い文字 ---
+   1  販売中
+
+=== 全部予定数終了で付ける 2枠（2枚）/ 一部だけ 1枚 / 読めない 0枚 / 見たことの無い文字 1種 ===
+書いた 2枠 / CRCRLF 0 / 素のLF 0 （どちらも0が正）
+

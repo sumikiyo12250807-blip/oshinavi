@@ -1,0 +1,14 @@
+足した枠 {"type": "プリセール（東京 12/30公演）〜12/3 23:59", "date": "2026-12-03", "url": "https://t.pia.jp/pia/event/event.do?eventCd=2641939"}
+足した枠 {"type": "プリセール（東京 12/31公演）〜12/3 23:59", "date": "2026-12-03", "url": "https://t.pia.jp/pia/event/event.do?eventCd=2641939"}
+40637 出演 LIVE DI:GA JUDGEMENT 2026 → osage／キュウソネコカミ／kobore／四星球／トップシークレットマン／プッシュプルポット／WHITE ASH／夜の本気ダンス／iriencHy／9mm Parabellum Bullet／バックドロップシンデレラ／First Love is Never Returned／フルカワユタカ／Broken my toybox／Base Ball Bear／めっちゃ美人
+54089 出演 東京シティ・フィルハーモニック管弦楽団／東京シティ･フィルハーモニック管弦楽団 → 東京シティ・フィルハーモニック管弦楽団／藤岡幸夫／坂田美子／久保田晶子／滝田美智子／西川浩平／稲葉明徳／中村華子／氏家克典
+2908 出演 前橋汀子／ユベール・スダーン／東京交響楽団 → 前橋汀子／ユベール・スダーン／東京交響楽団／太田弦／日本センチュリー交響楽団
+4349 出演 ミュージカル『ジャック・ザ・リッパー』 → 木村達成／加藤和樹／松下優也／堂珍嘉邦／新納慎也／平間壮一
+=== reconcile_pia --ids 40637 rc=0
+=== reconcile_pia (today=2026-11-23) 対象1件 ===
+
+✅ id=40637 osage／キュウソネコカミ／kobore／四星 | 登録4=ぴあ4 一致
+
+=== 集計: OK 1 / 🚨MISSING 0 / ⚠️DROP 0 / 💤STALE 0 / ❌FETCH 0 / ❌QC 0 ===
+=== QC照合カバレッジ: 照合できた枠 4/4 ===
+

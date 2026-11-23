@@ -132,6 +132,21 @@ if ((Get-Date) -lt [datetime]'2026-11-06' -and $now -ge $noonStart.AddMinutes(30
   }
 }
 
+# ---------- C 登録済みの TIGET・FANY の見直し（2026-11-23 抜き打ちで 🔴4件＝朝の鎖から抜けていた） ----------
+if ($now -ge $today.AddHours(16) -and $now -lt $today.AddHours(23).AddMinutes(30) -and -not (Already 'vendor')) {
+  $vs = Join-Path $state ('vendor_sweep_' + $stamp + '.txt')
+  if (-not (Test-Path $vs)) {
+    $c = @()
+    $c += '🚨 登録済みの TIGET・FANY の見直しが今日まだです（今 ' + $nowStr + '）。'
+    $c += '   売り切れの印・終わった公演・売り場で日付が動いた公演は、これを回さないと画面に残ります（tmp/x1123/spot/rootcause.md）。'
+    $c += '   やること（TIGET・FANY だけを叩く＝ぴあ・e+ と重ねてよい・裏で約1時間半）:'
+    $c += '     python tools/vendor_sweep_daily.py'
+    $c += '   終わったら tmp/heal_tiget_report.txt の「公演日が過ぎた＝消す候補」を売り場の生の文字で確かめて消す'
+    $msgs += ($c -join "`n")
+    Mark 'vendor'
+  }
+}
+
 if ($msgs.Count -gt 0) {
   [Console]::Error.WriteLine(($msgs -join "`n`n"))
   [Console]::Error.WriteLine('')

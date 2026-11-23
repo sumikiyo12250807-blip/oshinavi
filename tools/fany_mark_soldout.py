@@ -47,7 +47,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH = os.path.join(ROOT, 'index.html')
 REPORT = os.path.join(ROOT, 'tmp', 'fany_soldout_report.txt')
-LOCK = os.path.join(ROOT, 'tmp', 'x1104', 'index.lock')
+LOCK = os.path.join(ROOT, 'tmp', 'x1112', 'index.lock')   # 🆕11/23 ほかの道具と同じ鍵に（x1104 のままだと書き込みが重なる）
 UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/124.0 Safari/537.36')
 RE_RECEPTION = re.compile(r'https?://ticket\.fany\.lol/reception/\d+/\d+')

@@ -10,7 +10,13 @@ https://claude.ai/artifact/TVpEVPpVHr5s5ByLuwpoRv
 - （済）07:0x 裏：tmp/x1123/am_chain23.py＝morning_chain の .done を待つ → 期限切れの削除（候補962・独立505・一致505だけ）→ commit → 新着の振り分け（assign23）→ 売り場ボタンの直し（fix_links・鍵つき）→ push_am23（prepush → commit → push → 公開の最終更新）
 - 🔄 10:07 記事3本（tmp/x1123/art23）：候補85（11/24〜27 発売・12/10 以降まで買える・書いた37組を外す）→ 海宝直人『ever after』（11/25）・小曽根真『Now and Beyond! Vol.1』東京オペラシティ（11/27）・大宮よしもと 年末寄席 12/26〜30（11/25 FANY）＝係（Fable）が材料と本文 ▶ 別の係で独立FC → 確認ページ → PushNotification
   - ✅ 本文3本（1,239〜1,372字・禁止語0・引用一致）→ 🔄 独立FC（fc_brief.md）／登録の直し候補：大宮 12/27 の2回（56884・56885）の出演に 男性ブランコ・コットン が無い（FANY にはある）・小曽根 Now and Beyond! が2枚（29543 e+ jazz／6157 ぴあ classic）▶ FC の結果を見てから直す
+  - ✅ 独立FC 🔴3🟠3🟡6 → 直した（海宝 e+ は1月の回も＝「東京の回」に・ローチケの名前を外す／小曽根 ぴあは「poco会員限定先行」／大宮 買い方の条件2行を外す）・登録＝31897 に e+ 1月分4回（reconcile_eplus FAIL 0・21枠）・56884／56885 に 男性ブランコ・コットン → commit 99949649a24 → 確認ページ https://claude.ai/artifact/FJWyED2ZB3XDDDxYNcp7n5 ・PushNotification 済み ▶ すちこの OK で pickup/a/ に組む
 - ❓ 11/21 の記事3本（Monte-Cristo・渡辺美里と京フィル・一富士茄子牛焦げルギー）は確認ページ https://claude.ai/artifact/Ud4539xduoPp88v14bEEAv のまま すちこの OK 待ち（まだ pickup に組んでいない）▶ 今日の3本と一緒に見てもらう
+- ✅ 13:07 抜き打ち30件（tmp/x1123/spot・seed 11232026・母数 16,240）＝🔴6🟠6🟡6✅12 → 直した・番人（tmp/x1123/spot/rootcause.md）：TIGET・FANY の登録済みを毎日見直していなかった（FANY の売り切れ点検は 11/5 から0回）＝tools/vendor_sweep_daily.py＋shift_guard C／heal_tiget＝公演日が過ぎた消す候補／fany_mark_soldout の鍵 x1112／refetch_artist 全角半角／commit.py の鍵 O_EXCL／37549 削除・40637 ぴあ先行2枠
+- 🔄 14:3x 裏：vendor_sweep_daily（TIGET 全件の番人＝一致 3,152・🚨1,012・生データ 4・読めず 14・非公開 23 → heal_tiget --apply → 番人 → FANY 売り切れ全件）▶ 終わったら heal_tiget の報告（日付・出演者の差し替え・消す候補・非公開23）を見る
+- ✅ 昼の隠れ枠ヒール（14:5x）convert 92・削除候補 173（明朝の期限切れの道で）・ぴあ URL 無効化 3（35609・36227・53802＝後継を探す）
+- ✅ 14:5x X の数字（画面から）＝フォロワー 93（+1）・11/22 夜の5本はまだ1日目＝判定 11/24／tmp/x_analysis_1123.md
+- ✅ 12時台 すちこ（仕事場）「2026年の売上票」→ デスクトップの 売上表.xlsx の「令和8年」シートだけを数字で写してチャットに送った（元の表は触っていない）
 - ✅ 06:4x 歌詞2本（クラシック・J-POPとロック）＝登録と1行ずつ突き合わせ 食い違い0・Reol／金子三勇士の読みを確かめた・GOTCHAROCKA／0.1gの誤算は読みの出典なしで外した
 
 # ▶▶ 11/22(日)（道具は tmp/x1122）
