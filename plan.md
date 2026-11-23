@@ -1,4 +1,32 @@
 # ▶▶ 11/23(月)（道具は tmp/x1123）
+## 🌙 夜通しの予定表（11/23→24・すちこ「夜通しのスケジュールもまとめて　見落とさないように」）
+| 順 | 売り場 | やること | 道具・記録 | 状態 |
+|---|---|---|---|---|
+| 1 | ぴあ | 見直し（今日の組）→ 取りこぼし heal → 夜のヒール → 並び順 | night23.py／night23.txt | 🔄 20:52〜 |
+| 2 | 吉本 FANY | 新しい公演（今日〜半年）→ 新着へ → 番人 | night_fany23.py／night_fany23.txt | 🔄 21:2x〜（1と並んで） |
+| 3 | 全体 | 22:07 夜の便 → **夜の push**（公開の最終更新を確かめる） | night_1123.py（鎖） | ⏳ 1の後 |
+| 4 | ぴあ | 発売前（0102/0202）の新しい分 → 新着へ | night_collect23.py（鎖） | ⏳ 3の後 |
+| 5 | ぴあ | 発売中・抽選受付中で載っていない分（今朝の一覧・233公演） | night_onsale23.py／night_onsale/night_onsale.txt | ⏳ 4の後・06:10 で止める |
+| 6 | e+ | 出演者ページ2周目 → 組み立て → 番人2枚 → 新着へ → 札 | overnight_1123.py（鎖） | ⏳ 4の後（5と並んで） |
+| 7 | 新しい売り場5つ | 宝塚・松竹・TicketRugby・チケットボード・B.LEAGUE | night_newv23.py（鎖） | ⏳ 6の後 |
+| 8 | 吉本 FANY | 売り切れの印（約3,000枚・1時間強） | 鎖の最後 | ⏳ 7の後 |
+| 見 | — | 23:43 番人／02:37 見回り／05:17 見回り＋朝の報告の下書き | アラーム | ⏰ |
+- 夜は commit だけ（push は 3 の1回）・重い道具は同時2本まで・ぴあを叩くのは1本ずつ（1→4→5）
+- 🚨まだ夜に入っていない：e+ の3分の1の照合（reconcile_eplus --third）／TIGET の番人の残り210（明日 vendor_sweep_daily）／楽天・TIGET・チケットペイの新しい公演（朝の鎖）
+- 朝の報告：売り場ごとに「はじめ→おわり」のカード数・新着に入った数・止まった段とわけ
+
+## 🔁 引き継ぎ（21:2x /clear の前）
+- 🌙 21:2x すちこ「吉本の方もよろしくね」▶ FANY の一覧は 11/21 朝が最後＝11/22・11/23 は新しい公演を集めていなかった → tmp/x1123/night_fany23.py を裏で起動（一覧 tmp/fany_1123.json → 組み立て → 新着へ → 番人 → commit・記録 night_fany23.txt）▶ 🚨なぜ毎朝の鎖から FANY の収集が抜けたか明日確かめて鎖に戻す・朝に件数を報告
+- 🌙 21:1x すちこ「今夜集めるのは全部よ　ぴあもe+も新しい売り場も　たくさん集めて　じゃないとどんどん減ってる　件数を増やして」▶ 鎖（ぴあ発売前・e+ 二周目・新しい売り場5つ・FANY）に加えて **tmp/x1123/night_onsale23.py（ぴあ 発売中・受付中のうち今朝の一覧 tmp/x1123/pia_open に有って載っていない分＝実測 3,898公演中 233・94%は載っていた）** を裏で起動＝night_collect23.done を待って始め、e+ と並んで回る・50件ずつ新着へ＋照合＋commit・06:10 で止める（記録 tmp/x1123/night_onsale/night_onsale.txt）▶ 朝の報告に件数を入れる・🚨毎晩の鎖に入れる（memory project_overnight_harvest に書く）
+- 🌙 21:0x すちこ「おやすみ　今夜はたくさん集めてね　明日また何か対策をいろいろ考えましょ　時間があったらいくつか考えて明日の朝提案して」▶ 🚨**11/24 朝の報告で「対策の案」をいくつか出す**（月3万円に向けて：数字〈X・TikTok・GA4・Search Console〉を見て・理由を添えて・1案1行＋例1つ）＝夜の待ち時間に tmp/x1123/ideas_1124.md に書きためる
+- 裏で動いている（1本ずつ）：tmp/x1123/night23.py（ぴあの見直し 今日の組 → 取りこぼし heal → 全体の夜のヒール → check_order → 段ごと commit・記録 night23.txt）→ その .done を tmp/x1123/night_chain23.py が待って 夜の push（night_1123・記録 night_1123.txt）→ ぴあ発売前 → e+ 出演者ページ二周目 → 新しい売り場5つ → FANY 売り切れ全件（記録 night_chain23.txt）▶ 🚨/clear のあとまず `Get-CimInstance Win32_Process -Filter "Name='python.exe'"` で2本が生きているか・tmp/x1123/*.done を見る。止まっていたら（メモリ不足で止められた時は）すちこに聞いてから続きを1本ずつ
+- 夜の push が通ったら：公開の最終更新を確かめて すちこに「やった」／宿のボタン（バッジの下・横長・押すと沈む・img/btn_hotel_wide.png）・Amazon 商品ページ 19枚・ボタンを数える仕掛けの直しが公開に乗る
+- まだ：e+ の3分の1の照合（reconcile_eplus --third → fix_eplus_fails）＝夜の鎖に入っていない／TIGET の番人の残り 🚨210（明日の vendor_sweep_daily）
+- すちこの OK 待ち：❓GA4 にカスタムディメンション3つ（link_kind・link_text・link_url）を登録してよいか／記事 11/23 の3本と 11/21 の3本（確認ページ FJWyED2ZB3XDDDxYNcp7n5・Ud4539xduoPp88v14bEEAv）
+- 明日から：14:37 数字の日報（X＋TikTok＋GA4/Search Console・今日試すこと1つ＝memory project_daily_numbers_report）／毎日お金になる出口を1つ試す（動画より先）・台帳 tmp/tiktok/trials.md／Amazon の商品ページを毎日少しずつ（tools/amazon_dp.py --pick N → --apply・8秒おき）／動画は作る前に memory feedback_anesan_video_rules（1本にまとめた）を上から全部・12月から絵は Gemini（tmp/video/gemini_prompt.md）
+- 11/26 夕方：X 11/27 発売の準備で rows1127.py → render1127.py full → to_dl.py（14番の曲の動画・字幕に行を入れ直す）→ 音楽のまとめに _x を付けて予約
+- 朝の報告：夜通しの件数（ぴあ・e+ 二周目・新しい売り場5つ・FANY 売り切れ）
+
 - 🎵📌 いまの歌詞（「歌詞出して」と言われたらこのリンクをすぐ出す）＝11/27(金)発売まとめ2本（クラシック・J-POPとロック）
 https://claude.ai/artifact/TVpEVPpVHr5s5ByLuwpoRv
 - 🎵🚨 Suno のダウンロード残り 0（次回請求 11/28＝そこで戻る・時刻は画面に無し）▶ すちこ「27日はいいわ　お休み　28日に2日分つくる　それでまた少しずつ時間あるとき数日先まで作ればいいよ」＝**11/27・11/28 発売の動画はお休み**（X 11/26 夜・11/27 夜は動画なし・TikTok 11/24〜11/27 もなし）／11/28 朝に 11/29・11/30 発売の歌詞2日分 → そのあと空いた時に数日先まで（今朝の 11/27 の歌詞は使わない）
@@ -18,6 +46,8 @@ https://claude.ai/artifact/TVpEVPpVHr5s5ByLuwpoRv
 - ✅ vendor_sweep_daily は heal_tiget --apply まで済み（差し替え 805・残り🚨210）・FANY 売り切れ全件は未着手／消す候補 30822 削除・16922 公演名（メールアドレス入り）を直した・heal_tiget の判定を締め直した（rootcause.md F）
 - ✅ 昼の隠れ枠ヒール（14:5x）convert 92・削除候補 173（明朝の期限切れの道で）・ぴあ URL 無効化 3（35609・36227・53802＝後継を探す）
 - 🔄 14番の曲（OSHINAVI.wav 44.7秒）の動画＝11/27 J-POP・ロック（X 11/26 夜）：すちこ「背景動画/96057 サイバーパンクのファッションにして」「明日発売のチケットをスクロールで出す感じ？」＝下から上へ流れる字幕 → 姐さん9人 1回目は9人ともピンクの巻き髪（すちこ「髪形とか髪色が全部同じ」）→ 髪を1人ずつ指定して頼み直し Downloads/cyberrap_chibi_1127c.png → 見本 https://claude.ai/artifact/Evqzyvd3PSSSdB7p679H1N → すちこ OK → render1127.py（行は rows1127.py で登録から・いま10行）→ 絵コンテ＋試し https://claude.ai/artifact/5SGRfhFQoUxY3NC7MyXiTE （out.mp4 16.3MB・out_x 7.6MB・44.7秒）→ すちこ「なにも文字がないことがないように・最後oshinavi.jpで終わり」で直した → すちこ「いいわね　これつけて予約して」＝✅ Downloads/oshinavi_1127_jpoprock_matome(_x).mp4 に置いた（いまの10行）・bg_used.md に 96057 ▶ 🚨11/26 夕方の X 準備（11/27 発売）で rows1127.py → render1127.py full → to_dl.py で行を入れ直し、音楽のまとめに _x を付けて予約（check_x_video）
+- 🔄 21:1x 裏：tmp/x1123/night_chain23.py（night23 の .done を待つ・1本ずつ）＝夜の push（night_1123）→ ぴあ発売前の引き直し → e+ 出演者ページ（🆕読み終えた印を消して二周目＝昨夜は一周し終えて早く終わった）→ 新しい売り場5つ（宝塚・松竹・TicketRugby・チケットボード・B.LEAGUE＝11/20 に1回やったきりだった）→ FANY 売り切れ全件 ▶ 朝に件数を報告・新しい売り場の集め直しを毎晩の鎖に入れる
+- 🔄 20:5x 裏：tmp/x1123/night23.py（1本ずつ）＝ぴあの見直し 今日の組（昼はメモリ不足で止められ0回）→ 取りこぼし heal --ids → 全体の隠れ枠ヒール → check_order → 各段 commit ▶ そのあと e+ の3分の1の照合 → prepush → 夜の push（22:07 より遅れる）／FANY 売り切れ全件は夜通しで
 - ✅ 夜 すちこ「2と3を試してみて」＝①宿のボタンを売り場のバッジのすぐ下に横長で（すちこの絵 img/btn_hotel_wide.png・押すと3px沈む・すちこ「いいわね」・音はつけない）②Amazon の「最新CD」を商品ページへ 19枚（tools/amazon_dp.py）＝今夜の push で出る／試しの台帳 tmp/tiktok/trials.md
 - ✅ すちこ「Xの文章OK」→ 19:31・19:46・20:01・20:16 に予約（予約一覧で4本・時刻を確かめた・動画2本）／18:47 締め＝予約一覧をもう一度見て4本・時刻一致（今夜はトレンド枠なしで4本）。本文の指紋は予約のとき Confirm の前後2回とも post_hash.txt と一致を確かめてから押した（一覧から開き直しての照合は開く手順が通らず、していない）
 - ✅ 16:07 X 11/24 発売の4本（tmp/x1123/x）＝主役 スワローズ 楽燕祭 2027（公式 80.5万）・トレンド枠なし・独立FC 🔴0🟠0🟡5（2つ直した）・動画 ①クラシックとおでかけ ③ライブ（check ✅）→ 確認ページ https://claude.ai/artifact/8Mjt5mN3abR1h2X5g35ium ・PushNotification 済み ▶ すちこの OK で 19:31・19:46・20:01・20:16 に予約／夜の便で見る：工藤静香 Kitara が2枚（49238・56974）
