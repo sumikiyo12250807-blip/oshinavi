@@ -1151,6 +1151,10 @@
       line-height: 0;
     }
     .btn-img-pic { height: 36px; width: auto; display: block; }
+    /* 🆕2026-11-24 絵つきの横長ボタン＝横いっぱい（最大560px）・押している間だけ3px沈む（宿の帯 .hotel-wide-btn と同じ） */
+    .ticket-link-btn.btn-wide { flex-basis: 100%; max-width: 560px; transition: transform .06s ease, filter .06s ease; filter: drop-shadow(0 5px 0 rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(80,140,255,.35)); -webkit-tap-highlight-color: transparent; }
+    .ticket-link-btn.btn-wide:active { transform: translateY(3px); filter: drop-shadow(0 2px 0 rgba(0,0,0,.55)) drop-shadow(0 0 6px rgba(80,140,255,.3)); }
+    .btn-wide-pic { width: 100%; height: auto; display: block; }
 
     .btn-rakuten {
       background: rgba(191, 0, 0, 0.12);
@@ -38833,10 +38837,23 @@
       "プロレスリングWAVEグッズ": "img/btn2_wr13.png",
       "初代タイガーマスクグッズ": "img/btn2_wr14.png",
     };
-    const btnInner = (icon, label) => BTN_IMG[label]
+    // 🆕2026-11-24 すちこ「いいわね　これを押したら推した感じでお願いね」＝絵つきの横長ボタン（宿ボタンが型・tmp/btn/wide_icons_1124.py）。横いっぱい・押すと沈む
+    const BTN_WIDE = {
+      "推しうちわを作る": "img/btn_wide_uchiwa.png",
+      "推し活グッズ": "img/btn_wide_goods.png",
+      "オペラグラス": "img/btn_wide_operaglass.png",
+      "ライブ用耳栓": "img/btn_wide_earplug.png",
+      "観戦グッズ": "img/btn_wide_kansen.png",
+      "予習する（最新CD）": "img/btn_wide_cd.png",
+      "Amazon Musicで聴く": "img/btn_wide_amazonmusic.png",
+      "会場近くのホテルを探す": "img/btn_hotel_wide.png",
+    };
+    const btnInner = (icon, label) => BTN_WIDE[label]
+      ? `<img class="btn-wide-pic" src="${BTN_WIDE[label]}" alt="${label}" width="1000" height="124" loading="lazy" decoding="async">`
+      : BTN_IMG[label]
       ? `<img class="btn-img-pic" src="${BTN_IMG[label]}" alt="${label}" loading="lazy" decoding="async">`
       : `${icon} ${label}`;
-    const btnImgCls = (label) => BTN_IMG[label] ? " btn-img" : "";
+    const btnImgCls = (label) => BTN_WIDE[label] ? " btn-img btn-wide" : BTN_IMG[label] ? " btn-img" : "";
     const HOTEL_EXPEDIA_BTN = `<a class="ticket-link-btn btn-hotel${btnImgCls("会場近くのホテルを探す")}" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446" target="_blank" rel="nofollow noopener">${btnInner("🏨", "会場近くのホテルを探す")}</a>`;
     // 🆕2026-10-17 ユーザー「OK　やってみて」（90日計画の出口①）＝ホテルのボタンを「会場名＋県＋公演日」の Expedia の宿の検索へ飛ばす（バリューコマースの vc_url＝計測の印が付くのを実ブラウザで確認）。
     //   会場が1つのカードだけ。ツアー・複数会場・配信は今までどおり Expedia のトップ（HOTEL_EXPEDIA_BTN）。

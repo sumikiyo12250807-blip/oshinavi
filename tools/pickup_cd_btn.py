@@ -87,11 +87,12 @@ def cd_for(name, E):
 def box(url, hotel):
     a = ""
     if url:
-        a += (f'<a href="{html.escape(url)}" target="_blank" rel="noopener" style="display:inline-block">'
-              '<img src="../../img/btn_cd_0915.png" alt="予習する（最新CD）" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
+        # 🆕2026-11-24 すちこ「いいわね　これを押したら推した感じでお願いね」＝トップのカードと同じ絵つきの横長（押すと沈む）
+        a += (f'<a class="hotel-wide-btn" href="{html.escape(url)}" target="_blank" rel="noopener">'
+              '<img src="../../img/btn_wide_cd.png" alt="予習する（最新CD）" width="1000" height="124" loading="lazy" decoding="async"></a>')
         # 🆕2026-11-19 すちこ「記事の方にもAmazonで聞くのボタンを付けて」＝トップのカードと同じ決まり（CDのボタンが出る組にだけ・同じ画像・同じ行き先）
-        a += (f'<a href="{AMAZON_MUSIC_URL}" target="_blank" rel="noopener" style="display:inline-block">'
-              '<img src="../../img/btn2_amazonmusic.png" alt="Amazon Musicで聴く" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
+        a += (f'<a class="hotel-wide-btn" href="{AMAZON_MUSIC_URL}" target="_blank" rel="noopener">'
+              '<img src="../../img/btn_wide_amazonmusic.png" alt="Amazon Musicで聴く" width="1000" height="124" loading="lazy" decoding="async"></a>')
     # 🆕2026-11-24 すちこ「記事の方の近くのホテルを探すボタンも変えといてね」＝トップのカードと同じ横長の宿ボタン（押すと沈む・CSS は HOTEL_CSS）を先頭に横いっぱい
     a = (f'<a class="hotel-wide-btn" href="{html.escape(hotel)}" target="_blank" rel="nofollow noopener">'
          '<img src="../../img/btn_hotel_wide.png" alt="会場近くのホテルを探す" width="1000" height="124" loading="lazy" decoding="async"></a>') + a
