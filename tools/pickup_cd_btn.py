@@ -92,9 +92,16 @@ def box(url, hotel):
         # 🆕2026-11-19 すちこ「記事の方にもAmazonで聞くのボタンを付けて」＝トップのカードと同じ決まり（CDのボタンが出る組にだけ・同じ画像・同じ行き先）
         a += (f'<a href="{AMAZON_MUSIC_URL}" target="_blank" rel="noopener" style="display:inline-block">'
               '<img src="../../img/btn2_amazonmusic.png" alt="Amazon Musicで聴く" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
-    a += (f'<a href="{html.escape(hotel)}" target="_blank" rel="nofollow noopener" style="display:inline-block">'
-          '<img src="../../img/btn2_hotel.png" alt="会場近くのホテルを探す" style="height:40px;display:block" loading="lazy" decoding="async"></a>')
+    # 🆕2026-11-24 すちこ「記事の方の近くのホテルを探すボタンも変えといてね」＝トップのカードと同じ横長の宿ボタン（押すと沈む・CSS は HOTEL_CSS）を先頭に横いっぱい
+    a = (f'<a class="hotel-wide-btn" href="{html.escape(hotel)}" target="_blank" rel="nofollow noopener">'
+         '<img src="../../img/btn_hotel_wide.png" alt="会場近くのホテルを探す" width="1000" height="124" loading="lazy" decoding="async"></a>') + a
     return f'\n  <div class="pk-amz" style="margin:12px 0 4px;display:flex;flex-wrap:wrap;gap:8px">{a}</div>'
+
+
+HOTEL_CSS = ('<style id="hotel-wide-css">.hotel-wide-btn{flex-basis:100%;display:block;max-width:560px;line-height:0;transition:transform .06s ease,filter .06s ease;'
+             'filter:drop-shadow(0 5px 0 rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(80,140,255,.35));-webkit-tap-highlight-color:transparent}'
+             '.hotel-wide-btn img{width:100%;height:auto;display:block}'
+             '.hotel-wide-btn:active{transform:translateY(3px);filter:drop-shadow(0 2px 0 rgba(0,0,0,.55)) drop-shadow(0 0 6px rgba(80,140,255,.3))}</style>')
 
 
 def main():
@@ -120,6 +127,8 @@ def main():
         m2 = re.search(r'<a class="pk-shows" href="[^"]*\?q=[^"]+"[^>]*>.*?</a>', s2, re.S)
         s2 = s2[:m2.end()] + box(url, hotel) + s2[m2.end():]
         (got.append((f, name, url, hotel)) if url else none.append((f, name, "CDなし・宿だけ", hotel)))
+        if 'id="hotel-wide-css"' not in s2:
+            s2 = s2.replace("</head>", HOTEL_CSS + "\n</head>", 1)
         if click_track.MARK not in s2:
             s2 = s2.replace("</body>", click_track.snippet("pickup") + "\n</body>", 1)
         if not a.dry and s2 != s:
