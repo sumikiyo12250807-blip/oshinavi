@@ -12,7 +12,7 @@ D = 'C:/Users/user/oshinavi/tmp/x1123/songs/'
 BG = 'C:/Users/user/Downloads/背景動画/96057_640x360.mp4'
 WAV = 'C:/Users/user/Downloads/OSHINAVI.wav'
 W, H, FPS, DUR = 1080, 1920, 30, 44.72
-T0, T1 = 2.3, 43.2           # 字幕が流れる間（前奏のあと〜曲の終わり）
+T0, T1 = 2.3, 41.5           # 字幕が流れる間（前奏のあと〜終わりの3秒前＝最後は oshinavi.jp で止まって見せる）
 FB = 'C:/Windows/Fonts/BIZ-UDGothicB.ttc'
 FR = 'C:/Windows/Fonts/BIZ-UDGothicR.ttc'
 f = lambda p, s: ImageFont.truetype(p, s)
@@ -52,10 +52,11 @@ glow_text(head, (W // 2, H - 46), 'oshinavi.jp で発売時刻をチェック', 
 
 # ---- 流れる字幕（縦長の1枚） ----
 RH = 132
-strip = Image.new('RGBA', (W - 120, RH * len(rows) + 40), (0, 0, 0, 0))
+PADT, ENDH = 60, 220          # 🆕11/23 すちこ「なにも文字がないことがないように・最後文字が残っててoshinavi.jpで終わり」
+strip = Image.new('RGBA', (W - 120, PADT + RH * len(rows) + ENDH), (0, 0, 0, 0))
 ds = ImageDraw.Draw(strip)
 for i, r in enumerate(rows):
-    y = 20 + i * RH
+    y = PADT + i * RH
     ds.text((10, y + RH // 2), r['time'], font=f(FB, 60), fill=(110, 235, 255, 255), anchor='lm')
     nm = r['name']
     tail = '／' + r['pref'] + r['pre']
@@ -66,10 +67,17 @@ for i, r in enumerate(rows):
     ds.text((200, y + RH // 2), nm, font=fn, fill=(255, 255, 255, 255), anchor='lm')
     ds.text((200 + ds.textlength(nm, font=fn) + 8, y + RH // 2 + 6), tail, font=f(FR, 40), fill=(205, 190, 255, 255), anchor='lm')
     ds.line((10, y + RH - 6, W - 130, y + RH - 6), fill=(120, 90, 220, 90), width=2)
+# 最後の行＝oshinavi.jp（光る文字）
+ey = PADT + RH * len(rows) + ENDH // 2
+g = Image.new('RGBA', strip.size, (0, 0, 0, 0))
+ImageDraw.Draw(g).text((strip.width // 2, ey), 'oshinavi.jp', font=f(FB, 104), fill=(90, 200, 255, 255), anchor='mm')
+g = g.filter(ImageFilter.GaussianBlur(12))
+strip.alpha_composite(g); strip.alpha_composite(g)
+ImageDraw.Draw(strip).text((strip.width // 2, ey), 'oshinavi.jp', font=f(FB, 104), fill=(255, 255, 255, 255), anchor='mm')
 SH = BOT - TOP
-dist = SH + strip.height
+dist = max(0, strip.height - SH)   # 1行目が箱の上にいる所から、oshinavi.jp が箱の下に収まる所まで＝箱が空になる時が無い
 fade = np.ones(SH, dtype=np.float32)
-k = 110
+k = 50
 fade[:k] = np.linspace(0, 1, k); fade[-k:] = np.linspace(1, 0, k)
 FADE = Image.fromarray((np.tile(fade[:, None], (1, strip.width)) * 255).astype(np.uint8), 'L')
 
@@ -96,10 +104,11 @@ def frame(t):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     im.alpha_composite(head)
     # 字幕
-    if T0 <= t:
-        off = int((t - T0) / (T1 - T0) * dist)
+    if True:
+        x = min(1.0, max(0.0, (t - T0) / (T1 - T0)))
+        off = int(x * dist)
         win = Image.new('RGBA', (strip.width, SH), (0, 0, 0, 0))
-        win.alpha_composite(strip, (0, SH - off))
+        win.alpha_composite(strip, (0, -off))
         a = np.asarray(win)[:, :, 3].astype(np.float32) * (np.asarray(FADE).astype(np.float32) / 255)
         win.putalpha(Image.fromarray(a.astype(np.uint8)))
         im.alpha_composite(win, (60, TOP))
