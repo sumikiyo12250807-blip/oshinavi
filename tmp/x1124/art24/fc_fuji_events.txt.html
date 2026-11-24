@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" xmlns:og="http://ogp.me/ns#">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-style-type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <link rel="stylesheet" type="text/css" href="//www.fujitv.co.jp/fp/css/fp.css" />
+    <!--↓制作者 head挿入エリア-->
+    <!--OGP-->
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="フジテレビ EVENT GUIDE（イベントガイド） - フジテレビ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.fujitv.co.jp/events/index.html" />
+    <meta property="og:image" content="https://www.fujitv.co.jp/events/common/img/events_ogp.png" />
+    <meta property="og:site_name" content="フジテレビ" />
+    <meta property="og:description" content="フジテレビ EVENT GUIDE（イベントガイド） - フジテレビがお送りするイベント総合ナビゲーション" />
+    <!--/OGP-->
+    <meta name="description" content="フジテレビ EVENT GUIDE（イベントガイド） - フジテレビがお送りするイベント総合ナビゲーション" />
+    <meta name="Keywords" content="" />
+    <title>フジテレビ EVENT GUIDE（イベントガイド） - フジテレビ</title>
+    <!--↑制作者 head挿入エリア-->
+    <script type="text/javascript" src="//www.fujitv.co.jp/js/fujimenu.js"></script>
+    <script type="text/javascript" src="/common/js/libs/jquery/jquery-1.11.3.min.js"></script> 
+    <link href="/events/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/events/css/sp-style.css" rel="stylesheet" type="text/css" />
+    <link href="/events/css/jquery.css" rel="stylesheet" type="text/css" />
+    <link href="/events/css/flexnav.css" media="screen, projection" rel="stylesheet" type="text/css">
+  </head>
+  <body id="event">
+    <div id="cx_spContentsWrap">
+      <div id="cx_spContentsMain"> 
+        <script type="text/javascript">writeFujimenu();</script>
+        <div id="fp-wrap">
+          <div id="fp-contents">
+            <div id="fp-l"> 
+              <!--↓制作者 コンテンツ(左)エリア-->
+              <div id="eventHeader"> <img src="/events/img/eventguide_title.png" width="630" height="84" /></div>
+              <ul class="recommendArea">
+              </ul>
+              <ul id="dropmenu" class="dropmenu cf">
+                <li class="all" data-target="all"><a href="javascript:void(0);">すべて</a></li>
+                <li class="concert" data-target="concert"><a href="javascript:void(0);">コンサート</a></li>
+                <li class="stage" data-target="stage"><a href="javascript:void(0);">ステージ</a></li>
+                <li class="sports" data-target="sports"><a href="javascript:void(0);">スポーツ</a></li>
+                <li class="art" data-target="art"><a href="javascript:void(0);">展覧会</a></li>
+                <li class="others" data-target="others"><a href="javascript:void(0);">その他</a></li>
+                <li class="month"><a href="javascript:void(0);">開催月で絞り込む</a>
+                  <ul>
+                    <li data-target="month" data-month="201512"><a href="javascript:void(0);">2015年12月</a></li>
+                    <li data-target="month" data-month="201511"><a href="javascript:void(0);">2015年11月</a></li>
+                    <li data-target="month" data-month="201510"><a href="javascript:void(0);">2015年10月</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div id="menu-buttonflexnav">
+                <div class="menu-button">開催月で絞り込む</div>
+                <ul data-breakpoint="640" class="flexnav">
+                  <li data-target="month" data-month="201512"><a href="javascript:void(0);">2015年12月</a></li>
+                  <li data-target="month" data-month="201511"><a href="javascript:void(0);">2015年11月</a></li>
+                  <li data-target="month" data-month="201510"><a href="javascript:void(0);">2015年10月</a></li>
+                </ul>
+              </div>        
+              <ul class="dropLine">
+                <li class="all"></li>
+                <li class="concert"></li>
+                <li class="stage"></li>
+                <li class="sports"></li>
+                <li class="art"></li>
+                <li class="others"></li>
+                <li class="month"> </li>
+              </ul>
+              <div class="eventBlockwrap">
+                <div class="eventBlockwrapInner"></div>
+                <div class="eventBlockwrapInner"></div>
+                <div class="eventBlockwrapInner"></div>
+              </div>
+              <!--↑制作者 コンテンツ(左)エリア--> 
+            </div>
+            <div id="fp-r"> 
+              <script type="text/javascript">
+                fujitv.loadFpRight({ recommend: "events", rectangle: "events", free: "/events/right.html", wnew: "event", present: 0, freeCallback: function(){ cx_getTwitter('fujitv_event','timeline',  {"more": false, "refresh": false, "image": true, "firstView": 10, "moreView": 10, "endlink": ["続きはTwitterで", "https://twitter.com/fujitv_event"], "jsonType":"timeline"}); } });
+              </script>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">fujimenu.writeGbfooter();</script> 
+      </div>
+    </div>
+    <!--↓制作者 JavaScript記述エリア--> 
+    <script type="text/javascript" src="/events/js/jquery.bxslider.min.js"></script> 
+    <script type="text/javascript" src="/events/js/jquery.flexnav.js"></script>
+    <script type="text/javascript" src="/events/js/event_top.js"></script>
+    <script type="text/javascript" src="/common/js/cx_twitter.js"></script>
+
+    <!--↑制作者 JavaScript記述エリア--> 
+<script type="text/javascript">
+	fujitv.imgProtect("img|p",".eventBlockwrapInner",".recommendArea");
+</script>
+  </body>
+</html>
