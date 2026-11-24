@@ -1,0 +1,31 @@
+=== tools/ticketdive_harvest.py --out tmp/x1124/td/harvest2.json rc=0 12:39:21
+新しく1件
+  [1537] UhN1Gu2jhWVZvvvvfM9B コント進化論7 公演1/受付1（artist）
+  出演者 dHpQ77p6j4milBXIzZhD → 新しく1件
+  [1538] KPT1129 11/29(日)『山形チェリーランドさがえ フリーライブ＆忘 公演1/受付1（artist）
+  出演者 RDfCEyKdQCx9Y4v6CSye → 新しく1件
+  [1539] PUSH_UP_1125 ごじからPUSH UP  #8 公演1/受付1（artist）
+  出演者 JVs2XSlblUcNclz79ODa → 新しく1件
+  [1540] PCawzhMF8qhqji1Mb3Ap 虎視眈眈 公演1/受付1（artist）
+
+=== 公演 1540件 / 読めなかった 0件 → tmp/x1124/td/harvest2.json ===
+入口ごと（最初に見つけた入口・個別ページを引いた分）: {'top': 2, 'search': 337, 'artist': 1201}
+統計: {"found_total": 1926, "found_future": 1926, "by_first_source": {"artist": 1216, "search": 692, "top": 18}, "fetched_events": 1540, "artists_seen": 2792, "artists_fetched": 2792, "artists_left": 0, "events_left_in_queue": 0, "http_calls": 4396, "skipped_known": 386, "rows_by_first_source": {"top": 2, "search": 337, "artist": 1201}}
+
+
+=== tools/build_ticketdive_entries.py tmp/x1124/td/harvest2.json --out tmp/x1124/td/built.json rc=0 12:39:22
+=== 組み上がり 1443件 / 載せない 97件 → tmp/x1124/td/built.json ===
+  載せない: 載せる枠が無い: 94件
+  載せない: 公演が終わっている: 1件
+  載せない: 公開されていない: 1件
+  載せない: 公演日が2年より先＝主催者の試し書き・雛形の疑い: 1件
+  県の出所: {'detail_address': 155, 'venue_name': 63, 'unknown': 1225} / 県が空のカード 1225
+  ジャンル: {'(空)': 790, 'idol': 605, 'fes': 17, 'owarai': 27, 'engeki': 4}
+  枠 2278（発売前 579・売り切れ 126）/ 状態が分からず落とした枠があるカード 0
+
+
+=== tools/gate_ticketdive_slots.py --built tmp/x1124/td/built.json rc=2 14:05:27
+
+gate_ticketdive_slots: match=1435 ng=8 fetcherr=0 unknown=1 -> tmp/gate_ticketdive_report.txt
+
+番人が鳴った＝投入しない
