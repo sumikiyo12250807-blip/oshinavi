@@ -309,6 +309,11 @@ CSS = ("body{font-family:sans-serif;max-width:860px;margin:0 auto;padding:16px;l
        ".st{font-weight:bold;color:#c00}.pre{color:#0a58ca}a{color:#06c;word-break:break-all}"
        ".btns{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.ab{display:inline-block;text-decoration:none;font-size:13px;font-weight:bold}"
        ".ab:not(.ai){padding:7px 14px;border-radius:8px;background:#ff9900;color:#111}.ab.ai img{height:36px;display:block}"
+       # 🆕2026-11-24 すちこ「会場近くのホテルを探すのボタンを大きくして　Amazonミュージックのボタンも付けて」＝トップのカードと同じ横長（押すと沈む）
+       ".ab.aw{flex-basis:100%;max-width:560px;line-height:0;transition:transform .06s ease,filter .06s ease;"
+       "filter:drop-shadow(0 5px 0 rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(80,140,255,.35));-webkit-tap-highlight-color:transparent}"
+       ".ab.aw img{width:100%;height:auto;display:block}"
+       ".ab.aw:active{transform:translateY(3px);filter:drop-shadow(0 2px 0 rgba(0,0,0,.55)) drop-shadow(0 0 6px rgba(80,140,255,.3))}"
        "@media (prefers-color-scheme: dark){body{background:#111;color:#eee}.ev{border-color:#444}.ev .v,.note{color:#bbb}a{color:#6af}}")
 
 
@@ -350,7 +355,15 @@ def rakuten_deep(url):
     return url
 
 
+BTN_WIDE = {"会場近くのホテルを探す": "img/btn_hotel_wide.png", "Amazon Musicで聴く": "img/btn_wide_amazonmusic.png"}
+AMAZON_MUSIC_URL = f"https://www.amazon.co.jp/music/unlimited?tag={AMZ_TAG}"   # index.html の AMAZON_MUSIC_URL と同じ
+
+
 def btn(url, label, icon, nofollow=False):
+    rel = "nofollow noopener" if nofollow else "noopener"
+    if label in BTN_WIDE:
+        return (f'<a class="ab ai aw" href="{esc(url)}" target="_blank" rel="{rel}">'
+                f'<img src="../{BTN_WIDE[label]}" alt="{esc(label)}" width="1000" height="124" loading="lazy" decoding="async"></a>')
     img = BTN_IMG.get(label)
     inner = (f'<img src="../{img}" alt="{esc(label)}" loading="lazy" decoding="async">' if img else f"{icon} {esc(label)}")
     rel = "nofollow noopener" if nofollow else "noopener"
@@ -457,6 +470,8 @@ def page_html(name, items, today, stamp, total_rows, num=None):
     top_btns = []
     cu = cd_url(name, items)
     if cu:
+        # 🆕2026-11-24 すちこ「Amazonミュージックのボタンも付けて」＝トップのカードと同じ決まり（CDのボタンが出る人にだけ）・横長を先に
+        top_btns.append(btn(AMAZON_MUSIC_URL, "Amazon Musicで聴く", "🎵"))
         top_btns.append(btn(cu, "予習する（最新CD）", "🎧"))
     ga = next((genre_amazon(ev) for _, ev, _ in items if genre_amazon(ev)), None)
     if ga:
@@ -483,11 +498,10 @@ def page_html(name, items, today, stamp, total_rows, num=None):
             link = f' <a href="{esc(url)}" target="_blank" rel="noopener">{esc(vendor_of(url))}</a>' if url else ""
             o.append(f'<li><span class="{cls}">{esc(state_text(state, t, today))}</span> {esc(t.get("type") or "")}{link}</li>')
         o.append("</ul>")
-        eb = []
+        eb = [btn(hotel_url(ev, today), "会場近くのホテルを探す", "🏨", nofollow=True)]   # 横長の宿を先に（11/24 すちこ「大きなボタンは上の方に」）
         rk = rakuten_deep((ev.get("links") or {}).get("rakuten"))
         if rk:
             eb.append(btn(rk, "楽天チケット", "🎫"))
-        eb.append(btn(hotel_url(ev, today), "会場近くのホテルを探す", "🏨", nofollow=True))
         o.append(f'<div class="btns">{"".join(eb)}</div></div>')
     o.append(cta(q, name))
     o.append('<p class="note"><a href="../artists.html">ほかのアーティストを見る</a>｜<a href="../index.html">OSHINAVI トップ</a></p>')
