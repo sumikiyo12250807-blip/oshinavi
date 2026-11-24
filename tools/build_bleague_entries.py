@@ -134,6 +134,13 @@ def build(ev, today, now, notes=None):
             return None, '試合名が読めない'
         artist = name
     name = re.sub(r'\s+', ' ', name).strip()
+    # 2026-11-24 抜き打ち 57757：シーズンシート・席パック＝販売用の器（器の日付に試合は無い）＝試合として出さない
+    SEASON = bool(re.search(r'シーズンシート|シーズンチケット|シーズンパス|年間シート|パック|プラン', name)) or (home and away and home == away)
+    if SEASON:
+        artist = home or artist.split('／')[0]
+        name = name.replace('%s対%s（%s） ' % (home, away, venue or '会場未定'), '').strip() or name
+        if artist not in name:
+            name = artist + ' ' + name
     if '駐車' in name:
         # 2026-11-20 クラブが駐車券を同じ売り場で売っている（29件）＝試合の券ではないので載せない
         return None, '駐車券（試合の券ではない）'
@@ -157,6 +164,8 @@ def build(ev, today, now, notes=None):
         return e.date().isoformat(), '%s %s' % (mdp(e.date().isoformat()), hm(e))
     show = md(date, int(today[:4])) + (' ' + stime if stime else '')
     head = '一般販売（%s公演）' % ('%s %s' % (pref, show) if pref else show)
+    if SEASON:
+        head = '一般販売（シーズンシート・席のセット）'
     url = ev.get('url') or BH.page_url(ev.get('host'), ev.get('id'))
     if status == 'SALE_ENDED' or (end is not None and end <= now):
         ed, et = endpart(end)
@@ -182,11 +191,13 @@ def build(ev, today, now, notes=None):
             tk = {'type': '%s%s %s発売〜%s' % (head, mdp(g0.date().isoformat()), hm(g0), et),
                   'date': ed, 'startDate': g0.date().isoformat(), 'url': url}
     srcg = gsd.get('genre') or ''
+    if SEASON:
+        date = tk['date']
     e = {
         'artist': artist,
         'name': name,
         'date': date,
-        'dateLabel': jp(date) + (' %s試合開始' % stime if stime else ''),
+        'dateLabel': ('ホームゲームの席のセット販売（%s）' % (pref or venue or '')) if SEASON else (jp(date) + (' %s試合開始' % stime if stime else '')),
         'venue': venue or '（会場未定）',
         'prefecture': pref,
         'genre': 'new',
