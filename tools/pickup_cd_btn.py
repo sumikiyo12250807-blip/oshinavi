@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""今週のピックアップの記事（1組1ページ）に「予習する（最新CD）」のボタンを足す（2026-10-27 すちこ「④の記事にCDボタンもお願い」）。
+"""今週のピックアップの記事（1組1ページ）に「最新のCD」のボタンを足す（2026-10-27 すちこ「④の記事にCDボタンもお願い」）。
 
 - 記事の「発売になる公演 タップで探す」（pk-shows・?q=名前）の名前で EVENTS を引き、その組の links.amazon を使う
   （tools/amazon_latest.py で商品ページになっていればそれ・無ければ検索のURL）。
@@ -89,7 +89,7 @@ def box(url, hotel):
     if url:
         # 🆕2026-11-24 すちこ「いいわね　これを押したら推した感じでお願いね」＝トップのカードと同じ絵つきの横長（押すと沈む）
         a += (f'<a class="hotel-wide-btn" href="{html.escape(url)}" target="_blank" rel="noopener">'
-              '<img src="../../img/btn_wide_cd.png" alt="予習する（最新CD）" width="1000" height="124" loading="lazy" decoding="async"></a>')
+              '<img src="../../img/btn_wide_cd.png" alt="最新のCD" width="1000" height="124" loading="lazy" decoding="async"></a>')
         # 🆕2026-11-19 すちこ「記事の方にもAmazonで聞くのボタンを付けて」＝トップのカードと同じ決まり（CDのボタンが出る組にだけ・同じ画像・同じ行き先）
         a += (f'<a class="hotel-wide-btn" href="{AMAZON_MUSIC_URL}" target="_blank" rel="noopener">'
               '<img src="../../img/btn_wide_amazonmusic.png" alt="Amazon Musicで聴く" width="1000" height="124" loading="lazy" decoding="async"></a>')

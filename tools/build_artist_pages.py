@@ -327,7 +327,7 @@ CLICK = click_track.snippet("artist")   # 🆕10/27 ボタンのクリックを 
 #   文言と画像は index.html の BTN_IMG・GENRE_AMAZON_LINKS・hotelHref と同じもの（画面の決まりを変えない）。
 AMZ_TAG = "oshinavi0a-22"
 HOTEL_VC = "https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3769972&pid=892633446"
-BTN_IMG = {"楽天チケット": "img/btn2_rakuten.png", "予習する（最新CD）": "img/btn_cd_0915.png",
+BTN_IMG = {"楽天チケット": "img/btn2_rakuten.png", "最新のCD": "img/btn_cd_0915.png",
            "会場近くのホテルを探す": "img/btn2_hotel.png", "推しうちわを作る": "img/btn2_uchiwa.png",
            "推し活グッズ": "img/btn2_goods.png", "ライブ用耳栓": "img/btn2_earplug.png", "オペラグラス": "img/btn2_operaglass.png",
            "観戦グッズ": "img/btn2_kansen.png", "フェスの必需品": "img/btn2_fes.png", "花火の必需品": "img/btn2_hanabi.png",
@@ -472,7 +472,7 @@ def page_html(name, items, today, stamp, total_rows, num=None):
     if cu:
         # 🆕2026-11-24 すちこ「Amazonミュージックのボタンも付けて」＝トップのカードと同じ決まり（CDのボタンが出る人にだけ）・横長を先に
         top_btns.append(btn(AMAZON_MUSIC_URL, "Amazon Musicで聴く", "🎵"))
-        top_btns.append(btn(cu, "予習する（最新CD）", "🎧"))
+        top_btns.append(btn(cu, "最新のCD", "🎧"))
     ga = next((genre_amazon(ev) for _, ev, _ in items if genre_amazon(ev)), None)
     if ga:
         top_btns.append(btn(ga[0], ga[1], "🛍"))
