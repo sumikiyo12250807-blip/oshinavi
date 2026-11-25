@@ -1,0 +1,446 @@
+<!-- {*** 演目事典の目次用テンプレート ***} -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="ja" />
+	<meta name="viewport" content="width=device-width" />
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="ja_JP" />
+	<meta property="og:url" content="https://www.the-noh.com/jp/" />
+	<meta property="og:image" content="https://www.the-noh.com/jp/img/og-mainphoto.jpg" />
+<meta name="Keywords" content="能,能楽,演目," />
+<meta name="description" content="能楽に関する情報が満載のポータルサイト「the能ドットコム」では、能の初心者に向けた
+    解説や演目辞典、公演スケジュールなどを掲載しています。" />
+<link href="../../../style2018.css?ver=20230320" rel="stylesheet" type="text/css" media="screen" />
+<link rel="shortcut icon" href="../../../favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Orbitron:500,900" rel="stylesheet">
+	<script src="https://www.the-noh.com/cgi/acc/acctag.js" type="text/javascript"></script>
+	<script src="../../../Scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
+<title>能楽・演目事典</title>
+</head>
+<!-- PHPのtemplateなのでDWのライブラリから独立させておく-->
+<body>
+<div id="container">
+<div id="toplogo"><img src="../../../img/toplogo.jpg" alt="the能ドットコム" /></div>
+<div id="SekaiHeader">
+<!-- title Slices -->
+<table width="960" height="70" border="0" cellpadding="0" cellspacing="0" class="pc-only"><tr><td rowspan="2"><a href="../../../jp/index.html"><img src="../../../jp/img/title/toplogo50_logo.gif" alt="トップページへ" width="200" height="70" border="0"></a></td><td><img src="../../../jp/img/title/toplogo50_01.jpg" alt="" width="600" height="50"></td><td><img src="../../../jp/img/title/toplogo50_red.gif" width="160" height="50" alt=""></td></tr><tr><td class="navi">
+<!-- パンくずリスト -->
+＞&nbsp;<a href="../../../jp/index.html">Top</a>&nbsp;＞&nbsp;演目事典</td><td><a href="../../../jp/sitemap.html"><img src="../../../jp/img/title/toplogo50_map.gif" alt="SITE MAP" name="sitemap" width="160" height="20" border="0" id="sitemap" /></a></td></tr></table><!-- End Slices -->
+</div><!-- /SekaiHeader -->
+
+<!-- バーガーメニュー -->
+<div class="bgr_wrap">
+	<input id="bgr_menu" type="checkbox" name="bgr_menu" class="bgr_menu_check"/>
+	<label for="bgr_menu" class="bgr_btn"></label>
+		<nav class="bgr_menu_wrap">
+			<ul class="bgr_list">
+	<li><a href="../../../jp/index.html">the能ドットコム：Home</a></li>
+	<li><a href="../../../jp/sekai/index.html">入門：能の世界</a></li>
+	<li><a href="../../../jp/zeami/index.html" >世阿弥のことば</a></li>
+	<li><a href="../../../jp/oversea/index.html">能の海外交流</a></li>
+	<li><a href="../../../jp/trivia/index.html">能楽トリビア</a></li>
+	<li><a href="https://www.the-noh.com/sub/jp/index.php?mode=dic">演目事典</a></li>
+	<li><a href="https://www.the-noh.com/sub/jp/index.php?mode=db&amp;class_id=1" >能面事典</a></li>
+	<li><a href="https://db2.the-noh.com/jdic/">用語事典</a></li>
+	<li><a href="../../../jp/theater/index.html" >全国能楽堂マップ</a></li>
+	<li><a href="../../../jp/people/index.html">能を支える人びと</a></li>
+	<li><a href="../../../jp/people/actors/index.html">能楽師に聞く</a></li>
+	<li><a href="../../../jp/people/masters/index.html">名人列伝</a></li>
+	<li><a href="../../../jp/people/essay/index.html">エッセイ：わたしと能</a></li>
+	<li><a href="../../../jp/schedule/index.html">公演スケジュール</a></li>
+	<li><a href="../../../jp/event/index.html">能楽関連イベント情報</a></li>
+	<li><a href="../../../jp/credit.html">クレジット</a></li>
+	<li><a href="../../../jp/sponsor.html">協賛者リスト</a></li>
+	<li><a href="../../../jp/sitemap.html">サイトマップ</a></li>
+	<li><a href="../../../jp/topics/index.html">更新履歴</a></li>
+	<li><a href="../../../index.html">English</a></li>
+			</ul>
+		</nav>
+        <div class="bgr_menu_close"><label for="bgr_menu"></label></div>
+</div><!-- /bgr_wrap -->
+
+<div id="SideMenu"><img src="../../../jp/img/sidemenu/menutitle_feature.gif" alt="FEATURE" width="200" height="25" />
+<ul>
+<li id="menu_nohworld"><a href="../../../jp/sekai/index.html"><img src="../../../jp/img/sidemenu/menu_sekai.jpg" alt="能の世界" width="200" height="34" /></a></li>
+<li id="menu_zeami"><a href="../../../jp/zeami/index.html"><img src="../../../jp/img/sidemenu/menu_zeami.jpg" alt="世阿弥のことば" width="200" height="34" /></a></li>
+<li id="menu_overseas"><a href="../../../jp/oversea/index.html"><img src="../../../jp/img/sidemenu/menu_kaigai.jpg" alt="能の海外交流" width="200" height="34" /></a></li>
+<li id="menu_trivia"><a href="../../../jp/trivia/index.html"><img src="../../../jp/img/sidemenu/menu_trivia.jpg" alt="能楽トリビア" width="200" height="34" /></a></li>
+</ul>
+<ul>
+<img src="../../../jp/img/sidemenu/menutitle_db.gif" alt="DATABASE" width="200" height="25" />
+<li id="menu_kyoku"><a href="https://www.the-noh.com/sub/jp/index.php?mode=dic"><img src="../../../jp/img/sidemenu/menu_kyoku.jpg" alt="演目事典" width="200" height="34" /></a></li>
+<li id="menu_mask"><a href="https://www.the-noh.com/sub/jp/index.php?mode=db&amp;class_id=1"><img src="../../../jp/img/sidemenu/menu_mask.jpg" alt="能面事典" width="200" height="34" /></a></li>
+<li id="menu_dic"><a href="https://db2.the-noh.com/jdic/"><img src="../../../jp/img/sidemenu/menu_dic.jpg" alt="用語事典" width="200" height="34" /></a></li>
+<li id="menu_theater"><a href="../../../jp/theater/index.html"><img src="../../../jp/img/sidemenu/menu_theater.jpg" alt="全国能楽堂マップ" width="200" height="34" /></a></li>
+</ul>
+<ul>
+<img src="../../../jp/img/sidemenu/menutitle_people.gif" alt="PEOPLE" width="200" height="25" />
+<li id="menu_sasaeru"><a href="../../../jp/people/index.html"><img src="../../../jp/img/sidemenu/menu_sasaeru.jpg" alt="能を支える人びと" width="200" height="34" /></a></li>
+<li id="menu_nohtalk"><a href="../../../jp/people/actors/index.html"><img src="../../../jp/img/sidemenu/menu_interview.jpg" alt="能楽師に聞く" width="200" height="34" /></a></li>
+<li id="menu_masters"><a href="../../../jp/people/masters/index.html"><img src="../../../jp/img/sidemenu/menu_meijin.jpg" alt="名人列伝" width="200" height="34" /></a></li>
+<li id="menu_essay"><a href="../../../jp/people/essay/index.html"><img src="../../../jp/img/sidemenu/menu_essay.jpg" alt="ESSAY わたしと能" width="200" height="34" /></a></li>
+</ul>
+<ul>
+<img src="../../../jp/img/sidemenu/menutitle_info.gif" alt="INFOMATION" width="200" height="25" />
+<li id="menu_program"><a href="../../../jp/schedule/index.html"><img src="../../../jp/img/sidemenu/menu_program.jpg" alt="公演スケジュール" width="200" height="34" /></a></li>
+<li id="menu_event"><a href="../../../jp/event/index.html"><img src="../../../jp/img/sidemenu/menu_event.jpg" alt="能楽関連イベント情報" width="200" height="34" /></a></li>
+<li id="menu_media"><a href="../../../jp/media/index.html"><img src="../../../jp/img/sidemenu/menu_media.jpg" alt="能楽関連メディア情報" width="200" height="34" /></a></li>
+<li id="menu_credit"><a href="../../../jp/credit.html"><img src="../../../jp/img/sidemenu/menu_credit.jpg" alt="クレジット" width="200" height="34" /></a></li>
+</ul>
+<!-- SponsorShip -->
+<div id="Sponsor"><a href="../../../jp/sponsor.html"><img src="../../../jp/img/sidemenu/sponsorship-j.jpg" alt="協賛者リスト" width="166" height="39" /></a></div>
+<!-- #BeginLibraryItem "/Library/Google Search2018.lbi" -->
+<!-- GoogleSiteSearch2018 -->
+<div class="googlesearch">
+<form action="//www.google.com/cse" id="cse-search-box">
+<input type="hidden" name="cx" value="009898109189282862043:wbjmja7ij2s" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" size="20" />
+<input type="submit" name="sa" value="サイト内検索" />
+</form>
+<script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=ja"></script>
+</div>
+<!-- end GoogleSiteSearch2018 -->
+<!-- #EndLibraryItem --></div><!-- /SideMenu -->
+
+<div id="MainBox">
+
+<!-- ページタイトル -->
+<table id="playstitle" width="100%" height="45" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="128">
+			<h1><img src="../../../jp/plays/img/plays_title2.gif" width="128" height="38" alt="演目事典"></h1></td>
+		<td width="" class="font09em">随時新しい演目を追加しています。</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="../../../jp/plays/img/plays_title_hr.gif" width="100%" height="7" alt=""></td>
+	</tr>
+</table>
+<div align="center"><a href="../../../jp/plays/photostory/index.html"><img src="../../../jp/plays/img/pslink.gif" alt="PhotoStory" width="740" height="40" border="0" /></a></div>
+<div class="mgn15">
+
+<!-- 本文ここから -->
+<h2>演目の選択・検索</h2>
+
+<p class="caption">調べたい演目をクリックすると、その演目の「あらすじ／みどころ」「演目STORY PAPER」「フォトストーリー」などが表示されます。</p>
+<hr noshade="noshade" size="1px" />
+<form action="index.php">
+<input type="hidden" name="mode" value="dic" />
+<input type="hidden" name="action" value="search_do" />
+
+<div class="plays_list"><table>
+
+            <tr>
+        <td class="bold">あ</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_006.html">葵上</a> |
+                <a href="../../jp/plays/data/program_070.html">阿漕</a> |
+                <a href="../../jp/plays/data/program_090.html">芦刈</a> |
+                <a href="../../jp/plays/data/program_009.html">安宅</a> |
+                <a href="../../jp/plays/data/program_036.html">安達原</a> |
+                <a href="../../jp/plays/data/program_008.html">敦盛</a> |
+                <a href="../../jp/plays/data/program_024.html">海人／海士</a> |
+                <a href="../../jp/plays/data/program_102.html">綾鼓</a> |
+                <a href="../../jp/plays/data/program_068.html">嵐山</a> |
+                <a href="../../jp/plays/data/program_010.html">井筒</a> |
+                <a href="../../jp/plays/data/program_060.html">岩船</a> |
+                <a href="../../jp/plays/data/program_032.html">鵜飼</a> |
+                <a href="../../jp/plays/data/program_106.html">歌占</a> |
+                <a href="../../jp/plays/data/program_063.html">善知鳥／烏頭</a> |
+                <a href="../../jp/plays/data/program_111.html">采女</a> |
+                <a href="../../jp/plays/data/program_101.html">江口</a> |
+                <a href="../../jp/plays/data/program_061.html">箙</a> |
+                <a href="../../jp/plays/data/program_082.html">絵馬</a> |
+                <a href="../../jp/plays/data/program_067.html">翁</a> |
+                <a href="../../jp/plays/data/program_075.html">大原御幸／小原御幸</a> |
+                <a href="../../jp/plays/data/program_105.html">姨捨／伯母捨</a> |
+                <a href="../../jp/plays/data/program_115.html">女郎花</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">か</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_029.html">杜若</a> |
+                <a href="../../jp/plays/data/program_066.html">景清</a> |
+                <a href="../../jp/plays/data/program_051.html">花月</a> |
+                <a href="../../jp/plays/data/program_093.html">春日龍神</a> |
+                <a href="../../jp/plays/data/program_058.html">葛城</a> |
+                <a href="../../jp/plays/data/program_026.html">鉄輪</a> |
+                <a href="../../jp/plays/data/program_128.html">兼平</a> |
+                <a href="../../jp/plays/data/program_033.html">加茂／賀茂</a> |
+                <a href="../../jp/plays/data/program_023.html">通小町</a> |
+                <a href="../../jp/plays/data/program_059.html">邯鄲</a> |
+                <a href="../../jp/plays/data/program_041.html">鬼界島</a> |
+                <a href="../../jp/plays/data/program_086.html">菊慈童</a> |
+                <a href="../../jp/plays/data/program_094.html">砧</a> |
+                <a href="../../jp/plays/data/program_020.html">清経</a> |
+                <a href="../../jp/plays/data/program_088.html">国栖</a> |
+                <a href="../../jp/plays/data/program_098.html">熊坂</a> |
+                <a href="../../jp/plays/data/program_025.html">鞍馬天狗</a> |
+                <a href="../../jp/plays/data/program_035.html">黒塚</a> |
+                <a href="../../jp/plays/data/program_127.html">絃上</a> |
+                <a href="../../jp/plays/data/program_048.html">月宮殿</a> |
+                <a href="../../jp/plays/data/program_126.html">玄象</a> |
+                <a href="../../jp/plays/data/program_064.html">恋重荷</a> |
+                <a href="../../jp/plays/data/program_037.html">小鍛冶</a> |
+                <a href="../../jp/plays/data/program_092.html">小督</a> |
+                <a href="../../jp/plays/data/program_031.html">小袖曾我</a> |
+                <a href="../../jp/plays/data/program_062.html">胡蝶</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">さ</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_113.html">西行桜</a> |
+                <a href="../../jp/plays/data/program_104.html">鷺</a> |
+                <a href="../../jp/plays/data/program_039.html">桜川</a> |
+                <a href="../../jp/plays/data/program_096.html">実盛</a> |
+                <a href="../../jp/plays/data/program_030.html">石橋</a> |
+                <a href="../../jp/plays/data/program_120.html">舎利</a> |
+                <a href="../../jp/plays/data/program_040.html">俊寛</a> |
+                <a href="../../jp/plays/data/program_053.html">猩々</a> |
+                <a href="../../jp/plays/data/program_055.html">猩々乱</a> |
+                <a href="../../jp/plays/data/program_081.html">正尊</a> |
+                <a href="../../jp/plays/data/program_074.html">自然居士</a> |
+                <a href="../../jp/plays/data/program_012.html">隅田川</a> |
+                <a href="../../jp/plays/data/program_089.html">西王母</a> |
+                <a href="../../jp/plays/data/program_045.html">殺生石</a> |
+                <a href="../../jp/plays/data/program_057.html">蝉丸</a> |
+                <a href="../../jp/plays/data/program_091.html">千手／千寿</a> |
+                <a href="../../jp/plays/data/program_103.html">是界／善界／是我意</a> |
+                <a href="../../jp/plays/data/program_109.html">草紙洗</a> |
+                <a href="../../jp/plays/data/program_110.html">草紙洗小町／草子洗小町</a> |
+                <a href="../../jp/plays/data/program_069.html">卒都婆小町</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">た</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_015.html">高砂</a> |
+                <a href="../../jp/plays/data/program_072.html">忠度</a> |
+                <a href="../../jp/plays/data/program_116.html">龍田</a> |
+                <a href="../../jp/plays/data/program_028.html">田村</a> |
+                <a href="../../jp/plays/data/program_027.html">竹生島</a> |
+                <a href="../../jp/plays/data/program_097.html">張良</a> |
+                <a href="../../jp/plays/data/program_002.html">土蜘蛛</a> |
+                <a href="../../jp/plays/data/program_042.html">経政／経正</a> |
+                <a href="../../jp/plays/data/program_047.html">鶴亀</a> |
+                <a href="../../jp/plays/data/program_117.html">定家</a> |
+                <a href="../../jp/plays/data/program_021.html">天鼓</a> |
+                <a href="../../jp/plays/data/program_084.html">唐船</a> |
+                <a href="../../jp/plays/data/program_118.html">東方朔</a> |
+                <a href="../../jp/plays/data/program_050.html">東北</a> |
+                <a href="../../jp/plays/data/program_044.html">融</a> |
+                <a href="../../jp/plays/data/program_049.html">巴</a> |
+                <a href="../../jp/plays/data/program_108.html">朝長</a> |
+                <a href="../../jp/plays/data/program_122.html">鳥追</a> |
+                <a href="../../jp/plays/data/program_121.html">鳥追舟</a> |
+                <a href="../../jp/plays/data/program_013.html">道成寺</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">な</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_114.html">難波</a> |
+                <a href="../../jp/plays/data/program_052.html">鵺</a> |
+                <a href="../../jp/plays/data/program_018.html">野宮</a> |
+                <a href="../../jp/plays/data/program_112.html">野守</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">は</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_011.html">羽衣</a> |
+                <a href="../../jp/plays/data/program_022.html">半蔀</a> |
+                <a href="../../jp/plays/data/program_080.html">橋弁慶</a> |
+                <a href="../../jp/plays/data/program_100.html">鉢木</a> |
+                <a href="../../jp/plays/data/program_077.html">花筐</a> |
+                <a href="../../jp/plays/data/program_034.html">班女</a> |
+                <a href="../../jp/plays/data/program_130.html">芭蕉</a> |
+                <a href="../../jp/plays/data/program_129.html">檜垣</a> |
+                <a href="../../jp/plays/data/program_087.html">百万</a> |
+                <a href="../../jp/plays/data/program_073.html">藤</a> |
+                <a href="../../jp/plays/data/program_095.html">富士太鼓</a> |
+                <a href="../../jp/plays/data/program_078.html">藤戸</a> |
+                <a href="../../jp/plays/data/program_003.html">船弁慶</a> |
+                <a href="../../jp/plays/data/program_107.html">放下僧</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">ま</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_038.html">巻絹</a> |
+                <a href="../../jp/plays/data/program_085.html">枕慈童</a> |
+                <a href="../../jp/plays/data/program_043.html">松風</a> |
+                <a href="../../jp/plays/data/program_124.html">松虫</a> |
+                <a href="../../jp/plays/data/program_056.html">三井寺</a> |
+                <a href="../../jp/plays/data/program_054.html">乱</a> |
+                <a href="../../jp/plays/data/program_125.html">三山</a> |
+                <a href="../../jp/plays/data/program_065.html">三輪</a> |
+                <a href="../../jp/plays/data/program_076.html">望月</a> |
+                <a href="../../jp/plays/data/program_014.html">紅葉狩</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">や</td>
+        <td>| 
+        
+                        <a href="../../jp/plays/data/program_019.html">八島／屋島</a> |
+                <a href="../../jp/plays/data/program_046.html">山姥</a> |
+                <a href="../../jp/plays/data/program_119.html">遊行柳</a> |
+                <a href="../../jp/plays/data/program_016.html">熊野／湯谷</a> |
+                <a href="../../jp/plays/data/program_083.html">楊貴妃</a> |
+                <a href="../../jp/plays/data/program_099.html">夜討曽我</a> |
+                <a href="../../jp/plays/data/program_017.html">養老</a> |
+                <a href="../../jp/plays/data/program_123.html">頼政</a> |
+                <a href="../../jp/plays/data/program_079.html">弱法師</a> |
+                
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">ら</td>
+        <td>| 
+        
+                        
+        </td>
+    </tr>
+        <tr>
+        <td class="bold">わ他</td>
+        <td>| 
+        
+                        
+        </td>
+    </tr>
+        
+</table></div>
+
+<hr noshade="noshade" size="1px" />
+
+<p class="caption">調べたい演目の名前がわからない場合は、「分類」「流派」「作者」などを選択してから、［検索］を押してしてください。</p>
+
+<div class="play_search">
+  <table width="100%" border="0" cellpadding="5" cellspacing="2" class="font08em">
+    <tr bordercolor="#000000" bgcolor="#CADEE2">
+      <td width="35" align="center">分類</td>
+          <td width="0"><label><input type="checkbox" name="categories[]" value="1" />初番目物</label>&nbsp;
+<label><input type="checkbox" name="categories[]" value="2" />二番目物</label>&nbsp;
+<label><input type="checkbox" name="categories[]" value="3" />三番目物</label>&nbsp;
+<label><input type="checkbox" name="categories[]" value="4" />四番目物</label>&nbsp;
+<label><input type="checkbox" name="categories[]" value="5" />五番目物</label>&nbsp;</td>
+      </tr>
+    <tr bordercolor="#000000" bgcolor="#CADEE2">
+      <td align="center">流派</td>
+          <td><label><input type="checkbox" name="schools[]" value="1" />観世流</label>&nbsp;
+<label><input type="checkbox" name="schools[]" value="2" />宝生流</label>&nbsp;
+<label><input type="checkbox" name="schools[]" value="3" />金春流</label>&nbsp;
+<label><input type="checkbox" name="schools[]" value="4" />金剛流</label>&nbsp;
+<label><input type="checkbox" name="schools[]" value="5" />喜多流</label>&nbsp;</td>
+      </tr>
+    <tr bordercolor="#000000" bgcolor="#CADEE2">
+      <td align="center">作者</td>
+          <td><label><input type="radio" name="author" value="1" />不明／不詳</label>&nbsp;
+<label><input type="radio" name="author" value="2" />観阿弥清次</label>&nbsp;
+<label><input type="radio" name="author" value="3" />世阿弥元清</label>&nbsp;
+<label><input type="radio" name="author" value="4" />観世十郎元雅</label>&nbsp;
+<label><input type="radio" name="author" value="5" />金春禅竹</label>&nbsp;
+<label><input type="radio" name="author" value="6" />観世小次郎信光</label>&nbsp;
+<label><input type="radio" name="author" value="7" />金春禅鳳</label>&nbsp;
+<label><input type="radio" name="author" value="8" />観世弥次郎長俊</label>&nbsp;
+<label><input type="radio" name="author" value="9" />宮増</label>&nbsp;
+<label><input type="radio" name="author" value="10" />内藤左衛門</label>&nbsp;
+<label><input type="radio" name="author" value="11" />日吉左阿弥</label>&nbsp;
+<label><input type="radio" name="author" value="12" />竹田法印定盛</label>&nbsp;</td>
+      </tr>
+    <tr bordercolor="#000000" bgcolor="#CADEE2">
+      <td colspan="2" align="center"><input type="submit" value="検索" />
+</td>
+          </tr>
+  </table>
+</div>
+</form>
+<p class="caption">「分類」と「流派」は複数を同時にチェックできます。「作者」は１人しか選択できませんので、特定できない場合はなにもチェックしないでください。</p>
+
+
+</div><!-- /mgn15 -->
+
+<hr class="gray1px" />
+
+<div id="mobileMenu">
+｜<a href="../../../jp/sekai/index.html">入門：能の世界</a>
+｜<a href="../../../jp/zeami/index.html" >世阿弥のことば</a>
+｜<a href="../../../jp/oversea/index.html">能の海外交流</a>
+｜<a href="../../../jp/trivia/index.html">能楽トリビア</a>
+｜<a href="https://www.the-noh.com/sub/jp/index.php?mode=dic">演目事典</a>
+｜<a href="https://www.the-noh.com/sub/jp/index.php?mode=db&amp;class_id=1" >能面事典</a>
+｜<a href="https://db2.the-noh.com/jdic/">用語事典</a>
+｜<a href="../../../jp/theater/index.html" >全国能楽堂マップ</a>
+｜<a href="../../../jp/people/index.html">能を支える人びと</a>
+｜<a href="../../../jp/people/actors/index.html">能楽師に聞く</a>
+｜<a href="../../../jp/people/masters/index.html">名人列伝</a>
+｜<a href="../../../jp/people/essay/index.html">エッセイ：わたしと能</a>
+｜<a href="../../../jp/schedule/index.html">公演スケジュール</a>
+｜<a href="../../../jp/event/index.html">能楽関連イベント情報</a>
+｜<a href="../../../jp/credit.html">クレジット</a>
+｜<a href="../../../jp/sponsor.html">協賛者リスト</a>
+｜<a href="../../../jp/sitemap.html">サイトマップ</a>
+｜<a href="../../../jp/topics/index.html">更新履歴</a>
+｜<a href="../../../index.html">English</a>｜
+</div><!-- /mobileMenu --><!-- #BeginLibraryItem "/Library/footer2018.lbi" -->
+<div id="footercredit">｜<a href="../../../jp/credit.html#menseki">免責事項</a>｜<a href="https://db2.the-noh.com/contact/form.html">お問い合わせ</a>｜<a href="../../../jp/linkbanner.html">リンク許可</a>｜<a href="https://www.calibercast.com/about/">運営会社</a>｜<br />
+Copyright&copy;
+<!--#config timefmt="%Y" -->
+<!--#echo var="DATE_LOCAL" -->
+CaliberCast, Ltd All right reserved.</div>
+<!-- #EndLibraryItem --></div><!-- /MainBox -->
+</div><!-- /container -->
+
+<!-- Scroll PageTop -->
+<button class="scroll-top" id="js-button"><img src="../../../img/pagetop.png" alt="TOP" width="30" height="30" ></button>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4506297-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-4506297-2');
+</script>
+<script>
+scrollTop('js-button', 500);
+function scrollTop(elem,duration) {
+let target = document.getElementById(elem);
+target.addEventListener('click', function() {
+let currentY = window.pageYOffset; 
+let step = duration/currentY > 1 ? 10 : 100;
+let timeStep = duration/currentY * step;
+let intervalID = setInterval(scrollUp, timeStep);
+function scrollUp(){
+currentY = window.pageYOffset;
+if(currentY === 0) {
+clearInterval(intervalID);
+} else {
+scrollBy( 0, -step );
+}
+}
+});
+}
+</script>
+</body>
+</html>

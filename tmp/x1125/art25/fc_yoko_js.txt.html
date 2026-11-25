@@ -1,0 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    const url = '/contents/event/ticket';
+    const params = new URLSearchParams({
+        lang: document.documentElement.lang,
+    });
+
+    fetch(`${url}?${params}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error();
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('upcoming-event-index')
+                .insertAdjacentHTML('afterbegin', data.upcoming);
+            document.getElementById('on_sale-event-index')
+                .insertAdjacentHTML('afterbegin', data.on_sale);
+        })
+        .catch(error => {});
+});

@@ -1,0 +1,10 @@
+
+ {{ title }}
+ 能のあらすじ・見どころ
+ Summary and Highlights of Noh
+ {{ tuneTitleNative }}
+ {{ LANGS[lang]['lang_native'] }}
+ {{ headerSummary }}
+ {{ headerHighlights }}
+ 他言語版 [Languages]
+ {{ obj.tune_title_native }} [{{ LANGS[lang]['lang_native'] }}]

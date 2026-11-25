@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="description" v-bind:content="description">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link v-bind:href="cssMain" media="screen" rel="stylesheet" type="text/css">
+  <link v-bind:href="cssGoogle" media="screen" rel="stylesheet" type="text/css">
+</head>
+
+<body class="sh-contents">
+
+  <header class="pageHeader col-2 w">
+    <page-header></page-header>
+  </header>
+
+  <article class="" lang="ja" v-cloak>
+    <header>
+      <h2 class="article-title">
+        <small class="sub-title" lang="ja">能のあらすじ・見どころ</small>
+        <small class="sub-title" lang="en">Summary and Highlights of Noh</small>
+        <span class="song-title">{{ tuneTitleNative }}</span>
+        <small class="language">{{ LANGS[lang]['lang_native'] }}</small>
+      </h2>
+    </header>
+    <section class="summary">
+      <h3>{{ headerSummary }}</h3>
+      <div v-html="summary"></div>
+    </section>
+    <section class="highlights">
+      <h3>{{ headerHighlights }}</h3>
+      <div v-html="highlights"></div>
+    </section>
+    <footer class="sh-footer w">
+      <ul class="credit" v-html="credit"></ul>
+    </footer>
+    <nav class="other-languages w">
+      <h4>他言語版 [Languages]</h4>
+      <ul>
+        <li v-for="(obj, lang) in otherLangs"><a v-bind:href="'/sh/' + tuneId + '/' + lang">{{ obj.tune_title_native }} [{{ LANGS[lang]['lang_native'] }}]</a></li>
+      </ul>
+    </nav>
+    <!-- /Contents -->
+    <footer class="article-footer w">
+      <article-footer></article-footer>
+    </footer>
+  </article>
+
+  <footer class="page-footer w">
+    <page-footer></page-footer>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/(address)/dist/vue.global.min.js"></script>
+  <script src="/js/const.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/vue/tmpl_header.js"></script>
+  <script src="/js/vue/tmpl_article-footer.js"></script>
+  <script src="/js/vue/tmpl_page-footer.js"></script>
+  <script src="/js/vue/sh_contents.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+document.addEventListener('DOMContentLoaded', () => {
+ 'use strict';
+ const params = new URLSearchParams(location.search);
+ const url = '/contents/event/' + (params.get('id') ?? 0);
+ params.delete('id');
+ fetch(`${url}?${params}`)
+ .then(response => {
+ if (!response.ok) {
+ throw new Error('イベントはありません。');
+ }
+ return response.json();
+ })
+ .then(data => {
+ if (data.redirect_url) {
+ window.location.href = data.redirect_url;
+ return;
+ }
+ document.querySelector('nav ol li:last-child span').replaceChildren(data.plain_title);
+ document.getElementById('event-title').insertAdjacentHTML('afterbegin', data.title);
+ document.getElementById('event-flyer').insertAdjacentHTML('afterbegin', data.flyer);
+ data.pdf != ''
+ ? document.querySelector('#event-pdf a').href = data.pdf
+ : document.getElementById('event-pdf').style.display = 'none';
+ document.getElementById('event-date').insertAdjacentHTML('afterbegin', data.date);
+ document.getElementById('event-venue').insertAdjacentHTML('afterbegin', data.venue);
+ document.getElementById('event-price').insertAdjacentHTML('afterbegin', data.price);
+ data.sale_comment != ''
+ ? document.getElementById('event-sale-comment').insertAdjacentHTML('afterbegin', data.sale_comment)
+ : document.getElementById('event-sale-comment').style.display = 'none';
+ data.todays_ticket != ''
+ ? document.getElementById('event-todays-ticket').insertAdjacentHTML('afterbegin', data.todays_ticket)
+ : document.getElementById('event-todays-ticket').closest('section').style.display = 'none';
+ document.getElementById('event-summary').insertAdjacentHTML('afterbegin', data.summary);
+ data.performer != ''
+ ? document.querySelector('#event-performer div').insertAdjacentHTML('afterbegin', data.performer)
+ : document.getElementById('event-performer').style.display = 'none';
+ document.querySelector('#event-program h2').replaceChildren(data.program_headline);
+ data.program != ''
+ ? document.querySelector('#event-program div').insertAdjacentHTML('afterbegin', data.program)
+ : document.getElementById('event-program').style.display = 'none';
+ data.content != ''
+ ? document.querySelector('#event-content div').insertAdjacentHTML('afterbegin', data.content)
+ : document.getElementById('event-content').style.display = 'none';
+ if (data.no_tickets) {
+ document.getElementById('event-scroll-ticket').style.display = 'none';
+ document.getElementById('event-ticket-headline').closest('section').style.display = 'none';
+ } else {
+ document.getElementById('event-ticket-headline').insertAdjacentHTML('afterend', data.restriction);
+ document.querySelectorAll('.event-ticket-tickets').forEach((element, i) => {
+ data.tickets[i] != null
+ ? element.insertAdjacentHTML('afterbegin', data.tickets[i])
+ : element.closest('div').style.display = 'none';
+ });
+ document.getElementById('event-ticket-link').insertAdjacentHTML('afterbegin', data.ticket_sale_button);
+ if (!data.now_on_sale) {
+ document.getElementById('event-scroll-ticket').style.display = 'none';
+ }
+ if (!data.no_online_sale) {
+ document.getElementById('event-ticket-attention').style.display = 'none';
+ }
+ data.agency != ''
+ ? document.getElementById('event-ticket-agency').insertAdjacentHTML('beforeend', data.agency)
+ : document.getElementById('event-ticket-agency').style.display = 'none';
+ }
+ data.contact != ''
+ ? document.querySelector('#event-contact h2').insertAdjacentHTML('afterend', data.contact)
+ : document.getElementById('event-contact').style.display = 'none';
+ if (data.no_profiles) {
+ document.getElementById('event-scroll-profile').style.display = 'none';
+ document.getElementById('event-profile').style.display = 'none';
+ } else {
+ document.querySelector('#event-profile ul').insertAdjacentHTML('afterbegin', data.profile);
+ }
+ })
+ .catch(error => {
+ document.getElementById('event-title').closest('article').replaceChildren(error.message);
+ });
+});

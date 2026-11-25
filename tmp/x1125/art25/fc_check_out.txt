@@ -1,0 +1,78 @@
+### harunoutaikai.md
+Q 春の謡会2027 | exact=['fc_fany.txt', 'fc_fany_r1.txt', 'fc_fany_r2.txt'] | nfkc=['fc_city27.txt', 'fc_fany.txt', 'fc_fany_r1.txt']
+Q 大阪国際文化芸術プロジェクト | exact=['fc_city26.txt', 'fc_city27.txt', 'fc_oica.txt'] | nfkc=['fc_city26.txt', 'fc_city27.txt', 'fc_oica.txt']
+Q うたう（謡う） | exact=['fc_city26.txt', 'fc_city27.txt', 'fc_pref.txt'] | nfkc=['fc_city26.txt', 'fc_city27.txt', 'fc_oica27.txt']
+Q 長い時を超えて受け継がれてきた能楽と、現代音楽を楽しんでいただける公演 | exact=['fc_city26.txt', 'fc_city27.txt', 'fc_oica27.txt'] | nfkc=['fc_city26.txt', 'fc_city27.txt', 'fc_oica27.txt']
+Q スペシャルコラボレーションイベント | exact=['fc_city26.txt', 'fc_city27.txt', 'fc_pref.txt'] | nfkc=['fc_city26.txt', 'fc_city27.txt', 'fc_pref.txt']
+Q 春の謡会 2026 | exact=['fc_city26.txt'] | nfkc=['fc_city26.txt', 'fc_oica.txt']
+Q 俊寛 | exact=['fc_city26.txt', 'fc_nohgaku_db.txt'] | nfkc=['fc_city26.txt', 'fc_nohgaku_db.txt']
+Q 大会 | exact=['fc_city26.txt', 'fc_nohgaku_db.txt'] | nfkc=['fc_city26.txt', 'fc_nohgaku_db.txt']
+Q 二人静 | exact=['fc_city27.txt', 'fc_fany.txt', 'fc_fany_r1.txt'] | nfkc=['fc_city27.txt', 'fc_fany.txt', 'fc_fany_r1.txt']
+Q 紅葉狩 | exact=['fc_city27.txt', 'fc_fany.txt', 'fc_fany_r2.txt'] | nfkc=['fc_city27.txt', 'fc_fany.txt', 'fc_fany_r2.txt']
+Q 意外性に富んだスペクタクルな能の一つ | exact=['fc_noh_momiji.txt'] | nfkc=['fc_noh_momiji.txt']
+Q 谷町四丁目 | exact=['fc_ootsuki_access.txt'] | nfkc=['fc_ootsuki_access.txt']
+Q 谷町六丁目 | exact=['fc_ootsuki_access.txt'] | nfkc=['fc_ootsuki_access.txt']
+Q うたう | exact=['fc_city26.txt', 'fc_city27.txt', 'fc_nohgaku_db.txt'] | nfkc=['fc_city26.txt', 'fc_city27.txt', 'fc_nohgaku_db.txt']
+D R9年 1/30(土) -> 2027-01-30 土 OK
+D 11/28(土) -> 2026-11-28 土 OK
+D R9年 1/30(土) -> 2027-01-30 土 OK
+D 1/31(日) -> 2027-01-31 日 OK
+D 1/30(土) -> 2027-01-30 土 OK
+D 1/31(日) -> 2027-01-31 日 OK
+D 11/28(土) -> 2026-11-28 土 OK
+D 1/30(土) -> 2027-01-30 土 OK
+D R9年 1/28(木) -> 2027-01-28 木 OK
+D 1/31(日) -> 2027-01-31 日 OK
+D 1/29(金) -> 2027-01-29 金 OK
+chars: 
+### mayj_kidsjazz.md
+Q Kids meet Jazz!with May J.スペシャルコンサート | exact=[] | nfkc=['fc_eplus_mayj.txt']
+Q Kids meet Jazz! | exact=[] | nfkc=['fc_eplus_mayj.txt']
+Q のべ20万人の親子が参加した大人気のファミリーコンサート | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q 親子で一緒に感じるはじめてのジャズ | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q May J.との夢のコラボでおくる、スペシャルコンサート | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q 英語やダンスもMay J.と体感する | exact=[] | nfkc=[]
+Q 楽しさ満載＆親子で感動 | exact=[] | nfkc=[]
+Q Let It Go | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q ドレミの歌 | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q 美女と野獣 | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q 線路は続くよどこまでも | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q Let It Go | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+Q 多くの人に感動を与えた | exact=['fc_eplus_mayj.txt'] | nfkc=['fc_eplus_mayj.txt']
+D R9年 3/7(日) -> 2027-03-07 日 OK
+D 11/26(木) -> 2026-11-26 木 OK
+D R9年 3/7(日) -> 2027-03-07 日 OK
+D R9年 3/7(日) -> 2027-03-07 日 OK
+D 11/26(木) -> 2026-11-26 木 OK
+D R9年 2/27(土) -> 2027-02-27 土 OK
+D 11/26(木) -> 2026-11-26 木 OK
+D 11/27(金) -> 2026-11-27 金 OK
+D 11/14(土) -> 2026-11-14 土 OK
+chars: 
+### tokiasako.md
+Q 土岐麻子 Sentimental Journey Yokosuka Bayside Breeze vol.8 | exact=[] | nfkc=[]
+Q Yokosuka Bayside Breeze | exact=['fc_yokotop.txt', 'fc_yoko_3675.txt', 'fc_yoko_3675json.txt'] | nfkc=['fc_eplus_toki.txt', 'fc_yokotop.txt', 'fc_yoko_3675.txt']
+Q 現在の日本のポピュラーシーンをリードするアーティストのライブを愉しむシリーズ | exact=['fc_yoko_bb.txt'] | nfkc=['fc_yoko_bb.txt']
+Q アーティストとの距離感も近く、大きな会場とは異なる臨場感を味わえる | exact=['fc_yoko_bb.txt'] | nfkc=['fc_yoko_bb.txt']
+Q ひとりソウルショウ | exact=['fc_yoko_bb.txt'] | nfkc=['fc_yoko_bb.txt']
+Q Sentimental Journey | exact=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt'] | nfkc=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt']
+Q Sentimental Journey | exact=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt'] | nfkc=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt']
+Q Sentimental Journey | exact=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt'] | nfkc=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt']
+Q Sentimental Journey at BLUE NOTE TOKYO | exact=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt'] | nfkc=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt']
+Q 高木大丈夫（ギター）と西原史織（ヴァイオリン）を迎えたトリオ編成で登場する | exact=['fc_bb147213.txt'] | nfkc=['fc_bb147213.txt']
+Q Sentimental Journey | exact=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt'] | nfkc=['fc_bb147213.txt', 'fc_bb148386.txt', 'fc_bb148386_1.txt']
+Q 土岐麻子～Sentimental Journey 2025～ | exact=['fc_bb148642.txt', 'fc_bb148642_1.txt'] | nfkc=['fc_bb148642.txt', 'fc_bb148642_1.txt']
+Q アコースティック編成によるツアー | exact=['fc_bb148642.txt'] | nfkc=['fc_bb148642.txt']
+Q 汐入駅 | exact=['fc_yoko_access.txt'] | nfkc=['fc_yoko_access.txt']
+Q JR横須賀駅 | exact=['fc_yoko_access.txt'] | nfkc=['fc_yoko_access.txt']
+Q 座席選択 | exact=['fc_eplus_mayj.txt', 'fc_eplus_toki.txt'] | nfkc=['fc_eplus_mayj.txt', 'fc_eplus_toki.txt']
+Q 11月29日（日）10:00〜 | exact=[] | nfkc=[]
+D R9年 2/21(日) -> 2027-02-21 日 OK
+D 11/29(日) -> 2026-11-29 日 OK
+D R9年 2/21(日) -> 2027-02-21 日 OK
+D R9年 2/21(日) -> 2027-02-21 日 OK
+D 11/29(日) -> 2026-11-29 日 OK
+D R9年 2/18(木) -> 2027-02-18 木 OK
+D 11/29(日) -> 2026-11-29 日 OK
+D 11/19(木) -> 2026-11-19 木 OK
+chars: 俱
