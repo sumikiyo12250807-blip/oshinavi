@@ -57,8 +57,26 @@ def parse_blocks(html):
             status = 'before'
         else:
             status = 'unknown'
-        out.append({'sd': sd, 'ed': ed, 'st': f'{int(g[3])}:{g[4]}', 'et': f'{int(g[8])}:{g[9]}', 'status': status})
+        # 🆕2026-11-25 抜き打ち 6260＝受付名も持つ（fix_eplus_fails.blocks と同じ作り）＝n-受付名ズレ に使う
+        hd = re.search(r'block-ticket__header[^>]*>(.*?)</header>', body, re.S)
+        ht = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', H.unescape(hd.group(1) if hd else body)))
+        label = re.sub(r'受付期間.*', '', ht).strip()
+        label = re.sub(r'[★☆◇◆■◎●▲△▼▽※]', '', label)
+        label = re.sub(r'(先着|抽選)\s*(先着|抽選)', r'\1', label)
+        label = re.sub(r'\s+', '', label)
+        out.append({'sd': sd, 'ed': ed, 'st': f'{int(g[3])}:{g[4]}', 'et': f'{int(g[8])}:{g[9]}', 'status': status, 'label': label})
     return out
+
+def label_differs(ty, label):
+    """カードの受付名（公演の括弧より前）と実ページの窓の受付名が、包む・包まれるのどちらでもない"""
+    import unicodedata
+    k = lambda x: re.sub(r'[\s　★☆]', '', unicodedata.normalize('NFKC', x or ''))
+    m = list(re.finditer(r'（[^（）]*公演）', ty or ''))
+    if not m or not label:
+        return False
+    old = k((ty or '')[:m[-1].start()])
+    new = k(label)
+    return bool(old) and new not in old and old not in new
 
 def norm_pref(p):
     # 「京都府」→「京都」だが、短縮形「京都」に適用すると末尾「都」を削って「京」に化ける
@@ -258,6 +276,10 @@ def main():
                         W = match[0]
                         if bdl and bdl[0] == 'close' and bdl[1] and hm(bdl[1]) != hm(W['et']):
                             fails.append((e['id'], ti, 'b-締切時刻ズレ', f"badge締切 {bdl[1]} != 実 {W['et']}", u))
+                        # 🆕2026-11-25 抜き打ち 6260 プピリットパロ＝締切は一般発売の窓と一致・名前だけ 9/23 に終わった「抽選四次先行受付」
+                        #   （締切延長で窓を合わせたとき受付名を残した）＝日付だけ比べていたので鳴らなかった
+                        if label_differs(t.get('type'), W.get('label')):
+                            fails.append((e['id'], ti, 'n-受付名ズレ', f"受付名が実頁の窓（{W.get('label')} 〜{W['ed']}）と違う", u))
                     else:
                         eds = ','.join(b['ed'].isoformat() for b in openw)
                         fails.append((e['id'], ti, 'b-締切ズレ', f"date {t.get('date')} != open窓ed[{eds}]", u))

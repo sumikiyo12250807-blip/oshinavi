@@ -84,6 +84,15 @@ def apply_window(t, W, L):
     for k in ('soldout', 'soldoutSince', 'saleEnded', 'saleEndedSince'):
         t.pop(k, None)
     ty = t['type']
+    # 🆕2026-11-25 抜き打ち 6260 プピリットパロ＝9/23 に終わった「抽選四次先行受付」の枠を、締切延長で一般発売の窓に合わせたとき
+    #   受付名を古いまま残した（中身は先着一般発売・名前だけ終わった抽選先行）→ 合わせる窓の受付名が違えば名前も窓に合わせる
+    s = scope_of(ty)
+    if s and W.get('label'):
+        import unicodedata
+        _k = lambda x: re.sub(r'[\s　]', '', unicodedata.normalize('NFKC', x or ''))
+        old = ty[:s.start()]
+        if _k(W['label']) not in _k(old) and _k(old) not in _k(W['label']):
+            ty = fix_half_kana(W['label']) + ty[s.start():]
     if L and L.get('time') and W['ed'].isoformat() == L['date']:
         ty = set_scope_time(ty, L['time'])
     if W['sd'] >= TODAY:
@@ -142,7 +151,7 @@ def main():
         if eid not in EV:
             log.append((eid, ti, code, '触らず', '登録に無い')); continue
         t0 = EV[eid]['tickets'][ti]
-        if code not in ('c-死枠', 's-売切表示ズレ', 'b-締切ズレ', 'b-締切延長'):
+        if code not in ('c-死枠', 's-売切表示ズレ', 'b-締切ズレ', 'b-締切延長', 'n-受付名ズレ'):
             log.append((eid, ti, code, '報告だけ', f['detail'])); continue
         if u not in cache:
             try:
@@ -171,6 +180,13 @@ def main():
                 log.append((eid, ti, code, '触らず', f'開いている窓{len(op)}')); continue
             apply_window(tk, op[0], L)
             log.append((eid, ti, code, '締切を延ばした', f"{before} → {tk['type']}")); continue
+        if code == 'n-受付名ズレ':
+            # 🆕2026-11-25 抜き打ち 6260＝締切の合う受付中の窓が1つなら、受付名をその窓に合わせる（apply_window が名前も直す）
+            cand = [b for b in bl if b['status'] == 'open' and b['sd'] <= TODAY <= b['ed'] and b['ed'].isoformat() == (t0.get('date') or '')]
+            if len(cand) != 1:
+                log.append((eid, ti, code, '触らず', f'候補の窓{len(cand)}')); continue
+            apply_window(tk, cand[0], L)
+            log.append((eid, ti, code, '受付名を合わせた', f"{before} → {tk['type']}")); continue
         if code == 'b-締切ズレ':
             cand = [b for b in bl if b['sd'].isoformat() == t0['startDate']] if t0.get('startDate') \
                 else [b for b in bl if b['status'] == 'open' and b['sd'] <= TODAY <= b['ed']]
