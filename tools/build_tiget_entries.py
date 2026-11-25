@@ -538,6 +538,10 @@ def artist_from(ev, name):
     perf = [x for x in (ev.get('performers') or []) if x]
     if perf:
         return '／'.join(perf)
+    # 🆕2026-11-25 抜き打ち 16954・43499＝リンクが無くても説明文の「出演：」「ゲスト：」の行に名前がある
+    dc = [x for x in (ev.get('desc_cast') or []) if x]
+    if dc:
+        return '／'.join(dc)
     org = (ev.get('organizer') or '').strip()
     ko, kn = _nkey(org), _nkey(name)
     if len(ko) >= 2 and kn.startswith(ko) and len(kn) > len(ko):

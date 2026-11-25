@@ -219,6 +219,11 @@ def eplus_cast(html):
         dt = _perf(html or '')
     except Exception:
         dt = []
+    # 🆕2026-11-25 抜き打ち 40005 横浜ヤングカーニバル＝「=BAND=」「=DJ=」の見出しの行が名前に混ざり、
+    #   「GASOLINE (四日市)」「SHIGERU (SLAP of CEMETERY)」の括弧で長さの決まり（16字）を超えて、14組を全部捨てていた
+    #   ＝見出しの行は外す・長さは末尾の括弧（出身地・所属）を外して数える
+    dt = [x for x in dt if not re.fullmatch(r'[=＝]*\s*[A-Za-z]{1,8}\s*[=＝]+', x)]
+    _bare = lambda x: re.sub(r'\s*[(（][^()（）]*[)）]\s*$', '', x)
     _k = lambda s: re.sub(r'[\s　]', '', s or '').lower()
     # 楽器の札付きの並び（「キクチタケシ(vo,pf)／Arrow(cho)／植木栄(g)」＝バンドのメンバー表）は使わない＝リンクのまま
     if dt and sum(1 for x in dt if re.search(r'[(（][A-Za-z.,/&\s]{1,12}[)）]\s*$', x)) * 2 >= len(dt):
@@ -231,7 +236,9 @@ def eplus_cast(html):
     if 1 <= len(dt) <= 5:
         return dt
     # 🆕2026-11-20 54987（新喜劇 16組）＝短い名前だけが並ぶ時は30組まで使う（説明文なら長い行や「。」が混ざる）
-    if len(dt) <= 30 and all(len(x) <= 16 and '。' not in x for x in dt):
+    #   （英字だけの名前は長くなる＝「SCREAMiNG MUMMY CAT」19字＝英字と空白・記号だけなら24字まで）
+    if len(dt) <= 30 and all((len(_bare(x)) <= 16 or (len(_bare(x)) <= 24 and re.fullmatch(r'[ -~]+', _bare(x))))
+                             and '。' not in x for x in dt):
         return dt
     return []
 

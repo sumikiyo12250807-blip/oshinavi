@@ -66,6 +66,29 @@ def main():
             run(out, ['tools/gate_tiget_slots.py', '--ids', ','.join(map(str, bad))])
             out.write(io.open(os.path.join(R, 'tmp', 'gate_tiget_report.txt'), encoding='utf-8').read()[-4000:] + '\n')
     if not a.skip_fany:
+        # 🆕2026-11-25 抜き打ち 41041 六本木コントライブNEXT！＝登録（10/25）のあとで売り場が出演者を8組足したのに、
+        #   カードはロングコートダディ1組のまま。heal_fany --artist（増えた時だけ差し替え）が毎日の流れに入っていなかった
+        #   ＝その日か前の日に引いた FANY の一覧があれば、鍵の中で heal_fany --apply --artist（枠の作り直し＋増えた出演者）
+        import glob
+        src = [p for p in sorted(glob.glob(os.path.join(R, 'tmp', 'fany_1[0-9][0-9][0-9].json')), key=os.path.getmtime)
+               if time.time() - os.path.getmtime(p) < 36 * 3600]
+        if src:
+            fd = None
+            for _ in range(1200):
+                try:
+                    fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, b'vendor_sweep_daily_fany'); os.close(fd); break
+                except FileExistsError:
+                    time.sleep(3)
+            if fd is None:
+                out.write('鍵が取れなかった＝heal_fany は回していない\n')
+            else:
+                try:
+                    run(out, ['tools/heal_fany.py', '--src', os.path.relpath(src[-1], R), '--apply', '--artist'])
+                finally:
+                    os.remove(LOCK)
+                out.write(io.open(os.path.join(R, 'tmp', 'heal_fany_report.txt'), encoding='utf-8').read()[-3000:] + '\n')
+        else:
+            out.write('36時間以内の FANY の一覧が無い＝heal_fany は回していない（朝の fany の収集が止まった日）\n')
         run(out, ['tools/fany_mark_soldout.py', '--apply'])
         out.write(io.open(os.path.join(R, 'tmp', 'fany_soldout_report.txt'), encoding='utf-8').read()[-1500:] + '\n')
     out.close()

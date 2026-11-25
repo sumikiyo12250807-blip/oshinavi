@@ -372,6 +372,17 @@ def parse_event(html, eid):
                            'valid_from_time': vm.group(4) if vm else None,
                            'availability': am.group(1) if am else None})
     out['ld_offers'] = offers
+    # 🆕2026-11-25 抜き打ち 16954・43499＝出演者のリンクが無く、説明文（JSON-LD の description）に「出演：〜」「ゲスト：〜」の行だけがある
+    #   ＝その行の名前だけを持つ（行の頭が 出演／ゲスト の時だけ・ほかの文は読まない）。使うかどうかは build_tiget_entries.artist_from
+    out['desc_cast'] = []
+    dm = re.search(r'"description":\s*"((?:[^"\\]|\\.)*)"', ldm.group(1) if ldm else '')
+    if dm:
+        for ln in re.split(r'\r?\n|\\r\\n|\\n', unesc(dm.group(1))):
+            cm = re.match(r'\s*(?:出演|ゲスト)\s*[：:]\s*(.+?)\s*$', ln)
+            if cm:
+                for a in re.split(r'\s*[/／、,]\s*', cm.group(1)):
+                    if a and len(a) <= 40 and a not in out['desc_cast']:
+                        out['desc_cast'].append(a)
     # 公演（日時）ごとの塊
     for pm in re.finditer(r'<div class="pg-event__ordering__program">(.*?)(?=<div class="pg-event__ordering__program">|<div class="pg-event__ordering__caption">)',
                           html, re.S):
