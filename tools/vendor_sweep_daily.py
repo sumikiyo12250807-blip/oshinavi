@@ -65,6 +65,29 @@ def main():
             out.write(io.open(os.path.join(R, 'tmp', 'heal_tiget_report.txt'), encoding='utf-8').read()[-4000:] + '\n')
             run(out, ['tools/gate_tiget_slots.py', '--ids', ','.join(map(str, bad))])
             out.write(io.open(os.path.join(R, 'tmp', 'gate_tiget_report.txt'), encoding='utf-8').read()[-4000:] + '\n')
+    # 🆕2026-11-25 抜き打ち 57731 オルスタライブ（TicketDive）＝売り場が発売を 20:20 に早めたのに、カードは「11/24 22:20発売」のまま
+    #   ＝TicketDive の登録済みは毎日の見直しに入っていなかった → 全件の番人 → 🚨 の分だけ heal_ticketdive --apply（鍵の中）→ 番人
+    run(out, ['tools/gate_ticketdive_slots.py'])
+    td_rep = os.path.join(R, 'tmp', 'gate_ticketdive_report.txt')
+    td_bad = sorted({int(x) for x in re.findall(r'🚨 id=(\d+)', io.open(td_rep, encoding='utf-8').read())}) if os.path.exists(td_rep) else []
+    out.write('TicketDive 番人で鳴った %d件\n' % len(td_bad))
+    if td_bad:
+        fd = None
+        for _ in range(1200):
+            try:
+                fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, b'vendor_sweep_daily_td'); os.close(fd); break
+            except FileExistsError:
+                time.sleep(3)
+        if fd is None:
+            out.write('鍵が取れなかった＝heal_ticketdive は回していない\n')
+        else:
+            try:
+                run(out, ['tools/heal_ticketdive.py', '--ids', ','.join(map(str, td_bad)), '--apply'])
+                run(out, ['tools/compact_events.py', '--apply'])   # heal_ticketdive は EVENTS を字下げで書き直す＝詰め直す
+            finally:
+                os.remove(LOCK)
+            run(out, ['tools/gate_ticketdive_slots.py', '--ids', ','.join(map(str, td_bad))])
+            out.write(io.open(td_rep, encoding='utf-8').read()[-3000:] + '\n')
     if not a.skip_fany:
         # 🆕2026-11-25 抜き打ち 41041 六本木コントライブNEXT！＝登録（10/25）のあとで売り場が出演者を8組足したのに、
         #   カードはロングコートダディ1組のまま。heal_fany --artist（増えた時だけ差し替え）が毎日の流れに入っていなかった
@@ -84,6 +107,7 @@ def main():
             else:
                 try:
                     run(out, ['tools/heal_fany.py', '--src', os.path.relpath(src[-1], R), '--apply', '--artist'])
+                    run(out, ['tools/compact_events.py', '--apply'])
                 finally:
                     os.remove(LOCK)
                 out.write(io.open(os.path.join(R, 'tmp', 'heal_fany_report.txt'), encoding='utf-8').read()[-3000:] + '\n')
