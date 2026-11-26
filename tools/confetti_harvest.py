@@ -126,6 +126,10 @@ class Reader:
         low = html.lower()
         if len(html) < 2000 or 'access denied' in low or '403 forbidden' in low or 'request blocked' in low:
             raise Blocked('断られた形（長さ %d）: %s' % (len(html), url))
+        # 🆕11/27 初回＝Cloudflare の確かめの画面（題「しばらくお待ちください...」・cloudflare へのリンクだけ）が返った
+        #   ＝bot 判定で止められた形。すり抜けない（待って読み直す・UA を替えるなどはしない）＝その日止めて先方に相談
+        if 'しばらくお待ちください' in html or 'just a moment' in low or 'challenge-platform' in low or 'cf-chl' in low:
+            raise Blocked('断られた形（Cloudflare の確かめの画面・長さ %d）: %s' % (len(html), url))
         return html
 
 
