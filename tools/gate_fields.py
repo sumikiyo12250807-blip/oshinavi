@@ -269,7 +269,35 @@ def main():
             last = max(last or d, d)
         if last and last >= today and e.get('date') and e['date'] < last:
             C.append((e, last))
+    # U 🆕2026-11-26 抜き打ち（会期の行の県を数えた時に見つけた）72 劇団四季『アナと雪の女王』東京 に、名古屋「オペラ座の怪人」の受付5本
+    #   （eventCd 2604198 ほか・同じ枠は 4625 にもある）＝アナ雪のカードから別の公演の受付に飛ぶ。4521 yama に YAMATO String Quartet の枠も
+    #   ＝同じぴあの公演番号（eventCd）の枠が、名前の頭の違う2枚以上のカードにある。共演（岩崎宏美／岩崎良美）は売り場を見て tools/dupcd_ok.json に
+    #   「eventCd」を書いた分だけ鳴らさない。--ids の時は見ない（全件で比べる網）
+    U = []
+    if '--ids' not in sys.argv:
+        try:
+            DUP_OK = set(json.load(io.open(ROOT + 'tools/dupcd_ok.json', encoding='utf-8')))
+        except FileNotFoundError:
+            DUP_OK = set()
+        def _nk(n):
+            n = unicodedata.normalize('NFKC', n or '')
+            return re.sub(r'[\s「」『』【】\[\]（）()<>＜＞!！・／/、。,.:：\-‐–—~〜～"\'“”]', '', n)[:8]
+        _by = {}
+        for e in E:
+            if (e.get('date') or '') < today:
+                continue
+            for t in e.get('tickets') or []:
+                if not (t.get('soldout') or (t.get('date') or '') >= today):
+                    continue
+                m_ = re.search(r'pia\.jp/.*eventCd=(\w+)', t.get('url') or '')
+                if m_:
+                    _by.setdefault(m_.group(1), {})[e['id']] = e
+        for cd, es in _by.items():
+            if len(es) >= 2 and cd not in DUP_OK and len({_nk(x.get('name')) for x in es.values()}) >= 2:
+                U.append((cd, sorted(es)))
     print(f'=== gate_fields (today={today}) 対象{len(E)}件 ===')
+    for cd, ids in U:
+        print(f'  U eventCd={cd} の枠が名前の違うカードにある＝別の公演の受付が混ざった（共演なら tools/dupcd_ok.json へ）: {ids}')
     for e in A:
         print(f'  A id{e["id"]} 名前の欄にURL: {(e.get("artist") or "")[:60]}')
     for e in B:
@@ -322,7 +350,13 @@ def main():
     _O_stop = [e for e in O if e.get('genre') != 'new']
     if _O_stop:
         print(f'  🚨O {len(_O_stop)}件＝python tools/fill_venue_from_slots.py --apply --lock tmp/x1112/index.lock で会場を足してから')
-    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or S1 or S3 or _O_stop or ((M or O) and '--assign' in sys.argv)) else 0)
+    # 🆕2026-11-26 U（別の公演の受付が混ざった）・Q（会期の行の県の抜け＝tools/fill_label_pref.py --apply が prepush で直す）も止める側
+    import fill_label_pref as FLP
+    Q = [e for e in E if (e.get('date') or '') >= today and FLP.new_label(e, today)]
+    for e in Q[:20]:
+        print(f'  Q id{e["id"]} 会期の行の県に、これからの公演の県が無い＝tools/fill_label_pref.py --apply: {(e.get("dateLabel") or "")[:60]}')
+    print(f'=== 🆕11/26: U 別の公演の受付が混ざった {len(U)} / Q 会期の行の県の抜け {len(Q)} ===')
+    sys.exit(1 if (A or B or C or D or F or H or I or K or L or N or P or S1 or S3 or U or Q or _O_stop or ((M or O) and '--assign' in sys.argv)) else 0)
 
 
 if __name__ == '__main__':
