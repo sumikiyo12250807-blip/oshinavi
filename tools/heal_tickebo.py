@@ -41,10 +41,31 @@ REPORT = 'tmp/heal_tickebo_report.txt'
 URL_RE = r'ticket\.tickebo\.jp/show/event\.html\?info=(\d+)'
 
 
-def heal_one(e, built):
+FS = _load('fill_slot_pref')
+SHOW_RE = re.compile(r'（(?:[^（）\s]+ )?((?:R9年\s*)?\d{1,2}/\d{1,2})公演）')
+
+
+def _show_key(t):
+    m = SHOW_RE.search(t.get('type') or '')
+    return re.sub(r'\s', '', m.group(1)) if m else None
+
+
+def heal_one(e, built, today=None):
     notes = []
+    old_tb = [t for t in e.get('tickets') or [] if 'tickebo.jp' in (t.get('url') or '')]
     others = [t for t in e.get('tickets') or [] if 'tickebo.jp' not in (t.get('url') or '')]
-    e['tickets'] = others + built['tickets']
+    # 🆕11/26 穴①：作り直しは受付の終わった窓（予定枚数終了など）を出さない → 締切がまだ先の古い枠が消えた
+    #   （56115 高嶋ちさ子 東京 12/23＝画面は「予定枚数終了」）。作り直しに同じ公演日の枠が無く、締切が今日以降の古い枠は残して報告する（印は人が売り場を見て付ける）
+    today = today or datetime.date.today().isoformat()
+    newkeys = {_show_key(t) for t in built['tickets']}
+    keep = [t for t in old_tb if _show_key(t) and _show_key(t) not in newkeys and (t.get('date') or '') >= today]
+    for t in keep:
+        notes.append('⚠️作り直しに無い枠を残した（売り場で予定枚数終了か販売終了かを見て印を付ける）: %s' % t.get('type'))
+    e['tickets'] = others + built['tickets'] + keep
+    # 🆕11/26 穴②：作り直した枠の括弧に県が入らない（会場名から県を当てられない）→ エントリの県が1つなら入れる（fill_slot_pref と同じ決まり）
+    p = (e.get('prefecture') or '').strip()
+    for t, m in FS.missing(e):
+        t['type'] = t['type'][:m.start(1)] + p + ' ' + t['type'][m.start(1):]
     if not others and (built['date'] != e.get('date') or built['dateLabel'] != e.get('dateLabel')):
         notes.append('カードの日付: %s ｜ %s → %s ｜ %s' % (e.get('date'), e.get('dateLabel'), built['date'], built['dateLabel']))
         e['date'], e['dateLabel'] = built['date'], built['dateLabel']
@@ -67,7 +88,18 @@ def _selftest():
           'tickets': [{'type': '旧', 'url': 'https://ticket.tickebo.jp/show/event.html?info=1'}]}
     notes = heal_one(e2, b)
     assert e2['date'] == '2026-12-20' and e2['venue'] == 'V2' and len(notes) == 2, (e2, notes)
-    print('selftest OK: チケットボードの枠だけ差し替え/チケットボードだけのカードは日付も直す/名前・会場は報告だけ')
+    # 🆕11/26 締切が先の古い枠で作り直しに無い公演日は残す・括弧に県を入れる
+    e3 = {'name': 'A', 'venue': 'V', 'prefecture': '東京', 'date': '2026-12-18', 'dateLabel': 'x',
+          'tickets': [{'type': '一般（山形 12/19公演）〜12/18', 'date': '2026-12-18', 'url': 'https://ticket.tickebo.jp/show/event.html?info=1'},
+                      {'type': '一般（東京 12/23公演）〜12/22', 'date': '2026-12-22', 'url': 'https://ticket.tickebo.jp/show/event.html?info=1'},
+                      {'type': '一般（東京 11/20公演）〜11/19', 'date': '2026-11-19', 'url': 'https://ticket.tickebo.jp/show/event.html?info=1'}]}
+    b3 = {'name': 'A', 'venue': 'V', 'date': '2026-12-18', 'dateLabel': 'x',
+          'tickets': [{'type': '一般（12/19公演）〜12/18', 'date': '2026-12-18', 'url': 'https://ticket.tickebo.jp/show/event.html?info=1'}]}
+    n3 = heal_one(e3, b3, today='2026-11-26')
+    ty3 = [t['type'] for t in e3['tickets']]
+    assert ty3 == ['一般（東京 12/19公演）〜12/18', '一般（東京 12/23公演）〜12/22'], ty3
+    assert len(n3) == 1 and '12/23' in n3[0], n3
+    print('selftest OK: チケットボードの枠だけ差し替え/チケットボードだけのカードは日付も直す/名前・会場は報告だけ/締切が先の消えた公演日は残す/括弧に県')
 
 
 def main():
