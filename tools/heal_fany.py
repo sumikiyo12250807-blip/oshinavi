@@ -145,7 +145,13 @@ def artist_grow(old, new, name):
     _k = lambda s: re.sub(r'[\s　]', '', s)
     if old == name:
         return new
-    if len(nn) > len(on) and {_k(x) for x in on} <= {_k(x) for x in nn}:
+    # 🆕2026-11-26 抜き打ち 23532 NGK 本公演＝カード「中田カウス」・売り場「中田カウス 漫才のDENDO」＝売り場の名前が
+    #   カードの名前の後ろに空白＋言葉を足しただけの時も「含む」と見る（完全一致だけだと 3組のまま24組の抜けを直せなかった）
+    _nk = [re.sub(r'[\s　]', '', x) for x in nn]
+    _nr = [x.strip() for x in nn]
+    def _in(x):
+        return _k(x) in _nk or any(y.startswith(x.strip() + ' ') or y.startswith(x.strip() + '　') for y in _nr)
+    if len(nn) > len(on) and all(_in(x) for x in on):
         return new
     return None
 
@@ -359,6 +365,9 @@ def _selftest():
     check('札付きの古い名前も含むと見る', artist_grow('ゲスト:カベポスター／超速バギー', '滝音／カベポスター／超速バギー', 'K') == '滝音／カベポスター／超速バギー')
     check('含まれない名前があれば触らない', artist_grow('A／手で直したB', 'A／C／D', 'n') is None)
     check('同じ数なら触らない', artist_grow('A／B', 'B／A', 'n') is None)
+    check('🆕11/26 後ろに空白＋言葉を足した名前も含むと見る（23532）',
+          artist_grow('中田カウス／月亭八方', '中田カウス 漫才のDENDO／月亭八方／ミルクボーイ', 'n') == '中田カウス 漫才のDENDO／月亭八方／ミルクボーイ')
+    check('🆕11/26 空白なしで続く別の名前は含むと見ない', artist_grow('中田', '中田カウス／月亭八方', 'n') is None)
     check('公演名に倒れていたら差し替え', artist_grow('ルミネ', 'A／B', 'ルミネ') == 'A／B')
     check('作り直しも公演名なら触らない', artist_grow('A', 'ルミネ', 'ルミネ') is None)
     print('selftest %s' % ('OK' if ok else 'NG'))
