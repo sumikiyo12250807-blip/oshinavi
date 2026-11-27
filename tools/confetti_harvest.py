@@ -124,6 +124,12 @@ class Reader:
         save_ledger(self.L)
         html = r.stdout.decode('utf-8', 'replace')
         low = html.lower()
+        # 🆕11/28 断られた画面も残す（11/28 は保存されず、メンテナンスの文字があるかを確かめられなかった）
+        if len(html) < 2000 or 'access denied' in low or '403 forbidden' in low or 'request blocked' in low or \
+                'しばらくお待ちください' in html or 'just a moment' in low or 'challenge-platform' in low or 'cf-chl' in low:
+            io.open(os.path.join(self.dir, 'blocked_%s.html' % time.strftime('%H%M%S')), 'w', encoding='utf-8').write(html)
+            if 'メンテナンス' in html or 'maintenance' in low:
+                raise Blocked('メンテナンス中の画面（長さ %d）: %s＝翌朝もう一度' % (len(html), url))
         if len(html) < 2000 or 'access denied' in low or '403 forbidden' in low or 'request blocked' in low:
             raise Blocked('断られた形（長さ %d）: %s' % (len(html), url))
         # 🆕11/27 初回＝Cloudflare の確かめの画面（題「しばらくお待ちください...」・cloudflare へのリンクだけ）が返った
