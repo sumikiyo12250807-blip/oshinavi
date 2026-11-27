@@ -156,12 +156,12 @@ def main():
             continue
         targets.append((e, urls))
 
-    ng, ok, fetcherr, rawng, private = [], 0, [], [], []
+    ng, ok, fetcherr, rawng, private, renamed = [], 0, [], [], [], []
     rep = io.open(REPORT, 'w', encoding='utf-8')
     rep.write('=== gate_tiget_slots (today=%s) 対象%d件 ===\n' % (a.today, len(targets)))
     for e, urls in targets:
         # 実ページからゼロから作り直す（登録値は見ない）
-        rebuilt, raws, dropped, arts = [], [], [], []
+        rebuilt, raws, dropped, arts, names = [], [], [], [], []
         bad = False
         for eid in urls:
             try:
@@ -190,6 +190,7 @@ def main():
             built, why = BT.build(d, a.today)
             if built:
                 rebuilt += built['tickets']
+                names.append(built.get('name') or '')
                 if built.get('artist') and built['artist'] != built.get('name') and d.get('performers'):
                     arts += [x for x in built['artist'].split('／') if x not in arts]
             # 🚨2026-09-30 組めなかった（公演が終わった等）を「正常」と決めつけない＝生データで買える券種を見る
@@ -210,6 +211,11 @@ def main():
         #   入れ替わった／足されたのに、出演者の欄は登録の時のまま（ヒールは tickets だけ）。売り場に出演者リンクがある時は
         #   出演者の顔ぶれも比べる＝違えば 🚨（heal_tiget が売り場どおりに差し替える）
         _na = lambda s: re.sub(r'[\s　]', '', s or '')
+        # 🆕2026-11-27 抜き打ち 22520（「楽屋A寄席 in 喜楽館vol.3」→ 売り場は「神戸フリー寄席」）＝枠が一致すると
+        #   heal_tiget まで行かず、公演名の変化はどこにも出なかった。1ページだけのカードは公演名も比べて 📝 で出す
+        #   （heal_tiget は名前を触らない決まり＝報告を見て手で直す。直すまで毎日鳴る）
+        if names and len(urls) == 1 and names[0] and _na(names[0]) != _na(e.get('name')):
+            renamed.append((e, names[0]))
         if arts and len(urls) == 1 and {_na(x) for x in arts} != {_na(x) for x in (e.get('artist') or '').split('／')}:
             ng.append((e, [('出演者', e.get('artist'))], [('出演者', '／'.join(arts))]))
             continue
@@ -236,16 +242,18 @@ def main():
         rep.write('❌ id=%s events/%s 読めなかった: %s\n' % (i, eid, why))
     for i, eid in private:
         rep.write('🔒 id=%s events/%s 主催者が非公開設定＝載せない（新着なら外して tools/tiget_watch.json へ）\n' % (i, eid))
-    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d / 🔒非公開 %d ===\n'
-              % (ok, len(ng), len(rawng), len(fetcherr), len(private)))
+    for e, nn in renamed:
+        rep.write('📝 id=%s 売り場の公演名が変わった（手で直す）: 登録「%s」／売り場「%s」\n' % (e['id'], (e.get('name') or '')[:60], nn[:80]))
+    rep.write('\n=== 集計: 一致 %d / 🚨食い違い %d / 🚨生データ突合 %d / ❌読めなかった %d / 🔒非公開 %d / 📝公演名が変わった %d ===\n'
+              % (ok, len(ng), len(rawng), len(fetcherr), len(private), len(renamed)))
     rep.close()
     # 🆕11/23 売り場の公演名にメールアドレスが入っていることがある（16922）＝tmp/ は公開されるので伏せる
     _t = io.open(REPORT, encoding='utf-8').read()
     io.open(REPORT, 'w', encoding='utf-8').write(re.sub(r'[\w.+-]+[@＠][\w-]+(?:\.[\w-]+)+', '（メールアドレスは伏せた）', _t))
     # コンソールは文字化けするのでASCIIの要約だけ。中身は REPORT を読む
-    sys.stderr.write('gate_tiget_slots: match=%d ng=%d rawng=%d fetcherr=%d private=%d -> %s\n'
-                     % (ok, len(ng), len(rawng), len(fetcherr), len(private), REPORT))
-    sys.exit(2 if (ng or fetcherr or rawng or private) else 0)
+    sys.stderr.write('gate_tiget_slots: match=%d ng=%d rawng=%d fetcherr=%d private=%d renamed=%d -> %s\n'
+                     % (ok, len(ng), len(rawng), len(fetcherr), len(private), len(renamed), REPORT))
+    sys.exit(2 if (ng or fetcherr or rawng or private or renamed) else 0)
 
 
 if __name__ == '__main__':

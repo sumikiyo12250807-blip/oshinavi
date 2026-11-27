@@ -96,12 +96,22 @@ def main():
                 arts, src = BP.pia_cast(BP.fetch(pia)), 'ぴあ'
             elif ep:
                 arts, src = [], 'e+'
+                # 🆕2026-11-27 抜き打ち 53439 SHACHI＝最初のページ（終わった大阪の回）が 404 で、残り2ページを読まずに
+                #   「読めず」で止まっていた＝1ページ読めなくても次へ進む。全部読めなかった時だけ「読めず」
+                errs = []
                 for k, u in enumerate(eps):
                     if k:
                         time.sleep(2.0)
-                    for a in eplus_cast(fetch_ep(u)):
+                    try:
+                        h_ = fetch_ep(u)
+                    except Exception as ex_:
+                        errs.append(str(ex_)[:40])
+                        continue
+                    for a in eplus_cast(h_):
                         if a not in arts:
                             arts.append(a)
+                if errs and len(errs) == len(eps):
+                    raise Exception(errs[0])
             elif tg:
                 # 🆕2026-11-04 TIGET（28996・17195＝登録のあとで出演者が足された／主催の名前で始まる公演名）
                 TH, BT = _tiget()
