@@ -11,7 +11,7 @@
 - 一般発売は2026/10/2(金) 10:00〜、ネットのみ・1人2枚まで・予定枚数が終わりしだい終了 — https://t.pia.jp/pia/ticketInformation.do?eventCd=2631078&rlsCd=001
 - ぴあの先行抽選はすでに受付終了 — https://t.pia.jp/pia/event/event.do?eventCd=2631078
 - 未就学児は入場不可。チケット不正転売禁止法の対象、購入者の氏名と連絡先を確認して販売、撮影・録音・録画は禁止、本人確認・荷物検査あり、スーツケースなど大きい荷物は持ち込み不可 — https://t.pia.jp/pia/event/event.do?eventCd=2631078
-- 問い合わせ先は kikyofes2026@gmail.com（ききょう祭の窓口） — https://t.pia.jp/pia/event/event.do?eventCd=2631078
+- 問い合わせ先は ***（ききょう祭の窓口） — https://t.pia.jp/pia/event/event.do?eventCd=2631078
 - ぴあのジャンル札は「アニメ・声優・ゲーム」 — https://t.pia.jp/pia/event/event.do?eventCd=2631078
 - 形式（トークショーかどうか）は公式の情報源では見つからなかった。非公式のRAG Music文化祭カレンダーには「トークショー: 花江夏樹」、同じ日に「お笑いライブ: ネイビーズアフロ / ぎょうぶ」とある（公式ではないので投稿の根拠にしない） — https://www.ragnet.co.jp/festival-hyogo
 - ききょう祭の公式（大学サイト・X @kikyofes）での告知文：見つからなかった（Xは取得できず、大学サイトは2026年度の案内が検索に出なかった）

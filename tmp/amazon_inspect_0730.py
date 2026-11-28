@@ -22,7 +22,7 @@ for kw, srs in [('辻彩奈', True), ('辻彩奈', False), ('岩崎宏美', True
     out.append('=== k=%s CD  srs=%s' % (kw, srs))
     out.append('   %s' % u)
     out.append('   len=%d  data-asin=%d' % (len(h), asin))
-    for mark in ('ロボットではありません', 'api-services-support@amazon.com', 'CAPTCHA',
+    for mark in ('ロボットではありません', '***', 'CAPTCHA',
                  '検索結果', '件の結果', 'に一致する商品はありませんでした',
                  '該当する商品はありません', 'キーワードで検索してみてください',
                  's-search-results', 'srs-breadcrumb'):
